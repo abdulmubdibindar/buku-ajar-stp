@@ -1,0 +1,245 @@
+1.2.3 Data Terstruktur
+Berdasarkan formatnya, data dapat dibedakan menjadi dua
+jenis. Jenis data berdasarkan formatnya tersebut terdiri atas
+data tidak terstruktur (unstructured data) dan data
+terstruktur (structured data).
+
+Data tidak terstruktur adalah data yang tidak memiliki format
+yang terdefinisikan sebelum dikumpulkan, seperti teks
+wawancara, rekaman suara, gambar, atau video. Bentuk dan
+ukuran data-data tersebut dapat berbeda-beda, dengan kata
+lain formatnya tidak sama sehingga dapat dikatakan juga tidak
+terdefinisi atau tidak terstruktur [3].
+
+Di sisi lain, data terstruktur adalah data yang memiliki definisi
+yang jelas dan pola yang telah ditentukan sebelum dikumpulkan.
+Definisi yang jelas di sini diperlihatkan dengan bentuk data
+terstruktur berupa tabel. Dengan bentuk tabel, data memiliki
+format yang terdefinisi, lebih jelas isinya, dan dapat dikenali
+polanya sehingga lebih mudah untuk dianalisis.
+
+Penelitian yang menggunakan analisis statistik pasti
+menghasilkan data terstruktur dari pengumpulannya [4]. Hal ini
+bukan berarti penelitian kualitatif juga tidak bisa menghasilkan
+data terstruktur, akan tetapi hal tersebut tidak mutlak. Hanya
+penelitian kuantitatif dengan metode analisis statistik yang
+mutlak menggunakan data terstruktur.
+
+1.2.3.1 Elemen Data Terstruktur
+Dengan format yang jelas, data terstruktur dapat dipandang
+sebagai susunan 3 elemen penting: objek (object), variabel
+(variable), dan nilai (value).
+
+6
+Objek merepresentasikan sumber data yang diamati dan diukur
+variabelnya. Selain "objek", istilah lain juga sering digunakan
+dalam berbagai sumber, seperti "kasus" (case) atau "observasi"
+(observation). Dalam data terstruktur, ia diwakili oleh baris
+tabel. Objek dapat diwakili oleh berbagai macam bentuk,
+selama kita dapat mengenalinya dan masuk akal untuk
+direpresentasikan dalam bentuk baris di tabel. Contoh dari
+objek adalah orang/penduduk, keluarga, persil lahan/kavling,
+kecamatan, dan sebagainya. Dalam istilah penelitian, objek juga
+disebut unit amatan (unit of observation).
+
+Variabel adalah karakteristik objek yang diukur. Dalam tabel, ia
+diwakili oleh kolom. Variabel merupakan hal yang akan kita
+analisis dan kita nyatakan dalam bentuk angka. Satu objek
+dapat terdiri atas banyak sekali variabel, tergantung tujuan dan
+lingkup pengamatan kita. Makin banyak variabel yang kita
+amati, makin banyak juga kolomnya. Contoh variabel adalah
+pada kasus penduduk adalah usia, jenis kelamin, status
+perkawinan, dll.
+
+Nilai adalah hasil pengukuran variabel suatu objek. Disebut
+"pengukuran" karena pengumpulan data kuantitatif Dalam tabel,
+ia berada dalam sel tabel, yakni perpotongan antara baris
+dengan kolom. Nilai berperan sebagai bahan baku analisis
+statistik yang akan dipaparkan lebih lanjut pada bab-bab
+selanjutnya.
+
+Gambar 1-2 berikut mengilustrasikan set data (dataset) yang
+dihasilkan dari perancangan variabel dan objek dalam kolom
+dan baris seperti penjelasan di atas.
+
+                                                                                  7
+   Objek data: mahasiswa ITERA
+
+   Gambar 1-2. Ilustrasi data terstruktur dan elemen-elemennya
+
+1.2.3.2 Tabulasi Data Terstruktur yang Baik
+Agar mudah dianalisis, tabel terstruktur perlu diformat dengan
+baik sehingga memiliki ciri-ciri yang sesuai dengan elemennya:
+
+   · Baris merepresentasikan objek yang jelas
+   · Kolom merepresentasikan satu variabel
+   · Sel berisi nilai variabel objek. Nilai variabel pada setiap
+
+       baris (objek) memiliki format yang sama
+
+Berikut adalah pembahasan beberapa kasus tabulasi yang tidak
+baik dan perlu dihindari untuk membentuk data terstruktur.
+
+Tabel 1.1. Ilustrasi kesalahan tabulasi data terstruktur dan pembahasannya
+
+   Letak kesalahan                 Perbaikan
+
+Baris mengandung objek `provinsi'  Baris sudah merepresentasikan satu
+dan kabupaten. Ini menimbulkan     objek yang jelas, yaitu kabupaten,
+                                   dengan nama provinsi sebagai variabel
+
+8
+             Letak kesalahan                  Perbaikan
+ambiguitas kedetilan objek apakah
+pada tingkat provinsi saja atau                          Jumlah Jumlah tidak
+hingga kabupaten
+                                              Jumlah     Pernah   pernah
+Kolom-kolom tidak secara tegas                bekerja
+menunjukkan variabel yang           Provinsi  2 219 698  bekerja  bekerja
+berbeda. Kolom pengangguran        Aceh       6 681 224
+memiliki anak kolom sehingga       Sumatera              38 459   108 163
+variabelnya tidak tunggal          Utara
+                                                         191 274  191 164
+                                   ...
+                                              ...        ...               ...
+
+                                   Satu kolom sudah mewakili satu
+                                   variabel yang jelas. Variabel jumlah
+                                   pernah bekerja dan jumlah tidak
+                                   pernah bekerja sudah menjadi satu
+                                   kolom tunggal sehingga lebih jelas
+
+Nilai umur pada beberapa baris ada Semua nilai sudah disamakan
+
+yang mengandung kata `tahun'       formatnya berupa angka saja
+
+1.3 Studi Kasus
+
+Dalam bab ini, kita akan mengambil kasus berupa perencanaan
+transportasi berkelanjutan mahasiswa dan staf pegawai di
+kampus ITERA. Transportasi berkelanjutan adalah
+perpindahan dalam konteks transportasi yang memiliki nilai
+berkelanjutan, salah satunya minim polusi udara.
+
+                                                                  9
+1.3.1 Peran dan Kedudukan Statistika dalam
+           Perencanaan
+
+Dalam kasus ini, kita sudah mengetahui bahwa tujuan dari
+rektorat adalah "transportasi mahasiswa dan pegawai yang
+berkelanjutan." Selanjutnya, kita perlu mengetahui apa
+persoalan yang ada saat ini di kampus ITERA (perhatikan
+Gambar 1-3).
+Untuk mengetahui persoalan terkait dengan transportasi
+mahasiswa dan pegawai, kita perlu mengajukan pertanyaan
+terkait hal ini, yakni sudah sejauh mana keberlanjutan pada pola
+pergerakan pada mahasiswa dan pegawai kampus ITERA saat
+ini?
+Ini adalah pertanyaan penelitian kita untuk menjawab apa
+persoalan yang ada terkait rencana transportasi berkelanjutan
+di kampus ITERA. Untuk menjawab pertanyaan ini, kita
+mengumpulkan data terkait pola pergerakan mahasiswa dan
+pegawai di ITERA dengan menyebarkan kuesioner kepada para
+mahasiswa dan pegawai kampus ITERA tentang pola
+pergerakan mereka.
+
+10
+                                         Tujuan: Transportasi mahasiswa dan
+                                               pegawai yang berkelanjutan
+
+                                                 Persoalan ...
+
+                                                   Solusi ...
+
+                                              Analisis solusi ...
+
+                                                  Evaluasi ...
+
+                                                 Implementasi
+
+     Gambar 1-3. Proses Perencanaan Rasional pada Kasus Perencanaan
+                                            Mobilitas ITERA
+
+Simak data yang dikumpulkan dalam format terstruktur pada
+subbab berikut.
+1.3.2 Data Terstruktur: Objek, Variabel, dan Nilai
+Untuk mengidentifikasi pola pergerakan mahasiswa dan pegawai
+kampus, kita perlu menentukan apa saja karakteristik dari pola
+pergerakan tersebut yang kita perlu analisis. Dengan kata lain,
+kita perlu menentukan variabel apa saja yang akan kita ukur
+lewat kuesioner kita.
+Katakanlah kita menetapkan variabel-variabel untuk kita ukur
+terkait dengan pola pergerakan antara lain adalah jenis
+kendaraan yang dimiliki, jarak tempat tinggal ke kampus,
+jumlah perjalanan per hari, serta biaya perjalanan per pekan.
+Dengan demikian variabel-variabel tersebut akan menjadi
+kolom dari tabel data terstruktur kita.
+
+                                                                                 11
+Selanjutnya, pola pergerakan yang kita ingin ketahui adalah
+pola pergerakan orang per orang dari mahasiswa dan pegawai
+di kampus ITERA. Oleh karena itu, objek dalam data kita
+adalah orang yang merupakan mahasiswa atau pegawai di
+kampus ITERA. Ini bisa disebut juga unit amatan dalam
+penelitian kita. Masing-masing objek tersebut akan menjadi
+baris dari tabel data terstruktur kita.
+
+Dari paparan tersebut, kita bisa merancang terlebih dahulu
+tabel data terstruktur kita sebagai persiapan untuk
+menyebarkan kuesioner untuk pengumpulan data. Tabel
+rancangan data terstruktur kita adalah sebagai berikut.
+
+Tabel 1.2. Rancangan Tabel Data Terstruktur Penelitian Kasus Mobilitas
+
+                    Kampus Berkelanjutan
+
+                                          Jumlah perjalanan Biaya perjalanan
+
+ID Jenis Kendaraan       Jarak ke kampus       <<nama hari>>       per pekan
+
+1 ...               ...                   ...                 ...
+
+2 ...               ...                   ...                 ...
+
+3 ...               ...                   ...                 ...
+
+4 ...               ...                   ...                 ...
+
+... ...             ...                   ...                 ...
+
+Bagaimana dengan nilai? Untuk kasus ini, kita akan
+membahasnya secara lebih lengkap di subbab selanjutnya
+mengenai tingkat pengukuran variabel.
+
+1.4 Soal Evaluasi
+
+1. Jelaskanlah di bagian mana dalam proses perencanaan
+    analisis statistik berada dan bagaimana perannya! STP-1.1
+
+2. Apa yang membedakan analisis kuantitatif dan kualitatif?
+
+       STP-1.2
+
+3. Perhatikan tabel hasil pengumpulan data kuesioner berikut
+    ini.
+
+12
+ ID_rumah  Usia_KK        Jml_anggota         Luas_rumah Income_bln
+001                   55                   2
+002                   64                   5  101  3,3
+003                   33                   7
+004                   28                   2  245  6,0
+
+                                              69   3,5
+
+                                              44   27,0
+
+Jawablah pertanyaan-pertanyaan berikut berdasarkan tabel
+tersebut STP-1.3:
+a. Apakah format tabel tersebut?
+b. Sebutkan apa saja variabelnya dan apa objek yang
+
+    paling menggambarkan data tersebut, berdasarkan
+    nama-nama variabelnya.
+
+                                                   13

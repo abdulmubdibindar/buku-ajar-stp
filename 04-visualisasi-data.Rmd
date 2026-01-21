@@ -1,0 +1,75 @@
+# Visualisasi Data Kuantitatif
+
+## Konsep Dasar
+
+Visualisasi data adalah representasi grafis dari informasi dan data. Dengan menggunakan elemen visual seperti grafik, bagan, dan peta, visualisasi data menyediakan cara yang mudah diakses untuk melihat dan memahami tren, outlier, dan pola dalam data.
+
+Dalam R, `ggplot2` adalah paket yang paling populer dan kuat untuk membuat visualisasi data. Prinsip dasarnya adalah "Grammar of Graphics", yang membangun grafik komponen demi komponen (data, aesthetics, geometries).
+
+## Jenis Visualisasi Dasar
+
+### Diagram Batang (Bar Chart)
+
+Cocok untuk membandingkan kuantitas antar kategori (Data Nominal/Ordinal).
+
+```{r, echo=TRUE, eval=FALSE}
+library(ggplot2)
+ggplot(data, aes(x = Kategori, y = Jumlah)) +
+  geom_col() +
+  theme_minimal()
+```
+
+### Histogram
+
+Cocok untuk melihat distribusi data numerik (Data Interval/Rasio).
+
+```{r, echo=TRUE, eval=FALSE}
+ggplot(data, aes(x = VariabelNumerik)) +
+  geom_histogram(binwidth = 5)
+```
+
+### Boxplot
+
+Cocok untuk melihat ringkasan lima angka (min, k1, median, k3, max) dan outlier. Sangat baik untuk membandingkan distribusi antar grup.
+
+```{r, echo=TRUE, eval=FALSE}
+ggplot(data, aes(x = Kategori, y = Nilai)) +
+  geom_boxplot()
+```
+
+### Scatterplot
+
+Cocok untuk melihat hubungan antara dua variabel numerik.
+
+```{r, echo=TRUE, eval=FALSE}
+ggplot(data, aes(x = X, y = Y)) +
+  geom_point()
+```
+
+## Studi Kasus
+
+Menggunakan data transportasi kampus, kita akan memvisualisasikan moda transportasi.
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+# Data contoh
+transport <- data.frame(
+  Moda = c("Motor", "Mobil", "Jalan Kaki", "Ojek Online", "Bus"),
+  Jumlah = c(150, 40, 80, 50, 20)
+)
+
+# Membuat Bar Chart
+ggplot(transport, aes(x = reorder(Moda, -Jumlah), y = Jumlah)) +
+  geom_col(fill = "steelblue") +
+  theme_minimal() +
+  labs(title = "Moda Transportasi Mahasiswa",
+       x = "Jenis Moda",
+       y = "Jumlah Mahasiswa")
+```
+
+## Soal Evaluasi
+
+1.  Jelaskan prinsip dasar pemilihan jenis grafik berdasarkan tingkat pengukuran variabelnya! (STP-3.1)
+2.  Apa fungsi Boxplot dalam analisis data eksploratif? (STP-3.2)
+3.  Perhatikan diagram berikut (misalkan ada diagram batang). Apa kesimpulan yang dapat diambil? (STP-3.3)

@@ -1,0 +1,892 @@
+Bab 8
+Analisis Statistik Asosiasi Bivariat:
+Korelasi Antarvariabel Nominal
+
+8.1 Capaian Pembelajaran
+Setelah mempelajari bab ini, Anda diharapkan:
+
+    1. Mampu memaknai hasil analisis korelasi pasangan
+         variabel bertingkat pengukuran nominal dengan tepat
+
+               STP-9.1
+
+Agar lebih mudah memahami konsep dasar, Anda dapat
+mempelajari studi kasus terlebih dahulu dan menyimak
+pembahasan sesuai dengan konsep dasarnya.
+
+8.2 Konsep Dasar
+Mulai bab ini kita akan bergeser dari analisis statistik univariat,
+analisis statistik yang hanya memperhatikan satu variabel saja,
+ke analisis statistik bivariat, yaitu analisis statistik yang
+memperhatikan dua variabel secara bersamaan.
+Beberapa kasus yang sudah kita bahas dalam bab-bab
+sebelumnya yang mencerminkan analisis univariat adalah
+sebagai berikut:
+
+    · pada bab 2 Analisis Statistika Deskriptif, kita
+         menghitung persentase/proporsi mahasiswa pengguna
+         sepeda motor ke kampus,
+
+                                                                               195
+    · pada bab 3 Visualisasi kita memvisualkan sebaran
+         jumlah perjalanan dalam hari Senin, baik staf maupun
+         mahasiswa
+
+    · pada bab 4 kita menghitung nilai standar untuk rata-
+         rata jarak
+
+    · pada bab 5 kita juga menghitung interval kepercayaan
+         untuk parameter rata-rata jarak ke kampus populasi
+         mahasiswa Itera
+
+    · pada bab 6 dan 7, meskipun ada pembahasan tentang
+         pengujian hipotesis perbedaan rata-rata independen dan
+         dependen, dua populasi tidak sama dengan dua
+         variabel. Variabel yang dianalisis tetap satu, yakni
+         perbedaan nilai suatu parameter, yang berarti hanya ada
+         satu variabel yang diuji.
+
+Berbeda dengan contoh-contoh tersebut, analisis statistik
+bivariat memperhitungkan dua variabel secara bersamaan. Apa
+yang dimaksud dengan "memperhitungkan dua variabel secara
+bersamaan?" Kita memperhatikan hubungan antara variabel
+pertama dengan variabel kedua. Hubungan ini dapat berupa
+keterkaitan atau pengaruh.
+
+8.2.1 Elemen dalam Hubungan Dua Variabel
+Terdapat sejumlah elemen yang dapat menjadi penciri suatu
+hubungan dua variabel:
+
+    1. keberadaan/kekuatan hubungan, yakni ada/tidaknya
+         atau erat/renggangnya hubungan
+
+    2. arah hubungan, yakni apabila satu variabel semakin
+         besar/tinggi nilainya, variabel lainnya ikut besar/naik
+         atau justru sebaliknya
+
+196
+3. pola hubungan, yakni bentuk visual hubungan dalam
+    grafik.
+
+Ketiga elemen tersebut sangat terkait dengan tingkat
+pengukuran variabel-variabel yang dianalisis. Ciri yang
+dapat kita temukan dalam setiap tingkat pengukuran variabel
+berbeda-beda. Pelajari tabel berikut yang merangkum
+kepemilikan tiap ciri dalam hubungan.
+
+Tabel 8.1. Elemen dalam Hubungan Dua Variabel Berdasarkan Tingkat
+
+                 Pengukurannya
+
+Elemen         Nominal Ordinal Metrik  Penjelasan
+
+Keberadaan &                           Keberadaan dan
+
+kekuatan                               kekuatan hubungan
+
+                                       adalah ciri yang dimiliki
+
+                                       seluruh tingkatan
+
+                                       pengukuran variabel
+
+Arah hubungan                          Arah hubungan berarti
+
+                                       kecenderungan
+
+                                       tinggi/rendahnya nilai.
+
+                                       Variabel terrendah yang
+
+                                       memiliki informasi
+
+                                       tersebut adalah ordinal
+
+                                       karena terdapat makna
+
+                                       tingkatan di dalamnya
+
+Pola                                   Pola adalah bentuk titik-
+
+                                       titik dalam diagam
+
+                                       pencar (scatterplot).
+
+                                       Diagram ini hanya bisa
+
+                                       dibuat untuk pasangan
+
+                                       variabel
+
+Perlu diingat bahwa elemen-elemen hubungan tersebut dapat
+ditelaah jika tingkat pengukuran kedua variabel yang
+dianalisis sama. Misalnya, variabel ordinal dengan ordinal
+atau metrik dengan metrik.
+
+                                                              197
+Bagaimana jika salah satu berbeda? Jika salah satu variabel
+tingkat pengukurannya lebih rendah dibandingkan yang lainnya,
+maka tingkat pengukuran variabel yang lebih rendah
+tersebutlah yang menentukan elemen hubungan apa yang
+dapat diidentifikasi. Pelajari tabel berikut untuk mengetahui
+bagaimana setiap tingkat variabel memiliki jenis hubungan yang
+berbeda.
+
+     Tabel 8.2. Elemen dalam Hubungan Dua Variabel dengan Tingkat
+
+                      Pengukuran yang Berbeda
+
+Tingkat      Nominal   Ordinal                 Metrik
+
+Variabel-1/
+
+Variabel-2
+
+Nominal · Keberadaan/
+
+             kekuatan
+
+Ordinal      · Keberadaan/ · Keberadaan/
+
+             kekuatan  kekuatan
+
+                       · Arah
+
+Metrik       · Keberadaan/ · Keberadaan/       · Keberadaan/
+                                                     kekuatan
+             kekuatan  kekuatan
+                                               · Arah
+                       · Arah                  · Pola
+
+Misalnya, jika variabel yang kita hubungkan adalah variabel
+nominal dengan ordinal, maka elemen hubungan yang dapat kita
+analisis hanya keberadaan/kekuatannya, karena variabel
+yang lebih rendah tingkat pengukurannya adalah variabel
+nominal, yang hanya bisa dianalisis keberaan/kekuatan
+hubungannya.
+
+8.2.2 Keterkaitan (Korelasi) dan Pengaruh
+           (Kausalitas)
+
+Bentuk hubungan dua variabel dapat kita bagi menjadi
+keterkaitan dan pengaruh, istilah lainnya adalah korelasi dan
+kausalitas. Yang membedakan keduanya hanyalah
+
+198
+keberadaan sebab-akibat yang hanya terdapat pada
+hubungan kausalitas.
+
+Pada hubungan korelasi tidak ada hubungan sebab-akibat
+seperti pada hubungan kausalitas. Ketika kita mendapatkan
+bahwa hubungan antara dua variabel adalah kuat dan/atau
+searah, misalnya, kita tidak bisa langsung menyatakan ada
+pengaruh antara dua variabel tersebut. Hubungan
+kausalitas hanya bisa didapatkan setelah dilakukan penelitian
+yang sesuai dan akan dipelajari di bab berikutnya.
+
+8.2.3 Koefisien Korelasi Variabel Nominal
+
+Secara kuantitatif, hubungan korelatif dua variabel dinyatakan
+dengan sebuah angka yang disebut dengan koefisien korelasi.
+Untuk dua variabel nominal, koefisien yang akan kita pelajari
+di antaranya adalah koefisien berbasis chi-kuadrat (chi-square,
+2 ) dan berbasis galat (error).
+
+8.2.3.1 Uji Korelasi Berbasis Chi-square Koefisien phi,
+             Cramer's V, dan C
+
+Uji Chi-square (dibaca: kai-square), dilambangkan dengan
+simbol ², adalah salah satu teknik statistik yang biasa
+digunakan untuk menganalisis hubungan antara dua variabel
+kategorikal, atau yang memiliki skala nominal hingga ordinal.
+Huruf  (chi) berasal dari alfabet Yunani dan dilafalkan seperti
+"ki", menjadi dasar penamaan uji ini [1].
+
+Secara umum dalam analisis asosiasi, uji Chi-square digunakan
+untuk menilai apakah perbedaan yang diamati dalam distribusi
+frekuensi suatu sampel dapat dijelaskan hanya oleh peluang
+acak (random chance), atau justru mencerminkan perbedaan
+yang nyata (genuine differences) dalam populasi [1].
+
+                                                                               199
+Dengan kata lain, uji ini membantu peneliti menentukan apakah
+ada hubungan atau ketidaktergantungan antara dua variabel
+kategorikal, seperti `jenis kelamin dan kepemilikan jenis
+kendaraan', ataupun `tingkat pendidikan dan partisipasi
+program'.
+Uji Chi-square mengunakan tabel silang (atau tabulasi silang)
+saat membandingkan data observasi dan data yang diharapkan
+untuk mengidentifikasi hubungan. Pada tabel silang ini, setiap
+sel dalam tabel akan memuat rangkuman kondisi nilai frekuensi
+yang diamati berdasarkan kategori nilai tertentu (Gambar 8.1).
+
+             Gambar 8-1 Ilustrasi Tabulasi Silang dalam Uji Chi-square
+
+I. Frekuensi yang diamati (fo)
+Frekuensi yang diamati adalah nilai frekuensi aktual yang
+didapatkan dari data sampel yang dikumpulkan melalui survei,
+observasi, atau eksperimen yang dilakukan.
+II. Frekuensi yang diharapkan (fe)
+Sementara itu, frekuensi yang diharapkan adalah frekuensi
+teoritis yang akan muncul di setiap sel apabila hipotesis kosong
+(H) benar -- artinya jika tidak ada hubungan (asosiasi) antara
+kedua variabel.
+Nilai fe dapat dihitung berdasarkan rumus:
+
+200
+ =  (total baris x total kolom)
+         total keseluruhan
+
+2) Hipotesis dan penarikan kesimpulan dalam uji Chi-square
+
+I. Hipotesis Kosong (Ho)
+Hipotesis kosong menyatakan bahwa tidak ada perbedaan atau
+hubungan yang signifikan antara dua variabel yang diuji.
+Artinya, proporsi kejadian dalam setiap kategori sama saja, dan
+perbedaan yang muncul hanyalah akibat kebetulan (random
+chance), serta tidak nyata dalam populasinya. Kedua variabel
+bersifat independen satu sama lain.
+
+II. Hipotesis Alternatif (H1)
+Sebaliknya, hipotesis alternatif menyatakan bahwa ada
+perbedaan nyata dalam proporsi kejadian di antara kategori
+variabel, atau dengan kata lain, terdapat hubungan yang
+signifikan antar variabel yang diuji.
+
+Jika dituliskan, hipotesis dalam pengujian Chi-square ini adalah
+sebagai berikut:
+
+             H0 : tidak ada hubungan antara kedua variabel
+             Ha : terdapat hubungan antara kedua variabel
+
+Penarikan kesimpulan untuk hipotesis dalam uji Chi-square
+didasarkan pada nilai Chi-square hitung (²) dan nilai Chi-
+square tabel yang ditentukan dari nilai signifikansi (p-value)
+yang digunakan dan nilai df atau degree of freedom. Nilai df
+atau degree of freedom dihitung dari persamaan berikut.
+
+(jumlah kolom­1)×(jumlah baris­1)
+
+Tabel Chi-square dapat dilihat pada Gambar 8-2, lihat
+Appendix C pada buku Healey) [2].
+
+                                   201
+Jika nilai Chi-square hitung lebih besar dari Chi-square
+tabel maka H0 ditolak. Sementara itu, jika nilai Chi-
+square hitung kurang dari Chi-square tabel maka H0
+gagal ditolak.
+
+3) Perhitungan nilai Chi-square
+Selanjutnya, nilai Chi-square dapat dihitung berdasarkan rumus:
+
+      2 =   (  - ) 2
+                 
+
+Hasil perhitungan ini kemudian dapat digunakan langsung
+untuk menarik kesimpulan berupa ada atau tidak adanya
+hubungan antar variabel yang diuji.
+
+Catatan 8-1
+
+Pada dasarnya, jika kita hanya ingin mengetahui ada atau
+tidak adanya hubuungan kita cukup melakukan penarikan
+kesimpulan berdasarkan uji Chi-square saja. Apabila H0
+ditolak, maka sudah cukup bagi kita untuk mengatakan
+bahwa terdapat hubungan antar variabel yang diuji.
+Namun, kita tidak akan mengetahui dengan jelas
+kekuatan hubungan tersebut.
+
+4) Perhitungan koefisien asosiasi (phi, Cramer's V, dan
+    kontingensi C)
+
+Pada berbagai kasus, uji Chi-square (²) tidak hanya digunakan
+untuk mengetahui apakah hubungan antara dua variabel
+kategorikal ada atau tidak, tetapi juga untuk memahami
+seberapa kuat hubungan tersebut. Dengan kata lain, setelah kita
+mengetahui bahwa hubungan antarvariabel signifikan, langkah
+
+202
+berikutnya adalah mengukur kekuatan asosiasi (strength of
+association) antara kedua variabel tersebut.
+
+                                   Gambar 8-2 Tabel Chi-square
+
+Untuk tujuan tersebut, sejumlah koefisien asosiasi telah
+dikembangkan. Koefisien-koefisien ini memberikan gambaran
+tentang tingkat keeratan hubungan antara dua variabel, dan
+semuanya didasarkan pada nilai Chi-square (²) yang telah
+dihitung sebelumnya.
+Secara umum, terdapat tiga bentuk koefisien asosiasi yang
+paling sering digunakan, masing-masing dengan fungsi dan
+cakupan yang berbeda, yaitu:
+
+                                                                               203
+     1. Koefisien Phi () -- digunakan hanya untuk tabel
+         dengan ukuran 2×2, yaitu ketika kedua variabel hanya
+         memiliki dua kategori. Nilai koefisien berada pada
+         rentang 01 dengan interpretasi bahwa semakin besar
+         nilai maka semakin kuat hubungan. Koefisien Phi ()
+         dapat dihitung menggunakan rumus:
+
+                         =   ²
+                              
+
+     2. Koefisien Cramer's V (V) -- digunakan untuk tabel yang
+
+     lebih besar dari 2×2, seperti 3×2 atau 4×3, sehingga
+
+     lebih fleksibel dalam berbagai ukuran data (lihat
+     Gambar 8-3). Nilai koefisien ini juga berada pada
+
+     rentang 01 dengan interpretasi bahwa semakin besar
+     nilai maka semakin kuat hubungan. Namun, koefisien ini
+     sensitif terhadap distribusi kategori sehingga mungkin
+
+     terdapat kondisi nilai V mengecil meskipun hubungan
+     sebenarnya kuat karena nilai ini hanya menunjukkan
+
+     keteraturan statistik [2]. Koefisien V ini dapat dihitung
+
+     menggunakan rumus:
+
+      =                       ²
+                            ( - 1)
+
+     dimana k adalah jumlah kategori terkecil dari kedua
+
+         variabel yang diuji.
+     3. Koefisien Kontingensi (C) -- digunakan untuk mengukur
+
+     kekuatan hubungan secara umum pada tabel kontingensi
+     yang tidak berbentuk persegi (non-square), meskipun
+
+     nilainya cenderung lebih sulit untuk diinterpretasikan
+     dibandingkan Cramer's V karena nilainya hampir tidak
+
+     pernah menyentuh nilai maksimum 1 (C tidak
+
+     terstandardisasi) [2]. Apabila dibandingkan, seringkali
+
+204
+      koefisien V yang lebih direkomendasikan, khususnya
+      terhadap kasus-kasus sosial. Koefisien C ini dapat
+      dihitung menggunakan rumus:
+
+                       C  =       ²
+                               2+ N
+
+Kekuatan hubungan antar variabel yang dapat dihitung
+berdasarkan koefisien asosiasi (phi, V, ataupun C) secara
+langsung dapat diinterpretasi menggunakan acuan sebagaimana
+ditampilkan pada Tabel 8.3 [4].
+
+          Gambar 8-3 Ilustrasi Ukuran Tabel Silang
+
+          Tabel 8.3 Interpretasi Nilai Koefisien Korelasi
+
+      Nilai Koefisien          Interpretasi
+
+0,00                   Tidak ada hubungan
+
+0,010,09               Hubungan sangat kecil
+
+0,100,29               Hubungan rendah hingga sedang
+
+0,300,49               Hubungan sedang hingga kuat
+
+0,500,69               Hubungan kuat hingga sangat kuat
+
+                                                           205
+      Nilai Koefisien                            Interpretasi
+0,700,89               Hubungan sangat kuat
+0,90+                  Hubungan hampir sempurna
+
+8.2.3.2 Uji Korelasi Berbasis Galat (Error) Koefisien
+             Lambda
+
+Selain pengujian asosiasi dan perhitungan koefisien berbasis
+Chi-square, terdapat pula pengujian asosiasi dan perhitungan
+koefisien berbasis eror (Proportional Reduction of Error, PRE).
+Koefisien ini menggunakan logika yang berbeda dari uji Chi-
+square, karena berfokus pada kemampuan suatu variabel dalam
+meningkatkan ketepatan prediksi terhadap variabel lain.
+
+Secara sederhana, konsep PRE dapat dijelaskan melalui logika
+pengurangan kesalahan prediksi (error reduction), yaitu sejauh
+mana pengetahuan tentang suatu variabel dapat mengurangi
+kesalahan prediksi (error) terhadap variabel lainnya.
+
+Dalam analisis korelasi berbasis galat ini kita mulai perlu
+mempertimbangkan mana variabel yang independen, artinya
+memengaruhi variabel lain, dan dependen, yakni yang
+dipengaruhi.
+
+Sebagai contoh, apabila kita ingin menebak sikap seseorang
+terhadap suatu isu, misalnya terkait dengan preferensinya untuk
+menggunakan kendaraan umum atau tidak (variabel Y), maka
+tebakan terbaik kita adalah dengan memilih jawaban yang
+paling umum muncul dalam populasi secara umum. Sebagai
+contoh, jika mayoritas responden menyatakan bahwa "setuju
+untuk menggunakan transportasi publik", maka itu akan
+menjadi dasar dan tebakan terbaik kita untuk seseorang
+tersebut.
+
+206
+Namun, kita menyadari bahwa setiap orang tidak memiliki
+pandangan yang sama, sehingga mungkin saja akan ada
+kesalahan dalam tebakan kita tersebut.
+
+Selanjutnya, bayangkan jika kita memiliki informasi tambahan
+yang terkait dengan preferensi pemilihan transportasi publik
+seperti kepemilikan kendaraan (variabel X). Dan hal tersebut
+menjadi bahan pertimbangan kita untuk membuat tebakan.
+
+Dengan kata lain, di sini kita menganggap bahwa variabel
+preferensi untuk menggunakan angkutan umum (variabel Y)
+dipengaruhi dari bagaimana kepemilikan kendaraannya
+(variabel X).
+
+Apabila tebakan yang kita buat dengan mengetahui informasi
+tambahan lebih akurat, maka informasi tambahan yang kita
+miliki telah membantu kita mengurangi kesalahan dalam
+menebak dibandingkan dengan jika kita tidak memiliki
+informasi sama sekali. Dan dengan begitu, kita dapat
+menyimpulkan bahwa terdapat hubungan antara
+preferensi penggunaan kendaraan umum dan
+kepemilikan kendaraaan.
+
+Sesuai dengan ilustrasi terssebut, jika distrukturkan, maka
+proses pengujian asosiasi berbasis PRE adalah sebagai berikut:
+
+    1. Prediksi pertama (E) -- dilakukan tanpa
+         mengetahui nilai variabel independen (X). Dalam hal ini,
+         tebakan terbaik adalah memilih kategori yang paling
+         sering muncul (mode) pada variabel dependen (Y).
+
+    2. Prediksi kedua (E) -- dilakukan setelah mengetahui
+         nilai variabel independen (X). Dengan informasi ini, kita
+         dapat memperkirakan nilai Y dengan lebih tepat.
+
+                                                                               207
+Apabila kedua variabel tersebut benar-benar berhubungan,
+maka jumlah kesalahan prediksi pada kondisi kedua (E) akan
+lebih kecil daripada pada kondisi pertama (E).
+Dengan demikian, semakin besar pengurangan kesalahan yang
+terjadi, semakin kuat hubungan antara kedua variabel tersebut.
+
+Pada pengujian asosiasi berbasis PRE ini, kita dapat
+menggunakan koefisien Lambda (). Koefisien Lambda ()
+ini digunakan untuk mengukur kekuatan asosiasi antara dua
+variabel nominal dengan ukuran tabel berapapun [2]. Lambda
+menunjukkan seberapa besar pengetahuan tentang X membantu
+prediksi nilai Y. Koefisien Lambda ini dapat dihitung
+menggunakan rumus:
+
+     =   1 -  2
+            1
+
+di mana E1 dihitung dengan mengurangkan frekuensi marginal
+terbesar tersebut dari total kasus dan E2 adalah jumlah total
+dari hasil pengurangan yang diperoleh dari setiap kolom
+tersebut.
+
+Untuk memudahkan, tahapan perhitungan koefisien Lambda ini
+dapat diselesaikan melalui prosedur berikut:
+
+     1. Mempersiapkan tabel silang antara variabel yang akan
+         diujikan. Dalam hal ini, kita dapat menetapkan variabel
+         X dan variabel Y sebagai dasar pengujian. Bentuk tabel
+         silang ini mengikuti format yang telah disampaikan pada
+         sub bab sebelumnya.
+
+     2. Menghitung nilai  1 dengan cara: i) mengidentifikasi
+         nilai total kolom terbesar (modus frekuensi untuk
+         kategori pada variabel Y); ii) menghitung  1 dengan
+         rumus  1 = N ­ total kolom terbesar.
+
+208
+    3. Menghitung nilai  2 dengan cara: i) mengidentifikasi
+         modus frekuensi untuk setiap kategori pada variabel X);
+         ii) menjumlahkan kedua nilai frekuensi tersebut; iii)
+         menghitung nilai  2 dengan rumus = N ­ hasil
+         penjumlahan kedua nilai frekuensi tersebut.
+
+    4. Menghitung nilai koefisien Lambda menggunakan rumus
+         dengan nilai  1 dan  2 yang telah diketahui.
+
+    5. Menginterpretasi nilai Lambda yang memiliki kisaran
+         rentang nilai 01. Semakin tinggi nilai Lambda, artinya
+         semakin besar kemampuan variabel X untuk
+         memprediksi variabel Y, dan semakin erat hubungannya.
+
+  Catatan 8-2
+
+  Sangat penting untuk menempatkan variabel mana yang
+  menjadi baris dan yang menjadi kolom. Variabel dependen
+  biasanya ditempatkan di baris karena E1 dihitung dari nilai
+  total baris.
+
+  Penempatan variabel di baris/kolom yang berbeda dapat
+  menghasilkan koefisien  yang berbeda pula.
+
+8.2.4 Makna Kekuatan Korelasi
+Apa yang dimaksud dengan kekuatan/kelemahan dalam korelasi?
+Korelasi yang kuat ditandai dengan perbedaan frekuensi antar
+sel yang besar, mengindikasikan bahwa perbedaan jumlah
+kategori di satu variabel juga terjadi di variabel lainnya [4].
+
+Korelasi yang kuat berarti terdapat hubungan yang erat antara
+perubahan dua variabel. Hal ini bisa kita maknai sebagai tidak
+adanya variabel pengganggu (confounding variable) yang dapat
+mengaburkan makna hubungan dua variabel. Ciri dari
+
+                                                                               209
+confounding variable adalah adanya pengaruh dari variabel
+tersebut ke variabel-variabel yang sedang diteliti.
+
+Contoh dari confounding variable adalah misalnya antara
+variabel jenis tempat tinggal dengan jenis kendaraan yang
+dipakai ke kampus (Gambar 8-4). Hubungan antara kedua
+variabel tersebut sebenarnya dipengaruhi oleh adanya variabel
+ketiga, yakni besar pendapatan keluarga. Keluarga dengan
+pendapatan yang tinggi cenderung memiliki mobil, dan
+mahasiswa yang tinggal di rumah sendiri dan mengendarai
+mobil bisa dikatakan berasal dari rumah tangga yang
+pendapatannya tinggi tersebut.
+
+Di sisi lain, rumah tangga yang berpendapatan lebih rendah
+cenderung menggunakan sepeda motor. Hal ini juga bisa
+dianggap berlaku kepada mahasiswa yang tinggal di indekos
+sendirian karena pendapatan mereka juga cenderung terbatas.
+Jadi, ada tingkat pendapatan yang sebenarnya berhubungan
+lebih erat dengan jenis tempat tinggal dan kendaraan yang
+digunakan.
+
+                             Pendapatan mahasiswa
+
+     Jenis tempat tinggal  Kendaraan ke kampus
+
+     Gambar 8-4. Ilustrasi confounding variable
+
+210
+8.3 Studi Kasus
+
+Kita akan melihat hubungan korelasi antara variabel jenis
+tempat tinggal mahasiswa dengan kendaraan utama yang
+digunakan untuk mencapai kampus. Dalam kasus ini hal yang
+ingin kita ketahui adalah ada/tidaknya hubungan antara jenis
+tempat tinggal mahasiswa dengan kendaraan utama yang
+digunakan mahasiswa untuk mencapai kampus. Selanjutnya,
+jika ada, seberapa kuat hubungannya.
+
+Berikut adalah tabel silang yang menampilkan sebaran jumlah
+responden menurut jenis tempat tinggalnya dan kendaraan
+utamanya.
+
+Tabel 8.4. Tabel Silang Antara Kendaraan Utama (Baris) dan Jenis
+
+                    Tempat Tinggal (Kolom)
+
+                                  Rumah Rumah
+
+                    Kos      Kos kontrak kontrak Rumah Rumah
+
+                Asrama bersama sendiri bersama sendiri pribadi saudara
+
+Berjalan kaki   23       20  39             17   11  0                 1
+
+Layanan online  0        19  86             28   6   37                12
+
+Menumpang       0        18  24             40   0   11                4
+
+dengan teman/
+
+keluarga
+
+Mobil pribadi   0        6   15             5    3   110               13
+
+Sepeda motor    2        57  296            125  23  394               94
+
+pribadi
+
+Sepeda          0        0   8              8    0   1                 1
+
+Kedua variabel ini tentunya adalah variabel nominal karena
+nilai-nilai dalam variabel tersebut bukan angka dan tidak ada
+tingkatan antarnilainya.
+
+8.3.1 Koefisien Korelasi Berbasis Chi-Square
+
+Koefisien korelasi variabel nominal berbasis chi-square terdiri
+atas koefisien phi, Cramer's V, dan C. Pertama, kita perlu
+
+                                                                  211
+terlebih dahulu menentukan dengan benar koefisien mana yang
+bisa kita pakai untuk menganalisis hubungan kedua variabel kita.
+
+Koefisien phi hanya bisa digunakan untuk variabel nominal yang
+masing-masing berjumlah 2 kategori, sehingga menghasilkan
+tabel silang 2×2. Di sisi lain, tabel silang kita terdiri atas 6 baris
+dan 7 kolom. Dengan demikian, kita tidak bisa menggunakan
+koefisien phi dan hanya bisa menggunakan V atau C.
+
+8.3.1.1 Menghitung Keberadaan Hubungan dengan Chi
+             Kuadrat
+
+Untuk memudahkan analisis, kita akan mengganti label kategori
+dalam kedua variabel sebagai berikut:
+
+         Tabel 8.5. Kodifikasi Kategori Kedua Variabel Nominal
+
+Variabel                 Kategori                               Kode
+
+Jenis tempat Asrama                A
+
+tinggal   Kos Bersama              B
+
+          Kos Sendiri              C
+
+          Rumah Kontrak Bersama    D
+
+          Rumah Kontrak Sendiri    E
+
+          Rumah Pribadi            F
+
+          Rumah Saudara            G
+
+Kendaraan Berjalan kaki            H
+
+utama     Layanan online           I
+
+          Menumpang dengan teman/keluarga J
+
+          Mobil pribadi            K
+
+          Sepeda motor pribadi     L
+
+          Sepeda                   M
+
+Kemudian kita akan menghitung total frekuensi kolom, baris,
+dan seluruh data untuk menghitung frekuensi yang diharapkan.
+
+212
+Tabel 8.6. Tabel Silang Antara Kendaraan Utama (Baris) dan Jenis
+
+                         Tempat Tinggal (Kolom)
+
+                                                          Total
+
+                            A B C D E F G Baris
+
+      H                     23 20 39 17 11 0 1 111
+
+      I                     0 19 86 28 6 37 12 188
+
+      J                     0 18 24 40 0 11 4 97
+
+      K                     0 6 15 5 3 110 13 152
+
+      L                     2 57 296 125 23 394 94 991
+
+      M                     0 0 8 8 0 1 1 18
+
+      Total Kolom 25 120 468 223 43 553 125 1557
+
+Selanjutnya kita akan membuat tabel frekuensi yang diharapkan
+dari rumus fe.
+
+Tabel 8.7. Tabel Frekuensi yang Diharapkan (Expected Frequency) dari
+
+Tabel Silang Jenis Tempat Tinggal dengan Kendaraan Utama
+
+         A                  BC DEFG
+
+H        111 × 25  =  1,78  8,55 33,36 15,90 3,07 39,42 8,91
+           1557
+         188 × 25
+I          1557    =  3,02  14,49  56,51   26,93   5,19   66,77 15,09
+
+J        97 × 25   =  1,56  7,48   29,16   13,89   2,68   34,45   7,79
+          1557
+         152 × 25
+K          1557    = 2,44   11,71  45,69   21,77   4,20   53,99 12,20
+
+L     991 × 25  =  15,91    76,38  297,87  141,94  27,37  351,96  79,56
+        1557
+         18 × 25
+M         1557     =  0,29  1,39   5,41    2,58 0,50      6,39 1,45
+
+Terakhir, kita mengaplikasikan rumus perhitungan 2 untuk
+tiap-tiap sel seperti pada tabel berikut. Tiga sel pertama
+diisikan sebagai contoh.
+
+         Tabel 8.8. Tabel Perhitungan Chi Kuadrat
+
+                   A               B       C DEFG
+
+   H     (23 - 1,78)        (20 - 8,55)    ... ............
+
+                   1,78            8,55
+
+   I     (0 - 3,02)                ...     ... ............
+
+                   3,02
+
+   J               ...             ...     ... ............
+
+   K               ...             ...     ... ............
+
+   L               ...             ...     ... ............
+
+   M               ...             ...     ... ............
+
+                                                                         213
+Hasil dari tabel tersebut, nilai 2 adalah penjumlahan dari
+seluruh nilai yang ada dalam sel tabel tersebut, yaitu 600,86.
+Nilai statistik ini digunakan untuk menguji hipotesis kita terkait
+keberadaan hubungan antara kedua variabel.
+
+Nilai chi-square tabel yang kita gunakan untuk membandingkan
+nilai chi-square yang kita hitung dilihat dari nilai signifikansi (p-
+value) dan degree of freedom. Kita menggunakan p-value sebesar
+5% (0,05) dan degree of freedom (6 ­ 1)×(7 ­ 1) = 30.
+
+Dari tabel chi-square pada Gambar 8-2, nilai chi-square yang
+kita gunakan sebagai pembanding adalah 43,773. Nilai ini jauh
+lebih kecil dibandingkan dengan nilai chi-square hitung kita,
+atau dengan kata lain nilai chi-square hitung kita jauh melebihi
+nilai chi-square tabel. Dengan demikian, kita dapat menolak H0
+yang bermakna tidak ada hubungan antara variabel jenis
+tempat tinggal dengan kendaraan utama yang dipakai untuk
+mencapai kampus
+
+8.3.1.2 Menghitung Kekuatan Hubungan
+Setelah kita mengetahui adanya hubungan antara jenis tempat
+tinggal dengan kendaraan yang sering digunakan untuk
+mencapai kampus, kita perlu menghitung seerat apa hubungan
+antara dua variabel tersebut.
+
+Kita akan menghitung besar koefisien korelasi antara jenis
+tempat tinggal dengan kendaraan yang sering digunakan ke
+kampus dari nilai koefisien V. Perhitungannya ditunjukkan
+sebagai berikut. Nilai k, yakni jumlah kategori yang terkecil
+antara kedua variabel, adalah 6, yang merupakan jumlah
+kategori untuk variabel jenis kendaraan
+
+214
+  =       2
+        ( - 1)
+
+  =       600,86
+       1557(6 - 1)
+
+  = 0,2778
+
+Nilai 0,2778 dikatakan rendah-sedang sesuai dengan interpretasi
+yang ada di Tabel 8.3. Artinya, kekuatan hubungan antara jenis
+tempat tinggal dengan kendaran yang digunakan ke kampus
+tidak cukup kuat dan kemungkinan ada variabel lain yang
+menjelaskan hubungan antara kedua variabel tersebut dengan
+lebih baik.
+
+8.3.1.3 Koefisien Korelasi Berbasis Galat
+
+Di sini kita perlu memandang mana variabel yang kira-kira
+cocok dikatakan memengaruhi (independen) dan mana yang
+dipengaruhi. Karena lebih masuk akal bahwa kendaraan yang
+digunakan ke kampus dipengaruhi oleh jenis tempat tinggal apa
+yang dialami, maka kita menganggap bahwa variabel jenis
+tempat tinggal adalah variabel independennya.
+
+Kita akan menghitung galat (error) dari tabel silang yang sama
+halnya dengan perhitungan chi-square. Pertama, kita lihat
+terlebih dahulu total terbesar untuk baris kita untuk
+menghitung E1. Dari Tabel 8.6 kita dapat mengetahui bahwa
+yang paling banyak adalah kategori L, yakni pengguna sepeda
+motor pribadi (991 orang). Maka, nilai E1 kita adalah jumlah
+data keseluruhan dikurangi 991 tersebut. Hasilnya adalah 566.
+
+Kemudian, kita perlu menghitung total galat dari setiap kolom,
+yakni pengurangan dari total kolom dengan frekuensi terbesar
+dalam setiap kolom sebagai berikut
+
+                    215
+            Tabel 8.9. Perhitungan E2 untuk Koefisien Lambda
+
+                                                              Total
+
+                       A            B C D E F G Baris
+
+     H                     23 20 39 17 11 0 1 111
+
+     I                          0 19 86 28 6 37 12 188
+
+     J                          0 18 24 40 0 11 4 97
+
+     K                          0 6 15 5 3 110 13 152
+
+     L                          2 57 296 125 23 394 94 991
+
+     M                          0 0 8 8 0 1 1 18
+
+     Total Kolom           25 120 468 223 43 553 125 1557
+
+     Galat        25 ­ 23 = 2 63 172 98 20 159 31 545
+
+Dengan demikian, nilai  kita adalah
+
+                            =        1 -  2
+                                        1
+                                    566 - 545
+                           =            566
+
+                           = 0,037
+
+Hasil yang ditunjukkan oleh koefisien  jauh lebih kecil
+dibandingkan dengan yang diberikan oleh koefisien V, walaupun
+tetap menandakan adanya hubungan korelatif antara variabel
+jenis tempat tinggal dengan kendaraan yang sering dipakai ke
+kampus.
+
+8.4 Soal Evaluasi
+
+Perhatikan tabel silang yang menunjukkan distribusi frekuensi
+pandangan mahasiswa terhadap kegiatan ekstrakurikuler
+(ekskul) berdasarkan variabel pandangan mereka dan apakah
+mereka anggota sebuah himpunan. STP-9.1
+
+Baris pandangan mahasiswa terhadap  Ya         Tidak
+                                                 448
+kegiatan ekskul
+
+Kolom Apakah anggota himpunan?
+
+Semua mahasiswa wajib               466
+
+berhimpun (ikut himpunan)
+
+216
+Baris pandangan mahasiswa terhadap  Ya   Tidak
+
+kegiatan ekskul                            383
+                                           46
+Kolom Apakah anggota himpunan?
+
+Mahasiswa dibebaskan memilih        345
+
+bentuk ekskul sendiri
+
+Kegiatan ekskul itu tidak penting   38
+
+a. Tentukan koefisien yang pas digunakan untuk
+    menyatakan korelasi kedua variabel tersebut (phi,
+    Cramer's V, C, atau lambda, bisa lebih dari satu)
+
+b. Hitung dan interpretasikan nilai koefisien tersebut sesuai
+    makna koefisien tersebut dalam konsepnya (pilih salah
+    satu dari jawaban Anda di a).
+
+c. Apa yang bisa kita simpulkan dari hasil perhitungan
+    koefisien tersebut?
+
+                                                217

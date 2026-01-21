@@ -1,0 +1,734 @@
+Bab 3
+Visualisasi Data Kuantitatif
+
+3.1 Capaian Pembelajaran
+
+Setelah mempelajari bab ini, Anda diharapkan:
+
+    1. Mampu memilih visualisasi yang tepat sesuai dengan
+         variabel yang akan disajikan dan informasi yang ingin
+         disampaikan STP-3.1
+
+    2. Mampu menginterpretasikan suatu visualisasi data
+         kuantitatif secara mendalam STP-3.2
+
+    3. Mampu menjelaskan pentingnya menentukan tingkat
+         pengukuran untuk sebuah variabel dari kaitannya
+         dengan analisis statistik deskriptif dan diagram yang
+         dipilih untuk menyajikan informasi STP-3.4
+
+Agar lebih mudah memahami konsep dasar, Anda dapat
+mempelajari studi kasus terlebih dahulu dan menyimak
+pembahasan sesuai dengan konsep dasarnya.
+
+3.2 Konsep Dasar
+
+Visualisasi data adalah mengubah bentuk penyajian
+
+data/presentasi data dari bentuk tabular/tabel menjadi bentuk
+
+grafis. Kita sering mendengar pepatah yang berbunyi "a picture
+
+is worth a thousand words" yang artinya kurang lebih "satu
+
+gambar bernilai seribu kata." Pepatah  ini
+
+menggambarkan bahwa data yang disajikan dalam bentuk
+
+                                            45
+gambar/grafis dapat menampilkan banyak sekali informasi
+kepada audiens.
+
+Sajian data dalam bentuk gambar disebut juga grafik atau
+diagram (chart). Jenis grafik atau diagram yang digunakan
+sangat bergantung pada jenis dan tingkat pengukuran variabel
+yang akan divisualisasi.
+
+Banyak sekali panduan-panduan untuk memilih bentuk grafik
+yang perlu Anda gunakan untuk menyajikan data Anda. Salah
+satu sumber yang menyediakan panduan tersebut adalah situs
+From Data to Viz, https://www.data-to-viz.com [9]
+
+3.2.1 Jenis-jenis Diagram
+Untuk memilih jenis diagram yang tepat, kita perlu menentukan
+terlebih dahulu jenis dan tingkat pengukuran variabel yang akan
+kita sajikan. Kemudian, kita dapat mempertimbangkan jenis
+informasi apa yang ingin kita sajikan dan menyesuaikannya
+dengan cara menampilkan nilainya, bisa dengan sumbu
+(tegak/datar; Y/X) atau yang lainnya. Berikut adalah
+pembahasan sebagian jenis-jenis diagram berdasarkan jenis nilai
+dan tingkat pengukuran variabel yang sudah kita bahas dan
+tujuan penggunaanya.
+
+3.2.1.1 Variabel Kategorikal
+Visualisasi variabel kategorikal bertujuan menampilkan jumlah
+(frekuensi) objek untuk masing-masing kategori. Untuk
+menentukan jenis diagram yang tepat, kita perlu
+memperhatikan jumlah variabel yang dianalisis dan
+hubungan antarvariabel.
+
+46
+1) Grafik Batang (Column/Bar Chart)
+Grafik batang adalah grafik yang paling sering digunakan untuk
+memvisualkan variabel kategorikal. Grafik ini memberikan
+informasi distribusi frekuensi sebuah variabel. Tinggi batang
+mewakili frekuensi dari kategori-kategori yang ada dalam
+variabel, sementara kategori-kategori mewakili jumlah batang
+yang ada.
+Terdapat dua jenis grafik batang: tegak dan mendatar (Gambar
+3-1). Grafik batang tegak disebut juga column chart sementara
+yang mendatar disebut bar chart. Perbedaan column chart dan
+bar chart hanya terletak di sumbu yang menunjukkan
+frekuensi (tinggi/panjang) batang. Column chart
+menggunakan sumbu Y untuk menunjukkan tinggi/nilai
+frekuensinya, sementara bar chart menggunakan sumbu Y.
+
+                    Gambar 3-1. Grafik batang tegak (column chart)
+
+Untuk lebih memahami bagaimana mengubah data terstruktur
+menjadi grafik batang, penjelasannya dapat dilihat di Gambar
+3-2. Objek-objek Var-1 memiliki nilai A, B, C, dan seterusnya.
+Kita perlu membuat tabel distribusi frekuensi dari kolom Var-1
+terlebih dahulu sehingga kita mengetahui kategori-kategori
+dalam Var-1 beserta frekuensinya. Jumlah kategori tersebut
+
+                                                                                 47
+akan menjadi jumlah batang, sementara frekuensinya menjadi
+tinggi atau panjang batang
+
+                Gambar 3-2. Ilustrasi cara menghasilkan grafik batang
+
+2) Grafik Lollipop
+Diagram lollipop pada dasarnya serupa dengan diagram batang,
+hanya saja data direpresentasikan oleh tiang-tiang berujung
+lingkaran yang menyerupai permen loli. Penggunaannya sangat
+cocok untuk data berjumlah banyak guna menghindari efek
+Moiré (dibaca `moaré') [10]. Efek Moiré adalah ilusi optik
+pergerakan benda yang posisinya berdekatan dan membentuk
+sebuah kisi (fringe) seperti yang ditunjukkan Gambar 3-3,
+sehingga dapat menyulitkan pembaca grafik.
+
+   Gambar 3-3. Grafik lollipop dapat menghindari ilusi optik yang disebut
+                                                Moiré effect
+
+48
+3) Grafik Pai/Donat (Pie/Donut Chart)
+Grafik jenis ini juga sering digunakan untuk visualisasi variabel
+kategoris. Perbedaan dengan grafik batang adalah frekuensi tiap
+kategori tidak diperlihatkan dengan sumbu tegak, tetapi besar
+juring (sektor) lingkaran.
+Grafik donat memiliki lubang di bagian tengah (seperti namanya,
+kue donat) yang berfungsi untuk mempermudah pembandingan
+antarsektor.
+
+               Gambar 3-4. Contoh grafik pai (kiri) dan donat (kanan)
+
+Proses pembuatannya sama seperti pembuatan grafik batang
+yang ditunjukkan oleh Gambar 3-2, hanya saja jumlah kategori
+menjadi jumlah sektor, sementara frekuensinya menjadi ukuran
+sektor.
+4) Grafik Batang Bertumpuk (Stacked Column/Bar Chart)
+Grafik batang bertumpuk (stacked bar/column chart) digunakan
+untuk membandingkan komposisi dari beberapa kategori. Setiap
+batang mewakili nilai total, yang kemudian dipecah menjadi
+beberapa segmen untuk menunjukkan bagaimana kontribusi
+masing-masing subkategori membentuk total tersebut.
+
+                                                                                 49
+                      Gambar 3-5. Contoh grafik batang bertumpuk
+
+Kategori kedua variabel tersebut dibuat bertumpukan. Misalnya
+sebaran pengguna kendaraan (mobil, motor, sepeda)
+berdasarkan jenis kelamin (laki-laki dan perempuan)
+Untuk lebih memahami bagaimana mengubah data terstruktur
+menjadi grafik batang bertumpuk, ilustrasi berikut dapat kita
+gunakan. Objek-objek Var-1 memiliki nilai A, B, atau C. Tiap
+objek dengan nilai Var-1 yang sama juga memiliki nilai Var-2
+yang berbeda. Dengan demikian, objek-objek yang termasuk ke
+dalam nilai Vari-1 dan Var-2 yang sama akan menjadi
+tinggi/panjang dari grafik batang.
+
+       Gambar 3-6. Ilustrasi cara menghasilkan grafik batang bertumpuk
+
+50
+5) Grafik Treemap
+Secara fungsi, treemap dan stacked bar chart sangat mirip karena
+keduanya menunjukkan distribusi frekuensi objek berdasarkan
+kategori variabelnya. Jika stacked chart memakai panjang
+segmen pada batang untuk menunjukkan proporsi, treemap
+menggunakan luas area persegi panjang. Frekuensinya
+diperlihatkan oleh luas persegi masing-masing kategori.
+
+                              Gambar 3-7. Contoh grafik treemap
+
+Proses pembuatannya sama persis seperti dengan grafik batang
+bertumpuk yang ditunjukkan oleh Gambar 3-6.
+3.2.1.2 Variabel Numerik
+Berbeda dengan visualisasi variabel kategorikal yang
+memperlihatkan frekuensi masing-masing kategori dalam
+variabel, grafik data dengan variabel numerik merepresentasikan
+nilai yang sebenarnya.
+Persamaan dengan visualisasi pada data kategorikal adalah
+perlunya pertimbangan jumlah variabel dan cara menyajikan
+nilianya dengan sumbu atau bukan. Selain itu juga perlu
+dipertimbangkan keterurutan objek/observasi (order).
+
+                                                                                 51
+Berikut adalah tinjauan beberapa jenis grafik visualisasi data
+variabel numerik dengan masing-masing ilustrasi data
+terstrukturnya.
+1) Histogram
+Histogram menunjukkan distribusi nilai-nilai yang berada pada
+rentang tertentu. Rentang nilai ditunjukkan di sumbu X-nya,
+sementara sumbu Y adalah frekuensinya. Istilah untuk rentang-
+rentang ini disebut bin, sementara lebar/ukurannya disebut bin
+size atau bin width.
+Dalam grafik yang dibuat dalam Excel®, angka dalam kurung
+siku menunjukkan batas-batas rentang nilai yang dimaksud,
+sementara tinggi batang menunjukkan frekuensinya.
+
+                                 Gambar 3-8. Contoh histogram
+
+Gambar 3-8 menunjukkan histogram nilai suatu variabel untuk
+sekumpulan objek. Interpretasi kita adalah terdapat 9 objek
+yang nilai variabelnya antara 15 sampai 19, sementara itu untuk
+objek yang bernilai >19 (19 tidak termasuk), hingga 23 ada 6
+objek. Untuk objek bernilai >23 hingga 27 ada 4 objek, dan
+seterusnya.
+
+52
+Catatan 3-1
+Jangan tertukar antara histogram dengan grafik batang!
+Perbedaan mendasar keduanya terletak pada sumbu X-nya.
+Sumbu X pada histogram menunjukkan angka, sementara pada
+grafik batang menunjukkan kategorinya.
+Satu karakteristik lain yang membedakan histogram dengan
+grafik batang jarak antarbatangnya. Grafik batang biasanya
+memiliki celah di antara batangnya, sementara histogram
+rapat-rapat.
+
+Proses pembuatan histogram dari tabel data terstruktur
+diilustrasikan pada Gambar 3-9. Dalam proses ini, variabel
+numerik dikelompokkan ke dalam interval atau rentang tertentu.
+Selanjutnya, frekuensi merepresentasikan jumlah total objek
+yang nilainya berada di dalam masing-masing rentang tersebut.
+
+       Gambar 3-9. Ilustrasi tabel terstruktur untuk membuat histogram
+
+2) Boxplot
+Boxplot adalah grafik berbentuk kotak dan garis yang
+menampilkan ukuran penyebaran suatu variabel numerik secara
+grafis (Gambar 3-10). Sebagaimana yang ditunjukkan oleh
+gambar tersebut, kotak dan garis pada boxplot dapat berjumlah
+satu atau lebih. Satu kotak dan garis menandakan hanya ada
+satu kategori objek dengan variabel numerik yang ditampilkan.
+
+                                                                                 53
+Sementara itu, variabel numerik tersebut dikategorikan lagi
+berdasarkan suatu variabel kategoris, maka jumlah kotak dan
+garisnya bisa lebih dari satu.
+
+    (a)                      (b)
+
+Gambar 3-10. Contoh boxplot untuk (a) satu variabel numerik dan (b) satu
+
+         variabel kategoris
+
+Setiap elemen pada boxplot memiliki makna ukuran penyebaran
+(Gambar 3-11). Di sini, kita akan berkenalan dengan ukuran
+penyebaran lain yakni kuartil.
+
+    1. Kotak (box) adalah jangkauan antarkuartil
+        (interquartile range, IQR). Bagian utama berbentuk
+        kotak ini merepresentasikan 50% data yang berada
+        di tengah sebaran.
+             a. Batas bawah kotak adalah Kuartil Pertama
+                  (Q1). Ini adalah nilai yang memisahkan
+                  seperempat (25%) data terbawah dari sisa
+                  data lainnya.
+             b. Batas atas kotak adalah Kuartil Ketiga
+                  (Q3). Ini adalah nilai yang memisahkan
+                  seperempat (25%) data teratas dari sisa
+                  data lainnya.
+
+54
+         c. Tinggi dari kotak ini disebut Jangkauan
+              Antarkuartil (IQR), yang dihitung dengan
+              IQR = Q3 - Q1.
+
+2. Garis horizontal di dalam kotak menandai Median
+    (Q2), yang merupakan nilai tengah dari keseluruhan
+    data. Garis ini membagi data yang sudah terurut
+    menjadi dua bagian yang sama besar.
+
+3. Garis vertikal yang memanjang dari atas dan bawah
+    kotak ini menunjukkan jangkauan data di luar bagian
+    tengah, dengan mengecualikan pencilan. Garis ini
+    sering disebut juga dengan whiskers (kumis).
+         a. Sumbu atas memanjang dari Q3 hingga nilai
+              data terbesar yang masih berada dalam batas
+              Q3 + (1.5 * IQR).
+         b. Sumbu bawah memanjang dari Q1 hingga nilai
+              data terkecil yang masih berada dalam batas Q1
+              - (1.5 * IQR).
+         c. Penting untuk diingat bahwa sumbu ini tidak
+              selalu mewakili nilai minimum dan maksimum
+              absolut dari data.
+
+4. Setiap titik data yang nilainya berada di luar jangkauan
+    sumbu (di atas Q3 + 1.5 * IQR atau di bawah Q1 - 1.5
+    * IQR) dianggap sebagai pencilan. Nilai-nilai ini
+    ditampilkan sebagai titik atau simbol individual
+    untuk menandakan bahwa mereka adalah observasi yang
+    tidak biasa.
+
+                                                                            55
+                       Gambar 3-11. Elemen-elemen sebuah boxplot
+
+3) Grafik Garis (Line Plot) dan Area (Area Plot)
+Grafik ini memetakan nilai variabel angka yang masuk akal bisa
+diurutkan, yakni biasanya yang berupa deret waktu (time
+series). Garis menghubungkan masing-masing titik nilai pada
+tiap-tiap posisi untuk menegaskan perubahan nilainya.
+Gambar 3-12 berikut mengilustrasikan data terstruktur yang
+membentuk line atau area plot.
+
+              Gambar 3-12. Line dan Area plot serta pembentukannya
+
+Area plot secara prinsip sama saja dengan line plot, hanya saja
+ruang di bawah garisnya diisi dengan warna yang sama dengan
+garis. Area plot biasanya digunakan untuk data numerik dengan
+dimensi waktu yang terdiri atas kategori-kategori.
+
+56
+4) Grafik Pencar (Scatterplot)
+Scatterplot dapat memperlihatkan pemetaan nilai dua variabel
+numerik yang berkaitan. Sumbu tegak dan datar menunjukkan
+nilai-nilai dua variabel tersebut sementara tiap titik dibentuk
+dari perpotongan nilai dari kedua variabel untuk tiap-tiap objek.
+
+                  Gambar 3-13. Scatterplot beserta pembentukannya
+
+3.2.2 Penggunaan dan Interpretasi Diagram
+Memilih diagram yang tepat adalah kunci dalam menghasilkan
+analisis yang baik dan tajam. Setiap diagram memiliki
+karakteristik yang berbeda satu sama lain, sehingga
+penggunaannya harus disesuaikan dengan jenis variabel dan
+pesan yang ingin ditekankan.
+Untuk memilih visualisasi yang paling efektif, mulailah dengan
+menjawab beberapa pertanyaan mendasar berikut:
+
+    · Apa tujuan utama Anda? Apakah Anda ingin
+         menunjukkan perbandingan, distribusi, komposisi, atau
+         hubungan antarvariabel?
+
+    · Ada berapa variabel yang ingin Anda tampilkan?
+         Apakah hanya satu, dua, atau lebih?
+
+                                                                                 57
+    · Apa jenis nilai dan tingkat pengukuran dari
+         variabel-variabel tersebut? Apakah kategorikal
+         (nominal, ordinal) atau numerik (metrik)?
+
+Jawaban dari pertanyaan-pertanyaan ini akan menuntun Anda
+pada pilihan diagram yang paling sesuai.
+
+3.2.2.1 Memilih Diagram Berdasarkan Tujuan
+Secara umum, tujuan visualisasi data dalam statistik dapat
+dikelompokkan menjadi beberapa kategori, yang masing-masing
+memiliki jenis diagram yang cocok.
+
+    · Untuk Menampilkan Distribusi Frekuensi: Jika
+         tujuan Anda adalah menunjukkan seberapa sering setiap
+         kategori dalam satu variabel muncul, Anda sedang
+         menampilkan distribusi frekuensi. Ini paling cocok untuk
+         variabel kategorikal (nominal atau ordinal).
+         Pilihan utamanya adalah grafik batang atau grafik
+         lollipop, di mana panjang atau tinggi batang
+         merepresentasikan jumlah atau frekuensi setiap kategori
+              o Grafik pai atau donat juga dapat digunakan
+                   untuk tujuan ini, terutama untuk menunjukkan
+                   bagaimana frekuensi setiap kategori
+                   berkontribusi pada keseluruhan (100%), yang
+                   diwakili oleh besaran juring lingkaran.
+
+    · Untuk Menampilkan Komposisi: Ketika Anda ingin
+         menunjukkan bagian-bagian dari suatu keseluruhan,
+         Anda sedang menampilkan komposisi. Grafik pai dan
+         donat secara inheren melakukan ini.
+              o Selain itu, ada grafik batang bertumpuk yang
+                   sangat efektif untuk membandingkan komposisi
+                   di antara beberapa kelompok utama.
+
+58
+         o Grafik treemap juga berfungsi serupa, di mana
+              luas setiap persegi panjang merepresentasikan
+              proporsinya terhadap keseluruhan.
+
+· Untuk Menampilkan Distribusi Nilai Numerik:
+    Jika Anda bekerja dengan variabel numerik (metrik)
+    dan ingin memahami bagaimana nilainya tersebar, Anda
+    dapat menggunakan histogram atau boxplot.
+         o Histogram sangat baik dalam menunjukkan
+              bentuk distribusi data--apakah simetris,
+              menjulur ke satu sisi, atau memiliki beberapa
+              puncak--dengan mengelompokkan nilai ke
+              dalam rentang-rentang (bins) tertentu. Perlu
+              diingat, sumbu X pada histogram adalah skala
+              angka kontinu, yang membedakannya dari grafik
+              batang yang sumbu X-nya berisi kategori diskrit.
+         o Di sisi lain, boxplot meringkas distribusi nilai ke
+              dalam lima statistik utama (minimum, kuartil
+              pertama, median, kuartil ketiga, dan maksimum)
+              serta dapat secara efektif mengidentifikasi
+              adanya nilai pencilan (outlier).
+
+· Untuk Menampilkan Hubungan Antarvariabel:
+         o Untuk melihat hubungan antara dua variabel
+              numerik, scatterplot adalah pilihan yang
+              paling tepat. Setiap titik pada grafik mewakili
+              satu objek pengamatan, dan polanya dapat
+              menunjukkan apakah ada korelasi (positif,
+              negatif) di antara kedua variabel tersebut (akan
+              dipelajari di Bab 10).
+         o Untuk menampilkan perubahan variabel
+              numerik seiring waktu (atau urutan lain yang
+              berkesinambungan), grafik garis atau area plot
+
+                                                                            59
+                   adalah pilihan yang ideal. Grafik ini secara efektif
+                   menyoroti tren, pola, dan fluktuasi dari waktu ke
+                   waktu.
+
+3.2.2.2 Menginterpretasikan Diagram
+Setelah memilih diagram yang tepat, langkah selanjutnya adalah
+menginterpretasikannya--menarik makna dari apa yang Anda
+lihat. Alih-alih hanya mendeskripsikan diagram (misalkan
+"batang A lebih tinggi dari batang B"), cobalah untuk
+menjawab pertanyaan "Lalu kenapa?"
+
+    · Pada grafik batang atau pai, cari kategori yang paling
+         dominan (modus) dan yang paling jarang. Tanyakan
+         mengapa ada perbedaan yang signifikan di antara
+         kategori tersebut.
+
+    · Pada histogram dan boxplot, perhatikan pusat, bentuk,
+         dan sebaran data. Di mana sebagian besar data
+         terkonsentrasi? Apakah datanya menyebar luas atau
+         terkumpul rapat? Adakah nilai-nilai ekstrem (pencilan)
+         yang mungkin memerlukan penyelidikan lebih lanjut?
+
+    · Pada scatterplot, perhatikan arah dan kekuatan
+         hubungan. Apakah titik-titik membentuk pola garis
+         lurus yang jelas, atau tersebar acak? Apakah ada
+         kelompok-kelompok titik yang menonjol?
+
+    · Pada grafik garis, identifikasi tren secara keseluruhan
+         (naik, turun, atau datar). Carilah titik-titik puncak atau
+         lembah yang signifikan dan hubungkan dengan peristiwa
+         atau konteks yang mungkin menyebabkannya.
+
+Dengan pendekatan terstruktur ini--bertanya, memilih, lalu
+menginterpretasi--visualisasi data menjadi alat analisis yang
+
+60
+ampuh, mengubah data mentah menjadi informasi yang dapat
+dipahami dan ditindaklanjuti.
+
+3.3 Studi Kasus
+
+Dalam studi kasus ini kita akan menganalisis perbandingan
+jumlah perjalanan per jam antara mahasiswa dan staf kampus
+ITERA di hari Senin. Data didapatkan dari kuesioner yang
+disebarkan kepada 429 mahasiswa dan 286 staf kampus ITERA
+pada pertengahan 2023. Masing-masing responden ditanya jam
+dan tempat mereka pergi selama sepekan ke belakang sejak
+disebarnya kuesioner.
+
+Variabel yang kita gunakan hanya ada dua jenis: waktu dan
+keperluan perjalanan. Variabel waktu adalah variabel
+numeris-interval dan keperluan perjalanan adalah kategoris-
+nominal. Satu lagi hanyalah ID responden sebagai variabel
+identitas responden yang melakukan perjalanan. Dengan
+demikian, objek dari data terstruktur ini adalah perjalanan
+yang dilakukan responden pada waktu tertentu. ID
+responden akan ada di lebih dari satu baris, menandakan bahwa
+yang menjadi objek bukan respondennya, melainkan perjalanan
+yang dilakukan oleh responden tersebut.
+
+Berikut adalah ilustrasi dari tabel data terstruktur untuk kasus
+ini.
+
+     Tabel 3.1. Ilustrasi set data
+
+ID   Waktu  Keperluan
+
+001  07:00 Kuliah
+
+001  12:00 Makan
+
+001  12:50 Kuliah
+
+001  14:50 Pulang
+
+002  10:00 Kuliah
+
+002  12:00 Pulang
+
+...         ......
+
+                                    61
+    ID         Waktu   Keperluan
+    Metadata:
+    ID         = nomor urut responden
+    Waktu      = waktu berlangsungnya perjalanan (jam:menit)
+    Keperluan  = keperluan perjalanan (nominal)
+
+Set data ini kemudian dibuat tabel distribusi frekuensi
+berdasarkan waktu terjadinya dan keperluannya. Waktu
+terjadinya menjadi baris tabel distribusi dan kolomnya adalah
+jenis-jenis keperluannya.
+
+Berikut adalah gambaran tabel distribusi frekuensinya.
+
+    Tabel 3.2. Gambaran tabel distribusi frekuensi dari set data
+
+    Waktu      Kuliah        Pulang       Makan
+
+    06:00              24            -                                    -
+
+    07:00              142           -                                    3
+
+    ...                ...           ...                          ...
+
+Setelah itu, nilai frekuensi perjalanan per waktu per keperluan
+diubah menjadi propori sehingga diketahui frekuensi relatif yang
+lebih pas untuk dipakai sebagai perbandingan sebagai berikut.
+
+    Tabel 3.3. Gambaran tabel distribusi frekuensi dari set data dalam %
+
+    Waktu      Kuliah        Pulang       Makan
+
+    06:00             0,022          0                                    0
+
+    07:00             0,13           0                            0,003
+
+    ...                ...           ...                          ...
+
+3.3.1 Menentukan Jenis Visualisasi Data
+
+Setelah menentukan jenis nilai dan tingkat pengukuran untuk
+tiap-tiap variabel, kita perlu memilih jenis visualisasi yang tepat
+untuk menyajikan data kita dan menggali informasi darinya.
+Oleh karena kita ingin menyajikan distribusi, tetapi juga kita
+
+62
+memiliki kategori-kategori, maka ada muatan komposisi juga di
+dalamnya. Dengan demikian, kita bisa menggunakan
+diagram batang bertumpuk (stacked column chart).
+Berikut adalah diagram yang dimaksud untuk memvisualkan
+distribusi dan komposisi perjalanan antara mahasiswa dan staf
+kampus ITERA di hari Senin.
+
+                                   Monday (students)
+
+  0,25
+  0,20
+  0,15
+  0,10
+  0,05
+  0,00
+
+           06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22
+          dining home other recreation schooling shopping social visit
+
+                                             Monday (staff)
+
+   0,20
+
+   0,10
+
+   0,00
+              5 6 7 8 9 10 11 12 13 15 16 17 18 19 20 22
+
+         dining home other recreation religious schooling shopping social visit work
+
+         Gambar 3-14. Diagram batang bertumpuk untuk menampilkan
+                               perbandingan proporsi perjalanan
+
+Secara konsep, diagram batang bertumpuk sudah betul
+digunakan untuk menampilkan perbandingan distribusi jumlah
+perjalanan per waktu per keperluan. Akan tetapi, kita bisa
+
+                                                                                 63
+menggali lebih banyak informasi apabila kita menggunakan
+diagram lain.
+
+Karena sumbu X kita adalah waktu yang merupakan sebuah
+variabel berurut, akan lebih pas jika kita menggunakan
+diagram garis. Diagram garis juga dapat dengan mudah
+membantu kita mengidentifikasi pola jumlah pergerakan untuk
+setiap keperluan seiring jam dalam sehari.
+
+Hasilnya ditampilkan sebagai berikut.
+
+                                          Monday (students)
+
+    0,15
+
+    0,10
+
+    0,05
+
+    0,00
+              06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22
+
+          dining     home                                    other               recreation
+          schooling  shopping                                social visit
+
+                               Monday (staff)
+
+    0,20
+
+    0,10
+
+    0,00
+
+          5 6 7 8 9 10 11 12 13 15 16 17 18 19 20 22
+
+          dining     home      other                                       recreation        religious
+
+          schooling  shopping  social visit                                work
+
+    Gambar 3-15. Diagram garis hasil penyempurnaan dari grafik batang
+                                                bertumpuk
+
+64
+3.3.2 Interpretasi Visualisasi
+Apa interpretasi yang bisa kita ambil dari hasil visualisasi kita?
+Dari Gambar 3-15 dapat terlihat bahwa perjalanan mahasiswa
+(student) untuk pergi ke dan pulang dari kampus (schooling,
+home) terjadi selama hampir sepanjang hari (garis ungu dan
+oranye). Hal ini terlihat dari nilai proporsi perjalanan di
+sepanjang waktu tersebut yang menyentuh angka ±0,14 pada
+jam 7 dan puncak kedua di jam 12 yakni ±0,09 untuk berkuliah
+(schooling) dan home yang bernilai sekitar 0,05 di siang hari dan
+hampir 0,06 di sore hari.
+
+Akan tetapi, hal yang berbeda ditunjukkan oleh staf. Perjalanan
+staf dari dan ke kampus kebanyakan mengikuti pola di mana
+jam pergi ke kampus dan jam pulang dari kampus selalu terjadi
+pada waktu yang sama, yakni pergi di pagi hari dengan proporsi
+lebih dari 0,2 (work) dan pulang di sore hari, sekitar pukul 16-
+17 (home).
+
+Lalu apa? Nah, di sinilah peran pengetahuan di bidang PWK
+digunakan dalam mendalami hasil analisis. Dalam teori pasar di
+ekonomi kita sudah mempelajari konsep penyediaan (supply)
+dan permintaan (demand). Hal yang ingin dicapai dalam teori
+tersebut adalah kesetimbangan, artinya penyediaan memenuhi
+permintaan.
+
+Dari kedua grafik tadi, kita jadi mengetahui bahwa permintaan
+mahasiswa dan staf dalam hal bepergian berbeda. Apabila
+ITERA ingin mewujudkan suatu penyediaan berupa layanan
+transportasi umum, misalnya bis kampus, maka pelayanannya
+harus bisa memenuhi kebutuhan perjalanan mahasiswa yang
+terjadi hampir sepanjang hari, alih-alih hanya pagi dan sore saja.
+
+                                                                                 65
+3.4 Soal Evaluasi
+
+Perhatikan cuplikan tabel set data (dataset) hasil kuesioner
+kepada objek-objek berupa mahasiswa di suatu perguruan tinggi
+berikut beserta metadatanya.
+
+KodeResp      Usia      Fakultas  ThnMsk  UangSaku  Jarak
+001                 22  1         2020    2            19,27
+002                 25  1         2020    1              0,58
+003                 24  2         2021    1              0,56
+004                 19  3         2022    1              1,05
+005                 23  2         2021    1              1,69
+006                 20  1         2020    3              1,37
+Metadata:
+KodeResp     = nomor urut responden
+Usia         = usia responden (tahun)
+Fakultas     = fakultas mahasiswa
+
+ThnMsk               1 = Fakultas Syariah,
+UangSaku             2 = Fakultas Tarbiyah dan Keguruan,
+                     3 = Fakultas Dakwah dan Komunikasi
+Jarak        = Tahun masuk kuliah (Masehi)
+             = uang saku mahasiswa per bulan
+                     1 = <1 juta rupiah,
+                     2 = 1­2 juta rupiah,
+                     3 = 2­3 juta rupiah,
+                     4 = 3­4 juta,
+                     5 = >4 juta)
+             = jarak tempat tinggal mahasiswa dari kampus, kilometer
+
+Beri tanda centang pada grafik yang Anda anggap bisa
+merepresentasikan setiap variael disertai dengan alasan
+mengapa ia bisa atau tidak bisa (yang tidak.Anda beri centang
+berarti tidak bisa.) STP-3.1
+
+No  Variabel    Batang            Jenis Diagram
+                        Pai Treemap Histogram Boxplot Alasan
+
+1. Usia
+
+2. Fakultas
+
+3. Tahun Masuk
+
+4. Uang Saku
+
+66
+No  Variabel                              Jenis Diagram
+               Batang Pai Treemap Histogram Boxplot Alasan
+
+5. Jarak ke
+
+    kampus
+
+6. Uang Saku
+
+    per Tahun
+
+    Masuk
+
+7. Perhatikan diagram berikut STP-3.2:
+    a. Sebutkan jenis diagram tersebut
+    b. Sebutkan objek, variabel, dan karakteristik variabel
+         (jenis nilai dan tingkat pengukuran) yang divisualkan
+         dengan diagram tersebut
+    c. Tuliskan 3 butir informasi yang Anda bisa gali dari
+         diagram tersebut.
+
+8. Perhatikan diagram yang memvisualisasi gaji pokok
+    sekumpulan staf berikut (petunjuk kaitkan dengan konsep
+    jenis nilai dan tingkat pengukuran variabel). STP-3.4
+    a. Apakah kita bisa mengetahui rata-rata, median, kuartil
+         bawah, dan kuartil atas gaji pokok staf dari diagram
+         tersebut? Jelaskan jawaban Anda.
+
+                                                                                 67
+    b. Apa yang harus dilakukan supaya kita dapat mengetahui
+        rata-rata, median, kuartil bawah, dan kuartil atas gaji
+        pokok staf, jika jawaban Anda di 8.a adalah tidak?
+
+                       Gaji Pokok Staf
+
+    200
+
+    150
+
+    100
+
+    50
+
+    0                       Rp3.100.000 -  Rp4.100.000 -
+             Rp2.000.000 -  Rp4.000.000     Rp5.000.000
+              Rp3.000.000
+
+68

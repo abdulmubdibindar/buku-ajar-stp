@@ -1,0 +1,25 @@
+# Korelasi Antarvariabel Metrik
+
+## Konsep Dasar
+
+Untuk dua variabel numerik (interval/rasio), ukuran asosiasi yang paling umum adalah **Pearson Product-Moment Correlation ($r$)**. Nilai $r$ berkisar antara -1 hingga +1.
+
+## Studi Kasus dengan R
+
+Hubungan antara **Pendapatan** dan **Pengeluaran**.
+
+```{r, echo=TRUE}
+pendapatan <- c(5, 6, 7, 8, 9, 10, 11)
+pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
+
+# Scatterplot
+plot(pendapatan, pengeluaran)
+
+# Korelasi Pearson
+cor.test(pendapatan, pengeluaran, method = "pearson")
+```
+
+## Soal Evaluasi
+
+1.  Apa syarat utama penggunaan korelasi Pearson? (STP-10.1)
+2.  Jika $r = 0$, apakah artinya tidak ada hubungan sama sekali? Jelaskan! (STP-10.2)

@@ -1,0 +1,54 @@
+# Data Terstruktur
+
+## Konsep Data Terstruktur
+
+Data terstruktur adalah data yang telah diorganisir dalam format tabel (baris dan kolom) sehingga mudah untuk diolah menggunakan komputer. Data terstruktur terdiri atas beberapa elemen utama, yakni: (1) Tabulasi Data; (2) Objek; (3) Variabel; dan (4) Nilai.
+
+![Ilustrasi data terstruktur dan elemen-elemennya](images/placeholder.png)
+
+### Elemen Data Terstruktur
+
+1.  **Tabulasi Data**. Tabulasi data adalah bentuk penyajian data dalam bentuk tabel yang terdiri atas baris dan kolom. Sebuah tabulasi data yang baik harus memiliki struktur yang jelas di mana baris mewakili objek dan kolom mewakili variabel.
+2.  **Objek**. Objek adalah unit analisis yang datanya kita kumpulkan. Dalam tabulasi data, objek biasanya menempati posisi baris (row). Contoh objek dalam perencanaan wilayah dan kota bisa berupa rumah tangga, individu, kelurahan, kecamatan, atau kabupaten.
+3.  **Variabel**. Variabel adalah karakteristik atau atribut yang melekat pada objek yang nilainya bisa berbeda-beda (bervariasi) antar satu objek dengan objek lainnya. Dalam tabulasi data, variabel menempati posisi kolom (column). Contoh variabel adalah luas lahan, jumlah penduduk, pendapatan per bulan, dan tingkat pendidikan.
+4.  **Nilai**. Nilai adalah angka atau kategori yang mengisi perpotongan antara baris (objek) dan kolom (variabel). Nilai ini merepresentasikan data spesifik dari variabel tertentu untuk objek tertentu.
+
+### Tabulasi Data Terstruktur yang Baik
+
+Agar data dapat diolah dengan baik menggunakan perangkat lunak statistik seperti R, tabulasi data harus memenuhi kaidah "Tidy Data" atau data yang rapi. Berikut adalah prinsip-prinsip data yang rapi:
+
+1.  Setiap variabel harus membentuk satu kolom.
+2.  Setiap observasi (objek) harus membentuk satu baris.
+3.  Setiap jenis unit observasi membentuk satu tabel.
+
+Tabel di bawah ini menunjukkan perbandingan antara data yang tidak rapi (untidy) dan data yang rapi (tidy).
+
+| Data Tidak Rapi (Untidy) | Data Rapi (Tidy) |
+| :--- | :--- |
+| **Karakteristik** | **Karakteristik** |
+| Judul kolom berisi nilai, bukan nama variabel. Contoh: Kolom `2020`, `2021` (berisi tahun, yang seharusnya menjadi nilai). | Judul kolom adalah nama variabel. Contoh: Ada kolom `Tahun` yang berisi nilai 2020, 2021. |
+| Satu kolom berisi beberapa informasi. Contoh: Kolom `Lokasi` berisi `Kec. Sukarame, Kota Bandar Lampung`. | Satu kolom hanya berisi satu informasi. Dipisah menjadi kolom `Kecamatan` dan `Kota`. |
+| Variabel yang sama disimpan di kolom yang berbeda. | Satu kolom mewakili satu variabel yang jelas. |
+
+## Studi Kasus
+
+Dalam bab ini, kita akan mengambil kasus berupa perencanaan transportasi berkelanjutan mahasiswa dan staf pegawai di kampus ITERA. Transportasi berkelanjutan adalah konsep transportasi yang meminimalisir dampak lingkungan dan sosial.
+
+Survei dilakukan kepada mahasiswa dan staf untuk mengetahui pola pergerakan mereka menuju kampus. Data yang dikumpulkan antara lain: moda transportasi yang digunakan, jarak tempuh, waktu tempuh, dan biaya transportasi.
+
+## Soal Evaluasi
+
+1.  Jelaskanlah di bagian mana dalam proses perencanaan analisis statistik berada dan bagaimana perannya! (STP-1.1)
+2.  Apa yang membedakan analisis kuantitatif dan kualitatif? (STP-1.2)
+3.  Perhatikan tabel hasil pengumpulan data kuesioner berikut ini (STP-1.3):
+
+| ID_rumah | Usia_KK | Jml_anggota | Luas_rumah | Income_bln |
+| :--- | :--- | :--- | :--- | :--- |
+| 001 | 55 | 2 | 101 | 3,3 |
+| 002 | 64 | 5 | 245 | 6,0 |
+| 003 | 33 | 7 | 69 | 3,5 |
+| 004 | 28 | 2 | 44 | 27,0 |
+
+Jawablah pertanyaan-pertanyaan berikut berdasarkan tabel tersebut:
+a. Apakah format tabel tersebut?
+b. Sebutkan apa saja variabelnya dan apa objek yang paling menggambarkan data tersebut, berdasarkan nama-nama variabelnya.

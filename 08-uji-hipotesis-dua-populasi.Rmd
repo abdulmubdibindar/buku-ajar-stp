@@ -1,0 +1,49 @@
+# Uji Hipotesis Dua Populasi
+
+## Konsep Dasar
+
+Uji ini digunakan untuk membandingkan parameter (rata-rata atau proporsi) dari dua populasi yang berbeda. Tujuannya adalah untuk mengetahui apakah ada perbedaan yang signifikan di antara keduanya.
+
+### Uji Beda Rata-rata (Independent Samples t-test)
+
+Digunakan untuk dua kelompok sampel yang tidak saling berhubungan (independen). Contoh: Membandingkan rata-rata pendapatan warga di Kota A dan Kota B.
+
+Hipotesis:
+*   $H_0: \mu_A = \mu_B$
+*   $H_1: \mu_A \ne \mu_B$
+
+### Uji Beda Rata-rata Berpasangan (Paired Samples t-test)
+
+Digunakan untuk dua kelompok sampel yang saling berhubungan (berpasangan). Contoh: Membandingkan kemacetan di jalan yang sama **sebelum** dan **sesudah** penerapan kebijakan ganjil-genap.
+
+## Studi Kasus dengan R
+
+### Independent t-test
+
+Membandingkan pendapatan (dalam juta) antara pria dan wanita.
+
+```{r, echo=TRUE}
+# Data Contoh
+pria <- c(5, 6, 5, 7, 6, 8, 5)
+wanita <- c(4, 5, 4, 6, 5, 5, 4)
+
+# Uji t independen
+t.test(pria, wanita, var.equal = TRUE)
+```
+
+### Paired t-test
+
+Membandingkan waktu tempuh (menit) sebelum dan sesudah pembangunan tol.
+
+```{r, echo=TRUE}
+sebelum <- c(60, 55, 70, 65, 80)
+sesudah <- c(40, 45, 50, 55, 60)
+
+# Uji t berpasangan
+t.test(sebelum, sesudah, paired = TRUE)
+```
+
+## Soal Evaluasi
+
+1.  Kapan kita menggunakan uji t independen dan kapan menggunakan uji t berpasangan? Berikan contoh kasus perencanaannya! (STP-7.1)
+2.  Lakukan uji beda rata-rata untuk data berikut... (STP-7.2)

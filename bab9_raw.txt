@@ -1,0 +1,623 @@
+7.2.4 Uji Hipotesis Lebih Dari Dua Populasi
+
+Selanjutnya, untuk kasus lebih dari dua populasi, konsep
+dasarnya sama seperti pada kasus dua populasi yang tidak saling
+berhubungan (independen). Perbedaannya terletak pada jumlah
+populasi yang dibandingkan, yaitu lebih dari dua dan
+parameter yang dapat diujikan hanyalah rata-rata.
+
+170
+Secara umum, bentuk hipotesis kosong (H) menyatakan bahwa
+tidak terdapat perbedaan rata-rata di antara seluruh
+populasi yang diuji. Sebaliknya, hipotesis alternatif (H)
+menyatakan bahwa setidaknya terdapat satu rata-rata
+populasi yang berbeda dari yang lain.
+
+Adapun penulisan bentuk umum dari hipotesis ini adalah
+sebagai berikut:
+
+                      H0 : 1 = 2 = 3 =  = k
+
+           H1 : setidaknya terdapat satu i yang berbeda
+
+Secara teknis, langkah pengujian hipotesis lebih dari dua
+populasi ini berbeda dengan yang telah disampaikan pada
+bagian sebelumnya. Pengujian hipotesis lebih dari dua populasi
+ini menggunakan teknik analisis yang disebut dengan ANOVA,
+yang akan dijelaskan lebih lanjut.
+
+7.2.5 ANOVA (Analysis of Variant)
+ANOVA merupakan metode statistik inferensial yang dirancang
+khusus untuk membandingkan rata-rata dari lebih dari dua
+populasi atau kelompok.
+
+Teknik ini digunakan untuk menentukan, berdasarkan satu
+variabel dependen metrik (interval-rasio), apakah sampel-
+sampel tersebut berasal dari populasi yang memiliki rata-rata
+yang sama.
+
+Secara konsep, ANOVA membandingkan variasi antar
+kelompok (between-group variance) dengan variasi di dalam
+kelompok (within-group variance) untuk menilai apakah
+perbedaan rata-rata yang muncul bersifat signifikan secara
+
+                                                                               171
+statistik atau hanya terjadi karena faktor kebetulan (random
+error).
+
+Bentuk hipotesis kosong yang dapat dirumuskan dalam
+pengujian menggunakan ANOVA adalah bahwa tidak ada
+perbedaan signifikan di antara semua rata-rata populasi.
+Sementara itu, hipotesis alternatif mennyatakan bahwa
+setidaknya terdapat satu dari rata-rata poulasi yang berbeda
+dari yang lain.
+
+Langkah-langkah pengujian hipotesis menggunakan prosedur
+ANOVA akan dijelaskan sebagai berikut.
+
+7.2.5.1 Membuat asumsi
+Agar prosedur ANOVA dapat dilakukan, terdapat beberapa
+asumsi yang harus dipenuhi, di diantaranya [2, 4]:
+
+    a. Sampel harus acak dan independen satu sama lain;
+    b. Tingkat pengukuran variabel yang diuji adalah interval-
+
+         rasio;
+    c. Data terdistribusi normal. Pada dasarnya, ANOVA
+
+         toleran terhadap beberapa pelanggaran, tetapi
+         keberadaan outlier yang parah akan mengganggu hasil
+         analisis sehingga akan lebih baik jika asumsi ini
+         terpenuhi [1];
+    d. Variansi kelompok harus kira-kira sama untuk semua
+         populasi.
+
+7.2.5.2 Merumuskan hipotesis (H dan H1)
+Pada dasarnya, hipotesis dalam prosedur ANOVA memiliki
+bentuk yang seragam. Peneliti hanya perlu menyesuaikan
+notasinya sesuai dengan konteks atau kebutuhan penelitian yang
+
+172
+dilakukan. Adapun bentuk matematis dari hipotesis dalam
+analisis ANOVA adalah sebagai berikut:
+
+                       H0 : 1 = 2 = 3 =  = k
+           H1 : setidaknya terdapat satu i yang berbeda
+7.2.5.3 Menentukan wilayah serta titik kritis
+Dalam prosedur ANOVA, distribusi sampling yang digunakan
+adalah distribusi F. Distribusi ini memungkinkan peneliti untuk
+menguji hipotesis nol (H) mengenai ada tidaknya perbedaan
+rata-rata di antara dua kelompok atau lebih.
+Bentuk distribusi F bersifat asimetris (miring ke kanan) dan
+nilainya selalu positif (Gambar 7-1). Hal ini karena nilai F
+diperoleh dari perbandingan antara dua nilai variansi, yaitu
+variansi antar kelompok (between groups, dfb) dan variansi
+dalam kelompok (within groups, dfw).
+
+              Gambar 7-1 Ilustrasi Distribusi Normal F untuk ANOVA
+
+Nilai F yang besar menunjukkan bahwa perbedaan rata-rata
+antar kelompok kemungkinan signifikan secara statistik,
+
+                                                                               173
+sedangkan nilai F yang mendekati 1 menunjukkan bahwa
+perbedaan tersebut cenderung terjadi karena kebetulan.
+
+1) Menghitung nilai derajat kebebasan variansi antar
+    kelompok (dfb)
+
+Derajat kebebasan antar kelompok menunjukkan banyaknya
+kelompok yang dibandingkan dikurangi satu. Oleh karena itu,
+rumus yang dapat digunakan adalah:
+
+                                  dfb = k ­ 1
+
+      dimana k adalah jumlah populasi yang dibandingkan
+
+2) Menghitung derajat kebebasan variansi dalam kelompok
+    (dfw)
+
+Derajat kebebasan dalam kelompok menunjukkan total
+pengamatan dikurangi jumlah populasi yang diamati. Oleh
+karena itu, rumus yang dapat digunakan adalah:
+
+                                 dfw = N ­ k
+
+       dimana N adalah total sampel dari seluruh populasi
+
+3) Membaca Tabel F
+Setelah nilai dfb dan dfw dihitung, selanjutnya kita dapat
+menetapkan tingkat signifikansi dalam pengujian. Pada Tabel F
+yang disediakan oleh Healey dalam Appendix D [2], kita dapat
+menetapkan tingkat signifikansi () sebesar 0,05 atau 0,01
+(dalam tabel F, nilai  ini dinotasikan sebagai p). Tabel F untuk
+=0,05 ditampilkan pada Gambar 7-2 dan untuk =0,01
+ditampilkan pada Gambar 7-3. Nilai pada Tabel F ini
+menunjukkan titik kritis yang akan menjadi batas wilayah kritis
+sebagai penolakan Ho.
+
+174
+Gambar 7-2 Tabel F untuk Tingkat Signifikansi 0,05
+
+                                                                  175
+                 Gambar 7-3 Tabel F untuk Tingkat Signifikansi 0,01
+
+4) Menentukan wilayah kritis
+Nilai F yang diperoleh berdasarkan Tabel akan menjadi titik
+kritis yang memisahkan wilayah penolakan Ho dan wilayah
+gagal tolak Ho.
+
+7.2.5.4 Menghitung statistik uji
+Perhitungan statistik uji, dalam hal ini adalah nilai F dapat
+dihitung melalui tahapan sebagai berikut.
+
+1) Menghitung Mean Square Between (MSB)
+MSB adalah variasi yang disebabkan oleh perbedaan rata-rata
+antara kelompok (variabel independen). Rumus dari MSB ini
+adalah:
+
+176
+                                            
+                                   = 
+
+                                                    
+
+                            =  ( -  )2
+
+                                                   =1
+
+dimana ni = jumlah sampel pada populasi ke-i; xi =rata-rata
+populasi ke-i, dan  = rata-rata seluruh sampel dari seluruh
+populasi.
+2) Menghitung Mean Square Within (MSW)
+MSW adalah variasi yang terjadi secara acak di dalam setiap
+kelompok (kesalahan acak). Rumus dari MSW ini adalah:
+
+                                            
+                                  = 
+
+                                                 
+
+                        =   || - ||2
+
+                                               =1 =1
+
+dimana k adalah jumlah populasi yang diamati, ni adalah
+jumlah data dalam populasi ke-i, xij adalah data ke-j dalam
+populasi ke-i; c adalah centroid dari populasi terhadap populasi
+i. Nilai || - ||2 juga merupakan kuadrat jarak (euclidean
+distance) antara titik data xij dan centroid ci.
+3) Menghitung nilai F
+Rumus yang dapat digunakan adalah:
+
+                                         
+                                    = 
+
+                                                                               177
+7.2.5.5 Menarik kesimpulan
+Penarikan kesimpulan dilakukan dengan membandingkan nilai
+statistik uji, yaitu nilai F hasil perhitungan terhadap nilai F
+tabel sebagai titik kritis.
+
+Ho akan ditolak apabila nilai statistik hitung lebih dari nilai
+titik kritis atau F hitung > F tabel. Dalam hal ini, nilai statistik
+uji akan berada pada wilayah kritis.
+
+Sementara apabila nilai F hitung < F tabel, maka hasil
+pengujian gagal menolak Ho.
+
+Melalui pengujian berbasis SPSS ataupun perangkat lunak
+statistika lainnya, penarikan kesimpulan juga dapat dilakukan
+berdasarkan nilai p.
+
+Jika nilai p < 0,05 maka Ho akan ditolak, sementara jika nilai
+p>0,05 maka Ho akan gagal ditolak.
+
+7.2.5.6 Memaknai hasil pengujian hipotesis
+Apabila Ho ditolak, maka dapat disimpulkan bahwa
+sekurangnya terdapat satu populasi yang rata-ratanya tidak
+sama dengan populasi yang lain. Namun, dalam pengujian ini
+kita tidak tahu persis berapa jumlah populasi yang tidak sama.
+Apakah populasi A, populasi B, ataukah populasi C. Hasil
+pengujian ANOVA hanya memberikan pengetahuan kepada kita
+bahwa terdapat rata-rata nilai yang tidak sama.
+
+Sementara itu apabila Ho gagal ditolak, pada dasarnya kita
+tidak cukup bukti untuk mengatakan bahwa terdapat perbedaan
+rata-rata antar populasi yang diuji. Bisa jadi, nilai rata-rata dari
+seluruh populasi yang kita uji adalah sama.
+
+178
+7.3 Studi Kasus
+
+Untuk merespon kebutuhan mahasiswa, pihak kampus ITERA
+kemudian menerapkan program Bus Kampus. Program ini
+diharapkan dapat memberikan kemudahan bagi mahasiswa
+untuk mengakses kampus. Secara jangka panjang, program ini
+juga diharapkan dapat mengurangi beban biaya transportasi
+mahasiswa dalam melakukan perjalanan menuju kampus.
+
+7.3.1 Kasus Pengujian Hipotesis Dua Populasi
+           Berpasangan
+
+Setelah 3 bulan pelaksanaan, pihak kampus ingin mengevaluasi
+hasil keberjalanan program. Dalam hal ini, standar penilaiannya
+adalah bahwa program Bus Kampus berhasil menurunkan
+pengeluaran mahasiswa.
+
+Berdasarkan tujuan ini, dapat kita simpulkan bahwa nilai rata-
+rata pengeluaran mahasiswa setelah program harus lebih kecil
+dari nilai rata-rata pengeluaran mahasiswa sebelum program.
+Dengan kata lain, rata-rata pengeluaran setelah program ­
+sebelum program > 0 (bernilai positif).
+
+Selanjutnya, pihak kampus mengambil sampel dari sejumlah 30
+mahasiswa ITERA untuk mengumpulkan data terkait dengan
+biaya pengeluaran transportasi mahasiswa dalam satu minggu
+untuk menuju kampus. Adapun hasil dari survei yang telah
+dilakukan adalah sebagai berikut:
+
+    · Rata-rata pengeluaran sebelum program: 180.000
+    · Rata-rata pengeluaran setelah program: 120.000
+    · Standar deviasi selisih rata-rata pengeluaran: 90.000
+
+Atas dasar ini, kita akan melakukan pengujian terhadap dua
+populasi berhubungan (satu populasi, dengan dua kondisi
+
+                                                                               179
+pengamatan) untuk membuktikan dugaan tersebut dengan
+tingkat kepercayaan 95%.
+
+7.3.1.1 Membuat asumsi
+Berdasarkan informasi awal yang dimiliki, kita dapat membuat
+asumsi yang sesuai dengan syarat pengujian hipotesis sebagai
+berikut:
+
+a. Sampling telah memenuhi prinsip probabilitas
+b. Distribusi sampling mengikuti distribusi normal (sampel
+
+     minimal 30)
+
+Selain itu, tingkat pengukuran variabel berada pada skala
+interval-rasio (rata-rata pengeluaran), sehingga dapat dilakukan
+uji hipotesis untuk nilai rata-rata.
+
+7.3.1.2 Merumuskan hipotesis (H dan H1)
+Dalam kasus, terdapat pernyataan penting yang menjadi dasar
+perumusan hipotesis, yaitu: "...dengan kata lain, rata-rata
+pengeluaran sebelum program ­ setelah program > 0..."
+
+Pernyataan tersebut menunjukkan dugaan yang ingin divalidasi,
+yaitu apakah benar bahwa pengeluaran sebelum program
+­ pengeluaran setelah program > O.
+
+Pertanyaan ini mengindikasikan bentuk pertidaksamaan lebih
+dari (>), sehingga tidak dapat dijadikan sebagai kondisi netral
+H. Dugaan ini merujuk pada kondisi hipotesis alternatif (H)
+pada bentuk kasus 3 (right-tailed). Dalam hal ini, dapat kita
+gunakan notasi  untuk mendefinisikan rata-rata pengeluaran
+setelah program dikurangi dengan rata-rata pengeluaran
+sebelum program.
+
+180
+Sementara itu, bentuk kondisi netral yang menjadi hipotesis
+adalah "tidak adanya perbedaan rata-rata pengeluaran
+mahasiswa pada kondisi sebelum dan setelah program",
+sehingga hipotesis yang kita miliki adalah:
+
+                                  Ho :  = 0
+                                  H1 :  > 0
+7.3.1.3 Memilih distribusi sampling dan menentukan wilayah
+             kritis
+Berdasarkan informasi yang telah diberikan pada kasus, dapat
+disimpulkan:
+  1. Ukuran sampel adalah 30 responden yang sebetulnya
+       berada di ambang batas antara sampel besar dan sampel
+       kecil, meskipun beberapa pendapat menyatakan cukup
+       untuk dikategorikan sebagai sampel besar [2]. Namun,
+       untuk lebih meyakinkan, kita masih boleh untuk
+       menggunakan distribusi t yang dikhususkan untuk
+       sampel kecil.
+  2. Hipotesis alternatif yang digunakan berbentuk lebih dari
+       dari (right-tailed test), sehingga wilayah kritis berada di
+       ekor sebelah kanan kurva distribusi.
+  3. Dengan tingkat kepercayaan 95% ( = 5%), maka nilai t
+       yang menjadi batas wilayah kritis adalah 1,699 (lihat
+       Gambar 7-5).
+
+                                                                               181
+Gambar 7-4 Distribusi Sampling t pada Kasus Dua Populasi Dependen
+
+7.3.1.4 Menghitung statistik uji
+Berdasarkan kasus yang telah diuraikan, dapat rangkum:
+
+     · Nilai x = d = 180.000-160.000=20.000
+     · Std = 90.000
+
+maka perhitungan statistik uji t dari kasus adalah sebagai
+berikut:
+
+          =  - µ0
+              /
+
+      =  60.000 - 0  = 3,65
+
+         90.000/30
+
+Dengan demikian, nilai statistik uji yang diperoleh adalah: 3,65
+
+182
+7.3.1.5 Menarik kesimpulan
+Pada kasus, nilai statistik uji dan titik kritis adalah:
+
+                                 thitung = 3,65
+                                 tkritis = 1,699
+sehingga keputusannya adalah nilai statistik uji jatuh ke dalam
+wilayah kritis sehingga hipotesis kosong ditolak (Gambar 7-7)
+
+    Gambar 7-5 Hasil Pengujian Hipotesis Kasus Dua Populasi Dependen
+
+7.3.1.6 Memaknai Hasil Pengujian Hipotesis
+Hasil pengujian hipotesis menunjukkan bahwa H ditolak, yang
+berarti perbedaan rata-rata pengeluaran yang teramati pada
+sampel cukup signifikan untuk merepresentasikan kondisi
+populasi. Dengan demikian, dugaan awal yang menyatakan
+bahwa tidak terdapat perbedaan rata-rata pengeluaran
+mahasiswa sebelum dan sesudah program Bus Kampus
+dinyatakan tidak benar.
+
+                                                                               183
+Berdasarkan data yang dikumpulkan, diketahui bahwa terjadi
+penurunan rata-rata pengeluaran mahasiswa untuk biaya
+perjalanan menuju kampus ITERA dalam satu minggu. Temuan
+ini memberikan bukti empiris bahwa program Bus Kampus
+berhasil menurunkan pengeluaran transportasi mahasiswa,
+sehingga dapat dinyatakan bahwa program tersebut berjalan
+efektif dalam mencapai tujuan utamanya, yaitu meningkatkan
+aksesibilitas sekaligus menekan beban biaya perjalanan
+mahasiswa menuju kampus.
+
+7.3.2 Kasus Pengujian Hipotesis Lebih Dari Dua
+           Populasi (ANOVA)
+
+Selanjutnya, pihak kampus ITERA ingin kembali mendetailkan
+analisis terkait keberhasilan program Bus Kampus pada seluruh
+fakultas, yaitu FSAINS, FTIK, dan FTI. Pihak kampus ingin
+membuktikan apakah keberhasilan program Bus Kampus ini
+dirasakan oleh seluruh mahasiswa dari seluruh fakultas
+atau tidak. Jika terdapat satu fakultas saja yang rata-rata
+pengeluaran mahasiswanya berbeda, maka dapat dikatakan
+keberhasilan program Bus Kampus belum merata.
+
+Oleh karena itu, pihak kampus kembali melakukan survey.
+Namun kali ini, survei dilakukan dengan menggunakan
+pendekatan random sampling dengan kuota. Masing-masing
+fakultas akan diwakili oleh 30 orang mahasiswa dengan
+pertanyaan terkait rata-rata pengeluaran untuk biaya
+perjalanan menuju kampus ITERA dalam satu minggu.
+
+Dalam hal ini, terdapat tiga populasi yang akan diuji sehingga
+prosedur ANOVA dapat digunakan.
+
+184
+7.3.2.1 Membuat asumsi
+Berdasarkan informasi pada kasus, asumsi yang dapat
+disimpulkan adalah:
+
+  a. Sampel acak dan independen satu sama lain (berbeda
+       fakultas);
+
+  b. Tingkat pengukuran variabel yang diuji adalah interval-
+       rasio (pengeluaran mahasiswa);
+
+7.3.2.2 Merumuskan hipotesis (H dan H1)
+Pertanyaan penelitian dari kasus yang dijelaskan adalah:
+"...apakah keberhasilan program Bus Kampus ini dirasakan
+oleh seluruh mahasiswa dari seluruh fakultas atau
+tidak". Hal ini secara jelas menunjukkan kondisi netral yang
+dapat diwakilkan oleh hipotesis kosong. Oleh karena itu,
+hipotesis yang dirumuskan adalah:
+
+                     H0 : FTIK = FTI = SAINS
+
+            H1 : setidaknya terdapat satu  yang berbeda
+
+7.3.2.3 Menentukan wilayah serta titik kritis
+Untuk menentukan wilayah dan titik kritis, kita perlu
+menghitung dfb dan dfw terlebuh dahulu.
+
+1) Menghitung nilai derajat kebebasan variansi antar
+    kelompok (dfb)
+
+Berdasarkan kasus, diketahui bahwa terdapat tiga populasi yang
+akan diujikan sehingga k=3. Oleh karena itu, nilai dfb dapat
+htung sebagai berikut:
+
+                          dfb = k - 1 = 3 - 1 = 2
+
+                                                                               185
+2) Menghitung derajat kebebasan variansi dalam kelompok
+    (dfw)
+
+Berdasarkan kasus, diketahui bahwa sampel yang digunakan
+adalah 30 mahasiswa FTIK, 30 mahasiswa FSAINS, dan 30
+mahasiswa FTI. Total seluruh sampel adalah 30+30+30=90
+sehingga nilai N=90. Oleh karena itu, nilai dfw dapat dihitung:
+
+                       dfw = N ­ k = 90 ­ 3 = 87
+3) Menentukan titik dan wilayah kritis
+Berdasarkan perhitungan, diketahui bahwa nilai dfb = 2 dan
+dfw = 87. Dengan tingkat kepercayaan 95% atau =5%, maka
+nilai F tabel yang menjadi titik kritis adalah 3,15 (Gambar 6-7).
+
+            Gambar 7-6 Distribusi Wilayah Kritis pada Kasus ANOVA
+
+186
+7.3.2.4 Menghitung statistik uji
+Untuk lebih mudah menghitung statistik uji, dapat dilakukan
+pengolahan sederhana terhadap data set yang kita miliki, yaitu:
+- Mengitung nilai rata-rata sampel pada masing-masing
+
+     populasi
+- Menghitung rata-rata secara keseluruhan
+- Menghitung selisih kuadrat nilai terhadap rata-rata sampel
+
+     pada masing-masing populasi
+- Pengolahan data tersebut dapat dialkukan dengan
+
+     menghitung nilai rata-rata dari masing-masing populasi,
+     ratra-rata keseluruhan.
+Adapun hasil pengolahan ini dapat ditampilkan pada Gamabr
+7-7.
+
+                                                                               187
+                        Gambar 7-7 Raw Data Pengolahan ANOVA
+
+1) Menghitung Mean Square Between (MSB)
+Rumus dari MSB ini adalah:
+
+                                            
+                                   = 
+Sebelumnya, perlu dihitung nilai SSB.
+
+                                                    
+
+                            =  ( -  )2
+
+                                                   =1
+
+188
+ = 30(68,12 - 70,62)2 + 30(63,55 - 70,62)2 + 30(80,19 - 70,62)2
+
+ = 30(-2,5)2 + 30(-7,07)2 + 30(9,57)2
+ = 30(6,25 + 49,98 + 91,58)
+ = 30(147,81) = 4434,3
+Setelah nilai SSB diketahui, maka MSB dapat dihitung:
+
+                                4434.4
+                      =  = 2 = 2217,2
+2) Menghitung Mean Square Within (MSW)
+Rumus dari MSW ini adalah:
+
+                                            
+                                  = 
+Sebelumnya, perlu dihitung nilai SSW:
+
+                                                 
+
+                        =   || - ||2
+
+                                               =1 =1
+
+SSW=(30-1)(9,00)2+(30-1)(11,17)2+(30-1)(14,88)2
+SSW = 29(81) + 29(124,71) + 29(221,41)
+SSW = 2349 + 3616,59 + 6420,89 = 12386,48
+Setelah nilai SSW diketahui, maka MSW dapat dihitung:
+
+                              12386, 48
+                   =  = 87 = 142,43
+3) Menghitung nilai F
+Rumus yang dapat digunakan adalah:
+
+                              2217,2
+                        =  = 142,43 = 15,57
+
+                                                                               189
+7.3.2.5 Menarik kesimpulan
+Berdasarkan hasil perhitungan, diketahui bahwa:
+
+                                F tabel = 3,15
+                              F hitung = 15,57
+F hitung > F tabel sehingga dapat disimpulkan bahwa nilai
+statistik uji berada pada wilayah kritis dan Ho ditolak
+(Gambar 7-8).
+
+                Gambar 7-8 Hasil Pengujian Hipotesis Kasus ANOVA
+
+Penolakan H ini menunjukkan bahwa perbedaan yang muncul
+pada sampel masing-masing fakultas cukup signifikan sehingga
+dapat dianggap mewakili kondisi pada tingkat populasi.
+Berdasarkan hasil tersebut, dapat disimpulkan bahwa
+setidaknya terdapat satu fakultas yang memiliki rata-rata
+pengeluaran berbeda dibandingkan fakultas lainnya.
+7.3.2.6 Memaknai hasil pengujian hipotesis
+Temuan ini mengindikasikan bahwa program Bus Kampus
+ITERA belum berhasil secara merata di seluruh fakultas.
+Ketidaksamaan rata-rata pengeluaran mahasiswa antar fakultas
+
+190
+menunjukkan adanya perbedaan efektivitas program dalam
+menekan biaya perjalanan. Dengan kata lain, meskipun program
+ini efektif bagi sebagian mahasiswa, manfaatnya belum
+dirasakan secara seimbang di semua fakultas.
+
+Perbedaan ini dapat disebabkan oleh karakteristik dan perilaku
+mobilitas mahasiswa yang berbeda antar fakultas. Misalnya:
+
+    · Mahasiswa dari Fakultas Teknologi Industri (FTI)
+         mungkin memiliki jadwal kuliah lebih padat atau lokasi
+         tempat tinggal lebih jauh dari kampus sehingga masih
+         bergantung pada moda transportasi lain.
+
+    · Sementara itu, mahasiswa Fakultas Sains (FSAINS) dan
+         FTIK kemungkinan besar memiliki akses yang lebih
+         mudah terhadap rute Bus Kampus atau lebih banyak
+         menyesuaikan jadwal kuliah dengan jadwal bus.
+
+7.4 Soal Evaluasi
+Untuk kasus-kasus berikut, tentukanlah (a) hipotesis kosong dan
+hipotesis alternatifnya, (b) keputusan dalam memilih hipotesis
+yang diterima, dan (c) makna dari hasil pemilihan hipotesis
+tersebut. STP-7.1
+
+    1. Gilang ingin mengetahui apakah selisih rata-rata usia
+         antara seluruh Dosen dengan Tenaga Kependidikan di
+         ITERA sama dengan 1 tahun atau sebenarnya lebih. Dari
+         73 sampel Dosen, Gilang mendapatkan rata-rata usianya
+         yaitu 30 tahun sementara dari 69 sampel Tenaga
+         Kependidikan, rata-rata usianya 29 tahun. Simpangan
+         baku sampel Dosen dan Tenaga Kependidikan yang
+         didapatkan Gilang adalah 2,9 tahun dan 2,5 tahun secara
+
+                                                                               191
+         berturut-turut. Dengan galat 10%, bantulah Gilang
+         menganalisis hipotesis tersebut.
+    2. Kampus ITERA kembali melakukan penilaian terhadap
+         Program Bus Kampus. Namun, segmentasi penilaian
+         yang akan dilakukan ini adalah terhadap pegawai dan
+         tenaga kependidikan (tendik). Sebanyak 120 orang
+         pegawai yang dipilih secara acak beberapa bulan
+         sebelum peluncuran program dan setelah program
+         berjalan. Hasilnya adalah rata-rata selisih biaya
+         (sesudah-sebelum) yang didapatkan sebesar -Rp250.000
+         dengan simpangan baku Rp120.000. Buktikanlah,
+         apakah benar selisih tersebut terjadi secara
+         keseluruhan/signifikan secara statistik dengan galat =
+         10%?
+    3. Sebagai bagian dari upaya peningkatan keselamatan di
+         lingkungan kampus, mahasiswa ITERA diwajibkan
+         mematuhi peraturan berkendara, salah satunya adalah
+         menggunakan helm saat mengendarai kendaraan
+         bermotor, termasuk ketika berpindah antar gedung
+         untuk mengikuti perkuliahan.
+         Namun, berdasarkan pengamatan, tingkat kepatuhan
+         mahasiswa terhadap aturan tersebut berbeda-beda antar
+         tingkat perkuliahan. Diduga bahwa mahasiswa tingkat
+         atas lebih sering mengabaikan aturan dibandingkan
+         mahasiswa tingkat awal.
+         Untuk menguji dugaan tersebut, dilakukan survei
+         terhadap 200 mahasiswa yang dipilih secara acak,
+         dengan rincian: 50 mahasiswa tingkat 1, 50 mahasiswa
+         tingkat 2, 50 mahasiswa tingkat 3, dan 50 mahasiswa
+         tingkat 4.
+
+192
+Setiap responden diminta mengisi kuesioner dengan skor
+kepatuhan berkendara (rentang 0­100), di mana skor
+yang lebih tinggi menunjukkan tingkat kepatuhan yang
+lebih baik.
+Dengan tingkat signifikansi  = 0,05, buktikanlah
+dugaan tersebut! (Berdasarkan perhitungan diketahui
+nilai SSB = 4,45 dan SSW = 17,934)
+
+                                                                     193

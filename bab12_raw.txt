@@ -1,0 +1,545 @@
+Bab 10
+Analisis Statistik Asosiasi Bivariat:
+Korelasi Antarvariabel Metrik
+
+10.1 Capaian Pembelajaran
+Setelah mempelajari bab ini, Anda diharapkan:
+
+    1. Mampu memaknai hasil analisis korelasi pasangan
+         variabel bertingkat pengukuran metrik dengan tepat
+         STP-11.1.
+
+Agar lebih mudah memahami konsep dasar, Anda dapat
+mempelajari studi kasus terlebih dahulu dan menyimak
+pembahasan sesuai dengan konsep dasarnya.
+
+10.2 Konsep Dasar
+Selanjutnya, pada bab ini akan dibahas bentuk pengujian
+asosiasi yang lebih kompleks, yaitu pengujian pada variabel
+berjenis metrik. Variabel metrik mencakup data dengan skala
+pengukuran interval maupun rasio (lihat kembali
+pembahasan pada bab 2 mengenai jenis data). Variabel jenis ini
+memiliki nilai yang beragam dan bersifat numerik, sehingga
+dapat langsung diolah secara matematis.
+Dalam analisis asosiasi, pengujian hubungan antarvariabel
+metrik dapat memberikan informasi yang lebih lengkap,
+meliputi:
+
+                                                                               235
+    1. Keberadaan atau keeratan hubungan,
+    2. Arah hubungan (positif atau negatif), dan
+    3. Pola hubungan yang terbentuk antara kedua variabel.
+
+Untuk menguji asosiasi antarvariabel metrik, dapat digunakan
+beberapa koefisien asosiasi, seperti koefisien korelasi
+Spearman's rho () dan koefisien r Pearson (r). Kedua
+ukuran ini didasarkan pada logika pengurangan kesalahan
+prediksi (Proportional Reduction of Error, PRE).
+Artinya, pengujian dilakukan untuk melihat sejauh mana
+informasi dari satu variabel dapat meningkatkan akurasi
+prediksi terhadap nilai variabel lainnya.
+
+10.2.1 Koefisien Spearman's rho
+Koefisien Spearman's rho () digunakan untuk mengukur
+tingkat asosiasi antara dua (atau bisa salah satu) variabel
+interval dan tidak mensyaratkan distribusi data yang
+normal. Kondisi ini menjadikan pengukuran asosiasi
+menggunakan Spearman's rho lebih fleksibel, karena dapat
+diterapkan tanpa perlu terlebih dahulu mengidentifikasi bentuk
+distribusi datanya.
+
+  Catatan 10-1
+
+  Ingat kembali perbedaan mendasar antara tingkat
+  pengukuran variabel interval dan rasio, yakni bahwa variabel
+  interval adalah variabel angka yang titik nolnya tidak
+  absolut.
+
+  Yang dimaksud dengan tidak absolut adalah tidak ada posisi
+  nilai nol mutlak yang berarti untuk variabel tersebut. Contoh
+  paling mudah adalah variabel rating yang memiliki rentang
+
+236
+panjang, seperti 0 hingga 10 (apalagi jika menggunakan
+desimal).
+
+Tidak ada makna nol absolut dalam sebuah rating, karena
+rating bersifat subjektif tidak bisa dibuat titik nol universal.
+
+Contoh lain adalah temperatur/suhu, yang memiliki titik nol
+berbeda-beda tergantung dari termometernya, serta tahun,
+tergantung dari kalendernya.
+
+Secara konseptual, logika pengukuran Spearman's rho
+serupa dengan koefisien Gamma, Somers' d, maupun Kendall's
+tau-b, yaitu dengan mempertimbangkan urutan (peringkat)
+pasangan kasus untuk mengetahui ada tidaknya hubungan
+antara dua variabel. Dalam analisis ini, nilai setiap variabel
+terlebih dahulu diubah menjadi peringkat (ranking) sebelum
+dilakukan perhitungan asosiasinya.
+
+Koefisien spearman rho ini dapat diukur dengan rumus:
+
+ =  1-    6   2
+         ( 2 - 1)
+
+di mana   2 menunjukkan jumlah kuadrat dari selisih
+peringkat (ranking) antara dua variabel, sedangkan N
+merupakan jumlah pasangan kasus berdasarkan hasil
+observasi.
+
+Nilai koefisien Spearman's rho () berkisar antara 0 hingga
+1, yang menggambarkan kekuatan hubungan antara kedua
+variabel (lihat Tabel 8.2 untuk pedoman interpretasi kekuatan
+hubungan koefisien korelasi). Selain itu, nilai r dapat bernilai
+positif (+) maupun negatif (-), yang menunjukkan arah
+
+                                                       237
+hubungan antara kedua variabel -- apakah searah (positif)
+atau berlawanan arah (negatif).
+
+Hasil kuadrat dari koefisien Spearman's rho (²)
+menggambarkan besarnya kemampuan peningkatan
+keakuratan prediksi suatu variabel berdasarkan informasi
+dari variabel lainnya. Dengan kata lain, semakin besar nilai ²,
+semakin tinggi pula kemampuan satu variabel dalam
+menjelaskan variasi yang terjadi pada variabel pasangannya.
+
+10.2.2 Koefisien Pearson's r
+Selanjutnya, koefisien korelasi Pearson (r) digunakan untuk
+mengukur hubungan antara dua variabel dengan skala
+interval maupun rasio. Koefisien ini bersifat simetris dalam
+menggambarkan hubungan linear, sehingga perubahan pada
+lokasi (mean) maupun skala (satuan atau varians) dari
+nilai variabel X tidak akan memengaruhi besar nilai korelasi.
+
+Secara konseptual, logika pengukuran koefisien Pearson (r)
+adalah untuk menilai sejauh mana dua variabel bergerak
+bersama (co-vary). Koefisien ini pada dasarnya merupakan
+hasil normalisasi dari kovariansi antara variabel X dan Y.
+
+Perlu diingat bahwa kovariansi adalah ukuran mentah tentang
+bagaimana dua variabel (X dan Y) bervariasi secara bersamaan,
+yang mencerminkan baik arah maupun kekuatan hubungan
+antara keduanya. Namun, nilai kovariansi sangat bergantung
+pada satuan pengukuran variabel. Oleh karena itu, koefisien r
+Pearson menghitung rasio antara kovariansi dan produk dari
+simpangan baku (standar deviasi) masing-masing variabel,
+sehingga menghasilkan indeks yang dapat menunjukkan
+kekuatan dan arah hubungan linear antara X dan Y.
+
+238
+Koefisien korelasi r pearson dapat dihitung menggunakan rumus:
+
+            =   ( -  )( -   )
+
+                 ( -  )2  ( -   )2
+
+dimana:
+
+    ·  adalah rata-rata dari X
+    ·   adalah rata-rata dari Y
+    ·  ( -  )( -   ) adalah kovariasi antara variabel X
+
+         dan Y, yatiu jumlah dari hasil kali deviasi setiap skor Y
+         dari rata-rata Y dengan deviasi setiap skor Y dari rata
+         Y;
+    ·  ( -  )2 dan  ( -   )2 adalah jumlah kuadrat
+         deviasi dari skor rata-ratanya untuk variabel X dan Y.
+
+Hasil kuadrat dari koefisien korelasi Pearson (r²)
+menunjukkan proporsi total variasi variabel Y yang dapat
+dijelaskan oleh variabel X. Dengan kata lain, nilai r²
+menggambarkan seberapa besar kontribusi variabel X
+dalam menjelaskan perubahan pada variabel Y,
+meskipun sebagian variasi Y masih mungkin dipengaruhi oleh
+variabel lain di luar X.
+
+Secara keseluruhan, perbandingan dalam penggunaan koefisien
+korelasi Spearman's rho dan Pearson's r ditampilkan pada Tabel
+10.1.
+
+Tabel 10.1 Perbandingan antara Koefisien Korelasi Spearman's Rho dan
+
+                          Pearson's R
+
+Kriteria       Spearman rho            Pearson's r
+
+Jenis data yang Interval               Rasio
+
+digunakan
+
+                                                    239
+     Kriteria            Spearman rho              Pearson's r
+Dasar               Berdasarkan ranking       Data asli (raw
+perhitungan         data                      score)
+Nilai koefisien     0 sampai 1 dengan nilai   0 sampai 1 dengan
+                    negatif () dan (+)        nilai negatif () dan
+Interpretasi nilai  yang menunjukkan arah     (+) yang
+koefisien                                     menunjukkan arah
+                    Kekuatan dan arah         Kekuatan dan arah
+Makna nilai         hubungan berdasarkan      hubungan secara
+kuadrat (² /        urutan nilai              linear
+r²)                 Menunjukkan proporsi      Menunjukkan
+                    keakuratan prediksi       proporsi variabel Y
+                    berdasarkan urutan nilai  yang dijelaskan oleh
+                    variabel                  variabel X
+
+10.2.3 Pola Hubungan
+
+Pola hubungan adalah bentuk dari titik-titik yang ada dalam
+scatter plot antara variabel-variabel metrik yang kita analisis.
+Dari pola dalam scatter plot kita juga sebenarnya dapat
+menelaah elemen-elemen hubungan lainnya: keberadaan,
+kekuatan, dan arah.
+
+Ketiga elemen tersebut paling mudah diidentifikasi dari scatter
+plot yang menunjukkan pola linear. Gambar 10-1 menjelaskan
+maksud hal tersebut. Grafik (a) dan (b) menunjukkan pola
+hubungan linear karena sebaran titik-titik membentuk pola garis
+lurus yang berarti keberadaan hubungan antara variabel-
+variabel metrik yang dianalisis dapat dikonfirmasi. Sementara
+itu, ketiadaan hubungan diperlihatkan oleh grafik (c) dan (d)
+yang kumpulannya tidak membentuk pola apapun (tidak
+beraturan).
+
+240
+a     b
+
+   c     d
+
+Gambar 10-1. Scatter Plot Hubungan Linear antara Dua Variabel
+
+Kekuatan hubungan dilihat dari kerapatan titik-titik. Titik-
+titik yang mengumpul dengan rapat menandakan hubungan
+yang kuat, sementara hubungan yang lemah diperlihatkan oleh
+kumpulan titik-titik yang renggang.
+
+Arah hubungan dilihat dari kemiringan garis. Kemiringan ke
+atas menandakan hubungan yang positif atau searah. Hal ini
+dapat dilihat dari titik-titik yang berada di bawah garis merah
+(horizontal)--lebih kecil--juga berada di kiri garis biru
+(vertikal)--lebih kecil juga. Di sisi lain, kemiringan ke bawah
+menandakan hubungan yang negatif atau berlawanan. Titik-
+titik yang berada di bawah garis merah (horizontal)--lebih
+kecil--berada di kanan garis biru (vertikal)--lebih besar
+
+                                                               241
+     Gambar 10-2. Scatter Plot Hubungan Nonlinear antara Dua Variabel
+
+Pola hubungan lain adalah nonlinear. Hubungan nonlinear
+adalah hubungan yang, ya seperti namanya, tidak linear.
+Hubungan-hubungan tidak linear ini biasanya mengandung
+fungsi-fungsi matematis nonlinear seperti fungsi kuadrat
+(quadratic, x2), kubik (cubic, x3), eksponensial (exponential, ex)
+atau sinusoidal (sin(x)). Hal ini diperjelas dengan ilustrasi yang
+ada di Gambar 10-2.
+
+10.3 Studi Kasus
+Pada studi kasus kali ini, kita akan menilai asosiasi dari variabel
+metrik dalam kasus identifikasi terhadap faktor-faktor yang
+memiliki hubungan dengan tingkat kepuasan terhadap
+penggunaan transportasi online.
+
+242
+10.3.1 Koefisien Spearman's rho
+
+Untuk studi kasus pengukuran koefisien Spearman's rho, analisis
+difokuskan pada pengujian asosiasi antara dua variabel interval
+dan rasio, yaitu tingkat kepuasan terhadap penggunaan
+transportasi online (dengan skala 0­20) dan jarak tempuh
+perjalanan (dalam satuan kilometer). Penelitian ini dilakukan
+pada segmen kecil responden, yaitu 12 mahasiswa yang
+dijadikan sampel penelitian. Data yang diperoleh disajikan pada
+Tabel 10.2 berikut.
+
+Tabel 10.2 Data Responden untuk Studi Kasus Pengukuran Koefisien
+
+           Spearman's rho
+
+Responden  Jarak Tempuh    Tingkat
+
+           (km)            Kepuasan (0­20)
+
+1                2                  18
+
+2                5                  15
+
+3                3                  17
+
+4                10                 10
+
+5                8                  12
+
+6                1                  19
+
+7                15                 8
+
+8                12                 9
+
+9                7                  13
+
+10               4                  16
+
+11               9                  11
+
+12               6                  14
+
+Langkah awal untuk menghitung koefisien Spearman's rho
+adalah dengan memberikan peringkat (ranking) pada setiap
+nilai dari masing-masing variabel yang akan diuji. Dalam hal ini,
+seluruh nilai pada variabel jarak tempuh dan tingkat
+kepuasan diberi peringkat berdasarkan urutannya, dari nilai
+terkecil hingga terbesar.
+
+                                            243
+Setelah proses pemberian peringkat dilakukan, langkah
+berikutnya adalah menghitung selisih peringkat (D) antara
+kedua variabel untuk setiap responden. Untuk memudahkan
+perhitungan, nilai selisih ini kemudian dikuadratkan sehingga
+diperoleh nilai D².
+
+Proses pemberian peringkat dan perhitungan nilai D serta D²
+ditampilkan pada Tabel 10.3.
+
+Tabel 10.3 Pengolahan Data Mentah Perhitungan Koefisien Spearman Rho
+
+              Jarak  Rank         Kepuasan    Rank
+
+Responden Tempuh Jarak            (0­20)      Kepuasan D = X ­ Y D²
+
+              (km)   (X)                          (Y)
+
+1             2           2       18              11            -9          81
+
+2             5           5       15              8             -3          9
+
+3             3           3       17              10            -7          49
+
+4             10          10      10              3             7           49
+
+5             8           8       12              5             3           9
+
+6             1           1       19              12      -11       121
+
+7             15          12      8               1             11  121
+
+8             12          11      9               2             9           81
+
+9             7           7       13              6             1           1
+
+10            4           4       16              9             -5          25
+
+11            9           9       11              4             5           25
+
+12            6           6       14              7             -1          1
+
+                                                                    572
+
+Selanjutnya, nilai koefisien Spearman rho dapat dihitung dengan
+menggunakan rumus berikut:
+
+     =  1-    6     2     =   1-     6( 572)  1)  =   1-  3432  =   - 1,00
+              (   2 - 1)          12(122 -                1716
+
+Berdasarkan hasil perhitungan, diketahui bahwa nilai =1,00
+yang menunjukkan hubungan sempurna antara jarak
+tempuh dan tingkat kepuasan. Nilai koefisien ini juga
+
+244
+bernilai negatif yang menunjukkan arah yang berlawanan antara
+kedua variabel tersebut. Artinya, apabila jarak perjalanan
+semakin jauh maka tingkat kepuasan akan semakin rendah.
+
+Selain itu, kita juga dapat menghitung nilai 2 =1,00 yang
+menunjukkan 100% keakuratan prediksi nilai variabel kepuasan
+apabila nilai variabel jarak tempuh diketahui.
+
+10.3.2 Koefisien Pearson's r
+
+Selanjutnya, untuk menghitung koefisien Pearson's r kita akan
+menggunakan kasus asosiasi variabel jarak dan pengeluaran per
+minggu. Adapun data terkait kedua variabel ini dari 12
+responden yang dikumpulkan ditampilkan pada Tabel 10.4.
+
+Tabel 10.4 Data Responden untuk Studi Kasus Pengukuran Koefisien
+
+        Pearson's r
+
+                                              Pengeluaran per
+Responden Jarak (km) minggu (ribu rupiah)
+
+1   2                50
+
+2   5                80
+
+3   3                60
+
+4   10               150
+
+5   8                120
+
+6   1                40
+
+7   15               200
+
+8   12               170
+
+9   7                100
+
+10  4                70
+
+11  9                130
+
+12  6                90
+
+Langkah awal dalam perhitungan koefisien korelasi Pearson
+(r) adalah menghitung simpangan baku (standar deviasi) dari
+masing-masing variabel. Proses ini diawali dengan menentukan
+
+                                                               245
+rata-rata (mean) dari setiap variabel, kemudian menghitung
+selisih (deviasi) antara masing-masing nilai dengan rata-ratanya.
+Nilai deviasi tersebut selanjutnya dikuadratkan untuk
+memperoleh ukuran penyebaran data terhadap rata-rata.
+
+Dalam hal ini juga, kita dapat menetapkan variabel jarak
+sebagai variabel independen (X), dan variabel pengeluaran
+sebagai variabel dependen (Y).
+
+Hasil perhitungan rata-rata, deviasi, dan simpangan baku dari
+masing-masing variabel ditampilkan pada Tabel 10.5.
+
+Tabel 10.5 Pengolahan Data Mentah Perhitungan Koefisien Pearson r
+
+Responden  X               Y           X - X   Y -  (X-X )(Y-) (X-X )² (Y-)²
+                        (Ribu
+           (Jarak/km)  rupiah)          -4.83
+                                        -1.83
+     1     2           50               -3.83  -55  265.83  23.36         3,025
+                                         3.17
+     2     5           80                1.17  -25  45.83           3.36  625
+                                        -5.83
+     3     3           60                8.17  -45  172.50  14.69         2,025
+                                         5.17
+     4     10          150               0.17  45   142.50  10.03         2,025
+                                        -2.83
+     5     8           120               2.17  15   17.50           1.36  225
+                                        -0.83
+     6     1           40                      -65  379.17  34.03         4,225
+                                           0
+     7     15          200                     95   775.83  66.69         9,025
+
+     8     12          170                     65   335.83  26.69         4,225
+
+     9     7           100                     -5   -0.83           0.03  25
+
+     10    4           70                      -35  99.17           8.03  1,225
+
+     11    9           130                     25   54.17           4.69  625
+
+     12    6           90                      -15  12.50           0.69  225
+
+Jumlah     82          1,260                   0    2,300.00 193.67 27,500
+
+()         (rata2: 6,83) (rata2: 105)
+
+Selanjutnya, nilai koefisien r dapat dihitung dengan
+menggunakan rumus berikut:
+
+ =          ( -  )( -   ) =                         2300            = 0,996
+
+           ( -  )2  ( -   )2                        193,67 × 27500
+
+Berdasarkan hasil perhitungan, diketahui bahwa nilai r=0,996
+yang hampir mendekati 1 sehingga dapat disimpulkan bahwa
+
+246
+variabel jarak dan pengeluaran memiliki korelasi yang sangat
+kuat dengan arah yang positif (searah). Artinya, semakin jauh
+jarak perjalanan yang ditempuh, maka pengeluaran per
+minggu juga cenderung semakin besar.
+Namun perlu diingat, walaupun ditetapkan variabel dependen
+(Y) dan independen (X), dalam pengujian ini tidak dibahas
+hubungan sebab-akibat (kausalitas). Korelasi yang
+ditemukan hanya menunjukkan adanya kesamaan pola
+perubahan antara kedua variabel -- ketika nilai variabel jarak
+meningkat, nilai pengeluaran juga meningkat, dan sebaliknya.
+Selain itu, kita juga dapat menghitung nilai 2 = 0,992 yang
+menunjukkan bahwa sekitar 99,2% variasi dari variabel
+pengeluaran dapat dijelaskan oleh variabel jarak tempuh.
+10.3.3 Pola Hubungan
+Kita akan menelaah pola hubungan antara variabel-variabel
+yang kita analisis.
+
+Gambar 10-3. Scatter Plot Variabel Jarak dengan Tingkat Kepuasan (kiri)
+                              dan Pengeluaran per Pekan (kanan)
+
+Dari Gambar 10-3 kita dapat melihat polanya sangat mendekati
+garis lurus. Tidak heran nilai koefisien korelasinya mendekati 1.
+
+                                                                               247
+Untuk jarak vs. tingkat kepuasan, dengan koefisien korelasi rho,
+tandanya negatif, konsisten dengan pola grafik yang
+kemiringannya ke bawah, menandakan hubungan yang terbalik
+(makin jauh jarak rumah ke kampus, makin rendah kepuasan
+terhadap angkutan daring). Berbeda dengan jarak vs.
+pengeluaran per bulan, kemiringan polanya ke atas,
+menandakan hubungan yang searah (makin jauh jarak rumah ke
+kampus, makin tinggi pengeluaran per bulan).
+
+10.4 Soal Evaluasi
+
+Perhatikan tabel terkait jarak rumah ke fasilitas kesehatan,
+frekuensi kunjungan per tahun, dan tingkat kepuasan terhadap
+fasilitas kesehatan berikut. Lakukanlah pengujian asosiasi pada
+masing-masing variabel berikut: (i) jarak dan frekuensi
+kunjungan; dan (ii) frekuensi kunjungan dan kepuasan.
+
+Responden  Jarak ke     Frekuensi Kunjungan per    Kepuasan
+                                      Tahun         terhadap
+           Faskes (km)                           Faskes (0­20)
+                                         10
+     1     1.2                            8              18
+                                          7              16
+     2     2.5                            6              15
+                                         12              14
+     3     3.8                            7              19
+                                          4              15
+     4     5.0                            9              12
+                                          8              17
+     5     0.8                            6              15
+                                          3              13
+     6     4.5                           11              11
+                                          7              18
+     7     6.2                            4              15
+                                          8              12
+     8     2.0                                           16
+
+     9     3.2
+
+     10    5.5
+
+     11    7.0
+
+     12    1.0
+
+     13    4.0
+
+     14    6.8
+
+     15    3.5
+
+     a. Tentukan koefisien yang pas digunakan untuk
+         menyatakan korelasi kedua variabel pada masing-masing
+
+248
+    pasangan korelasi variabel (i, ii) (Spearman's  atau
+    Pearson's r).
+b. Hitung dan interpretasikan nilai-nilai tersebut sesuai
+    makna koefisien tersebut dalam konsepnya (Tuliskan
+    langkah-langkah sesuai penjelasan pada bagian konsep).
+c. Apa yang bisa kita simpulkan dari hasil perhitungan
+    koefisien-koefisien tersebut?
+
+                                                                          249

@@ -1,0 +1,29 @@
+# Korelasi Antarvariabel Ordinal
+
+## Konsep Dasar
+
+Untuk data ordinal (berjenjang/ranking), kita menggunakan korelasi berbasis peringkat. Dua yang paling populer adalah **Spearman's Rho ($\rho$)** dan **Kendall's Tau ($\tau$)**.
+
+## Studi Kasus dengan R
+
+Apakah ada hubungan antara **Tingkat Pendidikan** (SD, SMP, SMA) dengan **Kepuasan Layanan** (Rendah, Sedang, Tinggi)?
+
+```{r, echo=TRUE}
+# Data Ordinal (sebagai angka peringkat)
+pendidikan <- c(1, 2, 3, 2, 3, 1, 2)
+kepuasan <- c(1, 1, 3, 2, 3, 1, 2)
+
+# Korelasi Spearman
+cor.test(pendidikan, kepuasan, method = "spearman")
+
+# Korelasi Kendall
+cor.test(pendidikan, kepuasan, method = "kendall")
+```
+
+**Interpretasi**:
+Nilai korelasi mendekati +1 menunjukkan hubungan positif kuat (semakin tinggi pendidikan, semakin tinggi kepuasan).
+
+## Soal Evaluasi
+
+1.  Kapan kita sebaiknya menggunakan Kendall's Tau dibandingkan Spearman's Rho? (STP-9.1)
+2.  Jelaskan makna korelasi negatif pada variabel ordinal! (STP-9.2)

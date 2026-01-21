@@ -1,0 +1,766 @@
+Dependensi: Analisis Regresi Linear
+Berganda
+
+12.1 Capaian Pembelajaran
+Setelah mempelajari bab ini, Anda diharapkan:
+
+    1. Mampu mampu menyebutkan perbedaan analisis regresi
+         linear berganda dengan analisis regresi linear sederhana
+
+               STP-13.1
+
+    2. Mampu menguraikan hubungan antara variabel
+         independen dengan variabel dependennya secara tepat
+         dalam sebuah persamaan regresi linear berganda STP-13.2
+
+Agar lebih mudah memahami konsep dasar, Anda dapat
+mempelajari studi kasus terlebih dahulu dan menyimak
+pembahasan sesuai dengan konsep dasarnya.
+
+12.2 Konsep Dasar
+Analisis regresi linear berganda merupakan salah satu teknik
+analisis multivariat berbasis hubungan dependensi yang
+digunakan untuk memahami dan memprediksi nilai variabel
+dependen berdasarkan beberapa variabel independen. Berbeda
+dengan peramalan deret berkala yang hanya menggunakan pola
+masa lalu, regresi linear berganda mempertimbangkan faktor-
+faktor penyebab yang memengaruhi variabel dependen.
+
+                                                                               279
+Karena melibatkan identifikasi pengaruh variabel bebas
+terhadap variabel terikat, teknik ini sering disebut sebagai
+analisis peramalan kausal.
+
+12.2.1 Perbedaan Analisis Regresi Linear Berganda
+           dengan Analisis Regresi Linear Sederhana
+
+Analisis regresi merupakan salah satu metode statistik yang
+digunakan untuk memahami hubungan antara variabel
+dependen (variabel yang diprediksi) dan variabel independen
+(variabel yang memengaruhi). Pada dasarnya, perbedaan utama
+antara regresi linear sederhana dan regresi linear berganda
+terletak pada jumlah variabel independen yang digunakan
+dalam pemodelan.
+
+Regresi linear sederhana hanya melibatkan satu variabel
+independen untuk menjelaskan atau memprediksi variabel
+dependen. Model ini digunakan untuk melihat pengaruh satu
+faktor saja terhadap suatu perubahan pada variabel terikat.
+Secara matematis, model regresi linear sederhana dituliskan
+sebagai berikut.
+
+                                   =  + 
+
+Sementara itu, regresi linear berganda digunakan ketika variabel
+dependen dipengaruhi oleh lebih dari satu variabel independen.
+Model ini memberikan gambaran yang lebih komprehensif
+karena dapat menangkap pengaruh simultan dari beberapa
+faktor terhadap variabel terikat. Bentuk umum model regresi
+linear berganda sebagai berikut.
+
+                    =  + 1  1 + 2  2 +  +   
+
+Model ini memungkinkan tidak hanya menilai besar dan arah
+pengaruh masing-masing variabel, tetapi juga memahami
+
+280
+variabel mana yang lebih dominan dalam menjelaskan
+perubahan pada variabel dependen.
+
+Perbedaan keduanya tidak hanya pada jumlah variabel
+independen, tetapi juga pada kompleksitas hubungan,
+kemampuan prediksi, dan kedalaman analisis. Regresi linear
+sederhana lebih cocok untuk hubungan yang bersifat tunggal
+dan langsung, sedangkan regresi linear berganda digunakan
+untuk fenomena yang lebih kompleks.
+
+12.2.2 Jenis-jenis Hubungan Multivariat
+Analisis regresi linear berganda melibatkan hubungan pengaruh
+satu variabel dependen dengan beberapa variabel independen
+sekaligus, analisis ini termasuk dalam kategori hubungan
+multivariat. Hubungan multivariat merujuk pada kondisi ketika
+sebuah fenomena dipengaruhi atau dijelaskan oleh lebih dari
+satu variabel pada saat yang bersamaan.
+
+Dalam konteks statistik dan analisis data, hubungan multivariat
+dapat muncul dalam berbagai bentuk, tergantung pada jumlah
+dan peran variabel yang dianalisis. Secara umum, terdapat tiga
+jenis hubungan multivariat yang sering digunakan dalam
+penelitian, meliputi:
+
+    a. Hubungan Multivariat Prediktif (Predictive Relationship)
+         Pada jenis hubungan ini, fokus analisis adalah
+         memprediksi suatu variabel dependen berdasarkan
+         sejumlah variabel independen. Jenis hubungan ini sangat
+         bermanfaat ketika ingin mengetahui variabel apa saja
+         yang paling berpengaruh. Misalnya, memprediksi tingkat
+         kerawanan banjir berdasarkan curah hujan, kemiringan
+         lahan, dan kerapatan permukiman.
+
+                                                                               281
+    b. Hubungan Multivariat Asosiatif (Associative
+         Relationship)
+         Jenis hubungan ini bertujuan melihat keterkaitan antar
+         beberapa variabel tanpa memperjelas mana yang
+         memengaruhi dan mana yang dipengaruhi. Hubungan ini
+         dapat digunakan untuk mengelompokkan wilayah
+         berdasarkan karakteristik fisik atau sosial, atau
+         mengidentifikasi pola keterkaitan antarindikator
+         pembangunan.
+
+    c. Hubungan Multivariat Kausal (Causal Relationship)
+         Pada hubungan kausal, analisis diarahkan untuk melihat
+         pengaruh sebab akibat antar variabel dalam sebuah
+         sistem yang kompleks. Hubungan ini relevan digunakan
+         ketika ingin memahami mekanisme pengaruh antar
+         variabel secara lebih mendalam, misalnya bagaimana
+         perubahan tutupan lahan memengaruhi limpasan
+         permukaan dan selanjutnya meningkatkan potensi banjir.
+
+Dalam analisis multivariat, pemilihan metode statistik yang
+tepat sangat bergantung pada jenis hubungan antar variabel,
+jumlah variabel dependen, serta tingkat pengukuran variabel
+yang terlibat. Diagram alur berikut membantu penentuan teknik
+analisis yang sesuai berdasarkan karakteristik hubungan
+tersebut.
+
+282
+                 Gambar 12-1. Kedudukan Analisis Regresi Berganda
+
+Secara umum, terdapat dua jenis hubungan dalam analisis
+multivariat, yaitu hubungan dependensi dan hubungan
+interdependensi. Hubungan dependensi terjadi ketika terdapat
+variabel yang diprediksi (dependen) dan variabel yang
+memprediksi (independen). Sebaliknya, hubungan
+interdependensi tidak mengutamakan perbedaan peran antar
+variabel, melainkan bertujuan memahami struktur internal atau
+pola kedekatan antar variabel.
+
+Pada jalur dependensi, langkah pertama adalah melihat jumlah
+variabel dependen yang ingin dianalisis. Jika hanya terdapat
+satu variabel dependen, maka teknik analisis dipilih berdasarkan
+tingkat pengukuran variabel dependen tersebut. Apabila
+variabel dependen berskala metrik (interval maupun rasio),
+maka teknik yang sesuai adalah multiple regression analysis,
+khususnya ketika variabel independen dapat berupa campuran
+metrik dan non-metrik. Namun apabila variabel dependen
+berskala non-metrik (nominal atau ordinal), maka analisis yang
+digunakan dapat berupa logistic regression untuk data biner,
+
+                                                                               283
+atau conjoint analysis untuk analisis preferensi dalam konteks
+pemasaran atau perilaku pilihan.
+
+Jika penelitian melibatkan lebih dari satu variabel dependen
+dalam satu hubungan analisis, maka peneliti perlu kembali
+mengidentifikasi tingkat pengukuran dari variabel dependen.
+Untuk variabel dependen berskala metrik, terdapat dua
+kemungkinan teknik. Apabila variabel independen bersifat
+metrik, maka teknik yang direkomendasikan adalah canonical
+correlation analysis, yaitu analisis yang menghubungkan dua set
+variabel secara simultan. Namun jika variabel independen
+bersifat non-metrik, maka metode yang tepat adalah
+Multivariate Analysis of Variance (MANOVA). Sebaliknya,
+untuk variabel dependen non-metrik, metode yang digunakan
+adalah multiple discriminant analysis, yang bertujuan
+mengklasifikasikan objek ke dalam kelompok tertentu
+berdasarkan kombinasi variabel prediktor.
+
+Pada tingkat yang lebih kompleks, ketika penelitian melibatkan
+beberapa hubungan antara variabel dependen dan independen
+secara simultan, misalnya dalam model teoritis yang
+menggambarkan hubungan kausal antar konstruk laten, maka
+teknik yang paling sesuai adalah Structural Equation Modeling
+(SEM). SEM memungkinkan peneliti menganalisis hubungan
+struktural dan hubungan pengukuran secara bersamaan. Dalam
+kasus tertentu, hubungan antar dua set variabel dapat dianalisis
+menggunakan canonical correlation yang diperluas dengan
+variabel dummy jika terdapat variabel non-metrik yang perlu
+diakomodasi.
+
+Sementara itu, untuk hubungan interdependensi, tidak dicari
+variabel dependen tertentu, melainkan berusaha memahami
+pola hubungan atau struktur antar variabel. Meskipun tidak
+
+284
+ditampilkan dalam diagram, teknik interdependensi umum
+meliputi analisis faktor, analisis klaster, dan multidimensional
+scaling.
+
+12.2.3 Model Regresi Linear Berganda
+Model regresi linear berganda merupakan pengembangan dari
+regresi linear sederhana yang digunakan ketika variabel
+dependen dipengaruhi oleh lebih dari satu variabel independen.
+Regresi linear berganda melibatkan beberapa variabel
+independen sekaligus, terdapat dua hal penting yang perlu
+diperhatikan agar model tetap valid dan dapat diinterpretasikan
+dengan baik.
+
+12.2.3.1 Hubungan antarvariabel independen dan isu
+             Multikolinearitas
+
+Dalam regresi linear berganda, antarvariabel independen tidak
+boleh memiliki hubungan korelatif yang kuat, terlebih lagi
+hubungan kausalitas satu sama lain. Jika terjadi hubungan yang
+terlalu tinggi antarvariabel independen, kondisi ini disebut
+multikolinearitas.
+
+Multikolinearitas adalah keadaan ketika dua atau lebih variabel
+independen saling berhubungan sangat kuat sehingga informasi
+yang diberikan menjadi redundan. Akibatnya, model tidak
+dapat memisahkan kontribusi masing-masing variabel, yang
+dapat menyebabkan:
+
+    · koefisien regresi menjadi tidak stabil,
+    · nilai signifikansi (uji t) menjadi tidak akurat,
+    · interpretasi pengaruh tiap variabel menjadi menyesatkan,
+    · model tampak baik secara keseluruhan (uji F signifikan),
+
+         tetapi variabel satu per satu tidak signifikan.
+
+                                                                               285
+Dalam konteks penelitian perencanaan wilayah dan kota,
+multikolinearitas perlu dihindari karena banyak fenomena
+perkotaan memiliki hubungan yang saling berkorelasi. Misalnya,
+kepadatan penduduk dan kepadatan bangunan sering bergerak
+dalam arah yang sama sehingga tidak tepat dimasukkan
+bersamaan tanpa pengecekan diagnostik.
+
+12.2.3.2 Variabel independen bertingkat pengukuran
+             nonmetrik dan perlunya Variabel Dummy
+
+Dalam beberapa kasus, variabel independen yang digunakan
+dalam model regresi tidak selalu berbentuk data numerik.
+Variabel yang bersifat kategorik, seperti jenis kelamin, tipe
+penggunaan lahan, kelas wilayah, atau tingkat pelayanan,
+termasuk variabel nonmetrik dan tidak dapat langsung
+dimasukkan ke dalam persamaan regresi.
+
+Agar dapat dianalisis, variabel nonmetrik ini perlu diubah
+menjadi variabel dummy, yaitu variabel baru yang hanya
+memiliki nilai 0 dan 1. Nilai 0 menunjukkan ketidakhadiran
+kategori tertentu, sedangkan nilai 1 menunjukkan kehadiran
+kategori tersebut. Proses ini memungkinkan variabel kategorik
+untuk diolah dalam model regresi sehingga pengaruhnya
+terhadap variabel dependen tetap dapat dianalisis secara
+kuantitatif.
+
+Sebagai contoh, jika variabel "jenis kawasan" memiliki dua
+kategori, yaitu kawasan terbangun dan kawasan tidak terbangun,
+maka model regresi dapat menggunakan variabel dummy:
+
+                          1 = kawasan terbangun
+
+                      0 = kawasan tidak terbangun
+
+286
+Ketika kategori berjumlah lebih dari dua, misalnya tiga jenis
+penggunaan lahan (permukiman, perdagangan, industri), maka
+dibuat beberapa variabel dummy sesuai pendekatan k ­ 1, yaitu
+dua dummy untuk tiga kategori. Salah satu kategori harus
+ditetapkan sebagai kategori referensi (baseline) yang diwakili
+oleh angka 0 pada seluruh variabel dummy.
+
+Misalnya, kategori permukiman dipilih sebagai nilai referensi.
+Sehingga, kategori perdagangan dan industri masing-masing
+direpresentasikan melalui dua variabel dummy, yaitu Dummy
+Perdagangan dan Dummy Industri. Nilai 1 dalam salah satu
+dummy menunjukkan keberadaan kategori tersebut, sedangkan
+nilai 0 menunjukkan ketidakhadirannya.
+
+                Tabel 12.1 Penetapan Dummy
+
+Kategori     Dummy 1 (Perdagangan) Dummy 2 (Industri)
+Permukiman
+Perdagangan  0  0
+Industri
+             1  0
+
+             0  1
+
+Secara sistematis, kategori permukiman dikodekan sebagai (0, 0)
+karena menjadi kelompok pembanding. Kategori perdagangan
+dikodekan sebagai (1, 0), dan kategori industri sebagai (0, 1).
+Dalam model regresi linear, kedua dummy tersebut kemudian
+dimasukkan sebagai variabel independen. Persamaan regresi
+yang terbentuk umumnya dituliskan sebagai berikut.
+
+              = 0 + 1 ( ) + 2 ()
+
+Dalam persamaan tersebut,  merepresentasikan nilai rata-
+rata variabel dependen untuk kategori referensi, yaitu
+permukiman. Sementara itu,  dan  menggambarkan
+besarnya perbedaan nilai variabel dependen antara kategori
+
+                                            287
+perdagangan dan industri dibandingkan dengan kategori
+permukiman.
+
+12.2.4 Diagnosis Model Regresi Linear Berganda
+
+Dalam analisis regresi linear berganda, tidak hanya dituntut
+menghasilkan persamaan regresi, tetapi juga memastikan bahwa
+model yang dibangun merupakan model terbaik (best-fit model)
+dari beberapa alternatif model yang mungkin. Diagnosis model
+dilakukan untuk memilih model yang paling sesuai berdasarkan
+keseimbangan antara kualitas prediksi, kelayakan statistik, dan
+kesederhanaan model.
+
+Prinsip ini selaras dengan panduan dalam literatur kuantitatif
+perencanaan, termasuk yang dijelaskan oleh Reid Ewing, bahwa
+pemilihan model harus mempertimbangkan parsimoni
+menggunakan variabel secukupnya untuk menjelaskan data
+tanpa menambah kompleksitas yang tidak perlu. Jika terdapat
+beberapa model dengan jumlah variabel independen berbeda,
+maka beberapa aspek berikut perlu diperhatikan.
+
+12.2.4.1 Diagnosis Asumsi Klasik
+1) Diagnostik Multikolinearitas
+Model yang baik harus bebas dari hubungan kuat antar variabel
+independen. Multikolinearitas dapat menyebabkan:
+
+    · koefisien tidak stabil,
+    · variabel menjadi tidak signifikan,
+    · interpretasi model menjadi sulit.
+
+Dalam diagnosis model, peneliti memeriksa Variance Inflation
+Factor (VIF). VIF > 10 (atau dalam praktik konservatif, > 5)
+mengindikasikan multikolinearitas tinggi. Toleransi yang terlalu
+rendah (< 0,1).
+
+288
+Jika dua variabel sangat berkorelasi, salah satu variabel dapat
+dihilangkan atau digabungkan, mengacu pada prinsip parsimony.
+
+2) Evaluasi Residual (Apakah Model Memenuhi Asumsi?)
+Model yang baik harus memenuhi asumsi klasik regresi.
+Diagnosis dilakukan dengan Plot residual vs fitted values,
+memeriksa homoskedastisitas; Normal probability plot (P-P
+Plot), memeriksa normalitas residual; dan Durbin-Watson,
+memeriksa autokorelasi.
+
+Jika asumsi tidak terpenuhi, solusi yang umum dilakukan adalah
+transformasi data (misalnya log) atau pemilihan variabel yang
+lebih tepat.
+
+12.2.4.2 Uji Signifikansi
+1) Kesesuaian Model Secara Keseluruhan (Goodness of Fit)
+Kriteria pertama adalah menilai apakah penambahan variabel
+memang meningkatkan kualitas prediksi. Indikator yang lazim
+digunakan yaitu R² dan Adjusted R².
+
+    · R² menunjukkan seberapa besar variasi variabel
+         dependen dapat dijelaskan oleh model. Namun, R²
+         cenderung meningkat ketika variabel baru ditambahkan,
+         bahkan jika variabel tersebut tidak penting.
+
+    · Adjusted R² lebih tepat digunakan karena telah
+         mengoreksi efek jumlah variabel. Model yang baik
+         biasanya memiliki Adjusted R² yang lebih tinggi
+         dibandingkan model alternatif.
+
+2) Signifikansi Statistik Model (Uji F)
+Menguji apakah seluruh variabel independen secara bersama-
+sama berpengaruh signifikan terhadap variabel dependen. Jika
+
+                                                                               289
+beberapa model dibandingkan, pilih model yang tetap signifikan
+secara keseluruhan.
+
+3) Signifikansi Statistik Parsial (Uji t)
+Penambahan variabel independen hanya layak dipertahankan
+jika variabel tersebut:
+
+    · signifikan secara statistik,
+    · koefisiennya stabil (tidak berubah drastis saat variabel
+
+         lain ditambahkan),
+    · memiliki dasar teoritis yang kuat.
+
+Jika sebuah variabel tidak signifikan secara konsisten atau tidak
+relevan secara teoritis, variabel tersebut perlu dipertimbangkan
+untuk dihilangkan.
+
+12.2.4.3 Pembentukan Model
+1) Prinsip Parsimoni: Model Sederhana adalah Model Terbaik
+Konsep ini ditekankan oleh Ewing dalam diagnosis regresi,
+hindari model yang terlalu banyak variabel (over-specified)
+maupun terlalu sedikit variabel (under-specified).
+
+Over-specified model, banyak variabel tidak signifikan,
+meningkatkan error, dan menurunkan efisiensi. Under-specified
+model, variabel penting hilang, menyebabkan bias pada koefisien.
+
+Model terbaik adalah model yang:
+
+    · menggunakan variabel secukupnya,
+    · signifikan secara statistik,
+    · tepat secara teoritis,
+    · memenuhi asumsi regresi.
+
+290
+2) Perbandingan Model: Kapan Model dengan Variabel Lebih
+    Banyak Layak Dipilih?
+
+Model dengan banyak variabel layak dipilih jika:
+
+    · Adjusted R² meningkat secara berarti,
+    · variabel baru signifikan dan relevan dengan teori,
+    · tidak menimbulkan multikolinearitas,
+    · asumsi regresi tetap terpenuhi.
+
+Jika penambahan variabel hanya meningkatkan R² sedikit, atau
+membuat variabel lain menjadi tidak signifikan, maka model
+yang lebih sederhana justru lebih baik.
+
+12.3 Studi Kasus
+
+Sebagai kelanjutan dari pembahasan pada Bab 11 mengenai
+pemilihan model analisis asosiasi multivariat, pada bagian ini
+dilakukan analisis lebih mendalam untuk menguji hubungan
+kausalitas antara satu variabel dependen dengan beberapa
+variabel independen.
+
+Jika pada regresi linear sederhana hanya dianalisis pengaruh
+satu faktor penyebab, maka melalui regresi linear berganda
+pengaruh beberapa faktor dapat diuji secara simultan untuk
+melihat kontribusi masing-masing variabel terhadap
+pengeluaran transportasi mahasiswa. Dalam studi kasus ini,
+pengeluaran transportasi per minggu (Y) dipengaruhi oleh
+empat variabel penjelas, yaitu jarak tempat tinggal ke kampus
+(X), jumlah perjalanan mingguan (X), uang saku mahasiswa
+(X), dan kepemilikan motor yang dikonversi menjadi variabel
+dummy (X).
+
+Asumsi dasarnya adalah bahwa semakin jauh jarak dan semakin
+sering perjalanan dilakukan, maka semakin besar pula
+
+                                                                               291
+pengeluaran transportasi, sementara uang saku dan kepemilikan
+motor diperkirakan turut memengaruhi besarnya biaya
+transportasi mahasiswa. Analisis dilakukan menggunakan data
+dari 12 responden untuk mengidentifikasi seberapa besar dan
+seberapa signifikan masing-masing variabel tersebut dalam
+menjelaskan variasi pengeluaran transportasi mingguan.
+
+Tabel 12.2 Data Responden untuk Analisis Regresi Linear Berganda
+
+                Jumlah     Uang Kepemilikan Pengeluaran
+
+         Jarak Perjalanan  Saku   Motor   per minggu
+Responden (km)             (ribu  (1=ya,      (ribu
+                per
+
+                Minggu rupiah) 0=tidak)   rupiah)
+
+     1   2      6          150    1       50
+
+     2   5      10         220    1       80
+
+     3   3      8          180    1       60
+
+     4   10     14         400    0       150
+
+     5   8      12         320    1       120
+
+     6   1      5          120    1       40
+
+     7   15     18         500    0       200
+
+     8   12     16         450    0       170
+
+     9   7      11         250    1       100
+
+     10  4      7          160    1       70
+
+     11  9      13         350    0       130
+
+     12  6      9          220    1       90
+
+12.3.1 Model Regresi Berganda
+
+Untuk membentuk model regresi linear berganda pada studi
+kasus ini, dilakukan estimasi koefisien regresi dari setiap variabel
+independen sehingga dapat diketahui arah dan besarnya
+pengaruh masing-masing variabel terhadap pengeluaran
+transportasi per minggu.
+
+Model disusun dengan memasukkan empat variabel penjelas,
+yaitu jarak tempat tinggal ke kampus, jumlah perjalanan
+mingguan, uang saku mahasiswa, serta kepemilikan motor yang
+dikategorikan sebagai variabel dummy. Estimasi koefisien yang
+
+292
+diperoleh kemudian digunakan untuk menyusun persamaan
+regresi dan menilai apakah setiap variabel berpengaruh secara
+signifikan ataupun tidak terhadap variasi pengeluaran
+mahasiswa.
+
+              Tabel 12.3 Koefisien Regresi Berganda
+
+Model  Variabel  B         Std.    t                     Sig. (p-
+1                                                         value)
+                 (Koefisien Error
+                                                     0.692
+                 Regresi)                            0.286
+                                                     0.862
+       (Constant) 2.593    6.273   0.413             0.000
+                                                     0.753
+       Jarak     1.884     1.638   1.150
+
+       Perjalanan -0.197   1.092   -0.180
+
+       Uang_Saku 0.298     0.043   6.890
+
+       Motor     1.761     5.378   0.327
+
+Berdasarkan hasil estimasi, konstanta model bernilai 2,593 yang
+menggambarkan titik awal pengeluaran ketika seluruh variabel
+independen bernilai nol. Variabel jarak memiliki koefisien positif
+sebesar 1,884 yang menunjukkan kecenderungan peningkatan
+pengeluaran seiring bertambahnya jarak tempuh.
+
+Variabel jumlah perjalanan mingguan justru memiliki koefisien
+negatif (-0,197). Sebaliknya, variabel uang saku mahasiswa
+memiliki koefisien 0,298. Variabel kepemilikan motor memiliki
+koefisien 1,761. Mengacu pada nilai koefisien regresi yang
+diperoleh, model regresi linear berganda dapat dituliskan
+sebagai berikut.
+
+        = 2.593 + 1.884 1 - 0.197 2 + 0.298 3 + 1.761 4
+dengan:
+
+ = pengeluaran transportasi per minggu (ribu rupiah)
+
+ 1 = jarak tempat tinggal ke kampus (km)
+ 2 = jumlah perjalanan per minggu
+ 3 = uang saku mahasiswa (ribu rupiah)
+
+                                                                   293
+ 4 = kepemilikan motor (1 = ya, 0 = tidak)
+12.3.2 Diagnosis Asumsi Klasik
+Sebelum model regresi linear berganda digunakan untuk
+menarik kesimpulan, perlu dilakukan pengujian asumsi klasik
+untuk memastikan bahwa model memenuhi prasyarat statistik.
+Pengujian ini mencakup uji normalitas residual, uji
+homoskedastisitas, uji multikolinearitas, dan uji autokorelasi.
+Dengan terpenuhinya seluruh asumsi tersebut, hasil regresi
+dapat dipercaya dan interpretasinya menjadi lebih valid.
+12.3.2.1 Uji Normalitas Residual
+Uji normalitas dilakukan untuk menilai apakah galat prediksi
+(residual) terdistribusi secara normal. Pada studi kasus ini,
+pemeriksaan normalitas dapat dilakukan melalui grafik
+histogram residual atau normal probability plot (P-P Plot).
+
+                                        Gambar 12-2. P-P Plot
+
+Model regresi dinyatakan sudah memenuhi asumsi normalitas
+dengan pola titik pada grafik mengikuti garis diagonal atau
+histogram menunjukkan bentuk mendekati distribusi normal.
+
+294
+Normalitas residual penting agar estimasi koefisien regresi
+bersifat tidak bias dan hasil uji signifikan dapat
+diinterpretasikan dengan tepat.
+12.3.2.2 Uji Homoskedastisitas
+Uji homoskedastisitas bertujuan melihat apakah varian residual
+bersifat konstan pada seluruh rentang nilai prediksi.
+Pemeriksaan dilakukan menggunakan grafik scatterplot antara
+nilai residual dan nilai prediksi.
+
+                                     Gambar 12-3. Scatter Plot
+
+Asumsi homoskedastisitas sudah terpenuhi dengan titik-titik
+pada grafik tampak menyebar secara acak dan tidak membentuk
+pola tertentu seperti kipas, gelombang, atau garis menyempit.
+Jika residual tidak berpola, maka model dianggap stabil dalam
+memprediksi variabel dependen dan tidak mengalami
+heteroskedastisitas yang dapat mengganggu akurasi estimasi
+koefisien.
+12.3.2.3 Uji Multikolinearitas
+Uji ini dilakukan untuk memastikan tidak terdapat hubungan
+korelasi yang tinggi antar variabel independen dalam model.
+
+                                                                               295
+Multikolinearitas biasanya diperiksa menggunakan nilai
+Variance Inflation Factor (VIF) dan Tolerance.
+
+        Tabel 12.4 Uji Multikolinearitas
+
+     Model Variabel  Tolerance            VIF
+                                          4.45
+     1  Jarak (X)    0.2150               7.76
+                                          8.79
+        Perjalanan (X) 0.1360             5.92
+
+        Uang Saku (X) 0.1111
+
+        Motor (X)    0.1690
+
+Model dinyatakan bebas multikolinearitas dimana seluruh
+variabel memiliki nilai VIF < 10 dan nilai Tolerance > 0,1.
+Terpenuhinya asumsi ini menandakan bahwa masing-masing
+variabel independen memberikan kontribusi informasi yang unik
+terhadap variabel dependen, sehingga koefisien regresi dapat
+diestimasi dengan stabil tanpa pengaruh saling ketergantungan
+antar variabel.
+
+12.3.2.4 Uji Autokorelasi
+Uji autokorelasi digunakan untuk menilai apakah terdapat
+korelasi antara residual pada pengamatan sekarang dengan
+residual pada pengamatan sebelumnya. Karena data penelitian
+ini merupakan data cross-section dan bukan deret waktu,
+autokorelasi umumnya jarang terjadi.
+
+Diagnosis autokorelasi dapat dilihat dari nilai Durbin­Watson
+dengan kriteria mendekati angka 2 sebagai tanda tidak adanya
+autokorelasi. Jika nilai berada dalam rentang yang dapat
+diterima, maka residual dapat dikatakan bebas dari hubungan
+serial dan model regresi dinyatakan memenuhi asumsi ini.
+
+296
+12.3.3 Uji Kualitas Regresi Berganda
+
+Dari model regresi berganda yang terbentuk akan dilakukan uji
+kualitas yaitu menghitung koefisien determinasi, uji F dan uji t.
+
+12.3.3.1 Koefisien Determinasi
+
+Nilai R Square sebesar 0.988 menunjukkan bahwa 98.8% variasi
+dalam variabel Pengeluaran per minggu dapat dijelaskan secara
+simultan oleh variabel Jarak, Jumlah Perjalanan per Minggu,
+Uang Saku, dan Kepemilikan Motor. Hal ini berarti model
+regresi memiliki daya prediksi yang sangat kuat.
+
+          Tabel 12.5 Koefisien Determinasi Regresi Berganda
+
+Model     R  R         Adjusted R  Std. Error of the
+1
+             Square Square         Estimate
+
+          0.994 0.988  0.981       5.753
+
+12.3.3.2 Uji F
+
+Nilai Sig. (p-value) pada tabel ANOVA adalah 0.000. Karena
+nilai ini lebih kecil dari 0.05, dapat disimpulkan bahwa secara
+simultan (bersama-sama), variabel Jarak, Jumlah Perjalanan
+per Minggu, Uang Saku, dan Kepemilikan Motor memiliki
+pengaruh yang signifikan terhadap Pengeluaran per minggu.
+
+                   Tabel 12.6 Uji F Regresi Berganda
+
+Model     Sum of Squares df Mean Square F                    Sig.
+Regresi                                                      0.000
+Residual  23157.087    4 5789.272  174.908
+Total
+          232.080      7 33.154
+
+          23389.167    11
+
+12.3.3.3 Uji t
+
+Koefisien regresi Uang Saku adalah 0.298 dengan nilai Sig. =
+0.000. Karena Sig. < 0.05, variabel Uang Saku secara parsial
+berpengaruh signifikan terhadap Pengeluaran per minggu.
+Koefisien positif (0.298) mengindikasikan bahwa setiap kenaikan
+
+                                                                    297
+1.000 rupiah pada Uang Saku akan meningkatkan Pengeluaran
+per minggu sebesar 298 rupiah, dengan asumsi variabel lain
+tetap.
+
+Variabel Jarak Sig. = 0.286, Jumlah Perjalanan per Minggu Sig.
+= 0.862, dan Kepemilikan Motor Sig. = 0.753 semuanya
+memiliki nilai Sig. > 0.05. Ini menunjukkan bahwa secara parsial,
+ketiga variabel tersebut tidak berpengaruh signifikan terhadap
+Pengeluaran per minggu.
+
+              Tabel 12.7 Uji t Regresi Berganda
+
+Model  Variabel B (Koefisien Std.  t             Sig. (p-value)
+1
+              Regresi)    Error                  0.692
+                                                 0.286
+       (Constant) 2.593   6.273    0.413         0.862
+                                                 0.000
+       Jarak  1.884       1.638    1.150         0.753
+
+       Perjalanan -0.197  1.092    -0.180
+
+       Uang_Saku 0.298    0.043    6.890
+
+       Motor  1.761       5.378    0.327
+
+12.3.4 Interpretasi Hasil Regresi Berganda
+
+Hasil analisis regresi menunjukkan bahwa Uang Saku (sebagai
+proksi daya beli) adalah satu-satunya faktor yang secara
+signifikan dan positif memengaruhi Pengeluaran per minggu
+masyarakat (Sig.=0.000). Sebaliknya, faktor-faktor fisik dan
+mobilitas seperti Jarak ke tempat tujuan, Jumlah Perjalanan
+per Minggu, dan Kepemilikan Motor terbukti tidak signifikan
+secara statistik, yang menyiratkan bahwa dinamika tata ruang
+(seperti kedekatan atau aksesibilitas) memiliki pengaruh yang
+sangat kecil terhadap pola konsumsi mingguan.
+
+Implikasinya bagi PWK adalah bahwa di wilayah ini,
+Pengeluaran masyarakat didorong oleh kapasitas finansial
+mereka, bukan oleh kemudahan fisik aksesibilitas. Strategi
+perencanaan kota yang bertujuan untuk mengelola atau
+
+298
+meningkatkan aktivitas ekonomi lokal melalui kontrol
+pengeluaran harus mengutamakan intervensi ekonomi juga
+selain dengan intervensi tata ruang dan transportasi.
+
+Berdasarkan temuan tersebut, rekomendasi kebijakan PWK
+harus difokuskan pada penguatan ekonomi lokal yaitu
+pemerintah daerah direkomendasikan untuk memprioritaskan
+program pengembangan ekonomi yang meningkatkan
+pendapatan dan daya beli masyarakat (misalnya, program
+pelatihan keterampilan, insentif UMKM lokal, dan penciptaan
+lapangan kerja di dalam area permukiman) karena kenaikan
+Uang Saku secara langsung meningkatkan pengeluaran.
+
+Sehingga, untuk merangsang pertumbuhan konsumsi dan
+ekonomi di wilayah ini, kunci utamanya adalah menciptakan
+lebih banyak uang di kantong penduduk, bukan sekadar
+mengurangi jarak tempuh mereka.
+
+12.4 Soal Evaluasi
+
+1. Sebutkan perbedaan analisis regresi linear berganda dengan
+    analisis regresi linear sederhana. STP-13.1
+
+2. Hubungan kausal variabel Kepadatan Penduduk (X1), Akses
+    Transportasi (X2), dan Kualitas Ruang Terbuka Hijau (X3)
+    dengan variabel Tingkat Penggunaan Transpotasi Umum
+    (Y), dimana Y adalah variabel yang dipengaruhi oleh 3
+    variabel lainnya, dimodelkan dengan persamaan berikut.
+                      = 12,5 + 0,45 1 + 0,30 2 - 0,25 3
+    dengan keterangan:
+    Y = Tingkat Penggunaan Transportasi Umum (skala 0­100)
+    X1 = Kepadatan Penduduk (jiwa/ha)
+    X2 = Akses Transportasi (skor kemudahan akses 0­10)
+    X3 = Kualitas Ruang Terbuka Hijau (skor penilaian 0­10)
+
+                                                                               299
+    Uraikan hubungan antara variabel Tingkat Penggunaan
+    Transpotasi Umum dengan tiga variabel lainnya
+    berdasarkan persamaan tersebut. STP-13.2
+3. Didapatkan hasil diagnostik untuk model hubungan pada
+    nomor 2 adalah sebagai berikut.
+    Koefisien Determinasi (R²) = 0,72
+    Uji F : Fhitung = 18,45 dengan nilai p-value = 0,000
+    Uji t :
+    Variabel X1  thitung = 3,10 ; p = 0,003
+    Variabel X2  thitung = 1,25 ; p = 0,215
+    Variabel X3  thitung = 2,45 ; p = 0,018
+    Uraikanlah bagaimana kualitas model tersebut. Anda dapat
+    mengulasnya dengan poin-poin berikut: STP-13.1
+    a. Keakuratan model (R2)
+    b. Keberartian model (uji F)
+    c. Keberartian tiap variabel (uji t)
+
+300

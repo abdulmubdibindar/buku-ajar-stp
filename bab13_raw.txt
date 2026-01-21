@@ -1,0 +1,910 @@
+Bab 11
+Analisis Statistik Asosiasi Bivariat:
+Kausalitas dengan Regresi Linear
+Sederhana
+
+11.1 Capaian Pembelajaran
+Setelah mempelajari bab ini, Anda diharapkan:
+
+    1. Mampu membedakan korelasi dan kausalitas dengan
+         tepat STP-12.1
+
+    2. Mampu menguraikan hubungan antara variabel
+         independen dengan variabel dependennya secara tepat
+         sesuai dengan bentuk persamaan regresi linear sederhana
+
+               STP-12.2
+
+Agar lebih mudah memahami konsep dasar, Anda dapat
+mempelajari studi kasus terlebih dahulu dan menyimak
+pembahasan sesuai dengan konsep dasarnya.
+
+11.2 Konsep Dasar
+Analisis asosiasi adalah analisis yang digunakan untuk mencari
+hubungan antara dua atau lebih variabel. Keberadaan hubungan
+didasarkan pada pola naik turunnya nilai variabel dari sampel
+ataupun populasi yang diuji.
+
+                                                                               251
+11.2.1 Korelasi dan kausalitas
+Dalam analisis asosiasi terdapat dua jenis hubungan: korelasi
+dan kausalitas. Korelasi (keterkaitan) adalah hubungan yang
+sifatnya diketahui dari data dan belum diketahui secara pasti
+kebenarannya, sementara hubungan kausal (eksperimental)
+adalah hubungan yang memiliki sifat sebab-akibat dan sudah
+pasti memiliki keterkaitan. Setiap hubungan kausal adalah
+hubungan korelatif, tetapi tidak setiap hubungan
+korelatif memiliki kausalitas.
+
+Terdapat beberapa kondisi prasyarat yang harus terpenuhi
+sebelum suatu hubungan dapat dinyatakan bersifat kausal [1].
+Kondisi-kondisi ini membantu kita memastikan bahwa
+hubungan yang kita analisis dapat dinyatakan bersifat kausal,
+maka empat kondisi berikut harus terpenuhi:
+
+    1. Plausibilitas Konseptual (Conceptual Plausibility)
+         Terdapat teori atau dasar konseptual yang mendukung
+         hubungan antara variabel yang menjadi penyebab
+         (independent variable) dan variabel akibat (dependent
+         variable). Hubungan tersebut harus masuk akal secara
+         ilmiah dan sesuai dengan kerangka teori yang relevan.
+
+    2. Asosiasi yang Kuat (Strong Association)
+         Hubungan pengaruh antarvariabel harus menunjukkan
+         korelasi yang cukup kuat dan signifikan secara statistik.
+         Semakin tinggi korelasi, semakin besar kemungkinan
+         bahwa hubungan tersebut bersifat kausal.
+
+    3. Urutan Waktu (Time Sequence)
+         Variabel penyebab harus mendahului variabel akibat
+         dalam urutan waktu. Artinya, perubahan pada variabel
+
+252
+         bebas terjadi sebelum perubahan pada variabel terikat,
+         bukan sebaliknya.
+    4. Eliminasi Penjelasan Rival (Elimination of Rival
+         Explanations)
+         Semua faktor pengganggu (confounding variables) yang
+         dapat menjelaskan hubungan tersebut harus
+         dikendalikan. hal ini dapat dilakukan dengan
+         menambahkan variabel kontrol dalam model statistik,
+         membuat kelompok yang sebanding, menetapkan
+         batasan konteks penelitian, randomisasi, dan
+         menggunakan instrumen atau prosedur yang konsisten
+         agar hubungan yang diamati benar-benar mencerminkan
+         pengaruh dari variabel penyebab.
+
+Dalam menyimpulkan adanya hubungan kausal, perlu
+menggabungkan logika teori, bukti statistik, urutan waktu yang
+jelas, dan pengendalian variabel luar. Pendekatan ini membantu
+memastikan bahwa hasil penelitian tidak hanya menunjukkan
+korelasi, tetapi benar-benar mencerminkan mekanisme sebab-
+akibat yang dapat dipertanggungjawabkan secara ilmiah.
+Analisis asosiasi dapat digunakan dalam berbagai kasus
+perencanaan wilayah dan kota, di antaranya:
+
+    1. Memahami variabel kunci dalam suatu konteks.
+         Analisis asosiasi memungkinkan perencana untuk
+         mampu menyimpulkan hubungan suatu variabel dengan
+         variabel lainnya. Hubungan variabel ini akan
+         menunjukkan pola perubahan variabel oleh variabel
+         kunci yang mempengaruhinya. Contoh: faktor-faktor
+         yang mempengaruhi perilaku masyarakat membuang
+         sampah, faktor pengaruh partisipasi masyarakat terhadap
+
+                                                                               253
+         kegiatan musrembang dan sebagainya, dan variabel
+         kunci fenomena migrasi penduduk di Provinsi Lampung.
+    2. Melakukan prediksi. Analisis asosiasi dapat
+         digunakan untuk memperkirakan nilai suatu variabel
+         berdasarkan nilai variabel-variabel kuncinya sehingga
+         dapat menjadi dasar intervensi ataupun antisipasi
+         terhadap kondisi yang akan datang. Contoh: perubahan
+         luas lahan pertanian berdasarkan variabel jumlah
+         penduduk dan PDRB, nilai investasi daerah berdasarkan
+         variabel inflasi dan jumlah UMKM, dan ketinggian muka
+         genangan air laut berdasarkan variabel suhu harian rata-
+         rata dan kecepatan angin.
+    3. Melakukan eksperimen. Analisis asosiasi dapat
+         digunakan untuk melakukan penyelidikan lebih lanjut
+         terhadap suatu variabel dalam sistem yang terkontrol.
+         Hal ini juga dapat dilakukan sebagai dasar berbagai
+         penelitian lanjutan yang dapat memperkaya
+         pengetahuan. Contoh: hubungan antara jenis kelamin
+         dan pemilihan jenis transportasi publik, pengaruh tarif
+         PDAM terhadap tingkat pemakaian air rumah tangga,
+         dan pengaruh tingkat pendidikan terhadap ketahanan
+         masyarakat pesisir terhadap perubahan iklim.
+    4. Melakukan identifikasi variabel pengganti.
+         Analisis asosiasi dapat digunakan sebagai dasar untuk
+         memilih suatu variabel sebagai ganti dari variabel lain.
+         Contoh: apabila diketahui bahwa masyarakat
+         membutuhkan ruang untuk berkumpul, sementara lahan
+         yang tersedia sangat terbatas, apakah ada alternatif
+         pengganti ketersediaan ruang terbuka hijau (RTH) bagi
+         masyarakat?
+
+254
+11.2.2 Model
+Dalam konteks penelitian kuantitatif dan analisis data, model
+merupakan representasi sederhana dari kenyataan yang
+kompleks. Model juga digunakan untuk menjelaskan hubungan
+antarvariabel, memprediksi suatu kejadian, atau memahami
+mekanisme suatu fenomena. Dengan kata lain, model adalah
+bentuk penyederhanaan dari realitas yang memungkinkan
+peneliti melakukan analisis secara sistematis dan terukur.
+
+Model dapat bersifat konseptual, matematis, atau statistik:
+
+    · model konseptual menggambarkan hubungan logis
+         antarvariabel berdasarkan teori atau konsep yang
+         mendasari penelitian.
+
+    · model matematis menyatakan hubungan tersebut dalam
+         bentuk persamaan matematis.
+
+    · model statistik adalah model matematis yang
+         melibatkan unsur ketidakpastian dan data empiris,
+         misalnya model regresi.
+
+Salah satu bentuk model statistik yang paling umum digunakan
+dalam analisis data adalah model regresi linear. Model ini
+digunakan untuk menggambarkan hubungan antara satu atau
+lebih variabel bebas (independent variables) dengan satu
+variabel terikat (dependent variable).
+
+Model regresi linear berfungsi sebagai alat untuk memodelkan,
+menganalisis, dan memprediksi hubungan antara variabel-
+variabel yang diamati. Model ini dapat membantu memahami
+arah dan kekuatan pengaruh dari variabel independen terhadap
+variabel dependen, serta menilai sejauh mana model mampu
+menjelaskan variasi data yang terjadi di lapangan.
+
+                                                                               255
+11.2.3 Model Regresi Linear Sederhana
+
+Regresi linear sederhana merupakan salah satu bentuk model
+statistik yang digunakan untuk menjelaskan hubungan kausal
+antara dua variabel, yaitu variabel independen (X) dan
+variabel dependen (Y). Variabel dependen sering disebut
+juga sebagai outcome variable atau response variable, sedangkan
+variabel independen dikenal pula sebagai predictor variable atau
+explanatory variable.
+
+Menurut [5], analisis regresi linear memiliki beberapa fungsi
+utama dalam penelitian kuantitatif yang berkaitan dengan
+hubungan antarvariabel:
+
+    1. regresi linear berfungsi untuk menentukan keberadaan
+         hubungan kausal antara dua variabel atau lebih,
+         sehingga dapat diketahui apakah suatu variabel
+         independen benar-benar memengaruhi variabel
+         dependen
+
+    2. regresi linear memungkinkan peneliti untuk mengetahui
+         bentuk hubungan kausal tersebut secara matematis,
+         melalui persamaan regresi yang menggambarkan arah
+         dan kekuatan pengaruh antarvariabel
+
+    3. regresi linear juga berfungsi untuk mengetahui tingkat
+         keakuratan prediksi terhadap bentuk hubungan yang
+         telah ditemukan. Model regresi membantu mengukur
+         sejauh mana variabel independen mampu menjelaskan
+         variasi yang terjadi pada variabel dependen.
+
+    4. dalam kasus regresi multivariat, analisis ini digunakan
+         untuk mengetahui tingkat kepentingan relatif
+         antarvariabel independen berdasarkan besarnya
+         kontribusi masing-masing variabel terhadap perubahan
+
+256
+         nilai variabel dependen, yang akan dipelajari pada Bab
+         12.
+
+Model regresi pada pembahasan Bab 11 ini digunakan untuk
+mengetahui sejauh mana perubahan pada variabel X dapat
+memengaruhi perubahan pada variabel Y secara linier, atau
+dengan kata lain, apakah ada hubungan sebab-akibat yang
+bersifat proporsional di antara keduanya.
+
+Bentuk umum dari persamaan regresi linear sederhana dapat
+ditulis sebagai:
+
+                                =  +  + 
+
+dengan:
+
+Y = variabel dependen (nilai yang diprediksi),
+X = variabel independen (nilai yang menjelaskan),
+a = konstanta atau intercept, yaitu nilai Y saat X = 0,
+b = koefisien regresi atau slope, yaitu besar perubahan Y
+
+           untuk setiap satu satuan perubahan X,
+e = error term atau residual, yaitu selisih antara nilai Y
+
+           aktual dengan nilai Y hasil prediksi
+
+Sebelum dapat menggunakan model terdapat asumsi dasar
+yang perlu dipenuhi terlebih dahulu. Asumsi dasar dari regresi
+linear sederhana adalah bahwa hubungan antara variabel
+independen dan dependen bersifat linear dan kedua
+variabel memiliki tingkat pengukuran metrik (interval
+atau rasio). Artinya, setiap perubahan pada X diharapkan
+menghasilkan perubahan konstan pada Y.
+
+Selain hubungan linear, model juga mengasumsikan bahwa
+error term (e) berdistribusi acak dan tidak berkorelasi
+
+                                                                               257
+satu sama lain. Bila asumsi ini terpenuhi, model dapat
+dikatakan valid untuk mengukur dan menjelaskan hubungan
+kausal.
+
+Sebagai contoh, hubungan antara upah kerja (Y) dan waktu
+penyelesaian kerja (X) dinyatakan melalui persamaan garis
+linear berikut:
+
+                                 = 15 + 20
+
+Koefisien regresi (b) menunjukkan arah dan besaran pengaruh
+X terhadap Y. Nilai koefisien positif berarti bahwa peningkatan
+X akan meningkatkan Y, sedangkan nilai negatif menunjukkan
+hubungan yang berlawanan arah.
+
+Koefisien b = 20 menunjukkan bahwa setiap penambahan satu
+jam waktu kerja (X) akan meningkatkan upah kerja (Y) sebesar
+20 satuan. Terdapat pengaruh positif antara waktu kerja dan
+upah yang diterima.
+
+Konstanta atau intercept (a) menunjukkan nilai Y ketika X
+bernilai nol. Secara konseptual, nilai ini menggambarkan titik
+potong garis regresi terhadap sumbu Y. Namun demikian,
+interpretasi konstanta perlu memperhatikan konteks empiris,
+karena pada beberapa kasus nilai X=0 tidak realistis secara
+praktis. Sehingga, konstanta lebih tepat dipahami sebagai nilai
+dasar model pada kisaran data observasi yang digunakan.
+
+Konstanta a = 15 menunjukkan bahwa apabila tidak ada waktu
+kerja yang dihabiskan (X = 0), maka upah kerja tetap diberikan
+sebesar 15 satuan. Nilai konstanta ini menggambarkan besarnya
+upah dasar yang diterima tanpa mempertimbangkan lama
+waktu kerja.
+
+258
+Dari hasil tersebut dapat disimpulkan bahwa angka 20 dalam
+persamaan regresi mencerminkan pengaruh kausal antara
+variabel waktu penyelesaian kerja (X) dan upah kerja (Y).
+Artinya, perubahan pada waktu kerja akan secara langsung
+memengaruhi perubahan pada besarnya upah yang diterima.
+
+Secara konsep, persamaan regresi linear sederhana merupakan
+bentuk persamaan garis lurus yang menggambarkan hubungan
+antara dua variabel, yaitu variabel bebas (independen) yang
+dilambangkan dengan X, dan variabel terikat (dependen) yang
+dilambangkan dengan Y. Persamaan ini memetakan bagaimana
+perubahan nilai X akan diikuti oleh perubahan nilai Y.
+
+Karena regresi linear bersifat matematis dan menggunakan
+perhitungan berbasis angka, baik variabel dependen maupun
+independen pada analisis regresi linear harus berupa variabel
+metrik. Artinya, kedua variabel diukur dalam skala interval
+atau rasio, bukan dalam bentuk kategori.
+
+Merujuk pada contoh yang sama sebelumnya, hubungan antara
+waktu kerja (X) dan upah kerja (Y), dapat digambarkan
+persamaan garisnya sebagai berikut.
+
+Tabel 11.1. Waktu Kerja dalam Jam dan Upah Kerja dalam Dollar
+
+Waktu Kerja (X) Upah Kerja (Y)
+
+0  15
+
+1  35
+
+2  55
+
+3  75
+
+                                                               259
+                                     Y = 15 + 20X
+
+ Gambar 11-1. Grafik Persamaan Garis antara Waktu Kerja (X) dan Upah
+                                                  Kerja (Y)
+
+Dari tabel dan grafik di atas, terlihat bahwa setiap penambahan
+satu jam waktu kerja akan meningkatkan biaya kerja sebesar 20
+dollar, sesuai dengan nilai koefisien regresi b=20. Garis regresi
+ini menggambarkan pola hubungan linier yang stabil antara
+kedua variabel tersebut.
+11.2.3.1 Prediksi Nilai Variabel Dependen
+Salah satu fungsi utama model regresi linear sederhana adalah
+untuk memprediksi nilai Y berdasarkan nilai X yang diketahui.
+Setelah parameter a dan b diperoleh dari hasil analisis, nilai Y
+dapat dihitung langsung melalui persamaan regresi:
+
+                                  =  + 
+Simbol  menyatakan nilai Y hasil prediksi (predicted value).
+Misalnya, jika waktu kerja 5 jam, maka dengan persamaan  =
+15 + 20 , nilai prediksi upah kerja yaitu:
+
+                      = 15 + 20(5) = 115 
+Perlu diperhatikan bahwa ada penambahan nilai e pada model
+regresi, sehingga prediksi ini bersifat estimatif karena selalu ada
+
+260
+selisih antara nilai aktual dan nilai hasil perhitungan, yang
+direpresentasikan oleh komponen error (e).
+
+Untuk lebih memahami penerapan analisis regresi linear
+sederhana secara menyeluruh, berikut terdapat contoh lain
+dalam konteks Perencanaan Wilayah dan Kota yang dapat
+dicermati.
+
+Seorang mahasiswa bernama Ahmad ditugaskan untuk
+menganalisis kondisi sosial ekonomi masyarakat di kawasan
+pesisir Kota Bandar Lampung. Dalam penelitiannya, Ahmad
+ingin mengetahui apakah tingkat kegigihan kerja masyarakat
+berpengaruh terhadap kualitas ekonomi mereka.
+
+Sebagai representasi dari tingkat kegigihan kerja, Ahmad
+menggunakan jumlah jam kerja per minggu (X), sedangkan
+kualitas ekonomi diukur melalui penghasilan per bulan (Y)
+dalam ribuan rupiah. Data dikumpulkan dari 15 responden di
+kawasan tersebut.
+
+Tabel 11.2. Jam Kerja per Minggu dan Penghasilan per Bulan
+
+No Responden Jam Kerja per Minggu (X) Penghasilan per Bulan (Y)
+
+1   30  Rp. 787.540,-
+
+2   33  Rp.761.720,-
+
+3   35  Rp. 1.091.420,-
+
+4   37  Rp. 911.250,-
+
+5   39  Rp. 874.680,-
+
+6   41  Rp. 1.514.560,-
+
+7   43  Rp. 1.240.560,-
+
+8   45  Rp. 1.363.510,-
+
+9   48  Rp. 1.129.340,-
+
+10  50  Rp. 1.369.690,-
+
+11  52  Rp. 1.565.040,-
+
+12  54  Rp. 1.376.940,-
+
+13  56  Rp. 1.746.570,-
+
+14  58  Rp. 1.615.590,-
+
+15  60  Rp. 1.741.660,-
+
+                                                            261
+Tujuan analisis Ahmad adalah untuk mengetahui bentuk
+hubungan matematis antara dua variabel tersebut, serta
+seberapa besar pengaruh jam kerja terhadap
+penghasilan masyarakat pesisir.
+11.2.3.2 Mencari Persamaan Regresi Terbaik dengan Konsep
+
+             Least Square
+Setelah data terkumpul, Ahmad membuat diagram sebar
+(scatter plot) untuk melihat pola hubungan antara jam kerja dan
+penghasilan. Dari hasil visualisasi, terlihat adanya
+kecenderungan bahwa semakin tinggi jam kerja per minggu,
+semakin besar pula penghasilan per bulan. Hal ini menunjukkan
+indikasi adanya hubungan positif dan linear antara kedua
+variabel.
+
+     Gambar 11-2. Grafik Sebaran Titik Garis antara Jam Kerja (X) dan
+                                             Penghasilan (Y)
+
+Untuk memperoleh model matematis hubungan tersebut,
+Ahmad menggunakan metode kuadrat terkecil (least square
+method). Metode ini bertujuan mencari garis regresi terbaik
+yakni garis yang menghasilkan jumlah kuadrat selisih (sum of
+squared error) paling kecil antara nilai pengamatan (Y) dan nilai
+
+262
+hasil prediksi (). Pendekatan ini memastikan bahwa model
+regresi menggambarkan pola hubungan seakurat mungkin
+berdasarkan data yang ada.
+
+       Gambar 11-3. Grafik Persamaan Garis antara Jam Kerja (X) dan
+                                             Penghasilan (Y)
+
+               Jumlah kuadrat selisih-selisihnya
+  Gambar 11-4. Perhitungan Jumlah Kuadrat Selisih dari Tiga Persamaan
+
+                    Garis antara Jam Kerja (X) dan Penghasilan (Y)
+
+Berdasarkan perhitungan jumlah kuadrat selisih dari ketiga opsi
+persamaan garis yang ada maka dipilih satu yang memiliki nilai
+
+                                                                               263
+terkecil (error paling kecil) yaitu persamaan garis pertama
+sebagai persamaan garis regresi terbaik yang akan digunakan.
+11.2.3.3 Konsep Penentuan Koefisien (b) dan Konstanta (a)
+Proses penentuan a dan b ini disebut estimasi parameter, karena
+dilakukan berdasarkan data sampel. Hasil estimasi ini nantinya
+digunakan untuk membentuk persamaan regresi yang dapat
+memprediksi nilai variabel dependen (Y) dari variabel
+independen (X). Sesuai data sebelumnya maka dapat nilai a dan
+b dapat dihitung dengan uraian sebagai berikut.
+b (koefisien/kelerengan garis)
+
+a (konstanta)
+
+11.2.3.4 Persamaan Regresi yang Dihasilkan
+Dari hasil analisis, Ahmad memperoleh persamaan regresi
+sebagai berikut:
+
+                           Y=-138,64+31,086X
+Persamaan tersebut menunjukkan bahwa setiap penambahan 1
+jam kerja per minggu akan meningkatkan penghasilan sebesar
+Rp31.086. Sementara nilai konstanta (-138,64) berarti bahwa
+apabila seseorang tidak bekerja sama sekali (X = 0), maka
+penghasilannya akan bernilai negatif sebesar Rp138.640, yang
+bisa dimaknai sebagai kondisi defisit atau pengeluaran tanpa
+pendapatan.
+
+264
+11.2.3.5 Uji Kualitas Model Regresi
+Sebagaimana dijelaskan sebelumnya, model regresi merupakan
+hasil estimasi dari data sampel. Perlu dilakukan uji kualitas
+model untuk memastikan apakah persamaan yang diperoleh
+cukup akurat dan dapat digunakan untuk memprediksi nilai
+variabel dependen di populasi.
+1) Standar Error Estimasi (SSE)
+Melihat perbandingan antara nilai aktual (observed Y) dan nilai
+hasil prediksi (predicted Y atau ) untuk mengetahui selisih
+antara keduanya disebut error (). Semakin kecil nilai error,
+semakin baik model regresi menggambarkan hubungan antara
+kedua variabel.
+
+Sesuai kasus di atas dapat dihitung nilai standard error sebagai
+berikut.
+
+                                                                               265
+Didapatkan hasil yaitu 164,44 yang berarti bahwa simpangan
+hasil regresi adalah Rp. 164.440,- atau model regresi yang
+dibangun memiliki rata-rata kesalahan prediksi sebesar Rp
+164.440,-.
+2) Koefisien Determinasi (R²)
+Salah satu ukuran utama kualitas model adalah koefisien
+determinasi (R²). Nilai ini menunjukkan seberapa besar proporsi
+variasi variabel dependen (Y) yang dapat dijelaskan oleh
+variabel independen (X).
+
+Sesuai kasus di atas dapat dihitung koefisien determinasi sebagai
+berikut.
+
+266
+Nilai R² = 0,776 atau 77,6%, yang berarti bahwa 77,6% variasi
+penghasilan masyarakat pesisir dapat dijelaskan oleh lama jam
+kerja per minggu. Sementara 22,4% sisanya dipengaruhi oleh
+faktor lain yang tidak dimasukkan ke dalam model, seperti
+keterampilan, tingkat pendidikan, maupun kondisi ekonomi
+keluarga.
+
+Nilai R² yang tinggi menunjukkan bahwa model memiliki
+kemampuan prediksi yang baik, sehingga hubungan
+antarvariabel yang ditemukan tidak bersifat kebetulan.
+
+3) Uji Signifikansi Model (Uji F)
+Untuk memastikan bahwa hubungan antara X dan Y bersifat
+nyata secara statistik, dilakukan uji F (Analysis of
+Variance/ANOVA). Uji ini menguji hipotesis nol (H) yang
+menyatakan bahwa tidak ada hubungan linear antara X dan Y.
+
+Gambar 11-5. Uji Signifikansi Model
+
+                                     267
+Sesuai kasus di atas nilai F hitung menunjukkan p-value sebesar
+1,41 × 10, karena p-value < 0,05, maka H ditolak. Artinya,
+model regresi yang diperoleh signifikan secara statistik. Sehingga,
+lama jam kerja memang berpengaruh terhadap besar
+penghasilan per bulan.
+4) Uji Signifikansi Parsial (Uji t)
+Selain uji F yang menilai model secara keseluruhan, dilakukan
+pula uji t untuk melihat kontribusi masing-masing variabel
+independen. Sesuai kasus di atas, hanya ada satu variabel X
+(jam kerja), maka uji t digunakan untuk mengonfirmasi apakah
+variabel ini memang signifikan secara individual.
+
+                               Tabel 11.3. Uji Signifikansi Parsial
+
+Hasil uji menunjukkan nilai p-value < 0,05, yang berarti variabel
+jam kerja berpengaruh signifikan terhadap penghasilan.
+Sehingga, variabel ini layak dipertahankan dalam model, karena
+memberikan kontribusi nyata terhadap variasi nilai Y.
+5) Interpretasi Hasil Analisis
+Dari seluruh hasil pengujian, dapat disimpulkan bahwa ada
+hubungan signifikan antara jam kerja dan penghasilan
+masyarakat pesisir. Hubungan tersebut bersifat positif, artinya
+peningkatan jam kerja berbanding lurus dengan peningkatan
+penghasilan.
+Persamaan regresi yang dihasilkan:
+
+                         = - 138,64 + 31,086
+
+268
+menunjukkan bahwa setiap tambahan satu jam kerja per minggu
+meningkatkan penghasilan sebesar Rp. 31.086,-.
+
+Model regresi ini menjelaskan 77,6% variasi penghasilan, dan
+signifikan secara statistik baik secara simultan (uji F) maupun
+parsial (uji t). Dengan tingkat simpangan sebesar Rp. 164.440,-
+model ini dapat dianggap cukup akurat untuk digunakan dalam
+prediksi ekonomi masyarakat pesisir.
+
+11.3 Studi Kasus
+
+Sebagai lanjutan dari analisis pada Bab 10 mengenai hubungan
+asosiasi menggunakan korelasi Pearson, pada bagian ini
+dilakukan langkah lebih jauh untuk menguji hubungan
+kausalitas antara dua variabel.
+
+Jika pada korelasi Pearson hubungan yang diidentifikasi hanya
+bersifat keterkaitan, maka melalui analisis regresi linear
+sederhana dapat diketahui arah dan besarnya pengaruh sebab-
+akibat antara kedua variabel tersebut.
+
+Dalam studi kasus ini, akan dianalisis pengaruh jarak
+terhadap pengeluaran per minggu. Asumsi dasarnya adalah
+bahwa semakin jauh jarak yang ditempuh seseorang, maka
+semakin besar pula pengeluaran yang dikeluarkan setiap minggu,
+misalnya untuk biaya transportasi atau konsumsi.
+
+Data yang digunakan diperoleh dari 12 responden, dengan
+variabel jarak (X) sebagai variabel independen dan pengeluaran
+per minggu (Y) sebagai variabel dependen.
+
+Tabel 11.4 Data Responden untuk Analisis Regresi Linear Sederhana
+
+Responden Jarak (km)  Pengeluaran per
+
+                      minggu (ribu rupiah)
+
+1  2                  50
+
+                                            269
+         Responden Jarak (km)          Pengeluaran per
+                                    minggu (ribu rupiah)
+         2             5
+                                                  80
+         3             3                          60
+                                                 150
+         4             10                        120
+                                                  40
+         5             8                         200
+                                                 170
+         6             1                         100
+                                                  70
+         7             15                        130
+                                                  90
+         8             12
+
+         9             7
+
+         10            4
+
+         11            9
+
+         12            6
+
+11.3.1 Model Regresi Sederhana
+
+Pada perumusan persamaan regresi untuk kasus ini dilakukan
+perhitungan koefisien (b) dan konstanta (a) sebagai komponen
+penyusun persamaan garis pada model regeresinya.
+
+         Tabel 11.5 Perhitungan Koefisien dan Konstanta
+
+Resp.    X   Y            (  -   )  (  -  )  (  -   ) (  -   )
+
+     1   2   50             -4,83   -55,00   265,83
+                            -1,83   -25,00    45,83
+     2   5   80             -3,83   -45,00   172,50
+                            3,17    45,00    142,50
+     3   3   60             1,17    15,00     17,50
+                            -5,83   -65,00   379,17
+     4   10  150            8,17    95,00    775,83
+                            5,17    65,00    335,83
+     5   8   120            0,17    -5,00     -0,83
+                            -2,83   -35,00    99,17
+     6   1   40             2,17    25,00     54,17
+                            -0,83   -15,00    12,50
+     7   15  200           193,67            2300,00
+
+     8   12  170
+
+     9   7   100
+
+     10  4   70
+
+     11  9   130
+
+     12  6   90
+
+Rata-rata 6,83 105,00
+
+270
+Resp.  X  Y  (  -  )             (  -   )  (  -  ) (  -  )
+
+                                 b                   11,88
+
+                                 a                   23,85
+
+Setelah dilakukan perhitungan menggunakan rumus yang telah
+dijelaskan sebelumnya, diperoleh nilai koefisien regresi (b)
+sebesar 11,8 dan konstanta (a) sebesar 23,85. Sehingga, model
+regresi linear sederhana yang terbentuk dapat dituliskan sebagai:
+
+                             Y = 23,85 + 11,8X
+
+Model tersebut menunjukkan bahwa terdapat hubungan positif
+antara variabel jarak (X) dan pengeluaran per minggu (Y).
+Artinya, setiap penambahan jarak 1 satuan akan diikuti oleh
+kenaikan pengeluaran sebesar 11,8 satuan.
+
+Sementara itu, nilai konstanta 23,85 mengindikasikan bahwa
+ketika jarak bernilai nol, dalam konteks ini berarti tidak ada
+jarak yang ditempuh, maka pengeluaran dasar yang tetap
+dikeluarkan adalah sebesar Rp. 23.850,- dalam satu minggu.
+
+11.3.2 Uji Kualitas Regresi Sederhana
+
+Dari model regresi sederhana yang terbentuk akan dilakukan uji
+kualitas yaitu menghitung koefisien determinasi, uji F dan uji t.
+
+11.3.2.1 Koefisien Determinasi (R2)
+Nilai R2 menunjukkan seberapa besar proporsi variasi variabel
+pengeluaran per minggu (Y) yang dapat dijelaskan oleh variabel
+jarak (X).
+
+       Tabel 11.6 Perhitungan Koefisien Determinasi
+
+          Regression Statistics
+
+          Multiple R             0,9966
+
+                                                            271
+       R Square                0,9933
+       Adjusted R Square       0,9926
+       Standard Error          6,897
+       Observations            12
+
+Nilai R2 sebesar 0,9933 berarti bahwa 99,3% variasi pengeluaran
+per minggu dapat dijelaskan oleh jarak tempuh, sedangkan
+sisanya 0,7% dipengaruhi oleh faktor lain di luar model, seperti
+perbedaan pendapatan, gaya hidup, atau efisiensi transportasi.
+Sedangkan, nilai Multiple R sebesar 0,9966, yang menunjukkan
+adanya hubungan positif yang sangat kuat antara kedua variabel
+tersebut.
+
+Selanjutnya, nilai Adjusted R Square sebesar 0,9926 menegaskan
+bahwa hasil model tetap konsisten meskipun disesuaikan dengan
+jumlah sampel yang digunakan (n = 12). Terakhir, Standard
+Error sebesar 6,897 menunjukkan rata-rata simpangan prediksi
+pengeluaran dari nilai sebenarnya sekitar Rp. 6.900,- merupakan
+nilai yang kecil, menandakan model ini sangat akurat dalam
+melakukan estimasi.
+
+11.3.2.2 Uji Signifikansi Persamaan (F)
+
+Uji F dilakukan untuk memastikan hubungan antara variabel
+jarak (X) dan variabel pengeluaran per minggu (Y) bersifat
+nyata secara statistik.
+
+       Tabel 11.7 Uji Signifikasi Persamaan
+
+       df SS         MS     F                Significance F
+
+Regression 1 1.476.099 1.476.099 1476,279 0,000
+
+                                             (3,40E-12)
+
+Residual 10 9.993    999,3
+
+Total  11 1.486.092
+
+272
+Dari hasil perhitungan diperoleh F hitung = 1476,279 dan
+Significance F = 0,000 (p < 0,05). Nilai F hitung yang sangat
+tinggi dan p-value yang jauh di bawah 0,05 menandakan bahwa
+model regresi yang dibangun secara keseluruhan signifikan.
+Dengan kata lain, variabel jarak berpengaruh nyata terhadap
+pengeluaran per minggu.
+
+Dalam konteks studi kasus, hasil ini menguatkan dugaan bahwa
+semakin jauh jarak yang ditempuh seseorang dalam beraktivitas,
+semakin besar pula pengeluaran mingguannya, baik karena
+meningkatnya biaya transportasi, konsumsi energi, maupun
+kebutuhan penunjang lainnya.
+
+11.3.2.3 Uji Signifikansi Parsial (t)
+Uji t dilakukan untuk melihat kontribusi variabel independen
+yang dalam kasus ini yaitu variabel jarak (X).
+
+                    Tabel 11.8 Uji Signifikasi Parsial
+
+Variable   Coefficients Standard t Stat P-              Lower   Upper
+                                                        95%     95%
+Intercept  (B)      Error  value                        18,388  29,306
+Jarak                                                   11,187  12,565
+(km)       23,8468  2,450  9,733 0,000
+
+           11,8761  0,309  38,422 0,000
+
+Konstanta (a) = 23,8468, menunjukkan bahwa ketika jarak
+bernilai nol, pengeluaran dasar seseorang tetap ada, yaitu
+sekitar Rp 23.846 per minggu. Nilai ini dapat diartikan sebagai
+biaya minimum yang dikeluarkan walaupun seseorang tidak
+melakukan perjalanan (misalnya untuk kebutuhan rutin di
+rumah).
+
+Koefisien Jarak (b) = 11,8761, menunjukkan bahwa setiap
+kenaikan jarak 1 km akan meningkatkan pengeluaran mingguan
+rata-rata sebesar Rp 11.876,-. Nilai koefisien ini bermakna
+
+                                                                273
+positif dan signifikan (p < 0,05), artinya jarak memiliki
+pengaruh langsung terhadap meningkatnya pengeluaran.
+
+Nilai t hitung sebesar 38,422 dengan p-value 0,000 menunjukkan
+bahwa variabel jarak secara parsial memberikan pengaruh yang
+sangat signifikan terhadap pengeluaran per minggu. Hal ini
+memperkuat kesimpulan bahwa jarak merupakan faktor penentu
+utama dalam variasi pengeluaran mingguan responden.
+
+11.3.3 Interpretasi Hasil Regresi Sederhana
+Berdasarkan hasil regresi linear sederhana yang diperoleh, dapat
+disimpulkan bahwa terdapat hubungan kausal yang kuat
+dan signifikan antara jarak tempuh dan pengeluaran per
+minggu.
+
+Model regresi yang terbentuk adalah:
+
+                           = 23,85 + 11,88
+
+Dapat diartikan bahwa setiap tambahan 1 km jarak tempuh
+akan menambah pengeluaran mingguan sebesar Rp. 11.880,-.
+Sementara pengeluaran minimum saat jarak nol adalah sekitar
+Rp. 23.850,-.
+
+Dengan nilai R² sebesar 0,993, model ini sangat baik digunakan
+untuk memperkirakan pengeluaran mingguan berdasarkan jarak,
+serta menunjukkan bahwa jarak berperan penting dalam
+perilaku ekonomi masyarakat, khususnya dalam konteks
+perencanaan kota dan transportasi perkotaan.
+
+Selain itu, model tersebut dapat digunakan untuk memprediksi
+besar pengeluaran per minggu (Y) berdasarkan jarak (X) yang
+ditempuh oleh seseorang. Sebagai contoh, apabila diketahui
+
+274
+jarak yang ditempuh seseorang adalah 10 km, maka besarnya
+pengeluaran mingguannya dapat diperkirakan sebagai berikut.
+
+        = 23,85 + 11,88(10) = 23,85 + 118,8 = 142,65
+
+Sehingga didapat, pengeluaran mingguan diprediksi sebesar Rp
+142.650,-. Artinya, apabila seseorang menempuh jarak 10 km
+dalam aktivitas rutinnya, maka berdasarkan model regresi, ia
+diperkirakan akan mengeluarkan biaya sekitar Rp. 142.650,- per
+minggu. Nilai ini menggambarkan besarnya pengeluaran yang
+dapat diperkirakan dari pola hubungan linear antara jarak dan
+pengeluaran dimana semakin jauh jarak yang ditempuh,
+semakin besar pula pengeluaran yang diperlukan.
+
+Terakhir, relevansinya dengan bidang Perencanaan Wilayah dan
+Kota, khususnya dalam perencanaan transportasi dan tata
+ruang perkotaan. Peningkatan jarak perjalanan yang
+berbanding lurus dengan peningkatan pengeluaran menegaskan
+pentingnya konsep kota kompak (compact city) dan
+pengembangan tata guna lahan campuran (mixed-use
+development) untuk mengurangi jarak tempuh harian penduduk.
+
+Hasil analisis regresi menjadi dasar bagi perencana kota untuk
+mendorong penyediaan transportasi publik yang efisien dan
+terjangkau, serta pengaturan zonasi permukiman agar lebih
+dekat dengan pusat aktivitas ekonomi dan pelayanan. Model
+regresi ini tidak hanya menjelaskan hubungan kausal antara
+jarak dan pengeluaran, tetapi juga memberikan dasar empiris
+bagi kebijakan mobilitas berkelanjutan dan efisiensi spasial
+dalam perencanaan kota.
+
+                                                                               275
+11.4 Soal Evaluasi
+
+     1. Berikan tanda centang pada kotak yang sesuai dengan
+
+     masing-masing pernyataan STP-12.1
+
+              Pernyataan                Korelasi Kausalitas
+
+     Daerah dengan banyak ruang
+
+     hijau biasanya memiliki suhu
+
+     udara lebih rendah.
+
+     Peningkatan harga bahan bakar
+
+     menyebabkan masyarakat lebih
+
+     banyak menggunakan
+
+     transportasi umum.
+
+     Wilayah dengan tingkat
+
+     pendidikan tinggi cenderung
+
+     memiliki angka kemiskinan
+
+     rendah.
+
+     Semakin tinggi curah hujan,
+
+     semakin sering terjadi banjir.
+
+     Peningkatan jumlah kendaraan
+
+     menyebabkan peningkatan
+
+     polusi udara.
+
+     Kota dengan pendapatan tinggi
+
+     cenderung memiliki indeks
+
+     kebahagiaan yang tinggi.
+
+     Kota besar memiliki tingkat
+
+     kemacetan yang tinggi.
+
+     Kurangnya sistem drainase
+
+     menyebabkan genangan air di
+
+     jalan.
+
+     Penggundulan hutan
+
+     menyebabkan meningkatnya
+
+     risiko longsor.
+
+276
+                  Pernyataan  Korelasi Kausalitas
+
+Kegiatan industri yang tidak
+terkendali menyebabkan
+pencemaran sungai.
+
+2. Setelah dianalisis menggunakan regresi linear, berikut
+    adalah persamaan yang menunjukkan hubungan kausal
+    variabel kepadatan penduduk (X) dengan variabel luas
+    ruang terbuka hijau (Y):
+
+Y = 120 - 0,5X
+
+Persamaan tersebut menunjukkan bahwa kepadatan
+penduduk (X) memengaruhi luas ruang terbuka hijau
+(Y).
+Uraikan hubungan antara variabel Y dengan X
+berdasarkan persamaan tersebut!
+
+                              277
+Bab 12
+Analisis Statistik Asosiasi Multivariat

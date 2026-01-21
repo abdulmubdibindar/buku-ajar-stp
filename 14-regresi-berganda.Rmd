@@ -1,0 +1,25 @@
+# Regresi Linear Berganda
+
+## Konsep Dasar
+
+Regresi linear berganda melibatkan **lebih dari satu** variabel independen untuk memprediksi variabel dependen.
+$$ Y = a + b_1X_1 + b_2X_2 + \dots + \epsilon $$
+
+## Studi Kasus dengan R
+
+Memprediksi **Harga Rumah** berdasarkan **Luas Tanah** dan **Jumlah Kamar**.
+
+```{r, echo=TRUE}
+harga <- c(500, 700, 600, 800, 900)
+luas <- c(100, 150, 120, 160, 200)
+kamar <- c(2, 3, 2, 4, 5)
+
+# Model Regresi Berganda
+model_berganda <- lm(harga ~ luas + kamar)
+summary(model_berganda)
+```
+
+## Soal Evaluasi
+
+1.  Apa itu multikolinearitas dalam regresi berganda? (STP-12.1)
+2.  Bagaimana cara menginterpretasikan Adjusted $R^2$? (STP-12.2)

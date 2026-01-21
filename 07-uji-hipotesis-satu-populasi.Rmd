@@ -1,0 +1,44 @@
+# Uji Hipotesis Satu Populasi
+
+## Konsep Dasar
+
+Uji hipotesis adalah prosedur statistik yang menggunakan data sampel untuk mengevaluasi suatu dugaan (hipotesis) mengenai populasi.
+
+### Hipotesis Nol dan Alternatif
+
+*   **Hipotesis Nol ($H_0$)**: Pernyataan tentang status quo, tidak ada perbedaan, atau tidak ada efek. Biasanya mengandung tanda sama dengan ($=, \le, \ge$).
+*   **Hipotesis Alternatif ($H_1$)**: Pernyataan yang bertentangan dengan $H_0$, biasanya merupakan dugaan yang ingin dibuktikan oleh peneliti. Mengandung tanda ketidaksamaan ($\ne, <, >$).
+
+### Langkah-langkah Pengujian Hipotesis
+
+1.  **Rumuskan Hipotesis ($H_0$ dan $H_1$)**.
+2.  **Tentukan Tingkat Signifikansi ($\alpha$)**. Biasanya 0.05.
+3.  **Pilih Statistik Uji**. (Z-test jika $\sigma$ diketahui atau $n > 30$, t-test jika $\sigma$ tidak diketahui dan $n < 30$).
+4.  **Hitung Statistik Hitung dan P-value**.
+5.  **Ambil Keputusan**. Tolak $H_0$ jika P-value $< \alpha$.
+6.  **Tarik Kesimpulan**.
+
+## Studi Kasus dengan R
+
+Seorang perencana kota menduga bahwa rata-rata waktu tempuh warga ke tempat kerja adalah **lebih dari 45 menit**. Dari survei terhadap 35 warga, diperoleh rata-rata 48 menit dengan simpangan baku 10 menit. Ujilah hipotesis tersebut dengan $\alpha = 0.05$.
+
+Hipotesis:
+*   $H_0: \mu \le 45$ (Rata-rata tidak lebih dari 45 menit)
+*   $H_1: \mu > 45$ (Rata-rata lebih dari 45 menit)
+
+```{r, echo=TRUE}
+# Data Sampel (Simulasi)
+set.seed(123)
+waktu_tempuh <- rnorm(35, mean = 48, sd = 10)
+
+# Uji T Satu Sampel
+t.test(waktu_tempuh, mu = 45, alternative = "greater")
+```
+
+**Interpretasi**:
+Jika p-value < 0.05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
+
+## Soal Evaluasi
+
+1.  Jelaskan perbedaan antara Hipotesis Nol dan Hipotesis Alternatif. (STP-6.1)
+2.  Apa makna P-value dalam pengambilan keputusan uji hipotesis? (STP-6.2)

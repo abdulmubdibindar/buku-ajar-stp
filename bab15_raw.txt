@@ -1,0 +1,643 @@
+Bab 13
+Analisis Statistik Asosiasi Multivariat
+Interdependensi: Analisis Komponen
+Prinsip dan Analisis Faktor
+
+13.1 Capaian Pembelajaran
+Setelah mempelajari bab ini, Anda diharapkan:
+
+    1. Mampu menjelaskan kegunaan dan asumsi pendahuluan
+         untuk melakukan analisis komponen prinsip dan analisis
+         faktor STP-14.1
+
+    2. Mampu menginterpretasikan hasil analisis komponen
+         prinsip/analisis faktor dengan benar STP-14.2
+
+13.2 Konsep Dasar dan Studi Kasus
+Analisis komponen prinsip (principal component analysis,
+PCA) dan Analisis Faktor (common factor analysis)
+
+  Catatan 13-1
+  Istilah "variabel" memiliki sebutan lain yakni dimensi
+  (dimension). Ini merujuk pada visualisasi data yang
+  dilakukan dengan sumbu-sumbu X, Y, dan Z. Sumbu-sumbu
+  tersebut tidak lain adalah variabel kita. Jumlah sumbu
+  menandakan jumlah dimensinya juga: 2 dimensi berarti
+  mengandung 2 variabel, 3 dimensi berarti mengandung 3
+  variabel.
+
+                                                                               301
+adalah metode analisis statistik multivariat lain yang berguna
+untuk mengurangi jumlah variabel yang dianalisis
+dengan meringkasnya.
+Analisis komponen prinsip dan analisis faktor termasuk ke
+dalam analisis multivariat juga, seperti halnya analisis Regresi.
+Akan tetapi, sebagaimana gambar serupa yang pernah
+ditampilkan di Bab 12 sebelumnya, pada Gambar 13-1
+menunjukan posisi PCA dan CFA. Posisinya terletak pada jenis
+hubungan yang interdependen.
+
+        Gambar 13-1. Kedudukan Analisis Komponen Prinsip (Principal
+                                         Component Analysis)
+
+Yang dimaksud dengan "hubungan interdependen" adalah
+seluruh variabel saling bergantung satu sama lain, ini
+bermakna bahwa setiap variabel setara hubungannya sehingga
+tidak ada hubungan pengaruh (memengaruhi-dipengaruhi)
+seperti halnya yang ada dalam analisis regresi linear berganda.
+13.2.1 Kegunaan PCA dan Analisis Faktor
+PCA dan analisis faktor sama-sama memliki kegunaan untuk
+mengurangi jumlah variabel dari analisis kita. Seperti yang
+
+302
+sudah disampaikan, pengurangan ini dilakukan bukan dengan
+menghilangkan sebagian variabel, melainkan dengan
+merangkumnya menjadi variabel baru yang disebut dimensi.
+
+PCA dan Analisis Faktor memiliki perbedaan mendasar dalam
+memaknai hasil analisis masing-masing:
+
+    1. PCA mengurangi variabel-variabel (data reduction)
+         yang dianalisis dengan mengelompokkan variabel-
+         variabel yang mirip menjadi satu variat yang
+         merupakan penjumlahan nilai setiap variabel yang mirip
+         tersebut
+
+    2. Analisis faktor meringkas variabel-variabel (data
+         summarization) yang dianalisis dengan
+
+Kasus: Kegunaan PCA dan Analisis Faktor
+
+Sebuah penelitian mengidentifikasi struktur di balik variabel-
+variabel yang memengaruhi penduduk Kota Bandung memilih
+cara mengakses lokasi Car-Free Day [13]. Terdapat 12 variabel
+yang diukur: (1) total biaya perjalanan, (2) biaya parkir, (3)
+durasi perjalanan, (4) jumlah rombongan dalam perjalanan,
+(5) jumlah lajur jalan terbanyak yang dilalui, (6) usia pelaku
+perjalanan, (7) jumlah sepeda motor, (8) jumlah mobil, (9)
+jumlah sepeda, (10) jumlah orang dewasa dalam rumah
+tangganya, (11) jumlah anak-anak dalam rumah tangganya,
+dan (12) jarak tempuh dari rumah ke lokasi CFD. Ke-12
+variabel ini diberi singkatan dalam pengerjaannya, seperti
+berikut: (1) ongkos, (2) bparkir, (3) durasi, (4) bareng, (5)
+toplajur, (6) usia, (7) jmlmotor, (8) jmlmobil, (9) jmlsepeda,
+(10) jmldewasa, (11) jmlanak, dan (12) jarak.
+
+                                                                               303
+Jika di akhir kita hanya ingin membuat pengelompokan
+variabel, maka kita cukup menggunakan analisis faktor.
+Lain halnya jika kita membutuhkan variat yang merupakan
+penjumlahan nilai-nilai variabel. Contoh variat misalnya
+adalah sebagai berikut:
+
+                total_biaya = 1  + 2 
+                 impedansi = 3  + 4 
+
+Pengelompokan keempat variabel menjadi 2 variat serta nilai-
+nilai 1, 2, 3, dan 4, dihasilkan secara bersama-sama
+sebagai keluaran dari PCA.
+
+         mengelompokkan variabel-variabel yang mirip saja
+         tanpa mengubahnya menjadi variabel lain/variat
+
+13.2.2 Asumsi Dasar dalam Melakukan PCA/Analisis
+           Faktor
+
+Terdapat dua jenis asumsi dasar sebelum melakukan
+PCA/Analisis Faktor terhadap data kita. Yang pertama adalah
+asumsi konseptual, sedangkan yang kedua asumsi
+statistikal.
+
+Asumsi konseptual berbicara tentang kemasukakalan
+pengelompokan variabel-variabel yang dilibatkan. Kita
+harus memiliki justifikasi yang kuat secara konseptual bahwa di
+antara variabel-variabel yang kita analisis ada kelompok-
+kelompok yang bisa dibentuk.
+
+Asumsi kedua berbicara tentang kemungkinan dilakukannya
+analisis komponen prinsip dari sudut pandang ukuran
+statistik. Ada beberapa hal yang perlu kita perhatikan
+mengenai asumsi statistik:
+
+304
+Kasus: Asumsi konseptual
+
+Dalam kasus sebelumnya, kita dapat mengelompokkan secara
+akal sehat beberapa variabel yang terlibat di dalam analisis
+kita. Contohnya adalah "total biaya perjalanan" dengan "biaya
+parkir" kita kelompokkan sebagai "elemen biaya", atau
+"jumlah orang dewasa" dengan "jumlah anak-anak" menjadi
+"elemen rumah tangga", dan seterusnya.
+
+  1. Baik PCA maupun Analisis Faktor menggunakan basis
+       nilai koefisien korelasi Pearson r sebagai
+       pengelompokan. Oleh karena itu, variabel-variabel yang
+       bisa kita analisis dengan PCA adalah variabel metrik
+       (interval/rasio)
+
+  2. Idealnya, setiap variabel metrik dalam variabel-variabel
+       yang dianalisis berdistribusi normal
+
+  3. Terdapat hubungan linear antarvariabel yang
+       ditunjukkan oleh pola diagram pencar antarvariabel
+       yang disebut juga asumsi linearitas.
+
+Kasus: Asumsi statistikal
+
+Dilihat dari tingkat pengukurannya, seluruh variabel yang akan kita
+analisis adalah variabel metrik, karena ukuran semua variabel
+adalah angka yang bermakna, serta memiliki posisi nol yang absolut
+dan masuk akal.
+
+Akan tetapi, secara ukuran kenormalan distribusi dan linearitas,
+dataset ini tidak memenuhi asumsi tersebut. Ini dapat dilihat dari
+hasil analisis grafis dan koefisien korelasi r-Pearsonnya seperti pada
+Gambar 13-2.
+
+Pada Gambar 13-2 tersebut diagonal bawah berisi diagram pencar
+untuk tiap pasangan variabel yang kita analisis. Diagonal berisi
+
+                                                                             305
+  density plot, bentuk lain dari histogram yang menyajikan distribusi nilai
+
+  variabel. Terakhir, diagonal atas menampilkan nilai korelasi Pearson's r.
+
+                                       Gambar 13-2. Diagram Pencar Antarvariabel
+
+  Kita bisa melihat bahwa tidak ada pola linear untuk setiap pasangan
+  variabel. Pola distribusi normal juga tidak terlihat di setiap variabel
+  kecuali variabel toplajur.
+  Oleh karena itu, sebenarnya kita tidak bisa melanjutkan
+  PCA/analisis faktor pada dataset ini karena tidak terpenuhinya
+  asumsi normalitas dan linearitas. Akan tetapi, untuk tujuan
+  pembelajaran kita akan tetap melakukannya dan membahas hasilnya.
+
+13.2.3 Langkah dalam Melakukan PCA/Analisis
+           Faktor
+
+Setelah kita mengecek asumsi-asumsi, kita melakukan langkah-
+langkah berikut dalam melakukan analisis komponen prinsip.
+Secara umum langkah-langkah yang kita perlu lakukan di
+
+306
+antaranya:
+
+1. mempersiapkan data,
+2. mengekstrak dimensi baru, melakukan rotasi, dan
+3. interpretasi dimensi
+
+Secara teknis, langkah-langkah ini kita lakukan dengan
+bantuan program komputer, bukan dengan hitungan
+manual seperti materi-materi sebelumnya.
+
+13.2.4 Mempersiapkan Data
+
+Di langkah ini kita melakukan uji kelayakan data untuk
+memastikan data kita memiliki interkorelasi yang memadai,
+artinya terdapat korelasi yang cukup kuat satu sama lain
+antarvariabel yang kita analisis. Pemenuhan kriteria ini dilihat
+dari 2 indikator: (1) Uji Bartlett of Sphericity dan (2) Measure
+of Sampling Adequacy.
+
+Tabel 13.1. Kriteria Interkorelasi yang Memadai dalam Persiapan Data
+
+No          Indikator  Kriteria interkorelasi memadai
+
+1 Uji Bartlett of Sphericity Nilai p (p-value) pengujian <
+
+                       0,05 yang berarti signifikan
+
+Kasus: Uji kelayakan dalam persiapan data
+
+Berdasarkan pengujian kedua indikator menggunakan R, nilai p
+pengujian Bartlett of Sphericity menunjukkan 2.28095e-76. Nilai
+MSA/nilai uji KMO keseluruhan menunjukkan 0,63.
+
+Ini berarti uji Bartlett of Sphericity menunjukkan hasil yang
+signifikan karena bernilai <0,05 serta untuk MSA nilai uji KMO
+berada lebih dari 0,5. Secara uji kelayakan data, maka data kita
+dikatakan layak.
+
+                                                            307
+No      Indikator                Kriteria interkorelasi memadai
+                                 Nilai tes KMO keseluruhan
+     2 Measure of Sampling       dan per variabel melebihi 0,5
+
+        Adequacy (MSA), dilihat
+
+        dari nilai tes Kaiser-
+
+        Meyer-Olkin (KMO)
+
+Selanjutnya kita perlu memeriksa MSA untuk seluruh variabel kita
+dengan melihat nilai uji KMO per variabel.
+
+Hasil uji KMO per variabel adalah sebagai berikut:
+
+ongkos  bparkir durasi           bareng  toplajur usia
+0,66                             0,63
+        0,65  0,60                       0,81       0,62
+
+jmlmotor jmlmobil jmlsepeda jmldewasa jmlanak Jarak
+
+0,61    0,61  0,57               0,48    0,44       0,64
+
+Dari nilai-nilai tersebut, nilai uji KMO yang tidak melebihi 0,5
+hanyalah jmldewasa dan jmlanak. Oleh karena itu, kedua variabel
+ini kita keluarkan dari analisis, sehingga variabel kita sekarang
+berjumlah 10 buah saja.
+
+13.2.5 Mengekstrak Dimensi Baru
+
+Jika kriteria-kriteria dalam Tabel 13.1 tersebut terpenuhi, kita
+dapat melanjutkan analisis kita ke tahap kedua, yakni
+mengekstrak atau ekstraksi dimensi baru. Terdapat dua
+metode dalam melakukan ekstraksi dimensi baru: metode
+principal component analysis (PCA) dan common factor
+analysis atau yang akan kita sebut analisis faktor.
+
+Secara konseptual perbedaan keduanya sudah dijelaskan di
+subbab 13.2.1. Secara teknis, perbedaan antara PCA dan
+analisis faktor terletak pada variat dan factor score. Dua hal
+
+308
+ini hanya dihasilkan dari PCA. Analisis faktor tidak
+menghasilkan dua hal ini, tetapi hanya mengelompokkan
+variabel-variabel yang mirip dalam satu dimensi baru.
+
+Mengekstrak dimensi baru membutuhkan keputusan terkait
+jumlah dimensi baru yang diekstrak. Untuk memutuskannya,
+kita melakukan analisis lain yang disebut analisis paralel
+(parallel analysis).
+
+13.2.5.1 Analisis Paralel Untuk Memutuskan Jumlah Dimensi
+Sebelum sampai ke pembahasan eigenvalue dan memutuskan
+jumlah dimensi yang kita ambil, kita akan mulai dari konsep
+yang paling awal terlebih dahulu: nilai terstandar dan
+variansinya.
+
+1) Total Variansi Nilai Terstandar
+Sebelum diolah, nilai-nilai seluruh variabel analisis kita
+distandarkan terlebih dahulu, atau diubah dalam bentuk Z-
+
+Kasus: Standardisasi Nilai
+
+Berikut adalah cuplikan 5 baris pertama nilai variabel jarak dan
+usia sebagai contoh standardisasi nilai.
+
+   jarak  usia                Z-jarak Z-usia
+              45
+   3000       46              -0,496  1,18
+              50
+   3000       25              -0,496  1,26
+              22
+   3000       ...             -0,496  1,57
+
+   7000     29,82             0,232   -0,374
+            12,90
+   280                        -0,990  -0,606
+
+   ...                        ...     ...
+
+ 5725                         0       0
+
+s  5499                       1       1
+
+                                              309
+Sebagai  contoh,  perhitungan  untuk   Z1  jarak  adalah  3000 - 5725  =
+                                                              5499
+
+- 0,496
+
+score. Artinya seluruh variabel akan mempunyai nilai rata-rata
+
+dan variansi/simpangan baku yang sama, yakni 0 dan 1, secara
+berturut-turut. Untuk menstandarkan nilai-nilai variabel kita,
+seperti yang sudah dibahas dalam Bab sebelumnya, yakni pada
+4.2.7, setiap nilai dalam data kita (  ) dihitung dengan
+persamaan berikut:
+
+                               =    -  
+                                    
+
+Jika kita berbicara total variansi, artinya kita menjumlahkan
+seluruh variansi variabel yang kita analisis. Karena setiap
+variabel sudah terstandardisasi, variansinya bernilai 1. Karena
+itu juga, total variansi variabel-variabel yang kita analisis
+
+Karena jumlah variabel analisis kita adalah 10 buah, maka total
+variansi kita juga bernilai 10.
+
+hasilnya bernilai sama dengan jumlah variabel yang kita analisis.
+
+2) Nilai Eigen
+Setiap dimensi atau jumlah dimensi yang dihasilkan dari
+gabungan variabel-variabel analisis kita memiliki sebuah skor
+yang disebut Nilai eigen atau eigenvalue. Nilai eigen atau
+eigenvalue adalah nilai yang merepresentasikan jumlah
+variansi dari variabel asli yang berhasil dirangkum oleh
+dimensi tersebut. Nilai ini kita gunakan untuk menentukan
+
+310
+jumlah dimensi baru yang kita hasilkan dalam analisis
+paralel.
+
+3) Menentukan Jumlah Dimensi Baru
+Jumlah dimensi baru yang kita akan hasilkan dapat didasarkan
+pada kriteria-kriteria yang berkaitan dengan nilai eigen.
+Ada tiga kriteria setidaknya yang bisa kita pakai untuk
+menentukan jumlah dimensi yang akan dihasilkan:
+
+Kasus: analisis paralel berdasarkan nilai eigen dan
+persentase kumulatif variansi
+
+Untuk ke-10 variabel kita, nilai eigen yang kita peroleh beserta %
+variansi dan kumulatifnya adalah sebagai berikut.
+
+ Dimensi ke-/   Nilai eigen  % variansi       %
+jumlah dimensi                           kumulatif
+                   2,488       24,88%     variansi
+         1         1,650       16,50%
+         2         1,236       12,36%     24,88%
+         3         1,017       10,17%     41,38%
+         4         0,851       8,51%      53,74%
+         5         0,826       8,26%      63,91%
+         6         0,614       6,14%      72,42%
+         7         0,506       5,06%      80,68%
+         8         0,470       4,70%      86,82%
+         9         0,342       3,42%      91,88%
+        10                                96,58%
+                                         100,00%
+
+· Berdasarkan nilai eigen, yang besarnya >1 berada pada
+     dimensi ke-4
+
+· Berdasarkan nilai persentase variansi kumulatif, besarnya
+     mencapai di atas 60% pada dimensi ke-4.
+
+                                                     311
+    1. Nilai eigen yang besarnya >1
+    2. Persentase kumulatif variansi yang dijelaskan >60%
+    3. Scree plot, titik di mana terdapat perbelokan dari
+
+         kemiringan curam menjadi landai
+
+Pembahasan setiap kriteria dapat Anda simak pada kasus
+berikut.
+
+Untuk scree plot, kita perlu membuat grafik garis untuk nilai
+eigen dengan jumlah dimensinya. Grafik untuk kasus kita
+diperlihatkan pada Gambar 13-3. Pada gambar tersebut,
+perbelokan melandai terletak pada titik kelima. Hasil dari
+kriteria ini berbeda dengan yang kita peroleh pada kriteria
+sebelumnya.
+
+                 Scree plot
+
+3
+
+2,5
+
+2
+
+1,5
+
+1
+
+0,5
+
+0
+
+     1  2  3  4  5  6                  7  8  9 10
+
+              Gambar 13-3. Scree plot
+
+Karena kita mendapatkan jumlah yang berbeda untuk kriteria
+scree plot, kita bisa mengambil salah satu kriteria saja. Kita bisa
+mengambil jumlah yang paling kecil yang dihasilkan dari ketiga
+kriteria tersebut.
+
+312
+Karena jumlah paling kecil adalah 4, yakni berdasarkan nilai eigen
+dan juga persentase kumulatif variansi yang >60%, maka kita ambil
+4 sebagai jumlah dimensi kita
+
+13.2.5.2 Mengelompokkan Variabel ke dalam Dimensi
+Setelah memutuskan jumlah dimensi yang kita ekstrak, kita
+harus mengelompokkan variabel-variabel ke dalam dimensi yang
+kita ekstrak.
+
+Istilah "dimensi" ini sekarang harus kita bedakan. Jika kita
+menggunakan PCA, maka nama dimensi kita adalah
+komponen atau variat. Namun apabila kita menggunakan
+analisis faktor, dimensi kita disebut faktor.
+
+Variabel dikelompokkan ke dalam dimensi berdasarkan nilai
+loading-nya. Setiap variabel mempunyai nilai loading untuk
+tiap-tiap dimensi yang disajikan dalam factor matrix. Untuk
+menentukan ke dalam dimensi mana tiap-tiap variabel
+dikelompokkan, kita mengacu pada nilai absolut loading
+
+Kasus: mengelompokkan variabel-variabel
+
+Setelah menentukan jumlah dimensi yang kita akan hasilkan, kita
+akan menemukan nilai-nilai loading tiap-tiap variabel dalam setiap
+dimensi melalui factor matrix. Berikut adalah factor matrix kita.
+
+Kita akan mengelompokkan variabel-variabel saja tanpa
+menghasilkan variat. Oleh karena itu, kita akan menggunakan
+
+analisis faktor atau common factor analysis.
+
+Variabel  Faktor-1   Faktor-2   Faktor-3   Faktor-4
+ongkos        0,556     -0,375      0,316          *)
+bparkir       0,420     -0,342      0,464
+durasi        0,505                -0,431
+
+                                                             313
+terbesar yang ada di antara keempat dimensi yang
+diekstrak.
+
+bareng            -0,135  0,121   -0,248
+
+toplajur   0,561                  0,251
+
+usia              0,313           0,321
+
+jmlmotor   0,291  0,226
+
+jmlmobil   0,315  0,239   0,235
+
+jmlsepeda  0,423  0,883   0,208   -0,166
+
+jarak      0,793  -0,200  -0,372  -0,103
+
+*) sel yang dikosongkan berarti memiliki nilai sangat kecil atau mendekati nol
+
+Dari keempat faktor tersebut, kita dapat mengidentifikasi nilai
+absolut loading terbesar yang dimiliki masing-masing variabel
+untuk mengetahui variabel mana yang masuk ke dalam tiap-tiap
+faktor. Berdasarkan nilai-nilai loading tersebut, anggota masing-
+masing faktor adalah:
+
+     · Faktor-1: ongkos, durasi, jarak, toplajur, jmlmotor,
+          jmlmobil
+
+     · Faktor-2: jmlsepeda
+     · Faktor-3: bparkir
+     · Faktor-4: bareng, usia
+
+13.2.5.3 Merotasi Faktor/Komponen
+
+Nilai-nilai loading bisa tidak kontras antarfaktor atau
+antarkomponen. Ini membuat pengelompokan tidak tegas.
+Untuk membuat nilai loading dalam setiap faktor atau
+komponen cenderung kontras atau timpang satu sama lain, kita
+dapat melakukan rotasi. Proses rotasi akan memberatkan nilai
+loading tiap-tiap variabel ke satu faktor atau komponen
+sehingga pengelompokan dapat dilakukan dengan lebih baik.
+
+314
+Terdapat banyak jenis rotasi faktor atau komponen yang
+digolongkan menjadi orthogonal dan oblique. Teknik rotasi
+yang termasuk ke dalam jenis orthogonal dan banyak dipakai
+antara lain quartimax, varimax, dan equamax. Sementara itu,
+teknik rotasi jenis oblique yang banyak dipakai antara lain
+promax, oblimin, dan simplimax.
+
+Kasus: Merotasi faktor
+
+Kita sudah dapat distribusi nilai loading dari analisis sebelumnya.
+Sekarang kita akan melakukan rotasi dari factor matrix
+sebelumnya dengan metode varimax.
+
+Factor matrix kita menjadi:
+
+Variabel   Faktor-1          Faktor-2  Faktor-3   Faktor-4
+ongkos         0,236                       0,667     -0,220
+bparkir                                    0,699     -0,150
+durasi
+bareng     0,660
+toplajur
+usia       0,364             0,168     0,401      -0,299
+jmlmotor   0,214             0,191                 0,237
+jmlmobil                     0,300                 0,420
+jmlsepeda  0,855             0,391
+jarak                        1,004     0,232      0,116
+                                       0,275
+
+Dengan demikian, pengelompokan kita menjadi:
+     · Faktor-1: durasi, jarak
+     · Faktor-2: jmlmotor, jmlmobil, jmlsepeda
+     · Faktor-3: ongkos, bparkir, toplajur
+     · Faktor-4: bareng, usia
+
+                                                             315
+Jika kita melakukan analisis komponen prinsip, langkah terakhir
+setelah kita merotasi komponen adalah memperoleh skor
+komponen. Skor komponen ini bertindak seperti halnya
+koefisien dalam variabel-variabel independen. Gunanya adalah
+untuk membentuk variat yang merupakan persamaan linear
+yang disusun oleh variabel-variabel anggotanya
+
+Kasus: Analisis komponen prinsip
+
+Factor matrix dalam analisis komponen prinsip (PCA) disebut
+component matrix. Component matrix kita setelah dirotasi dengan
+varimax menjadi:
+
+Variabel   Komp-1     Komp-2      Komp-3          Komp-4
+ongkos        0,255      0,791                       0,115
+bparkir                  0,823       0,119           0,119
+durasi        0,847                    0,21
+bareng                   0,425                       0,806
+toplajur        0,49                 0,324          -0,216
+usia                    -0,148       0,597          -0,601
+jmlmotor      0,344      0,385       0,638           0,209
+jmlmobil     -0,114                  0,833          -0,147
+jmlsepeda                0,285                      -0,131
+jarak         0,825
+
+Dengan demikian, pengelompokan kita menjadi:
+     · Komponen-1: durasi, jarak, toplajur
+     · Komponen-2: ongkos, bparkir
+     · Komponen-3: jmlmotor, jmlmobil, jmlsepeda
+     · Komponen-4: bareng, usia
+
+316
+Dapat kita lihat bahwa pengelompokannya tidak jauh berbeda
+dengan analisis faktor. Selanjutnya kita akan menemukan score-
+nya.
+
+Variabel   Komp-1     Komp-2     Komp-3     Komp-4
+Ongkos          0,85       0,79
+bparkir         0,49       0,82       0,60       0,81
+durasi                                0,64      -0,60
+bareng          0,82                  0,83
+toplajur
+usia
+jmlmotor
+jmlmobil
+jmlsepeda
+jarak
+
+13.2.6 Interpretasi Dimensi
+
+Langkah terakhir adalah menginterpretasi dimensi baru yang
+mengelompokkan variabel-variabel analisis kita. Di sini, kita
+memberi nama dimensi-dimensi dengan nama yang sesuai.
+
+Untuk PCA, interpretasi akhir kita adalah persamaan akhir
+variat yang kita gunakan untuk mengurangi jumlah kolom
+dalam dataset kita.
+
+Kasus: Interpretasi Faktor dan Komponen
+
+Dari analisis faktor, kita mendapatkan faktor sebagai berikut:
+
+     · Faktor-1: durasi, jarak
+     · Faktor-2: jmlmotor, jmlmobil, jmlsepeda
+     · Faktor-3: ongkos, bparkir, toplajur
+     · Faktor-4: bareng, usia
+
+                                                                317
+  Faktor-1 dapat kita beri nama "impedansi perjalanan". Faktor-
+  2 dapat kita beri nama "kepemilikan kendaraan pribadi".
+  Faktor-3 dapat kita beri nama "biaya perjalanan", walaupun di
+  sana ada variabel jumlah lajur perjalanan, dan Faktor-4 dapat kita
+  beri nama "karakteristik pelaku perjalanan."
+  Untuk komponen, hasil interpretasinya adalah:
+
+        komp-1 = 0,85+ 0,49+ 0,82
+        komp -2 = 0,79 + 0,82
+        komp -3 = 0,60 + 0,64 + 0,83
+        komp -4 = 0,81 - 0,60
+
+13.3 Soal Evaluasi
+1. Perhatikan tabel data terstruktur berikut!
+
+     Manakah variabel yang dapat dianalisis dengan metode
+
+     komponen prinsip? STP-14.1
+
+2. Pengelompokan variabel-variabel yang ada di nomor 1 di
+
+     atas menghasilkan factor matrix sebagai berikut. STP-14.2
+
+           Var         Fac_1            Fac_2
+
+     Var1       -0,598           0,013
+
+     Var2       0,114            0,343
+
+318
+        Var        Fac_1        Fac_2
+Var3         0,681        -0,112
+
+Interpretasikanlah hasil analisis tersebut meliputi:  dalam
+a. Jumlah faktor yang dihasilkan
+b. Variabel-variabel yang terkelompokkan ke
+
+    masing-masing faktor
+
+                                                      319

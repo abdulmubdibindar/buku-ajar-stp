@@ -1,0 +1,136 @@
+1.2.1 Kedudukan dan Peran Analisis Data dalam
+           Perencanaan
+
+Proses perencanaan adalah proses yang sangat memerlukan data
+di seluruh tahapannya. Seperti yang ditunjukkan dalam Gambar
+1-1 tentang proses perencanaan secara rasional, setiap tahapnya
+sangat memerlukan data sebagai masukan untuk melaksanakan
+setiap tahap.
+
+                            Menetapkan Tujuan dan Sasaran
+
+                                  Merumuskan Persoalan
+
+                                    Menghasilkan Solusi
+
+                                     Menganalisis Solusi
+
+                                  Mengevaluasi Alternatif
+
+                                         Implementasi
+
+                         Gambar 1-1. Proses Perencanaan Rasional
+                                   Diadaptasi dari Ewing & Park [1]
+
+Kita ambil contoh di tahap pertama. Penetapan tujuan dan
+sasaran memerlukan data dari berbagai sumber di wilayah
+perencanaan, termasuk dari pemangku kepentingan
+(stakeholder). Data-data tersebut dikumpulkan dan untuk
+merumuskan tujuan dan sasaran yang benar-benar
+mencerminkan kebutuhan wilayah perencanaan.
+
+2
+Lain lagi di tahap kedua, contoh lainnya. Perumusan persoalan
+(problem) adalah hal yang harus dilakukan dengan
+mempertimbangkan data dan fakta kondisi yang ada (kondisi
+eksisting). Hal ini dikarenakan jika kita salah mendefinisikan
+persoalan, implementasi rencana tidak akan menjawab
+persoalan yang seharusnya.
+
+Dari paparan sebelumnya, kita dapat menyimpulkan bahwa
+setiap tahap dalam perencanaan memerlukan penelitian, yakni
+kegiatan membuat pertanyaan mengenai suatu permasalahan
+dan menjawab pertanyaan tersebut dengan proses yang
+sistematis.
+
+1.2.2 Penelitian Kuantitatif vs. Penelitian Kualitatif
+           dan Kedudukan Statistik
+
+Selanjutnya kita akan membahas dua pendekatan terbesar
+dalam penelitian yakni penelitian kuantitatif dan penelitian
+kualitatif.
+
+Penelitian secara umum adalah proses mengajukan pertanyaan
+dan menjawabnya secara sistematis. Pertanyaan yang diajukan
+bisa terkait dengan tahap yang dilakukan dalam proses
+perencanaan tadi.
+
+Secara umum, pendekatan penelitian terbagi menjadi
+pendekatan kuantitatif dan kualitatif. Singkatnya,
+pendekatan kuantitatif menekankan pengukuran yang
+menghasilkan angka-angka (kuantitas) dalam prosesnya,
+sementara pendekatan kualitatif menekankan pada eksplorasi
+data-data yang bersifat non-angka dan perlu diindra (dilihat,
+dicium, diraba, didengar) dan dirasakan alih-alih hanya diukur.
+
+                                                                                  3
+1.2.2.1 Analisis Kuantitatif vs. Analisis Kualitatif
+Analisis adalah salah satu proses dalam penelitian yang
+mengolah data yang dikumpulkan menjadi jawaban dari
+pertanyaan di awal. Sebagaimana pendekatannya, secara umum
+analisis juga dapat dibagi menjadi analisis kuantitatif dan
+analisis kualitatif.
+
+Di sisi lain, data sebagai bahan analisis juga dapat dibagi
+menjadi data kuantitatif dan kualitatif. Kita dapat
+memaknai data kuantitatif sebagai fakta/fenomena yang diukur
+sehingga dinyatakan dalam bentuk angka, sementara data
+kualitatif adalah fakta/fenomena yang dijelaskan dalam bentuk
+pemaknaan dan pemahaman yang mendalam dari pelaku
+penelitian (subjek penelitian).
+
+1.2.2.2 Analisis Statistik sebagai Analisis Kuantitatif
+Statistik adalah serangkaian teknik matematis yang digunakan
+untuk mengorganisir, memanipulasi, dan menganalisis data
+dengan tujuan menjawab pertanyaan penelitian [2]. Ilmu yang
+mempelajari statistik disebut statistika yang dalam bahasa
+Inggris menjadi `statistics' (menggunakan `s').
+
+Dalam pengertian tersebut terdapat kata kunci `matematis.'
+Kata kunci tersebut tentunya mengantarkan kita berpikir bahwa
+analisis statistik adalah bagian dari penelitian kuantitatif.
+
+Analisis statistik dapat melakukan hal-hal berikut:
+
+    1. Meringkas dan Mengorganisasi Data. Statistik
+         membantu mereduksi banyak item informasi menjadi
+         beberapa angka yang jelas, ringkas, dan mudah
+         dipahami, sebuah proses yang dikenal sebagai reduksi
+         data.
+
+4
+    2. Mengidentifikasi Pola dan Hubungan. Statistik
+         memungkinkan peneliti untuk mendeteksi pola dalam
+         data dan mengukur hubungan antara dua atau lebih
+         variabel.
+
+    3. Membuat Generalisasi. Salah satu jenis statistik,
+         statistik inferensial, mampu untuk menggeneralisasi
+         temuan dari sampel kecil ke populasi yang lebih luas,
+         memberikan perkiraan seberapa mungkin pola yang
+         diamati dalam sampel berlaku di populasi. Ini akan kita
+         pelajari di bab selanjutnya
+
+    4. Menguji Hipotesis dan Teori. Dalam penelitian
+         secara umum, statistik membantu kita menguji apakah
+         ide atau dugaan yang kita buat benar, berdasarkan data.
+         Dari teori yang ada, kita bisa membuat hipotesis dan
+         mengujinya secara empiris, atau bahkan menemukan
+         hipotesis baru dari data.
+
+Secara umum, statistika dapat dibagi menjadi dua menurut
+keperluannya terkait data: statistika deskriptif dan
+statistika inferensial [1]. Statistika deskriptif berfungsi untuk
+mendeskripsikan data dari sebuah sampel atau populasi. Di sisi
+lain, statistik inferensial menarik kesimpulan dari data yang
+dikumpulkan (sampel) terhadap cakupan yang lebih besar dari
+data tersebut, yakni populasi.
+
+Berdasarkan jumlah variabelnya statistika juga dapat dibagi
+menjadi 3: statistika univariat, bivariat dan multivariat.
+Sesuai namanya, statistika univariat adalah statistika yang
+digunakan untuk menganalisis satu variabel saja. Statistika
+bivariat adalah statistika yang menganalisis dua variabel secara
+bersamaan, sementara multivariat menganalisis lebih dari dua.
+
+                                                                                  5

@@ -1,0 +1,30 @@
+# Korelasi Antarvariabel Nominal
+
+## Konsep Dasar
+
+Analisis ini digunakan untuk mengukur kekuatan hubungan antara dua variabel kategori (nominal). Teknik yang umum digunakan adalah **Chi-Square ($X^2$)** untuk signifikansi dan **Cramer's V**, **Phi**, atau **Lambda** untuk kekuatan hubungan.
+
+## Studi Kasus dengan R
+
+Apakah ada hubungan antara **Fakultas** dengan **Moda Transportasi** yang digunakan?
+
+```{r, echo=TRUE}
+# Data Contoh
+fakultas <- c("Saintek", "Soshum", "Saintek", "Soshum", "Saintek", "Saintek")
+moda <- c("Motor", "Mobil", "Motor", "Jalan Kaki", "Mobil", "Motor")
+
+# Membuat Tabel Kontingensi
+tabel <- table(fakultas, moda)
+print(tabel)
+
+# Uji Chi-Square
+chisq.test(tabel)
+```
+
+**Interpretasi**:
+Jika P-value < 0.05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
+
+## Soal Evaluasi
+
+1.  Apa perbedaan Chi-Square Test dengan Lambda sebagai ukuran asosiasi? (STP-8.1)
+2.  Hitunglah nilai Cramer's V untuk tabel kontingensi berikut... (STP-8.2)

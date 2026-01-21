@@ -1,0 +1,29 @@
+# Analisis Statistik Multivariat Interdependensi
+
+## Konsep Dasar
+
+Analisis multivariat interdependensi tidak membedakan variabel menjadi dependen dan independen. Tujuannya adalah untuk mencari struktur dasar dari sekumpulan variabel.
+Contoh: **Analisis Faktor** dan **Principal Component Analysis (PCA)**. Biasanya digunakan untuk mereduksi dimensi data (menyederhanakan banyak variabel menjadi beberapa faktor utama).
+
+## Studi Kasus dengan R
+
+Mereduksi 5 indikator kepuasan menjadi faktor-faktor utama.
+
+```{r, echo=TRUE}
+# Simulasi Data
+set.seed(123)
+data_survei <- matrix(rnorm(100*5), ncol=5)
+colnames(data_survei) <- c("Q1", "Q2", "Q3", "Q4", "Q5")
+
+# Principal Component Analysis
+pca_result <- prcomp(data_survei, scale. = TRUE)
+summary(pca_result)
+
+# Melihat beban faktor (loadings)
+pca_result$rotation
+```
+
+## Soal Evaluasi
+
+1.  Apa tujuan utama dari Analisis Faktor? (STP-13.1)
+2.  Jelaskan perbedaan mendasar antara Analisis Regresi dan Analisis Faktor! (STP-13.2)

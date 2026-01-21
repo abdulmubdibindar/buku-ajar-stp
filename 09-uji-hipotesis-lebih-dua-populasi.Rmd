@@ -1,0 +1,39 @@
+# Uji Hipotesis Lebih dari Dua Populasi
+
+## Analisis Variansi (ANOVA)
+
+Ketika kita ingin membandingkan rata-rata dari **lebih dari dua** kelompok populasi, kita menggunakan **Analysis of Variance (ANOVA)**. Jika kita menggunakan uji t berulang kali untuk setiap pasangan kelompok, risiko kesalahan Tipe I (False Positive) akan meningkat. ANOVA mengatasi masalah ini dengan menguji perbedaan secara simultan.
+
+Hipotesis ANOVA Satu Arah (One-Way ANOVA):
+*   $H_0: \mu_1 = \mu_2 = \dots = \mu_k$ (Semua rata-rata kelompok sama)
+*   $H_1$: Setidaknya ada satu pasang rata-rata yang berbeda.
+
+## Studi Kasus dengan R
+
+Kita ingin membandingkan rata-rata harga tanah di tiga zona: Pusat Kota, Suburban, dan Rural.
+
+```{r, echo=TRUE}
+# Data Contoh
+harga_tanah <- c(10, 12, 11, 13, 15, # Pusat
+                 8, 9, 7, 8, 10,       # Suburban
+                 4, 5, 3, 5, 4)        # Rural
+zona <- factor(rep(c("Pusat", "Suburban", "Rural"), each = 5))
+
+data_tanah <- data.frame(harga = harga_tanah, zona = zona)
+
+# ANOVA Satu Arah
+model_anova <- aov(harga ~ zona, data = data_tanah)
+summary(model_anova)
+```
+
+**Interpretasi**:
+Jika nilai Pr(>F) pada tabel ANOVA kurang dari 0.05, maka tolak $H_0$. Artinya, terdapat perbedaan signifikan rata-rata harga tanah antar zona tersebut. Untuk mengetahui zona mana yang berbeda, dapat dilanjutkan dengan uji lanjut (Post Hoc Test) seperti Tukey HSD.
+
+```{r, echo=TRUE}
+TukeyHSD(model_anova)
+```
+
+## Soal Evaluasi
+
+1.  Mengapa kita tidak dianjurkan menggunakan uji t berulang kali untuk membandingkan 3 kelompok atau lebih? (STP-7.3)
+2.  Apa kesimpulan jika P-value ANOVA > 0.05? (STP-7.4)

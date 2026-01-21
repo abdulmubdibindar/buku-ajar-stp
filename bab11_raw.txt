@@ -1,0 +1,534 @@
+Bab 9
+Analisis Statistik Asosiasi Bivariat:
+Korelasi Antarvariabel Ordinal
+
+9.1 Capaian Pembelajaran
+Setelah mempelajari bab ini, Anda diharapkan:
+
+    1. Mampu memaknai hasil analisis korelasi pasangan
+         variabel bertingkat pengukuran ordinal dengan tepat
+
+               STP-10.1
+
+Agar lebih mudah memahami konsep dasar, Anda dapat
+mempelajari studi kasus terlebih dahulu dan menyimak
+pembahasan sesuai dengan konsep dasarnya.
+
+9.2 Konsep Dasar
+Pada bab ini, penjelasan analisis asosiasi bivariat sama dengan
+yang telah dijelaskan pada bab sebelumnya. Hanya saja, pada
+bab ini jenis variabel yang akan dianalisis adalah variabel
+ordinal (baca kembali sub bab 2.2.1.2 terkait jenis data
+berdasrkan skala pengukurannya). Sebagai pengingat, variabel
+dengan jenis ordinal ini adalah variabel yang memiliki ragam
+nilai kategori yang dapat diurutkan (contoh: tinggi ­ sedang ­
+rendah, dsb).
+Untuk mengukur korelasi antarvariabel ordinal, dapat
+digunakan beberapa koefisien seperti gamma dan tau-b Kendall
+yang secara konsep berbasis galat (PRE).
+
+                                                                               219
+9.2.1 Koefisien Gamma
+
+Koefisien Gamma digunakan untuk mengukur korelasi antar
+variabel ordinal, khususnya variabel yang memiliki kategori nilai
+yang relatif lebih sedikit (tidak lebih dari lima atau enam
+kategori) [4].
+
+Pengukuran koefisien Gamma dapat menjawab tiga pertanyaan
+dasar mengenai asosiasi bivariat pada variabel ordinal sebagai
+berikut:
+
+     1. Apakah variabel yang diuji memiliki asosiasi (saling
+         terkait)?
+
+     2. Seberapa kuat asosiasinya?
+     3. Bagaimana arah asosiasinya? (positif atau negatif)
+
+Logika pengukuran koefisien korelasi Gamma adalah berbasis
+galat (PRE) dengan menentukan seberapa besar kemampuan
+kita untuk memprediksi peringkat (atau urutan) dari nilai suatu
+variabel ditingkatkan dengan mengetahui peringkat niali
+variabel lainnya [2]. Hubungan antar variabel akan disimpulkan
+berdasarkan kesesuaian (concordant) dan ketidaksesuaian
+(discordant) terhadap urutan dari nilai variabel tersebut.
+
+Rumus untuk menghitung koefisien Gamma ini adalah sebagai
+berikut:
+
+      =   - 
+          + 
+
+dimana C adalah jumlah total pasangan kasus yang memiliki
+peringkat dalam urutan yang sama (concordant) pada kedua
+variabel dan D adalah jumlah total pasangan kasus yang
+memiliki peringkat dalam urutan yang berbeda (discordant)
+pada kedua variabel.
+
+220
+Concordant (C) dapat dihitung untuk setiap sel dengan
+mengalikan jumlah kasus dalam sel tersebut dengan jumlah total
+kasus di semua sel di bawah dan di sebelah kanan sel tersebut.
+Total nilai C adalah penjumlahan dari nilai-nilai ini di seluruh
+sel yang relevan.
+
+Sementara itu, Discordant (D) dapat dihitung untuk setiap sel
+dengan mengalikan jumlah kasus dalam sel tersebut dengan
+jumlah total kasus di semua sel di bawah dan di sebelah kiri sel
+tersebut. Total nilai D adalah penjumlahan dari nilai-nilai ini di
+seluruh sel yang relevan.
+
+Setelah nilai C dan D diketahui, koefisien Gamma dapat
+dihitung dan diinterpretasi sesuai dengan kasus yang
+dibutuhkan.
+
+Nilai dari koefisien Gamma berada pada rentang 0 hingga 1 yang
+akan menunjukkan sejauh mana pengetahuan tentang satu
+variabel dapat meningkatkan kemampuan kita untuk
+memprediksi variabel lain. Kita juga dapat menginterpretasi
+besaran nilai koefisien Gamma tersebut sesuai dengan rentang
+nilai koefisien korelasi yang terdapat pada Tabel 8-3. Nilai
+koefisien Gamma ini juga dapat bernilai positif (+) ataupun
+negatif (-) yang dapat menunjukkan arah asosiasi atau
+hubungan yang terjadi antar variabel yang diuji. Positif berarti
+hubungan serah, dan negatif berarti hubungan berlawanan arah.
+
+9.2.2 Koefisien Somers' D
+Untuk kasus pengujian korelasi antarvariabel ordinal dengan
+ukuran kategori yang tidak sama (non-persegi), koefisien Somers'
+D sering digunakan dibandingkan dengan koefisien Gamma. Hal
+ini karena nilai koefisien Somers' D dapat mencapai nilai
+
+                                                                               221
+sempurna, yaitu 1, meskipun jumlah kategori pada kedua
+variabel tidak sama. Dengan demikian, koefisien Somers' D
+memiliki fleksibilitas yang lebih tinggi.
+
+Dalam perhitungannya, Somers' D tidak hanya
+mempertimbangkan concordant dan discordant, melainkan juga
+keberadaan pasangan kasus yang terikat pada variabel
+independen (X). Hal ini yang menjadi pembeda utama Somers'
+D dengan Gamma. Meskipun lebih konservatif, tetapi hasil
+estimasinya lebih baik.
+
+Selain itu, nilai Somers' D juga bersifat asimetris, artinya
+apabila posisi variabel dibalik (variabel Y menjadi X atau
+sebaliknya), maka nilai Somers' D juga akan berubah. Oleh
+karena itu, sebelum pengujian dilakukan kita perlu
+dengan benar menetapkan variabel Y dan variabel X.
+Hal ini juga seringkali menjadi titik kritis untuk pengujian
+korelasi dengan pengukuran koefisien Sommers' D.
+
+Koefisien Sommers' D dapat dihitung dengan menggunakan
+rumus berikut:
+
+      =       -     
+           +     +
+
+dimana C adalah jumlah total pasangan kasus yang memiliki
+peringkat dalam urutan yang sama (concordant); D adalah
+jumlah total pasangan kasus yang memiliki peringkat dalam
+urutan yang berbeda (discordant); dan T adalah jumlah
+pasangan terikat (tied ranks) pada variabel independen X.
+
+Nilai koefisien Somers' D berada pada rentang 0 sampai dengan
+1 sehingga dapat diinterpretasikan kekuatan asosiasinya, serta
+
+222
+arah asosiasi dengan nilai positif ataupun negatif sebagaimana
+koefisien Gamma.
+
+9.2.3 Koefisien tau-b Kendall
+
+Koefisien tau-b Kendall memiliki banyak kemiripan prinsip
+dengan koefisien Gamma. Koefisien tau-b Kendall akan efektif
+apabila digunakan pada tabel persegi dengan banyak kasus yang
+cenderung menghasilkan peringkat yang sama (tied ranks).
+Dalam pengukurannya, koefisien tau-b Kendall juga
+mempertimbangkan prinsip pasangan terikat sebagaimana yang
+disertakan oleh koefisien Somers' D, tetapi tidak hanya di
+variabel dependen melainkan juga di variabel dependennya.
+
+Koefisien tau-b Kendall memiliki sifat simetris, sehingga posisi
+variabel X dan variabel Y tidak bermasalah apabila ditukar.
+
+Akan tetapi, jika pun diaplikasikan, kita sebenarnya hanya perlu
+menghitung nilai T untuk sumbu yang satunya, kemudian kita
+menghitung nilai-nilai tersebut dengan persamaan berikut.
+
+ =    (   +    +   -       +    +  2 )
+                  1 ) × (
+
+Secara keseluruhan, perbandingan dalam penggunaan koefisien
+korelasi Gamma, Somer's D, dan tau-b Kendall ditampilkan
+pada Tabel 9-1.
+
+                                        223
+Tabel 9.1 Perbandingan Penggunaan Koefisien Korelasi Gamma, Somer's
+                                      D, dan Tau-b Kendall
+
+     Kriteria       Gamma         Somers'D Tau-b Kendall
+
+Penggunaan      Matriks korelasi  Semua jenis       Matriks korelasi
+                persegi           matriks korelasi  persegi dengan
+                sederhana (2x2),                    jumlah kasus (n)
+                (3x3), dan (4x4)                    yang besar
+
+Dasar           Jumlah            Jumlah            Jumlah
+perhitungan     pasangan          pasangan
+                concordant dan    concordant,       pasangan
+                discordant        discordant, dan
+                                  tied rank pada    concordant,
+                                  variabel X
+                                                    discordant, tied
+
+                                                    rank         pada
+
+                                                    variabel X dan
+
+                                                    variabel Y
+
+Sifat hubungan  Simetris, tidak   Asimetris,        Simetris,
+yang diukur     membedakan        variabel X dan    variabel X dan
+                variabel          Y dibedakan       Y dibedakan
+                dependen (Y)
+                dan variabel
+                independen (X)
+
+Interpretasi nilai 0 sampai 1 dengan nilai negatif () dan (+) yang
+
+koefisien       menunjukkan arah
+
+9.3 Studi Kasus
+
+Kita akan meninjau korelasi antara variabel tingkat uang saku
+dan tingkat semester perkuliahan. Perhatikan nilai-nilai dalam
+kedua variabel berikut.
+
+     Tabel 9.2. Nilai-nilai Variabel Tingkat Uang Saku dan Semester
+
+                        Perkuliahan
+
+     Tingkat uang saku            Tingkat semester perkuliahan
+
+· <Rp1 juta                       · Semester 1 ­ Semester 2
+
+· Rp1 ­ Rp 2 juta                 · Semester 3 ­ Semester 4
+
+· Rp2,1 ­ Rp3 juta                · Semester 5 ­ Semester 6
+
+224
+         Tingkat uang saku          Tingkat semester perkuliahan
+· Rp3,1 ­ Rp4 juta                 · Semester 7 ­ Semester 8
+· >Rp4 juta
+
+Pada masing-masing variabel kita dapat melihat ada tingkatan
+dari tiap nilainya. Pada variabel "tingkat uang saku" nilai "<Rp1
+juta" lebih kecil dari "Rp2,1 ­ Rp3 juta." Nilai-nilai tersebut
+hanyalah nilai-nilai diskret. Kita tidak tahu pasti "<Rp1 juta"
+itu apakah Rp900 ribu atau Rp500 ribu. Ini berarti variabel
+Tingkat Uang Saku adalah variabel ordinal.
+
+Sama seperti Tingkat Uang Saku, nilai dalam Tingkat Semester
+Perkuliahan juga berupa nilai diskret dan mengandung
+tingkatan antarnilainya. Maka, variabel Tingkat Semester
+Perkuliahan juga merupakan variabel ordinal.
+
+9.3.1 Koefisien Gamma
+
+Koefisien yang tepat untuk menggambarkan hubungan dua
+variabel ordinal dan yang paling mudah adalah koefisien
+Gamma. Koefisien ini memiliki kisaran nilai -1 hingga +1. Nilai
+-1 berarti hubungan berlawanan arah yang sangat kuat,
+sedangkan +1 hubungan searah yang sangat kuat. Arah
+hubungan dinyatakan dengan tanda nilai koefisiennya,
+sementara kekuatannya dinyatakan dengan besar nilai
+koefisiennya.
+
+Koefisien Gamma dihitung dengan rumus berikut.
+
+                              =    -  
+                                   +  
+
+C dan D mengacu pada pengolahan tabel silang antara kedua
+variabel. Oleh karena itu, kita perlu membuat tabel silang
+antara kedua variabel kita. Untuk menyederhanakan penulisan
+
+                                                225
+tabel kita akan mengodifikasi kategori-kategori dari masing-
+masing variabel menjadi huruf-huruf sederhana. Berikut adalah
+kodifikasi dan hasil tabel silang kita.
+
+Tabel 9.3. Kodifikasi Kategori-kategori dalam Variabel Tingkat Uang Saku
+
+     dan Tingkat Semester Perkuliahan
+
+     Tingkat uang saku           Tingkat semester perkuliahan
+
+· <Rp1 juta  a                   · Semester 1 ­ Semester 2  w
+
+· Rp1 ­ Rp 2 juta  b             · Semester 3 ­ Semester 4  x
+
+· Rp2,1 ­ Rp3 juta  c            · Semester 5 ­ Semester 6  y
+
+· Rp3,1 ­ Rp4 juta  d            · Semester 7 ­ Semester 8  z
+
+· >Rp4 juta  e
+
+     Tabel 9.4. Tabel Silang yang Telah Dikodifikasi Nilai-nilanya
+
+                       w   x     y  z
+
+                a      58 89 81 159
+
+                b      87 118 181 350
+
+                c      40 57 53 142
+
+                d      34 19 24 37
+
+                e       7     4     5 12
+
+Berbeda dengan tabel silang variabel nominal, menyusun tabel
+silang variabel ordinal tentunya harus memperhatikan
+urutan tingkat dari setiap nilai. Nilai dengan tingkat paling
+rendah ditempatkan paling atas apabila menjadi baris dan
+paling kiri apabila ia menjadi kolom. Makin ke bawah dan ke
+kanan, nilainya makin tinggi.
+
+Selanjutnya kita akan menghitung nilai C dan D dari tabel
+silang kita tersebut. Nilai C adalah jumlah dari perkalian
+frekuensi pasangan concordant, pasangan yang kedua nilainya
+mempunyai arah yang sama pada kedua nilai.
+
+Dalam tabel kita, beberapa pasangan-pasangan concordant di
+antaranya adalah:
+
+      a-w dan b-x, a-w dan c-x, a-w dan d-x, serta a-w dan e-x
+
+226
+ a-w dan b-y, a-w dan c-y, a-w dan d-y, serta a-w dan e-
+    y
+
+ a-w dan b-z, a-w dan c-z, a-w dan d-z, serta a-w dan e-z
+ a-x dan b-y, a-x dan c-y, a-x dan d-y, serta a-x dan e-y
+ ... dan seterusnya
+
+Kita ambil pasangan a-w dan b-x. Nilai b (Rp1- Rp2 juta) lebih
+besar dari a (<Rp1 juta), dan x (Semester 3 ­ Semester 4) juga
+lebih besar dari w (Semester 1 ­ Semester 2).
+
+Dari pada pusing, kita dapat mengilustrasikan pasangan-
+pasangan concordant tersebut sehingga membuat pola seperti
+yang ditampilkan pada Gambar 9-1.
+
+Kita kemudian mengalikan seluruh pasangan concordant
+tersebut dan menjumlahkan semua hasilnya. Agar perhitungan
+kita lebih sederhana, kita akan mengambil ilustrasi pasangan-
+pasangan yang concordant dengan a-w, yakni yang ditandai
+merah pada Gambar 9-2.
+
+Dari Gambar 9-2 tersebut, artinya perkalian kita adalah
+
+(,  × , ) + (,  × , ) + (,  × , ) +
+(,  × , ) + (,  × , ) + (,  × , ) +
+(,  × , ) + (,  × , ) + (,  × , ) +
+(,  × , ) + (,  × , ) + (,  × , )
+
+Bentuk tersebut dapat disederhanakan menjadi:
+
+,   (  ,  + ,  + ,  + ,    + ,   +  ,          )
+         + ,  + ,  + ,  +  ,  +  ,  
+
+                                                         227
+Gambar 9-1. Ilustrasi Perkalian Pasangan-pasangan Concordant pada Tabel
+                                                 Silang 5×4
+
+        Gambar 9-2. Ilustrasi Perkalian Pasangan Concordant yang Akan
+                                                 Digunakan
+
+Jika kita mengacu pada ilustrasi di Gambar 9-2 kita dapat
+mengenali polanya sebagai "frekuensi di pojok × (penjumlahan
+frekuensi-frekuensi dalam sel-sel di bawahnya."
+Dengan demikian, untuk pasangan-pasangan concordant yang
+ditandai merah tersebut nilainya adalah:
+
+58 × (118 + 181 + 350 + 57 + 53 + 142 + 19 + 24 + 37 + 4 + 5 + 12) = 58.116
+
+228
+Jumlah tersebut baru yang ditandai merah. Untuk yang lainnya,
+kita dapat menghitung sesuai pola yang kita peroleh tadi.
+
+89 × (181 + 350 + 53 + 142 + 24 + 37 + 5 + 12) = 71.556
+                           81 × (350 + 142 + 37 + 12) = 43.821
+
+87 × (57 + 53 + 142 + 19 + 24 + 37 + 4 + 5 + 2) = 30.771
+               118 × (53 + 142 + 24 + 37 + 5 + 12) = 32.214
+                                  181 × (142 + 37 + 12) = 34.571
+                    40 × (19 + 24 + 37 + 4 + 5 + 12) = 4.040
+                                57 × (24 + 37 + 5 + 12) = 4.446
+                                            53 × (37 + 12) = 2.597
+                                        34 × (4 + 5 + 12) = 714
+                                             19 × (5 + 12) = 323
+                                                     24 × 12 = 288
+
+Maka total seluruh perhitungan tersebut adalah C = 283.397.
+
+Langkah kedua terakhir adalah kita perlu menghitung jumlah
+frekuensi pasangan discordant. Pasangan discordant adalah
+pasangan yang nilainya tidak searah.
+
+Sebagai contoh adalah pasangan a-z dan b-w. Nilai b (Rp1- Rp2
+juta) lebih besar dari a (<Rp1 juta), tetapi nilai w (Semester 1
+­ Semester 2) lebih kecil dari z (Semester 7 ­ Semester 8).
+
+Seperti halnya Gambar 9-1, pasangan-pasangan discordant juga
+bisa diilustrasikan seperti yang ditunjukkan oleh Gambar 9-3.
+
+Perhitungannya adalah sebagai berikut.
+
+159 × (87 + 118 + 181 + 40 + 57 + 53 + 34 + 19 + 24 + 7 + 4 + 5) = 100.011
+                            81 × (87 + 118 + 40 + 57 + 34 + 19 + 7 + 4) = 29.646
+                                                       89 × (87 + 40 + 34 + 7) = 14.952
+
+                       350 × (40 + 57 + 53 + 34 + 19 + 24 + 7 + 4 + 5) = 85.050
+                                         181 × (40 + 57 + 34 + 19 + 7 + 4) = 29.141
+                                                            118 × (40 + 34 + 7) = 9.558
+                                           142 × (34 + 19 + 24 + 7 + 4 + 5) = 13.206
+                                                        53 × (34 + 19 + 7 + 4) = 3.392
+                                                                    57 × (34 + 7) = 2.337
+
+                                                                               229
+                                   37 × (7 + 4 + 5) = 592
+                                        24 × (7 + 4) = 264
+                                            19 × (7) = 133
+
+Maka totalnya adalah D = 288.282.
+
+Gambar 9-3. Ilustrasi Perkalian Pasangan-pasangan Discordant pada Tabel
+                                                Silang 5×4
+
+Dengan demikian, nilai koefisien Gamma kita adalah
+
+       =    -    =  283.397 -      288.282  =  - 0,009
+            +       283.397 +      288.282
+
+Dari koefisien tersebut, kita dapat mengetahui bahwa hubungannya
+terbalik karena tandanya negatif dan kekuatannya lemah karena
+nilainya mendekati nol. Ini berarti antara tingkat semester dan uang
+saku terdapat hubungan yang terbalik, yakni semakin tinggi semester
+kuliah, semakin sedikit uang saku yang diberikan oleh orang tua/wali
+mahasiswa. Akan tetapi kita tidak bisa menilai hubungan kedua
+variabel tersebut kuat. Dengan kata lain, banyak juga mahasiswa yang
+tinggi tingkat semesternya, tinggi juga uang sakunya, atau sebaliknya.
+
+230
+9.3.2 Koefisien Sommer's d
+
+Dalam perhitungan koefisien d Sommer (Sommer's d) kita sudah
+melibatkan penentuan variabel dependen dan independen, atau
+variabel yang dipengaruhi dan memengaruhi.
+
+Dalam kasus kita, yang paling masuk akal adalah mengatakan
+"tingkat semester perkuliahan memengaruhi tingkat uang saku"
+ketimbang "tingkat uang saku memengaruhi tingkat semester
+perkuliahan." Oleh karena itu, kita menganggap variabel
+independennya adalah Tingkat Semester Perkuliahan dan
+variabel dependennya Tingkat Uang Saku.
+
+Perhitungan koefisien d Sommer ini mirip dengan koefisien
+Gamma, hanya saja ada di perbedaan dalam perhitungan
+penyebutnya. Koefisien d Sommer dihitung dengan rumus
+sebagai berikut.
+
+ =       -     
+      +     +
+
+Perhitungan T adalah jumlah dari perkalian pasangan-pasangan
+concordant dari tabel silang kita, tetapi per ruas tempat variabel
+independennya berlokasi. Merujuk pada tabel silang kita yang
+ada di Tabel 9.4, variabel independen kita berada di kolom. Oleh
+karena itu, kita perlu menghitung perkalian pasangan-pasangan
+concordant yang ada di kolom.
+
+Seperti halnya perhitungan C dan D di koefisien Gamma
+sebelumnya, perhitungan T diilustrasikan sebagai berikut.
+
+                 231
+            Gambar 9-4. Perhitungan Nilai T pada Koefisien Koerlasi d
+
+Perhitungan lengkapnya adalah sebagai berikut.
+
+                       58 × (87 + 40 + 34 + 7) = 9.774
+                              87 × (40 + 34 + 7) = 7.047
+                                    40 × (34 + 7) = 1.640
+                                             34 × 7 = 238
+
+                     89 × (118 + 57 + 19 + 4) = 17.622
+                            118 × (57 + 19 + 4) = 9.400
+                                    57 × (19 + 4) = 1.311
+                                             19 × 4 = 76
+
+                     81 × (181 + 53 + 24 + 5) = 21.303
+                            181 × (53 + 24 + 5) = 14.842
+                                    53 × (24 + 5) = 1.537
+                                             24 × 5 = 120
+
+                 159 × (350 + 142 + 37 + 12) = 86.019
+                         350 × (142 + 37 + 12) = 66.850
+                                 142 × (37 + 12) = 6.958
+                                            37 × 12 = 444
+
+232
+Dengan demikian, total dari ke-16 persamaan untuk setiap
+kolom tersebut adalah T = 245.191.
+
+Alhasil, koefisien d Sommer kita menjadi
+
+ =       -       =        283.397 - 288.282      =    - 0,00598
+      +     +       283.397 + 288.282 + 245.191
+
+Nilai tersebut tidak jauh berbeda dengan nilai Gamma yang tadi
+kita hitung, dan interpretasinya juga tidak berbeda dengan nilai
+Gamma, hanya saja di sini kita sudah memperhitungkan efek
+variabel Tingkat Semester Perkuliahan sebagai variabel
+independen.
+
+9.3.3 Koefisien tau-b Kendall
+
+Koefisien tau-b Kendall hanya dapat diaplikasikan pada tabel
+kontingensi yang berukuran sama, misalnya 3×3, 4×4, dst. Oleh
+karena itu kita tidak dapat mengaplikasikannya di kasus ini.
+
+Akan tetapi, jika pun diaplikasikan, kita sebenarnya hanya perlu
+menghitung nilai T untuk sumbu yang satunya, kemudian kita
+menghitung nilai-nilai tersebut dengan persamaan berikut.
+
+             =      (   +    +   -       +    +  2 )
+                                1 ) × (
+
+9.4 Soal Evaluasi
+
+Perhatikan tabel silang yang menunjukkan distribusi frekuensi
+dari 100 orang peserta musrenbang (musyawarah perencanaan
+pembangunan) di suatu lingkungan berdasarkan variabel
+persepsi mereka terhadap keberjalanan musrenbang dan tingkat
+partisipasi mereka. STP-10.1
+
+                                                      233
+Kurang dari ekspektasi  Hadir 1 kali      Hadir 2 kali      Hadir >3 kali
+Sesuai ekspektasi                    20                  6                  4
+Melebihi ekspektasi                  10                15                   5
+                                       8               11                  21
+
+     a. Tentukan koefisien yang pas digunakan untuk
+         menyatakan korelasi kedua variabel tersebut (Gamma,
+         Sommer's d, atau tau-b Kendall)
+
+     b. Hitung dan interpretasikan nilai tersebut sesuai makna
+         koefisien tersebut dalam konsepnya.
+
+     c. Apa yang bisa kita simpulkan dari hasil perhitungan
+         koefisien tersebut?
+
+234

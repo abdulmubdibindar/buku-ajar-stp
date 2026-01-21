@@ -1,0 +1,81 @@
+# Analisis Statistik Deskriptif
+
+## Konsep Dasar
+
+Statistika deskriptif adalah bagian dari statistika yang mempelajari cara-cara pengumpulan, penyusunan, dan penyajian data suatu penelitian. Tujuan utamanya adalah untuk memberikan gambaran (deskripsi) mengenai data tersebut agar mudah dipahami. Statistik deskriptif tidak bermaksud menarik kesimpulan untuk populasi yang lebih besar (inferensi), melainkan hanya menjelaskan "apa adanya" dari data yang kita miliki.
+
+## Teknik Analisis Statistik Deskriptif
+
+Teknik analisis deskriptif yang digunakan bergantung pada tingkat pengukuran variabelnya (Nominal, Ordinal, Interval, atau Rasio).
+
+### Ukuran Pemusatan (Central Tendency)
+
+Ukuran pemusatan digunakan untuk melihat di mana data "berpusat" atau nilai yang mewakili keseluruhan data.
+
+1.  **Mean (Rata-rata)**. Nilai rata-rata dari seluruh data. Cocok untuk data metrik (Interval/Rasio).
+    $$ \bar{x} = \frac{\sum x_i}{n} $$
+    Dimana:
+    *   $\bar{x}$ = Rata-rata sampel
+    *   $\sum x_i$ = Jumlah seluruh nilai
+    *   $n$ = Jumlah observasi
+
+2.  **Median (Nilai Tengah)**. Nilai yang berada tepat di tengah data setelah data diurutkan. Cocok untuk data ordinal dan metrik yang memiliki outlier (pencilan).
+
+3.  **Modus**. Nilai yang paling sering muncul. Cocok untuk semua jenis data, terutama data nominal.
+
+### Ukuran Penyebaran (Dispersion)
+
+Ukuran penyebaran menjelaskan seberapa "menyebar" atau bervariasi data kita dari nilai pusatnya.
+
+1.  **Range (Jangkauan)**. Selisih antara nilai maksimum dan minimum.
+    $$ Range = Max - Min $$
+
+2.  **Varian (Variance) dan Simpangan Baku (Standard Deviation)**. Mengukur seberapa jauh rata-rata data menyimpang dari mean-nya.
+    $$ s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}} $$
+    Dimana $s$ adalah simpangan baku sampel.
+
+### Statistik untuk Data Kategorik
+
+Untuk data nominal dan ordinal, kita sering menggunakan:
+
+1.  **Persentase/Proporsi**. Bagian dari keseluruhan.
+    $$ \% = \frac{f}{n} \times 100\% $$
+2.  **Rasio**. Perbandingan antara dua kategori.
+
+## Studi Kasus
+
+Dalam studi kasus transportasi ITERA, kita ingin mengetahui karakteristik pengguna transportasi.
+Misalkan kita memiliki data sampel 10 mahasiswa.
+
+```{r, echo=TRUE}
+# Contoh data fiktif untuk ilustrasi
+mahasiswa <- data.frame(
+  Usia = c(19, 20, 19, 21, 20, 22, 19, 20, 21, 20),
+  Uang_Saku = c(500, 600, 450, 700, 500, 800, 500, 550, 750, 600)*1000
+)
+
+# Menghitung Rata-rata Usia
+mean(mahasiswa$Usia)
+
+# Menghitung Simpangan Baku Uang Saku
+sd(mahasiswa$Uang_Saku)
+```
+
+## Soal Evaluasi
+
+1.  Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut. (STP-2.1)
+2.  Centang analisis statistik deskriptif yang relevan diaplikasikan kepada variabel-variabel tersebut. (STP-2.2)
+
+    | Variabel | Persentase/Proporsi | Rasio | Laju |
+    | :--- | :---: | :---: | :---: |
+    | Usia | | | |
+    | Fakultas | | | |
+    | ThnMsk | | | |
+    | Uang_saku | | | |
+
+3.  Apa informasi utama yang bisa kita simpulkan dari hasil statistik deskriptif variabel-variabel berikut? (STP-2.3)
+    a. Persentase tiap kategori Fakultas
+    b. Proporsi kategori pada variabel UangSaku
+    c. Rata-rata (mean) variabel Usia
+    d. Median variabel ThnMsk
+    e. Standar deviasi variabel Jarak

@@ -1,0 +1,30 @@
+# Regresi Linear Sederhana
+
+## Konsep Dasar
+
+Regresi linear sederhana digunakan untuk memprediksi nilai satu variabel dependen ($Y$) berdasarkan satu variabel independen ($X$). Persamaannya:
+$$ Y = a + bX + \epsilon $$
+
+## Studi Kasus dengan R
+
+Memprediksi **Pengeluaran** berdasarkan **Pendapatan**.
+
+```{r, echo=TRUE}
+pendapatan <- c(5, 6, 7, 8, 9, 10, 11)
+pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
+
+# Membuat Model Regresi
+model <- lm(pengeluaran ~ pendapatan)
+summary(model)
+
+# Melihat koefisien
+coef(model)
+```
+
+**Interpretasi**:
+Nilai Intercept ($a$) dan Slope ($b$) menentukan persamaan garis prediksi. $R^2$ menunjukkan seberapa baik model menjelaskan variasi data.
+
+## Soal Evaluasi
+
+1.  Apa perbedaan antara korelasi dan regresi? (STP-11.1)
+2.  Jelaskan makna $R^2$ (Koefisien Determinasi)! (STP-11.2)

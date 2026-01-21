@@ -1,0 +1,43 @@
+# Estimasi Parameter
+
+## Konsep Dasar
+
+Dalam statistik inferensial, kita menggunakan statistik sampel (seperti $\bar{x}$) untuk mengestimasi parameter populasi (seperti $\mu$).
+
+Ada dua jenis estimasi:
+1.  **Estimasi Titik (Point Estimation)**. Menggunakan satu nilai tunggal. Contoh: "Rata-rata pendapatan adalah 5 juta". Kelemahannya: akurasinya diragukan.
+2.  **Estimasi Rentang (Interval Estimation)**. Menggunakan rentang nilai dengan tingkat kepercayaan tertentu. Contoh: "Rata-rata pendapatan ada di antara 4,8 juta hingga 5,2 juta dengan tingkat kepercayaan 95%". Inilah yang disebut **Confidence Interval (CI)**.
+
+## Estimasi Rentang Kepercayaan (Confidence Interval)
+
+Rumus umum untuk CI rata-rata adalah:
+$$ \bar{x} \pm Z_{\alpha/2} \times SE $$
+Atau:
+$$ \bar{x} - Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} < \mu < \bar{x} + Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} $$
+
+Nilai $Z_{\alpha/2}$ bergantung pada tingkat kepercayaan (Confidence Level, $1-\alpha$):
+*   Tingkat Kepercayaan 90% ($\alpha=10\%$) $\rightarrow Z = 1.645$
+*   Tingkat Kepercayaan 95% ($\alpha=5\%$) $\rightarrow Z = 1.96$
+*   Tingkat Kepercayaan 99% ($\alpha=1\%$) $\rightarrow Z = 2.575$
+
+### Studi Kasus
+
+Seorang peneliti ingin mengestimasi rata-rata pengeluaran bulanan mahasiswa. Dari sampel 100 mahasiswa, diperoleh rata-rata 1.5 juta rupiah dengan simpangan baku 500 ribu rupiah. Buatlah selang kepercayaan 95%.
+
+Diketahui:
+*   $n = 100$
+*   $\bar{x} = 1.500.000$
+*   $s = 500.000$ (menggantikan $\sigma$)
+*   $Z_{0.025} = 1.96$
+
+Standard Error: $SE = 500.000 / \sqrt{100} = 50.000$.
+
+Batas Bawah: $1.500.000 - (1.96 \times 50.000) = 1.402.000$.
+Batas Atas: $1.500.000 + (1.96 \times 50.000) = 1.598.000$.
+
+Jadi, dengan tingkat kepercayaan 95%, rata-rata pengeluaran mahasiswa berada di antara Rp1.402.000 dan Rp1.598.000.
+
+## Soal Evaluasi
+
+1.  Apa yang dimaksud dengan tingkat kepercayaan (confidence level)? (STP-5.1)
+2.  Hitunglah Confidence Interval 95% untuk rata-rata jika $\bar{x}=100$, $s=15$, dan $n=36$. (STP-5.2)

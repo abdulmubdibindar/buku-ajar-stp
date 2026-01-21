@@ -1,0 +1,1143 @@
+Bab 4
+Pengantar Analisis Statistik Inferensial
+
+4.1 Capaian Pembelajaran
+Setelah mempelajari bab ini, Anda diharapkan:
+
+    1. Mampu memilih jenis-jenis pengambilan sampel dalam
+         statistik untuk sebuah kasus STP-4.1.
+
+    2. Mampu menjelaskan hasil perhitungan probabilitas dari
+         suatu nilai sampel dalam distribusi statistik sampel
+         menggunakan standard error STP-4.2.
+
+Agar lebih mudah memahami konsep dasar, Anda dapat
+mempelajari studi kasus terlebih dahulu dan menyimak
+pembahasan sesuai dengan konsep dasarnya.
+
+4.2 Konsep Dasar
+Statistika inferensial adalah cabang statistika yang mempelajari
+penarikan kesimpulan tentang populasi berdasarkan data dari
+sampel. Konsep-konsep dasar yang perlu dipahami dalam
+analisis statistika ini meliputi perbedaan antara populasi dan
+sampel, teknik pengambilan sampel, distribusi sampel dan
+distribusi statistik sampel, serta prinsip-prinsip seperti teorema
+limit sentral dan distribusi normal.
+Setelah memahami konsep-konsep tersebut, kita dapat
+melanjutkannya ke bagaimana menarik kesimupulan tentang
+karakteristik populasi dari sampel, yang mencakup pembuatan
+
+                                                                                 69
+estimasi parameter, menghitung peluang, dan mengambil
+keputusan secara akurat meskipun hanya menggunakan
+sebagian data dari keseluruhan populasi.
+
+4.2.1 Populasi vs. Sampel
+
+Dalam penelitian, istilah populasi merujuk pada sekumpulan
+objek yang didefinisikan dengan jelas dan memenuhi syarat
+tertentu sebagai keseluruhan ruang lingkup yang menjadi target
+generalisasi penelitian. Populasi dapat berupa manusia, benda,
+peristiwa, hingga fenomena yang menjadi sasaran kajian
+penelitian. Karakteristik, seperti rata-rata, proporsi, atau
+simpangan baku, dari suatu populasi disebut parameter [2].
+Parameter inilah yang ingin diketahui peneliti, namun seringkali
+tidak mungkin diukur secara langsung karena keterbatasan
+dalam menjangkau seluruh populasi.
+
+Sebagai contoh, kita ingin mengetahui rata-rata usia seluruh
+penduduk Kota Bandar Lampung tahun 2021 yang jumlahnya
+sebanyak 1.184.949 jiwa (Gambar 4-1). Jumlah tersebutlah yang
+merupakan populasi. Jika seluruh penduduk ini diobservasi
+usianya kemudian dihitung rata-ratanya, maka nilai rata-rata
+tersebut dinamakan parameter karena berasal dari populasi.
+
+Namun, meneliti seluruh penduduk tentu tidak mudah, sehingga
+peneliti biasanya mengambil sebagian kecil dari populasi yang
+disebut sampel. Misalnya, diambil 100 orang penduduk Kota
+Bandar Lampung untuk diukur usianya. Sampel yang baik harus
+mencerminkan karakteristik populasi (representatif) agar data
+yang diperoleh tetap valid dan reliabel. Karakteristik dari
+sampel disebut statistik, dan nilai inilah yang digunakan
+sebagai dasar untuk memperkirakan parameter populasi [5].
+
+70
+  Gambar 4-1. Perbedaan populasi dan sampel pada kasus penduduk Kota
+                                            Bandar Lampung
+
+Menarik kesimpulan berupa nilai parameter menggunakan
+statistik adalah tujuan dari analisis statistik inferensial.
+Penarikan kesimpulan ini dilakukan dengan membuat estimasi
+parameter atau menguji hipotesis terkait dengan parameter kita
+dan ini akan dipelajari pada bab-bab berikutnya. Oleh karena
+itu, analisis statistik inferensial memerlukan pemahaman yang
+baik tentang hubungan antara populasi dan sampel.
+
+Dengan menggunakan sampel yang representatif, peneliti tetap
+dapat memperoleh gambaran mengenai kondisi populasi secara
+efisien. Inilah alasan mengapa penggunaan sampel menjadi
+solusi yang umum dalam penelitian kuantitatif. Namun, jika
+sampel tidak dipilih dengan hati-hati, hasil penelitian dapat
+menimbulkan bias sehingga kesimpulan yang ditarik tidak dapat
+digeneralisasikan. Oleh sebab itu, pada sub bab selanjutnya
+perlu diketahui pemilihan teknik pengambilan sampel yang
+menjadi aspek penting dalam rancangan penelitian.
+
+                                                                                 71
+4.2.2 Teknik-Teknik Pengambilan Sampel
+Teknik pengambilan sampel merupakan prosedur penting dalam
+penelitian yang bertujuan memastikan bahwa sampel yang
+dipilih benar-benar dapat mewakili populasinya. Pemilihan
+teknik yang tepat menentukan kualitas data, validitas hasil
+penelitian, dan sejauh mana temuan dapat digeneralisasikan ke
+populasi.
+
+Dalam praktiknya terdapat dua kelompok besar yang membagi
+teknik pengambilan sampel, yaitu probabilitas dan non-
+probabilitas.
+
+Teknik probabilitas adalah teknik pemilihan sampel yang
+memberikan kesempatan yang sama bagi setiap anggota
+populasi untuk terpilih sebagai sampel. Sementara itu, pada
+teknik non-probabilitas, keterpilihan sebagai sampel untuk
+setiap individu dalam populasi tidak sama.
+
+Perbedaan kesempatan terpilihnya anggota populasi sebagai
+sampel ini muncul karena satu faktor: ada/tidak adanya
+kerangka sampel (sampling frame). Kerangka sampel
+adalah daftar seluruh anggota populasi yang memungkinkan
+kita memilih anggota-anggota tersebut sebagai sampel [4].
+
+Keberadaan kerangka sampel pada teknik probabilitas memberi
+kemungkinan sampel untuk digeneralisasi karakteristiknya
+terhadap populasi karena kerangka sampel ini menjamin
+representativitas.
+
+Sebaliknya, sampel dengan teknik nonprobabilitas biasanya
+ditentukan karena pertimbangan kemudahan, biaya, atau
+keterbatasan waktu. Konsekuensinya, teknik ini tidak dapat
+
+72
+menjamin probabilitas yang sama bagi setiap anggota populasi,
+sehingga hasilnya lebih terbatas untuk digeneralisasikan.
+
+4.2.2.1 Teknik Pengambilan Sampel Probabilitas
+Secara umum, teknik pengambilan sampel probabilitas
+memerlukan keberadaan kerangka sampel. Pada teknik seperti
+simple random sampling, systematic random sampling, dan
+stratified random sampling, kerangka sampel biasanya adalah
+daftar lengkap anggota populasi yang memuat keterangan
+setiap individu dalam populasi. Sementara itu, pada cluster
+sampling, kerangka sampel tidak serta-merta berupa daftar
+individu, melainkan harus dibuat terlebih dahulu dari
+persebaran anggota populasi secara spasial yang kemudian unit-
+unitnya dipilih secara acak [2] [11].
+
+1) Simple Random Sampling
+Simple random sampling merupakan teknik paling dasar dalam
+pengambilan sampel acak, di mana setiap anggota populasi
+memiliki peluang yang sama untuk dipilih. Pemilihan secara
+acak ini dilakukan dengan sistem eksternal dari peneliti yakni
+berupa pengundian angka dengan suatu cara atau anggota
+sampelnya langsung.
+
+ Gambar 4-2. Pengambilan sampel dengan teknik simple random sampling
+
+Misalnya, apabila peneliti memiliki daftar rumah dari hasil
+sensus penduduk di suatu kawasan perumahan komersil, maka
+peneliti dapat menggunakan tabel angka acak atau perangkat
+lunak statistik untuk menentukan sampel. Katakanlah lima
+
+                                                                                 73
+angka acak pertama yang muncul adalah 3, 6, 10, 15, dan 20
+(Gambar 4-2), maka rumah dengan nomor urut tersebut yang
+terpilih sebagai sampel penelitian. Dengan cara ini, keterwakilan
+sampel dapat terjamin karena setiap unit populasi memiliki
+kesempatan yang setara untuk dipilih.
+2) Systematic Random Sampling
+Berbeda dengan metode acak sederhana, systematic random
+sampling menggunakan sistem pemilihan berdasarkan interval
+tertentu. Langkah pertama adalah menentukan angka acak awal,
+kemudian memilih sampel berikutnya berdasarkan kelipatan
+dari angka tersebut.
+
+     Gambar 4-3. Pengambilan sampel dengan teknik systematic random
+                                                  sampling
+
+Sebagai contoh, apabila angka acak yang pertama keluar adalah
+3 dan peneliti menggunakan interval 3, maka sampel yang
+terpilih adalah urutan ke-3, 6, 9, 12, dan seterusnya (Gambar
+4-3). Teknik ini relatif lebih mudah dan lebih cepat diterapkan
+dibandingkan simple random sampling, terutama ketika populasi
+cukup besar dan daftar populasi tersedia secara lengkap.
+3) Stratified Random Sampling
+Dalam beberapa kasus, populasi terdiri atas kelompok-kelompok,
+disebut strata, yang memiliki karakteristik yang sama di
+dalamnya, misalnya jumlah anggota rumah tangga, tingkat
+pendidikan, atau status sosial ekonomi.
+
+74
+Agar setiap kelompok terwakili, digunakanlah teknik stratified
+random sampling. Caranya adalah dengan membagi populasi ke
+dalam beberapa strata sesuai karakteristik yang relevan,
+kemudian mengambil sampel secara proporsional dari setiap
+strata.
+
+       Gambar 4-4. Pengambilan sampel dengan teknik stratified random
+                                                  sampling
+
+Misalnya, seperti yang diilustrasikan Gambar 4-4, sebuah
+populasi rumah tangga dapat dibagi menjadi tiga kelompok
+berdasarkan jumlah anggota: (1) rumah tangga dengan 1­3
+anggota, warna biru, (2) rumah tangga dengan 4­6 anggota,
+warna hijau, dan (3) rumah tangga dengan 7 anggota, warna
+merah. Dari setiap strata ini, peneliti mengambil sampel sesuai
+proporsi jumlah rumah tangga di masing-masing kelompok.
+Dengan demikian, variasi dalam populasi tetap terwakili dalam
+sampel yang dipilih.
+4) Cluster Sampling
+Dalam metode ini, kita dapat membuat kerangka sampel untuk
+populasi kita berdasarkan unit geografis, misalnya blok, desa,
+atau kelurahan. Tiap-tiap blok, atau desa, atau kelurahan
+tersebut, yang disebut klaster, kita lakukan pemilihan secara
+acak untuk menentukan unit mana yang menjadi sampel.
+Kemudian kita mendatangi elemen tiap unit klaster tersebut,
+misalnya rumah tangga, dan mengambil datanya. Teknik ini
+
+                                                                                 75
+lebih hemat waktu dan biaya, terutama jika populasi tersebar
+luas dan aksesnya terbatas.
+
+Sebagai contoh, sebuah penelitian dilakukan dengan ruang
+lingkup sebuah desa. Oleh karena itu, daerah tersebut dibagi ke
+dalam unit-unit berupa wilayah RT (rukun tetangga). Peneliti
+kemudian memperoleh daftar seluruh RT yang ada di desa
+tersebut lalu memilih sejumlah RT secara acak dan hanya
+melakukan survei di dalam wilayah RT yang terpilih tersebut.
+
+4.2.2.2 Teknik Pengambilan Sampel Non-Probabilitas
+Teknik non-probabilitas adalah metode pengambilan sampel di
+mana tidak semua anggota populasi memiliki peluang yang
+sama untuk dipilih. Kondisi ini terjadi karena teknik tersebut
+tidak memiliki kerangka sampel yang memberikan informasi
+anggota populasi secara lengkap [11].
+
+Pemilihan sampel cenderung ditentukan oleh pertimbangan
+peneliti atau kondisi praktis. Teknik ini lebih mudah dilakukan,
+namun hasilnya kurang dapat digeneralisasikan ke populasi.
+Bentuk-bentuk teknik non-probabilitas antara lain:
+
+· Convenience sampling adalah teknik pengambilan sampel
+    yang didasarkan pada kemudahan akses, di mana peneliti
+    memilih responden yang paling mudah dijangkau.
+    Misalnya, seorang peneliti yang meneliti kepuasan
+    mahasiswa terhadap fasilitas kampus sehingga hanya
+    mewawancarai mahasiswa yang sedang berada di kantin
+    karena lebih mudah ditemui.
+
+· Purposive sampling merupakan teknik pengambilan sampel
+    yang didasarkan pada pertimbangan tertentu sesuai tujuan
+    penelitian.
+
+76
+    Misalnya, terdapat penelitian mengenai kinerja guru sekolah
+    menengah dimana hanya melibatkan guru dengan
+    pengalaman mengajar lebih dari lima tahun, karena kriteria
+    tersebut dianggap relevan.
+· Quota sampling adalah teknik pengambilan sampel yang
+    menetapkan jumlah (kuota) tertentu untuk setiap kelompok
+    dalam populasi.
+    Misalnya, penelitian tentang kebiasaan penggunaan
+    transportasi di kota menetapkan kuota 50 responden laki-
+    laki dan 50 responden perempuan untuk menjaga
+    keseimbangan data.
+· Snowball sampling digunakan ketika populasi sulit dijangkau,
+    dengan cara meminta responden awal untuk
+    merekomendasikan responden berikutnya.
+    Misalnya, penelitian mengenai komunitas pengguna narkoba
+    dimulai dari satu orang responden, kemudian orang tersebut
+    mengenalkan peneliti kepada pengguna lain, dan proses ini
+    berlanjut seperti bola salju.
+
+4.2.3 Distribusi Sampel vs. Distribusi Statistik
+           Sampel
+
+Dalam statistik, kita mengenal yang disebut dengan variabel
+acak. Variabel acak adalah variabel numerik yang nilainya
+adalah hasil dari kejadian acak, seperti tinggi badan orang-orang
+yang ada di kantin pada esok siang hari, waktu yang dibutuhkan
+setiap motor untuk mencapai kampus, atau suhu badan kita
+satu jam kemudian.
+
+Karena keacakannya, nilai dalam variabel acak membentuk
+sebaran/distribusi, yang sebagaimana kita sudah pelajari
+divisualkan dengan histogram.
+
+                                                                                 77
+Terdapat perbedaan penting antara distribusi sampel dan
+distribusi statistik sampel. Meskipun sekilas terdengar mirip,
+keduanya sebenarnya merujuk pada konsep yang berbeda.
+
+4.2.3.1 Distribusi Sampel
+Distribusi sampel adalah sebaran nilai data dari suatu sampel
+yang kita peroleh langsung dari lapangan. Data yang telah
+dikumpulkan dari sampel dapat kita susun dalam bentuk tabel
+frekuensi, histogram, atau diagram lain yang memperlihatkan
+pola sebaran (distribusi) nilai. Distribusi ini memungkinkan kita
+memahami karakteristik dasar data yang kita peroleh, seperti
+pusat sebaran, tingkat keragaman, serta ada atau tidaknya nilai
+ekstrem [5].
+
+Misalnya, seorang peneliti mengambil data pengeluaran
+mingguan mahasiswa dalam satu kelas. Data pengeluaran
+tersebut bisa berbeda-beda antara satu mahasiswa dengan yang
+lain. Jika semua nilai pengeluaran itu disusun dalam bentuk
+tabel frekuensi atau histogram, maka pola yang terlihat adalah
+distribusi sampel. Dengan kata lain, distribusi sampel
+menggambarkan bagaimana data numerik dari anggota sampel
+menyebar pada variabel yang diteliti.
+
+Untuk variabel numerik, distribusi sampel dapat diringkas
+melalui ukuran tendensi sentral seperti rata-rata, median, dan
+modus, serta ukuran penyebaran seperti varians, simpangan
+baku, dan rentang interkuartil [2]. Visualisasi dengan histogram
+membantu memperlihatkan bentuk distribusi, apakah simetris,
+miring ke kanan, miring ke kiri, atau multimodal. Sementara itu,
+boxplot menekankan pada median, rentang kuartil, serta
+keberadaan outlier, dan Q­Q plot digunakan untuk memeriksa
+
+78
+apakah distribusi data mendekati distribusi teoretis tertentu,
+misalnya distribusi normal.
+
+                Gambar 4-5. Visualisasi distribusi sampel pengeluaran
+
+Distribusi sampel berbeda dengan distribusi populasi karena
+hanya menggambarkan data dari unit yang terpilih dalam
+penelitian. Distribusi sampel dapat berubah tergantung ukuran
+sampel dan cara pemilihan sampelnya. Semakin besar dan
+semakin representatif sampel yang diambil, semakin baik
+distribusi sampel dapat mendekati distribusi populasi
+sebenarnya. Namun, perlu ditekankan bahwa ukuran besar tidak
+otomatis menjamin distribusi sampel representatif, karena
+representativitas lebih ditentukan oleh metode pengambilan
+sampel yang digunakan.
+4.2.3.2 Distribusi Statistik Sampel
+Distribusi statistik sampel adalah distribusi dari suatu nilai
+statistik (misalnya rata-rata, proporsi, varians) yang dihitung
+berulang kali dari banyak sampel yang diambil dari populasi
+yang sama [5]. Konsep ini bersifat teoretis karena dalam praktik
+penelitian kita biasanya hanya memiliki satu sampel. Namun,
+melalui pemikiran teoretis atau simulasi komputer, kita dapat
+membayangkan bagaimana sebaran nilai-nilai statistik itu
+terbentuk bila pengambilan sampel dilakukan berkali-kali.
+
+                                                                                 79
+Sebagai ilustrasi, misalkan dari suatu populasi mahasiswa kita
+berulang kali mengambil sampel berukuran 30 orang. Dari
+setiap sampel, kita menghitung rata-rata pengeluaran mingguan.
+Proses ini diulang ratusan bahkan ribuan kali, sehingga kita
+memperoleh banyak nilai rata-rata.
+
+         Gambar 4-6. Visualisasi distribusi statistik sampel pengeluaran
+                        dibandingkan dengan distribusi populasinya
+
+Penting untuk dipahami bahwa distribusi statistik sampel ini
+hanya berlaku untuk variabel numerik. Hal ini karena
+perhitungan statistik seperti rata-rata atau simpangan baku
+tidak bisa diterapkan pada data non-numerik. Pemahaman
+mengenai distribusi statistik sampel merupakan dasar dari
+analisis inferensial, sebab melalui distribusi inilah peneliti dapat
+memperkirakan parameter populasi dan melakukan pengujian
+hipotesis dengan lebih akurat.
+Distribusi statistik sampel sangat penting dalam statistik
+inferensial. Melalui distribusi ini, peneliti dapat menentukan
+apakah nilai statistik sampel yang dia peroleh bisa dikatakan
+merepresentasikan nilai parameter populasinya, atau bisa jadi
+karena kesalahan dalam pengambilan sampel (sampling error).
+Harus digarisbawahi bahwa distribusi statistik sampel tidak
+menggambarkan data individu, melainkan variasi dari nilai-nilai
+
+80
+statistik yang dihitung berulang kali. Hal ini membedakannya
+dari distribusi sampel, yang memperlihatkan langsung sebaran
+nilai observasi dalam satu sampel. Pemahaman mengenai
+distribusi statistik sampel adalah kunci untuk mengerti
+bagaimana kita bisa menggeneralisasikan hasil penelitian dari
+sampel ke seluruh populasi.
+
+4.2.4 Distribusi Normal
+
+Distribusi normal adalah salah satu jenis distribusi nilai variabel
+acak numerik yang dapat digambarkan dengan kurva berbentuk
+lonceng yang halus, simetris, dan membentang tanpa batas di
+kedua sisi sumbu horizontal [12].
+
+Variabel acak numerik adalah variabel acak yang dapat
+mengambil nilai berupa bilangan riil dalam suatu rentang
+tertentu dan jumlah kemungkinan nilainya tidak terbatas.
+Variabel ini tidak hanya terbatas pada angka-angka tertentu
+yang dapat dihitung, tetapi bisa memiliki nilai yang sangat
+banyak bahkan tak terhingga dalam interval yang ditentukan.
+Contoh variabel acak kontinu antara lain tinggi badan, waktu,
+atau suhu, yang nilainya dapat dinyatakan dengan tingkat
+ketelitian sangat kecil (misalnya 160,25 cm atau 27,115°C).
+
+Distribusi normal digambarkan melalui kurva berbentuk lonceng
+yang halus, simetris, dan membentang tanpa batas di kedua sisi
+sumbu horizontal. Dalam kurva normal, sumbu X mewakili
+nilai-nilai variabel, sedangkan sumbu Y menunjukkan
+probabilitas atau peluang kemunculan nilai tersebut.
+
+Ciri khas dari distribusi normal adalah puncak kurva terletak
+pada nilai rata-rata (), yang sekaligus menjadi nilai dengan
+probabilitas tertinggi. Bentuk kurva ditentukan oleh dua
+parameter, yaitu rata-rata () dan simpangan baku (). Rata-
+
+                                                                                 81
+rata menentukan posisi pusat distribusi, sedangkan simpangan
+baku menentukan seberapa lebar atau menyempit kurva
+distribusi. Semakin besar simpangan baku, kurva akan tampak
+lebih "melebar"; sebaliknya, simpangan baku yang kecil
+membuat kurva lebih "runcing". Hal ini diilustrasikan oleh
+Gambar 4-7, yang menunjukkan nilai  = 0 dan dua kurva
+dengan  = 1 dan 3.
+
+         Gambar 4-7. Pengaruh simpangan baku terhadap kurva normal
+
+Salah satu sifat fundamental dari distribusi normal adalah
+proporsi area di bawah kurva selalu tetap bila diukur dalam
+satuan simpangan baku dari rata-rata. Ini disebut dengan
+aturan empiris dalam distribusi normal. Misalnya, sekitar 68%
+data berada dalam ±1 dari mean, 95% dalam ±2, dan 99,7%
+dalam ±3. Sifat inilah yang menjadi dasar dalam banyak teknik
+statistika inferensial, karena memungkinkan kita
+memperkirakan probabilitas dan membuat keputusan
+berdasarkan data sampel.
+
+82
+Gambar 4-8. Area kurva distribusi normal dalam satuan simpangan baku
+
+Dalam praktiknya tidak semua data empiris mengikuti pola
+distribusi normal yang ideal [4]. Dikenal pula ukuran tambahan
+untuk mendeskripsikan bentuk distribusi yang menyimpang
+(tidak normal), yaitu:
+
+· Skewness  (kemencengan),  mengukur               derajat
+
+ketidaksimetrisan distribusi. Distribusi yang condong ke kiri
+
+disebut skewness negatif, sedangkan distribusi yang condong
+
+ke kanan disebut skewness positif. Skewness dihitung dari
+
+rata-rata, median, dan sebaran data  kalau hasilnya
+
+negatif, distribusi condong ke kiri; kalau positif, condong ke
+
+kanan; kalau  0, distribusinya simetris (normal).
+
+· Kurtosis (keruncingan), mengukur seberapa "runcing" atau
+
+"datar" puncak distribusi dibandingkan distribusi normal
+
+standar. Nilai kurtosis tinggi menunjukkan distribusi dengan
+
+puncak tajam dan ekor panjang, sedangkan kurtosis rendah
+
+menunjukkan distribusi lebih datar. Kurtosis dihitung dari
+
+derajat keruncingan relatif terhadap distribusi normal 
+
+nilai > 3 (leptokurtic: puncak tajam); nilai < 3 (platykurtic:
+
+puncak datar); nilai = 3 (mesokurtic: normal).
+
+                                                   83
+    Gambar 4-9. Perbandingan kurva distribusi yang menyimpang dengan
+                                            distribusi normal
+
+4.2.5 Teorema Limit Sentral
+Teorema Limit Sentral (Central Limit Theorem/CLT) adalah
+salah satu konsep paling fundamental dalam statistik. Teorema
+ini menyatakan bahwa apabila ukuran sampel yang diambil dari
+suatu populasi cukup besar, maka distribusi statistik sampelnya
+akan mendekati distribusi normal, terlepas dari distribusi
+nilai di populasinya berbentuk normal atau tidak [2]. Dengan
+kata lain, meskipun populasi awal tidak berdistribusi normal,
+distribusi rata-rata sampel yang besar tetap akan mengikuti
+pola distribusi normal. Perhatikan penjelasan teorema ini pada
+pembahasan kasus di 4.3.2.
+
+Penerapan teorema limit sentral sangat penting dalam statistik
+inferensial. Hal ini karena banyak metode analisis inferensial--
+seperti uji hipotesis dan pembentukan interval kepercayaan--
+menggunakan asumsi distribusi normal. Berkat teorema limit
+sentral, peneliti tetap dapat melakukan inferensi statistik
+meskipun data awal tidak berdistribusi normal, selama ukuran
+sampelnya cukup besar. Dengan begitu, distribusi normal dapat
+
+84
+digunakan sebagai pendekatan untuk mempermudah
+perhitungan statistik.
+
+Untuk lebih memahami teorema limit sentral secara sederhana,
+perhatikan contoh berikut. Misalkan terdapat tiga orang dengan
+penghasilan per bulan masing-masing sebesar Rp. 1.000.000,-
+dengan perwakilan nilai yaitu 1; Rp. 3.000.000,- dengan
+perwakilan nilai yaitu 3; dan Rp. 5.000.000,- dengan perwakilan
+nilai yaitu 5.
+
+Tabel 4.1. Probabilitas tiap satu nilai
+
+Nilai  P(x)
+  1
+  3       1
+  5       3
+          1
+          3
+          1
+          3
+
+Distribusi probabilitas pada contoh teorema limit sentral dapat
+diperoleh dari nilai rata-rata penghasilan dua orang yang dipilih
+secara acak dari tiga individu dengan penghasilan Rp.
+1.000.000,-; Rp. 3.000.000,-; dan Rp. 5.000.000,-. Karena
+terdapat tiga kemungkinan penghasilan, maka masing-masing
+memiliki probabilitas sebesar 1.
+
+                                                      3
+
+Nilai harapan (expected value) atau P(x) dari penghasilan
+tersebut adalah Rp3.000.000,-, sebagaimana dihitung dari
+penjumlahan hasil kali antara setiap nilai dengan
+probabilitasnya. Selanjutnya, jumlah seluruh kemungkinan
+pasangan penghasilan adalah sembilan kombinasi.
+
+                                                                                 85
+Apabila diambil sampel sebanyak dua orang secara acak dengan
+pengembalian (artinya setelah terpilih, seseorang dapat terpilih
+kembali), maka akan dihasilkan beberapa kombinasi pasangan
+penghasilan. Selanjutnya, dari setiap kombinasi tersebut
+dihitung rata-rata penghasilannya. Nilai rata-rata yang mungkin
+muncul antara lain Rp. 1.000.000,- dengan perwakilan nilai yaitu
+1 (jika dua kali memilih orang dengan penghasilan Rp.
+1.000.000,-); Rp. 2.000.000,- dengan perwakilan nilai yaitu 2
+(jika memilih Rp. 1.000.000,- dan Rp. 3.000.000,-); Rp.
+3.000.000,- dengan perwakilan nilai yaitu 3; Rp. 4.000.000,-
+dengan perwakilan nilai yaitu 4; hingga Rp. 5.000.000,- dengan
+perwakilan nilai yaitu 5.
+
+    Tabel 4.2. Rata-rata tiap pasangan nilai
+
+    Pasangan Nilai Rata-rata ()
+
+    1,1     1
+
+    1,3     2
+
+    1,5     3
+
+    3,1     2
+
+    3,3     3
+
+    3,5     4
+
+    5,1     3
+
+    5,3     4
+
+    5,5     5
+
+    Tabel 4.3. Probabilitas tiap pasangan nilai
+
+            Q()
+
+         1  1
+
+            9
+            2
+         2
+            9
+            3
+         3
+            9
+            2
+         4
+            9
+            1
+         5
+            9
+
+86
+Dari kombinasi ini dapat dihitung rata-rata penghasilan dua
+orang terpilih (), yang menghasilkan nilai 1, 2, 3, 4, dan 5
+dengan probabilitas berbeda.
+
+Nilai rata-rata (expected value) dari x-bar tersebut juga sama
+dengan Rp. 3.000.000,-, yang konsisten dengan nilai harapan
+populasi. Hal ini menunjukkan bahwa meskipun sampel diambil
+secara acak, distribusi rata-rata sampel akan tetap mengarah
+pada distribusi normal.
+
+   Gambar 4-10. Perubahan distribusi rata-rata sampel menuju distribusi
+                                                    normal
+
+Apabila jumlah sampelnya ditingkatkan dan proses pengambilan
+sampel dilakukan berulang kali, maka distribusi dari rata-rata
+yang diperoleh akan semakin membentuk pola menyerupai
+distribusi normal. Hal ini sejalan dengan teorema limit sentral
+yang menyatakan bahwa rata-rata sampel dari suatu populasi,
+meskipun data awalnya tidak berdistribusi normal, akan
+cenderung mendekati distribusi normal apabila jumlah
+pengambilan sampel cukup besar.
+Penting untuk dipahami bahwa teorema limit sentral hanya
+berbicara mengenai ukuran sampel yang besar agar distribusi
+
+                                                                                 87
+statistik sampel mendekati normal. Hal ini tidak otomatis
+menjamin bahwa sampel tersebut representatif terhadap
+populasi. Representativitas sampel lebih ditentukan oleh cara
+pemilihan sampel yang tepat.
+
+Catatan 4-1
+
+Jangan menganggap bahwa sampel yang besar sudah pasti
+representatif! Sampel yang besar belum tentu sampel yang
+representatif. Keduanya adalah hal yang berbeda. Sampel
+representatif biasanya memang besar, namun sampel besar
+tidak otomatis representatif apabila teknik pengambilannya
+tidak dilakukan dengan benar.
+
+4.2.6 Standard error
+
+Standard error (SE) pada dasarnya adalah simpangan baku
+(standard deviation) dari distribusi statistik sampel.
+Konsep ini muncul karena dalam penelitian kuantitatif, peneliti
+biasanya tidak meneliti seluruh populasi, melainkan hanya
+mengambil sebagian sampel. Dari sampel tersebut dihitung nilai
+statistik, misalnya rata-rata atau proporsi, yang digunakan
+untuk memperkirakan parameter populasi. Namun, nilai
+statistik dari sampel tentu saja tidak selalu persis sama dengan
+nilai parameter populasi, karena adanya variasi dalam proses
+pengambilan sampel. Perbedaan antar-sampel inilah yang
+menyebabkan terbentuknya distribusi nilai statistik, dan
+simpangan baku dari distribusi tersebut dikenal dengan istilah
+standard error [4].
+
+Secara sederhana, standard error dapat dipahami sebagai
+ukuran seberapa jauh rata-rata sampel atau nilai statistik
+sampel menyimpang dari nilai sebenarnya di populasi. Jika
+
+88
+standard error kecil, maka nilai statistik sampel cenderung
+mendekati parameter populasi; sebaliknya, jika standard error
+besar, maka kemungkinan kesalahan dalam estimasi semakin
+tinggi. Standard error menjadi indikator penting dalam menilai
+ketepatan estimasi sampel terhadap populasi.
+
+Besarnya standard error sangat dipengaruhi oleh ukuran sampel.
+Semakin besar jumlah sampel, maka semakin kecil nilai standard
+error, karena variasi antar-sampel berkurang dan estimasi
+menjadi lebih stabil. Hal ini dapat dilihat pada rumus standard
+error untuk rata-rata sampel, yaitu:
+
+                                         
+                                 SE =
+
+                                        
+
+di mana s adalah simpangan baku sampel dan  adalah ukuran
+sampel. Rumus ini menunjukkan bahwa jika ukuran sampel 
+diperbesar, maka penyebut  juga membesar, sehingga nilai
+SE menjadi lebih kecil.
+
+Perlu diketahui bahwa standar deviasi (simpangan baku) dan
+standard error sama-sama mengukur sebaran data, tetapi
+keduanya memiliki makna yang berbeda. Standar deviasi
+menunjukkan seberapa jauh penyebaran data individu dalam
+suatu sampel atau populasi dari nilai rata-ratanya, sehingga
+menggambarkan variasi atau keragaman data. Sementara itu,
+standard error menunjukkan seberapa jauh rata-rata sampel
+yang diperoleh kemungkinan menyimpang dari rata-rata
+populasi sebenarnya.
+
+Pada akhirnya, standard error sering digunakan sebagai dasar
+untuk melakukan inferensi statistik yang berfungsi sebagai
+pengukur seberapa jauh rata-rata sampel dapat menyimpang
+dari rata-rata populasi dengan tingkat kepercayaan tertentu.
+
+                                                                                 89
+4.2.7 Nilai Standar (Z-Score)
+
+Dalam penelitian kita memiliki satuan ukur yang berbeda-beda
+sehingga data asli kadang harus distandarisasi sebelum bisa
+dianalisis. Hasilnya adalah suatu nilai yang dikenal dengan
+istilah nilai standar atau Z-score [4]. Nilai standar atau z-
+score adalah suatu bilangan yang menunjukkan seberapa jauh
+nilai mentah menyimpang dari rata-ratanya dalam distribusi
+data dengan satuan standar deviasi. Untuk distribusi populasi,
+persamaan nilai standar kita adalah sebagai berikut.
+
+                                          - 
+                                    = 
+
+Persamaan z-score digunakan untuk menghitung seberapa jauh
+suatu nilai data  berada dari rata-rata populasi  dalam
+satuan simpangan baku  . Simbol  merepresentasikan nilai
+data yang sedang dianalisis,  adalah nilai rata-rata (mean) dari
+populasi, sedangkan  adalah standar deviasi yang
+menunjukkan tingkat penyebaran data terhadap rata-rata
+populasi.
+
+Apabila nilai yang kita miliki adalah nilai sampel, dan seringnya
+memang demikian, maka persamaan nilai standar kita menjadi:
+
+                                          - 
+                                    = 
+
+Dengan nilai standar, kita dapat menggunakan nilai ini untuk
+mengolah dua variabel dengan satuan yang berbeda atau
+besaran variabel yang terlampau jauh, misalnya cm dengan kg
+dan ratusan dengan jutaan. Tujuan dilakukannya standarisasi
+untuk menyamakan satuan, jadi nilai standar tidak lagi
+tergantung pada satuan pengukuran melainkan menjadi nilai
+baku. Transformasi kurva ke bentuk kurva standar dengan nilai
+
+90
+tengah pada kurva normal yang sudah distandarkan yaitu z =
+0 pada sumbu simetris.
+
+     Gambar 4-11. Transformasi distribusi normal ke z-score dalam kurva
+
+Z-score menunjukkan seberapa jauh suatu observasi berada dari
+rata-rata dalam satuan simpangan baku, sehingga makna z-
+score terletak pada jarak nilai standar dari rata-rata. Misalnya,
+jika Z=1, maka nilai observasi berada satu simpangan baku di
+atas rata-rata. Jika Z=-2, berarti observasi tersebut berada dua
+simpangan baku di bawah rata-rata.
+4.2.8 Menghitung Peluang Suatu Nilai Standar
+
+           dalam Distribusi Normal
+Dalam kurva distribusi normal, seperti yang sudah dibahas di
+subbab 4.2.4, ada yang disebut dengan aturan empiris yang
+berguna untuk memperkirakan berapa probabilitas kejadian
+suatu nilai acak dalam distribusi normal. Sama halnya dengan
+Gambar 4-8, karena satuan Z adalah simpangan baku, maka
+±1 sama dengan ±1Z, ±2 sama dengan ±2Z, dan seterusnya.
+Dalam distribusi normal standar, terdapat aturan umum yang
+dikenal sebagai Aturan Empiris dan sering digunakan, sebagai
+berikut:
+· Sekitar 68% data berada dalam rentang Z=-1 sampai Z=+1
+· Sekitar 95% data berada dalam rentang Z=-2 sampai Z=+2
+
+                                                                                 91
+· Sekitar 99,7% data berada dalam rentang Z=-3 sampai
+    Z=+3
+
+ Gambar 4-12. Area proporsi data sebagai probabilitas nilai dalam rentang
+                                                    z-score
+
+Untuk menghitung peluang secara lebih presisi, peneliti
+menggunakan tabel distribusi normal (tabel Z). Tabel ini
+memberikan nilai probabilitas kumulatif untuk berbagai Z-score.
+Cara membacanya adalah dengan mencari baris sesuai dua digit
+pertama nilai Z (misalnya 1.2 untuk Z = 1,23) dan kolom sesuai
+digit ketiga (misalnya 0.03) sehingga ditemukan z-score = 0,3907.
+Nilai tersebut atau seluruh nilai yang dicari pada tabel adalah
+probabilitas. Dalam kurva, probabiltas tersebut ditunjukan
+pada luas daerah yang diarsir [6].
+
+92
+       Gambar 4-13. Contoh membaca tabel distribusi normal
+
+4.2.9  Z-Score untuk Rata-rata Sampel:
+       Menghubungkan Nilai Z dengan Standard
+       error
+
+Sebelumnya, kita telah membahas Z-score dengan formula
+seperti berikut. Formula ini sangat berguna untuk mengetahui
+posisi sebuah nilai individu (X) dalam distribusi populasinya.
+
+             - 
+        = 
+
+Namun, dalam statistika inferensial, pertanyaan kita seringkali
+bukan tentang satu nilai individu, melainkan tentang
+
+                                                            93
+keseluruhan sampel. Kita lebih tertarik untuk mengetahui
+seberapa wajar atau tidak wajar rata-rata sampel () yang
+kita peroleh.
+
+Untuk menjawabnya, kita perlu melakukan sebuah penyesuaian
+penting. Saat kita mengevaluasi sebuah rata-rata sampel, kita
+tidak lagi membandingkannya dengan sebaran data individu,
+melainkan dengan distribusi statistik sampel--distribusi
+teoretis dari semua kemungkinan rata-rata sampel yang bisa
+diambil.
+
+Seperti yang telah kita pelajari dari Teorema Limit Sentral,
+distribusi ini cenderung normal. Namun, yang terpenting,
+sebarannya jauh lebih sempit daripada sebaran data populasi
+aslinya. Ukuran sebaran untuk distribusi statistik sampel ini
+bukanlah simpangan baku (), melainkan Standard error
+(SE).
+
+Oleh karena itu, ketika kita ingin menstandarkan sebuah rata-
+rata sampel menjadi Z-score, kita harus menggunakan Standard
+error sebagai pembaginya. Formulanya menjadi:
+
+           -    - 
+           =  atau  = /
+
+Di sini:
+
+    ·  adalah rata-rata sampel yang kita observasi.
+    ·  adalah rata-rata populasi (yang seringkali kita
+
+        hipotesiskan atau asumsikan).
+    · SE adalah standard error, yang dihitung dari
+
+        simpangan baku sampel (s) dan ukuran sampel (n).
+
+94
+Perlu dicatat bahwa karena kita biasanya hanya bekerja dengan
+satu sampel, nilai standard error yang kita hitung (/) adalah
+estimasi terbaik kita untuk simpangan baku sebenarnya dari
+distribusi statistik sampel.
+
+Tabel 4.4. Perbedaan Kunci Z-Score antara Untuk Nilai Individu dan
+                                  Untuk Rata-rata Sampel
+
+Konteks           Z-Score untuk Nilai  Z-Score untuk Rata-
+                          Individu          Rata Sampel
+
+Objek Analisis    Satu titik data (X)  Sebuah statistik sampel
+                                       ()
+
+Distribusi Acuan  Distribusi data di   Distribusi statistik
+                  populasi             sampel
+
+Ukuran Sebaran    Simpangan Baku (     Standard error (SE)
+(Pembagi)         atau s)
+
+Dengan pemahaman ini, kita dapat secara akurat menghitung
+probabilitas atau peluang mendapatkan suatu nilai rata-rata
+sampel tertentu, yang akan menjadi dasar dari pengujian
+hipotesis pada bab-bab selanjutnya.
+
+4.3 Studi Kasus
+
+Agar lebih mudah memahami materi pengantar untuk statistika
+inferensial ini, mari kita andaikan set data kita yang terdiri atas
+428 orang responden mahasiswa yang dapat Anda peroleh di sini
+sebagai populasi. Kita memulai pembahasan dengan
+bagaimana memilih sampel kita agar representatif, kemudian
+dilanjutkan dengan pembahasan mengenai distribusi hasil
+sampel, sampai kepada perhitungan standard error dan peluang
+kemunculan suatu nilai statistik sampel.
+
+                                                                    95
+4.3.1 Teknik Pengambilan Sampel
+Karena set data dianggap sebagai populasi, maka kita dapat
+dikatakan memiliki kerangka sampel. Adanya kerangka
+sampel tersebut memungkinkan setiap anggota populasi kita
+memiliki kesempatan yang sama untuk terpilih, karena kita
+"mengetahui" siapa saja calon sampel kita. Dengan demikian,
+kita bisa mempraktikkan teknik pengambilan sampel
+probabilitas dalam memilih sampel kita.
+
+Berikut adalah penjabaran penggunaan teknik-teknik yang ada
+dalam pengambilan sampel probabilitas.
+
+4.3.1.1 Simple Random Sampling
+Pemilihan sampel dengan teknik ini dilakukan dengan sistem
+undian. Kita dapat memanfaatkan berbagai sistem pengundian
+seperti situs wheelofnames.com ini, yang sekarang banyak
+dipakai di kalangan mahasiswa untuk mengundi pembagian
+kelompok, misalnya. Namun, mengingat jumlah anggota
+populasi kita yang mencapai 428, sangat tidak mungkin rasanya
+kita memasukkan seluruh anggota tersebut ke dalam entrinya.
+Oleh karena itu, kita harus menggunakan cara lain
+
+Cara lainnya adalah bisa dengan memanfaatkan tabel angka
+acak (random number table) atau penggerak angka acak
+seperti formula RANDBETWEEN di perangkat spreadsheet pilihan Anda.
+Angka yang dikeluarkan dari pengolahan formula tersebut
+menjadi urutan anggota populasi yang kita pilih sebagai sampel.
+
+  Gambar 4-14. Ilustrasi Penulisan Formula Spreadsheet untuk Pengundian
+                                                    Sampel
+
+96
+Untuk sampel berikutnya, kita melakukan pengundian lagi
+untuk sampel selanjutnya sampai jumlahnya tercukupi.
+
+4.3.1.2 Systematic Random Sampling
+
+Penggunaan teknik ini sama dengan simple random sampling
+pada awalnya. Kita menentukan "tempat pertama" kita
+mengambil calon sampel dengan mengundinya menggunakan
+suatu sistem tadi. Misalnya hasil =RANDBETWEEN(1;428)
+menghasilkan angka 26, maka kita mengambil anggota populasi
+dengan nomor 26 dalam kerangka sampel sebagai sampel
+pertama.
+
+Kemudian, sampel selanjutnya kita pilih dengan menetapkan
+suatu sistem pemilihan anggota populasi. Misalnya kita pilih
+anggota kelima setelah sampel terpilih pertama. Maka, kita
+selanjutnya memilih anggota ke-31, ke-36, ke-41, dan seterusnya
+hingga sejumlah sampel tertentu.
+
+4.3.1.3 Stratified Random Sampling
+
+Untuk melakukan pengambilan sampel dengan stratified random,
+kita terlebih dahulu membagi kerangka sampel kita berdasarkan
+suatu variabel kategoris menjadi strata-strata, kemudian
+melakukan simple random sampling per strata.
+
+Dalam kasus ini, kita akan menggunakan variabel tahun kuliah
+dengan rincian sebagaimana yang ditunjukkan oleh Tabel
+berikut. Kita dapat mengurutkan daftar anggota populasi kita
+menurut variabel tahun kuliah tersebut, kemudian mengundi
+anggota populasi yang kita pilih secara acak atau sistematis.
+
+Tabel 4.5. Rincian Jumlah Anggota Populasi Berdasarkan Tahun Kuliah
+
+Tahun kuliah  Jumlah anggota  Proporsi jumlah
+
+Pertama       37              0,09
+
+Kedua         67              0,16
+
+                                               97
+     Tahun kuliah  Jumlah anggota             Proporsi jumlah
+Ketiga                                   109                        0,25
+Keempat                                  215                        0,50
+Total                                    428                        1,00
+
+Dari rincian tersebut, kita kemudian mengundi setiap strata
+untuk mendapatkan sampel yang kita butuhkan secara
+proporsional. Apabila kita hendak menarik 100 orang sampel,
+artinya kita perlu memilih 9 orang dari strata Tahun kuliah
+Pertama, 16 orang dari strata Tahun kuliah Kedua, dan
+seterusnya.
+
+4.3.1.4 Cluster sampling
+Pengambilan sampel secara klaster tidak relevan dengan kasus
+ini, karena kita sudah memiliki anggota populasi dalam bentuk
+tabel.
+
+4.3.2 Distribusi Sampel, Distribusi Statistik Sampel,
+           dan Teorema Limit Sentral
+
+Untuk dapat memahami perbedaan antara distribusi sampel
+dan distribusi statistik sampel, kita akan menggunakan kasus
+pengambilan 100 buah sampel dari data "populasi" 428
+mahasiswa kita.
+
+Gambar 4-15 menunjukkan histogram distribusi nilai jarak
+rumah-kampus 100 orang mahasiswa yang diambil sebagai
+sampel. Tinggi batang-batang histogram menunjukkan sebaran
+nilai jarak tempat tinggal 100 orang sampel ini ke kampus,
+sementara garis putus-putusnya menunjukkan rata-rata jarak
+tempat tinggal ke kampus 100 orang sampel kita, yakni 5,118
+km.
+
+98
+Sementara itu, Gambar 4-16 menunjukkan histogram nilai rata-
+rata jarak ke kampus dari 100 kali pengambilan berbagai n
+ukuran sampel. Dari gambar tersebut, kita dapat mengamati
+bahwa semakin banyak n atau ukuran sampel yang kita ambil,
+semakin mengumpul ke tengah (semakin presisi) distribusi
+statistiknya.
+Seperti yang kita sudah pahami, distribusi statistik sampel
+hanya dapat diterapkan untuk variabel numerik, seperti halnya
+variabel jarak tempat tinggal ke kampus ini.
+
+       Gambar 4-15. Histogram Distribusi Jarak 100 Sampel Mahasiswa
+
+Dari Gambar 4-16 kita juga dapat memperhatikan bahwa
+bentuk distribusi statistik sampel makin mendekati bentuk
+distribusi normal seiring meningkatnya jumlah sampel yang kita
+ambil. Selain itu, nilai rata-rata yang frekuensi terjadinya
+tertinggi makin mendekati nilai rata-rata populasi.
+Ini mengonfirmasi teorema limit sentral yang menyatakan
+apabila sampel kita besar, maka kita dapat mengatakan bahwa
+
+                                                                                 99
+distribusi statistik sampel kita normal, dan kita dapat
+memperkirakan nilai parameter berdasarkan nilai sampel kita.
+
+   Gambar 4-16. Ilustrasi Pengambilan Sampel Berukuran n Sebanyak 100
+                                                      Kali
+
+4.3.3 Menghitung Standard error Distribusi Statistik
+           Sampel
+
+Standard error adalah simpangan baku dari distribusi statistik
+sampel. Ini menunjukkan seberapa sempit atau lebarnya sebaran
+nilai-nilai statistik dari sejumlah kemungkinan sampel kita.
+Dengan kata lain, nilai standard error juga merepresentasikan
+lebar/sempitnya distribusi statistik sampel.
+Dimisalkan kita memiliki 100 orang sampel dengan rata-rata
+jarak 4,7568 km, kemudian, kita petakan nilai tersebut pada
+distribusi statistik sampel yang juga memperlihatkan nilai rata-
+rata populasi yang kita ketahui, yakni 5,0092 km (Gambar 4-17).
+
+100
+    Gambar 4-17. Posisi Rata-rata Sampel dan Populasi dalam Distribusi
+                                             Statistik Sampel
+
+Masalahnya, distribusi statistik sampel ini merupakan
+distribusi teoretis. Kita tidak akan pernah mengetahui seperti
+apa bentuk dari distribusi statistik sampel kita selain dari hasil
+simulasi saja, termasuk selebar apa distribusi tersebut. Oleh
+karena itu, kita menggunakan standard error untuk
+mengetahui lebar/sempitnya distribusi statistik sampel kita
+tersebut.
+
+Berdasarkan hasil yang diperoleh dari sampel berukuran 100
+orang dengan rata-rata 4,7568 km tersebut, kita mengetahui
+simpangan baku sampel kita ini sebesar 2,173 km. Dengan
+demikian, besar standard error distribusi statistik sampel kita
+adalah
+
+                                           
+                                   SE =
+
+                                          
+                                      = 2,173
+
+                                          100
+                                      = 0,2173
+
+                                                                               101
+Dengan demikian kita mengetahui bahwa 1 standard error
+lebarnya adalah sama dengan 0,2173 km.
+
+4.3.4 Menghitung Nilai Standar (Z-Score) Untuk
+           Rata-rata Sampel
+
+Berdasarkan teorema limit sentral, kita dapat menganggap
+bahwa distribusi statistik sampel kita berbentuk normal karena
+sampel yang kita ambil bisa dikatakan besar, yakni 100 orang.
+Dengan demikian, kita dapat menghitung nilai standar untuk
+statistik kita untuk menilai kewajaran statistik yang kita peroleh.
+
+Untuk menjawab seberapa wajar nilai statistik yang kita peroleh,
+kita akan menghitung nilai standar statistik kita menggunakan
+persamaan yang dibahas pada subbab 4.2.9.
+
+Kita mengetahui bahwa statistik kita, yakni rata-rata jarak
+tempat-tinggal kampus, adalah 4,7568 km, atau mari kita
+persingkat dua desimal saja menjadi 4,76 km. Kemudian, kita
+punya simpangan baku sampel kita sebesar 2,17 km. Kita pun
+sudah menghitung standard error di subbab sebelumnya dan
+memperoleh 0,22. Dengan mengambil nilai populasi yang
+diketahui sebesar 5,01 km kita dapat menghitung nilai standar
+statistik kita sebagai berikut.
+
+                                   - 
+                             = 
+
+                                  4,76 - 5,01
+                               = 0,22
+                               = -1,13636  -1,14
+
+Apabila divisualkan, hasilnya akan seperti yang terlihat pada
+histogram di Gambar 4-18. Pada histogram tersebut dapat kita
+amati posisi statistik sampel kita, yakni di sebelum rata-rata
+
+102
+populasi (Z = 0), dengan kata lain, statistik kita lebih kecil dari
+rata-rata populasi.
+
+             Gambar 4-18. Posisi Statistik Sampel Terhadap Parameter
+
+Kita tidak berhenti di pencarian nilai standarnya. Selebihnya,
+hal yang paling krusial dalam analisis statistik inferensial adalah
+berapakah probabilitas mendapatkan rata-rata sampel sebesar
+4,76 km atau yang lebih kecil dari itu? Ini berarti kita perlu
+mencari luas area di bawah kurva normal yang berada di
+sebelah kiri dari Z = -1,14.
+
+    Gambar 4-19. Area di Bawah Kurva Normal untuk Rata-rata 4,76 km
+
+                                                                               103
+Untuk mencari nilainya, kita perlu menggunakan tabel
+distribusi normal seperti yang dibahas pada 4.2.9, tepatnya
+di Gambar 4-13. Pertama, kita amati dulu ilustrasi yang dipakai
+acuan untuk nilai-nilai yang ada di tabel tersebut. Ilustrasi yang
+digunakan adalah area di antara Z=0 dengan nilai yang kita cari.
+
+          Gambar 4-20. Ilustrasi yang Digunakan dalam Kurva Normal
+
+Artinya, untuk menemukan nilai di bahwa kurva normal sesuai
+yang kita inginkan, kita tinggal mengurangkan nilai area
+tersebut dengan 0,5. Mengapa? Karena ilustrasi tersebut
+menunjukkan bahwa area yang diarsir hanya mencakup sebagian
+dari separuh kurva normal, yang mana separuh kurva normal =
+0,5. Ini diilustrasikan dengan Gambar 4-21 berikut.
+
+     Gambar 4-21. Proses Pemerolehan Luas Area Rata-rata = 4,47 atau
+                                                   Kurang
+
+Area pada tabel dengan Z = -1,14 adalah 0,3729 (coba temukan
+sendiri). Dengan demikian, luas area yang ingin kita ketahui
+adalah 0,5000  0,3729 = 0,1271 atau 12,71%. Artinya,
+
+104
+probabilitas mendapatkan hasil statistik sebesar 4,76 km tersebut
+adalah 12,71%.
+
+Apakah hasil ini umum? Atau langka? Jawabannya kita yang
+menentukan patokannya sendiri. Selain itu, ini adalah inti dari
+apa yang ingin dicari dalam analisis statistik inferensial. Oleh
+karena itu, kita akan mengetahuinya di bab-bab berikutnya.
+
+4.4 Soal Evaluasi
+
+1. Perhatikan cerita berikut dan jawablah soalnya. STP-4.1
+    Sebuah acara keakraban angkatan Anda akan dilakukan di
+    suatu tempat yang memerlukan biaya sewa tempat. Agar
+    acara Anda dihadiri sebanyak mungkin orang, Anda
+    menanyakan kesediaan kawan-kawan Anda. Anda pun
+    merancang sebuah survei untuk mengetahui persentase
+    kawan Anda yang setuju acara keakraban diadakan di tempat
+    tersebut. Untuk itu Anda menanyakan sebagian kawan Anda
+    sebagai sampel.
+    a. Apabila Anda memiliki daftar nama seluruh kawan
+         Anda, apa nama teknik pengambilan sampel yang Anda
+         bisa lakukan?
+    b. Jelaskan bagaimana metode Anda memilih sampel
+         kawan Anda berdasarkan kondisi di soal ke-1 tersebut.
+    c. Apabila Anda tidak memiliki daftar nama seluruh
+         kawan Anda, apa nama teknik pengambilan sampel yang
+         Anda bisa lakukan?
+    d. Jelaskan bagaimana metode Anda memilih sampel
+         kawan Anda berdasarkan kondisi di soal ke-3 tersebut.
+
+2. Jelaskan perbedaan antara simpangan baku (standard
+    deviation) dengan standard error! STP-4.2
+
+                                                                               105
+3. Suatu sampel pegawai ITERA berjumlah 286 orang yang
+    mengukur jarak tempat tinggal mereka ke kampus
+    menghasilkan rata-rata 7,90 km dan simpangan baku 6,42
+    km. STP-4.2
+    a. Jelaskan perbedaan distribusi sampel dengan
+         distribusi statistik sampel menggunakan kasus ini.
+    b. Apakah kita dapat menggunakan teorema limit sentral
+         dalam perhitungan probabilitas distribusi statistik
+         sampel kita tersebut? Jelaskan jawaban Anda.
+    c. Katakanlah parameternya (rata-rata jarak tempat
+         tinggal seluruh pegawai ITERA) diketahui sebesar 7,5
+         km, Hitunglah nilai standar (z-score) sampel kita.
+    d. Hitunglah probabilitas kita mendapatkan nilai rata-rata
+         seperti yang ditanyakan dalam 3.c tersebut dan jelaskan
+         maknanya
+
+106

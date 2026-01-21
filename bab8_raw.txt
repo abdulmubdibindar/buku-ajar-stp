@@ -1,0 +1,225 @@
+Bab 7
+Analisis Statistik Inferensial: Uji
+Hipotesis Dua Populasi Atau Lebih
+
+7.1 Capaian Pembelajaran
+Setelah mempelajari bab ini, Anda diharapkan dapat:
+
+    1. Mampu memaknai hasil dari pengujian hipotesis dua
+         atau lebih populasi pada suatu kasus STP-7.1.
+
+Agar lebih mudah memahami konsep dasar, Anda dapat
+mempelajari studi kasus terlebih dahulu dan menyimak
+pembahasan sesuai dengan konsep dasarnya.
+
+7.2 Konsep Dasar
+Jika kita sebelumnya menguji hipotesis yang terkait dengan
+parameter satu populasi saja, sekarang kita akan mempelajari
+bagaimana pengujian hipotesis yang melibatkan lebih dari satu
+populasi.
+Secara definisi, pengujian hipotesis lebih dari satu
+populasi adalah metode statistik inferensial yang digunakan
+untuk mengetahui apakah perbedaan yang terlihat pada sampel
+dari populasi-populasi yang diuji cukup besar sehingga dapat
+disimpulkan bahwa populasi tersebut juga benar-benar berbeda.
+Dengan kata lain, metode ini membantu peneliti menarik
+kesimpulan tentang persamaan ataupun perbedaan kondisi lebih
+
+                                                                               165
+dari satu populasi berdasarkan data sampelnya saja. Lebih detil,
+konsep ini akan dijelaskan melalui penjabaran berikut.
+
+7.2.1 Pengertian Uji Hipotesis Lebih dari Satu
+           Populasi
+
+Pengertian lebih dari satu populasi tergantung pada definisi
+populasi yang kita gunakan pada penelitian kita. Jika satu
+populasi pada penelitian kita adalah "seluruh mahasiswa
+ITERA", maka dua populasi dapat menjadi "seluruh mahasiswa
+ITERA" dan "seluruh mahasiswa UIN RIL", dan sebagainya.
+Akan ada hal yang kita bandingkan dari kedua ataupun seluruh
+populasi tersebut. Dalam hal ini, kita akan membuktikan bahwa
+`ada atau tidaknya perbedaan karakteristik dari mahasiswa
+ITERA dan mahasiswa UIN RIL'. Perbedaan karakteristik ini
+dapat berupa parameter tertentu, seperti rata-rata, median,
+atau proporsi pada dua atau lebih populasi yang diujikan.
+
+Di sisi lain, pengertian lebih dari satu populasi juga dapat
+digunakan untuk satu populasi dalam dua kondisi berbeda.
+Dalam hal ini, pengujian hipotesis dilakukan untuk
+membandingkan kondisi sebelum dan sesudah suatu perlakuan
+atau intervensi pada populasi yang diamati.
+
+Berdasarkan teknik dan pendekatannya, penjelasan uji hipotesis
+lebih dari satu populasi ini dapat dikelompokkan ke dalam tiga
+bentuk kasus, yaitu dua populasi tidak berpasangan, dua
+populasi berpasangan, dan lebih dari dua populasi.
+
+7.2.2 Uji Hipotesis Dua Populasi Tidak Berpasangan
+
+Pada uji hipotesis dua populasi tidak berpasangan, hanya
+terdapat dua populasi yang akan diujikan. Dua populasi ini
+adalah populasi yang berbeda dan tidak saling berkaitan.
+
+166
+Contoh dari bentuk kasus ini adalah perbandingan karakteristik
+mahasiswa ITERA dan mahasiswa UIN RIL sebagaimana yang
+telah disampaikan sebelumnya. Kedua populasi tersebut berasal
+dari sumber yang berbeda dan tidak memiliki hubungan. Makna
+tidak berpasangan menegaskan bahwa kedua populasi yang diuji
+benar-benar terpisah (independen), sehingga pengujian
+dilakukan untuk membandingkan parameter dari lebih dari satu
+populasi yang berdiri sendiri.
+Pada kasus ini, hipotesis kosong (H) yang menunjukkan kondisi
+netral dapat dirumuskan sebagai tidak adanya perbedaan
+antara kedua populasi yang dibandingkan. Bentuk umum
+penulisan hipotesis kosong ini adalah:
+
+         Ho : parameter populasi A = parameter populasi
+    Ho : parameter populasi A ­ parameter populasi B = 0;
+Ho :  = 0, dimana  menjadi notasi untuk selisih parameter
+
+                             dari kedua populasi
+Sementara itu, hipotesis alternatif (H) menunjukkan kondisi
+adanya perbedaan antara kedua populasi tersebut --
+baik perbedaan yang memiliki arah (lebih besar atau lebih kecil),
+maupun yang tidak memiliki arah (lihat Tabel 6-1). Bentuk
+umum penulisan hipotesis alternatif ini adalah:
+
+        H : parameter populasi A  parameter populasi B
+      H : parameter populasi A ­ parameter populasi B  0
+
+                                   H:0
+
+                                                                               167
+Untuk kasus pengujian yang menggunakan rata-rata sebagai
+parameter populasi, maka bentuk hipotesis dapat dituliskan
+sebagaimana ditampilkan pada Tabel 7-1.
+
+Tabel 7.1 Alternatif Bentuk Hipotesis Alternatif Kasus Dua Populasi Tidak
+
+                       Berpasangan
+
+No Bentuk Hipotesis    Hipotesis      Tujuan
+     kasus     kosong  alternatif   penelitian
+
+I Tidak     H0: A = B H1: A  B Menguji dugaan
+
+     sama   atau  = atau   0 adanya perbedaan
+
+     dengan 0                       rata-rata pada
+
+                                    populasi A dan
+
+                                    populasi B
+
+II Lebih    H0: A = B H1: A > B Menguji dugaan
+
+     dari   atau  = atau  > 0 bahwa rata-rata
+
+            0                       populasi A lebih
+
+                                    dari populasi B
+
+III Kurang H0: A = B H1: A < B Menguji dugaan
+
+     dari   atau  = atau  < 0 bahwa rata-rata
+
+            0                       populasi A kurang
+
+                                    dari populasi B
+
+Selanjutnya untuk pengujian, langkah-langkah yang dapat
+dilakukan masih sama dengan apa yang telah dijelaskan pada
+Bab 6 (baca langkah pengujian hipotesis), yang terdiri
+atas lima tahapan utama, yaitu:
+
+  1. Menetapkan asumsi dasar pengujian;
+  2. Merumuskan hipotesis kosong (H) dan hipotesis alternatif
+
+       (H);
+  3. Memilih distribusi sampling yang sesuai serta menentukan
+
+       wilayah dan titik kritis,
+  4. Menghitung nilai statistik uji, dan
+  5. Menarik kesimpulan berdasarkan hasil pengujian.
+
+168
+Hal yang mungkin berbeda adalah bentuk hipotesis yang
+menjadi dasar pengujian dan pemaknaan hasil pengujian.
+
+7.2.3 Uji Hipotesis Dua Populasi Berpasangan
+Kasus dua populasi berpasangan merujuk pada kondisi di mana
+terdapat dua populasi yang sama dan saling berkaitan. Kedua
+populasi ini sebenarnya berasal dari satu populasi yang sama,
+tetapi diamati dalam dua kondisi yang berbeda.
+
+Sebagai contoh, kita ingin menguji apakah terdapat perubahan
+kondisi mahasiswa ITERA pada saat sebelum dan sesudah
+penerapan program Bus Kampus. Pada dasarnya, populasi yang
+kita amati adalah seluruh mahasiswa ITERA. Hanya saja, kita
+melakukan pengamatan pada dua kondisi yang berbeda.
+
+Hasil pengujian ini akan menunjukkan apakah terdapat
+perubahan yang signifikan akibat adanya program atau
+intervensi tersebut.
+
+Bentuk umum dari hipotesis kosong (H) dan hipotesis alternatif
+(H) pada kasus ini sebenarnya sama seperti yang telah
+dijelaskan pada uji dua populasi tidak berpasangan.
+
+Perbedaannya terletak pada notasi penulisan hipotesis, yang
+digunakan untuk menegaskan kondisi populasi yang diamati.
+Pada hipotesis nol (H), asumsi yang digunakan adalah bahwa
+tidak terdapat perbedaan antara kondisi sebelum dan
+sesudah intervensi. Sebaliknya, pada hipotesis alternatif (H),
+diasumsikan terdapat perbedaan antara kondisi sebelum
+dan sesudah intervensi.
+
+                                                                               169
+Adapun untuk kasus dengan parameter rata-rata, bentuk
+hipotesis tersebut dapat dituliskan sebagaimana ditampilkan
+pada Tabel 7-2.
+
+Tabel 7.2 Alternatif Bentuk Hipotesis Alternatif Kasus Dua Populasi
+
+                 Berpasangan
+
+No Bentuk        Hipotesis  Hipotesis     Tujuan
+          kasus   kosong    alternatif  penelitian
+
+I Tidak          H0: sd = sb H1: sd  sb Menguji dugaan
+
+     sama        atau  = 0 atau   0 adanya
+
+     dengan                             perbedaan rata-
+
+                                        rata pada
+
+                                        kondisi sebelum
+
+                                        dan sesudah
+
+II Lebih         H0: sd = sb H1: sd > sb Menguji dugaan
+
+     dari        atau  = 0 atau  > 0 bahwa rata-rata
+
+                                        kondisi sebelum
+
+                                        lebih dari
+
+                                        kondisi setelah
+
+III Kurang H0: sd = sb H1: sd < sb Menguji dugaan
+
+     dari        atau  = 0 atau   0 bahwa rata-rata
+
+                                        kondisi sebelum
+
+                                        kurang dari
+
+                                        kondisi setelah
+
+Adapun langkah pengujiannya juga masih sama dengan apa
+yang telah disampaikan pada bab sebelumnya.
+

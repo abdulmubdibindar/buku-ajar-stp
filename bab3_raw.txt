@@ -1,0 +1,1263 @@
+Bab 2
+Analisis Statistika Deskriptif
+
+2.1 Capaian Pembelajaran
+Setelah mempelajari bab ini, Anda diharapkan:
+
+    1. Mampu menentukan tingkat pengukuran yang tepat
+         untuk sebuah variabel STP-2.1
+
+    2. Mampu memilih statistik deskriptif yang tepat sesuai
+         dengan variabel yang akan disajikan dan informasi yang
+         ingin disampaikan STP-2.2
+
+    3. Mampu menginterpretasikan informasi dari persentase/
+         proporsi, rasio, laju, ukuran pemusatan, dan ukuran
+         penyebaran suatu data kuantiatif sesuai dengan konteks
+         kasusnya STP-2.3
+
+Agar lebih mudah memahami konsep dasar, Anda dapat
+mempelajari studi kasus terlebih dahulu dan menyimak
+pembahasan sesuai dengan konsep dasarnya.
+
+2.2 Konsep Dasar
+Pada konsep dasar ini kita akan membahas jenis-jenis nilai dan
+tingkat pengukuran variabel dan kaitannya dengan analisis
+statistik deskriptif yang dapat digunakan pada masing-masing
+jenis dan tingkat pengukuran variabel.
+
+                                                                                 15
+2.2.1 Jenis Nilai dan Tingkat Pengukuran Variabel
+
+Nilai dan variabel dalam data terstruktur memiliki sifat
+mendasar yang akan memengaruhi jenis analisis kita di tahap
+selanjutnya. Dalam subbab ini kita akan menelaah apa saja
+sifat-sifat mendasar tersebut, yakni jenis nilai dan tingkat
+pengukuran variabel.
+
+2.2.1.1 Jenis Nilai
+Menurut karakteristik nilainya, variabel dapat kita
+kelompokkan menjadi dua jenis: kategoris (categorical) dan
+numerik (numerical).
+
+    · Variabel kategoris adalah variabel yang nilainya berupa
+         non-angka.
+         Contoh: "Jenis kelamin" (laki-laki, perempuan); "jenis
+         pekerjaan" (pegawai negeri, pegawai swasta, militer);
+         "nama kecamatan tempat tinggal" (Sukarame, Labuhan
+         Ratu).
+
+    · Variabel numerik adalah variabel yang nilainya berupa
+         angka dan berasal dari pengukuran secara kuantitatif.
+         Variasi nilainya dapat berkisar dari negatif tak-hingga
+         (-) sampai tak-hingga ().
+         Contoh: "lama tempuh" (satuan menit, jam), "jarak
+         tempat tinggal dari kantor" (dalam kilometer), "jumlah
+         hari hujan dalam satu bulan"
+
+Variabel numerik juga dapat dibagi menjadi dua jenis
+berdasarkan kemampuan nilainya dibagi-bagi, di antaranya
+diskret dan kontinu.
+
+Variabel diskret adalah variabel numerik yang angkanya berupa
+bilangan bulat, sehingga tidak ada nilai berupa pecahan atau
+angka desimal. Contoh variabel diskret misalnya adalah "jumlah
+
+16
+anggota keluarga", "jumlah hari hujan dalam satu bulan", atau
+"jumlah pergerakan suatu rumah dalam sepekan."
+Sementara itu, variabel kontinu memungkinkan adanya nilai
+pecahan atau desimal. Ini disebut kontinu karena kita
+memandang selisih di antara dua angka dapat dibagi terus-
+menerus sehingga menghasilkan nilai desimal yang makin
+panjang. Contoh variabel kontinu adalah "jarak tempat tinggal
+dari kantor", "rata-rata penghasilan bulanan selama 10 tahun",
+atau "volume air limpasan dalam suatu kawasan."
+Gambar 2-1 mengilustrasikan perbedaan variabel numerik
+diskret dan kontinu dalam garis bilangan. Bulatan-bulatan
+hitam adalah representasi dari nilai-nilai yang mungkin ada
+dalam variabel numerik tersebut sementara garis-garis vertikal
+adalah posisi angka bilangan bulat.
+
+Gambar 2-1. Ilustrasi angka pada variabel numerik diskret (a) dan kontinu
+                                                       (b)
+
+Gambar (a) adalah ilustrasi dari variabel numerik diskret yang
+menunjukkan bahwa nilai-nilai angka hanya bisa diletakkan
+secara tegas di bilangan-bilangan bulat sementara (b) yang
+mengilustrasikan variabel numerik kontinu menunjukkan bahwa
+di sepanjang ruang antara bilangan-bilangan bulat tersebut kita
+masih bisa menyimpan sebuah nilai yang menunjukkan
+kemampuan pembagian angka secara terus-menerus
+
+                                                                                 17
+2.2.1.2 Tingkat Pengukuran Variabel
+Kita telah mengenal bahwa pengumpulan data pada penelitian
+kuantitatif juga diberi istilah pengukuran. Dalam hal ini,
+pengumpulan data bisa diibaratkan dengan kita menggunakan
+penggaris untuk mengukur panjang suatu objek [5, p. 14].
+Penggaris tentunya memiliki sederet angka.
+
+Jika kita mengandaikan nilai-nilai variabel adalah sebagai angka,
+penafsiran kita terhadap angka-angkat tersebut bisa berbeda
+tergantung dari variabel yang kita ukur (lihat pembahasan kasus
+di 2.3.2). Maka dari itu, ada yang disebut dengan tingkat
+pengukuran pada variabel, atau yang banyak disebutkan
+dalam banyak literatur statistik level of measurement scale [5, 2,
+6]
+
+Angka-angka yang kita kumpulkan pada data kita sebenarnya
+adalah nilai (value) dan interpretasinya berbeda menurut
+tingkat pengukurannya. Tingkatan ini mencakup tingkat yang
+paling tinggi, yakni yang menyatakan angka sebenarnya, sampai
+yang paling rendah, yakni yang hanya menyatakan pembeda
+antarobjek.
+
+Tingkat pengukuran variabel dari yang paling rendah ke yang
+paling tinggi di antaranya adalah nominal, ordinal, dan
+metrik (metric).
+
+1) Nominal
+Tingkat pengukuran nominal adalah tingkat pengukuran yang
+paling rendah. Angka pada tingkat ini hanya dimaknai sebagai
+pembeda nilai antarobjek. Jika angka dikenakan pada variabel
+ini, angka tersebut hanya bertindak sebagai label.
+
+Pada variabel yang memiliki tingkat pengukuran ini operasi
+matematika atau perhitungan tidak menghasilkan interpretasi
+
+18
+yang bermakna atau menghasil interpretasi yang tidak masuk
+akal.
+
+Contohnya variabel jenis moda transportasi ketika liburan
+memiliki enam nilai yang mungkin: mobil pribadi, kereta api,
+sepeda motor, bus, tram, dan pesawat. Angka 1 sampai 6
+digunakan untuk melabeli keenam jenis moda transportasi
+tersebut. Pemberian angka 6 untuk pesawat tidak bermakna
+pesawat lebih besar dari mobil yang berangka 1. Interpretasinya
+sama saja jika angkanya dibalik, 1 untuk pesawat dan 6 untuk
+pesawat. Selain itu, bus yang bernilai 4 tidak berarti 2sepeda.
+Dengan demikian, variabel jenis moda transportasi ketika
+liburan adalah variabel dengan tingkat pengukuran nominal.
+
+2) Ordinal
+Variabel dengan tingkat pengukuran ordinal adalah variabel
+yang memiliki urutan peringkat yang logis. Jika angka
+dikenakan pada tingkatan ini, angka tersebut hanya
+menunjukkan urutan posisi tetapi tidak dapat memberikan
+penafsiran berapa jarak di antara posisi-posisi tersebut.
+
+Contohnya variabel tingkat pendidikan: 1 untuk SD, 2 untuk
+SMP, 3 untuk SMA, 4 untuk S-1, dan 5 untuk S-2. Angka 3
+untuk SMA bukan berarti berjarak 2 satuan dari SD (3­1),
+begitu juga S-2 bukan berarti berjarak 2 satuan dari SMA.
+Begitu juga S-1 bukan berarti 2SMP. Ini adalah salah satu
+contoh variabel dengan tingkat pengukuran ordinal. Bacalah
+Catatan 2-1 berikut tentang sebuah skala ordinal yang sering
+digunakan dalam penelitian.
+
+Catatan 2-1
+
+Banyak penelitian sosial menggunakan skala Likert [7] untuk
+mengukur variabel yang berkenaan penilaian persepsional yang
+
+                                                                                 19
+bersifat subjektif. Misalnya, persepsi mahasiswa terhadap
+kinerja seorang dosen yang memiliki nilai "sangat tidak puas",
+"tidak puas", "puas", dan "sangat puas", atau ditambah "netral"
+sehingga berjumlah ganjil. Namun, banyak penelitian
+mengaplikasikan perhitungan matematika pada kumpulan nilai
+ini. Hal ini menyalahi prinsip tingkat pengukuran. Beberapa
+ilmuwan mencoba mengurangi kesalahan ini dengan
+menganjurkan penggunaan hingga 11 tingkatan [8].
+
+3) Metrik
+Variabel dengan tingkat pengukuran angka (metric) adalah
+variabel dengan angka yang sebenarnya karena angka pada
+tingkat pengukuran ini dapat ditafsirkan sebagai posisi dan
+skala nilanya. Di berbagai sumber, tingkat pengukuran ini
+banyak dibagi menjadi dua tingkat: interval dan rasio.
+
+Terdapat perbedaan dan persamaan antara kedua tingkat
+variabel ini. Secara umum, kedua tingkat pengukuran ini
+memiliki rentang yang sama antarnilainya sehingga sama-sama
+dapat diolah secara angka. Nilai-nilai dari variabel yang berada
+pada tingkat pengukuran ini dapat dikenakan operasi
+matematika. Mereka dapat ditambahkan, dikurangi, dibagi,
+atau dikalikan. Interpretasi dari perhitungan matematis untuk
+variabel pada tingkat ini masuk akal dan memiliki arti.
+
+Perbedaan variabel interval dan rasio terletak pada posisi nilai
+nol absolutnya. Variabel interval tidak memiliki posisi nilai
+nol absolut sedangkan variabel rasio ya. Sebagai contoh, dalam
+pengukurannya, temperatur dengan 40° Celcius pasti 10° lebih
+panas dibandingkan temperatur 30° Celcius dan 2 kali lebih
+dingin dibandingkan temperatur 80° Celcius. Akan tetapi,
+ukuran temperatur pada termometer Celcius tidak akan sama
+dengan ukuran temperatur pada termometer Kelvin karena
+
+20
+letak nolnya tidak sama. Dengan demikian, temperatur adalah
+salah satu contoh variabel interval.
+
+Contoh variabel rasio adalah jarak tempuh. Jarak tempuh dapat
+bernilai desimal dan memiliki titik nol yang absolut, yakni pada
+kondisi tidak ada ruang di antara sebuah titik. Jarak juga dapat
+dikalikan, dibagi, dikurangi, dan ditambah. Dengan demikian,
+jarak adalah salah satu contoh variabel rasio. Gambar 2-2
+menampilkan ilustrasi "mistar/penggaris" untuk masing-masing
+tingkat pengukuran variabel.
+
+Variabel Nominal: semua nilai          Variabel Ordinal: nilai angka dapat
+angka bersifat setara, tidak ada yang  diurutkan pada suatu skala seperti
+lebih tinggi atau lebih rendah.        "mistar" yang menunjukkan tingkatan.
+                                       Namun, angka tersebut tidak
+                                       mewakili nilai numerik yang dapat
+                                       dihitung secara matematis.
+
+ Variabel Metrik-Interval: semua Ilustrasi nilai variabel dengan tingkat
+ nilai adalah angka dan memiliki jarak pengukuran rasio. Semua nilai adalah
+ antara yang sama besar, namun tidak angka dan terdapat titik nol absolut.
+ ada titik nol absolut.
+
+            Gambar 2-2. Ilustrasi berbagai tingkat pengukuran variabel
+
+2.2.2 Metadata
+
+Setelah menentukan jenis nilai dan tingkat pengukuran, kita
+juga perlu membuat metadata. Metadata adalah informasi
+tentang data, yaitu informasi yang menjelaskan konteks,
+struktur, dan karakteristik data tersebut. Contohnya meliputi
+nama variabel, tipe data (jenis nilai dan tingkat pengukuran),
+satuan pengukuran, sumber data, dan waktu pengumpulan.
+
+                                       21
+Dengan metadata yang jelas, data menjadi lebih mudah
+dipahami, dikelola, dan dianalisis, walaupun bukan oleh peneliti
+aslinya, karena pengguna tahu arti setiap variabel dan
+bagaimana data tersebut diperoleh. Tanpa metadata,
+interpretasi data bisa salah dan analisis menjadi tidak valid.
+2.2.3 Keterkaitan antara Jenis Nilai dan Tingkat
+
+           Pengukuran Variabel
+Jenis nilai dan tingkat pengukuran variabel memiliki keterkaitan
+yang erat. Suatu variabel dengan tingkat pengukuran nominal
+dan ordinal pasti memiliki nilai kategoris, tidak mungkin
+bernilai angka. Iyapun bernilai angka, angka tersebut tidak bisa
+dikalkulasikan secara matematis sebagaimana yang sudah
+dibahas.
+Selanjutnya, variabel dengan jenis nilai numerik, baik diskret
+maupun kontinu, pasti adalah variabel dengan tingkat
+pengukuran interval atau rasio. Nilai angka dalam variabel
+tingkat ini bisa dikalkulasi menggunakan operasi-operasi
+matematis seperti dikalikan, ditambahkan, dikurangi, atau
+dibagi.
+Tabel 2.1 berikut menunjukkan hubungan antara jenis nilai
+dengan tingkat pengukuran sebuah variabel sebagaimana yang
+dipaparkan.
+
+22
+Tabel 2.1. Keterkaitan antara jenis nilai dengan tingkat pengukuran suatu
+                                                  variabel
+
+                              Jenis nilai
+
+                              Numerik
+
+                            Kategoris Diskret Kontinu
+
+Tingkat           Nominal                  
+    pengukuran    Ordinal
+        variabel  Interval                 
+                  Rasio
+                                           
+
+                                           
+
+2.2.4 Menaikkan-menurunkan Tingkat Pengukuran
+           Variabel
+
+Kita dapat menurunkan atau menaikkan tingkat pengukuran
+variabel jika kita memiliki pemahaman yang cukup terkait
+ukuran angka variabel yang kita teliti. Misalnya kita ambil
+contoh penghasilan keluarga. Kita dapat menyatakan besar
+penghasilan keluarga dalam bentuk angka jumlah yang
+sebenarnya sehingga variabel penghasilan keluarga tersebut
+merupakan skala.
+
+Akan tetapi, jika orang yang kita tanya hanya tahu perkiraannya
+dan tidak angka pastinya, kita dapat membuat nilai penghasilan
+tersebut menjadi urutan rentang. Dengan demikian, nilai
+variabel penghasilan sekarang berbentuk kategori-kategori yang
+memungkinkan orang tersebut dapat menjawabnya tanpa perlu
+tahu angka pastinya. Artinya, variabel penghasilan ini sekarang
+menjadi variabel ordinal.
+
+Konsep ini diperlihatkan dalam kasus yang dibahas pada subbab
+2.3.2.
+
+                                                       23
+2.2.5 Teknik Analisis Statistik Deskriptif
+
+Analisis statistik deskriptif adalah analisis yang
+mendeskripsikan data dari sebuah sampel atau populasi. Dengan
+menggunakan statistik deskriptif, kita bisa mengambil makna
+dari data kita dengan lebih bernilai. Ini adalah salah satu teknik
+dalam pengolahan data menjadi informasi.
+
+Makna data yang kita kumpulkan bisa bermacam-macam sesuai
+teknik analisis statistik deskriptif yang kita gunakan. Secara
+umum, kita dapat membagi teknik-teknik ini menjadi 4 kategori:
+ukuran frekuensi, ukuran kecenderungan memusat,
+ukuran penyebaran, dan tabel silang.
+
+Untuk masing-masing kategori teknik ini ada juga tingkat
+pengukuran yang tepat untuk digunakan teknik analisis tersebut
+pada variabelnya.
+
+2.2.5.1 Ukuran Frekuensi
+
+Ukuran frekuensi adalah ukuran yang menyatakan frekuensi
+relatif objek-objek dilihat dari suatu variabel. Objek-objek
+dikelompokkan ke dalam kategori-kategori dan dihitung
+jumlahnya dan dibandingkan dengan jumlah keseluruhan objek
+tersebut.
+
+    frekuensi kategori                  
+    FR= jumlah keseluruhan observasi = 
+
+Kegunaan dari ukuran ini di antaranya:
+
+    · memberikan informasi mengenai banyaknya objek
+        dengan kategori tertentu dalam data kita dalam bentuk
+        standar
+
+24
+· membandingkan distribusi frekuensi suatu kategori
+    antara dua set data yang memiliki jumlah total berbeda,
+    secara objektif.
+
+Teknik ini dapat digunakan langsung pada variabel berjenis
+diskret, artinya variabel yang bertingkat pengukuran nominal
+dan ordinal. Variabel angka juga bisa dianalisis dengan ukuran
+frekuensi apabila nilainya bulat dan terjadi berulang. Contohnya
+variabel tahun kelahiran yang merupakan variabel angka,
+namun nilainya pasti bulat dan banyak orang yang lahir di
+tahun yang sama.
+
+Jika kita ingin membuat analisis ukuran frekuensi pada variabel
+kontinu, maka kita harus membuat interval kelas terlebih
+dahulu seperti yang dibahas pada subbab 2.2.4.
+
+Teknik-teknik yang menggunakan frekuensi relatif dalam ukuran
+frekuensi di antaranya adalah persentase/proporsi, laju, dan
+rasio.
+
+           Tabel 2.2. Teknik-teknik dalam Ukuran Frekuensi
+
+   Teknik  Interpretasi teknik Cara perhitungan             Penjelasan
+Proporsi
+           Frekuensi relatif  Membagi frekuensi Meringkas
+
+           objek suatu        kategori yang ingin penjelasan angka
+
+           kategori terhadap kita ketahui        dan mengetahui
+
+           seluruh objek      dengan jumlah      dominansi suatu
+
+                              seluruh objek      kategori
+
+                                =  
+                                   
+
+                              pk = proporsi
+
+                              objek kategori k
+
+                              fk = frekuensi
+
+                              objek kategori k
+
+                                                            25
+   Teknik    Interpretasi teknik   Cara perhitungan           Penjelasan
+Persentase
+            Sama dengan           N = jumlah            Sama dengan
+            proporsi, hanya                             proporsi, hanya saja
+            saja basisnya 100     seluruh objek         basisnya 100 dan
+            dan dalam satuan      Membagi frekuensi     dalam satuan persen
+            persen (%), alih-     kategori yang ingin   (%)
+            alih 0­1 seperti      kita ketahui
+            pada proporsi         dengan jumlah
+                                  seluruh objek
+                                  kemudian dikali
+                                  100%
+
+                                    =   × 100%
+                                       
+                                              
+Rasio       Frekuensi relatif       =                   Mengetahui
+Laju/rate   objek suatu                                 perbandingan
+            kategori terhadap     fk = proporsi         frekuensi suatu
+            kategori lain                               kategori terhadap
+                                  objek kategori k      kategori lainnya
+            Jumlah kejadian
+            suatu kategori        fl = frekuensi        Secara rumus,
+            terhadap seluruh                            perhitungan laju
+            kemungkinan yang      kategori l            hampir sama dengan
+            terjadi dalam satu                          persentase/proporsi.
+            rentang waktu              =      ×         Akan tetapi,
+                                                        maknanya berbeda.
+                                                        Laju
+                                  lk = laju kejadian k  merepresentasikan
+                                                        perbandingan jumlah
+                                  N = jumlah            kejadian dalam satu
+                                                        rentang waktu dengan
+                                  seluruh kejadian      frekuensi seluruh
+                                                        kejadian yang
+                                  yang mungkin          mungkin. Bacalah
+                                                        Catatan 2-2 berikut.
+                                  J = bilangan
+
+                                  pengali
+
+Catatan 2-2
+
+Perbedaan makna persentase dengan laju terletak pada "kesan
+dinamisme" dari suatu kejadian. Contoh penggunaan laju yang
+
+26
+sering digunakan adalah pada jumlah kecelakaan. Untuk
+menyebutkan bahwa kejadian kecelakaan di suatu tempat itu
+tinggi atau rendah, kita tidak bisa serta-merta melaporkan
+jumlah kejadiannya saja. Akan tetapi, kita harus bisa
+membaginya dengan jumlah pengendara di tempat tersebut.
+Bilangan pengali J pada Tabel 2.2 dimaksudkan untuk
+mengubah angka desimal menjadi bilangan bulat agar kita bisa
+mengatakan "setiap J orang terdapat (lk × J) kejadian dalam T
+waktu"
+
+Kesan dinamismenya terletak pada jumlah pengendara yang
+bisa berubah-ubah setiap waktu. Dari tahun ke tahun pastinya
+terdapat perubahan jumlah seluruh orang yang merupakan
+pengendara bermotor. Lain halnya dengan persentase yang
+biasanya digunakan untuk menyebutkan frekuensi relatif. Kita
+hanya peduli pada seberapa dominan suatu kategori dalam
+seluruh objek yang ada.
+
+2.2.5.2 Ukuran Kecenderungan Pemusatan
+Ukuran kecenderungan pemusatan atau measure of central
+tendency adalah ukuran yang menerangkan bagaimana
+karakteristik yang mewakili kebanyakan objek yang kita
+kumpulkan. Secara matematis ini disebut juga kecenderungan
+pusat dari distribusi nilai objek.
+
+Dengan demikian, interpretasi yang dapat kita buat dari ukuran
+ini adalah karakteristik kebanyakan untuk kumpulan objek kita.
+Karakteristik tersebut ditunjukkan oleh nilai dari teknik ukuran
+kencenderungan pemusatan yang dipilih. Oleh karena itu,
+satuan nilai kecenderungan pemusatan akan sama dengan
+satuan variabelnya.
+
+                                                                                 27
+Teknik-teknik menyatakan yang termasuk ke dalam ukuran
+kecenderungan pemusatan terdiri atas rata-rata (mean),
+median, dan modus (mode). Penggunaan setiap teknik harus
+memperhatikan tingkat pengukuran variabelnya. Simak
+pembahasannya pada Tabel 2.3 berikut.
+
+    Tabel 2.3. Teknik-teknik dalam Ukuran Kecenderungan Pemusatan
+
+            Interpretasi
+
+    Teknik  teknik                    Cara perhitungan                       Penjelasan
+
+Rata-rata Pusat                Menjumlahkan seluruh nilai Rata-rata hanya
+
+(mean)      distribusi: nilai yang ada di objek kita lalu                    dapat dikenakan
+
+            suatu variabel membaginya dengan jumlah pada variabel
+
+            yang dimiliki      objek tersebut.                               dengan tingkat
+
+            kebanyakan          =              =   1 +       2 +     +       pengukuran
+            objek                     = 1                                    metrik
+                                                                             (interval/rasio)
+                                       
+
+                                = simbol rata-rata (dibaca saja.
+
+                               "eks bar")                                    Teknik ini sering
+
+                                = simbol penjumlahan                         digunakan dalam
+
+                               seluruh nilai objek                           menyebutkan
+
+                               X = nilai masing-masing                       kecenderungan
+
+                               objek                                         memusat suatu set
+
+                               i = penghitung objek, objek data.
+
+                               kesatu berarti i = 1, kedua                   Akan tetapi, teknik
+                               berarti i = 2, dst.                           ini mempunyai
+                               n = jumlah seluruh objek                      kelemahan, yakni
+
+                                                                             sangat terpengaruh
+
+                                                                             oleh pencilan.
+
+Median      Pusat              Urutkan nilai objek-objek dari                Median dapat
+            distribusi: nilai  kecil ke besar terlebih dahulu,               digunakan pada
+            yang menjadi       kemudian:                                     data yang
+            pembagi                                                          berurutan, dengan
+            kumpulan objek     · bila jumlah seluruh                         demikian tingkat
+            kita menjadi                                                     pengukuran
+            dua kumpulan           objek ganjil, nilai                       terrendah yang
+            dengan jumlah                                                    bisa menggunakan
+            yang sama              median adalah nilai dari                  adalah ordinal
+            (50%-50%)
+                                   objek       ke-   +   1                   Median tidak
+                                                      2                      terpengaruh oleh
+                                                                             pencilan, sehingga
+                               · bila genap, nilai median
+
+                                   adalah nilai tengah dari
+
+                                   nilai       objek        ke-         dan
+                                                                  2
+
+                                   objek       ke-     +    1
+                                                    2
+
+28
+   Teknik      Interpretasi  Cara perhitungan                       Penjelasan
+Modus             teknik                                      untuk melengkapi
+                                                              kelemahan rata-
+            Nilai suatu                                       rata, nilai median
+            variabel yang                                     juga disajikan.
+            sering muncul
+            dalam set data   Buat tabel distribusi frekuensi  Modus dapat
+                             terlebih dahulu dan temukan      digunakan pada
+                             nilai dengan frekuensi           hampir seluruh
+                             terbanyak.                       tingkat
+                                                              pengukuran, kecuali
+                                                              metrik yang nilai
+                                                              desimalnya sangat
+                                                              beragam.
+
+                                                              Sebuah kumpulan
+                                                              objek bisa memiliki
+                                                              lebih dari satu
+                                                              modus atau bahkan
+                                                              tidak punya modus
+                                                              sama sekali.
+
+Catatan 2-3
+
+Bagaimana rata-rata (mean) bisa sensitif terhadap pencilan?
+Simak contoh berikut.
+
+Misalkan kita punya 5 objek yang bernilai 2, 3, 2, 4, dan 5. Rata-
+
+rata  dari  nilai  tersebut  adalah  2+ 3+ 2+ 4+ 5  =  3,2    dan  mediannya
+                                             5
+
+3. Akan tetapi, jika kita tambahkan pencilan, yakni nilai
+
+                                                                   29
+ekstrem, misalnya 10, maka rata-ratanya akan menjadi 4,3. Nilai
+rata-rata meningkat lebih dari 1 poin.
+
+Sementara itu, jika kita menghitung mediannya, kumpulan 6
+objek kita memiliki nilai 3,5. Tidak jauh berbeda dengan nilai
+median set data kita sebelumnya.
+
+2.2.5.3 Ukuran Penyebaran
+
+Lain halnya dengan ukuran pemusatan, ukuran penyebaran
+(measure of dispersion) memberikan informasi tentang
+keberagaman nilai suatu kumpulan objek. Dua set data dapat
+memiliki ukuran pemusatan yang sama, naman belum tentu
+variasi atau keberagamannya juga sama. Oleh karena itu kita
+perlu menyajikan ukuran penyebaran di samping ukuran
+pemusatannya.
+
+Ukuran penyebaran dapat dikenakan pada tingkat pengukuran
+variabel nominal, ordinal, atau metrik. Untuk tingkat
+pengukuran tertentu, teknik mengukur penyebarannya juga
+berbeda. Simak pembahasannya pada tabel berikut.
+
+             Tabel 2.4. Teknik-teknik dalam Ukuran Penyebaran
+
+             Interpretasi
+
+   Teknik          teknik       Cara perhitungan                 Penjelasan
+Indeks       Tingkat                   (2 -  f 2)          Nilai 0 menandakan
+Variansi     keberagaman                                   tidak ada variasi
+Kualitatif   suatu kategori   IQV = 2( - 1)                sama sekali pada
+
+(Index of    kualitatif yang  k = jumlah kategori          data sementara 1
+Qualitative  dinyatakan       n = jumlah seluruh objek     menandakan bahwa
+Variance)    dalam skala 0-1   f2 = jumlah seluruh         data sangat
+[2]                           frekuensi yang dikuadratkan  bervariasi
+
+                                                           Teknik ini
+                                                           digunakan hanya
+                                                           untuk variabel
+                                                           nominal atau
+                                                           ordinal
+
+30
+   Teknik     Interpretasi           Cara perhitungan               Penjelasan
+Rentang/         teknik      Mengurangkan nilai terbesar      Rentang tidak
+range                        dengan nilai terkecil dari set   memberikan banyak
+           Selisih antara    data kita                        informasi mengenai
+Variansi   dua nilai                                          keberagaman,
+           ekstrem dalam                                      tetapi hanya
+Simpangan  data                                               rentang data secara
+baku/                                                         keseluruhan
+standard
+deviation  Seberapa dekat    Hitung rata-rata () terlebih     Pengurangan 1 dari
+           nilai tiap-tiap   dahulu, kemudian hitung          jumlah objek dalam
+           objek dengan      selisih masing-masing nilai      perhitungan
+           nilai rata-       objek dengan rata-rata tadi,     variansi digunakan
+           ratanya.          kuadratkan, dan bagi dengan      untuk kumpulan
+                             jumlah objek dikurangi 1         objek yang berupa
+           Nilai variansi                                     sampel.
+           yang besar        2  =    n    (  x  i  -  x)2     Apabila kumpulan
+           menandakan                i=                       objek kita berupa
+           keberagaman                   1                    populasi,
+           yang tinggi.                                       pengurangan
+                                         n- 1                 dengan 1 tidak
+                                                              diperlukan
+           Sama dengan       Hitung variansi kemudian         Satuan yang
+           variansi, hanya   hitung akar kuadratnya.          dihasilkan oleh
+           berbeda satuan                                     variansi adalah
+                                                              (satuan variabel)2.
+           Seperti halnya     = 2                             Untuk ukuran
+           variansi, nilai                                    dengan satuan yan
+           simpangan baku    =               (        -  ) 2  sama, kita perlu
+           yang tinggi juga              =                    menghitung akar
+           menandakan                       1                 kuadratnya.
+           keberagaman
+           yang tinggi.                       - 1
+
+2.3 Studi Kasus
+
+Dalam subbab ini kita masih akan menggunakan kasus
+penelitian tentang keberlanjutan pergerakan Kampus ITERA.
+Setelah kita menentukan apa objek dan variabel yang akan
+dinilai, kita harus menentukan jenis nilai dan tingkat
+
+                                                              31
+pengukuran dari variabel-variabel kita agar
+pengukuran/pengumpulan data menjawab kebutuhan kita.
+
+2.3.1 Menentukan Jenis Nilai dan Tingkat
+           Pengukuran Variabel
+
+Kita akan melanjutkan kasus pengumpulan data pergerakan
+mahasiswa di kampus ITERA dari bab sebelumnya. Setelah
+menentukan variabel-variabel yang diukur dan memperkirakan
+tabel data terstrukturnya (Tabel 2.5), kita perlu menelaah nilai-
+nilai seperti apa yang kira-kira akan dihasilkan sehingga kita
+dapat menentukan jenis nilai dan tingkat pengukuran
+variabel-variabel kita tersebut agar jenis analisisnya nanti sesuai.
+
+Tabel 2.5. Rancangan Tabel Data Terstruktur Penelitian Kasus Mobilitas
+
+                     Kampus Berkelanjutan
+
+                          Jumlah perjalanan Biaya perjalanan
+
+ID Jenis Kendaraan Jarak ke kampus <<nama hari>>       per pekan
+
+1 ...                ...  ...                     ...
+
+2 ...                ...  ...                     ...
+
+3 ...                ...  ...                     ...
+
+4 ...                ...  ...                     ...
+
+... ...              ...  ...                     ...
+
+Tabel 2.6 berikut menampilkan penelaahan jenis nilai dan
+tingkat pengukuran masing-masing variabel yang di subbab
+sebelumnya sudah dirumuskan.
+
+Tabel 2.6. Pembahasan jenis nilai dan tingkat pengukuran masing-masing
+
+                          variabel dari kasus
+
+                          Jenis Nilai &
+
+         Nama  Nama       Tingkat
+
+No. Variabel panggilan       pengukuran               Pembahasan
+                          Jenis nilai:         Nilai bersifat kualitatif,
+1. Jenis       kend
+
+    Kendaraan             Kategori (mobil, tidak bisa dihitung, jadi
+
+                          motor, sepeda)       tidak cocok jika
+                          Tingkat              dianggap numerik.
+                          pengukuran:          Tingkat pengukuran
+                          Nominal              nominal paling cocok
+                                               karena variabel ini hanya
+
+32
+                         Jenis Nilai &
+
+Nama        Nama         Tingkat
+
+No. Variabel panggilan   pengukuran       Pembahasan
+
+                                          membedakan jenis dan
+
+                                          tanpa urutan; tidak
+
+                                          masuk akal jika ordinal,
+
+2. Jarak ke jarak        Jenis nilai:     interval, atau rasio.
+                                          Nilai berupa angka
+
+kampus                   Numerik          kontinu, bisa desimal,
+
+                         kontinu          cocok untuk analisis
+
+                         (kilometer)      kecenderungan memusat
+                         Tingkat          dengan rata-rata dan
+
+                         pengukuran:      penyebaran dengan
+                         Metrik (rasio)   varian. Tingkat
+                                          pengukuran rasio karena
+
+                                          ada nol absolut (0 km =
+
+                                          tidak ada jarak) dan
+
+                                          perbandingan bermakna;
+
+                                          bukan sekadar urutan.
+
+3. Jumlah   perjalanan_ Jenis nilai:      Nilai berupa hitungan
+            senin
+perjalanan  perjalanan_  Numerik diskret  bulat (diskrit), cocok
+<<hari>>    selasa       (frekuensi)      untuk analisis frekuensi.
+            dst.         Tingkat          Tingkat pengukuran
+
+                         pengukuran:      rasio karena nol berarti
+
+                         Metrik (rasio)   tidak ada perjalanan dan
+
+                                          perbandingan
+
+                                          proporsional bermakna;
+
+                                          tidak tepat jika interval
+
+4. Biaya    biaya_pekan Jenis nilai:      atau ordinal.
+                                          Nilai berupa angka
+
+perjalanan               Numerik          kontinu, cocok untuk
+
+per pekan                kontinu (rupiah) analisis rata-rata dan
+
+                         Tingkat          varian seperti halnya
+                         pengukuran:      jarak ke kampus.
+                         Metrik (rasio)   Tingkat pengukuran
+                                          rasio karena nol absolut
+
+                                          (Rp0 = tidak ada biaya)
+
+                                          dan perbandingan
+
+                                          bermakna; bukan
+
+                                          interval.
+
+Berdasarkan hasil penelaahan pada Tabel 2.6 tersebut kita
+dapat mengonsep atau memperkirakan bentuk tabel data hasil
+
+                                                                  33
+kuesioner kita dengan membuat metadata atau "data tentang
+data" kita, yakni penjelasan dari data kita yang memuat
+penjelasan tiap-tiap variabel dan nilai-nilai yang memungkinkan
+dari variabel-variabel tersebut. Tabel 2.7 berikut adalah contoh
+metadata dari keenam variabel yang kita telaah.
+
+             Tabel 2.7. Metadata Pola Pergerakan Mahasiswa
+
+                                                            Contoh
+
+Nama panggilan Deskripsi Tipe Data Satuan                   Nilai
+
+kend               Moda          Kategorikal ­              1 = Motor
+
+                   transportasi                             2 = Mobil
+
+                   yang
+
+                   digunakan
+
+jarak              responden              Kilometer 2.5, 10, 15
+                   Jarak tempuh Numerik
+
+                   dari rumah ke kontinu  (km)
+
+                   kampus
+
+perjalanan_senin Banyaknya Numerik        Kali              0, 1, 2
+perjalanan_selasa
+dst.               perjalanan ke diskrit
+
+                   kampus pada
+
+biaya_pekan        hari tertentu          Rupiah 0, 25000,
+                   Total biaya Numerik
+
+                   transportasi kontinu   (Rp)              100000
+
+                   selama satu
+
+                   minggu
+
+2.3.2 Menurunkan Tingkat Pengukuran Variabel
+
+Perhatikan variabel jarak (Jarak ke kampus) dan biaya_pekan
+(biaya perjalanan per pekan) baik pada Tabel 2.6 dan pada
+metadatanya di Tabel 2.7. Kedua variabel tersebut adalah
+variabel dengan tingkat pengukuran tertinggi: metrik rasio.
+
+Tingkat pengukuran yang lebih rendahnya berturut-turut
+adalah ordinal dan nominal. Kita bisa saja mengukur kedua
+variabel tersebut dengan tingkat pengukuran yang lebih rendah
+
+34
+tersebut, yakni dengan menetapkan kelas atau rentang nilai
+seperti berikut.
+
+Tabel 2.8. Nilai Variabel Jarak dan Biaya per Pekan yang Diturunkan
+
+             Tingkat Pengukurannya
+
+Nama panggilan variabel  Contoh nilai dalam tingkat ordinal
+
+jarak                    1 = 0 ­ 2 km
+
+                         2 = 2,1 ­ 3 km
+
+                         3 = 3,1 ­ 4 km
+
+biaya_pekan              4 = >4 km
+                         1 = Rp500 ribu ­ Rp1 juta
+
+                         2 = Rp1,1 juta ­ Rp2 juta
+
+                         3 = >Rp2,1 juta
+
+Pendekatan ini memang mempermudah interpretasi dan
+penyajian, terutama untuk analisis deskriptif atau visualisasi.
+Namun, ada konsekuensi penting:
+
+· Kehilangan Informasi. Saat data metrik diubah
+    menjadi ordinal, detail numerik hilang. Misalnya, jarak
+    2,1 km dan 4,9 km sama-sama masuk kategori "Sedang",
+    padahal perbedaannya cukup besar.
+
+· Penentuan Interval Kelas Memerlukan Justifikasi.
+    Batas antar kelas tidak boleh ditentukan sembarangan.
+    Harus ada dasar logis, misalnya distribusi data, standar
+    kebijakan, atau pertimbangan praktis. Jika tidak, hasil
+    analisis bisa bias.
+
+· Dampak pada Analisis Statistik. Data ordinal tidak
+    bisa dianalisis dengan analisis statistik yang hanya bisa
+    dikenakan pada data metrik, seperti rata-rata dan
+    simpangan baku. Artinya, kita membatasi jenis uji
+    statistik yang dapat digunakan.
+
+Dengan demikian, penurunan tingkat pengukuran ini harus
+dilakukan dengan hati-hati dan disertai alasan yang jelas.
+
+                                                                     35
+2.3.3 Analisis Statistik Deskriptif pada Set Data
+           Pola Pergerakan Mahasiswa
+
+Sekarang kita akan membahas teknik analisis statistik dalam set
+data (dataset) mengenai pola pergerakan mahasiswa di ITERA.
+Untuk kepentingan kelengkapan ulasan, variabelnya kita
+tambah dengan satu variabel ordinal: tingkat tahun kuliah
+(tingkat).
+
+Berikut adalah contoh set data hasil kuesioner yang sudah
+disebarkan beserat metadatanya:
+
+    Tabel 2.9. Contoh Set Data Hasil Kuesioner beserta Metadatanya
+
+    ID kend tingkat jarak perjalanan_senin biaya_pekan
+
+    117          5      4 2.34  3                                      0
+
+    118          1      4 2.66  2                                      40
+
+    119          1      4 3.84  2                                      30
+
+    120          1      4 3.64  3                                      40
+
+    121          1      3 3.17  2                                      45
+
+    138          3      4 3,84  3                                      15
+
+    139          3      3 3,84  4                                      60
+
+    161          5      2 3,52  4                                      0
+
+    Metadata:
+
+    ID              =   nomor urut responden
+                        jenis kendaraan yang digunakan
+    kend            =   1 = sepeda motor pribadi
+                        2 = mobil pribadi
+    tingkat         =   3 = layanan online
+                        4 = menumpang kawan
+    jarak           =   5 = sepeda
+                        6 = berjalan kaki
+    perjalanan_Senin =  tingkat semester kuliah
+                        1 = Tahun pertama,
+    biaya_pekan     =   2 = Tahun kedua,
+                        3 = Tahun ketiga
+                        4 = Tahun keempat
+                        5 = Swasta (mahasiswa tingkat akhir)
+                        jarak tempat tinggal mahasiswa dari kampus,
+                        kilometer
+                        frekuensi perjalanan di hari Senin
+                        biaya perjalanan selama sepekan (ribu rupiah)
+
+36
+Bagian berikut membahas analisis statistik deskriptif untuk
+masing-masing-variabel.
+
+2.3.3.1 Ukuran Frekuensi
+
+Ukuran frekuensi dapat dikenakan langsung pada variabel
+berjenis diskret, seperti kend dan tingkat. Untuk dapat
+menghitung analisis ini kita harus membuat terlebih dahulu
+tabel frekuensi untuk kedua variabel ini. Tabel frekuensi dari
+cuplikan set data tersebut adalah seperti berikut.
+
+Tabel 2.10. Tabel Distribusi Frekuensi Untuk Variabel kend
+
+        kend         Jenis kendaraan               Frekuensi
+          1   Sepeda motor pribadi                                  4
+          2   Mobil pribadi                                         0
+          3   Layanan online                                        2
+          4   Menumpang kawan                                       0
+          5   Sepeda                                                2
+          6   Berjalan kaki                                         0
+
+              Total                                                 8
+
+Teknik analisis statistik deskriptif yang dapat dikenakan pada
+kedua variabel tersebut dipaparkan dalam tabel berikut.
+
+Tabel 2.11. Teknik Analisis Ukuran Frekuensi pada Kasus
+
+Teknik       Informasi yang dapat
+
+  analisis              diambil        Contoh analisis dan interpretasinya
+Persentase/  Mana kendaraan yang
+proporsi     paling banyak          %  sepeda     motor  =  sepeda  motor  ×  100%
+             penggunanya;                                         
+             bagaimana dominansi       4
+             mahasiswa berdasarkan  =  8  ×  100%
+
+                                    = 50%
+
+             tingkat kuliahnya      sepeda motor  = sepeda motor
+                                                          
+                                       4
+                                    =  8
+
+                                    = 0,5
+
+                                    Ini berarti setengah bagian dari
+
+                                    responden kita adalah pengguna
+
+                                    sepeda motor pribadi. Bisa dikatakan
+
+                                    cukup banyak.
+
+                                                                              37
+   Teknik    Informasi yang dapat       Contoh analisis dan interpretasinya
+  analisis             diambil
+Rasio                                Rasio = 2
+            Ketimpangan jumlah                   4
+Laju/rate   mahasiswa
+            antarkategori            =  1
+            kendaraan atau tingkat      5
+            kuliah
+                                     Artinya untuk setiap 1 orang
+            Meskipun laju pada
+            dasarnya memiliki        responden mahasiswa tingkat 2 ada 5
+            perhitungan yang sama
+            dengan proporsi atau     orang responden tingkat 4.
+            persentase, teknik ini
+            kurang pas dikenakan     Perbandingan sampel kita tidak
+            pada variabel yang
+            bukan bernilai kejadian  imbang antara mahasiswa baru
+            seperti halnya
+            kecelakaan atau          dengan mahasiswa lama
+            penyakit
+                                     Rate sepeda motor  =  sepeda  motor  ×  10
+                                                                 
+                                        4
+                                     =  8  ×  10
+
+                                     =5
+
+                                     Ini berarti setiap sepuluh orang dalam
+
+                                     sampel kita terdapat 5 orang
+
+                                     pengguna sepeda motor
+
+2.3.3.2 Ukuran Kecenderungan Pemusatan
+
+Sebagaimana konsep yang sudah dibahas, ukuran pemusatan
+data terdiri atas rata-rata, median, dan modus. Rata-rata dan
+median dapat digunakan pada variabel-variabel jenis kontinu
+dan tingkat pengukuran metrik, sementara nominal dan ordinal
+hanya dapat menggunakan modus.
+
+Oleh karena itu, kita dapat menganalisis rata-rata dan median
+untuk variabel jarak, perjalanan_Senin, dan biaya_pekan, sementara
+modus untuk kend dan tingkat.
+
+38
+Tabel 2.12. Teknik Analisis Ukuran Kecenderungan Pemusatan pada Kasus
+
+Teknik        Informasi yang dapat        Contoh analisis dan
+
+analisis      diambil                        interpretasinya
+
+Rata-rata  ·  Jarak tempat tinggal           2,34 +  2,66 +   +  3,84 +  3,52
+              kebanyakan responden                           8
+                                          =
+
+              dari kampus ITERA           =  11,2
+                                              8
+                                          = 3,72
+           · Jumlah perjalanan
+                                       Artinya, kebanyakan
+              yang dilakukan
+              kebanyakan mahasiswa responden tinggal sejauh 3,72
+                                       km dari kampus ITERA
+              di hari Senin
+
+Median     · Besar biaya perjalanan    Jumlah data ada 8, maka
+Modus                                  nilai tengah dari jumlah
+                 yang kebanyakan       perjalanan pada hari Senin
+                 dihabiskan mahasiswa  dari 8 orang responden
+                 setiap pekannya       mahasiswa kita adalah rata-
+           Nilai tengah jarak tempat   rata nilai data ke-4 dan ke-5,
+           tinggal ke kampus ITERA     yakni 3 dan 3. Maka nilai
+           mahasiswa yang menjadi      tengahnya adalah 3.
+           responden                   Ini sebenarnya dapat
+                                       diperoleh dengan melihat
+           Jenis kendaraan atau        tabel distribusi frekuensinya.
+           tingkat semester mahasiswa  Nilai modus adalah nilai
+           terbanyak                   yang frekuensinya paling
+                                       banyak.
+
+                                                             Dari tabel frekuensi pada
+                                                             Tabel 2.10
+
+2.3.3.3 Ukuran Penyebaran
+Seperti halnya ukuran kecenderungan pemusatan, ukuran
+penyebaran juga perlu memerhatikan tingkat pengukuran dan
+jenis nilainya. Untuk variabel diskret seperti tingkat yang
+memerlukan perhitungan tambahan berupa kuadrat frekuensi
+tiap kategori kita hitung terpisah sebagai berikut.
+
+                                                                         39
+    Tabel 2.13. Kuadrat Frekuensi Tiap Kategori untuk Menghitung IQV
+
+            tingkat   Tingkat Semester  Frekuensi (f)      f2
+                1    Tahun pertama                      0        0
+
+            2        Tahun kedua        1                  1
+
+            3        Tahun ketiga       2                  4
+
+            4        Tahun keempat      5                  25
+
+            5        Swasta             0                  0
+
+                     Total              8  f2=30
+
+Tabel 2.14 berikut membahas ukuran penyebaran pada variabel-
+variabel data kita.
+
+    Tabel 2.14. Teknik Analisis Ukuran Penyebaran pada Kasus
+
+    Teknik     Informasi yang dapat     Contoh analisis dan
+
+  analisis             diambil          interpretasinya
+IQV         Tingkat keragaman
+            sampel berdasarkan          IQVtingkat =       (2 -  f2 )
+            jenis kendaraan                                  2( - 1)
+            bermotor atau tingkat
+            semester                    =                  3(82 - 30)
+                                                           82(3 - 1)
+
+                                        = 0,79
+
+Rentang/    Rentang nilai jarak,        Berdasarkan nilai IQV tersebut,
+range       jumlah perjalanan di        variabel tingkat memiliki
+            hari Senin, dan biaya       keragaman yang cukup tinggi.
+            perjalanan dalam            Artinya responden kita dari segi
+            sepekan                     tingkat semesternya cukup
+                                        beragam
+                                        Rangeperjalanan_senin = 4 ­ 2 = 2
+                                        "Panjang" data perjalanan di
+                                        hari Senin kita adalah 2
+
+Untuk menghitung variansi dan simpangan baku, kita harus
+menghitung terlebih dahulu rata-rata dan mengurangkan nilai
+setiap objek dengan rata-rata tersebut. Hasil pengurangannya
+kita kuadratkan, dan di akhir kita jumlahkan seluruhnya. Tabel
+berikut memperlihatkan proses tersebut.
+
+40
+Tabel 2.15. Kebutuhan Awal Perhitungan Variansi dan Simpangan Baku
+
+            ID biaya_pekan     xi-Mean            (xi-Mean)2
+
+117                         0        -28.75             826,5625
+
+118         40                             11.25        126,5625
+
+119         30                             1.25           1,5625
+
+120         40                             11.25        126,5625
+
+121         45                             16.25        264,0625
+
+138         15                       -13.75             189,0625
+
+139         60                             31.25        976,5625
+
+161                         0        -28.75             826,5625
+
+            Mean:28,75         Total: 0 Total: 3.337,5
+
+Tabel 2.16. Teknik Analisis Ukuran Penyebaran pada Kasus (Variansi dan
+
+                            Simpangan Baku)
+
+Teknik      Informasi yang dapat                  Contoh analisis dan
+
+  analisis               diambil                  interpretasinya
+Variansi/   Seberapa beragam nilai
+variance    jarak, jumlah perjalanan              s2 =    n    (  x  i  -  x)2
+            per hari, dan biaya                           i=
+            perjalanan dalam sepekan,                         1
+            dilihat dari selisih nilainya
+                                                              n- 1
+                                                        3.337,5
+                                                  =      8- 1
+
+                                                  = 476,78
+
+            dengan rata-rata secara        Dari nilai variansi tersebut
+            keseluruhan.                   kita bisa mengetahui bahwa
+
+Simpangan   Wajib diingat, satuan yang     kebanyakan selisih biaya para
+baku/       kita gunakan dalam nilai       responden dari rata-ratanya
+standard    kita adalah "ribu", maka       adalah 476.780 rupiah2
+deviation   hasil perhitungan              Nilai dari variansi masih
+            variansi/simpangan baku        sulit dipahami karena nilai
+            harus dikalikan lagi dengan    biaya yang dikuadratkan
+            1.000                          tidak masuk akal.
+
+                                           Maka dari itu kita perlu
+
+                                           menghitung simpangan
+
+                                           bakunya juga dengan
+
+                                           menarik akar kuadratnya.
+
+                                                
+                                            = 2 =  476,78 = 21,8
+
+                                           Dengan demikian,
+                                           kebanyakan objek itu
+                                           berjarak 21.800 rupiah dari
+                                           rata-ratanya
+
+                                                                                41
+2.4 Soal Evaluasi
+
+Perhatikan cuplikan tabel set data (dataset) hasil kuesioner
+kepada objek-objek berupa mahasiswa di suatu perguruan tinggi
+berikut beserta metadatanya.
+
+KodeResp   Usia      Fakultas  ThnMsk         UangSaku  Jarak
+001              22  1         2020           2            19,27
+002              25  1         2020           1              0,58
+003              24  2         2021           1              0,56
+004              19  3         2022           1              1,05
+005              23  2         2021           1              1,69
+006              20  1         2020           3              1,37
+Metadata:
+KodeResp   = nomor urut responden
+Usia       = usia responden (tahun)
+Fakultas   = fakultas mahasiswa
+
+ThnMsk             1 = Fakultas Syariah,
+UangSaku           2 = Fakultas Tarbiyah dan Keguruan,
+                   3 = Fakultas Dakwah dan Komunikasi
+Jarak      = Tahun masuk kuliah (Masehi)
+           = uang saku mahasiswa per bulan
+                   1 = <1 juta rupiah,
+                   2 = 1­2 juta rupiah,
+                   3 = 2­3 juta rupiah,
+                   4 = 3­4 juta,
+                   5 = >4 juta)
+           = jarak tempat tinggal mahasiswa dari kampus, kilometer
+
+Jawablah pertanyaan-pertanyaan berikut:
+
+1. Sebutkan tingkat pengukuran untuk variabel-variabel yang
+    ada dalam set data tersebut. STP-2.1
+
+2. Centang analisis statistik deskriptif yang relevan
+    diaplikasikan kepada variabel-variabel tersebut STP-2.2
+
+       Variabel  Persentase/ proporsi  Rasio  Laju
+    Usia
+    Fakultas
+    ThnMsk
+    Uang_saku
+
+42
+ Variabel Mean Median Modus IQV Range  Varian/Simpangan
+Usia                                            baku
+Fakultas
+Thn
+Uang_saku
+
+3. Apa informasi utama yang bisa kita simpulkan dari hasil
+    statistik deskriptif variabel-variabel berikut? STP-2.3
+    a. Persentase tiap kategori Fakultas
+    b. Proporsi kategori pada variabel UangSaku
+    c. Rata-rata (mean) variabel Usia
+    d. Median variabel ThnMsk
+    e. Standar deviasi variabel Jarak
+
+                                       43

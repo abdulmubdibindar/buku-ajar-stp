@@ -1,0 +1,36 @@
+# Pengantar Analisis Statistik Inferensial
+
+## Konsep Dasar
+
+Statistik inferensial adalah metode yang digunakan untuk menarik kesimpulan mengenai populasi berdasarkan data sampel. Konsep kuncinya adalah bahwa kita tidak mengukur seluruh populasi (sensus), melainkan hanya sebagian kecilnya (sampel), namun kita ingin hasil pengukuran sampel tersebut dapat digeneralisasi ke populasi.
+
+### Teknik Pengambilan Sampel
+
+Agar generalisasi valid, sampel harus representatif. Beberapa teknik:
+
+1.  **Simple Random Sampling**. Setiap anggota populasi memiliki peluang yang sama untuk dipilih.
+2.  **Stratified Random Sampling**. Populasi dibagi menjadi strata (kelompok), lalu sampel diambil secara acak dari tiap strata secara proporsional.
+3.  **Cluster Sampling**. Populasi dibagi menjadi klaster (wilayah), lalu beberapa klaster dipilih secara acak.
+
+## Distribusi Sampling dan Teorema Limit Sentral
+
+Walaupun kita hanya mengambil satu sampel, kita perlu membayangkan konsep "Distribusi Sampling". Jika kita mengambil banyak sampel berulang kali dari populasi yang sama, rata-rata dari masing-masing sampel tersebut akan membentuk distribusi normal, terlepas dari bentuk distribusi populasinya. Inilah **Teorema Limit Sentral**.
+
+### Standard Error
+
+Simpangan baku dari distribusi sampling disebut **Standard Error (SE)**.
+$$ SE = \frac{\sigma}{\sqrt{n}} $$
+Dimana $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel.
+
+### Z-Score
+
+Untuk mengetahui posisi suatu nilai dalam distribusi normal baku, kita menggunakan Z-Score:
+$$ Z = \frac{x - \mu}{\sigma} $$
+Untuk rata-rata sampel:
+$$ Z = \frac{\bar{x} - \mu}{SE} $$
+
+## Soal Evaluasi
+
+1.  Jelaskan perbedaan mendasar antara statistik deskriptif dan inferensial. (STP-4.1)
+2.  Sebutkan dan jelaskan tiga teknik pengambilan sampel probabilitas. (STP-4.2)
+3.  Hitung Z-Score jika diketahui rata-rata sampel = 50, rata-rata populasi = 45, simpangan baku = 10, dan n = 25. (STP-4.3)
