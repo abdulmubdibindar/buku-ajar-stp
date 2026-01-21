@@ -1,0 +1,5 @@
+language:
+  label:
+    fig: "Gambar "
+    tab: "Tabel "
+output_dir: "docs"
