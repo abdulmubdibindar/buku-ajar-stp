@@ -28,3 +28,17 @@ options(cli.hyperlink = FALSE)
 
 # Statistika untuk Perencanaan
 
+Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan penggunaan R dalam pengolahan data kuantitatif, terutama dalam perencanaan wilayah dan kota. Buku ini terdiri atas x bagian:
+
+1. Penggunaan statistika dalam perencanaan wilayah dan kota
+2. Pengenalan data terstruktur
+3. Visualisasi data kuantitatif
+4. Analisis statistik deskriptif
+5. Analisis statistik inferensial
+6. Analisis statistik asosiasi
+
+
+------------------------------------
+
+# Pengantar {unnumbered}
+
