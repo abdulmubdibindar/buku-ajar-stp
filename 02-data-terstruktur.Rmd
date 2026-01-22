@@ -28,7 +28,7 @@ Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 ele
 
 ::: rmdkasus
 
-### Studi Kasus: Ilustrasi Elemen Data Terstruktur {.unnumbered #kasus-elemen-data-terstruktur}
+### Studi Kasus: Elemen Data Terstruktur {.unnumbered #kasus-elemen-data-terstruktur} 
 
 Perhatikan hasil pengumpulan data kuesioner berupa tabulasi data dari mahasiswa-mahasiswa ITERA seperti yang ditampilkan pada Gambar \@ref(fig:bab-2-ilus-data-terstruktur).
 
@@ -120,6 +120,7 @@ kable(tabel_1_3, format = "html", escape = FALSE,
 ```
 
 Jawablah pertanyaan-pertanyaan berikut berdasarkan tabel tersebut:
+
 a. Ada berapa objek dalam data terstruktur tersebut? 
 b. Sebutkan apa kira-kira objek dari data terstruktur tersebut.
 c. Berapa variabel yang dapat dianalisis dari data terstruktur tersebut? Sebutkan apa saja.
@@ -139,7 +140,7 @@ Tingkat pengukuran berbicara tentang cara kita menyatakan hasil pengukuran suatu
 
 ### Studi Kasus: Tingkat Pengukuran Variabel {.unnumbered}
 
-Sesuai dengan kasus \@ref{kasus-elemen-data-terstruktur}, kita akan menggunakan kasus variabel `Usia` dari data terstruktur tersebut.
+Sesuai dengan kasus \@ref(kasus-elemen-data-terstruktur), kita akan menggunakan kasus variabel `Usia` dari data terstruktur tersebut.
 
 Dalam variabel tersebut, nilai `Usia` dapat kita nyatakan dalam 2 bentuk yang berbeda. Kita akan bedakan bentuknya menjadi kasus-kasus berikut:
 
@@ -161,7 +162,7 @@ Dalam variabel tersebut, nilai `Usia` dapat kita nyatakan dalam 2 bentuk yang be
     * 46: 46-55 tahun
     * 56: 56-65 tahun
 
-    Dalam kasus, nilai `17` bukan lagi berarti "17 tahun", melainkan "17-25 tahun". Artinya nilai `17` ini bisa saja bernilai `17` atau `18` atau `19` atau `20` atau `21` atau `22` atau `23` atau `24` atau `25`.
+    Dalam kasus ini, nilai `17` bukan lagi berarti "17 tahun", melainkan "17-25 tahun". Artinya nilai `17` ini bisa saja bernilai `17` atau `18` atau `19` atau `20` atau `21` atau `22` atau `23` atau `24` atau `25`.
 
 Kedua kasus tersebut menunjukkan bahwa kita bisa menggunakan tingkat pengukuran yang berbeda untuk variabel yang sama. 
 
@@ -200,7 +201,7 @@ Dalam praktiknya, menentukan tingkat pengukuran variabel seringkali tidak mudah 
 3. Jika **numerik**, pastikan apakah angka-angka merepresentasikan angka sebenarnya. Jika tidak, ia sebenarnya adalah **kategorik**. Kembali ke langkah 1.
 4. Jika **numerik** dan angka-angka merepresentasikan angka sebenarnya, pastikan apakah angka-angka memiliki posisi nol absolut. Jika tidak, ia pasti berupa **interval**. Jika ya, ia pasti berupa **rasio**.
 
-Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilkan dalam 
+Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilkan dalam Gambar \@ref(fig:fig-menentukan-tingpeng) berikut. 
 
 ```{r fig-menentukan-tingpeng, echo=FALSE, fig.cap='Diagram alir menentukan tingkat pengukuran variabel', out.width='80%', fig.align='center'}
 knitr::include_graphics('images/bab-2-menentukan-tingpeng.svg')
