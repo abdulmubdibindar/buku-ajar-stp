@@ -369,10 +369,10 @@ jumlah dimensi                           kumulatif
         10                                96,58%
                                          100,00%
 
-· Berdasarkan nilai eigen, yang besarnya >1 berada pada
+ï¿½ Berdasarkan nilai eigen, yang besarnya >1 berada pada
      dimensi ke-4
 
-· Berdasarkan nilai persentase variansi kumulatif, besarnya
+ï¿½ Berdasarkan nilai persentase variansi kumulatif, besarnya
      mencapai di atas 60% pada dimensi ke-4.
 
                                                      311
@@ -480,12 +480,12 @@ untuk mengetahui variabel mana yang masuk ke dalam tiap-tiap
 faktor. Berdasarkan nilai-nilai loading tersebut, anggota masing-
 masing faktor adalah:
 
-     · Faktor-1: ongkos, durasi, jarak, toplajur, jmlmotor,
+     ï¿½ Faktor-1: ongkos, durasi, jarak, toplajur, jmlmotor,
           jmlmobil
 
-     · Faktor-2: jmlsepeda
-     · Faktor-3: bparkir
-     · Faktor-4: bareng, usia
+     ï¿½ Faktor-2: jmlsepeda
+     ï¿½ Faktor-3: bparkir
+     ï¿½ Faktor-4: bareng, usia
 
 13.2.5.3 Merotasi Faktor/Komponen
 
@@ -527,10 +527,10 @@ jarak                        1,004     0,232      0,116
                                        0,275
 
 Dengan demikian, pengelompokan kita menjadi:
-     · Faktor-1: durasi, jarak
-     · Faktor-2: jmlmotor, jmlmobil, jmlsepeda
-     · Faktor-3: ongkos, bparkir, toplajur
-     · Faktor-4: bareng, usia
+     ï¿½ Faktor-1: durasi, jarak
+     ï¿½ Faktor-2: jmlmotor, jmlmobil, jmlsepeda
+     ï¿½ Faktor-3: ongkos, bparkir, toplajur
+     ï¿½ Faktor-4: bareng, usia
 
                                                              315
 Jika kita melakukan analisis komponen prinsip, langkah terakhir
@@ -559,10 +559,10 @@ jmlsepeda                0,285                      -0,131
 jarak         0,825
 
 Dengan demikian, pengelompokan kita menjadi:
-     · Komponen-1: durasi, jarak, toplajur
-     · Komponen-2: ongkos, bparkir
-     · Komponen-3: jmlmotor, jmlmobil, jmlsepeda
-     · Komponen-4: bareng, usia
+     ï¿½ Komponen-1: durasi, jarak, toplajur
+     ï¿½ Komponen-2: ongkos, bparkir
+     ï¿½ Komponen-3: jmlmotor, jmlmobil, jmlsepeda
+     ï¿½ Komponen-4: bareng, usia
 
 316
 Dapat kita lihat bahwa pengelompokannya tidak jauh berbeda
@@ -595,10 +595,10 @@ Kasus: Interpretasi Faktor dan Komponen
 
 Dari analisis faktor, kita mendapatkan faktor sebagai berikut:
 
-     · Faktor-1: durasi, jarak
-     · Faktor-2: jmlmotor, jmlmobil, jmlsepeda
-     · Faktor-3: ongkos, bparkir, toplajur
-     · Faktor-4: bareng, usia
+     ï¿½ Faktor-1: durasi, jarak
+     ï¿½ Faktor-2: jmlmotor, jmlmobil, jmlsepeda
+     ï¿½ Faktor-3: ongkos, bparkir, toplajur
+     ï¿½ Faktor-4: bareng, usia
 
                                                                 317
   Faktor-1 dapat kita beri nama "impedansi perjalanan". Faktor-

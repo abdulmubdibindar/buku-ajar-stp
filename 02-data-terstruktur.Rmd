@@ -1,19 +1,49 @@
 # Data Terstruktur
 
-## Konsep Data Terstruktur
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
 
-Data terstruktur adalah data yang telah diorganisir dalam format tabel (baris dan kolom) sehingga mudah untuk diolah menggunakan komputer. Data terstruktur terdiri atas beberapa elemen utama, yakni: (1) Tabulasi Data; (2) Objek; (3) Variabel; dan (4) Nilai.
+Setelah mempelajari bab ini, Anda diharapkan:
 
-![Ilustrasi data terstruktur dan elemen-elemennya](images/placeholder.png)
+1. mampu menganalisis variabel dan objek dalam sebuah format data terstruktur sesuai dengan konsepnya [STP-1.3]{.capaian}
+2. mampu menentukan tingkat pengukuran yang tepat untuk sebuah variabel [STP-2.1]{.capaian}
+:::
 
-### Elemen Data Terstruktur
+Berdasarkan formatnya, data dapat dibedakan menjadi dua jenis. Jenis data berdasarkan formatnya tersebut terdiri atas **data tidak terstruktur**  (*unstructured data*) dan **data terstruktur** (*structured data*).
 
-1.  **Tabulasi Data**. Tabulasi data adalah bentuk penyajian data dalam bentuk tabel yang terdiri atas baris dan kolom. Sebuah tabulasi data yang baik harus memiliki struktur yang jelas di mana baris mewakili objek dan kolom mewakili variabel.
-2.  **Objek**. Objek adalah unit analisis yang datanya kita kumpulkan. Dalam tabulasi data, objek biasanya menempati posisi baris (row). Contoh objek dalam perencanaan wilayah dan kota bisa berupa rumah tangga, individu, kelurahan, kecamatan, atau kabupaten.
-3.  **Variabel**. Variabel adalah karakteristik atau atribut yang melekat pada objek yang nilainya bisa berbeda-beda (bervariasi) antar satu objek dengan objek lainnya. Dalam tabulasi data, variabel menempati posisi kolom (column). Contoh variabel adalah luas lahan, jumlah penduduk, pendapatan per bulan, dan tingkat pendidikan.
-4.  **Nilai**. Nilai adalah angka atau kategori yang mengisi perpotongan antara baris (objek) dan kolom (variabel). Nilai ini merepresentasikan data spesifik dari variabel tertentu untuk objek tertentu.
+Data tidak terstruktur adalah data yang tidak memiliki format yang terdefinisikan sebelum dikumpulkan, seperti teks wawancara, rekaman suara, gambar, atau video. Bentuk dan ukuran data-data tersebut dapat berbeda-beda, dengan kata lain formatnya tidak sama sehingga dapat dikatakan juga tidak terdefinisi atau tidak terstruktur [@oracle2024structured].
 
-### Tabulasi Data Terstruktur yang Baik
+Di sisi lain, data terstruktur adalah data yang memiliki definisi yang jelas dan pola yang telah ditentukan sebelum dikumpulkan. Definisi yang jelas di sini diperlihatkan dengan bentuk data terstruktur berupa tabel. Dengan bentuk tabel, data memiliki format yang terdefinisi, lebih jelas isinya, dan dapat dikenali polanya sehingga lebih mudah untuk dianalisis.
+
+**Penelitian yang menggunakan analisis statistik pasti menghasilkan data terstruktur dari pengumpulannya** [@devaus2014surveys]. Hal ini bukan berarti penelitian kualitatif juga tidak bisa menghasilkan data terstruktur, akan tetapi hal tersebut tidak mutlak. Hanya penelitian kuantitatif dengan metode analisis statistik yang mutlak menggunakan data terstruktur.
+
+## Elemen Data Terstruktur
+
+Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 elemen penting: objek (*object*), variabel (*variable*), dan nilai (*value*). Ketiga hal ini membentuk struktur yang disebut **tabulasi data**. Tabulasi data adalah bentuk penyajian data dalam bentuk tabel yang terdiri atas baris dan kolom. Sebuah tabulasi data yang baik harus memiliki struktur yang jelas di mana baris mewakili objek dan kolom mewakili variabel.
+
+1.  **Objek**. Objek adalah unit analisis yang datanya kita kumpulkan. Dalam tabulasi data, objek biasanya menempati posisi **baris** (*row*). Contoh objek dalam perencanaan wilayah dan kota bisa berupa rumah tangga, individu, kelurahan, kecamatan, atau kabupaten.
+2.  **Variabel**. Variabel adalah karakteristik atau atribut yang melekat pada objek yang nilainya bisa berbeda-beda (bervariasi) antar satu objek dengan objek lainnya. Dalam tabulasi data, variabel menempati posisi **kolom** (*column*). Contoh variabel adalah luas lahan, jumlah penduduk, pendapatan per bulan, dan tingkat pendidikan.
+3.  **Nilai**. Nilai adalah angka atau kategori yang mengisi perpotongan antara baris (objek) dan kolom (variabel), yakni **sel** (*cell*). Nilai ini merepresentasikan data spesifik dari variabel tertentu untuk objek tertentu.
+
+
+::: rmdkasus
+
+### Studi Kasus: Ilustrasi Elemen Data Terstruktur {.unnumbered #kasus-elemen-data-terstruktur}
+
+Perhatikan hasil pengumpulan data kuesioner berupa tabulasi data dari mahasiswa-mahasiswa ITERA seperti yang ditampilkan pada Gambar \@ref(fig:bab-2-ilus-data-terstruktur).
+
+```{r bab-2-ilus-data-terstruktur, echo=FALSE, fig.cap='Ilustrasi elemen data terstruktur', out.width="80%", fig.align='center'}
+knitr::include_graphics("images/bab-2-ilus-data-terstruktur.png")
+```
+
+Kita akan membedah elemen-elemen data terstruktur dari tabulasi data tersebut:
+- Objek dari tabulasi data tersebut adalah mahasiswa-mahasiswa ITERA. Tiap objek dibedakan berdasarkan variabel `ID-mahasiswa`.
+- Variabel dari tabulasi data tersebut di antaranya adalah `Program Studi`, `Usia`, `Jumlah Motor`, dan `Jumlah Mobil`. Adapun variabel `ID-mahasiswa` tidak termasuk dalam variabel yang dihitung karena hanya bertindak sebagai pengidentifikasi objek.
+- Nilai dari tabulasi data tersebut bisa kita lihat di sel-selnya. Misalnya, objek mahasiswa dengan `ID-mahasiswa` 002 memiliki nilai `Program Studi` adalah "Matematika", `Usia` adalah 21 tahun, `Jumlah Motor` adalah 0, dan `Jumlah Mobil` adalah 1.
+
+:::
+
+## Tabulasi Data Terstruktur yang Baik
 
 Agar data dapat diolah dengan baik menggunakan perangkat lunak statistik seperti R, tabulasi data harus memenuhi kaidah "Tidy Data" atau data yang rapi. Berikut adalah prinsip-prinsip data yang rapi:
 
@@ -21,34 +51,165 @@ Agar data dapat diolah dengan baik menggunakan perangkat lunak statistik seperti
 2.  Setiap observasi (objek) harus membentuk satu baris.
 3.  Setiap jenis unit observasi membentuk satu tabel.
 
-Tabel di bawah ini menunjukkan perbandingan antara data yang tidak rapi (untidy) dan data yang rapi (tidy).
+Pelajari kasus yang berisi perbandingan antara data yang tidak rapi dan data yang rapi berikut.
 
-| Data Tidak Rapi (Untidy) | Data Rapi (Tidy) |
-| :--- | :--- |
-| **Karakteristik** | **Karakteristik** |
-| Judul kolom berisi nilai, bukan nama variabel. Contoh: Kolom `2020`, `2021` (berisi tahun, yang seharusnya menjadi nilai). | Judul kolom adalah nama variabel. Contoh: Ada kolom `Tahun` yang berisi nilai 2020, 2021. |
-| Satu kolom berisi beberapa informasi. Contoh: Kolom `Lokasi` berisi `Kec. Sukarame, Kota Bandar Lampung`. | Satu kolom hanya berisi satu informasi. Dipisah menjadi kolom `Kecamatan` dan `Kota`. |
-| Variabel yang sama disimpan di kolom yang berbeda. | Satu kolom mewakili satu variabel yang jelas. |
+::: rmdkasus
 
-## Studi Kasus
+### Studi Kasus: Perbandingan Data yang Tidak Rapi dan Data yang Rapi {.unnumbered} 
 
-Dalam bab ini, kita akan mengambil kasus berupa perencanaan transportasi berkelanjutan mahasiswa dan staf pegawai di kampus ITERA. Transportasi berkelanjutan adalah konsep transportasi yang meminimalisir dampak lingkungan dan sosial.
+Berikut adalah beberapa contoh kesalahan umum dalam struktur data dan perbaikannya:
 
-Survei dilakukan kepada mahasiswa dan staf untuk mengetahui pola pergerakan mereka menuju kampus. Data yang dikumpulkan antara lain: moda transportasi yang digunakan, jarak tempuh, waktu tempuh, dan biaya transportasi.
+```{r tabel-perbandingan-tidy, echo=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
 
-## Soal Evaluasi
+# Membuat data frame dengan path gambar
+perbandingan <- data.frame(
+  Jenis = c("Kesalahan 1: Header Baris Bersarang", 
+            "Kesalahan 2: Struktur Kompleks", 
+            "Kesalahan 3: Format Tidak Konsisten"),
+  `Data Tidak Rapi` = c(
+    '<img src="images/bab-2-kesalahan-1-recreate.png" width="300"/>',
+    '<img src="images/bab-2-kesalahan-2-recreate.png" width="300"/>',
+    '<img src="images/bab-2-kesalahan-3-recreate.png" width="300"/>'
+  ),
+  `Data Rapi` = c(
+    '<img src="images/bab-2-perbaikan-1-recreate.png" width="300"/>',
+    '<img src="images/bab-2-perbaikan-2-recreate.png" width="300"/>',
+    '<img src="images/bab-2-perbaikan-3-recreate.png" width="300"/>'
+  ),
+  check.names = FALSE
+)
 
-1.  Jelaskanlah di bagian mana dalam proses perencanaan analisis statistik berada dan bagaimana perannya! (STP-1.1)
-2.  Apa yang membedakan analisis kuantitatif dan kualitatif? (STP-1.2)
-3.  Perhatikan tabel hasil pengumpulan data kuesioner berikut ini (STP-1.3):
+kable(perbandingan, format = "html", escape = FALSE, 
+      col.names = c("Jenis Kesalahan", "Data Tidak Rapi (Salah)", "Data Rapi (Benar)")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = "20%") %>%
+  column_spec(2, width = "40%") %>%
+  column_spec(3, width = "40%")
+```
 
-| ID_rumah | Usia_KK | Jml_anggota | Luas_rumah | Income_bln |
-| :--- | :--- | :--- | :--- | :--- |
-| 001 | 55 | 2 | 101 | 3,3 |
-| 002 | 64 | 5 | 245 | 6,0 |
-| 003 | 33 | 7 | 69 | 3,5 |
-| 004 | 28 | 2 | 44 | 27,0 |
+:::
+
+Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-elemen data terstruktur.
+
+::: rmdexercise
+
+### Soal Evaluasi 2 {.unnumbered}
+
+Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
+
+```{r tabel-1-3, echo=FALSE}
+library(knitr)
+library(kableExtra)
+
+tabel_1_3 <- data.frame(
+  ID_rumah = c("001", "002", "003", "004"),
+  Usia_KK = c(55, 64, 33, 28),
+  Jml_anggota = c(2, 5, 7, 2),
+  Luas_rumah = c(101, 245, 69, 44),
+  Income_bln = c(3.3, 6.0, 3.5, 27.0)
+)
+
+kable(tabel_1_3, format = "html", escape = FALSE, 
+      col.names = c("ID_rumah", "Usia_KK", "Jml_anggota", "Luas_rumah", "Income_bln")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = "20%") %>%
+  column_spec(2, width = "40%") %>%
+  column_spec(3, width = "40%")
+```
 
 Jawablah pertanyaan-pertanyaan berikut berdasarkan tabel tersebut:
-a. Apakah format tabel tersebut?
-b. Sebutkan apa saja variabelnya dan apa objek yang paling menggambarkan data tersebut, berdasarkan nama-nama variabelnya.
+a. Ada berapa objek dalam data terstruktur tersebut? 
+b. Sebutkan apa kira-kira objek dari data terstruktur tersebut.
+c. Berapa variabel yang dapat dianalisis dari data terstruktur tersebut? Sebutkan apa saja.
+d. Apakah format tabel tersebut sesuai dengan prinsip data yang rapi? Jelaskan alasan Anda.
+
+:::
+
+## Tingkat Pengukuran Variabel
+
+Pada subbab ini kita akan membahas lebih dalam tentang nilai dalam variabel yang berpengaruh pada analisis selanjutnya, yakni tingkat pengukuran variabel.
+
+Sebagaimana telah disebutkan pada Subbab \@ref(analisis-kuantitatif-vs-kualitatif) bahwa pengumpulan data kuantitatif dapat disebut juga sebagai pengukuran suatu variabel, cara kita mengukur suatu variabel bisa diibaratkan seperti menggunakan mistar yang memiliki sederet angka [@kachigan1986statistical].
+
+Tingkat pengukuran berbicara tentang cara kita menyatakan hasil pengukuran suatu variabel tersebut dalam angka, mulai dari hasil yang sangat menyerupai angka dalam mistar hingga hasil yang bukan angka sama sekali.
+
+::: rmdkasus
+
+### Studi Kasus: Tingkat Pengukuran Variabel {.unnumbered}
+
+Sesuai dengan kasus \@ref{kasus-elemen-data-terstruktur}, kita akan menggunakan kasus variabel `Usia` dari data terstruktur tersebut.
+
+Dalam variabel tersebut, nilai `Usia` dapat kita nyatakan dalam 2 bentuk yang berbeda. Kita akan bedakan bentuknya menjadi kasus-kasus berikut:
+
+1. **Kasus-1:** nilai `Usia` dinyatakan dalam bentuk angka dalam satuan tahun. Dengan demikian, dalam kasus ini nilai `17` berarti "17 tahun", dan nilai `26` berarti "26 tahun", dan seterusnya.
+
+2. **Kasus-2:** nilai `Usia` dinyatakan dalam bentuk rentang usia seperti berikut:
+
+    * kategori 1: 17-25 tahun
+    * kategori 2: 26-35 tahun
+    * kategori 3: 36-45 tahun
+    * kategori 4: 46-55 tahun
+    * kategori 5: 56-65 tahun
+
+    Kita bisa menyatakan setiap kategori dengan angka tertentu yang masing-masingnya tentu mewakili rentang usia tersebut. Misalnya, kita bisa menyatakan kategori 1 dengan angka 17, kategori 2 dengan angka 26, dan seterusnya, sehingga rentangnya menjadi seperti ini:
+
+    * 17: 17-25 tahun
+    * 26: 26-35 tahun
+    * 36: 36-45 tahun
+    * 46: 46-55 tahun
+    * 56: 56-65 tahun
+
+    Dalam kasus, nilai `17` bukan lagi berarti "17 tahun", melainkan "17-25 tahun". Artinya nilai `17` ini bisa saja bernilai `17` atau `18` atau `19` atau `20` atau `21` atau `22` atau `23` atau `24` atau `25`.
+
+Kedua kasus tersebut menunjukkan bahwa kita bisa menggunakan tingkat pengukuran yang berbeda untuk variabel yang sama. 
+
+Kita akan mempelajari nama-nama tingkat pengukuran tersebut dalam subbab-subbab selanjutnya.
+
+:::
+
+## Jenis-jenis Tingkat Pengukuran Variabel
+
+Tingkat pengukuran variabel secara umum memiliki 3 jenis dari yang paling rendah ke yang paling tinggi di antaranya adalah nominal, ordinal, dan metrik (metric). Kita akan bahas lebih dalam tentang jenis-jenis tersebut sebagai berikut mulai dari yang paling rendah ke yang paling tinggi.
+
+### Nominal
+
+Tingkat pengukuran nominal adalah tingkat pengukuran yang **paling rendah**. Jika angka dikenakan pada variabel ini, angka tersebut hanya bertindak sebagai label.
+
+### Ordinal
+
+Tingkat pengukuran ordinal berada di atas nominal. Angka pada tingkat ini hanya menunjukkan **urutan** atau **posisi** tetapi tidak dapat memberikan penafsiran berapa jarak di antara posisi-posisi tersebut.
+
+### Metrik (Angka)
+
+Variabel dengan tingkat pengukuran angka (bahasa Inggris: *metric*) adalah variabel dengan **angka yang sebenarnya** karena angka pada tingkat pengukuran ini memiliki penafsiran angka yang sebenarnya, yaitu memiliki posisi dan skala nilainya.
+
+Dalam literatur lain, seperti @tjokropandojo2021pengantar, tingkat pengukuran ini banyak dibagi menjadi dua tingkat lagi, yaitu **interval** dan **rasio**. Perbedaan antara keduanya adalah bahwa interval **tidak memiliki posisi nol absolut** seperti rasio.
+
+Contoh yang paling mudah adalah suhu. Suhu dapat dinyatakan dalam skala Celsius dan Fahrenheit. Dalam skala Celsius, air membeku pada tingkat 0 derajat, tetapi dalam skala Fahrenheit air membeku pada tingkat 32 derajat. Ini menunjukkan posisi nol yang tidak absolut pada pengukuran suhu.
+
+Contoh lainnya adalah tahun. Dalam penanggalan Masehi, tahun-0 ditempatkan pada masa kelahiran Isa Al-Masih. Sementara itu, dalam penanggalan Hijriah, tahun-0 ditempatkan masa hijrahnya Nabi Muhammad SAW. Masa kelahiran Isa Al-Masih tentunya terjadi lebih dulu dibandingkan masa hijrah Nabi Muhammad SAW. Ini juga menunjukkan posisi nol yang tidak absolut pada pengukuran tahun.
+
+## Menentukan Tingkat Pengukuran Variabel
+
+Dalam praktiknya, menentukan tingkat pengukuran variabel seringkali tidak mudah karena seringkali data yang kita kumpulkan tidak memiliki tingkat pengukuran yang jelas. Oleh karena itu, kita perlu melakukan analisis lebih dalam untuk menentukan tingkat pengukuran variabel tersebut. Berikut adalah langkah-langkah yang dapat kita lakukan untuk menentukan tingkat pengukuran variabel.
+
+1. Tentukan apakah jenis nilai dari variabel: apakah **kategorik** atau **numerik**
+2. Jika **kategorik**, tentukan apakah terdapat tingkatan yang masuk akal. Jika terdapat tingkatan, maka ia pasti berupa ordinal. Jika tidak terdapat tingkatan, maka ia pasti berupa nominal.
+3. Jika **numerik**, pastikan apakah angka-angka merepresentasikan angka sebenarnya. Jika tidak, ia sebenarnya adalah **kategorik**. Kembali ke langkah 1.
+4. Jika **numerik** dan angka-angka merepresentasikan angka sebenarnya, pastikan apakah angka-angka memiliki posisi nol absolut. Jika tidak, ia pasti berupa **interval**. Jika ya, ia pasti berupa **rasio**.
+
+Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilkan dalam 
+
+```{r fig-menentukan-tingpeng, echo=FALSE, fig.cap='Diagram alir menentukan tingkat pengukuran variabel', out.width='80%', fig.align='center'}
+knitr::include_graphics('images/bab-2-menentukan-tingpeng.svg')
+```
+
+::: rmdkasus
+
+### Studi Kasus: Menentukan Tingkat Pengukuran Variabel {.unnumbered}
+
+
+
+:::
