@@ -1,6 +1,9 @@
-pengantar-unnumbered
+fig:proses-perencanaan-rasional
+fig:kasus-bab1
 konsep-dasar-statistika-dalam-perencanaan
+capaian-pembelajaran
 kedudukan-dan-peran-analisis-data-dalam-perencanaan
+studi-kasus
 penelitian-kuantitatif-vs.-penelitian-kualitatif-dan-kedudukan-statistik
 analisis-kuantitatif-vs.-analisis-kualitatif
 analisis-statistik-sebagai-analisis-kuantitatif
@@ -8,7 +11,7 @@ data-terstruktur
 konsep-data-terstruktur
 elemen-data-terstruktur
 tabulasi-data-terstruktur-yang-baik
-studi-kasus
+studi-kasus-1
 soal-evaluasi
 analisis-statistik-deskriptif
 konsep-dasar
@@ -16,7 +19,7 @@ teknik-analisis-statistik-deskriptif
 ukuran-pemusatan-central-tendency
 ukuran-penyebaran-dispersion
 statistik-untuk-data-kategorik
-studi-kasus-1
+studi-kasus-2
 soal-evaluasi-1
 visualisasi-data-kuantitatif
 konsep-dasar-1
@@ -25,7 +28,7 @@ diagram-batang-bar-chart
 histogram
 boxplot
 scatterplot
-studi-kasus-2
+studi-kasus-3
 soal-evaluasi-2
 pengantar-analisis-statistik-inferensial
 konsep-dasar-2
@@ -37,7 +40,7 @@ soal-evaluasi-3
 estimasi-parameter
 konsep-dasar-3
 estimasi-rentang-kepercayaan-confidence-interval
-studi-kasus-3
+studi-kasus-4
 soal-evaluasi-4
 uji-hipotesis-satu-populasi
 konsep-dasar-4

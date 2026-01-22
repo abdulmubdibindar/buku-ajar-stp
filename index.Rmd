@@ -49,7 +49,7 @@ Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan
 
 ------------------------------------
 
-# Pengantar {unnumbered}
+# Pengantar {.unnumbered}
 
 Puji dan syukur kami panjatkan ke hadirat Tuhan Yang Maha Esa, Allah *subhanahu wa ta’aala*, yang tanpa rahmat, izin, dan kekuatan dari-Nya modul ini tidak akan pernah bisa dirampungkan. Kami juga memanjatkan salawat dan permohonan keselamatan untuk Rasul junjungan kami dan seluruh alam, Nabi Muhammad *shallallahu alaihi wa sallam*, pembawa risalah kebenaran dan transformator peradaban terbesar sepanjang sejarah.
 

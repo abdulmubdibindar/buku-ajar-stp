@@ -1,7 +1,7 @@
 # Konsep Dasar Statistika dalam Perencanaan
 
 ::: rmdcapaian
-**Capaian Pembelajaran**
+### Capaian Pembelajaran {.unnumbered}
 
 Setelah mempelajari bab ini, Anda diharapkan:
 
@@ -14,9 +14,9 @@ Agar lebih mudah memahami konsep dasar, Anda dapat mempelajari studi kasus terle
 
 ## Kedudukan dan Peran Analisis Data dalam Perencanaan
 
-Proses perencanaan adalah proses yang sangat memerlukan data di seluruh tahapannya. Seperti yang ditunjukkan dalam Gambar \@ref(fig:proses_perencanaan_rasional) tentang proses perencanaan secara rasional, setiap tahapnya sangat memerlukan data sebagai masukan untuk melaksanakan **setiap tahap**.
+Proses perencanaan adalah proses yang sangat memerlukan data di seluruh tahapannya. Seperti yang ditunjukkan dalam Gambar \@ref(fig:proses-perencanaan-rasional) tentang proses perencanaan secara rasional, setiap tahapnya sangat memerlukan data sebagai masukan untuk melaksanakan **setiap tahap**.
 
-```{r proses_perencanaan_rasional, fig.cap="Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic", echo=FALSE}
+```{r proses-perencanaan-rasional, fig.cap="Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic", echo=FALSE}
 knitr::include_graphics("images/proses-perencanaan-rasional.png")
 ```
 
@@ -27,14 +27,14 @@ Lain lagi di tahap kedua, contoh lainnya. Perumusan persoalan (*problem*) adalah
 Dari paparan sebelumnya, kita dapat menyimpulkan bahwa setiap tahap dalam perencanaan memerlukan penelitian, yakni kegiatan membuat pertanyaan mengenai suatu permasalahan dan menjawab pertanyaan tersebut dengan proses yang sistematis.
 
 ::: rmdkasus
-**Studi Kasus**
+### Studi Kasus {.unnumbered}
 
 Kita akan mengambil kasus berupa perencanaan transportasi berkelanjutan mahasiswa dan staf pegawai di kampus ITERA. Transportasi berkelanjutan adalah perpindahan dalam konteks transportasi yang memiliki nilai berkelanjutan, salah satunya minim polusi udara.
 
-Dalam kasus ini, kita sudah mengetahui bahwa tujuan dari rektorat adalah “transportasi mahasiswa dan pegawai yang berkelanjutan.” Selanjutnya, kita perlu mengetahui apa persoalan yang ada saat ini di kampus ITERA (perhatikan Gambar \@ref(fig:kasus_bab1))
+Dalam kasus ini, kita sudah mengetahui bahwa tujuan dari rektorat adalah “transportasi mahasiswa dan pegawai yang berkelanjutan.” Selanjutnya, kita perlu mengetahui apa persoalan yang ada saat ini di kampus ITERA (perhatikan Gambar \@ref(fig:kasus-bab1))
 
-```{r kasus_bab1, fig.cap="Persoalan Transportasi di ITERA", echo=FALSE}
-knitr::include_graphics("images/kasus_bab1.png")
+```{r kasus-bab1, fig.cap="Persoalan Transportasi di ITERA", echo=FALSE}
+knitr::include_graphics("images/kasus-bab1.png")
 ```
 
 Untuk mengetahui persoalan terkait dengan transportasi mahasiswa dan pegawai, kita perlu mengajukan pertanyaan terkait hal ini, yakni *sudah sejauh mana keberlanjutan pada pola pergerakan pada mahasiswa dan pegawai kampus ITERA saat ini?*
@@ -58,9 +58,9 @@ Di sisi lain, data sebagai bahan analisis juga dapat dibagi menjadi **data kuant
 
 ### Analisis Statistik sebagai Analisis Kuantitatif
 
-Statistik adalah serangkaian teknik matematis yang digunakan untuk mengorganisir, memanipulasi, dan menganalisis data dengan tujuan menjawab pertanyaan penelitian [@healey2021statistics]. Ilmu yang mempelajari statistik disebut statistika yang dalam bahasa Inggris menjadi `statistics` (menggunakan `s`).
+Statistik adalah serangkaian teknik matematis yang digunakan untuk mengorganisir, memanipulasi, dan menganalisis data dengan tujuan menjawab pertanyaan penelitian [@healey2021statistics]. Ilmu yang mempelajari statistik disebut statistika yang dalam bahasa Inggris menjadi "statistics" (menggunakan "s").
 
-Dalam pengertian tersebut terdapat kata kunci `matematis.` Kata kunci tersebut tentunya mengantarkan kita berpikir bahwa analisis statistik adalah bagian dari penelitian kuantitatif.
+Dalam pengertian tersebut terdapat kata kunci "matematis". Kata kunci tersebut tentunya mengantarkan kita berpikir bahwa analisis statistik adalah bagian dari penelitian kuantitatif.
 
 Analisis statistik dapat melakukan hal-hal berikut:
 
