@@ -17,7 +17,7 @@ Agar lebih mudah memahami konsep dasar, Anda dapat mempelajari studi kasus terle
 Proses perencanaan adalah proses yang sangat memerlukan data di seluruh tahapannya. Seperti yang ditunjukkan dalam Gambar \@ref(fig:proses_perencanaan_rasional) tentang proses perencanaan secara rasional, setiap tahapnya sangat memerlukan data sebagai masukan untuk melaksanakan **setiap tahap**.
 
 ```{r proses_perencanaan_rasional, fig.cap="Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic", echo=FALSE}
-knitr::include_graphics("images/proses_perencanaan_rasional.png")
+knitr::include_graphics("images/proses-perencanaan-rasional.png")
 ```
 
 Kita ambil contoh di tahap pertama. Penetapan tujuan dan sasaran memerlukan data dari berbagai sumber di wilayah perencanaan, termasuk dari pemangku kepentingan (*stakeholder*). Data-data tersebut dikumpulkan dan untuk merumuskan tujuan dan sasaran yang benar-benar mencerminkan kebutuhan wilayah perencanaan.
