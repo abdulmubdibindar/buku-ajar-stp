@@ -324,3 +324,4 @@ kable(metadata_soal, format = 'html', escape = FALSE,
 Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut dan jelaskan! [STP-2.1]{.capaian}
 
 :::
+
