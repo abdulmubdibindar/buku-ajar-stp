@@ -194,7 +194,7 @@ Dalam praktiknya, menentukan tingkat pengukuran variabel seringkali tidak mudah 
 
 Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilkan dalam Gambar \@ref(fig:fig-menentukan-tingpeng) berikut. 
 
-```{r fig-menentukan-tingpeng, echo=FALSE, fig.cap='Diagram alir menentukan tingkat pengukuran variabel', out.width='60%', fig.align='center'}
+```{r fig-menentukan-tingpeng, echo=FALSE, fig.cap='Diagram alir menentukan tingkat pengukuran variabel', fig.align='center'}
 knitr::include_graphics('images/bab-2-menentukan-tingpeng.svg')
 ```
 
