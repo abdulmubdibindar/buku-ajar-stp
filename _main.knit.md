@@ -947,32 +947,32 @@ Melanjutkan kasus sebelumnya, kita akan menghitung persentase dan proporsi untuk
 
 **Perhitungan untuk Variabel `kend`:**
 
-Dari tabel distribusi frekuensi variabel `kend`, kita dapat menghitung persentase penggunaan sepeda motor pribadi:
-
-$$
-\text{Persentase sepeda motor} = \frac{4}{8} \times 100\% = 50\%
-$$
-
-Sedangkan proporsinya adalah:
+Dari tabel distribusi frekuensi variabel `kend`, kita dapat menghitung proporsi (frekuensi relatif) penggunaan sepeda motor pribadi menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif):
 
 $$
 \text{Proporsi sepeda motor} = \frac{4}{8} = 0,5
 $$
 
-**Interpretasi:** Setengah bagian (50%) dari responden adalah pengguna sepeda motor pribadi. Ini menunjukkan bahwa sepeda motor pribadi merupakan moda transportasi yang dominan dalam sampel penelitian ini.
+Sedangkan persentasenya dapat dihitung menggunakan Persamaan \@ref(eq:konsep-persentase):
+
+$$
+\text{Persentase sepeda motor} = \frac{4}{8} \times 100\% = 50\%
+$$
+
+**Interpretasi:** Setengah bagian (proporsi = 0,5 atau 50%) dari responden adalah pengguna sepeda motor pribadi. Ini menunjukkan bahwa sepeda motor pribadi merupakan moda transportasi yang dominan dalam sampel penelitian ini.
 
 **Perhitungan untuk Variabel `tingkat`:**
 
-Dari tabel distribusi frekuensi variabel `tingkat`, kita dapat menghitung persentase mahasiswa tahun keempat:
-
-$$
-\text{Persentase tahun keempat} = \frac{5}{8} \times 100\% = 62,5\%
-$$
-
-Sedangkan proporsinya adalah:
+Dari tabel distribusi frekuensi variabel `tingkat`, kita dapat menghitung proporsi mahasiswa tahun keempat menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif):
 
 $$
 \text{Proporsi tahun keempat} = \frac{5}{8} = 0,625
+$$
+
+Sedangkan persentasenya dapat dihitung menggunakan Persamaan \@ref(eq:konsep-persentase):
+
+$$
+\text{Persentase tahun keempat} = \frac{5}{8} \times 100\% = 62,5\%
 $$
 
 **Interpretasi:** Mayoritas responden (62,5%) adalah mahasiswa tahun keempat. Artinya, sebagian besar responden adalah mahasiswa yang sudah menyelesaikan studi di ITERA. Informasi ini berguna untuk memahami karakteristik sampel dalam penelitian pola pergerakan mahasiswa.
@@ -986,15 +986,10 @@ Hampir sama dengan persentase, laju juga merupakan ukuran frekuensi relatif. Per
 $$
 \begin{equation}
 \text{Laju} = \frac{f}{n_i} \times 100\%
-(\#eq:konsep-laju})
+(\#eq:konsep-laju)
 \end{equation}
 $$
 
-::: rmdnote
-Catatan {.header}
-
-Selain persen (per 100), ada juga satuan 'permil' (per 1000) dengan simbol $$\permil$$, yang biasa digunakan pada perhitungan-perhitungan yang melibatkan bilangan yang sangat kecil.
-:::
 
 ## Teknik Analisis Statistik Deskriptif
 

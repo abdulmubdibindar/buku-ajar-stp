@@ -13,6 +13,7 @@ tab:bab-3-kasus-metadata
 tab:bab-3-tabel-frekuensi-kend
 tab:bab-3-tabel-frekuensi-tingkat
 eq:konsep-persentase
+eq:konsep-laju
 konsep-dasar-statistika-dalam-perencanaan
 kedudukan-dan-peran-analisis-data-dalam-perencanaan
 penelitian-kuantitatif-vs.-penelitian-kualitatif-dan-kedudukan-statistik
