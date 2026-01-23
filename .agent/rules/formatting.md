@@ -16,7 +16,7 @@ trigger: always_on
 
 1. Create chunk id with "-" as separator, e.g. `fig-proses-perencanaan-rasional`
 2. Use knitr::include_graphics() to include images
-3. Use out.width = '80%' and fig.align = "center" to control image size and alignment
+3. Use out.width = '60%' and fig.align = "center" to control image size and alignment
 4. Use fig.cap to add image caption
 5. Use echo=FALSE to hide code
 

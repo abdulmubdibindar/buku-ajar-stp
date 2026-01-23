@@ -1,6 +1,5 @@
 ---
 title: "Buku Ajar Statistika untuk Perencanaan"
-subtitle: "Penggunaan R dalam Pengolahan Data Kuantitatif"
 author:
   - "Muhammad Abdul Mubdi Bindar"
   - "Husna Tiara Putri"

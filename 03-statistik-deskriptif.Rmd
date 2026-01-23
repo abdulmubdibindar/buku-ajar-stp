@@ -1,5 +1,14 @@
 # Analisis Statistik Deskriptif
 
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
+
+Setelah mempelajari bab ini, Anda diharapkan:
+
+1. mampu menentukan tingkat pengukuran yang tepat untuk sebuah variabel [STP-2.1]{.capaian}
+2. mampu menghitung ukuran pemusatan dan penyebaran data [STP-2.2]{.capaian}
+:::
+
 ## Konsep Dasar
 
 Statistika deskriptif adalah bagian dari statistika yang mempelajari cara-cara pengumpulan, penyusunan, dan penyajian data suatu penelitian. Tujuan utamanya adalah untuk memberikan gambaran (deskripsi) mengenai data tersebut agar mudah dipahami. Statistik deskriptif tidak bermaksud menarik kesimpulan untuk populasi yang lebih besar (inferensi), melainkan hanya menjelaskan "apa adanya" dari data yang kita miliki.
@@ -66,12 +75,12 @@ sd(mahasiswa$Uang_Saku)
 1.  Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut. (STP-2.1)
 2.  Centang analisis statistik deskriptif yang relevan diaplikasikan kepada variabel-variabel tersebut. (STP-2.2)
 
-    | Variabel | Persentase/Proporsi | Rasio | Laju |
-    | :--- | :---: | :---: | :---: |
-    | Usia | | | |
-    | Fakultas | | | |
-    | ThnMsk | | | |
-    | Uang_saku | | | |
+    | Variabel  | Persentase/Proporsi | Rasio | Laju  |
+    | :-------- | :-----------------: | :---: | :---: |
+    | Usia      |                     |       |       |
+    | Fakultas  |                     |       |       |
+    | ThnMsk    |                     |       |       |
+    | Uang_saku |                     |       |       |
 
 3.  Apa informasi utama yang bisa kita simpulkan dari hasil statistik deskriptif variabel-variabel berikut? (STP-2.3)
     a. Persentase tiap kategori Fakultas

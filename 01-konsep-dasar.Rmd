@@ -13,7 +13,7 @@ Setelah mempelajari bab ini, Anda diharapkan:
 
 Proses perencanaan adalah proses yang sangat memerlukan data di seluruh tahapannya. Seperti yang ditunjukkan dalam Gambar \@ref(fig:proses-perencanaan-rasional) tentang proses perencanaan secara rasional, setiap tahapnya sangat memerlukan data sebagai masukan untuk melaksanakan **setiap tahap**.
 
-```{r proses-perencanaan-rasional, fig.cap='Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic', echo=FALSE, out.width='80%',  fig.align='center'}
+```{r proses-perencanaan-rasional, fig.cap='Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic', echo=FALSE, out.width='60%',  fig.align='center'}
 knitr::include_graphics("images/proses-perencanaan-rasional.png")
 ```
 
@@ -30,7 +30,7 @@ Kita akan mengambil kasus berupa perencanaan transportasi berkelanjutan mahasisw
 
 Dalam kasus ini, kita sudah mengetahui bahwa tujuan dari rektorat adalah “transportasi mahasiswa dan pegawai yang berkelanjutan.” Selanjutnya, kita perlu mengetahui apa persoalan yang ada saat ini di kampus ITERA (perhatikan Gambar \@ref(fig:kasus-bab1))
 
-```{r kasus-bab1, fig.cap='Persoalan Transportasi di ITERA', echo=FALSE, out.width='80%', fig.align='center'}
+```{r kasus-bab1, fig.cap='Persoalan Transportasi di ITERA', echo=FALSE, out.width='60%', fig.align='center'}
 knitr::include_graphics("images/kasus-bab1.png")
 ```
 

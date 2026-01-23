@@ -18,4 +18,4 @@ trigger: always_on
 ### For rmdexercise
 
 - Add learning outcome code provided by rmdcapaian for each problem sentence
-- Add sequential number that spans across all parts
+- Add sequential number that spans across all parts of the module. Be aware of current order of the numbering.
