@@ -70,10 +70,11 @@ mean(mahasiswa$Usia)
 sd(mahasiswa$Uang_Saku)
 ```
 
-## Soal Evaluasi
+::: rmdexercise
+### Soal Evaluasi 4 {.unnumbered}
 
-1.  Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut. (STP-2.1)
-2.  Centang analisis statistik deskriptif yang relevan diaplikasikan kepada variabel-variabel tersebut. (STP-2.2)
+1.  Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut. [STP-2.1]{.capaian}
+2.  Centang analisis statistik deskriptif yang relevan diaplikasikan kepada variabel-variabel tersebut. [STP-2.2]{.capaian}
 
     | Variabel  | Persentase/Proporsi | Rasio | Laju  |
     | :-------- | :-----------------: | :---: | :---: |
@@ -82,9 +83,11 @@ sd(mahasiswa$Uang_Saku)
     | ThnMsk    |                     |       |       |
     | Uang_saku |                     |       |       |
 
-3.  Apa informasi utama yang bisa kita simpulkan dari hasil statistik deskriptif variabel-variabel berikut? (STP-2.3)
+3.  Apa informasi utama yang bisa kita simpulkan dari hasil statistik deskriptif variabel-variabel berikut? [STP-2.3]{.capaian}
     a. Persentase tiap kategori Fakultas
     b. Proporsi kategori pada variabel UangSaku
     c. Rata-rata (mean) variabel Usia
     d. Median variabel ThnMsk
     e. Standar deviasi variabel Jarak
+
+:::

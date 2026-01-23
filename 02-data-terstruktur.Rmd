@@ -39,7 +39,6 @@ Kita akan membedah elemen-elemen data terstruktur dari tabulasi data tersebut:
 - Objek dari tabulasi data tersebut adalah mahasiswa-mahasiswa ITERA. Tiap objek dibedakan berdasarkan variabel `ID-mahasiswa`.
 - Variabel dari tabulasi data tersebut di antaranya adalah `Program Studi`, `Usia`, `Jumlah Motor`, dan `Jumlah Mobil`. Adapun variabel `ID-mahasiswa` tidak termasuk dalam variabel yang dihitung karena hanya bertindak sebagai pengidentifikasi objek.
 - Nilai dari tabulasi data tersebut bisa kita lihat di sel-selnya. Misalnya, objek mahasiswa dengan `ID-mahasiswa` 002 memiliki nilai `Program Studi` adalah "Matematika", `Usia` adalah 21 tahun, `Jumlah Motor` adalah 0, dan `Jumlah Mobil` adalah 1.
-
 :::
 
 ## Tabulasi Data Terstruktur yang Baik
@@ -86,7 +85,6 @@ kable(perbandingan, format = 'html', escape = FALSE,
   column_spec(2, width = '40%') %>%
   column_spec(3, width = '40%')
 ```
-
 :::
 
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-elemen data terstruktur.
@@ -122,7 +120,6 @@ a. Ada berapa objek dalam data terstruktur tersebut?
 b. Sebutkan apa kira-kira objek dari data terstruktur tersebut.
 c. Berapa variabel yang dapat dianalisis dari data terstruktur tersebut? Sebutkan apa saja.
 d. Apakah format tabel tersebut sesuai dengan prinsip data yang rapi? Jelaskan alasan Anda.
-
 :::
 
 ## Tingkat Pengukuran Variabel
@@ -163,7 +160,6 @@ Dalam variabel tersebut, nilai `Usia` dapat kita nyatakan dalam 2 bentuk yang be
 Kedua kasus tersebut menunjukkan bahwa kita bisa menggunakan tingkat pengukuran yang berbeda untuk variabel yang sama. 
 
 Kita akan mempelajari nama-nama tingkat pengukuran tersebut dalam subbab-subbab selanjutnya.
-
 :::
 
 ## Jenis-jenis Tingkat Pengukuran Variabel
@@ -274,8 +270,8 @@ kable(metadata_2, format = 'html', escape = FALSE,
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
   row_spec(2, background = '#ffffcc')
 ```
-
 :::
+
 
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang tingkat pengukuran variabel.
 
@@ -322,6 +318,5 @@ kable(metadata_soal, format = 'html', escape = FALSE,
 ```
 
 Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut dan jelaskan! [STP-2.1]{.capaian}
-
 :::
 

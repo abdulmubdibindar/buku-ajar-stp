@@ -28,7 +28,6 @@ ukuran-pemusatan-central-tendency
 ukuran-penyebaran-dispersion
 statistik-untuk-data-kategorik
 studi-kasus
-soal-evaluasi
 visualisasi-data-kuantitatif
 konsep-dasar-1
 jenis-visualisasi-dasar
@@ -37,7 +36,7 @@ histogram
 boxplot
 scatterplot
 studi-kasus-1
-soal-evaluasi-4
+soal-evaluasi
 pengantar-analisis-statistik-inferensial
 konsep-dasar-2
 teknik-pengambilan-sampel
