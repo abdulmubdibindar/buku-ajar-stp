@@ -22,7 +22,7 @@ chisq.test(tabel)
 ```
 
 **Interpretasi**:
-Jika P-value < 0.05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
+Jika P-value < 0,05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
 
 ::: rmdexercise
 ### Soal Evaluasi 11 {.unnumbered}

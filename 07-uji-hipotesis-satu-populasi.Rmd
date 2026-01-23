@@ -12,7 +12,7 @@ Uji hipotesis adalah prosedur statistik yang menggunakan data sampel untuk menge
 ### Langkah-langkah Pengujian Hipotesis
 
 1.  **Rumuskan Hipotesis ($H_0$ dan $H_1$)**.
-2.  **Tentukan Tingkat Signifikansi ($\alpha$)**. Biasanya 0.05.
+2.  **Tentukan Tingkat Signifikansi ($\alpha$)**. Biasanya 0,05.
 3.  **Pilih Statistik Uji**. (Z-test jika $\sigma$ diketahui atau $n > 30$, t-test jika $\sigma$ tidak diketahui dan $n < 30$).
 4.  **Hitung Statistik Hitung dan P-value**.
 5.  **Ambil Keputusan**. Tolak $H_0$ jika P-value $< \alpha$.
@@ -36,7 +36,7 @@ t.test(waktu_tempuh, mu = 45, alternative = "greater")
 ```
 
 **Interpretasi**:
-Jika p-value < 0.05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
+Jika p-value < 0,05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
 
 ::: rmdexercise
 ### Soal Evaluasi 8 {.unnumbered}

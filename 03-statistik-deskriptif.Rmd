@@ -5,13 +5,212 @@
 
 Setelah mempelajari bab ini, Anda diharapkan:
 
-1. mampu menentukan tingkat pengukuran yang tepat untuk sebuah variabel [STP-2.1]{.capaian}
-2. mampu menghitung ukuran pemusatan dan penyebaran data [STP-2.2]{.capaian}
+1. mampu memilih statistik deskriptif yang tepat sesuai dengan variabel yang akan disajikan dan informasi yang ingin disampaikan [STP-2.2]{.capaian}
+2. mampu menginterpretasikan informasi dari persentase/proporsi, rasio, laju, ukuran pemusatan, dan ukuran penyebaran suatu data kuantiatif sesuai dengan konteks kasusnya [STP-2.3]{.capaian}
 :::
 
-## Konsep Dasar
+## Makna Analisis Statistik Deskriptif?
 
-Statistika deskriptif adalah bagian dari statistika yang mempelajari cara-cara pengumpulan, penyusunan, dan penyajian data suatu penelitian. Tujuan utamanya adalah untuk memberikan gambaran (deskripsi) mengenai data tersebut agar mudah dipahami. Statistik deskriptif tidak bermaksud menarik kesimpulan untuk populasi yang lebih besar (inferensi), melainkan hanya menjelaskan "apa adanya" dari data yang kita miliki.
+Statistik deskriptif adalah metode analisis untuk mendeskripsikan data dari sampel atau populasi. Metode ini digunakan untuk membantu kita menghasilkan informasi yang bermakna dan bernilai dari sekadar data mentah. Perlu dicatat bahwa analisis statistik deskriptif dapat digunakan pada data mentah entah  berupa sampel atau populasi. Dengan demikian, statistik deskriptif sangat bergantung pada kondisi data mentah yang kita miliki.
+
+Berdasarkan teknik yang digunakan, statistik deskriptif dapat dibagi menjadi 4 kategori: **ukuran frekuensi**, **ukuran kecenderungan memusat**, **ukuran penyebaran**, dan **tabel silang**. Setiap kategori teknik memiliki tingkat pengukuran yang sesuai untuk variabel yang akan dianalisi. Makna yang dihasilkan juga akan berbeda tergantung pada teknik yang digunakan.
+
+::: rmdnote
+⚠️ Penting {.header}
+
+Di sinilah letak krusialnya menentukan tingkat pengukuran variabel, karena akan menentukan teknik analisis statistik deskriptif apa yang akan digunakan. Sebagai contoh, kita tidak bisa menggunakan mean untuk mengukur variabel nominal.
+
+:::
+
+Kita akan membahas berbagai teknik analisis statistik deskriptif berdasarkan kategori-kategori tersebut. Masing-masing pembahasan teknik juga akan dilengkapi dengan makna hasil analisisnya dan untuk apa teknik tersebut digunakan.
+
+## Ukuran Frekuensi
+
+Ukuran frekuensi adalah cara paling sederhana untuk memaknai satu variabel. Ukuran ini menyatakan frekuensi relatif objek-objek dilihat dari suatu variabel kategorik. Objek-objek dikelompokkan ke dalam kategori-kategori dan dihitung jumlahnya dan dibandingkan dengan jumlah keseluruhan objek tersebut. Untuk dapat menggunakan teknik ini, kita perlu melakukan pengolahan pada data mentah berupa variabel kategorik, yakni mengelompokkan objek berdasarkan kategori-kategori yang ada pada variabel tersebut dan menghitung frekuensi dari setiap kategori tersebut.
+
+Secara matematis, ukuran frekuensi dapat dinyatakan sebagai berikut:
+
+$$
+\begin{equation}
+\text{FR} = \frac{f}{n}
+(\#eq:konsep-frekuensi-relatif)
+\end{equation}
+$$
+
+dengan:
+
+- $FR$ = Frekuensi Relatif
+- $f$ = Frekuensi suatu kategori
+- $n$ = Jumlah Observasi
+
+Makna yang dihasilkan dari teknik ini adalah seberapa besar perbandingan jumlah objek pada suatu kategori relatif terhadap jumlah keseluruhan objeknya. Dari besar perbandingan tersebut, kita dapat mengetahui dominasi kategori tertentu pada objek-objek yang diamati serta perbandingan yang adil antar kumpulan objek dengan kategorisasi yang sama.
+
+Karena rumus perhitungan frekuensi relatif melibatkan penghitungan frekuensi atau jumlah objek (Persamaan \@ref(eq:konsep-frekuensi-relatif)), maka teknik ini hanya dapat digunakan pada data nominal dan ordinal. Teknik ini tidak dapat digunakan pada data interval dan rasio karena data interval dan rasio tidak memiliki kategori.
+
+::: rmdkasus
+### Studi Kasus: Analisis Pola Pergerakan Mahasiswa ITERA {.unnumbered}
+
+Sekarang kita akan membahas teknik analisis statistik dalam set data (dataset) mengenai pola pergerakan mahasiswa di ITERA. Untuk kepentingan kelengkapan ulasan, variabelnya kita tambah dengan satu variabel ordinal: tingkat tahun kuliah (`tingkat`).
+
+Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta metadatanya:
+
+```{r bab-3-kasus-dataset, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+kasus_dataset <- data.frame(
+  ID = c('117', '118', '119', '120', '121', '138', '139', '161'),
+  kend = c(5, 1, 1, 1, 1, 3, 3, 5),
+  tingkat = c(4, 4, 4, 4, 3, 4, 3, 2),
+  jarak = c(2.34, 2.66, 3.84, 3.64, 3.17, 3.84, 3.84, 3.52),
+  perjalanan_senin = c(3, 2, 2, 3, 2, 3, 4, 4),
+  biaya_pekan = c(0, 40, 30, 40, 45, 15, 60, 0)
+)
+
+kable(kasus_dataset, format = 'html', align = 'c',
+      caption = 'Contoh Set Data Hasil Kuesioner',
+      col.names = c('ID', 'kend', 'tingkat', 'jarak', 'perjalanan_senin', 'biaya_pekan')) %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+```
+
+**Metadata:**
+
+```{r bab-3-kasus-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+metadata_kasus <- data.frame(
+  Variabel = c('ID', 'kend','tingkat', 'jarak', 'perjalanan_senin', 'biaya_pekan'),
+  Keterangan = c(
+    'Nomor urut responden',
+    'Jenis kendaraan yang digunakan<br>1 = sepeda motor pribadi<br>2 = mobil pribadi<br>3 = layanan online<br>4 = menumpang kawan<br>5 = sepeda<br>6 = berjalan kaki',
+    'Tingkat semester kuliah<br>1 = Tahun pertama<br>2 = Tahun kedua<br>3 = Tahun ketiga<br>4 = Tahun keempat<br>5 = Swasta (mahasiswa tingkat akhir)',
+    'Jarak tempat tinggal mahasiswa dari kampus (kilometer)',
+    'Frekuensi perjalanan di hari Senin',
+    'Biaya perjalanan selama sepekan (ribu rupiah)'
+  )
+)
+
+kable(metadata_kasus, format = 'html', escape = FALSE,
+      col.names = c('Variabel', 'Keterangan'),
+      caption = 'Metadata Variabel') %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = '20%') %>%
+  column_spec(2, width = '80%')
+```
+
+Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nominal atau ordinal), seperti `kend` dan `tingkat`. Untuk dapat menghitung analisis ini kita harus membuat terlebih dahulu tabel frekuensi untuk kedua variabel ini. Kemudian, barulah kita dapat menghitung frekuensi relatifnya menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif) 
+
+```{r bab-3-tabel-frekuensi-kend, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+frekuensi_kend <- data.frame(
+  kend = c(1, 2, 3, 4, 5, 6, 'Total'),
+  Jenis_kendaraan = c('Sepeda motor pribadi', 'Mobil pribadi', 'Layanan online', 'Menumpang kawan', 'Sepeda', 'Berjalan kaki', ''),
+  Frekuensi = c(4, 0, 2, 0, 2, 0, 8),
+  Frekuensi_Relatif = c(0.50, 0.00, 0.25, 0.00, 0.25, 0.00, 1.00)
+)
+
+kable(frekuensi_kend, format = 'html', align = 'c',
+      caption = 'Tabel Distribusi Frekuensi Untuk Variabel `kend`',
+      col.names = c('kend', 'Jenis kendaraan', 'Frekuensi', 'Frekuensi Relatif')) %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+  row_spec(7, bold = TRUE)
+```
+
+```{r bab-3-tabel-frekuensi-tingkat, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+frekuensi_tingkat <- data.frame(
+  tingkat = c(1, 2, 3, 4, 5, 'Total'),
+  Tingkat_kuliah = c('Tahun pertama', 'Tahun kedua', 'Tahun ketiga', 'Tahun keempat', 'Swasta (tingkat akhir)', ''),
+  Frekuensi = c(0, 1, 2, 5, 0, 8),
+  Frekuensi_Relatif = c(0.000, 0.125, 0.250, 0.625, 0.000, 1.000)
+)
+
+kable(frekuensi_tingkat, format = 'html', align = 'c',
+      caption = 'Tabel Distribusi Frekuensi Untuk Variabel `tingkat`',
+      col.names = c('tingkat', 'Tingkat kuliah', 'Frekuensi', 'Frekuensi Relatif')) %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+  row_spec(6, bold = TRUE)
+```
+:::
+
+### Persentase dan Proporsi
+
+Dua jenis ukuran frekuensi yang paling sering dipakai adalah persentase dan proporsi [@ewing2020basic]. Kedua teknik ini menghasilkan nilai yang sama, hanya saja dinyatakan dalam skala yang berbeda. Persentase dinyatakan dalam skala 0-100 dengan satuan persen (%), sedangkan proporsi dinyatakan dalam skala 0-1. Dengan demikian, dapat dikatakan bahwa sebenarnya Persamaan \@ref(eq:konsep-frekuensi-relatif) adalah proporsi dan persentase adalah proporsi yang dikalikan dengan 100.
+
+$$
+\begin{equation}
+\text{Persentase} = \frac{f}{n} \times 100\%
+(\#eq:konsep-persentase)
+\end{equation}
+$$
+
+::: rmdnote
+Catatan {.header}
+
+Selain persen (per 100), ada juga satuan 'permil' (per 1000) dengan simbol ‰, yang biasa digunakan pada perhitungan-perhitungan yang melibatkan bilangan yang sangat kecil.
+:::
+
+
+::: rmdkasus
+### Studi Kasus: Penerapan Persentase dan Proporsi {.unnumbered}
+
+Melanjutkan kasus sebelumnya, kita akan menghitung persentase dan proporsi untuk variabel `kend` dan `tingkat` dari data mahasiswa ITERA.
+
+**Perhitungan untuk Variabel `kend`:**
+
+Dari tabel distribusi frekuensi variabel `kend`, kita dapat menghitung persentase penggunaan sepeda motor pribadi:
+
+$$
+\text{Persentase sepeda motor} = \frac{4}{8} \times 100\% = 50\%
+$$
+
+Sedangkan proporsinya adalah:
+
+$$
+\text{Proporsi sepeda motor} = \frac{4}{8} = 0,5
+$$
+
+**Interpretasi:** Setengah bagian (50%) dari responden adalah pengguna sepeda motor pribadi. Ini menunjukkan bahwa sepeda motor pribadi merupakan moda transportasi yang dominan dalam sampel penelitian ini.
+
+**Perhitungan untuk Variabel `tingkat`:**
+
+Dari tabel distribusi frekuensi variabel `tingkat`, kita dapat menghitung persentase mahasiswa tahun keempat:
+
+$$
+\text{Persentase tahun keempat} = \frac{5}{8} \times 100\% = 62,5\%
+$$
+
+Sedangkan proporsinya adalah:
+
+$$
+\text{Proporsi tahun keempat} = \frac{5}{8} = 0,625
+$$
+
+**Interpretasi:** Mayoritas responden (62,5%) adalah mahasiswa tahun keempat. Artinya, sebagian besar responden adalah mahasiswa yang sudah menyelesaikan studi di ITERA. Informasi ini berguna untuk memahami karakteristik sampel dalam penelitian pola pergerakan mahasiswa.
+
+:::
+
+### Laju *(Rate)*
+
+Hampir sama dengan persentase, laju juga merupakan ukuran frekuensi relatif. Perbedaan dengan persentase terletak pada ide dari pembagi (denominator) yang digunakan. Persentase digunakan pada kondisi jumlah keseluruhan objek tidak berubah atau statis. Sementara laju digunakan pada kondisi jumlah keseluruhan objek berubah atau dinamis.
+
+$$
+\begin{equation}
+\text{Laju} = \frac{f}{n_i} \times 100\%
+(\#eq:konsep-laju})
+\end{equation}
+$$
+
+::: rmdnote
+Catatan {.header}
+
+Selain persen (per 100), ada juga satuan 'permil' (per 1000) dengan simbol $$\permil$$, yang biasa digunakan pada perhitungan-perhitungan yang melibatkan bilangan yang sangat kecil.
+:::
 
 ## Teknik Analisis Statistik Deskriptif
 

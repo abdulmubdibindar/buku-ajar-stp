@@ -10,6 +10,7 @@ trigger: always_on
 - Inside each container (such as rmdnote or rmdkasus), format the first line of the container such as it becomes 3rd unnumbered heading for the title
 - Use "Studi Kasus: " as beginner for the title of rmdkasus
 - Use "Catatan: " as beginner for the title rmdnote
+- Use , for decimal and . for thousand separator
 
 ### For rmdkasus
 

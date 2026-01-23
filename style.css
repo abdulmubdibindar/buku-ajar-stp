@@ -55,3 +55,50 @@
     border: 1px solid #90caf9;
     font-weight: 500;
 }
+
+/* Styling untuk headings dengan class .header di dalam block */
+.rmdnote h1.header,
+.rmdnote h2.header,
+.rmdnote h3.header,
+.rmdnote h4.header,
+.rmdnote h5.header,
+.rmdnote h6.header,
+.rmdnote p.header,
+.rmdcapaian h1.header,
+.rmdcapaian h2.header,
+.rmdcapaian h3.header,
+.rmdcapaian h4.header,
+.rmdcapaian h5.header,
+.rmdcapaian h6.header,
+.rmdcapaian p.header,
+.rmdkasus h1.header,
+.rmdkasus h2.header,
+.rmdkasus h3.header,
+.rmdkasus h4.header,
+.rmdkasus h5.header,
+.rmdkasus h6.header,
+.rmdkasus p.header,
+.rmdexercise h1.header,
+.rmdexercise h2.header,
+.rmdexercise h3.header,
+.rmdexercise h4.header,
+.rmdexercise h5.header,
+.rmdexercise h6.header,
+.rmdexercise p.header {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+/* Fallback: jika .header diterapkan pada elemen biasa (bukan heading) */
+.rmdnote .header,
+.rmdcapaian .header,
+.rmdkasus .header,
+.rmdexercise .header {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    font-weight: 700;
+}

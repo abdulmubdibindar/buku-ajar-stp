@@ -316,7 +316,7 @@ metadata_soal <- data.frame(
 )
 
 kable(metadata_soal, format = 'html', escape = FALSE,
-      col.names = c('Nama Variabel', 'Deskripsi', 'Nilai-nilai yang mungkin'),
+      col.names = c('Nama Variabel', 'Deskripsi', 'Nilai-nilai yang valid'),
       caption = 'Metadata variabel survei mahasiswa') %>%
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
 ```

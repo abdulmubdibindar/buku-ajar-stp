@@ -596,7 +596,7 @@ Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai beri
   <tr>
    <th style="text-align:left;"> Nama Variabel </th>
    <th style="text-align:left;"> Deskripsi </th>
-   <th style="text-align:left;"> Nilai-nilai yang mungkin </th>
+   <th style="text-align:left;"> Nilai-nilai yang valid </th>
   </tr>
  </thead>
 <tbody>
@@ -646,13 +646,355 @@ Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data ters
 
 Setelah mempelajari bab ini, Anda diharapkan:
 
-1. mampu menentukan tingkat pengukuran yang tepat untuk sebuah variabel [STP-2.1]{.capaian}
-2. mampu menghitung ukuran pemusatan dan penyebaran data [STP-2.2]{.capaian}
+1. mampu memilih statistik deskriptif yang tepat sesuai dengan variabel yang akan disajikan dan informasi yang ingin disampaikan [STP-2.2]{.capaian}
+2. mampu menginterpretasikan informasi dari persentase/proporsi, rasio, laju, ukuran pemusatan, dan ukuran penyebaran suatu data kuantiatif sesuai dengan konteks kasusnya [STP-2.3]{.capaian}
 :::
 
-## Konsep Dasar
+## Makna Analisis Statistik Deskriptif?
 
-Statistika deskriptif adalah bagian dari statistika yang mempelajari cara-cara pengumpulan, penyusunan, dan penyajian data suatu penelitian. Tujuan utamanya adalah untuk memberikan gambaran (deskripsi) mengenai data tersebut agar mudah dipahami. Statistik deskriptif tidak bermaksud menarik kesimpulan untuk populasi yang lebih besar (inferensi), melainkan hanya menjelaskan "apa adanya" dari data yang kita miliki.
+Statistik deskriptif adalah metode analisis untuk mendeskripsikan data dari sampel atau populasi. Metode ini digunakan untuk membantu kita menghasilkan informasi yang bermakna dan bernilai dari sekadar data mentah. Perlu dicatat bahwa analisis statistik deskriptif dapat digunakan pada data mentah entah  berupa sampel atau populasi. Dengan demikian, statistik deskriptif sangat bergantung pada kondisi data mentah yang kita miliki.
+
+Berdasarkan teknik yang digunakan, statistik deskriptif dapat dibagi menjadi 4 kategori: **ukuran frekuensi**, **ukuran kecenderungan memusat**, **ukuran penyebaran**, dan **tabel silang**. Setiap kategori teknik memiliki tingkat pengukuran yang sesuai untuk variabel yang akan dianalisi. Makna yang dihasilkan juga akan berbeda tergantung pada teknik yang digunakan.
+
+::: rmdnote
+⚠️ Penting {.header}
+
+Di sinilah letak krusialnya menentukan tingkat pengukuran variabel, karena akan menentukan teknik analisis statistik deskriptif apa yang akan digunakan. Sebagai contoh, kita tidak bisa menggunakan mean untuk mengukur variabel nominal.
+
+:::
+
+Kita akan membahas berbagai teknik analisis statistik deskriptif berdasarkan kategori-kategori tersebut. Masing-masing pembahasan teknik juga akan dilengkapi dengan makna hasil analisisnya dan untuk apa teknik tersebut digunakan.
+
+## Ukuran Frekuensi
+
+Ukuran frekuensi adalah cara paling sederhana untuk memaknai satu variabel. Ukuran ini menyatakan frekuensi relatif objek-objek dilihat dari suatu variabel kategorik. Objek-objek dikelompokkan ke dalam kategori-kategori dan dihitung jumlahnya dan dibandingkan dengan jumlah keseluruhan objek tersebut. Untuk dapat menggunakan teknik ini, kita perlu melakukan pengolahan pada data mentah berupa variabel kategorik, yakni mengelompokkan objek berdasarkan kategori-kategori yang ada pada variabel tersebut dan menghitung frekuensi dari setiap kategori tersebut.
+
+Secara matematis, ukuran frekuensi dapat dinyatakan sebagai berikut:
+
+$$
+\begin{equation}
+\text{FR} = \frac{f}{n}
+(\#eq:konsep-frekuensi-relatif)
+\end{equation}
+$$
+
+dengan:
+
+- $FR$ = Frekuensi Relatif
+- $f$ = Frekuensi suatu kategori
+- $n$ = Jumlah Observasi
+
+Makna yang dihasilkan dari teknik ini adalah seberapa besar perbandingan jumlah objek pada suatu kategori relatif terhadap jumlah keseluruhan objeknya. Dari besar perbandingan tersebut, kita dapat mengetahui dominasi kategori tertentu pada objek-objek yang diamati serta perbandingan yang adil antar kumpulan objek dengan kategorisasi yang sama.
+
+Karena rumus perhitungan frekuensi relatif melibatkan penghitungan frekuensi atau jumlah objek (Persamaan \@ref(eq:konsep-frekuensi-relatif)), maka teknik ini hanya dapat digunakan pada data nominal dan ordinal. Teknik ini tidak dapat digunakan pada data interval dan rasio karena data interval dan rasio tidak memiliki kategori.
+
+::: rmdkasus
+### Studi Kasus: Analisis Pola Pergerakan Mahasiswa ITERA {.unnumbered}
+
+Sekarang kita akan membahas teknik analisis statistik dalam set data (dataset) mengenai pola pergerakan mahasiswa di ITERA. Untuk kepentingan kelengkapan ulasan, variabelnya kita tambah dengan satu variabel ordinal: tingkat tahun kuliah (`tingkat`).
+
+Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta metadatanya:
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-3-kasus-dataset)Contoh Set Data Hasil Kuesioner</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> ID </th>
+   <th style="text-align:center;"> kend </th>
+   <th style="text-align:center;"> tingkat </th>
+   <th style="text-align:center;"> jarak </th>
+   <th style="text-align:center;"> perjalanan_senin </th>
+   <th style="text-align:center;"> biaya_pekan </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 117 </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 2.34 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 118 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 2.66 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 119 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 3.84 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 120 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 3.64 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 121 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 3.17 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 45 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 138 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 3.84 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 139 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 3.84 </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 161 </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 3.52 </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 0 </td>
+  </tr>
+</tbody>
+</table>
+
+**Metadata:**
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-3-kasus-metadata)Metadata Variabel</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Variabel </th>
+   <th style="text-align:left;"> Keterangan </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;width: 20%; font-weight: bold;"> ID </td>
+   <td style="text-align:left;width: 80%; "> Nomor urut responden </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20%; font-weight: bold;"> kend </td>
+   <td style="text-align:left;width: 80%; "> Jenis kendaraan yang digunakan<br>1 = sepeda motor pribadi<br>2 = mobil pribadi<br>3 = layanan online<br>4 = menumpang kawan<br>5 = sepeda<br>6 = berjalan kaki </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20%; font-weight: bold;"> tingkat </td>
+   <td style="text-align:left;width: 80%; "> Tingkat semester kuliah<br>1 = Tahun pertama<br>2 = Tahun kedua<br>3 = Tahun ketiga<br>4 = Tahun keempat<br>5 = Swasta (mahasiswa tingkat akhir) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20%; font-weight: bold;"> jarak </td>
+   <td style="text-align:left;width: 80%; "> Jarak tempat tinggal mahasiswa dari kampus (kilometer) </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20%; font-weight: bold;"> perjalanan_senin </td>
+   <td style="text-align:left;width: 80%; "> Frekuensi perjalanan di hari Senin </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20%; font-weight: bold;"> biaya_pekan </td>
+   <td style="text-align:left;width: 80%; "> Biaya perjalanan selama sepekan (ribu rupiah) </td>
+  </tr>
+</tbody>
+</table>
+
+Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nominal atau ordinal), seperti `kend` dan `tingkat`. Untuk dapat menghitung analisis ini kita harus membuat terlebih dahulu tabel frekuensi untuk kedua variabel ini. Kemudian, barulah kita dapat menghitung frekuensi relatifnya menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif) 
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-3-tabel-frekuensi-kend)Tabel Distribusi Frekuensi Untuk Variabel `kend`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> kend </th>
+   <th style="text-align:center;"> Jenis kendaraan </th>
+   <th style="text-align:center;"> Frekuensi </th>
+   <th style="text-align:center;"> Frekuensi Relatif </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Sepeda motor pribadi </td>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> 0.50 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Mobil pribadi </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Layanan online </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 0.25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> Menumpang kawan </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> Sepeda </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 0.25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 6 </td>
+   <td style="text-align:center;"> Berjalan kaki </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> Total </td>
+   <td style="text-align:center;font-weight: bold;">  </td>
+   <td style="text-align:center;font-weight: bold;"> 8 </td>
+   <td style="text-align:center;font-weight: bold;"> 1.00 </td>
+  </tr>
+</tbody>
+</table>
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-3-tabel-frekuensi-tingkat)Tabel Distribusi Frekuensi Untuk Variabel `tingkat`</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> tingkat </th>
+   <th style="text-align:center;"> Tingkat kuliah </th>
+   <th style="text-align:center;"> Frekuensi </th>
+   <th style="text-align:center;"> Frekuensi Relatif </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> Tahun pertama </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 0.000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> Tahun kedua </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.125 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> Tahun ketiga </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 0.250 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 4 </td>
+   <td style="text-align:center;"> Tahun keempat </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 0.625 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> Swasta (tingkat akhir) </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 0.000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> Total </td>
+   <td style="text-align:center;font-weight: bold;">  </td>
+   <td style="text-align:center;font-weight: bold;"> 8 </td>
+   <td style="text-align:center;font-weight: bold;"> 1.000 </td>
+  </tr>
+</tbody>
+</table>
+:::
+
+### Persentase dan Proporsi
+
+Dua jenis ukuran frekuensi yang paling sering dipakai adalah persentase dan proporsi [@ewing2020basic]. Kedua teknik ini menghasilkan nilai yang sama, hanya saja dinyatakan dalam skala yang berbeda. Persentase dinyatakan dalam skala 0-100 dengan satuan persen (%), sedangkan proporsi dinyatakan dalam skala 0-1. Dengan demikian, dapat dikatakan bahwa sebenarnya Persamaan \@ref(eq:konsep-frekuensi-relatif) adalah proporsi dan persentase adalah proporsi yang dikalikan dengan 100.
+
+$$
+\begin{equation}
+\text{Persentase} = \frac{f}{n} \times 100\%
+(\#eq:konsep-persentase)
+\end{equation}
+$$
+
+::: rmdnote
+Catatan {.header}
+
+Selain persen (per 100), ada juga satuan 'permil' (per 1000) dengan simbol ‰, yang biasa digunakan pada perhitungan-perhitungan yang melibatkan bilangan yang sangat kecil.
+:::
+
+
+::: rmdkasus
+### Studi Kasus: Penerapan Persentase dan Proporsi {.unnumbered}
+
+Melanjutkan kasus sebelumnya, kita akan menghitung persentase dan proporsi untuk variabel `kend` dan `tingkat` dari data mahasiswa ITERA.
+
+**Perhitungan untuk Variabel `kend`:**
+
+Dari tabel distribusi frekuensi variabel `kend`, kita dapat menghitung persentase penggunaan sepeda motor pribadi:
+
+$$
+\text{Persentase sepeda motor} = \frac{4}{8} \times 100\% = 50\%
+$$
+
+Sedangkan proporsinya adalah:
+
+$$
+\text{Proporsi sepeda motor} = \frac{4}{8} = 0,5
+$$
+
+**Interpretasi:** Setengah bagian (50%) dari responden adalah pengguna sepeda motor pribadi. Ini menunjukkan bahwa sepeda motor pribadi merupakan moda transportasi yang dominan dalam sampel penelitian ini.
+
+**Perhitungan untuk Variabel `tingkat`:**
+
+Dari tabel distribusi frekuensi variabel `tingkat`, kita dapat menghitung persentase mahasiswa tahun keempat:
+
+$$
+\text{Persentase tahun keempat} = \frac{5}{8} \times 100\% = 62,5\%
+$$
+
+Sedangkan proporsinya adalah:
+
+$$
+\text{Proporsi tahun keempat} = \frac{5}{8} = 0,625
+$$
+
+**Interpretasi:** Mayoritas responden (62,5%) adalah mahasiswa tahun keempat. Artinya, sebagian besar responden adalah mahasiswa yang sudah menyelesaikan studi di ITERA. Informasi ini berguna untuk memahami karakteristik sampel dalam penelitian pola pergerakan mahasiswa.
+
+:::
+
+### Laju *(Rate)*
+
+Hampir sama dengan persentase, laju juga merupakan ukuran frekuensi relatif. Perbedaan dengan persentase terletak pada ide dari pembagi (denominator) yang digunakan. Persentase digunakan pada kondisi jumlah keseluruhan objek tidak berubah atau statis. Sementara laju digunakan pada kondisi jumlah keseluruhan objek berubah atau dinamis.
+
+$$
+\begin{equation}
+\text{Laju} = \frac{f}{n_i} \times 100\%
+(\#eq:konsep-laju})
+\end{equation}
+$$
+
+::: rmdnote
+Catatan {.header}
+
+Selain persen (per 100), ada juga satuan 'permil' (per 1000) dengan simbol $$\permil$$, yang biasa digunakan pada perhitungan-perhitungan yang melibatkan bilangan yang sangat kecil.
+:::
 
 ## Teknik Analisis Statistik Deskriptif
 
@@ -900,7 +1242,7 @@ Nilai $Z_{\alpha/2}$ bergantung pada tingkat kepercayaan (Confidence Level, $1-\
 
 ### Studi Kasus
 
-Seorang peneliti ingin mengestimasi rata-rata pengeluaran bulanan mahasiswa. Dari sampel 100 mahasiswa, diperoleh rata-rata 1.5 juta rupiah dengan simpangan baku 500 ribu rupiah. Buatlah selang kepercayaan 95%.
+Seorang peneliti ingin mengestimasi rata-rata pengeluaran bulanan mahasiswa. Dari sampel 100 mahasiswa, diperoleh rata-rata 1,5 juta rupiah dengan simpangan baku 500 ribu rupiah. Buatlah selang kepercayaan 95%.
 
 Diketahui:
 *   $n = 100$
@@ -939,7 +1281,7 @@ Uji hipotesis adalah prosedur statistik yang menggunakan data sampel untuk menge
 ### Langkah-langkah Pengujian Hipotesis
 
 1.  **Rumuskan Hipotesis ($H_0$ dan $H_1$)**.
-2.  **Tentukan Tingkat Signifikansi ($\alpha$)**. Biasanya 0.05.
+2.  **Tentukan Tingkat Signifikansi ($\alpha$)**. Biasanya 0,05.
 3.  **Pilih Statistik Uji**. (Z-test jika $\sigma$ diketahui atau $n > 30$, t-test jika $\sigma$ tidak diketahui dan $n < 30$).
 4.  **Hitung Statistik Hitung dan P-value**.
 5.  **Ambil Keputusan**. Tolak $H_0$ jika P-value $< \alpha$.
@@ -978,7 +1320,7 @@ t.test(waktu_tempuh, mu = 45, alternative = "greater")
 ```
 
 **Interpretasi**:
-Jika p-value < 0.05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
+Jika p-value < 0,05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
 
 ::: rmdexercise
 ### Soal Evaluasi 8 {.unnumbered}
@@ -1113,7 +1455,7 @@ summary(model_anova)
 ```
 
 **Interpretasi**:
-Jika nilai Pr(>F) pada tabel ANOVA kurang dari 0.05, maka tolak $H_0$. Artinya, terdapat perbedaan signifikan rata-rata harga tanah antar zona tersebut. Untuk mengetahui zona mana yang berbeda, dapat dilanjutkan dengan uji lanjut (Post Hoc Test) seperti Tukey HSD.
+Jika nilai Pr(>F) pada tabel ANOVA kurang dari 0,05, maka tolak $H_0$. Artinya, terdapat perbedaan signifikan rata-rata harga tanah antar zona tersebut. Untuk mengetahui zona mana yang berbeda, dapat dilanjutkan dengan uji lanjut (Post Hoc Test) seperti Tukey HSD.
 
 
 ``` r
@@ -1137,7 +1479,7 @@ TukeyHSD(model_anova)
 ### Soal Evaluasi 10 {.unnumbered}
 
 1.  Mengapa kita tidak dianjurkan menggunakan uji t berulang kali untuk membandingkan 3 kelompok atau lebih? [STP-7.3]{.capaian}
-2.  Apa kesimpulan jika P-value ANOVA > 0.05? [STP-7.4]{.capaian}
+2.  Apa kesimpulan jika P-value ANOVA > 0,05? [STP-7.4]{.capaian}
 
 :::
 
@@ -1189,7 +1531,7 @@ chisq.test(tabel)
 ```
 
 **Interpretasi**:
-Jika P-value < 0.05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
+Jika P-value < 0,05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
 
 ::: rmdexercise
 ### Soal Evaluasi 11 {.unnumbered}
