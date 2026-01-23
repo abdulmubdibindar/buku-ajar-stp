@@ -29,8 +29,11 @@ $$ Z = \frac{x - \mu}{\sigma} $$
 Untuk rata-rata sampel:
 $$ Z = \frac{\bar{x} - \mu}{SE} $$
 
-## Soal Evaluasi
+::: rmdexercise
+### Soal Evaluasi 6 {.unnumbered}
 
-1.  Jelaskan perbedaan mendasar antara statistik deskriptif dan inferensial. (STP-4.1)
-2.  Sebutkan dan jelaskan tiga teknik pengambilan sampel probabilitas. (STP-4.2)
-3.  Hitung Z-Score jika diketahui rata-rata sampel = 50, rata-rata populasi = 45, simpangan baku = 10, dan n = 25. (STP-4.3)
+1.  Jelaskan perbedaan mendasar antara statistik deskriptif dan inferensial. [STP-4.1]{.capaian}
+2.  Sebutkan dan jelaskan tiga teknik pengambilan sampel probabilitas. [STP-4.2]{.capaian}
+3.  Hitung Z-Score jika diketahui rata-rata sampel = 50, rata-rata populasi = 45, simpangan baku = 10, dan n = 25. [STP-4.3]{.capaian}
+
+:::

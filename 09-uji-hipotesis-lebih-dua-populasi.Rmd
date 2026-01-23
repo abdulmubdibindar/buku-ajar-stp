@@ -33,7 +33,10 @@ Jika nilai Pr(>F) pada tabel ANOVA kurang dari 0.05, maka tolak $H_0$. Artinya, 
 TukeyHSD(model_anova)
 ```
 
-## Soal Evaluasi
+::: rmdexercise
+### Soal Evaluasi 10 {.unnumbered}
 
-1.  Mengapa kita tidak dianjurkan menggunakan uji t berulang kali untuk membandingkan 3 kelompok atau lebih? (STP-7.3)
-2.  Apa kesimpulan jika P-value ANOVA > 0.05? (STP-7.4)
+1.  Mengapa kita tidak dianjurkan menggunakan uji t berulang kali untuk membandingkan 3 kelompok atau lebih? [STP-7.3]{.capaian}
+2.  Apa kesimpulan jika P-value ANOVA > 0.05? [STP-7.4]{.capaian}
+
+:::

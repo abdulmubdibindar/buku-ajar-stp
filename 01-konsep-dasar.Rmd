@@ -68,7 +68,6 @@ Berdasarkan pertanyaan penelitian *sudah sejauh mana keberlanjutan pada pola per
 | **Alat Analisis**    | Statistik (SPSS, Excel, Pemodelan Transportasi).                        | Transkrip wawancara, observasi lapangan, analisis tema.                      |
 | **Kelebihan**        | Akurat untuk menghitung target penurunan emisi karbon secara matematis. | Sangat baik untuk merancang kebijakan yang sesuai dengan psikologi pengguna. |
 | **Kelemahan**        | Tidak bisa menjelaskan alasan personal di balik angka.                  | Hasilnya tidak bisa digeneralisasi untuk seluruh populasi secara kaku.       |
-
 :::
 
 ### Analisis Statistik sebagai Analisis Kuantitatif
@@ -91,10 +90,8 @@ Berdasarkan jumlah variabelnya statistika juga dapat dibagi menjadi 3: **statist
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang konsep dasar statistika dalam perencanaan.
 
 ::: rmdexercise
-
 ### Soal Evaluasi 1 {.unnumbered}
 
 1.  Jelaskanlah penggunaan analisis data dalam setiap tahap perencanaan untuk kasus acara kumpul keakraban angkatan! [STP-1.1]{.capaian}
 2.  Ceritakan perbedaan  analisis kuantitatif dan kualitatif yang mungkin digunakan dalam perencanaan acara tersebut. [STP-1.2]{.capaian}
-
 :::

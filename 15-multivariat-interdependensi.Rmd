@@ -23,7 +23,10 @@ summary(pca_result)
 pca_result$rotation
 ```
 
-## Soal Evaluasi
+::: rmdexercise
+### Soal Evaluasi 16 {.unnumbered}
 
-1.  Apa tujuan utama dari Analisis Faktor? (STP-13.1)
-2.  Jelaskan perbedaan mendasar antara Analisis Regresi dan Analisis Faktor! (STP-13.2)
+1.  Apa tujuan utama dari Analisis Faktor? [STP-13.1]{.capaian}
+2.  Jelaskan perbedaan mendasar antara Analisis Regresi dan Analisis Faktor! [STP-13.2]{.capaian}
+
+:::

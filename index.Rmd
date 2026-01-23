@@ -9,6 +9,7 @@ output:
     bookdown::gitbook:
         css: style.css
         split_bib: false
+        keep_md: true
     bookdown::pdf_book:
         latex_engine: xelatex
         citation_package: natbib

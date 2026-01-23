@@ -25,7 +25,6 @@ Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 ele
 2.  **Variabel**. Variabel adalah karakteristik atau atribut yang melekat pada objek yang nilainya bisa berbeda-beda (bervariasi) antar satu objek dengan objek lainnya. Dalam tabulasi data, variabel menempati posisi **kolom** (*column*). Contoh variabel adalah luas lahan, jumlah penduduk, pendapatan per bulan, dan tingkat pendidikan.
 3.  **Nilai**. Nilai adalah angka atau kategori yang mengisi perpotongan antara baris (objek) dan kolom (variabel), yakni **sel** (*cell*). Nilai ini merepresentasikan data spesifik dari variabel tertentu untuk objek tertentu.
 
-
 ::: rmdkasus
 ### Studi Kasus: Elemen Data Terstruktur {.unnumbered #kasus-elemen-data-terstruktur} 
 
@@ -307,8 +306,13 @@ library(kableExtra)
 metadata_soal <- data.frame(
   `Nama Variabel` = c('`KodeResp`', '`Usia`', '`Fakultas`', '`ThnMsk`', '`UangSaku`', '`Jarak`'),
   Deskripsi = c('Nomor urut responden', 'Usia responden (tahun)', 'Fakultas mahasiswa', 'Tahun masuk kuliah (Masehi)', 'Uang saku mahasiswa per bulan', 'Jarak tempat tinggal mahasiswa dari kampus (km)'),
-  `Nilai-nilai yang mungkin` = c(' - ', ' - ', '1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi', ' - ', '1 = <1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = >4 juta', ' - '),
-  check.names = FALSE
+  `Nilai-nilai yang valid` = c(
+  ' tiga digit angka, hingga jumlah responden minimal', 
+  ' 18 - &infin;', 
+  '1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi', 
+  '2018 - 2022',
+  '1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta',
+  '0 - &infin;')
 )
 
 kable(metadata_soal, format = 'html', escape = FALSE,
@@ -318,5 +322,5 @@ kable(metadata_soal, format = 'html', escape = FALSE,
 ```
 
 Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut dan jelaskan! [STP-2.1]{.capaian}
-:::
 
+:::

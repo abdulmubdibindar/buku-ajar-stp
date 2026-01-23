@@ -19,7 +19,10 @@ model_berganda <- lm(harga ~ luas + kamar)
 summary(model_berganda)
 ```
 
-## Soal Evaluasi
+::: rmdexercise
+### Soal Evaluasi 15 {.unnumbered}
 
-1.  Apa itu multikolinearitas dalam regresi berganda? (STP-12.1)
-2.  Bagaimana cara menginterpretasikan Adjusted $R^2$? (STP-12.2)
+1.  Apa itu multikolinearitas dalam regresi berganda? [STP-12.1]{.capaian}
+2.  Bagaimana cara menginterpretasikan Adjusted $R^2$? [STP-12.2]{.capaian}
+
+:::

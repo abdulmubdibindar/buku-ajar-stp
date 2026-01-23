@@ -23,7 +23,10 @@ cor.test(pendidikan, kepuasan, method = "kendall")
 **Interpretasi**:
 Nilai korelasi mendekati +1 menunjukkan hubungan positif kuat (semakin tinggi pendidikan, semakin tinggi kepuasan).
 
-## Soal Evaluasi
+::: rmdexercise
+### Soal Evaluasi 12 {.unnumbered}
 
-1.  Kapan kita sebaiknya menggunakan Kendall's Tau dibandingkan Spearman's Rho? (STP-9.1)
-2.  Jelaskan makna korelasi negatif pada variabel ordinal! (STP-9.2)
+1.  Kapan kita sebaiknya menggunakan Kendall's Tau dibandingkan Spearman's Rho? [STP-9.1]{.capaian}
+2.  Jelaskan makna korelasi negatif pada variabel ordinal! [STP-9.2]{.capaian}
+
+:::

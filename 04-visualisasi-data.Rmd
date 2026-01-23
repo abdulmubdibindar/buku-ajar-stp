@@ -68,8 +68,11 @@ ggplot(transport, aes(x = reorder(Moda, -Jumlah), y = Jumlah)) +
        y = "Jumlah Mahasiswa")
 ```
 
-## Soal Evaluasi
+::: rmdexercise
+### Soal Evaluasi 5 {.unnumbered}
 
-1.  Jelaskan prinsip dasar pemilihan jenis grafik berdasarkan tingkat pengukuran variabelnya! (STP-3.1)
-2.  Apa fungsi Boxplot dalam analisis data eksploratif? (STP-3.2)
-3.  Perhatikan diagram berikut (misalkan ada diagram batang). Apa kesimpulan yang dapat diambil? (STP-3.3)
+1.  Jelaskan prinsip dasar pemilihan jenis grafik berdasarkan tingkat pengukuran variabelnya! [STP-3.1]{.capaian}
+2.  Apa fungsi Boxplot dalam analisis data eksploratif? [STP-3.2]{.capaian}
+3.  Perhatikan diagram berikut (misalkan ada diagram batang). Apa kesimpulan yang dapat diambil? [STP-3.3]{.capaian}
+
+:::

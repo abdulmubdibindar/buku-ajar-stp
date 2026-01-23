@@ -24,7 +24,10 @@ chisq.test(tabel)
 **Interpretasi**:
 Jika P-value < 0.05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
 
-## Soal Evaluasi
+::: rmdexercise
+### Soal Evaluasi 11 {.unnumbered}
 
-1.  Apa perbedaan Chi-Square Test dengan Lambda sebagai ukuran asosiasi? (STP-8.1)
-2.  Hitunglah nilai Cramer's V untuk tabel kontingensi berikut... (STP-8.2)
+1.  Apa perbedaan Chi-Square Test dengan Lambda sebagai ukuran asosiasi? [STP-8.1]{.capaian}
+2.  Hitunglah nilai Cramer's V untuk tabel kontingensi berikut... [STP-8.2]{.capaian}
+
+:::
