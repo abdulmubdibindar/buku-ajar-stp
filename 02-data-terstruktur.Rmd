@@ -211,6 +211,5 @@ knitr::include_graphics('images/bab-2-menentukan-tingpeng.svg')
 
 ### Studi Kasus: Menentukan Tingkat Pengukuran Variabel {.unnumbered}
 
-
-
+Kita akan melanjutkan kasus pengumpulan data pergerakan mahasiswa di kampus ITERA dari bab sebelumnya. Setelah menentukan variabel-variabel yang diukur dan memperkirakan tabel data terstrukturnya, kita perlu menelaah nilai-nilai seperti apa yang kira-kira akan dihasilkan sehingga kita dapat menentukan jenis nilai dan tingkat pengukuran variabel-variabel kita tersebut agar jenis analisisnya nanti sesuai.
 :::
