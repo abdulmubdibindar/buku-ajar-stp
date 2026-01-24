@@ -15,8 +15,11 @@ trigger: always_on
 ### For rmdkasus
 
 - Modify details for the title based on the context of the case
+- Prioritize using datasets in @datasets as the foundation of the case
+- Prefer simpler, more concise, and more efficient language use
 
 ### For rmdexercise
 
 - Add learning outcome code provided by rmdcapaian for each problem sentence
 - Add sequential number that spans across all parts of the module. Be aware of current order of the numbering.
+- Set the level of the heading to 2

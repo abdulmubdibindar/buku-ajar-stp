@@ -1,0 +1,83 @@
+::: rmdkasus
+### Studi Kasus: Perhitungan Rasio Penggunaan Kendaraan {.unnumbered}
+
+Rasio sangat berguna untuk membandingkan dua kategori yang berbeda dalam suatu variabel. Dalam studi transportasi, kita sering ingin membandingkan penggunaan berbagai jenis moda transportasi untuk memahami preferensi dan pola mobilitas.
+
+Mari kita gunakan data mahasiswa ITERA untuk menghitung rasio penggunaan kendaraan bermotor terhadap kendaraan non-bermotor. Berdasarkan data survei pola mobilitas mahasiswa ITERA, kita dapat mengelompokkan jenis kendaraan menjadi dua kategori besar:
+
+**Kendaraan Bermotor:**
+- Sepeda Motor Pribadi
+- Mobil Pribadi  
+- Transportasi Online
+- Kendaraan Bermotor (menumpang dengan keluarga/teman)
+
+**Kendaraan Non-Bermotor:**
+- Sepeda
+- Berjalan Kaki
+
+Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi sebagai berikut:
+
+```{r bab-3-data-rasio-itera, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+data_kendaraan <- data.frame(
+  Kategori = c('Kendaraan Bermotor', 'Kendaraan Non-Bermotor', 'Total'),
+  Jumlah = c(398, 31, 429),
+  Persen = c('92,8%', '7,2%', '100%')
+)
+
+kable(data_kendaraan, format = 'html', align = 'c',
+      caption = 'Distribusi Penggunaan Kendaraan Mahasiswa ITERA',
+      col.names = c('Kategori Kendaraan', 'Jumlah Mahasiswa', 'Persentase')) %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+  row_spec(3, bold = TRUE)
+```
+
+**Detail per jenis kendaraan:**
+
+```{r bab-3-detail-kendaraan-itera, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+detail_kendaraan <- data.frame(
+  Jenis = c('Sepeda Motor Pribadi', 'Mobil Pribadi', 'Transportasi Online', 
+            'Menumpang (Kendaraan Bermotor)', 'Sepeda', 'Berjalan Kaki'),
+  Kategori = c('Bermotor', 'Bermotor', 'Bermotor', 'Bermotor', 
+               'Non-Bermotor', 'Non-Bermotor'),
+  Jumlah = c(276, 47, 32, 43, 18, 13)
+)
+
+kable(detail_kendaraan, format = 'html', align = 'c',
+      caption = 'Detail Jenis Kendaraan yang Digunakan',
+      col.names = c('Jenis Kendaraan', 'Kategori', 'Jumlah')) %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+  row_spec(1:4, background = '#e8f4f8') %>%
+  row_spec(5:6, background = '#f8f9e8')
+```
+
+Menggunakan Persamaan \@ref(eq:konsep-rasio), kita dapat menghitung rasio penggunaan kendaraan bermotor terhadap kendaraan non-bermotor:
+
+$$
+\text{Rasio} = \frac{n_{\text{bermotor}}}{n_{\text{non-bermotor}}} = \frac{398}{31} = 12,84
+$$
+
+**Interpretasi:**
+
+Rasio 12,84 berarti bahwa untuk setiap 1 mahasiswa yang menggunakan kendaraan non-bermotor (sepeda atau berjalan kaki), terdapat sekitar 13 mahasiswa yang menggunakan kendaraan bermotor. Nilai rasio ini dapat juga dinyatakan sebagai **12,84:1** atau dibulatkan menjadi **13:1**.
+
+Rasio yang tinggi ini menunjukkan dominasi penggunaan kendaraan bermotor di kalangan mahasiswa ITERA. Informasi ini penting bagi perencana kampus untuk:
+
+1. Merencanakan kapasitas area parkir kendaraan bermotor yang memadai
+2. Mempertimbangkan program promosi penggunaan kendaraan non-bermotor demi keberlanjutan
+3. Merancang infrastruktur jalur sepeda dan pejalan kaki yang aman
+
+Kita juga dapat menghitung rasio antar jenis kendaraan bermotor. Misalnya, rasio penggunaan sepeda motor pribadi terhadap mobil pribadi:
+
+$$
+\text{Rasio motor:mobil} = \frac{276}{47} = 5,87 \approx 6:1
+$$
+
+Artinya, untuk setiap 1 mahasiswa yang menggunakan mobil pribadi, terdapat sekitar 6 mahasiswa yang menggunakan sepeda motor pribadi.
+
+:::
