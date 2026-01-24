@@ -241,6 +241,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.4.1" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#indeks-variasi-kualitatif-index-of-qualitative-variance-iqv"><i class="fa fa-check"></i><b>3.4.1</b> Indeks Variasi Kualitatif (<em>Index of Qualitative Variance</em>, IQV)</a></li>
 <li class="chapter" data-level="" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#studi-kasus-keberagaman-distribusi-mahasiswa-antar-fakultas"><i class="fa fa-check"></i>Studi Kasus: Keberagaman Distribusi Mahasiswa Antar Fakultas</a></li>
 <li class="chapter" data-level="3.4.2" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#rentang-range"><i class="fa fa-check"></i><b>3.4.2</b> Rentang (<em>Range</em>)</a></li>
+<li class="chapter" data-level="" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#studi-kasus-perbandingan-rentang-biaya-perjalanan-mahasiswa"><i class="fa fa-check"></i>Studi Kasus: Perbandingan Rentang Biaya Perjalanan Mahasiswa</a></li>
 <li class="chapter" data-level="3.4.3" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#variansi-variance"><i class="fa fa-check"></i><b>3.4.3</b> Variansi (<em>Variance</em>)</a></li>
 <li class="chapter" data-level="3.4.4" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#simpangan-baku-standard-deviation"><i class="fa fa-check"></i><b>3.4.4</b> Simpangan Baku (<em>Standard Deviation</em>)</a></li>
 <li class="chapter" data-level="" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#soal-evaluasi-4"><i class="fa fa-check"></i>Soal Evaluasi 4</a></li>
@@ -972,8 +973,8 @@ UBL
 <p>Jika kita hanya membandingkan jumlah absolut, ITERA memiliki 276 pengguna sepeda motor sedangkan UBL memiliki 195 pengguna. Apakah ini berarti penggunaan sepeda motor lebih dominan di ITERA? <strong>Belum tentu</strong>, karena total responden di kedua kampus berbeda.</p>
 <p><strong>Perbandingan Menggunakan Persentase:</strong></p>
 <p>Mari kita hitung persentase pengguna sepeda motor di masing-masing kampus menggunakan Persamaan <a href="analisis-statistik-deskriptif.html#eq:konsep-persentase">(3.2)</a>:</p>
-<p><strong>ITERA:</strong>
-<span class="math display">\[
+<p><strong>ITERA:</strong></p>
+<p><span class="math display">\[
 \text{Persentase sepeda motor ITERA} = \frac{276}{429} \times 100\% = 64,3\%
 \]</span></p>
 <p><strong>UBL:</strong>
@@ -1049,9 +1050,7 @@ UBL
 </ol>
 <p>Tanpa persentase, kita akan salah menyimpulkan hanya berdasarkan jumlah absolut (276 vs 195). Persentase memberikan ukuran yang adil untuk membandingkan dominansi kategori pada kelompok dengan ukuran berbeda.</p>
 <p><strong>Implikasi untuk Perencanaan:</strong></p>
-<p>Informasi ini penting bagi perencana transportasi kampus untuk:
-- ITERA perlu menyediakan area parkir motor yang lebih luas (minimal 64% dari kapasitas mahasiswa)
-- UBL dapat mengalokasikan lebih banyak ruang untuk moda transportasi alternatif karena dominansi motor lebih rendah</p>
+<p>Informasi ini penting bagi perencana transportasi kampus untuk: - ITERA perlu menyediakan area parkir motor yang lebih luas (minimal 64% dari kapasitas mahasiswa) - UBL dapat mengalokasikan lebih banyak ruang untuk moda transportasi alternatif karena dominansi motor lebih rendah</p>
 </div>
 <div id="laju-rate" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Laju <em>(Rate)</em><a href="analisis-statistik-deskriptif.html#laju-rate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1224,14 +1223,9 @@ UNILA
 <h3>Studi Kasus: Perhitungan Rasio Penggunaan Kendaraan<a href="analisis-statistik-deskriptif.html#studi-kasus-perhitungan-rasio-penggunaan-kendaraan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Rasio sangat berguna untuk membandingkan dua kategori yang berbeda dalam suatu variabel. Dalam studi transportasi, kita sering ingin membandingkan penggunaan berbagai jenis moda transportasi untuk memahami preferensi dan pola mobilitas.</p>
 <p>Mari kita gunakan data mahasiswa ITERA untuk menghitung rasio penggunaan kendaraan bermotor terhadap kendaraan non-bermotor. Berdasarkan data survei pola mobilitas mahasiswa ITERA, kita dapat mengelompokkan jenis kendaraan menjadi dua kategori besar:</p>
-<p><strong>Kendaraan Bermotor:</strong>
-- Sepeda Motor Pribadi
-- Mobil Pribadi<br />
-- Transportasi Online
-- Kendaraan Bermotor (menumpang dengan keluarga/teman)</p>
-<p><strong>Kendaraan Non-Bermotor:</strong>
-- Sepeda
-- Berjalan Kaki</p>
+<p><strong>Kendaraan Bermotor:</strong> - Sepeda Motor Pribadi - Mobil Pribadi<br />
+- Transportasi Online - Kendaraan Bermotor (menumpang dengan keluarga/teman)</p>
+<p><strong>Kendaraan Non-Bermotor:</strong> - Sepeda - Berjalan Kaki</p>
 <p>Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi sebagai berikut:</p>
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>
@@ -1412,19 +1406,16 @@ Non-Bermotor
 <div id="studi-kasus-perubahan-persentase-penggunaan-transportasi-online" class="section level3 unnumbered hasAnchor rmdkasus">
 <h3>Studi Kasus: Perubahan Persentase Penggunaan Transportasi Online<a href="analisis-statistik-deskriptif.html#studi-kasus-perubahan-persentase-penggunaan-transportasi-online" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Mari kita analisis perubahan pola mobilitas mahasiswa ITERA dari waktu ke waktu. Berdasarkan data survei yang dilakukan pada dua periode berbeda, kita tertarik untuk mengetahui perubahan persentase penggunaan transportasi online sebagai moda transportasi utama.</p>
-<p><strong>Data Survei Periode 1 (Semester Ganjil 2023):</strong>
-- Total responden: 200 mahasiswa
-- Pengguna transportasi online: 24 mahasiswa</p>
-<p><strong>Data Survei Periode 2 (Semester Ganjil 2024):</strong>
-- Total responden: 429 mahasiswa<br />
+<p><strong>Data Survei Periode 1 (Semester Ganjil 2023):</strong> - Total responden: 200 mahasiswa - Pengguna transportasi online: 24 mahasiswa</p>
+<p><strong>Data Survei Periode 2 (Semester Ganjil 2024):</strong> - Total responden: 429 mahasiswa<br />
 - Pengguna transportasi online: 32 mahasiswa</p>
 <p>Pertama, kita hitung persentase penggunaan transportasi online pada masing-masing periode:</p>
-<p><strong>Periode 1:</strong>
-<span class="math display">\[
+<p><strong>Periode 1:</strong></p>
+<p><span class="math display">\[
 \text{Persentase TO Periode 1} = \frac{24}{200} \times 100\% = 12,0\%
 \]</span></p>
-<p><strong>Periode 2:</strong>
-<span class="math display">\[
+<p><strong>Periode 2:</strong></p>
+<p><span class="math display">\[
 \text{Persentase TO Periode 2} = \frac{32}{429} \times 100\% = 7,5\%
 \]</span></p>
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
@@ -1490,10 +1481,7 @@ Semester Ganjil 2024
 <li>Pertumbuhan jumlah pengguna transportasi online (8 orang) tidak sebanding dengan pertumbuhan total populasi (229 orang)</li>
 </ol>
 <p><strong>Implikasi untuk Perencanaan:</strong></p>
-<p>Penurunan 37,5% ini mengindikasikan bahwa:
-- Mahasiswa lebih memilih moda transportasi lain seperti sepeda motor pribadi
-- Kebijakan kampus tentang akses transportasi online mungkin perlu dievaluasi
-- Perlu investigasi lebih lanjut tentang faktor-faktor yang menyebabkan penurunan ini (biaya, ketersediaan, kenyamanan, dll.)</p>
+<p>Penurunan 37,5% ini mengindikasikan bahwa: - Mahasiswa lebih memilih moda transportasi lain seperti sepeda motor pribadi - Kebijakan kampus tentang akses transportasi online mungkin perlu dievaluasi - Perlu investigasi lebih lanjut tentang faktor-faktor yang menyebabkan penurunan ini (biaya, ketersediaan, kenyamanan, dll.)</p>
 </div>
 <p>Simak juga pembahasan kasus terkait perubahan persentase yang sempat hangat di pertengahan tahun 2025, yakni kenaikan tarif pajak pertambahan nilai (PPN) dari 11% hingga 12%.</p>
 <div id="studi-kasus-kesalahan-umum-dalam-menafsirkan-kenaikan-pajak" class="section level3 unnumbered hasAnchor rmdkasus">
@@ -1503,10 +1491,7 @@ Semester Ganjil 2024
 <p>“Pemerintah menaikkan tarif pajak penghasilan (PPh) dari 11% menjadi 12%. Kenaikannya hanya 1% saja, tidak terlalu signifikan.”</p>
 </blockquote>
 <p>Benarkah kenaikannya “hanya 1%”? Mari kita analisis dengan cermat menggunakan konsep perubahan persentase.</p>
-<p><strong>Data:</strong>
-- Tarif pajak awal (<span class="math inline">\(f_1\)</span>) = 11%
-- Tarif pajak baru (<span class="math inline">\(f_2\)</span>) = 12%
-- Selisih absolut = 12% - 11% = 1 poin persentase</p>
+<p><strong>Data:</strong> - Tarif pajak awal (<span class="math inline">\(f_1\)</span>) = 11% - Tarif pajak baru (<span class="math inline">\(f_2\)</span>) = 12% - Selisih absolut = 12% - 11% = 1 poin persentase</p>
 <p><strong>Analisis yang Keliru:</strong></p>
 <p>Banyak orang menyimpulkan bahwa kenaikannya “hanya 1%” karena melihat selisih absolut. Namun, ini adalah <strong>kesalahan interpretasi yang fatal</strong>.</p>
 <p><strong>Analisis yang Benar:</strong></p>
@@ -1559,20 +1544,20 @@ Kenaikan hampir 10% dari beban pajak awal
 </table>
 <p><strong>Dampak Fatal Kesalahan Interpretasi:</strong></p>
 <p>Mari kita lihat dampak nyata pada ekonomi rumah tangga. Misalkan seorang pekerja dengan penghasilan Rp 10.000.000 per bulan:</p>
-<p><strong>Beban Pajak Sebelum Kenaikan:</strong>
-<span class="math display">\[
+<p><strong>Beban Pajak Sebelum Kenaikan:</strong></p>
+<p><span class="math display">\[
 \text{Pajak lama} = 11\% \times \text{Rp 10.000.000} = \text{Rp 1.100.000}
 \]</span></p>
-<p><strong>Beban Pajak Setelah Kenaikan:</strong>
-<span class="math display">\[
+<p><strong>Beban Pajak Setelah Kenaikan:</strong></p>
+<p><span class="math display">\[
 \text{Pajak baru} = 12\% \times \text{Rp 10.000.000} = \text{Rp 1.200.000}
 \]</span></p>
-<p><strong>Tambahan Beban Pajak per Bulan:</strong>
-<span class="math display">\[
+<p><strong>Tambahan Beban Pajak per Bulan:</strong></p>
+<p><span class="math display">\[
 \text{Tambahan} = \text{Rp 1.200.000} - \text{Rp 1.100.000} = \text{Rp 100.000}
 \]</span></p>
-<p><strong>Tambahan Beban Pajak per Tahun:</strong>
-<span class="math display">\[
+<p><strong>Tambahan Beban Pajak per Tahun:</strong></p>
+<p><span class="math display">\[
 \text{Tambahan tahunan} = \text{Rp 100.000} \times 12 = \text{Rp 1.200.000}
 \]</span></p>
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
@@ -1773,13 +1758,13 @@ Mhs 8
 </tr>
 </tbody>
 </table>
-<p><strong>Perhitungan Mean:</strong>
-<span class="math display">\[
+<p><strong>Perhitungan Mean:</strong></p>
+<p><span class="math display">\[
 \bar{x} = \frac{50 + 55 + 60 + 65 + 70 + 75 + 80 + 85}{8} = \frac{540}{8} = 67,5
 \]</span></p>
-<p><strong>Perhitungan Median:</strong><br />
-Data sudah terurut, <span class="math inline">\(n=8\)</span> (genap), maka median adalah rata-rata nilai ke-4 dan ke-5:
-<span class="math display">\[
+<p><strong>Perhitungan Median:</strong></p>
+<p>Data sudah terurut, <span class="math inline">\(n=8\)</span> (genap), maka median adalah rata-rata nilai ke-4 dan ke-5:</p>
+<p><span class="math display">\[
 \text{Median} = \frac{65 + 70}{2} = 67,5
 \]</span></p>
 <p>Sekarang misalkan Mhs 8 memiliki biaya ekstrem Rp 500.000 (menggunakan layanan <em>premium</em>):</p>
@@ -1864,12 +1849,12 @@ Mhs 8
 </tr>
 </tbody>
 </table>
-<p><strong>Perhitungan Mean Baru:</strong>
-<span class="math display">\[
+<p><strong>Perhitungan Mean Baru:</strong></p>
+<p><span class="math display">\[
 \bar{x} = \frac{50 + 55 + 60 + 65 + 70 + 75 + 80 + 500}{8} = \frac{955}{8} = 119,4
 \]</span></p>
-<p><strong>Perhitungan Median Baru:</strong>
-<span class="math display">\[
+<p><strong>Perhitungan Median Baru:</strong></p>
+<p><span class="math display">\[
 \text{Median} = \frac{65 + 70}{2} = 67,5
 \]</span></p>
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
@@ -2000,8 +1985,8 @@ Sepeda
 </tr>
 </tbody>
 </table>
-<p><strong>Hasil:</strong><br />
-Modus untuk variabel <code>kend</code> adalah <strong>sepeda motor pribadi</strong> (kode 1) dengan frekuensi 4. Artinya, jenis kendaraan yang paling umum digunakan mahasiswa adalah sepeda motor pribadi.</p>
+<p><strong>Hasil:</strong></p>
+<p>Modus untuk variabel <code>kend</code> adalah <strong>sepeda motor pribadi</strong> (kode 1) dengan frekuensi 4. Artinya, jenis kendaraan yang paling umum digunakan mahasiswa adalah sepeda motor pribadi.</p>
 <p><strong>Variabel 2: Frekuensi Perjalanan Senin (<code>perjalanan_senin</code>) - Numerik Diskret</strong></p>
 <p>Variabel ini menunjukkan berapa kali mahasiswa melakukan perjalanan di hari Senin. Mari kita buat tabel frekuensinya:</p>
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
@@ -2045,8 +2030,8 @@ Frekuensi
 </tr>
 </tbody>
 </table>
-<p><strong>Hasil:</strong><br />
-Data ini <strong>bimodal</strong> karena terdapat dua nilai yang sama-sama memiliki frekuensi tertinggi (3): mahasiswa yang melakukan <strong>2 kali perjalanan</strong> dan <strong>3 kali perjalanan</strong>. Artinya, pola yang paling umum adalah mahasiswa melakukan 2-3 kali perjalanan per hari Senin.</p>
+<p><strong>Hasil:</strong></p>
+<p>Data ini <strong>bimodal</strong> karena terdapat dua nilai yang sama-sama memiliki frekuensi tertinggi (3): mahasiswa yang melakukan <strong>2 kali perjalanan</strong> dan <strong>3 kali perjalanan</strong>. Artinya, pola yang paling umum adalah mahasiswa melakukan 2-3 kali perjalanan per hari Senin.</p>
 <p><strong>Interpretasi untuk Perencanaan:</strong></p>
 <ol style="list-style-type: decimal">
 <li><strong>Jenis Kendaraan</strong>: Dominasi sepeda motor pribadi (modus) mengindikasikan perlunya penyediaan area parkir motor yang memadai</li>
@@ -2192,7 +2177,7 @@ Adab
 </tbody>
 </table>
 <p>Kita mengaplikasikan Persamaan <a href="analisis-statistik-deskriptif.html#eq:konsep-iqv">(3.7)</a> dengan langkah-langkah seperti berikut. Simak dan bila perlu tulis ulang langkah-langkahnya oleh Anda.</p>
-<p><strong>Langkah 1: Hitung <span class="math inline">\(\sum p_i^2\)</span></strong></p>
+<p><strong>Langkah 1: Hitung</strong> <span class="math inline">\(\sum p_i^2\)</span></p>
 <p><span class="math display">\[
 \begin{aligned}
 \sum p_i^2 &amp;= (0,110)^2 + (0,295)^2 + (0,145)^2 + (0,325)^2 + (0,038)^2 \\
@@ -2258,15 +2243,91 @@ IQV
 <p><strong>Interpretasi:</strong></p>
 <p>Nilai IQV = 0,879 menunjukkan tingkat keberagaman yang tinggi dalam distribusi mahasiswa antar fakultas. Nilai ini mendekati 1,00, yang berarti distribusi mahasiswa cukup merata di berbagai fakultas (tidak terlalu terkonsentrasi di satu fakultas saja).</p>
 <p>Meskipun ada fakultas dengan jumlah mahasiswa yang lebih banyak seperti Dakwah dan Ilmu Komunikasi (32,5%) dan Syariah (29,5%), distribusi secara keseluruhan masih menunjukkan variasi yang baik. Jika semua mahasiswa hanya berada di satu fakultas, maka IQV = 0,00 (tidak ada variasi sama sekali).</p>
-<p><strong>Implikasi untuk Perencanaan:</strong></p>
-<p>Tingkat keberagaman yang tinggi ini mengindikasikan bahwa:
-1. Alokasi sumber daya kampus perlu mempertimbangkan kebutuhan berbagai fakultas
-2. Perencanaan fasilitas umum (kantin, masjid, perpustakaan) harus dapat menampung mahasiswa dari berbagai fakultas
-3. Program-program lintas fakultas dapat efektif karena distribusi yang cukup merata</p>
 </div>
 <div id="rentang-range" class="section level3 hasAnchor" number="3.4.2">
 <h3><span class="header-section-number">3.4.2</span> Rentang (<em>Range</em>)<a href="analisis-statistik-deskriptif.html#rentang-range" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Rentang adalah selisih antara nilai tertinggi dan nilai terendah dalam suatu distribusi data. Rentang hanya dapat digunakan pada variabel interval dan rasio.</p>
+<p>Rentang adalah selisih antara nilai tertinggi (maksimum) dan nilai terendah (minimum) dalam suatu distribusi data. Karena itu, rentang hanya dapat digunakan pada variabel interval dan rasio.</p>
+<p>Makna dari perhitungan rentang tidak banyak memberikan informasi terkait keberagaman data jika hanya dikenakan pada satu set data saja. Apabila dibandingkan, maka set data yang rentangnya lebih besar dapat dikatakan lebih beragam.</p>
+</div>
+<div id="studi-kasus-perbandingan-rentang-biaya-perjalanan-mahasiswa" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Perbandingan Rentang Biaya Perjalanan Mahasiswa<a href="analisis-statistik-deskriptif.html#studi-kasus-perbandingan-rentang-biaya-perjalanan-mahasiswa" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Rentang dapat digunakan untuk membandingkan tingkat keberagaman data antar kelompok alih-alih untuk menjelaskan satu set data saja. Mari kita bandingkan keberagaman biaya perjalanan sepekan mahasiswa dari dua perguruan tinggi: UIN RIL dan UNILA.</p>
+<p>Berdasarkan data survei pola mobilitas mahasiswa, kita akan menganalisis variabel <code>biaya_perjalanan</code> (biaya perjalanan sepekan dalam rupiah). Perhatikan statistik deskriptif dari kedua kelompok:</p>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:bab-3-data-rentang">Tabel 3.21: </span>Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA
+</caption>
+<thead>
+<tr>
+<th style="text-align:center;">
+Kampus
+</th>
+<th style="text-align:center;">
+Minimum (Rp)
+</th>
+<th style="text-align:center;">
+Maksimum (Rp)
+</th>
+<th style="text-align:center;">
+Rentang (Rp)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+UIN RIL
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+150
+</td>
+<td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;">
+150
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+UNILA
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+400
+</td>
+<td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;">
+400
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Perhitungan Rentang untuk UIN RIL:</strong></p>
+<p><span class="math display">\[
+\begin{align}
+\text{Rentang}_{\text{UIN RIL}} &amp;= \text{Maks} - \text{Min}\\
+&amp;= 150 - 0\\
+&amp;= 150
+\end{align}
+\]</span></p>
+<p><strong>Perhitungan Rentang untuk UNILA:</strong></p>
+<p><span class="math display">\[
+\begin{align}
+\text{Rentang}_{\text{UNILA}} &amp;= \text{Maks} - \text{Min}\\
+&amp;=400 - 0\\
+&amp;=400
+\end{align}
+\]</span></p>
+<p>Nilai spesifik untuk minimum, maksimum, dan rentang dapat dilihat pada tabel di atas.</p>
+<p><strong>Interpretasi:</strong></p>
+<p>Hasil perhitungan menunjukkan bahwa terdapat variasi yang cukup besar dalam biaya perjalanan sepekan mahasiswa di kedua kampus. Perbandingan rentang biaya perjalanan memberikan informasi penting tentang keberagaman kondisi ekonomi dan pola mobilitas mahasiswa:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Rentang yang Berbeda</strong>: Perbedaan rentang biaya perjalanan antara UIN RIL dan UNILA menunjukkan tingkat keberagaman ekonomi dan pola mobilitas yang berbeda di kedua kampus</p></li>
+<li><p><strong>Variasi Biaya</strong>: Mahasiswa di kedua kampus memiliki spektrum biaya perjalanan yang luas, dari yang sangat rendah (kemungkinan berjalan kaki atau bersepeda) hingga yang cukup tinggi (menggunakan kendaraan bermotor atau transportasi online)</p></li>
+<li><p><strong>Implikasi Ekonomi</strong>: Keberagaman biaya perjalanan mencerminkan perbedaan kondisi ekonomi mahasiswa dan pilihan moda transportasi yang tersedia</p></li>
+</ol>
 </div>
 <div id="variansi-variance" class="section level3 hasAnchor" number="3.4.3">
 <h3><span class="header-section-number">3.4.3</span> Variansi (<em>Variance</em>)<a href="analisis-statistik-deskriptif.html#variansi-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>

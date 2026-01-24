@@ -187,11 +187,14 @@ Jika kita hanya membandingkan jumlah absolut, ITERA memiliki 276 pengguna sepeda
 
 Mari kita hitung persentase pengguna sepeda motor di masing-masing kampus menggunakan Persamaan \@ref(eq:konsep-persentase):
 
-**ITERA:** $$
+**ITERA:**
+
+$$
 \text{Persentase sepeda motor ITERA} = \frac{276}{429} \times 100\% = 64,3\%
 $$
 
-**UBL:** $$
+**UBL:**
+$$
 \text{Persentase sepeda motor UBL} = \frac{195}{380} \times 100\% = 51,3\%
 $$
 
@@ -458,11 +461,15 @@ Mari kita analisis perubahan pola mobilitas mahasiswa ITERA dari waktu ke waktu.
 
 Pertama, kita hitung persentase penggunaan transportasi online pada masing-masing periode:
 
-**Periode 1:** $$
+**Periode 1:**
+
+$$
 \text{Persentase TO Periode 1} = \frac{24}{200} \times 100\% = 12,0\%
 $$
 
-**Periode 2:** $$
+**Periode 2:**
+
+$$
 \text{Persentase TO Periode 2} = \frac{32}{429} \times 100\% = 7,5\%
 $$
 
@@ -553,19 +560,27 @@ kable(data_pajak, format = 'html', align = 'c',
 
 Mari kita lihat dampak nyata pada ekonomi rumah tangga. Misalkan seorang pekerja dengan penghasilan Rp 10.000.000 per bulan:
 
-**Beban Pajak Sebelum Kenaikan:** $$
+**Beban Pajak Sebelum Kenaikan:**
+
+$$
 \text{Pajak lama} = 11\% \times \text{Rp 10.000.000} = \text{Rp 1.100.000}
 $$
 
-**Beban Pajak Setelah Kenaikan:** $$
+**Beban Pajak Setelah Kenaikan:**
+
+$$
 \text{Pajak baru} = 12\% \times \text{Rp 10.000.000} = \text{Rp 1.200.000}
 $$
 
-**Tambahan Beban Pajak per Bulan:** $$
+**Tambahan Beban Pajak per Bulan:**
+
+$$
 \text{Tambahan} = \text{Rp 1.200.000} - \text{Rp 1.100.000} = \text{Rp 100.000}
 $$
 
-**Tambahan Beban Pajak per Tahun:** $$
+**Tambahan Beban Pajak per Tahun:**
+
+$$
 \text{Tambahan tahunan} = \text{Rp 100.000} \times 12 = \text{Rp 1.200.000}
 $$
 
@@ -672,12 +687,17 @@ kable(data_awal, format = 'html', align = 'c',
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
 ```
 
-**Perhitungan Mean:** $$
+**Perhitungan Mean:**
+
+$$
 \bar{x} = \frac{50 + 55 + 60 + 65 + 70 + 75 + 80 + 85}{8} = \frac{540}{8} = 67,5
 $$
 
-**Perhitungan Median:**\
-Data sudah terurut, $n=8$ (genap), maka median adalah rata-rata nilai ke-4 dan ke-5: $$
+**Perhitungan Median:**
+
+Data sudah terurut, $n=8$ (genap), maka median adalah rata-rata nilai ke-4 dan ke-5:
+
+$$
 \text{Median} = \frac{65 + 70}{2} = 67,5
 $$
 
@@ -697,11 +717,15 @@ kable(data_outlier, format = 'html', align = 'c',
   row_spec(8, bold = TRUE, background = '#ffe8e8')
 ```
 
-**Perhitungan Mean Baru:** $$
+**Perhitungan Mean Baru:**
+
+$$
 \bar{x} = \frac{50 + 55 + 60 + 65 + 70 + 75 + 80 + 500}{8} = \frac{955}{8} = 119,4
 $$
 
-**Perhitungan Median Baru:** $$
+**Perhitungan Median Baru:**
+
+$$
 \text{Median} = \frac{65 + 70}{2} = 67,5
 $$
 
@@ -763,7 +787,8 @@ kable(modus_kend, format = 'html', align = 'c',
   row_spec(1, bold = TRUE, background = '#e8f4f8')
 ```
 
-**Hasil:**\
+**Hasil:**
+
 Modus untuk variabel `kend` adalah **sepeda motor pribadi** (kode 1) dengan frekuensi 4. Artinya, jenis kendaraan yang paling umum digunakan mahasiswa adalah sepeda motor pribadi.
 
 **Variabel 2: Frekuensi Perjalanan Senin (`perjalanan_senin`) - Numerik Diskret**
@@ -786,7 +811,8 @@ kable(modus_perjalanan, format = 'html', align = 'c',
   row_spec(1:2, bold = TRUE, background = '#fff4e8')
 ```
 
-**Hasil:**\
+**Hasil:**
+
 Data ini **bimodal** karena terdapat dua nilai yang sama-sama memiliki frekuensi tertinggi (3): mahasiswa yang melakukan **2 kali perjalanan** dan **3 kali perjalanan**. Artinya, pola yang paling umum adalah mahasiswa melakukan 2-3 kali perjalanan per hari Senin.
 
 **Interpretasi untuk Perencanaan:**
@@ -894,6 +920,78 @@ Meskipun ada fakultas dengan jumlah mahasiswa yang lebih banyak seperti Dakwah d
 ### Rentang (*Range*)
 
 Rentang adalah selisih antara nilai tertinggi (maksimum) dan nilai terendah (minimum) dalam suatu distribusi data. Karena itu, rentang hanya dapat digunakan pada variabel interval dan rasio.
+
+Makna dari perhitungan rentang tidak banyak memberikan informasi terkait keberagaman data jika hanya dikenakan pada satu set data saja. Apabila dibandingkan, maka set data yang rentangnya lebih besar dapat dikatakan lebih beragam.
+
+::: rmdkasus
+### Studi Kasus: Perbandingan Rentang Biaya Perjalanan Mahasiswa {.unnumbered}
+
+Rentang dapat digunakan untuk membandingkan tingkat keberagaman data antar kelompok alih-alih untuk menjelaskan satu set data saja. Mari kita bandingkan keberagaman biaya perjalanan sepekan mahasiswa dari dua perguruan tinggi: UIN RIL dan UNILA.
+
+Berdasarkan data survei pola mobilitas mahasiswa, kita akan menganalisis variabel `biaya_perjalanan` (biaya perjalanan sepekan dalam rupiah). Perhatikan statistik deskriptif dari kedua kelompok:
+
+```{r bab-3-data-rentang, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+# Membaca data
+data_uin <- read.csv2('datasets/DataUtama_mhsUINRIL.csv')
+data_unila <- read.csv2('datasets/DataUtama_mhsUNILA.csv')
+
+# Menghitung max dan min
+max_uin <- max(data_uin$`biaya.dalam.sepekan`, na.rm = TRUE)
+min_uin <- min(data_uin$`biaya.dalam.sepekan`, na.rm = TRUE)
+max_unila <- max(data_unila$`biaya.dalam.sepekan`, na.rm = TRUE)
+min_unila <- min(data_unila$`biaya.dalam.sepekan`, na.rm = TRUE)
+
+# Menghitung statistik untuk biaya_perjalanan
+stat_rentang <- data.frame(
+  Kampus = c('UIN RIL', 'UNILA'),
+  Min = c(min_uin, min_unila),
+  Maks = c(max_uin, max_unila),
+  Rentang = c(max_uin - min_uin, max_unila - min_unila)
+)
+
+kable(stat_rentang, format = 'html', align = 'c',
+      caption = 'Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA',
+      col.names = c('Kampus', 'Minimum (Rp)', 'Maksimum (Rp)', 'Rentang (Rp)')) %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+  column_spec(4, bold = TRUE, background = '#e8f4f8')
+```
+
+**Perhitungan Rentang untuk UIN RIL:**
+
+$$
+\begin{align}
+\text{Rentang}_{\text{UIN RIL}} &= \text{Maks} - \text{Min}\\
+&= 150 - 0\\
+&= 150
+\end{align}
+$$
+
+**Perhitungan Rentang untuk UNILA:**
+
+$$
+\begin{align}
+\text{Rentang}_{\text{UNILA}} &= \text{Maks} - \text{Min}\\
+&=400 - 0\\
+&=400
+\end{align}
+$$
+
+Nilai spesifik untuk minimum, maksimum, dan rentang dapat dilihat pada tabel di atas.
+
+**Interpretasi:**
+
+Hasil perhitungan menunjukkan bahwa terdapat variasi yang cukup besar dalam biaya perjalanan sepekan mahasiswa di kedua kampus. Perbandingan rentang biaya perjalanan memberikan informasi penting tentang keberagaman kondisi ekonomi dan pola mobilitas mahasiswa:
+
+1. **Rentang yang Berbeda**: Perbedaan rentang biaya perjalanan antara UIN RIL dan UNILA menunjukkan tingkat keberagaman ekonomi dan pola mobilitas yang berbeda di kedua kampus
+
+2. **Variasi Biaya**: Mahasiswa di kedua kampus memiliki spektrum biaya perjalanan yang luas, dari yang sangat rendah (kemungkinan berjalan kaki atau bersepeda) hingga yang cukup tinggi (menggunakan kendaraan bermotor atau transportasi online)
+
+3. **Implikasi Ekonomi**: Keberagaman biaya perjalanan mencerminkan perbedaan kondisi ekonomi mahasiswa dan pilihan moda transportasi yang tersedia
+
+:::
 
 
 

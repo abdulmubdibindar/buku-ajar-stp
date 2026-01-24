@@ -34,6 +34,7 @@ tab:bab-3-modus-perjalanan
 eq:konsep-iqv
 tab:bab-3-data-iqv-fakultas
 tab:bab-3-hasil-iqv
+tab:bab-3-data-rentang
 konsep-dasar-statistika-dalam-perencanaan
 kedudukan-dan-peran-analisis-data-dalam-perencanaan
 penelitian-kuantitatif-vs.-penelitian-kualitatif-dan-kedudukan-statistik

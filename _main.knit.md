@@ -646,13 +646,13 @@ Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data ters
 
 Setelah mempelajari bab ini, Anda diharapkan:
 
-1. mampu memilih statistik deskriptif yang tepat sesuai dengan variabel yang akan disajikan dan informasi yang ingin disampaikan [STP-2.2]{.capaian}
-2. mampu menginterpretasikan informasi dari persentase/proporsi, rasio, laju, ukuran pemusatan, dan ukuran penyebaran suatu data kuantiatif sesuai dengan konteks kasusnya [STP-2.3]{.capaian}
+1.  mampu memilih statistik deskriptif yang tepat sesuai dengan variabel yang akan disajikan dan informasi yang ingin disampaikan [STP-2.2]{.capaian}
+2.  mampu menginterpretasikan informasi dari persentase/proporsi, rasio, laju, ukuran pemusatan, dan ukuran penyebaran suatu data kuantiatif sesuai dengan konteks kasusnya [STP-2.3]{.capaian}
 :::
 
 ## Makna Analisis Statistik Deskriptif
 
-Statistik deskriptif adalah metode analisis untuk mendeskripsikan data dari sampel atau populasi. Metode ini digunakan untuk membantu kita menghasilkan informasi yang bermakna dan bernilai dari sekadar data mentah. Perlu dicatat bahwa analisis statistik deskriptif dapat digunakan pada data mentah entah  berupa sampel atau populasi. Dengan demikian, statistik deskriptif sangat bergantung pada kondisi data mentah yang kita miliki.
+Statistik deskriptif adalah metode analisis untuk mendeskripsikan data dari sampel atau populasi. Metode ini digunakan untuk membantu kita menghasilkan informasi yang bermakna dan bernilai dari sekadar data mentah. Perlu dicatat bahwa analisis statistik deskriptif dapat digunakan pada data mentah entah berupa sampel atau populasi. Dengan demikian, statistik deskriptif sangat bergantung pada kondisi data mentah yang kita miliki.
 
 Berdasarkan teknik yang digunakan, statistik deskriptif dapat dibagi menjadi 4 kategori: **ukuran frekuensi**, **ukuran kecenderungan memusat**, **ukuran penyebaran**, dan **tabel silang**. Setiap kategori teknik memiliki tingkat pengukuran yang sesuai untuk variabel yang akan dianalisi. Makna yang dihasilkan juga akan berbeda tergantung pada teknik yang digunakan.
 
@@ -660,7 +660,6 @@ Berdasarkan teknik yang digunakan, statistik deskriptif dapat dibagi menjadi 4 k
 [⚠️ Penting]{.tajuksaya}
 
 Di sinilah letak krusialnya menentukan tingkat pengukuran variabel, karena akan menentukan teknik analisis statistik deskriptif apa yang akan digunakan. Sebagai contoh, kita tidak bisa menggunakan mean untuk mengukur variabel nominal.
-
 :::
 
 ## Ukuran Frekuensi
@@ -678,9 +677,9 @@ $$
 
 dengan:
 
-- $FR$ = Frekuensi Relatif
-- $f$ = Frekuensi suatu kategori
-- $n$ = Jumlah Observasi
+-   $FR$ = Frekuensi Relatif
+-   $f$ = Frekuensi suatu kategori
+-   $n$ = Jumlah Observasi
 
 Makna yang dihasilkan dari teknik ini adalah seberapa besar perbandingan jumlah objek pada suatu kategori relatif terhadap jumlah keseluruhan objeknya. Dari besar perbandingan tersebut, kita dapat mengetahui dominasi kategori tertentu pada objek-objek yang diamati serta perbandingan yang adil antar kumpulan objek dengan kategorisasi yang sama.
 
@@ -811,7 +810,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
 </tbody>
 </table>
 
-Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nominal atau ordinal), seperti `kend` dan `tingkat`. Untuk dapat menghitung analisis ini kita harus membuat terlebih dahulu tabel frekuensi untuk kedua variabel ini. Kemudian, barulah kita dapat menghitung frekuensi relatifnya menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif) 
+Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nominal atau ordinal), seperti `kend` dan `tingkat`. Untuk dapat menghitung analisis ini kita harus membuat terlebih dahulu tabel frekuensi untuk kedua variabel ini. Kemudian, barulah kita dapat menghitung frekuensi relatifnya menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif)
 
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-tabel-frekuensi-kend)Tabel Distribusi Frekuensi Untuk Variabel `kend`</caption>
@@ -918,7 +917,6 @@ Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nom
   </tr>
 </tbody>
 </table>
-
 :::
 
 Teknik-teknik analisis statistik deskriptif yang termasuk ke dalam kelompok ukuran frekuensi di antaranya adalah **persentase/proporsi**, **laju**, **rasio**, dan **perubahan persentase**. Silakan pelajari cara penggunaan masing-masing teknik disertai kasus penerapannya.
@@ -926,7 +924,6 @@ Teknik-teknik analisis statistik deskriptif yang termasuk ke dalam kelompok ukur
 ### Persentase dan Proporsi
 
 Dua jenis ukuran frekuensi yang paling sering dipakai adalah persentase dan proporsi [@ewing2020basic]. Kedua teknik ini menghasilkan nilai yang sama, hanya saja dinyatakan dalam skala yang berbeda. Persentase dinyatakan dalam skala 0-100 dengan satuan persen (%), sedangkan proporsi dinyatakan dalam skala 0-1. Dengan demikian, dapat dikatakan bahwa sebenarnya Persamaan \@ref(eq:konsep-frekuensi-relatif) adalah proporsi dan persentase adalah proporsi yang dikalikan dengan 100.
-
 
 $$
 \begin{equation}
@@ -942,7 +939,6 @@ Makna yang bisa kita dapatkan dari analisis ini adalah dominansi suatu kategori 
 
 Selain persen (per 100), ada juga satuan 'permil' (per 1000) dengan simbol ‰, yang biasa digunakan pada perhitungan-perhitungan yang melibatkan bilangan yang sangat kecil.
 :::
-
 
 ::: rmdkasus
 ### Studi Kasus: Penerapan Persentase dan Proporsi {.unnumbered}
@@ -983,6 +979,7 @@ Jika kita hanya membandingkan jumlah absolut, ITERA memiliki 276 pengguna sepeda
 Mari kita hitung persentase pengguna sepeda motor di masing-masing kampus menggunakan Persamaan \@ref(eq:konsep-persentase):
 
 **ITERA:**
+
 $$
 \text{Persentase sepeda motor ITERA} = \frac{276}{429} \times 100\% = 64,3\%
 $$
@@ -1025,18 +1022,15 @@ $$
 
 Dengan menggunakan persentase, kita dapat membandingkan kedua kampus secara adil meskipun jumlah respondennya berbeda:
 
-1. **Dominansi di ITERA**: Sebanyak 64,3% mahasiswa ITERA menggunakan sepeda motor pribadi sebagai kendaraan utama
-2. **Dominansi di UBL**: Sebanyak 51,3% mahasiswa UBL menggunakan sepeda motor pribadi sebagai kendaraan utama
-3. **Kesimpulan**: Penggunaan sepeda motor lebih dominan di ITERA dibandingkan UBL, dengan selisih 13 poin persentase
+1.  **Dominansi di ITERA**: Sebanyak 64,3% mahasiswa ITERA menggunakan sepeda motor pribadi sebagai kendaraan utama
+2.  **Dominansi di UBL**: Sebanyak 51,3% mahasiswa UBL menggunakan sepeda motor pribadi sebagai kendaraan utama
+3.  **Kesimpulan**: Penggunaan sepeda motor lebih dominan di ITERA dibandingkan UBL, dengan selisih 13 poin persentase
 
 Tanpa persentase, kita akan salah menyimpulkan hanya berdasarkan jumlah absolut (276 vs 195). Persentase memberikan ukuran yang adil untuk membandingkan dominansi kategori pada kelompok dengan ukuran berbeda.
 
 **Implikasi untuk Perencanaan:**
 
-Informasi ini penting bagi perencana transportasi kampus untuk:
-- ITERA perlu menyediakan area parkir motor yang lebih luas (minimal 64% dari kapasitas mahasiswa)
-- UBL dapat mengalokasikan lebih banyak ruang untuk moda transportasi alternatif karena dominansi motor lebih rendah
-
+Informasi ini penting bagi perencana transportasi kampus untuk: - ITERA perlu menyediakan area parkir motor yang lebih luas (minimal 64% dari kapasitas mahasiswa) - UBL dapat mengalokasikan lebih banyak ruang untuk moda transportasi alternatif karena dominansi motor lebih rendah
 :::
 
 ### Laju *(Rate)*
@@ -1153,14 +1147,13 @@ $$
 \text{Laju 2024} = \frac{9.450}{13.500} \times 100\% = 70,0\%
 $$
 
-**Interpretasi:** 
+**Interpretasi:**
 
-Hasil perhitungan menunjukkan bahwa laju penggunaan sepeda motor meningkat di semua kampus. ITERA mengalami peningkatan laju tertinggi (10 poin persentase, dari 65% menjadi 75%), diikuti oleh UBL (6 poin persentase) dan UNILA (5 poin persentase). 
+Hasil perhitungan menunjukkan bahwa laju penggunaan sepeda motor meningkat di semua kampus. ITERA mengalami peningkatan laju tertinggi (10 poin persentase, dari 65% menjadi 75%), diikuti oleh UBL (6 poin persentase) dan UNILA (5 poin persentase).
 
 Perhatikan bahwa meskipun jumlah mahasiswa di setiap kampus bertambah dari tahun 2023 ke 2024, kita tetap dapat membandingkan laju penggunaan sepeda motor karena denominatornya disesuaikan dengan jumlah mahasiswa pada setiap periode. Ini berbeda dengan persentase biasa yang menggunakan denominator tetap.
 
 Informasi laju ini sangat berguna bagi perencana transportasi untuk memahami tren penggunaan moda transportasi dan merencanakan infrastruktur yang sesuai, seperti area parkir kendaraan bermotor di kampus.
-
 :::
 
 ### Rasio
@@ -1176,8 +1169,8 @@ $$
 
 dengan:
 
-*   $n_i$ = Jumlah objek pada kategori i
-*   $n_j$ = Jumlah objek pada kategori j
+-   $n_i$ = Jumlah objek pada kategori i
+-   $n_j$ = Jumlah objek pada kategori j
 
 Makna yang bisa kita hasilkan dari perhitungan ini adalah ketimpangan dari dua kategori yang dibandingkan. Biasanya dinyatakan dalam bentuk perbandingan "1:n" yang berarti "setiap 1 objek kategori x terdapat n objek kategori y".
 
@@ -1188,15 +1181,10 @@ Rasio sangat berguna untuk membandingkan dua kategori yang berbeda dalam suatu v
 
 Mari kita gunakan data mahasiswa ITERA untuk menghitung rasio penggunaan kendaraan bermotor terhadap kendaraan non-bermotor. Berdasarkan data survei pola mobilitas mahasiswa ITERA, kita dapat mengelompokkan jenis kendaraan menjadi dua kategori besar:
 
-**Kendaraan Bermotor:**
-- Sepeda Motor Pribadi
-- Mobil Pribadi  
-- Transportasi Online
-- Kendaraan Bermotor (menumpang dengan keluarga/teman)
+**Kendaraan Bermotor:** - Sepeda Motor Pribadi - Mobil Pribadi\
+- Transportasi Online - Kendaraan Bermotor (menumpang dengan keluarga/teman)
 
-**Kendaraan Non-Bermotor:**
-- Sepeda
-- Berjalan Kaki
+**Kendaraan Non-Bermotor:** - Sepeda - Berjalan Kaki
 
 Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi sebagai berikut:
 
@@ -1285,9 +1273,9 @@ Rasio 12,84 berarti bahwa untuk setiap 1 mahasiswa yang menggunakan kendaraan no
 
 Rasio yang tinggi ini menunjukkan dominasi penggunaan kendaraan bermotor di kalangan mahasiswa ITERA. Informasi ini penting bagi perencana kampus untuk:
 
-1. Merencanakan kapasitas area parkir kendaraan bermotor yang memadai
-2. Mempertimbangkan program promosi penggunaan kendaraan non-bermotor demi keberlanjutan
-3. Merancang infrastruktur jalur sepeda dan pejalan kaki yang aman
+1.  Merencanakan kapasitas area parkir kendaraan bermotor yang memadai
+2.  Mempertimbangkan program promosi penggunaan kendaraan non-bermotor demi keberlanjutan
+3.  Merancang infrastruktur jalur sepeda dan pejalan kaki yang aman
 
 Kita juga dapat menghitung rasio antar jenis kendaraan bermotor. Misalnya, rasio penggunaan sepeda motor pribadi terhadap mobil pribadi:
 
@@ -1296,7 +1284,6 @@ $$
 $$
 
 Artinya, untuk setiap 1 mahasiswa yang menggunakan mobil pribadi, terdapat sekitar 6 mahasiswa yang menggunakan sepeda motor pribadi.
-
 :::
 
 ### Perubahan Persentase (*Percentage Change*)
@@ -1316,33 +1303,31 @@ $$
 
 dengan:
 
-- $f_1$ = Nilai pertama (waktu awal), frekuensi, atau nilai
-- $f_2$ = Nilai kedua (waktu kemudian), frekuensi, atau nilai
+-   $f_1$ = Nilai pertama (waktu awal), frekuensi, atau nilai
+-   $f_2$ = Nilai kedua (waktu kemudian), frekuensi, atau nilai
 
 Makna yang dihasilkan dari analisis ini adalah magnitud (besar nilai) dan arah perubahan yang terjadi. Tanda positif menunjukkan peningkatan, sedangkan tanda negatif menunjukkan penurunan.
-
 
 ::: rmdkasus
 ### Studi Kasus: Perubahan Persentase Penggunaan Transportasi Online {.unnumbered}
 
 Mari kita analisis perubahan pola mobilitas mahasiswa ITERA dari waktu ke waktu. Berdasarkan data survei yang dilakukan pada dua periode berbeda, kita tertarik untuk mengetahui perubahan persentase penggunaan transportasi online sebagai moda transportasi utama.
 
-**Data Survei Periode 1 (Semester Ganjil 2023):**
-- Total responden: 200 mahasiswa
-- Pengguna transportasi online: 24 mahasiswa
+**Data Survei Periode 1 (Semester Ganjil 2023):** - Total responden: 200 mahasiswa - Pengguna transportasi online: 24 mahasiswa
 
-**Data Survei Periode 2 (Semester Ganjil 2024):**
-- Total responden: 429 mahasiswa  
+**Data Survei Periode 2 (Semester Ganjil 2024):** - Total responden: 429 mahasiswa\
 - Pengguna transportasi online: 32 mahasiswa
 
 Pertama, kita hitung persentase penggunaan transportasi online pada masing-masing periode:
 
 **Periode 1:**
+
 $$
 \text{Persentase TO Periode 1} = \frac{24}{200} \times 100\% = 12,0\%
 $$
 
 **Periode 2:**
+
 $$
 \text{Persentase TO Periode 2} = \frac{32}{429} \times 100\% = 7,5\%
 $$
@@ -1381,20 +1366,16 @@ $$
 
 **Interpretasi:**
 
-Terjadi **penurunan sebesar 37,5%** dalam penggunaan transportasi online sebagai moda transportasi utama mahasiswa ITERA dari Semester Ganjil 2023 ke Semester Ganjil 2024. 
+Terjadi **penurunan sebesar 37,5%** dalam penggunaan transportasi online sebagai moda transportasi utama mahasiswa ITERA dari Semester Ganjil 2023 ke Semester Ganjil 2024.
 
 Perhatikan bahwa meskipun jumlah absolut pengguna transportasi online meningkat dari 24 menjadi 32 orang, magnitudnya justru menurun dari 12,0% menjadi 7,5%. Ini terjadi karena:
 
-1. Total responden meningkat signifikan (dari 200 ke 429 mahasiswa)
-2. Pertumbuhan jumlah pengguna transportasi online (8 orang) tidak sebanding dengan pertumbuhan total populasi (229 orang)
+1.  Total responden meningkat signifikan (dari 200 ke 429 mahasiswa)
+2.  Pertumbuhan jumlah pengguna transportasi online (8 orang) tidak sebanding dengan pertumbuhan total populasi (229 orang)
 
 **Implikasi untuk Perencanaan:**
 
-Penurunan 37,5% ini mengindikasikan bahwa:
-- Mahasiswa lebih memilih moda transportasi lain seperti sepeda motor pribadi
-- Kebijakan kampus tentang akses transportasi online mungkin perlu dievaluasi
-- Perlu investigasi lebih lanjut tentang faktor-faktor yang menyebabkan penurunan ini (biaya, ketersediaan, kenyamanan, dll.)
-
+Penurunan 37,5% ini mengindikasikan bahwa: - Mahasiswa lebih memilih moda transportasi lain seperti sepeda motor pribadi - Kebijakan kampus tentang akses transportasi online mungkin perlu dievaluasi - Perlu investigasi lebih lanjut tentang faktor-faktor yang menyebabkan penurunan ini (biaya, ketersediaan, kenyamanan, dll.)
 :::
 
 Simak juga pembahasan kasus terkait perubahan persentase yang sempat hangat di pertengahan tahun 2025, yakni kenaikan tarif pajak pertambahan nilai (PPN) dari 11% hingga 12%.
@@ -1408,10 +1389,7 @@ Perhatikan pernyataan berikut yang sering kita dengar di media massa atau percak
 
 Benarkah kenaikannya "hanya 1%"? Mari kita analisis dengan cermat menggunakan konsep perubahan persentase.
 
-**Data:**
-- Tarif pajak awal ($f_1$) = 11%
-- Tarif pajak baru ($f_2$) = 12%
-- Selisih absolut = 12% - 11% = 1 poin persentase
+**Data:** - Tarif pajak awal ($f_1$) = 11% - Tarif pajak baru ($f_2$) = 12% - Selisih absolut = 12% - 11% = 1 poin persentase
 
 **Analisis yang Keliru:**
 
@@ -1455,21 +1433,25 @@ $$
 Mari kita lihat dampak nyata pada ekonomi rumah tangga. Misalkan seorang pekerja dengan penghasilan Rp 10.000.000 per bulan:
 
 **Beban Pajak Sebelum Kenaikan:**
+
 $$
 \text{Pajak lama} = 11\% \times \text{Rp 10.000.000} = \text{Rp 1.100.000}
 $$
 
 **Beban Pajak Setelah Kenaikan:**
+
 $$
 \text{Pajak baru} = 12\% \times \text{Rp 10.000.000} = \text{Rp 1.200.000}
 $$
 
 **Tambahan Beban Pajak per Bulan:**
+
 $$
 \text{Tambahan} = \text{Rp 1.200.000} - \text{Rp 1.100.000} = \text{Rp 100.000}
 $$
 
 **Tambahan Beban Pajak per Tahun:**
+
 $$
 \text{Tambahan tahunan} = \text{Rp 100.000} \times 12 = \text{Rp 1.200.000}
 $$
@@ -1505,19 +1487,18 @@ $$
 
 **Kesimpulan dan Implikasi:**
 
-1. **Kesalahan Persepsi**: Mengatakan "hanya naik 1%" membuat masyarakat meremehkan dampak kebijakan tersebut
-2. **Dampak Riil**: Kenaikan 9,09% berarti beban pajak meningkat hampir sepersepuluh dari beban awal
-3. **Akumulasi Tahunan**: Tambahan Rp 1.200.000 per tahun adalah beban yang signifikan bagi rumah tangga
-4. **Kesalahan Kebijakan Publik**: Jika pembuat kebijakan atau masyarakat salah memahami magnitud perubahan ini, bisa terjadi kesalahan dalam:
-   - Perencanaan anggaran rumah tangga
-   - Evaluasi dampak kebijakan fiskal
-   - Negosiasi upah dan tunjangan
-   - Pengambilan keputusan investasi
+1.  **Kesalahan Persepsi**: Mengatakan "hanya naik 1%" membuat masyarakat meremehkan dampak kebijakan tersebut
+2.  **Dampak Riil**: Kenaikan 9,09% berarti beban pajak meningkat hampir sepersepuluh dari beban awal
+3.  **Akumulasi Tahunan**: Tambahan Rp 1.200.000 per tahun adalah beban yang signifikan bagi rumah tangga
+4.  **Kesalahan Kebijakan Publik**: Jika pembuat kebijakan atau masyarakat salah memahami magnitud perubahan ini, bisa terjadi kesalahan dalam:
+    -   Perencanaan anggaran rumah tangga
+    -   Evaluasi dampak kebijakan fiskal
+    -   Negosiasi upah dan tunjangan
+    -   Pengambilan keputusan investasi
 
 **Pelajaran Penting:**
 
 Dalam analisis ekonomi dan kebijakan publik, **selalu gunakan perubahan persentase**, bukan selisih absolut, untuk memahami magnitud perubahan yang sebenarnya. Kesalahan interpretasi bisa berakibat fatal pada perencanaan ekonomi baik di tingkat individu, rumah tangga, maupun negara.
-
 :::
 
 ## Ukuran Kecenderungan Pemusatan (*Measure Central Tendency*)
@@ -1547,10 +1528,10 @@ $$
 
 dengan:
 
-*   $\bar{x}$ = Rata-rata sampel
-*   $X_i$ = Nilai observasi ke-$i$
-*   $n$ = Jumlah observasi
-*   $\sum_{i=1}^{n} X_i$ = Jumlah seluruh nilai ($X_1 + X_2 + ... + X_n$)
+-   $\bar{x}$ = Rata-rata sampel
+-   $X_i$ = Nilai observasi ke-$i$
+-   $n$ = Jumlah observasi
+-   $\sum_{i=1}^{n} X_i$ = Jumlah seluruh nilai ($X_1 + X_2 + ... + X_n$)
 
 Makna yang dihasilkan teknik analisis ini adalah **pusat dari distribusi nilai variabel sekumpulan objek**. Artinya, nilai rata-rata adalah nilai yang paling mewakili nilai-nilai lainnya dalam distribusi tersebut. Atau dengan kata lain, nilai yang menyatakan "kebanyakan" nilai suatu variabel dalam distribusi tersebut.
 
@@ -1560,13 +1541,12 @@ Median sering disebut juga sebagai "nilai tengah" suatu variabel karena nilai me
 
 Cara menghitung nilai median adalah dengan mengurutkan nilai variabel dari objek-objek yang dianalisis dari yang terkecil hingga yang terbesar, kemudian:
 
-- jika jumlah objek ganjil, maka median adalah nilai yang berada tepat di tengah, yakni objek ke $\frac{n+1}{2}$
-- jika jumlah objek genap, maka median adalah rata-rata dari dua nilai yang berada di tengah, yakni objek ke $\frac{n}{2}$ dan $\frac{n}{2}+1$
+-   jika jumlah objek ganjil, maka median adalah nilai yang berada tepat di tengah, yakni objek ke $\frac{n+1}{2}$
+-   jika jumlah objek genap, maka median adalah rata-rata dari dua nilai yang berada di tengah, yakni objek ke $\frac{n}{2}$ dan $\frac{n}{2}+1$
 
 Median digunakan pada data yang berurutan, dengan demikian tingkat pengukuran *paling rendah* yang bisa menggunakan adalah **ordinal**. Variabel dengan tingkat pengukuran nominal tidak bisa menggunakan median karena tidak memiliki urutan.
 
 Makna yang dihasilkan teknik analisis ini sama saja dengan *mean*, yakni **pusat dari distribusi nilai variabel sekumpulan objek**. Akan tetapi, median sering disandingkan dengan *mean* karena tidak seperti *mean*, median tidak terpengaruh oleh nilai ekstrem (*outlier*).
-
 
 ::: rmdkasus
 ### Studi Kasus: Mean dan Median pada Data dengan Pencilan {.unnumbered}
@@ -1618,12 +1598,15 @@ Perhatikan data biaya perjalanan sepekan (ribu rupiah) dari 8 mahasiswa ITERA:
 </table>
 
 **Perhitungan Mean:**
+
 $$
 \bar{x} = \frac{50 + 55 + 60 + 65 + 70 + 75 + 80 + 85}{8} = \frac{540}{8} = 67,5
 $$
 
-**Perhitungan Median:**  
+**Perhitungan Median:**
+
 Data sudah terurut, $n=8$ (genap), maka median adalah rata-rata nilai ke-4 dan ke-5:
+
 $$
 \text{Median} = \frac{65 + 70}{2} = 67,5
 $$
@@ -1675,11 +1658,13 @@ Sekarang misalkan Mhs 8 memiliki biaya ekstrem Rp 500.000 (menggunakan layanan *
 </table>
 
 **Perhitungan Mean Baru:**
+
 $$
 \bar{x} = \frac{50 + 55 + 60 + 65 + 70 + 75 + 80 + 500}{8} = \frac{955}{8} = 119,4
 $$
 
 **Perhitungan Median Baru:**
+
 $$
 \text{Median} = \frac{65 + 70}{2} = 67,5
 $$
@@ -1716,7 +1701,6 @@ $$
 **Interpretasi:**
 
 Mean terpengaruh drastis oleh pencilan (naik 77%), sedangkan median tetap 67,5. Median lebih representatif untuk data dengan pencilan karena menunjukkan nilai tengah mayoritas mahasiswa. Ini penting dalam perencanaan: jika menggunakan mean (Rp 119.400), estimasi subsidi transportasi akan terlalu tinggi dan tidak mencerminkan kebutuhan kebanyakan mahasiswa.
-
 :::
 
 ### Modus
@@ -1766,7 +1750,8 @@ Dari dataset 8 mahasiswa yang telah digunakan sebelumnya, kita dapat membuat tab
 </tbody>
 </table>
 
-**Hasil:**  
+**Hasil:**
+
 Modus untuk variabel `kend` adalah **sepeda motor pribadi** (kode 1) dengan frekuensi 4. Artinya, jenis kendaraan yang paling umum digunakan mahasiswa adalah sepeda motor pribadi.
 
 **Variabel 2: Frekuensi Perjalanan Senin (`perjalanan_senin`) - Numerik Diskret**
@@ -1797,16 +1782,15 @@ Variabel ini menunjukkan berapa kali mahasiswa melakukan perjalanan di hari Seni
 </tbody>
 </table>
 
-**Hasil:**  
+**Hasil:**
+
 Data ini **bimodal** karena terdapat dua nilai yang sama-sama memiliki frekuensi tertinggi (3): mahasiswa yang melakukan **2 kali perjalanan** dan **3 kali perjalanan**. Artinya, pola yang paling umum adalah mahasiswa melakukan 2-3 kali perjalanan per hari Senin.
 
 **Interpretasi untuk Perencanaan:**
 
-1. **Jenis Kendaraan**: Dominasi sepeda motor pribadi (modus) mengindikasikan perlunya penyediaan area parkir motor yang memadai
-2. **Frekuensi Perjalanan**: Pola bimodal 2-3 kali perjalanan menunjukkan bahwa kebanyakan mahasiswa melakukan perjalanan pulang-pergi ditambah satu perjalanan tambahan (ke kantin, perpustakaan, dll). Informasi ini berguna untuk merencanakan jadwal layanan transportasi kampus pada jam-jam tertentu
-
+1.  **Jenis Kendaraan**: Dominasi sepeda motor pribadi (modus) mengindikasikan perlunya penyediaan area parkir motor yang memadai
+2.  **Frekuensi Perjalanan**: Pola bimodal 2-3 kali perjalanan menunjukkan bahwa kebanyakan mahasiswa melakukan perjalanan pulang-pergi ditambah satu perjalanan tambahan (ke kantin, perpustakaan, dll). Informasi ini berguna untuk merencanakan jadwal layanan transportasi kampus pada jam-jam tertentu
 :::
-
 
 ## Ukuran Penyebaran (*Measure of Dispersion*)
 
@@ -1820,8 +1804,8 @@ IQV adalah satu-satunya ukuran penyebaran yang dapat digunakan untuk variabel no
 
 IQV pada dasarnya adalah rasio antara jumlah variasi yang benar-benar teramati dalam distribusi data dengan variasi maksimum yang mungkin ada dalam distribusi tersebut. Makna dari nilai IQV adalah sebagai berikut:
 
-- IQV = 0,00: Tidak ada variasi dalam distribusi data sama sekali, semua objek benar-benar seragam
-- IQV = 1,00: Variasi maksimum dalam distribusi data, semua objek benar-benar berbeda satu sama lain
+-   IQV = 0,00: Tidak ada variasi dalam distribusi data sama sekali, semua objek benar-benar seragam
+-   IQV = 1,00: Variasi maksimum dalam distribusi data, semua objek benar-benar berbeda satu sama lain
 
 Perhitungan IQV dilakukan dengan rumus:
 
@@ -1834,9 +1818,8 @@ $$
 
 dengan:
 
-- $k$ = Jumlah kategori
-- $p_i$ = Proporsi pada kategori ke-$i$
-
+-   $k$ = Jumlah kategori
+-   $p_i$ = Proporsi pada kategori ke-$i$
 
 ::: rmdkasus
 ### Studi Kasus: Keberagaman Distribusi Mahasiswa Antar Fakultas {.unnumbered}
@@ -1900,7 +1883,7 @@ Dari set data hasil penyebaran kuesioner yang berisi 400 mahasiswa, kita dapat m
 
 Kita mengaplikasikan Persamaan \@ref(eq:konsep-iqv) dengan langkah-langkah seperti berikut. Simak dan bila perlu tulis ulang langkah-langkahnya oleh Anda.
 
-**Langkah 1: Hitung $\sum p_i^2$**
+**Langkah 1: Hitung** $\sum p_i^2$
 
 $$
 \begin{aligned}
@@ -1952,28 +1935,86 @@ $$
 Nilai IQV = 0,879 menunjukkan tingkat keberagaman yang tinggi dalam distribusi mahasiswa antar fakultas. Nilai ini mendekati 1,00, yang berarti distribusi mahasiswa cukup merata di berbagai fakultas (tidak terlalu terkonsentrasi di satu fakultas saja).
 
 Meskipun ada fakultas dengan jumlah mahasiswa yang lebih banyak seperti Dakwah dan Ilmu Komunikasi (32,5%) dan Syariah (29,5%), distribusi secara keseluruhan masih menunjukkan variasi yang baik. Jika semua mahasiswa hanya berada di satu fakultas, maka IQV = 0,00 (tidak ada variasi sama sekali).
+:::
 
-**Implikasi untuk Perencanaan:**
+### Rentang (*Range*)
 
-Tingkat keberagaman yang tinggi ini mengindikasikan bahwa:
-1. Alokasi sumber daya kampus perlu mempertimbangkan kebutuhan berbagai fakultas
-2. Perencanaan fasilitas umum (kantin, masjid, perpustakaan) harus dapat menampung mahasiswa dari berbagai fakultas
-3. Program-program lintas fakultas dapat efektif karena distribusi yang cukup merata
+Rentang adalah selisih antara nilai tertinggi (maksimum) dan nilai terendah (minimum) dalam suatu distribusi data. Karena itu, rentang hanya dapat digunakan pada variabel interval dan rasio.
+
+Makna dari perhitungan rentang tidak banyak memberikan informasi terkait keberagaman data jika hanya dikenakan pada satu set data saja. Apabila dibandingkan, maka set data yang rentangnya lebih besar dapat dikatakan lebih beragam.
+
+::: rmdkasus
+### Studi Kasus: Perbandingan Rentang Biaya Perjalanan Mahasiswa {.unnumbered}
+
+Rentang dapat digunakan untuk membandingkan tingkat keberagaman data antar kelompok alih-alih untuk menjelaskan satu set data saja. Mari kita bandingkan keberagaman biaya perjalanan sepekan mahasiswa dari dua perguruan tinggi: UIN RIL dan UNILA.
+
+Berdasarkan data survei pola mobilitas mahasiswa, kita akan menganalisis variabel `biaya_perjalanan` (biaya perjalanan sepekan dalam rupiah). Perhatikan statistik deskriptif dari kedua kelompok:
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-3-data-rentang)Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Kampus </th>
+   <th style="text-align:center;"> Minimum (Rp) </th>
+   <th style="text-align:center;"> Maksimum (Rp) </th>
+   <th style="text-align:center;"> Rentang (Rp) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> UIN RIL </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 150 </td>
+   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 150 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> UNILA </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 400 </td>
+   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 400 </td>
+  </tr>
+</tbody>
+</table>
+
+**Perhitungan Rentang untuk UIN RIL:**
+
+$$
+\begin{align}
+\text{Rentang}_{\text{UIN RIL}} &= \text{Maks} - \text{Min}\\
+&= 150 - 0\\
+&= 150
+\end{align}
+$$
+
+**Perhitungan Rentang untuk UNILA:**
+
+$$
+\begin{align}
+\text{Rentang}_{\text{UNILA}} &= \text{Maks} - \text{Min}\\
+&=400 - 0\\
+&=400
+\end{align}
+$$
+
+Nilai spesifik untuk minimum, maksimum, dan rentang dapat dilihat pada tabel di atas.
+
+**Interpretasi:**
+
+Hasil perhitungan menunjukkan bahwa terdapat variasi yang cukup besar dalam biaya perjalanan sepekan mahasiswa di kedua kampus. Perbandingan rentang biaya perjalanan memberikan informasi penting tentang keberagaman kondisi ekonomi dan pola mobilitas mahasiswa:
+
+1. **Rentang yang Berbeda**: Perbedaan rentang biaya perjalanan antara UIN RIL dan UNILA menunjukkan tingkat keberagaman ekonomi dan pola mobilitas yang berbeda di kedua kampus
+
+2. **Variasi Biaya**: Mahasiswa di kedua kampus memiliki spektrum biaya perjalanan yang luas, dari yang sangat rendah (kemungkinan berjalan kaki atau bersepeda) hingga yang cukup tinggi (menggunakan kendaraan bermotor atau transportasi online)
+
+3. **Implikasi Ekonomi**: Keberagaman biaya perjalanan mencerminkan perbedaan kondisi ekonomi mahasiswa dan pilihan moda transportasi yang tersedia
 
 :::
 
 
-### Rentang (*Range*)
-
-Rentang adalah selisih antara nilai tertinggi dan nilai terendah dalam suatu distribusi data. Rentang hanya dapat digunakan pada variabel interval dan rasio.
 
 ### Variansi (*Variance*)
 
-
-
 ### Simpangan Baku (*Standard Deviation*)
-
-
 
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 
@@ -1981,17 +2022,17 @@ Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap ana
 ### Soal Evaluasi 4 {.unnumbered}
 
 1.  Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut. [STP-2.1]{.capaian}
+
 2.  Centang analisis statistik deskriptif yang relevan diaplikasikan kepada variabel-variabel tersebut. [STP-2.2]{.capaian}
 
-    | Variabel  | Persentase/Proporsi | Rasio | Laju  |
-    | :-------- | :-----------------: | :---: | :---: |
-    | Usia      |                     |       |       |
-    | Fakultas  |                     |       |       |
-    | ThnMsk    |                     |       |       |
-    | Uang_saku |                     |       |       |
+    | Variabel  | Persentase/Proporsi | Rasio | Laju |
+    |:----------|:-------------------:|:-----:|:----:|
+    | Usia      |                     |       |      |
+    | Fakultas  |                     |       |      |
+    | ThnMsk    |                     |       |      |
+    | Uang_saku |                     |       |      |
 
 3.  Apa informasi utama yang bisa kita simpulkan dari hasil statistik deskriptif variabel-variabel berikut? [STP-2.3]{.capaian}
-
 :::
 
 <!--chapter:end:03-statistik-deskriptif.Rmd-->

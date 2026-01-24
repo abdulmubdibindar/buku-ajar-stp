@@ -25,3 +25,7 @@ trigger: always_on
 1. Use function `kableExtra` or `kable` to create tables
 2. Use `kable_styling` to style tables
 3. Use similar styling as in Images from number 3--5
+
+### Equations
+
+1. Follow how to format equations from @guides/equation_guide.md
