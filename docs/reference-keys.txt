@@ -35,6 +35,9 @@ eq:konsep-iqv
 tab:bab-3-data-iqv-fakultas
 tab:bab-3-hasil-iqv
 tab:bab-3-data-rentang
+fig:fig-ilustrasi-kuartil
+eq:konsep-variansi
+eq:konsep-simpangan-baku
 konsep-dasar-statistika-dalam-perencanaan
 kedudukan-dan-peran-analisis-data-dalam-perencanaan
 penelitian-kuantitatif-vs.-penelitian-kualitatif-dan-kedudukan-statistik
@@ -63,8 +66,8 @@ modus
 ukuran-penyebaran-measure-of-dispersion
 indeks-variasi-kualitatif-index-of-qualitative-variance-iqv
 rentang-range
-variansi-variance
-simpangan-baku-standard-deviation
+kuartil-desil-dan-persentil
+variansi-variance-dan-simpangan-baku-standard-deviation
 visualisasi-data-kuantitatif
 konsep-dasar
 jenis-visualisasi-dasar

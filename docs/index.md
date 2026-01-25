@@ -2010,11 +2010,42 @@ Hasil perhitungan menunjukkan bahwa terdapat variasi yang cukup besar dalam biay
 
 :::
 
+### Kuartil, Desil, dan Persentil
 
+Kuartil, desil, dan persentil adalah ukuran penyebaran yang digunakan untuk membagi data menjadi beberapa bagian yang sama besar. Kuartil membagi data menjadi **empat** bagian yang sama besar, desil membagi data menjadi **sepuluh** bagian yang sama besar, dan persentil membagi data menjadi **seratus** bagian yang sama besar.
 
-### Variansi (*Variance*)
+Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$), dan kuartil atas ($Q_3$).
 
-### Simpangan Baku (*Standard Deviation*)
+<div class="figure" style="text-align: center">
+<img src="images/bab-3-kuartil.png" alt="Ilustrasi Kuartil" width="647" />
+<p class="caption">(\#fig:fig-ilustrasi-kuartil)Ilustrasi Kuartil</p>
+</div>
+
+Makna dari hasil perhitungan kuartil adalah 
+
+### Variansi (*Variance*) dan Simpangan Baku (*Standard Deviation*)
+
+Variansi dan simpangan baku adalah ukuran penyebaran yang paling memberikan banyak informasi tentang variasi nilai suatu variabel dari sekumpulan objek. Variansi dan simpangan baku dapat dikatakan **ukuran seberapa dekat nilai tiap-tiap objek dengan nilai rata-ratanya.** Ini adalah makna dari variansi dan simpangan baku. Dengan kata lain, ukuran ini adalah rata-rata jarak nilai setiap objek dengan nilai rata-rata seluruh objek tersebut.
+
+Variansi dihitung dengan rumus berikut.
+
+$$
+\begin{equation}
+\text{Variansi} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}
+\end{equation}
+(\#eq:konsep-variansi)
+$$
+
+Sementara itu, simpangan baku adalah akar kuadrat dari variansi.
+
+$$
+\begin{align}
+\text{Simpangan Baku} &= \sqrt{\text{Variansi}}\\
+&=\sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}} (\#eq:konsep-simpangan-baku)
+\end{align}
+$$ 
+
+Nilai variansi dan simpangan baku yang kecil menunjukkan bahwa nilai tiap-tiap objek cenderung berdekatan dengan nilai rata-ratanya. Sebaliknya, nilai variansi dan simpangan baku yang besar menunjukkan bahwa nilai tiap-tiap objek cenderung berjauhan dengan nilai rata-ratanya.
 
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 

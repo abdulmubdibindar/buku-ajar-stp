@@ -242,8 +242,8 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#studi-kasus-keberagaman-distribusi-mahasiswa-antar-fakultas"><i class="fa fa-check"></i>Studi Kasus: Keberagaman Distribusi Mahasiswa Antar Fakultas</a></li>
 <li class="chapter" data-level="3.4.2" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#rentang-range"><i class="fa fa-check"></i><b>3.4.2</b> Rentang (<em>Range</em>)</a></li>
 <li class="chapter" data-level="" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#studi-kasus-perbandingan-rentang-biaya-perjalanan-mahasiswa"><i class="fa fa-check"></i>Studi Kasus: Perbandingan Rentang Biaya Perjalanan Mahasiswa</a></li>
-<li class="chapter" data-level="3.4.3" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#variansi-variance"><i class="fa fa-check"></i><b>3.4.3</b> Variansi (<em>Variance</em>)</a></li>
-<li class="chapter" data-level="3.4.4" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#simpangan-baku-standard-deviation"><i class="fa fa-check"></i><b>3.4.4</b> Simpangan Baku (<em>Standard Deviation</em>)</a></li>
+<li class="chapter" data-level="3.4.3" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#kuartil-desil-dan-persentil"><i class="fa fa-check"></i><b>3.4.3</b> Kuartil, Desil, dan Persentil</a></li>
+<li class="chapter" data-level="3.4.4" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#variansi-variance-dan-simpangan-baku-standard-deviation"><i class="fa fa-check"></i><b>3.4.4</b> Variansi (<em>Variance</em>) dan Simpangan Baku (<em>Standard Deviation</em>)</a></li>
 <li class="chapter" data-level="" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#soal-evaluasi-4"><i class="fa fa-check"></i>Soal Evaluasi 4</a></li>
 </ul></li>
 </ul></li>
@@ -2329,11 +2329,36 @@ UNILA
 <li><p><strong>Implikasi Ekonomi</strong>: Keberagaman biaya perjalanan mencerminkan perbedaan kondisi ekonomi mahasiswa dan pilihan moda transportasi yang tersedia</p></li>
 </ol>
 </div>
-<div id="variansi-variance" class="section level3 hasAnchor" number="3.4.3">
-<h3><span class="header-section-number">3.4.3</span> Variansi (<em>Variance</em>)<a href="analisis-statistik-deskriptif.html#variansi-variance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="kuartil-desil-dan-persentil" class="section level3 hasAnchor" number="3.4.3">
+<h3><span class="header-section-number">3.4.3</span> Kuartil, Desil, dan Persentil<a href="analisis-statistik-deskriptif.html#kuartil-desil-dan-persentil" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kuartil, desil, dan persentil adalah ukuran penyebaran yang digunakan untuk membagi data menjadi beberapa bagian yang sama besar. Kuartil membagi data menjadi <strong>empat</strong> bagian yang sama besar, desil membagi data menjadi <strong>sepuluh</strong> bagian yang sama besar, dan persentil membagi data menjadi <strong>seratus</strong> bagian yang sama besar.</p>
+<p>Terdapat tiga jenis kuartil, yaitu kuartil bawah (<span class="math inline">\(Q_1\)</span>), kuartil tengah (<span class="math inline">\(Q_2\)</span>), dan kuartil atas (<span class="math inline">\(Q_3\)</span>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ilustrasi-kuartil"></span>
+<img src="images/bab-3-kuartil.png" alt="Ilustrasi Kuartil" width="647" />
+<p class="caption">
+Gambar 3.1: Ilustrasi Kuartil
+</p>
 </div>
-<div id="simpangan-baku-standard-deviation" class="section level3 hasAnchor" number="3.4.4">
-<h3><span class="header-section-number">3.4.4</span> Simpangan Baku (<em>Standard Deviation</em>)<a href="analisis-statistik-deskriptif.html#simpangan-baku-standard-deviation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Makna dari hasil perhitungan kuartil adalah</p>
+</div>
+<div id="variansi-variance-dan-simpangan-baku-standard-deviation" class="section level3 hasAnchor" number="3.4.4">
+<h3><span class="header-section-number">3.4.4</span> Variansi (<em>Variance</em>) dan Simpangan Baku (<em>Standard Deviation</em>)<a href="analisis-statistik-deskriptif.html#variansi-variance-dan-simpangan-baku-standard-deviation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Variansi dan simpangan baku adalah ukuran penyebaran yang paling memberikan banyak informasi tentang variasi nilai suatu variabel dari sekumpulan objek. Variansi dan simpangan baku dapat dikatakan <strong>ukuran seberapa dekat nilai tiap-tiap objek dengan nilai rata-ratanya.</strong> Ini adalah makna dari variansi dan simpangan baku. Dengan kata lain, ukuran ini adalah rata-rata jarak nilai setiap objek dengan nilai rata-rata seluruh objek tersebut.</p>
+<p>Variansi dihitung dengan rumus berikut.</p>
+<p><span class="math display" id="eq:konsep-variansi">\[
+\begin{equation}
+\text{Variansi} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}
+\end{equation}
+\tag{3.8}
+\]</span></p>
+<p>Sementara itu, simpangan baku adalah akar kuadrat dari variansi.</p>
+<p><span class="math display" id="eq:konsep-simpangan-baku">\[
+\begin{align}
+\text{Simpangan Baku} &amp;= \sqrt{\text{Variansi}}\\
+&amp;=\sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}} \tag{3.9}
+\end{align}
+\]</span></p>
+<p>Nilai variansi dan simpangan baku yang kecil menunjukkan bahwa nilai tiap-tiap objek cenderung berdekatan dengan nilai rata-ratanya. Sebaliknya, nilai variansi dan simpangan baku yang besar menunjukkan bahwa nilai tiap-tiap objek cenderung berjauhan dengan nilai rata-ratanya.</p>
 <p>Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.</p>
 </div>
 <div id="soal-evaluasi-4" class="section level3 unnumbered hasAnchor rmdexercise">

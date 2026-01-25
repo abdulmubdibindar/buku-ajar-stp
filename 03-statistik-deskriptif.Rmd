@@ -56,7 +56,7 @@ library(knitr)
 library(kableExtra)
 
 kasus_dataset <- data.frame(
-  ID = c('117', '118', '119', '120', '121', '138', '139', '161'),
+  ID = c("117", "118", "119", "120", "121", "138", "139", "161"),
   kend = c(5, 1, 1, 1, 1, 3, 3, 5),
   tingkat = c(4, 4, 4, 4, 3, 4, 3, 2),
   jarak = c(2.34, 2.66, 3.84, 3.64, 3.17, 3.84, 3.84, 3.52),
@@ -64,10 +64,12 @@ kasus_dataset <- data.frame(
   biaya_pekan = c(0, 40, 30, 40, 45, 15, 60, 0)
 )
 
-kable(kasus_dataset, format = 'html', align = 'c',
-      caption = 'Contoh Set Data Hasil Kuesioner',
-      col.names = c('ID', 'kend', 'tingkat', 'jarak', 'perjalanan_senin', 'biaya_pekan')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kable(kasus_dataset,
+  format = "html", align = "c",
+  caption = "Contoh Set Data Hasil Kuesioner",
+  col.names = c("ID", "kend", "tingkat", "jarak", "perjalanan_senin", "biaya_pekan")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
 ```
 
 **Metadata:**
@@ -77,23 +79,25 @@ library(knitr)
 library(kableExtra)
 
 metadata_kasus <- data.frame(
-  Variabel = c('ID', 'kend','tingkat', 'jarak', 'perjalanan_senin', 'biaya_pekan'),
+  Variabel = c("ID", "kend", "tingkat", "jarak", "perjalanan_senin", "biaya_pekan"),
   Keterangan = c(
-    'Nomor urut responden',
-    'Jenis kendaraan yang digunakan<br>1 = sepeda motor pribadi<br>2 = mobil pribadi<br>3 = layanan online<br>4 = menumpang kawan<br>5 = sepeda<br>6 = berjalan kaki',
-    'Tingkat semester kuliah<br>1 = Tahun pertama<br>2 = Tahun kedua<br>3 = Tahun ketiga<br>4 = Tahun keempat<br>5 = Swasta (mahasiswa tingkat akhir)',
-    'Jarak tempat tinggal mahasiswa dari kampus (kilometer)',
-    'Frekuensi perjalanan di hari Senin',
-    'Biaya perjalanan selama sepekan (ribu rupiah)'
+    "Nomor urut responden",
+    "Jenis kendaraan yang digunakan<br>1 = sepeda motor pribadi<br>2 = mobil pribadi<br>3 = layanan online<br>4 = menumpang kawan<br>5 = sepeda<br>6 = berjalan kaki",
+    "Tingkat semester kuliah<br>1 = Tahun pertama<br>2 = Tahun kedua<br>3 = Tahun ketiga<br>4 = Tahun keempat<br>5 = Swasta (mahasiswa tingkat akhir)",
+    "Jarak tempat tinggal mahasiswa dari kampus (kilometer)",
+    "Frekuensi perjalanan di hari Senin",
+    "Biaya perjalanan selama sepekan (ribu rupiah)"
   )
 )
 
-kable(metadata_kasus, format = 'html', escape = FALSE,
-      col.names = c('Variabel', 'Keterangan'),
-      caption = 'Metadata Variabel') %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  column_spec(1, bold = TRUE, width = '20%') %>%
-  column_spec(2, width = '80%')
+kable(metadata_kasus,
+  format = "html", escape = FALSE,
+  col.names = c("Variabel", "Keterangan"),
+  caption = "Metadata Variabel"
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = "20%") %>%
+  column_spec(2, width = "80%")
 ```
 
 Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nominal atau ordinal), seperti `kend` dan `tingkat`. Untuk dapat menghitung analisis ini kita harus membuat terlebih dahulu tabel frekuensi untuk kedua variabel ini. Kemudian, barulah kita dapat menghitung frekuensi relatifnya menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif)
@@ -103,16 +107,18 @@ library(knitr)
 library(kableExtra)
 
 frekuensi_kend <- data.frame(
-  kend = c(1, 2, 3, 4, 5, 6, 'Total'),
-  Jenis_kendaraan = c('Sepeda motor pribadi', 'Mobil pribadi', 'Layanan online', 'Menumpang kawan', 'Sepeda', 'Berjalan kaki', ''),
+  kend = c(1, 2, 3, 4, 5, 6, "Total"),
+  Jenis_kendaraan = c("Sepeda motor pribadi", "Mobil pribadi", "Layanan online", "Menumpang kawan", "Sepeda", "Berjalan kaki", ""),
   Frekuensi = c(4, 0, 2, 0, 2, 0, 8),
   Frekuensi_Relatif = c(0.50, 0.00, 0.25, 0.00, 0.25, 0.00, 1.00)
 )
 
-kable(frekuensi_kend, format = 'html', align = 'c',
-      caption = 'Tabel Distribusi Frekuensi Untuk Variabel `kend`',
-      col.names = c('kend', 'Jenis kendaraan', 'Frekuensi', 'Frekuensi Relatif')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+kable(frekuensi_kend,
+  format = "html", align = "c",
+  caption = "Tabel Distribusi Frekuensi Untuk Variabel `kend`",
+  col.names = c("kend", "Jenis kendaraan", "Frekuensi", "Frekuensi Relatif")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
   row_spec(7, bold = TRUE)
 ```
 
@@ -121,16 +127,18 @@ library(knitr)
 library(kableExtra)
 
 frekuensi_tingkat <- data.frame(
-  tingkat = c(1, 2, 3, 4, 5, 'Total'),
-  Tingkat_kuliah = c('Tahun pertama', 'Tahun kedua', 'Tahun ketiga', 'Tahun keempat', 'Swasta (tingkat akhir)', ''),
+  tingkat = c(1, 2, 3, 4, 5, "Total"),
+  Tingkat_kuliah = c("Tahun pertama", "Tahun kedua", "Tahun ketiga", "Tahun keempat", "Swasta (tingkat akhir)", ""),
   Frekuensi = c(0, 1, 2, 5, 0, 8),
   Frekuensi_Relatif = c(0.000, 0.125, 0.250, 0.625, 0.000, 1.000)
 )
 
-kable(frekuensi_tingkat, format = 'html', align = 'c',
-      caption = 'Tabel Distribusi Frekuensi Untuk Variabel `tingkat`',
-      col.names = c('tingkat', 'Tingkat kuliah', 'Frekuensi', 'Frekuensi Relatif')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+kable(frekuensi_tingkat,
+  format = "html", align = "c",
+  caption = "Tabel Distribusi Frekuensi Untuk Variabel `tingkat`",
+  col.names = c("tingkat", "Tingkat kuliah", "Frekuensi", "Frekuensi Relatif")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
   row_spec(6, bold = TRUE)
 ```
 :::
@@ -168,15 +176,17 @@ library(knitr)
 library(kableExtra)
 
 perbandingan_kampus <- data.frame(
-  Kampus = c('ITERA', 'UBL'),
+  Kampus = c("ITERA", "UBL"),
   Total_Responden = c(429, 380),
   Pengguna_Motor = c(276, 195)
 )
 
-kable(perbandingan_kampus, format = 'html', align = 'c',
-      caption = 'Data Pengguna Sepeda Motor Pribadi di ITERA dan UBL',
-      col.names = c('Kampus', 'Total Responden', 'Pengguna Sepeda Motor Pribadi')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kable(perbandingan_kampus,
+  format = "html", align = "c",
+  caption = "Data Pengguna Sepeda Motor Pribadi di ITERA dan UBL",
+  col.names = c("Kampus", "Total Responden", "Pengguna Sepeda Motor Pribadi")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
 ```
 
 **Perbandingan Menggunakan Frekuensi Absolut:**
@@ -203,18 +213,20 @@ library(knitr)
 library(kableExtra)
 
 hasil_perbandingan <- data.frame(
-  Kampus = c('ITERA', 'UBL'),
+  Kampus = c("ITERA", "UBL"),
   Total = c(429, 380),
   Motor = c(276, 195),
   Proporsi = c(0.643, 0.513),
-  Persen = c('64,3%', '51,3%')
+  Persen = c("64,3%", "51,3%")
 )
 
-kable(hasil_perbandingan, format = 'html', align = 'c',
-      caption = 'Perbandingan Proporsi dan Persentase Pengguna Sepeda Motor',
-      col.names = c('Kampus', 'Total Responden', 'Pengguna Motor', 'Proporsi', 'Persentase')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  column_spec(5, bold = TRUE, background = '#e8f4f8')
+kable(hasil_perbandingan,
+  format = "html", align = "c",
+  caption = "Perbandingan Proporsi dan Persentase Pengguna Sepeda Motor",
+  col.names = c("Kampus", "Total Responden", "Pengguna Motor", "Proporsi", "Persentase")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(5, bold = TRUE, background = "#e8f4f8")
 ```
 
 **Interpretasi:**
@@ -261,15 +273,17 @@ library(knitr)
 library(kableExtra)
 
 data_2023 <- data.frame(
-  Kampus = c('UBL', 'ITERA', 'UNILA'),
+  Kampus = c("UBL", "ITERA", "UNILA"),
   Jumlah_Mahasiswa = c(8500, 5200, 12000),
   Pengguna_Motor = c(5100, 3380, 7800)
 )
 
-kable(data_2023, format = 'html', align = 'c',
-      caption = 'Data Pengguna Sepeda Motor Tahun 2023',
-      col.names = c('Kampus', 'Jumlah Mahasiswa', 'Pengguna Sepeda Motor')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kable(data_2023,
+  format = "html", align = "c",
+  caption = "Data Pengguna Sepeda Motor Tahun 2023",
+  col.names = c("Kampus", "Jumlah Mahasiswa", "Pengguna Sepeda Motor")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
 ```
 
 **Data Tahun 2024:**
@@ -279,15 +293,17 @@ library(knitr)
 library(kableExtra)
 
 data_2024 <- data.frame(
-  Kampus = c('UBL', 'ITERA', 'UNILA'),
+  Kampus = c("UBL", "ITERA", "UNILA"),
   Jumlah_Mahasiswa = c(9200, 5800, 13500),
   Pengguna_Motor = c(6072, 4350, 9450)
 )
 
-kable(data_2024, format = 'html', align = 'c',
-      caption = 'Data Pengguna Sepeda Motor Tahun 2024',
-      col.names = c('Kampus', 'Jumlah Mahasiswa', 'Pengguna Sepeda Motor')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kable(data_2024,
+  format = "html", align = "c",
+  caption = "Data Pengguna Sepeda Motor Tahun 2024",
+  col.names = c("Kampus", "Jumlah Mahasiswa", "Pengguna Sepeda Motor")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
 ```
 
 Dengan menggunakan Persamaan \@ref(eq:konsep-laju), kita dapat menghitung laju penggunaan sepeda motor untuk masing-masing kampus:
@@ -368,15 +384,17 @@ library(knitr)
 library(kableExtra)
 
 data_kendaraan <- data.frame(
-  Kategori = c('Kendaraan Bermotor', 'Kendaraan Non-Bermotor', 'Total'),
+  Kategori = c("Kendaraan Bermotor", "Kendaraan Non-Bermotor", "Total"),
   Jumlah = c(398, 31, 429),
-  Persen = c('92,8%', '7,2%', '100%')
+  Persen = c("92,8%", "7,2%", "100%")
 )
 
-kable(data_kendaraan, format = 'html', align = 'c',
-      caption = 'Distribusi Penggunaan Kendaraan Mahasiswa ITERA',
-      col.names = c('Kategori Kendaraan', 'Jumlah Mahasiswa', 'Persentase')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+kable(data_kendaraan,
+  format = "html", align = "c",
+  caption = "Distribusi Penggunaan Kendaraan Mahasiswa ITERA",
+  col.names = c("Kategori Kendaraan", "Jumlah Mahasiswa", "Persentase")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
   row_spec(3, bold = TRUE)
 ```
 
@@ -387,19 +405,25 @@ library(knitr)
 library(kableExtra)
 
 detail_kendaraan <- data.frame(
-  Jenis = c('Sepeda Motor Pribadi', 'Mobil Pribadi', 'Transportasi Online', 
-            'Menumpang (Kendaraan Bermotor)', 'Sepeda', 'Berjalan Kaki'),
-  Kategori = c('Bermotor', 'Bermotor', 'Bermotor', 'Bermotor', 
-               'Non-Bermotor', 'Non-Bermotor'),
+  Jenis = c(
+    "Sepeda Motor Pribadi", "Mobil Pribadi", "Transportasi Online",
+    "Menumpang (Kendaraan Bermotor)", "Sepeda", "Berjalan Kaki"
+  ),
+  Kategori = c(
+    "Bermotor", "Bermotor", "Bermotor", "Bermotor",
+    "Non-Bermotor", "Non-Bermotor"
+  ),
   Jumlah = c(276, 47, 32, 43, 18, 13)
 )
 
-kable(detail_kendaraan, format = 'html', align = 'c',
-      caption = 'Detail Jenis Kendaraan yang Digunakan',
-      col.names = c('Jenis Kendaraan', 'Kategori', 'Jumlah')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  row_spec(1:4, background = '#e8f4f8') %>%
-  row_spec(5:6, background = '#f8f9e8')
+kable(detail_kendaraan,
+  format = "html", align = "c",
+  caption = "Detail Jenis Kendaraan yang Digunakan",
+  col.names = c("Jenis Kendaraan", "Kategori", "Jumlah")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(1:4, background = "#e8f4f8") %>%
+  row_spec(5:6, background = "#f8f9e8")
 ```
 
 Menggunakan Persamaan \@ref(eq:konsep-rasio), kita dapat menghitung rasio penggunaan kendaraan bermotor terhadap kendaraan non-bermotor:
@@ -478,17 +502,19 @@ library(knitr)
 library(kableExtra)
 
 data_perubahan <- data.frame(
-  Periode = c('Semester Ganjil 2023', 'Semester Ganjil 2024'),
+  Periode = c("Semester Ganjil 2023", "Semester Ganjil 2024"),
   Total_Responden = c(200, 429),
   Pengguna_TO = c(24, 32),
-  Persentase = c('12,0%', '7,5%')
+  Persentase = c("12,0%", "7,5%")
 )
 
-kable(data_perubahan, format = 'html', align = 'c',
-      caption = 'Data Penggunaan Transportasi Online di ITERA',
-      col.names = c('Periode', 'Total Responden', 'Pengguna Transportasi Online', 'Persentase')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  column_spec(4, bold = TRUE, background = '#f8f4e8')
+kable(data_perubahan,
+  format = "html", align = "c",
+  caption = "Data Penggunaan Transportasi Online di ITERA",
+  col.names = c("Periode", "Total Responden", "Pengguna Transportasi Online", "Persentase")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(4, bold = TRUE, background = "#f8f4e8")
 ```
 
 Sekarang kita hitung perubahan persentase menggunakan Persamaan \@ref(eq:konsep-percentage-change):
@@ -543,17 +569,19 @@ library(knitr)
 library(kableExtra)
 
 data_pajak <- data.frame(
-  Interpretasi = c('Selisih Absolut (KELIRU)', 'Perubahan Persentase (BENAR)'),
-  Perhitungan = c('12% - 11% = 1 poin persentase', '(12% - 11%) / 11% × 100% = 9,09%'),
-  Makna = c('Terkesan kenaikan kecil', 'Kenaikan hampir 10% dari beban pajak awal')
+  Interpretasi = c("Selisih Absolut (KELIRU)", "Perubahan Persentase (BENAR)"),
+  Perhitungan = c("12% - 11% = 1 poin persentase", "(12% - 11%) / 11% × 100% = 9,09%"),
+  Makna = c("Terkesan kenaikan kecil", "Kenaikan hampir 10% dari beban pajak awal")
 )
 
-kable(data_pajak, format = 'html', align = 'c',
-      caption = 'Perbandingan Interpretasi Kenaikan Pajak',
-      col.names = c('Jenis Interpretasi', 'Perhitungan', 'Makna')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  row_spec(1, background = '#ffe8e8') %>%
-  row_spec(2, background = '#e8f8e8')
+kable(data_pajak,
+  format = "html", align = "c",
+  caption = "Perbandingan Interpretasi Kenaikan Pajak",
+  col.names = c("Jenis Interpretasi", "Perhitungan", "Makna")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(1, background = "#ffe8e8") %>%
+  row_spec(2, background = "#e8f8e8")
 ```
 
 **Dampak Fatal Kesalahan Interpretasi:**
@@ -589,18 +617,20 @@ library(knitr)
 library(kableExtra)
 
 dampak_ekonomi <- data.frame(
-  Periode = c('Per Bulan', 'Per Tahun'),
-  Pajak_Lama = c('Rp 1.100.000', 'Rp 13.200.000'),
-  Pajak_Baru = c('Rp 1.200.000', 'Rp 14.400.000'),
-  Tambahan_Beban = c('Rp 100.000', 'Rp 1.200.000'),
-  Persen_Kenaikan = c('9,09%', '9,09%')
+  Periode = c("Per Bulan", "Per Tahun"),
+  Pajak_Lama = c("Rp 1.100.000", "Rp 13.200.000"),
+  Pajak_Baru = c("Rp 1.200.000", "Rp 14.400.000"),
+  Tambahan_Beban = c("Rp 100.000", "Rp 1.200.000"),
+  Persen_Kenaikan = c("9,09%", "9,09%")
 )
 
-kable(dampak_ekonomi, format = 'html', align = 'c',
-      caption = 'Dampak Kenaikan Pajak pada Penghasilan Rp 10 Juta/Bulan',
-      col.names = c('Periode', 'Pajak Lama (11%)', 'Pajak Baru (12%)', 'Tambahan Beban', 'Perubahan %')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  column_spec(4:5, bold = TRUE, background = '#fff4e8')
+kable(dampak_ekonomi,
+  format = "html", align = "c",
+  caption = "Dampak Kenaikan Pajak pada Penghasilan Rp 10 Juta/Bulan",
+  col.names = c("Periode", "Pajak Lama (11%)", "Pajak Baru (12%)", "Tambahan Beban", "Perubahan %")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(4:5, bold = TRUE, background = "#fff4e8")
 ```
 
 **Kesimpulan dan Implikasi:**
@@ -677,14 +707,16 @@ library(kableExtra)
 
 biaya_normal <- c(50, 55, 60, 65, 70, 75, 80, 85)
 data_awal <- data.frame(
-  Mahasiswa = paste('Mhs', 1:8),
+  Mahasiswa = paste("Mhs", 1:8),
   Biaya = biaya_normal
 )
 
-kable(data_awal, format = 'html', align = 'c',
-      caption = 'Biaya Perjalanan Sepekan (Ribu Rupiah)',
-      col.names = c('Mahasiswa', 'Biaya (Rp)')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kable(data_awal,
+  format = "html", align = "c",
+  caption = "Biaya Perjalanan Sepekan (Ribu Rupiah)",
+  col.names = c("Mahasiswa", "Biaya (Rp)")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
 ```
 
 **Perhitungan Mean:**
@@ -706,15 +738,17 @@ Sekarang misalkan Mhs 8 memiliki biaya ekstrem Rp 500.000 (menggunakan layanan *
 ```{r bab-3-data-biaya-outlier, echo=FALSE, out.width='50%', fig.align='center'}
 biaya_outlier <- c(50, 55, 60, 65, 70, 75, 80, 500)
 data_outlier <- data.frame(
-  Mahasiswa = paste('Mhs', 1:8),
+  Mahasiswa = paste("Mhs", 1:8),
   Biaya = biaya_outlier
 )
 
-kable(data_outlier, format = 'html', align = 'c',
-      caption = 'Biaya Perjalanan dengan Pencilan',
-      col.names = c('Mahasiswa', 'Biaya (Rp)')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  row_spec(8, bold = TRUE, background = '#ffe8e8')
+kable(data_outlier,
+  format = "html", align = "c",
+  caption = "Biaya Perjalanan dengan Pencilan",
+  col.names = c("Mahasiswa", "Biaya (Rp)")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(8, bold = TRUE, background = "#ffe8e8")
 ```
 
 **Perhitungan Mean Baru:**
@@ -731,19 +765,21 @@ $$
 
 ```{r bab-3-perbandingan-mean-median, echo=FALSE, out.width='60%', fig.align='center'}
 perbandingan <- data.frame(
-  Kondisi = c('Tanpa Pencilan', 'Dengan Pencilan'),
-  Mean = c('67,5', '119,4'),
-  Median = c('67,5', '67,5'),
-  Selisih_Mean = c('—', '+51,9'),
-  Selisih_Median = c('—', '0')
+  Kondisi = c("Tanpa Pencilan", "Dengan Pencilan"),
+  Mean = c("67,5", "119,4"),
+  Median = c("67,5", "67,5"),
+  Selisih_Mean = c("—", "+51,9"),
+  Selisih_Median = c("—", "0")
 )
 
-kable(perbandingan, format = 'html', align = 'c',
-      caption = 'Perbandingan Mean dan Median',
-      col.names = c('Kondisi', 'Mean', 'Median', 'Δ Mean', 'Δ Median')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  column_spec(3, bold = TRUE, background = '#e8f8e8') %>%
-  column_spec(5, bold = TRUE, background = '#e8f8e8')
+kable(perbandingan,
+  format = "html", align = "c",
+  caption = "Perbandingan Mean dan Median",
+  col.names = c("Kondisi", "Mean", "Median", "Δ Mean", "Δ Median")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(3, bold = TRUE, background = "#e8f8e8") %>%
+  column_spec(5, bold = TRUE, background = "#e8f8e8")
 ```
 
 **Interpretasi:**
@@ -776,15 +812,17 @@ library(kableExtra)
 
 modus_kend <- data.frame(
   kend = c(1, 3, 5),
-  Jenis_kendaraan = c('Sepeda motor pribadi', 'Layanan online', 'Sepeda'),
+  Jenis_kendaraan = c("Sepeda motor pribadi", "Layanan online", "Sepeda"),
   Frekuensi = c(4, 2, 2)
 )
 
-kable(modus_kend, format = 'html', align = 'c',
-      caption = 'Distribusi Frekuensi Jenis Kendaraan',
-      col.names = c('Kode', 'Jenis Kendaraan', 'Frekuensi')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  row_spec(1, bold = TRUE, background = '#e8f4f8')
+kable(modus_kend,
+  format = "html", align = "c",
+  caption = "Distribusi Frekuensi Jenis Kendaraan",
+  col.names = c("Kode", "Jenis Kendaraan", "Frekuensi")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(1, bold = TRUE, background = "#e8f4f8")
 ```
 
 **Hasil:**
@@ -804,11 +842,13 @@ modus_perjalanan <- data.frame(
   Frekuensi = c(3, 3, 2)
 )
 
-kable(modus_perjalanan, format = 'html', align = 'c',
-      caption = 'Distribusi Frekuensi Perjalanan di Hari Senin',
-      col.names = c('Jumlah Perjalanan', 'Frekuensi')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  row_spec(1:2, bold = TRUE, background = '#fff4e8')
+kable(modus_perjalanan,
+  format = "html", align = "c",
+  caption = "Distribusi Frekuensi Perjalanan di Hari Senin",
+  col.names = c("Jumlah Perjalanan", "Frekuensi")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(1:2, bold = TRUE, background = "#fff4e8")
 ```
 
 **Hasil:**
@@ -863,17 +903,21 @@ library(kableExtra)
 
 # Data distribusi fakultas (sesuai dengan dataset)
 data_fakultas <- data.frame(
-  Fakultas = c('Ekonomi dan Bisnis Islam', 'Syariah', 'Ushuluddin dan Studi Agama',
-               'Dakwah dan Ilmu Komunikasi', 'Tarbiyah dan Keguruan', 
-               'Sains dan Teknologi', 'Ilmu Sosial dan Ilmu Politik', 'Adab'),
+  Fakultas = c(
+    "Ekonomi dan Bisnis Islam", "Syariah", "Ushuluddin dan Studi Agama",
+    "Dakwah dan Ilmu Komunikasi", "Tarbiyah dan Keguruan",
+    "Sains dan Teknologi", "Ilmu Sosial dan Ilmu Politik", "Adab"
+  ),
   Frekuensi = c(44, 118, 58, 130, 15, 20, 10, 5),
   Proporsi = c(0.110, 0.295, 0.145, 0.325, 0.038, 0.050, 0.025, 0.013)
 )
 
-kable(data_fakultas, format = 'html', align = 'c',
-      caption = 'Distribusi Mahasiswa UIN Raden Intan Lampung Berdasarkan Fakultas',
-      col.names = c('Fakultas', 'Frekuensi', 'Proporsi')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kable(data_fakultas,
+  format = "html", align = "c",
+  caption = "Distribusi Mahasiswa UIN Raden Intan Lampung Berdasarkan Fakultas",
+  col.names = c("Fakultas", "Frekuensi", "Proporsi")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
 ```
 
 Kita mengaplikasikan Persamaan \@ref(eq:konsep-iqv) dengan langkah-langkah seperti berikut. Simak dan bila perlu tulis ulang langkah-langkahnya oleh Anda.
@@ -899,15 +943,17 @@ $$
 
 ```{r bab-3-hasil-iqv, echo=FALSE, out.width='60%', fig.align='center'}
 hasil_iqv <- data.frame(
-  Komponen = c('Jumlah kategori (k)', 'Σpᵢ²', '1 - Σpᵢ²', 'IQV'),
-  Nilai = c('8', '0,231', '0,769', '0,879')
+  Komponen = c("Jumlah kategori (k)", "Σpᵢ²", "1 - Σpᵢ²", "IQV"),
+  Nilai = c("8", "0,231", "0,769", "0,879")
 )
 
-kable(hasil_iqv, format = 'html', align = 'c',
-      caption = 'Hasil Perhitungan IQV',
-      col.names = c('Komponen', 'Nilai')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  row_spec(4, bold = TRUE, background = '#e8f4f8')
+kable(hasil_iqv,
+  format = "html", align = "c",
+  caption = "Hasil Perhitungan IQV",
+  col.names = c("Komponen", "Nilai")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(4, bold = TRUE, background = "#e8f4f8")
 ```
 
 **Interpretasi:**
@@ -935,8 +981,8 @@ library(knitr)
 library(kableExtra)
 
 # Membaca data
-data_uin <- read.csv2('datasets/DataUtama_mhsUINRIL.csv')
-data_unila <- read.csv2('datasets/DataUtama_mhsUNILA.csv')
+data_uin <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
 
 # Menghitung max dan min
 max_uin <- max(data_uin$`biaya.dalam.sepekan`, na.rm = TRUE)
@@ -946,17 +992,19 @@ min_unila <- min(data_unila$`biaya.dalam.sepekan`, na.rm = TRUE)
 
 # Menghitung statistik untuk biaya_perjalanan
 stat_rentang <- data.frame(
-  Kampus = c('UIN RIL', 'UNILA'),
+  Kampus = c("UIN RIL", "UNILA"),
   Min = c(min_uin, min_unila),
   Maks = c(max_uin, max_unila),
   Rentang = c(max_uin - min_uin, max_unila - min_unila)
 )
 
-kable(stat_rentang, format = 'html', align = 'c',
-      caption = 'Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA',
-      col.names = c('Kampus', 'Minimum (Rp)', 'Maksimum (Rp)', 'Rentang (Rp)')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  column_spec(4, bold = TRUE, background = '#e8f4f8')
+kable(stat_rentang,
+  format = "html", align = "c",
+  caption = "Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA",
+  col.names = c("Kampus", "Minimum (Rp)", "Maksimum (Rp)", "Rentang (Rp)")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(4, bold = TRUE, background = "#e8f4f8")
 ```
 
 **Perhitungan Rentang untuk UIN RIL:**
@@ -993,11 +1041,41 @@ Hasil perhitungan menunjukkan bahwa terdapat variasi yang cukup besar dalam biay
 
 :::
 
+### Kuartil, Desil, dan Persentil
 
+Kuartil, desil, dan persentil adalah ukuran penyebaran yang digunakan untuk membagi data menjadi beberapa bagian yang sama besar. Kuartil membagi data menjadi **empat** bagian yang sama besar, desil membagi data menjadi **sepuluh** bagian yang sama besar, dan persentil membagi data menjadi **seratus** bagian yang sama besar.
 
-### Variansi (*Variance*)
+Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$), dan kuartil atas ($Q_3$).
 
-### Simpangan Baku (*Standard Deviation*)
+```{r fig-ilustrasi-kuartil, echo=FALSE, fig.align='center', fig.cap='Ilustrasi Kuartil'}
+knitr::include_graphics('images/bab-3-kuartil.png')
+```
+
+Makna dari hasil perhitungan kuartil adalah nilai-nilai yang menjadi kuartil bawah, kuartil tengah, dan kuartil atas adalah nilai-nilai yang menjadi pembatas jumlah observasi sebanyak masing-masing 25% ketika setelah diurutkan dari kecil ke besar. Dengan begitu pula, maka kuartil **tidak dapat** dikenakan pada variabel dengan **tingkat pengukuran nominal**.
+
+### Variansi (*Variance*) dan Simpangan Baku (*Standard Deviation*)
+
+Variansi dan simpangan baku adalah ukuran penyebaran yang paling memberikan banyak informasi tentang variasi nilai suatu variabel dari sekumpulan objek. Variansi dan simpangan baku dapat dikatakan **ukuran seberapa dekat nilai tiap-tiap objek dengan nilai rata-ratanya.** Ini adalah makna dari variansi dan simpangan baku. Dengan kata lain, ukuran ini adalah rata-rata jarak nilai setiap objek dengan nilai rata-rata seluruh objek tersebut.
+
+Variansi dihitung dengan rumus yang ditampilkan pada Persamaan \@ref(eq:konsep-variansi). Satuan dari nilai variansi sama dengan satuan variabel yang dianalisisnya, tetapi karena dikuadratkan, maka satuannya juga ikut dikuadratkan.
+
+$$
+\begin{equation}
+\text{Variansi} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}
+\end{equation}
+(\#eq:konsep-variansi)
+$$
+
+Karena nilai variansi dihasilkan dari kuadrat selisih nilai objek dengan rata-rata, maka satuannya juga ikut dikuadratkan. Ini membuat penafsiran menjadi aneh. Untuk menormalkannya, ditariklah akar kuadrat dari variansi itu yang dinamakan **simpangan baku** (*standard deviation*).
+
+$$
+\begin{align}
+\text{Simpangan Baku} &= \sqrt{\text{Variansi}}\\
+&=\sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}} (\#eq:konsep-simpangan-baku)
+\end{align}
+$$ 
+
+Nilai variansi dan simpangan baku yang kecil menunjukkan bahwa nilai tiap-tiap objek cenderung berdekatan dengan nilai rata-ratanya. Sebaliknya, nilai variansi dan simpangan baku yang besar menunjukkan bahwa nilai tiap-tiap objek cenderung berjauhan dengan nilai rata-ratanya.
 
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 
