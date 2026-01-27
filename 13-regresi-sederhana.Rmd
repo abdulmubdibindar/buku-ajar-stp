@@ -25,7 +25,7 @@ coef(model)
 Nilai Intercept ($a$) dan Slope ($b$) menentukan persamaan garis prediksi. $R^2$ menunjukkan seberapa baik model menjelaskan variasi data.
 
 ::: rmdexercise
-### Soal Evaluasi 14 {.unnumbered}
+## Soal Evaluasi 14 {.unnumbered}
 
 1.  Apa perbedaan antara korelasi dan regresi? [STP-11.1]{.capaian}
 2.  Jelaskan makna $R^2$ (Koefisien Determinasi)! [STP-11.2]{.capaian}

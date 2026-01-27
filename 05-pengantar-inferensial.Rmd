@@ -30,7 +30,7 @@ Untuk rata-rata sampel:
 $$ Z = \frac{\bar{x} - \mu}{SE} $$
 
 ::: rmdexercise
-### Soal Evaluasi 6 {.unnumbered}
+## Soal Evaluasi 6 {.unnumbered}
 
 1.  Jelaskan perbedaan mendasar antara statistik deskriptif dan inferensial. [STP-4.1]{.capaian}
 2.  Sebutkan dan jelaskan tiga teknik pengambilan sampel probabilitas. [STP-4.2]{.capaian}

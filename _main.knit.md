@@ -154,7 +154,7 @@ Berdasarkan jumlah variabelnya statistika juga dapat dibagi menjadi 3: **statist
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang konsep dasar statistika dalam perencanaan.
 
 ::: rmdexercise
-### Soal Evaluasi 1 {.unnumbered}
+## Soal Evaluasi 1 {.unnumbered}
 
 1.  Jelaskanlah penggunaan analisis data dalam setiap tahap perencanaan untuk kasus acara kumpul keakraban angkatan! [STP-1.1]{.capaian}
 2.  Ceritakan perbedaan  analisis kuantitatif dan kualitatif yang mungkin digunakan dalam perencanaan acara tersebut. [STP-1.2]{.capaian}
@@ -251,7 +251,7 @@ Berikut adalah beberapa contoh kesalahan umum dalam struktur data dan perbaikann
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-elemen data terstruktur.
 
 ::: rmdexercise
-### Soal Evaluasi 2 {.unnumbered}
+## Soal Evaluasi 2 {.unnumbered}
 
 Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
 
@@ -520,7 +520,7 @@ Kita bisa mengubah tingkat pengukuran variabel dari satu tingkat ke lainnya. Mis
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang tingkat pengukuran variabel.
 
 ::: rmdexercise
-### Soal Evaluasi 3 {.unnumbered}
+## Soal Evaluasi 3 {.unnumbered}
 
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
@@ -2021,6 +2021,66 @@ Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$)
 <p class="caption">(\#fig:fig-ilustrasi-kuartil)Ilustrasi Kuartil</p>
 </div>
 
+::: rmdkasus
+### Studi Kasus: Analisis Posisi Data dengan Kuartil {.unnumbered}
+
+Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-3-kuartil-unila)Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> Statistik </th>
+   <th style="text-align:center;"> Posisi Data </th>
+   <th style="text-align:center;"> Nilai (Ribu Rp) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 25% </td>
+   <td style="text-align:center;"> Kuartil Bawah (Q1) </td>
+   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> Membatasi 25% data terbawah </td>
+   <td style="text-align:center;"> 35 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 50% </td>
+   <td style="text-align:center;"> Kuartil Tengah (Q2/Median) </td>
+   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> Membatasi 50% data terbawah </td>
+   <td style="text-align:center;"> 50 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 75% </td>
+   <td style="text-align:center;"> Kuartil Atas (Q3) </td>
+   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> Membatasi 75% data terbawah </td>
+   <td style="text-align:center;"> 100 </td>
+  </tr>
+</tbody>
+</table>
+
+**Cara Menentukan Kuartil:**
+
+1.  **Kuartil Bawah ($Q_1$):**
+    *   Urutkan data dari terkecil hingga terbesar.
+    *   Cari nilai pada posisi $\frac{1(n+1)}{4}$.
+    *   Nilai ini memisahkan 25% data terendah dari sisa 75% data lainnya.
+
+2.  **Kuartil Atas ($Q_3$):**
+    *   Data diurutkan dari terkecil hingga terbesar.
+    *   Cari nilai pada posisi $\frac{3(n+1)}{4}$.
+    *   Nilai ini memisahkan 75% data terendah dari 25% data tertinggi.
+
+**Interpretasi:**
+
+Dari hasil perhitungan pada tabel di atas, kita dapat menafsirkan:
+
+1.  **Kuartil Bawah ($Q_1$):** Sebesar 25% mahasiswa UNILA memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai $Q_1$. Ini menandakan kelompok dengan biaya transportasi paling efisien.
+2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% mahasiswa memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
+3.  **Kuartil Atas ($Q_3$):** Sebesar 75% mahasiswa memiliki biaya perjalanan di bawah nilai $Q_3$, sedangkan 25% sisanya menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
+
+Pemahaman ini penting untuk melihat sebaran beban biaya di kalangan mahasiswa, apakah terkonsentrasi di nilai rendah atau tinggi.
+:::
+
 Makna dari hasil perhitungan kuartil adalah nilai-nilai yang menjadi kuartil bawah, kuartil tengah, dan kuartil atas adalah nilai-nilai yang menjadi pembatas jumlah observasi sebanyak masing-masing 25% ketika setelah diurutkan dari kecil ke besar. Dengan begitu pula, maka kuartil **tidak dapat** dikenakan pada variabel dengan **tingkat pengukuran nominal**.
 
 ### Variansi (*Variance*) dan Simpangan Baku (*Standard Deviation*)
@@ -2050,7 +2110,7 @@ Nilai variansi dan simpangan baku yang kecil menunjukkan bahwa nilai tiap-tiap o
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 
 ::: rmdexercise
-### Soal Evaluasi 4 {.unnumbered}
+## Soal Evaluasi 4 {.unnumbered}
 
 1.  Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut. [STP-2.1]{.capaian}
 
@@ -2146,7 +2206,7 @@ ggplot(transport, aes(x = reorder(Moda, -Jumlah), y = Jumlah)) +
 ![](_main_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
 
 ::: rmdexercise
-### Soal Evaluasi 5 {.unnumbered}
+## Soal Evaluasi 5 {.unnumbered}
 
 1.  Jelaskan prinsip dasar pemilihan jenis grafik berdasarkan tingkat pengukuran variabelnya! [STP-3.1]{.capaian}
 2.  Apa fungsi Boxplot dalam analisis data eksploratif? [STP-3.2]{.capaian}
@@ -2188,7 +2248,7 @@ Untuk rata-rata sampel:
 $$ Z = \frac{\bar{x} - \mu}{SE} $$
 
 ::: rmdexercise
-### Soal Evaluasi 6 {.unnumbered}
+## Soal Evaluasi 6 {.unnumbered}
 
 1.  Jelaskan perbedaan mendasar antara statistik deskriptif dan inferensial. [STP-4.1]{.capaian}
 2.  Sebutkan dan jelaskan tiga teknik pengambilan sampel probabilitas. [STP-4.2]{.capaian}
@@ -2238,7 +2298,7 @@ Batas Atas: $1.500.000 + (1.96 \times 50.000) = 1.598.000$.
 Jadi, dengan tingkat kepercayaan 95%, rata-rata pengeluaran mahasiswa berada di antara Rp1.402.000 dan Rp1.598.000.
 
 ::: rmdexercise
-### Soal Evaluasi 7 {.unnumbered}
+## Soal Evaluasi 7 {.unnumbered}
 
 1.  Apa yang dimaksud dengan tingkat kepercayaan (confidence level)? [STP-5.1]{.capaian}
 2.  Hitunglah Confidence Interval 95% untuk rata-rata jika $\bar{x}=100$, $s=15$, dan $n=36$. [STP-5.2]{.capaian}
@@ -2303,7 +2363,7 @@ t.test(waktu_tempuh, mu = 45, alternative = "greater")
 Jika p-value < 0,05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
 
 ::: rmdexercise
-### Soal Evaluasi 8 {.unnumbered}
+## Soal Evaluasi 8 {.unnumbered}
 
 1.  Jelaskan perbedaan antara Hipotesis Nol dan Hipotesis Alternatif. [STP-6.1]{.capaian}
 2.  Apa makna P-value dalam pengambilan keputusan uji hipotesis? [STP-6.2]{.capaian}
@@ -2388,7 +2448,7 @@ t.test(sebelum, sesudah, paired = TRUE)
 ```
 
 ::: rmdexercise
-### Soal Evaluasi 9 {.unnumbered}
+## Soal Evaluasi 9 {.unnumbered}
 
 1.  Kapan kita menggunakan uji t independen dan kapan menggunakan uji t berpasangan? Berikan contoh kasus perencanaannya! [STP-7.1]{.capaian}
 2.  Lakukan uji beda rata-rata untuk data berikut... [STP-7.2]{.capaian}
@@ -2456,7 +2516,7 @@ TukeyHSD(model_anova)
 ```
 
 ::: rmdexercise
-### Soal Evaluasi 10 {.unnumbered}
+## Soal Evaluasi 10 {.unnumbered}
 
 1.  Mengapa kita tidak dianjurkan menggunakan uji t berulang kali untuk membandingkan 3 kelompok atau lebih? [STP-7.3]{.capaian}
 2.  Apa kesimpulan jika P-value ANOVA > 0,05? [STP-7.4]{.capaian}
@@ -2514,7 +2574,7 @@ chisq.test(tabel)
 Jika P-value < 0,05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
 
 ::: rmdexercise
-### Soal Evaluasi 11 {.unnumbered}
+## Soal Evaluasi 11 {.unnumbered}
 
 1.  Apa perbedaan Chi-Square Test dengan Lambda sebagai ukuran asosiasi? [STP-8.1]{.capaian}
 2.  Hitunglah nilai Cramer's V untuk tabel kontingensi berikut... [STP-8.2]{.capaian}
@@ -2584,7 +2644,7 @@ cor.test(pendidikan, kepuasan, method = "kendall")
 Nilai korelasi mendekati +1 menunjukkan hubungan positif kuat (semakin tinggi pendidikan, semakin tinggi kepuasan).
 
 ::: rmdexercise
-### Soal Evaluasi 12 {.unnumbered}
+## Soal Evaluasi 12 {.unnumbered}
 
 1.  Kapan kita sebaiknya menggunakan Kendall's Tau dibandingkan Spearman's Rho? [STP-9.1]{.capaian}
 2.  Jelaskan makna korelasi negatif pada variabel ordinal! [STP-9.2]{.capaian}
@@ -2634,7 +2694,7 @@ cor.test(pendapatan, pengeluaran, method = "pearson")
 ```
 
 ::: rmdexercise
-### Soal Evaluasi 13 {.unnumbered}
+## Soal Evaluasi 13 {.unnumbered}
 
 1.  Apa syarat utama penggunaan korelasi Pearson? [STP-10.1]{.capaian}
 2.  Jika $r = 0$, apakah artinya tidak ada hubungan sama sekali? Jelaskan! [STP-10.2]{.capaian}
@@ -2699,7 +2759,7 @@ coef(model)
 Nilai Intercept ($a$) dan Slope ($b$) menentukan persamaan garis prediksi. $R^2$ menunjukkan seberapa baik model menjelaskan variasi data.
 
 ::: rmdexercise
-### Soal Evaluasi 14 {.unnumbered}
+## Soal Evaluasi 14 {.unnumbered}
 
 1.  Apa perbedaan antara korelasi dan regresi? [STP-11.1]{.capaian}
 2.  Jelaskan makna $R^2$ (Koefisien Determinasi)! [STP-11.2]{.capaian}
@@ -2751,7 +2811,7 @@ summary(model_berganda)
 ```
 
 ::: rmdexercise
-### Soal Evaluasi 15 {.unnumbered}
+## Soal Evaluasi 15 {.unnumbered}
 
 1.  Apa itu multikolinearitas dalam regresi berganda? [STP-12.1]{.capaian}
 2.  Bagaimana cara menginterpretasikan Adjusted $R^2$? [STP-12.2]{.capaian}
@@ -2806,7 +2866,7 @@ pca_result$rotation
 ```
 
 ::: rmdexercise
-### Soal Evaluasi 16 {.unnumbered}
+## Soal Evaluasi 16 {.unnumbered}
 
 1.  Apa tujuan utama dari Analisis Faktor? [STP-13.1]{.capaian}
 2.  Jelaskan perbedaan mendasar antara Analisis Regresi dan Analisis Faktor! [STP-13.2]{.capaian}

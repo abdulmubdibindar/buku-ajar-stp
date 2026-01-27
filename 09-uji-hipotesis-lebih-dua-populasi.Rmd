@@ -34,7 +34,7 @@ TukeyHSD(model_anova)
 ```
 
 ::: rmdexercise
-### Soal Evaluasi 10 {.unnumbered}
+## Soal Evaluasi 10 {.unnumbered}
 
 1.  Mengapa kita tidak dianjurkan menggunakan uji t berulang kali untuk membandingkan 3 kelompok atau lebih? [STP-7.3]{.capaian}
 2.  Apa kesimpulan jika P-value ANOVA > 0,05? [STP-7.4]{.capaian}

@@ -38,7 +38,7 @@ Batas Atas: $1.500.000 + (1.96 \times 50.000) = 1.598.000$.
 Jadi, dengan tingkat kepercayaan 95%, rata-rata pengeluaran mahasiswa berada di antara Rp1.402.000 dan Rp1.598.000.
 
 ::: rmdexercise
-### Soal Evaluasi 7 {.unnumbered}
+## Soal Evaluasi 7 {.unnumbered}
 
 1.  Apa yang dimaksud dengan tingkat kepercayaan (confidence level)? [STP-5.1]{.capaian}
 2.  Hitunglah Confidence Interval 95% untuk rata-rata jika $\bar{x}=100$, $s=15$, dan $n=36$. [STP-5.2]{.capaian}

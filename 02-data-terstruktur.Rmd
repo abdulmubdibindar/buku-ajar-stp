@@ -89,7 +89,7 @@ kable(perbandingan, format = 'html', escape = FALSE,
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-elemen data terstruktur.
 
 ::: rmdexercise
-### Soal Evaluasi 2 {.unnumbered}
+## Soal Evaluasi 2 {.unnumbered}
 
 Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
 
@@ -275,7 +275,7 @@ kable(metadata_2, format = 'html', escape = FALSE,
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang tingkat pengukuran variabel.
 
 ::: rmdexercise
-### Soal Evaluasi 3 {.unnumbered}
+## Soal Evaluasi 3 {.unnumbered}
 
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 

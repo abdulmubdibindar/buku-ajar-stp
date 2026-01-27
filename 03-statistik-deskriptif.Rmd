@@ -1048,8 +1048,65 @@ Kuartil, desil, dan persentil adalah ukuran penyebaran yang digunakan untuk memb
 Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$), dan kuartil atas ($Q_3$).
 
 ```{r fig-ilustrasi-kuartil, echo=FALSE, fig.align='center', fig.cap='Ilustrasi Kuartil'}
-knitr::include_graphics('images/bab-3-kuartil.png')
+knitr::include_graphics("images/bab-3-kuartil.png")
 ```
+
+::: rmdkasus
+### Studi Kasus: Analisis Posisi Data dengan Kuartil {.unnumbered}
+
+Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.
+
+```{r bab-3-kuartil-unila, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+# Membaca data
+data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
+biaya_unila <- data_unila$biaya.dalam.sepekan
+
+# Menghitung kuartil
+q1 <- quantile(biaya_unila, 0.25, na.rm = TRUE)
+q2 <- quantile(biaya_unila, 0.50, na.rm = TRUE)
+q3 <- quantile(biaya_unila, 0.75, na.rm = TRUE)
+
+# Dataframe hasil
+hasil_kuartil <- data.frame(
+  Statistik = c("Kuartil Bawah (Q1)", "Kuartil Tengah (Q2/Median)", "Kuartil Atas (Q3)"),
+  Posisi = c("Membatasi 25% data terbawah", "Membatasi 50% data terbawah", "Membatasi 75% data terbawah"),
+  Nilai = c(q1, q2, q3)
+)
+
+kable(hasil_kuartil,
+  format = "html", align = "c",
+  caption = "Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA",
+  col.names = c("Statistik", "Posisi Data", "Nilai (Ribu Rp)")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(3, bold = TRUE, background = "#e8f4f8")
+```
+
+**Cara Menentukan Kuartil:**
+
+1.  **Kuartil Bawah ($Q_1$):**
+    *   Urutkan data dari terkecil hingga terbesar.
+    *   Cari nilai pada posisi $\frac{1(n+1)}{4}$.
+    *   Nilai ini memisahkan 25% data terendah dari sisa 75% data lainnya.
+
+2.  **Kuartil Atas ($Q_3$):**
+    *   Data diurutkan dari terkecil hingga terbesar.
+    *   Cari nilai pada posisi $\frac{3(n+1)}{4}$.
+    *   Nilai ini memisahkan 75% data terendah dari 25% data tertinggi.
+
+**Interpretasi:**
+
+Dari hasil perhitungan pada tabel di atas, kita dapat menafsirkan:
+
+1.  **Kuartil Bawah ($Q_1$):** Sebesar 25% mahasiswa UNILA memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai $Q_1$. Ini menandakan kelompok dengan biaya transportasi paling efisien.
+2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% mahasiswa memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
+3.  **Kuartil Atas ($Q_3$):** Sebesar 75% mahasiswa memiliki biaya perjalanan di bawah nilai $Q_3$, sedangkan 25% sisanya menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
+
+Pemahaman ini penting untuk melihat sebaran beban biaya di kalangan mahasiswa, apakah terkonsentrasi di nilai rendah atau tinggi.
+:::
 
 Makna dari hasil perhitungan kuartil adalah nilai-nilai yang menjadi kuartil bawah, kuartil tengah, dan kuartil atas adalah nilai-nilai yang menjadi pembatas jumlah observasi sebanyak masing-masing 25% ketika setelah diurutkan dari kecil ke besar. Dengan begitu pula, maka kuartil **tidak dapat** dikenakan pada variabel dengan **tingkat pengukuran nominal**.
 
@@ -1080,7 +1137,7 @@ Nilai variansi dan simpangan baku yang kecil menunjukkan bahwa nilai tiap-tiap o
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 
 ::: rmdexercise
-### Soal Evaluasi 4 {.unnumbered}
+## Soal Evaluasi 4 {.unnumbered}
 
 1.  Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut. [STP-2.1]{.capaian}
 

@@ -44,7 +44,7 @@ t.test(sebelum, sesudah, paired = TRUE)
 ```
 
 ::: rmdexercise
-### Soal Evaluasi 9 {.unnumbered}
+## Soal Evaluasi 9 {.unnumbered}
 
 1.  Kapan kita menggunakan uji t independen dan kapan menggunakan uji t berpasangan? Berikan contoh kasus perencanaannya! [STP-7.1]{.capaian}
 2.  Lakukan uji beda rata-rata untuk data berikut... [STP-7.2]{.capaian}

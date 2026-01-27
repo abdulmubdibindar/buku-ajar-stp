@@ -7,6 +7,7 @@ trigger: always_on
 ### General blocks
 
 - Use {.unnumbered} at the end of the title of each blocks
+- For rmdkasus, use 3rd heading, but for rmdexercise, use 2nd heading
 
 ### General chunks
 

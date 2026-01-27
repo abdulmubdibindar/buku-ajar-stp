@@ -36,6 +36,7 @@ tab:bab-3-data-iqv-fakultas
 tab:bab-3-hasil-iqv
 tab:bab-3-data-rentang
 fig:fig-ilustrasi-kuartil
+tab:bab-3-kuartil-unila
 eq:konsep-variansi
 eq:konsep-simpangan-baku
 konsep-dasar-statistika-dalam-perencanaan

@@ -39,7 +39,7 @@ t.test(waktu_tempuh, mu = 45, alternative = "greater")
 Jika p-value < 0,05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
 
 ::: rmdexercise
-### Soal Evaluasi 8 {.unnumbered}
+## Soal Evaluasi 8 {.unnumbered}
 
 1.  Jelaskan perbedaan antara Hipotesis Nol dan Hipotesis Alternatif. [STP-6.1]{.capaian}
 2.  Apa makna P-value dalam pengambilan keputusan uji hipotesis? [STP-6.2]{.capaian}

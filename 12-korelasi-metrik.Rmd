@@ -20,7 +20,7 @@ cor.test(pendapatan, pengeluaran, method = "pearson")
 ```
 
 ::: rmdexercise
-### Soal Evaluasi 13 {.unnumbered}
+## Soal Evaluasi 13 {.unnumbered}
 
 1.  Apa syarat utama penggunaan korelasi Pearson? [STP-10.1]{.capaian}
 2.  Jika $r = 0$, apakah artinya tidak ada hubungan sama sekali? Jelaskan! [STP-10.2]{.capaian}

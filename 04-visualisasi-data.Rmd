@@ -69,7 +69,7 @@ ggplot(transport, aes(x = reorder(Moda, -Jumlah), y = Jumlah)) +
 ```
 
 ::: rmdexercise
-### Soal Evaluasi 5 {.unnumbered}
+## Soal Evaluasi 5 {.unnumbered}
 
 1.  Jelaskan prinsip dasar pemilihan jenis grafik berdasarkan tingkat pengukuran variabelnya! [STP-3.1]{.capaian}
 2.  Apa fungsi Boxplot dalam analisis data eksploratif? [STP-3.2]{.capaian}

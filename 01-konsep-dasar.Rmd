@@ -90,7 +90,7 @@ Berdasarkan jumlah variabelnya statistika juga dapat dibagi menjadi 3: **statist
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang konsep dasar statistika dalam perencanaan.
 
 ::: rmdexercise
-### Soal Evaluasi 1 {.unnumbered}
+## Soal Evaluasi 1 {.unnumbered}
 
 1.  Jelaskanlah penggunaan analisis data dalam setiap tahap perencanaan untuk kasus acara kumpul keakraban angkatan! [STP-1.1]{.capaian}
 2.  Ceritakan perbedaan  analisis kuantitatif dan kualitatif yang mungkin digunakan dalam perencanaan acara tersebut. [STP-1.2]{.capaian}
