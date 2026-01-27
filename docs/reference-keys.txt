@@ -39,6 +39,7 @@ fig:fig-ilustrasi-kuartil
 tab:bab-3-kuartil-unila
 eq:konsep-variansi
 eq:konsep-simpangan-baku
+tab:bab-3-simulasi-variansi
 konsep-dasar-statistika-dalam-perencanaan
 kedudukan-dan-peran-analisis-data-dalam-perencanaan
 penelitian-kuantitatif-vs.-penelitian-kualitatif-dan-kedudukan-statistik

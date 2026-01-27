@@ -245,6 +245,7 @@ div.csl-indent {
 <li class="chapter" data-level="3.4.3" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#kuartil-desil-dan-persentil"><i class="fa fa-check"></i><b>3.4.3</b> Kuartil, Desil, dan Persentil</a></li>
 <li class="chapter" data-level="" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#studi-kasus-analisis-posisi-data-dengan-kuartil"><i class="fa fa-check"></i>Studi Kasus: Analisis Posisi Data dengan Kuartil</a></li>
 <li class="chapter" data-level="3.4.4" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#variansi-variance-dan-simpangan-baku-standard-deviation"><i class="fa fa-check"></i><b>3.4.4</b> Variansi (<em>Variance</em>) dan Simpangan Baku (<em>Standard Deviation</em>)</a></li>
+<li class="chapter" data-level="" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#studi-kasus-menghitung-variansi-dan-simpangan-baku-biaya-perjalanan"><i class="fa fa-check"></i>Studi Kasus: Menghitung Variansi dan Simpangan Baku Biaya Perjalanan</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="analisis-statistik-deskriptif.html"><a href="analisis-statistik-deskriptif.html#soal-evaluasi-4"><i class="fa fa-check"></i>Soal Evaluasi 4</a></li>
 </ul></li>
@@ -2328,7 +2329,7 @@ Gambar 3.1: Ilustrasi Kuartil
 <p>Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.</p>
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:bab-3-kuartil-unila">Tabel 3.22: </span>Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA
+<span id="tab:bab-3-kuartil-unila">Tabel 3.22: </span>Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = 393)
 </caption>
 <thead>
 <tr>
@@ -2406,11 +2407,11 @@ Membatasi 75% data terbawah
 </ul></li>
 </ol>
 <p><strong>Interpretasi:</strong></p>
-<p>Dari hasil perhitungan pada tabel di atas, kita dapat menafsirkan:</p>
+<p>Dari total <strong>393</strong> mahasiswa yang diamati, kita dapat menafsirkan posisi data sebagai berikut:</p>
 <ol style="list-style-type: decimal">
-<li><strong>Kuartil Bawah (<span class="math inline">\(Q_1\)</span>):</strong> Sebesar 25% mahasiswa UNILA memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai <span class="math inline">\(Q_1\)</span>. Ini menandakan kelompok dengan biaya transportasi paling efisien.</li>
-<li><strong>Kuartil Tengah (<span class="math inline">\(Q_2\)</span>):</strong> Sebesar 50% mahasiswa memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.</li>
-<li><strong>Kuartil Atas (<span class="math inline">\(Q_3\)</span>):</strong> Sebesar 75% mahasiswa memiliki biaya perjalanan di bawah nilai <span class="math inline">\(Q_3\)</span>, sedangkan 25% sisanya menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).</li>
+<li><strong>Kuartil Bawah (<span class="math inline">\(Q_1\)</span>):</strong> Sebesar 25% dari populasi (sekitar <strong>98</strong> mahasiswa) memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai <span class="math inline">\(Q_1\)</span>. Ini menandakan kelompok dengan biaya transportasi paling efisien.</li>
+<li><strong>Kuartil Tengah (<span class="math inline">\(Q_2\)</span>):</strong> Sebesar 50% (sekitar <strong>196</strong> mahasiswa) memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.</li>
+<li><strong>Kuartil Atas (<span class="math inline">\(Q_3\)</span>):</strong> Sebesar 75% (sekitar <strong>295</strong> mahasiswa) memiliki biaya perjalanan di bawah nilai <span class="math inline">\(Q_3\)</span>. Artinya, hanya 25% sisanya (sekitar <strong>98</strong> mahasiswa) yang menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).</li>
 </ol>
 <p>Pemahaman ini penting untuk melihat sebaran beban biaya di kalangan mahasiswa, apakah terkonsentrasi di nilai rendah atau tinggi.</p>
 </div>
@@ -2433,8 +2434,168 @@ Membatasi 75% data terbawah
 \end{align}
 \]</span></p>
 <p>Nilai variansi dan simpangan baku yang kecil menunjukkan bahwa nilai tiap-tiap objek cenderung berdekatan dengan nilai rata-ratanya. Sebaliknya, nilai variansi dan simpangan baku yang besar menunjukkan bahwa nilai tiap-tiap objek cenderung berjauhan dengan nilai rata-ratanya.</p>
-<p>Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.</p>
 </div>
+<div id="studi-kasus-menghitung-variansi-dan-simpangan-baku-biaya-perjalanan" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Menghitung Variansi dan Simpangan Baku Biaya Perjalanan<a href="analisis-statistik-deskriptif.html#studi-kasus-menghitung-variansi-dan-simpangan-baku-biaya-perjalanan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Mari kita hitung variansi dan simpangan baku dari sampel kecil biaya perjalanan sepekan (dalam ribu rupiah) dari 5 mahasiswa. Ini akan membantu kita memahami bagaimana ukuran penyebaran dihitung langkah demi langkah.</p>
+<p>Data biaya perjalanan (<code>X</code>): 50, 60, 55, 70, 65.</p>
+<p><strong>Langkah 1: Hitung Rata-rata (<span class="math inline">\(\bar{x}\)</span>)</strong></p>
+<p><span class="math display">\[
+\bar{x} = \frac{50 + 60 + 55 + 70 + 65}{5} = \frac{300}{5} = 60
+\]</span></p>
+<p><strong>Langkah 2: Buat Tabel Perhitungan <span class="math inline">\((x_i - \bar{x})^2\)</span></strong></p>
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:bab-3-simulasi-variansi">Tabel 3.23: </span>Perhitungan Selisih Kuadrat
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Data Asli
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Pusat
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Deviasi
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:center;">
+Mahasiswa
+</th>
+<th style="text-align:center;">
+Biaya (X)
+</th>
+<th style="text-align:center;">
+Rata-rata (x̄)
+</th>
+<th style="text-align:center;">
+Selisih (X - x̄)
+</th>
+<th style="text-align:center;">
+Kuadrat (X - x̄)²
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+50
+</td>
+<td style="text-align:center;">
+60
+</td>
+<td style="text-align:center;">
+-10
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+60
+</td>
+<td style="text-align:center;">
+60
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+C
+</td>
+<td style="text-align:center;">
+55
+</td>
+<td style="text-align:center;">
+60
+</td>
+<td style="text-align:center;">
+-5
+</td>
+<td style="text-align:center;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+D
+</td>
+<td style="text-align:center;">
+70
+</td>
+<td style="text-align:center;">
+60
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:center;border-bottom: 2px solid #000">
+E
+</td>
+<td style="text-align:center;border-bottom: 2px solid #000">
+65
+</td>
+<td style="text-align:center;border-bottom: 2px solid #000">
+60
+</td>
+<td style="text-align:center;border-bottom: 2px solid #000">
+5
+</td>
+<td style="text-align:center;border-bottom: 2px solid #000">
+25
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Langkah 3: Hitung Jumlah Kuadrat Selisih</strong></p>
+<p><span class="math display">\[
+\sum_{i=1}^{n}(x_i - \bar{x})^2 = 100 + 0 + 25 + 100 + 25 = 250
+\]</span></p>
+<p><strong>Langkah 4: Hitung Variansi dan Simpangan Baku</strong></p>
+<p>Sesuai Persamaan <a href="analisis-statistik-deskriptif.html#eq:konsep-variansi">(3.8)</a>, kita bagi jumlah tersebut dengan <span class="math inline">\(n = 5\)</span>:</p>
+<p><span class="math display">\[
+\text{Variansi} = \frac{250}{5} = 50
+\]</span></p>
+<p>Simpangan baku adalah akar kuadrat dari variansi:</p>
+<p><span class="math display">\[
+\text{Simpangan Baku} = \sqrt{50} \approx 7,07
+\]</span></p>
+<p><strong>Interpretasi:</strong></p>
+<p>Simpangan baku sebesar 7,07 (ribu rupiah) menunjukkan rata-rata penyimpangan biaya perjalanan setiap mahasiswa dari biaya rata-rata kelompoknya.</p>
+<ul>
+<li>Semakin <strong>kecil</strong> simpangan baku, semakin seragam biaya perjalanan mahasiswa (data mengumpul di sekitar rata-rata).</li>
+<li>Semakin <strong>besar</strong> simpangan baku, semakin bervariasi biaya perjalanan mahasiswa (data menyebar jauh dari rata-rata).</li>
+</ul>
+<p>Dalam perencanaan, wilayah dengan simpangan baku pendapatan atau pengeluaran yang tinggi menunjukkan ketimpangan yang tinggi, yang mungkin memerlukan intervensi kebijakan yang berbeda dibandingkan wilayah yang cenderung homogen.</p>
+</div>
+<p>Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.</p>
 </div>
 <div id="soal-evaluasi-4" class="section level2 unnumbered hasAnchor rmdexercise">
 <h2>Soal Evaluasi 4<a href="analisis-statistik-deskriptif.html#soal-evaluasi-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>

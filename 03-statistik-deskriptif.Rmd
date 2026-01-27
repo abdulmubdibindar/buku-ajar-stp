@@ -1064,6 +1064,9 @@ library(kableExtra)
 data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
 biaya_unila <- data_unila$biaya.dalam.sepekan
 
+# Menghitung jumlah observasi valid
+n_obs <- sum(!is.na(biaya_unila))
+
 # Menghitung kuartil
 q1 <- quantile(biaya_unila, 0.25, na.rm = TRUE)
 q2 <- quantile(biaya_unila, 0.50, na.rm = TRUE)
@@ -1078,7 +1081,7 @@ hasil_kuartil <- data.frame(
 
 kable(hasil_kuartil,
   format = "html", align = "c",
-  caption = "Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA",
+  caption = paste0("Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = ", n_obs, ")"),
   col.names = c("Statistik", "Posisi Data", "Nilai (Ribu Rp)")
 ) %>%
   kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
@@ -1099,11 +1102,11 @@ kable(hasil_kuartil,
 
 **Interpretasi:**
 
-Dari hasil perhitungan pada tabel di atas, kita dapat menafsirkan:
+Dari total **`r n_obs`** mahasiswa yang diamati, kita dapat menafsirkan posisi data sebagai berikut:
 
-1.  **Kuartil Bawah ($Q_1$):** Sebesar 25% mahasiswa UNILA memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai $Q_1$. Ini menandakan kelompok dengan biaya transportasi paling efisien.
-2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% mahasiswa memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
-3.  **Kuartil Atas ($Q_3$):** Sebesar 75% mahasiswa memiliki biaya perjalanan di bawah nilai $Q_3$, sedangkan 25% sisanya menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
+1.  **Kuartil Bawah ($Q_1$):** Sebesar 25% dari populasi (sekitar **`r round(0.25 * n_obs)`** mahasiswa) memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai $Q_1$. Ini menandakan kelompok dengan biaya transportasi paling efisien.
+2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% (sekitar **`r round(0.50 * n_obs)`** mahasiswa) memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
+3.  **Kuartil Atas ($Q_3$):** Sebesar 75% (sekitar **`r round(0.75 * n_obs)`** mahasiswa) memiliki biaya perjalanan di bawah nilai $Q_3$. Artinya, hanya 25% sisanya (sekitar **`r round(0.25 * n_obs)`** mahasiswa) yang menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
 
 Pemahaman ini penting untuk melihat sebaran beban biaya di kalangan mahasiswa, apakah terkonsentrasi di nilai rendah atau tinggi.
 :::
@@ -1133,6 +1136,93 @@ $$
 $$ 
 
 Nilai variansi dan simpangan baku yang kecil menunjukkan bahwa nilai tiap-tiap objek cenderung berdekatan dengan nilai rata-ratanya. Sebaliknya, nilai variansi dan simpangan baku yang besar menunjukkan bahwa nilai tiap-tiap objek cenderung berjauhan dengan nilai rata-ratanya.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Variansi dan Simpangan Baku Biaya Perjalanan {.unnumbered}
+
+Mari kita hitung variansi dan simpangan baku dari sampel kecil biaya perjalanan sepekan (dalam ribu rupiah) dari 5 mahasiswa. Ini akan membantu kita memahami bagaimana ukuran penyebaran dihitung langkah demi langkah.
+
+Data biaya perjalanan (`X`): 50, 60, 55, 70, 65.
+
+**Langkah 1: Hitung Rata-rata ($\bar{x}$)**
+
+$$
+\bar{x} = \frac{50 + 60 + 55 + 70 + 65}{5} = \frac{300}{5} = 60
+$$
+
+**Langkah 2: Buat Tabel Perhitungan $(x_i - \bar{x})^2$**
+
+```{r bab-3-simulasi-variansi, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+data_var <- data.frame(
+  Mahasiswa = c("A", "B", "C", "D", "E"),
+  Biaya_X = c(50, 60, 55, 70, 65),
+  Mean = c(60, 60, 60, 60, 60),
+  Selisih = c(-10, 0, -5, 10, 5),
+  Kuadrat_Selisih = c(100, 0, 25, 100, 25)
+)
+
+kable(data_var,
+  format = "html", align = "c",
+  caption = "Perhitungan Selisih Kuadrat",
+  col.names = c("Mahasiswa", "Biaya (X)", "Rata-rata (x̄)", "Selisih (X - x̄)", "Kuadrat (X - x̄)²")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  add_header_above(c(" " = 1, "Data Asli" = 1, "Pusat" = 1, "Deviasi" = 2)) %>%
+  row_spec(5, extra_css = "border-bottom: 2px solid #000")
+```
+
+**Langkah 3: Hitung Jumlah Kuadrat Selisih**
+
+$$
+\sum_{i=1}^{n}(x_i - \bar{x})^2 = 100 + 0 + 25 + 100 + 25 = 250
+$$
+
+**Langkah 4: Hitung Variansi dan Simpangan Baku**
+
+Sesuai Persamaan \@ref(eq:konsep-variansi), kita bagi jumlah tersebut dengan $n = 5$:
+
+$$
+\text{Variansi} = \frac{250}{5} = 50
+$$
+
+Simpangan baku adalah akar kuadrat dari variansi:
+
+$$
+\text{Simpangan Baku} = \sqrt{50} \approx 7,07
+$$
+
+**Interpretasi:**
+
+Simpangan baku sebesar 7,07 (ribu rupiah) menunjukkan rata-rata penyimpangan biaya perjalanan setiap mahasiswa dari biaya rata-rata kelompoknya.
+
+-   Semakin **kecil** simpangan baku, semakin seragam biaya perjalanan mahasiswa (data mengumpul di sekitar rata-rata).
+-   Semakin **besar** simpangan baku, semakin bervariasi biaya perjalanan mahasiswa (data menyebar jauh dari rata-rata).
+
+Dalam bidang PWK, wilayah dengan simpangan baku pendapatan atau pengeluaran yang tinggi menunjukkan ketimpangan yang tinggi, yang mungkin memerlukan intervensi kebijakan yang berbeda dibandingkan wilayah yang cenderung homogen.
+:::
+
+
+
+
+### Rangkuman Teknik Analisis Statistik Deskriptif
+
+Pemilihan teknik analisis statistik deskriptif sangat bergantung pada tujuan analisis (apakah melihat pemusatan atau penyebaran) dan tingkat pengukuran variabel yang tersedia. Tabel berikut merangkum berbagai teknik yang telah dipelajari beserta syarat penggunaannya.
+
+| No | Nama Analisis | Tingkat Pengukuran | Makna Singkat Hasil |
+|:--:|:---|:---|:---|
+| 1 | Frekuensi & Persentase | Nominal, Ordinal, Metrik | Jumlah atau proporsi kemunculan suatu nilai dalam distribusi |
+| 2 | Rasio | Nominal, Ordinal, Metrik | Perbandingan relatif jumlah satu kategori terhadap kategori lain |
+| 3 | Laju (*Rate*) | Metrik (jumlah kejadian) | Intensitas kejadian relatif terhadap populasi berisiko atau waktu |
+| 4 | Modus | Nominal, Ordinal, Metrik | Nilai yang paling sering muncul (tren) |
+| 5 | Median | Ordinal, Metrik | Nilai tengah yang membagi data menjadi dua bagian sama besar |
+| 6 | Rata-rata (*Mean*) | Metrik | Pusat aritmatika yang mewakili keseluruhan nilai |
+| 7 | IQV | Nominal, Ordinal | Derajat keberagaman (heterogenitas) data kualitatif |
+| 8 | Rentang (*Range*) | Metrik | Selisih total antara nilai tertinggi dan terendah |
+| 9 | Kuartil/Persentil | Ordinal, Metrik | Posisi nilai yang membagi data terurut menjadi bagian-bagian proporsional |
+| 10 | Variansi & Simpangan Baku | Metrik | Rata-rata jarak penyimpangan setiap data terhadap nilai rata-ratanya |
 
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 

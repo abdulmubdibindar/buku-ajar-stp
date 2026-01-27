@@ -2027,7 +2027,7 @@ Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$)
 Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.
 
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-kuartil-unila)Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA</caption>
+<caption>(\#tab:bab-3-kuartil-unila)Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = 393)</caption>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -2072,11 +2072,11 @@ Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat bergu
 
 **Interpretasi:**
 
-Dari hasil perhitungan pada tabel di atas, kita dapat menafsirkan:
+Dari total **393** mahasiswa yang diamati, kita dapat menafsirkan posisi data sebagai berikut:
 
-1.  **Kuartil Bawah ($Q_1$):** Sebesar 25% mahasiswa UNILA memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai $Q_1$. Ini menandakan kelompok dengan biaya transportasi paling efisien.
-2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% mahasiswa memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
-3.  **Kuartil Atas ($Q_3$):** Sebesar 75% mahasiswa memiliki biaya perjalanan di bawah nilai $Q_3$, sedangkan 25% sisanya menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
+1.  **Kuartil Bawah ($Q_1$):** Sebesar 25% dari populasi (sekitar **98** mahasiswa) memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai $Q_1$. Ini menandakan kelompok dengan biaya transportasi paling efisien.
+2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% (sekitar **196** mahasiswa) memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
+3.  **Kuartil Atas ($Q_3$):** Sebesar 75% (sekitar **295** mahasiswa) memiliki biaya perjalanan di bawah nilai $Q_3$. Artinya, hanya 25% sisanya (sekitar **98** mahasiswa) yang menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
 
 Pemahaman ini penting untuk melihat sebaran beban biaya di kalangan mahasiswa, apakah terkonsentrasi di nilai rendah atau tinggi.
 :::
@@ -2106,6 +2106,109 @@ $$
 $$ 
 
 Nilai variansi dan simpangan baku yang kecil menunjukkan bahwa nilai tiap-tiap objek cenderung berdekatan dengan nilai rata-ratanya. Sebaliknya, nilai variansi dan simpangan baku yang besar menunjukkan bahwa nilai tiap-tiap objek cenderung berjauhan dengan nilai rata-ratanya.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Variansi dan Simpangan Baku Biaya Perjalanan {.unnumbered}
+
+Mari kita hitung variansi dan simpangan baku dari sampel kecil biaya perjalanan sepekan (dalam ribu rupiah) dari 5 mahasiswa. Ini akan membantu kita memahami bagaimana ukuran penyebaran dihitung langkah demi langkah.
+
+Data biaya perjalanan (`X`): 50, 60, 55, 70, 65.
+
+**Langkah 1: Hitung Rata-rata ($\bar{x}$)**
+
+$$
+\bar{x} = \frac{50 + 60 + 55 + 70 + 65}{5} = \frac{300}{5} = 60
+$$
+
+**Langkah 2: Buat Tabel Perhitungan $(x_i - \bar{x})^2$**
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-3-simulasi-variansi)Perhitungan Selisih Kuadrat</caption>
+ <thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Data Asli</div></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Pusat</div></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Deviasi</div></th>
+</tr>
+  <tr>
+   <th style="text-align:center;"> Mahasiswa </th>
+   <th style="text-align:center;"> Biaya (X) </th>
+   <th style="text-align:center;"> Rata-rata (x̄) </th>
+   <th style="text-align:center;"> Selisih (X - x̄) </th>
+   <th style="text-align:center;"> Kuadrat (X - x̄)² </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> A </td>
+   <td style="text-align:center;"> 50 </td>
+   <td style="text-align:center;"> 60 </td>
+   <td style="text-align:center;"> -10 </td>
+   <td style="text-align:center;"> 100 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> B </td>
+   <td style="text-align:center;"> 60 </td>
+   <td style="text-align:center;"> 60 </td>
+   <td style="text-align:center;"> 0 </td>
+   <td style="text-align:center;"> 0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> C </td>
+   <td style="text-align:center;"> 55 </td>
+   <td style="text-align:center;"> 60 </td>
+   <td style="text-align:center;"> -5 </td>
+   <td style="text-align:center;"> 25 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> D </td>
+   <td style="text-align:center;"> 70 </td>
+   <td style="text-align:center;"> 60 </td>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> 100 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;border-bottom: 2px solid #000"> E </td>
+   <td style="text-align:center;border-bottom: 2px solid #000"> 65 </td>
+   <td style="text-align:center;border-bottom: 2px solid #000"> 60 </td>
+   <td style="text-align:center;border-bottom: 2px solid #000"> 5 </td>
+   <td style="text-align:center;border-bottom: 2px solid #000"> 25 </td>
+  </tr>
+</tbody>
+</table>
+
+**Langkah 3: Hitung Jumlah Kuadrat Selisih**
+
+$$
+\sum_{i=1}^{n}(x_i - \bar{x})^2 = 100 + 0 + 25 + 100 + 25 = 250
+$$
+
+**Langkah 4: Hitung Variansi dan Simpangan Baku**
+
+Sesuai Persamaan \@ref(eq:konsep-variansi), kita bagi jumlah tersebut dengan $n = 5$:
+
+$$
+\text{Variansi} = \frac{250}{5} = 50
+$$
+
+Simpangan baku adalah akar kuadrat dari variansi:
+
+$$
+\text{Simpangan Baku} = \sqrt{50} \approx 7,07
+$$
+
+**Interpretasi:**
+
+Simpangan baku sebesar 7,07 (ribu rupiah) menunjukkan rata-rata penyimpangan biaya perjalanan setiap mahasiswa dari biaya rata-rata kelompoknya.
+
+-   Semakin **kecil** simpangan baku, semakin seragam biaya perjalanan mahasiswa (data mengumpul di sekitar rata-rata).
+-   Semakin **besar** simpangan baku, semakin bervariasi biaya perjalanan mahasiswa (data menyebar jauh dari rata-rata).
+
+Dalam perencanaan, wilayah dengan simpangan baku pendapatan atau pengeluaran yang tinggi menunjukkan ketimpangan yang tinggi, yang mungkin memerlukan intervensi kebijakan yang berbeda dibandingkan wilayah yang cenderung homogen.
+:::
+
+
 
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 
