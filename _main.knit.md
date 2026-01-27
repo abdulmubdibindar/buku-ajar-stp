@@ -2205,28 +2205,215 @@ Simpangan baku sebesar 7,07 (ribu rupiah) menunjukkan rata-rata penyimpangan bia
 -   Semakin **kecil** simpangan baku, semakin seragam biaya perjalanan mahasiswa (data mengumpul di sekitar rata-rata).
 -   Semakin **besar** simpangan baku, semakin bervariasi biaya perjalanan mahasiswa (data menyebar jauh dari rata-rata).
 
-Dalam perencanaan, wilayah dengan simpangan baku pendapatan atau pengeluaran yang tinggi menunjukkan ketimpangan yang tinggi, yang mungkin memerlukan intervensi kebijakan yang berbeda dibandingkan wilayah yang cenderung homogen.
+Dalam bidang PWK, wilayah dengan simpangan baku pendapatan atau pengeluaran yang tinggi menunjukkan ketimpangan yang tinggi, yang mungkin memerlukan intervensi kebijakan yang berbeda dibandingkan wilayah yang cenderung homogen.
 :::
 
 
+
+
+### Rangkuman Teknik Analisis Statistik Deskriptif
+
+Pemilihan teknik analisis statistik deskriptif sangat bergantung pada tujuan analisis (apakah melihat pemusatan atau penyebaran) dan tingkat pengukuran variabel yang tersedia. Tabel \@ref(tab:rangkuman-deskriptif) merangkum berbagai teknik yang telah dipelajari beserta syarat penggunaannya.
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:rangkuman-deskriptif)Rangkuman Teknik Analisis Statistik Deskriptif</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> No </th>
+   <th style="text-align:left;"> Nama Analisis </th>
+   <th style="text-align:left;"> Tingkat Pengukuran </th>
+   <th style="text-align:left;"> Makna Singkat Hasil </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1 </td>
+   <td style="text-align:left;"> Frekuensi &amp; Persentase </td>
+   <td style="text-align:left;"> Nominal, Ordinal </td>
+   <td style="text-align:left;"> Jumlah atau proporsi kemunculan suatu nilai dalam distribusi </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2 </td>
+   <td style="text-align:left;"> Rasio </td>
+   <td style="text-align:left;"> Nominal, Ordinal </td>
+   <td style="text-align:left;"> Perbandingan relatif jumlah satu kategori terhadap kategori lain </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 3 </td>
+   <td style="text-align:left;"> Laju (*Rate*) </td>
+   <td style="text-align:left;"> Metrik (jumlah kejadian) </td>
+   <td style="text-align:left;"> Intensitas kejadian relatif terhadap populasi berisiko atau waktu </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 4 </td>
+   <td style="text-align:left;"> Modus </td>
+   <td style="text-align:left;"> Nominal, Ordinal, Metrik </td>
+   <td style="text-align:left;"> Nilai yang paling sering muncul (tren) </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 5 </td>
+   <td style="text-align:left;"> Median </td>
+   <td style="text-align:left;"> Ordinal, Metrik </td>
+   <td style="text-align:left;"> Nilai tengah yang membagi data menjadi dua bagian sama besar </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 6 </td>
+   <td style="text-align:left;"> Rata-rata (*Mean*) </td>
+   <td style="text-align:left;"> Metrik </td>
+   <td style="text-align:left;"> Pusat aritmatika yang mewakili keseluruhan nilai </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 7 </td>
+   <td style="text-align:left;"> IQV </td>
+   <td style="text-align:left;"> Nominal, Ordinal </td>
+   <td style="text-align:left;"> Derajat keberagaman (heterogenitas) data kualitatif </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 8 </td>
+   <td style="text-align:left;"> Rentang (*Range*) </td>
+   <td style="text-align:left;"> Metrik </td>
+   <td style="text-align:left;"> Selisih total antara nilai tertinggi dan terendah </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 9 </td>
+   <td style="text-align:left;"> Kuartil/Persentil </td>
+   <td style="text-align:left;"> Ordinal, Metrik </td>
+   <td style="text-align:left;"> Posisi nilai yang membagi data terurut menjadi bagian-bagian proporsional </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 10 </td>
+   <td style="text-align:left;"> Variansi &amp; Simpangan Baku </td>
+   <td style="text-align:left;"> Metrik </td>
+   <td style="text-align:left;"> Rata-rata jarak penyimpangan setiap data terhadap nilai rata-ratanya </td>
+  </tr>
+</tbody>
+</table>
 
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 
 ::: rmdexercise
 ## Soal Evaluasi 4 {.unnumbered}
 
-1.  Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut. [STP-2.1]{.capaian}
+Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 responden berikut.
 
-2.  Centang analisis statistik deskriptif yang relevan diaplikasikan kepada variabel-variabel tersebut. [STP-2.2]{.capaian}
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-3-eval-4-preview)Cuplikan data survei mahasiswa</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> KodeResp </th>
+   <th style="text-align:center;"> Usia </th>
+   <th style="text-align:center;"> Fakultas </th>
+   <th style="text-align:center;"> ThnMsk </th>
+   <th style="text-align:center;"> UangSaku </th>
+   <th style="text-align:center;"> Jarak </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 001 </td>
+   <td style="text-align:center;"> 22 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2020 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 19.27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 002 </td>
+   <td style="text-align:center;"> 25 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2020 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 003 </td>
+   <td style="text-align:center;"> 24 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 2021 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.56 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 004 </td>
+   <td style="text-align:center;"> 19 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 2022 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 005 </td>
+   <td style="text-align:center;"> 23 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 2021 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.69 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 006 </td>
+   <td style="text-align:center;"> 20 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2020 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 1.37 </td>
+  </tr>
+</tbody>
+</table>
 
-    | Variabel  | Persentase/Proporsi | Rasio | Laju |
-    |:----------|:-------------------:|:-----:|:----:|
-    | Usia      |                     |       |      |
-    | Fakultas  |                     |       |      |
-    | ThnMsk    |                     |       |      |
-    | Uang_saku |                     |       |      |
+Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-3.  Apa informasi utama yang bisa kita simpulkan dari hasil statistik deskriptif variabel-variabel berikut? [STP-2.3]{.capaian}
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-3-eval-4-metadata)Metadata variabel survei mahasiswa</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Nama Variabel </th>
+   <th style="text-align:left;"> Deskripsi </th>
+   <th style="text-align:left;"> Nilai-nilai yang valid </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> `KodeResp` </td>
+   <td style="text-align:left;"> Nomor urut responden </td>
+   <td style="text-align:left;"> tiga digit angka, hingga jumlah responden minimal </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `Usia` </td>
+   <td style="text-align:left;"> Usia responden (tahun) </td>
+   <td style="text-align:left;"> 18 - ∞ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `Fakultas` </td>
+   <td style="text-align:left;"> Fakultas mahasiswa </td>
+   <td style="text-align:left;"> 1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `ThnMsk` </td>
+   <td style="text-align:left;"> Tahun masuk kuliah (Masehi) </td>
+   <td style="text-align:left;"> 2018 - 2022 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `UangSaku` </td>
+   <td style="text-align:left;"> Uang saku mahasiswa per bulan </td>
+   <td style="text-align:left;"> 1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `Jarak` </td>
+   <td style="text-align:left;"> Jarak tempat tinggal mahasiswa dari kampus (km) </td>
+   <td style="text-align:left;"> 0 - ∞ </td>
+  </tr>
+</tbody>
+</table>
+
+1. Identifikasilah statistik deskriptif yang dapat dikenakan pada variabel-variabel berikut: [STP-2.2]{.capaian}
+  
+  a. Fakultas
+  b. Uang saku
+  c. Jarak
+  
+  Sertakan juga hasil perhitungan kalian dengan langkah yang dapat dipertanggungjawabkan.
+2. Interpretasikan salah satu hasil statistik deskriptif yang telah dihitung pada masing-masing variabel. [STP-2.3]{.capaian}
+
 :::
 
 <!--chapter:end:03-statistik-deskriptif.Rmd-->

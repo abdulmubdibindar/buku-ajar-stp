@@ -40,6 +40,9 @@ tab:bab-3-kuartil-unila
 eq:konsep-variansi
 eq:konsep-simpangan-baku
 tab:bab-3-simulasi-variansi
+tab:rangkuman-deskriptif
+tab:bab-3-eval-4-preview
+tab:bab-3-eval-4-metadata
 konsep-dasar-statistika-dalam-perencanaan
 kedudukan-dan-peran-analisis-data-dalam-perencanaan
 penelitian-kuantitatif-vs.-penelitian-kualitatif-dan-kedudukan-statistik
@@ -70,6 +73,7 @@ indeks-variasi-kualitatif-index-of-qualitative-variance-iqv
 rentang-range
 kuartil-desil-dan-persentil
 variansi-variance-dan-simpangan-baku-standard-deviation
+rangkuman-teknik-analisis-statistik-deskriptif
 visualisasi-data-kuantitatif
 konsep-dasar
 jenis-visualisasi-dasar

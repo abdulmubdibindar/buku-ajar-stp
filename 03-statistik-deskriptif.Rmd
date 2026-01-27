@@ -1209,36 +1209,108 @@ Dalam bidang PWK, wilayah dengan simpangan baku pendapatan atau pengeluaran yang
 
 ### Rangkuman Teknik Analisis Statistik Deskriptif
 
-Pemilihan teknik analisis statistik deskriptif sangat bergantung pada tujuan analisis (apakah melihat pemusatan atau penyebaran) dan tingkat pengukuran variabel yang tersedia. Tabel berikut merangkum berbagai teknik yang telah dipelajari beserta syarat penggunaannya.
+Pemilihan teknik analisis statistik deskriptif sangat bergantung pada tujuan analisis (apakah melihat pemusatan atau penyebaran) dan tingkat pengukuran variabel yang tersedia. Tabel \@ref(tab:rangkuman-deskriptif) merangkum berbagai teknik yang telah dipelajari beserta syarat penggunaannya.
 
-| No | Nama Analisis | Tingkat Pengukuran | Makna Singkat Hasil |
-|:--:|:---|:---|:---|
-| 1 | Frekuensi & Persentase | Nominal, Ordinal, Metrik | Jumlah atau proporsi kemunculan suatu nilai dalam distribusi |
-| 2 | Rasio | Nominal, Ordinal, Metrik | Perbandingan relatif jumlah satu kategori terhadap kategori lain |
-| 3 | Laju (*Rate*) | Metrik (jumlah kejadian) | Intensitas kejadian relatif terhadap populasi berisiko atau waktu |
-| 4 | Modus | Nominal, Ordinal, Metrik | Nilai yang paling sering muncul (tren) |
-| 5 | Median | Ordinal, Metrik | Nilai tengah yang membagi data menjadi dua bagian sama besar |
-| 6 | Rata-rata (*Mean*) | Metrik | Pusat aritmatika yang mewakili keseluruhan nilai |
-| 7 | IQV | Nominal, Ordinal | Derajat keberagaman (heterogenitas) data kualitatif |
-| 8 | Rentang (*Range*) | Metrik | Selisih total antara nilai tertinggi dan terendah |
-| 9 | Kuartil/Persentil | Ordinal, Metrik | Posisi nilai yang membagi data terurut menjadi bagian-bagian proporsional |
-| 10 | Variansi & Simpangan Baku | Metrik | Rata-rata jarak penyimpangan setiap data terhadap nilai rata-ratanya |
+```{r rangkuman-deskriptif, echo=FALSE, out.width='100%'}
+library(knitr)
+library(kableExtra)
+
+rangkuman_df <- data.frame(
+  No = 1:10,
+  Nama_Analisis = c(
+    "Frekuensi & Persentase", "Rasio", "Laju (*Rate*)", "Modus",
+    "Median", "Rata-rata (*Mean*)", "IQV", "Rentang (*Range*)",
+    "Kuartil/Persentil", "Variansi & Simpangan Baku"
+  ),
+  Tingkat_Pengukuran = c(
+    "Nominal, Ordinal", "Nominal, Ordinal", "Metrik (jumlah kejadian)",
+    "Nominal, Ordinal, Metrik", "Ordinal, Metrik", "Metrik",
+    "Nominal, Ordinal", "Metrik", "Ordinal, Metrik", "Metrik"
+  ),
+  Makna = c(
+    "Jumlah atau proporsi kemunculan suatu nilai dalam distribusi",
+    "Perbandingan relatif jumlah satu kategori terhadap kategori lain",
+    "Intensitas kejadian relatif terhadap populasi berisiko atau waktu",
+    "Nilai yang paling sering muncul (tren)",
+    "Nilai tengah yang membagi data menjadi dua bagian sama besar",
+    "Pusat aritmatika yang mewakili keseluruhan nilai",
+    "Derajat keberagaman (heterogenitas) data kualitatif",
+    "Selisih total antara nilai tertinggi dan terendah",
+    "Posisi nilai yang membagi data terurut menjadi bagian-bagian proporsional",
+    "Rata-rata jarak penyimpangan setiap data terhadap nilai rata-ratanya"
+  )
+)
+
+kable(rangkuman_df,
+  format = "html", align = "clll",
+  caption = "Rangkuman Teknik Analisis Statistik Deskriptif",
+  col.names = c("No", "Nama Analisis", "Tingkat Pengukuran", "Makna Singkat Hasil")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE)
+```
 
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 
 ::: rmdexercise
 ## Soal Evaluasi 4 {.unnumbered}
 
-1.  Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut. [STP-2.1]{.capaian}
+Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 responden berikut.
 
-2.  Centang analisis statistik deskriptif yang relevan diaplikasikan kepada variabel-variabel tersebut. [STP-2.2]{.capaian}
+```{r bab-3-eval-4-preview, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
 
-    | Variabel  | Persentase/Proporsi | Rasio | Laju |
-    |:----------|:-------------------:|:-----:|:----:|
-    | Usia      |                     |       |      |
-    | Fakultas  |                     |       |      |
-    | ThnMsk    |                     |       |      |
-    | Uang_saku |                     |       |      |
+preview_data <- data.frame(
+  KodeResp = c("001", "002", "003", "004", "005", "006"),
+  Usia = c(22, 25, 24, 19, 23, 20),
+  Fakultas = c(1, 1, 2, 3, 2, 1),
+  ThnMsk = c(2020, 2020, 2021, 2022, 2021, 2020),
+  UangSaku = c(2, 1, 1, 1, 1, 3),
+  Jarak = c(19.27, 0.58, 0.56, 1.05, 1.69, 1.37)
+)
 
-3.  Apa informasi utama yang bisa kita simpulkan dari hasil statistik deskriptif variabel-variabel berikut? [STP-2.3]{.capaian}
+kable(preview_data,
+  format = "html", align = "c",
+  caption = "Cuplikan data survei mahasiswa"
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
+
+Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
+
+```{r bab-3-eval-4-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+metadata_soal <- data.frame(
+  `Nama Variabel` = c("`KodeResp`", "`Usia`", "`Fakultas`", "`ThnMsk`", "`UangSaku`", "`Jarak`"),
+  Deskripsi = c("Nomor urut responden", "Usia responden (tahun)", "Fakultas mahasiswa", "Tahun masuk kuliah (Masehi)", "Uang saku mahasiswa per bulan", "Jarak tempat tinggal mahasiswa dari kampus (km)"),
+  `Nilai-nilai yang valid` = c(
+    " tiga digit angka, hingga jumlah responden minimal",
+    " 18 - &infin;",
+    "1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi",
+    "2018 - 2022",
+    "1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta",
+    "0 - &infin;"
+  )
+)
+
+kable(metadata_soal,
+  format = "html", escape = FALSE,
+  col.names = c("Nama Variabel", "Deskripsi", "Nilai-nilai yang valid"),
+  caption = "Metadata variabel survei mahasiswa"
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
+
+1. Identifikasilah statistik deskriptif yang dapat dikenakan pada variabel-variabel berikut: [STP-2.2]{.capaian}
+  
+  a. Fakultas
+  b. Uang saku
+  c. Jarak
+  
+  Sertakan juga hasil perhitungan kalian dengan langkah yang dapat dipertanggungjawabkan.
+2. Interpretasikan salah satu hasil statistik deskriptif yang telah dihitung pada masing-masing variabel. [STP-2.3]{.capaian}
+
 :::
