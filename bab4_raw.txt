@@ -23,130 +23,58 @@ pembahasan sesuai dengan konsep dasarnya.
 
 3.2 Konsep Dasar
 
-Visualisasi data adalah mengubah bentuk penyajian
+Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bentuk tabular/tabel menjadi bentuk grafis. Kita sering mendengar pepatah yang berbunyi "a picture is worth a thousand words" yang artinya kurang lebih "satu gambar bernilai seribu kata." Pepatah  ini menggambarkan bahwa data yang disajikan dalam bentuk gambar/grafis dapat menampilkan banyak sekali informasi kepada audiens.
 
-data/presentasi data dari bentuk tabular/tabel menjadi bentuk
+Sajian data dalam bentuk gambar disebut juga grafik atau diagram (chart). Jenis grafik atau diagram yang digunakan sangat bergantung pada jenis dan tingkat pengukuran variabel yang akan divisualisasi.
 
-grafis. Kita sering mendengar pepatah yang berbunyi "a picture
-
-is worth a thousand words" yang artinya kurang lebih "satu
-
-gambar bernilai seribu kata." Pepatah  ini
-
-menggambarkan bahwa data yang disajikan dalam bentuk
-
-                                            45
-gambar/grafis dapat menampilkan banyak sekali informasi
-kepada audiens.
-
-Sajian data dalam bentuk gambar disebut juga grafik atau
-diagram (chart). Jenis grafik atau diagram yang digunakan
-sangat bergantung pada jenis dan tingkat pengukuran variabel
-yang akan divisualisasi.
-
-Banyak sekali panduan-panduan untuk memilih bentuk grafik
-yang perlu Anda gunakan untuk menyajikan data Anda. Salah
-satu sumber yang menyediakan panduan tersebut adalah situs
-From Data to Viz, https://www.data-to-viz.com [9]
+Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs From Data to Viz, https://www.data-to-viz.com.
 
 3.2.1 Jenis-jenis Diagram
-Untuk memilih jenis diagram yang tepat, kita perlu menentukan
-terlebih dahulu jenis dan tingkat pengukuran variabel yang akan
-kita sajikan. Kemudian, kita dapat mempertimbangkan jenis
-informasi apa yang ingin kita sajikan dan menyesuaikannya
-dengan cara menampilkan nilainya, bisa dengan sumbu
-(tegak/datar; Y/X) atau yang lainnya. Berikut adalah
-pembahasan sebagian jenis-jenis diagram berdasarkan jenis nilai
-dan tingkat pengukuran variabel yang sudah kita bahas dan
-tujuan penggunaanya.
+
+Untuk memilih jenis diagram yang tepat, kita perlu menentukan terlebih dahulu jenis dan tingkat pengukuran variabel yang akan kita sajikan. Kemudian, kita dapat mempertimbangkan jenis informasi apa yang ingin kita sajikan dan menyesuaikannya dengan cara menampilkan nilainya, bisa dengan sumbu (tegak/datar; Y/X) atau yang lainnya. Berikut adalah pembahasan sebagian jenis-jenis diagram berdasarkan jenis nilai dan tingkat pengukuran variabel yang sudah kita bahas dan tujuan penggunaanya.
 
 3.2.1.1 Variabel Kategorikal
-Visualisasi variabel kategorikal bertujuan menampilkan jumlah
-(frekuensi) objek untuk masing-masing kategori. Untuk
-menentukan jenis diagram yang tepat, kita perlu
-memperhatikan jumlah variabel yang dianalisis dan
-hubungan antarvariabel.
 
-46
-1) Grafik Batang (Column/Bar Chart)
-Grafik batang adalah grafik yang paling sering digunakan untuk
-memvisualkan variabel kategorikal. Grafik ini memberikan
-informasi distribusi frekuensi sebuah variabel. Tinggi batang
-mewakili frekuensi dari kategori-kategori yang ada dalam
-variabel, sementara kategori-kategori mewakili jumlah batang
-yang ada.
-Terdapat dua jenis grafik batang: tegak dan mendatar (Gambar
-3-1). Grafik batang tegak disebut juga column chart sementara
-yang mendatar disebut bar chart. Perbedaan column chart dan
-bar chart hanya terletak di sumbu yang menunjukkan
-frekuensi (tinggi/panjang) batang. Column chart
-menggunakan sumbu Y untuk menunjukkan tinggi/nilai
-frekuensinya, sementara bar chart menggunakan sumbu Y.
+Visualisasi variabel kategorikal bertujuan menampilkan jumlah (frekuensi) objek untuk masing-masing kategori. Untuk menentukan jenis diagram yang tepat, kita perlu memperhatikan jumlah variabel yang dianalisis dan hubungan antarvariabel.
+
+
+1) Grafik Batang (Column/Bar Chart)
+
+Grafik batang adalah grafik yang paling sering digunakan untuk memvisualkan variabel kategorikal. Grafik ini memberikan informasi distribusi frekuensi sebuah variabel. Tinggi batang mewakili frekuensi dari kategori-kategori yang ada dalam variabel, sementara kategori-kategori mewakili jumlah batang yang ada.
+
+Terdapat dua jenis grafik batang: tegak dan mendatar. Grafik batang tegak disebut juga column chart sementara yang mendatar disebut bar chart. Perbedaan column chart dan bar chart hanya terletak di sumbu yang menunjukkan frekuensi (tinggi/panjang) batang. Column chart menggunakan sumbu Y untuk menunjukkan tinggi/nilai frekuensinya, sementara bar chart menggunakan sumbu Y.
 
                     Gambar 3-1. Grafik batang tegak (column chart)
 
-Untuk lebih memahami bagaimana mengubah data terstruktur
-menjadi grafik batang, penjelasannya dapat dilihat di Gambar
-3-2. Objek-objek Var-1 memiliki nilai A, B, C, dan seterusnya.
-Kita perlu membuat tabel distribusi frekuensi dari kolom Var-1
-terlebih dahulu sehingga kita mengetahui kategori-kategori
-dalam Var-1 beserta frekuensinya. Jumlah kategori tersebut
-
-                                                                                 47
-akan menjadi jumlah batang, sementara frekuensinya menjadi
-tinggi atau panjang batang
+Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang, penjelasannya dapat dilihat di Gambar 3-2. Objek-objek Var-1 memiliki nilai A, B, C, dan seterusnya. Kita perlu membuat tabel distribusi frekuensi dari kolom Var-1 terlebih dahulu sehingga kita mengetahui kategori-kategori dalam Var-1 beserta frekuensinya. Jumlah kategori tersebut akan menjadi jumlah batang, sementara frekuensinya menjadi tinggi atau panjang batang
 
                 Gambar 3-2. Ilustrasi cara menghasilkan grafik batang
 
 2) Grafik Lollipop
-Diagram lollipop pada dasarnya serupa dengan diagram batang,
-hanya saja data direpresentasikan oleh tiang-tiang berujung
-lingkaran yang menyerupai permen loli. Penggunaannya sangat
-cocok untuk data berjumlah banyak guna menghindari efek
-Moiré (dibaca `moaré') [10]. Efek Moiré adalah ilusi optik
-pergerakan benda yang posisinya berdekatan dan membentuk
-sebuah kisi (fringe) seperti yang ditunjukkan Gambar 3-3,
-sehingga dapat menyulitkan pembaca grafik.
 
-   Gambar 3-3. Grafik lollipop dapat menghindari ilusi optik yang disebut
-                                                Moiré effect
+Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data direpresentasikan oleh tiang-tiang berujung lingkaran yang menyerupai permen loli. Penggunaannya sangat cocok untuk data berjumlah banyak guna menghindari efek Moir (dibaca `moar') [10]. Efek Moir adalah ilusi optik pergerakan benda yang posisinya berdekatan dan membentuk sebuah kisi (fringe) seperti yang ditunjukkan Gambar 3-3, sehingga dapat menyulitkan pembaca grafik.
 
-48
-3) Grafik Pai/Donat (Pie/Donut Chart)
-Grafik jenis ini juga sering digunakan untuk visualisasi variabel
-kategoris. Perbedaan dengan grafik batang adalah frekuensi tiap
-kategori tidak diperlihatkan dengan sumbu tegak, tetapi besar
-juring (sektor) lingkaran.
-Grafik donat memiliki lubang di bagian tengah (seperti namanya,
-kue donat) yang berfungsi untuk mempermudah pembandingan
-antarsektor.
+   Gambar 3-3. Grafik lollipop dapat menghindari ilusi optik yang disebut Moir effect
+
+3) Grafik Pai/Donat (Pie/Donut Chart)
+
+Grafik jenis ini juga sering digunakan untuk visualisasi variabel kategoris. Perbedaan dengan grafik batang adalah frekuensi tiap kategori tidak diperlihatkan dengan sumbu tegak, tetapi besar juring (sektor) lingkaran.
+
+Grafik donat memiliki lubang di bagian tengah (seperti namanya, kue donat) yang berfungsi untuk mempermudah pembandingan antarsektor.
 
                Gambar 3-4. Contoh grafik pai (kiri) dan donat (kanan)
 
-Proses pembuatannya sama seperti pembuatan grafik batang
-yang ditunjukkan oleh Gambar 3-2, hanya saja jumlah kategori
-menjadi jumlah sektor, sementara frekuensinya menjadi ukuran
-sektor.
+Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan oleh Gambar 3-2, hanya saja jumlah kategori menjadi jumlah sektor, sementara frekuensinya menjadi ukuran sektor.
+
 4) Grafik Batang Bertumpuk (Stacked Column/Bar Chart)
-Grafik batang bertumpuk (stacked bar/column chart) digunakan
-untuk membandingkan komposisi dari beberapa kategori. Setiap
-batang mewakili nilai total, yang kemudian dipecah menjadi
-beberapa segmen untuk menunjukkan bagaimana kontribusi
-masing-masing subkategori membentuk total tersebut.
 
-                                                                                 49
-                      Gambar 3-5. Contoh grafik batang bertumpuk
+Grafik batang bertumpuk (stacked bar/column chart) digunakan untuk membandingkan komposisi dari beberapa kategori. Setiap batang mewakili nilai total, yang kemudian dipecah menjadi beberapa segmen untuk menunjukkan bagaimana kontribusi masing-masing subkategori membentuk total tersebut.
 
-Kategori kedua variabel tersebut dibuat bertumpukan. Misalnya
-sebaran pengguna kendaraan (mobil, motor, sepeda)
-berdasarkan jenis kelamin (laki-laki dan perempuan)
-Untuk lebih memahami bagaimana mengubah data terstruktur
-menjadi grafik batang bertumpuk, ilustrasi berikut dapat kita
-gunakan. Objek-objek Var-1 memiliki nilai A, B, atau C. Tiap
-objek dengan nilai Var-1 yang sama juga memiliki nilai Var-2
-yang berbeda. Dengan demikian, objek-objek yang termasuk ke
-dalam nilai Vari-1 dan Var-2 yang sama akan menjadi
-tinggi/panjang dari grafik batang.
+                                                       
+Kategori kedua variabel tersebut dibuat bertumpukan. Misalnya sebaran pengguna kendaraan (mobil, motor, sepeda) berdasarkan jenis kelamin (laki-laki dan perempuan)
+
+Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang bertumpuk, ilustrasi berikut dapat kita gunakan. Objek-objek Var-1 memiliki nilai A, B, atau C. Tiap objek dengan nilai Var-1 yang sama juga memiliki nilai Var-2 yang berbeda. Dengan demikian, objek-objek yang termasuk ke
+dalam nilai Vari-1 dan Var-2 yang sama akan menjadi tinggi/panjang dari grafik batang.
 
        Gambar 3-6. Ilustrasi cara menghasilkan grafik batang bertumpuk
 
@@ -183,7 +111,7 @@ rentang tertentu. Rentang nilai ditunjukkan di sumbu X-nya,
 sementara sumbu Y adalah frekuensinya. Istilah untuk rentang-
 rentang ini disebut bin, sementara lebar/ukurannya disebut bin
 size atau bin width.
-Dalam grafik yang dibuat dalam Excel®, angka dalam kurung
+Dalam grafik yang dibuat dalam Excelï¿½, angka dalam kurung
 siku menunjukkan batas-batas rentang nilai yang dimaksud,
 sementara tinggi batang menunjukkan frekuensinya.
 
@@ -318,15 +246,15 @@ pesan yang ingin ditekankan.
 Untuk memilih visualisasi yang paling efektif, mulailah dengan
 menjawab beberapa pertanyaan mendasar berikut:
 
-    · Apa tujuan utama Anda? Apakah Anda ingin
+    ï¿½ Apa tujuan utama Anda? Apakah Anda ingin
          menunjukkan perbandingan, distribusi, komposisi, atau
          hubungan antarvariabel?
 
-    · Ada berapa variabel yang ingin Anda tampilkan?
+    ï¿½ Ada berapa variabel yang ingin Anda tampilkan?
          Apakah hanya satu, dua, atau lebih?
 
                                                                                  57
-    · Apa jenis nilai dan tingkat pengukuran dari
+    ï¿½ Apa jenis nilai dan tingkat pengukuran dari
          variabel-variabel tersebut? Apakah kategorikal
          (nominal, ordinal) atau numerik (metrik)?
 
@@ -338,7 +266,7 @@ Secara umum, tujuan visualisasi data dalam statistik dapat
 dikelompokkan menjadi beberapa kategori, yang masing-masing
 memiliki jenis diagram yang cocok.
 
-    · Untuk Menampilkan Distribusi Frekuensi: Jika
+    ï¿½ Untuk Menampilkan Distribusi Frekuensi: Jika
          tujuan Anda adalah menunjukkan seberapa sering setiap
          kategori dalam satu variabel muncul, Anda sedang
          menampilkan distribusi frekuensi. Ini paling cocok untuk
@@ -352,7 +280,7 @@ memiliki jenis diagram yang cocok.
                    berkontribusi pada keseluruhan (100%), yang
                    diwakili oleh besaran juring lingkaran.
 
-    · Untuk Menampilkan Komposisi: Ketika Anda ingin
+    ï¿½ Untuk Menampilkan Komposisi: Ketika Anda ingin
          menunjukkan bagian-bagian dari suatu keseluruhan,
          Anda sedang menampilkan komposisi. Grafik pai dan
          donat secara inheren melakukan ini.
@@ -365,7 +293,7 @@ memiliki jenis diagram yang cocok.
               luas setiap persegi panjang merepresentasikan
               proporsinya terhadap keseluruhan.
 
-· Untuk Menampilkan Distribusi Nilai Numerik:
+ï¿½ Untuk Menampilkan Distribusi Nilai Numerik:
     Jika Anda bekerja dengan variabel numerik (metrik)
     dan ingin memahami bagaimana nilainya tersebar, Anda
     dapat menggunakan histogram atau boxplot.
@@ -383,7 +311,7 @@ memiliki jenis diagram yang cocok.
               serta dapat secara efektif mengidentifikasi
               adanya nilai pencilan (outlier).
 
-· Untuk Menampilkan Hubungan Antarvariabel:
+ï¿½ Untuk Menampilkan Hubungan Antarvariabel:
          o Untuk melihat hubungan antara dua variabel
               numerik, scatterplot adalah pilihan yang
               paling tepat. Setiap titik pada grafik mewakili
@@ -407,23 +335,23 @@ lihat. Alih-alih hanya mendeskripsikan diagram (misalkan
 "batang A lebih tinggi dari batang B"), cobalah untuk
 menjawab pertanyaan "Lalu kenapa?"
 
-    · Pada grafik batang atau pai, cari kategori yang paling
+    ï¿½ Pada grafik batang atau pai, cari kategori yang paling
          dominan (modus) dan yang paling jarang. Tanyakan
          mengapa ada perbedaan yang signifikan di antara
          kategori tersebut.
 
-    · Pada histogram dan boxplot, perhatikan pusat, bentuk,
+    ï¿½ Pada histogram dan boxplot, perhatikan pusat, bentuk,
          dan sebaran data. Di mana sebagian besar data
          terkonsentrasi? Apakah datanya menyebar luas atau
          terkumpul rapat? Adakah nilai-nilai ekstrem (pencilan)
          yang mungkin memerlukan penyelidikan lebih lanjut?
 
-    · Pada scatterplot, perhatikan arah dan kekuatan
+    ï¿½ Pada scatterplot, perhatikan arah dan kekuatan
          hubungan. Apakah titik-titik membentuk pola garis
          lurus yang jelas, atau tersebar acak? Apakah ada
          kelompok-kelompok titik yang menonjol?
 
-    · Pada grafik garis, identifikasi tren secara keseluruhan
+    ï¿½ Pada grafik garis, identifikasi tren secara keseluruhan
          (naik, turun, atau datar). Carilah titik-titik puncak atau
          lembah yang signifikan dan hubungkan dengan peristiwa
          atau konteks yang mungkin menyebabkannya.
@@ -610,8 +538,8 @@ Dari Gambar 3-15 dapat terlihat bahwa perjalanan mahasiswa
 (student) untuk pergi ke dan pulang dari kampus (schooling,
 home) terjadi selama hampir sepanjang hari (garis ungu dan
 oranye). Hal ini terlihat dari nilai proporsi perjalanan di
-sepanjang waktu tersebut yang menyentuh angka ±0,14 pada
-jam 7 dan puncak kedua di jam 12 yakni ±0,09 untuk berkuliah
+sepanjang waktu tersebut yang menyentuh angka ï¿½0,14 pada
+jam 7 dan puncak kedua di jam 12 yakni ï¿½0,09 untuk berkuliah
 (schooling) dan home yang bernilai sekitar 0,05 di siang hari dan
 hampir 0,06 di sore hari.
 
@@ -661,9 +589,9 @@ UangSaku             2 = Fakultas Tarbiyah dan Keguruan,
 Jarak        = Tahun masuk kuliah (Masehi)
              = uang saku mahasiswa per bulan
                      1 = <1 juta rupiah,
-                     2 = 1­2 juta rupiah,
-                     3 = 2­3 juta rupiah,
-                     4 = 3­4 juta,
+                     2 = 1ï¿½2 juta rupiah,
+                     3 = 2ï¿½3 juta rupiah,
+                     4 = 3ï¿½4 juta,
                      5 = >4 juta)
              = jarak tempat tinggal mahasiswa dari kampus, kilometer
 

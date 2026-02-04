@@ -2,77 +2,45 @@
 
 ## Konsep Dasar
 
-Visualisasi data adalah representasi grafis dari informasi dan data. Dengan menggunakan elemen visual seperti grafik, bagan, dan peta, visualisasi data menyediakan cara yang mudah diakses untuk melihat dan memahami tren, outlier, dan pola dalam data.
+Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bentuk tabular/tabel menjadi bentuk grafis. Kita sering mendengar pepatah yang berbunyi *"a picture is worth a thousand words"* yang artinya kurang lebih "satu gambar bernilai seribu kata." Pepatah ini menggambarkan bahwa data yang disajikan dalam bentuk gambar/grafis dapat menampilkan banyak sekali informasi kepada audiens.
 
-Dalam R, `ggplot2` adalah paket yang paling populer dan kuat untuk membuat visualisasi data. Prinsip dasarnya adalah "Grammar of Graphics", yang membangun grafik komponen demi komponen (data, aesthetics, geometries).
+Sajian data dalam bentuk gambar disebut juga **grafik** atau **diagram** *(chart)*. Jenis grafik atau diagram yang digunakan sangat bergantung pada jenis dan tingkat pengukuran variabel yang akan divisualisasikan.
 
-## Jenis Visualisasi Dasar
+Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs [@fromdatatoviz] atau [@Ferdio].
 
-### Diagram Batang (Bar Chart)
 
-Cocok untuk membandingkan kuantitas antar kategori (Data Nominal/Ordinal).
+## Jenis-jenis Diagram
 
-```{r, echo=TRUE, eval=FALSE}
-library(ggplot2)
-ggplot(data, aes(x = Kategori, y = Jumlah)) +
-  geom_col() +
-  theme_minimal()
-```
+Untuk memilih jenis diagram yang tepat, kita perlu menentukan terlebih dahulu jenis dan tingkat pengukuran variabel yang akan kita sajikan. Kemudian, kita dapat mempertimbangkan jenis informasi apa yang ingin kita sajikan dan menyesuaikannya dengan cara menampilkan nilainya, bisa dengan sumbu (tegak/datar; Y/X) atau yang lainnya. Berikut adalah pembahasan sebagian jenis-jenis diagram berdasarkan jenis nilai dan tingkat pengukuran variabel yang sudah kita bahas dan tujuan penggunaanya.
 
-### Histogram
+### Variabel Kategorikal
 
-Cocok untuk melihat distribusi data numerik (Data Interval/Rasio).
+Visualisasi variabel kategorikal bertujuan menampilkan **jumlah (frekuensi) objek** untuk masing-masing kategori. Untuk menentukan jenis diagram yang tepat, kita perlu memperhatikan **jumlah variabel** yang dianalisis dan **hubungan antarvariabel**.
 
-```{r, echo=TRUE, eval=FALSE}
-ggplot(data, aes(x = VariabelNumerik)) +
-  geom_histogram(binwidth = 5)
-```
+#### Grafik Batang *(Column/Bar Chart)*
 
-### Boxplot
+Grafik batang adalah grafik yang paling sering digunakan untuk memvisualkan variabel kategorikal. Grafik ini memberikan informasi berupa **sebaran frekuensi** sebuah variabel. 
 
-Cocok untuk melihat ringkasan lima angka (min, k1, median, k3, max) dan outlier. Sangat baik untuk membandingkan distribusi antar grup.
+Bentuk grafik batang tersusun dari dua sumbu tegak (Y) dan datar (X). Tinggi batang sepanjang sumbu Y bermakna frekuensi dari kategori-kategori yang ada dalam variabel, sementara kategori-kategori berada di sepanjang sumbu X.
 
-```{r, echo=TRUE, eval=FALSE}
-ggplot(data, aes(x = Kategori, y = Nilai)) +
-  geom_boxplot()
-```
+Terdapat dua jenis grafik batang: tegak dan mendatar. Grafik batang tegak disebut juga *column chart* sementara yang mendatar disebut *bar chart*. Perbedaan column chart dan bar chart hanya terletak di **sumbu yang menunjukkan frekuensi kategori**, yakni tinggi/panjang batang. Grafik batang yang menggunakan sumbu Y untuk menunjukkan jumlah frekuensinya adalah ***column chart***, sementara yang menggunakan sumbu X adalah ***bar chart***.
 
-### Scatterplot
+Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang, penjelasannya dapat dilihat di Gambar \@ref:(fig-proses-column-chart). Objek-objek Var-1 memiliki nilai A, B, C, dan seterusnya. Kita perlu membuat tabel distribusi frekuensi dari kolom Var-1 terlebih dahulu sehingga kita mengetahui kategori-kategori dalam Var-1 beserta frekuensinya. Jumlah kategori tersebut akan menjadi jumlah batang, sementara frekuensinya menjadi tinggi atau panjang batang.
 
-Cocok untuk melihat hubungan antara dua variabel numerik.
+#### Grafik Batang Bertumpuk (Stacked Column/Bar Chart)
 
-```{r, echo=TRUE, eval=FALSE}
-ggplot(data, aes(x = X, y = Y)) +
-  geom_point()
-```
+Grafik batang bertumpuk *(stacked bar/column chart)* digunakan untuk membandingkan komposisi dari beberapa kategori. Setiap batang mewakili nilai total, yang kemudian dipecah menjadi beberapa segmen untuk menunjukkan bagaimana kontribusi masing-masing subkategori membentuk total tersebut. Kategori kedua variabel tersebut dibuat bertumpukan. Misalnya sebaran pengguna kendaraan (mobil, motor, sepeda) berdasarkan jenis kelamin (laki-laki dan perempuan).
 
-## Studi Kasus
+Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang bertumpuk, ilustrasi berikut dapat kita gunakan. Objek-objek Var-1 memiliki nilai A, B, atau C. Tiap objek dengan nilai Var-1 yang sama juga memiliki nilai Var-2 yang berbeda. Dengan demikian, objek-objek yang termasuk ke dalam nilai Vari-1 dan Var-2 yang sama akan menjadi tinggi/panjang dari grafik batang.
 
-Menggunakan data transportasi kampus, kita akan memvisualisasikan moda transportasi.
 
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
-library(ggplot2)
+#### Grafik Lollipop
 
-# Data contoh
-transport <- data.frame(
-  Moda = c("Motor", "Mobil", "Jalan Kaki", "Ojek Online", "Bus"),
-  Jumlah = c(150, 40, 80, 50, 20)
-)
+Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data direpresentasikan oleh tiang-tiang berujung lingkaran yang menyerupai permen loli. Penggunaannya sangat cocok untuk data berjumlah banyak guna menghindari efek Moiré (dibaca `moarey') @wikipedia2025moire. Efek Moiré adalah ilusi optik pergerakan benda yang posisinya berdekatan dan membentuk sebuah kisi (fringe) seperti yang ditunjukkan Gambar \@ref:(fig-contoh-moire), sehingga dapat menyulitkan pembaca grafik.
 
-# Membuat Bar Chart
-ggplot(transport, aes(x = reorder(Moda, -Jumlah), y = Jumlah)) +
-  geom_col(fill = "steelblue") +
-  theme_minimal() +
-  labs(title = "Moda Transportasi Mahasiswa",
-       x = "Jenis Moda",
-       y = "Jumlah Mahasiswa")
-```
+Grafik jenis ini juga sering digunakan untuk visualisasi variabel kategoris. Perbedaan dengan grafik batang adalah frekuensi tiap kategori tidak diperlihatkan dengan sumbu tegak, tetapi besar juring (sektor) lingkaran.
 
-::: rmdexercise
-## Soal Evaluasi 5 {.unnumbered}
+Grafik donat memiliki lubang di bagian tengah (seperti namanya, kue donat) yang berfungsi untuk mempermudah pembandingan antarsektor.
 
-1.  Jelaskan prinsip dasar pemilihan jenis grafik berdasarkan tingkat pengukuran variabelnya! [STP-3.1]{.capaian}
-2.  Apa fungsi Boxplot dalam analisis data eksploratif? [STP-3.2]{.capaian}
-3.  Perhatikan diagram berikut (misalkan ada diagram batang). Apa kesimpulan yang dapat diambil? [STP-3.3]{.capaian}
+#### Grafik *Treemap*
 
-:::
