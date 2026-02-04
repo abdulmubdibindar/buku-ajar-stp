@@ -80,38 +80,24 @@ dalam nilai Vari-1 dan Var-2 yang sama akan menjadi tinggi/panjang dari grafik b
 
 50
 5) Grafik Treemap
-Secara fungsi, treemap dan stacked bar chart sangat mirip karena
-keduanya menunjukkan distribusi frekuensi objek berdasarkan
-kategori variabelnya. Jika stacked chart memakai panjang
-segmen pada batang untuk menunjukkan proporsi, treemap
-menggunakan luas area persegi panjang. Frekuensinya
-diperlihatkan oleh luas persegi masing-masing kategori.
+
+Secara fungsi, treemap dan stacked bar chart sangat mirip karena keduanya menunjukkan distribusi frekuensi objek berdasarkan kategori variabelnya. Jika stacked chart memakai panjang segmen pada batang untuk menunjukkan proporsi, treemap menggunakan luas area persegi panjang. Frekuensinya diperlihatkan oleh luas persegi masing-masing kategori.
 
                               Gambar 3-7. Contoh grafik treemap
 
-Proses pembuatannya sama persis seperti dengan grafik batang
-bertumpuk yang ditunjukkan oleh Gambar 3-6.
-3.2.1.2 Variabel Numerik
-Berbeda dengan visualisasi variabel kategorikal yang
-memperlihatkan frekuensi masing-masing kategori dalam
-variabel, grafik data dengan variabel numerik merepresentasikan
-nilai yang sebenarnya.
-Persamaan dengan visualisasi pada data kategorikal adalah
-perlunya pertimbangan jumlah variabel dan cara menyajikan
-nilianya dengan sumbu atau bukan. Selain itu juga perlu
-dipertimbangkan keterurutan objek/observasi (order).
+Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk yang ditunjukkan oleh Gambar 3-6.
 
-                                                                                 51
-Berikut adalah tinjauan beberapa jenis grafik visualisasi data
-variabel numerik dengan masing-masing ilustrasi data
-terstrukturnya.
+3.2.1.2 Variabel Numerik
+
+Berbeda dengan visualisasi variabel kategorikal yang memperlihatkan frekuensi masing-masing kategori dalam variabel, grafik data dengan variabel numerik merepresentasikan nilai yang sebenarnya. Persamaan dengan visualisasi pada data kategorikal adalah perlunya pertimbangan jumlah variabel dan cara menyajikan nilianya dengan sumbu atau bukan. Selain itu juga perlu dipertimbangkan keterurutan objek/observasi (order).
+
+Berikut adalah tinjauan beberapa jenis grafik visualisasi data variabel numerik dengan masing-masing ilustrasi data terstrukturnya.
+
 1) Histogram
-Histogram menunjukkan distribusi nilai-nilai yang berada pada
-rentang tertentu. Rentang nilai ditunjukkan di sumbu X-nya,
-sementara sumbu Y adalah frekuensinya. Istilah untuk rentang-
-rentang ini disebut bin, sementara lebar/ukurannya disebut bin
-size atau bin width.
-Dalam grafik yang dibuat dalam Excel�, angka dalam kurung
+
+Histogram menunjukkan distribusi nilai-nilai yang berada pada rentang tertentu. Rentang nilai ditunjukkan di sumbu X-nya, sementara sumbu Y adalah frekuensinya. Istilah untuk rentang-rentang ini disebut bin, sementara lebar/ukurannya disebut bin size atau bin width.
+
+Dalam grafik yang dibuat dalam Excel, angka dalam kurung
 siku menunjukkan batas-batas rentang nilai yang dimaksud,
 sementara tinggi batang menunjukkan frekuensinya.
 
@@ -135,8 +121,7 @@ grafik batang jarak antarbatangnya. Grafik batang biasanya
 memiliki celah di antara batangnya, sementara histogram
 rapat-rapat.
 
-Proses pembuatan histogram dari tabel data terstruktur
-diilustrasikan pada Gambar 3-9. Dalam proses ini, variabel
+Proses pembuatan histogram dari tabel data terstruktur diilustrasikan pada Gambar 3-9. Dalam proses ini, variabel
 numerik dikelompokkan ke dalam interval atau rentang tertentu.
 Selanjutnya, frekuensi merepresentasikan jumlah total objek
 yang nilainya berada di dalam masing-masing rentang tersebut.
