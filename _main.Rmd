@@ -21,7 +21,10 @@ biblio-title: "Referensi"
 link-citations: true
 ---
 
-
+```{r setup, include=FALSE}
+# Opsi ini penting untuk mencegah error LaTeX karena karakter khusus dari pesan warning/error
+options(cli.hyperlink = FALSE)
+```
 
 # Statistika untuk Perencanaan {.unnumbered}
 
@@ -75,10 +78,9 @@ Setelah mempelajari bab ini, Anda diharapkan:
 
 Proses perencanaan adalah proses yang sangat memerlukan data di seluruh tahapannya. Seperti yang ditunjukkan dalam Gambar \@ref(fig:proses-perencanaan-rasional) tentang proses perencanaan secara rasional, setiap tahapnya sangat memerlukan data sebagai masukan untuk melaksanakan **setiap tahap**.
 
-<div class="figure" style="text-align: center">
-<img src="images/proses-perencanaan-rasional.png" alt="Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic" width="60%" />
-<p class="caption">(\#fig:proses-perencanaan-rasional)Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic</p>
-</div>
+```{r proses-perencanaan-rasional, fig.cap='Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic', echo=FALSE, out.width='60%',  fig.align='center'}
+knitr::include_graphics("images/proses-perencanaan-rasional.png")
+```
 
 Kita ambil contoh di tahap pertama. Penetapan tujuan dan sasaran memerlukan data dari berbagai sumber di wilayah perencanaan, termasuk dari pemangku kepentingan (*stakeholder*). Data-data tersebut dikumpulkan dan untuk merumuskan tujuan dan sasaran yang benar-benar mencerminkan kebutuhan wilayah perencanaan.
 
@@ -93,10 +95,9 @@ Kita akan mengambil kasus berupa perencanaan transportasi berkelanjutan mahasisw
 
 Dalam kasus ini, kita sudah mengetahui bahwa tujuan dari rektorat adalah “transportasi mahasiswa dan pegawai yang berkelanjutan.” Selanjutnya, kita perlu mengetahui apa persoalan yang ada saat ini di kampus ITERA (perhatikan Gambar \@ref(fig:kasus-bab1))
 
-<div class="figure" style="text-align: center">
-<img src="images/kasus-bab1.png" alt="Persoalan Transportasi di ITERA" width="60%" />
-<p class="caption">(\#fig:kasus-bab1)Persoalan Transportasi di ITERA</p>
-</div>
+```{r kasus-bab1, fig.cap='Persoalan Transportasi di ITERA', echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("images/kasus-bab1.png")
+```
 
 Untuk mengetahui persoalan terkait dengan transportasi mahasiswa dan pegawai, kita perlu mengajukan pertanyaan terkait hal ini, yakni *sudah sejauh mana keberlanjutan pada pola pergerakan pada mahasiswa dan pegawai kampus ITERA saat ini?*
 
@@ -194,10 +195,9 @@ Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 ele
 
 Perhatikan hasil pengumpulan data kuesioner berupa tabulasi data dari mahasiswa-mahasiswa ITERA seperti yang ditampilkan pada Gambar \@ref(fig:bab-2-ilus-data-terstruktur).
 
-<div class="figure" style="text-align: center">
-<img src="images/bab-2-ilus-data-terstruktur.png" alt="Ilustrasi elemen data terstruktur" width="60%" />
-<p class="caption">(\#fig:bab-2-ilus-data-terstruktur)Ilustrasi elemen data terstruktur</p>
-</div>
+```{r bab-2-ilus-data-terstruktur, echo=FALSE, fig.cap='Ilustrasi elemen data terstruktur', out.width='60%', fig.align='center'}
+knitr::include_graphics('images/bab-2-ilus-data-terstruktur.png')
+```
 
 Kita akan membedah elemen-elemen data terstruktur dari tabulasi data tersebut:
 - Objek dari tabulasi data tersebut adalah mahasiswa-mahasiswa ITERA. Tiap objek dibedakan berdasarkan variabel `ID-mahasiswa`.
@@ -220,32 +220,35 @@ Pelajari kasus yang berisi perbandingan antara data yang tidak rapi dan data yan
 
 Berikut adalah beberapa contoh kesalahan umum dalam struktur data dan perbaikannya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;"> Jenis Kesalahan </th>
-   <th style="text-align:left;"> Data Tidak Rapi (Salah) </th>
-   <th style="text-align:left;"> Data Rapi (Benar) </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> Kesalahan 1: Header Baris Bersarang </td>
-   <td style="text-align:left;width: 40%; "> <img src="images/bab-2-kesalahan-1-recreate.png" width="300"> </td>
-   <td style="text-align:left;width: 40%; "> <img src="images/bab-2-perbaikan-1-recreate.png" width="300"> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> Kesalahan 2: Struktur Kompleks </td>
-   <td style="text-align:left;width: 40%; "> <img src="images/bab-2-kesalahan-2-recreate.png" width="300"> </td>
-   <td style="text-align:left;width: 40%; "> <img src="images/bab-2-perbaikan-2-recreate.png" width="300"> </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> Kesalahan 3: Format Tidak Konsisten </td>
-   <td style="text-align:left;width: 40%; "> <img src="images/bab-2-kesalahan-3-recreate.png" width="300"> </td>
-   <td style="text-align:left;width: 40%; "> <img src="images/bab-2-perbaikan-3-recreate.png" width="300"> </td>
-  </tr>
-</tbody>
-</table>
+```{r tabel-perbandingan-tidy, echo=FALSE, message=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+# Membuat data frame dengan path gambar
+perbandingan <- data.frame(
+  Jenis = c('Kesalahan 1: Header Baris Bersarang', 
+            'Kesalahan 2: Struktur Kompleks', 
+            'Kesalahan 3: Format Tidak Konsisten'),
+  `Data Tidak Rapi` = c(
+    '<img src="images/bab-2-kesalahan-1-recreate.png" width="300"/>',
+    '<img src="images/bab-2-kesalahan-2-recreate.png" width="300"/>',
+    '<img src="images/bab-2-kesalahan-3-recreate.png" width="300"/>'
+  ),
+  `Data Rapi` = c(
+    '<img src="images/bab-2-perbaikan-1-recreate.png" width="300"/>',
+    '<img src="images/bab-2-perbaikan-2-recreate.png" width="300"/>',
+    '<img src="images/bab-2-perbaikan-3-recreate.png" width="300"/>'
+  ),
+  check.names = FALSE
+)
+
+kable(perbandingan, format = 'html', escape = FALSE, 
+      col.names = c('Jenis Kesalahan', 'Data Tidak Rapi (Salah)', 'Data Rapi (Benar)')) %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = '20%') %>%
+  column_spec(2, width = '40%') %>%
+  column_spec(3, width = '40%')
+```
 :::
 
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-elemen data terstruktur.
@@ -255,47 +258,25 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-eleme
 
 Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;"> ID_rumah </th>
-   <th style="text-align:right;"> Usia_KK </th>
-   <th style="text-align:right;"> Jml_anggota </th>
-   <th style="text-align:right;"> Luas_rumah </th>
-   <th style="text-align:right;"> Income_bln </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> 001 </td>
-   <td style="text-align:right;width: 40%; "> 55 </td>
-   <td style="text-align:right;width: 40%; "> 2 </td>
-   <td style="text-align:right;"> 101 </td>
-   <td style="text-align:right;"> 3.3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> 002 </td>
-   <td style="text-align:right;width: 40%; "> 64 </td>
-   <td style="text-align:right;width: 40%; "> 5 </td>
-   <td style="text-align:right;"> 245 </td>
-   <td style="text-align:right;"> 6.0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> 003 </td>
-   <td style="text-align:right;width: 40%; "> 33 </td>
-   <td style="text-align:right;width: 40%; "> 7 </td>
-   <td style="text-align:right;"> 69 </td>
-   <td style="text-align:right;"> 3.5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> 004 </td>
-   <td style="text-align:right;width: 40%; "> 28 </td>
-   <td style="text-align:right;width: 40%; "> 2 </td>
-   <td style="text-align:right;"> 44 </td>
-   <td style="text-align:right;"> 27.0 </td>
-  </tr>
-</tbody>
-</table>
+```{r tabel-1-3, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+tabel_1_3 <- data.frame(
+  ID_rumah = c('001', '002', '003', '004'),
+  Usia_KK = c(55, 64, 33, 28),
+  Jml_anggota = c(2, 5, 7, 2),
+  Luas_rumah = c(101, 245, 69, 44),
+  Income_bln = c(3.3, 6.0, 3.5, 27.0)
+)
+
+kable(tabel_1_3, format = 'html', escape = FALSE, 
+      col.names = c('ID_rumah', 'Usia_KK', 'Jml_anggota', 'Luas_rumah', 'Income_bln')) %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = '20%') %>%
+  column_spec(2, width = '40%') %>%
+  column_spec(3, width = '40%')
+```
 
 Jawablah pertanyaan-pertanyaan berikut berdasarkan tabel tersebut:
 
@@ -378,93 +359,55 @@ Dalam praktiknya, menentukan tingkat pengukuran variabel seringkali tidak mudah 
 
 Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilkan dalam Gambar \@ref(fig:fig-menentukan-tingpeng) berikut. 
 
-<div class="figure" style="text-align: center">
-<img src="images/bab-2-menentukan-tingpeng.svg" alt="Diagram alir menentukan tingkat pengukuran variabel"  />
-<p class="caption">(\#fig:fig-menentukan-tingpeng)Diagram alir menentukan tingkat pengukuran variabel</p>
-</div>
+```{r fig-menentukan-tingpeng, echo=FALSE, fig.cap='Diagram alir menentukan tingkat pengukuran variabel', fig.align='center'}
+knitr::include_graphics('images/bab-2-menentukan-tingpeng.svg')
+```
 
 ::: rmdkasus
 ### Studi Kasus: Menentukan Tingkat Pengukuran Variabel {.unnumbered}
 
 Melanjutkan kasus pengumpulan data pergerakan mahasiswa ITERA dari bab sebelumnya, setelah merumuskan pertanyaan penelitian mengenai keberlanjutan pola pergerakan, kita perlu menentukan variabel yang akan diukur. Berikut adalah variabel-variabel tersebut beserta penjelasannya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-2-rancangan-metadata)Penelaahan tingkat pengukuran variabel penelitian</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Variabel </th>
-   <th style="text-align:left;"> Nama Panggilan </th>
-   <th style="text-align:left;"> Penjelasan </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Moda transportasi yang digunakan responden </td>
-   <td style="text-align:left;"> `kend` </td>
-   <td style="text-align:left;"> Nilai-nilai dari moda transportasi bukanlah angka, melainkan label yang merepresentasikan jenis moda transportasi yang digunakan responden. Oleh karena itu, jenis nilai dari variabel ini adalah kategorik. Tidak ada tingkatan pada nilai-nilai di variabel ini, sehingga tingkat pengukurannya adalah nominal. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Jarak tempuh dari rumah ke kampus </td>
-   <td style="text-align:left;"> `jarak` </td>
-   <td style="text-align:left;"> Nilai-nilai dari jarak tempuh dari rumah ke kampus adalah angka yang merepresentasikan jarak tempuh dari rumah ke kampus. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan tidak ada jarak tempuh. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Banyaknya perjalanan ke kampus dalam satu pekan </td>
-   <td style="text-align:left;"> `frek_jalan_sepekan` </td>
-   <td style="text-align:left;"> Nilai-nilai dari banyaknya perjalanan ke kampus dalam satu pekan adalah angka yang merepresentasikan banyaknya perjalanan ke kampus dalam satu pekan. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan banyaknya perjalanan ke kampus 0 kali, atau tidak pernah ke kampus. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio. </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Total biaya transportasi selama satu pekan </td>
-   <td style="text-align:left;"> `biaya` </td>
-   <td style="text-align:left;"> Nilai-nilai dari total biaya transportasi selama satu pekan adalah angka yang merepresentasikan total biaya transportasi selama satu pekan. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan total biaya transportasi 0 rupiah, atau tidak mengeluarkan biaya transportasi. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio. </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-2-rancangan-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+rancangan <- data.frame(
+  Variabel = c('Moda transportasi yang digunakan responden', 'Jarak tempuh dari rumah ke kampus', 'Banyaknya perjalanan ke kampus dalam satu pekan', 'Total biaya transportasi selama satu pekan'),
+  `Nama Panggilan` = c('`kend`', '`jarak`', '`frek_jalan_sepekan`', '`biaya`'),
+  `Penjelasan` = c('Nilai-nilai dari moda transportasi bukanlah angka, melainkan label yang merepresentasikan jenis moda transportasi yang digunakan responden. Oleh karena itu, jenis nilai dari variabel ini adalah kategorik. Tidak ada tingkatan pada nilai-nilai di variabel ini, sehingga tingkat pengukurannya adalah nominal.',
+  'Nilai-nilai dari jarak tempuh dari rumah ke kampus adalah angka yang merepresentasikan jarak tempuh dari rumah ke kampus. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan tidak ada jarak tempuh. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio.',
+  'Nilai-nilai dari banyaknya perjalanan ke kampus dalam satu pekan adalah angka yang merepresentasikan banyaknya perjalanan ke kampus dalam satu pekan. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan banyaknya perjalanan ke kampus 0 kali, atau tidak pernah ke kampus. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio.',
+  'Nilai-nilai dari total biaya transportasi selama satu pekan adalah angka yang merepresentasikan total biaya transportasi selama satu pekan. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan total biaya transportasi 0 rupiah, atau tidak mengeluarkan biaya transportasi. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio.'),
+  check.names = FALSE
+)
+
+kable(rancangan, format = 'html', escape = FALSE, 
+      col.names = c('Variabel', 'Nama Panggilan', 'Penjelasan'),
+      caption = 'Penelaahan tingkat pengukuran variabel penelitian') %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+```
 
 Setelah menelaah jenis nilai dan tingkat pengukuran variabel, kita perlu menspesifikasikan nilai isian beserta satuannya. Jika menggunakan kodifikasi, aturannya harus diperjelas. Spesifikasi ini disebut **metadata**, yaitu data yang menjelaskan tentang data.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-2-metadata)Metadata variabel penelitian</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Variabel </th>
-   <th style="text-align:left;"> Nama Panggilan </th>
-   <th style="text-align:left;"> Tingkat Pengukuran </th>
-   <th style="text-align:left;"> Satuan </th>
-   <th style="text-align:left;"> Nilai yang mungkin </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Moda transportasi yang digunakan responden </td>
-   <td style="text-align:left;"> `kend` </td>
-   <td style="text-align:left;"> Nominal </td>
-   <td style="text-align:left;"> Tidak ada </td>
-   <td style="text-align:left;"> Sepeda motor, mobil, angkutan umum, dll </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Jarak tempuh dari rumah ke kampus </td>
-   <td style="text-align:left;"> `jarak` </td>
-   <td style="text-align:left;"> Metrik </td>
-   <td style="text-align:left;"> km </td>
-   <td style="text-align:left;"> 0 - ∞ km </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Banyaknya perjalanan ke kampus dalam satu pekan </td>
-   <td style="text-align:left;"> `frek_jalan_sepekan` </td>
-   <td style="text-align:left;"> Metrik </td>
-   <td style="text-align:left;"> kali </td>
-   <td style="text-align:left;"> 0 - 7 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Total biaya transportasi selama satu pekan </td>
-   <td style="text-align:left;"> `biaya` </td>
-   <td style="text-align:left;"> Metrik </td>
-   <td style="text-align:left;"> rupiah (Rp) </td>
-   <td style="text-align:left;"> 0 - ∞ </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-2-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+metadata <- data.frame(
+  Variabel = c('Moda transportasi yang digunakan responden', 'Jarak tempuh dari rumah ke kampus', 'Banyaknya perjalanan ke kampus dalam satu pekan', 'Total biaya transportasi selama satu pekan'),
+  `Nama Panggilan` = c('`kend`', '`jarak`', '`frek_jalan_sepekan`', '`biaya`'),
+  `Tingkat Pengukuran` = c('Nominal', 'Metrik', 'Metrik', 'Metrik'),
+  `Satuan` = c('Tidak ada', 'km', 'kali', 'rupiah (Rp)'),
+  `Nilai yang mungkin` = c('Sepeda motor, mobil, angkutan umum, dll', '0 - ∞ km', '0 - 7', '0 - ∞'),
+  check.names = FALSE
+)
+
+kable(metadata, format = 'html', escape = FALSE, 
+      col.names = c('Variabel', 'Nama Panggilan', 'Tingkat Pengukuran', 'Satuan', 'Nilai yang mungkin'),
+      caption = 'Metadata variabel penelitian') %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+```
 
 **Mengubah Tingkat Pengukuran Variabel**
 
@@ -472,48 +415,25 @@ Kita sudah menentukan nilai dari telaahan variabel-variabel yang sudah kita buat
 
 Kita bisa mengubah tingkat pengukuran variabel dari satu tingkat ke lainnya. Misalnya, kita bisa mengubah tingkat pengukuran variabel `jarak` dari metrik (rasio) menjadi ordinal. Karena tingkat pengukuran variabel metrik adalah angka, untuk mengubahnya menjadi ordinal maka kita perlu mengubahnya menjadi kategorikal. Artinya, kita perlu membuat kategori baru dari variabel `jarak` tersebut.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-2-ubah-tingkat-pengukuran)Metadata variabel penelitian yang diubah</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Variabel </th>
-   <th style="text-align:left;"> Nama Panggilan </th>
-   <th style="text-align:left;"> Tingkat Pengukuran </th>
-   <th style="text-align:left;"> Satuan </th>
-   <th style="text-align:left;"> Nilai yang mungkin </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Moda transportasi yang digunakan responden </td>
-   <td style="text-align:left;"> `kend` </td>
-   <td style="text-align:left;"> Nominal </td>
-   <td style="text-align:left;"> Tidak ada </td>
-   <td style="text-align:left;"> Sepeda motor, mobil, angkutan umum, dll </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;background-color: rgba(255, 255, 204, 255) !important;"> Jarak tempuh dari rumah ke kampus </td>
-   <td style="text-align:left;background-color: rgba(255, 255, 204, 255) !important;"> `jarak` </td>
-   <td style="text-align:left;background-color: rgba(255, 255, 204, 255) !important;"> Ordinal </td>
-   <td style="text-align:left;background-color: rgba(255, 255, 204, 255) !important;"> km </td>
-   <td style="text-align:left;background-color: rgba(255, 255, 204, 255) !important;"> 0 - 5 km,<br>5 - 10 km,<br>10 - 15 km,<br>dll </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Banyaknya perjalanan ke kampus dalam satu pekan </td>
-   <td style="text-align:left;"> `frek_jalan_sepekan` </td>
-   <td style="text-align:left;"> Metrik </td>
-   <td style="text-align:left;"> kali </td>
-   <td style="text-align:left;"> 0 - 7 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Total biaya transportasi selama satu pekan </td>
-   <td style="text-align:left;"> `biaya` </td>
-   <td style="text-align:left;"> Metrik </td>
-   <td style="text-align:left;"> rupiah (Rp) </td>
-   <td style="text-align:left;"> 0 - ∞ </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-2-ubah-tingkat-pengukuran, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+metadata_2 <- data.frame(
+  Variabel = c('Moda transportasi yang digunakan responden', 'Jarak tempuh dari rumah ke kampus', 'Banyaknya perjalanan ke kampus dalam satu pekan', 'Total biaya transportasi selama satu pekan'),
+  `Nama Panggilan` = c('`kend`', '`jarak`', '`frek_jalan_sepekan`', '`biaya`'),
+  `Tingkat Pengukuran` = c('Nominal', 'Ordinal', 'Metrik', 'Metrik'),
+  `Satuan` = c('Tidak ada', 'km', 'kali', 'rupiah (Rp)'),
+  `Nilai yang mungkin` = c('Sepeda motor, mobil, angkutan umum, dll', '0 - 5 km,<br>5 - 10 km,<br>10 - 15 km,<br>dll', '0 - 7', '0 - ∞'),
+  check.names = FALSE
+)
+
+kable(metadata_2, format = 'html', escape = FALSE, 
+      col.names = c('Variabel', 'Nama Panggilan', 'Tingkat Pengukuran', 'Satuan', 'Nilai yang mungkin'),
+      caption = 'Metadata variabel penelitian yang diubah') %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
+  row_spec(2, background = '#ffffcc')
+```
 :::
 
 
@@ -524,114 +444,47 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang tingkat peng
 
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-2-eval-3-preview)Cuplikan data survei mahasiswa</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> KodeResp </th>
-   <th style="text-align:center;"> Usia </th>
-   <th style="text-align:center;"> Fakultas </th>
-   <th style="text-align:center;"> ThnMsk </th>
-   <th style="text-align:center;"> UangSaku </th>
-   <th style="text-align:center;"> Jarak </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> 001 </td>
-   <td style="text-align:center;"> 22 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2020 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 19.27 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 002 </td>
-   <td style="text-align:center;"> 25 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2020 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.58 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 003 </td>
-   <td style="text-align:center;"> 24 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 2021 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.56 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 004 </td>
-   <td style="text-align:center;"> 19 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 2022 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.05 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 005 </td>
-   <td style="text-align:center;"> 23 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 2021 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.69 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 006 </td>
-   <td style="text-align:center;"> 20 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2020 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 1.37 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-2-eval-3-preview, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+preview_data <- data.frame(
+  KodeResp = c('001', '002', '003', '004', '005', '006'),
+  Usia = c(22, 25, 24, 19, 23, 20),
+  Fakultas = c(1, 1, 2, 3, 2, 1),
+  ThnMsk = c(2020, 2020, 2021, 2022, 2021, 2020),
+  UangSaku = c(2, 1, 1, 1, 1, 3),
+  Jarak = c(19.27, 0.58, 0.56, 1.05, 1.69, 1.37)
+)
+
+kable(preview_data, format = 'html', align = 'c',
+      caption = 'Cuplikan data survei mahasiswa') %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+```
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-2-eval-3-metadata)Metadata variabel survei mahasiswa</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Nama Variabel </th>
-   <th style="text-align:left;"> Deskripsi </th>
-   <th style="text-align:left;"> Nilai-nilai yang valid </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> `KodeResp` </td>
-   <td style="text-align:left;"> Nomor urut responden </td>
-   <td style="text-align:left;"> tiga digit angka, hingga jumlah responden minimal </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `Usia` </td>
-   <td style="text-align:left;"> Usia responden (tahun) </td>
-   <td style="text-align:left;"> 18 - ∞ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `Fakultas` </td>
-   <td style="text-align:left;"> Fakultas mahasiswa </td>
-   <td style="text-align:left;"> 1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `ThnMsk` </td>
-   <td style="text-align:left;"> Tahun masuk kuliah (Masehi) </td>
-   <td style="text-align:left;"> 2018 - 2022 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `UangSaku` </td>
-   <td style="text-align:left;"> Uang saku mahasiswa per bulan </td>
-   <td style="text-align:left;"> 1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `Jarak` </td>
-   <td style="text-align:left;"> Jarak tempat tinggal mahasiswa dari kampus (km) </td>
-   <td style="text-align:left;"> 0 - ∞ </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-2-eval-3-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+metadata_soal <- data.frame(
+  `Nama Variabel` = c('`KodeResp`', '`Usia`', '`Fakultas`', '`ThnMsk`', '`UangSaku`', '`Jarak`'),
+  Deskripsi = c('Nomor urut responden', 'Usia responden (tahun)', 'Fakultas mahasiswa', 'Tahun masuk kuliah (Masehi)', 'Uang saku mahasiswa per bulan', 'Jarak tempat tinggal mahasiswa dari kampus (km)'),
+  `Nilai-nilai yang valid` = c(
+  ' tiga digit angka, hingga jumlah responden minimal', 
+  ' 18 - &infin;', 
+  '1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi', 
+  '2018 - 2022',
+  '1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta',
+  '0 - &infin;')
+)
+
+kable(metadata_soal, format = 'html', escape = FALSE,
+      col.names = c('Nama Variabel', 'Deskripsi', 'Nilai-nilai yang valid'),
+      caption = 'Metadata variabel survei mahasiswa') %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+```
 
 Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut dan jelaskan! [STP-2.1]{.capaian}
 
@@ -692,231 +545,96 @@ Sekarang kita akan membahas teknik analisis statistik dalam set data (dataset) m
 
 Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta metadatanya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-kasus-dataset)Contoh Set Data Hasil Kuesioner</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> ID </th>
-   <th style="text-align:center;"> kend </th>
-   <th style="text-align:center;"> tingkat </th>
-   <th style="text-align:center;"> jarak </th>
-   <th style="text-align:center;"> perjalanan_senin </th>
-   <th style="text-align:center;"> biaya_pekan </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> 117 </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 2.34 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 118 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 2.66 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 40 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 119 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 3.84 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 30 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 120 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 3.64 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 40 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 121 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 3.17 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 45 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 138 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 3.84 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 15 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 139 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 3.84 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 60 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 161 </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 3.52 </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 0 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-kasus-dataset, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+kasus_dataset <- data.frame(
+  ID = c("117", "118", "119", "120", "121", "138", "139", "161"),
+  kend = c(5, 1, 1, 1, 1, 3, 3, 5),
+  tingkat = c(4, 4, 4, 4, 3, 4, 3, 2),
+  jarak = c(2.34, 2.66, 3.84, 3.64, 3.17, 3.84, 3.84, 3.52),
+  perjalanan_senin = c(3, 2, 2, 3, 2, 3, 4, 4),
+  biaya_pekan = c(0, 40, 30, 40, 45, 15, 60, 0)
+)
+
+kable(kasus_dataset,
+  format = "html", align = "c",
+  caption = "Contoh Set Data Hasil Kuesioner",
+  col.names = c("ID", "kend", "tingkat", "jarak", "perjalanan_senin", "biaya_pekan")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
 
 **Metadata:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-kasus-metadata)Metadata Variabel</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Variabel </th>
-   <th style="text-align:left;"> Keterangan </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> ID </td>
-   <td style="text-align:left;width: 80%; "> Nomor urut responden </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> kend </td>
-   <td style="text-align:left;width: 80%; "> Jenis kendaraan yang digunakan<br>1 = sepeda motor pribadi<br>2 = mobil pribadi<br>3 = layanan online<br>4 = menumpang kawan<br>5 = sepeda<br>6 = berjalan kaki </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> tingkat </td>
-   <td style="text-align:left;width: 80%; "> Tingkat semester kuliah<br>1 = Tahun pertama<br>2 = Tahun kedua<br>3 = Tahun ketiga<br>4 = Tahun keempat<br>5 = Swasta (mahasiswa tingkat akhir) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> jarak </td>
-   <td style="text-align:left;width: 80%; "> Jarak tempat tinggal mahasiswa dari kampus (kilometer) </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> perjalanan_senin </td>
-   <td style="text-align:left;width: 80%; "> Frekuensi perjalanan di hari Senin </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;width: 20%; font-weight: bold;"> biaya_pekan </td>
-   <td style="text-align:left;width: 80%; "> Biaya perjalanan selama sepekan (ribu rupiah) </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-kasus-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+metadata_kasus <- data.frame(
+  Variabel = c("ID", "kend", "tingkat", "jarak", "perjalanan_senin", "biaya_pekan"),
+  Keterangan = c(
+    "Nomor urut responden",
+    "Jenis kendaraan yang digunakan<br>1 = sepeda motor pribadi<br>2 = mobil pribadi<br>3 = layanan online<br>4 = menumpang kawan<br>5 = sepeda<br>6 = berjalan kaki",
+    "Tingkat semester kuliah<br>1 = Tahun pertama<br>2 = Tahun kedua<br>3 = Tahun ketiga<br>4 = Tahun keempat<br>5 = Swasta (mahasiswa tingkat akhir)",
+    "Jarak tempat tinggal mahasiswa dari kampus (kilometer)",
+    "Frekuensi perjalanan di hari Senin",
+    "Biaya perjalanan selama sepekan (ribu rupiah)"
+  )
+)
+
+kable(metadata_kasus,
+  format = "html", escape = FALSE,
+  col.names = c("Variabel", "Keterangan"),
+  caption = "Metadata Variabel"
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE, width = "20%") %>%
+  column_spec(2, width = "80%")
+```
 
 Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nominal atau ordinal), seperti `kend` dan `tingkat`. Untuk dapat menghitung analisis ini kita harus membuat terlebih dahulu tabel frekuensi untuk kedua variabel ini. Kemudian, barulah kita dapat menghitung frekuensi relatifnya menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif)
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-tabel-frekuensi-kend)Tabel Distribusi Frekuensi Untuk Variabel `kend`</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> kend </th>
-   <th style="text-align:center;"> Jenis kendaraan </th>
-   <th style="text-align:center;"> Frekuensi </th>
-   <th style="text-align:center;"> Frekuensi Relatif </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> Sepeda motor pribadi </td>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 0.50 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> Mobil pribadi </td>
-   <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> Layanan online </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.25 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> Menumpang kawan </td>
-   <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> Sepeda </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.25 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 6 </td>
-   <td style="text-align:center;"> Berjalan kaki </td>
-   <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> Total </td>
-   <td style="text-align:center;font-weight: bold;">  </td>
-   <td style="text-align:center;font-weight: bold;"> 8 </td>
-   <td style="text-align:center;font-weight: bold;"> 1.00 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-tabel-frekuensi-kend, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-tabel-frekuensi-tingkat)Tabel Distribusi Frekuensi Untuk Variabel `tingkat`</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> tingkat </th>
-   <th style="text-align:center;"> Tingkat kuliah </th>
-   <th style="text-align:center;"> Frekuensi </th>
-   <th style="text-align:center;"> Frekuensi Relatif </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> Tahun pertama </td>
-   <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.000 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> Tahun kedua </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.125 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> Tahun ketiga </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.250 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> Tahun keempat </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 0.625 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> Swasta (tingkat akhir) </td>
-   <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.000 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> Total </td>
-   <td style="text-align:center;font-weight: bold;">  </td>
-   <td style="text-align:center;font-weight: bold;"> 8 </td>
-   <td style="text-align:center;font-weight: bold;"> 1.000 </td>
-  </tr>
-</tbody>
-</table>
+frekuensi_kend <- data.frame(
+  kend = c(1, 2, 3, 4, 5, 6, "Total"),
+  Jenis_kendaraan = c("Sepeda motor pribadi", "Mobil pribadi", "Layanan online", "Menumpang kawan", "Sepeda", "Berjalan kaki", ""),
+  Frekuensi = c(4, 0, 2, 0, 2, 0, 8),
+  Frekuensi_Relatif = c(0.50, 0.00, 0.25, 0.00, 0.25, 0.00, 1.00)
+)
+
+kable(frekuensi_kend,
+  format = "html", align = "c",
+  caption = "Tabel Distribusi Frekuensi Untuk Variabel `kend`",
+  col.names = c("kend", "Jenis kendaraan", "Frekuensi", "Frekuensi Relatif")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(7, bold = TRUE)
+```
+
+```{r bab-3-tabel-frekuensi-tingkat, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+frekuensi_tingkat <- data.frame(
+  tingkat = c(1, 2, 3, 4, 5, "Total"),
+  Tingkat_kuliah = c("Tahun pertama", "Tahun kedua", "Tahun ketiga", "Tahun keempat", "Swasta (tingkat akhir)", ""),
+  Frekuensi = c(0, 1, 2, 5, 0, 8),
+  Frekuensi_Relatif = c(0.000, 0.125, 0.250, 0.625, 0.000, 1.000)
+)
+
+kable(frekuensi_tingkat,
+  format = "html", align = "c",
+  caption = "Tabel Distribusi Frekuensi Untuk Variabel `tingkat`",
+  col.names = c("tingkat", "Tingkat kuliah", "Frekuensi", "Frekuensi Relatif")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(6, bold = TRUE)
+```
 :::
 
 Teknik-teknik analisis statistik deskriptif yang termasuk ke dalam kelompok ukuran frekuensi di antaranya adalah **persentase/proporsi**, **laju**, **rasio**, dan **perubahan persentase**. Silakan pelajari cara penggunaan masing-masing teknik disertai kasus penerapannya.
@@ -947,28 +665,23 @@ Salah satu keunggulan persentase adalah kemampuannya untuk membandingkan dominan
 
 Berdasarkan survei pola mobilitas mahasiswa, diperoleh data sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-perbandingan-kampus)Data Pengguna Sepeda Motor Pribadi di ITERA dan UBL</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Kampus </th>
-   <th style="text-align:center;"> Total Responden </th>
-   <th style="text-align:center;"> Pengguna Sepeda Motor Pribadi </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> ITERA </td>
-   <td style="text-align:center;"> 429 </td>
-   <td style="text-align:center;"> 276 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> UBL </td>
-   <td style="text-align:center;"> 380 </td>
-   <td style="text-align:center;"> 195 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-perbandingan-kampus, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+perbandingan_kampus <- data.frame(
+  Kampus = c("ITERA", "UBL"),
+  Total_Responden = c(429, 380),
+  Pengguna_Motor = c(276, 195)
+)
+
+kable(perbandingan_kampus,
+  format = "html", align = "c",
+  caption = "Data Pengguna Sepeda Motor Pribadi di ITERA dan UBL",
+  col.names = c("Kampus", "Total Responden", "Pengguna Sepeda Motor Pribadi")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
 
 **Perbandingan Menggunakan Frekuensi Absolut:**
 
@@ -989,34 +702,26 @@ $$
 \text{Persentase sepeda motor UBL} = \frac{195}{380} \times 100\% = 51,3\%
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-hasil-perbandingan)Perbandingan Proporsi dan Persentase Pengguna Sepeda Motor</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Kampus </th>
-   <th style="text-align:center;"> Total Responden </th>
-   <th style="text-align:center;"> Pengguna Motor </th>
-   <th style="text-align:center;"> Proporsi </th>
-   <th style="text-align:center;"> Persentase </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> ITERA </td>
-   <td style="text-align:center;"> 429 </td>
-   <td style="text-align:center;"> 276 </td>
-   <td style="text-align:center;"> 0.643 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 64,3% </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> UBL </td>
-   <td style="text-align:center;"> 380 </td>
-   <td style="text-align:center;"> 195 </td>
-   <td style="text-align:center;"> 0.513 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 51,3% </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-hasil-perbandingan, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+hasil_perbandingan <- data.frame(
+  Kampus = c("ITERA", "UBL"),
+  Total = c(429, 380),
+  Motor = c(276, 195),
+  Proporsi = c(0.643, 0.513),
+  Persen = c("64,3%", "51,3%")
+)
+
+kable(hasil_perbandingan,
+  format = "html", align = "c",
+  caption = "Perbandingan Proporsi dan Persentase Pengguna Sepeda Motor",
+  col.names = c("Kampus", "Total Responden", "Pengguna Motor", "Proporsi", "Persentase")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(5, bold = TRUE, background = "#e8f4f8")
+```
 
 **Interpretasi:**
 
@@ -1057,63 +762,43 @@ Misalkan kita memiliki data survei pola mobilitas mahasiswa dari tiga perguruan 
 
 **Data Tahun 2023:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-data-laju-2023)Data Pengguna Sepeda Motor Tahun 2023</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Kampus </th>
-   <th style="text-align:center;"> Jumlah Mahasiswa </th>
-   <th style="text-align:center;"> Pengguna Sepeda Motor </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> UBL </td>
-   <td style="text-align:center;"> 8500 </td>
-   <td style="text-align:center;"> 5100 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> ITERA </td>
-   <td style="text-align:center;"> 5200 </td>
-   <td style="text-align:center;"> 3380 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> UNILA </td>
-   <td style="text-align:center;"> 12000 </td>
-   <td style="text-align:center;"> 7800 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-data-laju-2023, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+data_2023 <- data.frame(
+  Kampus = c("UBL", "ITERA", "UNILA"),
+  Jumlah_Mahasiswa = c(8500, 5200, 12000),
+  Pengguna_Motor = c(5100, 3380, 7800)
+)
+
+kable(data_2023,
+  format = "html", align = "c",
+  caption = "Data Pengguna Sepeda Motor Tahun 2023",
+  col.names = c("Kampus", "Jumlah Mahasiswa", "Pengguna Sepeda Motor")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
 
 **Data Tahun 2024:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-data-laju-2024)Data Pengguna Sepeda Motor Tahun 2024</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Kampus </th>
-   <th style="text-align:center;"> Jumlah Mahasiswa </th>
-   <th style="text-align:center;"> Pengguna Sepeda Motor </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> UBL </td>
-   <td style="text-align:center;"> 9200 </td>
-   <td style="text-align:center;"> 6072 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> ITERA </td>
-   <td style="text-align:center;"> 5800 </td>
-   <td style="text-align:center;"> 4350 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> UNILA </td>
-   <td style="text-align:center;"> 13500 </td>
-   <td style="text-align:center;"> 9450 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-data-laju-2024, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+data_2024 <- data.frame(
+  Kampus = c("UBL", "ITERA", "UNILA"),
+  Jumlah_Mahasiswa = c(9200, 5800, 13500),
+  Pengguna_Motor = c(6072, 4350, 9450)
+)
+
+kable(data_2024,
+  format = "html", align = "c",
+  caption = "Data Pengguna Sepeda Motor Tahun 2024",
+  col.names = c("Kampus", "Jumlah Mahasiswa", "Pengguna Sepeda Motor")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
 
 Dengan menggunakan Persamaan \@ref(eq:konsep-laju), kita dapat menghitung laju penggunaan sepeda motor untuk masing-masing kampus:
 
@@ -1188,78 +873,52 @@ Mari kita gunakan data mahasiswa ITERA untuk menghitung rasio penggunaan kendara
 
 Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-data-rasio-itera)Distribusi Penggunaan Kendaraan Mahasiswa ITERA</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Kategori Kendaraan </th>
-   <th style="text-align:center;"> Jumlah Mahasiswa </th>
-   <th style="text-align:center;"> Persentase </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Kendaraan Bermotor </td>
-   <td style="text-align:center;"> 398 </td>
-   <td style="text-align:center;"> 92,8% </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Kendaraan Non-Bermotor </td>
-   <td style="text-align:center;"> 31 </td>
-   <td style="text-align:center;"> 7,2% </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> Total </td>
-   <td style="text-align:center;font-weight: bold;"> 429 </td>
-   <td style="text-align:center;font-weight: bold;"> 100% </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-data-rasio-itera, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+data_kendaraan <- data.frame(
+  Kategori = c("Kendaraan Bermotor", "Kendaraan Non-Bermotor", "Total"),
+  Jumlah = c(398, 31, 429),
+  Persen = c("92,8%", "7,2%", "100%")
+)
+
+kable(data_kendaraan,
+  format = "html", align = "c",
+  caption = "Distribusi Penggunaan Kendaraan Mahasiswa ITERA",
+  col.names = c("Kategori Kendaraan", "Jumlah Mahasiswa", "Persentase")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(3, bold = TRUE)
+```
 
 **Detail per jenis kendaraan:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-detail-kendaraan-itera)Detail Jenis Kendaraan yang Digunakan</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Jenis Kendaraan </th>
-   <th style="text-align:center;"> Kategori </th>
-   <th style="text-align:center;"> Jumlah </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> Sepeda Motor Pribadi </td>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> Bermotor </td>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> 276 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> Mobil Pribadi </td>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> Bermotor </td>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> 47 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> Transportasi Online </td>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> Bermotor </td>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> 32 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> Menumpang (Kendaraan Bermotor) </td>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> Bermotor </td>
-   <td style="text-align:center;background-color: rgba(232, 244, 248, 255) !important;"> 43 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;background-color: rgba(248, 249, 232, 255) !important;"> Sepeda </td>
-   <td style="text-align:center;background-color: rgba(248, 249, 232, 255) !important;"> Non-Bermotor </td>
-   <td style="text-align:center;background-color: rgba(248, 249, 232, 255) !important;"> 18 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;background-color: rgba(248, 249, 232, 255) !important;"> Berjalan Kaki </td>
-   <td style="text-align:center;background-color: rgba(248, 249, 232, 255) !important;"> Non-Bermotor </td>
-   <td style="text-align:center;background-color: rgba(248, 249, 232, 255) !important;"> 13 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-detail-kendaraan-itera, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+detail_kendaraan <- data.frame(
+  Jenis = c(
+    "Sepeda Motor Pribadi", "Mobil Pribadi", "Transportasi Online",
+    "Menumpang (Kendaraan Bermotor)", "Sepeda", "Berjalan Kaki"
+  ),
+  Kategori = c(
+    "Bermotor", "Bermotor", "Bermotor", "Bermotor",
+    "Non-Bermotor", "Non-Bermotor"
+  ),
+  Jumlah = c(276, 47, 32, 43, 18, 13)
+)
+
+kable(detail_kendaraan,
+  format = "html", align = "c",
+  caption = "Detail Jenis Kendaraan yang Digunakan",
+  col.names = c("Jenis Kendaraan", "Kategori", "Jumlah")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(1:4, background = "#e8f4f8") %>%
+  row_spec(5:6, background = "#f8f9e8")
+```
 
 Menggunakan Persamaan \@ref(eq:konsep-rasio), kita dapat menghitung rasio penggunaan kendaraan bermotor terhadap kendaraan non-bermotor:
 
@@ -1332,31 +991,25 @@ $$
 \text{Persentase TO Periode 2} = \frac{32}{429} \times 100\% = 7,5\%
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-data-percentage-change)Data Penggunaan Transportasi Online di ITERA</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Periode </th>
-   <th style="text-align:center;"> Total Responden </th>
-   <th style="text-align:center;"> Pengguna Transportasi Online </th>
-   <th style="text-align:center;"> Persentase </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Semester Ganjil 2023 </td>
-   <td style="text-align:center;"> 200 </td>
-   <td style="text-align:center;"> 24 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(248, 244, 232, 255) !important;"> 12,0% </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Semester Ganjil 2024 </td>
-   <td style="text-align:center;"> 429 </td>
-   <td style="text-align:center;"> 32 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(248, 244, 232, 255) !important;"> 7,5% </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-data-percentage-change, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+data_perubahan <- data.frame(
+  Periode = c("Semester Ganjil 2023", "Semester Ganjil 2024"),
+  Total_Responden = c(200, 429),
+  Pengguna_TO = c(24, 32),
+  Persentase = c("12,0%", "7,5%")
+)
+
+kable(data_perubahan,
+  format = "html", align = "c",
+  caption = "Data Penggunaan Transportasi Online di ITERA",
+  col.names = c("Periode", "Total Responden", "Pengguna Transportasi Online", "Persentase")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(4, bold = TRUE, background = "#f8f4e8")
+```
 
 Sekarang kita hitung perubahan persentase menggunakan Persamaan \@ref(eq:konsep-percentage-change):
 
@@ -1405,28 +1058,25 @@ $$
 
 **Sebenarnya, kenaikan pajak tersebut adalah 9,09%, bukan 1%!**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-kasus-pajak)Perbandingan Interpretasi Kenaikan Pajak</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Jenis Interpretasi </th>
-   <th style="text-align:center;"> Perhitungan </th>
-   <th style="text-align:center;"> Makna </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;background-color: rgba(255, 232, 232, 255) !important;"> Selisih Absolut (KELIRU) </td>
-   <td style="text-align:center;background-color: rgba(255, 232, 232, 255) !important;"> 12% - 11% = 1 poin persentase </td>
-   <td style="text-align:center;background-color: rgba(255, 232, 232, 255) !important;"> Terkesan kenaikan kecil </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;background-color: rgba(232, 248, 232, 255) !important;"> Perubahan Persentase (BENAR) </td>
-   <td style="text-align:center;background-color: rgba(232, 248, 232, 255) !important;"> (12% - 11%) / 11% × 100% = 9,09% </td>
-   <td style="text-align:center;background-color: rgba(232, 248, 232, 255) !important;"> Kenaikan hampir 10% dari beban pajak awal </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-kasus-pajak, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+data_pajak <- data.frame(
+  Interpretasi = c("Selisih Absolut (KELIRU)", "Perubahan Persentase (BENAR)"),
+  Perhitungan = c("12% - 11% = 1 poin persentase", "(12% - 11%) / 11% × 100% = 9,09%"),
+  Makna = c("Terkesan kenaikan kecil", "Kenaikan hampir 10% dari beban pajak awal")
+)
+
+kable(data_pajak,
+  format = "html", align = "c",
+  caption = "Perbandingan Interpretasi Kenaikan Pajak",
+  col.names = c("Jenis Interpretasi", "Perhitungan", "Makna")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(1, background = "#ffe8e8") %>%
+  row_spec(2, background = "#e8f8e8")
+```
 
 **Dampak Fatal Kesalahan Interpretasi:**
 
@@ -1456,34 +1106,26 @@ $$
 \text{Tambahan tahunan} = \text{Rp 100.000} \times 12 = \text{Rp 1.200.000}
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-dampak-ekonomi)Dampak Kenaikan Pajak pada Penghasilan Rp 10 Juta/Bulan</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Periode </th>
-   <th style="text-align:center;"> Pajak Lama (11%) </th>
-   <th style="text-align:center;"> Pajak Baru (12%) </th>
-   <th style="text-align:center;"> Tambahan Beban </th>
-   <th style="text-align:center;"> Perubahan % </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Per Bulan </td>
-   <td style="text-align:center;"> Rp 1.100.000 </td>
-   <td style="text-align:center;"> Rp 1.200.000 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 244, 232, 255) !important;"> Rp 100.000 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 244, 232, 255) !important;"> 9,09% </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Per Tahun </td>
-   <td style="text-align:center;"> Rp 13.200.000 </td>
-   <td style="text-align:center;"> Rp 14.400.000 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 244, 232, 255) !important;"> Rp 1.200.000 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 244, 232, 255) !important;"> 9,09% </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-dampak-ekonomi, echo=FALSE, out.width='75%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+dampak_ekonomi <- data.frame(
+  Periode = c("Per Bulan", "Per Tahun"),
+  Pajak_Lama = c("Rp 1.100.000", "Rp 13.200.000"),
+  Pajak_Baru = c("Rp 1.200.000", "Rp 14.400.000"),
+  Tambahan_Beban = c("Rp 100.000", "Rp 1.200.000"),
+  Persen_Kenaikan = c("9,09%", "9,09%")
+)
+
+kable(dampak_ekonomi,
+  format = "html", align = "c",
+  caption = "Dampak Kenaikan Pajak pada Penghasilan Rp 10 Juta/Bulan",
+  col.names = c("Periode", "Pajak Lama (11%)", "Pajak Baru (12%)", "Tambahan Beban", "Perubahan %")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(4:5, bold = TRUE, background = "#fff4e8")
+```
 
 **Kesimpulan dan Implikasi:**
 
@@ -1553,49 +1195,23 @@ Makna yang dihasilkan teknik analisis ini sama saja dengan *mean*, yakni **pusat
 
 Perhatikan data biaya perjalanan sepekan (ribu rupiah) dari 8 mahasiswa ITERA:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-data-biaya-awal)Biaya Perjalanan Sepekan (Ribu Rupiah)</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Mahasiswa </th>
-   <th style="text-align:center;"> Biaya (Rp) </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Mhs 1 </td>
-   <td style="text-align:center;"> 50 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 2 </td>
-   <td style="text-align:center;"> 55 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 3 </td>
-   <td style="text-align:center;"> 60 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 4 </td>
-   <td style="text-align:center;"> 65 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 5 </td>
-   <td style="text-align:center;"> 70 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 6 </td>
-   <td style="text-align:center;"> 75 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 7 </td>
-   <td style="text-align:center;"> 80 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 8 </td>
-   <td style="text-align:center;"> 85 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-data-biaya-awal, echo=FALSE, out.width='50%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+biaya_normal <- c(50, 55, 60, 65, 70, 75, 80, 85)
+data_awal <- data.frame(
+  Mahasiswa = paste("Mhs", 1:8),
+  Biaya = biaya_normal
+)
+
+kable(data_awal,
+  format = "html", align = "c",
+  caption = "Biaya Perjalanan Sepekan (Ribu Rupiah)",
+  col.names = c("Mahasiswa", "Biaya (Rp)")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
 
 **Perhitungan Mean:**
 
@@ -1613,49 +1229,21 @@ $$
 
 Sekarang misalkan Mhs 8 memiliki biaya ekstrem Rp 500.000 (menggunakan layanan *premium*):
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-data-biaya-outlier)Biaya Perjalanan dengan Pencilan</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Mahasiswa </th>
-   <th style="text-align:center;"> Biaya (Rp) </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Mhs 1 </td>
-   <td style="text-align:center;"> 50 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 2 </td>
-   <td style="text-align:center;"> 55 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 3 </td>
-   <td style="text-align:center;"> 60 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 4 </td>
-   <td style="text-align:center;"> 65 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 5 </td>
-   <td style="text-align:center;"> 70 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 6 </td>
-   <td style="text-align:center;"> 75 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Mhs 7 </td>
-   <td style="text-align:center;"> 80 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 232, 232, 255) !important;"> Mhs 8 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 232, 232, 255) !important;"> 500 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-data-biaya-outlier, echo=FALSE, out.width='50%', fig.align='center'}
+biaya_outlier <- c(50, 55, 60, 65, 70, 75, 80, 500)
+data_outlier <- data.frame(
+  Mahasiswa = paste("Mhs", 1:8),
+  Biaya = biaya_outlier
+)
+
+kable(data_outlier,
+  format = "html", align = "c",
+  caption = "Biaya Perjalanan dengan Pencilan",
+  col.names = c("Mahasiswa", "Biaya (Rp)")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(8, bold = TRUE, background = "#ffe8e8")
+```
 
 **Perhitungan Mean Baru:**
 
@@ -1669,34 +1257,24 @@ $$
 \text{Median} = \frac{65 + 70}{2} = 67,5
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-perbandingan-mean-median)Perbandingan Mean dan Median</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Kondisi </th>
-   <th style="text-align:center;"> Mean </th>
-   <th style="text-align:center;"> Median </th>
-   <th style="text-align:center;"> Δ Mean </th>
-   <th style="text-align:center;"> Δ Median </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Tanpa Pencilan </td>
-   <td style="text-align:center;"> 67,5 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 248, 232, 255) !important;"> 67,5 </td>
-   <td style="text-align:center;"> — </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 248, 232, 255) !important;"> — </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Dengan Pencilan </td>
-   <td style="text-align:center;"> 119,4 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 248, 232, 255) !important;"> 67,5 </td>
-   <td style="text-align:center;"> +51,9 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 248, 232, 255) !important;"> 0 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-perbandingan-mean-median, echo=FALSE, out.width='60%', fig.align='center'}
+perbandingan <- data.frame(
+  Kondisi = c("Tanpa Pencilan", "Dengan Pencilan"),
+  Mean = c("67,5", "119,4"),
+  Median = c("67,5", "67,5"),
+  Selisih_Mean = c("—", "+51,9"),
+  Selisih_Median = c("—", "0")
+)
+
+kable(perbandingan,
+  format = "html", align = "c",
+  caption = "Perbandingan Mean dan Median",
+  col.names = c("Kondisi", "Mean", "Median", "Δ Mean", "Δ Median")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(3, bold = TRUE, background = "#e8f8e8") %>%
+  column_spec(5, bold = TRUE, background = "#e8f8e8")
+```
 
 **Interpretasi:**
 
@@ -1722,33 +1300,24 @@ Modus sangat berguna untuk mengidentifikasi nilai yang paling umum dalam data ka
 
 Dari dataset 8 mahasiswa yang telah digunakan sebelumnya, kita dapat membuat tabel frekuensi untuk variabel `kend`:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-modus-kend)Distribusi Frekuensi Jenis Kendaraan</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Kode </th>
-   <th style="text-align:center;"> Jenis Kendaraan </th>
-   <th style="text-align:center;"> Frekuensi </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 1 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> Sepeda motor pribadi </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> Layanan online </td>
-   <td style="text-align:center;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> Sepeda </td>
-   <td style="text-align:center;"> 2 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-modus-kend, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+modus_kend <- data.frame(
+  kend = c(1, 3, 5),
+  Jenis_kendaraan = c("Sepeda motor pribadi", "Layanan online", "Sepeda"),
+  Frekuensi = c(4, 2, 2)
+)
+
+kable(modus_kend,
+  format = "html", align = "c",
+  caption = "Distribusi Frekuensi Jenis Kendaraan",
+  col.names = c("Kode", "Jenis Kendaraan", "Frekuensi")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(1, bold = TRUE, background = "#e8f4f8")
+```
 
 **Hasil:**
 
@@ -1758,29 +1327,23 @@ Modus untuk variabel `kend` adalah **sepeda motor pribadi** (kode 1) dengan frek
 
 Variabel ini menunjukkan berapa kali mahasiswa melakukan perjalanan di hari Senin. Mari kita buat tabel frekuensinya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-modus-perjalanan)Distribusi Frekuensi Perjalanan di Hari Senin</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Jumlah Perjalanan </th>
-   <th style="text-align:center;"> Frekuensi </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 244, 232, 255) !important;"> 2 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 244, 232, 255) !important;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 244, 232, 255) !important;"> 3 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(255, 244, 232, 255) !important;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 2 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-modus-perjalanan, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+modus_perjalanan <- data.frame(
+  Perjalanan = c(2, 3, 4),
+  Frekuensi = c(3, 3, 2)
+)
+
+kable(modus_perjalanan,
+  format = "html", align = "c",
+  caption = "Distribusi Frekuensi Perjalanan di Hari Senin",
+  col.names = c("Jumlah Perjalanan", "Frekuensi")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(1:2, bold = TRUE, background = "#fff4e8")
+```
 
 **Hasil:**
 
@@ -1828,58 +1391,28 @@ Indeks Variasi Kualitatif (IQV) sangat berguna untuk mengukur tingkat keberagama
 
 Dari set data hasil penyebaran kuesioner yang berisi 400 mahasiswa, kita dapat membuat tabel distribusi frekuensi untuk variabel `Fakultas`:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-data-iqv-fakultas)Distribusi Mahasiswa UIN Raden Intan Lampung Berdasarkan Fakultas</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Fakultas </th>
-   <th style="text-align:center;"> Frekuensi </th>
-   <th style="text-align:center;"> Proporsi </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Ekonomi dan Bisnis Islam </td>
-   <td style="text-align:center;"> 44 </td>
-   <td style="text-align:center;"> 0.110 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Syariah </td>
-   <td style="text-align:center;"> 118 </td>
-   <td style="text-align:center;"> 0.295 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Ushuluddin dan Studi Agama </td>
-   <td style="text-align:center;"> 58 </td>
-   <td style="text-align:center;"> 0.145 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Dakwah dan Ilmu Komunikasi </td>
-   <td style="text-align:center;"> 130 </td>
-   <td style="text-align:center;"> 0.325 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Tarbiyah dan Keguruan </td>
-   <td style="text-align:center;"> 15 </td>
-   <td style="text-align:center;"> 0.038 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Sains dan Teknologi </td>
-   <td style="text-align:center;"> 20 </td>
-   <td style="text-align:center;"> 0.050 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Ilmu Sosial dan Ilmu Politik </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 0.025 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Adab </td>
-   <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 0.013 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-data-iqv-fakultas, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+# Data distribusi fakultas (sesuai dengan dataset)
+data_fakultas <- data.frame(
+  Fakultas = c(
+    "Ekonomi dan Bisnis Islam", "Syariah", "Ushuluddin dan Studi Agama",
+    "Dakwah dan Ilmu Komunikasi", "Tarbiyah dan Keguruan",
+    "Sains dan Teknologi", "Ilmu Sosial dan Ilmu Politik", "Adab"
+  ),
+  Frekuensi = c(44, 118, 58, 130, 15, 20, 10, 5),
+  Proporsi = c(0.110, 0.295, 0.145, 0.325, 0.038, 0.050, 0.025, 0.013)
+)
+
+kable(data_fakultas,
+  format = "html", align = "c",
+  caption = "Distribusi Mahasiswa UIN Raden Intan Lampung Berdasarkan Fakultas",
+  col.names = c("Fakultas", "Frekuensi", "Proporsi")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
 
 Kita mengaplikasikan Persamaan \@ref(eq:konsep-iqv) dengan langkah-langkah seperti berikut. Simak dan bila perlu tulis ulang langkah-langkahnya oleh Anda.
 
@@ -1902,33 +1435,20 @@ $$
 IQV = \frac{8(1 - 0,231)}{8 - 1} = \frac{8 \times 0,769}{7} = \frac{6,152}{7} = 0,879
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-hasil-iqv)Hasil Perhitungan IQV</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Komponen </th>
-   <th style="text-align:center;"> Nilai </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> Jumlah kategori (k) </td>
-   <td style="text-align:center;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> Σpᵢ² </td>
-   <td style="text-align:center;"> 0,231 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 1 - Σpᵢ² </td>
-   <td style="text-align:center;"> 0,769 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> IQV </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 0,879 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-hasil-iqv, echo=FALSE, out.width='60%', fig.align='center'}
+hasil_iqv <- data.frame(
+  Komponen = c("Jumlah kategori (k)", "Σpᵢ²", "1 - Σpᵢ²", "IQV"),
+  Nilai = c("8", "0,231", "0,769", "0,879")
+)
+
+kable(hasil_iqv,
+  format = "html", align = "c",
+  caption = "Hasil Perhitungan IQV",
+  col.names = c("Komponen", "Nilai")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  row_spec(4, bold = TRUE, background = "#e8f4f8")
+```
 
 **Interpretasi:**
 
@@ -1950,31 +1470,36 @@ Rentang dapat digunakan untuk membandingkan tingkat keberagaman data antar kelom
 
 Berdasarkan data survei pola mobilitas mahasiswa, kita akan menganalisis variabel `biaya_perjalanan` (biaya perjalanan sepekan dalam rupiah). Perhatikan statistik deskriptif dari kedua kelompok:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-data-rentang)Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> Kampus </th>
-   <th style="text-align:center;"> Minimum (Rp) </th>
-   <th style="text-align:center;"> Maksimum (Rp) </th>
-   <th style="text-align:center;"> Rentang (Rp) </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> UIN RIL </td>
-   <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 150 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 150 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> UNILA </td>
-   <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 400 </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 400 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-data-rentang, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+# Membaca data
+data_uin <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
+
+# Menghitung max dan min
+max_uin <- max(data_uin$`biaya.dalam.sepekan`, na.rm = TRUE)
+min_uin <- min(data_uin$`biaya.dalam.sepekan`, na.rm = TRUE)
+max_unila <- max(data_unila$`biaya.dalam.sepekan`, na.rm = TRUE)
+min_unila <- min(data_unila$`biaya.dalam.sepekan`, na.rm = TRUE)
+
+# Menghitung statistik untuk biaya_perjalanan
+stat_rentang <- data.frame(
+  Kampus = c("UIN RIL", "UNILA"),
+  Min = c(min_uin, min_unila),
+  Maks = c(max_uin, max_unila),
+  Rentang = c(max_uin - min_uin, max_unila - min_unila)
+)
+
+kable(stat_rentang,
+  format = "html", align = "c",
+  caption = "Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA",
+  col.names = c("Kampus", "Minimum (Rp)", "Maksimum (Rp)", "Rentang (Rp)")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(4, bold = TRUE, background = "#e8f4f8")
+```
 
 **Perhitungan Rentang untuk UIN RIL:**
 
@@ -2016,47 +1541,46 @@ Kuartil, desil, dan persentil adalah ukuran penyebaran yang digunakan untuk memb
 
 Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$), dan kuartil atas ($Q_3$).
 
-<div class="figure" style="text-align: center">
-<img src="images/bab-3-kuartil.png" alt="Ilustrasi Kuartil" width="647" />
-<p class="caption">(\#fig:fig-ilustrasi-kuartil)Ilustrasi Kuartil</p>
-</div>
+```{r fig-ilustrasi-kuartil, echo=FALSE, fig.align='center', fig.cap='Ilustrasi Kuartil'}
+knitr::include_graphics("images/bab-3-kuartil.png")
+```
 
 ::: rmdkasus
 ### Studi Kasus: Analisis Posisi Data dengan Kuartil {.unnumbered}
 
 Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-kuartil-unila)Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = 393)</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;">   </th>
-   <th style="text-align:center;"> Statistik </th>
-   <th style="text-align:center;"> Posisi Data </th>
-   <th style="text-align:center;"> Nilai (Ribu Rp) </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> 25% </td>
-   <td style="text-align:center;"> Kuartil Bawah (Q1) </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> Membatasi 25% data terbawah </td>
-   <td style="text-align:center;"> 35 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 50% </td>
-   <td style="text-align:center;"> Kuartil Tengah (Q2/Median) </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> Membatasi 50% data terbawah </td>
-   <td style="text-align:center;"> 50 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> 75% </td>
-   <td style="text-align:center;"> Kuartil Atas (Q3) </td>
-   <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> Membatasi 75% data terbawah </td>
-   <td style="text-align:center;"> 100 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-kuartil-unila, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+# Membaca data
+data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
+biaya_unila <- data_unila$biaya.dalam.sepekan
+
+# Menghitung jumlah observasi valid
+n_obs <- sum(!is.na(biaya_unila))
+
+# Menghitung kuartil
+q1 <- quantile(biaya_unila, 0.25, na.rm = TRUE)
+q2 <- quantile(biaya_unila, 0.50, na.rm = TRUE)
+q3 <- quantile(biaya_unila, 0.75, na.rm = TRUE)
+
+# Dataframe hasil
+hasil_kuartil <- data.frame(
+  Statistik = c("Kuartil Bawah (Q1)", "Kuartil Tengah (Q2/Median)", "Kuartil Atas (Q3)"),
+  Posisi = c("Membatasi 25% data terbawah", "Membatasi 50% data terbawah", "Membatasi 75% data terbawah"),
+  Nilai = c(q1, q2, q3)
+)
+
+kable(hasil_kuartil,
+  format = "html", align = "c",
+  caption = paste0("Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = ", n_obs, ")"),
+  col.names = c("Statistik", "Posisi Data", "Nilai (Ribu Rp)")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(3, bold = TRUE, background = "#e8f4f8")
+```
 
 **Cara Menentukan Kuartil:**
 
@@ -2072,11 +1596,11 @@ Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat bergu
 
 **Interpretasi:**
 
-Dari total **393** mahasiswa yang diamati, kita dapat menafsirkan posisi data sebagai berikut:
+Dari total **`r n_obs`** mahasiswa yang diamati, kita dapat menafsirkan posisi data sebagai berikut:
 
-1.  **Kuartil Bawah ($Q_1$):** Sebesar 25% dari populasi (sekitar **98** mahasiswa) memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai $Q_1$. Ini menandakan kelompok dengan biaya transportasi paling efisien.
-2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% (sekitar **196** mahasiswa) memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
-3.  **Kuartil Atas ($Q_3$):** Sebesar 75% (sekitar **295** mahasiswa) memiliki biaya perjalanan di bawah nilai $Q_3$. Artinya, hanya 25% sisanya (sekitar **98** mahasiswa) yang menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
+1.  **Kuartil Bawah ($Q_1$):** Sebesar 25% dari populasi (sekitar **`r round(0.25 * n_obs)`** mahasiswa) memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai $Q_1$. Ini menandakan kelompok dengan biaya transportasi paling efisien.
+2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% (sekitar **`r round(0.50 * n_obs)`** mahasiswa) memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
+3.  **Kuartil Atas ($Q_3$):** Sebesar 75% (sekitar **`r round(0.75 * n_obs)`** mahasiswa) memiliki biaya perjalanan di bawah nilai $Q_3$. Artinya, hanya 25% sisanya (sekitar **`r round(0.25 * n_obs)`** mahasiswa) yang menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
 
 Pemahaman ini penting untuk melihat sebaran beban biaya di kalangan mahasiswa, apakah terkonsentrasi di nilai rendah atau tinggi.
 :::
@@ -2122,61 +1646,27 @@ $$
 
 **Langkah 2: Buat Tabel Perhitungan $(x_i - \bar{x})^2$**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-simulasi-variansi)Perhitungan Selisih Kuadrat</caption>
- <thead>
-<tr>
-<th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
-<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Data Asli</div></th>
-<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Pusat</div></th>
-<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Deviasi</div></th>
-</tr>
-  <tr>
-   <th style="text-align:center;"> Mahasiswa </th>
-   <th style="text-align:center;"> Biaya (X) </th>
-   <th style="text-align:center;"> Rata-rata (x̄) </th>
-   <th style="text-align:center;"> Selisih (X - x̄) </th>
-   <th style="text-align:center;"> Kuadrat (X - x̄)² </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> A </td>
-   <td style="text-align:center;"> 50 </td>
-   <td style="text-align:center;"> 60 </td>
-   <td style="text-align:center;"> -10 </td>
-   <td style="text-align:center;"> 100 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> B </td>
-   <td style="text-align:center;"> 60 </td>
-   <td style="text-align:center;"> 60 </td>
-   <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> C </td>
-   <td style="text-align:center;"> 55 </td>
-   <td style="text-align:center;"> 60 </td>
-   <td style="text-align:center;"> -5 </td>
-   <td style="text-align:center;"> 25 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> D </td>
-   <td style="text-align:center;"> 70 </td>
-   <td style="text-align:center;"> 60 </td>
-   <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 100 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;border-bottom: 2px solid #000"> E </td>
-   <td style="text-align:center;border-bottom: 2px solid #000"> 65 </td>
-   <td style="text-align:center;border-bottom: 2px solid #000"> 60 </td>
-   <td style="text-align:center;border-bottom: 2px solid #000"> 5 </td>
-   <td style="text-align:center;border-bottom: 2px solid #000"> 25 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-simulasi-variansi, echo=FALSE, out.width='70%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+data_var <- data.frame(
+  Mahasiswa = c("A", "B", "C", "D", "E"),
+  Biaya_X = c(50, 60, 55, 70, 65),
+  Mean = c(60, 60, 60, 60, 60),
+  Selisih = c(-10, 0, -5, 10, 5),
+  Kuadrat_Selisih = c(100, 0, 25, 100, 25)
+)
+
+kable(data_var,
+  format = "html", align = "c",
+  caption = "Perhitungan Selisih Kuadrat",
+  col.names = c("Mahasiswa", "Biaya (X)", "Rata-rata (x̄)", "Selisih (X - x̄)", "Kuadrat (X - x̄)²")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  add_header_above(c(" " = 1, "Data Asli" = 1, "Pusat" = 1, "Deviasi" = 2)) %>%
+  row_spec(5, extra_css = "border-bottom: 2px solid #000")
+```
 
 **Langkah 3: Hitung Jumlah Kuadrat Selisih**
 
@@ -2215,79 +1705,44 @@ Dalam bidang PWK, wilayah dengan simpangan baku pendapatan atau pengeluaran yang
 
 Pemilihan teknik analisis statistik deskriptif sangat bergantung pada tujuan analisis (apakah melihat pemusatan atau penyebaran) dan tingkat pengukuran variabel yang tersedia. Tabel \@ref(tab:rangkuman-deskriptif) merangkum berbagai teknik yang telah dipelajari beserta syarat penggunaannya.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:rangkuman-deskriptif)Rangkuman Teknik Analisis Statistik Deskriptif</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> No </th>
-   <th style="text-align:left;"> Nama Analisis </th>
-   <th style="text-align:left;"> Tingkat Pengukuran </th>
-   <th style="text-align:left;"> Makna Singkat Hasil </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 1 </td>
-   <td style="text-align:left;"> Frekuensi &amp; Persentase </td>
-   <td style="text-align:left;"> Nominal, Ordinal </td>
-   <td style="text-align:left;"> Jumlah atau proporsi kemunculan suatu nilai dalam distribusi </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 2 </td>
-   <td style="text-align:left;"> Rasio </td>
-   <td style="text-align:left;"> Nominal, Ordinal </td>
-   <td style="text-align:left;"> Perbandingan relatif jumlah satu kategori terhadap kategori lain </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 3 </td>
-   <td style="text-align:left;"> Laju (*Rate*) </td>
-   <td style="text-align:left;"> Metrik (jumlah kejadian) </td>
-   <td style="text-align:left;"> Intensitas kejadian relatif terhadap populasi berisiko atau waktu </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 4 </td>
-   <td style="text-align:left;"> Modus </td>
-   <td style="text-align:left;"> Nominal, Ordinal, Metrik </td>
-   <td style="text-align:left;"> Nilai yang paling sering muncul (tren) </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 5 </td>
-   <td style="text-align:left;"> Median </td>
-   <td style="text-align:left;"> Ordinal, Metrik </td>
-   <td style="text-align:left;"> Nilai tengah yang membagi data menjadi dua bagian sama besar </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 6 </td>
-   <td style="text-align:left;"> Rata-rata (*Mean*) </td>
-   <td style="text-align:left;"> Metrik </td>
-   <td style="text-align:left;"> Pusat aritmatika yang mewakili keseluruhan nilai </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 7 </td>
-   <td style="text-align:left;"> IQV </td>
-   <td style="text-align:left;"> Nominal, Ordinal </td>
-   <td style="text-align:left;"> Derajat keberagaman (heterogenitas) data kualitatif </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 8 </td>
-   <td style="text-align:left;"> Rentang (*Range*) </td>
-   <td style="text-align:left;"> Metrik </td>
-   <td style="text-align:left;"> Selisih total antara nilai tertinggi dan terendah </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 9 </td>
-   <td style="text-align:left;"> Kuartil/Persentil </td>
-   <td style="text-align:left;"> Ordinal, Metrik </td>
-   <td style="text-align:left;"> Posisi nilai yang membagi data terurut menjadi bagian-bagian proporsional </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;font-weight: bold;"> 10 </td>
-   <td style="text-align:left;"> Variansi &amp; Simpangan Baku </td>
-   <td style="text-align:left;"> Metrik </td>
-   <td style="text-align:left;"> Rata-rata jarak penyimpangan setiap data terhadap nilai rata-ratanya </td>
-  </tr>
-</tbody>
-</table>
+```{r rangkuman-deskriptif, echo=FALSE, out.width='100%'}
+library(knitr)
+library(kableExtra)
+
+rangkuman_df <- data.frame(
+  No = 1:10,
+  Nama_Analisis = c(
+    "Frekuensi & Persentase", "Rasio", "Laju (*Rate*)", "Modus",
+    "Median", "Rata-rata (*Mean*)", "IQV", "Rentang (*Range*)",
+    "Kuartil/Persentil", "Variansi & Simpangan Baku"
+  ),
+  Tingkat_Pengukuran = c(
+    "Nominal, Ordinal", "Nominal, Ordinal", "Metrik (jumlah kejadian)",
+    "Nominal, Ordinal, Metrik", "Ordinal, Metrik", "Metrik",
+    "Nominal, Ordinal", "Metrik", "Ordinal, Metrik", "Metrik"
+  ),
+  Makna = c(
+    "Jumlah atau proporsi kemunculan suatu nilai dalam distribusi",
+    "Perbandingan relatif jumlah satu kategori terhadap kategori lain",
+    "Intensitas kejadian relatif terhadap populasi berisiko atau waktu",
+    "Nilai yang paling sering muncul (tren)",
+    "Nilai tengah yang membagi data menjadi dua bagian sama besar",
+    "Pusat aritmatika yang mewakili keseluruhan nilai",
+    "Derajat keberagaman (heterogenitas) data kualitatif",
+    "Selisih total antara nilai tertinggi dan terendah",
+    "Posisi nilai yang membagi data terurut menjadi bagian-bagian proporsional",
+    "Rata-rata jarak penyimpangan setiap data terhadap nilai rata-ratanya"
+  )
+)
+
+kable(rangkuman_df,
+  format = "html", align = "clll",
+  caption = "Rangkuman Teknik Analisis Statistik Deskriptif",
+  col.names = c("No", "Nama Analisis", "Tingkat Pengukuran", "Makna Singkat Hasil")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE) %>%
+  column_spec(1, bold = TRUE)
+```
 
 Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 
@@ -2296,114 +1751,52 @@ Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap ana
 
 Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 responden berikut.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-eval-4-preview)Cuplikan data survei mahasiswa</caption>
- <thead>
-  <tr>
-   <th style="text-align:center;"> KodeResp </th>
-   <th style="text-align:center;"> Usia </th>
-   <th style="text-align:center;"> Fakultas </th>
-   <th style="text-align:center;"> ThnMsk </th>
-   <th style="text-align:center;"> UangSaku </th>
-   <th style="text-align:center;"> Jarak </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> 001 </td>
-   <td style="text-align:center;"> 22 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2020 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 19.27 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 002 </td>
-   <td style="text-align:center;"> 25 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2020 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.58 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 003 </td>
-   <td style="text-align:center;"> 24 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 2021 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.56 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 004 </td>
-   <td style="text-align:center;"> 19 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 2022 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.05 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 005 </td>
-   <td style="text-align:center;"> 23 </td>
-   <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 2021 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.69 </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> 006 </td>
-   <td style="text-align:center;"> 20 </td>
-   <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 2020 </td>
-   <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 1.37 </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-eval-4-preview, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+preview_data <- data.frame(
+  KodeResp = c("001", "002", "003", "004", "005", "006"),
+  Usia = c(22, 25, 24, 19, 23, 20),
+  Fakultas = c(1, 1, 2, 3, 2, 1),
+  ThnMsk = c(2020, 2020, 2021, 2022, 2021, 2020),
+  UangSaku = c(2, 1, 1, 1, 1, 3),
+  Jarak = c(19.27, 0.58, 0.56, 1.05, 1.69, 1.37)
+)
+
+kable(preview_data,
+  format = "html", align = "c",
+  caption = "Cuplikan data survei mahasiswa"
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-eval-4-metadata)Metadata variabel survei mahasiswa</caption>
- <thead>
-  <tr>
-   <th style="text-align:left;"> Nama Variabel </th>
-   <th style="text-align:left;"> Deskripsi </th>
-   <th style="text-align:left;"> Nilai-nilai yang valid </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> `KodeResp` </td>
-   <td style="text-align:left;"> Nomor urut responden </td>
-   <td style="text-align:left;"> tiga digit angka, hingga jumlah responden minimal </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `Usia` </td>
-   <td style="text-align:left;"> Usia responden (tahun) </td>
-   <td style="text-align:left;"> 18 - ∞ </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `Fakultas` </td>
-   <td style="text-align:left;"> Fakultas mahasiswa </td>
-   <td style="text-align:left;"> 1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `ThnMsk` </td>
-   <td style="text-align:left;"> Tahun masuk kuliah (Masehi) </td>
-   <td style="text-align:left;"> 2018 - 2022 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `UangSaku` </td>
-   <td style="text-align:left;"> Uang saku mahasiswa per bulan </td>
-   <td style="text-align:left;"> 1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> `Jarak` </td>
-   <td style="text-align:left;"> Jarak tempat tinggal mahasiswa dari kampus (km) </td>
-   <td style="text-align:left;"> 0 - ∞ </td>
-  </tr>
-</tbody>
-</table>
+```{r bab-3-eval-4-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+metadata_soal <- data.frame(
+  `Nama Variabel` = c("`KodeResp`", "`Usia`", "`Fakultas`", "`ThnMsk`", "`UangSaku`", "`Jarak`"),
+  Deskripsi = c("Nomor urut responden", "Usia responden (tahun)", "Fakultas mahasiswa", "Tahun masuk kuliah (Masehi)", "Uang saku mahasiswa per bulan", "Jarak tempat tinggal mahasiswa dari kampus (km)"),
+  `Nilai-nilai yang valid` = c(
+    " tiga digit angka, hingga jumlah responden minimal",
+    " 18 - &infin;",
+    "1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi",
+    "2018 - 2022",
+    "1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta",
+    "0 - &infin;"
+  )
+)
+
+kable(metadata_soal,
+  format = "html", escape = FALSE,
+  col.names = c("Nama Variabel", "Deskripsi", "Nilai-nilai yang valid"),
+  caption = "Metadata variabel survei mahasiswa"
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+```
 
 1. Identifikasilah statistik deskriptif yang dapat dikenakan pada variabel-variabel berikut: [STP-2.2]{.capaian}
   
@@ -2460,8 +1853,7 @@ Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang b
 
 Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi, baru kemudian divisualisasikan.
 
-
-``` r
+```{r}
 # Memuat data
 data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 
@@ -2470,18 +1862,9 @@ tabel_moda <- table(data_uinril$kendaraan.utama)
 tabel_moda
 ```
 
-```
-## 
-##                  Berjalan Kaki Kendaraan Bermotor (menumpang)                  Mobil Pribadi                         Sepeda 
-##                             33                             27                             15                              5 
-##           Sepeda Motor Pribadi            Transportasi Online 
-##                            290                             30
-```
-
 Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (*column chart*):
 
-
-``` r
+```{r fig-column-moda, fig.cap='Grafik batang tegak distribusi moda transportasi', fig.align='center', out.width='70%'}
 barplot(tabel_moda,
   main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
   xlab = "Moda Transportasi",
@@ -2491,15 +1874,9 @@ barplot(tabel_moda,
 )
 ```
 
-<div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-column-moda-1.png" alt="Grafik batang tegak distribusi moda transportasi" width="70%" />
-<p class="caption">(\#fig:fig-column-moda)Grafik batang tegak distribusi moda transportasi</p>
-</div>
-
 Atau dalam bentuk grafik batang mendatar (*bar chart*):
 
-
-``` r
+```{r fig-bar-moda, fig.cap='Grafik batang mendatar distribusi moda transportasi', fig.align='center', out.width='70%'}
 barplot(tabel_moda,
   main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
   xlab = "Frekuensi",
@@ -2510,31 +1887,17 @@ barplot(tabel_moda,
 )
 ```
 
-<div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-bar-moda-1.png" alt="Grafik batang mendatar distribusi moda transportasi" width="70%" />
-<p class="caption">(\#fig:fig-bar-moda)Grafik batang mendatar distribusi moda transportasi</p>
-</div>
-
 Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin:
 
-
-``` r
+```{r}
 # Membuat tabel kontingensi (distribusi frekuensi dua variabel)
 tabel_moda_jk <- table(data_uinril$Jenis.Kelamin, data_uinril$kendaraan.utama)
 tabel_moda_jk
 ```
 
-```
-##            
-##             Berjalan Kaki Kendaraan Bermotor (menumpang) Mobil Pribadi Sepeda Sepeda Motor Pribadi Transportasi Online
-##   Laki-laki             1                              9             6      2                  167                   3
-##   Perempuan            32                             18             9      3                  123                  27
-```
-
 Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
 
-
-``` r
+```{r fig-stacked-bar, fig.cap='Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='75%'}
 barplot(tabel_moda_jk,
   main = "Moda Transportasi Berdasarkan Jenis Kelamin",
   xlab = "Moda Transportasi",
@@ -2545,11 +1908,6 @@ barplot(tabel_moda_jk,
   args.legend = list(x = "topright")
 )
 ```
-
-<div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-stacked-bar-1.png" alt="Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin" width="75%" />
-<p class="caption">(\#fig:fig-stacked-bar)Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin</p>
-</div>
 
 **Interpretasi:** Grafik menunjukkan bahwa sepeda motor merupakan moda transportasi yang paling banyak digunakan oleh mahasiswa UINRIL, diikuti oleh mobil dan angkutan umum. Dari grafik batang bertumpuk terlihat bahwa penggunaan sepeda motor lebih dominan pada mahasiswa laki-laki dibandingkan perempuan, sementara penggunaan angkutan umum relatif seimbang antara kedua jenis kelamin.
 
@@ -2567,8 +1925,7 @@ Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data dir
 
 Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data fakultas mahasiswa UINRIL.
 
-
-``` r
+```{r}
 # Install package ggplot2 jika belum ada
 # install.packages('ggplot2')
 library(ggplot2)
@@ -2583,71 +1940,872 @@ tabel_fakultas <- tabel_fakultas[order(tabel_fakultas$Frekuensi, decreasing = TR
 tabel_fakultas
 ```
 
-```
-##                     Fakultas Frekuensi
-## 5      Tarbiyah dan Keguruan       158
-## 3   Ekonomi dan Bisnis Islam        85
-## 4                    Syariah        59
-## 2 Dakwah dan Ilmu Komunikasi        49
-## 6 Ushuluddin dan Studi Agama        44
-## 1                       Adab         5
-```
-
 Berikut adalah visualisasi menggunakan grafik batang biasa:
 
+```{r fig-bar-fakultas, fig.cap='Grafik batang fakultas mahasiswa UINRIL', fig.align='center', out.width='85%'}
+ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
+  geom_bar(stat = "identity", fill = "#3498db", width = 0, 8) +
+  theme_minimal() +
+  labs(
+    title = "Distribusi Mahasiswa per Fakultas (Grafik Batang)",
+    x = "Fakultas",
+    y = "Frekuensi"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+```
+
+Sekarang bandingkan dengan grafik lollipop:
+
+```{r fig-lollipop-fakultas, fig.cap='Grafik lollipop fakultas mahasiswa UINRIL', fig.align='center', out.width='85%'}
+ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
+  geom_segment(aes(x = Fakultas, xend = Fakultas, y = 0, yend = Frekuensi),
+    color = "#95a5a6", size = 0, 5
+  ) +
+  geom_point(color = "#e74c3c", size = 3) +
+  theme_minimal() +
+  labs(
+    title = "Distribusi Mahasiswa per Fakultas (Grafik Lollipop)",
+    x = "Fakultas",
+    y = "Frekuensi"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+```
+
+**Perbandingan:** Pada grafik lollipop, setiap kategori lebih mudah dibedakan karena hanya tiang tipis dan titik yang mewakili nilai, sehingga menghindari efek visual yang berlebihan (Moiré). Grafik lollipop sangat cocok untuk dataset dengan banyak kategori seperti ini, karena lebih ringkas dan tetap informatif. Sementara grafik batang biasa terlihat lebih padat dan dapat menimbulkan kesulitan dalam membaca data ketika batang-batangnya berdekatan.
+
+:::
+
+#### Grafik *Treemap*
+
+Secara fungsi, treemap dan *stacked bar chart* sangat mirip karena keduanya menunjukkan distribusi frekuensi objek berdasarkan kategori variabelnya. Jika *stacked chart* memakai panjang segmen pada batang untuk menunjukkan proporsi, *treemap* menggunakan luas area persegi panjang. Frekuensinya diperlihatkan oleh **luas persegi masing-masing kategori**.
+
+Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Treemap Moda Transportasi {.unnumbered}
+
+Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
+
+```{r}
+# Install package treemap jika belum ada
+# install.packages('treemap')
+library(treemap)
+
+# Memuat data
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+
+# Membuat tabel kontingensi dan mengubahnya ke data frame
+tabel_moda_jk <- as.data.frame(table(data_uinril$Jenis.kelamin, data_uinril$kendaraan.utama))
+colnames(tabel_moda_jk) <- c("Jenis_Kelamin", "Moda_Transportasi", "Frekuensi")
+
+# Menampilkan tabel
+tabel_moda_jk
+```
+
+Dari tabel distribusi frekuensi tersebut, kita dapat membuat treemap:
+
+```{r fig-treemap-moda, fig.cap='Treemap moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='80%'}
+treemap(tabel_moda_jk,
+  index = c("Moda_Transportasi", "Jenis_Kelamin"),
+  vSize = "Frekuensi",
+  type = "index",
+  title = "Komposisi Moda Transportasi Berdasarkan Jenis Kelamin",
+  fontsize.labels = c(12, 10),
+  fontcolor.labels = c("white", "white"),
+  bg.labels = 0,
+  border.col = "white",
+  border.lwds = 2,
+  palette = "Set2"
+)
+```
+
+**Interpretasi:** Treemap menunjukkan proporsi penggunaan moda transportasi dengan jelas melalui luas area. Area terbesar dimiliki oleh sepeda motor, menunjukkan dominasinya sebagai moda transportasi utama. Di dalam setiap moda, terdapat sub-area yang menunjukkan pembagian berdasarkan jenis kelamin. Visualisasi ini memudahkan kita untuk membandingkan proporsi secara langsung tanpa perlu membaca angka.
+
+:::
+
+#### Grafik Pai/Donat *(Pie/Donut Chart)*
+
+Grafik jenis ini juga sering digunakan untuk visualisasi variabel kategoris. Perbedaan dengan grafik batang adalah frekuensi tiap kategori tidak diperlihatkan dengan sumbu tegak, tetapi besar juring (sektor) lingkaran.
+
+Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada kasus di \@ref(materi-bar-chart), hanya saja jumlah kategori menjadi jumlah sektor, sementara frekuensinya menjadi ukuran sektor.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Grafik Pai dan Donat {.unnumbered}
+
+Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.
+
+```{r}
+# Memuat data
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+
+# Membuat tabel distribusi frekuensi untuk moda transportasi
+tabel_moda <- table(data_uinril$kendaraan.utama)
+tabel_moda
+```
+
+Dari tabel distribusi frekuensi, kita dapat membuat grafik pai (*pie chart*):
+
+```{r fig-pie-moda, fig.cap='Grafik pai moda transportasi mahasiswa UINRIL', fig.align='center', out.width='70%'}
+# Menghitung persentase
+persentase <- round(100 * tabel_moda / sum(tabel_moda), 1)
+label <- paste0(names(tabel_moda), "\n", persentase, "%")
+
+pie(tabel_moda,
+  labels = label,
+  main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
+  col = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6"),
+  border = "white"
+)
+```
+
+Untuk membuat grafik donat (*donut chart*), kita dapat menggunakan package `ggplot2`:
+
+```{r fig-donut-moda, fig.cap='Grafik donat moda transportasi mahasiswa UINRIL', fig.align='center', out.width='70%'}
+library(ggplot2)
+
+# Mengubah tabel menjadi data frame
+df_moda <- as.data.frame(tabel_moda)
+colnames(df_moda) <- c("Moda", "Frekuensi")
+
+# Menghitung persentase dan posisi label
+df_moda$Persentase <- round(100 * df_moda$Frekuensi / sum(df_moda$Frekuensi), 1)
+df_moda$Label <- paste0(df_moda$Persentase, "%")
+
+# Membuat donut chart
+ggplot(df_moda, aes(x = 2, y = Frekuensi, fill = Moda)) +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  coord_polar(theta = "y") +
+  xlim(0, 5, 2, 5) +
+  theme_void() +
+  labs(title = "Distribusi Moda Transportasi (Donut Chart)") +
+  geom_text(aes(label = Label),
+    position = position_stack(vjust = 0, 5),
+    color = "white", size = 4
+  ) +
+  scale_fill_manual(values = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6"))
+```
+
+**Interpretasi:** Baik grafik pai maupun donat menunjukkan proporsi penggunaan moda transportasi dengan jelas. Sepeda motor mendominasi dengan proporsi terbesar, diikuti oleh mobil dan angkutan umum. Grafik donat memberikan tampilan yang lebih modern dengan ruang kosong di tengahnya yang dapat digunakan untuk informasi tambahan.
+
+:::
+
+
+### Variabel Numerik
+
+Berbeda dengan visualisasi variabel kategorikal yang memperlihatkan frekuensi masing-masing kategori dalam variabel, grafik data dengan variabel numerik merepresentasikan nilai yang sebenarnya. 
+
+Persamaan dengan visualisasi pada data kategorikal adalah perlunya pertimbangan **jumlah variabel** dan cara menyajikan nilianya dengan sumbu atau bukan. Selain itu juga perlu dipertimbangkan **keterurutan objek/observasi *(order)***.
+
+Berikut adalah tinjauan beberapa jenis grafik visualisasi data variabel numerik dengan masing-masing ilustrasi data terstrukturnya.
+
+#### Histogram
+
+Histogram menunjukkan distribusi nilai-nilai yang berada pada rentang tertentu. Rentang nilai ditunjukkan di sumbu X-nya, sementara sumbu Y adalah frekuensinya. Istilah untuk rentang-rentang ini disebut ***bin***, sementara lebar/ukurannya disebut ***bin size*** atau ***bin width***.
+
+
+::: rmdnote
+
+[Penting!]{.tajuksaya}
+
+Jangan tertukar antara histogram dengan grafik batang! Perbedaan mendasar keduanya terletak pada sumbu X-nya. Sumbu X pada histogram menunjukkan angka, sementara pada grafik batang menunjukkan kategorinya.
+
+Satu karakteristik lain yang membedakan histogram dengan grafik batang adalah **jarak antarbatangnya**. Grafik batang biasanya memiliki celah di antara batangnya, sementara histogram tidak memiliki celah.
+
+:::
+
+
+Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus berikut. Dalam proses ini, variabel numerik dikelompokkan ke dalam interval atau rentang tertentu. Selanjutnya, frekuensi merepresentasikan jumlah total objek yang nilainya berada di dalam masing-masing rentang tersebut.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Histogram Biaya Perjalanan {.unnumbered}
+
+Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
+
+```{r}
+# Memuat data
+data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
+
+# Konversi kolom biaya perjalanan (mengganti koma dengan titik)
+data_itera$biaya.perjalanan <- as.numeric(gsub(",", ".", data_itera$biaya.perjalanan))
+
+# Melihat statistik deskriptif
+summary(data_itera$biaya.perjalanan)
+```
+
+Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (bin). R melakukan ini secara otomatis, tetapi kita juga bisa mengatur sendiri. Mari kita buat histogram dengan pengaturan bin otomatis:
+
+```{r fig-hist-biaya-auto, fig.cap='Histogram biaya perjalanan (bin otomatis)', fig.align='center', out.width='75%'}
+hist(data_itera$biaya.perjalanan,
+  main = "Distribusi Biaya Perjalanan Mahasiswa ITERA",
+  xlab = "Biaya Perjalanan (Rp ribu)",
+  ylab = "Frekuensi",
+  col = "#3498db",
+  border = "white",
+  las = 1
+)
+```
+
+Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi dengan lebih detail:
+
+```{r fig-hist-biaya-manual, fig.cap='Histogram biaya perjalanan (bin manual)', fig.align='center', out.width='75%'}
+# Membuat histogram dengan 15 bin
+hist(data_itera$biaya.perjalanan,
+  breaks = 15,
+  main = "Distribusi Biaya Perjalanan (15 Bin)",
+  xlab = "Biaya Perjalanan (Rp ribu)",
+  ylab = "Frekuensi",
+  col = "#e74c3c",
+  border = "white",
+  las = 1
+)
+```
+
+Untuk lebih memahami proses binning, mari kita buat tabel frekuensi manual:
+
+```{r}
+# Membuat interval bin
+bins <- seq(0, max(data_itera$biaya.perjalanan, na.rm = TRUE), length.out = 10)
+
+# Mengelompokkan data ke dalam bin
+data_itera$bin <- cut(data_itera$biaya.perjalanan, breaks = bins, include.lowest = TRUE)
+
+# Membuat tabel frekuensi
+tabel_freq <- table(data_itera$bin)
+head(tabel_freq)
+```
+
+**Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
+
+:::
+
+
+#### *Boxplot*
+
+Boxplot adalah grafik berbentuk kotak dan garis yang menampilkan ukuran penyebaran suatu variabel numerik secara grafis (Gambar \@ref(fig:jenis-boxplot)). Sebagaimana yang ditunjukkan oleh gambar tersebut, kotak dan garis pada boxplot dapat berjumlah satu atau lebih. Satu kotak dan garis menandakan hanya ada satu kategori objek dengan variabel numerik yang ditampilkan.
+
+Sementara itu, variabel numerik tersebut dikategorikan lagi berdasarkan suatu variabel kategoris, maka jumlah kotak dan garisnya bisa lebih dari satu.
+
+Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada kasus berikut.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Boxplot Uang Saku Mahasiswa {.unnumbered}
+
+Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi uang saku mahasiswa dari berbagai universitas.
+
+```{r}
+# Memuat data dari beberapa universitas
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
+
+# Menambahkan kolom identitas kampus
+data_uinril$Kampus <- "UINRIL"
+data_unila$Kampus <- "UNILA"
+
+# Menggabungkan data
+data_gabung <- rbind(data_uinril, data_unila)
+
+# Melihat ringkasan data uang saku
+summary(data_gabung$Uang.Saku)
+```
+
+Mari kita buat boxplot tunggal untuk uang saku UINRIL terlebih dahulu:
+
+```{r fig-boxplot-single, fig.cap='Boxplot uang saku mahasiswa UINRIL', fig.align='center', out.width='60%'}
+boxplot(data_uinril$Uang.Saku,
+  main = "Distribusi Uang Saku Mahasiswa UINRIL",
+  ylab = "Uang Saku (Rp juta)",
+  col = "#3498db",
+  border = "#2c3e50"
+)
+
+# Menambahkan label untuk setiap elemen boxplot
+text(1, 1, quantile(data_uinril$Uang.Saku, 0, 25, na.rm = TRUE),
+  labels = paste0("Q1 = ", round(quantile(data_uinril$Uang.Saku, 0, 25, na.rm = TRUE), 1)),
+  pos = 4, cex = 0, 8, col = "red"
+)
+text(1, 1, median(data_uinril$Uang.Saku, na.rm = TRUE),
+  labels = paste0("Median = ", round(median(data_uinril$Uang.Saku, na.rm = TRUE), 1)),
+  pos = 4, cex = 0, 8, col = "red"
+)
+text(1, 1, quantile(data_uinril$Uang.Saku, 0, 75, na.rm = TRUE),
+  labels = paste0("Q3 = ", round(quantile(data_uinril$Uang.Saku, 0, 75, na.rm = TRUE), 1)),
+  pos = 4, cex = 0, 8, col = "red"
+)
+```
+
+Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi uang saku antar kampus:
+
+```{r fig-boxplot-multiple, fig.cap='Boxplot uang saku mahasiswa berdasarkan kampus', fig.align='center', out.width='75%'}
+boxplot(Uang.Saku ~ Kampus,
+  data = data_gabung,
+  main = "Perbandingan Distribusi Uang Saku Antar Kampus",
+  xlab = "Kampus",
+  ylab = "Uang Saku (Rp juta)",
+  col = c("#3498db", "#e74c3c"),
+  border = "#2c3e50"
+)
+```
+
+**Penjelasan elemen boxplot:**
+
+- **Garis tengah kotak (median/Q2)**: Nilai tengah data yang membagi data menjadi dua bagian sama besar
+- **Kotak bagian bawah (Q1)**: Kuartil pertama, 25% data berada di bawah nilai ini
+- **Kotak bagian atas (Q3)**: Kuartil ketiga, 75% data berada di bawah nilai ini
+- **Tinggi kotak (IQR)**: Jarak interkuartil, menunjukkan rentang 50% data tengah
+- **Whiskers (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)
+- **Titik-titik di luar whiskers**: Outlier atau nilai ekstrem yang jauh dari sebagian besar data
+
+**Interpretasi:** Dari boxplot ganda terlihat bahwa distribusi uang saku mahasiswa UNILA memiliki median yang sedikit lebih tinggi dibandingkan UINRIL. Rentang interkuartil (tinggi kotak) UNILA juga lebih besar, menunjukkan variasi uang saku yang lebih beragam. Terdapat beberapa outlier pada kedua kampus yang menunjukkan ada mahasiswa dengan uang saku yang jauh lebih tinggi dari mayoritas. Informasi ini berguna untuk perencanaan fasilitas kampus seperti kantin atau transportasi yang disesuaikan dengan daya beli mahasiswa.
+
+:::
+
+#### Grafik Garis *(Line Plot)* dan Area *(Area Plot)*
+
+Grafik ini memetakan nilai variabel angka yang masuk akal bisa diurutkan, yakni biasanya yang berupa deret waktu (time series). Garis menghubungkan masing-masing titik nilai pada tiap-tiap posisi untuk menegaskan perubahan nilainya. Gambar \@ref(fig:line-plot-area-plot) berikut mengilustrasikan data terstruktur yang membentuk line atau area plot.
+
+Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah garisnya diisi dengan warna yang sama dengan garis. Area plot biasanya digunakan untuk data numerik dengan dimensi waktu yang terdiri atas kategori-kategori.
+
+
+#### Grafik Pencar *(Scatterplot)*
+
+*Scatterplot* dapat memperlihatkan pemetaan nilai dua variabel numerik yang berkaitan. Sumbu tegak dan datar menunjukkan nilai-nilai dua variabel tersebut sementara tiap titik dibentuk dari perpotongan nilai dari kedua variabel untuk tiap-tiap objek.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Scatterplot Hubungan Biaya Perjalanan dan Uang Saku {.unnumbered}
+
+Scatterplot memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan uang saku mahasiswa ITERA.
+
+```{r}
+# Memuat data
+data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
+
+# Konversi biaya perjalanan (mengganti koma dengan titik)
+data_itera$biaya.perjalanan <- as.numeric(gsub(",", ".", data_itera$biaya.perjalanan))
+
+# Melihat struktur data untuk memahami pemetaan ke scatterplot
+head(data_itera[, c("biaya.perjalanan", "Uang.Saku")], 10)
+```
+
+Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (`biaya.perjalanan`) akan menjadi sumbu X, dan kolom kedua (`Uang.Saku`) menjadi sumbu Y. Setiap baris akan menjadi satu titik pada scatterplot.
+
+Mari kita buat scatterplot sederhana:
+
+```{r fig-scatter-basic, fig.cap='Scatterplot hubungan biaya perjalanan dan uang saku', fig.align='center', out.width='75%'}
+plot(data_itera$biaya.perjalanan, data_itera$Uang.Saku,
+  main = "Hubungan Biaya Perjalanan dan Uang Saku Mahasiswa ITERA",
+  xlab = "Biaya Perjalanan (Rp ribu)",
+  ylab = "Uang Saku (Rp juta)",
+  pch = 16,
+  col = rgb(52, 152, 219, maxColorValue = 255, alpha = 100),
+  cex = 1, 2
+)
+
+# Menambahkan garis tren
+abline(lm(Uang.Saku ~ biaya.perjalanan, data = data_itera),
+  col = "#e74c3c", lwd = 2, lty = 2
+)
+```
+
+Kita juga dapat membuat scatterplot yang lebih informatif menggunakan `ggplot2`:
+
+```{r fig-scatter-ggplot, fig.cap='Scatterplot dengan ggplot2', fig.align='center', out.width='75%'}
+library(ggplot2)
+
+ggplot(data_itera, aes(x = biaya.perjalanan, y = Uang.Saku)) +
+  geom_point(color = "#3498db", alpha = 0, 6, size = 3) +
+  geom_smooth(method = "lm", se = TRUE, color = "#e74c3c", fill = "#e74c3c", alpha = 0, 2) +
+  theme_minimal() +
+  labs(
+    title = "Hubungan Biaya Perjalanan dan Uang Saku",
+    subtitle = "Mahasiswa ITERA",
+    x = "Biaya Perjalanan (Rp ribu)",
+    y = "Uang Saku (Rp juta)"
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 14))
+```
+
+**Hubungan data terstruktur dengan scatterplot:**
+
+- Setiap **baris** dalam tabel data menjadi **satu titik** pada grafik
+- Nilai **kolom pertama** (biaya perjalanan) menentukan **posisi horizontal (X)** titik
+- Nilai **kolom kedua** (uang saku) menentukan **posisi vertikal (Y)** titik
+- Titik di koordinat (50, 2) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu dan uang saku 2 juta
+
+**Interpretasi:** Scatterplot menunjukkan adanya hubungan positif yang lemah hingga sedang antara biaya perjalanan dan uang saku mahasiswa. Mahasiswa dengan uang saku lebih besar cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka mungkin tinggal lebih jauh dari kampus atau menggunakan moda transportasi yang lebih mahal. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa dengan uang saku rendah namun biaya perjalanan tinggi.
+
+:::
 
 
 
+## Penggunaan dan Interpretasi Diagram
+
+Memilih diagram yang tepat adalah kunci dalam menghasilkan analisis yang baik dan tajam. Setiap diagram memiliki karakteristik yang berbeda satu sama lain, sehingga penggunaannya harus disesuaikan dengan jenis variabel dan pesan yang ingin ditekankan.
+
+Untuk memilih visualisasi yang paling efektif, mulailah dengan menjawab beberapa pertanyaan mendasar berikut:
+
+* **Apa tujuan utama Anda?** Apakah Anda ingin menunjukkan perbandingan, distribusi, komposisi, atau hubungan antarvariabel?
+* **Ada berapa variabel yang ingin Anda tampilkan?** Apakah hanya satu, dua, atau lebih?
+* **Apa jenis nilai dan tingkat pengukuran dari variabel-variabel tersebut?** Apakah kategorikal (nominal, ordinal) atau numerik (metrik)?
+
+Jawaban dari pertanyaan-pertanyaan ini akan menuntun Anda pada pilihan diagram yang paling sesuai.
+
+### Pemilihan Diagram Berdasarkan Tujuan
+
+### Pemilihan Diagram Berdasarkan Jumlah Variabel
 
 
+### Pemilihan Diagram Berdasarkan Tingkat Pengukuran Variabel
 
 
+<!--chapter:end:04-visualisasi-data.Rmd-->
 
+# Pengantar Analisis Statistik Inferensial
 
+## Konsep Dasar
 
+Statistik inferensial adalah metode yang digunakan untuk menarik kesimpulan mengenai populasi berdasarkan data sampel. Konsep kuncinya adalah bahwa kita tidak mengukur seluruh populasi (sensus), melainkan hanya sebagian kecilnya (sampel), namun kita ingin hasil pengukuran sampel tersebut dapat digeneralisasi ke populasi.
 
+### Teknik Pengambilan Sampel
 
+Agar generalisasi valid, sampel harus representatif. Beberapa teknik:
 
+1.  **Simple Random Sampling**. Setiap anggota populasi memiliki peluang yang sama untuk dipilih.
+2.  **Stratified Random Sampling**. Populasi dibagi menjadi strata (kelompok), lalu sampel diambil secara acak dari tiap strata secara proporsional.
+3.  **Cluster Sampling**. Populasi dibagi menjadi klaster (wilayah), lalu beberapa klaster dipilih secara acak.
 
+## Distribusi Sampling dan Teorema Limit Sentral
 
+Walaupun kita hanya mengambil satu sampel, kita perlu membayangkan konsep "Distribusi Sampling". Jika kita mengambil banyak sampel berulang kali dari populasi yang sama, rata-rata dari masing-masing sampel tersebut akan membentuk distribusi normal, terlepas dari bentuk distribusi populasinya. Inilah **Teorema Limit Sentral**.
 
+### Standard Error
 
+Simpangan baku dari distribusi sampling disebut **Standard Error (SE)**.
+$$ SE = \frac{\sigma}{\sqrt{n}} $$
+Dimana $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel.
 
+### Z-Score
 
+Untuk mengetahui posisi suatu nilai dalam distribusi normal baku, kita menggunakan Z-Score:
+$$ Z = \frac{x - \mu}{\sigma} $$
+Untuk rata-rata sampel:
+$$ Z = \frac{\bar{x} - \mu}{SE} $$
 
+::: rmdexercise
+## Soal Evaluasi 6 {.unnumbered}
 
+1.  Jelaskan perbedaan mendasar antara statistik deskriptif dan inferensial. [STP-4.1]{.capaian}
+2.  Sebutkan dan jelaskan tiga teknik pengambilan sampel probabilitas. [STP-4.2]{.capaian}
+3.  Hitung Z-Score jika diketahui rata-rata sampel = 50, rata-rata populasi = 45, simpangan baku = 10, dan n = 25. [STP-4.3]{.capaian}
 
+:::
 
+<!--chapter:end:05-pengantar-inferensial.Rmd-->
 
+# Estimasi Parameter
 
+## Konsep Dasar
 
+Dalam statistik inferensial, kita menggunakan statistik sampel (seperti $\bar{x}$) untuk mengestimasi parameter populasi (seperti $\mu$).
 
+Ada dua jenis estimasi:
+1.  **Estimasi Titik (Point Estimation)**. Menggunakan satu nilai tunggal. Contoh: "Rata-rata pendapatan adalah 5 juta". Kelemahannya: akurasinya diragukan.
+2.  **Estimasi Rentang (Interval Estimation)**. Menggunakan rentang nilai dengan tingkat kepercayaan tertentu. Contoh: "Rata-rata pendapatan ada di antara 4,8 juta hingga 5,2 juta dengan tingkat kepercayaan 95%". Inilah yang disebut **Confidence Interval (CI)**.
 
+## Estimasi Rentang Kepercayaan (Confidence Interval)
 
+Rumus umum untuk CI rata-rata adalah:
+$$ \bar{x} \pm Z_{\alpha/2} \times SE $$
+Atau:
+$$ \bar{x} - Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} < \mu < \bar{x} + Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} $$
 
+Nilai $Z_{\alpha/2}$ bergantung pada tingkat kepercayaan (Confidence Level, $1-\alpha$):
+*   Tingkat Kepercayaan 90% ($\alpha=10\%$) $\rightarrow Z = 1.645$
+*   Tingkat Kepercayaan 95% ($\alpha=5\%$) $\rightarrow Z = 1.96$
+*   Tingkat Kepercayaan 99% ($\alpha=1\%$) $\rightarrow Z = 2.575$
 
+### Studi Kasus
 
+Seorang peneliti ingin mengestimasi rata-rata pengeluaran bulanan mahasiswa. Dari sampel 100 mahasiswa, diperoleh rata-rata 1,5 juta rupiah dengan simpangan baku 500 ribu rupiah. Buatlah selang kepercayaan 95%.
 
+Diketahui:
+*   $n = 100$
+*   $\bar{x} = 1.500.000$
+*   $s = 500.000$ (menggantikan $\sigma$)
+*   $Z_{0.025} = 1.96$
 
+Standard Error: $SE = 500.000 / \sqrt{100} = 50.000$.
 
+Batas Bawah: $1.500.000 - (1.96 \times 50.000) = 1.402.000$.
+Batas Atas: $1.500.000 + (1.96 \times 50.000) = 1.598.000$.
 
+Jadi, dengan tingkat kepercayaan 95%, rata-rata pengeluaran mahasiswa berada di antara Rp1.402.000 dan Rp1.598.000.
 
+::: rmdexercise
+## Soal Evaluasi 7 {.unnumbered}
 
+1.  Apa yang dimaksud dengan tingkat kepercayaan (confidence level)? [STP-5.1]{.capaian}
+2.  Hitunglah Confidence Interval 95% untuk rata-rata jika $\bar{x}=100$, $s=15$, dan $n=36$. [STP-5.2]{.capaian}
 
+:::
 
+<!--chapter:end:06-estimasi-parameter.Rmd-->
 
+# Uji Hipotesis Satu Populasi
 
+## Konsep Dasar
 
+Uji hipotesis adalah prosedur statistik yang menggunakan data sampel untuk mengevaluasi suatu dugaan (hipotesis) mengenai populasi.
 
+### Hipotesis Nol dan Alternatif
 
+*   **Hipotesis Nol ($H_0$)**: Pernyataan tentang status quo, tidak ada perbedaan, atau tidak ada efek. Biasanya mengandung tanda sama dengan ($=, \le, \ge$).
+*   **Hipotesis Alternatif ($H_1$)**: Pernyataan yang bertentangan dengan $H_0$, biasanya merupakan dugaan yang ingin dibuktikan oleh peneliti. Mengandung tanda ketidaksamaan ($\ne, <, >$).
 
+### Langkah-langkah Pengujian Hipotesis
 
+1.  **Rumuskan Hipotesis ($H_0$ dan $H_1$)**.
+2.  **Tentukan Tingkat Signifikansi ($\alpha$)**. Biasanya 0,05.
+3.  **Pilih Statistik Uji**. (Z-test jika $\sigma$ diketahui atau $n > 30$, t-test jika $\sigma$ tidak diketahui dan $n < 30$).
+4.  **Hitung Statistik Hitung dan P-value**.
+5.  **Ambil Keputusan**. Tolak $H_0$ jika P-value $< \alpha$.
+6.  **Tarik Kesimpulan**.
 
+## Studi Kasus dengan R
 
+Seorang perencana kota menduga bahwa rata-rata waktu tempuh warga ke tempat kerja adalah **lebih dari 45 menit**. Dari survei terhadap 35 warga, diperoleh rata-rata 48 menit dengan simpangan baku 10 menit. Ujilah hipotesis tersebut dengan $\alpha = 0.05$.
 
+Hipotesis:
+*   $H_0: \mu \le 45$ (Rata-rata tidak lebih dari 45 menit)
+*   $H_1: \mu > 45$ (Rata-rata lebih dari 45 menit)
 
+```{r, echo=TRUE}
+# Data Sampel (Simulasi)
+set.seed(123)
+waktu_tempuh <- rnorm(35, mean = 48, sd = 10)
 
+# Uji T Satu Sampel
+t.test(waktu_tempuh, mu = 45, alternative = "greater")
+```
 
+**Interpretasi**:
+Jika p-value < 0,05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
 
+::: rmdexercise
+## Soal Evaluasi 8 {.unnumbered}
 
+1.  Jelaskan perbedaan antara Hipotesis Nol dan Hipotesis Alternatif. [STP-6.1]{.capaian}
+2.  Apa makna P-value dalam pengambilan keputusan uji hipotesis? [STP-6.2]{.capaian}
+
+:::
+
+<!--chapter:end:07-uji-hipotesis-satu-populasi.Rmd-->
+
+# Uji Hipotesis Dua Populasi
+
+## Konsep Dasar
+
+Uji ini digunakan untuk membandingkan parameter (rata-rata atau proporsi) dari dua populasi yang berbeda. Tujuannya adalah untuk mengetahui apakah ada perbedaan yang signifikan di antara keduanya.
+
+### Uji Beda Rata-rata (Independent Samples t-test)
+
+Digunakan untuk dua kelompok sampel yang tidak saling berhubungan (independen). Contoh: Membandingkan rata-rata pendapatan warga di Kota A dan Kota B.
+
+Hipotesis:
+*   $H_0: \mu_A = \mu_B$
+*   $H_1: \mu_A \ne \mu_B$
+
+### Uji Beda Rata-rata Berpasangan (Paired Samples t-test)
+
+Digunakan untuk dua kelompok sampel yang saling berhubungan (berpasangan). Contoh: Membandingkan kemacetan di jalan yang sama **sebelum** dan **sesudah** penerapan kebijakan ganjil-genap.
+
+## Studi Kasus dengan R
+
+### Independent t-test
+
+Membandingkan pendapatan (dalam juta) antara pria dan wanita.
+
+```{r, echo=TRUE}
+# Data Contoh
+pria <- c(5, 6, 5, 7, 6, 8, 5)
+wanita <- c(4, 5, 4, 6, 5, 5, 4)
+
+# Uji t independen
+t.test(pria, wanita, var.equal = TRUE)
+```
+
+### Paired t-test
+
+Membandingkan waktu tempuh (menit) sebelum dan sesudah pembangunan tol.
+
+```{r, echo=TRUE}
+sebelum <- c(60, 55, 70, 65, 80)
+sesudah <- c(40, 45, 50, 55, 60)
+
+# Uji t berpasangan
+t.test(sebelum, sesudah, paired = TRUE)
+```
+
+::: rmdexercise
+## Soal Evaluasi 9 {.unnumbered}
+
+1.  Kapan kita menggunakan uji t independen dan kapan menggunakan uji t berpasangan? Berikan contoh kasus perencanaannya! [STP-7.1]{.capaian}
+2.  Lakukan uji beda rata-rata untuk data berikut... [STP-7.2]{.capaian}
+
+:::
+
+<!--chapter:end:08-uji-hipotesis-dua-populasi.Rmd-->
+
+# Uji Hipotesis Lebih dari Dua Populasi
+
+## Analisis Variansi (ANOVA)
+
+Ketika kita ingin membandingkan rata-rata dari **lebih dari dua** kelompok populasi, kita menggunakan **Analysis of Variance (ANOVA)**. Jika kita menggunakan uji t berulang kali untuk setiap pasangan kelompok, risiko kesalahan Tipe I (False Positive) akan meningkat. ANOVA mengatasi masalah ini dengan menguji perbedaan secara simultan.
+
+Hipotesis ANOVA Satu Arah (One-Way ANOVA):
+*   $H_0: \mu_1 = \mu_2 = \dots = \mu_k$ (Semua rata-rata kelompok sama)
+*   $H_1$: Setidaknya ada satu pasang rata-rata yang berbeda.
+
+## Studi Kasus dengan R
+
+Kita ingin membandingkan rata-rata harga tanah di tiga zona: Pusat Kota, Suburban, dan Rural.
+
+```{r, echo=TRUE}
+# Data Contoh
+harga_tanah <- c(10, 12, 11, 13, 15, # Pusat
+                 8, 9, 7, 8, 10,       # Suburban
+                 4, 5, 3, 5, 4)        # Rural
+zona <- factor(rep(c("Pusat", "Suburban", "Rural"), each = 5))
+
+data_tanah <- data.frame(harga = harga_tanah, zona = zona)
+
+# ANOVA Satu Arah
+model_anova <- aov(harga ~ zona, data = data_tanah)
+summary(model_anova)
+```
+
+**Interpretasi**:
+Jika nilai Pr(>F) pada tabel ANOVA kurang dari 0,05, maka tolak $H_0$. Artinya, terdapat perbedaan signifikan rata-rata harga tanah antar zona tersebut. Untuk mengetahui zona mana yang berbeda, dapat dilanjutkan dengan uji lanjut (Post Hoc Test) seperti Tukey HSD.
+
+```{r, echo=TRUE}
+TukeyHSD(model_anova)
+```
+
+::: rmdexercise
+## Soal Evaluasi 10 {.unnumbered}
+
+1.  Mengapa kita tidak dianjurkan menggunakan uji t berulang kali untuk membandingkan 3 kelompok atau lebih? [STP-7.3]{.capaian}
+2.  Apa kesimpulan jika P-value ANOVA > 0,05? [STP-7.4]{.capaian}
+
+:::
+
+<!--chapter:end:09-uji-hipotesis-lebih-dua-populasi.Rmd-->
+
+# Korelasi Antarvariabel Nominal
+
+## Konsep Dasar
+
+Analisis ini digunakan untuk mengukur kekuatan hubungan antara dua variabel kategori (nominal). Teknik yang umum digunakan adalah **Chi-Square ($X^2$)** untuk signifikansi dan **Cramer's V**, **Phi**, atau **Lambda** untuk kekuatan hubungan.
+
+## Studi Kasus dengan R
+
+Apakah ada hubungan antara **Fakultas** dengan **Moda Transportasi** yang digunakan?
+
+```{r, echo=TRUE}
+# Data Contoh
+fakultas <- c("Saintek", "Soshum", "Saintek", "Soshum", "Saintek", "Saintek")
+moda <- c("Motor", "Mobil", "Motor", "Jalan Kaki", "Mobil", "Motor")
+
+# Membuat Tabel Kontingensi
+tabel <- table(fakultas, moda)
+print(tabel)
+
+# Uji Chi-Square
+chisq.test(tabel)
+```
+
+**Interpretasi**:
+Jika P-value < 0,05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
+
+::: rmdexercise
+## Soal Evaluasi 11 {.unnumbered}
+
+1.  Apa perbedaan Chi-Square Test dengan Lambda sebagai ukuran asosiasi? [STP-8.1]{.capaian}
+2.  Hitunglah nilai Cramer's V untuk tabel kontingensi berikut... [STP-8.2]{.capaian}
+
+:::
+
+<!--chapter:end:10-korelasi-nominal.Rmd-->
+
+# Korelasi Antarvariabel Ordinal
+
+## Konsep Dasar
+
+Untuk data ordinal (berjenjang/ranking), kita menggunakan korelasi berbasis peringkat. Dua yang paling populer adalah **Spearman's Rho ($\rho$)** dan **Kendall's Tau ($\tau$)**.
+
+## Studi Kasus dengan R
+
+Apakah ada hubungan antara **Tingkat Pendidikan** (SD, SMP, SMA) dengan **Kepuasan Layanan** (Rendah, Sedang, Tinggi)?
+
+```{r, echo=TRUE}
+# Data Ordinal (sebagai angka peringkat)
+pendidikan <- c(1, 2, 3, 2, 3, 1, 2)
+kepuasan <- c(1, 1, 3, 2, 3, 1, 2)
+
+# Korelasi Spearman
+cor.test(pendidikan, kepuasan, method = "spearman")
+
+# Korelasi Kendall
+cor.test(pendidikan, kepuasan, method = "kendall")
+```
+
+**Interpretasi**:
+Nilai korelasi mendekati +1 menunjukkan hubungan positif kuat (semakin tinggi pendidikan, semakin tinggi kepuasan).
+
+::: rmdexercise
+## Soal Evaluasi 12 {.unnumbered}
+
+1.  Kapan kita sebaiknya menggunakan Kendall's Tau dibandingkan Spearman's Rho? [STP-9.1]{.capaian}
+2.  Jelaskan makna korelasi negatif pada variabel ordinal! [STP-9.2]{.capaian}
+
+:::
+
+<!--chapter:end:11-korelasi-ordinal.Rmd-->
+
+# Korelasi Antarvariabel Metrik
+
+## Konsep Dasar
+
+Untuk dua variabel numerik (interval/rasio), ukuran asosiasi yang paling umum adalah **Pearson Product-Moment Correlation ($r$)**. Nilai $r$ berkisar antara -1 hingga +1.
+
+## Studi Kasus dengan R
+
+Hubungan antara **Pendapatan** dan **Pengeluaran**.
+
+```{r, echo=TRUE}
+pendapatan <- c(5, 6, 7, 8, 9, 10, 11)
+pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
+
+# Scatterplot
+plot(pendapatan, pengeluaran)
+
+# Korelasi Pearson
+cor.test(pendapatan, pengeluaran, method = "pearson")
+```
+
+::: rmdexercise
+## Soal Evaluasi 13 {.unnumbered}
+
+1.  Apa syarat utama penggunaan korelasi Pearson? [STP-10.1]{.capaian}
+2.  Jika $r = 0$, apakah artinya tidak ada hubungan sama sekali? Jelaskan! [STP-10.2]{.capaian}
+
+:::
+
+<!--chapter:end:12-korelasi-metrik.Rmd-->
+
+# Regresi Linear Sederhana
+
+## Konsep Dasar
+
+Regresi linear sederhana digunakan untuk memprediksi nilai satu variabel dependen ($Y$) berdasarkan satu variabel independen ($X$). Persamaannya:
+$$ Y = a + bX + \epsilon $$
+
+## Studi Kasus dengan R
+
+Memprediksi **Pengeluaran** berdasarkan **Pendapatan**.
+
+```{r, echo=TRUE}
+pendapatan <- c(5, 6, 7, 8, 9, 10, 11)
+pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
+
+# Membuat Model Regresi
+model <- lm(pengeluaran ~ pendapatan)
+summary(model)
+
+# Melihat koefisien
+coef(model)
+```
+
+**Interpretasi**:
+Nilai Intercept ($a$) dan Slope ($b$) menentukan persamaan garis prediksi. $R^2$ menunjukkan seberapa baik model menjelaskan variasi data.
+
+::: rmdexercise
+## Soal Evaluasi 14 {.unnumbered}
+
+1.  Apa perbedaan antara korelasi dan regresi? [STP-11.1]{.capaian}
+2.  Jelaskan makna $R^2$ (Koefisien Determinasi)! [STP-11.2]{.capaian}
+
+:::
+
+<!--chapter:end:13-regresi-sederhana.Rmd-->
+
+# Regresi Linear Berganda
+
+## Konsep Dasar
+
+Regresi linear berganda melibatkan **lebih dari satu** variabel independen untuk memprediksi variabel dependen.
+$$ Y = a + b_1X_1 + b_2X_2 + \dots + \epsilon $$
+
+## Studi Kasus dengan R
+
+Memprediksi **Harga Rumah** berdasarkan **Luas Tanah** dan **Jumlah Kamar**.
+
+```{r, echo=TRUE}
+harga <- c(500, 700, 600, 800, 900)
+luas <- c(100, 150, 120, 160, 200)
+kamar <- c(2, 3, 2, 4, 5)
+
+# Model Regresi Berganda
+model_berganda <- lm(harga ~ luas + kamar)
+summary(model_berganda)
+```
+
+::: rmdexercise
+## Soal Evaluasi 15 {.unnumbered}
+
+1.  Apa itu multikolinearitas dalam regresi berganda? [STP-12.1]{.capaian}
+2.  Bagaimana cara menginterpretasikan Adjusted $R^2$? [STP-12.2]{.capaian}
+
+:::
+
+<!--chapter:end:14-regresi-berganda.Rmd-->
+
+# Analisis Statistik Multivariat Interdependensi
+
+## Konsep Dasar
+
+Analisis multivariat interdependensi tidak membedakan variabel menjadi dependen dan independen. Tujuannya adalah untuk mencari struktur dasar dari sekumpulan variabel.
+Contoh: **Analisis Faktor** dan **Principal Component Analysis (PCA)**. Biasanya digunakan untuk mereduksi dimensi data (menyederhanakan banyak variabel menjadi beberapa faktor utama).
+
+## Studi Kasus dengan R
+
+Mereduksi 5 indikator kepuasan menjadi faktor-faktor utama.
+
+```{r, echo=TRUE}
+# Simulasi Data
+set.seed(123)
+data_survei <- matrix(rnorm(100*5), ncol=5)
+colnames(data_survei) <- c("Q1", "Q2", "Q3", "Q4", "Q5")
+
+# Principal Component Analysis
+pca_result <- prcomp(data_survei, scale. = TRUE)
+summary(pca_result)
+
+# Melihat beban faktor (loadings)
+pca_result$rotation
+```
+
+::: rmdexercise
+## Soal Evaluasi 16 {.unnumbered}
+
+1.  Apa tujuan utama dari Analisis Faktor? [STP-13.1]{.capaian}
+2.  Jelaskan perbedaan mendasar antara Analisis Regresi dan Analisis Faktor! [STP-13.2]{.capaian}
+
+:::
+
+<!--chapter:end:15-multivariat-interdependensi.Rmd-->
 

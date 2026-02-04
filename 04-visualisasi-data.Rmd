@@ -6,7 +6,7 @@ Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bent
 
 Sajian data dalam bentuk gambar disebut juga **grafik** atau **diagram** *(chart)*. Jenis grafik atau diagram yang digunakan sangat bergantung pada jenis dan tingkat pengukuran variabel yang akan divisualisasikan.
 
-Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs [@fromdatatoviz] atau [@Ferdio].
+Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs @fromdatatoviz atau @Ferdio.
 
 
 ## Jenis-jenis Diagram
@@ -25,34 +25,259 @@ Bentuk grafik batang tersusun dari dua sumbu tegak (Y) dan datar (X). Tinggi bat
 
 Terdapat dua jenis grafik batang: tegak dan mendatar. Grafik batang tegak disebut juga *column chart* sementara yang mendatar disebut *bar chart*. Perbedaan column chart dan bar chart hanya terletak di **sumbu yang menunjukkan frekuensi kategori**, yakni tinggi/panjang batang. Grafik batang yang menggunakan sumbu Y untuk menunjukkan jumlah frekuensinya adalah ***column chart***, sementara yang menggunakan sumbu X adalah ***bar chart***.
 
-Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang, penjelasannya dapat dilihat di Gambar \@ref:(fig-proses-column-chart). Objek-objek Var-1 memiliki nilai A, B, C, dan seterusnya. Kita perlu membuat tabel distribusi frekuensi dari kolom Var-1 terlebih dahulu sehingga kita mengetahui kategori-kategori dalam Var-1 beserta frekuensinya. Jumlah kategori tersebut akan menjadi jumlah batang, sementara frekuensinya menjadi tinggi atau panjang batang.
+Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang, penjelasannya dapat dilihat di Studi Kasus di bawah.
 
-#### Grafik Batang Bertumpuk (Stacked Column/Bar Chart)
+
+#### Grafik Batang Bertumpuk (Stacked Column/Bar Chart) {.materi-bar-chart}
 
 Grafik batang bertumpuk *(stacked bar/column chart)* digunakan untuk membandingkan komposisi dari beberapa kategori. Setiap batang mewakili nilai total, yang kemudian dipecah menjadi beberapa segmen untuk menunjukkan bagaimana kontribusi masing-masing subkategori membentuk total tersebut. Kategori kedua variabel tersebut dibuat bertumpukan. Misalnya sebaran pengguna kendaraan (mobil, motor, sepeda) berdasarkan jenis kelamin (laki-laki dan perempuan).
 
-Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang bertumpuk, ilustrasi berikut dapat kita gunakan. Objek-objek Var-1 memiliki nilai A, B, atau C. Tiap objek dengan nilai Var-1 yang sama juga memiliki nilai Var-2 yang berbeda. Dengan demikian, objek-objek yang termasuk ke dalam nilai Vari-1 dan Var-2 yang sama akan menjadi tinggi/panjang dari grafik batang.
+Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang bertumpuk, penjelasannya dapat dilihat di Studi Kasus di bawah. Secara umum, data mentah diubah menjadi tabel distribusi frekuensi, dan tabel distribusi frekuensi itu yang menjadi bahan pembuatan grafik.
+
+::: rmdkasus
+
+### Studi Kasus: Visualisasi Moda Transportasi Mahasiswa dengan Diagram Batang  {.unnumbered}
+
+Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi, baru kemudian divisualisasikan.
+
+```{r}
+# Memuat data
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+
+# Membuat tabel distribusi frekuensi untuk moda transportasi
+tabel_moda <- table(data_uinril$kendaraan.utama)
+tabel_moda
+```
+
+Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (*column chart*):
+
+```{r fig-column-moda, fig.cap='Grafik batang tegak distribusi moda transportasi', fig.align='center', out.width='70%'}
+barplot(tabel_moda,
+  main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
+  xlab = "Moda Transportasi",
+  ylab = "Frekuensi",
+  col = "#3498db",
+  las = 2
+)
+```
+
+Atau dalam bentuk grafik batang mendatar (*bar chart*):
+
+```{r fig-bar-moda, fig.cap='Grafik batang mendatar distribusi moda transportasi', fig.align='center', out.width='70%'}
+barplot(tabel_moda,
+  main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
+  xlab = "Frekuensi",
+  ylab = "Moda Transportasi",
+  col = "#e74c3c",
+  horiz = TRUE,
+  las = 1
+)
+```
+
+Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin:
+
+```{r}
+# Membuat tabel kontingensi (distribusi frekuensi dua variabel)
+tabel_moda_jk <- table(data_uinril$Jenis.Kelamin, data_uinril$kendaraan.utama)
+tabel_moda_jk
+```
+
+Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
+
+```{r fig-stacked-bar, fig.cap='Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='75%'}
+barplot(tabel_moda_jk,
+  main = "Moda Transportasi Berdasarkan Jenis Kelamin",
+  xlab = "Moda Transportasi",
+  ylab = "Frekuensi",
+  col = c("#9b59b6", "#f39c12"),
+  legend = rownames(tabel_moda_jk),
+  las = 2,
+  args.legend = list(x = "topright")
+)
+```
+
+**Interpretasi:** Grafik menunjukkan bahwa sepeda motor merupakan moda transportasi yang paling banyak digunakan oleh mahasiswa UINRIL, diikuti oleh mobil dan angkutan umum. Dari grafik batang bertumpuk terlihat bahwa penggunaan sepeda motor lebih dominan pada mahasiswa laki-laki dibandingkan perempuan, sementara penggunaan angkutan umum relatif seimbang antara kedua jenis kelamin.
+
+:::
 
 
 #### Grafik Lollipop
 
 Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data direpresentasikan oleh tiang-tiang berujung lingkaran yang menyerupai permen loli. Penggunaannya sangat cocok untuk data berjumlah banyak guna menghindari efek Moiré (dibaca `moarey') @wikipedia2025moire. Efek Moiré adalah ilusi optik pergerakan benda yang posisinya berdekatan dan membentuk sebuah kisi (fringe) seperti yang ditunjukkan Gambar \@ref(fig:contoh-moire), sehingga dapat menyulitkan pembaca grafik.
 
-Grafik jenis ini juga sering digunakan untuk visualisasi variabel kategoris. Perbedaan dengan grafik batang adalah frekuensi tiap kategori tidak diperlihatkan dengan sumbu tegak, tetapi besar juring (sektor) lingkaran.
 
-Grafik donat memiliki lubang di bagian tengah (seperti namanya, kue donat) yang berfungsi untuk mempermudah pembandingan antarsektor.
+::: rmdkasus
+
+### Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang {.unnumbered}
+
+Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data fakultas mahasiswa UINRIL.
+
+```{r}
+# Install package ggplot2 jika belum ada
+# install.packages('ggplot2')
+library(ggplot2)
+
+# Memuat data dan membuat tabel frekuensi fakultas
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+tabel_fakultas <- as.data.frame(table(data_uinril$Fakultas))
+colnames(tabel_fakultas) <- c("Fakultas", "Frekuensi")
+
+# Mengurutkan berdasarkan frekuensi
+tabel_fakultas <- tabel_fakultas[order(tabel_fakultas$Frekuensi, decreasing = TRUE), ]
+tabel_fakultas
+```
+
+Berikut adalah visualisasi menggunakan grafik batang biasa:
+
+```{r fig-bar-fakultas, fig.cap='Grafik batang fakultas mahasiswa UINRIL', fig.align='center', out.width='85%'}
+ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
+  geom_bar(stat = "identity", fill = "#3498db", width = 0, 8) +
+  theme_minimal() +
+  labs(
+    title = "Distribusi Mahasiswa per Fakultas (Grafik Batang)",
+    x = "Fakultas",
+    y = "Frekuensi"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+```
+
+Sekarang bandingkan dengan grafik lollipop:
+
+```{r fig-lollipop-fakultas, fig.cap='Grafik lollipop fakultas mahasiswa UINRIL', fig.align='center', out.width='85%'}
+ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
+  geom_segment(aes(x = Fakultas, xend = Fakultas, y = 0, yend = Frekuensi),
+    color = "#95a5a6", size = 0, 5
+  ) +
+  geom_point(color = "#e74c3c", size = 3) +
+  theme_minimal() +
+  labs(
+    title = "Distribusi Mahasiswa per Fakultas (Grafik Lollipop)",
+    x = "Fakultas",
+    y = "Frekuensi"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+```
+
+**Perbandingan:** Pada grafik lollipop, setiap kategori lebih mudah dibedakan karena hanya tiang tipis dan titik yang mewakili nilai, sehingga menghindari efek visual yang berlebihan (Moiré). Grafik lollipop sangat cocok untuk dataset dengan banyak kategori seperti ini, karena lebih ringkas dan tetap informatif. Sementara grafik batang biasa terlihat lebih padat dan dapat menimbulkan kesulitan dalam membaca data ketika batang-batangnya berdekatan.
+
+:::
 
 #### Grafik *Treemap*
 
 Secara fungsi, treemap dan *stacked bar chart* sangat mirip karena keduanya menunjukkan distribusi frekuensi objek berdasarkan kategori variabelnya. Jika *stacked chart* memakai panjang segmen pada batang untuk menunjukkan proporsi, *treemap* menggunakan luas area persegi panjang. Frekuensinya diperlihatkan oleh **luas persegi masing-masing kategori**.
 
-Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk yang ditunjukkan oleh Gambar \@ref(fig:proses-treemap)
+Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Treemap Moda Transportasi {.unnumbered}
+
+Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
+
+```{r}
+# Install package treemap jika belum ada
+# install.packages('treemap')
+library(treemap)
+
+# Memuat data
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+
+# Membuat tabel kontingensi dan mengubahnya ke data frame
+tabel_moda_jk <- as.data.frame(table(data_uinril$Jenis.kelamin, data_uinril$kendaraan.utama))
+colnames(tabel_moda_jk) <- c("Jenis_Kelamin", "Moda_Transportasi", "Frekuensi")
+
+# Menampilkan tabel
+tabel_moda_jk
+```
+
+Dari tabel distribusi frekuensi tersebut, kita dapat membuat treemap:
+
+```{r fig-treemap-moda, fig.cap='Treemap moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='80%'}
+treemap(tabel_moda_jk,
+  index = c("Moda_Transportasi", "Jenis_Kelamin"),
+  vSize = "Frekuensi",
+  type = "index",
+  title = "Komposisi Moda Transportasi Berdasarkan Jenis Kelamin",
+  fontsize.labels = c(12, 10),
+  fontcolor.labels = c("white", "white"),
+  bg.labels = 0,
+  border.col = "white",
+  border.lwds = 2,
+  palette = "Set2"
+)
+```
+
+**Interpretasi:** Treemap menunjukkan proporsi penggunaan moda transportasi dengan jelas melalui luas area. Area terbesar dimiliki oleh sepeda motor, menunjukkan dominasinya sebagai moda transportasi utama. Di dalam setiap moda, terdapat sub-area yang menunjukkan pembagian berdasarkan jenis kelamin. Visualisasi ini memudahkan kita untuk membandingkan proporsi secara langsung tanpa perlu membaca angka.
+
+:::
 
 #### Grafik Pai/Donat *(Pie/Donut Chart)*
 
 Grafik jenis ini juga sering digunakan untuk visualisasi variabel kategoris. Perbedaan dengan grafik batang adalah frekuensi tiap kategori tidak diperlihatkan dengan sumbu tegak, tetapi besar juring (sektor) lingkaran.
 
-Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan oleh Gambar \@ref(fig:proses-diagram-pai), hanya saja jumlah kategori menjadi jumlah sektor, sementara frekuensinya menjadi ukuran sektor.
+Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada kasus di \@ref(materi-bar-chart), hanya saja jumlah kategori menjadi jumlah sektor, sementara frekuensinya menjadi ukuran sektor.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Grafik Pai dan Donat {.unnumbered}
+
+Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.
+
+```{r}
+# Memuat data
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+
+# Membuat tabel distribusi frekuensi untuk moda transportasi
+tabel_moda <- table(data_uinril$kendaraan.utama)
+tabel_moda
+```
+
+Dari tabel distribusi frekuensi, kita dapat membuat grafik pai (*pie chart*):
+
+```{r fig-pie-moda, fig.cap='Grafik pai moda transportasi mahasiswa UINRIL', fig.align='center', out.width='70%'}
+# Menghitung persentase
+persentase <- round(100 * tabel_moda / sum(tabel_moda), 1)
+label <- paste0(names(tabel_moda), "\n", persentase, "%")
+
+pie(tabel_moda,
+  labels = label,
+  main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
+  col = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6"),
+  border = "white"
+)
+```
+
+Untuk membuat grafik donat (*donut chart*), kita dapat menggunakan package `ggplot2`:
+
+```{r fig-donut-moda, fig.cap='Grafik donat moda transportasi mahasiswa UINRIL', fig.align='center', out.width='70%'}
+library(ggplot2)
+
+# Mengubah tabel menjadi data frame
+df_moda <- as.data.frame(tabel_moda)
+colnames(df_moda) <- c("Moda", "Frekuensi")
+
+# Menghitung persentase dan posisi label
+df_moda$Persentase <- round(100 * df_moda$Frekuensi / sum(df_moda$Frekuensi), 1)
+df_moda$Label <- paste0(df_moda$Persentase, "%")
+
+# Membuat donut chart
+ggplot(df_moda, aes(x = 2, y = Frekuensi, fill = Moda)) +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  coord_polar(theta = "y") +
+  xlim(0, 5, 2, 5) +
+  theme_void() +
+  labs(title = "Distribusi Moda Transportasi (Donut Chart)") +
+  geom_text(aes(label = Label),
+    position = position_stack(vjust = 0, 5),
+    color = "white", size = 4
+  ) +
+  scale_fill_manual(values = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6"))
+```
+
+**Interpretasi:** Baik grafik pai maupun donat menunjukkan proporsi penggunaan moda transportasi dengan jelas. Sepeda motor mendominasi dengan proporsi terbesar, diikuti oleh mobil dan angkutan umum. Grafik donat memberikan tampilan yang lebih modern dengan ruang kosong di tengahnya yang dapat digunakan untuk informasi tambahan.
+
+:::
+
 
 ### Variabel Numerik
 
@@ -77,7 +302,72 @@ Satu karakteristik lain yang membedakan histogram dengan grafik batang adalah **
 
 :::
 
-Proses pembuatan histogram dari tabel data terstruktur diilustrasikan pada Gambar \@ref(fig:proses-histogram). Dalam proses ini, variabel numerik dikelompokkan ke dalam interval atau rentang tertentu. Selanjutnya, frekuensi merepresentasikan jumlah total objek yang nilainya berada di dalam masing-masing rentang tersebut.
+
+Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus berikut. Dalam proses ini, variabel numerik dikelompokkan ke dalam interval atau rentang tertentu. Selanjutnya, frekuensi merepresentasikan jumlah total objek yang nilainya berada di dalam masing-masing rentang tersebut.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Histogram Biaya Perjalanan {.unnumbered}
+
+Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
+
+```{r}
+# Memuat data
+data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
+
+# Konversi kolom biaya perjalanan (mengganti koma dengan titik)
+data_itera$biaya.perjalanan <- as.numeric(gsub(",", ".", data_itera$biaya.perjalanan))
+
+# Melihat statistik deskriptif
+summary(data_itera$biaya.perjalanan)
+```
+
+Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (bin). R melakukan ini secara otomatis, tetapi kita juga bisa mengatur sendiri. Mari kita buat histogram dengan pengaturan bin otomatis:
+
+```{r fig-hist-biaya-auto, fig.cap='Histogram biaya perjalanan (bin otomatis)', fig.align='center', out.width='75%'}
+hist(data_itera$biaya.perjalanan,
+  main = "Distribusi Biaya Perjalanan Mahasiswa ITERA",
+  xlab = "Biaya Perjalanan (Rp ribu)",
+  ylab = "Frekuensi",
+  col = "#3498db",
+  border = "white",
+  las = 1
+)
+```
+
+Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi dengan lebih detail:
+
+```{r fig-hist-biaya-manual, fig.cap='Histogram biaya perjalanan (bin manual)', fig.align='center', out.width='75%'}
+# Membuat histogram dengan 15 bin
+hist(data_itera$biaya.perjalanan,
+  breaks = 15,
+  main = "Distribusi Biaya Perjalanan (15 Bin)",
+  xlab = "Biaya Perjalanan (Rp ribu)",
+  ylab = "Frekuensi",
+  col = "#e74c3c",
+  border = "white",
+  las = 1
+)
+```
+
+Untuk lebih memahami proses binning, mari kita buat tabel frekuensi manual:
+
+```{r}
+# Membuat interval bin
+bins <- seq(0, max(data_itera$biaya.perjalanan, na.rm = TRUE), length.out = 10)
+
+# Mengelompokkan data ke dalam bin
+data_itera$bin <- cut(data_itera$biaya.perjalanan, breaks = bins, include.lowest = TRUE)
+
+# Membuat tabel frekuensi
+tabel_freq <- table(data_itera$bin)
+head(tabel_freq)
+```
+
+**Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
+
+:::
+
 
 #### *Boxplot*
 
@@ -85,7 +375,80 @@ Boxplot adalah grafik berbentuk kotak dan garis yang menampilkan ukuran penyebar
 
 Sementara itu, variabel numerik tersebut dikategorikan lagi berdasarkan suatu variabel kategoris, maka jumlah kotak dan garisnya bisa lebih dari satu.
 
-Setiap elemen pada boxplot memiliki makna ukuran penyebaran (Gambar \@ref(fig:jenis-boxplot)). Di sini, kita akan berkenalan dengan ukuran penyebaran lain yakni kuartil.
+Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada kasus berikut.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Boxplot Uang Saku Mahasiswa {.unnumbered}
+
+Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi uang saku mahasiswa dari berbagai universitas.
+
+```{r}
+# Memuat data dari beberapa universitas
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
+
+# Menambahkan kolom identitas kampus
+data_uinril$Kampus <- "UINRIL"
+data_unila$Kampus <- "UNILA"
+
+# Menggabungkan data
+data_gabung <- rbind(data_uinril, data_unila)
+
+# Melihat ringkasan data uang saku
+summary(data_gabung$Uang.Saku)
+```
+
+Mari kita buat boxplot tunggal untuk uang saku UINRIL terlebih dahulu:
+
+```{r fig-boxplot-single, fig.cap='Boxplot uang saku mahasiswa UINRIL', fig.align='center', out.width='60%'}
+boxplot(data_uinril$Uang.Saku,
+  main = "Distribusi Uang Saku Mahasiswa UINRIL",
+  ylab = "Uang Saku (Rp juta)",
+  col = "#3498db",
+  border = "#2c3e50"
+)
+
+# Menambahkan label untuk setiap elemen boxplot
+text(1, 1, quantile(data_uinril$Uang.Saku, 0, 25, na.rm = TRUE),
+  labels = paste0("Q1 = ", round(quantile(data_uinril$Uang.Saku, 0, 25, na.rm = TRUE), 1)),
+  pos = 4, cex = 0, 8, col = "red"
+)
+text(1, 1, median(data_uinril$Uang.Saku, na.rm = TRUE),
+  labels = paste0("Median = ", round(median(data_uinril$Uang.Saku, na.rm = TRUE), 1)),
+  pos = 4, cex = 0, 8, col = "red"
+)
+text(1, 1, quantile(data_uinril$Uang.Saku, 0, 75, na.rm = TRUE),
+  labels = paste0("Q3 = ", round(quantile(data_uinril$Uang.Saku, 0, 75, na.rm = TRUE), 1)),
+  pos = 4, cex = 0, 8, col = "red"
+)
+```
+
+Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi uang saku antar kampus:
+
+```{r fig-boxplot-multiple, fig.cap='Boxplot uang saku mahasiswa berdasarkan kampus', fig.align='center', out.width='75%'}
+boxplot(Uang.Saku ~ Kampus,
+  data = data_gabung,
+  main = "Perbandingan Distribusi Uang Saku Antar Kampus",
+  xlab = "Kampus",
+  ylab = "Uang Saku (Rp juta)",
+  col = c("#3498db", "#e74c3c"),
+  border = "#2c3e50"
+)
+```
+
+**Penjelasan elemen boxplot:**
+
+- **Garis tengah kotak (median/Q2)**: Nilai tengah data yang membagi data menjadi dua bagian sama besar
+- **Kotak bagian bawah (Q1)**: Kuartil pertama, 25% data berada di bawah nilai ini
+- **Kotak bagian atas (Q3)**: Kuartil ketiga, 75% data berada di bawah nilai ini
+- **Tinggi kotak (IQR)**: Jarak interkuartil, menunjukkan rentang 50% data tengah
+- **Whiskers (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)
+- **Titik-titik di luar whiskers**: Outlier atau nilai ekstrem yang jauh dari sebagian besar data
+
+**Interpretasi:** Dari boxplot ganda terlihat bahwa distribusi uang saku mahasiswa UNILA memiliki median yang sedikit lebih tinggi dibandingkan UINRIL. Rentang interkuartil (tinggi kotak) UNILA juga lebih besar, menunjukkan variasi uang saku yang lebih beragam. Terdapat beberapa outlier pada kedua kampus yang menunjukkan ada mahasiswa dengan uang saku yang jauh lebih tinggi dari mayoritas. Informasi ini berguna untuk perencanaan fasilitas kampus seperti kantin atau transportasi yang disesuaikan dengan daya beli mahasiswa.
+
+:::
 
 #### Grafik Garis *(Line Plot)* dan Area *(Area Plot)*
 
@@ -97,6 +460,73 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 #### Grafik Pencar *(Scatterplot)*
 
 *Scatterplot* dapat memperlihatkan pemetaan nilai dua variabel numerik yang berkaitan. Sumbu tegak dan datar menunjukkan nilai-nilai dua variabel tersebut sementara tiap titik dibentuk dari perpotongan nilai dari kedua variabel untuk tiap-tiap objek.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Scatterplot Hubungan Biaya Perjalanan dan Uang Saku {.unnumbered}
+
+Scatterplot memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan uang saku mahasiswa ITERA.
+
+```{r}
+# Memuat data
+data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
+
+# Konversi biaya perjalanan (mengganti koma dengan titik)
+data_itera$biaya.perjalanan <- as.numeric(gsub(",", ".", data_itera$biaya.perjalanan))
+
+# Melihat struktur data untuk memahami pemetaan ke scatterplot
+head(data_itera[, c("biaya.perjalanan", "Uang.Saku")], 10)
+```
+
+Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (`biaya.perjalanan`) akan menjadi sumbu X, dan kolom kedua (`Uang.Saku`) menjadi sumbu Y. Setiap baris akan menjadi satu titik pada scatterplot.
+
+Mari kita buat scatterplot sederhana:
+
+```{r fig-scatter-basic, fig.cap='Scatterplot hubungan biaya perjalanan dan uang saku', fig.align='center', out.width='75%'}
+plot(data_itera$biaya.perjalanan, data_itera$Uang.Saku,
+  main = "Hubungan Biaya Perjalanan dan Uang Saku Mahasiswa ITERA",
+  xlab = "Biaya Perjalanan (Rp ribu)",
+  ylab = "Uang Saku (Rp juta)",
+  pch = 16,
+  col = rgb(52, 152, 219, maxColorValue = 255, alpha = 100),
+  cex = 1, 2
+)
+
+# Menambahkan garis tren
+abline(lm(Uang.Saku ~ biaya.perjalanan, data = data_itera),
+  col = "#e74c3c", lwd = 2, lty = 2
+)
+```
+
+Kita juga dapat membuat scatterplot yang lebih informatif menggunakan `ggplot2`:
+
+```{r fig-scatter-ggplot, fig.cap='Scatterplot dengan ggplot2', fig.align='center', out.width='75%'}
+library(ggplot2)
+
+ggplot(data_itera, aes(x = biaya.perjalanan, y = Uang.Saku)) +
+  geom_point(color = "#3498db", alpha = 0, 6, size = 3) +
+  geom_smooth(method = "lm", se = TRUE, color = "#e74c3c", fill = "#e74c3c", alpha = 0, 2) +
+  theme_minimal() +
+  labs(
+    title = "Hubungan Biaya Perjalanan dan Uang Saku",
+    subtitle = "Mahasiswa ITERA",
+    x = "Biaya Perjalanan (Rp ribu)",
+    y = "Uang Saku (Rp juta)"
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 14))
+```
+
+**Hubungan data terstruktur dengan scatterplot:**
+
+- Setiap **baris** dalam tabel data menjadi **satu titik** pada grafik
+- Nilai **kolom pertama** (biaya perjalanan) menentukan **posisi horizontal (X)** titik
+- Nilai **kolom kedua** (uang saku) menentukan **posisi vertikal (Y)** titik
+- Titik di koordinat (50, 2) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu dan uang saku 2 juta
+
+**Interpretasi:** Scatterplot menunjukkan adanya hubungan positif yang lemah hingga sedang antara biaya perjalanan dan uang saku mahasiswa. Mahasiswa dengan uang saku lebih besar cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka mungkin tinggal lebih jauh dari kampus atau menggunakan moda transportasi yang lebih mahal. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa dengan uang saku rendah namun biaya perjalanan tinggi.
+
+:::
+
 
 
 ## Penggunaan dan Interpretasi Diagram
