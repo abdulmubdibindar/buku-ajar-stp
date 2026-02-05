@@ -220,7 +220,7 @@ Pelajari kasus yang berisi perbandingan antara data yang tidak rapi dan data yan
 
 Berikut adalah beberapa contoh kesalahan umum dalam struktur data dan perbaikannya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> Jenis Kesalahan </th>
@@ -255,7 +255,7 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-eleme
 
 Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> ID_rumah </th>
@@ -388,7 +388,7 @@ Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilka
 
 Melanjutkan kasus pengumpulan data pergerakan mahasiswa ITERA dari bab sebelumnya, setelah merumuskan pertanyaan penelitian mengenai keberlanjutan pola pergerakan, kita perlu menentukan variabel yang akan diukur. Berikut adalah variabel-variabel tersebut beserta penjelasannya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-rancangan-metadata)Penelaahan tingkat pengukuran variabel penelitian</caption>
  <thead>
   <tr>
@@ -423,7 +423,7 @@ Melanjutkan kasus pengumpulan data pergerakan mahasiswa ITERA dari bab sebelumny
 
 Setelah menelaah jenis nilai dan tingkat pengukuran variabel, kita perlu menspesifikasikan nilai isian beserta satuannya. Jika menggunakan kodifikasi, aturannya harus diperjelas. Spesifikasi ini disebut **metadata**, yaitu data yang menjelaskan tentang data.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-metadata)Metadata variabel penelitian</caption>
  <thead>
   <tr>
@@ -472,7 +472,7 @@ Kita sudah menentukan nilai dari telaahan variabel-variabel yang sudah kita buat
 
 Kita bisa mengubah tingkat pengukuran variabel dari satu tingkat ke lainnya. Misalnya, kita bisa mengubah tingkat pengukuran variabel `jarak` dari metrik (rasio) menjadi ordinal. Karena tingkat pengukuran variabel metrik adalah angka, untuk mengubahnya menjadi ordinal maka kita perlu mengubahnya menjadi kategorikal. Artinya, kita perlu membuat kategori baru dari variabel `jarak` tersebut.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-ubah-tingkat-pengukuran)Metadata variabel penelitian yang diubah</caption>
  <thead>
   <tr>
@@ -524,7 +524,7 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang tingkat peng
 
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-eval-3-preview)Cuplikan data survei mahasiswa</caption>
  <thead>
   <tr>
@@ -590,7 +590,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-eval-3-metadata)Metadata variabel survei mahasiswa</caption>
  <thead>
   <tr>
@@ -692,7 +692,7 @@ Sekarang kita akan membahas teknik analisis statistik dalam set data (dataset) m
 
 Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta metadatanya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kasus-dataset)Contoh Set Data Hasil Kuesioner</caption>
  <thead>
   <tr>
@@ -774,7 +774,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
 
 **Metadata:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kasus-metadata)Metadata Variabel</caption>
  <thead>
   <tr>
@@ -812,7 +812,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
 
 Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nominal atau ordinal), seperti `kend` dan `tingkat`. Untuk dapat menghitung analisis ini kita harus membuat terlebih dahulu tabel frekuensi untuk kedua variabel ini. Kemudian, barulah kita dapat menghitung frekuensi relatifnya menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif)
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-tabel-frekuensi-kend)Tabel Distribusi Frekuensi Untuk Variabel `kend`</caption>
  <thead>
   <tr>
@@ -868,7 +868,7 @@ Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nom
 </tbody>
 </table>
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-tabel-frekuensi-tingkat)Tabel Distribusi Frekuensi Untuk Variabel `tingkat`</caption>
  <thead>
   <tr>
@@ -947,7 +947,7 @@ Salah satu keunggulan persentase adalah kemampuannya untuk membandingkan dominan
 
 Berdasarkan survei pola mobilitas mahasiswa, diperoleh data sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-perbandingan-kampus)Data Pengguna Sepeda Motor Pribadi di ITERA dan UBL</caption>
  <thead>
   <tr>
@@ -989,7 +989,7 @@ $$
 \text{Persentase sepeda motor UBL} = \frac{195}{380} \times 100\% = 51,3\%
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-hasil-perbandingan)Perbandingan Proporsi dan Persentase Pengguna Sepeda Motor</caption>
  <thead>
   <tr>
@@ -1057,7 +1057,7 @@ Misalkan kita memiliki data survei pola mobilitas mahasiswa dari tiga perguruan 
 
 **Data Tahun 2023:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-laju-2023)Data Pengguna Sepeda Motor Tahun 2023</caption>
  <thead>
   <tr>
@@ -1087,7 +1087,7 @@ Misalkan kita memiliki data survei pola mobilitas mahasiswa dari tiga perguruan 
 
 **Data Tahun 2024:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-laju-2024)Data Pengguna Sepeda Motor Tahun 2024</caption>
  <thead>
   <tr>
@@ -1188,7 +1188,7 @@ Mari kita gunakan data mahasiswa ITERA untuk menghitung rasio penggunaan kendara
 
 Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-rasio-itera)Distribusi Penggunaan Kendaraan Mahasiswa ITERA</caption>
  <thead>
   <tr>
@@ -1218,7 +1218,7 @@ Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi seb
 
 **Detail per jenis kendaraan:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-detail-kendaraan-itera)Detail Jenis Kendaraan yang Digunakan</caption>
  <thead>
   <tr>
@@ -1332,7 +1332,7 @@ $$
 \text{Persentase TO Periode 2} = \frac{32}{429} \times 100\% = 7,5\%
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-percentage-change)Data Penggunaan Transportasi Online di ITERA</caption>
  <thead>
   <tr>
@@ -1405,7 +1405,7 @@ $$
 
 **Sebenarnya, kenaikan pajak tersebut adalah 9,09%, bukan 1%!**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kasus-pajak)Perbandingan Interpretasi Kenaikan Pajak</caption>
  <thead>
   <tr>
@@ -1456,7 +1456,7 @@ $$
 \text{Tambahan tahunan} = \text{Rp 100.000} \times 12 = \text{Rp 1.200.000}
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-dampak-ekonomi)Dampak Kenaikan Pajak pada Penghasilan Rp 10 Juta/Bulan</caption>
  <thead>
   <tr>
@@ -1553,7 +1553,7 @@ Makna yang dihasilkan teknik analisis ini sama saja dengan *mean*, yakni **pusat
 
 Perhatikan data biaya perjalanan sepekan (ribu rupiah) dari 8 mahasiswa ITERA:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-biaya-awal)Biaya Perjalanan Sepekan (Ribu Rupiah)</caption>
  <thead>
   <tr>
@@ -1613,7 +1613,7 @@ $$
 
 Sekarang misalkan Mhs 8 memiliki biaya ekstrem Rp 500.000 (menggunakan layanan *premium*):
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-biaya-outlier)Biaya Perjalanan dengan Pencilan</caption>
  <thead>
   <tr>
@@ -1669,7 +1669,7 @@ $$
 \text{Median} = \frac{65 + 70}{2} = 67,5
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-perbandingan-mean-median)Perbandingan Mean dan Median</caption>
  <thead>
   <tr>
@@ -1722,7 +1722,7 @@ Modus sangat berguna untuk mengidentifikasi nilai yang paling umum dalam data ka
 
 Dari dataset 8 mahasiswa yang telah digunakan sebelumnya, kita dapat membuat tabel frekuensi untuk variabel `kend`:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-modus-kend)Distribusi Frekuensi Jenis Kendaraan</caption>
  <thead>
   <tr>
@@ -1758,7 +1758,7 @@ Modus untuk variabel `kend` adalah **sepeda motor pribadi** (kode 1) dengan frek
 
 Variabel ini menunjukkan berapa kali mahasiswa melakukan perjalanan di hari Senin. Mari kita buat tabel frekuensinya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-modus-perjalanan)Distribusi Frekuensi Perjalanan di Hari Senin</caption>
  <thead>
   <tr>
@@ -1828,7 +1828,7 @@ Indeks Variasi Kualitatif (IQV) sangat berguna untuk mengukur tingkat keberagama
 
 Dari set data hasil penyebaran kuesioner yang berisi 400 mahasiswa, kita dapat membuat tabel distribusi frekuensi untuk variabel `Fakultas`:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-iqv-fakultas)Distribusi Mahasiswa UIN Raden Intan Lampung Berdasarkan Fakultas</caption>
  <thead>
   <tr>
@@ -1902,7 +1902,7 @@ $$
 IQV = \frac{8(1 - 0,231)}{8 - 1} = \frac{8 \times 0,769}{7} = \frac{6,152}{7} = 0,879
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-hasil-iqv)Hasil Perhitungan IQV</caption>
  <thead>
   <tr>
@@ -1950,7 +1950,7 @@ Rentang dapat digunakan untuk membandingkan tingkat keberagaman data antar kelom
 
 Berdasarkan data survei pola mobilitas mahasiswa, kita akan menganalisis variabel `biaya_perjalanan` (biaya perjalanan sepekan dalam rupiah). Perhatikan statistik deskriptif dari kedua kelompok:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-rentang)Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA</caption>
  <thead>
   <tr>
@@ -2026,7 +2026,7 @@ Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$)
 
 Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kuartil-unila)Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = 393)</caption>
  <thead>
   <tr>
@@ -2122,7 +2122,7 @@ $$
 
 **Langkah 2: Buat Tabel Perhitungan $(x_i - \bar{x})^2$**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-simulasi-variansi)Perhitungan Selisih Kuadrat</caption>
  <thead>
 <tr>
@@ -2215,7 +2215,7 @@ Dalam bidang PWK, wilayah dengan simpangan baku pendapatan atau pengeluaran yang
 
 Pemilihan teknik analisis statistik deskriptif sangat bergantung pada tujuan analisis (apakah melihat pemusatan atau penyebaran) dan tingkat pengukuran variabel yang tersedia. Tabel \@ref(tab:rangkuman-deskriptif) merangkum berbagai teknik yang telah dipelajari beserta syarat penggunaannya.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:rangkuman-deskriptif)Rangkuman Teknik Analisis Statistik Deskriptif</caption>
  <thead>
   <tr>
@@ -2296,7 +2296,7 @@ Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap ana
 
 Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 responden berikut.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-eval-4-preview)Cuplikan data survei mahasiswa</caption>
  <thead>
   <tr>
@@ -2362,7 +2362,7 @@ Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 res
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-eval-4-metadata)Metadata variabel survei mahasiswa</caption>
  <thead>
   <tr>
@@ -2472,8 +2472,10 @@ tabel_moda
 
 ```
 ## 
-##                  Berjalan Kaki Kendaraan Bermotor (menumpang)                  Mobil Pribadi                         Sepeda 
-##                             33                             27                             15                              5 
+##                  Berjalan Kaki Kendaraan Bermotor (menumpang) 
+##                             33                             27 
+##                  Mobil Pribadi                         Sepeda 
+##                             15                              5 
 ##           Sepeda Motor Pribadi            Transportasi Online 
 ##                            290                             30
 ```
@@ -2526,9 +2528,13 @@ tabel_moda_jk
 
 ```
 ##            
-##             Berjalan Kaki Kendaraan Bermotor (menumpang) Mobil Pribadi Sepeda Sepeda Motor Pribadi Transportasi Online
-##   Laki-laki             1                              9             6      2                  167                   3
-##   Perempuan            32                             18             9      3                  123                  27
+##             Berjalan Kaki Kendaraan Bermotor (menumpang) Mobil Pribadi Sepeda
+##   Laki-laki             1                              9             6      2
+##   Perempuan            32                             18             9      3
+##            
+##             Sepeda Motor Pribadi Transportasi Online
+##   Laki-laki                  167                   3
+##   Perempuan                  123                  27
 ```
 
 Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
@@ -2596,24 +2602,340 @@ tabel_fakultas
 Berikut adalah visualisasi menggunakan grafik batang biasa:
 
 
+``` r
+ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
+  geom_bar(stat = "identity", fill = "#3498db", width = 0.8) +
+  theme_minimal() +
+  labs(
+    title = "Distribusi Mahasiswa per Fakultas (Grafik Batang)",
+    x = "Fakultas",
+    y = "Frekuensi"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-bar-fakultas-1.png" alt="Grafik batang fakultas mahasiswa UINRIL" width="85%" />
+<p class="caption">(\#fig:fig-bar-fakultas)Grafik batang fakultas mahasiswa UINRIL</p>
+</div>
+
+Sekarang bandingkan dengan grafik lollipop:
 
 
+``` r
+ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
+  geom_segment(aes(x = Fakultas, xend = Fakultas, y = 0, yend = Frekuensi),
+    color = "#95a5a6", size = 0.5
+  ) +
+  geom_point(color = "#e74c3c", size = 3) +
+  theme_minimal() +
+  labs(
+    title = "Distribusi Mahasiswa per Fakultas (Grafik Lollipop)",
+    x = "Fakultas",
+    y = "Frekuensi"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-lollipop-fakultas-1.png" alt="Grafik lollipop fakultas mahasiswa UINRIL" width="85%" />
+<p class="caption">(\#fig:fig-lollipop-fakultas)Grafik lollipop fakultas mahasiswa UINRIL</p>
+</div>
+
+**Perbandingan:** Pada grafik lollipop, setiap kategori lebih mudah dibedakan karena hanya tiang tipis dan titik yang mewakili nilai, sehingga menghindari efek visual yang berlebihan (Moiré). Grafik lollipop sangat cocok untuk dataset dengan banyak kategori seperti ini, karena lebih ringkas dan tetap informatif. Sementara grafik batang biasa terlihat lebih padat dan dapat menimbulkan kesulitan dalam membaca data ketika batang-batangnya berdekatan.
+
+:::
+
+#### Grafik *Treemap*
+
+Secara fungsi, treemap dan *stacked bar chart* sangat mirip karena keduanya menunjukkan distribusi frekuensi objek berdasarkan kategori variabelnya. Jika *stacked chart* memakai panjang segmen pada batang untuk menunjukkan proporsi, *treemap* menggunakan luas area persegi panjang. Frekuensinya diperlihatkan oleh **luas persegi masing-masing kategori**.
+
+Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Treemap Moda Transportasi {.unnumbered}
+
+Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
 
 
+``` r
+# Install package treemap jika belum ada
+# install.packages('treemap')
+library(treemap)
+
+# Memuat data
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+
+# Membuat tabel kontingensi dan mengubahnya ke data frame
+tabel_moda_jk <- as.data.frame(table(data_uinril$Jenis.Kelamin, data_uinril$kendaraan.utama))
+colnames(tabel_moda_jk) <- c("Jenis_Kelamin", "Moda_Transportasi", "Frekuensi")
+
+# Menampilkan tabel
+tabel_moda_jk
+```
+
+```
+##    Jenis_Kelamin              Moda_Transportasi Frekuensi
+## 1      Laki-laki                  Berjalan Kaki         1
+## 2      Perempuan                  Berjalan Kaki        32
+## 3      Laki-laki Kendaraan Bermotor (menumpang)         9
+## 4      Perempuan Kendaraan Bermotor (menumpang)        18
+## 5      Laki-laki                  Mobil Pribadi         6
+## 6      Perempuan                  Mobil Pribadi         9
+## 7      Laki-laki                         Sepeda         2
+## 8      Perempuan                         Sepeda         3
+## 9      Laki-laki           Sepeda Motor Pribadi       167
+## 10     Perempuan           Sepeda Motor Pribadi       123
+## 11     Laki-laki            Transportasi Online         3
+## 12     Perempuan            Transportasi Online        27
+```
+
+Dari tabel distribusi frekuensi tersebut, kita dapat membuat treemap:
 
 
+``` r
+treemap(tabel_moda_jk,
+  index = c("Moda_Transportasi", "Jenis_Kelamin"),
+  vSize = "Frekuensi",
+  type = "index",
+  title = "Komposisi Moda Transportasi Berdasarkan Jenis Kelamin",
+  fontsize.labels = c(12, 10),
+  fontcolor.labels = c("white", "white"),
+  bg.labels = 0,
+  border.col = "white",
+  border.lwds = 2,
+  palette = "Set2"
+)
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-treemap-moda-1.png" alt="Treemap moda transportasi berdasarkan jenis kelamin" width="80%" />
+<p class="caption">(\#fig:fig-treemap-moda)Treemap moda transportasi berdasarkan jenis kelamin</p>
+</div>
+
+**Interpretasi:** Treemap menunjukkan proporsi penggunaan moda transportasi dengan jelas melalui luas area. Area terbesar dimiliki oleh sepeda motor, menunjukkan dominasinya sebagai moda transportasi utama. Di dalam setiap moda, terdapat sub-area yang menunjukkan pembagian berdasarkan jenis kelamin. Visualisasi ini memudahkan kita untuk membandingkan proporsi secara langsung tanpa perlu membaca angka.
+
+:::
+
+#### Grafik Pai/Donat *(Pie/Donut Chart)*
+
+Grafik jenis ini juga sering digunakan untuk visualisasi variabel kategoris. Perbedaan dengan grafik batang adalah frekuensi tiap kategori tidak diperlihatkan dengan sumbu tegak, tetapi besar juring (sektor) lingkaran.
+
+Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada kasus di \@ref(materi-bar-chart), hanya saja jumlah kategori menjadi jumlah sektor, sementara frekuensinya menjadi ukuran sektor.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Grafik Pai dan Donat {.unnumbered}
+
+Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.
 
 
+``` r
+# Memuat data
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+
+# Membuat tabel distribusi frekuensi untuk moda transportasi
+tabel_moda <- table(data_uinril$kendaraan.utama)
+tabel_moda
+```
+
+```
+## 
+##                  Berjalan Kaki Kendaraan Bermotor (menumpang) 
+##                             33                             27 
+##                  Mobil Pribadi                         Sepeda 
+##                             15                              5 
+##           Sepeda Motor Pribadi            Transportasi Online 
+##                            290                             30
+```
+
+Dari tabel distribusi frekuensi, kita dapat membuat grafik pai (*pie chart*):
 
 
+``` r
+# Menghitung persentase
+persentase <- round(100 * tabel_moda / sum(tabel_moda), 1)
+label <- paste0(names(tabel_moda), "\n", persentase, "%")
+
+pie(tabel_moda,
+  labels = label,
+  main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
+  col = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6"),
+  border = "white"
+)
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-pie-moda-1.png" alt="Grafik pai moda transportasi mahasiswa UINRIL" width="70%" />
+<p class="caption">(\#fig:fig-pie-moda)Grafik pai moda transportasi mahasiswa UINRIL</p>
+</div>
+
+Untuk membuat grafik donat (*donut chart*), kita mengubah jenis kategori menjadi juring-juring lingkaran dan sudunya ditentukan dari proporsi frekuensi. Prosesnya sama dengan grafik pai, hanya saja kita di tengahnya ada ruang kosong yang dapat digunakan untuk informasi tambahan.
 
 
+``` r
+library(ggplot2)
+
+# Mengubah tabel menjadi data frame
+df_moda <- as.data.frame(tabel_moda)
+colnames(df_moda) <- c("Moda", "Frekuensi")
+
+# Menghitung persentase dan posisi label
+df_moda$Persentase <- round(100 * df_moda$Frekuensi / sum(df_moda$Frekuensi), 1)
+df_moda$Label <- paste0(df_moda$Persentase, "%")
+
+# Membuat donut chart
+ggplot(df_moda, aes(x = 2, y = Frekuensi, fill = Moda)) +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  coord_polar(theta = "y") +
+  xlim(0.5, 2.5) +
+  theme_void() +
+  labs(title = "Distribusi Moda Transportasi (Donut Chart)") +
+  geom_text(aes(label = Label),
+    position = position_stack(vjust = 0.5),
+    color = "white", size = 4
+  ) +
+  scale_fill_manual(values = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6", "#34495e"))
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-donut-moda-1.png" alt="Grafik donat moda transportasi mahasiswa UINRIL" width="70%" />
+<p class="caption">(\#fig:fig-donut-moda)Grafik donat moda transportasi mahasiswa UINRIL</p>
+</div>
+
+**Interpretasi:** Baik grafik pai maupun donat menunjukkan proporsi penggunaan moda transportasi dengan jelas. Sepeda motor mendominasi dengan proporsi terbesar, diikuti oleh mobil dan angkutan umum. Grafik donat memberikan tampilan yang lebih modern dengan ruang kosong di tengahnya yang dapat digunakan untuk informasi tambahan.
+
+:::
 
 
+### Variabel Numerik
+
+Berbeda dengan visualisasi variabel kategorikal yang memperlihatkan frekuensi masing-masing kategori dalam variabel, grafik data dengan variabel numerik merepresentasikan nilai yang sebenarnya. 
+
+Persamaan dengan visualisasi pada data kategorikal adalah perlunya pertimbangan **jumlah variabel** dan cara menyajikan nilianya dengan sumbu atau bukan. Selain itu juga perlu dipertimbangkan **keterurutan objek/observasi *(order)***.
+
+Berikut adalah tinjauan beberapa jenis grafik visualisasi data variabel numerik dengan masing-masing ilustrasi data terstrukturnya.
+
+#### Histogram
+
+Histogram menunjukkan distribusi nilai-nilai yang berada pada rentang tertentu. Rentang nilai ditunjukkan di sumbu X-nya, sementara sumbu Y adalah frekuensinya. Istilah untuk rentang-rentang ini disebut ***bin***, sementara lebar/ukurannya disebut ***bin size*** atau ***bin width***.
 
 
+::: rmdnote
+
+[Penting!]{.tajuksaya}
+
+Jangan tertukar antara histogram dengan grafik batang! Perbedaan mendasar keduanya terletak pada sumbu X-nya. Sumbu X pada histogram menunjukkan angka, sementara pada grafik batang menunjukkan kategorinya.
+
+Satu karakteristik lain yang membedakan histogram dengan grafik batang adalah **jarak antarbatangnya**. Grafik batang biasanya memiliki celah di antara batangnya, sementara histogram tidak memiliki celah.
+
+:::
 
 
+Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus berikut. Dalam proses ini, variabel numerik dikelompokkan ke dalam interval atau rentang tertentu. Selanjutnya, frekuensi merepresentasikan jumlah total objek yang nilainya berada di dalam masing-masing rentang tersebut.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Histogram Biaya Perjalanan {.unnumbered}
+
+Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
+
+
+``` r
+# Memuat data
+data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
+
+# Melihat statistik deskriptif
+summary(data_itera$biaya.dalam.sepekan)
+```
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##       0   20000   30000   38666   45000  400000
+```
+
+Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (bin). R melakukan ini secara otomatis, tetapi kita juga bisa mengatur sendiri. Mari kita buat histogram dengan pengaturan bin otomatis:
+
+
+``` r
+hist(data_itera$biaya.dalam.sepekan,
+  main = "Distribusi Biaya Perjalanan Mahasiswa ITERA",
+  xlab = "Biaya Perjalanan (Rp ribu)",
+  ylab = "Frekuensi",
+  col = "#3498db",
+  border = "white",
+  las = 1
+)
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-hist-biaya-auto-1.png" alt="Histogram biaya perjalanan (bin otomatis)" width="75%" />
+<p class="caption">(\#fig:fig-hist-biaya-auto)Histogram biaya perjalanan (bin otomatis)</p>
+</div>
+
+Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi dengan lebih detail:
+
+
+``` r
+# Membuat histogram dengan 15 bin
+hist(data_itera$biaya.dalam.sepekan,
+  breaks = 15,
+  main = "Distribusi Biaya Perjalanan (15 Bin)",
+  xlab = "Biaya Perjalanan (Rp ribu)",
+  ylab = "Frekuensi",
+  col = "#e74c3c",
+  border = "white",
+  las = 1
+)
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-hist-biaya-manual-1.png" alt="Histogram biaya perjalanan (bin manual)" width="75%" />
+<p class="caption">(\#fig:fig-hist-biaya-manual)Histogram biaya perjalanan (bin manual)</p>
+</div>
+
+Untuk lebih memahami proses binning, mari kita buat tabel frekuensi manual:
+
+
+``` r
+# Membuat interval bin
+bins <- seq(0, max(data_itera$biaya.dalam.sepekan, na.rm = TRUE), length.out = 10)
+
+# Mengelompokkan data ke dalam bin
+data_itera$bin <- cut(data_itera$biaya.dalam.sepekan, breaks = bins, include.lowest = TRUE)
+
+# Membuat tabel frekuensi
+tabel_freq <- table(data_itera$bin)
+head(tabel_freq)
+```
+
+```
+## 
+##        [0,4.44e+04] (4.44e+04,8.89e+04] (8.89e+04,1.33e+05] (1.33e+05,1.78e+05] 
+##                 318                  80                  13                   7 
+## (1.78e+05,2.22e+05] (2.22e+05,2.67e+05] 
+##                   7                   1
+```
+
+**Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
+
+:::
+
+
+#### *Boxplot*
+
+Boxplot adalah grafik berbentuk kotak dan garis yang menampilkan ukuran penyebaran suatu variabel numerik secara grafis (Gambar \@ref(fig:jenis-boxplot)). Sebagaimana yang ditunjukkan oleh gambar tersebut, kotak dan garis pada boxplot dapat berjumlah satu atau lebih. Satu kotak dan garis menandakan hanya ada satu kategori objek dengan variabel numerik yang ditampilkan.
+
+Sementara itu, variabel numerik tersebut dikategorikan lagi berdasarkan suatu variabel kategoris, maka jumlah kotak dan garisnya bisa lebih dari satu.
+
+Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada kasus berikut.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat Boxplot Biaya Perjalanan Mahasiswa {.unnumbered}
+
+Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
 
 

@@ -131,7 +131,7 @@ Berikut adalah visualisasi menggunakan grafik batang biasa:
 
 ```{r fig-bar-fakultas, fig.cap='Grafik batang fakultas mahasiswa UINRIL', fig.align='center', out.width='85%'}
 ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
-  geom_bar(stat = "identity", fill = "#3498db", width = 0, 8) +
+  geom_bar(stat = "identity", fill = "#3498db", width = 0.8) +
   theme_minimal() +
   labs(
     title = "Distribusi Mahasiswa per Fakultas (Grafik Batang)",
@@ -146,7 +146,7 @@ Sekarang bandingkan dengan grafik lollipop:
 ```{r fig-lollipop-fakultas, fig.cap='Grafik lollipop fakultas mahasiswa UINRIL', fig.align='center', out.width='85%'}
 ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
   geom_segment(aes(x = Fakultas, xend = Fakultas, y = 0, yend = Frekuensi),
-    color = "#95a5a6", size = 0, 5
+    color = "#95a5a6", size = 0.5
   ) +
   geom_point(color = "#e74c3c", size = 3) +
   theme_minimal() +
@@ -183,7 +183,7 @@ library(treemap)
 data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 
 # Membuat tabel kontingensi dan mengubahnya ke data frame
-tabel_moda_jk <- as.data.frame(table(data_uinril$Jenis.kelamin, data_uinril$kendaraan.utama))
+tabel_moda_jk <- as.data.frame(table(data_uinril$Jenis.Kelamin, data_uinril$kendaraan.utama))
 colnames(tabel_moda_jk) <- c("Jenis_Kelamin", "Moda_Transportasi", "Frekuensi")
 
 # Menampilkan tabel
@@ -247,7 +247,7 @@ pie(tabel_moda,
 )
 ```
 
-Untuk membuat grafik donat (*donut chart*), kita dapat menggunakan package `ggplot2`:
+Untuk membuat grafik donat (*donut chart*), kita mengubah jenis kategori menjadi juring-juring lingkaran dan sudunya ditentukan dari proporsi frekuensi. Prosesnya sama dengan grafik pai, hanya saja kita di tengahnya ada ruang kosong yang dapat digunakan untuk informasi tambahan.
 
 ```{r fig-donut-moda, fig.cap='Grafik donat moda transportasi mahasiswa UINRIL', fig.align='center', out.width='70%'}
 library(ggplot2)
@@ -264,14 +264,14 @@ df_moda$Label <- paste0(df_moda$Persentase, "%")
 ggplot(df_moda, aes(x = 2, y = Frekuensi, fill = Moda)) +
   geom_bar(stat = "identity", width = 1, color = "white") +
   coord_polar(theta = "y") +
-  xlim(0, 5, 2, 5) +
+  xlim(0.5, 2.5) +
   theme_void() +
   labs(title = "Distribusi Moda Transportasi (Donut Chart)") +
   geom_text(aes(label = Label),
-    position = position_stack(vjust = 0, 5),
+    position = position_stack(vjust = 0.5),
     color = "white", size = 4
   ) +
-  scale_fill_manual(values = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6"))
+  scale_fill_manual(values = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6", "#34495e"))
 ```
 
 **Interpretasi:** Baik grafik pai maupun donat menunjukkan proporsi penggunaan moda transportasi dengan jelas. Sepeda motor mendominasi dengan proporsi terbesar, diikuti oleh mobil dan angkutan umum. Grafik donat memberikan tampilan yang lebih modern dengan ruang kosong di tengahnya yang dapat digunakan untuk informasi tambahan.
@@ -315,17 +315,14 @@ Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam
 # Memuat data
 data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
 
-# Konversi kolom biaya perjalanan (mengganti koma dengan titik)
-data_itera$biaya.perjalanan <- as.numeric(gsub(",", ".", data_itera$biaya.perjalanan))
-
 # Melihat statistik deskriptif
-summary(data_itera$biaya.perjalanan)
+summary(data_itera$biaya.dalam.sepekan)
 ```
 
 Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (bin). R melakukan ini secara otomatis, tetapi kita juga bisa mengatur sendiri. Mari kita buat histogram dengan pengaturan bin otomatis:
 
 ```{r fig-hist-biaya-auto, fig.cap='Histogram biaya perjalanan (bin otomatis)', fig.align='center', out.width='75%'}
-hist(data_itera$biaya.perjalanan,
+hist(data_itera$biaya.dalam.sepekan,
   main = "Distribusi Biaya Perjalanan Mahasiswa ITERA",
   xlab = "Biaya Perjalanan (Rp ribu)",
   ylab = "Frekuensi",
@@ -339,7 +336,7 @@ Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi denga
 
 ```{r fig-hist-biaya-manual, fig.cap='Histogram biaya perjalanan (bin manual)', fig.align='center', out.width='75%'}
 # Membuat histogram dengan 15 bin
-hist(data_itera$biaya.perjalanan,
+hist(data_itera$biaya.dalam.sepekan,
   breaks = 15,
   main = "Distribusi Biaya Perjalanan (15 Bin)",
   xlab = "Biaya Perjalanan (Rp ribu)",
@@ -354,10 +351,10 @@ Untuk lebih memahami proses binning, mari kita buat tabel frekuensi manual:
 
 ```{r}
 # Membuat interval bin
-bins <- seq(0, max(data_itera$biaya.perjalanan, na.rm = TRUE), length.out = 10)
+bins <- seq(0, max(data_itera$biaya.dalam.sepekan, na.rm = TRUE), length.out = 10)
 
 # Mengelompokkan data ke dalam bin
-data_itera$bin <- cut(data_itera$biaya.perjalanan, breaks = bins, include.lowest = TRUE)
+data_itera$bin <- cut(data_itera$biaya.dalam.sepekan, breaks = bins, include.lowest = TRUE)
 
 # Membuat tabel frekuensi
 tabel_freq <- table(data_itera$bin)
@@ -379,59 +376,59 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Boxplot Uang Saku Mahasiswa {.unnumbered}
+### Studi Kasus: Membuat Boxplot Biaya Perjalanan Mahasiswa {.unnumbered}
 
-Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi uang saku mahasiswa dari berbagai universitas.
+Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
 ```{r}
 # Memuat data dari beberapa universitas
 data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
 
-# Menambahkan kolom identitas kampus
-data_uinril$Kampus <- "UINRIL"
-data_unila$Kampus <- "UNILA"
+# Memilih kolom biaya perjalanan
+data_uinril <- data_uinril[, c("biaya.dalam.sepekan")]
+data_unila <- data_unila[, c("biaya.dalam.sepekan")]
 
 # Menggabungkan data
 data_gabung <- rbind(data_uinril, data_unila)
 
-# Melihat ringkasan data uang saku
-summary(data_gabung$Uang.Saku)
+# Melihat ringkasan data biaya perjalanan
+summary(data_gabung$biaya.dalam.sepekan)
 ```
 
-Mari kita buat boxplot tunggal untuk uang saku UINRIL terlebih dahulu:
+Mari kita buat boxplot tunggal untuk biaya perjalanan UINRIL terlebih dahulu:
 
-```{r fig-boxplot-single, fig.cap='Boxplot uang saku mahasiswa UINRIL', fig.align='center', out.width='60%'}
-boxplot(data_uinril$Uang.Saku,
-  main = "Distribusi Uang Saku Mahasiswa UINRIL",
-  ylab = "Uang Saku (Rp juta)",
+```{r fig-boxplot-single, fig.cap='Boxplot biaya perjalanan mahasiswa UINRIL', fig.align='center', out.width='60%'}
+boxplot(data_uinril$biaya.dalam.sepekan,
+  main = "Distribusi Biaya Perjalanan Mahasiswa UINRIL",
+  ylab = "Biaya Perjalanan (Rp ribu)",
   col = "#3498db",
   border = "#2c3e50"
 )
 
 # Menambahkan label untuk setiap elemen boxplot
-text(1, 1, quantile(data_uinril$Uang.Saku, 0, 25, na.rm = TRUE),
-  labels = paste0("Q1 = ", round(quantile(data_uinril$Uang.Saku, 0, 25, na.rm = TRUE), 1)),
+text(1, 1, quantile(data_uinril$biaya.dalam.sepekan, 0, 25, na.rm = TRUE),
+  labels = paste0("Q1 = ", round(quantile(data_uinril$biaya.dalam.sepekan, 0, 25, na.rm = TRUE), 1)),
   pos = 4, cex = 0, 8, col = "red"
 )
-text(1, 1, median(data_uinril$Uang.Saku, na.rm = TRUE),
-  labels = paste0("Median = ", round(median(data_uinril$Uang.Saku, na.rm = TRUE), 1)),
+text(1, 1, median(data_uinril$biaya.dalam.sepekan, na.rm = TRUE),
+  labels = paste0("Median = ", round(median(data_uinril$biaya.dalam.sepekan, na.rm = TRUE), 1)),
   pos = 4, cex = 0, 8, col = "red"
 )
-text(1, 1, quantile(data_uinril$Uang.Saku, 0, 75, na.rm = TRUE),
-  labels = paste0("Q3 = ", round(quantile(data_uinril$Uang.Saku, 0, 75, na.rm = TRUE), 1)),
+text(1, 1, quantile(data_uinril$biaya.dalam.sepekan, 0, 75, na.rm = TRUE),
+  labels = paste0("Q3 = ", round(quantile(data_uinril$biaya.dalam.sepekan, 0, 75, na.rm = TRUE), 1)),
   pos = 4, cex = 0, 8, col = "red"
 )
 ```
 
-Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi uang saku antar kampus:
+Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perjalanan antar kampus:
 
-```{r fig-boxplot-multiple, fig.cap='Boxplot uang saku mahasiswa berdasarkan kampus', fig.align='center', out.width='75%'}
-boxplot(Uang.Saku ~ Kampus,
+```{r fig-boxplot-multiple, fig.cap='Boxplot biaya perjalanan mahasiswa berdasarkan kampus', fig.align='center', out.width='75%'}
+boxplot(biaya.dalam.sepekan ~ Kampus,
   data = data_gabung,
-  main = "Perbandingan Distribusi Uang Saku Antar Kampus",
+  main = "Perbandingan Distribusi Biaya Perjalanan Antar Kampus",
   xlab = "Kampus",
-  ylab = "Uang Saku (Rp juta)",
+  ylab = "Biaya Perjalanan (Rp ribu)",
   col = c("#3498db", "#e74c3c"),
   border = "#2c3e50"
 )
@@ -446,7 +443,7 @@ boxplot(Uang.Saku ~ Kampus,
 - **Whiskers (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)
 - **Titik-titik di luar whiskers**: Outlier atau nilai ekstrem yang jauh dari sebagian besar data
 
-**Interpretasi:** Dari boxplot ganda terlihat bahwa distribusi uang saku mahasiswa UNILA memiliki median yang sedikit lebih tinggi dibandingkan UINRIL. Rentang interkuartil (tinggi kotak) UNILA juga lebih besar, menunjukkan variasi uang saku yang lebih beragam. Terdapat beberapa outlier pada kedua kampus yang menunjukkan ada mahasiswa dengan uang saku yang jauh lebih tinggi dari mayoritas. Informasi ini berguna untuk perencanaan fasilitas kampus seperti kantin atau transportasi yang disesuaikan dengan daya beli mahasiswa.
+**Interpretasi:** Dari boxplot ganda terlihat bahwa distribusi biaya perjalanan mahasiswa UNILA memiliki median yang sedikit lebih tinggi dibandingkan UINRIL. Rentang interkuartil (tinggi kotak) UNILA juga lebih besar, menunjukkan variasi biaya perjalanan yang lebih beragam. Terdapat beberapa outlier pada kedua kampus yang menunjukkan ada mahasiswa dengan biaya perjalanan yang jauh lebih tinggi dari mayoritas. Informasi ini berguna untuk perencanaan fasilitas kampus seperti kantin atau transportasi yang disesuaikan dengan daya beli mahasiswa.
 
 :::
 
@@ -463,27 +460,27 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Scatterplot Hubungan Biaya Perjalanan dan Uang Saku {.unnumbered}
+### Studi Kasus: Membuat *Scatterplot* Hubungan Biaya Perjalanan dan Uang Saku {.unnumbered}
 
-Scatterplot memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan uang saku mahasiswa ITERA.
+*Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan uang saku mahasiswa ITERA.
 
 ```{r}
 # Memuat data
 data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
 
 # Konversi biaya perjalanan (mengganti koma dengan titik)
-data_itera$biaya.perjalanan <- as.numeric(gsub(",", ".", data_itera$biaya.perjalanan))
+data_itera$biaya.dalam.sepekan <- as.numeric(gsub(",", ".", data_itera$biaya.dalam.sepekan))
 
 # Melihat struktur data untuk memahami pemetaan ke scatterplot
-head(data_itera[, c("biaya.perjalanan", "Uang.Saku")], 10)
+head(data_itera[, c("biaya.dalam.sepekan", "Uang.Saku")], 10)
 ```
 
-Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (`biaya.perjalanan`) akan menjadi sumbu X, dan kolom kedua (`Uang.Saku`) menjadi sumbu Y. Setiap baris akan menjadi satu titik pada scatterplot.
+Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (`biaya.dalam.sepekan`) akan menjadi sumbu X, dan kolom kedua (`Uang.Saku`) menjadi sumbu Y. Setiap baris akan menjadi satu titik pada scatterplot.
 
-Mari kita buat scatterplot sederhana:
+Mari kita buat *scatterplot* sederhana:
 
 ```{r fig-scatter-basic, fig.cap='Scatterplot hubungan biaya perjalanan dan uang saku', fig.align='center', out.width='75%'}
-plot(data_itera$biaya.perjalanan, data_itera$Uang.Saku,
+plot(data_itera$biaya.dalam.sepekan, data_itera$Uang.Saku,
   main = "Hubungan Biaya Perjalanan dan Uang Saku Mahasiswa ITERA",
   xlab = "Biaya Perjalanan (Rp ribu)",
   ylab = "Uang Saku (Rp juta)",
@@ -493,17 +490,17 @@ plot(data_itera$biaya.perjalanan, data_itera$Uang.Saku,
 )
 
 # Menambahkan garis tren
-abline(lm(Uang.Saku ~ biaya.perjalanan, data = data_itera),
+abline(lm(Uang.Saku ~ biaya.dalam.sepekan, data = data_itera),
   col = "#e74c3c", lwd = 2, lty = 2
 )
 ```
 
-Kita juga dapat membuat scatterplot yang lebih informatif menggunakan `ggplot2`:
+Kita juga dapat membuat *scatterplot* yang lebih informatif menggunakan `ggplot2`:
 
 ```{r fig-scatter-ggplot, fig.cap='Scatterplot dengan ggplot2', fig.align='center', out.width='75%'}
 library(ggplot2)
 
-ggplot(data_itera, aes(x = biaya.perjalanan, y = Uang.Saku)) +
+ggplot(data_itera, aes(x = biaya.dalam.sepekan, y = Uang.Saku)) +
   geom_point(color = "#3498db", alpha = 0, 6, size = 3) +
   geom_smooth(method = "lm", se = TRUE, color = "#e74c3c", fill = "#e74c3c", alpha = 0, 2) +
   theme_minimal() +
@@ -543,8 +540,39 @@ Jawaban dari pertanyaan-pertanyaan ini akan menuntun Anda pada pilihan diagram y
 
 ### Pemilihan Diagram Berdasarkan Tujuan
 
+Secara umum, tujuan visualisasi data dalam statistik dapat dikelompokkan menjadi beberapa empat kategori, yang masing-masing memiliki jenis diagram yang cocok. Berikut adalan penjelasan keempat kategori tersebut.
+
+1. **Menampilkan Distribusi Frekuensi**. Ini paling cocok untuk variabel kategorikal (nominal atau ordinal). Pilihan utamanya adalah **grafik batang** atau **grafik lollipop**, di mana panjang atau tinggi batang merepresentasikan jumlah atau frekuensi setiap kategori.
+2. **Menampilkan Komposisi**. Ketika Anda ingin menunjukkan bagian-bagian dari suatu keseluruhan, Anda sedang menampilkan komposisi. **Grafik pai** atau **donat** dapat dipakai untuk tujuan ini.
+3. **Menampilkan Distribusi Nilai Numerik**. Ketika Anda ingin menampilkan distribusi nilai numerik, Anda dapat menggunakan **histogram** atau **boxplot**. Untuk menampilkan ukuran-ukuran statistik penyebaran dengan lebih tegas, Anda dapat menggunakan *boxplot*.
+4. **Menampilkan Hubungan Antar Variabel**. Ketika Anda ingin menunjukkan hubungan antar variabel, Anda dapat menggunakan **scatterplot** atau **line plot**.
+
 ### Pemilihan Diagram Berdasarkan Jumlah Variabel
+
+Pemilihan diagram juga dapat Anda lakukan dengan melihat jumlah variabel yang ingin Anda tampilkan. Jika hanya satu variabel, Anda dapat menggunakan **grafik batang** atau **grafik lollipop**. Jika ada dua variabel, Anda dapat menggunakan **scatterplot** atau **line plot**.
+
+Grafik batang juga dapat digunakan untuk menampilkan distribusi frekuensi dari dua variabel kategorikal dengan menggunakan **grafik batang bertumpuk** atau **grafik batang berjejer**.
 
 
 ### Pemilihan Diagram Berdasarkan Tingkat Pengukuran Variabel
+
+Secara umum, diagram yang digunakan untuk menampilkan data kategorikal adalah **grafik batang** atau **grafik lollipop**, sedangkan diagram yang digunakan untuk menampilkan data numerik adalah **histogram** atau **boxplot**.
+
+Beberapa contoh pertimbangan dalam memilih diagram berdasarkan tingkat pengukuran variabel adalah sebagai berikut:
+
+1. **Data Ordinal**. Untuk data ordinal, Anda sangat disarankan untuk menggunakan **grafik batang** atau **grafik lollipop** yang diurutkan berdasarkan urutan kategori.
+2. **Data Metrik**. Histogram, *boxplot*, dan *scatterplot* adalah pilihan standar untuk visualisasi.
+
+Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingkat pengukuran variabel tersebut dapat dilihat pada Gambar \@ref(fig:simpulan-memilih-visualisasi) berikut.
+
+```{r simpulan-memilih-visualisasi, echo=FALSE, fig.cap='Panduan memilih jenis visualisasi', fig.align='center', out.width='60%'}
+knitr::include_graphics('images/simpulan-memilih-visualisasi.png')
+```
+
+::: rmdexercise
+
+
+
+:::
+
 
