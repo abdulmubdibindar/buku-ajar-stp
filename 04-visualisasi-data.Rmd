@@ -6,7 +6,7 @@ Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bent
 
 Sajian data dalam bentuk gambar disebut juga **grafik** atau **diagram** *(chart)*. Jenis grafik atau diagram yang digunakan sangat bergantung pada jenis dan tingkat pengukuran variabel yang akan divisualisasikan.
 
-Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs @fromdatatoviz atau @Ferdio.
+Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs @datatoviz atau @Ferdio.
 
 
 ## Jenis-jenis Diagram
@@ -41,6 +41,9 @@ Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang b
 Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi, baru kemudian divisualisasikan.
 
 ```{r}
+# Memuat library
+library(tidyverse)
+
 # Memuat data
 data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 
@@ -386,8 +389,12 @@ data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
 
 # Memilih kolom biaya perjalanan
-data_uinril <- data_uinril[, c("biaya.dalam.sepekan")]
-data_unila <- data_unila[, c("biaya.dalam.sepekan")]
+data_uinril <- data_uinril |>
+  select(biaya.dalam.sepekan, Kampus_PT)
+
+data_unila <- data_unila |>
+  select(biaya.dalam.sepekan, Kampus_PT)
+
 
 # Menggabungkan data
 data_gabung <- rbind(data_uinril, data_unila)
@@ -424,7 +431,7 @@ text(1, 1, quantile(data_uinril$biaya.dalam.sepekan, 0, 75, na.rm = TRUE),
 Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perjalanan antar kampus:
 
 ```{r fig-boxplot-multiple, fig.cap='Boxplot biaya perjalanan mahasiswa berdasarkan kampus', fig.align='center', out.width='75%'}
-boxplot(biaya.dalam.sepekan ~ Kampus,
+boxplot(biaya.dalam.sepekan ~ Kampus_PT,
   data = data_gabung,
   main = "Perbandingan Distribusi Biaya Perjalanan Antar Kampus",
   xlab = "Kampus",
@@ -460,38 +467,44 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat *Scatterplot* Hubungan Biaya Perjalanan dan Uang Saku {.unnumbered}
+### Studi Kasus: Membuat *Scatterplot* Hubungan Biaya Perjalanan dan Jarak Tempuh {.unnumbered}
 
-*Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan uang saku mahasiswa ITERA.
+*Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
 
 ```{r}
-# Memuat data
-data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
+# Memuat library
+library(tidyverse)
 
-# Konversi biaya perjalanan (mengganti koma dengan titik)
-data_itera$biaya.dalam.sepekan <- as.numeric(gsub(",", ".", data_itera$biaya.dalam.sepekan))
+# Memuat data
+data_itera <- read.csv2('datasets/DataUtama_mhsITERA.csv')
+
+# Konversi biaya perjalanan dan jarak (mengganti koma dengan titik, lalu ke numeric)
+data_itera$biaya.dalam.sepekan <- as.numeric(gsub(',', '.', data_itera$biaya.dalam.sepekan))
+data_itera$jarak <- as.numeric(gsub(',', '.', data_itera$jarak))
+
+# Menghapus baris dengan nilai NA pada kedua variabel
+data_itera <- data_itera %>% drop_na(biaya.dalam.sepekan, jarak)
 
 # Melihat struktur data untuk memahami pemetaan ke scatterplot
-head(data_itera[, c("biaya.dalam.sepekan", "Uang.Saku")], 10)
+head(data_itera[, c('biaya.dalam.sepekan', 'jarak')], 10)
 ```
 
-Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (`biaya.dalam.sepekan`) akan menjadi sumbu X, dan kolom kedua (`Uang.Saku`) menjadi sumbu Y. Setiap baris akan menjadi satu titik pada scatterplot.
+Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (`biaya.dalam.sepekan`) akan menjadi sumbu X, dan kolom kedua (`jarak`) menjadi sumbu Y. Setiap baris akan menjadi satu titik pada scatterplot.
 
 Mari kita buat *scatterplot* sederhana:
 
-```{r fig-scatter-basic, fig.cap='Scatterplot hubungan biaya perjalanan dan uang saku', fig.align='center', out.width='75%'}
-plot(data_itera$biaya.dalam.sepekan, data_itera$Uang.Saku,
-  main = "Hubungan Biaya Perjalanan dan Uang Saku Mahasiswa ITERA",
-  xlab = "Biaya Perjalanan (Rp ribu)",
-  ylab = "Uang Saku (Rp juta)",
+```{r fig-scatter-basic, fig.cap='Scatterplot hubungan biaya perjalanan dan jarak tempuh', fig.align='center', out.width='75%'}
+plot(data_itera$biaya.dalam.sepekan, data_itera$jarak,
+  main = 'Hubungan Biaya Perjalanan dan Jarak Tempuh Mahasiswa ITERA',
+  xlab = 'Biaya Perjalanan (Rp ribu)',
+  ylab = 'Jarak Tempuh (km)',
   pch = 16,
-  col = rgb(52, 152, 219, maxColorValue = 255, alpha = 100),
-  cex = 1, 2
+  col = rgb(52, 152, 219, maxColorValue = 255, alpha = 100)
 )
 
 # Menambahkan garis tren
-abline(lm(Uang.Saku ~ biaya.dalam.sepekan, data = data_itera),
-  col = "#e74c3c", lwd = 2, lty = 2
+abline(lm(jarak ~ biaya.dalam.sepekan, data = data_itera),
+  col = '#e74c3c', lwd = 2, lty = 2
 )
 ```
 
@@ -500,27 +513,27 @@ Kita juga dapat membuat *scatterplot* yang lebih informatif menggunakan `ggplot2
 ```{r fig-scatter-ggplot, fig.cap='Scatterplot dengan ggplot2', fig.align='center', out.width='75%'}
 library(ggplot2)
 
-ggplot(data_itera, aes(x = biaya.dalam.sepekan, y = Uang.Saku)) +
-  geom_point(color = "#3498db", alpha = 0, 6, size = 3) +
-  geom_smooth(method = "lm", se = TRUE, color = "#e74c3c", fill = "#e74c3c", alpha = 0, 2) +
+ggplot(data_itera, aes(x = biaya.dalam.sepekan, y = jarak)) +
+  geom_point(color = '#3498db', alpha = 0.6, size = 3) +
+  geom_smooth(method = 'lm', se = TRUE, color = '#e74c3c', fill = '#e74c3c', alpha = 0.2) +
   theme_minimal() +
   labs(
-    title = "Hubungan Biaya Perjalanan dan Uang Saku",
-    subtitle = "Mahasiswa ITERA",
-    x = "Biaya Perjalanan (Rp ribu)",
-    y = "Uang Saku (Rp juta)"
+    title = 'Hubungan Biaya Perjalanan dan Jarak Tempuh',
+    subtitle = 'Mahasiswa ITERA',
+    x = 'Biaya Perjalanan (Rp ribu)',
+    y = 'Jarak Tempuh (km)'
   ) +
-  theme(plot.title = element_text(face = "bold", size = 14))
+  theme(plot.title = element_text(face = 'bold', size = 14))
 ```
 
 **Hubungan data terstruktur dengan scatterplot:**
 
 - Setiap **baris** dalam tabel data menjadi **satu titik** pada grafik
 - Nilai **kolom pertama** (biaya perjalanan) menentukan **posisi horizontal (X)** titik
-- Nilai **kolom kedua** (uang saku) menentukan **posisi vertikal (Y)** titik
-- Titik di koordinat (50, 2) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu dan uang saku 2 juta
+- Nilai **kolom kedua** (jarak tempuh) menentukan **posisi vertikal (Y)** titik
+- Titik di koordinat (50, 10) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu dan jarak tempuh 10 km
 
-**Interpretasi:** Scatterplot menunjukkan adanya hubungan positif yang lemah hingga sedang antara biaya perjalanan dan uang saku mahasiswa. Mahasiswa dengan uang saku lebih besar cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka mungkin tinggal lebih jauh dari kampus atau menggunakan moda transportasi yang lebih mahal. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa dengan uang saku rendah namun biaya perjalanan tinggi.
+**Interpretasi:** Scatterplot menunjukkan adanya hubungan positif antara biaya perjalanan dan jarak tempuh mahasiswa ITERA. Mahasiswa yang tinggal lebih jauh dari kampus cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka memerlukan lebih banyak bahan bakar atau biaya transportasi umum. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa yang tinggal jauh dari kampus.
 
 :::
 

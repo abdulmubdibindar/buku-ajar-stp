@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Visualisasi Data Kuantitatif | Buku Ajar Statistika untuk Perencanaan</title>
   <meta name="description" content="4 Visualisasi Data Kuantitatif | Buku Ajar Statistika untuk Perencanaan" />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Visualisasi Data Kuantitatif | Buku Ajar Statistika untuk Perencanaan" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="analisis-statistik-deskriptif.html"/>
-<link rel="next" href="pengantar-analisis-statistik-inferensial.html"/>
+<link rel="next" href="estimasi-parameter.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -134,7 +134,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -186,7 +185,7 @@ div.csl-indent {
 <li class="chapter" data-level="2" data-path="data-terstruktur.html"><a href="data-terstruktur.html"><i class="fa fa-check"></i><b>2</b> Data Terstruktur</a>
 <ul>
 <li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#capaian-pembelajaran-1"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="2.1" data-path="data-terstruktur.html"><a href="data-terstruktur.html#elemen-data-terstruktur"><i class="fa fa-check"></i><b>2.1</b> Elemen Data Terstruktur</a>
+<li class="chapter" data-level="2.1" data-path="data-terstruktur.html"><a href="data-terstruktur.html#kasus-elemen-data-terstruktur"><i class="fa fa-check"></i><b>2.1</b> Elemen Data Terstruktur</a>
 <ul>
 <li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#kasus-elemen-data-terstruktur"><i class="fa fa-check"></i>Studi Kasus: Elemen Data Terstruktur</a></li>
 </ul></li>
@@ -253,102 +252,108 @@ div.csl-indent {
 <li class="chapter" data-level="4" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html"><i class="fa fa-check"></i><b>4</b> Visualisasi Data Kuantitatif</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#konsep-dasar"><i class="fa fa-check"></i><b>4.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="4.2" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#jenis-visualisasi-dasar"><i class="fa fa-check"></i><b>4.2</b> Jenis Visualisasi Dasar</a>
+<li class="chapter" data-level="4.2" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#jenis-jenis-diagram"><i class="fa fa-check"></i><b>4.2</b> Jenis-jenis Diagram</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#diagram-batang-bar-chart"><i class="fa fa-check"></i><b>4.2.1</b> Diagram Batang (Bar Chart)</a></li>
-<li class="chapter" data-level="4.2.2" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#histogram"><i class="fa fa-check"></i><b>4.2.2</b> Histogram</a></li>
-<li class="chapter" data-level="4.2.3" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#boxplot"><i class="fa fa-check"></i><b>4.2.3</b> Boxplot</a></li>
-<li class="chapter" data-level="4.2.4" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#scatterplot"><i class="fa fa-check"></i><b>4.2.4</b> Scatterplot</a></li>
+<li class="chapter" data-level="4.2.1" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#variabel-kategorikal"><i class="fa fa-check"></i><b>4.2.1</b> Variabel Kategorikal</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#studi-kasus-visualisasi-moda-transportasi-mahasiswa-dengan-diagram-batang"><i class="fa fa-check"></i>Studi Kasus: Visualisasi Moda Transportasi Mahasiswa dengan Diagram Batang</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#studi-kasus-perbandingan-grafik-lollipop-dengan-grafik-batang"><i class="fa fa-check"></i>Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-treemap-moda-transportasi"><i class="fa fa-check"></i>Studi Kasus: Membuat Treemap Moda Transportasi</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-grafik-pai-dan-donat"><i class="fa fa-check"></i>Studi Kasus: Membuat Grafik Pai dan Donat</a></li>
+<li class="chapter" data-level="4.2.2" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#variabel-numerik"><i class="fa fa-check"></i><b>4.2.2</b> Variabel Numerik</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-histogram-biaya-perjalanan"><i class="fa fa-check"></i>Studi Kasus: Membuat Histogram Biaya Perjalanan</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-boxplot-biaya-perjalanan-mahasiswa"><i class="fa fa-check"></i>Studi Kasus: Membuat Boxplot Biaya Perjalanan Mahasiswa</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-scatterplot-hubungan-biaya-perjalanan-dan-jarak-tempuh"><i class="fa fa-check"></i>Studi Kasus: Membuat <em>Scatterplot</em> Hubungan Biaya Perjalanan dan Jarak Tempuh</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#studi-kasus"><i class="fa fa-check"></i><b>4.3</b> Studi Kasus</a></li>
-<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#soal-evaluasi-5"><i class="fa fa-check"></i>Soal Evaluasi 5</a></li>
+<li class="chapter" data-level="4.3" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#penggunaan-dan-interpretasi-diagram"><i class="fa fa-check"></i><b>4.3</b> Penggunaan dan Interpretasi Diagram</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-tujuan"><i class="fa fa-check"></i><b>4.3.1</b> Pemilihan Diagram Berdasarkan Tujuan</a></li>
+<li class="chapter" data-level="4.3.2" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-jumlah-variabel"><i class="fa fa-check"></i><b>4.3.2</b> Pemilihan Diagram Berdasarkan Jumlah Variabel</a></li>
+<li class="chapter" data-level="4.3.3" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-tingkat-pengukuran-variabel"><i class="fa fa-check"></i><b>4.3.3</b> Pemilihan Diagram Berdasarkan Tingkat Pengukuran Variabel</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="pengantar-analisis-statistik-inferensial.html"><a href="pengantar-analisis-statistik-inferensial.html"><i class="fa fa-check"></i><b>5</b> Pengantar Analisis Statistik Inferensial</a>
+<li class="chapter" data-level="4.4" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#konsep-dasar-1"><i class="fa fa-check"></i><b>4.4</b> Konsep Dasar</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="pengantar-analisis-statistik-inferensial.html"><a href="pengantar-analisis-statistik-inferensial.html#konsep-dasar-1"><i class="fa fa-check"></i><b>5.1</b> Konsep Dasar</a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="pengantar-analisis-statistik-inferensial.html"><a href="pengantar-analisis-statistik-inferensial.html#teknik-pengambilan-sampel"><i class="fa fa-check"></i><b>5.1.1</b> Teknik Pengambilan Sampel</a></li>
+<li class="chapter" data-level="4.4.1" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#teknik-pengambilan-sampel"><i class="fa fa-check"></i><b>4.4.1</b> Teknik Pengambilan Sampel</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="pengantar-analisis-statistik-inferensial.html"><a href="pengantar-analisis-statistik-inferensial.html#distribusi-sampling-dan-teorema-limit-sentral"><i class="fa fa-check"></i><b>5.2</b> Distribusi Sampling dan Teorema Limit Sentral</a>
+<li class="chapter" data-level="4.5" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#distribusi-sampling-dan-teorema-limit-sentral"><i class="fa fa-check"></i><b>4.5</b> Distribusi Sampling dan Teorema Limit Sentral</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="pengantar-analisis-statistik-inferensial.html"><a href="pengantar-analisis-statistik-inferensial.html#standard-error"><i class="fa fa-check"></i><b>5.2.1</b> Standard Error</a></li>
-<li class="chapter" data-level="5.2.2" data-path="pengantar-analisis-statistik-inferensial.html"><a href="pengantar-analisis-statistik-inferensial.html#z-score"><i class="fa fa-check"></i><b>5.2.2</b> Z-Score</a></li>
+<li class="chapter" data-level="4.5.1" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#standard-error"><i class="fa fa-check"></i><b>4.5.1</b> Standard Error</a></li>
+<li class="chapter" data-level="4.5.2" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#z-score"><i class="fa fa-check"></i><b>4.5.2</b> Z-Score</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="pengantar-analisis-statistik-inferensial.html"><a href="pengantar-analisis-statistik-inferensial.html#soal-evaluasi-6"><i class="fa fa-check"></i>Soal Evaluasi 6</a></li>
+<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#soal-evaluasi-6"><i class="fa fa-check"></i>Soal Evaluasi 6</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="estimasi-parameter.html"><a href="estimasi-parameter.html"><i class="fa fa-check"></i><b>6</b> Estimasi Parameter</a>
+<li class="chapter" data-level="5" data-path="estimasi-parameter.html"><a href="estimasi-parameter.html"><i class="fa fa-check"></i><b>5</b> Estimasi Parameter</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="estimasi-parameter.html"><a href="estimasi-parameter.html#konsep-dasar-2"><i class="fa fa-check"></i><b>6.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="6.2" data-path="estimasi-parameter.html"><a href="estimasi-parameter.html#estimasi-rentang-kepercayaan-confidence-interval"><i class="fa fa-check"></i><b>6.2</b> Estimasi Rentang Kepercayaan (Confidence Interval)</a>
+<li class="chapter" data-level="5.1" data-path="estimasi-parameter.html"><a href="estimasi-parameter.html#konsep-dasar-2"><i class="fa fa-check"></i><b>5.1</b> Konsep Dasar</a></li>
+<li class="chapter" data-level="5.2" data-path="estimasi-parameter.html"><a href="estimasi-parameter.html#estimasi-rentang-kepercayaan-confidence-interval"><i class="fa fa-check"></i><b>5.2</b> Estimasi Rentang Kepercayaan (Confidence Interval)</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="estimasi-parameter.html"><a href="estimasi-parameter.html#studi-kasus-1"><i class="fa fa-check"></i><b>6.2.1</b> Studi Kasus</a></li>
+<li class="chapter" data-level="5.2.1" data-path="estimasi-parameter.html"><a href="estimasi-parameter.html#studi-kasus"><i class="fa fa-check"></i><b>5.2.1</b> Studi Kasus</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="estimasi-parameter.html"><a href="estimasi-parameter.html#soal-evaluasi-7"><i class="fa fa-check"></i>Soal Evaluasi 7</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html"><i class="fa fa-check"></i><b>7</b> Uji Hipotesis Satu Populasi</a>
+<li class="chapter" data-level="6" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html"><i class="fa fa-check"></i><b>6</b> Uji Hipotesis Satu Populasi</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html#konsep-dasar-3"><i class="fa fa-check"></i><b>7.1</b> Konsep Dasar</a>
+<li class="chapter" data-level="6.1" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html#konsep-dasar-3"><i class="fa fa-check"></i><b>6.1</b> Konsep Dasar</a>
 <ul>
-<li class="chapter" data-level="7.1.1" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html#hipotesis-nol-dan-alternatif"><i class="fa fa-check"></i><b>7.1.1</b> Hipotesis Nol dan Alternatif</a></li>
-<li class="chapter" data-level="7.1.2" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html#langkah-langkah-pengujian-hipotesis"><i class="fa fa-check"></i><b>7.1.2</b> Langkah-langkah Pengujian Hipotesis</a></li>
+<li class="chapter" data-level="6.1.1" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html#hipotesis-nol-dan-alternatif"><i class="fa fa-check"></i><b>6.1.1</b> Hipotesis Nol dan Alternatif</a></li>
+<li class="chapter" data-level="6.1.2" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html#langkah-langkah-pengujian-hipotesis"><i class="fa fa-check"></i><b>6.1.2</b> Langkah-langkah Pengujian Hipotesis</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html#studi-kasus-dengan-r"><i class="fa fa-check"></i><b>7.2</b> Studi Kasus dengan R</a></li>
+<li class="chapter" data-level="6.2" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html#studi-kasus-dengan-r"><i class="fa fa-check"></i><b>6.2</b> Studi Kasus dengan R</a></li>
 <li class="chapter" data-level="" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html#soal-evaluasi-8"><i class="fa fa-check"></i>Soal Evaluasi 8</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html"><i class="fa fa-check"></i><b>8</b> Uji Hipotesis Dua Populasi</a>
+<li class="chapter" data-level="7" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html"><i class="fa fa-check"></i><b>7</b> Uji Hipotesis Dua Populasi</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#konsep-dasar-4"><i class="fa fa-check"></i><b>8.1</b> Konsep Dasar</a>
+<li class="chapter" data-level="7.1" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#konsep-dasar-4"><i class="fa fa-check"></i><b>7.1</b> Konsep Dasar</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#uji-beda-rata-rata-independent-samples-t-test"><i class="fa fa-check"></i><b>8.1.1</b> Uji Beda Rata-rata (Independent Samples t-test)</a></li>
-<li class="chapter" data-level="8.1.2" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#uji-beda-rata-rata-berpasangan-paired-samples-t-test"><i class="fa fa-check"></i><b>8.1.2</b> Uji Beda Rata-rata Berpasangan (Paired Samples t-test)</a></li>
+<li class="chapter" data-level="7.1.1" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#uji-beda-rata-rata-independent-samples-t-test"><i class="fa fa-check"></i><b>7.1.1</b> Uji Beda Rata-rata (Independent Samples t-test)</a></li>
+<li class="chapter" data-level="7.1.2" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#uji-beda-rata-rata-berpasangan-paired-samples-t-test"><i class="fa fa-check"></i><b>7.1.2</b> Uji Beda Rata-rata Berpasangan (Paired Samples t-test)</a></li>
 </ul></li>
-<li class="chapter" data-level="8.2" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#studi-kasus-dengan-r-1"><i class="fa fa-check"></i><b>8.2</b> Studi Kasus dengan R</a>
+<li class="chapter" data-level="7.2" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#studi-kasus-dengan-r-1"><i class="fa fa-check"></i><b>7.2</b> Studi Kasus dengan R</a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#independent-t-test"><i class="fa fa-check"></i><b>8.2.1</b> Independent t-test</a></li>
-<li class="chapter" data-level="8.2.2" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#paired-t-test"><i class="fa fa-check"></i><b>8.2.2</b> Paired t-test</a></li>
+<li class="chapter" data-level="7.2.1" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#independent-t-test"><i class="fa fa-check"></i><b>7.2.1</b> Independent t-test</a></li>
+<li class="chapter" data-level="7.2.2" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#paired-t-test"><i class="fa fa-check"></i><b>7.2.2</b> Paired t-test</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="uji-hipotesis-dua-populasi.html"><a href="uji-hipotesis-dua-populasi.html#soal-evaluasi-9"><i class="fa fa-check"></i>Soal Evaluasi 9</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="uji-hipotesis-lebih-dari-dua-populasi.html"><a href="uji-hipotesis-lebih-dari-dua-populasi.html"><i class="fa fa-check"></i><b>9</b> Uji Hipotesis Lebih dari Dua Populasi</a>
+<li class="chapter" data-level="8" data-path="uji-hipotesis-lebih-dari-dua-populasi.html"><a href="uji-hipotesis-lebih-dari-dua-populasi.html"><i class="fa fa-check"></i><b>8</b> Uji Hipotesis Lebih dari Dua Populasi</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="uji-hipotesis-lebih-dari-dua-populasi.html"><a href="uji-hipotesis-lebih-dari-dua-populasi.html#analisis-variansi-anova"><i class="fa fa-check"></i><b>9.1</b> Analisis Variansi (ANOVA)</a></li>
-<li class="chapter" data-level="9.2" data-path="uji-hipotesis-lebih-dari-dua-populasi.html"><a href="uji-hipotesis-lebih-dari-dua-populasi.html#studi-kasus-dengan-r-2"><i class="fa fa-check"></i><b>9.2</b> Studi Kasus dengan R</a></li>
+<li class="chapter" data-level="8.1" data-path="uji-hipotesis-lebih-dari-dua-populasi.html"><a href="uji-hipotesis-lebih-dari-dua-populasi.html#analisis-variansi-anova"><i class="fa fa-check"></i><b>8.1</b> Analisis Variansi (ANOVA)</a></li>
+<li class="chapter" data-level="8.2" data-path="uji-hipotesis-lebih-dari-dua-populasi.html"><a href="uji-hipotesis-lebih-dari-dua-populasi.html#studi-kasus-dengan-r-2"><i class="fa fa-check"></i><b>8.2</b> Studi Kasus dengan R</a></li>
 <li class="chapter" data-level="" data-path="uji-hipotesis-lebih-dari-dua-populasi.html"><a href="uji-hipotesis-lebih-dari-dua-populasi.html#soal-evaluasi-10"><i class="fa fa-check"></i>Soal Evaluasi 10</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html"><i class="fa fa-check"></i><b>10</b> Korelasi Antarvariabel Nominal</a>
+<li class="chapter" data-level="9" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html"><i class="fa fa-check"></i><b>9</b> Korelasi Antarvariabel Nominal</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#konsep-dasar-5"><i class="fa fa-check"></i><b>10.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="10.2" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-dengan-r-3"><i class="fa fa-check"></i><b>10.2</b> Studi Kasus dengan R</a></li>
+<li class="chapter" data-level="9.1" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#konsep-dasar-5"><i class="fa fa-check"></i><b>9.1</b> Konsep Dasar</a></li>
+<li class="chapter" data-level="9.2" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-dengan-r-3"><i class="fa fa-check"></i><b>9.2</b> Studi Kasus dengan R</a></li>
 <li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#soal-evaluasi-11"><i class="fa fa-check"></i>Soal Evaluasi 11</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html"><i class="fa fa-check"></i><b>11</b> Korelasi Antarvariabel Ordinal</a>
+<li class="chapter" data-level="10" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html"><i class="fa fa-check"></i><b>10</b> Korelasi Antarvariabel Ordinal</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#konsep-dasar-6"><i class="fa fa-check"></i><b>11.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="11.2" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-dengan-r-4"><i class="fa fa-check"></i><b>11.2</b> Studi Kasus dengan R</a></li>
+<li class="chapter" data-level="10.1" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#konsep-dasar-6"><i class="fa fa-check"></i><b>10.1</b> Konsep Dasar</a></li>
+<li class="chapter" data-level="10.2" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-dengan-r-4"><i class="fa fa-check"></i><b>10.2</b> Studi Kasus dengan R</a></li>
 <li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#soal-evaluasi-12"><i class="fa fa-check"></i>Soal Evaluasi 12</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html"><i class="fa fa-check"></i><b>12</b> Korelasi Antarvariabel Metrik</a>
+<li class="chapter" data-level="11" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html"><i class="fa fa-check"></i><b>11</b> Korelasi Antarvariabel Metrik</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#konsep-dasar-7"><i class="fa fa-check"></i><b>12.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="12.2" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#studi-kasus-dengan-r-5"><i class="fa fa-check"></i><b>12.2</b> Studi Kasus dengan R</a></li>
+<li class="chapter" data-level="11.1" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#konsep-dasar-7"><i class="fa fa-check"></i><b>11.1</b> Konsep Dasar</a></li>
+<li class="chapter" data-level="11.2" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#studi-kasus-dengan-r-5"><i class="fa fa-check"></i><b>11.2</b> Studi Kasus dengan R</a></li>
 <li class="chapter" data-level="" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#soal-evaluasi-13"><i class="fa fa-check"></i>Soal Evaluasi 13</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="regresi-linear-sederhana.html"><a href="regresi-linear-sederhana.html"><i class="fa fa-check"></i><b>13</b> Regresi Linear Sederhana</a>
+<li class="chapter" data-level="12" data-path="regresi-linear-sederhana.html"><a href="regresi-linear-sederhana.html"><i class="fa fa-check"></i><b>12</b> Regresi Linear Sederhana</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="regresi-linear-sederhana.html"><a href="regresi-linear-sederhana.html#konsep-dasar-8"><i class="fa fa-check"></i><b>13.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="13.2" data-path="regresi-linear-sederhana.html"><a href="regresi-linear-sederhana.html#studi-kasus-dengan-r-6"><i class="fa fa-check"></i><b>13.2</b> Studi Kasus dengan R</a></li>
+<li class="chapter" data-level="12.1" data-path="regresi-linear-sederhana.html"><a href="regresi-linear-sederhana.html#konsep-dasar-8"><i class="fa fa-check"></i><b>12.1</b> Konsep Dasar</a></li>
+<li class="chapter" data-level="12.2" data-path="regresi-linear-sederhana.html"><a href="regresi-linear-sederhana.html#studi-kasus-dengan-r-6"><i class="fa fa-check"></i><b>12.2</b> Studi Kasus dengan R</a></li>
 <li class="chapter" data-level="" data-path="regresi-linear-sederhana.html"><a href="regresi-linear-sederhana.html#soal-evaluasi-14"><i class="fa fa-check"></i>Soal Evaluasi 14</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html"><i class="fa fa-check"></i><b>14</b> Regresi Linear Berganda</a>
+<li class="chapter" data-level="13" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html"><i class="fa fa-check"></i><b>13</b> Regresi Linear Berganda</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#konsep-dasar-9"><i class="fa fa-check"></i><b>14.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="14.2" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#studi-kasus-dengan-r-7"><i class="fa fa-check"></i><b>14.2</b> Studi Kasus dengan R</a></li>
+<li class="chapter" data-level="13.1" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#konsep-dasar-9"><i class="fa fa-check"></i><b>13.1</b> Konsep Dasar</a></li>
+<li class="chapter" data-level="13.2" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#studi-kasus-dengan-r-7"><i class="fa fa-check"></i><b>13.2</b> Studi Kasus dengan R</a></li>
 <li class="chapter" data-level="" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#soal-evaluasi-15"><i class="fa fa-check"></i>Soal Evaluasi 15</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html"><i class="fa fa-check"></i><b>15</b> Analisis Statistik Multivariat Interdependensi</a>
+<li class="chapter" data-level="14" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html"><i class="fa fa-check"></i><b>14</b> Analisis Statistik Multivariat Interdependensi</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#konsep-dasar-10"><i class="fa fa-check"></i><b>15.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="15.2" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#studi-kasus-dengan-r-8"><i class="fa fa-check"></i><b>15.2</b> Studi Kasus dengan R</a></li>
+<li class="chapter" data-level="14.1" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#konsep-dasar-10"><i class="fa fa-check"></i><b>14.1</b> Konsep Dasar</a></li>
+<li class="chapter" data-level="14.2" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#studi-kasus-dengan-r-8"><i class="fa fa-check"></i><b>14.2</b> Studi Kasus dengan R</a></li>
 <li class="chapter" data-level="" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#soal-evaluasi-16"><i class="fa fa-check"></i>Soal Evaluasi 16</a></li>
 </ul></li>
 </ul>
@@ -372,64 +377,622 @@ div.csl-indent {
 <h1><span class="header-section-number">4</span> Visualisasi Data Kuantitatif<a href="visualisasi-data-kuantitatif.html#visualisasi-data-kuantitatif" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="konsep-dasar" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Konsep Dasar<a href="visualisasi-data-kuantitatif.html#konsep-dasar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Visualisasi data adalah representasi grafis dari informasi dan data. Dengan menggunakan elemen visual seperti grafik, bagan, dan peta, visualisasi data menyediakan cara yang mudah diakses untuk melihat dan memahami tren, outlier, dan pola dalam data.</p>
-<p>Dalam R, <code>ggplot2</code> adalah paket yang paling populer dan kuat untuk membuat visualisasi data. Prinsip dasarnya adalah “Grammar of Graphics”, yang membangun grafik komponen demi komponen (data, aesthetics, geometries).</p>
+<p>Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bentuk tabular/tabel menjadi bentuk grafis. Kita sering mendengar pepatah yang berbunyi <em>“a picture is worth a thousand words”</em> yang artinya kurang lebih “satu gambar bernilai seribu kata.” Pepatah ini menggambarkan bahwa data yang disajikan dalam bentuk gambar/grafis dapat menampilkan banyak sekali informasi kepada audiens.</p>
+<p>Sajian data dalam bentuk gambar disebut juga <strong>grafik</strong> atau <strong>diagram</strong> <em>(chart)</em>. Jenis grafik atau diagram yang digunakan sangat bergantung pada jenis dan tingkat pengukuran variabel yang akan divisualisasikan.</p>
+<p>Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs <span class="citation">Healy and Conor (<a href="analisis-statistik-multivariat-interdependensi.html#ref-datatoviz">n.d.</a>)</span> atau <span class="citation">Ferdio (<a href="analisis-statistik-multivariat-interdependensi.html#ref-Ferdio">n.d.</a>)</span>.</p>
 </div>
-<div id="jenis-visualisasi-dasar" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> Jenis Visualisasi Dasar<a href="visualisasi-data-kuantitatif.html#jenis-visualisasi-dasar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="diagram-batang-bar-chart" class="section level3 hasAnchor" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> Diagram Batang (Bar Chart)<a href="visualisasi-data-kuantitatif.html#diagram-batang-bar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Cocok untuk membandingkan kuantitas antar kategori (Data Nominal/Ordinal).</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="visualisasi-data-kuantitatif.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="visualisasi-data-kuantitatif.html#cb1-2" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Kategori, <span class="at">y =</span> Jumlah)) <span class="sc">+</span></span>
-<span id="cb1-3"><a href="visualisasi-data-kuantitatif.html#cb1-3" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb1-4"><a href="visualisasi-data-kuantitatif.html#cb1-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div id="jenis-jenis-diagram" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Jenis-jenis Diagram<a href="visualisasi-data-kuantitatif.html#jenis-jenis-diagram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Untuk memilih jenis diagram yang tepat, kita perlu menentukan terlebih dahulu jenis dan tingkat pengukuran variabel yang akan kita sajikan. Kemudian, kita dapat mempertimbangkan jenis informasi apa yang ingin kita sajikan dan menyesuaikannya dengan cara menampilkan nilainya, bisa dengan sumbu (tegak/datar; Y/X) atau yang lainnya. Berikut adalah pembahasan sebagian jenis-jenis diagram berdasarkan jenis nilai dan tingkat pengukuran variabel yang sudah kita bahas dan tujuan penggunaanya.</p>
+<div id="variabel-kategorikal" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Variabel Kategorikal<a href="visualisasi-data-kuantitatif.html#variabel-kategorikal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Visualisasi variabel kategorikal bertujuan menampilkan <strong>jumlah (frekuensi) objek</strong> untuk masing-masing kategori. Untuk menentukan jenis diagram yang tepat, kita perlu memperhatikan <strong>jumlah variabel</strong> yang dianalisis dan <strong>hubungan antarvariabel</strong>.</p>
+<div id="grafik-batang-columnbar-chart" class="section level4 hasAnchor" number="4.2.1.1">
+<h4><span class="header-section-number">4.2.1.1</span> Grafik Batang <em>(Column/Bar Chart)</em><a href="visualisasi-data-kuantitatif.html#grafik-batang-columnbar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Grafik batang adalah grafik yang paling sering digunakan untuk memvisualkan variabel kategorikal. Grafik ini memberikan informasi berupa <strong>sebaran frekuensi</strong> sebuah variabel.</p>
+<p>Bentuk grafik batang tersusun dari dua sumbu tegak (Y) dan datar (X). Tinggi batang sepanjang sumbu Y bermakna frekuensi dari kategori-kategori yang ada dalam variabel, sementara kategori-kategori berada di sepanjang sumbu X.</p>
+<p>Terdapat dua jenis grafik batang: tegak dan mendatar. Grafik batang tegak disebut juga <em>column chart</em> sementara yang mendatar disebut <em>bar chart</em>. Perbedaan column chart dan bar chart hanya terletak di <strong>sumbu yang menunjukkan frekuensi kategori</strong>, yakni tinggi/panjang batang. Grafik batang yang menggunakan sumbu Y untuk menunjukkan jumlah frekuensinya adalah <strong><em>column chart</em></strong>, sementara yang menggunakan sumbu X adalah <strong><em>bar chart</em></strong>.</p>
+<p>Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang, penjelasannya dapat dilihat di Studi Kasus di bawah.</p>
 </div>
-<div id="histogram" class="section level3 hasAnchor" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> Histogram<a href="visualisasi-data-kuantitatif.html#histogram" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Cocok untuk melihat distribusi data numerik (Data Interval/Rasio).</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="visualisasi-data-kuantitatif.html#cb2-1" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> VariabelNumerik)) <span class="sc">+</span></span>
-<span id="cb2-2"><a href="visualisasi-data-kuantitatif.html#cb2-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">5</span>)</span></code></pre></div>
-</div>
-<div id="boxplot" class="section level3 hasAnchor" number="4.2.3">
-<h3><span class="header-section-number">4.2.3</span> Boxplot<a href="visualisasi-data-kuantitatif.html#boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Cocok untuk melihat ringkasan lima angka (min, k1, median, k3, max) dan outlier. Sangat baik untuk membandingkan distribusi antar grup.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="visualisasi-data-kuantitatif.html#cb3-1" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> Kategori, <span class="at">y =</span> Nilai)) <span class="sc">+</span></span>
-<span id="cb3-2"><a href="visualisasi-data-kuantitatif.html#cb3-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-</div>
-<div id="scatterplot" class="section level3 hasAnchor" number="4.2.4">
-<h3><span class="header-section-number">4.2.4</span> Scatterplot<a href="visualisasi-data-kuantitatif.html#scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Cocok untuk melihat hubungan antara dua variabel numerik.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="visualisasi-data-kuantitatif.html#cb4-1" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> X, <span class="at">y =</span> Y)) <span class="sc">+</span></span>
-<span id="cb4-2"><a href="visualisasi-data-kuantitatif.html#cb4-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div id="grafik-batang-bertumpuk-stacked-columnbar-chart" class="section level4 materi-bar-chart hasAnchor" number="4.2.1.2">
+<h4><span class="header-section-number">4.2.1.2</span> Grafik Batang Bertumpuk (Stacked Column/Bar Chart)<a href="visualisasi-data-kuantitatif.html#grafik-batang-bertumpuk-stacked-columnbar-chart" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Grafik batang bertumpuk <em>(stacked bar/column chart)</em> digunakan untuk membandingkan komposisi dari beberapa kategori. Setiap batang mewakili nilai total, yang kemudian dipecah menjadi beberapa segmen untuk menunjukkan bagaimana kontribusi masing-masing subkategori membentuk total tersebut. Kategori kedua variabel tersebut dibuat bertumpukan. Misalnya sebaran pengguna kendaraan (mobil, motor, sepeda) berdasarkan jenis kelamin (laki-laki dan perempuan).</p>
+<p>Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang bertumpuk, penjelasannya dapat dilihat di Studi Kasus di bawah. Secara umum, data mentah diubah menjadi tabel distribusi frekuensi, dan tabel distribusi frekuensi itu yang menjadi bahan pembuatan grafik.</p>
 </div>
 </div>
-<div id="studi-kasus" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> Studi Kasus<a href="visualisasi-data-kuantitatif.html#studi-kasus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Menggunakan data transportasi kampus, kita akan memvisualisasikan moda transportasi.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="visualisasi-data-kuantitatif.html#cb5-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-2"><a href="visualisasi-data-kuantitatif.html#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="visualisasi-data-kuantitatif.html#cb5-3" tabindex="-1"></a><span class="co"># Data contoh</span></span>
-<span id="cb5-4"><a href="visualisasi-data-kuantitatif.html#cb5-4" tabindex="-1"></a>transport <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb5-5"><a href="visualisasi-data-kuantitatif.html#cb5-5" tabindex="-1"></a>  <span class="at">Moda =</span> <span class="fu">c</span>(<span class="st">&quot;Motor&quot;</span>, <span class="st">&quot;Mobil&quot;</span>, <span class="st">&quot;Jalan Kaki&quot;</span>, <span class="st">&quot;Ojek Online&quot;</span>, <span class="st">&quot;Bus&quot;</span>),</span>
-<span id="cb5-6"><a href="visualisasi-data-kuantitatif.html#cb5-6" tabindex="-1"></a>  <span class="at">Jumlah =</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">40</span>, <span class="dv">80</span>, <span class="dv">50</span>, <span class="dv">20</span>)</span>
-<span id="cb5-7"><a href="visualisasi-data-kuantitatif.html#cb5-7" tabindex="-1"></a>)</span>
-<span id="cb5-8"><a href="visualisasi-data-kuantitatif.html#cb5-8" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="visualisasi-data-kuantitatif.html#cb5-9" tabindex="-1"></a><span class="co"># Membuat Bar Chart</span></span>
-<span id="cb5-10"><a href="visualisasi-data-kuantitatif.html#cb5-10" tabindex="-1"></a><span class="fu">ggplot</span>(transport, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Moda, <span class="sc">-</span>Jumlah), <span class="at">y =</span> Jumlah)) <span class="sc">+</span></span>
-<span id="cb5-11"><a href="visualisasi-data-kuantitatif.html#cb5-11" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb5-12"><a href="visualisasi-data-kuantitatif.html#cb5-12" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb5-13"><a href="visualisasi-data-kuantitatif.html#cb5-13" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Moda Transportasi Mahasiswa&quot;</span>,</span>
-<span id="cb5-14"><a href="visualisasi-data-kuantitatif.html#cb5-14" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Jenis Moda&quot;</span>,</span>
-<span id="cb5-15"><a href="visualisasi-data-kuantitatif.html#cb5-15" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Jumlah Mahasiswa&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" /><!-- --></p>
+<div id="studi-kasus-visualisasi-moda-transportasi-mahasiswa-dengan-diagram-batang" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Visualisasi Moda Transportasi Mahasiswa dengan Diagram Batang<a href="visualisasi-data-kuantitatif.html#studi-kasus-visualisasi-moda-transportasi-mahasiswa-dengan-diagram-batang" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi, baru kemudian divisualisasikan.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="visualisasi-data-kuantitatif.html#cb1-1" tabindex="-1"></a><span class="co"># Memuat library</span></span>
+<span id="cb1-2"><a href="visualisasi-data-kuantitatif.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="visualisasi-data-kuantitatif.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="visualisasi-data-kuantitatif.html#cb1-4" tabindex="-1"></a><span class="co"># Memuat data</span></span>
+<span id="cb1-5"><a href="visualisasi-data-kuantitatif.html#cb1-5" tabindex="-1"></a>data_uinril <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;datasets/DataUtama_mhsUINRIL.csv&quot;</span>)</span>
+<span id="cb1-6"><a href="visualisasi-data-kuantitatif.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="visualisasi-data-kuantitatif.html#cb1-7" tabindex="-1"></a><span class="co"># Membuat tabel distribusi frekuensi untuk moda transportasi</span></span>
+<span id="cb1-8"><a href="visualisasi-data-kuantitatif.html#cb1-8" tabindex="-1"></a>tabel_moda <span class="ot">&lt;-</span> <span class="fu">table</span>(data_uinril<span class="sc">$</span>kendaraan.utama)</span>
+<span id="cb1-9"><a href="visualisasi-data-kuantitatif.html#cb1-9" tabindex="-1"></a>tabel_moda</span></code></pre></div>
+<pre><code>## 
+##                  Berjalan Kaki Kendaraan Bermotor (menumpang) 
+##                             33                             27 
+##                  Mobil Pribadi                         Sepeda 
+##                             15                              5 
+##           Sepeda Motor Pribadi            Transportasi Online 
+##                            290                             30</code></pre>
+<p>Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (<em>column chart</em>):</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="visualisasi-data-kuantitatif.html#cb3-1" tabindex="-1"></a><span class="fu">barplot</span>(tabel_moda,</span>
+<span id="cb3-2"><a href="visualisasi-data-kuantitatif.html#cb3-2" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Distribusi Moda Transportasi Mahasiswa UINRIL&quot;</span>,</span>
+<span id="cb3-3"><a href="visualisasi-data-kuantitatif.html#cb3-3" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Moda Transportasi&quot;</span>,</span>
+<span id="cb3-4"><a href="visualisasi-data-kuantitatif.html#cb3-4" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Frekuensi&quot;</span>,</span>
+<span id="cb3-5"><a href="visualisasi-data-kuantitatif.html#cb3-5" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;#3498db&quot;</span>,</span>
+<span id="cb3-6"><a href="visualisasi-data-kuantitatif.html#cb3-6" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">2</span></span>
+<span id="cb3-7"><a href="visualisasi-data-kuantitatif.html#cb3-7" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-column-moda"></span>
+<img src="_main_files/figure-html/fig-column-moda-1.png" alt="Grafik batang tegak distribusi moda transportasi" width="70%" />
+<p class="caption">
+Gambar 4.1: Grafik batang tegak distribusi moda transportasi
+</p>
 </div>
-<div id="soal-evaluasi-5" class="section level2 unnumbered hasAnchor rmdexercise">
-<h2>Soal Evaluasi 5<a href="visualisasi-data-kuantitatif.html#soal-evaluasi-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Atau dalam bentuk grafik batang mendatar (<em>bar chart</em>):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="visualisasi-data-kuantitatif.html#cb4-1" tabindex="-1"></a><span class="fu">barplot</span>(tabel_moda,</span>
+<span id="cb4-2"><a href="visualisasi-data-kuantitatif.html#cb4-2" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Distribusi Moda Transportasi Mahasiswa UINRIL&quot;</span>,</span>
+<span id="cb4-3"><a href="visualisasi-data-kuantitatif.html#cb4-3" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Frekuensi&quot;</span>,</span>
+<span id="cb4-4"><a href="visualisasi-data-kuantitatif.html#cb4-4" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Moda Transportasi&quot;</span>,</span>
+<span id="cb4-5"><a href="visualisasi-data-kuantitatif.html#cb4-5" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;#e74c3c&quot;</span>,</span>
+<span id="cb4-6"><a href="visualisasi-data-kuantitatif.html#cb4-6" tabindex="-1"></a>  <span class="at">horiz =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-7"><a href="visualisasi-data-kuantitatif.html#cb4-7" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">1</span></span>
+<span id="cb4-8"><a href="visualisasi-data-kuantitatif.html#cb4-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-bar-moda"></span>
+<img src="_main_files/figure-html/fig-bar-moda-1.png" alt="Grafik batang mendatar distribusi moda transportasi" width="70%" />
+<p class="caption">
+Gambar 4.2: Grafik batang mendatar distribusi moda transportasi
+</p>
+</div>
+<p>Untuk <strong>grafik batang bertumpuk</strong>, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="visualisasi-data-kuantitatif.html#cb5-1" tabindex="-1"></a><span class="co"># Membuat tabel kontingensi (distribusi frekuensi dua variabel)</span></span>
+<span id="cb5-2"><a href="visualisasi-data-kuantitatif.html#cb5-2" tabindex="-1"></a>tabel_moda_jk <span class="ot">&lt;-</span> <span class="fu">table</span>(data_uinril<span class="sc">$</span>Jenis.Kelamin, data_uinril<span class="sc">$</span>kendaraan.utama)</span>
+<span id="cb5-3"><a href="visualisasi-data-kuantitatif.html#cb5-3" tabindex="-1"></a>tabel_moda_jk</span></code></pre></div>
+<pre><code>##            
+##             Berjalan Kaki Kendaraan Bermotor (menumpang) Mobil Pribadi Sepeda
+##   Laki-laki             1                              9             6      2
+##   Perempuan            32                             18             9      3
+##            
+##             Sepeda Motor Pribadi Transportasi Online
+##   Laki-laki                  167                   3
+##   Perempuan                  123                  27</code></pre>
+<p>Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="visualisasi-data-kuantitatif.html#cb7-1" tabindex="-1"></a><span class="fu">barplot</span>(tabel_moda_jk,</span>
+<span id="cb7-2"><a href="visualisasi-data-kuantitatif.html#cb7-2" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Moda Transportasi Berdasarkan Jenis Kelamin&quot;</span>,</span>
+<span id="cb7-3"><a href="visualisasi-data-kuantitatif.html#cb7-3" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Moda Transportasi&quot;</span>,</span>
+<span id="cb7-4"><a href="visualisasi-data-kuantitatif.html#cb7-4" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Frekuensi&quot;</span>,</span>
+<span id="cb7-5"><a href="visualisasi-data-kuantitatif.html#cb7-5" tabindex="-1"></a>  <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;#9b59b6&quot;</span>, <span class="st">&quot;#f39c12&quot;</span>),</span>
+<span id="cb7-6"><a href="visualisasi-data-kuantitatif.html#cb7-6" tabindex="-1"></a>  <span class="at">legend =</span> <span class="fu">rownames</span>(tabel_moda_jk),</span>
+<span id="cb7-7"><a href="visualisasi-data-kuantitatif.html#cb7-7" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">2</span>,</span>
+<span id="cb7-8"><a href="visualisasi-data-kuantitatif.html#cb7-8" tabindex="-1"></a>  <span class="at">args.legend =</span> <span class="fu">list</span>(<span class="at">x =</span> <span class="st">&quot;topright&quot;</span>)</span>
+<span id="cb7-9"><a href="visualisasi-data-kuantitatif.html#cb7-9" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-stacked-bar"></span>
+<img src="_main_files/figure-html/fig-stacked-bar-1.png" alt="Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin" width="75%" />
+<p class="caption">
+Gambar 4.3: Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin
+</p>
+</div>
+<p><strong>Interpretasi:</strong> Grafik menunjukkan bahwa sepeda motor merupakan moda transportasi yang paling banyak digunakan oleh mahasiswa UINRIL, diikuti oleh mobil dan angkutan umum. Dari grafik batang bertumpuk terlihat bahwa penggunaan sepeda motor lebih dominan pada mahasiswa laki-laki dibandingkan perempuan, sementara penggunaan angkutan umum relatif seimbang antara kedua jenis kelamin.</p>
+</div>
+<div id="grafik-lollipop" class="section level4 hasAnchor" number="4.2.1.3">
+<h4><span class="header-section-number">4.2.1.3</span> Grafik Lollipop<a href="visualisasi-data-kuantitatif.html#grafik-lollipop" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data direpresentasikan oleh tiang-tiang berujung lingkaran yang menyerupai permen loli. Penggunaannya sangat cocok untuk data berjumlah banyak guna menghindari efek Moiré (dibaca `moarey’) <span class="citation">Wikipedia contributors (<a href="analisis-statistik-multivariat-interdependensi.html#ref-wikipedia2025moire">2025</a>)</span>. Efek Moiré adalah ilusi optik pergerakan benda yang posisinya berdekatan dan membentuk sebuah kisi (fringe) seperti yang ditunjukkan Gambar <a href="#fig:contoh-moire"><strong>??</strong></a>, sehingga dapat menyulitkan pembaca grafik.</p>
+</div>
+<div id="studi-kasus-perbandingan-grafik-lollipop-dengan-grafik-batang" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang<a href="visualisasi-data-kuantitatif.html#studi-kasus-perbandingan-grafik-lollipop-dengan-grafik-batang" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data fakultas mahasiswa UINRIL.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="visualisasi-data-kuantitatif.html#cb8-1" tabindex="-1"></a><span class="co"># Install package ggplot2 jika belum ada</span></span>
+<span id="cb8-2"><a href="visualisasi-data-kuantitatif.html#cb8-2" tabindex="-1"></a><span class="co"># install.packages(&#39;ggplot2&#39;)</span></span>
+<span id="cb8-3"><a href="visualisasi-data-kuantitatif.html#cb8-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-4"><a href="visualisasi-data-kuantitatif.html#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="visualisasi-data-kuantitatif.html#cb8-5" tabindex="-1"></a><span class="co"># Memuat data dan membuat tabel frekuensi fakultas</span></span>
+<span id="cb8-6"><a href="visualisasi-data-kuantitatif.html#cb8-6" tabindex="-1"></a>data_uinril <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;datasets/DataUtama_mhsUINRIL.csv&quot;</span>)</span>
+<span id="cb8-7"><a href="visualisasi-data-kuantitatif.html#cb8-7" tabindex="-1"></a>tabel_fakultas <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(data_uinril<span class="sc">$</span>Fakultas))</span>
+<span id="cb8-8"><a href="visualisasi-data-kuantitatif.html#cb8-8" tabindex="-1"></a><span class="fu">colnames</span>(tabel_fakultas) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Fakultas&quot;</span>, <span class="st">&quot;Frekuensi&quot;</span>)</span>
+<span id="cb8-9"><a href="visualisasi-data-kuantitatif.html#cb8-9" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="visualisasi-data-kuantitatif.html#cb8-10" tabindex="-1"></a><span class="co"># Mengurutkan berdasarkan frekuensi</span></span>
+<span id="cb8-11"><a href="visualisasi-data-kuantitatif.html#cb8-11" tabindex="-1"></a>tabel_fakultas <span class="ot">&lt;-</span> tabel_fakultas[<span class="fu">order</span>(tabel_fakultas<span class="sc">$</span>Frekuensi, <span class="at">decreasing =</span> <span class="cn">TRUE</span>), ]</span>
+<span id="cb8-12"><a href="visualisasi-data-kuantitatif.html#cb8-12" tabindex="-1"></a>tabel_fakultas</span></code></pre></div>
+<pre><code>##                     Fakultas Frekuensi
+## 5      Tarbiyah dan Keguruan       158
+## 3   Ekonomi dan Bisnis Islam        85
+## 4                    Syariah        59
+## 2 Dakwah dan Ilmu Komunikasi        49
+## 6 Ushuluddin dan Studi Agama        44
+## 1                       Adab         5</code></pre>
+<p>Berikut adalah visualisasi menggunakan grafik batang biasa:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="visualisasi-data-kuantitatif.html#cb10-1" tabindex="-1"></a><span class="fu">ggplot</span>(tabel_fakultas, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Fakultas, <span class="sc">-</span>Frekuensi), <span class="at">y =</span> Frekuensi)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="visualisasi-data-kuantitatif.html#cb10-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#3498db&quot;</span>, <span class="at">width =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="visualisasi-data-kuantitatif.html#cb10-3" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-4"><a href="visualisasi-data-kuantitatif.html#cb10-4" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-5"><a href="visualisasi-data-kuantitatif.html#cb10-5" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Distribusi Mahasiswa per Fakultas (Grafik Batang)&quot;</span>,</span>
+<span id="cb10-6"><a href="visualisasi-data-kuantitatif.html#cb10-6" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Fakultas&quot;</span>,</span>
+<span id="cb10-7"><a href="visualisasi-data-kuantitatif.html#cb10-7" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Frekuensi&quot;</span></span>
+<span id="cb10-8"><a href="visualisasi-data-kuantitatif.html#cb10-8" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="visualisasi-data-kuantitatif.html#cb10-9" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">8</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-bar-fakultas"></span>
+<img src="_main_files/figure-html/fig-bar-fakultas-1.png" alt="Grafik batang fakultas mahasiswa UINRIL" width="85%" />
+<p class="caption">
+Gambar 4.4: Grafik batang fakultas mahasiswa UINRIL
+</p>
+</div>
+<p>Sekarang bandingkan dengan grafik lollipop:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="visualisasi-data-kuantitatif.html#cb11-1" tabindex="-1"></a><span class="fu">ggplot</span>(tabel_fakultas, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Fakultas, <span class="sc">-</span>Frekuensi), <span class="at">y =</span> Frekuensi)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="visualisasi-data-kuantitatif.html#cb11-2" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> Fakultas, <span class="at">xend =</span> Fakultas, <span class="at">y =</span> <span class="dv">0</span>, <span class="at">yend =</span> Frekuensi),</span>
+<span id="cb11-3"><a href="visualisasi-data-kuantitatif.html#cb11-3" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;#95a5a6&quot;</span>, <span class="at">size =</span> <span class="fl">0.5</span></span>
+<span id="cb11-4"><a href="visualisasi-data-kuantitatif.html#cb11-4" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="visualisasi-data-kuantitatif.html#cb11-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;#e74c3c&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb11-6"><a href="visualisasi-data-kuantitatif.html#cb11-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb11-7"><a href="visualisasi-data-kuantitatif.html#cb11-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb11-8"><a href="visualisasi-data-kuantitatif.html#cb11-8" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Distribusi Mahasiswa per Fakultas (Grafik Lollipop)&quot;</span>,</span>
+<span id="cb11-9"><a href="visualisasi-data-kuantitatif.html#cb11-9" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Fakultas&quot;</span>,</span>
+<span id="cb11-10"><a href="visualisasi-data-kuantitatif.html#cb11-10" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Frekuensi&quot;</span></span>
+<span id="cb11-11"><a href="visualisasi-data-kuantitatif.html#cb11-11" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb11-12"><a href="visualisasi-data-kuantitatif.html#cb11-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">8</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-lollipop-fakultas"></span>
+<img src="_main_files/figure-html/fig-lollipop-fakultas-1.png" alt="Grafik lollipop fakultas mahasiswa UINRIL" width="85%" />
+<p class="caption">
+Gambar 4.5: Grafik lollipop fakultas mahasiswa UINRIL
+</p>
+</div>
+<p><strong>Perbandingan:</strong> Pada grafik lollipop, setiap kategori lebih mudah dibedakan karena hanya tiang tipis dan titik yang mewakili nilai, sehingga menghindari efek visual yang berlebihan (Moiré). Grafik lollipop sangat cocok untuk dataset dengan banyak kategori seperti ini, karena lebih ringkas dan tetap informatif. Sementara grafik batang biasa terlihat lebih padat dan dapat menimbulkan kesulitan dalam membaca data ketika batang-batangnya berdekatan.</p>
+</div>
+<div id="grafik-treemap" class="section level4 hasAnchor" number="4.2.1.4">
+<h4><span class="header-section-number">4.2.1.4</span> Grafik <em>Treemap</em><a href="visualisasi-data-kuantitatif.html#grafik-treemap" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Secara fungsi, treemap dan <em>stacked bar chart</em> sangat mirip karena keduanya menunjukkan distribusi frekuensi objek berdasarkan kategori variabelnya. Jika <em>stacked chart</em> memakai panjang segmen pada batang untuk menunjukkan proporsi, <em>treemap</em> menggunakan luas area persegi panjang. Frekuensinya diperlihatkan oleh <strong>luas persegi masing-masing kategori</strong>.</p>
+<p>Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.</p>
+</div>
+<div id="studi-kasus-membuat-treemap-moda-transportasi" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Membuat Treemap Moda Transportasi<a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-treemap-moda-transportasi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="visualisasi-data-kuantitatif.html#cb12-1" tabindex="-1"></a><span class="co"># Install package treemap jika belum ada</span></span>
+<span id="cb12-2"><a href="visualisasi-data-kuantitatif.html#cb12-2" tabindex="-1"></a><span class="co"># install.packages(&#39;treemap&#39;)</span></span>
+<span id="cb12-3"><a href="visualisasi-data-kuantitatif.html#cb12-3" tabindex="-1"></a><span class="fu">library</span>(treemap)</span>
+<span id="cb12-4"><a href="visualisasi-data-kuantitatif.html#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="visualisasi-data-kuantitatif.html#cb12-5" tabindex="-1"></a><span class="co"># Memuat data</span></span>
+<span id="cb12-6"><a href="visualisasi-data-kuantitatif.html#cb12-6" tabindex="-1"></a>data_uinril <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;datasets/DataUtama_mhsUINRIL.csv&quot;</span>)</span>
+<span id="cb12-7"><a href="visualisasi-data-kuantitatif.html#cb12-7" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="visualisasi-data-kuantitatif.html#cb12-8" tabindex="-1"></a><span class="co"># Membuat tabel kontingensi dan mengubahnya ke data frame</span></span>
+<span id="cb12-9"><a href="visualisasi-data-kuantitatif.html#cb12-9" tabindex="-1"></a>tabel_moda_jk <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(data_uinril<span class="sc">$</span>Jenis.Kelamin, data_uinril<span class="sc">$</span>kendaraan.utama))</span>
+<span id="cb12-10"><a href="visualisasi-data-kuantitatif.html#cb12-10" tabindex="-1"></a><span class="fu">colnames</span>(tabel_moda_jk) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Jenis_Kelamin&quot;</span>, <span class="st">&quot;Moda_Transportasi&quot;</span>, <span class="st">&quot;Frekuensi&quot;</span>)</span>
+<span id="cb12-11"><a href="visualisasi-data-kuantitatif.html#cb12-11" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="visualisasi-data-kuantitatif.html#cb12-12" tabindex="-1"></a><span class="co"># Menampilkan tabel</span></span>
+<span id="cb12-13"><a href="visualisasi-data-kuantitatif.html#cb12-13" tabindex="-1"></a>tabel_moda_jk</span></code></pre></div>
+<pre><code>##    Jenis_Kelamin              Moda_Transportasi Frekuensi
+## 1      Laki-laki                  Berjalan Kaki         1
+## 2      Perempuan                  Berjalan Kaki        32
+## 3      Laki-laki Kendaraan Bermotor (menumpang)         9
+## 4      Perempuan Kendaraan Bermotor (menumpang)        18
+## 5      Laki-laki                  Mobil Pribadi         6
+## 6      Perempuan                  Mobil Pribadi         9
+## 7      Laki-laki                         Sepeda         2
+## 8      Perempuan                         Sepeda         3
+## 9      Laki-laki           Sepeda Motor Pribadi       167
+## 10     Perempuan           Sepeda Motor Pribadi       123
+## 11     Laki-laki            Transportasi Online         3
+## 12     Perempuan            Transportasi Online        27</code></pre>
+<p>Dari tabel distribusi frekuensi tersebut, kita dapat membuat treemap:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="visualisasi-data-kuantitatif.html#cb14-1" tabindex="-1"></a><span class="fu">treemap</span>(tabel_moda_jk,</span>
+<span id="cb14-2"><a href="visualisasi-data-kuantitatif.html#cb14-2" tabindex="-1"></a>  <span class="at">index =</span> <span class="fu">c</span>(<span class="st">&quot;Moda_Transportasi&quot;</span>, <span class="st">&quot;Jenis_Kelamin&quot;</span>),</span>
+<span id="cb14-3"><a href="visualisasi-data-kuantitatif.html#cb14-3" tabindex="-1"></a>  <span class="at">vSize =</span> <span class="st">&quot;Frekuensi&quot;</span>,</span>
+<span id="cb14-4"><a href="visualisasi-data-kuantitatif.html#cb14-4" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;index&quot;</span>,</span>
+<span id="cb14-5"><a href="visualisasi-data-kuantitatif.html#cb14-5" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">&quot;Komposisi Moda Transportasi Berdasarkan Jenis Kelamin&quot;</span>,</span>
+<span id="cb14-6"><a href="visualisasi-data-kuantitatif.html#cb14-6" tabindex="-1"></a>  <span class="at">fontsize.labels =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">10</span>),</span>
+<span id="cb14-7"><a href="visualisasi-data-kuantitatif.html#cb14-7" tabindex="-1"></a>  <span class="at">fontcolor.labels =</span> <span class="fu">c</span>(<span class="st">&quot;white&quot;</span>, <span class="st">&quot;white&quot;</span>),</span>
+<span id="cb14-8"><a href="visualisasi-data-kuantitatif.html#cb14-8" tabindex="-1"></a>  <span class="at">bg.labels =</span> <span class="dv">0</span>,</span>
+<span id="cb14-9"><a href="visualisasi-data-kuantitatif.html#cb14-9" tabindex="-1"></a>  <span class="at">border.col =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb14-10"><a href="visualisasi-data-kuantitatif.html#cb14-10" tabindex="-1"></a>  <span class="at">border.lwds =</span> <span class="dv">2</span>,</span>
+<span id="cb14-11"><a href="visualisasi-data-kuantitatif.html#cb14-11" tabindex="-1"></a>  <span class="at">palette =</span> <span class="st">&quot;Set2&quot;</span></span>
+<span id="cb14-12"><a href="visualisasi-data-kuantitatif.html#cb14-12" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-treemap-moda"></span>
+<img src="_main_files/figure-html/fig-treemap-moda-1.png" alt="Treemap moda transportasi berdasarkan jenis kelamin" width="80%" />
+<p class="caption">
+Gambar 4.6: Treemap moda transportasi berdasarkan jenis kelamin
+</p>
+</div>
+<p><strong>Interpretasi:</strong> Treemap menunjukkan proporsi penggunaan moda transportasi dengan jelas melalui luas area. Area terbesar dimiliki oleh sepeda motor, menunjukkan dominasinya sebagai moda transportasi utama. Di dalam setiap moda, terdapat sub-area yang menunjukkan pembagian berdasarkan jenis kelamin. Visualisasi ini memudahkan kita untuk membandingkan proporsi secara langsung tanpa perlu membaca angka.</p>
+</div>
+<div id="grafik-paidonat-piedonut-chart" class="section level4 hasAnchor" number="4.2.1.5">
+<h4><span class="header-section-number">4.2.1.5</span> Grafik Pai/Donat <em>(Pie/Donut Chart)</em><a href="visualisasi-data-kuantitatif.html#grafik-paidonat-piedonut-chart" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Grafik jenis ini juga sering digunakan untuk visualisasi variabel kategoris. Perbedaan dengan grafik batang adalah frekuensi tiap kategori tidak diperlihatkan dengan sumbu tegak, tetapi besar juring (sektor) lingkaran.</p>
+<p>Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada kasus di <a href="#materi-bar-chart"><strong>??</strong></a>, hanya saja jumlah kategori menjadi jumlah sektor, sementara frekuensinya menjadi ukuran sektor.</p>
+</div>
+<div id="studi-kasus-membuat-grafik-pai-dan-donat" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Membuat Grafik Pai dan Donat<a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-grafik-pai-dan-donat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="visualisasi-data-kuantitatif.html#cb15-1" tabindex="-1"></a><span class="co"># Memuat data</span></span>
+<span id="cb15-2"><a href="visualisasi-data-kuantitatif.html#cb15-2" tabindex="-1"></a>data_uinril <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;datasets/DataUtama_mhsUINRIL.csv&quot;</span>)</span>
+<span id="cb15-3"><a href="visualisasi-data-kuantitatif.html#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="visualisasi-data-kuantitatif.html#cb15-4" tabindex="-1"></a><span class="co"># Membuat tabel distribusi frekuensi untuk moda transportasi</span></span>
+<span id="cb15-5"><a href="visualisasi-data-kuantitatif.html#cb15-5" tabindex="-1"></a>tabel_moda <span class="ot">&lt;-</span> <span class="fu">table</span>(data_uinril<span class="sc">$</span>kendaraan.utama)</span>
+<span id="cb15-6"><a href="visualisasi-data-kuantitatif.html#cb15-6" tabindex="-1"></a>tabel_moda</span></code></pre></div>
+<pre><code>## 
+##                  Berjalan Kaki Kendaraan Bermotor (menumpang) 
+##                             33                             27 
+##                  Mobil Pribadi                         Sepeda 
+##                             15                              5 
+##           Sepeda Motor Pribadi            Transportasi Online 
+##                            290                             30</code></pre>
+<p>Dari tabel distribusi frekuensi, kita dapat membuat grafik pai (<em>pie chart</em>):</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="visualisasi-data-kuantitatif.html#cb17-1" tabindex="-1"></a><span class="co"># Menghitung persentase</span></span>
+<span id="cb17-2"><a href="visualisasi-data-kuantitatif.html#cb17-2" tabindex="-1"></a>persentase <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> tabel_moda <span class="sc">/</span> <span class="fu">sum</span>(tabel_moda), <span class="dv">1</span>)</span>
+<span id="cb17-3"><a href="visualisasi-data-kuantitatif.html#cb17-3" tabindex="-1"></a>label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">names</span>(tabel_moda), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>, persentase, <span class="st">&quot;%&quot;</span>)</span>
+<span id="cb17-4"><a href="visualisasi-data-kuantitatif.html#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="visualisasi-data-kuantitatif.html#cb17-5" tabindex="-1"></a><span class="fu">pie</span>(tabel_moda,</span>
+<span id="cb17-6"><a href="visualisasi-data-kuantitatif.html#cb17-6" tabindex="-1"></a>  <span class="at">labels =</span> label,</span>
+<span id="cb17-7"><a href="visualisasi-data-kuantitatif.html#cb17-7" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Distribusi Moda Transportasi Mahasiswa UINRIL&quot;</span>,</span>
+<span id="cb17-8"><a href="visualisasi-data-kuantitatif.html#cb17-8" tabindex="-1"></a>  <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;#3498db&quot;</span>, <span class="st">&quot;#e74c3c&quot;</span>, <span class="st">&quot;#f39c12&quot;</span>, <span class="st">&quot;#2ecc71&quot;</span>, <span class="st">&quot;#9b59b6&quot;</span>),</span>
+<span id="cb17-9"><a href="visualisasi-data-kuantitatif.html#cb17-9" tabindex="-1"></a>  <span class="at">border =</span> <span class="st">&quot;white&quot;</span></span>
+<span id="cb17-10"><a href="visualisasi-data-kuantitatif.html#cb17-10" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-pie-moda"></span>
+<img src="_main_files/figure-html/fig-pie-moda-1.png" alt="Grafik pai moda transportasi mahasiswa UINRIL" width="70%" />
+<p class="caption">
+Gambar 4.7: Grafik pai moda transportasi mahasiswa UINRIL
+</p>
+</div>
+<p>Untuk membuat grafik donat (<em>donut chart</em>), kita mengubah jenis kategori menjadi juring-juring lingkaran dan sudunya ditentukan dari proporsi frekuensi. Prosesnya sama dengan grafik pai, hanya saja kita di tengahnya ada ruang kosong yang dapat digunakan untuk informasi tambahan.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="visualisasi-data-kuantitatif.html#cb18-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="visualisasi-data-kuantitatif.html#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="visualisasi-data-kuantitatif.html#cb18-3" tabindex="-1"></a><span class="co"># Mengubah tabel menjadi data frame</span></span>
+<span id="cb18-4"><a href="visualisasi-data-kuantitatif.html#cb18-4" tabindex="-1"></a>df_moda <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(tabel_moda)</span>
+<span id="cb18-5"><a href="visualisasi-data-kuantitatif.html#cb18-5" tabindex="-1"></a><span class="fu">colnames</span>(df_moda) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Moda&quot;</span>, <span class="st">&quot;Frekuensi&quot;</span>)</span>
+<span id="cb18-6"><a href="visualisasi-data-kuantitatif.html#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="visualisasi-data-kuantitatif.html#cb18-7" tabindex="-1"></a><span class="co"># Menghitung persentase dan posisi label</span></span>
+<span id="cb18-8"><a href="visualisasi-data-kuantitatif.html#cb18-8" tabindex="-1"></a>df_moda<span class="sc">$</span>Persentase <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> df_moda<span class="sc">$</span>Frekuensi <span class="sc">/</span> <span class="fu">sum</span>(df_moda<span class="sc">$</span>Frekuensi), <span class="dv">1</span>)</span>
+<span id="cb18-9"><a href="visualisasi-data-kuantitatif.html#cb18-9" tabindex="-1"></a>df_moda<span class="sc">$</span>Label <span class="ot">&lt;-</span> <span class="fu">paste0</span>(df_moda<span class="sc">$</span>Persentase, <span class="st">&quot;%&quot;</span>)</span>
+<span id="cb18-10"><a href="visualisasi-data-kuantitatif.html#cb18-10" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="visualisasi-data-kuantitatif.html#cb18-11" tabindex="-1"></a><span class="co"># Membuat donut chart</span></span>
+<span id="cb18-12"><a href="visualisasi-data-kuantitatif.html#cb18-12" tabindex="-1"></a><span class="fu">ggplot</span>(df_moda, <span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> Frekuensi, <span class="at">fill =</span> Moda)) <span class="sc">+</span></span>
+<span id="cb18-13"><a href="visualisasi-data-kuantitatif.html#cb18-13" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">width =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-14"><a href="visualisasi-data-kuantitatif.html#cb18-14" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="at">theta =</span> <span class="st">&quot;y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="visualisasi-data-kuantitatif.html#cb18-15" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="fl">0.5</span>, <span class="fl">2.5</span>) <span class="sc">+</span></span>
+<span id="cb18-16"><a href="visualisasi-data-kuantitatif.html#cb18-16" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb18-17"><a href="visualisasi-data-kuantitatif.html#cb18-17" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribusi Moda Transportasi (Donut Chart)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-18"><a href="visualisasi-data-kuantitatif.html#cb18-18" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Label),</span>
+<span id="cb18-19"><a href="visualisasi-data-kuantitatif.html#cb18-19" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb18-20"><a href="visualisasi-data-kuantitatif.html#cb18-20" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">size =</span> <span class="dv">4</span></span>
+<span id="cb18-21"><a href="visualisasi-data-kuantitatif.html#cb18-21" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-22"><a href="visualisasi-data-kuantitatif.html#cb18-22" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#3498db&quot;</span>, <span class="st">&quot;#e74c3c&quot;</span>, <span class="st">&quot;#f39c12&quot;</span>, <span class="st">&quot;#2ecc71&quot;</span>, <span class="st">&quot;#9b59b6&quot;</span>, <span class="st">&quot;#34495e&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-donut-moda"></span>
+<img src="_main_files/figure-html/fig-donut-moda-1.png" alt="Grafik donat moda transportasi mahasiswa UINRIL" width="70%" />
+<p class="caption">
+Gambar 4.8: Grafik donat moda transportasi mahasiswa UINRIL
+</p>
+</div>
+<p><strong>Interpretasi:</strong> Baik grafik pai maupun donat menunjukkan proporsi penggunaan moda transportasi dengan jelas. Sepeda motor mendominasi dengan proporsi terbesar, diikuti oleh mobil dan angkutan umum. Grafik donat memberikan tampilan yang lebih modern dengan ruang kosong di tengahnya yang dapat digunakan untuk informasi tambahan.</p>
+</div>
+<div id="variabel-numerik" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Variabel Numerik<a href="visualisasi-data-kuantitatif.html#variabel-numerik" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Berbeda dengan visualisasi variabel kategorikal yang memperlihatkan frekuensi masing-masing kategori dalam variabel, grafik data dengan variabel numerik merepresentasikan nilai yang sebenarnya.</p>
+<p>Persamaan dengan visualisasi pada data kategorikal adalah perlunya pertimbangan <strong>jumlah variabel</strong> dan cara menyajikan nilianya dengan sumbu atau bukan. Selain itu juga perlu dipertimbangkan <strong>keterurutan objek/observasi <em>(order)</em></strong>.</p>
+<p>Berikut adalah tinjauan beberapa jenis grafik visualisasi data variabel numerik dengan masing-masing ilustrasi data terstrukturnya.</p>
+<div id="histogram" class="section level4 hasAnchor" number="4.2.2.1">
+<h4><span class="header-section-number">4.2.2.1</span> Histogram<a href="visualisasi-data-kuantitatif.html#histogram" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Histogram menunjukkan distribusi nilai-nilai yang berada pada rentang tertentu. Rentang nilai ditunjukkan di sumbu X-nya, sementara sumbu Y adalah frekuensinya. Istilah untuk rentang-rentang ini disebut <strong><em>bin</em></strong>, sementara lebar/ukurannya disebut <strong><em>bin size</em></strong> atau <strong><em>bin width</em></strong>.</p>
+<div class="rmdnote">
+<p><span class="tajuksaya">Penting!</span></p>
+<p>Jangan tertukar antara histogram dengan grafik batang! Perbedaan mendasar keduanya terletak pada sumbu X-nya. Sumbu X pada histogram menunjukkan angka, sementara pada grafik batang menunjukkan kategorinya.</p>
+<p>Satu karakteristik lain yang membedakan histogram dengan grafik batang adalah <strong>jarak antarbatangnya</strong>. Grafik batang biasanya memiliki celah di antara batangnya, sementara histogram tidak memiliki celah.</p>
+</div>
+<p>Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus berikut. Dalam proses ini, variabel numerik dikelompokkan ke dalam interval atau rentang tertentu. Selanjutnya, frekuensi merepresentasikan jumlah total objek yang nilainya berada di dalam masing-masing rentang tersebut.</p>
+</div>
+</div>
+<div id="studi-kasus-membuat-histogram-biaya-perjalanan" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Membuat Histogram Biaya Perjalanan<a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-histogram-biaya-perjalanan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="visualisasi-data-kuantitatif.html#cb19-1" tabindex="-1"></a><span class="co"># Memuat data</span></span>
+<span id="cb19-2"><a href="visualisasi-data-kuantitatif.html#cb19-2" tabindex="-1"></a>data_itera <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;datasets/DataUtama_mhsITERA.csv&quot;</span>)</span>
+<span id="cb19-3"><a href="visualisasi-data-kuantitatif.html#cb19-3" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="visualisasi-data-kuantitatif.html#cb19-4" tabindex="-1"></a><span class="co"># Melihat statistik deskriptif</span></span>
+<span id="cb19-5"><a href="visualisasi-data-kuantitatif.html#cb19-5" tabindex="-1"></a><span class="fu">summary</span>(data_itera<span class="sc">$</span>biaya.dalam.sepekan)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##       0   20000   30000   38666   45000  400000</code></pre>
+<p>Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (bin). R melakukan ini secara otomatis, tetapi kita juga bisa mengatur sendiri. Mari kita buat histogram dengan pengaturan bin otomatis:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="visualisasi-data-kuantitatif.html#cb21-1" tabindex="-1"></a><span class="fu">hist</span>(data_itera<span class="sc">$</span>biaya.dalam.sepekan,</span>
+<span id="cb21-2"><a href="visualisasi-data-kuantitatif.html#cb21-2" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Distribusi Biaya Perjalanan Mahasiswa ITERA&quot;</span>,</span>
+<span id="cb21-3"><a href="visualisasi-data-kuantitatif.html#cb21-3" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Biaya Perjalanan (Rp ribu)&quot;</span>,</span>
+<span id="cb21-4"><a href="visualisasi-data-kuantitatif.html#cb21-4" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Frekuensi&quot;</span>,</span>
+<span id="cb21-5"><a href="visualisasi-data-kuantitatif.html#cb21-5" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;#3498db&quot;</span>,</span>
+<span id="cb21-6"><a href="visualisasi-data-kuantitatif.html#cb21-6" tabindex="-1"></a>  <span class="at">border =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb21-7"><a href="visualisasi-data-kuantitatif.html#cb21-7" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">1</span></span>
+<span id="cb21-8"><a href="visualisasi-data-kuantitatif.html#cb21-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-hist-biaya-auto"></span>
+<img src="_main_files/figure-html/fig-hist-biaya-auto-1.png" alt="Histogram biaya perjalanan (bin otomatis)" width="75%" />
+<p class="caption">
+Gambar 4.9: Histogram biaya perjalanan (bin otomatis)
+</p>
+</div>
+<p>Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi dengan lebih detail:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="visualisasi-data-kuantitatif.html#cb22-1" tabindex="-1"></a><span class="co"># Membuat histogram dengan 15 bin</span></span>
+<span id="cb22-2"><a href="visualisasi-data-kuantitatif.html#cb22-2" tabindex="-1"></a><span class="fu">hist</span>(data_itera<span class="sc">$</span>biaya.dalam.sepekan,</span>
+<span id="cb22-3"><a href="visualisasi-data-kuantitatif.html#cb22-3" tabindex="-1"></a>  <span class="at">breaks =</span> <span class="dv">15</span>,</span>
+<span id="cb22-4"><a href="visualisasi-data-kuantitatif.html#cb22-4" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Distribusi Biaya Perjalanan (15 Bin)&quot;</span>,</span>
+<span id="cb22-5"><a href="visualisasi-data-kuantitatif.html#cb22-5" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Biaya Perjalanan (Rp ribu)&quot;</span>,</span>
+<span id="cb22-6"><a href="visualisasi-data-kuantitatif.html#cb22-6" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Frekuensi&quot;</span>,</span>
+<span id="cb22-7"><a href="visualisasi-data-kuantitatif.html#cb22-7" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;#e74c3c&quot;</span>,</span>
+<span id="cb22-8"><a href="visualisasi-data-kuantitatif.html#cb22-8" tabindex="-1"></a>  <span class="at">border =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb22-9"><a href="visualisasi-data-kuantitatif.html#cb22-9" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">1</span></span>
+<span id="cb22-10"><a href="visualisasi-data-kuantitatif.html#cb22-10" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-hist-biaya-manual"></span>
+<img src="_main_files/figure-html/fig-hist-biaya-manual-1.png" alt="Histogram biaya perjalanan (bin manual)" width="75%" />
+<p class="caption">
+Gambar 4.10: Histogram biaya perjalanan (bin manual)
+</p>
+</div>
+<p>Untuk lebih memahami proses binning, mari kita buat tabel frekuensi manual:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="visualisasi-data-kuantitatif.html#cb23-1" tabindex="-1"></a><span class="co"># Membuat interval bin</span></span>
+<span id="cb23-2"><a href="visualisasi-data-kuantitatif.html#cb23-2" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="fu">max</span>(data_itera<span class="sc">$</span>biaya.dalam.sepekan, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">length.out =</span> <span class="dv">10</span>)</span>
+<span id="cb23-3"><a href="visualisasi-data-kuantitatif.html#cb23-3" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="visualisasi-data-kuantitatif.html#cb23-4" tabindex="-1"></a><span class="co"># Mengelompokkan data ke dalam bin</span></span>
+<span id="cb23-5"><a href="visualisasi-data-kuantitatif.html#cb23-5" tabindex="-1"></a>data_itera<span class="sc">$</span>bin <span class="ot">&lt;-</span> <span class="fu">cut</span>(data_itera<span class="sc">$</span>biaya.dalam.sepekan, <span class="at">breaks =</span> bins, <span class="at">include.lowest =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-6"><a href="visualisasi-data-kuantitatif.html#cb23-6" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="visualisasi-data-kuantitatif.html#cb23-7" tabindex="-1"></a><span class="co"># Membuat tabel frekuensi</span></span>
+<span id="cb23-8"><a href="visualisasi-data-kuantitatif.html#cb23-8" tabindex="-1"></a>tabel_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(data_itera<span class="sc">$</span>bin)</span>
+<span id="cb23-9"><a href="visualisasi-data-kuantitatif.html#cb23-9" tabindex="-1"></a><span class="fu">head</span>(tabel_freq)</span></code></pre></div>
+<pre><code>## 
+##        [0,4.44e+04] (4.44e+04,8.89e+04] (8.89e+04,1.33e+05] (1.33e+05,1.78e+05] 
+##                 318                  80                  13                   7 
+## (1.78e+05,2.22e+05] (2.22e+05,2.67e+05] 
+##                   7                   1</code></pre>
+<p><strong>Interpretasi:</strong> Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (<em>right-skewed</em>), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.</p>
+</div>
+<div id="boxplot" class="section level4 hasAnchor" number="4.2.2.2">
+<h4><span class="header-section-number">4.2.2.2</span> <em>Boxplot</em><a href="visualisasi-data-kuantitatif.html#boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Boxplot adalah grafik berbentuk kotak dan garis yang menampilkan ukuran penyebaran suatu variabel numerik secara grafis (Gambar <a href="#fig:jenis-boxplot"><strong>??</strong></a>). Sebagaimana yang ditunjukkan oleh gambar tersebut, kotak dan garis pada boxplot dapat berjumlah satu atau lebih. Satu kotak dan garis menandakan hanya ada satu kategori objek dengan variabel numerik yang ditampilkan.</p>
+<p>Sementara itu, variabel numerik tersebut dikategorikan lagi berdasarkan suatu variabel kategoris, maka jumlah kotak dan garisnya bisa lebih dari satu.</p>
+<p>Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada kasus berikut.</p>
+</div>
+<div id="studi-kasus-membuat-boxplot-biaya-perjalanan-mahasiswa" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Membuat Boxplot Biaya Perjalanan Mahasiswa<a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-boxplot-biaya-perjalanan-mahasiswa" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="visualisasi-data-kuantitatif.html#cb25-1" tabindex="-1"></a><span class="co"># Memuat data dari beberapa universitas</span></span>
+<span id="cb25-2"><a href="visualisasi-data-kuantitatif.html#cb25-2" tabindex="-1"></a>data_uinril <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;datasets/DataUtama_mhsUINRIL.csv&quot;</span>)</span>
+<span id="cb25-3"><a href="visualisasi-data-kuantitatif.html#cb25-3" tabindex="-1"></a>data_unila <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;datasets/DataUtama_mhsUNILA.csv&quot;</span>)</span>
+<span id="cb25-4"><a href="visualisasi-data-kuantitatif.html#cb25-4" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="visualisasi-data-kuantitatif.html#cb25-5" tabindex="-1"></a><span class="co"># Memilih kolom biaya perjalanan</span></span>
+<span id="cb25-6"><a href="visualisasi-data-kuantitatif.html#cb25-6" tabindex="-1"></a>data_uinril <span class="ot">&lt;-</span> data_uinril <span class="sc">|&gt;</span></span>
+<span id="cb25-7"><a href="visualisasi-data-kuantitatif.html#cb25-7" tabindex="-1"></a>  <span class="fu">select</span>(biaya.dalam.sepekan, Kampus_PT)</span>
+<span id="cb25-8"><a href="visualisasi-data-kuantitatif.html#cb25-8" tabindex="-1"></a></span>
+<span id="cb25-9"><a href="visualisasi-data-kuantitatif.html#cb25-9" tabindex="-1"></a>data_unila <span class="ot">&lt;-</span> data_unila <span class="sc">|&gt;</span></span>
+<span id="cb25-10"><a href="visualisasi-data-kuantitatif.html#cb25-10" tabindex="-1"></a>  <span class="fu">select</span>(biaya.dalam.sepekan, Kampus_PT)</span>
+<span id="cb25-11"><a href="visualisasi-data-kuantitatif.html#cb25-11" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="visualisasi-data-kuantitatif.html#cb25-12" tabindex="-1"></a></span>
+<span id="cb25-13"><a href="visualisasi-data-kuantitatif.html#cb25-13" tabindex="-1"></a><span class="co"># Menggabungkan data</span></span>
+<span id="cb25-14"><a href="visualisasi-data-kuantitatif.html#cb25-14" tabindex="-1"></a>data_gabung <span class="ot">&lt;-</span> <span class="fu">rbind</span>(data_uinril, data_unila)</span>
+<span id="cb25-15"><a href="visualisasi-data-kuantitatif.html#cb25-15" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="visualisasi-data-kuantitatif.html#cb25-16" tabindex="-1"></a><span class="co"># Melihat ringkasan data biaya perjalanan</span></span>
+<span id="cb25-17"><a href="visualisasi-data-kuantitatif.html#cb25-17" tabindex="-1"></a><span class="fu">summary</span>(data_gabung<span class="sc">$</span>biaya.dalam.sepekan)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    0.00   30.00   50.00   56.42   65.00  400.00</code></pre>
+<p>Mari kita buat boxplot tunggal untuk biaya perjalanan UINRIL terlebih dahulu:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="visualisasi-data-kuantitatif.html#cb27-1" tabindex="-1"></a><span class="fu">boxplot</span>(data_uinril<span class="sc">$</span>biaya.dalam.sepekan,</span>
+<span id="cb27-2"><a href="visualisasi-data-kuantitatif.html#cb27-2" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Distribusi Biaya Perjalanan Mahasiswa UINRIL&quot;</span>,</span>
+<span id="cb27-3"><a href="visualisasi-data-kuantitatif.html#cb27-3" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Biaya Perjalanan (Rp ribu)&quot;</span>,</span>
+<span id="cb27-4"><a href="visualisasi-data-kuantitatif.html#cb27-4" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;#3498db&quot;</span>,</span>
+<span id="cb27-5"><a href="visualisasi-data-kuantitatif.html#cb27-5" tabindex="-1"></a>  <span class="at">border =</span> <span class="st">&quot;#2c3e50&quot;</span></span>
+<span id="cb27-6"><a href="visualisasi-data-kuantitatif.html#cb27-6" tabindex="-1"></a>)</span>
+<span id="cb27-7"><a href="visualisasi-data-kuantitatif.html#cb27-7" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="visualisasi-data-kuantitatif.html#cb27-8" tabindex="-1"></a><span class="co"># Menambahkan label untuk setiap elemen boxplot</span></span>
+<span id="cb27-9"><a href="visualisasi-data-kuantitatif.html#cb27-9" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fu">quantile</span>(data_uinril<span class="sc">$</span>biaya.dalam.sepekan, <span class="dv">0</span>, <span class="dv">25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-10"><a href="visualisasi-data-kuantitatif.html#cb27-10" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">paste0</span>(<span class="st">&quot;Q1 = &quot;</span>, <span class="fu">round</span>(<span class="fu">quantile</span>(data_uinril<span class="sc">$</span>biaya.dalam.sepekan, <span class="dv">0</span>, <span class="dv">25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>)),</span>
+<span id="cb27-11"><a href="visualisasi-data-kuantitatif.html#cb27-11" tabindex="-1"></a>  <span class="at">pos =</span> <span class="dv">4</span>, <span class="at">cex =</span> <span class="dv">0</span>, <span class="dv">8</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span></span>
+<span id="cb27-12"><a href="visualisasi-data-kuantitatif.html#cb27-12" tabindex="-1"></a>)</span>
+<span id="cb27-13"><a href="visualisasi-data-kuantitatif.html#cb27-13" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fu">median</span>(data_uinril<span class="sc">$</span>biaya.dalam.sepekan, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-14"><a href="visualisasi-data-kuantitatif.html#cb27-14" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">paste0</span>(<span class="st">&quot;Median = &quot;</span>, <span class="fu">round</span>(<span class="fu">median</span>(data_uinril<span class="sc">$</span>biaya.dalam.sepekan, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>)),</span>
+<span id="cb27-15"><a href="visualisasi-data-kuantitatif.html#cb27-15" tabindex="-1"></a>  <span class="at">pos =</span> <span class="dv">4</span>, <span class="at">cex =</span> <span class="dv">0</span>, <span class="dv">8</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span></span>
+<span id="cb27-16"><a href="visualisasi-data-kuantitatif.html#cb27-16" tabindex="-1"></a>)</span>
+<span id="cb27-17"><a href="visualisasi-data-kuantitatif.html#cb27-17" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="fu">quantile</span>(data_uinril<span class="sc">$</span>biaya.dalam.sepekan, <span class="dv">0</span>, <span class="dv">75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb27-18"><a href="visualisasi-data-kuantitatif.html#cb27-18" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">paste0</span>(<span class="st">&quot;Q3 = &quot;</span>, <span class="fu">round</span>(<span class="fu">quantile</span>(data_uinril<span class="sc">$</span>biaya.dalam.sepekan, <span class="dv">0</span>, <span class="dv">75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>)),</span>
+<span id="cb27-19"><a href="visualisasi-data-kuantitatif.html#cb27-19" tabindex="-1"></a>  <span class="at">pos =</span> <span class="dv">4</span>, <span class="at">cex =</span> <span class="dv">0</span>, <span class="dv">8</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span></span>
+<span id="cb27-20"><a href="visualisasi-data-kuantitatif.html#cb27-20" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-boxplot-single"></span>
+<img src="_main_files/figure-html/fig-boxplot-single-1.png" alt="Boxplot biaya perjalanan mahasiswa UINRIL" width="60%" />
+<p class="caption">
+Gambar 4.11: Boxplot biaya perjalanan mahasiswa UINRIL
+</p>
+</div>
+<p>Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perjalanan antar kampus:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="visualisasi-data-kuantitatif.html#cb28-1" tabindex="-1"></a><span class="fu">boxplot</span>(biaya.dalam.sepekan <span class="sc">~</span> Kampus_PT,</span>
+<span id="cb28-2"><a href="visualisasi-data-kuantitatif.html#cb28-2" tabindex="-1"></a>  <span class="at">data =</span> data_gabung,</span>
+<span id="cb28-3"><a href="visualisasi-data-kuantitatif.html#cb28-3" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Perbandingan Distribusi Biaya Perjalanan Antar Kampus&quot;</span>,</span>
+<span id="cb28-4"><a href="visualisasi-data-kuantitatif.html#cb28-4" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&quot;Kampus&quot;</span>,</span>
+<span id="cb28-5"><a href="visualisasi-data-kuantitatif.html#cb28-5" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&quot;Biaya Perjalanan (Rp ribu)&quot;</span>,</span>
+<span id="cb28-6"><a href="visualisasi-data-kuantitatif.html#cb28-6" tabindex="-1"></a>  <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;#3498db&quot;</span>, <span class="st">&quot;#e74c3c&quot;</span>),</span>
+<span id="cb28-7"><a href="visualisasi-data-kuantitatif.html#cb28-7" tabindex="-1"></a>  <span class="at">border =</span> <span class="st">&quot;#2c3e50&quot;</span></span>
+<span id="cb28-8"><a href="visualisasi-data-kuantitatif.html#cb28-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-boxplot-multiple"></span>
+<img src="_main_files/figure-html/fig-boxplot-multiple-1.png" alt="Boxplot biaya perjalanan mahasiswa berdasarkan kampus" width="75%" />
+<p class="caption">
+Gambar 4.12: Boxplot biaya perjalanan mahasiswa berdasarkan kampus
+</p>
+</div>
+<p><strong>Penjelasan elemen boxplot:</strong></p>
+<ul>
+<li><strong>Garis tengah kotak (median/Q2)</strong>: Nilai tengah data yang membagi data menjadi dua bagian sama besar</li>
+<li><strong>Kotak bagian bawah (Q1)</strong>: Kuartil pertama, 25% data berada di bawah nilai ini</li>
+<li><strong>Kotak bagian atas (Q3)</strong>: Kuartil ketiga, 75% data berada di bawah nilai ini</li>
+<li><strong>Tinggi kotak (IQR)</strong>: Jarak interkuartil, menunjukkan rentang 50% data tengah</li>
+<li><strong>Whiskers (garis atas dan bawah)</strong>: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)</li>
+<li><strong>Titik-titik di luar whiskers</strong>: Outlier atau nilai ekstrem yang jauh dari sebagian besar data</li>
+</ul>
+<p><strong>Interpretasi:</strong> Dari boxplot ganda terlihat bahwa distribusi biaya perjalanan mahasiswa UNILA memiliki median yang sedikit lebih tinggi dibandingkan UINRIL. Rentang interkuartil (tinggi kotak) UNILA juga lebih besar, menunjukkan variasi biaya perjalanan yang lebih beragam. Terdapat beberapa outlier pada kedua kampus yang menunjukkan ada mahasiswa dengan biaya perjalanan yang jauh lebih tinggi dari mayoritas. Informasi ini berguna untuk perencanaan fasilitas kampus seperti kantin atau transportasi yang disesuaikan dengan daya beli mahasiswa.</p>
+</div>
+<div id="grafik-garis-line-plot-dan-area-area-plot" class="section level4 hasAnchor" number="4.2.2.3">
+<h4><span class="header-section-number">4.2.2.3</span> Grafik Garis <em>(Line Plot)</em> dan Area <em>(Area Plot)</em><a href="visualisasi-data-kuantitatif.html#grafik-garis-line-plot-dan-area-area-plot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Grafik ini memetakan nilai variabel angka yang masuk akal bisa diurutkan, yakni biasanya yang berupa deret waktu (time series). Garis menghubungkan masing-masing titik nilai pada tiap-tiap posisi untuk menegaskan perubahan nilainya. Gambar <a href="#fig:line-plot-area-plot"><strong>??</strong></a> berikut mengilustrasikan data terstruktur yang membentuk line atau area plot.</p>
+<p>Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah garisnya diisi dengan warna yang sama dengan garis. Area plot biasanya digunakan untuk data numerik dengan dimensi waktu yang terdiri atas kategori-kategori.</p>
+</div>
+<div id="grafik-pencar-scatterplot" class="section level4 hasAnchor" number="4.2.2.4">
+<h4><span class="header-section-number">4.2.2.4</span> Grafik Pencar <em>(Scatterplot)</em><a href="visualisasi-data-kuantitatif.html#grafik-pencar-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><em>Scatterplot</em> dapat memperlihatkan pemetaan nilai dua variabel numerik yang berkaitan. Sumbu tegak dan datar menunjukkan nilai-nilai dua variabel tersebut sementara tiap titik dibentuk dari perpotongan nilai dari kedua variabel untuk tiap-tiap objek.</p>
+</div>
+<div id="studi-kasus-membuat-scatterplot-hubungan-biaya-perjalanan-dan-jarak-tempuh" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Membuat <em>Scatterplot</em> Hubungan Biaya Perjalanan dan Jarak Tempuh<a href="visualisasi-data-kuantitatif.html#studi-kasus-membuat-scatterplot-hubungan-biaya-perjalanan-dan-jarak-tempuh" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><em>Scatterplot</em> memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="visualisasi-data-kuantitatif.html#cb29-1" tabindex="-1"></a><span class="co"># Memuat library</span></span>
+<span id="cb29-2"><a href="visualisasi-data-kuantitatif.html#cb29-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb29-3"><a href="visualisasi-data-kuantitatif.html#cb29-3" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="visualisasi-data-kuantitatif.html#cb29-4" tabindex="-1"></a><span class="co"># Memuat data</span></span>
+<span id="cb29-5"><a href="visualisasi-data-kuantitatif.html#cb29-5" tabindex="-1"></a>data_itera <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&#39;datasets/DataUtama_mhsITERA.csv&#39;</span>)</span>
+<span id="cb29-6"><a href="visualisasi-data-kuantitatif.html#cb29-6" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="visualisasi-data-kuantitatif.html#cb29-7" tabindex="-1"></a><span class="co"># Konversi biaya perjalanan dan jarak (mengganti koma dengan titik, lalu ke numeric)</span></span>
+<span id="cb29-8"><a href="visualisasi-data-kuantitatif.html#cb29-8" tabindex="-1"></a>data_itera<span class="sc">$</span>biaya.dalam.sepekan <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&#39;,&#39;</span>, <span class="st">&#39;.&#39;</span>, data_itera<span class="sc">$</span>biaya.dalam.sepekan))</span>
+<span id="cb29-9"><a href="visualisasi-data-kuantitatif.html#cb29-9" tabindex="-1"></a>data_itera<span class="sc">$</span>jarak <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">&#39;,&#39;</span>, <span class="st">&#39;.&#39;</span>, data_itera<span class="sc">$</span>jarak))</span>
+<span id="cb29-10"><a href="visualisasi-data-kuantitatif.html#cb29-10" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="visualisasi-data-kuantitatif.html#cb29-11" tabindex="-1"></a><span class="co"># Menghapus baris dengan nilai NA pada kedua variabel</span></span>
+<span id="cb29-12"><a href="visualisasi-data-kuantitatif.html#cb29-12" tabindex="-1"></a>data_itera <span class="ot">&lt;-</span> data_itera <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>(biaya.dalam.sepekan, jarak)</span>
+<span id="cb29-13"><a href="visualisasi-data-kuantitatif.html#cb29-13" tabindex="-1"></a></span>
+<span id="cb29-14"><a href="visualisasi-data-kuantitatif.html#cb29-14" tabindex="-1"></a><span class="co"># Melihat struktur data untuk memahami pemetaan ke scatterplot</span></span>
+<span id="cb29-15"><a href="visualisasi-data-kuantitatif.html#cb29-15" tabindex="-1"></a><span class="fu">head</span>(data_itera[, <span class="fu">c</span>(<span class="st">&#39;biaya.dalam.sepekan&#39;</span>, <span class="st">&#39;jarak&#39;</span>)], <span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##    biaya.dalam.sepekan jarak
+## 1                10000  6.69
+## 2                21000  2.82
+## 3                40000  5.17
+## 4                30000  6.95
+## 5                25000  5.57
+## 6                40000  4.75
+## 7                30000  8.27
+## 8                    0  3.70
+## 9               100000  3.77
+## 10               30000  2.08</code></pre>
+<p>Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (<code>biaya.dalam.sepekan</code>) akan menjadi sumbu X, dan kolom kedua (<code>jarak</code>) menjadi sumbu Y. Setiap baris akan menjadi satu titik pada scatterplot.</p>
+<p>Mari kita buat <em>scatterplot</em> sederhana:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="visualisasi-data-kuantitatif.html#cb31-1" tabindex="-1"></a><span class="fu">plot</span>(data_itera<span class="sc">$</span>biaya.dalam.sepekan, data_itera<span class="sc">$</span>jarak,</span>
+<span id="cb31-2"><a href="visualisasi-data-kuantitatif.html#cb31-2" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&#39;Hubungan Biaya Perjalanan dan Jarak Tempuh Mahasiswa ITERA&#39;</span>,</span>
+<span id="cb31-3"><a href="visualisasi-data-kuantitatif.html#cb31-3" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">&#39;Biaya Perjalanan (Rp ribu)&#39;</span>,</span>
+<span id="cb31-4"><a href="visualisasi-data-kuantitatif.html#cb31-4" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">&#39;Jarak Tempuh (km)&#39;</span>,</span>
+<span id="cb31-5"><a href="visualisasi-data-kuantitatif.html#cb31-5" tabindex="-1"></a>  <span class="at">pch =</span> <span class="dv">16</span>,</span>
+<span id="cb31-6"><a href="visualisasi-data-kuantitatif.html#cb31-6" tabindex="-1"></a>  <span class="at">col =</span> <span class="fu">rgb</span>(<span class="dv">52</span>, <span class="dv">152</span>, <span class="dv">219</span>, <span class="at">maxColorValue =</span> <span class="dv">255</span>, <span class="at">alpha =</span> <span class="dv">100</span>)</span>
+<span id="cb31-7"><a href="visualisasi-data-kuantitatif.html#cb31-7" tabindex="-1"></a>)</span>
+<span id="cb31-8"><a href="visualisasi-data-kuantitatif.html#cb31-8" tabindex="-1"></a></span>
+<span id="cb31-9"><a href="visualisasi-data-kuantitatif.html#cb31-9" tabindex="-1"></a><span class="co"># Menambahkan garis tren</span></span>
+<span id="cb31-10"><a href="visualisasi-data-kuantitatif.html#cb31-10" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(jarak <span class="sc">~</span> biaya.dalam.sepekan, <span class="at">data =</span> data_itera),</span>
+<span id="cb31-11"><a href="visualisasi-data-kuantitatif.html#cb31-11" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&#39;#e74c3c&#39;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">lty =</span> <span class="dv">2</span></span>
+<span id="cb31-12"><a href="visualisasi-data-kuantitatif.html#cb31-12" tabindex="-1"></a>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-scatter-basic"></span>
+<img src="_main_files/figure-html/fig-scatter-basic-1.png" alt="Scatterplot hubungan biaya perjalanan dan jarak tempuh" width="75%" />
+<p class="caption">
+Gambar 4.13: Scatterplot hubungan biaya perjalanan dan jarak tempuh
+</p>
+</div>
+<p>Kita juga dapat membuat <em>scatterplot</em> yang lebih informatif menggunakan <code>ggplot2</code>:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="visualisasi-data-kuantitatif.html#cb32-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb32-2"><a href="visualisasi-data-kuantitatif.html#cb32-2" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="visualisasi-data-kuantitatif.html#cb32-3" tabindex="-1"></a><span class="fu">ggplot</span>(data_itera, <span class="fu">aes</span>(<span class="at">x =</span> biaya.dalam.sepekan, <span class="at">y =</span> jarak)) <span class="sc">+</span></span>
+<span id="cb32-4"><a href="visualisasi-data-kuantitatif.html#cb32-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&#39;#3498db&#39;</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb32-5"><a href="visualisasi-data-kuantitatif.html#cb32-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&#39;lm&#39;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&#39;#e74c3c&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;#e74c3c&#39;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb32-6"><a href="visualisasi-data-kuantitatif.html#cb32-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb32-7"><a href="visualisasi-data-kuantitatif.html#cb32-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-8"><a href="visualisasi-data-kuantitatif.html#cb32-8" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&#39;Hubungan Biaya Perjalanan dan Jarak Tempuh&#39;</span>,</span>
+<span id="cb32-9"><a href="visualisasi-data-kuantitatif.html#cb32-9" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&#39;Mahasiswa ITERA&#39;</span>,</span>
+<span id="cb32-10"><a href="visualisasi-data-kuantitatif.html#cb32-10" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&#39;Biaya Perjalanan (Rp ribu)&#39;</span>,</span>
+<span id="cb32-11"><a href="visualisasi-data-kuantitatif.html#cb32-11" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&#39;Jarak Tempuh (km)&#39;</span></span>
+<span id="cb32-12"><a href="visualisasi-data-kuantitatif.html#cb32-12" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-13"><a href="visualisasi-data-kuantitatif.html#cb32-13" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">&#39;bold&#39;</span>, <span class="at">size =</span> <span class="dv">14</span>))</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-scatter-ggplot"></span>
+<img src="_main_files/figure-html/fig-scatter-ggplot-1.png" alt="Scatterplot dengan ggplot2" width="75%" />
+<p class="caption">
+Gambar 4.14: Scatterplot dengan ggplot2
+</p>
+</div>
+<p><strong>Hubungan data terstruktur dengan scatterplot:</strong></p>
+<ul>
+<li>Setiap <strong>baris</strong> dalam tabel data menjadi <strong>satu titik</strong> pada grafik</li>
+<li>Nilai <strong>kolom pertama</strong> (biaya perjalanan) menentukan <strong>posisi horizontal (X)</strong> titik</li>
+<li>Nilai <strong>kolom kedua</strong> (jarak tempuh) menentukan <strong>posisi vertikal (Y)</strong> titik</li>
+<li>Titik di koordinat (50, 10) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu dan jarak tempuh 10 km</li>
+</ul>
+<p><strong>Interpretasi:</strong> Scatterplot menunjukkan adanya hubungan positif antara biaya perjalanan dan jarak tempuh mahasiswa ITERA. Mahasiswa yang tinggal lebih jauh dari kampus cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka memerlukan lebih banyak bahan bakar atau biaya transportasi umum. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa yang tinggal jauh dari kampus.</p>
+</div>
+</div>
+<div id="penggunaan-dan-interpretasi-diagram" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Penggunaan dan Interpretasi Diagram<a href="visualisasi-data-kuantitatif.html#penggunaan-dan-interpretasi-diagram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Memilih diagram yang tepat adalah kunci dalam menghasilkan analisis yang baik dan tajam. Setiap diagram memiliki karakteristik yang berbeda satu sama lain, sehingga penggunaannya harus disesuaikan dengan jenis variabel dan pesan yang ingin ditekankan.</p>
+<p>Untuk memilih visualisasi yang paling efektif, mulailah dengan menjawab beberapa pertanyaan mendasar berikut:</p>
+<ul>
+<li><strong>Apa tujuan utama Anda?</strong> Apakah Anda ingin menunjukkan perbandingan, distribusi, komposisi, atau hubungan antarvariabel?</li>
+<li><strong>Ada berapa variabel yang ingin Anda tampilkan?</strong> Apakah hanya satu, dua, atau lebih?</li>
+<li><strong>Apa jenis nilai dan tingkat pengukuran dari variabel-variabel tersebut?</strong> Apakah kategorikal (nominal, ordinal) atau numerik (metrik)?</li>
+</ul>
+<p>Jawaban dari pertanyaan-pertanyaan ini akan menuntun Anda pada pilihan diagram yang paling sesuai.</p>
+<div id="pemilihan-diagram-berdasarkan-tujuan" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Pemilihan Diagram Berdasarkan Tujuan<a href="visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-tujuan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Secara umum, tujuan visualisasi data dalam statistik dapat dikelompokkan menjadi beberapa empat kategori, yang masing-masing memiliki jenis diagram yang cocok. Berikut adalan penjelasan keempat kategori tersebut.</p>
 <ol style="list-style-type: decimal">
-<li>Jelaskan prinsip dasar pemilihan jenis grafik berdasarkan tingkat pengukuran variabelnya! <span class="capaian">STP-3.1</span></li>
-<li>Apa fungsi Boxplot dalam analisis data eksploratif? <span class="capaian">STP-3.2</span></li>
-<li>Perhatikan diagram berikut (misalkan ada diagram batang). Apa kesimpulan yang dapat diambil? <span class="capaian">STP-3.3</span></li>
+<li><strong>Menampilkan Distribusi Frekuensi</strong>. Ini paling cocok untuk variabel kategorikal (nominal atau ordinal). Pilihan utamanya adalah <strong>grafik batang</strong> atau <strong>grafik lollipop</strong>, di mana panjang atau tinggi batang merepresentasikan jumlah atau frekuensi setiap kategori.</li>
+<li><strong>Menampilkan Komposisi</strong>. Ketika Anda ingin menunjukkan bagian-bagian dari suatu keseluruhan, Anda sedang menampilkan komposisi. <strong>Grafik pai</strong> atau <strong>donat</strong> dapat dipakai untuk tujuan ini.</li>
+<li><strong>Menampilkan Distribusi Nilai Numerik</strong>. Ketika Anda ingin menampilkan distribusi nilai numerik, Anda dapat menggunakan <strong>histogram</strong> atau <strong>boxplot</strong>. Untuk menampilkan ukuran-ukuran statistik penyebaran dengan lebih tegas, Anda dapat menggunakan <em>boxplot</em>.</li>
+<li><strong>Menampilkan Hubungan Antar Variabel</strong>. Ketika Anda ingin menunjukkan hubungan antar variabel, Anda dapat menggunakan <strong>scatterplot</strong> atau <strong>line plot</strong>.</li>
+</ol>
+</div>
+<div id="pemilihan-diagram-berdasarkan-jumlah-variabel" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Pemilihan Diagram Berdasarkan Jumlah Variabel<a href="visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-jumlah-variabel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pemilihan diagram juga dapat Anda lakukan dengan melihat jumlah variabel yang ingin Anda tampilkan. Jika hanya satu variabel, Anda dapat menggunakan <strong>grafik batang</strong> atau <strong>grafik lollipop</strong>. Jika ada dua variabel, Anda dapat menggunakan <strong>scatterplot</strong> atau <strong>line plot</strong>.</p>
+<p>Grafik batang juga dapat digunakan untuk menampilkan distribusi frekuensi dari dua variabel kategorikal dengan menggunakan <strong>grafik batang bertumpuk</strong> atau <strong>grafik batang berjejer</strong>.</p>
+</div>
+<div id="pemilihan-diagram-berdasarkan-tingkat-pengukuran-variabel" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Pemilihan Diagram Berdasarkan Tingkat Pengukuran Variabel<a href="visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-tingkat-pengukuran-variabel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Secara umum, diagram yang digunakan untuk menampilkan data kategorikal adalah <strong>grafik batang</strong> atau <strong>grafik lollipop</strong>, sedangkan diagram yang digunakan untuk menampilkan data numerik adalah <strong>histogram</strong> atau <strong>boxplot</strong>.</p>
+<p>Beberapa contoh pertimbangan dalam memilih diagram berdasarkan tingkat pengukuran variabel adalah sebagai berikut:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Data Ordinal</strong>. Untuk data ordinal, Anda sangat disarankan untuk menggunakan <strong>grafik batang</strong> atau <strong>grafik lollipop</strong> yang diurutkan berdasarkan urutan kategori.</li>
+<li><strong>Data Metrik</strong>. Histogram, <em>boxplot</em>, dan <em>scatterplot</em> adalah pilihan standar untuk visualisasi.</li>
+</ol>
+<p>Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingkat pengukuran variabel tersebut dapat dilihat pada Gambar <a href="visualisasi-data-kuantitatif.html#fig:simpulan-memilih-visualisasi">4.15</a> berikut.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:simpulan-memilih-visualisasi"></span>
+<img src="images/simpulan-memilih-visualisasi.png" alt="Panduan memilih jenis visualisasi" width="60%" />
+<p class="caption">
+Gambar 4.15: Panduan memilih jenis visualisasi
+</p>
+</div>
+<div class="rmdexercise">
+
+</div>
+
+<pre><code># Pengantar Analisis Statistik Inferensial</code></pre>
+</div>
+</div>
+<div id="konsep-dasar-1" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Konsep Dasar<a href="visualisasi-data-kuantitatif.html#konsep-dasar-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statistik inferensial adalah metode yang digunakan untuk menarik kesimpulan mengenai populasi berdasarkan data sampel. Konsep kuncinya adalah bahwa kita tidak mengukur seluruh populasi (sensus), melainkan hanya sebagian kecilnya (sampel), namun kita ingin hasil pengukuran sampel tersebut dapat digeneralisasi ke populasi.</p>
+<div id="teknik-pengambilan-sampel" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Teknik Pengambilan Sampel<a href="visualisasi-data-kuantitatif.html#teknik-pengambilan-sampel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Agar generalisasi valid, sampel harus representatif. Beberapa teknik:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Simple Random Sampling</strong>. Setiap anggota populasi memiliki peluang yang sama untuk dipilih.</li>
+<li><strong>Stratified Random Sampling</strong>. Populasi dibagi menjadi strata (kelompok), lalu sampel diambil secara acak dari tiap strata secara proporsional.</li>
+<li><strong>Cluster Sampling</strong>. Populasi dibagi menjadi klaster (wilayah), lalu beberapa klaster dipilih secara acak.</li>
+</ol>
+</div>
+</div>
+<div id="distribusi-sampling-dan-teorema-limit-sentral" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Distribusi Sampling dan Teorema Limit Sentral<a href="visualisasi-data-kuantitatif.html#distribusi-sampling-dan-teorema-limit-sentral" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Walaupun kita hanya mengambil satu sampel, kita perlu membayangkan konsep “Distribusi Sampling”. Jika kita mengambil banyak sampel berulang kali dari populasi yang sama, rata-rata dari masing-masing sampel tersebut akan membentuk distribusi normal, terlepas dari bentuk distribusi populasinya. Inilah <strong>Teorema Limit Sentral</strong>.</p>
+<div id="standard-error" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Standard Error<a href="visualisasi-data-kuantitatif.html#standard-error" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Simpangan baku dari distribusi sampling disebut <strong>Standard Error (SE)</strong>.
+<span class="math display">\[ SE = \frac{\sigma}{\sqrt{n}} \]</span>
+Dimana <span class="math inline">\(\sigma\)</span> adalah simpangan baku populasi dan <span class="math inline">\(n\)</span> adalah ukuran sampel.</p>
+</div>
+<div id="z-score" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Z-Score<a href="visualisasi-data-kuantitatif.html#z-score" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Untuk mengetahui posisi suatu nilai dalam distribusi normal baku, kita menggunakan Z-Score:
+<span class="math display">\[ Z = \frac{x - \mu}{\sigma} \]</span>
+Untuk rata-rata sampel:
+<span class="math display">\[ Z = \frac{\bar{x} - \mu}{SE} \]</span></p>
+</div>
+</div>
+<div id="soal-evaluasi-6" class="section level2 unnumbered hasAnchor rmdexercise">
+<h2>Soal Evaluasi 6<a href="visualisasi-data-kuantitatif.html#soal-evaluasi-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Jelaskan perbedaan mendasar antara statistik deskriptif dan inferensial. <span class="capaian">STP-4.1</span></li>
+<li>Sebutkan dan jelaskan tiga teknik pengambilan sampel probabilitas. <span class="capaian">STP-4.2</span></li>
+<li>Hitung Z-Score jika diketahui rata-rata sampel = 50, rata-rata populasi = 45, simpangan baku = 10, dan n = 25. <span class="capaian">STP-4.3</span></li>
 </ol>
 </div>
 
@@ -440,7 +1003,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="analisis-statistik-deskriptif.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="pengantar-analisis-statistik-inferensial.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="estimasi-parameter.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

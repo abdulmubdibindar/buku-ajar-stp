@@ -2426,7 +2426,7 @@ Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bent
 
 Sajian data dalam bentuk gambar disebut juga **grafik** atau **diagram** *(chart)*. Jenis grafik atau diagram yang digunakan sangat bergantung pada jenis dan tingkat pengukuran variabel yang akan divisualisasikan.
 
-Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs @fromdatatoviz atau @Ferdio.
+Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs @datatoviz atau @Ferdio.
 
 
 ## Jenis-jenis Diagram
@@ -2462,6 +2462,9 @@ Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transpo
 
 
 ``` r
+# Memuat library
+library(tidyverse)
+
 # Memuat data
 data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 
@@ -2938,38 +2941,922 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
 
+``` r
+# Memuat data dari beberapa universitas
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
+
+# Memilih kolom biaya perjalanan
+data_uinril <- data_uinril |>
+  select(biaya.dalam.sepekan, Kampus_PT)
+
+data_unila <- data_unila |>
+  select(biaya.dalam.sepekan, Kampus_PT)
+
+
+# Menggabungkan data
+data_gabung <- rbind(data_uinril, data_unila)
+
+# Melihat ringkasan data biaya perjalanan
+summary(data_gabung$biaya.dalam.sepekan)
+```
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    0.00   30.00   50.00   56.42   65.00  400.00
+```
+
+Mari kita buat boxplot tunggal untuk biaya perjalanan UINRIL terlebih dahulu:
+
+
+``` r
+boxplot(data_uinril$biaya.dalam.sepekan,
+  main = "Distribusi Biaya Perjalanan Mahasiswa UINRIL",
+  ylab = "Biaya Perjalanan (Rp ribu)",
+  col = "#3498db",
+  border = "#2c3e50"
+)
+
+# Menambahkan label untuk setiap elemen boxplot
+text(1, 1, quantile(data_uinril$biaya.dalam.sepekan, 0, 25, na.rm = TRUE),
+  labels = paste0("Q1 = ", round(quantile(data_uinril$biaya.dalam.sepekan, 0, 25, na.rm = TRUE), 1)),
+  pos = 4, cex = 0, 8, col = "red"
+)
+text(1, 1, median(data_uinril$biaya.dalam.sepekan, na.rm = TRUE),
+  labels = paste0("Median = ", round(median(data_uinril$biaya.dalam.sepekan, na.rm = TRUE), 1)),
+  pos = 4, cex = 0, 8, col = "red"
+)
+text(1, 1, quantile(data_uinril$biaya.dalam.sepekan, 0, 75, na.rm = TRUE),
+  labels = paste0("Q3 = ", round(quantile(data_uinril$biaya.dalam.sepekan, 0, 75, na.rm = TRUE), 1)),
+  pos = 4, cex = 0, 8, col = "red"
+)
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-boxplot-single-1.png" alt="Boxplot biaya perjalanan mahasiswa UINRIL" width="60%" />
+<p class="caption">(\#fig:fig-boxplot-single)Boxplot biaya perjalanan mahasiswa UINRIL</p>
+</div>
+
+Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perjalanan antar kampus:
+
+
+``` r
+boxplot(biaya.dalam.sepekan ~ Kampus_PT,
+  data = data_gabung,
+  main = "Perbandingan Distribusi Biaya Perjalanan Antar Kampus",
+  xlab = "Kampus",
+  ylab = "Biaya Perjalanan (Rp ribu)",
+  col = c("#3498db", "#e74c3c"),
+  border = "#2c3e50"
+)
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-boxplot-multiple-1.png" alt="Boxplot biaya perjalanan mahasiswa berdasarkan kampus" width="75%" />
+<p class="caption">(\#fig:fig-boxplot-multiple)Boxplot biaya perjalanan mahasiswa berdasarkan kampus</p>
+</div>
+
+**Penjelasan elemen boxplot:**
+
+- **Garis tengah kotak (median/Q2)**: Nilai tengah data yang membagi data menjadi dua bagian sama besar
+- **Kotak bagian bawah (Q1)**: Kuartil pertama, 25% data berada di bawah nilai ini
+- **Kotak bagian atas (Q3)**: Kuartil ketiga, 75% data berada di bawah nilai ini
+- **Tinggi kotak (IQR)**: Jarak interkuartil, menunjukkan rentang 50% data tengah
+- **Whiskers (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)
+- **Titik-titik di luar whiskers**: Outlier atau nilai ekstrem yang jauh dari sebagian besar data
+
+**Interpretasi:** Dari boxplot ganda terlihat bahwa distribusi biaya perjalanan mahasiswa UNILA memiliki median yang sedikit lebih tinggi dibandingkan UINRIL. Rentang interkuartil (tinggi kotak) UNILA juga lebih besar, menunjukkan variasi biaya perjalanan yang lebih beragam. Terdapat beberapa outlier pada kedua kampus yang menunjukkan ada mahasiswa dengan biaya perjalanan yang jauh lebih tinggi dari mayoritas. Informasi ini berguna untuk perencanaan fasilitas kampus seperti kantin atau transportasi yang disesuaikan dengan daya beli mahasiswa.
+
+:::
+
+#### Grafik Garis *(Line Plot)* dan Area *(Area Plot)*
+
+Grafik ini memetakan nilai variabel angka yang masuk akal bisa diurutkan, yakni biasanya yang berupa deret waktu (time series). Garis menghubungkan masing-masing titik nilai pada tiap-tiap posisi untuk menegaskan perubahan nilainya. Gambar \@ref(fig:line-plot-area-plot) berikut mengilustrasikan data terstruktur yang membentuk line atau area plot.
+
+Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah garisnya diisi dengan warna yang sama dengan garis. Area plot biasanya digunakan untuk data numerik dengan dimensi waktu yang terdiri atas kategori-kategori.
+
+
+#### Grafik Pencar *(Scatterplot)*
+
+*Scatterplot* dapat memperlihatkan pemetaan nilai dua variabel numerik yang berkaitan. Sumbu tegak dan datar menunjukkan nilai-nilai dua variabel tersebut sementara tiap titik dibentuk dari perpotongan nilai dari kedua variabel untuk tiap-tiap objek.
+
+::: rmdkasus
+
+### Studi Kasus: Membuat *Scatterplot* Hubungan Biaya Perjalanan dan Jarak Tempuh {.unnumbered}
+
+*Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
+
+
+``` r
+# Memuat library
+library(tidyverse)
+
+# Memuat data
+data_itera <- read.csv2('datasets/DataUtama_mhsITERA.csv')
+
+# Konversi biaya perjalanan dan jarak (mengganti koma dengan titik, lalu ke numeric)
+data_itera$biaya.dalam.sepekan <- as.numeric(gsub(',', '.', data_itera$biaya.dalam.sepekan))
+data_itera$jarak <- as.numeric(gsub(',', '.', data_itera$jarak))
+
+# Menghapus baris dengan nilai NA pada kedua variabel
+data_itera <- data_itera %>% drop_na(biaya.dalam.sepekan, jarak)
+
+# Melihat struktur data untuk memahami pemetaan ke scatterplot
+head(data_itera[, c('biaya.dalam.sepekan', 'jarak')], 10)
+```
+
+```
+##    biaya.dalam.sepekan jarak
+## 1                10000  6.69
+## 2                21000  2.82
+## 3                40000  5.17
+## 4                30000  6.95
+## 5                25000  5.57
+## 6                40000  4.75
+## 7                30000  8.27
+## 8                    0  3.70
+## 9               100000  3.77
+## 10               30000  2.08
+```
+
+Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (`biaya.dalam.sepekan`) akan menjadi sumbu X, dan kolom kedua (`jarak`) menjadi sumbu Y. Setiap baris akan menjadi satu titik pada scatterplot.
+
+Mari kita buat *scatterplot* sederhana:
+
+
+``` r
+plot(data_itera$biaya.dalam.sepekan, data_itera$jarak,
+  main = 'Hubungan Biaya Perjalanan dan Jarak Tempuh Mahasiswa ITERA',
+  xlab = 'Biaya Perjalanan (Rp ribu)',
+  ylab = 'Jarak Tempuh (km)',
+  pch = 16,
+  col = rgb(52, 152, 219, maxColorValue = 255, alpha = 100)
+)
+
+# Menambahkan garis tren
+abline(lm(jarak ~ biaya.dalam.sepekan, data = data_itera),
+  col = '#e74c3c', lwd = 2, lty = 2
+)
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-scatter-basic-1.png" alt="Scatterplot hubungan biaya perjalanan dan jarak tempuh" width="75%" />
+<p class="caption">(\#fig:fig-scatter-basic)Scatterplot hubungan biaya perjalanan dan jarak tempuh</p>
+</div>
+
+Kita juga dapat membuat *scatterplot* yang lebih informatif menggunakan `ggplot2`:
+
+
+``` r
+library(ggplot2)
+
+ggplot(data_itera, aes(x = biaya.dalam.sepekan, y = jarak)) +
+  geom_point(color = '#3498db', alpha = 0.6, size = 3) +
+  geom_smooth(method = 'lm', se = TRUE, color = '#e74c3c', fill = '#e74c3c', alpha = 0.2) +
+  theme_minimal() +
+  labs(
+    title = 'Hubungan Biaya Perjalanan dan Jarak Tempuh',
+    subtitle = 'Mahasiswa ITERA',
+    x = 'Biaya Perjalanan (Rp ribu)',
+    y = 'Jarak Tempuh (km)'
+  ) +
+  theme(plot.title = element_text(face = 'bold', size = 14))
+```
+
+```
+## `geom_smooth()` using formula = 'y ~ x'
+```
+
+<div class="figure" style="text-align: center">
+<img src="_main_files/figure-html/fig-scatter-ggplot-1.png" alt="Scatterplot dengan ggplot2" width="75%" />
+<p class="caption">(\#fig:fig-scatter-ggplot)Scatterplot dengan ggplot2</p>
+</div>
+
+**Hubungan data terstruktur dengan scatterplot:**
+
+- Setiap **baris** dalam tabel data menjadi **satu titik** pada grafik
+- Nilai **kolom pertama** (biaya perjalanan) menentukan **posisi horizontal (X)** titik
+- Nilai **kolom kedua** (jarak tempuh) menentukan **posisi vertikal (Y)** titik
+- Titik di koordinat (50, 10) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu dan jarak tempuh 10 km
+
+**Interpretasi:** Scatterplot menunjukkan adanya hubungan positif antara biaya perjalanan dan jarak tempuh mahasiswa ITERA. Mahasiswa yang tinggal lebih jauh dari kampus cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka memerlukan lebih banyak bahan bakar atau biaya transportasi umum. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa yang tinggal jauh dari kampus.
+
+:::
 
 
 
+## Penggunaan dan Interpretasi Diagram
+
+Memilih diagram yang tepat adalah kunci dalam menghasilkan analisis yang baik dan tajam. Setiap diagram memiliki karakteristik yang berbeda satu sama lain, sehingga penggunaannya harus disesuaikan dengan jenis variabel dan pesan yang ingin ditekankan.
+
+Untuk memilih visualisasi yang paling efektif, mulailah dengan menjawab beberapa pertanyaan mendasar berikut:
+
+* **Apa tujuan utama Anda?** Apakah Anda ingin menunjukkan perbandingan, distribusi, komposisi, atau hubungan antarvariabel?
+* **Ada berapa variabel yang ingin Anda tampilkan?** Apakah hanya satu, dua, atau lebih?
+* **Apa jenis nilai dan tingkat pengukuran dari variabel-variabel tersebut?** Apakah kategorikal (nominal, ordinal) atau numerik (metrik)?
+
+Jawaban dari pertanyaan-pertanyaan ini akan menuntun Anda pada pilihan diagram yang paling sesuai.
+
+### Pemilihan Diagram Berdasarkan Tujuan
+
+Secara umum, tujuan visualisasi data dalam statistik dapat dikelompokkan menjadi beberapa empat kategori, yang masing-masing memiliki jenis diagram yang cocok. Berikut adalan penjelasan keempat kategori tersebut.
+
+1. **Menampilkan Distribusi Frekuensi**. Ini paling cocok untuk variabel kategorikal (nominal atau ordinal). Pilihan utamanya adalah **grafik batang** atau **grafik lollipop**, di mana panjang atau tinggi batang merepresentasikan jumlah atau frekuensi setiap kategori.
+2. **Menampilkan Komposisi**. Ketika Anda ingin menunjukkan bagian-bagian dari suatu keseluruhan, Anda sedang menampilkan komposisi. **Grafik pai** atau **donat** dapat dipakai untuk tujuan ini.
+3. **Menampilkan Distribusi Nilai Numerik**. Ketika Anda ingin menampilkan distribusi nilai numerik, Anda dapat menggunakan **histogram** atau **boxplot**. Untuk menampilkan ukuran-ukuran statistik penyebaran dengan lebih tegas, Anda dapat menggunakan *boxplot*.
+4. **Menampilkan Hubungan Antar Variabel**. Ketika Anda ingin menunjukkan hubungan antar variabel, Anda dapat menggunakan **scatterplot** atau **line plot**.
+
+### Pemilihan Diagram Berdasarkan Jumlah Variabel
+
+Pemilihan diagram juga dapat Anda lakukan dengan melihat jumlah variabel yang ingin Anda tampilkan. Jika hanya satu variabel, Anda dapat menggunakan **grafik batang** atau **grafik lollipop**. Jika ada dua variabel, Anda dapat menggunakan **scatterplot** atau **line plot**.
+
+Grafik batang juga dapat digunakan untuk menampilkan distribusi frekuensi dari dua variabel kategorikal dengan menggunakan **grafik batang bertumpuk** atau **grafik batang berjejer**.
+
+
+### Pemilihan Diagram Berdasarkan Tingkat Pengukuran Variabel
+
+Secara umum, diagram yang digunakan untuk menampilkan data kategorikal adalah **grafik batang** atau **grafik lollipop**, sedangkan diagram yang digunakan untuk menampilkan data numerik adalah **histogram** atau **boxplot**.
+
+Beberapa contoh pertimbangan dalam memilih diagram berdasarkan tingkat pengukuran variabel adalah sebagai berikut:
+
+1. **Data Ordinal**. Untuk data ordinal, Anda sangat disarankan untuk menggunakan **grafik batang** atau **grafik lollipop** yang diurutkan berdasarkan urutan kategori.
+2. **Data Metrik**. Histogram, *boxplot*, dan *scatterplot* adalah pilihan standar untuk visualisasi.
+
+Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingkat pengukuran variabel tersebut dapat dilihat pada Gambar \@ref(fig:simpulan-memilih-visualisasi) berikut.
+
+<div class="figure" style="text-align: center">
+<img src="images/simpulan-memilih-visualisasi.png" alt="Panduan memilih jenis visualisasi" width="60%" />
+<p class="caption">(\#fig:simpulan-memilih-visualisasi)Panduan memilih jenis visualisasi</p>
+</div>
+
+::: rmdexercise
 
 
 
+:::
 
 
 
+<!--chapter:end:04-visualisasi-data.Rmd-->
+
+    # Pengantar Analisis Statistik Inferensial
+
+## Konsep Dasar
+
+Statistik inferensial adalah metode yang digunakan untuk menarik kesimpulan mengenai populasi berdasarkan data sampel. Konsep kuncinya adalah bahwa kita tidak mengukur seluruh populasi (sensus), melainkan hanya sebagian kecilnya (sampel), namun kita ingin hasil pengukuran sampel tersebut dapat digeneralisasi ke populasi.
+
+### Teknik Pengambilan Sampel
+
+Agar generalisasi valid, sampel harus representatif. Beberapa teknik:
+
+1.  **Simple Random Sampling**. Setiap anggota populasi memiliki peluang yang sama untuk dipilih.
+2.  **Stratified Random Sampling**. Populasi dibagi menjadi strata (kelompok), lalu sampel diambil secara acak dari tiap strata secara proporsional.
+3.  **Cluster Sampling**. Populasi dibagi menjadi klaster (wilayah), lalu beberapa klaster dipilih secara acak.
+
+## Distribusi Sampling dan Teorema Limit Sentral
+
+Walaupun kita hanya mengambil satu sampel, kita perlu membayangkan konsep "Distribusi Sampling". Jika kita mengambil banyak sampel berulang kali dari populasi yang sama, rata-rata dari masing-masing sampel tersebut akan membentuk distribusi normal, terlepas dari bentuk distribusi populasinya. Inilah **Teorema Limit Sentral**.
+
+### Standard Error
+
+Simpangan baku dari distribusi sampling disebut **Standard Error (SE)**.
+$$ SE = \frac{\sigma}{\sqrt{n}} $$
+Dimana $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel.
+
+### Z-Score
+
+Untuk mengetahui posisi suatu nilai dalam distribusi normal baku, kita menggunakan Z-Score:
+$$ Z = \frac{x - \mu}{\sigma} $$
+Untuk rata-rata sampel:
+$$ Z = \frac{\bar{x} - \mu}{SE} $$
+
+::: rmdexercise
+## Soal Evaluasi 6 {.unnumbered}
+
+1.  Jelaskan perbedaan mendasar antara statistik deskriptif dan inferensial. [STP-4.1]{.capaian}
+2.  Sebutkan dan jelaskan tiga teknik pengambilan sampel probabilitas. [STP-4.2]{.capaian}
+3.  Hitung Z-Score jika diketahui rata-rata sampel = 50, rata-rata populasi = 45, simpangan baku = 10, dan n = 25. [STP-4.3]{.capaian}
+
+:::
+
+<!--chapter:end:05-pengantar-inferensial.Rmd-->
+
+# Estimasi Parameter
+
+## Konsep Dasar
+
+Dalam statistik inferensial, kita menggunakan statistik sampel (seperti $\bar{x}$) untuk mengestimasi parameter populasi (seperti $\mu$).
+
+Ada dua jenis estimasi:
+1.  **Estimasi Titik (Point Estimation)**. Menggunakan satu nilai tunggal. Contoh: "Rata-rata pendapatan adalah 5 juta". Kelemahannya: akurasinya diragukan.
+2.  **Estimasi Rentang (Interval Estimation)**. Menggunakan rentang nilai dengan tingkat kepercayaan tertentu. Contoh: "Rata-rata pendapatan ada di antara 4,8 juta hingga 5,2 juta dengan tingkat kepercayaan 95%". Inilah yang disebut **Confidence Interval (CI)**.
+
+## Estimasi Rentang Kepercayaan (Confidence Interval)
+
+Rumus umum untuk CI rata-rata adalah:
+$$ \bar{x} \pm Z_{\alpha/2} \times SE $$
+Atau:
+$$ \bar{x} - Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} < \mu < \bar{x} + Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} $$
+
+Nilai $Z_{\alpha/2}$ bergantung pada tingkat kepercayaan (Confidence Level, $1-\alpha$):
+*   Tingkat Kepercayaan 90% ($\alpha=10\%$) $\rightarrow Z = 1.645$
+*   Tingkat Kepercayaan 95% ($\alpha=5\%$) $\rightarrow Z = 1.96$
+*   Tingkat Kepercayaan 99% ($\alpha=1\%$) $\rightarrow Z = 2.575$
+
+### Studi Kasus
+
+Seorang peneliti ingin mengestimasi rata-rata pengeluaran bulanan mahasiswa. Dari sampel 100 mahasiswa, diperoleh rata-rata 1,5 juta rupiah dengan simpangan baku 500 ribu rupiah. Buatlah selang kepercayaan 95%.
+
+Diketahui:
+*   $n = 100$
+*   $\bar{x} = 1.500.000$
+*   $s = 500.000$ (menggantikan $\sigma$)
+*   $Z_{0.025} = 1.96$
+
+Standard Error: $SE = 500.000 / \sqrt{100} = 50.000$.
+
+Batas Bawah: $1.500.000 - (1.96 \times 50.000) = 1.402.000$.
+Batas Atas: $1.500.000 + (1.96 \times 50.000) = 1.598.000$.
+
+Jadi, dengan tingkat kepercayaan 95%, rata-rata pengeluaran mahasiswa berada di antara Rp1.402.000 dan Rp1.598.000.
+
+::: rmdexercise
+## Soal Evaluasi 7 {.unnumbered}
+
+1.  Apa yang dimaksud dengan tingkat kepercayaan (confidence level)? [STP-5.1]{.capaian}
+2.  Hitunglah Confidence Interval 95% untuk rata-rata jika $\bar{x}=100$, $s=15$, dan $n=36$. [STP-5.2]{.capaian}
+
+:::
+
+<!--chapter:end:06-estimasi-parameter.Rmd-->
+
+# Uji Hipotesis Satu Populasi
+
+## Konsep Dasar
+
+Uji hipotesis adalah prosedur statistik yang menggunakan data sampel untuk mengevaluasi suatu dugaan (hipotesis) mengenai populasi.
+
+### Hipotesis Nol dan Alternatif
+
+*   **Hipotesis Nol ($H_0$)**: Pernyataan tentang status quo, tidak ada perbedaan, atau tidak ada efek. Biasanya mengandung tanda sama dengan ($=, \le, \ge$).
+*   **Hipotesis Alternatif ($H_1$)**: Pernyataan yang bertentangan dengan $H_0$, biasanya merupakan dugaan yang ingin dibuktikan oleh peneliti. Mengandung tanda ketidaksamaan ($\ne, <, >$).
+
+### Langkah-langkah Pengujian Hipotesis
+
+1.  **Rumuskan Hipotesis ($H_0$ dan $H_1$)**.
+2.  **Tentukan Tingkat Signifikansi ($\alpha$)**. Biasanya 0,05.
+3.  **Pilih Statistik Uji**. (Z-test jika $\sigma$ diketahui atau $n > 30$, t-test jika $\sigma$ tidak diketahui dan $n < 30$).
+4.  **Hitung Statistik Hitung dan P-value**.
+5.  **Ambil Keputusan**. Tolak $H_0$ jika P-value $< \alpha$.
+6.  **Tarik Kesimpulan**.
+
+## Studi Kasus dengan R
+
+Seorang perencana kota menduga bahwa rata-rata waktu tempuh warga ke tempat kerja adalah **lebih dari 45 menit**. Dari survei terhadap 35 warga, diperoleh rata-rata 48 menit dengan simpangan baku 10 menit. Ujilah hipotesis tersebut dengan $\alpha = 0.05$.
+
+Hipotesis:
+*   $H_0: \mu \le 45$ (Rata-rata tidak lebih dari 45 menit)
+*   $H_1: \mu > 45$ (Rata-rata lebih dari 45 menit)
 
 
+``` r
+# Data Sampel (Simulasi)
+set.seed(123)
+waktu_tempuh <- rnorm(35, mean = 48, sd = 10)
+
+# Uji T Satu Sampel
+t.test(waktu_tempuh, mu = 45, alternative = "greater")
+```
+
+```
+## 
+## 	One Sample t-test
+## 
+## data:  waktu_tempuh
+## t = 2.1102, df = 34, p-value = 0.02114
+## alternative hypothesis: true mean is greater than 45
+## 95 percent confidence interval:
+##  45.67059      Inf
+## sample estimates:
+## mean of x 
+##  48.37518
+```
+
+**Interpretasi**:
+Jika p-value < 0,05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
+
+::: rmdexercise
+## Soal Evaluasi 8 {.unnumbered}
+
+1.  Jelaskan perbedaan antara Hipotesis Nol dan Hipotesis Alternatif. [STP-6.1]{.capaian}
+2.  Apa makna P-value dalam pengambilan keputusan uji hipotesis? [STP-6.2]{.capaian}
+
+:::
+
+<!--chapter:end:07-uji-hipotesis-satu-populasi.Rmd-->
+
+# Uji Hipotesis Dua Populasi
+
+## Konsep Dasar
+
+Uji ini digunakan untuk membandingkan parameter (rata-rata atau proporsi) dari dua populasi yang berbeda. Tujuannya adalah untuk mengetahui apakah ada perbedaan yang signifikan di antara keduanya.
+
+### Uji Beda Rata-rata (Independent Samples t-test)
+
+Digunakan untuk dua kelompok sampel yang tidak saling berhubungan (independen). Contoh: Membandingkan rata-rata pendapatan warga di Kota A dan Kota B.
+
+Hipotesis:
+*   $H_0: \mu_A = \mu_B$
+*   $H_1: \mu_A \ne \mu_B$
+
+### Uji Beda Rata-rata Berpasangan (Paired Samples t-test)
+
+Digunakan untuk dua kelompok sampel yang saling berhubungan (berpasangan). Contoh: Membandingkan kemacetan di jalan yang sama **sebelum** dan **sesudah** penerapan kebijakan ganjil-genap.
+
+## Studi Kasus dengan R
+
+### Independent t-test
+
+Membandingkan pendapatan (dalam juta) antara pria dan wanita.
 
 
+``` r
+# Data Contoh
+pria <- c(5, 6, 5, 7, 6, 8, 5)
+wanita <- c(4, 5, 4, 6, 5, 5, 4)
+
+# Uji t independen
+t.test(pria, wanita, var.equal = TRUE)
+```
+
+```
+## 
+## 	Two Sample t-test
+## 
+## data:  pria and wanita
+## t = 2.4648, df = 12, p-value = 0.02978
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  0.1491572 2.4222714
+## sample estimates:
+## mean of x mean of y 
+##  6.000000  4.714286
+```
+
+### Paired t-test
+
+Membandingkan waktu tempuh (menit) sebelum dan sesudah pembangunan tol.
 
 
+``` r
+sebelum <- c(60, 55, 70, 65, 80)
+sesudah <- c(40, 45, 50, 55, 60)
+
+# Uji t berpasangan
+t.test(sebelum, sesudah, paired = TRUE)
+```
+
+```
+## 
+## 	Paired t-test
+## 
+## data:  sebelum and sesudah
+## t = 6.532, df = 4, p-value = 0.002838
+## alternative hypothesis: true mean difference is not equal to 0
+## 95 percent confidence interval:
+##   9.199126 22.800874
+## sample estimates:
+## mean difference 
+##              16
+```
+
+::: rmdexercise
+## Soal Evaluasi 9 {.unnumbered}
+
+1.  Kapan kita menggunakan uji t independen dan kapan menggunakan uji t berpasangan? Berikan contoh kasus perencanaannya! [STP-7.1]{.capaian}
+2.  Lakukan uji beda rata-rata untuk data berikut... [STP-7.2]{.capaian}
+
+:::
+
+<!--chapter:end:08-uji-hipotesis-dua-populasi.Rmd-->
+
+# Uji Hipotesis Lebih dari Dua Populasi
+
+## Analisis Variansi (ANOVA)
+
+Ketika kita ingin membandingkan rata-rata dari **lebih dari dua** kelompok populasi, kita menggunakan **Analysis of Variance (ANOVA)**. Jika kita menggunakan uji t berulang kali untuk setiap pasangan kelompok, risiko kesalahan Tipe I (False Positive) akan meningkat. ANOVA mengatasi masalah ini dengan menguji perbedaan secara simultan.
+
+Hipotesis ANOVA Satu Arah (One-Way ANOVA):
+*   $H_0: \mu_1 = \mu_2 = \dots = \mu_k$ (Semua rata-rata kelompok sama)
+*   $H_1$: Setidaknya ada satu pasang rata-rata yang berbeda.
+
+## Studi Kasus dengan R
+
+Kita ingin membandingkan rata-rata harga tanah di tiga zona: Pusat Kota, Suburban, dan Rural.
 
 
+``` r
+# Data Contoh
+harga_tanah <- c(10, 12, 11, 13, 15, # Pusat
+                 8, 9, 7, 8, 10,       # Suburban
+                 4, 5, 3, 5, 4)        # Rural
+zona <- factor(rep(c("Pusat", "Suburban", "Rural"), each = 5))
+
+data_tanah <- data.frame(harga = harga_tanah, zona = zona)
+
+# ANOVA Satu Arah
+model_anova <- aov(harga ~ zona, data = data_tanah)
+summary(model_anova)
+```
+
+```
+##             Df Sum Sq Mean Sq F value   Pr(>F)    
+## zona         2  160.1   80.07   42.14 3.75e-06 ***
+## Residuals   12   22.8    1.90                     
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+**Interpretasi**:
+Jika nilai Pr(>F) pada tabel ANOVA kurang dari 0,05, maka tolak $H_0$. Artinya, terdapat perbedaan signifikan rata-rata harga tanah antar zona tersebut. Untuk mengetahui zona mana yang berbeda, dapat dilanjutkan dengan uji lanjut (Post Hoc Test) seperti Tukey HSD.
 
 
+``` r
+TukeyHSD(model_anova)
+```
+
+```
+##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = harga ~ zona, data = data_tanah)
+## 
+## $zona
+##                diff       lwr      upr     p adj
+## Rural-Pusat    -8.0 -10.32579 -5.67421 0.0000025
+## Suburban-Pusat -3.8  -6.12579 -1.47421 0.0024733
+## Suburban-Rural  4.2   1.87421  6.52579 0.0011306
+```
+
+::: rmdexercise
+## Soal Evaluasi 10 {.unnumbered}
+
+1.  Mengapa kita tidak dianjurkan menggunakan uji t berulang kali untuk membandingkan 3 kelompok atau lebih? [STP-7.3]{.capaian}
+2.  Apa kesimpulan jika P-value ANOVA > 0,05? [STP-7.4]{.capaian}
+
+:::
+
+<!--chapter:end:09-uji-hipotesis-lebih-dua-populasi.Rmd-->
+
+# Korelasi Antarvariabel Nominal
+
+## Konsep Dasar
+
+Analisis ini digunakan untuk mengukur kekuatan hubungan antara dua variabel kategori (nominal). Teknik yang umum digunakan adalah **Chi-Square ($X^2$)** untuk signifikansi dan **Cramer's V**, **Phi**, atau **Lambda** untuk kekuatan hubungan.
+
+## Studi Kasus dengan R
+
+Apakah ada hubungan antara **Fakultas** dengan **Moda Transportasi** yang digunakan?
 
 
+``` r
+# Data Contoh
+fakultas <- c("Saintek", "Soshum", "Saintek", "Soshum", "Saintek", "Saintek")
+moda <- c("Motor", "Mobil", "Motor", "Jalan Kaki", "Mobil", "Motor")
+
+# Membuat Tabel Kontingensi
+tabel <- table(fakultas, moda)
+print(tabel)
+```
+
+```
+##          moda
+## fakultas  Jalan Kaki Mobil Motor
+##   Saintek          0     1     3
+##   Soshum           1     1     0
+```
+
+``` r
+# Uji Chi-Square
+chisq.test(tabel)
+```
+
+```
+## Warning in chisq.test(tabel): Chi-squared approximation may be incorrect
+```
+
+```
+## 
+## 	Pearson's Chi-squared test
+## 
+## data:  tabel
+## X-squared = 3.75, df = 2, p-value = 0.1534
+```
+
+**Interpretasi**:
+Jika P-value < 0,05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
+
+::: rmdexercise
+## Soal Evaluasi 11 {.unnumbered}
+
+1.  Apa perbedaan Chi-Square Test dengan Lambda sebagai ukuran asosiasi? [STP-8.1]{.capaian}
+2.  Hitunglah nilai Cramer's V untuk tabel kontingensi berikut... [STP-8.2]{.capaian}
+
+:::
+
+<!--chapter:end:10-korelasi-nominal.Rmd-->
+
+# Korelasi Antarvariabel Ordinal
+
+## Konsep Dasar
+
+Untuk data ordinal (berjenjang/ranking), kita menggunakan korelasi berbasis peringkat. Dua yang paling populer adalah **Spearman's Rho ($\rho$)** dan **Kendall's Tau ($\tau$)**.
+
+## Studi Kasus dengan R
+
+Apakah ada hubungan antara **Tingkat Pendidikan** (SD, SMP, SMA) dengan **Kepuasan Layanan** (Rendah, Sedang, Tinggi)?
 
 
+``` r
+# Data Ordinal (sebagai angka peringkat)
+pendidikan <- c(1, 2, 3, 2, 3, 1, 2)
+kepuasan <- c(1, 1, 3, 2, 3, 1, 2)
+
+# Korelasi Spearman
+cor.test(pendidikan, kepuasan, method = "spearman")
+```
+
+```
+## Warning in cor.test.default(pendidikan, kepuasan, method = "spearman"): Cannot compute
+## exact p-value with ties
+```
+
+```
+## 
+## 	Spearman's rank correlation rho
+## 
+## data:  pendidikan and kepuasan
+## S = 5.6, p-value = 0.005752
+## alternative hypothesis: true rho is not equal to 0
+## sample estimates:
+## rho 
+## 0.9
+```
+
+``` r
+# Korelasi Kendall
+cor.test(pendidikan, kepuasan, method = "kendall")
+```
+
+```
+## Warning in cor.test.default(pendidikan, kepuasan, method = "kendall"): Cannot compute
+## exact p-value with ties
+```
+
+```
+## 
+## 	Kendall's rank correlation tau
+## 
+## data:  pendidikan and kepuasan
+## z = 2.3936, p-value = 0.01668
+## alternative hypothesis: true tau is not equal to 0
+## sample estimates:
+##   tau 
+## 0.875
+```
+
+**Interpretasi**:
+Nilai korelasi mendekati +1 menunjukkan hubungan positif kuat (semakin tinggi pendidikan, semakin tinggi kepuasan).
+
+::: rmdexercise
+## Soal Evaluasi 12 {.unnumbered}
+
+1.  Kapan kita sebaiknya menggunakan Kendall's Tau dibandingkan Spearman's Rho? [STP-9.1]{.capaian}
+2.  Jelaskan makna korelasi negatif pada variabel ordinal! [STP-9.2]{.capaian}
+
+:::
+
+<!--chapter:end:11-korelasi-ordinal.Rmd-->
+
+# Korelasi Antarvariabel Metrik
+
+## Konsep Dasar
+
+Untuk dua variabel numerik (interval/rasio), ukuran asosiasi yang paling umum adalah **Pearson Product-Moment Correlation ($r$)**. Nilai $r$ berkisar antara -1 hingga +1.
+
+## Studi Kasus dengan R
+
+Hubungan antara **Pendapatan** dan **Pengeluaran**.
 
 
+``` r
+pendapatan <- c(5, 6, 7, 8, 9, 10, 11)
+pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
+
+# Scatterplot
+plot(pendapatan, pengeluaran)
+```
+
+![](_main_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+
+``` r
+# Korelasi Pearson
+cor.test(pendapatan, pengeluaran, method = "pearson")
+```
+
+```
+## 
+## 	Pearson's product-moment correlation
+## 
+## data:  pendapatan and pengeluaran
+## t = 8.5927, df = 5, p-value = 0.0003521
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.7916653 0.9953960
+## sample estimates:
+##       cor 
+## 0.9677688
+```
+
+::: rmdexercise
+## Soal Evaluasi 13 {.unnumbered}
+
+1.  Apa syarat utama penggunaan korelasi Pearson? [STP-10.1]{.capaian}
+2.  Jika $r = 0$, apakah artinya tidak ada hubungan sama sekali? Jelaskan! [STP-10.2]{.capaian}
+
+:::
+
+<!--chapter:end:12-korelasi-metrik.Rmd-->
+
+# Regresi Linear Sederhana
+
+## Konsep Dasar
+
+Regresi linear sederhana digunakan untuk memprediksi nilai satu variabel dependen ($Y$) berdasarkan satu variabel independen ($X$). Persamaannya:
+$$ Y = a + bX + \epsilon $$
+
+## Studi Kasus dengan R
+
+Memprediksi **Pengeluaran** berdasarkan **Pendapatan**.
 
 
+``` r
+pendapatan <- c(5, 6, 7, 8, 9, 10, 11)
+pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
+
+# Membuat Model Regresi
+model <- lm(pengeluaran ~ pendapatan)
+summary(model)
+```
+
+```
+## 
+## Call:
+## lm(formula = pengeluaran ~ pendapatan)
+## 
+## Residuals:
+##          1          2          3          4          5          6          7 
+##  8.929e-02  3.929e-01 -8.036e-01 -1.804e-16  3.036e-01  1.071e-01 -8.929e-02 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept) -0.57143    0.66834  -0.855 0.431606    
+## pendapatan   0.69643    0.08105   8.593 0.000352 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.4289 on 5 degrees of freedom
+## Multiple R-squared:  0.9366,	Adjusted R-squared:  0.9239 
+## F-statistic: 73.83 on 1 and 5 DF,  p-value: 0.0003521
+```
+
+``` r
+# Melihat koefisien
+coef(model)
+```
+
+```
+## (Intercept)  pendapatan 
+##  -0.5714286   0.6964286
+```
+
+**Interpretasi**:
+Nilai Intercept ($a$) dan Slope ($b$) menentukan persamaan garis prediksi. $R^2$ menunjukkan seberapa baik model menjelaskan variasi data.
+
+::: rmdexercise
+## Soal Evaluasi 14 {.unnumbered}
+
+1.  Apa perbedaan antara korelasi dan regresi? [STP-11.1]{.capaian}
+2.  Jelaskan makna $R^2$ (Koefisien Determinasi)! [STP-11.2]{.capaian}
+
+:::
+
+<!--chapter:end:13-regresi-sederhana.Rmd-->
+
+# Regresi Linear Berganda
+
+## Konsep Dasar
+
+Regresi linear berganda melibatkan **lebih dari satu** variabel independen untuk memprediksi variabel dependen.
+$$ Y = a + b_1X_1 + b_2X_2 + \dots + \epsilon $$
+
+## Studi Kasus dengan R
+
+Memprediksi **Harga Rumah** berdasarkan **Luas Tanah** dan **Jumlah Kamar**.
 
 
+``` r
+harga <- c(500, 700, 600, 800, 900)
+luas <- c(100, 150, 120, 160, 200)
+kamar <- c(2, 3, 2, 4, 5)
+
+# Model Regresi Berganda
+model_berganda <- lm(harga ~ luas + kamar)
+summary(model_berganda)
+```
+
+```
+## 
+## Call:
+## lm(formula = harga ~ luas + kamar)
+## 
+## Residuals:
+##       1       2       3       4       5 
+## -22.901  -6.107  16.031  32.824 -19.847 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)
+## (Intercept)  156.489    104.150   1.503    0.272
+## luas           3.053      1.724   1.771    0.219
+## kamar         30.534     50.865   0.600    0.609
+## 
+## Residual standard error: 33.84 on 2 degrees of freedom
+## Multiple R-squared:  0.9771,	Adjusted R-squared:  0.9542 
+## F-statistic: 42.67 on 2 and 2 DF,  p-value: 0.0229
+```
+
+::: rmdexercise
+## Soal Evaluasi 15 {.unnumbered}
+
+1.  Apa itu multikolinearitas dalam regresi berganda? [STP-12.1]{.capaian}
+2.  Bagaimana cara menginterpretasikan Adjusted $R^2$? [STP-12.2]{.capaian}
+
+:::
+
+<!--chapter:end:14-regresi-berganda.Rmd-->
+
+# Analisis Statistik Multivariat Interdependensi
+
+## Konsep Dasar
+
+Analisis multivariat interdependensi tidak membedakan variabel menjadi dependen dan independen. Tujuannya adalah untuk mencari struktur dasar dari sekumpulan variabel.
+Contoh: **Analisis Faktor** dan **Principal Component Analysis (PCA)**. Biasanya digunakan untuk mereduksi dimensi data (menyederhanakan banyak variabel menjadi beberapa faktor utama).
+
+## Studi Kasus dengan R
+
+Mereduksi 5 indikator kepuasan menjadi faktor-faktor utama.
 
 
+``` r
+# Simulasi Data
+set.seed(123)
+data_survei <- matrix(rnorm(100*5), ncol=5)
+colnames(data_survei) <- c("Q1", "Q2", "Q3", "Q4", "Q5")
 
+# Principal Component Analysis
+pca_result <- prcomp(data_survei, scale. = TRUE)
+summary(pca_result)
+```
 
+```
+## Importance of components:
+##                           PC1    PC2    PC3    PC4    PC5
+## Standard deviation     1.1077 1.0610 1.0191 0.9468 0.8440
+## Proportion of Variance 0.2454 0.2251 0.2077 0.1793 0.1425
+## Cumulative Proportion  0.2454 0.4705 0.6783 0.8575 1.0000
+```
 
+``` r
+# Melihat beban faktor (loadings)
+pca_result$rotation
+```
+
+```
+##            PC1        PC2        PC3        PC4       PC5
+## Q1  0.67277300  0.3292034 -0.1275847 -0.1588174 0.6304766
+## Q2  0.19353433 -0.6901072  0.1205644  0.6023990 0.3299640
+## Q3 -0.28920162 -0.4912642 -0.5283287 -0.5405369 0.3220413
+## Q4  0.01926618 -0.2337862  0.8146660 -0.5122828 0.1373262
+## Q5 -0.65261949  0.3455152  0.1624021  0.2393297 0.6091420
+```
+
+::: rmdexercise
+## Soal Evaluasi 16 {.unnumbered}
+
+1.  Apa tujuan utama dari Analisis Faktor? [STP-13.1]{.capaian}
+2.  Jelaskan perbedaan mendasar antara Analisis Regresi dan Analisis Faktor! [STP-13.2]{.capaian}
+
+:::
+
+<!--chapter:end:15-multivariat-interdependensi.Rmd-->
 
