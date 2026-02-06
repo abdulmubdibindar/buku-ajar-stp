@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>15 Analisis Statistik Multivariat Interdependensi | Buku Ajar Statistika untuk Perencanaan</title>
   <meta name="description" content="15 Analisis Statistik Multivariat Interdependensi | Buku Ajar Statistika untuk Perencanaan" />
-  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="15 Analisis Statistik Multivariat Interdependensi | Buku Ajar Statistika untuk Perencanaan" />
   <meta property="og:type" content="book" />
@@ -134,6 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -388,21 +389,21 @@ Contoh: <strong>Analisis Faktor</strong> dan <strong>Principal Component Analysi
 <div id="studi-kasus-dengan-r-8" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Studi Kasus dengan R<a href="analisis-statistik-multivariat-interdependensi.html#studi-kasus-dengan-r-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Mereduksi 5 indikator kepuasan menjadi faktor-faktor utama.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-1" tabindex="-1"></a><span class="co"># Simulasi Data</span></span>
-<span id="cb31-2"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb31-3"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-3" tabindex="-1"></a>data_survei <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">100</span><span class="sc">*</span><span class="dv">5</span>), <span class="at">ncol=</span><span class="dv">5</span>)</span>
-<span id="cb31-4"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-4" tabindex="-1"></a><span class="fu">colnames</span>(data_survei) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1&quot;</span>, <span class="st">&quot;Q2&quot;</span>, <span class="st">&quot;Q3&quot;</span>, <span class="st">&quot;Q4&quot;</span>, <span class="st">&quot;Q5&quot;</span>)</span>
-<span id="cb31-5"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-5" tabindex="-1"></a></span>
-<span id="cb31-6"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-6" tabindex="-1"></a><span class="co"># Principal Component Analysis</span></span>
-<span id="cb31-7"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-7" tabindex="-1"></a>pca_result <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(data_survei, <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb31-8"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-8" tabindex="-1"></a><span class="fu">summary</span>(pca_result)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="analisis-statistik-multivariat-interdependensi.html#cb28-1" tabindex="-1"></a><span class="co"># Simulasi Data</span></span>
+<span id="cb28-2"><a href="analisis-statistik-multivariat-interdependensi.html#cb28-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb28-3"><a href="analisis-statistik-multivariat-interdependensi.html#cb28-3" tabindex="-1"></a>data_survei <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">100</span><span class="sc">*</span><span class="dv">5</span>), <span class="at">ncol=</span><span class="dv">5</span>)</span>
+<span id="cb28-4"><a href="analisis-statistik-multivariat-interdependensi.html#cb28-4" tabindex="-1"></a><span class="fu">colnames</span>(data_survei) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1&quot;</span>, <span class="st">&quot;Q2&quot;</span>, <span class="st">&quot;Q3&quot;</span>, <span class="st">&quot;Q4&quot;</span>, <span class="st">&quot;Q5&quot;</span>)</span>
+<span id="cb28-5"><a href="analisis-statistik-multivariat-interdependensi.html#cb28-5" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="analisis-statistik-multivariat-interdependensi.html#cb28-6" tabindex="-1"></a><span class="co"># Principal Component Analysis</span></span>
+<span id="cb28-7"><a href="analisis-statistik-multivariat-interdependensi.html#cb28-7" tabindex="-1"></a>pca_result <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(data_survei, <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb28-8"><a href="analisis-statistik-multivariat-interdependensi.html#cb28-8" tabindex="-1"></a><span class="fu">summary</span>(pca_result)</span></code></pre></div>
 <pre><code>## Importance of components:
 ##                           PC1    PC2    PC3    PC4    PC5
 ## Standard deviation     1.1077 1.0610 1.0191 0.9468 0.8440
 ## Proportion of Variance 0.2454 0.2251 0.2077 0.1793 0.1425
 ## Cumulative Proportion  0.2454 0.4705 0.6783 0.8575 1.0000</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="analisis-statistik-multivariat-interdependensi.html#cb33-1" tabindex="-1"></a><span class="co"># Melihat beban faktor (loadings)</span></span>
-<span id="cb33-2"><a href="analisis-statistik-multivariat-interdependensi.html#cb33-2" tabindex="-1"></a>pca_result<span class="sc">$</span>rotation</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="analisis-statistik-multivariat-interdependensi.html#cb30-1" tabindex="-1"></a><span class="co"># Melihat beban faktor (loadings)</span></span>
+<span id="cb30-2"><a href="analisis-statistik-multivariat-interdependensi.html#cb30-2" tabindex="-1"></a>pca_result<span class="sc">$</span>rotation</span></code></pre></div>
 <pre><code>##            PC1        PC2        PC3        PC4       PC5
 ## Q1  0.67277300  0.3292034 -0.1275847 -0.1588174 0.6304766
 ## Q2  0.19353433 -0.6901072  0.1205644  0.6023990 0.3299640
@@ -418,33 +419,33 @@ Contoh: <strong>Analisis Faktor</strong> dan <strong>Principal Component Analysi
 </ol>
 </div>
 
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-ewing2020basic" class="csl-entry">
-Ewing, R. H., and K. Park. 2020. <em>Basic Quantitative Research Methods for Urban Planners</em>. Routledge.
+Ewing, R. H., and K. Park. 2020. <em>Basic Quantitative Research Methods for Urban Planners</em>. New York, NY: Routledge.
 </div>
 <div id="ref-Ferdio" class="csl-entry">
-Ferdio. n.d. <span>“Chart Archives.”</span> In <em>Data Viz Project</em>. <a href="https://datavizproject.com/family/chart/">https://datavizproject.com/family/chart/</a>.
+Ferdio. n.d. <span>“Chart Archives.”</span> <em>Data Viz Project</em>. <a href="https://datavizproject.com/family/chart/">https://datavizproject.com/family/chart/</a>.
 </div>
 <div id="ref-healey2021statistics" class="csl-entry">
-Healey, J. F. 2021. <em>Statistics: A Tool for Social Research and Data Analysis</em>. Eleventh edition. Cengage.
+Healey, J. F. 2021. <em>Statistics: A Tool for Social Research and Data Analysis</em>. Eleventh edition. Boston, MA: Cengage.
 </div>
 <div id="ref-datatoviz" class="csl-entry">
-Healy, Yan Holtz, and Conor. n.d. <span>“Find the Graphic You Need.”</span> In <em>From Data to Viz</em>. <a href="https://www.data-to-viz.com/">https://www.data-to-viz.com/</a>.
+Healy, Yan Holtz, and Conor. n.d. <span>“Find the Graphic You Need.”</span> <em>From Data to Viz</em>. <a href="https://www.data-to-viz.com/">https://www.data-to-viz.com/</a>.
 </div>
 <div id="ref-kachigan1986statistical" class="csl-entry">
-Kachigan, S. K. 1986. <em>Statistical Analysis, an Interdisciplinary Introduction to Univariate &amp; Multivariate Methods</em>. Radius Press.
+Kachigan, S. K. 1986. <em>Statistical Analysis, an Interdisciplinary Introduction to Univariate &amp; Multivariate Methods</em>. New York: Radius Press.
 </div>
 <div id="ref-oracle2024structured" class="csl-entry">
-Oracle. 2024. <em>Structured Vs. Unstructured Data Types</em>. <a href="https://www.oracle.com/id/big-data/structured-vs-unstructured-data/">https://www.oracle.com/id/big-data/structured-vs-unstructured-data/</a>.
+Oracle. 2024. <span>“Structured Vs. Unstructured Data Types.”</span> <a href="https://www.oracle.com/id/big-data/structured-vs-unstructured-data/">https://www.oracle.com/id/big-data/structured-vs-unstructured-data/</a>.
 </div>
 <div id="ref-tjokropandojo2021pengantar" class="csl-entry">
-Tjokropandojo, D. S., S. Maryati, and U. Faoziyah. 2021. <em>Pengantar Metode Analisis Perencanaan</em>. ITB Press.
+Tjokropandojo, D. S., S. Maryati, and U. Faoziyah. 2021. <em>Pengantar Metode Analisis Perencanaan</em>. Bandung: ITB Press.
 </div>
 <div id="ref-devaus2014surveys" class="csl-entry">
-Vaus, D. de. 2014. <em>Surveys in Social Research</em>. 6th Edition. Routledge.
+Vaus, D. de. 2014. <em>Surveys in Social Research</em>. 6th Edition. New York: Routledge.
 </div>
 <div id="ref-wikipedia2025moire" class="csl-entry">
-Wikipedia contributors. 2025. <em>Moiré Pattern</em>. <a href="https://en.wikipedia.org/w/index.php?title=Moir%C3%A9_pattern&amp;oldid=1305650482" class="uri">Https://en.wikipedia.org/w/index.php?title=Moir%C3%A9_pattern&amp;oldid=1305650482</a>.
+Wikipedia contributors. 2025. <span>“Moiré Pattern.”</span> <a href="https://en.wikipedia.org/w/index.php?title=Moir%C3%A9_pattern&amp;oldid=1305650482" class="uri">https://en.wikipedia.org/w/index.php?title=Moir%C3%A9_pattern&amp;oldid=1305650482</a>.
 </div>
 </div>
 </div>

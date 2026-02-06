@@ -2514,14 +2514,14 @@ Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transpo
 Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (*column chart*)
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-column-moda-1.png" alt="Grafik batang tegak distribusi moda transportasi" width="75%" />
+<img src="figures/fig-column-moda-1.png" alt="Grafik batang tegak distribusi moda transportasi" width="75%" />
 <p class="caption">(\#fig:fig-column-moda)Grafik batang tegak distribusi moda transportasi</p>
 </div>
 
 Atau dalam bentuk grafik batang mendatar (*bar chart*):
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-bar-moda-1.png" alt="Grafik batang mendatar distribusi moda transportasi" width="75%" />
+<img src="figures/fig-bar-moda-1.png" alt="Grafik batang mendatar distribusi moda transportasi" width="75%" />
 <p class="caption">(\#fig:fig-bar-moda)Grafik batang mendatar distribusi moda transportasi</p>
 </div>
 
@@ -2565,7 +2565,7 @@ Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kit
 Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-stacked-bar-1.png" alt="Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin" width="75%" />
+<img src="figures/fig-stacked-bar-1.png" alt="Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin" width="75%" />
 <p class="caption">(\#fig:fig-stacked-bar)Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin</p>
 </div>
 
@@ -2631,14 +2631,14 @@ Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilk
 Berikut adalah visualisasi menggunakan grafik batang biasa:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-bar-prodi-1.png" alt="Grafik batang program studi mahasiswa UINRIL" width="85%" />
+<img src="figures/fig-bar-prodi-1.png" alt="Grafik batang program studi mahasiswa UINRIL" width="85%" />
 <p class="caption">(\#fig:fig-bar-prodi)Grafik batang program studi mahasiswa UINRIL</p>
 </div>
 
 Sekarang bandingkan dengan grafik lollipop:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-lollipop-prodi-1.png" alt="Grafik lollipop program studi mahasiswa UINRIL" width="85%" />
+<img src="figures/fig-lollipop-prodi-1.png" alt="Grafik lollipop program studi mahasiswa UINRIL" width="85%" />
 <p class="caption">(\#fig:fig-lollipop-prodi)Grafik lollipop program studi mahasiswa UINRIL</p>
 </div>
 
@@ -2734,7 +2734,7 @@ Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seper
 Dari tabel distribusi frekuensi tersebut, kita dapat membuat treemap:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-treemap-moda-1.png" alt="Treemap moda transportasi berdasarkan jenis kelamin" width="80%" />
+<img src="figures/fig-treemap-moda-1.png" alt="Treemap moda transportasi berdasarkan jenis kelamin" width="80%" />
 <p class="caption">(\#fig:fig-treemap-moda)Treemap moda transportasi berdasarkan jenis kelamin</p>
 </div>
 
@@ -2793,14 +2793,14 @@ Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kat
 Dari tabel distribusi frekuensi, kita dapat membuat grafik pai (*pie chart*):
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-pie-moda-1.png" alt="Grafik pai moda transportasi mahasiswa UINRIL" width="70%" />
+<img src="figures/fig-pie-moda-1.png" alt="Grafik pai moda transportasi mahasiswa UINRIL" width="70%" />
 <p class="caption">(\#fig:fig-pie-moda)Grafik pai moda transportasi mahasiswa UINRIL</p>
 </div>
 
 Untuk membuat grafik donat (*donut chart*), kita mengubah jenis kategori menjadi juring-juring lingkaran dan sudunya ditentukan dari proporsi frekuensi. Prosesnya sama dengan grafik pai, hanya saja kita di tengahnya ada ruang kosong yang dapat digunakan untuk informasi tambahan.
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-donut-moda-1.png" alt="Grafik donat moda transportasi mahasiswa UINRIL" width="70%" />
+<img src="figures/fig-donut-moda-1.png" alt="Grafik donat moda transportasi mahasiswa UINRIL" width="70%" />
 <p class="caption">(\#fig:fig-donut-moda)Grafik donat moda transportasi mahasiswa UINRIL</p>
 </div>
 
@@ -2884,14 +2884,14 @@ Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam
 Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (bin). R melakukan ini secara otomatis, tetapi kita juga bisa mengatur sendiri. Mari kita buat histogram dengan pengaturan bin otomatis:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-hist-biaya-auto-1.png" alt="Histogram biaya perjalanan (bin otomatis)" width="75%" />
+<img src="figures/fig-hist-biaya-auto-1.png" alt="Histogram biaya perjalanan (bin otomatis)" width="75%" />
 <p class="caption">(\#fig:fig-hist-biaya-auto)Histogram biaya perjalanan (bin otomatis)</p>
 </div>
 
 Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi dengan lebih detail:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-hist-biaya-manual-1.png" alt="Histogram biaya perjalanan (bin manual)" width="75%" />
+<img src="figures/fig-hist-biaya-manual-1.png" alt="Histogram biaya perjalanan (bin manual)" width="75%" />
 <p class="caption">(\#fig:fig-hist-biaya-manual)Histogram biaya perjalanan (bin manual)</p>
 </div>
 
@@ -2995,14 +2995,14 @@ Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat
 Mari kita buat boxplot tunggal untuk biaya perjalanan UINRIL terlebih dahulu:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-boxplot-single-1.png" alt="Boxplot biaya perjalanan mahasiswa UINRIL" width="60%" />
+<img src="figures/fig-boxplot-single-1.png" alt="Boxplot biaya perjalanan mahasiswa UINRIL" width="60%" />
 <p class="caption">(\#fig:fig-boxplot-single)Boxplot biaya perjalanan mahasiswa UINRIL</p>
 </div>
 
 Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perjalanan antar kampus:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-boxplot-multiple-1.png" alt="Boxplot biaya perjalanan mahasiswa berdasarkan kampus" width="75%" />
+<img src="figures/fig-boxplot-multiple-1.png" alt="Boxplot biaya perjalanan mahasiswa berdasarkan kampus" width="75%" />
 <p class="caption">(\#fig:fig-boxplot-multiple)Boxplot biaya perjalanan mahasiswa berdasarkan kampus</p>
 </div>
 
@@ -3093,7 +3093,7 @@ Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (
 Mari kita buat *scatterplot* menggunakan `ggplot2`:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-scatter-ggplot-1.png" alt="Scatterplot jarak tempuh vs biaya perjalanan" width="75%" />
+<img src="figures/fig-scatter-ggplot-1.png" alt="Scatterplot jarak tempuh vs biaya perjalanan" width="75%" />
 <p class="caption">(\#fig:fig-scatter-ggplot)Scatterplot jarak tempuh vs biaya perjalanan</p>
 </div>
 
@@ -3674,10 +3674,6 @@ chisq.test(tabel)
 ```
 
 ```
-## Warning in chisq.test(tabel): Chi-squared approximation may be incorrect
-```
-
-```
 ## 
 ## 	Pearson's Chi-squared test
 ## 
@@ -3719,11 +3715,6 @@ cor.test(pendidikan, kepuasan, method = "spearman")
 ```
 
 ```
-## Warning in cor.test.default(pendidikan, kepuasan, method = "spearman"): Cannot
-## compute exact p-value with ties
-```
-
-```
 ## 
 ## 	Spearman's rank correlation rho
 ## 
@@ -3738,11 +3729,6 @@ cor.test(pendidikan, kepuasan, method = "spearman")
 ``` r
 # Korelasi Kendall
 cor.test(pendidikan, kepuasan, method = "kendall")
-```
-
-```
-## Warning in cor.test.default(pendidikan, kepuasan, method = "kendall"): Cannot compute
-## exact p-value with ties
 ```
 
 ```
@@ -3789,7 +3775,7 @@ pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
 plot(pendapatan, pengeluaran)
 ```
 
-![](_main_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](figures/unnamed-chunk-12-1.png)<!-- -->
 
 ``` r
 # Korelasi Pearson
