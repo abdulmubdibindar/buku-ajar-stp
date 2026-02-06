@@ -28,23 +28,27 @@ options(cli.hyperlink = FALSE)
 
 # Statistika untuk Perencanaan {.unnumbered}
 
-Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan penggunaan R dalam pengolahan data kuantitatif, terutama dalam perencanaan wilayah dan kota. Buku ini terdiri atas x bagian:
+Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan penggunaan R dalam pengolahan data kuantitatif, terutama dalam perencanaan wilayah dan kota. Buku ini terdiri atas 15 bab yang terdiri atas beberapa bagian:
 
-1. Konsep Dasar Statistika dalam Perencanaan
-2. Data Terstruktur
-3. Analisis Statistik Deskriptif
-4. Visualisasi Data Kuantitatif
-5. Pengantar Statistik Inferensial
-6. Estimasi Parameter
-7. Uji Hipotesis Satu Populasi
-8. Uji Hipotesis Dua Populasi
-9. Uji Hipotesis Lebih dari Dua Populasi
-10. Korelasi Antarvariabel Nominal
-11. Korelasi Antarvariabel Ordinal
-12. Korelasi Antarvariabel Metrik
-13. Regresi Linear Sederhana
-14. Regresi Linear Berganda
-15. Analisis Statistik Multivariat Interdependensi
+1. Konsep Dasar Statistika
+    1. Konsep Dasar Statistika dalam Perencanaan
+    2. Data Terstruktur
+2. Statistika Univariat
+    3. Analisis Statistik Deskriptif
+    4. Visualisasi Data Kuantitatif
+    5. Pengantar Statistik Inferensial
+    6. Estimasi Parameter
+    7. Uji Hipotesis Satu Populasi
+    8. Uji Hipotesis Dua Populasi
+    9. Uji Hipotesis Lebih dari Dua Populasi
+3. Statistika Bivariat
+    10. Korelasi Antarvariabel Nominal
+    11. Korelasi Antarvariabel Ordinal
+    12. Korelasi Antarvariabel Metrik
+    13. Regresi Linear Sederhana
+4. Statistika Multivariat
+    14. Regresi Linear Berganda
+    15. Analisis Statistik Multivariat Interdependensi
 
 
 ------------------------------------
