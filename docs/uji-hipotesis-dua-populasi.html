@@ -400,12 +400,12 @@ div.csl-indent {
 <div id="independent-t-test" class="section level3 hasAnchor" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Independent t-test<a href="uji-hipotesis-dua-populasi.html#independent-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Membandingkan pendapatan (dalam juta) antara pria dan wanita.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="uji-hipotesis-dua-populasi.html#cb25-1" tabindex="-1"></a><span class="co"># Data Contoh</span></span>
-<span id="cb25-2"><a href="uji-hipotesis-dua-populasi.html#cb25-2" tabindex="-1"></a>pria <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">5</span>)</span>
-<span id="cb25-3"><a href="uji-hipotesis-dua-populasi.html#cb25-3" tabindex="-1"></a>wanita <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span>
-<span id="cb25-4"><a href="uji-hipotesis-dua-populasi.html#cb25-4" tabindex="-1"></a></span>
-<span id="cb25-5"><a href="uji-hipotesis-dua-populasi.html#cb25-5" tabindex="-1"></a><span class="co"># Uji t independen</span></span>
-<span id="cb25-6"><a href="uji-hipotesis-dua-populasi.html#cb25-6" tabindex="-1"></a><span class="fu">t.test</span>(pria, wanita, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="uji-hipotesis-dua-populasi.html#cb3-1" tabindex="-1"></a><span class="co"># Data Contoh</span></span>
+<span id="cb3-2"><a href="uji-hipotesis-dua-populasi.html#cb3-2" tabindex="-1"></a>pria <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">5</span>)</span>
+<span id="cb3-3"><a href="uji-hipotesis-dua-populasi.html#cb3-3" tabindex="-1"></a>wanita <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span>
+<span id="cb3-4"><a href="uji-hipotesis-dua-populasi.html#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="uji-hipotesis-dua-populasi.html#cb3-5" tabindex="-1"></a><span class="co"># Uji t independen</span></span>
+<span id="cb3-6"><a href="uji-hipotesis-dua-populasi.html#cb3-6" tabindex="-1"></a><span class="fu">t.test</span>(pria, wanita, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -421,11 +421,11 @@ div.csl-indent {
 <div id="paired-t-test" class="section level3 hasAnchor" number="8.2.2">
 <h3><span class="header-section-number">8.2.2</span> Paired t-test<a href="uji-hipotesis-dua-populasi.html#paired-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Membandingkan waktu tempuh (menit) sebelum dan sesudah pembangunan tol.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="uji-hipotesis-dua-populasi.html#cb27-1" tabindex="-1"></a>sebelum <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">80</span>)</span>
-<span id="cb27-2"><a href="uji-hipotesis-dua-populasi.html#cb27-2" tabindex="-1"></a>sesudah <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>)</span>
-<span id="cb27-3"><a href="uji-hipotesis-dua-populasi.html#cb27-3" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="uji-hipotesis-dua-populasi.html#cb27-4" tabindex="-1"></a><span class="co"># Uji t berpasangan</span></span>
-<span id="cb27-5"><a href="uji-hipotesis-dua-populasi.html#cb27-5" tabindex="-1"></a><span class="fu">t.test</span>(sebelum, sesudah, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="uji-hipotesis-dua-populasi.html#cb5-1" tabindex="-1"></a>sebelum <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">80</span>)</span>
+<span id="cb5-2"><a href="uji-hipotesis-dua-populasi.html#cb5-2" tabindex="-1"></a>sesudah <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>)</span>
+<span id="cb5-3"><a href="uji-hipotesis-dua-populasi.html#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="uji-hipotesis-dua-populasi.html#cb5-4" tabindex="-1"></a><span class="co"># Uji t berpasangan</span></span>
+<span id="cb5-5"><a href="uji-hipotesis-dua-populasi.html#cb5-5" tabindex="-1"></a><span class="fu">t.test</span>(sebelum, sesudah, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 

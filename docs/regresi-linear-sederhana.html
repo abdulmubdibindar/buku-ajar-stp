@@ -388,12 +388,12 @@ div.csl-indent {
 <div id="studi-kasus-dengan-r-6" class="section level2 hasAnchor" number="13.2">
 <h2><span class="header-section-number">13.2</span> Studi Kasus dengan R<a href="regresi-linear-sederhana.html#studi-kasus-dengan-r-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Memprediksi <strong>Pengeluaran</strong> berdasarkan <strong>Pendapatan</strong>.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="regresi-linear-sederhana.html#cb47-1" tabindex="-1"></a>pendapatan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
-<span id="cb47-2"><a href="regresi-linear-sederhana.html#cb47-2" tabindex="-1"></a>pengeluaran <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="fl">3.5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="dv">7</span>)</span>
-<span id="cb47-3"><a href="regresi-linear-sederhana.html#cb47-3" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="regresi-linear-sederhana.html#cb47-4" tabindex="-1"></a><span class="co"># Membuat Model Regresi</span></span>
-<span id="cb47-5"><a href="regresi-linear-sederhana.html#cb47-5" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(pengeluaran <span class="sc">~</span> pendapatan)</span>
-<span id="cb47-6"><a href="regresi-linear-sederhana.html#cb47-6" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="regresi-linear-sederhana.html#cb25-1" tabindex="-1"></a>pendapatan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
+<span id="cb25-2"><a href="regresi-linear-sederhana.html#cb25-2" tabindex="-1"></a>pengeluaran <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="fl">3.5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="dv">7</span>)</span>
+<span id="cb25-3"><a href="regresi-linear-sederhana.html#cb25-3" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="regresi-linear-sederhana.html#cb25-4" tabindex="-1"></a><span class="co"># Membuat Model Regresi</span></span>
+<span id="cb25-5"><a href="regresi-linear-sederhana.html#cb25-5" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(pengeluaran <span class="sc">~</span> pendapatan)</span>
+<span id="cb25-6"><a href="regresi-linear-sederhana.html#cb25-6" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = pengeluaran ~ pendapatan)
@@ -412,8 +412,8 @@ div.csl-indent {
 ## Residual standard error: 0.4289 on 5 degrees of freedom
 ## Multiple R-squared:  0.9366, Adjusted R-squared:  0.9239 
 ## F-statistic: 73.83 on 1 and 5 DF,  p-value: 0.0003521</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="regresi-linear-sederhana.html#cb49-1" tabindex="-1"></a><span class="co"># Melihat koefisien</span></span>
-<span id="cb49-2"><a href="regresi-linear-sederhana.html#cb49-2" tabindex="-1"></a><span class="fu">coef</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="regresi-linear-sederhana.html#cb27-1" tabindex="-1"></a><span class="co"># Melihat koefisien</span></span>
+<span id="cb27-2"><a href="regresi-linear-sederhana.html#cb27-2" tabindex="-1"></a><span class="fu">coef</span>(model)</span></code></pre></div>
 <pre><code>## (Intercept)  pendapatan 
 ##  -0.5714286   0.6964286</code></pre>
 <p><strong>Interpretasi</strong>:

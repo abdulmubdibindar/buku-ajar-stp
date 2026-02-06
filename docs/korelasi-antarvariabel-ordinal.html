@@ -387,13 +387,14 @@ div.csl-indent {
 <div id="studi-kasus-dengan-r-4" class="section level2 hasAnchor" number="11.2">
 <h2><span class="header-section-number">11.2</span> Studi Kasus dengan R<a href="korelasi-antarvariabel-ordinal.html#studi-kasus-dengan-r-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Apakah ada hubungan antara <strong>Tingkat Pendidikan</strong> (SD, SMP, SMA) dengan <strong>Kepuasan Layanan</strong> (Rendah, Sedang, Tinggi)?</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="korelasi-antarvariabel-ordinal.html#cb38-1" tabindex="-1"></a><span class="co"># Data Ordinal (sebagai angka peringkat)</span></span>
-<span id="cb38-2"><a href="korelasi-antarvariabel-ordinal.html#cb38-2" tabindex="-1"></a>pendidikan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb38-3"><a href="korelasi-antarvariabel-ordinal.html#cb38-3" tabindex="-1"></a>kepuasan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb38-4"><a href="korelasi-antarvariabel-ordinal.html#cb38-4" tabindex="-1"></a></span>
-<span id="cb38-5"><a href="korelasi-antarvariabel-ordinal.html#cb38-5" tabindex="-1"></a><span class="co"># Korelasi Spearman</span></span>
-<span id="cb38-6"><a href="korelasi-antarvariabel-ordinal.html#cb38-6" tabindex="-1"></a><span class="fu">cor.test</span>(pendidikan, kepuasan, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning in cor.test.default(pendidikan, kepuasan, method = &quot;spearman&quot;): Cannot compute exact p-value with ties</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="korelasi-antarvariabel-ordinal.html#cb16-1" tabindex="-1"></a><span class="co"># Data Ordinal (sebagai angka peringkat)</span></span>
+<span id="cb16-2"><a href="korelasi-antarvariabel-ordinal.html#cb16-2" tabindex="-1"></a>pendidikan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb16-3"><a href="korelasi-antarvariabel-ordinal.html#cb16-3" tabindex="-1"></a>kepuasan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb16-4"><a href="korelasi-antarvariabel-ordinal.html#cb16-4" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="korelasi-antarvariabel-ordinal.html#cb16-5" tabindex="-1"></a><span class="co"># Korelasi Spearman</span></span>
+<span id="cb16-6"><a href="korelasi-antarvariabel-ordinal.html#cb16-6" tabindex="-1"></a><span class="fu">cor.test</span>(pendidikan, kepuasan, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in cor.test.default(pendidikan, kepuasan, method = &quot;spearman&quot;): Cannot
+## compute exact p-value with ties</code></pre>
 <pre><code>## 
 ##  Spearman&#39;s rank correlation rho
 ## 
@@ -403,9 +404,10 @@ div.csl-indent {
 ## sample estimates:
 ## rho 
 ## 0.9</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="korelasi-antarvariabel-ordinal.html#cb41-1" tabindex="-1"></a><span class="co"># Korelasi Kendall</span></span>
-<span id="cb41-2"><a href="korelasi-antarvariabel-ordinal.html#cb41-2" tabindex="-1"></a><span class="fu">cor.test</span>(pendidikan, kepuasan, <span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning in cor.test.default(pendidikan, kepuasan, method = &quot;kendall&quot;): Cannot compute exact p-value with ties</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="korelasi-antarvariabel-ordinal.html#cb19-1" tabindex="-1"></a><span class="co"># Korelasi Kendall</span></span>
+<span id="cb19-2"><a href="korelasi-antarvariabel-ordinal.html#cb19-2" tabindex="-1"></a><span class="fu">cor.test</span>(pendidikan, kepuasan, <span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in cor.test.default(pendidikan, kepuasan, method = &quot;kendall&quot;): Cannot compute
+## exact p-value with ties</code></pre>
 <pre><code>## 
 ##  Kendall&#39;s rank correlation tau
 ## 

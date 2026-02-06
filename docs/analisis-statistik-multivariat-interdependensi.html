@@ -388,21 +388,21 @@ Contoh: <strong>Analisis Faktor</strong> dan <strong>Principal Component Analysi
 <div id="studi-kasus-dengan-r-8" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Studi Kasus dengan R<a href="analisis-statistik-multivariat-interdependensi.html#studi-kasus-dengan-r-8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Mereduksi 5 indikator kepuasan menjadi faktor-faktor utama.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="analisis-statistik-multivariat-interdependensi.html#cb53-1" tabindex="-1"></a><span class="co"># Simulasi Data</span></span>
-<span id="cb53-2"><a href="analisis-statistik-multivariat-interdependensi.html#cb53-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb53-3"><a href="analisis-statistik-multivariat-interdependensi.html#cb53-3" tabindex="-1"></a>data_survei <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">100</span><span class="sc">*</span><span class="dv">5</span>), <span class="at">ncol=</span><span class="dv">5</span>)</span>
-<span id="cb53-4"><a href="analisis-statistik-multivariat-interdependensi.html#cb53-4" tabindex="-1"></a><span class="fu">colnames</span>(data_survei) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1&quot;</span>, <span class="st">&quot;Q2&quot;</span>, <span class="st">&quot;Q3&quot;</span>, <span class="st">&quot;Q4&quot;</span>, <span class="st">&quot;Q5&quot;</span>)</span>
-<span id="cb53-5"><a href="analisis-statistik-multivariat-interdependensi.html#cb53-5" tabindex="-1"></a></span>
-<span id="cb53-6"><a href="analisis-statistik-multivariat-interdependensi.html#cb53-6" tabindex="-1"></a><span class="co"># Principal Component Analysis</span></span>
-<span id="cb53-7"><a href="analisis-statistik-multivariat-interdependensi.html#cb53-7" tabindex="-1"></a>pca_result <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(data_survei, <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb53-8"><a href="analisis-statistik-multivariat-interdependensi.html#cb53-8" tabindex="-1"></a><span class="fu">summary</span>(pca_result)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-1" tabindex="-1"></a><span class="co"># Simulasi Data</span></span>
+<span id="cb31-2"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb31-3"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-3" tabindex="-1"></a>data_survei <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">100</span><span class="sc">*</span><span class="dv">5</span>), <span class="at">ncol=</span><span class="dv">5</span>)</span>
+<span id="cb31-4"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-4" tabindex="-1"></a><span class="fu">colnames</span>(data_survei) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1&quot;</span>, <span class="st">&quot;Q2&quot;</span>, <span class="st">&quot;Q3&quot;</span>, <span class="st">&quot;Q4&quot;</span>, <span class="st">&quot;Q5&quot;</span>)</span>
+<span id="cb31-5"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-5" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-6" tabindex="-1"></a><span class="co"># Principal Component Analysis</span></span>
+<span id="cb31-7"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-7" tabindex="-1"></a>pca_result <span class="ot">&lt;-</span> <span class="fu">prcomp</span>(data_survei, <span class="at">scale. =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb31-8"><a href="analisis-statistik-multivariat-interdependensi.html#cb31-8" tabindex="-1"></a><span class="fu">summary</span>(pca_result)</span></code></pre></div>
 <pre><code>## Importance of components:
 ##                           PC1    PC2    PC3    PC4    PC5
 ## Standard deviation     1.1077 1.0610 1.0191 0.9468 0.8440
 ## Proportion of Variance 0.2454 0.2251 0.2077 0.1793 0.1425
 ## Cumulative Proportion  0.2454 0.4705 0.6783 0.8575 1.0000</code></pre>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="analisis-statistik-multivariat-interdependensi.html#cb55-1" tabindex="-1"></a><span class="co"># Melihat beban faktor (loadings)</span></span>
-<span id="cb55-2"><a href="analisis-statistik-multivariat-interdependensi.html#cb55-2" tabindex="-1"></a>pca_result<span class="sc">$</span>rotation</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="analisis-statistik-multivariat-interdependensi.html#cb33-1" tabindex="-1"></a><span class="co"># Melihat beban faktor (loadings)</span></span>
+<span id="cb33-2"><a href="analisis-statistik-multivariat-interdependensi.html#cb33-2" tabindex="-1"></a>pca_result<span class="sc">$</span>rotation</span></code></pre></div>
 <pre><code>##            PC1        PC2        PC3        PC4       PC5
 ## Q1  0.67277300  0.3292034 -0.1275847 -0.1588174 0.6304766
 ## Q2  0.19353433 -0.6901072  0.1205644  0.6023990 0.3299640

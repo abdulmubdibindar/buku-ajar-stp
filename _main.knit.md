@@ -29,23 +29,23 @@ Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan
 
 1. Konsep Dasar Statistika
     1. Konsep Dasar Statistika dalam Perencanaan
-    2. Data Terstruktur
+    1. Data Terstruktur
 2. Statistika Univariat
-    3. Analisis Statistik Deskriptif
-    4. Visualisasi Data Kuantitatif
-    5. Pengantar Statistik Inferensial
-    6. Estimasi Parameter
-    7. Uji Hipotesis Satu Populasi
-    8. Uji Hipotesis Dua Populasi
-    9. Uji Hipotesis Lebih dari Dua Populasi
+    1. Analisis Statistik Deskriptif
+    1. Visualisasi Data Kuantitatif
+    1. Pengantar Statistik Inferensial
+    1. Estimasi Parameter
+    1. Uji Hipotesis Satu Populasi
+    1. Uji Hipotesis Dua Populasi
+    1. Uji Hipotesis Lebih dari Dua Populasi
 3. Statistika Bivariat
-    10. Korelasi Antarvariabel Nominal
-    11. Korelasi Antarvariabel Ordinal
-    12. Korelasi Antarvariabel Metrik
-    13. Regresi Linear Sederhana
+    1. Korelasi Antarvariabel Nominal
+    1. Korelasi Antarvariabel Ordinal
+    1. Korelasi Antarvariabel Metrik
+    1. Regresi Linear Sederhana
 4. Statistika Multivariat
-    14. Regresi Linear Berganda
-    15. Analisis Statistik Multivariat Interdependensi
+    1. Regresi Linear Berganda
+    1. Analisis Statistik Multivariat Interdependensi
 
 
 ------------------------------------
@@ -2514,26 +2514,53 @@ Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transpo
 Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (*column chart*)
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-column-moda-1.png" alt="Grafik batang tegak distribusi moda transportasi" width="70%" />
+<img src="_main_files/figure-html/fig-column-moda-1.png" alt="Grafik batang tegak distribusi moda transportasi" width="75%" />
 <p class="caption">(\#fig:fig-column-moda)Grafik batang tegak distribusi moda transportasi</p>
 </div>
 
 Atau dalam bentuk grafik batang mendatar (*bar chart*):
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-bar-moda-1.png" alt="Grafik batang mendatar distribusi moda transportasi" width="70%" />
+<img src="_main_files/figure-html/fig-bar-moda-1.png" alt="Grafik batang mendatar distribusi moda transportasi" width="75%" />
 <p class="caption">(\#fig:fig-bar-moda)Grafik batang mendatar distribusi moda transportasi</p>
 </div>
 
-Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin:
+Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin (Tabel \@ref(tab:tab-distribusi-2-var)).
 
-
-```
-##            
-##             Berjalan Kaki Kendaraan Bermotor (menumpang) Mobil Pribadi Sepeda Sepeda Motor Pribadi Transportasi Online
-##   Laki-laki             1                              9             6      2                  167                   3
-##   Perempuan            32                             18             9      3                  123                  27
-```
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tab-distribusi-2-var)(\#tab:tab-distribusi-2-var)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung berdasarkan Jenis Kelamin</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Jenis Kelamin </th>
+   <th style="text-align:right;"> Berjalan Kaki </th>
+   <th style="text-align:right;"> Kendaraan Bermotor (menumpang) </th>
+   <th style="text-align:right;"> Mobil Pribadi </th>
+   <th style="text-align:right;"> Sepeda </th>
+   <th style="text-align:right;"> Sepeda Motor Pribadi </th>
+   <th style="text-align:right;"> Transportasi Online </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Laki-laki </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 167 </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Perempuan </td>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 123 </td>
+   <td style="text-align:right;"> 27 </td>
+  </tr>
+</tbody>
+</table>
 
 Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
 
@@ -2563,42 +2590,43 @@ Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data dir
 
 Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
 
-
-```
-##                                    Prodi Frekuensi
-## 8                         Hukum Keluarga        31
-## 6                        Ekonomi Syariah        28
-## 20             Pendidikan Bahasa Inggris        24
-## 21                    Pendidikan Biologi        23
-## 13              Manajemen Bisnis Syariah        21
-## 1                      Akuntansi Syariah        19
-## 4              Bimbingan Konseling Islam        19
-## 5                                Biologi        19
-## 9                      Hukum Tata Negara        19
-## 27                       Psikologi Islam        19
-## 26                     Perbankan Syariah        17
-## 24                 Pendidikan Matematika        16
-## 15            Manajemen Pendidikan Islam        15
-## 17                Pendidikan Agama Islam        15
-## 22                     Pendidikan Fisika        14
-## 14                      Manajemen Dakwah        13
-## 19                Pendidikan Bahasa Arab        11
-## 7                          Hukum Ekonomi         9
-## 12        Komunikasi dan Penyiaran Islam         9
-## 25         Pengembangan Masyarakat Islam         8
-## 10               Ilmu Alquran dan Tafsir         7
-## 31                     Studi Agama-Agama         7
-## 3                Bimbingan dan Konseling         6
-## 18             Pendidikan Anak Usia Dini         6
-## 29                      Sistem Informasi         6
-## 2              Aqidah dan Filsafat Islam         3
-## 11 Ilmu Perpustakaan dan Informasi Islam         3
-## 16               Pemikiran Politik Islam         3
-## 23   Pendidikan Guru Madrasah Ibtidaiyah         3
-## 30                       Sosiologi Agama         3
-## 28               Sejarah Peradaban Islam         2
-## 32               Tasawuf dan Psikoterapi         2
-```
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<caption>(\#tab:bab-4-distribusi-per-prodi)(\#tab:bab-4-distribusi-per-prodi)Distribusi Frekuensi Mahasiswa UIN Raden Intan Lampung Per Program Studi</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Nama Program Studi </th>
+   <th style="text-align:right;"> Frekuensi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Hukum Keluarga </td>
+   <td style="text-align:right;"> 31 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ekonomi Syariah </td>
+   <td style="text-align:right;"> 28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pendidikan Bahasa Inggris </td>
+   <td style="text-align:right;"> 24 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Pendidikan Biologi </td>
+   <td style="text-align:right;"> 23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Manajemen Bisnis Syariah </td>
+   <td style="text-align:right;"> 21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Akuntansi Syariah </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Catatan:</span> <sup></sup> Menampilkan 6 dari 32 program studi</td></tr></tfoot>
+</table>
 
 Berikut adalah visualisasi menggunakan grafik batang biasa:
 
@@ -2630,22 +2658,78 @@ Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
 
 Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
 
-
-```
-##    Jenis_Kelamin              Moda_Transportasi Frekuensi
-## 1      Laki-laki                  Berjalan Kaki         1
-## 2      Perempuan                  Berjalan Kaki        32
-## 3      Laki-laki Kendaraan Bermotor (menumpang)         9
-## 4      Perempuan Kendaraan Bermotor (menumpang)        18
-## 5      Laki-laki                  Mobil Pribadi         6
-## 6      Perempuan                  Mobil Pribadi         9
-## 7      Laki-laki                         Sepeda         2
-## 8      Perempuan                         Sepeda         3
-## 9      Laki-laki           Sepeda Motor Pribadi       167
-## 10     Perempuan           Sepeda Motor Pribadi       123
-## 11     Laki-laki            Transportasi Online         3
-## 12     Perempuan            Transportasi Online        27
-```
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tab-treemap-data)(\#tab:tab-treemap-data)Distribusi Frekuensi Moda Transportasi berdasarkan Jenis Kelamin untuk Treemap</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Jenis Kelamin </th>
+   <th style="text-align:left;"> Moda Transportasi </th>
+   <th style="text-align:right;"> Frekuensi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Laki-laki </td>
+   <td style="text-align:left;"> Berjalan Kaki </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Laki-laki </td>
+   <td style="text-align:left;"> Kendaraan Bermotor (menumpang) </td>
+   <td style="text-align:right;"> 9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Laki-laki </td>
+   <td style="text-align:left;"> Mobil Pribadi </td>
+   <td style="text-align:right;"> 6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Laki-laki </td>
+   <td style="text-align:left;"> Sepeda </td>
+   <td style="text-align:right;"> 2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Laki-laki </td>
+   <td style="text-align:left;"> Sepeda Motor Pribadi </td>
+   <td style="text-align:right;"> 167 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Laki-laki </td>
+   <td style="text-align:left;"> Transportasi Online </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Perempuan </td>
+   <td style="text-align:left;"> Berjalan Kaki </td>
+   <td style="text-align:right;"> 32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Perempuan </td>
+   <td style="text-align:left;"> Kendaraan Bermotor (menumpang) </td>
+   <td style="text-align:right;"> 18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Perempuan </td>
+   <td style="text-align:left;"> Mobil Pribadi </td>
+   <td style="text-align:right;"> 9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Perempuan </td>
+   <td style="text-align:left;"> Sepeda </td>
+   <td style="text-align:right;"> 3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Perempuan </td>
+   <td style="text-align:left;"> Sepeda Motor Pribadi </td>
+   <td style="text-align:right;"> 123 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Perempuan </td>
+   <td style="text-align:left;"> Transportasi Online </td>
+   <td style="text-align:right;"> 27 </td>
+  </tr>
+</tbody>
+</table>
 
 Dari tabel distribusi frekuensi tersebut, kita dapat membuat treemap:
 
@@ -2670,39 +2754,43 @@ Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada k
 
 Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.
 
-
-``` r
-# Memuat data
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
-
-# Membuat tabel distribusi frekuensi untuk moda transportasi
-tabel_moda <- table(data_uinril$kendaraan.utama)
-tabel_moda
-```
-
-```
-## 
-##                  Berjalan Kaki Kendaraan Bermotor (menumpang)                  Mobil Pribadi                         Sepeda           Sepeda Motor Pribadi 
-##                             33                             27                             15                              5                            290 
-##            Transportasi Online 
-##                             30
-```
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tab-pie-data)(\#tab:tab-pie-data)Distribusi Frekuensi Moda Transportasi untuk Grafik Pai</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Moda Transportasi </th>
+   <th style="text-align:right;"> Frekuensi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Berjalan Kaki </td>
+   <td style="text-align:right;"> 33 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kendaraan Bermotor (menumpang) </td>
+   <td style="text-align:right;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mobil Pribadi </td>
+   <td style="text-align:right;"> 15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sepeda </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sepeda Motor Pribadi </td>
+   <td style="text-align:right;"> 290 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Transportasi Online </td>
+   <td style="text-align:right;"> 30 </td>
+  </tr>
+</tbody>
+</table>
 
 Dari tabel distribusi frekuensi, kita dapat membuat grafik pai (*pie chart*):
-
-
-``` r
-# Menghitung persentase
-persentase <- round(100 * tabel_moda / sum(tabel_moda), 1)
-label <- paste0(names(tabel_moda), "\n", persentase, "%")
-
-pie(tabel_moda,
-  labels = label,
-  main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
-  col = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6"),
-  border = "white"
-)
-```
 
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-pie-moda-1.png" alt="Grafik pai moda transportasi mahasiswa UINRIL" width="70%" />
@@ -2710,32 +2798,6 @@ pie(tabel_moda,
 </div>
 
 Untuk membuat grafik donat (*donut chart*), kita mengubah jenis kategori menjadi juring-juring lingkaran dan sudunya ditentukan dari proporsi frekuensi. Prosesnya sama dengan grafik pai, hanya saja kita di tengahnya ada ruang kosong yang dapat digunakan untuk informasi tambahan.
-
-
-``` r
-library(ggplot2)
-
-# Mengubah tabel menjadi data frame
-df_moda <- as.data.frame(tabel_moda)
-colnames(df_moda) <- c("Moda", "Frekuensi")
-
-# Menghitung persentase dan posisi label
-df_moda$Persentase <- round(100 * df_moda$Frekuensi / sum(df_moda$Frekuensi), 1)
-df_moda$Label <- paste0(df_moda$Persentase, "%")
-
-# Membuat donut chart
-ggplot(df_moda, aes(x = 2, y = Frekuensi, fill = Moda)) +
-  geom_bar(stat = "identity", width = 1, color = "white") +
-  coord_polar(theta = "y") +
-  xlim(0.5, 2.5) +
-  theme_void() +
-  labs(title = "Distribusi Moda Transportasi (Donut Chart)") +
-  geom_text(aes(label = Label),
-    position = position_stack(vjust = 0.5),
-    color = "white", size = 4
-  ) +
-  scale_fill_manual(values = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6", "#34495e"))
-```
 
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-donut-moda-1.png" alt="Grafik donat moda transportasi mahasiswa UINRIL" width="70%" />
@@ -2779,33 +2841,47 @@ Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus
 
 Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
 
-
-``` r
-# Memuat data
-data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
-
-# Melihat statistik deskriptif
-summary(data_itera$biaya.dalam.sepekan)
-```
-
-```
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##       0   20000   30000   38666   45000  400000
-```
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:unnamed-chunk-1)(\#tab:unnamed-chunk-1)Statistik Deskriptif Biaya Perjalanan Mahasiswa ITERA</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Statistik </th>
+   <th style="text-align:right;"> Nilai </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Min </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Q1 </td>
+   <td style="text-align:right;"> 20000.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Median </td>
+   <td style="text-align:right;"> 30000.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mean </td>
+   <td style="text-align:right;"> 38665.89 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Q3 </td>
+   <td style="text-align:right;"> 45000.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Max </td>
+   <td style="text-align:right;"> 400000.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+</tbody>
+</table>
 
 Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (bin). R melakukan ini secara otomatis, tetapi kita juga bisa mengatur sendiri. Mari kita buat histogram dengan pengaturan bin otomatis:
-
-
-``` r
-hist(data_itera$biaya.dalam.sepekan,
-  main = "Distribusi Biaya Perjalanan Mahasiswa ITERA",
-  xlab = "Biaya Perjalanan (Rp ribu)",
-  ylab = "Frekuensi",
-  col = "#3498db",
-  border = "white",
-  las = 1
-)
-```
 
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-hist-biaya-auto-1.png" alt="Histogram biaya perjalanan (bin otomatis)" width="75%" />
@@ -2814,20 +2890,6 @@ hist(data_itera$biaya.dalam.sepekan,
 
 Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi dengan lebih detail:
 
-
-``` r
-# Membuat histogram dengan 15 bin
-hist(data_itera$biaya.dalam.sepekan,
-  breaks = 15,
-  main = "Distribusi Biaya Perjalanan (15 Bin)",
-  xlab = "Biaya Perjalanan (Rp ribu)",
-  ylab = "Frekuensi",
-  col = "#e74c3c",
-  border = "white",
-  las = 1
-)
-```
-
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-hist-biaya-manual-1.png" alt="Histogram biaya perjalanan (bin manual)" width="75%" />
 <p class="caption">(\#fig:fig-hist-biaya-manual)Histogram biaya perjalanan (bin manual)</p>
@@ -2835,24 +2897,41 @@ hist(data_itera$biaya.dalam.sepekan,
 
 Untuk lebih memahami proses binning, mari kita buat tabel frekuensi manual:
 
-
-``` r
-# Membuat interval bin
-bins <- seq(0, max(data_itera$biaya.dalam.sepekan, na.rm = TRUE), length.out = 10)
-
-# Mengelompokkan data ke dalam bin
-data_itera$bin <- cut(data_itera$biaya.dalam.sepekan, breaks = bins, include.lowest = TRUE)
-
-# Membuat tabel frekuensi
-tabel_freq <- table(data_itera$bin)
-head(tabel_freq)
-```
-
-```
-## 
-##        [0,4.44e+04] (4.44e+04,8.89e+04] (8.89e+04,1.33e+05] (1.33e+05,1.78e+05] (1.78e+05,2.22e+05] (2.22e+05,2.67e+05] 
-##                 318                  80                  13                   7                   7                   1
-```
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:unnamed-chunk-2)(\#tab:unnamed-chunk-2)Tabel Frekuensi Biaya Perjalanan (6 Interval Pertama)</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Interval Biaya </th>
+   <th style="text-align:right;"> Frekuensi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> [0,4.44e+04] </td>
+   <td style="text-align:right;"> 318 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> (4.44e+04,8.89e+04] </td>
+   <td style="text-align:right;"> 80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> (8.89e+04,1.33e+05] </td>
+   <td style="text-align:right;"> 13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> (1.33e+05,1.78e+05] </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> (1.78e+05,2.22e+05] </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> (2.22e+05,2.67e+05] </td>
+   <td style="text-align:right;"> 1 </td>
+  </tr>
+</tbody>
+</table>
 
 **Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
 
@@ -2873,57 +2952,47 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 
 Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
-
-``` r
-# Memuat data dari beberapa universitas
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
-data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
-
-# Memilih kolom biaya perjalanan
-data_uinril <- data_uinril |>
-  select(biaya.dalam.sepekan, Kampus_PT)
-
-data_unila <- data_unila |>
-  select(biaya.dalam.sepekan, Kampus_PT)
-
-
-# Menggabungkan data
-data_gabung <- rbind(data_uinril, data_unila)
-
-# Melihat ringkasan data biaya perjalanan
-summary(data_gabung$biaya.dalam.sepekan)
-```
-
-```
-##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    0.00   30.00   50.00   56.42   65.00  400.00
-```
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:unnamed-chunk-3)(\#tab:unnamed-chunk-3)Statistik Deskriptif Biaya Perjalanan Gabungan (UINRIL &amp; UNILA)</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Statistik </th>
+   <th style="text-align:right;"> Nilai </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Min </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Q1 </td>
+   <td style="text-align:right;"> 30.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Median </td>
+   <td style="text-align:right;"> 50.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mean </td>
+   <td style="text-align:right;"> 56.42 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Q3 </td>
+   <td style="text-align:right;"> 65.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Max </td>
+   <td style="text-align:right;"> 400.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+</tbody>
+</table>
 
 Mari kita buat boxplot tunggal untuk biaya perjalanan UINRIL terlebih dahulu:
-
-
-``` r
-boxplot(data_uinril$biaya.dalam.sepekan,
-  main = "Distribusi Biaya Perjalanan Mahasiswa UINRIL",
-  ylab = "Biaya Perjalanan (Rp ribu)",
-  col = "#3498db",
-  border = "#2c3e50"
-)
-
-# Menambahkan label untuk setiap elemen boxplot
-text(1, 1, quantile(data_uinril$biaya.dalam.sepekan, 0, 25, na.rm = TRUE),
-  labels = paste0("Q1 = ", round(quantile(data_uinril$biaya.dalam.sepekan, 0, 25, na.rm = TRUE), 1)),
-  pos = 4, cex = 0, 8, col = "red"
-)
-text(1, 1, median(data_uinril$biaya.dalam.sepekan, na.rm = TRUE),
-  labels = paste0("Median = ", round(median(data_uinril$biaya.dalam.sepekan, na.rm = TRUE), 1)),
-  pos = 4, cex = 0, 8, col = "red"
-)
-text(1, 1, quantile(data_uinril$biaya.dalam.sepekan, 0, 75, na.rm = TRUE),
-  labels = paste0("Q3 = ", round(quantile(data_uinril$biaya.dalam.sepekan, 0, 75, na.rm = TRUE), 1)),
-  pos = 4, cex = 0, 8, col = "red"
-)
-```
 
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-boxplot-single-1.png" alt="Boxplot biaya perjalanan mahasiswa UINRIL" width="60%" />
@@ -2931,18 +3000,6 @@ text(1, 1, quantile(data_uinril$biaya.dalam.sepekan, 0, 75, na.rm = TRUE),
 </div>
 
 Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perjalanan antar kampus:
-
-
-``` r
-boxplot(biaya.dalam.sepekan ~ Kampus_PT,
-  data = data_gabung,
-  main = "Perbandingan Distribusi Biaya Perjalanan Antar Kampus",
-  xlab = "Kampus",
-  ylab = "Biaya Perjalanan (Rp ribu)",
-  col = c("#3498db", "#e74c3c"),
-  border = "#2c3e50"
-)
-```
 
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-boxplot-multiple-1.png" alt="Boxplot biaya perjalanan mahasiswa berdasarkan kampus" width="75%" />
@@ -2979,90 +3036,65 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 
 *Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
 
-
-``` r
-# Memuat library
-library(tidyverse)
-
-# Memuat data
-data_itera <- read.csv2('datasets/DataUtama_mhsITERA.csv')
-
-# Konversi biaya perjalanan dan jarak (mengganti koma dengan titik, lalu ke numeric)
-data_itera$biaya.dalam.sepekan <- as.numeric(gsub(',', '.', data_itera$biaya.dalam.sepekan))
-data_itera$jarak <- as.numeric(gsub(',', '.', data_itera$jarak))
-
-# Menghapus baris dengan nilai NA pada kedua variabel
-data_itera <- data_itera %>% drop_na(biaya.dalam.sepekan, jarak)
-
-# Melihat struktur data untuk memahami pemetaan ke scatterplot
-head(data_itera[, c('biaya.dalam.sepekan', 'jarak')], 10)
-```
-
-```
-##    biaya.dalam.sepekan jarak
-## 1                10000  6.69
-## 2                21000  2.82
-## 3                40000  5.17
-## 4                30000  6.95
-## 5                25000  5.57
-## 6                40000  4.75
-## 7                30000  8.27
-## 8                    0  3.70
-## 9               100000  3.77
-## 10               30000  2.08
-```
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:unnamed-chunk-4)(\#tab:unnamed-chunk-4)Contoh Data Biaya Perjalanan dan Jarak Tempuh (10 Observasi Pertama)</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> Biaya Perjalanan (Rp ribu) </th>
+   <th style="text-align:right;"> Jarak Tempuh (km) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 10000 </td>
+   <td style="text-align:right;"> 6.69 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 21000 </td>
+   <td style="text-align:right;"> 2.82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 40000 </td>
+   <td style="text-align:right;"> 5.17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 30000 </td>
+   <td style="text-align:right;"> 6.95 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 25000 </td>
+   <td style="text-align:right;"> 5.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 40000 </td>
+   <td style="text-align:right;"> 4.75 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 30000 </td>
+   <td style="text-align:right;"> 8.27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 3.70 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 100000 </td>
+   <td style="text-align:right;"> 3.77 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 30000 </td>
+   <td style="text-align:right;"> 2.08 </td>
+  </tr>
+</tbody>
+</table>
 
 Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (`biaya.dalam.sepekan`) akan menjadi sumbu X, dan kolom kedua (`jarak`) menjadi sumbu Y. Setiap baris akan menjadi satu titik pada scatterplot.
 
-Mari kita buat *scatterplot* sederhana:
-
-
-``` r
-plot(data_itera$biaya.dalam.sepekan, data_itera$jarak,
-  main = 'Hubungan Biaya Perjalanan dan Jarak Tempuh Mahasiswa ITERA',
-  xlab = 'Biaya Perjalanan (Rp ribu)',
-  ylab = 'Jarak Tempuh (km)',
-  pch = 16,
-  col = rgb(52, 152, 219, maxColorValue = 255, alpha = 100)
-)
-
-# Menambahkan garis tren
-abline(lm(jarak ~ biaya.dalam.sepekan, data = data_itera),
-  col = '#e74c3c', lwd = 2, lty = 2
-)
-```
+Mari kita buat *scatterplot* menggunakan `ggplot2`:
 
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-scatter-basic-1.png" alt="Scatterplot hubungan biaya perjalanan dan jarak tempuh" width="75%" />
-<p class="caption">(\#fig:fig-scatter-basic)Scatterplot hubungan biaya perjalanan dan jarak tempuh</p>
-</div>
-
-Kita juga dapat membuat *scatterplot* yang lebih informatif menggunakan `ggplot2`:
-
-
-``` r
-library(ggplot2)
-
-ggplot(data_itera, aes(x = biaya.dalam.sepekan, y = jarak)) +
-  geom_point(color = '#3498db', alpha = 0.6, size = 3) +
-  geom_smooth(method = 'lm', se = TRUE, color = '#e74c3c', fill = '#e74c3c', alpha = 0.2) +
-  theme_minimal() +
-  labs(
-    title = 'Hubungan Biaya Perjalanan dan Jarak Tempuh',
-    subtitle = 'Mahasiswa ITERA',
-    x = 'Biaya Perjalanan (Rp ribu)',
-    y = 'Jarak Tempuh (km)'
-  ) +
-  theme(plot.title = element_text(face = 'bold', size = 14))
-```
-
-```
-## `geom_smooth()` using formula = 'y ~ x'
-```
-
-<div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-scatter-ggplot-1.png" alt="Scatterplot dengan ggplot2" width="75%" />
-<p class="caption">(\#fig:fig-scatter-ggplot)Scatterplot dengan ggplot2</p>
+<img src="_main_files/figure-html/fig-scatter-ggplot-1.png" alt="Scatterplot jarak tempuh vs biaya perjalanan" width="75%" />
+<p class="caption">(\#fig:fig-scatter-ggplot)Scatterplot jarak tempuh vs biaya perjalanan</p>
 </div>
 
 **Hubungan data terstruktur dengan scatterplot:**
@@ -3285,10 +3317,12 @@ Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai beri
   </table>
 
 2. Tentukan jenis grafik yang sesuai untuk beberapa tujuan visualisasi berikut [STP-3.2]{.capaian}:
+    a. menampilkan distribusi frekuensi dari variabel `Fakultas`
+    a. menampilkan distribusi frekuensi mahasiswa per `ThnMsk` dan `Fakultas`
+    a. memperlihatkan median, kuartil atas, dan kuartil bawah variabel `Usia` 
+    a. memperlihatkan sebaran mahasiswa berdasarkan `Jarak` tempat tinggal mereka
 
-  a. menampilkan distribusi frekuensi dari variabel `Fakultas`
-  b. menunjukkan 
-  c. 
+3. Analisislah mengapa grafik histogram tidak bisa digunakan untuk menampilkan distribusi frekuensi dari variabel `Fakultas` dan `UangSaku`! [STP-3.4]{.capaian}
 
 :::
 
@@ -3685,7 +3719,8 @@ cor.test(pendidikan, kepuasan, method = "spearman")
 ```
 
 ```
-## Warning in cor.test.default(pendidikan, kepuasan, method = "spearman"): Cannot compute exact p-value with ties
+## Warning in cor.test.default(pendidikan, kepuasan, method = "spearman"): Cannot
+## compute exact p-value with ties
 ```
 
 ```
@@ -3706,7 +3741,8 @@ cor.test(pendidikan, kepuasan, method = "kendall")
 ```
 
 ```
-## Warning in cor.test.default(pendidikan, kepuasan, method = "kendall"): Cannot compute exact p-value with ties
+## Warning in cor.test.default(pendidikan, kepuasan, method = "kendall"): Cannot compute
+## exact p-value with ties
 ```
 
 ```
@@ -3753,7 +3789,7 @@ pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
 plot(pendapatan, pengeluaran)
 ```
 
-![](_main_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
+![](_main_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
 
 ``` r
 # Korelasi Pearson

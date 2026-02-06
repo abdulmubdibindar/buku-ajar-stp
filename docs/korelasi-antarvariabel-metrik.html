@@ -387,14 +387,14 @@ div.csl-indent {
 <div id="studi-kasus-dengan-r-5" class="section level2 hasAnchor" number="12.2">
 <h2><span class="header-section-number">12.2</span> Studi Kasus dengan R<a href="korelasi-antarvariabel-metrik.html#studi-kasus-dengan-r-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hubungan antara <strong>Pendapatan</strong> dan <strong>Pengeluaran</strong>.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="korelasi-antarvariabel-metrik.html#cb44-1" tabindex="-1"></a>pendapatan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
-<span id="cb44-2"><a href="korelasi-antarvariabel-metrik.html#cb44-2" tabindex="-1"></a>pengeluaran <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="fl">3.5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="dv">7</span>)</span>
-<span id="cb44-3"><a href="korelasi-antarvariabel-metrik.html#cb44-3" tabindex="-1"></a></span>
-<span id="cb44-4"><a href="korelasi-antarvariabel-metrik.html#cb44-4" tabindex="-1"></a><span class="co"># Scatterplot</span></span>
-<span id="cb44-5"><a href="korelasi-antarvariabel-metrik.html#cb44-5" tabindex="-1"></a><span class="fu">plot</span>(pendapatan, pengeluaran)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-16-1.png" /><!-- --></p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="korelasi-antarvariabel-metrik.html#cb45-1" tabindex="-1"></a><span class="co"># Korelasi Pearson</span></span>
-<span id="cb45-2"><a href="korelasi-antarvariabel-metrik.html#cb45-2" tabindex="-1"></a><span class="fu">cor.test</span>(pendapatan, pengeluaran, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="korelasi-antarvariabel-metrik.html#cb22-1" tabindex="-1"></a>pendapatan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
+<span id="cb22-2"><a href="korelasi-antarvariabel-metrik.html#cb22-2" tabindex="-1"></a>pengeluaran <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="fl">3.5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="dv">7</span>)</span>
+<span id="cb22-3"><a href="korelasi-antarvariabel-metrik.html#cb22-3" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="korelasi-antarvariabel-metrik.html#cb22-4" tabindex="-1"></a><span class="co"># Scatterplot</span></span>
+<span id="cb22-5"><a href="korelasi-antarvariabel-metrik.html#cb22-5" tabindex="-1"></a><span class="fu">plot</span>(pendapatan, pengeluaran)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" /><!-- --></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="korelasi-antarvariabel-metrik.html#cb23-1" tabindex="-1"></a><span class="co"># Korelasi Pearson</span></span>
+<span id="cb23-2"><a href="korelasi-antarvariabel-metrik.html#cb23-2" tabindex="-1"></a><span class="fu">cor.test</span>(pendapatan, pengeluaran, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
