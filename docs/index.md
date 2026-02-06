@@ -2448,7 +2448,7 @@ Terdapat dua jenis grafik batang: tegak dan mendatar. Grafik batang tegak disebu
 Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang, penjelasannya dapat dilihat di Studi Kasus di bawah.
 
 
-#### Grafik Batang Bertumpuk (Stacked Column/Bar Chart) {.materi-bar-chart}
+#### Grafik Batang Bertumpuk (Stacked Column/Bar Chart) {#materi-bar-chart}
 
 Grafik batang bertumpuk *(stacked bar/column chart)* digunakan untuk membandingkan komposisi dari beberapa kategori. Setiap batang mewakili nilai total, yang kemudian dipecah menjadi beberapa segmen untuk menunjukkan bagaimana kontribusi masing-masing subkategori membentuk total tersebut. Kategori kedua variabel tersebut dibuat bertumpukan. Misalnya sebaran pengguna kendaraan (mobil, motor, sepeda) berdasarkan jenis kelamin (laki-laki dan perempuan).
 
@@ -2458,43 +2458,45 @@ Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang b
 
 ### Studi Kasus: Visualisasi Moda Transportasi Mahasiswa dengan Diagram Batang  {.unnumbered}
 
-Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi, baru kemudian divisualisasikan.
+Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi (Tabel \@ref(tab:bab-4-diagram-batang)), baru kemudian divisualisasikan.
 
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-4-diagram-batang)(\#tab:bab-4-diagram-batang)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Moda Transportasi </th>
+   <th style="text-align:right;"> Frekuensi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Berjalan Kaki </td>
+   <td style="text-align:right;"> 33 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kendaraan Bermotor (menumpang) </td>
+   <td style="text-align:right;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Mobil Pribadi </td>
+   <td style="text-align:right;"> 15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sepeda </td>
+   <td style="text-align:right;"> 5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sepeda Motor Pribadi </td>
+   <td style="text-align:right;"> 290 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Transportasi Online </td>
+   <td style="text-align:right;"> 30 </td>
+  </tr>
+</tbody>
+</table>
 
-``` r
-# Memuat library
-library(tidyverse)
-
-# Memuat data
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
-
-# Membuat tabel distribusi frekuensi untuk moda transportasi
-tabel_moda <- table(data_uinril$kendaraan.utama)
-tabel_moda
-```
-
-```
-## 
-##                  Berjalan Kaki Kendaraan Bermotor (menumpang) 
-##                             33                             27 
-##                  Mobil Pribadi                         Sepeda 
-##                             15                              5 
-##           Sepeda Motor Pribadi            Transportasi Online 
-##                            290                             30
-```
-
-Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (*column chart*):
-
-
-``` r
-barplot(tabel_moda,
-  main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
-  xlab = "Moda Transportasi",
-  ylab = "Frekuensi",
-  col = "#3498db",
-  las = 2
-)
-```
+Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (*column chart*)
 
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-column-moda-1.png" alt="Grafik batang tegak distribusi moda transportasi" width="70%" />
@@ -2503,18 +2505,6 @@ barplot(tabel_moda,
 
 Atau dalam bentuk grafik batang mendatar (*bar chart*):
 
-
-``` r
-barplot(tabel_moda,
-  main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
-  xlab = "Frekuensi",
-  ylab = "Moda Transportasi",
-  col = "#e74c3c",
-  horiz = TRUE,
-  las = 1
-)
-```
-
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-bar-moda-1.png" alt="Grafik batang mendatar distribusi moda transportasi" width="70%" />
 <p class="caption">(\#fig:fig-bar-moda)Grafik batang mendatar distribusi moda transportasi</p>
@@ -2522,12 +2512,6 @@ barplot(tabel_moda,
 
 Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin:
 
-
-``` r
-# Membuat tabel kontingensi (distribusi frekuensi dua variabel)
-tabel_moda_jk <- table(data_uinril$Jenis.Kelamin, data_uinril$kendaraan.utama)
-tabel_moda_jk
-```
 
 ```
 ##            
@@ -2541,19 +2525,6 @@ tabel_moda_jk
 ```
 
 Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
-
-
-``` r
-barplot(tabel_moda_jk,
-  main = "Moda Transportasi Berdasarkan Jenis Kelamin",
-  xlab = "Moda Transportasi",
-  ylab = "Frekuensi",
-  col = c("#9b59b6", "#f39c12"),
-  legend = rownames(tabel_moda_jk),
-  las = 2,
-  args.legend = list(x = "topright")
-)
-```
 
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-stacked-bar-1.png" alt="Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin" width="75%" />
@@ -2569,80 +2540,67 @@ barplot(tabel_moda_jk,
 
 Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data direpresentasikan oleh tiang-tiang berujung lingkaran yang menyerupai permen loli. Penggunaannya sangat cocok untuk data berjumlah banyak guna menghindari efek Moiré (dibaca `moarey') @wikipedia2025moire. Efek Moiré adalah ilusi optik pergerakan benda yang posisinya berdekatan dan membentuk sebuah kisi (fringe) seperti yang ditunjukkan Gambar \@ref(fig:contoh-moire), sehingga dapat menyulitkan pembaca grafik.
 
+<div class="figure" style="text-align: center">
+<img src="images/contoh-moire.png" alt="Contoh efek Moiré pada grafik batang" width="60%" />
+<p class="caption">(\#fig:contoh-moire)Contoh efek Moiré pada grafik batang</p>
+</div>
+
 
 ::: rmdkasus
 
 ### Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang {.unnumbered}
 
-Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data fakultas mahasiswa UINRIL.
+Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
 
-
-``` r
-# Install package ggplot2 jika belum ada
-# install.packages('ggplot2')
-library(ggplot2)
-
-# Memuat data dan membuat tabel frekuensi fakultas
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
-tabel_fakultas <- as.data.frame(table(data_uinril$Fakultas))
-colnames(tabel_fakultas) <- c("Fakultas", "Frekuensi")
-
-# Mengurutkan berdasarkan frekuensi
-tabel_fakultas <- tabel_fakultas[order(tabel_fakultas$Frekuensi, decreasing = TRUE), ]
-tabel_fakultas
-```
 
 ```
-##                     Fakultas Frekuensi
-## 5      Tarbiyah dan Keguruan       158
-## 3   Ekonomi dan Bisnis Islam        85
-## 4                    Syariah        59
-## 2 Dakwah dan Ilmu Komunikasi        49
-## 6 Ushuluddin dan Studi Agama        44
-## 1                       Adab         5
+##                                    Prodi Frekuensi
+## 8                         Hukum Keluarga        31
+## 6                        Ekonomi Syariah        28
+## 20             Pendidikan Bahasa Inggris        24
+## 21                    Pendidikan Biologi        23
+## 13              Manajemen Bisnis Syariah        21
+## 1                      Akuntansi Syariah        19
+## 4              Bimbingan Konseling Islam        19
+## 5                                Biologi        19
+## 9                      Hukum Tata Negara        19
+## 27                       Psikologi Islam        19
+## 26                     Perbankan Syariah        17
+## 24                 Pendidikan Matematika        16
+## 15            Manajemen Pendidikan Islam        15
+## 17                Pendidikan Agama Islam        15
+## 22                     Pendidikan Fisika        14
+## 14                      Manajemen Dakwah        13
+## 19                Pendidikan Bahasa Arab        11
+## 7                          Hukum Ekonomi         9
+## 12        Komunikasi dan Penyiaran Islam         9
+## 25         Pengembangan Masyarakat Islam         8
+## 10               Ilmu Alquran dan Tafsir         7
+## 31                     Studi Agama-Agama         7
+## 3                Bimbingan dan Konseling         6
+## 18             Pendidikan Anak Usia Dini         6
+## 29                      Sistem Informasi         6
+## 2              Aqidah dan Filsafat Islam         3
+## 11 Ilmu Perpustakaan dan Informasi Islam         3
+## 16               Pemikiran Politik Islam         3
+## 23   Pendidikan Guru Madrasah Ibtidaiyah         3
+## 30                       Sosiologi Agama         3
+## 28               Sejarah Peradaban Islam         2
+## 32               Tasawuf dan Psikoterapi         2
 ```
 
 Berikut adalah visualisasi menggunakan grafik batang biasa:
 
-
-``` r
-ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
-  geom_bar(stat = "identity", fill = "#3498db", width = 0.8) +
-  theme_minimal() +
-  labs(
-    title = "Distribusi Mahasiswa per Fakultas (Grafik Batang)",
-    x = "Fakultas",
-    y = "Frekuensi"
-  ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
-```
-
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-bar-fakultas-1.png" alt="Grafik batang fakultas mahasiswa UINRIL" width="85%" />
-<p class="caption">(\#fig:fig-bar-fakultas)Grafik batang fakultas mahasiswa UINRIL</p>
+<img src="_main_files/figure-html/fig-bar-prodi-1.png" alt="Grafik batang program studi mahasiswa UINRIL" width="85%" />
+<p class="caption">(\#fig:fig-bar-prodi)Grafik batang program studi mahasiswa UINRIL</p>
 </div>
 
 Sekarang bandingkan dengan grafik lollipop:
 
-
-``` r
-ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
-  geom_segment(aes(x = Fakultas, xend = Fakultas, y = 0, yend = Frekuensi),
-    color = "#95a5a6", size = 0.5
-  ) +
-  geom_point(color = "#e74c3c", size = 3) +
-  theme_minimal() +
-  labs(
-    title = "Distribusi Mahasiswa per Fakultas (Grafik Lollipop)",
-    x = "Fakultas",
-    y = "Frekuensi"
-  ) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
-```
-
 <div class="figure" style="text-align: center">
-<img src="_main_files/figure-html/fig-lollipop-fakultas-1.png" alt="Grafik lollipop fakultas mahasiswa UINRIL" width="85%" />
-<p class="caption">(\#fig:fig-lollipop-fakultas)Grafik lollipop fakultas mahasiswa UINRIL</p>
+<img src="_main_files/figure-html/fig-lollipop-prodi-1.png" alt="Grafik lollipop program studi mahasiswa UINRIL" width="85%" />
+<p class="caption">(\#fig:fig-lollipop-prodi)Grafik lollipop program studi mahasiswa UINRIL</p>
 </div>
 
 **Perbandingan:** Pada grafik lollipop, setiap kategori lebih mudah dibedakan karena hanya tiang tipis dan titik yang mewakili nilai, sehingga menghindari efek visual yang berlebihan (Moiré). Grafik lollipop sangat cocok untuk dataset dengan banyak kategori seperti ini, karena lebih ringkas dan tetap informatif. Sementara grafik batang biasa terlihat lebih padat dan dapat menimbulkan kesulitan dalam membaca data ketika batang-batangnya berdekatan.
@@ -2662,22 +2620,6 @@ Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
 Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
 
 
-``` r
-# Install package treemap jika belum ada
-# install.packages('treemap')
-library(treemap)
-
-# Memuat data
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
-
-# Membuat tabel kontingensi dan mengubahnya ke data frame
-tabel_moda_jk <- as.data.frame(table(data_uinril$Jenis.Kelamin, data_uinril$kendaraan.utama))
-colnames(tabel_moda_jk) <- c("Jenis_Kelamin", "Moda_Transportasi", "Frekuensi")
-
-# Menampilkan tabel
-tabel_moda_jk
-```
-
 ```
 ##    Jenis_Kelamin              Moda_Transportasi Frekuensi
 ## 1      Laki-laki                  Berjalan Kaki         1
@@ -2695,22 +2637,6 @@ tabel_moda_jk
 ```
 
 Dari tabel distribusi frekuensi tersebut, kita dapat membuat treemap:
-
-
-``` r
-treemap(tabel_moda_jk,
-  index = c("Moda_Transportasi", "Jenis_Kelamin"),
-  vSize = "Frekuensi",
-  type = "index",
-  title = "Komposisi Moda Transportasi Berdasarkan Jenis Kelamin",
-  fontsize.labels = c(12, 10),
-  fontcolor.labels = c("white", "white"),
-  bg.labels = 0,
-  border.col = "white",
-  border.lwds = 2,
-  palette = "Set2"
-)
-```
 
 <div class="figure" style="text-align: center">
 <img src="_main_files/figure-html/fig-treemap-moda-1.png" alt="Treemap moda transportasi berdasarkan jenis kelamin" width="80%" />
@@ -2915,10 +2841,10 @@ head(tabel_freq)
 
 ```
 ## 
-##        [0,4.44e+04] (4.44e+04,8.89e+04] (8.89e+04,1.33e+05] (1.33e+05,1.78e+05] 
-##                 318                  80                  13                   7 
-## (1.78e+05,2.22e+05] (2.22e+05,2.67e+05] 
-##                   7                   1
+##        [0,4.44e+04] (4.44e+04,8.89e+04] (8.89e+04,1.33e+05] 
+##                 318                  80                  13 
+## (1.33e+05,1.78e+05] (1.78e+05,2.22e+05] (2.22e+05,2.67e+05] 
+##                   7                   7                   1
 ```
 
 **Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
@@ -3191,15 +3117,161 @@ Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingka
 
 ::: rmdexercise
 
+## Soal Evaluasi 5 {.unnumbered}
+
+Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-4-eval-5-preview)Cuplikan data survei mahasiswa</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> KodeResp </th>
+   <th style="text-align:center;"> Usia </th>
+   <th style="text-align:center;"> Fakultas </th>
+   <th style="text-align:center;"> ThnMsk </th>
+   <th style="text-align:center;"> UangSaku </th>
+   <th style="text-align:center;"> Jarak </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 001 </td>
+   <td style="text-align:center;"> 22 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2020 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 19.27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 002 </td>
+   <td style="text-align:center;"> 25 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2020 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.58 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 003 </td>
+   <td style="text-align:center;"> 24 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 2021 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0.56 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 004 </td>
+   <td style="text-align:center;"> 19 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 2022 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 005 </td>
+   <td style="text-align:center;"> 23 </td>
+   <td style="text-align:center;"> 2 </td>
+   <td style="text-align:center;"> 2021 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 1.69 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 006 </td>
+   <td style="text-align:center;"> 20 </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 2020 </td>
+   <td style="text-align:center;"> 3 </td>
+   <td style="text-align:center;"> 1.37 </td>
+  </tr>
+</tbody>
+</table>
+
+Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:bab-4-eval-5-metadata)Metadata variabel survei mahasiswa</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Nama Variabel </th>
+   <th style="text-align:left;"> Deskripsi </th>
+   <th style="text-align:left;"> Nilai-nilai yang valid </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> `KodeResp` </td>
+   <td style="text-align:left;"> Nomor urut responden </td>
+   <td style="text-align:left;"> tiga digit angka, hingga jumlah responden minimal </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `Usia` </td>
+   <td style="text-align:left;"> Usia responden (tahun) </td>
+   <td style="text-align:left;"> 18 - ∞ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `Fakultas` </td>
+   <td style="text-align:left;"> Fakultas mahasiswa </td>
+   <td style="text-align:left;"> 1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `ThnMsk` </td>
+   <td style="text-align:left;"> Tahun masuk kuliah (Masehi) </td>
+   <td style="text-align:left;"> 2018 - 2022 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `UangSaku` </td>
+   <td style="text-align:left;"> Uang saku mahasiswa per bulan </td>
+   <td style="text-align:left;"> 1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> `Jarak` </td>
+   <td style="text-align:left;"> Jarak tempat tinggal mahasiswa dari kampus (km) </td>
+   <td style="text-align:left;"> 0 - ∞ </td>
+  </tr>
+</tbody>
+</table>
+
+1. Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut!
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:center;"> # </th>
+   <th style="text-align:center;"> Nama Variabel </th>
+   <th style="text-align:center;"> Tingkat Pengukuran </th>
+   <th style="text-align:center;"> Jenis Grafik yang Bisa Digunakan (bisa lebih dari 1) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> a </td>
+   <td style="text-align:center;"> `Fakultas` </td>
+   <td style="text-align:center;"> ... </td>
+   <td style="text-align:center;"> ... </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> b </td>
+   <td style="text-align:center;"> `Uang.Saku` </td>
+   <td style="text-align:center;"> ... </td>
+   <td style="text-align:center;"> ... </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> c </td>
+   <td style="text-align:center;"> `Jarak` </td>
+   <td style="text-align:center;"> ... </td>
+   <td style="text-align:center;"> ... </td>
+  </tr>
+</tbody>
+</table>
 
 
 :::
 
 
 
+
 <!--chapter:end:04-visualisasi-data.Rmd-->
 
-    # Pengantar Analisis Statistik Inferensial
+# Pengantar Analisis Statistik Inferensial
 
 ## Konsep Dasar
 
@@ -3587,8 +3659,8 @@ cor.test(pendidikan, kepuasan, method = "spearman")
 ```
 
 ```
-## Warning in cor.test.default(pendidikan, kepuasan, method = "spearman"): Cannot compute
-## exact p-value with ties
+## Warning in cor.test.default(pendidikan, kepuasan, method = "spearman"):
+## Cannot compute exact p-value with ties
 ```
 
 ```
@@ -3609,8 +3681,8 @@ cor.test(pendidikan, kepuasan, method = "kendall")
 ```
 
 ```
-## Warning in cor.test.default(pendidikan, kepuasan, method = "kendall"): Cannot compute
-## exact p-value with ties
+## Warning in cor.test.default(pendidikan, kepuasan, method = "kendall"): Cannot
+## compute exact p-value with ties
 ```
 
 ```
@@ -3657,7 +3729,7 @@ pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
 plot(pendapatan, pengeluaran)
 ```
 
-![](_main_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+![](_main_files/figure-html/unnamed-chunk-16-1.png)<!-- -->
 
 ``` r
 # Korelasi Pearson

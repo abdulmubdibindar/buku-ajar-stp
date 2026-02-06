@@ -1,5 +1,16 @@
 # Visualisasi Data Kuantitatif
 
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
+
+Setelah mempelajari bab ini, Anda diharapkan:
+
+1. mampu memilih visualisasi yang tepat sesuai dengan variabel yang akan disajikan dan informasi yang ingin disampaikan [STP-3.1]{.capaian}
+2. mampu menginterpretasikan suatu visualisasi data kuantitatif secara mendalam [STP-3.2]{.capaian}
+3. mampu menjelaskan pentingnya menentukan tingkat pengukuran untuk sebuah variabel dari kaitannya dengan analisis statistik deskriptif dan diagram yang dipilih untuk menyajikan informasi [STP-3.4]{.capaian}
+:::
+
+
 ## Konsep Dasar
 
 Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bentuk tabular/tabel menjadi bentuk grafis. Kita sering mendengar pepatah yang berbunyi *"a picture is worth a thousand words"* yang artinya kurang lebih "satu gambar bernilai seribu kata." Pepatah ini menggambarkan bahwa data yang disajikan dalam bentuk gambar/grafis dapat menampilkan banyak sekali informasi kepada audiens.
@@ -28,7 +39,7 @@ Terdapat dua jenis grafik batang: tegak dan mendatar. Grafik batang tegak disebu
 Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang, penjelasannya dapat dilihat di Studi Kasus di bawah.
 
 
-#### Grafik Batang Bertumpuk (Stacked Column/Bar Chart) {.materi-bar-chart}
+#### Grafik Batang Bertumpuk (Stacked Column/Bar Chart) {#materi-bar-chart}
 
 Grafik batang bertumpuk *(stacked bar/column chart)* digunakan untuk membandingkan komposisi dari beberapa kategori. Setiap batang mewakili nilai total, yang kemudian dipecah menjadi beberapa segmen untuk menunjukkan bagaimana kontribusi masing-masing subkategori membentuk total tersebut. Kategori kedua variabel tersebut dibuat bertumpukan. Misalnya sebaran pengguna kendaraan (mobil, motor, sepeda) berdasarkan jenis kelamin (laki-laki dan perempuan).
 
@@ -38,23 +49,31 @@ Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang b
 
 ### Studi Kasus: Visualisasi Moda Transportasi Mahasiswa dengan Diagram Batang  {.unnumbered}
 
-Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi, baru kemudian divisualisasikan.
+Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi (Tabel \@ref(tab:bab-4-diagram-batang)), baru kemudian divisualisasikan.
 
-```{r}
+```{r bab-4-diagram-batang, echo=FALSE, out.width='60%', fig.align='center'}
 # Memuat library
 library(tidyverse)
+library(knitr)
+library(kableExtra)
 
 # Memuat data
 data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 
 # Membuat tabel distribusi frekuensi untuk moda transportasi
 tabel_moda <- table(data_uinril$kendaraan.utama)
-tabel_moda
+
+# Format tabel
+kable(tabel_moda, col.names = c('Moda Transportasi', 'Frekuensi'), 
+      caption = 'Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung') %>%
+  kable_styling(bootstrap_options = c('striped', 'hover', 'condensed'), 
+                full_width = FALSE, position = 'center')
+
 ```
 
-Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (*column chart*):
+Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (*column chart*)
 
-```{r fig-column-moda, fig.cap='Grafik batang tegak distribusi moda transportasi', fig.align='center', out.width='70%'}
+```{r fig-column-moda, echo=FALSE, fig.cap='Grafik batang tegak distribusi moda transportasi', fig.align='center', out.width='70%'}
 barplot(tabel_moda,
   main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
   xlab = "Moda Transportasi",
@@ -66,7 +85,7 @@ barplot(tabel_moda,
 
 Atau dalam bentuk grafik batang mendatar (*bar chart*):
 
-```{r fig-bar-moda, fig.cap='Grafik batang mendatar distribusi moda transportasi', fig.align='center', out.width='70%'}
+```{r fig-bar-moda, echo=FALSE, fig.cap='Grafik batang mendatar distribusi moda transportasi', fig.align='center', out.width='70%'}
 barplot(tabel_moda,
   main = "Distribusi Moda Transportasi Mahasiswa UINRIL",
   xlab = "Frekuensi",
@@ -79,7 +98,7 @@ barplot(tabel_moda,
 
 Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin:
 
-```{r}
+```{r, echo=FALSE}
 # Membuat tabel kontingensi (distribusi frekuensi dua variabel)
 tabel_moda_jk <- table(data_uinril$Jenis.Kelamin, data_uinril$kendaraan.utama)
 tabel_moda_jk
@@ -87,7 +106,7 @@ tabel_moda_jk
 
 Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
 
-```{r fig-stacked-bar, fig.cap='Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='75%'}
+```{r fig-stacked-bar, echo=FALSE, fig.cap='Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='75%'}
 barplot(tabel_moda_jk,
   main = "Moda Transportasi Berdasarkan Jenis Kelamin",
   xlab = "Moda Transportasi",
@@ -108,55 +127,59 @@ barplot(tabel_moda_jk,
 
 Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data direpresentasikan oleh tiang-tiang berujung lingkaran yang menyerupai permen loli. Penggunaannya sangat cocok untuk data berjumlah banyak guna menghindari efek Moiré (dibaca `moarey') @wikipedia2025moire. Efek Moiré adalah ilusi optik pergerakan benda yang posisinya berdekatan dan membentuk sebuah kisi (fringe) seperti yang ditunjukkan Gambar \@ref(fig:contoh-moire), sehingga dapat menyulitkan pembaca grafik.
 
+```{r contoh-moire, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Contoh efek Moiré pada grafik batang'}
+knitr::include_graphics('images/contoh-moire.png')
+```
+
 
 ::: rmdkasus
 
 ### Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang {.unnumbered}
 
-Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data fakultas mahasiswa UINRIL.
+Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
 
-```{r}
+```{r, echo=FALSE}
 # Install package ggplot2 jika belum ada
 # install.packages('ggplot2')
 library(ggplot2)
 
-# Memuat data dan membuat tabel frekuensi fakultas
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
-tabel_fakultas <- as.data.frame(table(data_uinril$Fakultas))
-colnames(tabel_fakultas) <- c("Fakultas", "Frekuensi")
+# Memuat data dan membuat tabel frekuensi prodi
+data_uinril <- read.csv2('datasets/DataUtama_mhsUINRIL.csv')
+tabel_prodi <- as.data.frame(table(data_uinril$Prodi))
+colnames(tabel_prodi) <- c('Prodi', 'Frekuensi')
 
 # Mengurutkan berdasarkan frekuensi
-tabel_fakultas <- tabel_fakultas[order(tabel_fakultas$Frekuensi, decreasing = TRUE), ]
-tabel_fakultas
+tabel_prodi <- tabel_prodi[order(tabel_prodi$Frekuensi, decreasing = TRUE), ]
+tabel_prodi
 ```
 
 Berikut adalah visualisasi menggunakan grafik batang biasa:
 
-```{r fig-bar-fakultas, fig.cap='Grafik batang fakultas mahasiswa UINRIL', fig.align='center', out.width='85%'}
-ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
-  geom_bar(stat = "identity", fill = "#3498db", width = 0.8) +
+```{r fig-bar-prodi, echo=FALSE, fig.cap='Grafik batang program studi mahasiswa UINRIL', fig.align='center', out.width='85%'}
+ggplot(tabel_prodi, aes(x = reorder(Prodi, -Frekuensi), y = Frekuensi)) +
+  geom_bar(stat = 'identity', fill = '#3498db', width = 0.8) +
   theme_minimal() +
   labs(
-    title = "Distribusi Mahasiswa per Fakultas (Grafik Batang)",
-    x = "Fakultas",
-    y = "Frekuensi"
+    title = 'Distribusi Mahasiswa per Program Studi (Grafik Batang)',
+    x = 'Program Studi',
+    y = 'Frekuensi'
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
 ```
 
 Sekarang bandingkan dengan grafik lollipop:
 
-```{r fig-lollipop-fakultas, fig.cap='Grafik lollipop fakultas mahasiswa UINRIL', fig.align='center', out.width='85%'}
-ggplot(tabel_fakultas, aes(x = reorder(Fakultas, -Frekuensi), y = Frekuensi)) +
-  geom_segment(aes(x = Fakultas, xend = Fakultas, y = 0, yend = Frekuensi),
-    color = "#95a5a6", size = 0.5
+```{r fig-lollipop-prodi, echo=FALSE, fig.cap='Grafik lollipop program studi mahasiswa UINRIL', fig.align='center', out.width='85%'}
+ggplot(tabel_prodi, aes(x = reorder(Prodi, -Frekuensi), y = Frekuensi)) +
+  geom_segment(aes(x = Prodi, xend = Prodi, y = 0, yend = Frekuensi),
+    color = '#95a5a6', size = 0.5
   ) +
-  geom_point(color = "#e74c3c", size = 3) +
+  geom_point(color = '#e74c3c', size = 3) +
   theme_minimal() +
   labs(
-    title = "Distribusi Mahasiswa per Fakultas (Grafik Lollipop)",
-    x = "Fakultas",
-    y = "Frekuensi"
+    title = 'Distribusi Mahasiswa per Program Studi (Grafik Lollipop)',
+    x = 'Program Studi',
+    y = 'Frekuensi'
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
 ```
@@ -177,7 +200,7 @@ Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
 
 Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
 
-```{r}
+```{r, echo=FALSE}
 # Install package treemap jika belum ada
 # install.packages('treemap')
 library(treemap)
@@ -195,7 +218,7 @@ tabel_moda_jk
 
 Dari tabel distribusi frekuensi tersebut, kita dapat membuat treemap:
 
-```{r fig-treemap-moda, fig.cap='Treemap moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='80%'}
+```{r fig-treemap-moda, echo=FALSE, fig.cap='Treemap moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='80%'}
 treemap(tabel_moda_jk,
   index = c("Moda_Transportasi", "Jenis_Kelamin"),
   vSize = "Frekuensi",
@@ -582,10 +605,82 @@ Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingka
 knitr::include_graphics('images/simpulan-memilih-visualisasi.png')
 ```
 
+
+
 ::: rmdexercise
 
+## Soal Evaluasi 5 {.unnumbered}
 
+Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
+
+```{r bab-4-eval-5-preview, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+preview_data <- data.frame(
+  KodeResp = c('001', '002', '003', '004', '005', '006'),
+  Usia = c(22, 25, 24, 19, 23, 20),
+  Fakultas = c(1, 1, 2, 3, 2, 1),
+  ThnMsk = c(2020, 2020, 2021, 2022, 2021, 2020),
+  UangSaku = c(2, 1, 1, 1, 1, 3),
+  Jarak = c(19.27, 0.58, 0.56, 1.05, 1.69, 1.37)
+)
+
+kable(preview_data, format = 'html', align = 'c',
+      caption = 'Cuplikan data survei mahasiswa') %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+```
+
+Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
+
+```{r bab-4-eval-5-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+metadata_soal <- data.frame(
+  `Nama Variabel` = c('`KodeResp`', '`Usia`', '`Fakultas`', '`ThnMsk`', '`UangSaku`', '`Jarak`'),
+  Deskripsi = c('Nomor urut responden', 'Usia responden (tahun)', 'Fakultas mahasiswa', 'Tahun masuk kuliah (Masehi)', 'Uang saku mahasiswa per bulan', 'Jarak tempat tinggal mahasiswa dari kampus (km)'),
+  `Nilai-nilai yang valid` = c(
+  ' tiga digit angka, hingga jumlah responden minimal', 
+  ' 18 - &infin;', 
+  '1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi', 
+  '2018 - 2022',
+  '1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta',
+  '0 - &infin;')
+)
+
+kable(metadata_soal, format = 'html', escape = FALSE,
+      col.names = c('Nama Variabel', 'Deskripsi', 'Nilai-nilai yang valid'),
+      caption = 'Metadata variabel survei mahasiswa') %>%
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+```
+
+1. Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut! [STP-3.1]{.capaian}
+
+  ```{r bab-4-eval-5-jawaban-1, echo=FALSE, out.width='50%', fig.align='center'}
+  library(knitr)
+  library(kableExtra)
+
+  jawaban_tabel <- data.frame(
+    No = c('a', 'b', 'c'),
+    Variabel = c('`Usia`','`Fakultas`', '`UangSaku`', '`ThnMsk`','`Jarak`'),
+    Tingkat = c('...', '...', '...', '...', '...'),
+    Grafik = c('...', '...', '...', '...', '...')
+  )
+
+  kable(jawaban_tabel,
+    format = 'html', align = 'c',
+    col.names = c('#', 'Nama Variabel', 'Tingkat Pengukuran', 'Jenis Grafik yang Bisa Digunakan (bisa lebih dari 1)')) %>%
+    kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+  ```
+
+2. Tentukan jenis grafik yang sesuai untuk beberapa tujuan visualisasi berikut [STP-3.2]{.capaian}:
+
+  a. menampilkan distribusi frekuensi dari variabel `Fakultas`
+  b. menunjukkan 
+  c. 
 
 :::
+
 
 
