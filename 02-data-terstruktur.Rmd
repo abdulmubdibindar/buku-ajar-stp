@@ -77,7 +77,7 @@ perbandingan <- data.frame(
   check.names = FALSE
 )
 
-kable(perbandingan, format = 'html', escape = FALSE, 
+kbl(perbandingan, format = 'html', escape = FALSE, 
       col.names = c('Jenis Kesalahan', 'Data Tidak Rapi (Salah)', 'Data Rapi (Benar)')) %>%
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
   column_spec(1, bold = TRUE, width = '20%') %>%
@@ -105,7 +105,7 @@ tabel_1_3 <- data.frame(
   Income_bln = c(3.3, 6.0, 3.5, 27.0)
 )
 
-kable(tabel_1_3, format = 'html', escape = FALSE, 
+kbl(tabel_1_3, format = 'html', escape = FALSE, 
       col.names = c('ID_rumah', 'Usia_KK', 'Jml_anggota', 'Luas_rumah', 'Income_bln')) %>%
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
   column_spec(1, bold = TRUE, width = '20%') %>%
@@ -217,7 +217,7 @@ rancangan <- data.frame(
   check.names = FALSE
 )
 
-kable(rancangan, format = 'html', escape = FALSE, 
+kbl(rancangan, format = 'html', escape = FALSE, 
       col.names = c('Variabel', 'Nama Panggilan', 'Penjelasan'),
       caption = 'Penelaahan tingkat pengukuran variabel penelitian') %>%
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
@@ -238,7 +238,7 @@ metadata <- data.frame(
   check.names = FALSE
 )
 
-kable(metadata, format = 'html', escape = FALSE, 
+kbl(metadata, format = 'html', escape = FALSE, 
       col.names = c('Variabel', 'Nama Panggilan', 'Tingkat Pengukuran', 'Satuan', 'Nilai yang mungkin'),
       caption = 'Metadata variabel penelitian') %>%
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
@@ -263,7 +263,7 @@ metadata_2 <- data.frame(
   check.names = FALSE
 )
 
-kable(metadata_2, format = 'html', escape = FALSE, 
+kbl(metadata_2, format = 'html', escape = FALSE, 
       col.names = c('Variabel', 'Nama Panggilan', 'Tingkat Pengukuran', 'Satuan', 'Nilai yang mungkin'),
       caption = 'Metadata variabel penelitian yang diubah') %>%
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
@@ -292,7 +292,7 @@ preview_data <- data.frame(
   Jarak = c(19.27, 0.58, 0.56, 1.05, 1.69, 1.37)
 )
 
-kable(preview_data, format = 'html', align = 'c',
+kbl(preview_data, format = 'html', align = 'c',
       caption = 'Cuplikan data survei mahasiswa') %>%
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
 ```
@@ -315,7 +315,7 @@ metadata_soal <- data.frame(
   '0 - &infin;')
 )
 
-kable(metadata_soal, format = 'html', escape = FALSE,
+kbl(metadata_soal, format = 'html', escape = FALSE,
       col.names = c('Nama Variabel', 'Deskripsi', 'Nilai-nilai yang valid'),
       caption = 'Metadata variabel survei mahasiswa') %>%
   kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)

@@ -17,7 +17,7 @@ Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bent
 
 Sajian data dalam bentuk gambar disebut juga **grafik** atau **diagram** *(chart)*. Jenis grafik atau diagram yang digunakan sangat bergantung pada jenis dan tingkat pengukuran variabel yang akan divisualisasikan.
 
-Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs @datatoviz atau @Ferdio.
+Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs [From data to Viz](https://www.data-to-viz.com/) atau [Data Viz Project](https://datavizproject.com/).
 
 
 ## Jenis-jenis Diagram
@@ -62,30 +62,33 @@ data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 
 # Membuat tabel distribusi frekuensi untuk moda transportasi
 tabel_moda <- data_uinril |>
-  count(kendaraan.utama, name = 'Frekuensi')
+  count(kendaraan.utama, name = "Frekuensi")
 
 # Format tabel
-kable(tabel_moda, col.names = c('Moda Transportasi', 'Frekuensi'), 
-      caption = 'Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung') %>%
-  kable_styling(bootstrap_options = c('striped', 'hover', 'condensed'), 
-                full_width = FALSE, position = 'center')
-
+kbl(tabel_moda,
+  col.names = c("Moda Transportasi", "Frekuensi"),
+  caption = "Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung"
+) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE, position = "center"
+  )
 ```
 
 Setelah mendapatkan tabel distribusi frekuensi, kita dapat membuat grafik batang tegak (*column chart*)
 
 ```{r fig-column-moda, echo=FALSE, fig.cap='Grafik batang tegak distribusi moda transportasi', fig.align='center', out.width='75%'}
 ggplot(tabel_moda, aes(x = kendaraan.utama, y = Frekuensi)) +
-  geom_col(fill = '#3498db') +
+  geom_col(fill = "#3498db") +
   theme_minimal() +
   labs(
-    title = 'Distribusi Moda Transportasi Mahasiswa UINRIL',
-    x = 'Moda Transportasi',
-    y = 'Frekuensi'
+    title = "Distribusi Moda Transportasi Mahasiswa UINRIL",
+    x = "Moda Transportasi",
+    y = "Frekuensi"
   ) +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
-    plot.title = element_text(face = 'bold', hjust = 0.5)
+    plot.title = element_text(face = "bold", hjust = 0.5)
   )
 ```
 
@@ -93,15 +96,15 @@ Atau dalam bentuk grafik batang mendatar (*bar chart*):
 
 ```{r fig-bar-moda, echo=FALSE, fig.cap='Grafik batang mendatar distribusi moda transportasi', fig.align='center', out.width='75%'}
 ggplot(tabel_moda, aes(x = Frekuensi, y = kendaraan.utama)) +
-  geom_col(fill = '#e74c3c') +
+  geom_col(fill = "#e74c3c") +
   theme_minimal() +
   labs(
-    title = 'Distribusi Moda Transportasi Mahasiswa UINRIL',
-    x = 'Frekuensi',
-    y = 'Moda Transportasi'
+    title = "Distribusi Moda Transportasi Mahasiswa UINRIL",
+    x = "Frekuensi",
+    y = "Moda Transportasi"
   ) +
   theme(
-    plot.title = element_text(face = 'bold', hjust = 0.5)
+    plot.title = element_text(face = "bold", hjust = 0.5)
   )
 ```
 
@@ -110,20 +113,22 @@ Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kit
 ```{r tab-distribusi-2-var, echo=FALSE, message=FALSE, warning=FALSE}
 # Membuat tabel kontingensi (distribusi frekuensi dua variabel)
 tabel_moda_jk <- data_uinril |>
-  count(Jenis.Kelamin, kendaraan.utama, name = 'Frekuensi') |>
+  count(Jenis.Kelamin, kendaraan.utama, name = "Frekuensi") |>
   pivot_wider(names_from = kendaraan.utama, values_from = Frekuensi, values_fill = 0)
 
 # Format tabel
-kable(
+kbl(
   tabel_moda_jk,
-  col.names = c('Jenis Kelamin', 'Berjalan Kaki', 'Kendaraan Bermotor (menumpang)',
-  'Mobil Pribadi', 'Sepeda', 'Sepeda Motor Pribadi', 'Transportasi Online'),
-  caption = 'Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung berdasarkan Jenis Kelamin'
+  col.names = c(
+    "Jenis Kelamin", "Berjalan Kaki", "Kendaraan Bermotor (menumpang)",
+    "Mobil Pribadi", "Sepeda", "Sepeda Motor Pribadi", "Transportasi Online"
+  ),
+  caption = "Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung berdasarkan Jenis Kelamin"
 ) %>%
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed'),
+    bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
-    position = 'center'
+    position = "center"
   )
 ```
 
@@ -132,22 +137,22 @@ Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
 ```{r fig-stacked-bar, echo=FALSE, fig.cap='Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='75%'}
 # Konversi data ke format long untuk ggplot2
 tabel_moda_jk_long <- data_uinril |>
-  count(Jenis.Kelamin, kendaraan.utama, name = 'Frekuensi')
+  count(Jenis.Kelamin, kendaraan.utama, name = "Frekuensi")
 
 ggplot(tabel_moda_jk_long, aes(x = kendaraan.utama, y = Frekuensi, fill = Jenis.Kelamin)) +
-  geom_col(position = 'stack') +
+  geom_col(position = "stack") +
   theme_minimal() +
   labs(
-    title = 'Moda Transportasi Berdasarkan Jenis Kelamin',
-    x = 'Moda Transportasi',
-    y = 'Frekuensi',
-    fill = 'Jenis Kelamin'
+    title = "Moda Transportasi Berdasarkan Jenis Kelamin",
+    x = "Moda Transportasi",
+    y = "Frekuensi",
+    fill = "Jenis Kelamin"
   ) +
-  scale_fill_manual(values = c('#9b59b6', '#f39c12')) +
+  scale_fill_manual(values = c("#9b59b6", "#f39c12")) +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1, size = 9),
-    plot.title = element_text(face = 'bold', hjust = 0.5),
-    legend.position = 'top'
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    legend.position = "top"
   )
 ```
 
@@ -161,7 +166,7 @@ ggplot(tabel_moda_jk_long, aes(x = kendaraan.utama, y = Frekuensi, fill = Jenis.
 Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data direpresentasikan oleh tiang-tiang berujung lingkaran yang menyerupai permen loli. Penggunaannya sangat cocok untuk data berjumlah banyak guna menghindari efek Moiré (dibaca `moarey') @wikipedia2025moire. Efek Moiré adalah ilusi optik pergerakan benda yang posisinya berdekatan dan membentuk sebuah kisi (fringe) seperti yang ditunjukkan Gambar \@ref(fig:contoh-moire), sehingga dapat menyulitkan pembaca grafik.
 
 ```{r contoh-moire, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Contoh efek Moiré pada grafik batang'}
-knitr::include_graphics('images/contoh-moire.png')
+knitr::include_graphics("images/contoh-moire.png")
 ```
 
 
@@ -177,25 +182,25 @@ Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilk
 library(ggplot2)
 
 # Memuat data dan membuat tabel frekuensi prodi
-data_uinril <- read.csv2('datasets/DataUtama_mhsUINRIL.csv')
-tabel_prodi <- data_uinril |> 
-  count(Prodi, name = 'Frekuensi') |>
+data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+tabel_prodi <- data_uinril |>
+  count(Prodi, name = "Frekuensi") |>
   arrange(desc(Frekuensi))
 
 # Format tabel (hanya 6 teratas)
-kable(
+kbl(
   head(tabel_prodi, 6),
-  col.names = c('Nama Program Studi', 'Frekuensi'),
-  caption = 'Distribusi Frekuensi Mahasiswa UIN Raden Intan Lampung Per Program Studi'
+  col.names = c("Nama Program Studi", "Frekuensi"),
+  caption = "Distribusi Frekuensi Mahasiswa UIN Raden Intan Lampung Per Program Studi"
 ) %>%
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed'),
+    bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
-    position = 'center'
+    position = "center"
   ) %>%
   footnote(
-    general = paste0('Menampilkan 6 dari ', nrow(tabel_prodi), ' program studi'),
-    general_title = 'Catatan:',
+    general = paste0("Menampilkan 6 dari ", nrow(tabel_prodi), " program studi"),
+    general_title = "Catatan:",
     footnote_as_chunk = TRUE
   )
 ```
@@ -204,12 +209,12 @@ Berikut adalah visualisasi menggunakan grafik batang biasa:
 
 ```{r fig-bar-prodi, echo=FALSE, fig.cap='Grafik batang program studi mahasiswa UINRIL', fig.align='center', out.width='85%'}
 ggplot(tabel_prodi, aes(x = reorder(Prodi, -Frekuensi), y = Frekuensi)) +
-  geom_bar(stat = 'identity', fill = '#3498db', width = 0.8) +
+  geom_bar(stat = "identity", fill = "#3498db", width = 0.8) +
   theme_minimal() +
   labs(
-    title = 'Distribusi Mahasiswa per Program Studi (Grafik Batang)',
-    x = 'Program Studi',
-    y = 'Frekuensi'
+    title = "Distribusi Mahasiswa per Program Studi (Grafik Batang)",
+    x = "Program Studi",
+    y = "Frekuensi"
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
 ```
@@ -220,15 +225,15 @@ Sekarang bandingkan dengan grafik lollipop:
 ggplot(tabel_prodi, aes(x = reorder(Prodi, -Frekuensi), y = Frekuensi)) +
   geom_segment(
     aes(y = 0, yend = Frekuensi),
-    color = '#95a5a6',
+    color = "#95a5a6",
     size = 0.5
   ) +
-  geom_point(color = '#e74c3c', size = 3) +
+  geom_point(color = "#e74c3c", size = 3) +
   theme_minimal() +
   labs(
-    title = 'Distribusi Mahasiswa per Program Studi (Grafik Lollipop)',
-    x = 'Program Studi',
-    y = 'Frekuensi'
+    title = "Distribusi Mahasiswa per Program Studi (Grafik Lollipop)",
+    x = "Program Studi",
+    y = "Frekuensi"
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
 ```
@@ -259,19 +264,19 @@ data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 
 # Membuat tabel kontingensi menggunakan dplyr
 tabel_moda_jk <- data_uinril |>
-  count(Jenis.Kelamin, kendaraan.utama, name = 'Frekuensi') |>
+  count(Jenis.Kelamin, kendaraan.utama, name = "Frekuensi") |>
   rename(Jenis_Kelamin = Jenis.Kelamin, Moda_Transportasi = kendaraan.utama)
 
 # Format tabel dengan kable
-kable(
+kbl(
   tabel_moda_jk,
-  col.names = c('Jenis Kelamin', 'Moda Transportasi', 'Frekuensi'),
-  caption = 'Distribusi Frekuensi Moda Transportasi berdasarkan Jenis Kelamin untuk Treemap'
+  col.names = c("Jenis Kelamin", "Moda Transportasi", "Frekuensi"),
+  caption = "Distribusi Frekuensi Moda Transportasi berdasarkan Jenis Kelamin untuk Treemap"
 ) %>%
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed'),
+    bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
-    position = 'center'
+    position = "center"
   )
 ```
 
@@ -314,18 +319,18 @@ data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 
 # Membuat tabel distribusi frekuensi untuk moda transportasi
 tabel_moda <- data_uinril |>
-  count(kendaraan.utama, name = 'Frekuensi')
+  count(kendaraan.utama, name = "Frekuensi")
 
 # Format tabel dengan kable
-kable(
+kbl(
   tabel_moda,
-  col.names = c('Moda Transportasi', 'Frekuensi'),
-  caption = 'Distribusi Frekuensi Moda Transportasi untuk Grafik Pai'
+  col.names = c("Moda Transportasi", "Frekuensi"),
+  caption = "Distribusi Frekuensi Moda Transportasi untuk Grafik Pai"
 ) %>%
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed'),
+    bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
-    position = 'center'
+    position = "center"
   )
 ```
 
@@ -336,21 +341,23 @@ Dari tabel distribusi frekuensi, kita dapat membuat grafik pai (*pie chart*):
 tabel_moda_pct <- tabel_moda |>
   mutate(
     Persentase = round(100 * Frekuensi / sum(Frekuensi), 1),
-    Label = paste0(kendaraan.utama, '\n', Persentase, '%')
+    Label = paste0(kendaraan.utama, "\n", Persentase, "%")
   )
 
-ggplot(tabel_moda_pct, aes(x = '', y = Frekuensi, fill = kendaraan.utama)) +
-  geom_bar(stat = 'identity', width = 1, color = 'white') +
-  coord_polar(theta = 'y') +
+ggplot(tabel_moda_pct, aes(x = "", y = Frekuensi, fill = kendaraan.utama)) +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  coord_polar(theta = "y") +
   theme_void() +
-  labs(title = 'Distribusi Moda Transportasi Mahasiswa UINRIL') +
+  labs(title = "Distribusi Moda Transportasi Mahasiswa UINRIL") +
   geom_text(aes(label = Persentase),
     position = position_stack(vjust = 0.5),
-    color = 'white', size = 4
+    color = "white", size = 4
   ) +
-  scale_fill_manual(values = c('#3498db', '#e74c3c', '#f39c12', '#2ecc71', '#9b59b6', '#34495e'),
-                    name = 'Moda Transportasi') +
-  theme(plot.title = element_text(face = 'bold', hjust = 0.5))
+  scale_fill_manual(
+    values = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6", "#34495e"),
+    name = "Moda Transportasi"
+  ) +
+  theme(plot.title = element_text(face = "bold", hjust = 0.5))
 ```
 
 Untuk membuat grafik donat (*donut chart*), kita mengubah jenis kategori menjadi juring-juring lingkaran dan sudunya ditentukan dari proporsi frekuensi. Prosesnya sama dengan grafik pai, hanya saja kita di tengahnya ada ruang kosong yang dapat digunakan untuk informasi tambahan.
@@ -362,23 +369,25 @@ library(ggplot2)
 df_moda <- tabel_moda |>
   mutate(
     Persentase = round(100 * Frekuensi / sum(Frekuensi), 1),
-    Label = paste0(Persentase, '%')
+    Label = paste0(Persentase, "%")
   )
 
 # Membuat donut chart
 ggplot(df_moda, aes(x = 2, y = Frekuensi, fill = kendaraan.utama)) +
-  geom_bar(stat = 'identity', width = 1, color = 'white') +
-  coord_polar(theta = 'y') +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  coord_polar(theta = "y") +
   xlim(0.5, 2.5) +
   theme_void() +
-  labs(title = 'Distribusi Moda Transportasi (Donut Chart)') +
+  labs(title = "Distribusi Moda Transportasi (Donut Chart)") +
   geom_text(aes(label = Label),
     position = position_stack(vjust = 0.5),
-    color = 'white', size = 4
+    color = "white", size = 4
   ) +
-  scale_fill_manual(values = c('#3498db', '#e74c3c', '#f39c12', '#2ecc71', '#9b59b6', '#34495e'),
-                    name = 'Moda') +
-  theme(plot.title = element_text(face = 'bold', hjust = 0.5))
+  scale_fill_manual(
+    values = c("#3498db", "#e74c3c", "#f39c12", "#2ecc71", "#9b59b6", "#34495e"),
+    name = "Moda"
+  ) +
+  theme(plot.title = element_text(face = "bold", hjust = 0.5))
 ```
 
 **Interpretasi:** Baik grafik pai maupun donat menunjukkan proporsi penggunaan moda transportasi dengan jelas. Sepeda motor mendominasi dengan proporsi terbesar, diikuti oleh mobil dan angkutan umum. Grafik donat memberikan tampilan yang lebih modern dengan ruang kosong di tengahnya yang dapat digunakan untuk informasi tambahan.
@@ -422,9 +431,12 @@ Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam
 # Memuat data
 data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
 
+# Rescale biaya ke dalam ribuan
+data_itera$biaya.dalam.sepekan <- data_itera$biaya.dalam.sepekan / 1000
+
 # Melihat statistik deskriptif
 summary_stats <- data.frame(
-  Statistik = c('Min', 'Q1', 'Median', 'Mean', 'Q3', 'Max', 'NA'),
+  Statistik = c("Min", "Q1", "Median", "Mean", "Q3", "Max", "NA"),
   Nilai = c(
     min(data_itera$biaya.dalam.sepekan, na.rm = TRUE),
     quantile(data_itera$biaya.dalam.sepekan, 0.25, na.rm = TRUE),
@@ -436,80 +448,81 @@ summary_stats <- data.frame(
   )
 )
 
-kable(
+kbl(
   summary_stats,
-  col.names = c('Statistik', 'Nilai'),
-  caption = 'Statistik Deskriptif Biaya Perjalanan Mahasiswa ITERA',
+  col.names = c("Statistik", "Nilai (Rp ribu)"),
+  caption = "Statistik Deskriptif Biaya Perjalanan Mahasiswa ITERA (dalam ribuan rupiah)",
   digits = 2
 ) %>%
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed'),
+    bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
-    position = 'center'
+    position = "center"
   )
 ```
 
-Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (bin). R melakukan ini secara otomatis, tetapi kita juga bisa mengatur sendiri. Mari kita buat histogram dengan pengaturan bin otomatis:
+Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (*bin*). Perangkat lunak pengolah data statistik, contohnya bahasa pemrograman R, melakukan ini secara otomatis. Berikut adalah contoh pembuatan histogram dengan pengaturan *bin* otomatis:
 
-```{r , echo=FALSE, fig-hist-biaya-auto, fig.cap='Histogram biaya perjalanan (bin otomatis)', fig.align='center', out.width='75%'}
+```{r , echo=FALSE, fig-hist-biaya-auto, fig.cap='Histogram biaya perjalanan (bin otomatis) dalam ribuan rupiah', fig.align='center', out.width='75%'}
 ggplot(data_itera, aes(x = biaya.dalam.sepekan)) +
-  geom_histogram(fill = '#3498db', color = 'white', bins = 30) +
+  geom_histogram(fill = "#3498db", color = "white", bins = 30) +
   theme_minimal() +
   labs(
-    title = 'Distribusi Biaya Perjalanan Mahasiswa ITERA',
-    x = 'Biaya Perjalanan (Rp ribu)',
-    y = 'Frekuensi'
+    title = "Distribusi Biaya Perjalanan Mahasiswa ITERA",
+    x = "Biaya Perjalanan (Rp ribu)",
+    y = "Frekuensi"
   ) +
   theme(
-    plot.title = element_text(face = 'bold', hjust = 0.5)
+    plot.title = element_text(face = "bold", hjust = 0.5)
   )
 ```
 
 Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi dengan lebih detail:
 
-```{r , echo=FALSE, fig-hist-biaya-manual, fig.cap='Histogram biaya perjalanan (bin manual)', fig.align='center', out.width='75%'}
+```{r , echo=FALSE, fig-hist-biaya-manual, fig.cap='Histogram biaya perjalanan (bin manual) dalam ribuan rupiah', fig.align='center', out.width='75%'}
 # Membuat histogram dengan 15 bin
 ggplot(data_itera, aes(x = biaya.dalam.sepekan)) +
-  geom_histogram(bins = 15, fill = '#e74c3c', color = 'white') +
+  geom_histogram(bins = 15, fill = "#e74c3c", color = "white") +
   theme_minimal() +
   labs(
-    title = 'Distribusi Biaya Perjalanan (15 Bin)',
-    x = 'Biaya Perjalanan (Rp ribu)',
-    y = 'Frekuensi'
+    title = "Distribusi Biaya Perjalanan (15 Bin)",
+    x = "Biaya Perjalanan (Rp ribu)",
+    y = "Frekuensi"
   ) +
   theme(
-    plot.title = element_text(face = 'bold', hjust = 0.5)
+    plot.title = element_text(face = "bold", hjust = 0.5)
   )
 ```
 
-Untuk lebih memahami proses binning, mari kita buat tabel frekuensi manual:
+Untuk lebih memahami proses *binning*, mari kita buat tabel frekuensi manual:
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 # Membuat interval bin menggunakan dplyr
 data_itera_binned <- data_itera |>
   mutate(
-    bin = cut(biaya.dalam.sepekan, 
-              breaks = seq(0, max(biaya.dalam.sepekan, na.rm = TRUE), length.out = 10),
-              include.lowest = TRUE)
+    bin = cut(biaya.dalam.sepekan,
+      breaks = seq(0, max(biaya.dalam.sepekan, na.rm = TRUE), length.out = 10),
+      include.lowest = TRUE
+    )
   )
 
 # Membuat tabel frekuensi
 tabel_freq <- data_itera_binned |>
-  count(bin, name = 'Frekuensi')
+  count(bin, name = "Frekuensi")
 
-kable(
+kbl(
   head(tabel_freq, 6),
-  col.names = c('Interval Biaya', 'Frekuensi'),
-  caption = 'Tabel Frekuensi Biaya Perjalanan (6 Interval Pertama)'
+  col.names = c("Interval Biaya (Rp ribu)", "Frekuensi"),
+  caption = "Tabel Frekuensi Biaya Perjalanan dalam Ribuan Rupiah (6 Interval Pertama)"
 ) %>%
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed'),
+    bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
-    position = 'center'
+    position = "center"
   )
 ```
 
-**Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
+**Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah (perhatikan bahwa nilai biaya sudah dalam satuan ribu rupiah). Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
 
 :::
 
@@ -518,7 +531,12 @@ kable(
 
 Boxplot adalah grafik berbentuk kotak dan garis yang menampilkan ukuran penyebaran suatu variabel numerik secara grafis (Gambar \@ref(fig:jenis-boxplot)). Sebagaimana yang ditunjukkan oleh gambar tersebut, kotak dan garis pada boxplot dapat berjumlah satu atau lebih. Satu kotak dan garis menandakan hanya ada satu kategori objek dengan variabel numerik yang ditampilkan.
 
-Sementara itu, variabel numerik tersebut dikategorikan lagi berdasarkan suatu variabel kategoris, maka jumlah kotak dan garisnya bisa lebih dari satu.
+Sementara itu, jika variabel numerik tersebut dikategorikan lagi berdasarkan suatu variabel kategoris, maka jumlah kotak dan garisnya bisa lebih dari satu dan berjumlah sesuai dengan jumlah kategori objeknya.
+
+
+```{r jenis-boxplot, echo=FALSE, out.width='40%', fig.align='center', fig.cap='*Boxplot* yang terdiri atas dua kategori objek: A dan B'}
+knitr::include_graphics("figures/jenis-boxplot.png")
+```
 
 Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada kasus berikut.
 
@@ -546,7 +564,7 @@ data_gabung <- rbind(data_uinril, data_unila)
 
 # Melihat ringkasan data biaya perjalanan
 summary_stats <- data.frame(
-  Statistik = c('Min', 'Q1', 'Median', 'Mean', 'Q3', 'Max', 'NA'),
+  Statistik = c("Min", "Q1", "Median", "Mean", "Q3", "Max", "NA"),
   Nilai = c(
     min(data_gabung$biaya.dalam.sepekan, na.rm = TRUE),
     quantile(data_gabung$biaya.dalam.sepekan, 0.25, na.rm = TRUE),
@@ -558,16 +576,16 @@ summary_stats <- data.frame(
   )
 )
 
-kable(
+kbl(
   summary_stats,
-  col.names = c('Statistik', 'Nilai'),
-  caption = 'Statistik Deskriptif Biaya Perjalanan Gabungan (UINRIL & UNILA)',
+  col.names = c("Statistik", "Nilai"),
+  caption = "Statistik Deskriptif Biaya Perjalanan Gabungan (UINRIL & UNILA)",
   digits = 2
 ) %>%
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed'),
+    bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
-    position = 'center'
+    position = "center"
   )
 ```
 
@@ -575,14 +593,14 @@ Mari kita buat boxplot tunggal untuk biaya perjalanan UINRIL terlebih dahulu:
 
 ```{r fig-boxplot-single, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Boxplot biaya perjalanan mahasiswa UINRIL', fig.align='center', out.width='60%'}
 ggplot(data_uinril, aes(y = biaya.dalam.sepekan)) +
-  geom_boxplot(fill = '#3498db', color = '#2c3e50', width = 0.5) +
+  geom_boxplot(fill = "#3498db", color = "#2c3e50", width = 0.5) +
   theme_minimal() +
   labs(
-    title = 'Distribusi Biaya Perjalanan Mahasiswa UINRIL',
-    y = 'Biaya Perjalanan (Rp ribu)'
+    title = "Distribusi Biaya Perjalanan Mahasiswa UINRIL",
+    y = "Biaya Perjalanan (Rp ribu)"
   ) +
   theme(
-    plot.title = element_text(face = 'bold', hjust = 0.5),
+    plot.title = element_text(face = "bold", hjust = 0.5),
     axis.text.x = element_blank(),
     axis.title.x = element_blank()
   )
@@ -592,17 +610,17 @@ Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perja
 
 ```{r fig-boxplot-multiple, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Boxplot biaya perjalanan mahasiswa berdasarkan kampus', fig.align='center', out.width='75%'}
 ggplot(data_gabung, aes(x = Kampus_PT, y = biaya.dalam.sepekan, fill = Kampus_PT)) +
-  geom_boxplot(color = '#2c3e50') +
+  geom_boxplot(color = "#2c3e50") +
   theme_minimal() +
   labs(
-    title = 'Perbandingan Distribusi Biaya Perjalanan Antar Kampus',
-    x = 'Kampus',
-    y = 'Biaya Perjalanan (Rp ribu)'
+    title = "Perbandingan Distribusi Biaya Perjalanan Antar Kampus",
+    x = "Kampus",
+    y = "Biaya Perjalanan (Rp ribu)"
   ) +
-  scale_fill_manual(values = c('#3498db', '#e74c3c')) +
+  scale_fill_manual(values = c("#3498db", "#e74c3c")) +
   theme(
-    plot.title = element_text(face = 'bold', hjust = 0.5),
-    legend.position = 'none'
+    plot.title = element_text(face = "bold", hjust = 0.5),
+    legend.position = "none"
   )
 ```
 
@@ -612,8 +630,8 @@ ggplot(data_gabung, aes(x = Kampus_PT, y = biaya.dalam.sepekan, fill = Kampus_PT
 - **Kotak bagian bawah (Q1)**: Kuartil pertama, 25% data berada di bawah nilai ini
 - **Kotak bagian atas (Q3)**: Kuartil ketiga, 75% data berada di bawah nilai ini
 - **Tinggi kotak (IQR)**: Jarak interkuartil, menunjukkan rentang 50% data tengah
-- **Whiskers (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)
-- **Titik-titik di luar whiskers**: Outlier atau nilai ekstrem yang jauh dari sebagian besar data
+- ***Whiskers* (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)
+- **Titik-titik di luar *whiskers***: *Outlier* atau pencilan, yakni nilai-nilai ekstrem yang jauh dari sebagian besar data
 
 **Interpretasi:** Dari boxplot ganda terlihat bahwa distribusi biaya perjalanan mahasiswa UNILA memiliki median yang sedikit lebih tinggi dibandingkan UINRIL. Rentang interkuartil (tinggi kotak) UNILA juga lebih besar, menunjukkan variasi biaya perjalanan yang lebih beragam. Terdapat beberapa outlier pada kedua kampus yang menunjukkan ada mahasiswa dengan biaya perjalanan yang jauh lebih tinggi dari mayoritas. Informasi ini berguna untuk perencanaan fasilitas kampus seperti kantin atau transportasi yang disesuaikan dengan daya beli mahasiswa.
 
@@ -623,8 +641,15 @@ ggplot(data_gabung, aes(x = Kampus_PT, y = biaya.dalam.sepekan, fill = Kampus_PT
 
 Grafik ini memetakan nilai variabel angka yang masuk akal bisa diurutkan, yakni biasanya yang berupa deret waktu (time series). Garis menghubungkan masing-masing titik nilai pada tiap-tiap posisi untuk menegaskan perubahan nilainya. Gambar \@ref(fig:line-plot-area-plot) berikut mengilustrasikan data terstruktur yang membentuk line atau area plot.
 
-Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah garisnya diisi dengan warna yang sama dengan garis. Area plot biasanya digunakan untuk data numerik dengan dimensi waktu yang terdiri atas kategori-kategori.
+```{r line-plot-area-plot, echo=FALSE, fig.align='center', fig.cap='Ilustrasi line plot dan area plot serta data terstruktur yang membentuknya'}
+knitr::include_graphics("figures/diagram-garis-area.png")
+```
 
+Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah garisnya diisi dengan warna yang sama dengan garis. Area plot biasanya digunakan untuk data numerik dengan dimensi waktu yang terdiri atas kategori-kategori seperti yang ditunjukkan Gambar \@ref(fig:fig-area-plot-multi).
+
+```{r fig-area-plot-multi, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Ilustrasi area plot dengan tiga variabel'}
+knitr::include_graphics("figures/area-plot-lebih-dari-1.png")
+```
 
 #### Grafik Pencar *(Scatterplot)*
 
@@ -641,26 +666,29 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 library(tidyverse)
 
 # Memuat data
-data_itera <- read.csv2('datasets/DataUtama_mhsITERA.csv')
+data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
 
 # Konversi biaya perjalanan dan jarak (mengganti koma dengan titik, lalu ke numeric)
-data_itera$biaya.dalam.sepekan <- as.numeric(gsub(',', '.', data_itera$biaya.dalam.sepekan))
-data_itera$jarak <- as.numeric(gsub(',', '.', data_itera$jarak))
+data_itera$biaya.dalam.sepekan <- as.numeric(gsub(",", ".", data_itera$biaya.dalam.sepekan))
+data_itera$jarak <- as.numeric(gsub(",", ".", data_itera$jarak))
+
+# Rescale biaya ke dalam ribuan
+data_itera$biaya.dalam.sepekan <- data_itera$biaya.dalam.sepekan / 1000
 
 # Menghapus baris dengan nilai NA pada kedua variabel
 data_itera <- data_itera %>% drop_na(biaya.dalam.sepekan, jarak)
 
 # Melihat struktur data untuk memahami pemetaan ke scatterplot
-kable(
-  head(data_itera[, c('biaya.dalam.sepekan', 'jarak')], 10),
-  col.names = c('Biaya Perjalanan (Rp ribu)', 'Jarak Tempuh (km)'),
-  caption = 'Contoh Data Biaya Perjalanan dan Jarak Tempuh (10 Observasi Pertama)',
+kbl(
+  head(data_itera[, c("biaya.dalam.sepekan", "jarak")], 10),
+  col.names = c("Biaya Perjalanan (Rp ribu)", "Jarak Tempuh (km)"),
+  caption = "Contoh Data Biaya Perjalanan dan Jarak Tempuh dalam Ribuan Rupiah (10 Observasi Pertama)",
   digits = 2
 ) %>%
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed'),
+    bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
-    position = 'center'
+    position = "center"
   )
 ```
 
@@ -668,20 +696,20 @@ Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (
 
 Mari kita buat *scatterplot* menggunakan `ggplot2`:
 
-```{r fig-scatter-ggplot, echo=FALSE, message=FALSE, fig.cap='Scatterplot jarak tempuh vs biaya perjalanan', fig.align='center', out.width='75%'}
+```{r fig-scatter-ggplot, echo=FALSE, message=FALSE, fig.cap='Scatterplot jarak tempuh vs biaya perjalanan dalam ribuan rupiah', fig.align='center', out.width='75%'}
 library(ggplot2)
 
 ggplot(data_itera, aes(x = biaya.dalam.sepekan, y = jarak)) +
-  geom_point(color = '#3498db', alpha = 0.6, size = 3) +
-  geom_smooth(method = 'lm', se = TRUE, color = '#e74c3c', fill = '#e74c3c', alpha = 0.2) +
+  geom_point(color = "#3498db", alpha = 0.6, size = 3) +
+  geom_smooth(method = "lm", se = TRUE, color = "#e74c3c", fill = "#e74c3c", alpha = 0.2) +
   theme_minimal() +
   labs(
-    title = 'Hubungan Biaya Perjalanan dan Jarak Tempuh',
-    subtitle = 'Mahasiswa ITERA',
-    x = 'Biaya Perjalanan (Rp ribu)',
-    y = 'Jarak Tempuh (km)'
+    title = "Hubungan Biaya Perjalanan dan Jarak Tempuh",
+    subtitle = "Mahasiswa ITERA",
+    x = "Biaya Perjalanan (Rp ribu)",
+    y = "Jarak Tempuh (km)"
   ) +
-  theme(plot.title = element_text(face = 'bold', size = 14))
+  theme(plot.title = element_text(face = "bold", size = 14))
 ```
 
 **Hubungan data terstruktur dengan scatterplot:**
@@ -689,9 +717,9 @@ ggplot(data_itera, aes(x = biaya.dalam.sepekan, y = jarak)) +
 - Setiap **baris** dalam tabel data menjadi **satu titik** pada grafik
 - Nilai **kolom pertama** (biaya perjalanan) menentukan **posisi horizontal (X)** titik
 - Nilai **kolom kedua** (jarak tempuh) menentukan **posisi vertikal (Y)** titik
-- Titik di koordinat (50, 10) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu dan jarak tempuh 10 km
+- Titik di koordinat (50, 10) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu rupiah (nilai sudah dalam satuan ribu) dan jarak tempuh 10 km
 
-**Interpretasi:** Scatterplot menunjukkan adanya hubungan positif antara biaya perjalanan dan jarak tempuh mahasiswa ITERA. Mahasiswa yang tinggal lebih jauh dari kampus cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka memerlukan lebih banyak bahan bakar atau biaya transportasi umum. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa yang tinggal jauh dari kampus.
+**Interpretasi:** Scatterplot menunjukkan adanya hubungan positif antara biaya perjalanan (dalam ribuan rupiah) dan jarak tempuh mahasiswa ITERA. Mahasiswa yang tinggal lebih jauh dari kampus cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka memerlukan lebih banyak bahan bakar atau biaya transportasi umum. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa yang tinggal jauh dari kampus.
 
 :::
 
@@ -734,13 +762,13 @@ Beberapa contoh pertimbangan dalam memilih diagram berdasarkan tingkat pengukura
 1. **Data Ordinal**. Untuk data ordinal, Anda sangat disarankan untuk menggunakan **grafik batang** atau **grafik lollipop** yang diurutkan berdasarkan urutan kategori.
 2. **Data Metrik**. Histogram, *boxplot*, dan *scatterplot* adalah pilihan standar untuk visualisasi.
 
-Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingkat pengukuran variabel tersebut dapat dilihat pada Gambar \@ref(fig:simpulan-memilih-visualisasi) berikut.
+Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingkat pengukuran variabel tersebut dapat dilihat pada Gambar \@ref(fig:simpulan-memilih-visualisasi) berikut yang diambil dari @Crazyegg_2017.
 
-```{r simpulan-memilih-visualisasi, echo=FALSE, fig.cap='Panduan memilih jenis visualisasi', fig.align='center', out.width='60%'}
-knitr::include_graphics('images/simpulan-memilih-visualisasi.png')
+```{r simpulan-memilih-visualisasi, echo=FALSE, fig.cap='Panduan memilih jenis visualisasi', fig.align='center'}
+knitr::include_graphics("images/CrazyEgg-Diagram.webp")
 ```
 
-
+Silakan kerjakan soal-soal evaluasi berikut terkait visualisasi data kuantitatif untuk menguji pemahaman Anda terhadap penjelasan-penjelasan yang telah Anda pelajari.
 
 ::: rmdexercise
 
@@ -753,7 +781,7 @@ library(knitr)
 library(kableExtra)
 
 preview_data <- data.frame(
-  KodeResp = c('001', '002', '003', '004', '005', '006'),
+  KodeResp = c("001", "002", "003", "004", "005", "006"),
   Usia = c(22, 25, 24, 19, 23, 20),
   Fakultas = c(1, 1, 2, 3, 2, 1),
   ThnMsk = c(2020, 2020, 2021, 2022, 2021, 2020),
@@ -761,9 +789,11 @@ preview_data <- data.frame(
   Jarak = c(19.27, 0.58, 0.56, 1.05, 1.69, 1.37)
 )
 
-kable(preview_data, format = 'html', align = 'c',
-      caption = 'Cuplikan data survei mahasiswa') %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kbl(preview_data,
+  format = "html", align = "c",
+  caption = "Cuplikan data survei mahasiswa"
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
 ```
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
@@ -773,40 +803,44 @@ library(knitr)
 library(kableExtra)
 
 metadata_soal <- data.frame(
-  `Nama Variabel` = c('`KodeResp`', '`Usia`', '`Fakultas`', '`ThnMsk`', '`UangSaku`', '`Jarak`'),
-  Deskripsi = c('Nomor urut responden', 'Usia responden (tahun)', 'Fakultas mahasiswa', 'Tahun masuk kuliah (Masehi)', 'Uang saku mahasiswa per bulan', 'Jarak tempat tinggal mahasiswa dari kampus (km)'),
+  `Nama Variabel` = c("`KodeResp`", "`Usia`", "`Fakultas`", "`ThnMsk`", "`UangSaku`", "`Jarak`"),
+  Deskripsi = c("Nomor urut responden", "Usia responden (tahun)", "Fakultas mahasiswa", "Tahun masuk kuliah (Masehi)", "Uang saku mahasiswa per bulan", "Jarak tempat tinggal mahasiswa dari kampus (km)"),
   `Nilai-nilai yang valid` = c(
-  ' tiga digit angka, hingga jumlah responden minimal', 
-  ' 18 - &infin;', 
-  '1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi', 
-  '2018 - 2022',
-  '1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta',
-  '0 - &infin;')
+    " tiga digit angka, hingga jumlah responden minimal",
+    " 18 - &infin;",
+    "1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi",
+    "2018 - 2022",
+    "1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta",
+    "0 - &infin;"
+  )
 )
 
-kable(metadata_soal, format = 'html', escape = FALSE,
-      col.names = c('Nama Variabel', 'Deskripsi', 'Nilai-nilai yang valid'),
-      caption = 'Metadata variabel survei mahasiswa') %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kbl(metadata_soal,
+  format = "html", escape = FALSE,
+  col.names = c("Nama Variabel", "Deskripsi", "Nilai-nilai yang valid"),
+  caption = "Metadata variabel survei mahasiswa"
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
 ```
 
 1. Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut! [STP-3.1]{.capaian}
 
   ```{r bab-4-eval-5-jawaban-1, echo=FALSE, out.width='50%', fig.align='center'}
-  library(knitr)
-  library(kableExtra)
+library(knitr)
+library(kableExtra)
 
-  jawaban_tabel <- data.frame(
-    No = c('a', 'b', 'c', 'd', 'e'),
-    Variabel = c('`Usia`','`Fakultas`', '`UangSaku`', '`ThnMsk`','`Jarak`'),
-    Tingkat = c('...', '...', '...', '...', '...'),
-    Grafik = c('...', '...', '...', '...', '...')
-  )
+jawaban_tabel <- data.frame(
+  No = c("a", "b", "c", "d", "e"),
+  Variabel = c("`Usia`", "`Fakultas`", "`UangSaku`", "`ThnMsk`", "`Jarak`"),
+  Tingkat = c("...", "...", "...", "...", "..."),
+  Grafik = c("...", "...", "...", "...", "...")
+)
 
-  kable(jawaban_tabel,
-    format = 'html', align = 'c',
-    col.names = c('#', 'Nama Variabel', 'Tingkat Pengukuran', 'Jenis Grafik yang Bisa Digunakan (bisa lebih dari 1)')) %>%
-    kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kbl(jawaban_tabel,
+  format = "html", align = "c",
+  col.names = c("#", "Nama Variabel", "Tingkat Pengukuran", "Jenis Grafik yang Bisa Digunakan (bisa lebih dari 1)")
+) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
   ```
 
 2. Tentukan jenis grafik yang sesuai untuk beberapa tujuan visualisasi berikut [STP-3.2]{.capaian}:

@@ -20,12 +20,14 @@ trigger: always_on
 3. Use out.width = '60%' and fig.align = "center" to control image size and alignment
 4. Use fig.cap to add image caption
 5. Use echo=FALSE to hide code
+6. For data viz, use ggplot2 mainly to construct the diagrams
 
 ### Tables
 
-1. Use function `kableExtra` or `kable` to create tables
+1. Use function `kableExtra::kbl` create tables
 2. Use `kable_styling` to style tables
 3. Use similar styling as in Images from number 3--5
+4. Use dplyr package mainly to process dataset
 
 ### Equations
 

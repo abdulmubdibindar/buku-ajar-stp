@@ -64,7 +64,7 @@ kasus_dataset <- data.frame(
   biaya_pekan = c(0, 40, 30, 40, 45, 15, 60, 0)
 )
 
-kable(kasus_dataset,
+kbl(kasus_dataset,
   format = "html", align = "c",
   caption = "Contoh Set Data Hasil Kuesioner",
   col.names = c("ID", "kend", "tingkat", "jarak", "perjalanan_senin", "biaya_pekan")
@@ -90,7 +90,7 @@ metadata_kasus <- data.frame(
   )
 )
 
-kable(metadata_kasus,
+kbl(metadata_kasus,
   format = "html", escape = FALSE,
   col.names = c("Variabel", "Keterangan"),
   caption = "Metadata Variabel"
@@ -113,7 +113,7 @@ frekuensi_kend <- data.frame(
   Frekuensi_Relatif = c(0.50, 0.00, 0.25, 0.00, 0.25, 0.00, 1.00)
 )
 
-kable(frekuensi_kend,
+kbl(frekuensi_kend,
   format = "html", align = "c",
   caption = "Tabel Distribusi Frekuensi Untuk Variabel `kend`",
   col.names = c("kend", "Jenis kendaraan", "Frekuensi", "Frekuensi Relatif")
@@ -133,7 +133,7 @@ frekuensi_tingkat <- data.frame(
   Frekuensi_Relatif = c(0.000, 0.125, 0.250, 0.625, 0.000, 1.000)
 )
 
-kable(frekuensi_tingkat,
+kbl(frekuensi_tingkat,
   format = "html", align = "c",
   caption = "Tabel Distribusi Frekuensi Untuk Variabel `tingkat`",
   col.names = c("tingkat", "Tingkat kuliah", "Frekuensi", "Frekuensi Relatif")
@@ -181,7 +181,7 @@ perbandingan_kampus <- data.frame(
   Pengguna_Motor = c(276, 195)
 )
 
-kable(perbandingan_kampus,
+kbl(perbandingan_kampus,
   format = "html", align = "c",
   caption = "Data Pengguna Sepeda Motor Pribadi di ITERA dan UBL",
   col.names = c("Kampus", "Total Responden", "Pengguna Sepeda Motor Pribadi")
@@ -220,7 +220,7 @@ hasil_perbandingan <- data.frame(
   Persen = c("64,3%", "51,3%")
 )
 
-kable(hasil_perbandingan,
+kbl(hasil_perbandingan,
   format = "html", align = "c",
   caption = "Perbandingan Proporsi dan Persentase Pengguna Sepeda Motor",
   col.names = c("Kampus", "Total Responden", "Pengguna Motor", "Proporsi", "Persentase")
@@ -278,7 +278,7 @@ data_2023 <- data.frame(
   Pengguna_Motor = c(5100, 3380, 7800)
 )
 
-kable(data_2023,
+kbl(data_2023,
   format = "html", align = "c",
   caption = "Data Pengguna Sepeda Motor Tahun 2023",
   col.names = c("Kampus", "Jumlah Mahasiswa", "Pengguna Sepeda Motor")
@@ -298,7 +298,7 @@ data_2024 <- data.frame(
   Pengguna_Motor = c(6072, 4350, 9450)
 )
 
-kable(data_2024,
+kbl(data_2024,
   format = "html", align = "c",
   caption = "Data Pengguna Sepeda Motor Tahun 2024",
   col.names = c("Kampus", "Jumlah Mahasiswa", "Pengguna Sepeda Motor")
@@ -389,7 +389,7 @@ data_kendaraan <- data.frame(
   Persen = c("92,8%", "7,2%", "100%")
 )
 
-kable(data_kendaraan,
+kbl(data_kendaraan,
   format = "html", align = "c",
   caption = "Distribusi Penggunaan Kendaraan Mahasiswa ITERA",
   col.names = c("Kategori Kendaraan", "Jumlah Mahasiswa", "Persentase")
@@ -416,7 +416,7 @@ detail_kendaraan <- data.frame(
   Jumlah = c(276, 47, 32, 43, 18, 13)
 )
 
-kable(detail_kendaraan,
+kbl(detail_kendaraan,
   format = "html", align = "c",
   caption = "Detail Jenis Kendaraan yang Digunakan",
   col.names = c("Jenis Kendaraan", "Kategori", "Jumlah")
@@ -508,7 +508,7 @@ data_perubahan <- data.frame(
   Persentase = c("12,0%", "7,5%")
 )
 
-kable(data_perubahan,
+kbl(data_perubahan,
   format = "html", align = "c",
   caption = "Data Penggunaan Transportasi Online di ITERA",
   col.names = c("Periode", "Total Responden", "Pengguna Transportasi Online", "Persentase")
@@ -574,7 +574,7 @@ data_pajak <- data.frame(
   Makna = c("Terkesan kenaikan kecil", "Kenaikan hampir 10% dari beban pajak awal")
 )
 
-kable(data_pajak,
+kbl(data_pajak,
   format = "html", align = "c",
   caption = "Perbandingan Interpretasi Kenaikan Pajak",
   col.names = c("Jenis Interpretasi", "Perhitungan", "Makna")
@@ -624,7 +624,7 @@ dampak_ekonomi <- data.frame(
   Persen_Kenaikan = c("9,09%", "9,09%")
 )
 
-kable(dampak_ekonomi,
+kbl(dampak_ekonomi,
   format = "html", align = "c",
   caption = "Dampak Kenaikan Pajak pada Penghasilan Rp 10 Juta/Bulan",
   col.names = c("Periode", "Pajak Lama (11%)", "Pajak Baru (12%)", "Tambahan Beban", "Perubahan %")
@@ -711,7 +711,7 @@ data_awal <- data.frame(
   Biaya = biaya_normal
 )
 
-kable(data_awal,
+kbl(data_awal,
   format = "html", align = "c",
   caption = "Biaya Perjalanan Sepekan (Ribu Rupiah)",
   col.names = c("Mahasiswa", "Biaya (Rp)")
@@ -742,7 +742,7 @@ data_outlier <- data.frame(
   Biaya = biaya_outlier
 )
 
-kable(data_outlier,
+kbl(data_outlier,
   format = "html", align = "c",
   caption = "Biaya Perjalanan dengan Pencilan",
   col.names = c("Mahasiswa", "Biaya (Rp)")
@@ -772,7 +772,7 @@ perbandingan <- data.frame(
   Selisih_Median = c("—", "0")
 )
 
-kable(perbandingan,
+kbl(perbandingan,
   format = "html", align = "c",
   caption = "Perbandingan Mean dan Median",
   col.names = c("Kondisi", "Mean", "Median", "Δ Mean", "Δ Median")
@@ -816,7 +816,7 @@ modus_kend <- data.frame(
   Frekuensi = c(4, 2, 2)
 )
 
-kable(modus_kend,
+kbl(modus_kend,
   format = "html", align = "c",
   caption = "Distribusi Frekuensi Jenis Kendaraan",
   col.names = c("Kode", "Jenis Kendaraan", "Frekuensi")
@@ -842,7 +842,7 @@ modus_perjalanan <- data.frame(
   Frekuensi = c(3, 3, 2)
 )
 
-kable(modus_perjalanan,
+kbl(modus_perjalanan,
   format = "html", align = "c",
   caption = "Distribusi Frekuensi Perjalanan di Hari Senin",
   col.names = c("Jumlah Perjalanan", "Frekuensi")
@@ -912,7 +912,7 @@ data_fakultas <- data.frame(
   Proporsi = c(0.110, 0.295, 0.145, 0.325, 0.038, 0.050, 0.025, 0.013)
 )
 
-kable(data_fakultas,
+kbl(data_fakultas,
   format = "html", align = "c",
   caption = "Distribusi Mahasiswa UIN Raden Intan Lampung Berdasarkan Fakultas",
   col.names = c("Fakultas", "Frekuensi", "Proporsi")
@@ -947,7 +947,7 @@ hasil_iqv <- data.frame(
   Nilai = c("8", "0,231", "0,769", "0,879")
 )
 
-kable(hasil_iqv,
+kbl(hasil_iqv,
   format = "html", align = "c",
   caption = "Hasil Perhitungan IQV",
   col.names = c("Komponen", "Nilai")
@@ -998,7 +998,7 @@ stat_rentang <- data.frame(
   Rentang = c(max_uin - min_uin, max_unila - min_unila)
 )
 
-kable(stat_rentang,
+kbl(stat_rentang,
   format = "html", align = "c",
   caption = "Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA",
   col.names = c("Kampus", "Minimum (Rp)", "Maksimum (Rp)", "Rentang (Rp)")
@@ -1079,7 +1079,7 @@ hasil_kuartil <- data.frame(
   Nilai = c(q1, q2, q3)
 )
 
-kable(hasil_kuartil,
+kbl(hasil_kuartil,
   format = "html", align = "c",
   caption = paste0("Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = ", n_obs, ")"),
   col.names = c("Statistik", "Posisi Data", "Nilai (Ribu Rp)")
@@ -1164,7 +1164,7 @@ data_var <- data.frame(
   Kuadrat_Selisih = c(100, 0, 25, 100, 25)
 )
 
-kable(data_var,
+kbl(data_var,
   format = "html", align = "c",
   caption = "Perhitungan Selisih Kuadrat",
   col.names = c("Mahasiswa", "Biaya (X)", "Rata-rata (x̄)", "Selisih (X - x̄)", "Kuadrat (X - x̄)²")
@@ -1241,7 +1241,7 @@ rangkuman_df <- data.frame(
   )
 )
 
-kable(rangkuman_df,
+kbl(rangkuman_df,
   format = "html", align = "clll",
   caption = "Rangkuman Teknik Analisis Statistik Deskriptif",
   col.names = c("No", "Nama Analisis", "Tingkat Pengukuran", "Makna Singkat Hasil")
@@ -1270,7 +1270,7 @@ preview_data <- data.frame(
   Jarak = c(19.27, 0.58, 0.56, 1.05, 1.69, 1.37)
 )
 
-kable(preview_data,
+kbl(preview_data,
   format = "html", align = "c",
   caption = "Cuplikan data survei mahasiswa"
 ) %>%
@@ -1296,7 +1296,7 @@ metadata_soal <- data.frame(
   )
 )
 
-kable(metadata_soal,
+kbl(metadata_soal,
   format = "html", escape = FALSE,
   col.names = c("Nama Variabel", "Deskripsi", "Nilai-nilai yang valid"),
   caption = "Metadata variabel survei mahasiswa"

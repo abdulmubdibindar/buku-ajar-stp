@@ -2441,7 +2441,7 @@ Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bent
 
 Sajian data dalam bentuk gambar disebut juga **grafik** atau **diagram** *(chart)*. Jenis grafik atau diagram yang digunakan sangat bergantung pada jenis dan tingkat pengukuran variabel yang akan divisualisasikan.
 
-Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs @datatoviz atau @Ferdio.
+Banyak sekali panduan-panduan untuk memilih bentuk grafik yang perlu Anda gunakan untuk menyajikan data Anda. Salah satu sumber yang menyediakan panduan tersebut adalah situs [From data to Viz](https://www.data-to-viz.com/) atau [Data Viz Project](https://datavizproject.com/).
 
 
 ## Jenis-jenis Diagram
@@ -2476,7 +2476,7 @@ Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang b
 Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi (Tabel \@ref(tab:bab-4-diagram-batang)), baru kemudian divisualisasikan.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-4-diagram-batang)(\#tab:bab-4-diagram-batang)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung</caption>
+<caption>(\#tab:bab-4-diagram-batang)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Moda Transportasi </th>
@@ -2528,7 +2528,7 @@ Atau dalam bentuk grafik batang mendatar (*bar chart*):
 Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin (Tabel \@ref(tab:tab-distribusi-2-var)).
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:tab-distribusi-2-var)(\#tab:tab-distribusi-2-var)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung berdasarkan Jenis Kelamin</caption>
+<caption>(\#tab:tab-distribusi-2-var)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung berdasarkan Jenis Kelamin</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Jenis Kelamin </th>
@@ -2591,7 +2591,7 @@ Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data dir
 Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
-<caption>(\#tab:bab-4-distribusi-per-prodi)(\#tab:bab-4-distribusi-per-prodi)Distribusi Frekuensi Mahasiswa UIN Raden Intan Lampung Per Program Studi</caption>
+<caption>(\#tab:bab-4-distribusi-per-prodi)Distribusi Frekuensi Mahasiswa UIN Raden Intan Lampung Per Program Studi</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Nama Program Studi </th>
@@ -2659,7 +2659,7 @@ Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
 Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:tab-treemap-data)(\#tab:tab-treemap-data)Distribusi Frekuensi Moda Transportasi berdasarkan Jenis Kelamin untuk Treemap</caption>
+<caption>(\#tab:tab-treemap-data)Distribusi Frekuensi Moda Transportasi berdasarkan Jenis Kelamin untuk Treemap</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Jenis Kelamin </th>
@@ -2755,7 +2755,7 @@ Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada k
 Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:tab-pie-data)(\#tab:tab-pie-data)Distribusi Frekuensi Moda Transportasi untuk Grafik Pai</caption>
+<caption>(\#tab:tab-pie-data)Distribusi Frekuensi Moda Transportasi untuk Grafik Pai</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Moda Transportasi </th>
@@ -2842,11 +2842,11 @@ Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus
 Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:unnamed-chunk-1)(\#tab:unnamed-chunk-1)Statistik Deskriptif Biaya Perjalanan Mahasiswa ITERA</caption>
+<caption>(\#tab:unnamed-chunk-1)Statistik Deskriptif Biaya Perjalanan Mahasiswa ITERA (dalam ribuan rupiah)</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Statistik </th>
-   <th style="text-align:right;"> Nilai </th>
+   <th style="text-align:right;"> Nilai (Rp ribu) </th>
   </tr>
  </thead>
 <tbody>
@@ -2856,23 +2856,23 @@ Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam
   </tr>
   <tr>
    <td style="text-align:left;"> Q1 </td>
-   <td style="text-align:right;"> 20000.00 </td>
+   <td style="text-align:right;"> 20.00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Median </td>
-   <td style="text-align:right;"> 30000.00 </td>
+   <td style="text-align:right;"> 30.00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Mean </td>
-   <td style="text-align:right;"> 38665.89 </td>
+   <td style="text-align:right;"> 38.67 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Q3 </td>
-   <td style="text-align:right;"> 45000.00 </td>
+   <td style="text-align:right;"> 45.00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Max </td>
-   <td style="text-align:right;"> 400000.00 </td>
+   <td style="text-align:right;"> 400.00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NA </td>
@@ -2881,59 +2881,59 @@ Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam
 </tbody>
 </table>
 
-Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (bin). R melakukan ini secara otomatis, tetapi kita juga bisa mengatur sendiri. Mari kita buat histogram dengan pengaturan bin otomatis:
+Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (*bin*). Perangkat lunak pengolah data statistik, contohnya bahasa pemrograman R, melakukan ini secara otomatis. Berikut adalah contoh pembuatan histogram dengan pengaturan *bin* otomatis:
 
 <div class="figure" style="text-align: center">
-<img src="figures/fig-hist-biaya-auto-1.png" alt="Histogram biaya perjalanan (bin otomatis)" width="75%" />
-<p class="caption">(\#fig:fig-hist-biaya-auto)Histogram biaya perjalanan (bin otomatis)</p>
+<img src="figures/fig-hist-biaya-auto-1.png" alt="Histogram biaya perjalanan (bin otomatis) dalam ribuan rupiah" width="75%" />
+<p class="caption">(\#fig:fig-hist-biaya-auto)Histogram biaya perjalanan (bin otomatis) dalam ribuan rupiah</p>
 </div>
 
 Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi dengan lebih detail:
 
 <div class="figure" style="text-align: center">
-<img src="figures/fig-hist-biaya-manual-1.png" alt="Histogram biaya perjalanan (bin manual)" width="75%" />
-<p class="caption">(\#fig:fig-hist-biaya-manual)Histogram biaya perjalanan (bin manual)</p>
+<img src="figures/fig-hist-biaya-manual-1.png" alt="Histogram biaya perjalanan (bin manual) dalam ribuan rupiah" width="75%" />
+<p class="caption">(\#fig:fig-hist-biaya-manual)Histogram biaya perjalanan (bin manual) dalam ribuan rupiah</p>
 </div>
 
-Untuk lebih memahami proses binning, mari kita buat tabel frekuensi manual:
+Untuk lebih memahami proses *binning*, mari kita buat tabel frekuensi manual:
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:unnamed-chunk-2)(\#tab:unnamed-chunk-2)Tabel Frekuensi Biaya Perjalanan (6 Interval Pertama)</caption>
+<caption>(\#tab:unnamed-chunk-2)Tabel Frekuensi Biaya Perjalanan dalam Ribuan Rupiah (6 Interval Pertama)</caption>
  <thead>
   <tr>
-   <th style="text-align:left;"> Interval Biaya </th>
+   <th style="text-align:left;"> Interval Biaya (Rp ribu) </th>
    <th style="text-align:right;"> Frekuensi </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> [0,4.44e+04] </td>
+   <td style="text-align:left;"> [0,44.4] </td>
    <td style="text-align:right;"> 318 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (4.44e+04,8.89e+04] </td>
+   <td style="text-align:left;"> (44.4,88.9] </td>
    <td style="text-align:right;"> 80 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (8.89e+04,1.33e+05] </td>
+   <td style="text-align:left;"> (88.9,133] </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (1.33e+05,1.78e+05] </td>
+   <td style="text-align:left;"> (133,178] </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (1.78e+05,2.22e+05] </td>
+   <td style="text-align:left;"> (178,222] </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (2.22e+05,2.67e+05] </td>
+   <td style="text-align:left;"> (222,267] </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
 </tbody>
 </table>
 
-**Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
+**Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah (perhatikan bahwa nilai biaya sudah dalam satuan ribu rupiah). Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
 
 :::
 
@@ -2942,7 +2942,13 @@ Untuk lebih memahami proses binning, mari kita buat tabel frekuensi manual:
 
 Boxplot adalah grafik berbentuk kotak dan garis yang menampilkan ukuran penyebaran suatu variabel numerik secara grafis (Gambar \@ref(fig:jenis-boxplot)). Sebagaimana yang ditunjukkan oleh gambar tersebut, kotak dan garis pada boxplot dapat berjumlah satu atau lebih. Satu kotak dan garis menandakan hanya ada satu kategori objek dengan variabel numerik yang ditampilkan.
 
-Sementara itu, variabel numerik tersebut dikategorikan lagi berdasarkan suatu variabel kategoris, maka jumlah kotak dan garisnya bisa lebih dari satu.
+Sementara itu, jika variabel numerik tersebut dikategorikan lagi berdasarkan suatu variabel kategoris, maka jumlah kotak dan garisnya bisa lebih dari satu dan berjumlah sesuai dengan jumlah kategori objeknya.
+
+
+<div class="figure" style="text-align: center">
+<img src="figures/jenis-boxplot.png" alt="*Boxplot* yang terdiri atas dua kategori objek: A dan B" width="40%" />
+<p class="caption">(\#fig:jenis-boxplot)*Boxplot* yang terdiri atas dua kategori objek: A dan B</p>
+</div>
 
 Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada kasus berikut.
 
@@ -2953,7 +2959,7 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:unnamed-chunk-3)(\#tab:unnamed-chunk-3)Statistik Deskriptif Biaya Perjalanan Gabungan (UINRIL &amp; UNILA)</caption>
+<caption>(\#tab:unnamed-chunk-3)Statistik Deskriptif Biaya Perjalanan Gabungan (UINRIL &amp; UNILA)</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Statistik </th>
@@ -3012,8 +3018,8 @@ Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perja
 - **Kotak bagian bawah (Q1)**: Kuartil pertama, 25% data berada di bawah nilai ini
 - **Kotak bagian atas (Q3)**: Kuartil ketiga, 75% data berada di bawah nilai ini
 - **Tinggi kotak (IQR)**: Jarak interkuartil, menunjukkan rentang 50% data tengah
-- **Whiskers (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)
-- **Titik-titik di luar whiskers**: Outlier atau nilai ekstrem yang jauh dari sebagian besar data
+- ***Whiskers* (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)
+- **Titik-titik di luar *whiskers***: *Outlier* atau pencilan, yakni nilai-nilai ekstrem yang jauh dari sebagian besar data
 
 **Interpretasi:** Dari boxplot ganda terlihat bahwa distribusi biaya perjalanan mahasiswa UNILA memiliki median yang sedikit lebih tinggi dibandingkan UINRIL. Rentang interkuartil (tinggi kotak) UNILA juga lebih besar, menunjukkan variasi biaya perjalanan yang lebih beragam. Terdapat beberapa outlier pada kedua kampus yang menunjukkan ada mahasiswa dengan biaya perjalanan yang jauh lebih tinggi dari mayoritas. Informasi ini berguna untuk perencanaan fasilitas kampus seperti kantin atau transportasi yang disesuaikan dengan daya beli mahasiswa.
 
@@ -3023,8 +3029,17 @@ Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perja
 
 Grafik ini memetakan nilai variabel angka yang masuk akal bisa diurutkan, yakni biasanya yang berupa deret waktu (time series). Garis menghubungkan masing-masing titik nilai pada tiap-tiap posisi untuk menegaskan perubahan nilainya. Gambar \@ref(fig:line-plot-area-plot) berikut mengilustrasikan data terstruktur yang membentuk line atau area plot.
 
-Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah garisnya diisi dengan warna yang sama dengan garis. Area plot biasanya digunakan untuk data numerik dengan dimensi waktu yang terdiri atas kategori-kategori.
+<div class="figure" style="text-align: center">
+<img src="figures/diagram-garis-area.png" alt="Ilustrasi line plot dan area plot serta data terstruktur yang membentuknya" width="3745" />
+<p class="caption">(\#fig:line-plot-area-plot)Ilustrasi line plot dan area plot serta data terstruktur yang membentuknya</p>
+</div>
 
+Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah garisnya diisi dengan warna yang sama dengan garis. Area plot biasanya digunakan untuk data numerik dengan dimensi waktu yang terdiri atas kategori-kategori seperti yang ditunjukkan Gambar \@ref(fig:fig-area-plot-multi).
+
+<div class="figure" style="text-align: center">
+<img src="figures/area-plot-lebih-dari-1.png" alt="Ilustrasi area plot dengan tiga variabel" width="60%" />
+<p class="caption">(\#fig:fig-area-plot-multi)Ilustrasi area plot dengan tiga variabel</p>
+</div>
 
 #### Grafik Pencar *(Scatterplot)*
 
@@ -3037,7 +3052,7 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 *Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:unnamed-chunk-4)(\#tab:unnamed-chunk-4)Contoh Data Biaya Perjalanan dan Jarak Tempuh (10 Observasi Pertama)</caption>
+<caption>(\#tab:unnamed-chunk-4)Contoh Data Biaya Perjalanan dan Jarak Tempuh dalam Ribuan Rupiah (10 Observasi Pertama)</caption>
  <thead>
   <tr>
    <th style="text-align:right;"> Biaya Perjalanan (Rp ribu) </th>
@@ -3046,31 +3061,31 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 10000 </td>
+   <td style="text-align:right;"> 10 </td>
    <td style="text-align:right;"> 6.69 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 21000 </td>
+   <td style="text-align:right;"> 21 </td>
    <td style="text-align:right;"> 2.82 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 40000 </td>
+   <td style="text-align:right;"> 40 </td>
    <td style="text-align:right;"> 5.17 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 30000 </td>
+   <td style="text-align:right;"> 30 </td>
    <td style="text-align:right;"> 6.95 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 25000 </td>
+   <td style="text-align:right;"> 25 </td>
    <td style="text-align:right;"> 5.57 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 40000 </td>
+   <td style="text-align:right;"> 40 </td>
    <td style="text-align:right;"> 4.75 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 30000 </td>
+   <td style="text-align:right;"> 30 </td>
    <td style="text-align:right;"> 8.27 </td>
   </tr>
   <tr>
@@ -3078,11 +3093,11 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
    <td style="text-align:right;"> 3.70 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 100000 </td>
+   <td style="text-align:right;"> 100 </td>
    <td style="text-align:right;"> 3.77 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 30000 </td>
+   <td style="text-align:right;"> 30 </td>
    <td style="text-align:right;"> 2.08 </td>
   </tr>
 </tbody>
@@ -3093,8 +3108,8 @@ Tabel di atas menunjukkan pasangan nilai untuk setiap mahasiswa. Kolom pertama (
 Mari kita buat *scatterplot* menggunakan `ggplot2`:
 
 <div class="figure" style="text-align: center">
-<img src="figures/fig-scatter-ggplot-1.png" alt="Scatterplot jarak tempuh vs biaya perjalanan" width="75%" />
-<p class="caption">(\#fig:fig-scatter-ggplot)Scatterplot jarak tempuh vs biaya perjalanan</p>
+<img src="figures/fig-scatter-ggplot-1.png" alt="Scatterplot jarak tempuh vs biaya perjalanan dalam ribuan rupiah" width="75%" />
+<p class="caption">(\#fig:fig-scatter-ggplot)Scatterplot jarak tempuh vs biaya perjalanan dalam ribuan rupiah</p>
 </div>
 
 **Hubungan data terstruktur dengan scatterplot:**
@@ -3102,9 +3117,9 @@ Mari kita buat *scatterplot* menggunakan `ggplot2`:
 - Setiap **baris** dalam tabel data menjadi **satu titik** pada grafik
 - Nilai **kolom pertama** (biaya perjalanan) menentukan **posisi horizontal (X)** titik
 - Nilai **kolom kedua** (jarak tempuh) menentukan **posisi vertikal (Y)** titik
-- Titik di koordinat (50, 10) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu dan jarak tempuh 10 km
+- Titik di koordinat (50, 10) artinya mahasiswa tersebut memiliki biaya perjalanan 50 ribu rupiah (nilai sudah dalam satuan ribu) dan jarak tempuh 10 km
 
-**Interpretasi:** Scatterplot menunjukkan adanya hubungan positif antara biaya perjalanan dan jarak tempuh mahasiswa ITERA. Mahasiswa yang tinggal lebih jauh dari kampus cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka memerlukan lebih banyak bahan bakar atau biaya transportasi umum. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa yang tinggal jauh dari kampus.
+**Interpretasi:** Scatterplot menunjukkan adanya hubungan positif antara biaya perjalanan (dalam ribuan rupiah) dan jarak tempuh mahasiswa ITERA. Mahasiswa yang tinggal lebih jauh dari kampus cenderung memiliki biaya perjalanan yang lebih tinggi, yang masuk akal karena mereka memerlukan lebih banyak bahan bakar atau biaya transportasi umum. Garis tren (garis putus-putus merah) menunjukkan arah umum hubungan ini. Informasi ini berguna untuk perencanaan kebijakan kampus terkait subsidi transportasi yang mungkin lebih diprioritaskan untuk mahasiswa yang tinggal jauh dari kampus.
 
 :::
 
@@ -3147,14 +3162,14 @@ Beberapa contoh pertimbangan dalam memilih diagram berdasarkan tingkat pengukura
 1. **Data Ordinal**. Untuk data ordinal, Anda sangat disarankan untuk menggunakan **grafik batang** atau **grafik lollipop** yang diurutkan berdasarkan urutan kategori.
 2. **Data Metrik**. Histogram, *boxplot*, dan *scatterplot* adalah pilihan standar untuk visualisasi.
 
-Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingkat pengukuran variabel tersebut dapat dilihat pada Gambar \@ref(fig:simpulan-memilih-visualisasi) berikut.
+Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingkat pengukuran variabel tersebut dapat dilihat pada Gambar \@ref(fig:simpulan-memilih-visualisasi) berikut yang diambil dari @Crazyegg_2017.
 
 <div class="figure" style="text-align: center">
-<img src="images/simpulan-memilih-visualisasi.png" alt="Panduan memilih jenis visualisasi" width="60%" />
+<img src="images/CrazyEgg-Diagram.webp" alt="Panduan memilih jenis visualisasi"  />
 <p class="caption">(\#fig:simpulan-memilih-visualisasi)Panduan memilih jenis visualisasi</p>
 </div>
 
-
+Silakan kerjakan soal-soal evaluasi berikut terkait visualisasi data kuantitatif untuk menguji pemahaman Anda terhadap penjelasan-penjelasan yang telah Anda pelajari.
 
 ::: rmdexercise
 

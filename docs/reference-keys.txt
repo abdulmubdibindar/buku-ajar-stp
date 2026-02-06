@@ -61,9 +61,12 @@ tab:unnamed-chunk-1
 fig:fig-hist-biaya-auto
 fig:fig-hist-biaya-manual
 tab:unnamed-chunk-2
+fig:jenis-boxplot
 tab:unnamed-chunk-3
 fig:fig-boxplot-single
 fig:fig-boxplot-multiple
+fig:line-plot-area-plot
+fig:fig-area-plot-multi
 tab:unnamed-chunk-4
 fig:fig-scatter-ggplot
 fig:simpulan-memilih-visualisasi
