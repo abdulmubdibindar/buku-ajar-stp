@@ -25,23 +25,27 @@ link-citations: true
 
 # Statistika untuk Perencanaan {.unnumbered}
 
-Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan penggunaan R dalam pengolahan data kuantitatif, terutama dalam perencanaan wilayah dan kota. Buku ini terdiri atas x bagian:
+Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan penggunaan R dalam pengolahan data kuantitatif, terutama dalam perencanaan wilayah dan kota. Buku ini terdiri atas 15 bab yang terdiri atas beberapa bagian:
 
-1. Konsep Dasar Statistika dalam Perencanaan
-2. Data Terstruktur
-3. Analisis Statistik Deskriptif
-4. Visualisasi Data Kuantitatif
-5. Pengantar Statistik Inferensial
-6. Estimasi Parameter
-7. Uji Hipotesis Satu Populasi
-8. Uji Hipotesis Dua Populasi
-9. Uji Hipotesis Lebih dari Dua Populasi
-10. Korelasi Antarvariabel Nominal
-11. Korelasi Antarvariabel Ordinal
-12. Korelasi Antarvariabel Metrik
-13. Regresi Linear Sederhana
-14. Regresi Linear Berganda
-15. Analisis Statistik Multivariat Interdependensi
+1. Konsep Dasar Statistika
+    1. Konsep Dasar Statistika dalam Perencanaan
+    2. Data Terstruktur
+2. Statistika Univariat
+    3. Analisis Statistik Deskriptif
+    4. Visualisasi Data Kuantitatif
+    5. Pengantar Statistik Inferensial
+    6. Estimasi Parameter
+    7. Uji Hipotesis Satu Populasi
+    8. Uji Hipotesis Dua Populasi
+    9. Uji Hipotesis Lebih dari Dua Populasi
+3. Statistika Bivariat
+    10. Korelasi Antarvariabel Nominal
+    11. Korelasi Antarvariabel Ordinal
+    12. Korelasi Antarvariabel Metrik
+    13. Regresi Linear Sederhana
+4. Statistika Multivariat
+    14. Regresi Linear Berganda
+    15. Analisis Statistik Multivariat Interdependensi
 
 
 ------------------------------------
@@ -2420,6 +2424,17 @@ Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai beri
 
 # Visualisasi Data Kuantitatif
 
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
+
+Setelah mempelajari bab ini, Anda diharapkan:
+
+1. mampu memilih visualisasi yang tepat sesuai dengan variabel yang akan disajikan dan informasi yang ingin disampaikan [STP-3.1]{.capaian}
+2. mampu menginterpretasikan suatu visualisasi data kuantitatif secara mendalam [STP-3.2]{.capaian}
+3. mampu menjelaskan pentingnya menentukan tingkat pengukuran untuk sebuah variabel dari kaitannya dengan analisis statistik deskriptif dan diagram yang dipilih untuk menyajikan informasi [STP-3.4]{.capaian}
+:::
+
+
 ## Konsep Dasar
 
 Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bentuk tabular/tabel menjadi bentuk grafis. Kita sering mendengar pepatah yang berbunyi *"a picture is worth a thousand words"* yang artinya kurang lebih "satu gambar bernilai seribu kata." Pepatah ini menggambarkan bahwa data yang disajikan dalam bentuk gambar/grafis dapat menampilkan banyak sekali informasi kepada audiens.
@@ -2515,13 +2530,9 @@ Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kit
 
 ```
 ##            
-##             Berjalan Kaki Kendaraan Bermotor (menumpang) Mobil Pribadi Sepeda
-##   Laki-laki             1                              9             6      2
-##   Perempuan            32                             18             9      3
-##            
-##             Sepeda Motor Pribadi Transportasi Online
-##   Laki-laki                  167                   3
-##   Perempuan                  123                  27
+##             Berjalan Kaki Kendaraan Bermotor (menumpang) Mobil Pribadi Sepeda Sepeda Motor Pribadi Transportasi Online
+##   Laki-laki             1                              9             6      2                  167                   3
+##   Perempuan            32                             18             9      3                  123                  27
 ```
 
 Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
@@ -2671,12 +2682,10 @@ tabel_moda
 
 ```
 ## 
-##                  Berjalan Kaki Kendaraan Bermotor (menumpang) 
-##                             33                             27 
-##                  Mobil Pribadi                         Sepeda 
-##                             15                              5 
-##           Sepeda Motor Pribadi            Transportasi Online 
-##                            290                             30
+##                  Berjalan Kaki Kendaraan Bermotor (menumpang)                  Mobil Pribadi                         Sepeda           Sepeda Motor Pribadi 
+##                             33                             27                             15                              5                            290 
+##            Transportasi Online 
+##                             30
 ```
 
 Dari tabel distribusi frekuensi, kita dapat membuat grafik pai (*pie chart*):
@@ -2841,10 +2850,8 @@ head(tabel_freq)
 
 ```
 ## 
-##        [0,4.44e+04] (4.44e+04,8.89e+04] (8.89e+04,1.33e+05] 
-##                 318                  80                  13 
-## (1.33e+05,1.78e+05] (1.78e+05,2.22e+05] (2.22e+05,2.67e+05] 
-##                   7                   7                   1
+##        [0,4.44e+04] (4.44e+04,8.89e+04] (8.89e+04,1.33e+05] (1.33e+05,1.78e+05] (1.78e+05,2.22e+05] (2.22e+05,2.67e+05] 
+##                 318                  80                  13                   7                   7                   1
 ```
 
 **Interpretasi:** Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (*right-skewed*), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.
@@ -3115,6 +3122,8 @@ Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingka
 <p class="caption">(\#fig:simpulan-memilih-visualisasi)Panduan memilih jenis visualisasi</p>
 </div>
 
+
+
 ::: rmdexercise
 
 ## Soal Evaluasi 5 {.unnumbered}
@@ -3230,39 +3239,56 @@ Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai beri
 </tbody>
 </table>
 
-1. Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut!
+1. Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut! [STP-3.1]{.capaian}
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:center;"> # </th>
-   <th style="text-align:center;"> Nama Variabel </th>
-   <th style="text-align:center;"> Tingkat Pengukuran </th>
-   <th style="text-align:center;"> Jenis Grafik yang Bisa Digunakan (bisa lebih dari 1) </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:center;"> a </td>
-   <td style="text-align:center;"> `Fakultas` </td>
-   <td style="text-align:center;"> ... </td>
-   <td style="text-align:center;"> ... </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> b </td>
-   <td style="text-align:center;"> `Uang.Saku` </td>
-   <td style="text-align:center;"> ... </td>
-   <td style="text-align:center;"> ... </td>
-  </tr>
-  <tr>
-   <td style="text-align:center;"> c </td>
-   <td style="text-align:center;"> `Jarak` </td>
-   <td style="text-align:center;"> ... </td>
-   <td style="text-align:center;"> ... </td>
-  </tr>
-</tbody>
-</table>
+  <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+   <thead>
+    <tr>
+     <th style="text-align:center;"> # </th>
+     <th style="text-align:center;"> Nama Variabel </th>
+     <th style="text-align:center;"> Tingkat Pengukuran </th>
+     <th style="text-align:center;"> Jenis Grafik yang Bisa Digunakan (bisa lebih dari 1) </th>
+    </tr>
+   </thead>
+  <tbody>
+    <tr>
+     <td style="text-align:center;"> a </td>
+     <td style="text-align:center;"> `Usia` </td>
+     <td style="text-align:center;"> ... </td>
+     <td style="text-align:center;"> ... </td>
+    </tr>
+    <tr>
+     <td style="text-align:center;"> b </td>
+     <td style="text-align:center;"> `Fakultas` </td>
+     <td style="text-align:center;"> ... </td>
+     <td style="text-align:center;"> ... </td>
+    </tr>
+    <tr>
+     <td style="text-align:center;"> c </td>
+     <td style="text-align:center;"> `UangSaku` </td>
+     <td style="text-align:center;"> ... </td>
+     <td style="text-align:center;"> ... </td>
+    </tr>
+    <tr>
+     <td style="text-align:center;"> d </td>
+     <td style="text-align:center;"> `ThnMsk` </td>
+     <td style="text-align:center;"> ... </td>
+     <td style="text-align:center;"> ... </td>
+    </tr>
+    <tr>
+     <td style="text-align:center;"> e </td>
+     <td style="text-align:center;"> `Jarak` </td>
+     <td style="text-align:center;"> ... </td>
+     <td style="text-align:center;"> ... </td>
+    </tr>
+  </tbody>
+  </table>
 
+2. Tentukan jenis grafik yang sesuai untuk beberapa tujuan visualisasi berikut [STP-3.2]{.capaian}:
+
+  a. menampilkan distribusi frekuensi dari variabel `Fakultas`
+  b. menunjukkan 
+  c. 
 
 :::
 
@@ -3659,8 +3685,7 @@ cor.test(pendidikan, kepuasan, method = "spearman")
 ```
 
 ```
-## Warning in cor.test.default(pendidikan, kepuasan, method = "spearman"):
-## Cannot compute exact p-value with ties
+## Warning in cor.test.default(pendidikan, kepuasan, method = "spearman"): Cannot compute exact p-value with ties
 ```
 
 ```
@@ -3681,8 +3706,7 @@ cor.test(pendidikan, kepuasan, method = "kendall")
 ```
 
 ```
-## Warning in cor.test.default(pendidikan, kepuasan, method = "kendall"): Cannot
-## compute exact p-value with ties
+## Warning in cor.test.default(pendidikan, kepuasan, method = "kendall"): Cannot compute exact p-value with ties
 ```
 
 ```

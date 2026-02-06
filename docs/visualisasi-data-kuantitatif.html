@@ -251,6 +251,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="4" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html"><i class="fa fa-check"></i><b>4</b> Visualisasi Data Kuantitatif</a>
 <ul>
+<li class="chapter" data-level="" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#capaian-pembelajaran-3"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
 <li class="chapter" data-level="4.1" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#konsep-dasar"><i class="fa fa-check"></i><b>4.1</b> Konsep Dasar</a></li>
 <li class="chapter" data-level="4.2" data-path="visualisasi-data-kuantitatif.html"><a href="visualisasi-data-kuantitatif.html#jenis-jenis-diagram"><i class="fa fa-check"></i><b>4.2</b> Jenis-jenis Diagram</a>
 <ul>
@@ -379,6 +380,15 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="visualisasi-data-kuantitatif" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">4</span> Visualisasi Data Kuantitatif<a href="visualisasi-data-kuantitatif.html#visualisasi-data-kuantitatif" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="capaian-pembelajaran-3" class="section level3 unnumbered hasAnchor rmdcapaian">
+<h3>Capaian Pembelajaran<a href="visualisasi-data-kuantitatif.html#capaian-pembelajaran-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Setelah mempelajari bab ini, Anda diharapkan:</p>
+<ol style="list-style-type: decimal">
+<li>mampu memilih visualisasi yang tepat sesuai dengan variabel yang akan disajikan dan informasi yang ingin disampaikan <span class="capaian">STP-3.1</span></li>
+<li>mampu menginterpretasikan suatu visualisasi data kuantitatif secara mendalam <span class="capaian">STP-3.2</span></li>
+<li>mampu menjelaskan pentingnya menentukan tingkat pengukuran untuk sebuah variabel dari kaitannya dengan analisis statistik deskriptif dan diagram yang dipilih untuk menyajikan informasi <span class="capaian">STP-3.4</span></li>
+</ol>
+</div>
 <div id="konsep-dasar" class="section level2 hasAnchor" number="4.1">
 <h2><span class="header-section-number">4.1</span> Konsep Dasar<a href="visualisasi-data-kuantitatif.html#konsep-dasar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Visualisasi data adalah mengubah bentuk penyajian data/presentasi data dari bentuk tabular/tabel menjadi bentuk grafis. Kita sering mendengar pepatah yang berbunyi <em>“a picture is worth a thousand words”</em> yang artinya kurang lebih “satu gambar bernilai seribu kata.” Pepatah ini menggambarkan bahwa data yang disajikan dalam bentuk gambar/grafis dapat menampilkan banyak sekali informasi kepada audiens.</p>
@@ -488,13 +498,9 @@ Gambar 4.2: Grafik batang mendatar distribusi moda transportasi
 </div>
 <p>Untuk <strong>grafik batang bertumpuk</strong>, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin:</p>
 <pre><code>##            
-##             Berjalan Kaki Kendaraan Bermotor (menumpang) Mobil Pribadi Sepeda
-##   Laki-laki             1                              9             6      2
-##   Perempuan            32                             18             9      3
-##            
-##             Sepeda Motor Pribadi Transportasi Online
-##   Laki-laki                  167                   3
-##   Perempuan                  123                  27</code></pre>
+##             Berjalan Kaki Kendaraan Bermotor (menumpang) Mobil Pribadi Sepeda Sepeda Motor Pribadi Transportasi Online
+##   Laki-laki             1                              9             6      2                  167                   3
+##   Perempuan            32                             18             9      3                  123                  27</code></pre>
 <p>Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-stacked-bar"></span>
 <img src="_main_files/figure-html/fig-stacked-bar-1.png" alt="Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin" width="75%" />
@@ -611,12 +617,10 @@ Gambar 4.7: Treemap moda transportasi berdasarkan jenis kelamin
 <span id="cb4-5"><a href="visualisasi-data-kuantitatif.html#cb4-5" tabindex="-1"></a>tabel_moda <span class="ot">&lt;-</span> <span class="fu">table</span>(data_uinril<span class="sc">$</span>kendaraan.utama)</span>
 <span id="cb4-6"><a href="visualisasi-data-kuantitatif.html#cb4-6" tabindex="-1"></a>tabel_moda</span></code></pre></div>
 <pre><code>## 
-##                  Berjalan Kaki Kendaraan Bermotor (menumpang) 
-##                             33                             27 
-##                  Mobil Pribadi                         Sepeda 
-##                             15                              5 
-##           Sepeda Motor Pribadi            Transportasi Online 
-##                            290                             30</code></pre>
+##                  Berjalan Kaki Kendaraan Bermotor (menumpang)                  Mobil Pribadi                         Sepeda           Sepeda Motor Pribadi 
+##                             33                             27                             15                              5                            290 
+##            Transportasi Online 
+##                             30</code></pre>
 <p>Dari tabel distribusi frekuensi, kita dapat membuat grafik pai (<em>pie chart</em>):</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="visualisasi-data-kuantitatif.html#cb6-1" tabindex="-1"></a><span class="co"># Menghitung persentase</span></span>
 <span id="cb6-2"><a href="visualisasi-data-kuantitatif.html#cb6-2" tabindex="-1"></a>persentase <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> tabel_moda <span class="sc">/</span> <span class="fu">sum</span>(tabel_moda), <span class="dv">1</span>)</span>
@@ -734,10 +738,8 @@ Gambar 4.11: Histogram biaya perjalanan (bin manual)
 <span id="cb12-8"><a href="visualisasi-data-kuantitatif.html#cb12-8" tabindex="-1"></a>tabel_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(data_itera<span class="sc">$</span>bin)</span>
 <span id="cb12-9"><a href="visualisasi-data-kuantitatif.html#cb12-9" tabindex="-1"></a><span class="fu">head</span>(tabel_freq)</span></code></pre></div>
 <pre><code>## 
-##        [0,4.44e+04] (4.44e+04,8.89e+04] (8.89e+04,1.33e+05] 
-##                 318                  80                  13 
-## (1.33e+05,1.78e+05] (1.78e+05,2.22e+05] (2.22e+05,2.67e+05] 
-##                   7                   7                   1</code></pre>
+##        [0,4.44e+04] (4.44e+04,8.89e+04] (8.89e+04,1.33e+05] (1.33e+05,1.78e+05] (1.78e+05,2.22e+05] (2.22e+05,2.67e+05] 
+##                 318                  80                  13                   7                   7                   1</code></pre>
 <p><strong>Interpretasi:</strong> Histogram menunjukkan bahwa sebagian besar mahasiswa ITERA memiliki biaya perjalanan dalam rentang rendah hingga menengah, dengan konsentrasi terbesar pada rentang 0-50 ribu rupiah. Distribusi menunjukkan pola miring ke kanan (<em>right-skewed</em>), yang berarti terdapat beberapa mahasiswa dengan biaya perjalanan yang sangat tinggi. Informasi ini penting untuk perencanaan transportasi kampus, misalnya dalam menentukan subsidi atau rute angkutan kampus.</p>
 </div>
 <div id="boxplot" class="section level4 hasAnchor" number="4.2.2.2">
@@ -1192,7 +1194,7 @@ Jarak tempat tinggal mahasiswa dari kampus (km)
 </tbody>
 </table>
 <ol style="list-style-type: decimal">
-<li>Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut!</li>
+<li>Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut! <span class="capaian">STP-3.1</span></li>
 </ol>
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -1217,7 +1219,7 @@ Jenis Grafik yang Bisa Digunakan (bisa lebih dari 1)
 a
 </td>
 <td style="text-align:center;">
-<code>Fakultas</code>
+<code>Usia</code>
 </td>
 <td style="text-align:center;">
 …
@@ -1231,7 +1233,7 @@ a
 b
 </td>
 <td style="text-align:center;">
-<code>Uang.Saku</code>
+<code>Fakultas</code>
 </td>
 <td style="text-align:center;">
 …
@@ -1245,6 +1247,34 @@ b
 c
 </td>
 <td style="text-align:center;">
+<code>UangSaku</code>
+</td>
+<td style="text-align:center;">
+…
+</td>
+<td style="text-align:center;">
+…
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+d
+</td>
+<td style="text-align:center;">
+<code>ThnMsk</code>
+</td>
+<td style="text-align:center;">
+…
+</td>
+<td style="text-align:center;">
+…
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+e
+</td>
+<td style="text-align:center;">
 <code>Jarak</code>
 </td>
 <td style="text-align:center;">
@@ -1256,6 +1286,14 @@ c
 </tr>
 </tbody>
 </table>
+<ol start="2" style="list-style-type: decimal">
+<li>Tentukan jenis grafik yang sesuai untuk beberapa tujuan visualisasi berikut <span class="capaian">STP-3.2</span>:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>menampilkan distribusi frekuensi dari variabel <code>Fakultas</code></li>
+<li>menunjukkan</li>
+<li></li>
+</ol>
 </div>
 
 </div>

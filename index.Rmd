@@ -32,23 +32,23 @@ Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan
 
 1. Konsep Dasar Statistika
     1. Konsep Dasar Statistika dalam Perencanaan
-    2. Data Terstruktur
+    1. Data Terstruktur
 2. Statistika Univariat
-    3. Analisis Statistik Deskriptif
-    4. Visualisasi Data Kuantitatif
-    5. Pengantar Statistik Inferensial
-    6. Estimasi Parameter
-    7. Uji Hipotesis Satu Populasi
-    8. Uji Hipotesis Dua Populasi
-    9. Uji Hipotesis Lebih dari Dua Populasi
+    1. Analisis Statistik Deskriptif
+    1. Visualisasi Data Kuantitatif
+    1. Pengantar Statistik Inferensial
+    1. Estimasi Parameter
+    1. Uji Hipotesis Satu Populasi
+    1. Uji Hipotesis Dua Populasi
+    1. Uji Hipotesis Lebih dari Dua Populasi
 3. Statistika Bivariat
-    10. Korelasi Antarvariabel Nominal
-    11. Korelasi Antarvariabel Ordinal
-    12. Korelasi Antarvariabel Metrik
-    13. Regresi Linear Sederhana
+    1. Korelasi Antarvariabel Nominal
+    1. Korelasi Antarvariabel Ordinal
+    1. Korelasi Antarvariabel Metrik
+    1. Regresi Linear Sederhana
 4. Statistika Multivariat
-    14. Regresi Linear Berganda
-    15. Analisis Statistik Multivariat Interdependensi
+    1. Regresi Linear Berganda
+    1. Analisis Statistik Multivariat Interdependensi
 
 
 ------------------------------------

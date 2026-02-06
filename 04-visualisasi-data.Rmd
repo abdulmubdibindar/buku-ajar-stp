@@ -662,7 +662,7 @@ kable(metadata_soal, format = 'html', escape = FALSE,
   library(kableExtra)
 
   jawaban_tabel <- data.frame(
-    No = c('a', 'b', 'c'),
+    No = c('a', 'b', 'c', 'd', 'e'),
     Variabel = c('`Usia`','`Fakultas`', '`UangSaku`', '`ThnMsk`','`Jarak`'),
     Tingkat = c('...', '...', '...', '...', '...'),
     Grafik = c('...', '...', '...', '...', '...')
@@ -675,10 +675,9 @@ kable(metadata_soal, format = 'html', escape = FALSE,
   ```
 
 2. Tentukan jenis grafik yang sesuai untuk beberapa tujuan visualisasi berikut [STP-3.2]{.capaian}:
-
-  a. menampilkan distribusi frekuensi dari variabel `Fakultas`
-  b. menunjukkan 
-  c. 
+  1. menampilkan distribusi frekuensi dari variabel `Fakultas`
+  2. memperlihatkan median, kuartil atas, dan kuartil bawah variabel `Usia` 
+  3. memperlihatkan sebaran mahasiswa berdasarkan `Jarak` tempat tinggal mereka
 
 :::
 
