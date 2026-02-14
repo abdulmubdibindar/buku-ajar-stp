@@ -117,7 +117,7 @@ sampel_strat |> count(Tahun_Kuliah) |> kable(caption = "Jumlah Sampel per Strata
 ```
 :::
 
-### Distribusi Sampel, Statistik Sampel, dan Teorema Limit Sentral
+## Distribusi Sampel, Distribusi Statistik Sampel, dan Teorema Limit Sentral
 
 Penting untuk membedakan dua konsep distribusi dalam inferensi:
 
@@ -157,7 +157,7 @@ grid.arrange(p1, p2, ncol=2)
 Perhatikan gambar di atas. Distribusi populasi (kiri) terlihat "miring" (skewed) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang **sempurna normal**. Rata-rata dari distribusi sampling ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = `r round(mu, 2)`$).
 :::
 
-### Standard Error (SE)
+## Standard Error (SE)
 
 Standard Error adalah simpangan baku dari distribusi statistik sampel. Ini mengukur seberapa akurat rata-rata sampel kita sebagai estimator rata-rata populasi. Semakin kecil SE, semakin presisi estimasi kita.
 
@@ -187,9 +187,9 @@ $$ SE = \frac{`r round(sigma, 2)`}{\sqrt{100}} = `r round(sigma / 10, 4)` $$
 Nilai ini memberitahu kita bahwa rata-rata sampel kita (`r round(mean_sampel, 2)`) diperkirakan menyimpang sekitar $\pm `r round(sigma/10, 2)`$ km dari rata-rata populasi sebenarnya.
 :::
 
-### Nilai Standar (Z-Score) dalam Inferensi
+## Nilai Standar (*Z-Score*) dalam Inferensi
 
-Z-score menunjukkan posisi suatu nilai dalam distribusi normal baku. Untuk rata-rata sampel, rumusnya menggunakan SE sebagai pembagi (bukan simpangan baku biasa):
+*Z-score* menunjukkan posisi suatu nilai dalam distribusi normal baku. Untuk rata-rata sampel, rumusnya menggunakan SE sebagai pembagi (bukan simpangan baku biasa):
 
 $$ Z = \frac{\bar{x} - \mu}{SE} $$
 
