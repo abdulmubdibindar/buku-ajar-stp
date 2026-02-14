@@ -981,14 +981,14 @@ library(knitr)
 library(kableExtra)
 
 # Membaca data
-data_uin <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
-data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
+data_uin <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep = ";")
+data_unila <- read.csv("datasets/DataUtama_mhsUNILA.csv", sep = ";")
 
 # Menghitung max dan min
-max_uin <- max(data_uin$`biaya.dalam.sepekan`, na.rm = TRUE)
-min_uin <- min(data_uin$`biaya.dalam.sepekan`, na.rm = TRUE)
-max_unila <- max(data_unila$`biaya.dalam.sepekan`, na.rm = TRUE)
-min_unila <- min(data_unila$`biaya.dalam.sepekan`, na.rm = TRUE)
+max_uin <- max(data_uin$biaya.dalam.ribu2, na.rm = TRUE)
+min_uin <- min(data_uin$biaya.dalam.ribu2, na.rm = TRUE)
+max_unila <- max(data_unila$biaya.dalam.ribu2, na.rm = TRUE)
+min_unila <- min(data_unila$biaya.dalam.ribu2, na.rm = TRUE)
 
 # Menghitung statistik untuk biaya_perjalanan
 stat_rentang <- data.frame(
@@ -1061,8 +1061,8 @@ library(knitr)
 library(kableExtra)
 
 # Membaca data
-data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
-biaya_unila <- data_unila$biaya.dalam.sepekan
+data_unila <- read.csv("datasets/DataUtama_mhsUNILA.csv", sep = ";")
+biaya_unila <- data_unila$biaya.dalam.ribu2
 
 # Menghitung jumlah observasi valid
 n_obs <- sum(!is.na(biaya_unila))

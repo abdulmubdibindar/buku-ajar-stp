@@ -58,7 +58,7 @@ library(knitr)
 library(kableExtra)
 
 # Memuat data
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+data_uinril <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep = ";")
 
 # Membuat tabel distribusi frekuensi untuk moda transportasi
 tabel_moda <- data_uinril |>
@@ -113,15 +113,34 @@ Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kit
 ```{r tab-distribusi-2-var, echo=FALSE, message=FALSE, warning=FALSE}
 # Membuat tabel kontingensi (distribusi frekuensi dua variabel)
 tabel_moda_jk <- data_uinril |>
-  count(Jenis.Kelamin, kendaraan.utama, name = "Frekuensi") |>
-  pivot_wider(names_from = kendaraan.utama, values_from = Frekuensi, values_fill = 0)
+  # Ubah jadi factor supaya urutan dan kolomnya PASTI, meskipun datanya 0
+  mutate(kendaraan.utama = factor(kendaraan.utama, levels = c(
+    "Berjalan kaki",
+    "Menumpang kendaraan bermotor teman/keluarga",
+    "Mobil pribadi",
+    "Sepeda",
+    "Sepeda motor pribadi",
+    "Transportasi daring"
+  ))) |>
+  # .drop = FALSE supaya yang jumlahnya 0 tetap dihitung
+  count(jenis.kelamin, kendaraan.utama, .drop = FALSE, name = "Frekuensi") |>
+  pivot_wider(
+    names_from = kendaraan.utama,
+    values_from = Frekuensi,
+    values_fill = 0
+  )
 
 # Format tabel
 kbl(
   tabel_moda_jk,
   col.names = c(
-    "Jenis Kelamin", "Berjalan Kaki", "Kendaraan Bermotor (menumpang)",
-    "Mobil Pribadi", "Sepeda", "Sepeda Motor Pribadi", "Transportasi Online"
+    "Jenis Kelamin",
+    "Berjalan Kaki",
+    "Menumpang",
+    "Mobil Pribadi",
+    "Sepeda",
+    "Sepeda Motor",
+    "Transportasi Online"
   ),
   caption = "Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung berdasarkan Jenis Kelamin"
 ) %>%
@@ -137,9 +156,9 @@ Dari tabel kontingensi tersebut, kita dapat membuat grafik batang bertumpuk:
 ```{r fig-stacked-bar, echo=FALSE, fig.cap='Grafik batang bertumpuk moda transportasi berdasarkan jenis kelamin', fig.align='center', out.width='75%'}
 # Konversi data ke format long untuk ggplot2
 tabel_moda_jk_long <- data_uinril |>
-  count(Jenis.Kelamin, kendaraan.utama, name = "Frekuensi")
+  count(jenis.kelamin, kendaraan.utama, name = "Frekuensi")
 
-ggplot(tabel_moda_jk_long, aes(x = kendaraan.utama, y = Frekuensi, fill = Jenis.Kelamin)) +
+ggplot(tabel_moda_jk_long, aes(x = kendaraan.utama, y = Frekuensi, fill = jenis.kelamin)) +
   geom_col(position = "stack") +
   theme_minimal() +
   labs(
@@ -182,9 +201,9 @@ Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilk
 library(ggplot2)
 
 # Memuat data dan membuat tabel frekuensi prodi
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+data_uinril <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep = ";")
 tabel_prodi <- data_uinril |>
-  count(Prodi, name = "Frekuensi") |>
+  count(prodi, name = "Frekuensi") |>
   arrange(desc(Frekuensi))
 
 # Format tabel (hanya 6 teratas)
@@ -208,7 +227,7 @@ kbl(
 Berikut adalah visualisasi menggunakan grafik batang biasa:
 
 ```{r fig-bar-prodi, echo=FALSE, fig.cap='Grafik batang program studi mahasiswa UINRIL', fig.align='center', out.width='85%'}
-ggplot(tabel_prodi, aes(x = reorder(Prodi, -Frekuensi), y = Frekuensi)) +
+ggplot(tabel_prodi, aes(x = reorder(prodi, -Frekuensi), y = Frekuensi)) +
   geom_bar(stat = "identity", fill = "#3498db", width = 0.8) +
   theme_minimal() +
   labs(
@@ -222,7 +241,7 @@ ggplot(tabel_prodi, aes(x = reorder(Prodi, -Frekuensi), y = Frekuensi)) +
 Sekarang bandingkan dengan grafik lollipop:
 
 ```{r fig-lollipop-prodi, echo=FALSE, fig.cap='Grafik lollipop program studi mahasiswa UINRIL', fig.align='center', out.width='85%'}
-ggplot(tabel_prodi, aes(x = reorder(Prodi, -Frekuensi), y = Frekuensi)) +
+ggplot(tabel_prodi, aes(x = reorder(prodi, -Frekuensi), y = Frekuensi)) +
   geom_segment(
     aes(y = 0, yend = Frekuensi),
     color = "#95a5a6",
@@ -260,12 +279,13 @@ Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seper
 library(treemap)
 
 # Memuat data
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+# Memuat data
+data_uinril <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep = ";")
 
 # Membuat tabel kontingensi menggunakan dplyr
 tabel_moda_jk <- data_uinril |>
-  count(Jenis.Kelamin, kendaraan.utama, name = "Frekuensi") |>
-  rename(Jenis_Kelamin = Jenis.Kelamin, Moda_Transportasi = kendaraan.utama)
+  count(jenis.kelamin, kendaraan.utama, name = "Frekuensi") |>
+  rename(Jenis_Kelamin = jenis.kelamin, Moda_Transportasi = kendaraan.utama)
 
 # Format tabel dengan kable
 kbl(
@@ -315,7 +335,7 @@ Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kat
 
 ```{r tab-pie-data, echo=FALSE, message=FALSE, warning=FALSE}
 # Memuat data
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
+data_uinril <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep = ";")
 
 # Membuat tabel distribusi frekuensi untuk moda transportasi
 tabel_moda <- data_uinril |>
@@ -429,10 +449,10 @@ Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam
 
 ```{r bab-4-hist-biaya-prep, echo=FALSE, message=FALSE, warning=FALSE}
 # Memuat data
-data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
+data_itera <- read.csv("datasets/DataUtama_mhsITERA.csv", sep = ";")
 
 # Rescale biaya ke dalam ribuan
-data_itera$biaya.dalam.sepekan <- data_itera$biaya.dalam.sepekan / 1000
+data_itera$biaya.dalam.sepekan <- data_itera$biaya.dalam.ribu2
 
 # Melihat statistik deskriptif
 summary_stats <- data.frame(
@@ -548,15 +568,17 @@ Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat
 
 ```{r bab-4-boxplot-prep, echo=FALSE, message=FALSE, warning=FALSE}
 # Memuat data dari beberapa universitas
-data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
-data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
+data_uinril <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep = ";")
+data_unila <- read.csv("datasets/DataUtama_mhsUNILA.csv", sep = ";")
 
 # Memilih kolom biaya perjalanan
 data_uinril <- data_uinril |>
-  select(biaya.dalam.sepekan, Kampus_PT)
+  select(biaya.dalam.ribu2, kampus) |>
+  rename(biaya.dalam.sepekan = biaya.dalam.ribu2)
 
 data_unila <- data_unila |>
-  select(biaya.dalam.sepekan, Kampus_PT)
+  select(biaya.dalam.ribu2, kampus) |>
+  rename(biaya.dalam.sepekan = biaya.dalam.ribu2)
 
 
 # Menggabungkan data
@@ -609,7 +631,7 @@ ggplot(data_uinril, aes(y = biaya.dalam.sepekan)) +
 Sekarang mari kita buat boxplot ganda untuk membandingkan distribusi biaya perjalanan antar kampus:
 
 ```{r fig-boxplot-multiple, echo=FALSE, message=FALSE, warning=FALSE, fig.cap='Boxplot biaya perjalanan mahasiswa berdasarkan kampus', fig.align='center', out.width='75%'}
-ggplot(data_gabung, aes(x = Kampus_PT, y = biaya.dalam.sepekan, fill = Kampus_PT)) +
+ggplot(data_gabung, aes(x = kampus, y = biaya.dalam.sepekan, fill = kampus)) +
   geom_boxplot(color = "#2c3e50") +
   theme_minimal() +
   labs(
@@ -666,14 +688,11 @@ knitr::include_graphics("figures/area-plot-lebih-dari-1.png")
 library(tidyverse)
 
 # Memuat data
-data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
+data_itera <- read.csv("datasets/DataUtama_mhsITERA.csv", sep = ";")
 
-# Konversi biaya perjalanan dan jarak (mengganti koma dengan titik, lalu ke numeric)
-data_itera$biaya.dalam.sepekan <- as.numeric(gsub(",", ".", data_itera$biaya.dalam.sepekan))
-data_itera$jarak <- as.numeric(gsub(",", ".", data_itera$jarak))
-
-# Rescale biaya ke dalam ribuan
-data_itera$biaya.dalam.sepekan <- data_itera$biaya.dalam.sepekan / 1000
+# Gunakan data biaya dalam ribu dan jarak km langsung
+data_itera$biaya.dalam.sepekan <- data_itera$biaya.dalam.ribu2
+data_itera$jarak <- data_itera$jarak.km
 
 # Menghapus baris dengan nilai NA pada kedua variabel
 data_itera <- data_itera %>% drop_na(biaya.dalam.sepekan, jarak)

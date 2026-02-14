@@ -1,9 +1,5 @@
 # Pengantar Analisis Statistik Inferensial
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
 ::: rmdcapaian
 ## Capaian Pembelajaran {.unnumbered}
 
@@ -60,18 +56,19 @@ library(dplyr)
 library(knitr)
 
 # Baca data (disimulasikan sebagai Populasi)
-data_itera <- read_csv("datasets/DataUtama_mhsITERA.csv")
+# Baca data (disimulasikan sebagai Populasi)
+data_itera <- read.csv("datasets/DataUtama_mhsITERA.csv", sep = ";")
 
 # Bersihkan variabel jarak
 data_populasi <- data_itera |>
   mutate(
-    jarak = as.numeric(gsub(",", ".", jarak)),
+    jarak = jarak.km,
     # Buat variabel strata Tahun Kuliah
     Tahun_Kuliah = case_when(
-      Tingkat.Semester %in% c(1, 2) ~ "Pertama",
-      Tingkat.Semester %in% c(3, 4) ~ "Kedua",
-      Tingkat.Semester %in% c(5, 6) ~ "Ketiga",
-      Tingkat.Semester >= 7 ~ "Keempat"
+      tingkat.semester == "Semester 1 - 2" ~ "Pertama",
+      tingkat.semester == "Semester 3 - 4" ~ "Kedua",
+      tingkat.semester == "Semester 5 - 6" ~ "Ketiga",
+      tingkat.semester == "Semester 7 - 8 ke atas" ~ "Keempat"
     )
   ) |>
   filter(!is.na(jarak))
@@ -88,7 +85,7 @@ Kita undi 10 nomor urut mahasiswa secara acak dari total 429 mahasiswa.
 
 ```{r 05-inferensia-1-sampling-studi-kasus-srs-demo, echo=FALSE}
 set.seed(123)
-sampel_srs <- data_populasi |> sample_n(10) |> select(Nomor.urut, jarak)
+sampel_srs <- data_populasi |> sample_n(10) |> select(nomor.urut, jarak)
 kable(head(sampel_srs), caption = "Contoh Hasil Simple Random Sampling")
 ```
 
@@ -97,7 +94,7 @@ Kita ambil setiap mahasiswa kelipatan ke-50 dari daftar urut.
 
 ```{r 05-inferensia-1-sampling-studi-kasus-sys-demo, echo=FALSE}
 urutan <- seq(from = 1, to = N, by = 50)
-sampel_sys <- data_populasi |> slice(urutan) |> select(Nomor.urut, jarak)
+sampel_sys <- data_populasi |> slice(urutan) |> select(nomor.urut, jarak)
 kable(head(sampel_sys), caption = "Contoh Hasil Systematic Sampling (Interval 50)")
 ```
 
