@@ -8,7 +8,7 @@ Analisis ini digunakan untuk mengukur kekuatan hubungan antara dua variabel kate
 
 Apakah ada hubungan antara **Fakultas** dengan **Moda Transportasi** yang digunakan?
 
-```{r, echo=TRUE}
+```{r bab-10-uji-chi-square, echo=TRUE}
 # Data Contoh
 fakultas <- c("Saintek", "Soshum", "Saintek", "Soshum", "Saintek", "Saintek")
 moda <- c("Motor", "Mobil", "Motor", "Jalan Kaki", "Mobil", "Motor")

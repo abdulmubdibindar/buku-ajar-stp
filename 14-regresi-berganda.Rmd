@@ -9,7 +9,7 @@ $$ Y = a + b_1X_1 + b_2X_2 + \dots + \epsilon $$
 
 Memprediksi **Harga Rumah** berdasarkan **Luas Tanah** dan **Jumlah Kamar**.
 
-```{r, echo=TRUE}
+```{r bab-14-regresi-berganda, echo=TRUE}
 harga <- c(500, 700, 600, 800, 900)
 luas <- c(100, 150, 120, 160, 200)
 kamar <- c(2, 3, 2, 4, 5)

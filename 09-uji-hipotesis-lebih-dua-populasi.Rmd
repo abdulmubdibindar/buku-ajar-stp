@@ -12,7 +12,7 @@ Hipotesis ANOVA Satu Arah (One-Way ANOVA):
 
 Kita ingin membandingkan rata-rata harga tanah di tiga zona: Pusat Kota, Suburban, dan Rural.
 
-```{r, echo=TRUE}
+```{r bab-9-anova-satu-arah, echo=TRUE}
 # Data Contoh
 harga_tanah <- c(10, 12, 11, 13, 15, # Pusat
                  8, 9, 7, 8, 10,       # Suburban
@@ -29,7 +29,7 @@ summary(model_anova)
 **Interpretasi**:
 Jika nilai Pr(>F) pada tabel ANOVA kurang dari 0,05, maka tolak $H_0$. Artinya, terdapat perbedaan signifikan rata-rata harga tanah antar zona tersebut. Untuk mengetahui zona mana yang berbeda, dapat dilanjutkan dengan uji lanjut (Post Hoc Test) seperti Tukey HSD.
 
-```{r, echo=TRUE}
+```{r bab-9-tukey-hsd, echo=TRUE}
 TukeyHSD(model_anova)
 ```
 

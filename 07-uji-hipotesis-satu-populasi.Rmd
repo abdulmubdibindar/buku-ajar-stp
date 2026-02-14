@@ -26,7 +26,7 @@ Hipotesis:
 *   $H_0: \mu \le 45$ (Rata-rata tidak lebih dari 45 menit)
 *   $H_1: \mu > 45$ (Rata-rata lebih dari 45 menit)
 
-```{r, echo=TRUE}
+```{r bab-7-uji-t-satu-sampel, echo=TRUE}
 # Data Sampel (Simulasi)
 set.seed(123)
 waktu_tempuh <- rnorm(35, mean = 48, sd = 10)

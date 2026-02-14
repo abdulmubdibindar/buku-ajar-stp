@@ -427,7 +427,7 @@ Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus
 
 Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r bab-4-hist-biaya-prep, echo=FALSE, message=FALSE, warning=FALSE}
 # Memuat data
 data_itera <- read.csv2("datasets/DataUtama_mhsITERA.csv")
 
@@ -463,7 +463,7 @@ kbl(
 
 Sebelum membuat histogram, kita perlu mengelompokkan nilai-nilai ke dalam interval (*bin*). Perangkat lunak pengolah data statistik, contohnya bahasa pemrograman R, melakukan ini secara otomatis. Berikut adalah contoh pembuatan histogram dengan pengaturan *bin* otomatis:
 
-```{r , echo=FALSE, fig-hist-biaya-auto, fig.cap='Histogram biaya perjalanan (bin otomatis) dalam ribuan rupiah', fig.align='center', out.width='75%'}
+```{r fig-hist-biaya-auto, echo=FALSE, fig.cap='Histogram biaya perjalanan (bin otomatis) dalam ribuan rupiah', fig.align='center', out.width='75%'}
 ggplot(data_itera, aes(x = biaya.dalam.sepekan)) +
   geom_histogram(fill = "#3498db", color = "white", bins = 30) +
   theme_minimal() +
@@ -479,7 +479,7 @@ ggplot(data_itera, aes(x = biaya.dalam.sepekan)) +
 
 Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi dengan lebih detail:
 
-```{r , echo=FALSE, fig-hist-biaya-manual, fig.cap='Histogram biaya perjalanan (bin manual) dalam ribuan rupiah', fig.align='center', out.width='75%'}
+```{r fig-hist-biaya-manual, echo=FALSE, fig.cap='Histogram biaya perjalanan (bin manual) dalam ribuan rupiah', fig.align='center', out.width='75%'}
 # Membuat histogram dengan 15 bin
 ggplot(data_itera, aes(x = biaya.dalam.sepekan)) +
   geom_histogram(bins = 15, fill = "#e74c3c", color = "white") +
@@ -496,7 +496,7 @@ ggplot(data_itera, aes(x = biaya.dalam.sepekan)) +
 
 Untuk lebih memahami proses *binning*, mari kita buat tabel frekuensi manual:
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r bab-4-tab-freq-manual, echo=FALSE, message=FALSE, warning=FALSE}
 # Membuat interval bin menggunakan dplyr
 data_itera_binned <- data_itera |>
   mutate(
@@ -546,7 +546,7 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 
 Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r bab-4-boxplot-prep, echo=FALSE, message=FALSE, warning=FALSE}
 # Memuat data dari beberapa universitas
 data_uinril <- read.csv2("datasets/DataUtama_mhsUINRIL.csv")
 data_unila <- read.csv2("datasets/DataUtama_mhsUNILA.csv")
@@ -661,7 +661,7 @@ knitr::include_graphics("figures/area-plot-lebih-dari-1.png")
 
 *Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r bab-4-scatter-prep, echo=FALSE, message=FALSE, warning=FALSE}
 # Memuat library
 library(tidyverse)
 

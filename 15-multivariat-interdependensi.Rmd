@@ -9,7 +9,7 @@ Contoh: **Analisis Faktor** dan **Principal Component Analysis (PCA)**. Biasanya
 
 Mereduksi 5 indikator kepuasan menjadi faktor-faktor utama.
 
-```{r, echo=TRUE}
+```{r bab-15-pca, echo=TRUE}
 # Simulasi Data
 set.seed(123)
 data_survei <- matrix(rnorm(100*5), ncol=5)
