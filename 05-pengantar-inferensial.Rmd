@@ -15,15 +15,15 @@ Setelah mempelajari bab ini, Anda diharapkan:
 
 ## Konsep Dasar Statistika Inferensial
 
-Statistika inferensial adalah cabang statistika yang mempelajari **penarikan kesimpulan tentang populasi berdasarkan data dari sampel**. Konsep-konsep dasar yang perlu dipahami dalam analisis statistika ini meliputi perbedaan antara populasi dan sampel, teknik pengambilan sampel, distribusi sampel dan distribusi statistik sampel, serta prinsip-prinsip seperti teorema limit sentral dan distribusi normal.
+Statistika inferensial adalah cabang statistika yang mempelajari **penarikan kesimpulan tentang populasi berdasarkan data dari sampel**. Konsep-konsep dasar yang perlu dipahami dalam analisis statistika ini meliputi **perbedaan antara populasi dan sampel**, **teknik pengambilan sampel**, **distribusi sampel dan distribusi statistik sampel**, serta prinsip-prinsip terkait distribusi statistik, yakni beberapa di antaranya adalah **teorema limit sentral** dan **distribusi normal**.
 
-Setelah memahami konsep-konsep tersebut, kita dapat melanjutkan pembahasan ke penarikan kesimpulan karakteristik populasi dari hasil sampel, yang mencakup pembuatan estimasi parameter, menghitung peluang, dan mengambil keputusan secara akurat meskipun hanya menggunakan sebagian data dari keseluruhan populasi.
+Setelah memahami konsep-konsep tersebut, kita dapat melanjutkan pembahasan ke penarikan kesimpulan karakteristik populasi dari hasil sampel, yang mencakup pembuatan **estimasi parameter** dan **pengujian hipotesis** yang menyatakan karakteristik seluruh populasi dari hasil sampel.
 
 ## Populasi vs. Sampel
 
-Dalam penelitian, istilah **populasi** merujuk pada sekumpulan objek yang didefinisikan dengan jelas dan memenuhi syarat tertentu sebagai keseluruhan ruang lingkup yang menjadi target generalisasi penelitian. Populasi dapat berupa manusia, benda, peristiwa, hingga fenomena yang menjadi sasaran kajian penelitian. Karakteristik, seperti rata-rata ($\mu$), proporsi ($P$), atau simpangan baku ($\sigma$), dari suatu populasi disebut **parameter**. Parameter inilah yang ingin diketahui peneliti, namun seringkali tidak mungkin diukur secara langsung karena keterbatasan dalam menjangkau seluruh populasi.
+**Populasi** adalah seluruh kelompok objek (baik orang, benda, maupun kejadian) yang menjadi target penelitian kita. Ukuran statistik deskriptif dari populasi, seperti rata-rata ($\mu$) atau simpangan baku ($\sigma$), disebut **parameter**. Parameter inilah yang sebenarnya ingin diketahui oleh peneliti. Namun, karena jumlah populasi biasanya sangat besar, sering kali kita tidak mungkin mengukur seluruh anggota populasi secara langsung.
 
-Sebaliknya, **sampel** adalah sebagian kecil dari populasi yang diambil untuk diamati. Sampel yang baik harus mencerminkan karakteristik populasi (representatif) agar data yang diperoleh tetap valid dan reliabel. Karakteristik dari sampel (seperti rata-rata $\bar{x}$, simpangan baku $s$) disebut **statistik**, dan nilai inilah yang digunakan sebagai dasar untuk memperkirakan parameter populasi.
+Sebaliknya, **sampel** adalah sebagian kecil dari populasi yang kita ambil untuk diamati. Sampel yang baik harus bisa mewakili sifat keseluruhan populasinya (representatif). Ukuran statistik deskriptif dari sampel inilah yang disebut **statistik** (seperti rata-rata $\bar{x}$ atau simpangan baku $s$). Nilai statistik ini digunakan untuk menduga nilai parameter populasi.
 
 ## Teknik-Teknik Pengambilan Sampel
 
@@ -54,7 +54,7 @@ Mari kita simulasikan teknik pengambilan sampel probabilitas menggunakan hasil s
 
 Pertama, kita siapkan datanya. Kita asumsikan variabel yang kita amati adalah `jarak` tempat tinggal ke kampus (km).
 
-```{r setup-itera, echo=FALSE, message=FALSE, warning=FALSE}
+```{r 05-inferensia-1-sampling-studi-kasus-setup-data, echo=FALSE, message=FALSE, warning=FALSE}
 library(readr)
 library(dplyr)
 library(knitr)
@@ -86,7 +86,7 @@ Populasi kita memiliki $N = `r N`$ mahasiswa dengan rata-rata jarak $\mu = `r ro
 **1. Simple Random Sampling (SRS)**
 Kita undi 10 nomor urut mahasiswa secara acak dari total 429 mahasiswa.
 
-```{r srs-demo, echo=FALSE}
+```{r 05-inferensia-1-sampling-studi-kasus-srs-demo, echo=FALSE}
 set.seed(123)
 sampel_srs <- data_populasi |> sample_n(10) |> select(Nomor.urut, jarak)
 kable(head(sampel_srs), caption = "Contoh Hasil Simple Random Sampling")
@@ -95,7 +95,7 @@ kable(head(sampel_srs), caption = "Contoh Hasil Simple Random Sampling")
 **2. Systematic Random Sampling**
 Kita ambil setiap mahasiswa kelipatan ke-50 dari daftar urut.
 
-```{r sys-demo, echo=FALSE}
+```{r 05-inferensia-1-sampling-studi-kasus-sys-demo, echo=FALSE}
 urutan <- seq(from = 1, to = N, by = 50)
 sampel_sys <- data_populasi |> slice(urutan) |> select(Nomor.urut, jarak)
 kable(head(sampel_sys), caption = "Contoh Hasil Systematic Sampling (Interval 50)")
@@ -104,7 +104,7 @@ kable(head(sampel_sys), caption = "Contoh Hasil Systematic Sampling (Interval 50
 **3. Stratified Random Sampling**
 Kita ingin sampel yang proporsional berdasarkan `Tahun_Kuliah`.
 
-```{r strat-demo, echo=FALSE}
+```{r 05-inferensia-1-sampling-studi-kasus-strat-demo, echo=FALSE}
 # Cek proporsi populasi
 data_populasi |> count(Tahun_Kuliah) |> mutate(prop = n/sum(n)) |> kable()
 
@@ -134,7 +134,7 @@ Penting untuk membedakan dua konsep distribusi dalam inferensi:
 
 Mari kita buktikan CLT dengan melakukan simulasi dari data populasi mahasiswa tadi. Kita akan mengambil 1000 kali sampel (masing-masing $n=30$), lalu menghitung rata-ratanya dan memplot histogramnya.
 
-```{r clt-demo, echo=FALSE, fig.cap="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)", fig.width=10}
+```{r 05-inferensia-2-clt-studi-kasus-simulasi, echo=FALSE, fig.cap="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)", fig.width=10}
 library(ggplot2)
 library(gridExtra)
 
@@ -173,7 +173,7 @@ Di mana $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel. Ji
 
 Misalkan kita mengambil **satu sampel** acak berukuran $n=100$ mahasiswa dari populasi.
 
-```{r se-demo, echo=FALSE}
+```{r 05-inferensia-3-se-studi-kasus-hitung, echo=FALSE}
 set.seed(50)
 n_sampel <- 100
 satu_sampel <- sample_n(data_populasi, n_sampel)
@@ -205,7 +205,7 @@ Apakah rata-rata sampel kita sebesar **`r round(mean_sampel, 2)` km** itu wajar?
 
 $$ Z = \frac{`r round(mean_sampel, 2)` - `r round(mu, 2)`}{`r round(sigma/10, 4)`} $$
 
-```{r z-demo, echo=FALSE}
+```{r 05-inferensia-4-zscore-studi-kasus-hitung, echo=FALSE}
 se_teoritis <- sigma / sqrt(n_sampel)
 z_score <- (mean_sampel - mu) / se_teoritis
 probabilitas <- pnorm(z_score)
