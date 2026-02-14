@@ -2031,7 +2031,7 @@ Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$)
 Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.
 
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
-<caption>(\#tab:bab-3-kuartil-unila)Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = 393)</caption>
+<caption>(\#tab:bab-3-kuartil-unila)Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = 394)</caption>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -2076,11 +2076,11 @@ Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat bergu
 
 **Interpretasi:**
 
-Dari total **393** mahasiswa yang diamati, kita dapat menafsirkan posisi data sebagai berikut:
+Dari total **394** mahasiswa yang diamati, kita dapat menafsirkan posisi data sebagai berikut:
 
 1.  **Kuartil Bawah ($Q_1$):** Sebesar 25% dari populasi (sekitar **98** mahasiswa) memiliki biaya perjalanan sepekan kurang dari atau sama dengan nilai $Q_1$. Ini menandakan kelompok dengan biaya transportasi paling efisien.
-2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% (sekitar **196** mahasiswa) memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
-3.  **Kuartil Atas ($Q_3$):** Sebesar 75% (sekitar **295** mahasiswa) memiliki biaya perjalanan di bawah nilai $Q_3$. Artinya, hanya 25% sisanya (sekitar **98** mahasiswa) yang menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
+2.  **Kuartil Tengah ($Q_2$):** Sebesar 50% (sekitar **197** mahasiswa) memiliki biaya perjalanan kurang dari atau sama dengan median. Ini adalah titik tengah distribusi.
+3.  **Kuartil Atas ($Q_3$):** Sebesar 75% (sekitar **296** mahasiswa) memiliki biaya perjalanan di bawah nilai $Q_3$. Artinya, hanya 25% sisanya (sekitar **98** mahasiswa) yang menghabiskan biaya perjalanan di atas nilai tersebut (kelompok dengan biaya tinggi).
 
 Pemahaman ini penting untuk melihat sebaran beban biaya di kalangan mahasiswa, apakah terkonsentrasi di nilai rendah atau tinggi.
 :::
@@ -2485,27 +2485,23 @@ Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transpo
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> Berjalan Kaki </td>
-   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:left;"> Berjalan kaki </td>
+   <td style="text-align:right;"> 38 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Kendaraan Bermotor (menumpang) </td>
+   <td style="text-align:left;"> Menumpang kendaraan bermotor teman/keluarga </td>
    <td style="text-align:right;"> 27 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Mobil Pribadi </td>
+   <td style="text-align:left;"> Mobil pribadi </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Sepeda </td>
-   <td style="text-align:right;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Sepeda Motor Pribadi </td>
+   <td style="text-align:left;"> Sepeda motor pribadi </td>
    <td style="text-align:right;"> 290 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Transportasi Online </td>
+   <td style="text-align:left;"> Transportasi daring </td>
    <td style="text-align:right;"> 30 </td>
   </tr>
 </tbody>
@@ -2533,29 +2529,29 @@ Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kit
   <tr>
    <th style="text-align:left;"> Jenis Kelamin </th>
    <th style="text-align:right;"> Berjalan Kaki </th>
-   <th style="text-align:right;"> Kendaraan Bermotor (menumpang) </th>
+   <th style="text-align:right;"> Menumpang </th>
    <th style="text-align:right;"> Mobil Pribadi </th>
    <th style="text-align:right;"> Sepeda </th>
-   <th style="text-align:right;"> Sepeda Motor Pribadi </th>
+   <th style="text-align:right;"> Sepeda Motor </th>
    <th style="text-align:right;"> Transportasi Online </th>
   </tr>
  </thead>
 <tbody>
   <tr>
    <td style="text-align:left;"> Laki-laki </td>
-   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 3 </td>
    <td style="text-align:right;"> 9 </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 167 </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Perempuan </td>
-   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:right;"> 35 </td>
    <td style="text-align:right;"> 18 </td>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 0 </td>
    <td style="text-align:right;"> 123 </td>
    <td style="text-align:right;"> 27 </td>
   </tr>
@@ -2670,62 +2666,52 @@ Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seper
 <tbody>
   <tr>
    <td style="text-align:left;"> Laki-laki </td>
-   <td style="text-align:left;"> Berjalan Kaki </td>
-   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Berjalan kaki </td>
+   <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Laki-laki </td>
-   <td style="text-align:left;"> Kendaraan Bermotor (menumpang) </td>
+   <td style="text-align:left;"> Menumpang kendaraan bermotor teman/keluarga </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Laki-laki </td>
-   <td style="text-align:left;"> Mobil Pribadi </td>
+   <td style="text-align:left;"> Mobil pribadi </td>
    <td style="text-align:right;"> 6 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Laki-laki </td>
-   <td style="text-align:left;"> Sepeda </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Laki-laki </td>
-   <td style="text-align:left;"> Sepeda Motor Pribadi </td>
+   <td style="text-align:left;"> Sepeda motor pribadi </td>
    <td style="text-align:right;"> 167 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Laki-laki </td>
-   <td style="text-align:left;"> Transportasi Online </td>
+   <td style="text-align:left;"> Transportasi daring </td>
    <td style="text-align:right;"> 3 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Perempuan </td>
-   <td style="text-align:left;"> Berjalan Kaki </td>
-   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:left;"> Berjalan kaki </td>
+   <td style="text-align:right;"> 35 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Perempuan </td>
-   <td style="text-align:left;"> Kendaraan Bermotor (menumpang) </td>
+   <td style="text-align:left;"> Menumpang kendaraan bermotor teman/keluarga </td>
    <td style="text-align:right;"> 18 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Perempuan </td>
-   <td style="text-align:left;"> Mobil Pribadi </td>
+   <td style="text-align:left;"> Mobil pribadi </td>
    <td style="text-align:right;"> 9 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Perempuan </td>
-   <td style="text-align:left;"> Sepeda </td>
-   <td style="text-align:right;"> 3 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Perempuan </td>
-   <td style="text-align:left;"> Sepeda Motor Pribadi </td>
+   <td style="text-align:left;"> Sepeda motor pribadi </td>
    <td style="text-align:right;"> 123 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Perempuan </td>
-   <td style="text-align:left;"> Transportasi Online </td>
+   <td style="text-align:left;"> Transportasi daring </td>
    <td style="text-align:right;"> 27 </td>
   </tr>
 </tbody>
@@ -2764,27 +2750,23 @@ Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kat
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> Berjalan Kaki </td>
-   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:left;"> Berjalan kaki </td>
+   <td style="text-align:right;"> 38 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Kendaraan Bermotor (menumpang) </td>
+   <td style="text-align:left;"> Menumpang kendaraan bermotor teman/keluarga </td>
    <td style="text-align:right;"> 27 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Mobil Pribadi </td>
+   <td style="text-align:left;"> Mobil pribadi </td>
    <td style="text-align:right;"> 15 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Sepeda </td>
-   <td style="text-align:right;"> 5 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Sepeda Motor Pribadi </td>
+   <td style="text-align:left;"> Sepeda motor pribadi </td>
    <td style="text-align:right;"> 290 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> Transportasi Online </td>
+   <td style="text-align:left;"> Transportasi daring </td>
    <td style="text-align:right;"> 30 </td>
   </tr>
 </tbody>
@@ -2842,7 +2824,7 @@ Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus
 Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:unnamed-chunk-1)Statistik Deskriptif Biaya Perjalanan Mahasiswa ITERA (dalam ribuan rupiah)</caption>
+<caption>(\#tab:bab-4-hist-biaya-prep)Statistik Deskriptif Biaya Perjalanan Mahasiswa ITERA (dalam ribuan rupiah)</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Statistik </th>
@@ -2856,23 +2838,23 @@ Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam
   </tr>
   <tr>
    <td style="text-align:left;"> Q1 </td>
-   <td style="text-align:right;"> 20.00 </td>
+   <td style="text-align:right;"> 20000.00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Median </td>
-   <td style="text-align:right;"> 30.00 </td>
+   <td style="text-align:right;"> 30000.00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Mean </td>
-   <td style="text-align:right;"> 38.67 </td>
+   <td style="text-align:right;"> 38665.89 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Q3 </td>
-   <td style="text-align:right;"> 45.00 </td>
+   <td style="text-align:right;"> 45000.00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Max </td>
-   <td style="text-align:right;"> 400.00 </td>
+   <td style="text-align:right;"> 400000.00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NA </td>
@@ -2898,7 +2880,7 @@ Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi denga
 Untuk lebih memahami proses *binning*, mari kita buat tabel frekuensi manual:
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:unnamed-chunk-2)Tabel Frekuensi Biaya Perjalanan dalam Ribuan Rupiah (6 Interval Pertama)</caption>
+<caption>(\#tab:bab-4-tab-freq-manual)Tabel Frekuensi Biaya Perjalanan dalam Ribuan Rupiah (6 Interval Pertama)</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Interval Biaya (Rp ribu) </th>
@@ -2907,27 +2889,27 @@ Untuk lebih memahami proses *binning*, mari kita buat tabel frekuensi manual:
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> [0,44.4] </td>
+   <td style="text-align:left;"> [0,4.44e+04] </td>
    <td style="text-align:right;"> 318 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (44.4,88.9] </td>
+   <td style="text-align:left;"> (4.44e+04,8.89e+04] </td>
    <td style="text-align:right;"> 80 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (88.9,133] </td>
+   <td style="text-align:left;"> (8.89e+04,1.33e+05] </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (133,178] </td>
+   <td style="text-align:left;"> (1.33e+05,1.78e+05] </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (178,222] </td>
+   <td style="text-align:left;"> (1.78e+05,2.22e+05] </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (222,267] </td>
+   <td style="text-align:left;"> (2.22e+05,2.67e+05] </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
 </tbody>
@@ -2959,7 +2941,7 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:unnamed-chunk-3)Statistik Deskriptif Biaya Perjalanan Gabungan (UINRIL &amp; UNILA)</caption>
+<caption>(\#tab:bab-4-boxplot-prep)Statistik Deskriptif Biaya Perjalanan Gabungan (UINRIL &amp; UNILA)</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> Statistik </th>
@@ -2981,7 +2963,7 @@ Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat
   </tr>
   <tr>
    <td style="text-align:left;"> Mean </td>
-   <td style="text-align:right;"> 56.42 </td>
+   <td style="text-align:right;"> 56.54 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Q3 </td>
@@ -3052,7 +3034,7 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 *Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
 
 <table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
-<caption>(\#tab:unnamed-chunk-4)Contoh Data Biaya Perjalanan dan Jarak Tempuh dalam Ribuan Rupiah (10 Observasi Pertama)</caption>
+<caption>(\#tab:bab-4-scatter-prep)Contoh Data Biaya Perjalanan dan Jarak Tempuh dalam Ribuan Rupiah (10 Observasi Pertama)</caption>
  <thead>
   <tr>
    <th style="text-align:right;"> Biaya Perjalanan (Rp ribu) </th>
@@ -3061,31 +3043,31 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 10000 </td>
    <td style="text-align:right;"> 6.69 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 21000 </td>
    <td style="text-align:right;"> 2.82 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:right;"> 40000 </td>
    <td style="text-align:right;"> 5.17 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 30000 </td>
    <td style="text-align:right;"> 6.95 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 25000 </td>
    <td style="text-align:right;"> 5.57 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:right;"> 40000 </td>
    <td style="text-align:right;"> 4.75 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 30000 </td>
    <td style="text-align:right;"> 8.27 </td>
   </tr>
   <tr>
@@ -3093,11 +3075,11 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
    <td style="text-align:right;"> 3.70 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 100 </td>
+   <td style="text-align:right;"> 100000 </td>
    <td style="text-align:right;"> 3.77 </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 30000 </td>
    <td style="text-align:right;"> 2.08 </td>
   </tr>
 </tbody>
@@ -3348,42 +3330,200 @@ Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai beri
 
 # Pengantar Analisis Statistik Inferensial
 
-## Konsep Dasar
+::: rmdcapaian
+## Capaian Pembelajaran {.unnumbered}
 
-Statistik inferensial adalah metode yang digunakan untuk menarik kesimpulan mengenai populasi berdasarkan data sampel. Konsep kuncinya adalah bahwa kita tidak mengukur seluruh populasi (sensus), melainkan hanya sebagian kecilnya (sampel), namun kita ingin hasil pengukuran sampel tersebut dapat digeneralisasi ke populasi.
+Setelah mempelajari bab ini, Anda diharapkan:
 
-### Teknik Pengambilan Sampel
+1.  mampu memilih jenis-jenis pengambilan sampel dalam statistik untuk sebuah kasus. [STP-4.1]{.capaian}
+2.  mampu menjelaskan hasil perhitungan probabilitas dari suatu nilai sampel dalam distribusi statistik sampel menggunakan *standard error*. [STP-4.2]{.capaian}
+:::
 
-Agar generalisasi valid, sampel harus representatif. Beberapa teknik:
+## Konsep Dasar Statistika Inferensial
 
-1.  **Simple Random Sampling**. Setiap anggota populasi memiliki peluang yang sama untuk dipilih.
-2.  **Stratified Random Sampling**. Populasi dibagi menjadi strata (kelompok), lalu sampel diambil secara acak dari tiap strata secara proporsional.
-3.  **Cluster Sampling**. Populasi dibagi menjadi klaster (wilayah), lalu beberapa klaster dipilih secara acak.
+Statistika inferensial adalah cabang statistika yang mempelajari **penarikan kesimpulan tentang populasi berdasarkan data dari sampel**. Konsep-konsep dasar yang perlu dipahami dalam analisis statistika ini meliputi **perbedaan antara populasi dan sampel**, **teknik pengambilan sampel**, **distribusi sampel dan distribusi statistik sampel**, serta prinsip-prinsip terkait distribusi statistik, yakni beberapa di antaranya adalah **teorema limit sentral** dan **distribusi normal**.
 
-## Distribusi Sampling dan Teorema Limit Sentral
+Setelah memahami konsep-konsep tersebut, kita dapat melanjutkan pembahasan ke penarikan kesimpulan karakteristik populasi dari hasil sampel, yang mencakup pembuatan **estimasi parameter** dan **pengujian hipotesis** yang menyatakan karakteristik seluruh populasi dari hasil sampel.
 
-Walaupun kita hanya mengambil satu sampel, kita perlu membayangkan konsep "Distribusi Sampling". Jika kita mengambil banyak sampel berulang kali dari populasi yang sama, rata-rata dari masing-masing sampel tersebut akan membentuk distribusi normal, terlepas dari bentuk distribusi populasinya. Inilah **Teorema Limit Sentral**.
+## Populasi vs. Sampel
 
-### Standard Error
+**Populasi** adalah seluruh kelompok objek (baik orang, benda, maupun kejadian) yang menjadi target penelitian kita. Ukuran statistik deskriptif dari populasi, seperti rata-rata ($\mu$) atau simpangan baku ($\sigma$), disebut **parameter**. Parameter inilah yang sebenarnya ingin diketahui oleh peneliti. Namun, karena jumlah populasi biasanya sangat besar, sering kali kita tidak mungkin mengukur seluruh anggota populasi secara langsung.
 
-Simpangan baku dari distribusi sampling disebut **Standard Error (SE)**.
+Sebaliknya, **sampel** adalah sebagian kecil dari populasi yang kita ambil untuk diamati. Sampel yang baik harus bisa mewakili sifat keseluruhan populasinya (representatif). Ukuran statistik deskriptif dari sampel inilah yang disebut **statistik** (seperti rata-rata $\bar{x}$ atau simpangan baku $s$). Nilai statistik ini digunakan untuk menduga nilai parameter populasi.
+
+## Teknik-Teknik Pengambilan Sampel
+
+Teknik pengambilan sampel bertujuan memastikan bahwa sampel yang dipilih benar-benar dapat mewakili populasinya. Terdapat dua kelompok besar teknik pengambilan sampel: **probabilitas** dan **non-probabilitas**. Perbedaan kuncinya terletak pada ada/tidak adanya **kerangka sampel** (*sampling frame*), yaitu daftar seluruh anggota populasi.
+
+### Teknik Probabilitas
+
+Teknik ini menggunakan kerangka sampel dan memberikan peluang yang sama bagi setiap anggota untuk terpilih.
+
+1.  **Simple Random Sampling**: Setiap anggota populasi memiliki peluang yang sama untuk dipilih. Dilakukan dengan sistem undian atau pembangkit angka acak.
+2.  **Systematic Random Sampling**: Menggunakan interval tertentu. Misalnya, memilih setiap orang ke-5 dari daftar. Dimulai dengan menentukan angka acak awal.
+3.  **Stratified Random Sampling**: Populasi dibagi menjadi kelompok-kelompok (**strata**) yang memiliki karakteristik sama (misal: tingkat pendidikan, pendapatan). Sampel diambil secara acak dari setiap strata secara proporsional.
+4.  **Cluster Sampling**: Populasi dibagi berdasarkan unit geografis atau klaster (misal: wilayah, blok). Kerangka sampel dibuat berdasarkan daftar klaster, lalu klaster dipilih secara acak.
+
+### Teknik Non-Probabilitas
+
+Teknik ini **tidak** menggunakan kerangka sampel (biasanya karena tidak tersedia), dipilih berdasarkan kemudahan atau pertimbangan tertentu.
+
+1.  **Convenience Sampling**: Didasarkan pada kemudahan akses (misal: orang yang lewat).
+2.  **Purposive Sampling**: Didasarkan pada pertimbangan/kriteria tertentu peneliti (misal: ahli di bidang tertentu).
+3.  **Quota Sampling**: Menetapkan kuota jumlah untuk setiap kelompok (non-acak).
+4.  **Snowball Sampling**: Responden awal merekomendasikan responden berikutnya (berguna untuk populasi tersembunyi).
+
+::: rmdkasus
+### Studi Kasus: Teknik Pengambilan Sampel Data Jarak {.unnumbered}
+
+Mari kita simulasikan teknik pengambilan sampel probabilitas menggunakan hasil survei jarak tempat tinggal terhadap **429 mahasiswa** sebuah perguruan tinggi di Lampung (ITERA). Kita akan menganggap seluruh data responden ini sebagai **populasi**.
+
+Pertama, kita siapkan datanya. Kita asumsikan variabel yang kita amati adalah `jarak` tempat tinggal ke kampus (km).
+
+
+
+Populasi kita memiliki $N = 428$ mahasiswa dengan rata-rata jarak $\mu = 5.01$ km. Sekarang kita coba ambil sampel dengan berbagai teknik.
+
+**1. Simple Random Sampling (SRS)**
+Kita undi 10 nomor urut mahasiswa secara acak dari total 429 mahasiswa.
+
+
+Table: (\#tab:05-inferensia-1-sampling-studi-kasus-srs-demo)Contoh Hasil Simple Random Sampling
+
+| nomor.urut| jarak|
+|----------:|-----:|
+|        416|  2.75|
+|        180|  6.64|
+|         14|  3.70|
+|        196|  5.24|
+|        307|  3.77|
+|        119|  3.84|
+
+**2. Systematic Random Sampling**
+Kita ambil setiap mahasiswa kelipatan ke-50 dari daftar urut.
+
+
+Table: (\#tab:05-inferensia-1-sampling-studi-kasus-sys-demo)Contoh Hasil Systematic Sampling (Interval 50)
+
+| nomor.urut| jarak|
+|----------:|-----:|
+|          1|  6.69|
+|         52|  7.50|
+|        102|  6.78|
+|        152|  5.68|
+|        202|  7.03|
+|        252|  2.85|
+
+**3. Stratified Random Sampling**
+Kita ingin sampel yang proporsional berdasarkan `Tahun_Kuliah`.
+
+
+|Tahun_Kuliah |   n|      prop|
+|:------------|---:|---------:|
+|Kedua        |  67| 0.1565421|
+|Keempat      | 215| 0.5023364|
+|Ketiga       | 109| 0.2546729|
+|Pertama      |  37| 0.0864486|
+
+
+
+Table: (\#tab:05-inferensia-1-sampling-studi-kasus-strat-demo)Jumlah Sampel per Strata
+
+|Tahun_Kuliah |  n|
+|:------------|--:|
+|Kedua        |  7|
+|Keempat      | 22|
+|Ketiga       | 11|
+|Pertama      |  4|
+:::
+
+## Distribusi Sampel, Distribusi Statistik Sampel, dan Teorema Limit Sentral
+
+Penting untuk membedakan dua konsep distribusi dalam inferensi:
+
+1.  **Distribusi Sampel**: Sebaran nilai data dari **satu sampel** yang kita ambil. Ini menggambarkan variasi data individu.
+2.  **Distribusi Statistik Sampel**: Distribusi teoretis dari suatu **nilai statistik** (misalnya rata-rata) yang dihitung berulang kali dari **banyak sampel** yang mungkin diambil dari populasi yang sama.
+
+**Teorema Limit Sentral (CLT)** menyatakan bahwa apabila ukuran sampel ($n$) cukup besar (biasanya $n \ge 30$), maka **distribusi statistik sampel** (sebaran rata-rata sampel) akan mendekati **distribusi normal**, terlepas dari bentuk distribusi populasi asalnya. Hal ini memungkinkan kita menggunakan statistik parametrik.
+
+::: rmdkasus
+### Studi Kasus: Simulasi Teorema Limit Sentral {.unnumbered}
+
+Mari kita buktikan CLT dengan melakukan simulasi dari data populasi mahasiswa tadi. Kita akan mengambil 1000 kali sampel (masing-masing $n=30$), lalu menghitung rata-ratanya dan memplot histogramnya.
+
+<div class="figure">
+<img src="figures/05-inferensia-2-clt-studi-kasus-simulasi-1.png" alt="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)"  />
+<p class="caption">(\#fig:05-inferensia-2-clt-studi-kasus-simulasi)Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)</p>
+</div>
+
+Perhatikan gambar di atas. Distribusi populasi (kiri) terlihat "miring" (skewed) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang **sempurna normal**. Rata-rata dari distribusi sampling ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = 5.01$).
+:::
+
+## Standard Error (SE)
+
+Standard Error adalah simpangan baku dari distribusi statistik sampel. Ini mengukur seberapa akurat rata-rata sampel kita sebagai estimator rata-rata populasi. Semakin kecil SE, semakin presisi estimasi kita.
+
 $$ SE = \frac{\sigma}{\sqrt{n}} $$
-Dimana $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel.
 
-### Z-Score
+Di mana $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel. Jika $\sigma$ tidak diketahui, kita gunakan simpangan baku sampel ($s$) sebagai estimasi.
 
-Untuk mengetahui posisi suatu nilai dalam distribusi normal baku, kita menggunakan Z-Score:
-$$ Z = \frac{x - \mu}{\sigma} $$
-Untuk rata-rata sampel:
+::: rmdkasus
+### Studi Kasus: Menghitung Standard Error {.unnumbered}
+
+Misalkan kita mengambil **satu sampel** acak berukuran $n=100$ mahasiswa dari populasi.
+
+
+
+Dari sampel ini, kita peroleh rata-rata jarak $\bar{x} = 5.16$ km.
+Kita tahu simpangan baku populasi $\sigma = 2.82$. Maka **Standard Error** teoritisnya adalah:
+
+$$ SE = \frac{2.82}{\sqrt{100}} = 0.2817 $$
+
+Nilai ini memberitahu kita bahwa rata-rata sampel kita (5.16) diperkirakan menyimpang sekitar $\pm 0.28$ km dari rata-rata populasi sebenarnya.
+:::
+
+## Nilai Standar (*Z-Score*) dalam Inferensi
+
+*Z-score* menunjukkan posisi suatu nilai dalam distribusi normal baku. Untuk rata-rata sampel, rumusnya menggunakan SE sebagai pembagi (bukan simpangan baku biasa):
+
 $$ Z = \frac{\bar{x} - \mu}{SE} $$
 
+Z-score ini kemudian dapat dikonversi menjadi **probabilitas** (P-value) untuk menentukan seberapa "wajar" atau "langka" sampel yang kita dapatkan.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Z-Score dan Peluang {.unnumbered}
+
+Apakah rata-rata sampel kita sebesar **5.16 km** itu wajar? Mari hitung Z-score nya.
+
+$$ Z = \frac{5.16 - 5.01}{0.2817} $$
+
+
+
+Hasil:
+-   Z-score = **0.54**
+-   Probabilitas ($P(Z < z)$) = **0.7057**
+
+Artinya, peluang mendapatkan sampel dengan rata-rata 5.16 km atau lebih kecil dari populasi ini adalah sekitar **70.6%**. Angka ini cukup besar (jauh dari 5% atau 0.05), sehingga sampel kita dianggap masih wajar dan berasal dari populasi tersebut.
+:::
+
 ::: rmdexercise
-## Soal Evaluasi 6 {.unnumbered}
+## Soal Evaluasi 5 {.unnumbered}
 
-1.  Jelaskan perbedaan mendasar antara statistik deskriptif dan inferensial. [STP-4.1]{.capaian}
-2.  Sebutkan dan jelaskan tiga teknik pengambilan sampel probabilitas. [STP-4.2]{.capaian}
-3.  Hitung Z-Score jika diketahui rata-rata sampel = 50, rata-rata populasi = 45, simpangan baku = 10, dan n = 25. [STP-4.3]{.capaian}
+1.  **Studi Kasus Survei Keakraban**. [STP-4.1]{.capaian}
+    Sebuah acara keakraban angkatan Anda akan dilakukan di suatu tempat yang memerlukan biaya sewa tempat. Agar acara Anda dihadiri sebanyak mungkin orang, Anda menanyakan kesediaan kawan-kawan Anda. Anda pun merancang sebuah survei untuk mengetahui persentase kawan Anda yang setuju acara keakraban diadakan di tempat tersebut. Untuk itu Anda menanyakan sebagian kawan Anda sebagai sampel.
+    a.  Apabila Anda memiliki daftar nama seluruh kawan Anda, apa nama teknik pengambilan sampel yang Anda bisa lakukan?
+    b.  Jelaskan bagaimana metode Anda memilih sampel kawan Anda berdasarkan kondisi di soal ke-1 tersebut.
+    c.  Apabila Anda tidak memiliki daftar nama seluruh kawan Anda, apa nama teknik pengambilan sampel yang Anda bisa lakukan?
+    d.  Jelaskan bagaimana metode Anda memilih sampel kawan Anda berdasarkan kondisi di soal ke-3 tersebut.
 
+2.  Jelaskan perbedaan antara simpangan baku (*standard deviation*) dengan *standard error*! [STP-4.2]{.capaian}
+
+3.  **Kasus Jarak Tempat Tinggal**. [STP-4.2]{.capaian}
+    Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.
+    a.  Jelaskan perbedaan distribusi sampel dengan distribusi statistik sampel menggunakan kasus ini.
+    b.  Apakah kita dapat menggunakan teorema limit sentral dalam perhitungan probabilitas distribusi statistik sampel kita tersebut? Jelaskan jawaban Anda.
+    c.  Katakanlah parameternya (rata-rata jarak tempat tinggal seluruh pegawai ITERA) diketahui sebesar 7,5 km, Hitunglah nilai standar (z-score) sampel kita.
+    d.  Hitunglah probabilitas kita mendapatkan nilai rata-rata seperti yang ditanyakan dalam 3.c tersebut dan jelaskan maknanya.
 :::
 
 <!--chapter:end:05-pengantar-inferensial.Rmd-->
@@ -3790,7 +3930,7 @@ pengeluaran <- c(3, 4, 3.5, 5, 6, 6.5, 7)
 plot(pendapatan, pengeluaran)
 ```
 
-![](figures/unnamed-chunk-12-1.png)<!-- -->
+![](figures/bab-12-korelasi-pearson-1.png)<!-- -->
 
 ``` r
 # Korelasi Pearson
