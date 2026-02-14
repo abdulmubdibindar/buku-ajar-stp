@@ -34,6 +34,11 @@
 ### General chunks
 
 - Use single apostrophe for naming strings
+- SELALU BERI NAMA CHUNK
+- Untuk menjamin tidak ada duplikasi, gunakan format penamaan berikut untuk setiap chunk:
+  - `nama-bab-nomor-urutan-konsep-penjelasan`
+  - `nama-bab-nomor-urutan-konsep-studi-kasus`
+  - `nama-bab-nomor-urutan-konsep-evaluasi`
 
 ### Images
 

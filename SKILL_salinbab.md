@@ -52,6 +52,12 @@ Skill ini memandu proses konversi dan penyempurnaan materi bab buku ajar dari ra
   - `rmdnote`: Judul harus diawali dengan "Catatan: ".
 - **Angka**: Gunakan koma (`,`) untuk desimal dan titik (`.`) untuk ribuan.
 - **String**: Gunakan tanda kutip tunggal (`'`) untuk penamaan string dalam kode R.
+- **Code Chunks**:
+  - **SELALU BERI NAMA CHUNK**.
+  - Gunakan format penamaan berikut untuk mencegah duplikasi:
+    - `nama-bab-nomor-urutan-konsep-penjelasan`
+    - `nama-bab-nomor-urutan-konsep-studi-kasus`
+    - `nama-bab-nomor-urutan-konsep-evaluasi`
 
 ### 5. Elemen Visual (Gambar & Tabel)
 
