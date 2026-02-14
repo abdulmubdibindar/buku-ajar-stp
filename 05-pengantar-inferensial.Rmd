@@ -1,7 +1,11 @@
 # Pengantar Analisis Statistik Inferensial
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
 ::: rmdcapaian
-## Capaian Pembelajaran
+## Capaian Pembelajaran {.unnumbered}
 
 Setelah mempelajari bab ini, Anda diharapkan:
 
@@ -11,278 +15,211 @@ Setelah mempelajari bab ini, Anda diharapkan:
 
 ## Konsep Dasar Statistika Inferensial
 
-Statistika inferensial adalah cabang statistika yang mempelajari penarikan kesimpulan tentang populasi berdasarkan data dari sampel. Konsep-konsep dasar yang perlu dipahami dalam analisis statistika ini meliputi perbedaan antara populasi dan sampel, teknik pengambilan sampel, distribusi sampel dan distribusi statistik sampel, serta prinsip-prinsip seperti teorema limit sentral dan distribusi normal.
+Statistika inferensial adalah cabang statistika yang mempelajari **penarikan kesimpulan tentang populasi berdasarkan data dari sampel**. Konsep-konsep dasar yang perlu dipahami dalam analisis statistika ini meliputi perbedaan antara populasi dan sampel, teknik pengambilan sampel, distribusi sampel dan distribusi statistik sampel, serta prinsip-prinsip seperti teorema limit sentral dan distribusi normal.
 
-Setelah memahami konsep-konsep tersebut, kita dapat melanjutkannya ke bagaimana menarik kesimpulan tentang karakteristik populasi dari sampel, yang mencakup pembuatan estimasi parameter, menghitung peluang, dan mengambil keputusan secara akurat meskipun hanya menggunakan sebagian data dari keseluruhan populasi.
+Setelah memahami konsep-konsep tersebut, kita dapat melanjutkan pembahasan ke penarikan kesimpulan karakteristik populasi dari hasil sampel, yang mencakup pembuatan estimasi parameter, menghitung peluang, dan mengambil keputusan secara akurat meskipun hanya menggunakan sebagian data dari keseluruhan populasi.
 
-### Populasi vs. Sampel
+## Populasi vs. Sampel
 
 Dalam penelitian, istilah **populasi** merujuk pada sekumpulan objek yang didefinisikan dengan jelas dan memenuhi syarat tertentu sebagai keseluruhan ruang lingkup yang menjadi target generalisasi penelitian. Populasi dapat berupa manusia, benda, peristiwa, hingga fenomena yang menjadi sasaran kajian penelitian. Karakteristik, seperti rata-rata ($\mu$), proporsi ($P$), atau simpangan baku ($\sigma$), dari suatu populasi disebut **parameter**. Parameter inilah yang ingin diketahui peneliti, namun seringkali tidak mungkin diukur secara langsung karena keterbatasan dalam menjangkau seluruh populasi.
 
 Sebaliknya, **sampel** adalah sebagian kecil dari populasi yang diambil untuk diamati. Sampel yang baik harus mencerminkan karakteristik populasi (representatif) agar data yang diperoleh tetap valid dan reliabel. Karakteristik dari sampel (seperti rata-rata $\bar{x}$, simpangan baku $s$) disebut **statistik**, dan nilai inilah yang digunakan sebagai dasar untuk memperkirakan parameter populasi.
 
-Menarik kesimpulan berupa nilai parameter menggunakan statistik adalah tujuan dari analisis statistik inferensial.
+## Teknik-Teknik Pengambilan Sampel
 
-### Teknik-Teknik Pengambilan Sampel
+Teknik pengambilan sampel bertujuan memastikan bahwa sampel yang dipilih benar-benar dapat mewakili populasinya. Terdapat dua kelompok besar teknik pengambilan sampel: **probabilitas** dan **non-probabilitas**. Perbedaan kuncinya terletak pada ada/tidak adanya **kerangka sampel** (*sampling frame*), yaitu daftar seluruh anggota populasi.
 
-Teknik pengambilan sampel bertujuan memastikan bahwa sampel yang dipilih benar-benar dapat mewakili populasinya. Terdapat dua kelompok besar teknik pengambilan sampel: **probabilitas** dan **non-probabilitas**.
+### Teknik Probabilitas
 
-Perbedaan kuncinya terletak pada ada/tidak adanya **kerangka sampel** (*sampling frame*), yaitu daftar seluruh anggota populasi.
-- **Teknik Probabilitas**: Menggunakan kerangka sampel, memberikan peluang yang sama bagi setiap anggota untuk terpilih. Hasilnya lebih bisa digeneralisasi.
-- **Teknik Non-probabilitas**: Tidak menggunakan kerangka sampel (biasanya karena tidak tersedia), dipilih berdasarkan kemudahan atau pertimbangan tertentu. Hasilnya sulit digeneralisasi.
+Teknik ini menggunakan kerangka sampel dan memberikan peluang yang sama bagi setiap anggota untuk terpilih.
 
-#### Teknik Pengambilan Sampel Probabilitas
+1.  **Simple Random Sampling**: Setiap anggota populasi memiliki peluang yang sama untuk dipilih. Dilakukan dengan sistem undian atau pembangkit angka acak.
+2.  **Systematic Random Sampling**: Menggunakan interval tertentu. Misalnya, memilih setiap orang ke-5 dari daftar. Dimulai dengan menentukan angka acak awal.
+3.  **Stratified Random Sampling**: Populasi dibagi menjadi kelompok-kelompok (**strata**) yang memiliki karakteristik sama (misal: tingkat pendidikan, pendapatan). Sampel diambil secara acak dari setiap strata secara proporsional.
+4.  **Cluster Sampling**: Populasi dibagi berdasarkan unit geografis atau klaster (misal: wilayah, blok). Kerangka sampel dibuat berdasarkan daftar klaster, lalu klaster dipilih secara acak.
 
-1.  **Simple Random Sampling**.
-    Setiap anggota populasi memiliki peluang yang sama untuk dipilih. Dilakukan dengan sistem undian atau pembangkit angka acak.
-    
-2.  **Systematic Random Sampling**.
-    Menggunakan interval tertentu. Misalnya, memilih setiap orang ke-5 dari daftar. Dimulai dengan menentukan angka acak awal.
-    
-3.  **Stratified Random Sampling**.
-    Populasi dibagi menjadi kelompok-kelompok (**strata**) yang memiliki karakteristik sama (misal: tingkat pendidikan, pendapatan). Sampel diambil secara acak dari setiap strata secara proporsional.
-    
-4.  **Cluster Sampling**.
-    Populasi dibagi berdasarkan unit geografis atau klaster (misal: wilayah, blok). Kerangka sampel dibuat berdasarkan daftar klaster, lalu klaster dipilih secara acak.
+### Teknik Non-Probabilitas
 
-#### Teknik Pengambilan Sampel Non-Probabilitas
+Teknik ini **tidak** menggunakan kerangka sampel (biasanya karena tidak tersedia), dipilih berdasarkan kemudahan atau pertimbangan tertentu.
 
-1.  **Convenience Sampling**.
-    Didasarkan pada kemudahan akses. Contoh: mewawancarai orang yang lewat di kantin.
-    
-2.  **Purposive Sampling**.
-    Didasarkan pada pertimbangan/kriteria tertentu peneliti. Contoh: hanya guru dengan pengalaman > 5 tahun.
-    
-3.  **Quota Sampling**.
-    Menetapkan kuota jumlah untuk setiap kelompok. Mirip stratified tapi pengambilan sampelnya tidak acak (biasanya convenience).
-    
-4.  **Snowball Sampling**.
-    Responden awal merekomendasikan responden berikutnya. Berguna untuk populasi yang sulit dijangkau.
-
-### Distribusi Sampel vs. Distribusi Statistik Sampel
-
-Penting untuk membedakan dua konsep ini:
-
-1.  **Distribusi Sampel** (*Sample Distribution*):
-    Sebaran nilai data dari **satu sampel** yang kita ambil. Misalnya, kita mengambil 100 mahasiswa dan membuat histogram tinggi badan mereka. Ini menggambarkan variasi data individu.
-
-2.  **Distribusi Statistik Sampel** (*Sampling Distribution*):
-    Distribusi teoretis dari suatu **nilai statistik** (misalnya rata-rata) yang dihitung berulang kali dari **banyak sampel** yang mungkin diambil dari populasi yang sama.
-    Bayangkan kita mengambil 1000 kali sampel (masing-masing n=30), lalu menghitung rata-rata tiap sampel. Kumpulan rata-rata inilah yang membentuk distribusi statistik sampel. Ini adalah dasar inferensi statistik.
-
-### Distribusi Normal
-
-Distribusi normal adalah distribusi variabel acak kontinu yang berbentuk lonceng, simetris, dan ditentukan oleh rata-rata ($\mu$) dan simpangan baku ($\sigma$).
--   **Aturan Empiris**:
-    -   ~68% data berada dalam $\mu \pm 1\sigma$
-    -   ~95% data berada dalam $\mu \pm 2\sigma$
-    -   ~99.7% data berada dalam $\mu \pm 3\sigma$
-
-Jika distribusi tidak normal, kita mengenal istilah **Skewness** (kemencengan) dan **Kurtosis** (keruncingan).
-
-### Teorema Limit Sentral
-
-**Teorema Limit Sentral** (*Central Limit Theorem* - CLT) menyatakan bahwa:
-Apabila ukuran sampel ($n$) cukup besar (biasanya $n \ge 30$), maka **distribusi statistik sampel** (sebaran rata-rata sampel) akan mendekati **distribusi normal**, terlepas dari bentuk distribusi populasi asalnya.
-
-Hal ini memungkinkan kita menggunakan asumsi normalitas dalam uji statistik meskipun data asli kita tidak berdistribusi normal, asalkan sampel kita cukup besar.
-
-### Standard Error
-
-**Standard Error (SE)** adalah simpangan baku dari distribusi statistik sampel. Ini mengukur seberapa akurat rata-rata sampel kita sebagai estimator rata-rata populasi.
-
-$$ SE = \frac{\sigma}{\sqrt{n}} $$
-
-Di mana:
--   $\sigma$ = simpangan baku populasi (jika tidak diketahui, didekati dengan $s$ sampel).
--   $n$ = ukuran sampel.
-
-Semakin besar sampel ($n$), semakin kecil SE, artinya estimasi kita semakin presisi.
-
-### Nilai Standar (Z-Score)
-
-**Z-score** menunjukkan seberapa jauh suatu nilai menyimpang dari rata-ratanya dalam satuan simpangan baku.
-
-Untuk data individu:
-$$ Z = \frac{x - \mu}{\sigma} $$
-
-Untuk **rata-rata sampel** (dalam konteks inferensi), kita menggunakan SE sebagai pembagi:
-$$ Z = \frac{\bar{x} - \mu}{SE} $$
-
-Z-score digunakan untuk menghitung **peluang (probabilitas)** mendapatkan nilai statistik tertentu, dengan merujuk pada tabel Distribusi Normal Standar.
-
-<br>
+1.  **Convenience Sampling**: Didasarkan pada kemudahan akses (misal: orang yang lewat).
+2.  **Purposive Sampling**: Didasarkan pada pertimbangan/kriteria tertentu peneliti (misal: ahli di bidang tertentu).
+3.  **Quota Sampling**: Menetapkan kuota jumlah untuk setiap kelompok (non-acak).
+4.  **Snowball Sampling**: Responden awal merekomendasikan responden berikutnya (berguna untuk populasi tersembunyi).
 
 ::: rmdkasus
-## Studi Kasus: Analisis Data Mahasiswa ITERA {.unnumbered}
+### Studi Kasus: Teknik Pengambilan Sampel Data Jarak {.unnumbered}
 
-Untuk memahami konsep-konsep di atas, kita akan menggunakan dataset `DataUtama_mhsITERA.csv`. Mari kita asumsikan dataset ini adalah **populasi** mahasiswa yang kita miliki ($N$ = 429). Kita akan melakukan simulasi pengambilan sampel dan perhitungan statistik inferensial.
+Mari kita simulasikan teknik pengambilan sampel probabilitas menggunakan hasil survei jarak tempat tinggal terhadap **429 mahasiswa** sebuah perguruan tinggi di Lampung (ITERA). Kita akan menganggap seluruh data responden ini sebagai **populasi**.
 
-### Persiapan Data
+Pertama, kita siapkan datanya. Kita asumsikan variabel yang kita amati adalah `jarak` tempat tinggal ke kampus (km).
 
-Pertama, kita muat data dan lakukan pembersihan variabel `jarak`.
-
-```{r setup-itera, echo=TRUE, message=FALSE, warning=FALSE}
+```{r setup-itera, echo=FALSE, message=FALSE, warning=FALSE}
 library(readr)
 library(dplyr)
-library(ggplot2)
 library(knitr)
 
-# Baca data
+# Baca data (disimulasikan sebagai Populasi)
 data_itera <- read_csv("datasets/DataUtama_mhsITERA.csv")
 
-# Bersihkan variabel jarak (ubah koma jadi titik, konversi ke numerik)
-# Buat juga variabel Tahun Kuliah berdasarkan Semester
-data_itera_clean <- data_itera %>%
+# Bersihkan variabel jarak
+data_populasi <- data_itera |>
   mutate(
     jarak = as.numeric(gsub(",", ".", jarak)),
+    # Buat variabel strata Tahun Kuliah
     Tahun_Kuliah = case_when(
       Tingkat.Semester %in% c(1, 2) ~ "Pertama",
       Tingkat.Semester %in% c(3, 4) ~ "Kedua",
       Tingkat.Semester %in% c(5, 6) ~ "Ketiga",
       Tingkat.Semester >= 7 ~ "Keempat"
     )
-  ) %>%
+  ) |>
   filter(!is.na(jarak))
 
-# Hitung Parameter Populasi
-pop_mean <- mean(data_itera_clean$jarak)
-pop_sd <- sd(data_itera_clean$jarak)
-N <- nrow(data_itera_clean)
+N <- nrow(data_populasi)
+mu <- mean(data_populasi$jarak)
+sigma <- sd(data_populasi$jarak)
 ```
 
-Populasi kita memiliki $N = `r N`$ mahasiswa.
-Parameter populasi untuk variabel jarak:
--   Rata-rata ($\mu$) = **`r round(pop_mean, 2)` km**
--   Simpangan Baku ($\sigma$) = **`r round(pop_sd, 2)` km**
+Populasi kita memiliki $N = `r N`$ mahasiswa dengan rata-rata jarak $\mu = `r round(mu, 2)`$ km. Sekarang kita coba ambil sampel dengan berbagai teknik.
 
-### 1. Simulasi Teknik Pengambilan Sampel
+**1. Simple Random Sampling (SRS)**
+Kita undi 10 nomor urut mahasiswa secara acak dari total 429 mahasiswa.
 
-Kita akan mensimulasikan pengambilan sampel probabilitas menggunakan R.
-
-#### a. Simple Random Sampling
-Kita mengambil acak 10 mahasiswa dari populasi.
-
-```{r simple-random, echo=TRUE}
-set.seed(101) # Agar hasil bisa direplikasi
-sampel_srs <- data_itera_clean %>% 
-  sample_n(10) %>%
-  select(Nomor.urut, Prodi, jarak)
-
-kable(sampel_srs, caption = "Hasil Simple Random Sampling (n=10)")
+```{r srs-demo, echo=FALSE}
+set.seed(123)
+sampel_srs <- data_populasi |> sample_n(10) |> select(Nomor.urut, jarak)
+kable(head(sampel_srs), caption = "Contoh Hasil Simple Random Sampling")
 ```
 
-#### b. Systematic Random Sampling
-Misalkan kita ingin mengambil sampel setiap kelipatan 50 dari daftar yang sudah diurutkan berdasarkan `Nomor.urut`.
+**2. Systematic Random Sampling**
+Kita ambil setiap mahasiswa kelipatan ke-50 dari daftar urut.
 
-```{r systematic, echo=TRUE}
-# Urutkan data
-data_sorted <- data_itera_clean %>% arrange(Nomor.urut)
-
-# Ambil setiap kelipatan 50
+```{r sys-demo, echo=FALSE}
 urutan <- seq(from = 1, to = N, by = 50)
-sampel_sys <- data_sorted %>% slice(urutan) %>% select(Nomor.urut, Prodi, jarak)
-
-kable(sampel_sys, caption = "Hasil Systematic Sampling (Interval=50)")
+sampel_sys <- data_populasi |> slice(urutan) |> select(Nomor.urut, jarak)
+kable(head(sampel_sys), caption = "Contoh Hasil Systematic Sampling (Interval 50)")
 ```
 
-#### c. Stratified Random Sampling
-Kita akan membagi populasi berdasarkan `Tahun_Kuliah` (strata). Mari kita lihat proporsi populasi terlebih dahulu.
+**3. Stratified Random Sampling**
+Kita ingin sampel yang proporsional berdasarkan `Tahun_Kuliah`.
 
-```{r proporsi-strata, echo=TRUE}
-tabel_strata <- data_itera_clean %>%
-  count(Tahun_Kuliah) %>%
-  mutate(Proporsi = n / sum(n))
+```{r strat-demo, echo=FALSE}
+# Cek proporsi populasi
+data_populasi |> count(Tahun_Kuliah) |> mutate(prop = n/sum(n)) |> kable()
 
-kable(tabel_strata, caption = "Proporsi Populasi Berdasarkan Tahun Kuliah")
-```
-
-Kita akan mengambil sampel berukuran $n=100$ secara proporsional.
-
-```{r stratified, echo=TRUE}
-set.seed(102)
-sampel_strat <- data_itera_clean %>%
-  group_by(Tahun_Kuliah) %>%
-  sample_frac(size = 100/N) %>% # Mengambil proporsi yang sama agar total ~100
+# Ambil sampel berstrata (misal 10% dari tiap strata)
+set.seed(123)
+sampel_strat <- data_populasi |>
+  group_by(Tahun_Kuliah) |>
+  sample_frac(0.1) |>
   ungroup()
 
-# Cek jumlah per strata
-cek_strata <- sampel_strat %>% count(Tahun_Kuliah)
-kable(cek_strata, caption = "Jumlah Sampel per Strata (Stratified Sampling)")
+# Cek hasil sampel
+sampel_strat |> count(Tahun_Kuliah) |> kable(caption = "Jumlah Sampel per Strata")
 ```
-
-### 2. Distribusi Sampel vs Distribusi Statistik Sampel
-
-Mari kita visualisasikan perbedaan antara distribusi satu sampel dengan distribusi statistik (rata-rata) dari banyak sampel.
-
-```{r plot-distribusi, echo=TRUE, fig.cap="Perbandingan Distribusi Populasi, Satu Sampel, dan Distribusi Sampling"}
-# 1. Distribusi Populasi (Histogram)
-p1 <- ggplot(data_itera_clean, aes(x = jarak)) +
-  geom_histogram(bins=30, fill="gray", color="black", alpha=0.5) +
-  geom_vline(xintercept = pop_mean, color="red", size=1) +
-  labs(title = paste0("Populasi (N=", N, ")"), x="Jarak", y="Freq") + theme_minimal()
-
-# 2. Satu Sampel (n=100)
-set.seed(123)
-satu_sampel <- sample_n(data_itera_clean, 100)
-mean_satu <- mean(satu_sampel$jarak)
-p2 <- ggplot(satu_sampel, aes(x = jarak)) +
-  geom_histogram(bins=20, fill="skyblue", color="black", alpha=0.7) +
-  geom_vline(xintercept = mean_satu, color="blue", size=1, linetype="dashed") +
-  labs(title = paste0("Satu Sampel (n=100, mean=", round(mean_satu,2), ")"), x="Jarak", y="Freq") + theme_minimal()
-
-# 3. Distribusi Statistik Sampel (1000x sampel n=100)
-means_1000 <- replicate(1000, mean(sample(data_itera_clean$jarak, 100)))
-df_means <- data.frame(means = means_1000)
-mean_sampling <- mean(means_1000)
-
-p3 <- ggplot(df_means, aes(x = means)) +
-  geom_histogram(bins=30, fill="salmon", color="black", alpha=0.7) +
-  geom_vline(xintercept = mean_sampling, color="darkred", size=1) +
-  labs(title = "Distribusi Sampling (1000x rata-rata)", subtitle = "Teorema Limit Sentral", x="Rata-rata Sampel", y="Freq") + theme_minimal()
-
-library(gridExtra)
-grid.arrange(p1, p2, p3, ncol=1)
-```
-
-Perhatikan:
--   **Populasi** (atas) mungkin tidak normal (agak miring).
--   **Satu Sampel** (tengah) bentuknya kasar, mirip populasi tapi tidak persis.
--   **Distribusi Sampling** (bawah) berbentuk **Lonceng Sempurna (Normal)**. Rata-ratanya sangat dekat dengan rata-rata populasi. Ini bukti Teorema Limit Sentral.
-
-### 3. Menghitung Standard Error (SE)
-
-Kita ambil kasus sampel $n=100$ tadi.
-Rata-rata sampel ($\bar{x}$) = **`r round(mean_satu, 2)` km**.
-Simpangan baku populasi ($\sigma$) = **`r round(pop_sd, 2)` km**.
-
-Maka Standard Error teoritisnya:
-
-$$ SE = \frac{\sigma}{\sqrt{n}} = \frac{`r round(pop_sd, 2)`}{\sqrt{100}} = \frac{`r round(pop_sd, 2)`}{10} = `r round(pop_sd/10, 4)` $$
-
-Bandingkan dengan simpangan baku dari "Distribusi Sampling" (grafik merah) yang kita simulasikan: **`r round(sd(means_1000), 4)`**. Nilainya sangat dekat! Ini menunjukkan bahwa rumus SE akurat memprediksi variasi rata-rata sampel.
-
-### 4. Menghitung Z-Score dan Peluang
-
-Apakah rata-rata sampel sebesar **`r round(mean_satu, 2)` km** itu wajar? Atau aneh?
-Mari hitung Z-score nya:
-
-$$ Z = \frac{\bar{x} - \mu}{SE} = \frac{`r round(mean_satu, 2)` - `r round(pop_mean, 2)`}{`r round(pop_sd/10, 4)`} $$
-
-```{r calc-z, echo=TRUE}
-se <- pop_sd / sqrt(100)
-z_val <- (mean_satu - pop_mean) / se
-prob <- pnorm(z_val)
-```
-
-Hasil perhitungan:
--   $Z = `r round(z_val, 2)`$
--   Probabilitas ($P(Z < `r round(z_val, 2)`)$) = **`r round(prob, 4)`**
-
-Artinya, peluang mendapatkan sampel dengan rata-rata `r round(mean_satu, 2)` km atau lebih kecil adalah sekitar **`r round(prob*100, 1)`%**. Karena probabilitasnya cukup besar (tidak mendekati 0 atau 1), maka sampel ini dianggap **wajar** dan representatif dari populasi.
 :::
 
-## Soal Evaluasi
+### Distribusi Sampel, Statistik Sampel, dan Teorema Limit Sentral
+
+Penting untuk membedakan dua konsep distribusi dalam inferensi:
+
+1.  **Distribusi Sampel**: Sebaran nilai data dari **satu sampel** yang kita ambil. Ini menggambarkan variasi data individu.
+2.  **Distribusi Statistik Sampel**: Distribusi teoretis dari suatu **nilai statistik** (misalnya rata-rata) yang dihitung berulang kali dari **banyak sampel** yang mungkin diambil dari populasi yang sama.
+
+**Teorema Limit Sentral (CLT)** menyatakan bahwa apabila ukuran sampel ($n$) cukup besar (biasanya $n \ge 30$), maka **distribusi statistik sampel** (sebaran rata-rata sampel) akan mendekati **distribusi normal**, terlepas dari bentuk distribusi populasi asalnya. Hal ini memungkinkan kita menggunakan statistik parametrik.
+
+::: rmdkasus
+### Studi Kasus: Simulasi Teorema Limit Sentral {.unnumbered}
+
+Mari kita buktikan CLT dengan melakukan simulasi dari data populasi mahasiswa tadi. Kita akan mengambil 1000 kali sampel (masing-masing $n=30$), lalu menghitung rata-ratanya dan memplot histogramnya.
+
+```{r clt-demo, echo=FALSE, fig.cap="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)", fig.width=10}
+library(ggplot2)
+library(gridExtra)
+
+# 1. Distribusi Populasi (Data Asli)
+p1 <- ggplot(data_populasi, aes(x = jarak)) +
+  geom_histogram(bins=30, fill="gray", color="black", alpha=0.7) +
+  geom_vline(xintercept = mu, color="red", size=1) +
+  labs(title = paste0("Distribusi Populasi (N=", N, ")"), x="Jarak (km)") + theme_minimal()
+
+# 2. Distribusi Sampling (Rata-rata dari 1000 sampel)
+set.seed(999)
+means_1000 <- replicate(1000, mean(sample(data_populasi$jarak, 30)))
+df_means <- data.frame(means = means_1000)
+
+p2 <- ggplot(df_means, aes(x = means)) +
+  geom_histogram(bins=30, fill="steelblue", color="white", alpha=0.9) +
+  geom_vline(xintercept = mean(means_1000), color="red", size=1) +
+  labs(title = "Distribusi Sampling (n=30, 1000x)", x="Rata-rata Sampel") + theme_minimal()
+
+grid.arrange(p1, p2, ncol=2)
+```
+
+Perhatikan gambar di atas. Distribusi populasi (kiri) terlihat "miring" (skewed) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang **sempurna normal**. Rata-rata dari distribusi sampling ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = `r round(mu, 2)`$).
+:::
+
+### Standard Error (SE)
+
+Standard Error adalah simpangan baku dari distribusi statistik sampel. Ini mengukur seberapa akurat rata-rata sampel kita sebagai estimator rata-rata populasi. Semakin kecil SE, semakin presisi estimasi kita.
+
+$$ SE = \frac{\sigma}{\sqrt{n}} $$
+
+Di mana $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel. Jika $\sigma$ tidak diketahui, kita gunakan simpangan baku sampel ($s$) sebagai estimasi.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Standard Error {.unnumbered}
+
+Misalkan kita mengambil **satu sampel** acak berukuran $n=100$ mahasiswa dari populasi.
+
+```{r se-demo, echo=FALSE}
+set.seed(50)
+n_sampel <- 100
+satu_sampel <- sample_n(data_populasi, n_sampel)
+
+mean_sampel <- mean(satu_sampel$jarak)
+sd_sampel <- sd(satu_sampel$jarak)
+```
+
+Dari sampel ini, kita peroleh rata-rata jarak $\bar{x} = `r round(mean_sampel, 2)`$ km.
+Kita tahu simpangan baku populasi $\sigma = `r round(sigma, 2)`$. Maka **Standard Error** teoritisnya adalah:
+
+$$ SE = \frac{`r round(sigma, 2)`}{\sqrt{100}} = `r round(sigma / 10, 4)` $$
+
+Nilai ini memberitahu kita bahwa rata-rata sampel kita (`r round(mean_sampel, 2)`) diperkirakan menyimpang sekitar $\pm `r round(sigma/10, 2)`$ km dari rata-rata populasi sebenarnya.
+:::
+
+### Nilai Standar (Z-Score) dalam Inferensi
+
+Z-score menunjukkan posisi suatu nilai dalam distribusi normal baku. Untuk rata-rata sampel, rumusnya menggunakan SE sebagai pembagi (bukan simpangan baku biasa):
+
+$$ Z = \frac{\bar{x} - \mu}{SE} $$
+
+Z-score ini kemudian dapat dikonversi menjadi **probabilitas** (P-value) untuk menentukan seberapa "wajar" atau "langka" sampel yang kita dapatkan.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Z-Score dan Peluang {.unnumbered}
+
+Apakah rata-rata sampel kita sebesar **`r round(mean_sampel, 2)` km** itu wajar? Mari hitung Z-score nya.
+
+$$ Z = \frac{`r round(mean_sampel, 2)` - `r round(mu, 2)`}{`r round(sigma/10, 4)`} $$
+
+```{r z-demo, echo=FALSE}
+se_teoritis <- sigma / sqrt(n_sampel)
+z_score <- (mean_sampel - mu) / se_teoritis
+probabilitas <- pnorm(z_score)
+```
+
+Hasil:
+-   Z-score = **`r round(z_score, 2)`**
+-   Probabilitas ($P(Z < z)$) = **`r round(probabilitas, 4)`**
+
+Artinya, peluang mendapatkan sampel dengan rata-rata `r round(mean_sampel, 2)` km atau lebih kecil dari populasi ini adalah sekitar **`r round(probabilitas*100, 1)`%**. Angka ini cukup besar (jauh dari 5% atau 0.05), sehingga sampel kita dianggap masih wajar dan berasal dari populasi tersebut.
+:::
+
+::: rmdexercise
+## Soal Evaluasi 5 {.unnumbered}
 
 1.  **Studi Kasus Survei Keakraban**. [STP-4.1]{.capaian}
     Sebuah acara keakraban angkatan Anda akan dilakukan di suatu tempat yang memerlukan biaya sewa tempat. Agar acara Anda dihadiri sebanyak mungkin orang, Anda menanyakan kesediaan kawan-kawan Anda. Anda pun merancang sebuah survei untuk mengetahui persentase kawan Anda yang setuju acara keakraban diadakan di tempat tersebut. Untuk itu Anda menanyakan sebagian kawan Anda sebagai sampel.
@@ -299,3 +236,4 @@ Artinya, peluang mendapatkan sampel dengan rata-rata `r round(mean_satu, 2)` km 
     b.  Apakah kita dapat menggunakan teorema limit sentral dalam perhitungan probabilitas distribusi statistik sampel kita tersebut? Jelaskan jawaban Anda.
     c.  Katakanlah parameternya (rata-rata jarak tempat tinggal seluruh pegawai ITERA) diketahui sebesar 7,5 km, Hitunglah nilai standar (z-score) sampel kita.
     d.  Hitunglah probabilitas kita mendapatkan nilai rata-rata seperti yang ditanyakan dalam 3.c tersebut dan jelaskan maknanya.
+:::
