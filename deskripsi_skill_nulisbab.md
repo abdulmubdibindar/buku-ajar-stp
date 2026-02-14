@@ -10,10 +10,11 @@
    - contoh-contoh non-studi kasus yang diberikan
    - studi kasus
    - soal evaluasi
-4. Menstrukturkan kembali isi bab ke dalam file Rmd yang sesuai dengan isi setiap subbab menggunakan alur penjelasan konsep → studi kasus; contoh-contoh non-studi kasus dihapus sama sekali dengan memastikan studi kasus mewakili konsep yang dijelaskan
-5. Menggunakan kalimat konsep 1:1 dari file bab, kecuali studi kasus. Studi kasus dapat ditulis ulang dengan gaya bahasa yang sesuai dengan penjelasan konsep
-6. Menuliskan soal evaluasi 1:1 dari file bab. Pastikan soal evaluasi sesuai dengan capaian pembelajaran bab.
-7. Bila memungkinkan, gunakan file dalam @datasets yang merupakan data responden mahasiswa empat kampus perguruan tinggi di Bandar Lampung dan Lampung Selatan yang mengandung informasi sosioekonomi dan pola perjalanan mereka ke kampus
+4. Mengenali elemen-elemen tekstual yang mengganggu flow tulisan, seperti nomor halaman yang ter-render di tengah paragraf, atau hasil ekstraksi tabel yang berantakan, atau gambar yang dirujuk tetapi tidak ada karena ketidakmungkinan file txt menyimpan gambar.
+5. Menstrukturkan kembali isi bab ke dalam file Rmd yang sesuai dengan isi setiap subbab menggunakan alur penjelasan konsep → studi kasus; contoh-contoh non-studi kasus dihapus sama sekali dengan memastikan studi kasus mewakili konsep yang dijelaskan
+6. Menggunakan kalimat konsep 1:1 dari file bab, kecuali studi kasus. Studi kasus dapat ditulis ulang dengan gaya bahasa yang sesuai dengan penjelasan konsep
+7. Menuliskan soal evaluasi 1:1 dari file bab. Pastikan soal evaluasi sesuai dengan capaian pembelajaran bab.
+8. Bila memungkinkan, gunakan file dalam @datasets yang merupakan data responden mahasiswa empat kampus perguruan tinggi di Bandar Lampung dan Lampung Selatan yang mengandung informasi sosioekonomi dan pola perjalanan mereka ke kampus
 
 ## Hal-hal terkait dengan format penulisan
 

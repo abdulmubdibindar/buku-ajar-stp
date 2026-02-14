@@ -1,6 +1,6 @@
 ---
 name: salinbab
-description: Panduan menulis ulang materi bab buku ajar dari format teks mentah (.txt) ke format R Markdown (.Rmd). Gunakan skill ini saat perlu mengonversi, menstrukturkan ulang, dan memperkaya materi bab dengan studi kasus berbasis dataset lokal, serta memastikan kepatuhan terhadap standar format buku ajar.
+description: Panduan menulis ulang materi bab buku ajar dari format teks mentah (.txt) ke format R Markdown (.Rmd). Gunakan skill ini saat perlu mengonversi, menstrukturkan ulang, dan memperkaya materi bab dengan studi kasus berbasis dataset lokal, serta membersihkan elemen tekstual yang mengganggu.
 ---
 
 # Skill Salin Bab (Rewrite Chapter)
@@ -19,6 +19,10 @@ Skill ini memandu proses konversi dan penyempurnaan materi bab buku ajar dari ra
   3. Contoh-contoh (non-studi kasus)
   4. Studi kasus
   5. Soal evaluasi
+- **Pembersihan Teks**: Identifikasi dan bersihkan elemen tekstual yang mengganggu alur bacaan, seperti hal-hal berikut:
+  - Nomor halaman yang terselip di tengah paragraf.
+  - Hasil ekstraksi tabel yang berantakan/tidak terbaca.
+  - Sisa-sisa rujukan gambar atau caption gambar yang tidak relevan (karena format .txt).
 
 ### 2. Restrukturisasi Konten
 
