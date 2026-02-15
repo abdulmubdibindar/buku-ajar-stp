@@ -47,7 +47,7 @@ Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang b
 
 ::: rmdkasus
 
-### Studi Kasus: Visualisasi Moda Transportasi Mahasiswa dengan Diagram Batang  {.unnumbered}
+#### Studi Kasus: Visualisasi Moda Transportasi Mahasiswa dengan Diagram Batang  {.unnumbered}
 
 Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi (Tabel \@ref(tab:bab-4-diagram-batang)), baru kemudian divisualisasikan.
 
@@ -191,7 +191,7 @@ knitr::include_graphics("images/contoh-moire.png")
 
 ::: rmdkasus
 
-### Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang {.unnumbered}
+#### Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang {.unnumbered}
 
 Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
 
@@ -269,7 +269,7 @@ Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Treemap Moda Transportasi {.unnumbered}
+#### Studi Kasus: Membuat Treemap Moda Transportasi {.unnumbered}
 
 Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
 
@@ -329,7 +329,7 @@ Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada k
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Grafik Pai dan Donat {.unnumbered}
+#### Studi Kasus: Membuat Grafik Pai dan Donat {.unnumbered}
 
 Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.
 
@@ -443,7 +443,7 @@ Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Histogram Biaya Perjalanan {.unnumbered}
+#### Studi Kasus: Membuat Histogram Biaya Perjalanan {.unnumbered}
 
 Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
 
@@ -562,7 +562,7 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Boxplot Biaya Perjalanan Mahasiswa {.unnumbered}
+#### Studi Kasus: Membuat Boxplot Biaya Perjalanan Mahasiswa {.unnumbered}
 
 Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
@@ -679,7 +679,7 @@ knitr::include_graphics("figures/area-plot-lebih-dari-1.png")
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat *Scatterplot* Hubungan Biaya Perjalanan dan Jarak Tempuh {.unnumbered}
+#### Studi Kasus: Membuat *Scatterplot* Hubungan Biaya Perjalanan dan Jarak Tempuh {.unnumbered}
 
 *Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
 

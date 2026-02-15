@@ -26,7 +26,7 @@ Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 ele
 3.  **Nilai**. Nilai adalah angka atau kategori yang mengisi perpotongan antara baris (objek) dan kolom (variabel), yakni **sel** (*cell*). Nilai ini merepresentasikan data spesifik dari variabel tertentu untuk objek tertentu.
 
 ::: rmdkasus
-### Studi Kasus: Elemen Data Terstruktur {.unnumbered #kasus-elemen-data-terstruktur} 
+### Studi Kasus: Elemen Data Terstruktur {.unnumbered} 
 
 Perhatikan hasil pengumpulan data kuesioner berupa tabulasi data dari mahasiswa-mahasiswa ITERA seperti yang ditampilkan pada Gambar \@ref(fig:bab-2-ilus-data-terstruktur).
 
