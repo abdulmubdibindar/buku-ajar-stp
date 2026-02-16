@@ -12,6 +12,7 @@ trigger: always_on
 ### General chunks
 
 - Use single apostrophe for naming strings
+- Use '|>' for pipe operator
 
 ### Images
 
@@ -24,7 +25,7 @@ trigger: always_on
 
 ### Tables
 
-1. Use function `kableExtra::kbl` create tables
+1. Use function `kbl` to create tables
 2. Use `kable_styling` to style tables
 3. Use similar styling as in Images from number 3--5
 4. Use dplyr package mainly to process dataset
