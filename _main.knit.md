@@ -71,8 +71,8 @@ Tim Penulis
 
 Setelah mempelajari bab ini, Anda diharapkan:
 
-* Mampu menjelaskan kedudukan dan peran analisis statistik dalam perencanaan [STP-1.1]{.capaian}
-* Mampu menjelaskan perbedaan analisis kuantitatif dan kualitatif dengan tepat [STP-1.2]{.capaian}
+-   Mampu menjelaskan kedudukan dan peran analisis statistik dalam perencanaan [STP-1.1]{.capaian}
+-   Mampu menjelaskan perbedaan analisis kuantitatif dan kualitatif dengan tepat [STP-1.2]{.capaian}
 :::
 
 ## Kedudukan dan Peran Analisis Data dalam Perencanaan
@@ -91,7 +91,7 @@ Lain lagi di tahap kedua, contoh lainnya. Perumusan persoalan (*problem*) adalah
 Dari paparan sebelumnya, kita dapat menyimpulkan bahwa setiap tahap dalam perencanaan memerlukan penelitian, yakni kegiatan membuat pertanyaan mengenai suatu permasalahan dan menjawab pertanyaan tersebut dengan proses yang sistematis.
 
 ::: rmdkasus
-### Studi Kasus: Analisis Data dalam Perencanaan Transportasi Berkelanjutan di Kampus ITERA {.unnumbered #kasus-analisis-data-dalam-perencanaan}
+### Studi Kasus: Analisis Data dalam Perencanaan Transportasi Berkelanjutan di Kampus ITERA {#kasus-analisis-data-dalam-perencanaan .unnumbered}
 
 Kita akan mengambil kasus berupa perencanaan transportasi berkelanjutan mahasiswa dan staf pegawai di kampus ITERA. Transportasi berkelanjutan adalah perpindahan dalam konteks transportasi yang memiliki nilai berkelanjutan, salah satunya minim polusi udara.
 
@@ -124,18 +124,17 @@ Di sisi lain, data sebagai bahan analisis juga dapat dibagi menjadi **data kuant
 Karena analisis kuantitatif menggunakan angka-angka, pengumpulan data kuantitatif dapat disebut juga sebagai **pengukuran**.
 
 ::: rmdkasus
-
 ### Studi Kasus: Penelitian Mengenai Pola Pergerakan Mahasiswa dan Pegawai di Kampus ITERA {.unnumbered}
 
-Berdasarkan pertanyaan penelitian *sudah sejauh mana keberlanjutan pada pola pergerakan pada mahasiswa dan pegawai kampus ITERA saat ini?*, kita akan  mengumpulkan data terkait pola pergerakan mahasiswa dan pegawai di ITERA dengan menyebarkan kuesioner kepada para mahasiswa dan pegawai kampus ITERA tentang pola pergerakan mereka. Berikut adalah analisis tentang perbandingan antara analisis kuantitatif dan analisis kualitatif.
+Berdasarkan pertanyaan penelitian *sudah sejauh mana keberlanjutan pada pola pergerakan pada mahasiswa dan pegawai kampus ITERA saat ini?*, kita akan mengumpulkan data terkait pola pergerakan mahasiswa dan pegawai di ITERA dengan menyebarkan kuesioner kepada para mahasiswa dan pegawai kampus ITERA tentang pola pergerakan mereka. Berikut adalah analisis tentang perbandingan antara analisis kuantitatif dan analisis kualitatif.
 
-| Aspek                | Analisis Kuantitatif                                                    | Analisis Kualitatif                                                          |
-| :------------------- | :---------------------------------------------------------------------- | :--------------------------------------------------------------------------- |
-| **Fokus**            | Luas (*Breadth*), mencari generalisasi.                                 | Dalam (*Depth*), mencari makna/alasan.                                       |
-| **Pertanyaan Utama** | Berapa banyak emisi yang dihasilkan?                                    | Mengapa orang enggan naik shuttle?                                           |
-| **Alat Analisis**    | Statistik (SPSS, Excel, Pemodelan Transportasi).                        | Transkrip wawancara, observasi lapangan, analisis tema.                      |
-| **Kelebihan**        | Akurat untuk menghitung target penurunan emisi karbon secara matematis. | Sangat baik untuk merancang kebijakan yang sesuai dengan psikologi pengguna. |
-| **Kelemahan**        | Tidak bisa menjelaskan alasan personal di balik angka.                  | Hasilnya tidak bisa digeneralisasi untuk seluruh populasi secara kaku.       |
+| Aspek | Analisis Kuantitatif | Analisis Kualitatif |
+|:---------------|:--------------------------|:----------------------------|
+| **Fokus** | Luas (*Breadth*), mencari generalisasi. | Dalam (*Depth*), mencari makna/alasan. |
+| **Pertanyaan Utama** | Berapa banyak emisi yang dihasilkan? | Mengapa orang enggan naik shuttle? |
+| **Alat Analisis** | Statistik (SPSS, Excel, Pemodelan Transportasi). | Transkrip wawancara, observasi lapangan, analisis tema. |
+| **Kelebihan** | Akurat untuk menghitung target penurunan emisi karbon secara matematis. | Sangat baik untuk merancang kebijakan yang sesuai dengan psikologi pengguna. |
+| **Kelemahan** | Tidak bisa menjelaskan alasan personal di balik angka. | Hasilnya tidak bisa digeneralisasi untuk seluruh populasi secara kaku. |
 :::
 
 ### Analisis Statistik sebagai Analisis Kuantitatif
@@ -161,7 +160,7 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang konsep dasar
 ## Soal Evaluasi 1 {.unnumbered}
 
 1.  Jelaskanlah penggunaan analisis data dalam setiap tahap perencanaan untuk kasus acara kumpul keakraban angkatan! [STP-1.1]{.capaian}
-2.  Ceritakan perbedaan  analisis kuantitatif dan kualitatif yang mungkin digunakan dalam perencanaan acara tersebut. [STP-1.2]{.capaian}
+2.  Ceritakan perbedaan analisis kuantitatif dan kualitatif yang mungkin digunakan dalam perencanaan acara tersebut. [STP-1.2]{.capaian}
 :::
 
 <!--chapter:end:01-konsep-dasar.Rmd-->
@@ -194,7 +193,7 @@ Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 ele
 3.  **Nilai**. Nilai adalah angka atau kategori yang mengisi perpotongan antara baris (objek) dan kolom (variabel), yakni **sel** (*cell*). Nilai ini merepresentasikan data spesifik dari variabel tertentu untuk objek tertentu.
 
 ::: rmdkasus
-### Studi Kasus: Elemen Data Terstruktur {.unnumbered #kasus-elemen-data-terstruktur} 
+### Studi Kasus: Elemen Data Terstruktur {.unnumbered} 
 
 Perhatikan hasil pengumpulan data kuesioner berupa tabulasi data dari mahasiswa-mahasiswa ITERA seperti yang ditampilkan pada Gambar \@ref(fig:bab-2-ilus-data-terstruktur).
 
@@ -2471,7 +2470,7 @@ Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang b
 
 ::: rmdkasus
 
-### Studi Kasus: Visualisasi Moda Transportasi Mahasiswa dengan Diagram Batang  {.unnumbered}
+#### Studi Kasus: Visualisasi Moda Transportasi Mahasiswa dengan Diagram Batang  {.unnumbered}
 
 Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi (Tabel \@ref(tab:bab-4-diagram-batang)), baru kemudian divisualisasikan.
 
@@ -2582,7 +2581,7 @@ Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data dir
 
 ::: rmdkasus
 
-### Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang {.unnumbered}
+#### Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang {.unnumbered}
 
 Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
 
@@ -2650,7 +2649,7 @@ Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Treemap Moda Transportasi {.unnumbered}
+#### Studi Kasus: Membuat Treemap Moda Transportasi {.unnumbered}
 
 Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
 
@@ -2736,7 +2735,7 @@ Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada k
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Grafik Pai dan Donat {.unnumbered}
+#### Studi Kasus: Membuat Grafik Pai dan Donat {.unnumbered}
 
 Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.
 
@@ -2819,7 +2818,7 @@ Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Histogram Biaya Perjalanan {.unnumbered}
+#### Studi Kasus: Membuat Histogram Biaya Perjalanan {.unnumbered}
 
 Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
 
@@ -2936,7 +2935,7 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat Boxplot Biaya Perjalanan Mahasiswa {.unnumbered}
+#### Studi Kasus: Membuat Boxplot Biaya Perjalanan Mahasiswa {.unnumbered}
 
 Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
@@ -3029,7 +3028,7 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 
 ::: rmdkasus
 
-### Studi Kasus: Membuat *Scatterplot* Hubungan Biaya Perjalanan dan Jarak Tempuh {.unnumbered}
+#### Studi Kasus: Membuat *Scatterplot* Hubungan Biaya Perjalanan dan Jarak Tempuh {.unnumbered}
 
 *Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
 
@@ -3349,119 +3348,527 @@ Setelah memahami konsep-konsep tersebut, kita dapat melanjutkan pembahasan ke pe
 
 **Populasi** adalah seluruh kelompok objek (baik orang, benda, maupun kejadian) yang menjadi target penelitian kita. Ukuran statistik deskriptif dari populasi, seperti rata-rata ($\mu$) atau simpangan baku ($\sigma$), disebut **parameter**. Parameter inilah yang sebenarnya ingin diketahui oleh peneliti. Namun, karena jumlah populasi biasanya sangat besar, sering kali kita tidak mungkin mengukur seluruh anggota populasi secara langsung.
 
-Sebaliknya, **sampel** adalah sebagian kecil dari populasi yang kita ambil untuk diamati. Sampel yang baik harus bisa mewakili sifat keseluruhan populasinya (representatif). Ukuran statistik deskriptif dari sampel inilah yang disebut **statistik** (seperti rata-rata $\bar{x}$ atau simpangan baku $s$). Nilai statistik ini digunakan untuk menduga nilai parameter populasi.
+Sebaliknya, **sampel** adalah sebagian kecil dari populasi yang kita ambil untuk diamati. Sampel yang baik harus bisa mewakili sifat keseluruhan populasinya **(representatif)**. Ukuran statistik deskriptif dari sampel inilah yang disebut **statistik** (seperti rata-rata $\bar{x}$ atau simpangan baku $s$). Nilai statistik ini digunakan untuk menduga nilai parameter populasi.
 
-## Teknik-Teknik Pengambilan Sampel
-
-Teknik pengambilan sampel bertujuan memastikan bahwa sampel yang dipilih benar-benar dapat mewakili populasinya. Terdapat dua kelompok besar teknik pengambilan sampel: **probabilitas** dan **non-probabilitas**. Perbedaan kuncinya terletak pada ada/tidak adanya **kerangka sampel** (*sampling frame*), yaitu daftar seluruh anggota populasi.
-
-### Teknik Probabilitas
-
-Teknik ini menggunakan kerangka sampel dan memberikan peluang yang sama bagi setiap anggota untuk terpilih.
-
-1.  **Simple Random Sampling**: Setiap anggota populasi memiliki peluang yang sama untuk dipilih. Dilakukan dengan sistem undian atau pembangkit angka acak.
-2.  **Systematic Random Sampling**: Menggunakan interval tertentu. Misalnya, memilih setiap orang ke-5 dari daftar. Dimulai dengan menentukan angka acak awal.
-3.  **Stratified Random Sampling**: Populasi dibagi menjadi kelompok-kelompok (**strata**) yang memiliki karakteristik sama (misal: tingkat pendidikan, pendapatan). Sampel diambil secara acak dari setiap strata secara proporsional.
-4.  **Cluster Sampling**: Populasi dibagi berdasarkan unit geografis atau klaster (misal: wilayah, blok). Kerangka sampel dibuat berdasarkan daftar klaster, lalu klaster dipilih secara acak.
-
-### Teknik Non-Probabilitas
-
-Teknik ini **tidak** menggunakan kerangka sampel (biasanya karena tidak tersedia), dipilih berdasarkan kemudahan atau pertimbangan tertentu.
-
-1.  **Convenience Sampling**: Didasarkan pada kemudahan akses (misal: orang yang lewat).
-2.  **Purposive Sampling**: Didasarkan pada pertimbangan/kriteria tertentu peneliti (misal: ahli di bidang tertentu).
-3.  **Quota Sampling**: Menetapkan kuota jumlah untuk setiap kelompok (non-acak).
-4.  **Snowball Sampling**: Responden awal merekomendasikan responden berikutnya (berguna untuk populasi tersembunyi).
+**Mengapa kita mengambil sampel?** Alasan utamanya adalah **efisiensi** dan **kelayakan**. Menurut @saunders2023, melakukan sensus terhadap populasi yang besar sering kali tidak praktis karena membutuhkan **biaya** yang sangat mahal dan **waktu** yang lama. Selain itu, @devaus2014surveys menekankan bahwa sensus tidak menjamin data yang lebih akurat. Sebaliknya, sampel yang dipilih dengan hati-hati memungkinkan peneliti untuk mengontrol kualitas data dengan lebih ketat (misalnya melalui pelatihan pewawancara yang lebih intensif), sehingga justru dapat menghasilkan tingkat **akurasi** yang lebih tinggi dibandingkan sensus yang rentan terhadap *non-sampling error*.
 
 ::: rmdkasus
-### Studi Kasus: Teknik Pengambilan Sampel Data Jarak {.unnumbered}
+### Studi Kasus: Populasi vs. Sampel {.unnumbered}
 
-Mari kita simulasikan teknik pengambilan sampel probabilitas menggunakan hasil survei jarak tempat tinggal terhadap **429 mahasiswa** sebuah perguruan tinggi di Lampung (ITERA). Kita akan menganggap seluruh data responden ini sebagai **populasi**.
+Kita ingin menganalisis data karakteristik perjalanan mahasiswa di ITERA. Oleh karena itu, kita mengumpulkan data terstruktur yang mengukur variabel-variabel terkait pola perjalanan mahasiswa di ITERA.
 
-Pertama, kita siapkan datanya. Kita asumsikan variabel yang kita amati adalah `jarak` tempat tinggal ke kampus (km).
+Berdasarkan data tahun 2023 pertengahan, tercatat sebanyak **18.877** mahasiswa aktif di ITERA. Jika kita mengumpulkan seluruh mahasiswa aktif dengan jumlah tersebut, maka kita akan mendapatkan data populasi. Namun, karena jumlah mahasiswa yang sangat banyak, kita tidak mungkin mengumpulkan data seluruh mahasiswa aktif di ITERA. Oleh karena itu, kita mengumpulkan data sebagian mahasiswa aktif di ITERA, yaitu sebanyak **428** mahasiswa.
 
+<div class="figure" style="text-align: center">
+<img src="images/populasi_vs_sampel_itera.png" alt="Ilustrasi Perbandingan Populasi Mahasiswa ITERA dan Sampel" width="80%" />
+<p class="caption">(\#fig:05-inferensia-populasi-sampel-viz)Ilustrasi Perbandingan Populasi Mahasiswa ITERA dan Sampel</p>
+</div>
 
-
-Populasi kita memiliki $N = 428$ mahasiswa dengan rata-rata jarak $\mu = 5.01$ km. Sekarang kita coba ambil sampel dengan berbagai teknik.
-
-**1. Simple Random Sampling (SRS)**
-Kita undi 10 nomor urut mahasiswa secara acak dari total 429 mahasiswa.
-
-
-Table: (\#tab:05-inferensia-1-sampling-studi-kasus-srs-demo)Contoh Hasil Simple Random Sampling
-
-| nomor.urut| jarak|
-|----------:|-----:|
-|        416|  2.75|
-|        180|  6.64|
-|         14|  3.70|
-|        196|  5.24|
-|        307|  3.77|
-|        119|  3.84|
-
-**2. Systematic Random Sampling**
-Kita ambil setiap mahasiswa kelipatan ke-50 dari daftar urut.
-
-
-Table: (\#tab:05-inferensia-1-sampling-studi-kasus-sys-demo)Contoh Hasil Systematic Sampling (Interval 50)
-
-| nomor.urut| jarak|
-|----------:|-----:|
-|          1|  6.69|
-|         52|  7.50|
-|        102|  6.78|
-|        152|  5.68|
-|        202|  7.03|
-|        252|  2.85|
-
-**3. Stratified Random Sampling**
-Kita ingin sampel yang proporsional berdasarkan `Tahun_Kuliah`.
-
-
-|Tahun_Kuliah |   n|      prop|
-|:------------|---:|---------:|
-|Kedua        |  67| 0.1565421|
-|Keempat      | 215| 0.5023364|
-|Ketiga       | 109| 0.2546729|
-|Pertama      |  37| 0.0864486|
-
-
-
-Table: (\#tab:05-inferensia-1-sampling-studi-kasus-strat-demo)Jumlah Sampel per Strata
-
-|Tahun_Kuliah |  n|
-|:------------|--:|
-|Kedua        |  7|
-|Keempat      | 22|
-|Ketiga       | 11|
-|Pertama      |  4|
+Keputusan mengambil 428 sampel ini didasarkan pada pertimbangan **efisiensi** dan **akurasi** yang telah kita bahas sebelumnya. Melakukan sensus terhadap 18.877 mahasiswa tentu membutuhkan biaya dan waktu yang sangat besar. Selain itu, dengan jumlah yang jauh lebih sedikit, peneliti dapat lebih fokus menjamin kualitas data (misalnya meminimalisir kesalahan input atau bias wawancara), sehingga data sampel ini diharapkan memiliki kualitas yang lebih baik daripada sensus yang dilakukan secara terburu-buru.
 :::
 
-## Distribusi Sampel, Distribusi Statistik Sampel, dan Teorema Limit Sentral
+## Teknik-Teknik Pengambilan Sampel *(Sampling Techniques)*
 
-Penting untuk membedakan dua konsep distribusi dalam inferensi:
+Teknik pengambilan sampel bertujuan memastikan bahwa sampel yang dipilih benar-benar dapat mewakili populasinya. @healey2021statistics menekankan prinsip EPSEM (*Equal Probability of Selection Method*), yakni prinsip yang menekankan bahwa **setiap anggota populasi memiliki kesempatan yang sama untuk dipilih**. Hal ini penting untuk menghasilkan sampel yang representatif.
 
-1.  **Distribusi Sampel**: Sebaran nilai data dari **satu sampel** yang kita ambil. Ini menggambarkan variasi data individu.
-2.  **Distribusi Statistik Sampel**: Distribusi teoretis dari suatu **nilai statistik** (misalnya rata-rata) yang dihitung berulang kali dari **banyak sampel** yang mungkin diambil dari populasi yang sama.
+Teknik probabilitas adalah teknik yang menggunakan prinsip EPSEM. Untuk dapat menggunakannya, kita harus memiliki **kerangka sampel**. Kerangka sampel adalah daftar seluruh anggota populasi yang akan menjadi acuan kita untuk memilih sampel nantinya. Ada empat jenis teknik yang termasuk ke dalam teknik pengambilan sampel probabilitas [@tjokropandojo2021pengantar, @saunders2023]: *simple random sampling*, *systematic sampling*, *stratified sampling*, dan *multi-stage cluster sampling*.
 
-**Teorema Limit Sentral (CLT)** menyatakan bahwa apabila ukuran sampel ($n$) cukup besar (biasanya $n \ge 30$), maka **distribusi statistik sampel** (sebaran rata-rata sampel) akan mendekati **distribusi normal**, terlepas dari bentuk distribusi populasi asalnya. Hal ini memungkinkan kita menggunakan statistik parametrik.
+::: rmdkasus
+### Studi Kasus: Pengambilan Sampel dengan Populasi Kecil {.unnumbered}
+
+Untuk mempermudah pemahaman, bayangkan kita memiliki **populasi kecil** yang terdiri dari **16 orang** saja. Setiap orang memiliki atribut **Kelompok** (A/B/C/D) dan tinggal di **Blok** tertentu (1/2/3/4).
+
+Berikut adalah data lengkap ke-16 orang tersebut:
+
+
+Table: (\#tab:05-inferensia-setup-toy-populasi)Daftar Lengkap Populasi (N=16)
+
+| ID| Jarak|Kelompok |Blok   | ID| Jarak|Kelompok |Blok   |
+|--:|-----:|:--------|:------|--:|-----:|:--------|:------|
+|  1|   2.5|A        |Blok 1 |  9|  10.5|A        |Blok 3 |
+|  2|   1.0|B        |Blok 1 | 10|  11.2|B        |Blok 3 |
+|  3|   5.2|C        |Blok 1 | 11|   9.8|C        |Blok 3 |
+|  4|   3.8|D        |Blok 1 | 12|   8.5|D        |Blok 3 |
+|  5|   0.5|A        |Blok 2 | 13|  15.0|A        |Blok 4 |
+|  6|   1.2|B        |Blok 2 | 14|  14.2|B        |Blok 4 |
+|  7|   4.0|C        |Blok 2 | 15|  16.5|C        |Blok 4 |
+|  8|   6.1|D        |Blok 2 | 16|  13.8|D        |Blok 4 |
+
+Mari kita terapkan keempat teknik *sampling* untuk memilih sampel dari 16 orang ini.
+:::
+
+### *Simple Random Sampling*
+
+*Simple random sampling* merupakan teknik paling dasar dalam pengambilan sampel probabilistik. Kita mengambil secara acak nomor yang merepresentasikan nomor urut sampel. Ini memungkinkan setiap anggota populasi memiliki peluang yang sama untuk dipilih. Pemilihan anggota sampel secara acak ini dapat dilakukan dengan bantuan sistem eksternal dari peneliti, misalnya melalui tabel angka acak atau program komputer yang menghasilkan angka acak (*random number generator*) (Gambar \@ref(fig:05-inferensia-img-srs)).
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-5-srs.png" alt="Ilustrasi Simple Random Sampling" width="80%" />
+<p class="caption">(\#fig:05-inferensia-img-srs)Ilustrasi Simple Random Sampling</p>
+</div>
+
+::: rmdnote
+### Catatan: Miskonsepsi tentang Istilah Random {.unnumbered}
+
+Banyak yang salah kaprah dengan istilah *random* pada *simple random sampling*. Keacakan (*random*) di sini maksudnya bukan asal mengambil sampel secara acak **langsung di dunia nyata**, akan tetapi kita mengambil sampel tersebut dari **sebuah kerangka sampel**, elemen vital dalam teknik *sampling* probabilitas.
+:::
+
+::: rmdkasus
+### Studi Kasus: *Simple Random Sampling* dengan Populasi Kecil {.unnumbered}
+
+Misalkan kita menggunakan *random number generator* yang ada di hampir semua program *spreadsheet* untuk memilih 4 sampel. *Hasilnya adalah 4 orang yang terpilih secara acak tanpa pola tertentu.*
+
+
+Table: (\#tab:05-inferensia-toy-srs)Hasil SRS (n=4)
+
+| ID| Jarak|Kelompok |Blok   |
+|--:|-----:|:--------|:------|
+|  9|  10.5|A        |Blok 3 |
+| 16|  13.8|D        |Blok 4 |
+| 14|  14.2|B        |Blok 4 |
+|  7|   4.0|C        |Blok 2 |
+:::
+
+### *Systematic Random Sampling*
+
+Berbeda dengan *simple random sampling*, *systematic random sampling* menggunakan sistem pemilihan berdasarkan interval tertentu. Langkah pertama adalah menentukan angka acak awal, kemudian memilih sampel berikutnya berdasarkan kelipatan dari angka tersebut.
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-5-systematic.png" alt="Ilustrasi Systematic Random Sampling" width="60%" />
+<p class="caption">(\#fig:05-inferensia-img-systematic)Ilustrasi Systematic Random Sampling</p>
+</div>
+
+::: rmdkasus
+### Studi Kasus: *Systematic Sampling* dengan Populasi Kecil {.unnumbered}
+
+Kita ingin mengambil sampel dengan interval **k=4**. Kita urutkan berdasarkan ID, lalu ambil setiap kelipatan 4 (4, 8, 12, 16).
+
+
+Table: (\#tab:05-inferensia-toy-systematic)Hasil Systematic Sampling (Interval k=4)
+
+| ID| Jarak|Kelompok |Blok   |
+|--:|-----:|:--------|:------|
+|  4|   3.8|D        |Blok 1 |
+|  8|   6.1|D        |Blok 2 |
+| 12|   8.5|D        |Blok 3 |
+| 16|  13.8|D        |Blok 4 |
+
+*Perhatikan pola ID yang terpilih selalu berjarak 4 angka.*
+:::
+
+### *Stratified Random Sampling*
+
+Dalam beberapa kasus, populasi terdiri atas kelompok-kelompok, disebut **strata**, yang memiliki karakteristik yang sama didalamnya, misalnya jumlah anggota rumah tangga, tingkat pendidikan, atau status sosial ekonomi. Agar setiap kelompok terwakili, digunakanlah teknik *stratified random sampling*. Caranya adalah dengan membagi populasi ke dalam beberapa strata sesuai karakteristik yang relevan, kemudian mengambil sampel secara proporsional dari setiap strata.
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-5-stratified.png" alt="Ilustrasi Stratified Random Sampling" width="60%" />
+<p class="caption">(\#fig:05-inferensia-img-stratified)Ilustrasi Stratified Random Sampling</p>
+</div>
+
+::: rmdkasus
+### Studi Kasus: *Stratified Random Sampling* dengan Populasi Kecil {.unnumbered}
+
+Kita ingin memastikan setiap **Kelompok** (A, B, C, D) terwakili. Kita bagi populasi menjadi 4 strata (Kelompok), lalu ambil **1 orang acak** dari setiap strata.
+
+
+Table: (\#tab:05-inferensia-toy-stratified)Hasil Stratified Sampling (1 wakil per Kelompok)
+
+| ID| Jarak|Kelompok |Blok   |
+|--:|-----:|:--------|:------|
+|  9|  10.5|A        |Blok 3 |
+|  6|   1.2|B        |Blok 2 |
+|  3|   5.2|C        |Blok 1 |
+| 16|  13.8|D        |Blok 4 |
+
+*Hasilnya menjamin ada masing-masing satu perwakilan dari Kelompok A, B, C, dan D.*
+:::
+
+### *Multi-Stage Cluster Sampling*
+
+Teknik ini digunakan ketika kerangka sampel individu tidak tersedia, tetapi kerangka sampel untuk kelompok (klaster) tersedia. Misalnya, kita tidak punya daftar nama seluruh penduduk kota, tetapi kita punya kerangka sampel nama-nama kelurahan. Kita bisa memilih beberapa kelurahan secara acak (tahap 1), kemudian menghasilkan kerangka sampel baru dari kelurahan yang terpilih tersebut, misalnya berdasarkan batas administratif (RW/lingkungan), atau berdasarkan batas fisik, seperti blok-blok jalan (tahap 2). Dari kerangka sampel tersebut kita pilih lagi secara acak anggota kerangka sampel tersebut.
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-5-msc-sampling.png" alt="Ilustrasi Multi-Stage Cluster Sampling" width="60%" />
+<p class="caption">(\#fig:05-inferensia-img-cluster)Ilustrasi Multi-Stage Cluster Sampling</p>
+</div>
+
+::: rmdkasus
+### Studi Kasus: *Multi-Stage Cluster Sampling* dengan Populasi Kecil {.unnumbered}
+
+Kita ingin menghemat tenaga dengan hanya mendatangi satu lokasi saja. Kita pilih secara acak **1 Blok** (Cluster), lalu ambil **semua orang** di blok tersebut.
+
+
+Table: (\#tab:05-inferensia-toy-cluster)Hasil Cluster Sampling (Terpilih: Blok 4 )
+
+| ID| Jarak|Kelompok |Blok   |
+|--:|-----:|:--------|:------|
+| 13|  15.0|A        |Blok 4 |
+| 14|  14.2|B        |Blok 4 |
+| 15|  16.5|C        |Blok 4 |
+| 16|  13.8|D        |Blok 4 |
+
+*Kita hanya perlu mendatangi satu lokasi (Blok), tapi mendapatkan 4 responden sekaligus.*
+:::
+
+## Konsep Distribusi dalam Statistik
+
+Dalam stastistika inferensial, kita harus menguasai konsep mengenai **distribusi**. Distribusi adalah penyebaran suatu nilai yang memiliki karakteristik tertentu. Di sini, tujuan kita adalah mengenali apa yang kami akan sebut dengan **distribusi objek** dan **distribusi statistik**, atau yang dalam @healey2021statistics dan @ewing2020basic disebut **distribusi sampel** dan **distribusi hasil sampel** (*sampling distribution*).
+
+### Model-model Distribusi Statistik
+
+Terdapat banyak jenis model distribusi dalam statistik yang sering dipakai. Beberapa jenis model statisik yang populer misalnya adalah distribusi *uniform* (seragam), distribusi binomial, distribusi Poisson, dan distribusi normal atau Gaussian [@ModernStatR-Home]. Namun, dalam pembahasan statistika inferensial di buku ini kita hanya akan fokus pada **distribusi normal** dan turunannya, distribusi Student's t, beserta distribusi binomial, distribusi F, dan distribusi *Chi-square*.
+
+Seperti yang ditampilkan oleh Gambar \@ref(fig:fig-ragam-distribusi) berikut, setiap jenis distribusi statistik mempunyai berbagai bentuknya. Bentuk-bentuk ini pada hakikatnya adalah **histogram-histogram** representasi sebaran nilai-nilai sekumpulan objek.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-ragam-distribusi-1.png" alt="Ragam Bentuk Distribusi Statistik" width="80%" />
+<p class="caption">(\#fig:fig-ragam-distribusi)Ragam Bentuk Distribusi Statistik</p>
+</div>
+
+**Interpretasi Bentuk Distribusi**
+
+Seperti yang sudah dijelaskan bahwa bentuk distribusi sebenarnya adalah histogram, kita sudah belajar bahwa histogram memiliki 2 sumbu: sumbu X dan Y/mendatar dan tegak, yang masing-masing artinya adalah rentang nilai dan frekuensi kemunculan nilai tersebut secara berturut-turut. 
+
+Begitu juga gambar-gambar distribusi tersebut. Sumbu X mencerminkan **nilai-nilai yang terdapat dalam objek-objek** yang dinyatakan distribusinya, sumbu Y jumlah kemunculan nilai-nilai tersebut. Selain dipahami sebagai jumlah, sumbu Y juga bisa diinterpretasikan sebagai **probabilitas** kemunculan nilai-nilai tersebut.
+
+### Distribusi Normal {#bab-5-distribusi-normal}
+
+Distribusi normal adalah salah satu jenis distribusi nilai yang memiliki karakteristik berbentuk seperti lonceng, simetris, dan membentang tanpa batas di kedua sisi sumbu horizontal [@tjokropandojo2021pengantar]. Oleh karena itu, model distribusi ini juga disebut *bell curve* atau kurva lonceng [@healey2021statistics] (Gambar \@ref(fig:fig-bab-5-hist-normal)).
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-bab-5-hist-normal-1.png" alt="Distribusi Normal" width="80%" />
+<p class="caption">(\#fig:fig-bab-5-hist-normal)Distribusi Normal</p>
+</div>
+
+Dari Gambar \@ref(fig:fig-bab-5-hist-normal), kita dapat melihat bahwa distribusi normal memiliki beberapa karakteristik utama berikut:
+
+1.  **Parameter Utama:** Distribusi normal ditentukan sepenuhnya oleh dua parameter: rata-rata (*mean* atau $\mu$) dan varians ($\sigma^2$) [@Chan-IntroProb]. Rata-rata menentukan lokasi tengah distribusi, sedangkan varians (atau standar deviasi) menentukan lebar atau penyebaran kurva [@healey2021statistics; @Hair-Multivariate].
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-bab-5-parameter-normal-1.png" alt="Perbandingan Distribusi Normal dengan Rata-rata Sama namun Standar Deviasi Berbeda" width="80%" />
+<p class="caption">(\#fig:fig-bab-5-parameter-normal)Perbandingan Distribusi Normal dengan Rata-rata Sama namun Standar Deviasi Berbeda</p>
+</div>
+
+2.  **Simetri Sempurna:** Pada distribusi normal yang sempurna, nilai *mean* (rata-rata), *median* (nilai tengah), dan *mode* (nilai yang paling sering muncul) adalah identik dan berada **tepat di tengah distribusi** [@healey2021statistics; @devaus2014surveys].
+
+3.  **Skewness dan Kurtosis:**
+
+      - **Skewness (Kemencengan):** Distribusi normal memiliki nilai *skewness* 0, yang menunjukkan simetri sempurna. Jika data menumpuk di kiri, itu disebut *positive skew*, dan jika di kanan disebut *negative skew* [@devaus2014surveys; @ewing2020basic].
+
+      - **Kurtosis (Keruncingan):** Mengukur keruncingan atau kedataran puncak distribusi relatif terhadap distribusi normal. Distribusi normal memiliki nilai kurtosis 3. Distribusi yang lebih runcing disebut leptokurtik (>3), dan yang lebih datar disebut platikurtik (<3) [@Chan-IntroProb; @ewing2020basic].
+
+<div class="figure">
+<img src="figures/05-inferensia-viz-skewness-1.png" alt="Ilustrasi Positive dan Negative Skewness" width="49%" />
+<p class="caption">(\#fig:05-inferensia-viz-skewness)Ilustrasi Positive dan Negative Skewness</p>
+</div>
+<div class="figure">
+<img src="figures/05-inferensia-viz-kurtosis-1.png" alt="Perbandingan Kurtosis: Normal (3) vs Platikurtik (&lt;3)" width="49%" />
+<p class="caption">(\#fig:05-inferensia-viz-kurtosis)Perbandingan Kurtosis: Normal (3) vs Platikurtik (<3)</p>
+</div>
+
+4.  **Area di Bawah Kurva (Aturan 68-95-99, Aturan Empiris):** Salah satu karakteristik paling berguna adalah **proporsi area di bawah kurva yang tetap** berdasarkan jarak standar deviasi (SD) dari rata-rata [@healey2021statistics]:
+
+    -   $\pm$ 1 SD mencakup sekitar 68,26% dari total kasus.
+    -   $\pm$ 2 SD mencakup sekitar 95,44% dari total kasus.
+    -   $\pm$ 3 SD mencakup sekitar 99,72% dari total kasus.
+
+    Ini mengimplikasikan bahwa kejadian yang berada jauh di luar 3 standar deviasi dari rata-rata sangat jarang terjadi.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-bab-5-aturan-689599-1.png" alt="Ilustrasi Aturan 68-95-99 (Aturan Empiris)" width="80%" />
+<p class="caption">(\#fig:fig-bab-5-aturan-689599)Ilustrasi Aturan 68-95-99 (Aturan Empiris)</p>
+</div>
+
+
+### Distribusi Objek dan Distribusi Statistik
+
+**Distribusi objek** atau **distribusi sampel** merujuk pada **sebaran nilai data** dari objek-objek yang menjadi sampel yang kita ambil. Dengan kata lain, distribusi ini menggambarkan variasi data individual setiap objek.
+
+Di sisi lain, **distribusi statistik** atau **distribusi hasil sampel** *(sampling distribution)* adalah **sebaran nilai statistik** (misalnya rata-rata) dari suatu populasi yang berasal dari perhitungan statistik sampel-sampel yang diambil berulang kali dari populasi tersebut. Statistik yang dihitung biasanya dapat berupa proporsi atau rata-rata.
+
+Mari pelajari kasus berikut untuk lebih memahami perbedaan antara distribusi objek dengan distribusi statistik.
+
+::: rmdkasus
+### Studi Kasus: Distribusi Objek vs Distribusi Statistik {.unnumbered}
+
+Agar lebih mudah membayangkan perbedaan antara distribusi objek dan distribusi statistik, mari kita gunakan **populasi kecil** yang hanya terdiri dari **30 mahasiswa** (diambil dari data ITERA). Kita akan melihat variabel **Jarak Tempuh (km)**.
+
+**1. Distribusi Objek (Sebaran Data Individu)**
+
+Berikut adalah data populasi lengkap (N=30):
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:05-inferensia-populasi-30)Data Populasi (N=30)</caption>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:right;"> Jarak </th>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:right;"> Jarak </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:right;"> 0.44 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 5.01 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> 5.19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 17 </td>
+   <td style="text-align:right;"> 1.76 </td>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:right;"> 5.24 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 28 </td>
+   <td style="text-align:right;"> 2.05 </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 5.30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 2.24 </td>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 5.40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 2.75 </td>
+   <td style="text-align:right;"> 26 </td>
+   <td style="text-align:right;"> 5.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:right;"> 2.78 </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:right;"> 5.99 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 6.50 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 29 </td>
+   <td style="text-align:right;"> 3.57 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 6.59 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:right;"> 3.77 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 6.78 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 3.77 </td>
+   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:right;"> 7.07 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 27 </td>
+   <td style="text-align:right;"> 4.47 </td>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:right;"> 7.82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 4.85 </td>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 8.70 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:right;"> 10.44 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 12.41 </td>
+  </tr>
+</tbody>
+</table>
+
+Rata-rata populasi adalah $\mu = 4.99$ km dengan simpangan baku $\sigma = 2.67$ km.
+
+Sekarang, kita ambil **1 sampel** berukuran $n=10$ secara acak (*Simple Random Sampling*). Pengambilan menghasilkan sampel dengan ID 3, 9, 14, 17, 22, 23, 24, 25, 27, dan 30.
+
+<div class="figure" style="text-align: center">
+<img src="figures/05-inferensia-sampel-satu-1.png" alt="Histogram Distribusi Objek (n=10)" width="80%" />
+<p class="caption">(\#fig:05-inferensia-sampel-satu)Histogram Distribusi Objek (n=10)</p>
+</div>
+
+Pada histogram di atas, sumbu Y ("Frekuensi") menunjukkan **jumlah mahasiswa** yang memiliki jarak tempuh tertentu. Variasi datanya menggambarkan seberapa berbeda jarak antar individu.
+
+**2. Distribusi Statistik (Sebaran Rata-rata)**
+
+Sekarang, kita lakukan simulasi: kita mengambil sampel ($n=10$) dari populasi tersebut sebanyak **200 kali**. Setiap kali ambil, kita catat rata-ratanya.
+
+Berikut adalah 8 hasil pertama dari 200 pengambilan sampel:
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:05-inferensia-simulasi-200)Hasil Simulasi Distribusi Sampling (8 Teratas dari 200)</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Pengambilan_Ke </th>
+   <th style="text-align:left;"> Rata_Rata_Sampel </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:left;"> 3.79 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:left;"> 4.72 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:left;"> 4.7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:left;"> 4.62 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:left;"> 6.76 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 6 </td>
+   <td style="text-align:left;"> 5.94 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 7 </td>
+   <td style="text-align:left;"> 3.89 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 8 </td>
+   <td style="text-align:left;"> 3.82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ... </td>
+   <td style="text-align:left;"> ... </td>
+  </tr>
+</tbody>
+</table>
+
+Mari kita lihat histogram dari 200 rata-rata ini:
+
+<div class="figure" style="text-align: center">
+<img src="figures/05-inferensia-hist-sampling-1.png" alt="Distribusi Statistik (200 Rata-rata)" width="80%" />
+<p class="caption">(\#fig:05-inferensia-hist-sampling)Distribusi Statistik (200 Rata-rata)</p>
+</div>
+
+Perhatikan perbedaan kedua histogram tersebut:
+
+1.  **Distribusi objek**: Pada distribusi objek, tinggi batang (nilai di sumbu Y) mencerminkan "jumlah orang atau **frekuensi objek** yang memiliki nilai-nilai yang ada di sumbu X". Misalnya, objek yang memiliki nilai di antara 2,5 sampai 4,0 ada 4 buah (ID 23, 22, 9, dan 30), sementara 4,0 sampai 6,0 ada 2 objek (ID 27 dan 25).
+
+2.  **Distribusi statistik**: Pada distribusi statistik, tinggi batang mencerminkan **frekuensi munculnya nilai rata-rata** dari 200 kali pengambilan sampel sebanyak 10 objek. Jika kita kaitkan dengan probabilitas, maka tinggi batang mewakili tingkat kemungkinan suatu nilai rata-rata dihasilkan dari sampel yang berjumlah 10 objek.
+:::
+
+## Teorema Limit Sentral
+
+Tentu saja, di kehidupan nyata distribusi statistik dapat dikatakan tidak pernah ada. Sangat sulit untuk bisa mengambil sampel berkali-kali hingga sangat banyak. Ia hanyalah konsep teoritis untuk menjelaskan bagaimana suatu sampel bisa memiliki *pola statistik sampel yang dapat memprediksi populasi*. Dengan memahami pola prediksi tersebut, **kita tidak perlu lagi menghimpun semua anggota populasi** untuk menghitung parameter populasi. Cukup dengan mengumpulkan sampel tersebut, menghitung statistiknya, dan memperkirakan parameternya berdasarkan statistik tersebut.
+
+Pola prediksi inilah yang dijelaskan oleh **Teorema Limit Sentral *(Central Limit Theorem)***. Teorema ini menjadi pijakan analisis inferensial karena memberikan dua jaminan penting:
+
+1. jika ukuran sampel cukup besar (biasanya $n \ge 30$), **distribusi statistik sampel akan berbentuk normal** (lonceng simetris) apa pun bentuk populasi asalnya.
+
+2. rata-rata dari distribusi statistik ini akan **tepat sama dengan rata-rata populasi sebenarnya**, dengan variasi yang semakin kecil seiring bertambahnya ukuran sampel. Ini adalah jaminan yang paling krusial dari teorema ini.
+
+Kombinasi bentuk normal dan akurasi inilah yang memungkinkan kita melakukan estimasi dan uji statistik dengan percaya diri.
+
+Berdasarkan teorema ini, kita dapat membagi analisis statistika inferensial menjadi analisis statistik inferensial **parametrik** dan **nonparametrik**. Analisis inferensial parametrik adalah analisis inferensial yang mengasumsikan bahwa populasi kita berdistribusi normal. Asumsi ini diuji dengan teknik pengujian kenormalan seperti [uji Shapiro-Wilk]('https://www.statistikian.com/2013/01/saphiro-wilk.html') atau [P-P plot]('https://online.stat.psu.edu/stat501/lesson/4/4.6').
 
 ::: rmdkasus
 ### Studi Kasus: Simulasi Teorema Limit Sentral {.unnumbered}
 
-Mari kita buktikan CLT dengan melakukan simulasi dari data populasi mahasiswa tadi. Kita akan mengambil 1000 kali sampel (masing-masing $n=30$), lalu menghitung rata-ratanya dan memplot histogramnya.
+Mari kita buktikan CLT dengan melakukan simulasi pengambilan sampel berulang. Katakanlah kita memiliki **428 mahasiswa** sebagai populasi. Kita akan mengambil 1000 kali sampel berukuran 50 orang, lalu menghitung rata-ratanya dan memplot histogramnya.
+
+Berikut adalah baris perintah untuk melakukan simulasi tersebut dalam R. Dataset yang digunakan dapat diakses pada [tautan ini]('https://github.com/abdulmubdibindar/buku-ajar-stp/blob/main/datasets/DataUtama_mhsITERA.csv').
+
+
+``` r
+library(ggplot2)
+library(gridExtra)
+library(dplyr)
+
+# Setup Ulang Populasi Besar (N=428) untuk CLT
+data_itera <- read.csv("datasets/DataUtama_mhsITERA.csv", sep = ";")
+data_populasi <- data_itera |>
+  mutate(jarak = jarak.km) |>
+  filter(!is.na(jarak))
+
+# Hitung parameter populasi
+mu <- mean(data_populasi$jarak)
+N <- nrow(data_populasi)
+
+# 1. Distribusi Populasi (Data Asli)
+p1 <- ggplot(data_populasi, aes(x = jarak)) +
+  geom_histogram(bins=30, fill="gray", color="black", alpha=0.7) +
+  geom_vline(xintercept = mu, color="red", size=1) +
+  labs(title = paste0("Distribusi Populasi (N=", N, ")"), x="Jarak (km)") + theme_minimal()
+
+# 2. Distribusi Sampling (Rata-rata dari 1000 sampel)  --> SIMULASI
+set.seed(999)
+means_1000 <- replicate(1000, mean(sample(data_populasi$jarak, 50)))
+df_means <- data.frame(means = means_1000)
+
+p2 <- ggplot(df_means, aes(x = means)) +
+  geom_histogram(bins=30, fill="steelblue", color="white", alpha=0.9) +
+  geom_vline(xintercept = mean(means_1000), color="red", size=1) +
+  labs(title = "Distribusi Sampling (n=50, 1000x)", x="Rata-rata Sampel") + theme_minimal()
+
+grid.arrange(p1, p2, ncol=2)
+```
 
 <div class="figure">
-<img src="figures/05-inferensia-2-clt-studi-kasus-simulasi-1.png" alt="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)"  />
-<p class="caption">(\#fig:05-inferensia-2-clt-studi-kasus-simulasi)Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)</p>
+<img src="figures/fig-05-inferensia-2-clt-studi-kasus-simulasi-1.png" alt="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)"  />
+<p class="caption">(\#fig:fig-05-inferensia-2-clt-studi-kasus-simulasi)Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)</p>
 </div>
 
-Perhatikan gambar di atas. Distribusi populasi (kiri) terlihat "miring" (skewed) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang **sempurna normal**. Rata-rata dari distribusi sampling ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = 5.01$).
+Gambar \@ref(fig:fig-05-inferensia-2-clt-studi-kasus-simulasi) menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat "miring" (*skewed*) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna **normal**. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = 5.01$).
 :::
 
-## Standard Error (SE)
+::: rmdkasus
+### Studi Kasus: Efek Ukuran Sampel terhadap Variasi {.unnumbered}
 
-Standard Error adalah simpangan baku dari distribusi statistik sampel. Ini mengukur seberapa akurat rata-rata sampel kita sebagai estimator rata-rata populasi. Semakin kecil SE, semakin presisi estimasi kita.
+Mari kita lanjutkan eksperimen kita. Apa yang terjadi jika kita mengubah ukuran sampel ($n$) yang kita ambil berulang-ulang tersebut? Kali ini kita akan membandingkan distribusi statistik yang dihasilkan dari pengambilan sampel berukuran **$n=30$** dengan **$n=100$**.
+
+<div class="figure">
+<img src="figures/fig-05-inferensia-3-clt-sample-size-1.png" alt="Perbandingan Distribusi Statistik dengan Ukuran Sampel Berbeda"  />
+<p class="caption">(\#fig:fig-05-inferensia-3-clt-sample-size)Perbandingan Distribusi Statistik dengan Ukuran Sampel Berbeda</p>
+</div>
+
+Perhatikan Gambar \@ref(fig:fig-05-inferensia-3-clt-sample-size). Meskipun kedua kurva sama-sama berbentuk lonceng dan berpusat di rata-rata populasi (garis merah), kurva distribusi statistik untuk **$n=100$ (biru)** jauh lebih "kurus" dan tinggi dibandingkan kurva **$n=30$ (kuning)**.
+
+Ini menunjukkan bahwa semakin banyak sampel yang kita ambil dalam satu kali pengambilan ($n$ semakin besar), maka **variasi** dari rata-rata yang kita peroleh akan semakin kecil. Artinya, rata-rata sampel kita akan semakin jarang meleset jauh dari rata-rata populasi sebenarnya. Dengan kata lain, memperbesar ukuran sampel akan meningkatkan peluang kita untuk mendapatkan hasil yang sangat mendekati kondisi populasi yang sebenarnya.
+:::
+
+
+## Menentukan Ukuran Sampel
+
+
+
+
+## Menghitung Peluang Kemunculan Nilai Tertentu dari Distribusi Statistik
+
+
+
+*Standard Error* pada hakikatnya adalah **simpangan baku dari distribusi statistik**.  Sebagaimana yang sudah kita pelajari di subbab \@ref(bab-5-distribusi-normal), simpangan baku adalah ukuran rapat atau renggangnya distribusi. Jika kita kontekskan distribusinya ke distribusi statistik, maka *standard error* adalah ukuran jarak rata-rata sampel dari mengukur seberapa akurat rata-rata sampel kita sebagai estimator rata-rata populasi. Semakin kecil SE, semakin presisi estimasi kita.
 
 $$ SE = \frac{\sigma}{\sqrt{n}} $$
 
@@ -3474,8 +3881,7 @@ Misalkan kita mengambil **satu sampel** acak berukuran $n=100$ mahasiswa dari po
 
 
 
-Dari sampel ini, kita peroleh rata-rata jarak $\bar{x} = 5.16$ km.
-Kita tahu simpangan baku populasi $\sigma = 2.82$. Maka **Standard Error** teoritisnya adalah:
+Dari sampel ini, kita peroleh rata-rata jarak $\bar{x} = 5.16$ km. Kita tahu simpangan baku populasi $\sigma = 2.82$. Maka **Standard Error** teoritisnya adalah:
 
 $$ SE = \frac{2.82}{\sqrt{100}} = 0.2817 $$
 
@@ -3499,18 +3905,17 @@ $$ Z = \frac{5.16 - 5.01}{0.2817} $$
 
 
 
-Hasil:
--   Z-score = **0.54**
--   Probabilitas ($P(Z < z)$) = **0.7057**
+Hasil: - Z-score = **0.54** - Probabilitas ($P(Z < z)$) = **0.7057**
 
 Artinya, peluang mendapatkan sampel dengan rata-rata 5.16 km atau lebih kecil dari populasi ini adalah sekitar **70.6%**. Angka ini cukup besar (jauh dari 5% atau 0.05), sehingga sampel kita dianggap masih wajar dan berasal dari populasi tersebut.
 :::
 
+
 ::: rmdexercise
 ## Soal Evaluasi 5 {.unnumbered}
 
-1.  **Studi Kasus Survei Keakraban**. [STP-4.1]{.capaian}
-    Sebuah acara keakraban angkatan Anda akan dilakukan di suatu tempat yang memerlukan biaya sewa tempat. Agar acara Anda dihadiri sebanyak mungkin orang, Anda menanyakan kesediaan kawan-kawan Anda. Anda pun merancang sebuah survei untuk mengetahui persentase kawan Anda yang setuju acara keakraban diadakan di tempat tersebut. Untuk itu Anda menanyakan sebagian kawan Anda sebagai sampel.
+1.  **Studi Kasus Survei Keakraban**. [STP-4.1]{.capaian} Sebuah acara keakraban angkatan Anda akan dilakukan di suatu tempat yang memerlukan biaya sewa tempat. Agar acara Anda dihadiri sebanyak mungkin orang, Anda menanyakan kesediaan kawan-kawan Anda. Anda pun merancang sebuah survei untuk mengetahui persentase kawan Anda yang setuju acara keakraban diadakan di tempat tersebut. Untuk itu Anda menanyakan sebagian kawan Anda sebagai sampel.
+
     a.  Apabila Anda memiliki daftar nama seluruh kawan Anda, apa nama teknik pengambilan sampel yang Anda bisa lakukan?
     b.  Jelaskan bagaimana metode Anda memilih sampel kawan Anda berdasarkan kondisi di soal ke-1 tersebut.
     c.  Apabila Anda tidak memiliki daftar nama seluruh kawan Anda, apa nama teknik pengambilan sampel yang Anda bisa lakukan?
@@ -3518,8 +3923,8 @@ Artinya, peluang mendapatkan sampel dengan rata-rata 5.16 km atau lebih kecil da
 
 2.  Jelaskan perbedaan antara simpangan baku (*standard deviation*) dengan *standard error*! [STP-4.2]{.capaian}
 
-3.  **Kasus Jarak Tempat Tinggal**. [STP-4.2]{.capaian}
-    Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.
+3.  **Kasus Jarak Tempat Tinggal**. [STP-4.2]{.capaian} Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.
+
     a.  Jelaskan perbedaan distribusi sampel dengan distribusi statistik sampel menggunakan kasus ini.
     b.  Apakah kita dapat menggunakan teorema limit sentral dalam perhitungan probabilitas distribusi statistik sampel kita tersebut? Jelaskan jawaban Anda.
     c.  Katakanlah parameternya (rata-rata jarak tempat tinggal seluruh pegawai ITERA) diketahui sebesar 7,5 km, Hitunglah nilai standar (z-score) sampel kita.
