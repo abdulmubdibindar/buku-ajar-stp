@@ -1,4 +1,4 @@
-# Estimasi Parameter
+# Estimasi Parameter {#bab-6-estimasi-parameter}
 
 ## Konsep Dasar
 

@@ -57,10 +57,12 @@ library(knitr)
 # Buat Populasi Toy N=16
 populasi_kecil <- data.frame(
   ID = 1:16,
-  Jarak = c(2.5, 1.0, 5.2, 3.8,  # Blok 1
-            0.5, 1.2, 4.0, 6.1,  # Blok 2
-            10.5, 11.2, 9.8, 8.5, # Blok 3
-            15.0, 14.2, 16.5, 13.8), # Blok 4
+  Jarak = c(
+    2.5, 1.0, 5.2, 3.8, # Blok 1
+    0.5, 1.2, 4.0, 6.1, # Blok 2
+    10.5, 11.2, 9.8, 8.5, # Blok 3
+    15.0, 14.2, 16.5, 13.8
+  ), # Blok 4
   Kelompok = rep(c("A", "B", "C", "D"), 4), # Distribute Strata evenly
   Blok = rep(c("Blok 1", "Blok 2", "Blok 3", "Blok 4"), each = 4) # Clusters
 )
@@ -148,9 +150,9 @@ Kita ingin memastikan setiap **Kelompok** (A, B, C, D) terwakili. Kita bagi popu
 
 ```{r 05-inferensia-toy-stratified, echo=FALSE}
 set.seed(102)
-sampel_strat <- populasi_kecil |> 
-  group_by(Kelompok) |> 
-  sample_n(1) |> 
+sampel_strat <- populasi_kecil |>
+  group_by(Kelompok) |>
+  sample_n(1) |>
   ungroup() |>
   arrange(Kelompok) # Urutkan supaya terlihat perwakilannya
 
@@ -178,7 +180,7 @@ set.seed(103)
 # Pilih 1 blok secara acak
 blok_terpilih <- sample(unique(populasi_kecil$Blok), 1)
 
-sampel_cluster <- populasi_kecil |> 
+sampel_cluster <- populasi_kecil |>
   filter(Blok == blok_terpilih)
 
 kable(sampel_cluster, caption = paste("Hasil Cluster Sampling (Terpilih:", blok_terpilih, ")"))
@@ -203,7 +205,7 @@ library(gridExtra)
 library(grid)
 
 # Tema ilustrasi: ada garis sumbu tapi tanpa angka/label per panel
-theme_dist <- theme_classic() + 
+theme_dist <- theme_classic() +
   theme(
     axis.text = element_blank(),
     axis.ticks = element_blank(),
@@ -214,8 +216,10 @@ theme_dist <- theme_classic() +
 
 # 1. Uniform
 p1 <- ggplot(data.frame(x = c(0, 1)), aes(x)) +
-  stat_function(fun = dunif, args = list(min = 0, max = 1), 
-                geom = "area", fill = "#56B4E9", alpha = 0.8) +
+  stat_function(
+    fun = dunif, args = list(min = 0, max = 1),
+    geom = "area", fill = "#56B4E9", alpha = 0.8
+  ) +
   labs(title = "Uniform") +
   theme_dist
 
@@ -239,22 +243,28 @@ p4 <- ggplot(data.frame(x = c(-3, 3)), aes(x)) +
 
 # 5. F-Distribution
 p5 <- ggplot(data.frame(x = c(0, 5)), aes(x)) +
-  stat_function(fun = df, args = list(df1 = 5, df2 = 20), 
-                geom = "area", fill = "#56B4E9", alpha = 0.8) +
+  stat_function(
+    fun = df, args = list(df1 = 5, df2 = 20),
+    geom = "area", fill = "#56B4E9", alpha = 0.8
+  ) +
   labs(title = "F-Distribution") +
   theme_dist
 
 # 6. Chi-Square
 p6 <- ggplot(data.frame(x = c(0, 10)), aes(x)) +
-  stat_function(fun = dchisq, args = list(df = 3), 
-                geom = "area", fill = "#56B4E9", alpha = 0.8) +
+  stat_function(
+    fun = dchisq, args = list(df = 3),
+    geom = "area", fill = "#56B4E9", alpha = 0.8
+  ) +
   labs(title = "Chi-Square") +
   theme_dist
 
 # Grid dengan label sumbu global
-grid.arrange(p1, p2, p3, p4, p5, p6, ncol = 3,
-             left = textGrob("Frekuensi", rot = 90, gp = gpar(fontsize = 12, fontface = "bold")),
-             bottom = textGrob("Nilai Variabel", gp = gpar(fontsize = 12, fontface = "bold")))
+grid.arrange(p1, p2, p3, p4, p5, p6,
+  ncol = 3,
+  left = textGrob("Frekuensi", rot = 90, gp = gpar(fontsize = 12, fontface = "bold")),
+  bottom = textGrob("Nilai Variabel", gp = gpar(fontsize = 12, fontface = "bold"))
+)
 ```
 
 **Interpretasi Bentuk Distribusi**
@@ -288,42 +298,58 @@ mu <- 15
 sigma1 <- 1.75
 sigma2 <- 3.5 # Standar deviasi yang lebih besar (2x lipat)
 # Gunakan range yang cukup lebar untuk menampung distribusi yang lebih lebar (sigma2)
-x_range <- c(mu - 4 * sigma2, mu + 4 * sigma2) 
+x_range <- c(mu - 4 * sigma2, mu + 4 * sigma2)
 
 # Fungsi untuk membuat plot standar dengan parameter spesifik
 create_normal_plot <- function(mu, sigma, fill_color, title_text) {
   ggplot(data.frame(x = x_range), aes(x)) +
-    stat_function(fun = dnorm, args = list(mean = mu, sd = sigma), 
-                  geom = "area", fill = fill_color, alpha = 0.8) +
+    stat_function(
+      fun = dnorm, args = list(mean = mu, sd = sigma),
+      geom = "area", fill = fill_color, alpha = 0.8
+    ) +
     theme_minimal() +
     labs(title = title_text, x = "", y = "Densitas") +
     xlim(x_range) + # Pastikan sumbu x sama persis
-    
+
     # Garis Mean
     geom_vline(xintercept = mu, linetype = "dashed", color = "indianred", size = 0.5) +
-    annotate("text", x = mu, y = dnorm(mu, mean=mu, sd=sigma) * 0.1, 
-             label = expression(mu), color = "indianred", size = 4, fontface = "bold") +
-    
+    annotate("text",
+      x = mu, y = dnorm(mu, mean = mu, sd = sigma) * 0.1,
+      label = expression(mu), color = "indianred", size = 4, fontface = "bold"
+    ) +
+
     # Garis +/- 1 SD
     geom_vline(xintercept = c(mu - sigma, mu + sigma), linetype = "dashed", color = "indianred", size = 0.5) +
-    annotate("text", x = mu - sigma, y = dnorm(mu - sigma, mean=mu, sd=sigma) * 0.2, 
-             label = expression(mu - sigma), color = "indianred", size = 3, hjust = 1.1) +
-    annotate("text", x = mu + sigma, y = dnorm(mu + sigma, mean=mu, sd=sigma) * 0.2, 
-             label = expression(mu + sigma), color = "indianred", size = 3, hjust = -0.1) +
+    annotate("text",
+      x = mu - sigma, y = dnorm(mu - sigma, mean = mu, sd = sigma) * 0.2,
+      label = expression(mu - sigma), color = "indianred", size = 3, hjust = 1.1
+    ) +
+    annotate("text",
+      x = mu + sigma, y = dnorm(mu + sigma, mean = mu, sd = sigma) * 0.2,
+      label = expression(mu + sigma), color = "indianred", size = 3, hjust = -0.1
+    ) +
 
     # Garis +/- 2 SD
-    geom_vline(xintercept = c(mu - 2*sigma, mu + 2*sigma), linetype = "dashed", color = "indianred", size = 0.5) +
-    annotate("text", x = mu - 2*sigma, y = dnorm(mu - 2*sigma, mean=mu, sd=sigma) * 0.5, 
-             label = expression(mu - 2*sigma), color = "indianred", size = 3, hjust = 1.1) +
-    annotate("text", x = mu + 2*sigma, y = dnorm(mu + 2*sigma, mean=mu, sd=sigma) * 0.5, 
-             label = expression(mu + 2*sigma), color = "indianred", size = 3, hjust = -0.1) +
+    geom_vline(xintercept = c(mu - 2 * sigma, mu + 2 * sigma), linetype = "dashed", color = "indianred", size = 0.5) +
+    annotate("text",
+      x = mu - 2 * sigma, y = dnorm(mu - 2 * sigma, mean = mu, sd = sigma) * 0.5,
+      label = expression(mu - 2 * sigma), color = "indianred", size = 3, hjust = 1.1
+    ) +
+    annotate("text",
+      x = mu + 2 * sigma, y = dnorm(mu + 2 * sigma, mean = mu, sd = sigma) * 0.5,
+      label = expression(mu + 2 * sigma), color = "indianred", size = 3, hjust = -0.1
+    ) +
 
     # Garis +/- 3 SD
-    geom_vline(xintercept = c(mu - 3*sigma, mu + 3*sigma), linetype = "dashed", color = "indianred", size = 0.5) +
-    annotate("text", x = mu - 3*sigma, y = dnorm(mu - 3*sigma, mean=mu, sd=sigma) * 0.8, 
-             label = expression(mu - 3*sigma), color = "indianred", size = 3, hjust = 1.1) +
-    annotate("text", x = mu + 3*sigma, y = dnorm(mu + 3*sigma, mean=mu, sd=sigma) * 0.8, 
-             label = expression(mu + 3*sigma), color = "indianred", size = 3, hjust = -0.1)
+    geom_vline(xintercept = c(mu - 3 * sigma, mu + 3 * sigma), linetype = "dashed", color = "indianred", size = 0.5) +
+    annotate("text",
+      x = mu - 3 * sigma, y = dnorm(mu - 3 * sigma, mean = mu, sd = sigma) * 0.8,
+      label = expression(mu - 3 * sigma), color = "indianred", size = 3, hjust = 1.1
+    ) +
+    annotate("text",
+      x = mu + 3 * sigma, y = dnorm(mu + 3 * sigma, mean = mu, sd = sigma) * 0.8,
+      label = expression(mu + 3 * sigma), color = "indianred", size = 3, hjust = -0.1
+    )
 }
 
 # Plot 1: Sigma Kecil
@@ -333,7 +359,7 @@ p4 <- create_normal_plot(mu, sigma1, "#56B4E9", paste("Distribusi Normal (SD =",
 p5 <- create_normal_plot(mu, sigma2, "#E69F00", paste("Distribusi Normal (SD =", sigma2, ")")) +
   labs(x = "Nilai") # Tambahkan label sumbu x hanya di plot bawah
 
-grid.arrange(p4, p5, ncol=1)
+grid.arrange(p4, p5, ncol = 1)
 ```
 
 2.  **Simetri Sempurna:** Pada distribusi normal yang sempurna, nilai *mean* (rata-rata), *median* (nilai tengah), dan *mode* (nilai yang paling sering muncul) adalah identik dan berada **tepat di tengah distribusi** [@healey2021statistics; @devaus2014surveys].
@@ -353,36 +379,36 @@ set.seed(123)
 x_pos <- rbeta(2000, 2, 5) # Positive Skew
 x_neg <- rbeta(2000, 5, 2) # Negative Skew
 
-p_pos <- ggplot(data.frame(x=x_pos), aes(x)) +
-  geom_density(fill="#E69F00", alpha=0.7) +
-  labs(title="Positif Skew (Ekor Kanan)") +
+p_pos <- ggplot(data.frame(x = x_pos), aes(x)) +
+  geom_density(fill = "#E69F00", alpha = 0.7) +
+  labs(title = "Positif Skew (Ekor Kanan)") +
   theme_void() +
-  theme(plot.title = element_text(hjust = 0.5, face="bold"))
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
 
-p_neg <- ggplot(data.frame(x=x_neg), aes(x)) +
-  geom_density(fill="#56B4E9", alpha=0.7) +
-  labs(title="Negatif Skew (Ekor Kiri)") +
+p_neg <- ggplot(data.frame(x = x_neg), aes(x)) +
+  geom_density(fill = "#56B4E9", alpha = 0.7) +
+  labs(title = "Negatif Skew (Ekor Kiri)") +
   theme_void() +
-  theme(plot.title = element_text(hjust = 0.5, face="bold"))
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
 
-grid.arrange(p_pos, p_neg, ncol=2)
+grid.arrange(p_pos, p_neg, ncol = 2)
 ```
 ```{r 05-inferensia-viz-kurtosis, echo=FALSE, out.width='49%', fig.show='hold', fig.cap="Perbandingan Kurtosis: Normal (3) vs Platikurtik (<3)", warning=FALSE, message=FALSE}
 # Create data for Normal (Mesokurtic) and Uniform (Platykurtic)
-x_seq <- seq(-4, 4, length.out=200)
+x_seq <- seq(-4, 4, length.out = 200)
 
 df_kurt <- data.frame(
   x = rep(x_seq, 2),
-  y = c(dnorm(x_seq), dunif(x_seq, min=-2.5, max=2.5)), # Uniform adjusted width
-  Type = rep(c("Normal (Kurtosis = 3)", "Platikurtik (Kurtosis = 0)"), each=200)
+  y = c(dnorm(x_seq), dunif(x_seq, min = -2.5, max = 2.5)), # Uniform adjusted width
+  Type = rep(c("Normal (Kurtosis = 3)", "Platikurtik (Kurtosis = 0)"), each = 200)
 )
 
-ggplot(df_kurt, aes(x=x, y=y, fill=Type)) +
-  geom_area(position="identity", alpha=0.6) +
-  scale_fill_manual(values=c("#56B4E9", "#D55E00")) +
-  labs(y="Densitas", x="") +
+ggplot(df_kurt, aes(x = x, y = y, fill = Type)) +
+  geom_area(position = "identity", alpha = 0.6) +
+  scale_fill_manual(values = c("#56B4E9", "#D55E00")) +
+  labs(y = "Densitas", x = "") +
   theme_minimal() +
-  theme(legend.position="bottom", legend.title=element_blank())
+  theme(legend.position = "bottom", legend.title = element_blank())
 ```
 
 4.  **Area di Bawah Kurva (Aturan 68-95-99, Aturan Empiris):** Salah satu karakteristik paling berguna adalah **proporsi area di bawah kurva yang tetap** berdasarkan jarak standar deviasi (SD) dari rata-rata [@healey2021statistics]:
@@ -400,45 +426,55 @@ mu <- 15
 sigma <- 1.75
 
 # Create data
-x <- seq(mu - 4*sigma, mu + 4*sigma, length.out=1000)
-y <- dnorm(x, mean=mu, sd=sigma)
-df <- data.frame(x=x, y=y)
+x <- seq(mu - 4 * sigma, mu + 4 * sigma, length.out = 1000)
+y <- dnorm(x, mean = mu, sd = sigma)
+df <- data.frame(x = x, y = y)
 
-ggplot(df, aes(x=x, y=y)) +
+ggplot(df, aes(x = x, y = y)) +
   # Layer 3 SD (99.7%) - Lightest
-  geom_area(data=subset(df, x >= mu - 3*sigma & x <= mu + 3*sigma), fill="#C6DBEF", alpha=0.9) +
+  geom_area(data = subset(df, x >= mu - 3 * sigma & x <= mu + 3 * sigma), fill = "#C6DBEF", alpha = 0.9) +
   # Layer 2 SD (95%) - Medium
-  geom_area(data=subset(df, x >= mu - 2*sigma & x <= mu + 2*sigma), fill="#6BAED6", alpha=0.9) +
+  geom_area(data = subset(df, x >= mu - 2 * sigma & x <= mu + 2 * sigma), fill = "#6BAED6", alpha = 0.9) +
   # Layer 1 SD (68%) - Darkest
-  geom_area(data=subset(df, x >= mu - sigma & x <= mu + sigma), fill="#2171B5", alpha=0.9) +
+  geom_area(data = subset(df, x >= mu - sigma & x <= mu + sigma), fill = "#2171B5", alpha = 0.9) +
   # Outline
-  geom_line(size=0.8, color="black") +
-  
-  # Annotations (Horizontal Lines & Percentages)
-  
-  # 68% Line (Top)
-  annotate("segment", x = mu - sigma, xend = mu + sigma, y = 0.12, yend = 0.12, 
-           arrow = arrow(ends = "both", length = unit(0.2, "cm")), color="white", size=1) +
-  annotate("text", x = mu, y = 0.12, label = "68%", vjust = -0.8, color="white", fontface="bold", size=5) +
-  
-  # 95% Line (Middle)
-  annotate("segment", x = mu - 2*sigma, xend = mu + 2*sigma, y = 0.05, yend = 0.05, 
-           arrow = arrow(ends = "both", length = unit(0.2, "cm")), color="black", size=0.8) +
-  annotate("text", x = mu, y = 0.05, label = "95%", vjust = -0.8, color="black", fontface="bold", size=4) +
+  geom_line(size = 0.8, color = "black") +
 
-   # 99.7% Line (Bottom)
-  annotate("segment", x = mu - 3*sigma, xend = mu + 3*sigma, y = 0.01, yend = 0.01, 
-           arrow = arrow(ends = "both", length = unit(0.2, "cm")), color="black", size=0.8) +
-  annotate("text", x = mu, y = 0.01, label = "99.7%", vjust = -0.8, color="black", fontface="bold", size=4) +
-  
+  # Annotations (Horizontal Lines & Percentages)
+
+  # 68% Line (Top)
+  annotate("segment",
+    x = mu - sigma, xend = mu + sigma, y = 0.12, yend = 0.12,
+    arrow = arrow(ends = "both", length = unit(0.2, "cm")), color = "white", size = 1
+  ) +
+  annotate("text", x = mu, y = 0.12, label = "68%", vjust = -0.8, color = "white", fontface = "bold", size = 5) +
+
+  # 95% Line (Middle)
+  annotate("segment",
+    x = mu - 2 * sigma, xend = mu + 2 * sigma, y = 0.05, yend = 0.05,
+    arrow = arrow(ends = "both", length = unit(0.2, "cm")), color = "black", size = 0.8
+  ) +
+  annotate("text", x = mu, y = 0.05, label = "95%", vjust = -0.8, color = "black", fontface = "bold", size = 4) +
+
+  # 99.7% Line (Bottom)
+  annotate("segment",
+    x = mu - 3 * sigma, xend = mu + 3 * sigma, y = 0.01, yend = 0.01,
+    arrow = arrow(ends = "both", length = unit(0.2, "cm")), color = "black", size = 0.8
+  ) +
+  annotate("text", x = mu, y = 0.01, label = "99.7%", vjust = -0.8, color = "black", fontface = "bold", size = 4) +
+
   # Custom X Axis Labels
-  scale_x_continuous(breaks = c(mu-3*sigma, mu-2*sigma, mu-sigma, mu, mu+sigma, mu+2*sigma, mu+3*sigma),
-                     labels = c(expression(mu-3*sigma), expression(mu-2*sigma), expression(mu-sigma), 
-                                expression(mu), 
-                                expression(mu+sigma), expression(mu+2*sigma), expression(mu+3*sigma))) +
+  scale_x_continuous(
+    breaks = c(mu - 3 * sigma, mu - 2 * sigma, mu - sigma, mu, mu + sigma, mu + 2 * sigma, mu + 3 * sigma),
+    labels = c(
+      expression(mu - 3 * sigma), expression(mu - 2 * sigma), expression(mu - sigma),
+      expression(mu),
+      expression(mu + sigma), expression(mu + 2 * sigma), expression(mu + 3 * sigma)
+    )
+  ) +
   theme_minimal() +
-  labs(x="", y="Densitas") +
-  theme(axis.text.x = element_text(size=10))
+  labs(x = "", y = "Densitas") +
+  theme(axis.text.x = element_text(size = 10))
 ```
 
 
@@ -469,11 +505,11 @@ library(kableExtra)
 data_full <- read_delim("datasets/DataUtama_mhsITERA.csv", delim = ";", show_col_types = FALSE) |>
   filter(!is.na(jarak.km))
 set.seed(42)
-populasi_kecil <- data_full |> 
+populasi_kecil <- data_full |>
   sample_n(30) |>
   select(nomor.urut, jarak.km) |>
   mutate(ID = 1:30) |> # Re-ID for simplicity
-  select(ID, Jarak = jarak.km) |> 
+  select(ID, Jarak = jarak.km) |>
   arrange(Jarak)
 
 # Split table for display 2 columns side-by-side (15 rows each)
@@ -502,12 +538,14 @@ sampel_satu <- populasi_kecil |> sample_n(10)
 mean_sampel_satu <- mean(sampel_satu$Jarak)
 sd_sampel_satu <- sd(sampel_satu$Jarak)
 
-ggplot(sampel_satu, aes(x=Jarak)) +
-  geom_histogram(bins=6, fill="#E69F00", color="white", alpha=0.8) +
-  geom_vline(xintercept=mean_sampel_satu, color="red", linetype="dashed", size=1) +
-  labs(title="Distribusi Objek (Sampel Tunggal n=10)",
-       subtitle=paste("Rata-rata Sampel =", round(mean_sampel_satu, 2), "| SD Sampel =", round(sd_sampel_satu, 2)),
-       x="Jarak (km)", y="Frekuensi (Jumlah Mahasiswa)") +
+ggplot(sampel_satu, aes(x = Jarak)) +
+  geom_histogram(bins = 6, fill = "#E69F00", color = "white", alpha = 0.8) +
+  geom_vline(xintercept = mean_sampel_satu, color = "red", linetype = "dashed", size = 1) +
+  labs(
+    title = "Distribusi Objek (Sampel Tunggal n=10)",
+    subtitle = paste("Rata-rata Sampel =", round(mean_sampel_satu, 2), "| SD Sampel =", round(sd_sampel_satu, 2)),
+    x = "Jarak (km)", y = "Frekuensi (Jumlah Mahasiswa)"
+  ) +
   theme_minimal()
 ```
 
@@ -525,7 +563,7 @@ n_sim <- 200
 n_sampel <- 10
 hasil_simulasi <- numeric(n_sim)
 
-for(i in 1:n_sim) {
+for (i in 1:n_sim) {
   s <- sample(populasi_kecil$Jarak, n_sampel)
   hasil_simulasi[i] <- mean(s)
 }
@@ -537,7 +575,7 @@ df_sim <- data.frame(
 )
 
 tabel_sim_head <- head(df_sim, 8)
-rbind(tabel_sim_head |> mutate(Pengambilan_Ke=as.character(Pengambilan_Ke)), c("...", "...")) |>
+rbind(tabel_sim_head |> mutate(Pengambilan_Ke = as.character(Pengambilan_Ke)), c("...", "...")) |>
   kbl(caption = "Hasil Simulasi Distribusi Sampling (8 Teratas dari 200)") |>
   kable_styling(full_width = F)
 ```
@@ -548,12 +586,14 @@ Mari kita lihat histogram dari 200 rata-rata ini:
 mean_sampling <- mean(hasil_simulasi)
 se_sampling <- sd(hasil_simulasi)
 
-ggplot(data.frame(x=hasil_simulasi), aes(x=x)) +
-  geom_histogram(bins=15, fill="#56B4E9", color="white", alpha=0.8) +
-  geom_vline(xintercept=mean_sampling, color="red", linetype="dashed", size=1) +
-  labs(title="Distribusi Statistik Hasil Sampel",
-       subtitle=paste("Rata-rata dari Rata-rata =", round(mean_sampling, 2), "| Standard Error =", round(se_sampling, 2)),
-       x="Rata-rata Jarak (km)", y="Frekuensi (Jumlah Sampel)") +
+ggplot(data.frame(x = hasil_simulasi), aes(x = x)) +
+  geom_histogram(bins = 15, fill = "#56B4E9", color = "white", alpha = 0.8) +
+  geom_vline(xintercept = mean_sampling, color = "red", linetype = "dashed", size = 1) +
+  labs(
+    title = "Distribusi Statistik Hasil Sampel",
+    subtitle = paste("Rata-rata dari Rata-rata =", round(mean_sampling, 2), "| Standard Error =", round(se_sampling, 2)),
+    x = "Rata-rata Jarak (km)", y = "Frekuensi (Jumlah Sampel)"
+  ) +
   theme_minimal()
 ```
 
@@ -602,9 +642,10 @@ N <- nrow(data_populasi)
 
 # 1. Distribusi Populasi (Data Asli)
 p1 <- ggplot(data_populasi, aes(x = jarak)) +
-  geom_histogram(bins=30, fill="gray", color="black", alpha=0.7) +
-  geom_vline(xintercept = mu, color="red", size=1) +
-  labs(title = paste0("Distribusi Populasi (N=", N, ")"), x="Jarak (km)") + theme_minimal()
+  geom_histogram(bins = 30, fill = "gray", color = "black", alpha = 0.7) +
+  geom_vline(xintercept = mu, color = "red", size = 1) +
+  labs(title = paste0("Distribusi Populasi (N=", N, ")"), x = "Jarak (km)") +
+  theme_minimal()
 
 # 2. Distribusi Sampling (Rata-rata dari 1000 sampel)  --> SIMULASI
 set.seed(999)
@@ -612,11 +653,12 @@ means_1000 <- replicate(1000, mean(sample(data_populasi$jarak, 50)))
 df_means <- data.frame(means = means_1000)
 
 p2 <- ggplot(df_means, aes(x = means)) +
-  geom_histogram(bins=30, fill="steelblue", color="white", alpha=0.9) +
-  geom_vline(xintercept = mean(means_1000), color="red", size=1) +
-  labs(title = "Distribusi Sampling (n=50, 1000x)", x="Rata-rata Sampel") + theme_minimal()
+  geom_histogram(bins = 30, fill = "steelblue", color = "white", alpha = 0.9) +
+  geom_vline(xintercept = mean(means_1000), color = "red", size = 1) +
+  labs(title = "Distribusi Sampling (n=50, 1000x)", x = "Rata-rata Sampel") +
+  theme_minimal()
 
-grid.arrange(p1, p2, ncol=2)
+grid.arrange(p1, p2, ncol = 2)
 ```
 
 Gambar \@ref(fig:fig-05-inferensia-2-clt-studi-kasus-simulasi) menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat "miring" (*skewed*) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna **normal**. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = `r round(mu, 2)`$).
@@ -645,10 +687,12 @@ df_compare <- rbind(df_n30, df_n100)
 ggplot(df_compare, aes(x = means, fill = type)) +
   geom_density(alpha = 0.6) +
   scale_fill_manual(values = c("#E69F00", "#56B4E9")) +
-  geom_vline(xintercept = mu, color="red", linetype="dashed", size=1) +
-  labs(title = "Perbandingan Lebar Distribusi Statistik (n=30 vs n=100)",
-       subtitle = paste("Garis Merah Putus-putus = Rata-rata Populasi (", round(mu, 2), ")"),
-       x = "Rata-rata Sampel", y = "Densitas") +
+  geom_vline(xintercept = mu, color = "red", linetype = "dashed", size = 1) +
+  labs(
+    title = "Perbandingan Lebar Distribusi Statistik (n=30 vs n=100)",
+    subtitle = paste("Garis Merah Putus-putus = Rata-rata Populasi (", round(mu, 2), ")"),
+    x = "Rata-rata Sampel", y = "Densitas"
+  ) +
   theme_minimal() +
   theme(legend.title = element_blank(), legend.position = "top")
 ```
@@ -661,6 +705,54 @@ Ini menunjukkan bahwa semakin banyak sampel yang kita ambil dalam satu kali peng
 
 ## Menentukan Ukuran Sampel
 
+Jika selama ini kita masih berpikir bahwa ukuran sampel (jumlah sampel yang menjadi bahan data kita) ditentukan berdasarkan ukuran populasinya, maka kita salah kaprah. Menurut @devaus2014surveys, ukuran sampel menentukan galat dari perkiraan kita terhadap populasi, tapi ukuran sampel **bukan ditentukan dari ukuran populasi**. @devaus2014surveys juga menjabarkan jumlah-jumlah sampel yang berbeda untuk setiap galat dari perkiraan kita. Galat perkiraan ini disebut juga dengan *sampling error*. Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) menunjukkan ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%. Ini akan kita pelajari lebih dalam di Bab \@ref(bab-6-estimasi-parameter).
+
+```{r tabel-ukuran-sampel-sampling-error, echo=FALSE, fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+tabel_se <- data.frame(
+  SE_kiri = c(
+    "1,0%", "1,5%", "2,0%", "2,5%", "3,0%",
+    "3,5%", "4,0%", "4,5%", "5,0%", ""
+  ),
+  n_kiri = c(
+    "10.000", "4.500", "2.500", "1.600", "1.100",
+    "816", "625", "494", "400", ""
+  ),
+  SE_kanan = c(
+    "5,5%", "6,0%", "6,5%", "7,0%", "7,5%",
+    "8,0%", "8,5%", "9,0%", "9,5%", "10,0%"
+  ),
+  n_kanan = c(
+    "330", "277", "237", "204", "178",
+    "156", "138", "123", "110", "100"
+  )
+)
+
+kbl(
+  tabel_se,
+  col.names = c(
+    "_Sampling error_", "Ukuran Sampel Min.",
+    "_Sampling error_", "Ukuran Sampel Min."
+  ),
+  caption = "Ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%",
+  align = c("c", "c", "c", "c")
+) |>
+  kable_styling(full_width = FALSE, position = "center")
+```
+
+::: rmdkasus
+### Studi Kasus: Menentukan Jumlah Sampel dari Tabel {.unnumbered}
+
+Seorang mahasiswa ingin meneliti **proporsi mahasiswa ITERA yang menggunakan kendaraan bermotor** sebagai moda utama perjalanan ke kampus. Ia merancang survei dan perlu menentukan berapa responden yang harus ia kumpulkan.
+
+Karena ia belum tahu berapa proporsi sesungguhnya di populasi, ia menggunakan asumsi terburuk: 50% menggunakan kendaraan bermotor dan 50% tidak (varians 50/50). Ia juga menetapkan bahwa *sampling error* yang masih dapat ia tolerir adalah **5%** pada tingkat kepercayaan 95%.
+
+Dengan membaca Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) pada baris *sampling error* 5,0%, ia menemukan bahwa **sampel minimum yang dibutuhkan adalah 400 responden**. Jumlah inilah yang ia jadikan target pengumpulan data.
+
+Perhatikan bahwa angka ini tidak bergantung pada seberapa besar populasi mahasiswa ITERA (yang berjumlah lebih dari 18.000 orang). Cukup 400 responden, dan hasil surveinya akan memiliki akurasi dalam batas ±5% pada tingkat kepercayaan 95%.
+:::
 
 
 
