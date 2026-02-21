@@ -156,7 +156,9 @@ sampel_strat <- populasi_kecil |>
   ungroup() |>
   arrange(Kelompok) # Urutkan supaya terlihat perwakilannya
 
-kable(sampel_strat, caption = "Hasil Stratified Sampling (1 wakil per Kelompok)")
+kable(sampel_strat,
+  caption = "Hasil Stratified Sampling (1 wakil per Kelompok)"
+)
 ```
 
 *Hasilnya menjamin ada masing-masing satu perwakilan dari Kelompok A, B, C, dan D.*
@@ -183,11 +185,80 @@ blok_terpilih <- sample(unique(populasi_kecil$Blok), 1)
 sampel_cluster <- populasi_kecil |>
   filter(Blok == blok_terpilih)
 
-kable(sampel_cluster, caption = paste("Hasil Cluster Sampling (Terpilih:", blok_terpilih, ")"))
+kable(sampel_cluster,
+  caption = paste("Hasil Cluster Sampling (Terpilih:", blok_terpilih, ")")
+)
 ```
 
 *Kita hanya perlu mendatangi satu lokasi (Blok), tapi mendapatkan 4 responden sekaligus.*
 :::
+
+::: rmdexercise
+
+## Soal Evaluasi 6 {.unnumbered}
+
+[STP-4.3]{.capaian} Sebuah acara keakraban angkatan Anda akan dilakukan di suatu tempat yang memerlukan biaya sewa tempat. Agar acara Anda dihadiri sebanyak mungkin orang, Anda menanyakan kesediaan kawan-kawan Anda. Anda pun merancang sebuah survei untuk mengetahui persentase kawan Anda yang setuju acara keakraban diadakan di tempat tersebut. Untuk itu Anda menanyakan sebagian kawan Anda sebagai sampel.
+
+  a. Apabila Anda memiliki daftar nama seluruh kawan Anda, apa nama teknik pengambilan sampel yang Anda bisa lakukan?
+  b. Jelaskan bagaimana metode Anda memilih sampel kawan Anda berdasarkan kondisi di soal ke-1 tersebut.
+  c. Apabila Anda tidak memiliki daftar nama seluruh kawan Anda, apa nama teknik pengambilan sampel yang Anda bisa lakukan?
+  d. Jelaskan bagaimana metode Anda memilih sampel kawan Anda berdasarkan kondisi di soal ke-3 tersebut.
+:::
+
+
+## Menentukan Ukuran Sampel
+
+Jika selama ini kita masih berpikir bahwa ukuran sampel (jumlah sampel yang menjadi bahan data kita) ditentukan berdasarkan ukuran populasinya, maka kita salah kaprah. Menurut @devaus2014surveys, ukuran sampel menentukan galat dari perkiraan kita terhadap populasi, tapi ukuran sampel **bukan ditentukan dari ukuran populasi**. @devaus2014surveys juga menjabarkan jumlah-jumlah sampel yang berbeda untuk setiap galat dari perkiraan kita. Galat perkiraan ini disebut juga dengan *sampling error*. Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) menunjukkan ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%. Ini akan kita pelajari lebih dalam di Bab \@ref(bab-6-estimasi-parameter).
+
+```{r tabel-ukuran-sampel-sampling-error, echo=FALSE, fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+tabel_se <- data.frame(
+  SE_kiri = c(
+    "1,0%", "1,5%", "2,0%", "2,5%", "3,0%",
+    "3,5%", "4,0%", "4,5%", "5,0%", ""
+  ),
+  n_kiri = c(
+    "10.000", "4.500", "2.500", "1.600", "1.100",
+    "816", "625", "494", "400", ""
+  ),
+  SE_kanan = c(
+    "5,5%", "6,0%", "6,5%", "7,0%", "7,5%",
+    "8,0%", "8,5%", "9,0%", "9,5%", "10,0%"
+  ),
+  n_kanan = c(
+    "330", "277", "237", "204", "178",
+    "156", "138", "123", "110", "100"
+  )
+)
+
+kbl(
+  tabel_se,
+  col.names = c(
+    "_Sampling error_", "Ukuran Sampel Min.",
+    "_Sampling error_", "Ukuran Sampel Min."
+  ),
+  caption = "Ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%",
+  align = c("c", "c", "c", "c")
+) |>
+  kable_styling(full_width = FALSE, position = "center")
+```
+
+::: rmdkasus
+### Studi Kasus: Menentukan Jumlah Sampel dari Tabel {.unnumbered}
+
+Seorang mahasiswa ingin meneliti **proporsi mahasiswa ITERA yang menggunakan kendaraan bermotor** sebagai moda utama perjalanan ke kampus. Ia merancang survei dan perlu menentukan berapa responden yang harus ia kumpulkan.
+
+Karena ia belum tahu berapa proporsi sesungguhnya di populasi, ia menggunakan asumsi terburuk: 50% menggunakan kendaraan bermotor dan 50% tidak (varians 50/50). Ia juga menetapkan bahwa *sampling error* yang masih dapat ia tolerir adalah **5%** pada tingkat kepercayaan 95%.
+
+Dengan membaca Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) pada baris *sampling error* 5,0%, ia menemukan bahwa **sampel minimum yang dibutuhkan adalah 400 responden**. Jumlah inilah yang ia jadikan target pengumpulan data.
+
+Perhatikan bahwa angka ini tidak bergantung pada seberapa besar populasi mahasiswa ITERA (yang berjumlah lebih dari 18.000 orang). Cukup 400 responden, dan hasil surveinya akan memiliki akurasi dalam batas ±5% pada tingkat kepercayaan 95%.
+:::
+
+
+
 
 ## Konsep Distribusi dalam Statistik
 
@@ -224,28 +295,34 @@ p1 <- ggplot(data.frame(x = c(0, 1)), aes(x)) +
   theme_dist
 
 # 2. Binomial
-p2 <- ggplot(data.frame(x = 0:10, y = dbinom(0:10, size = 10, prob = 0.5)), aes(x, y)) +
-  geom_col(fill = "#56B4E9", alpha = 0.8, width = 0.7) +
+p2 <- ggplot(
+  data.frame(
+    x = 0:10,
+    y = dbinom(0:10, size = 10, prob = 0.5)
+  ),
+  aes(x, y)
+) +
+  geom_col(fill = "#e98056ff", alpha = 0.8, width = 0.7) +
   labs(title = "Binomial") +
   theme_dist
 
 # 3. Poisson
 p3 <- ggplot(data.frame(x = 0:10, y = dpois(0:10, lambda = 3)), aes(x, y)) +
-  geom_col(fill = "#56B4E9", alpha = 0.8, width = 0.7) +
+  geom_col(fill = "#ae56e9ff", alpha = 0.8, width = 0.7) +
   labs(title = "Poisson") +
   theme_dist
 
 # 4. Normal
 p4 <- ggplot(data.frame(x = c(-3, 3)), aes(x)) +
-  stat_function(fun = dnorm, geom = "area", fill = "#56B4E9", alpha = 0.8) +
+  stat_function(fun = dnorm, geom = "area", fill = "#3eb925ff", alpha = 0.8) +
   labs(title = "Normal") +
   theme_dist
 
 # 5. F-Distribution
 p5 <- ggplot(data.frame(x = c(0, 5)), aes(x)) +
   stat_function(
-    fun = df, args = list(df1 = 5, df2 = 20),
-    geom = "area", fill = "#56B4E9", alpha = 0.8
+    fun = function(x) df(x, df1 = 5, df2 = 20),
+    geom = "area", fill = "#e95676ff", alpha = 0.8
   ) +
   labs(title = "F-Distribution") +
   theme_dist
@@ -254,7 +331,7 @@ p5 <- ggplot(data.frame(x = c(0, 5)), aes(x)) +
 p6 <- ggplot(data.frame(x = c(0, 10)), aes(x)) +
   stat_function(
     fun = dchisq, args = list(df = 3),
-    geom = "area", fill = "#56B4E9", alpha = 0.8
+    geom = "area", fill = "#be2121ff", alpha = 0.8
   ) +
   labs(title = "Chi-Square") +
   theme_dist
@@ -262,8 +339,13 @@ p6 <- ggplot(data.frame(x = c(0, 10)), aes(x)) +
 # Grid dengan label sumbu global
 grid.arrange(p1, p2, p3, p4, p5, p6,
   ncol = 3,
-  left = textGrob("Frekuensi", rot = 90, gp = gpar(fontsize = 12, fontface = "bold")),
-  bottom = textGrob("Nilai Variabel", gp = gpar(fontsize = 12, fontface = "bold"))
+  left = textGrob("Frekuensi",
+    rot = 90,
+    gp = gpar(fontsize = 12, fontface = "bold")
+  ),
+  bottom = textGrob("Nilai Variabel",
+    gp = gpar(fontsize = 12, fontface = "bold")
+  )
 )
 ```
 
@@ -297,7 +379,8 @@ library(gridExtra)
 mu <- 15
 sigma1 <- 1.75
 sigma2 <- 3.5 # Standar deviasi yang lebih besar (2x lipat)
-# Gunakan range yang cukup lebar untuk menampung distribusi yang lebih lebar (sigma2)
+# Gunakan range yang cukup lebar untuk menampung distribusi
+# yang lebih lebar (sigma2)
 x_range <- c(mu - 4 * sigma2, mu + 4 * sigma2)
 
 # Fungsi untuk membuat plot standar dengan parameter spesifik
@@ -312,51 +395,90 @@ create_normal_plot <- function(mu, sigma, fill_color, title_text) {
     xlim(x_range) + # Pastikan sumbu x sama persis
 
     # Garis Mean
-    geom_vline(xintercept = mu, linetype = "dashed", color = "indianred", size = 0.5) +
+    geom_vline(
+      xintercept = mu,
+      linetype = "dashed",
+      color = "indianred",
+      size = 0.5
+    ) +
     annotate("text",
       x = mu, y = dnorm(mu, mean = mu, sd = sigma) * 0.1,
       label = expression(mu), color = "indianred", size = 4, fontface = "bold"
     ) +
 
     # Garis +/- 1 SD
-    geom_vline(xintercept = c(mu - sigma, mu + sigma), linetype = "dashed", color = "indianred", size = 0.5) +
+    geom_vline(
+      xintercept = c(mu - sigma, mu + sigma),
+      linetype = "dashed",
+      color = "indianred",
+      size = 0.5
+    ) +
     annotate("text",
       x = mu - sigma, y = dnorm(mu - sigma, mean = mu, sd = sigma) * 0.2,
-      label = expression(mu - sigma), color = "indianred", size = 3, hjust = 1.1
+      label = expression(mu - sigma),
+      color = "indianred",
+      size = 3,
+      hjust = 1.1
     ) +
     annotate("text",
       x = mu + sigma, y = dnorm(mu + sigma, mean = mu, sd = sigma) * 0.2,
-      label = expression(mu + sigma), color = "indianred", size = 3, hjust = -0.1
+      label = expression(mu + sigma),
+      color = "indianred",
+      size = 3,
+      hjust = -0.1
     ) +
 
     # Garis +/- 2 SD
-    geom_vline(xintercept = c(mu - 2 * sigma, mu + 2 * sigma), linetype = "dashed", color = "indianred", size = 0.5) +
-    annotate("text",
-      x = mu - 2 * sigma, y = dnorm(mu - 2 * sigma, mean = mu, sd = sigma) * 0.5,
-      label = expression(mu - 2 * sigma), color = "indianred", size = 3, hjust = 1.1
+    geom_vline(
+      xintercept = c(mu - 2 * sigma, mu + 2 * sigma),
+      linetype = "dashed",
+      color = "indianred",
+      size = 0.5
     ) +
     annotate("text",
-      x = mu + 2 * sigma, y = dnorm(mu + 2 * sigma, mean = mu, sd = sigma) * 0.5,
-      label = expression(mu + 2 * sigma), color = "indianred", size = 3, hjust = -0.1
+      x = mu - 2 * sigma,
+      y = dnorm(mu - 2 * sigma, mean = mu, sd = sigma) * 0.5,
+      label = expression(mu - 2 * sigma),
+      color = "indianred",
+      size = 3,
+      hjust = 1.1
+    ) +
+    annotate("text",
+      x = mu + 2 * sigma,
+      y = dnorm(mu + 2 * sigma, mean = mu, sd = sigma) * 0.5,
+      label = expression(mu + 2 * sigma),
+      color = "indianred",
+      size = 3,
+      hjust = -0.1
     ) +
 
     # Garis +/- 3 SD
-    geom_vline(xintercept = c(mu - 3 * sigma, mu + 3 * sigma), linetype = "dashed", color = "indianred", size = 0.5) +
-    annotate("text",
-      x = mu - 3 * sigma, y = dnorm(mu - 3 * sigma, mean = mu, sd = sigma) * 0.8,
-      label = expression(mu - 3 * sigma), color = "indianred", size = 3, hjust = 1.1
+    geom_vline(
+      xintercept = c(mu - 3 * sigma, mu + 3 * sigma),
+      linetype = "dashed", color = "indianred", size = 0.5
     ) +
     annotate("text",
-      x = mu + 3 * sigma, y = dnorm(mu + 3 * sigma, mean = mu, sd = sigma) * 0.8,
-      label = expression(mu + 3 * sigma), color = "indianred", size = 3, hjust = -0.1
+      x = mu - 3 * sigma,
+      y = dnorm(mu - 3 * sigma, mean = mu, sd = sigma) * 0.8,
+      label = expression(mu - 3 * sigma),
+      color = "indianred", size = 3, hjust = 1.1
+    ) +
+    annotate("text",
+      x = mu + 3 * sigma,
+      y = dnorm(mu + 3 * sigma, mean = mu, sd = sigma) * 0.8,
+      label = expression(mu + 3 * sigma),
+      color = "indianred", size = 3, hjust = -0.1
     )
 }
 
 # Plot 1: Sigma Kecil
-p4 <- create_normal_plot(mu, sigma1, "#56B4E9", paste("Distribusi Normal (SD =", sigma1, ")"))
+p4 <- create_normal_plot(
+  mu, sigma1, "#56B4E9",
+  paste("Distribusi Normal (SD =", sigma1, ")")
+)
 
 # Plot 2: Sigma Besar
-p5 <- create_normal_plot(mu, sigma2, "#E69F00", paste("Distribusi Normal (SD =", sigma2, ")")) +
+p5 <- create_normal_plot(mu, sigma2, "#E69F00", paste("Distribusi Normal (SD =", sigma2, ")")) + # nolint: line_length_linter.
   labs(x = "Nilai") # Tambahkan label sumbu x hanya di plot bawah
 
 grid.arrange(p4, p5, ncol = 1)
@@ -400,7 +522,10 @@ x_seq <- seq(-4, 4, length.out = 200)
 df_kurt <- data.frame(
   x = rep(x_seq, 2),
   y = c(dnorm(x_seq), dunif(x_seq, min = -2.5, max = 2.5)), # Uniform adjusted width
-  Type = rep(c("Normal (Kurtosis = 3)", "Platikurtik (Kurtosis = 0)"), each = 200)
+  Type = rep(c(
+    "Normal (Kurtosis = 3)",
+    "Platikurtik (Kurtosis = 0)"
+  ), each = 200)
 )
 
 ggplot(df_kurt, aes(x = x, y = y, fill = Type)) +
@@ -604,6 +729,15 @@ Perhatikan perbedaan kedua histogram tersebut:
 2.  **Distribusi statistik**: Pada distribusi statistik, tinggi batang mencerminkan **frekuensi munculnya nilai rata-rata** dari 200 kali pengambilan sampel sebanyak 10 objek. Jika kita kaitkan dengan probabilitas, maka tinggi batang mewakili tingkat kemungkinan suatu nilai rata-rata dihasilkan dari sampel yang berjumlah 10 objek.
 :::
 
+::: rmdexercise
+## Soal Evaluasi 7 {.unnumbered}
+
+[STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
+
+Jelaskan perbedaan distribusi objek dengan distribusi statistik berdasarkan kasus tersebut.
+
+:::
+
 ## Teorema Limit Sentral
 
 Tentu saja, di kehidupan nyata distribusi statistik dapat dikatakan tidak pernah ada. Sangat sulit untuk bisa mengambil sampel berkali-kali hingga sangat banyak. Ia hanyalah konsep teoritis untuk menjelaskan bagaimana suatu sampel bisa memiliki *pola statistik sampel yang dapat memprediksi populasi*. Dengan memahami pola prediksi tersebut, **kita tidak perlu lagi menghimpun semua anggota populasi** untuk menghitung parameter populasi. Cukup dengan mengumpulkan sampel tersebut, menghitung statistiknya, dan memperkirakan parameternya berdasarkan statistik tersebut.
@@ -702,69 +836,74 @@ Perhatikan Gambar \@ref(fig:fig-05-inferensia-3-clt-sample-size). Meskipun kedua
 Ini menunjukkan bahwa semakin banyak sampel yang kita ambil dalam satu kali pengambilan ($n$ semakin besar), maka **variasi** dari rata-rata yang kita peroleh akan semakin kecil. Artinya, rata-rata sampel kita akan semakin jarang meleset jauh dari rata-rata populasi sebenarnya. Dengan kata lain, memperbesar ukuran sampel akan meningkatkan peluang kita untuk mendapatkan hasil yang sangat mendekati kondisi populasi yang sebenarnya.
 :::
 
+::: rmdexercise
+## Soal Evaluasi 8 {.unnumbered}
 
-## Menentukan Ukuran Sampel
+[STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
 
-Jika selama ini kita masih berpikir bahwa ukuran sampel (jumlah sampel yang menjadi bahan data kita) ditentukan berdasarkan ukuran populasinya, maka kita salah kaprah. Menurut @devaus2014surveys, ukuran sampel menentukan galat dari perkiraan kita terhadap populasi, tapi ukuran sampel **bukan ditentukan dari ukuran populasi**. @devaus2014surveys juga menjabarkan jumlah-jumlah sampel yang berbeda untuk setiap galat dari perkiraan kita. Galat perkiraan ini disebut juga dengan *sampling error*. Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) menunjukkan ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%. Ini akan kita pelajari lebih dalam di Bab \@ref(bab-6-estimasi-parameter).
-
-```{r tabel-ukuran-sampel-sampling-error, echo=FALSE, fig.align='center'}
-library(knitr)
-library(kableExtra)
-
-tabel_se <- data.frame(
-  SE_kiri = c(
-    "1,0%", "1,5%", "2,0%", "2,5%", "3,0%",
-    "3,5%", "4,0%", "4,5%", "5,0%", ""
-  ),
-  n_kiri = c(
-    "10.000", "4.500", "2.500", "1.600", "1.100",
-    "816", "625", "494", "400", ""
-  ),
-  SE_kanan = c(
-    "5,5%", "6,0%", "6,5%", "7,0%", "7,5%",
-    "8,0%", "8,5%", "9,0%", "9,5%", "10,0%"
-  ),
-  n_kanan = c(
-    "330", "277", "237", "204", "178",
-    "156", "138", "123", "110", "100"
-  )
-)
-
-kbl(
-  tabel_se,
-  col.names = c(
-    "_Sampling error_", "Ukuran Sampel Min.",
-    "_Sampling error_", "Ukuran Sampel Min."
-  ),
-  caption = "Ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%",
-  align = c("c", "c", "c", "c")
-) |>
-  kable_styling(full_width = FALSE, position = "center")
-```
-
-::: rmdkasus
-### Studi Kasus: Menentukan Jumlah Sampel dari Tabel {.unnumbered}
-
-Seorang mahasiswa ingin meneliti **proporsi mahasiswa ITERA yang menggunakan kendaraan bermotor** sebagai moda utama perjalanan ke kampus. Ia merancang survei dan perlu menentukan berapa responden yang harus ia kumpulkan.
-
-Karena ia belum tahu berapa proporsi sesungguhnya di populasi, ia menggunakan asumsi terburuk: 50% menggunakan kendaraan bermotor dan 50% tidak (varians 50/50). Ia juga menetapkan bahwa *sampling error* yang masih dapat ia tolerir adalah **5%** pada tingkat kepercayaan 95%.
-
-Dengan membaca Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) pada baris *sampling error* 5,0%, ia menemukan bahwa **sampel minimum yang dibutuhkan adalah 400 responden**. Jumlah inilah yang ia jadikan target pengumpulan data.
-
-Perhatikan bahwa angka ini tidak bergantung pada seberapa besar populasi mahasiswa ITERA (yang berjumlah lebih dari 18.000 orang). Cukup 400 responden, dan hasil surveinya akan memiliki akurasi dalam batas ±5% pada tingkat kepercayaan 95%.
+Apakah kita dapat menggunakan teorema limit sentral dalam perhitungan probabilitas distribusi statistik sampel tersebut? Jelaskan jawaban Anda.
 :::
 
 
+## Menghitung Peluang Kemunculan Nilai Tertentu dari Distribusi Statistik yang Berbentuk Normal.
 
-## Menghitung Peluang Kemunculan Nilai Tertentu dari Distribusi Statistik
+Pada subbab \@ref(bab-5-distribusi-normal), kita telah belajar bahwa distribusi normal mempunyai aturan empiris atau aturan 68-95-99. Aturan ini berbicara tentang besar area di bawah kurva yang tetap berdasarkan jarak standar deviasi (SD) dari rata-rata [@healey2021statistics]:
+
+  -   $\pm$ 1 SD mencakup sekitar 68,26% dari total kasus.
+  -   $\pm$ 2 SD mencakup sekitar 95,44% dari total kasus.
+  -   $\pm$ 3 SD mencakup sekitar 99,72% dari total kasus.
+
+Sekarang kita akan menerapkan aturan empiris ini pada distribusi statistik yang berbentuk normal. Kita akan banyak menggunakan distribusi normal ini untuk menghitung **probabilitas terjadinya**--yang diwakili oleh besar area di bawah kurva distribusi normal--**dari suatu nilai yang diminta**, atau menentukan **nilai yang menjadi pembatas suatu probabilitas**. 
+
+Untuk itu, kita perlu memahami konsep tentang standard error dan nilai standar atau nilai Z (*Z-score*). Kedua konsep ini sangat krusial bagi kita untuk memudahkan kita membaca tabel nilai Z yang beguna untuk 
+
+### *Standard Error* (SE)
+
+Sebagaimana yang sudah kita pelajari, distribusi statistik berbeda dengan distribusi objek dalam hal nilai yang diukur. Jika **distribusi objek mengukur nilai dari objek**, maka **distribusi statistik mengukur nilai dari sekumpulan objek yang diambil berulang-ulang dari populasi**.
+
+Dalam distribusi objek, lebar distribusi berkaitan dengan ukuran statistik deskriptif yang disebut **standar deviasi** atau **simpangan baku**. Simpangan baku menunjukkan ukuran jarak rata-rata penyimpangan nilai-nilai dalam distribusi terhadap rata-ratanya. Untuk penyegaran, rumusnya adalah sebagai berikut.
+
+$$
+\begin{align}
+\text{Simpangan Baku} &= \sqrt{\text{Variansi}}\\
+&=\sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}} (\#eq:konsep-simpangan-baku-bab5)
+\end{align}
+$$ 
+
+Di sisi lain, dalam distribusi statistik simpangan bakunya punya sebutan lain, yakni ***standard error*** (SE). *Standard error* pada hakikatnya adalah adalah **ukuran jarak statistik sampel dari parameter populasi**. Ingat kembali bahwa **rata-rata dari distribusi statistik adalah nilai parameter populasinya**. Semakin kecil SE, semakin presisi estimasi sampel kita terhadap parameter populasi. Secara matematis, standard error dihitung dari simpangan baku sampel kita dengan rumus berikut.
+
+$$
+\begin{align}
+\text{SE} &=\frac{\sigma}{\sqrt{n}} (\#eq:konsep-standard-error-bab5)
+\end{align}
+$$ 
+
+Dengan $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel.
+
+Jika $\sigma$ tidak diketahui, kita gunakan simpangan baku sampel ($s$) sebagai estimasi, sehingga Persamaan \@ref(eq:konsep-standard-error-bab5) menjadi:
+
+$$
+\begin{align}
+\text{SE} &=\frac{s}{\sqrt{n}} (\#eq:konsep-se-pake-sd)
+\end{align}
+$$ 
 
 
+::: rmdnote
 
-*Standard Error* pada hakikatnya adalah **simpangan baku dari distribusi statistik**.  Sebagaimana yang sudah kita pelajari di subbab \@ref(bab-5-distribusi-normal), simpangan baku adalah ukuran rapat atau renggangnya distribusi. Jika kita kontekskan distribusinya ke distribusi statistik, maka *standard error* adalah ukuran jarak rata-rata sampel dari mengukur seberapa akurat rata-rata sampel kita sebagai estimator rata-rata populasi. Semakin kecil SE, semakin presisi estimasi kita.
+**PENTING**
 
-$$ SE = \frac{\sigma}{\sqrt{n}} $$
+Dalam beberapa sumber, seperti @healey2021statistics, perhitungan *standard error* yang menggunakan estimasi dari simpangan baku seperti Persamaan \@ref(eq:konsep-se-pake-sd) menggunakan bentuk yang dikoreksi, yakni dengan cara mengurangkan 1 dari nilai ukuran sampelnya, sehingga persamaannya menjadi:
 
-Di mana $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel. Jika $\sigma$ tidak diketahui, kita gunakan simpangan baku sampel ($s$) sebagai estimasi.
+$$
+\begin{align}
+\text{SE} &=\frac{s}{\sqrt{n-1}} (\#eq:konsep-se-pake-sd-healey)
+\end{align}
+$$ 
+
+Yang mana yang betul? Karena keduanya sama-sama disebutkan dalam banyak literatur, di sini yang perlu kita perhatikan adalah **konsistensi kita** dalam penggunaan salah satunya.
+
+:::
 
 ::: rmdkasus
 ### Studi Kasus: Menghitung Standard Error {.unnumbered}
@@ -784,56 +923,283 @@ mean_sampel <- mean(satu_sampel$jarak)
 sd_sampel <- sd(satu_sampel$jarak)
 ```
 
-Dari sampel ini, kita peroleh rata-rata jarak $\bar{x} = `r round(mean_sampel, 2)`$ km. Kita tahu simpangan baku populasi $\sigma = `r round(sigma, 2)`$. Maka **Standard Error** teoritisnya adalah:
+Dari sampel ini, kita peroleh rata-rata jarak $\bar{x} = `r round(mean_sampel, 2)`$ km. Kita tahu simpangan baku populasi $\sigma = `r round(sigma, 2)`$ km. Maka *Standard error* adalah:
 
-$$ SE = \frac{`r round(sigma, 2)`}{\sqrt{100}} = `r round(sigma / 10, 4)` $$
+$$
+\begin{align}
+SE &=\frac{s}{\sqrt{n}}\\
+&= \frac{`r round(sigma, 2)`}{\sqrt{100}} \\
+&= `r round(sigma / 10, 4)`
+\end{align}
+$$
 
 Nilai ini memberitahu kita bahwa rata-rata sampel kita (`r round(mean_sampel, 2)`) diperkirakan menyimpang sekitar $\pm `r round(sigma/10, 2)`$ km dari rata-rata populasi sebenarnya.
 :::
 
-## Nilai Standar (*Z-Score*) dalam Inferensi
+::: rmdexercise
+## Soal Evaluasi 9 {.unnumbered}
 
-*Z-score* menunjukkan posisi suatu nilai dalam distribusi normal baku. Untuk rata-rata sampel, rumusnya menggunakan SE sebagai pembagi (bukan simpangan baku biasa):
+[STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
 
-$$ Z = \frac{\bar{x} - \mu}{SE} $$
+Berapakah standard error dari distribusi statistik sampel tersebut?
+:::
 
-Z-score ini kemudian dapat dikonversi menjadi **probabilitas** (P-value) untuk menentukan seberapa "wajar" atau "langka" sampel yang kita dapatkan.
+
+### Nilai Standar (*Z-Score*)
+
+*Z-score* menunjukkan posisi suatu nilai dalam sumbu X distribusi normal **jika rata-rata distribusi tersebut dibuat 0** dan **simpangan bakunya dibuat 1**. Untuk distribusi objek, rumusnya adalah:
+
+$$
+\begin{align}
+Z = \frac{x - \mu}{\sigma} (\#eq:z-score)
+\end{align}
+$$
+
+Dengan $x$ adalah nilai dalam distribusi normal yang akan kita konversi, $\mu$ melambangkan rata-rata distribusi, dan $\sigma$ melambangkan simpangan baku distribusi.
+
 
 ::: rmdkasus
-### Studi Kasus: Menghitung Z-Score dan Peluang {.unnumbered}
+### Studi Kasus: Menghitung *Z-Score* Suatu Nilai {.unnumbered}
 
-Apakah rata-rata sampel kita sebesar **`r round(mean_sampel, 2)` km** itu wajar? Mari hitung Z-score nya.
+Dalam sebuah sampel yang berjumlah 100 orang, kita mempunyai distribusi biaya perjalanan dengan rata-rata ($\mu$) 50.000 dan simpangan baku ($\sigma$) 10.000. Jika seseorang menghabiskan biaya perjalanan sebesar $x = 65.000$. Berapakah *Z-score* pengeluarannya?
 
-$$ Z = \frac{`r round(mean_sampel, 2)` - `r round(mu, 2)`}{`r round(sigma/10, 4)`} $$
+**Jawaban:**
 
-```{r 05-inferensia-4-zscore-studi-kasus-hitung, echo=FALSE}
-se_teoritis <- sigma / sqrt(n_sampel)
-z_score <- (mean_sampel - mu) / se_teoritis
-probabilitas <- pnorm(z_score)
+*Z-score* nilainya dihitung sebagai berikut:
+
+$$
+\begin{align}
+Z &= \frac{x - \mu}{\sigma} \\
+&= \frac{65.000 - 50.000}{10.000} \\
+&= \frac{15.000}{10.000} \\
+&= 1,5
+\end{align}
+$$
+
+Nilai $Z = 1,5$ berarti biaya perjalanan orang tersebut berada 1,5 kali simpangan baku di atas rata-rata populasi.
+:::
+
+Jika kita menggunakan konsep *Z-Score* tersebut pada distribusi statistik, persamaan \@ref(eq:z-score) akan berubah dari $x$ menjadi $\bar{x}$ dan $\sigma$ menjadi $SE$:
+
+$$
+\begin{align}
+Z = \frac{\bar{x} - \mu}{SE}
+(\#eq:z-score-sampling-distribution)
+\end{align}
+$$
+
+Dengan $\bar{x}$ adalah rata-rata sampel yang kita miliki, $\mu$ adalah rata-rata populasi (parameter) yang kita jadikan sebagai patokan, dan $SE$ adalah *standard error* yang dihitung dengan persamaan \@ref(eq:konsep-se-pake-sd) atau \@ref(eq:konsep-se-pake-sd-healey), sehingga persamaan \@ref(eq:z-score-sampling-distribution) sama saja bentuknya dengan:
+
+$$
+\begin{equation}
+Z = \frac{\bar{x} - \mu}{s/\sqrt{n}}
+(\#eq:z-score-sampling-distribution)
+\end{equation}
+$$
+
+::: rmdkasus
+### Studi Kasus: Menghitung *Z-Score* Rata-rata Sampel {.unnumbered}
+
+Melanjutkan kasus distribusi biaya perjalanan sebelumnya, dengan menggunakan nilai rata-rata, simpangan baku, dan ukuran sampel yang sama, asumsikan kita mengetahui bahwa rata-rata biaya perjalanan populasi ($\mu$) sebesar 52.000. Berapakah nilai *Z-score* dari rata-rata sampel tersebut?
+
+**Jawaban:**
+
+Pertama-tama, hitung terlebih dahulu nilai *standard error* (SE)-nya:
+
+$$
+\begin{align}
+SE &= \frac{s}{\sqrt{n}} \\
+&= \frac{10.000}{\sqrt{100}} \\
+&= \frac{10.000}{10} \\
+&= 1.000
+\end{align}
+$$
+
+Selanjutnya, gunakan nilai SE tersebut untuk menghitung nilai *Z-score* dari rata-rata sampel yang kita peroleh:
+
+$$
+\begin{align}
+Z &= \frac{\bar{x} - \mu}{SE} \\
+&= \frac{50.000 - 52.000}{1.000} \\
+&= \frac{-2.000}{1.000} \\
+&= -2,0
+\end{align}
+$$
+
+Nilai $Z = -2,0$ ini berarti angka rata-rata sampel yang kita himpun tersebut ($\bar{x} = 50.000$) menduduki posisi 2 simpangan baku (atau 2 kali *standard error*) di bawah asumsi parameter rata-rata populasinya ($\mu = 52.000$). Dalam hal ini, *Z-score* mencerminkan rentang penyimpangan sampel terhadap populasinya: semakin jauh nilai *Z-score* dari angka nol, semakin jauh sampel kita menyimpang. Jika sampel kita ternyata dikategorikan "terlalu menyimpang", ada kemungkinan terjadinya bias ketika kita menghimpun sampel ke lapangan, atau asumsi kita mengenai rata-rata populasi tersebutlah yang justru keliru.
+:::
+
+::: rmdexercise
+## Soal Evaluasi 10 {.unnumbered}
+
+[STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
+
+Jika diketahui parameter (rata-rata jarak tempat tinggal seluruh pegawai ITERA) sebesar 7,5 km, hitunglah nilai standar (*z-score*) sampel tersebut. Ulaslah hasil perhitungan Anda secara analitik berdasarkan konsep yang sudah Anda pelajar.
+:::
+
+
+
+### Menentukan Probabilitas Terjadinya Suatu Nilai
+
+Probabilitas terjadinya suatu nilai dalam distribusi statistik yang berbentuk normal ditunjukkan oleh **luasan area di bawah kurva distribusi tersebut**. Luasan area di bawah kurva distribusi statistik ini dapat dihitung dengan terlebih dahulu menentukan nilai *Z-score* dari nilai tersebut.
+
+Karena kurva distribusi normal bersifat kontinu, probabilitas terjadinya *tepat* satu nilai spesifik secara pasti (misalnya tepat 50.000) pada dasarnya dianggap nol. Oleh sebab itu, saat kita membicarakan probabilitas pada distribusi normal, kita harus selalu merujuk pada probabilitas dalam suatu **rentang nilai**. Ini berarti kita memerlukan rentang yang dibatasi oleh **dua nilai** (batas bawah dan batas atas), yang kemudian masing-masing harus dikonversikan menjadi dua nilai *Z-score*.
+
+Untuk dapat menghitung probabilitas luasan di antara dua nilai *Z-score* ini, kita dapat memanfaatkan tabel statistik yang memuat nilai probabilitas kumulatif untuk setiap nilai *Z-score*. Tabel ini biasanya disajikan bersama ilustrasi area yang dimaksud seperti berikut.
+
+```{r fig-distribusi-normal-area-bc, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Ilustrasi area b (kiri) dan c (kanan) pada distribusi normal. Area b dan c masing-masing melambangkan probabilitas nilai-nilai yang berada di luar rentang nilai yang diamati.'}
+knitr::include_graphics("figures/distribusi-normal-area-bc.png")
 ```
 
-Hasil: - Z-score = **`r round(z_score, 2)`** - Probabilitas ($P(Z < z)$) = **`r round(probabilitas, 4)`**
+Beberapa contoh tabel yang dapat kita gunakan adalah seperti yang disertakan dalam @healey2021statistics atau seperti yang disajikan [Stat Calculators](https://statcalculators.com/z-score-table-standard-normal-distribution/) berikut.
 
-Artinya, peluang mendapatkan sampel dengan rata-rata `r round(mean_sampel, 2)` km atau lebih kecil dari populasi ini adalah sekitar **`r round(probabilitas*100, 1)`%**. Angka ini cukup besar (jauh dari 5% atau 0.05), sehingga sampel kita dianggap masih wajar dan berasal dari populasi tersebut.
+```{r bab-5-fig-z-table, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Contoh tabel Z-score.'}
+knitr::include_graphics("images/z-score-02.png")
+```
+
+Dalam perangkat lunak statistik seperti R, kita dapat memanfaatkan fungsi `pnorm()` untuk menghitung probabilitas luasan di antara dua nilai *Z-score* ini. 
+
+::: rmdkasus
+### Studi Kasus: Probabilitas Ditemukannya Suatu Sampel dengan Rata-rata Tertentu Dibandingkan dengan Rata-rata Populasi {.unnumbered}
+
+Dengan sampel berukuran 100 orang yang memiliki rata-rata $\bar{x} = 51.500$ dan *standard error* $SE = 1.000$, berapakah probabilitas sampel tersebut ditemukan bila acuan kita adalah rata-rata populasi ($\mu = 52.000$)?
+
+**Jawaban:**
+
+Kita perlu menghitung *Z-score* untuk $\bar{x}=51.500$ terlebih dahulu:
+
+$$
+\begin{align}
+Z &= \frac{51.500 - 52.000}{1.000} \\
+&= \frac{-500}{1.000} \\
+&= -0,5
+\end{align}
+$$
+
+Sekarang kita memiliki dua singkapan tiang batas, yakni mulai dari $Z = -0,5$ hingga $Z = 0,0$ (rata-rata populasi). Kita dapat menggunakan tabel *Z-score* untuk menentukan probabilitas luasan di antara kedua nilai tersebut. Sebagai contoh, kita akan menggunakan Gambar \@ref(fig:fig-distribusi-normal-area-bc).
+
+Pertama, kita perlu memperhatikan ilustrasi distribusi yang ada di pojok kiri atas tabel tersebut. Area yang diwarnai biru pada gambar tersebut menunjukkan area **b** dari ilustrasi kita (Gambar \@ref(fig:fig-distribusi-normal-area-bc), yaitu luasan dari $Z = 0$ hingga suatu nilai $Z$ positif tertentu. Karena distribusi normal bersifat simetris, luasan area di rentang $Z = 0$ hingga $Z = -0,5$ (yang kita cari) nilainya sama dengan luasan area di rentang $Z = 0$ hingga $Z = 0,5$ (positif).
+
+Untuk membaca tabel, kita perlu mengambil nilai absolut dari $Z$, yakni $|Z| = 0,5$. Nilai ini dibaca dengan cara:
+
+1. Cari baris yang sesuai dengan **angka puluhan** dari $Z$, yakni baris **0,5**.
+2. Pada baris tersebut, pilih kolom yang sesuai dengan **angka satuan kedua** (angka di belakang desimal kedua), yakni kolom **0,00** karena $Z = -0,50$ (tidak ada digit kedua).
+3. Nilai yang tercantum pada sel tersebut adalah **0,19146**.
+
+Nilai **0,19146** ini adalah probabilitas area **b**, yaitu probabilitas bahwa rata-rata sampel kita jatuh di antara $\bar{x} = 51.500$ ($Z = -0,5$) dan $\mu = 52.000$ ($Z = 0$). Dengan kata lain, ada sekitar **19,1%** peluang sampel acak kita akan menghasilkan rata-rata di antara rentang 51.500 dan 52.000.
+
+:::
+
+### Menentukan Nilai yang Menjadi Pembatas Suatu Probabilitas
+
+Terdapat saatnya kita bekerja secara berkebalikan: kita sudah menetapkan batasan luasan persentase atau target probabilitas di awal, lalu ingin mengetahui berapa sebenarnya nilai konkret ($X$ tunggal ataupun $\bar{x}$ rata-rata sampel) dari batas tersebut. 
+
+Langkah yang dapat kita terapkan adalah mencari nilai *Z-score* yang bersesuaian dengan persentase probabilitas kumulatif yang dituju. Nilai tersebut didapatkan dengan melihat tabel *Z-score* atau dengan memakai fungsi R, yakni `qnorm()`.
+
+Setelah nilai $Z$-nya diketahui, kita dapat mengembalikannya menjadi nilai $X$ atau $\bar{x}$ sesuai konteks kasus kita dengan memanipulasi secara aljabar rumus konversi *Z-score* untuk mengembalikan rupa *Z-score* menuju skala aslinya:
+
+Untuk distribusi objek:
+$X = \mu + Z \cdot \sigma$
+
+Untuk distribusi statistik:
+$\bar{x} = \mu + Z \cdot SE$
+
+::: rmdkasus
+### Studi Kasus: Menentukan Batas Biaya Perjalanan Ekstrem (Distribusi Objek) {.unnumbered}
+
+Apabila rata-rata biaya perjalanan mahasiswa per bulan dalam satu populasi adalah $\mu = 50.000$ dengan simpangan baku $\sigma = 10.000$, berapakah batas pengeluaran biaya perjalanan individu yang termasuk golongan 5% orang berbiaya hidup tertinggi di kampus tersebut?
+
+**Jawaban:**
+
+*Pertama*, kita harus memahami konteks pertanyaan dari soal. Frasa "golongan 5% orang berbiaya hidup **tertinggi**" berarti bahwa jika kita nyatakan dalam bentuk grafik distribusi normal, maka area tersebut berada di bagian c di sebelah kanan yang besarnya 5% atau 0,05 (Gambar \@ref(fig:fig-bab-5-right-tail-5pct)).
+
+
+```{r fig-bab-5-right-tail-5pct, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Ilustrasi area c (ekor kanan) sebesar 5% pada distribusi normal.'}
+library(ggplot2)
+
+z_cut <- qnorm(0.95)
+x <- seq(-3.5, 3.5, length.out = 1000)
+y <- dnorm(x)
+df_plot <- data.frame(x = x, y = y)
+
+ggplot(df_plot, aes(x, y)) +
+  geom_area(
+    data = subset(
+      df_plot,
+      x >= z_cut
+    ),
+    fill = "#E69F00",
+    alpha = 0.85
+  ) +
+  geom_area(
+    data = subset(
+      df_plot,
+      x <= z_cut
+    ),
+    fill = "#D0D0D0",
+    alpha = 0.6
+  ) +
+  geom_line(linewidth = 0.9) +
+  geom_vline(
+    xintercept = z_cut,
+    linetype = "dashed",
+    linewidth = 0.7,
+    color = "gray30"
+  ) +
+  annotate("text",
+    x = z_cut + 0.55,
+    y = 0.03,
+    label = "c\n(5%)",
+    size = 5,
+    fontface = "bold",
+    color = "#9A6200"
+  ) +
+  annotate("text",
+    x = -0.3, y = 0.15, label = "95%",
+    size = 5, color = "gray20"
+  ) +
+  # scale_x_continuous(
+  #   breaks = c(0, z_cut),
+  #   labels = c("0", "Z = 1,645")
+  # ) +
+  labs(x = "Nilai Standar (Z)", y = NULL) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(size = 11),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.line.y = element_blank()
+  )
+```
+
+*Kedua*, kita perlu memperhatikan area yang diwarnai biru pada Gambar \@ref(fig:bab-5-fig-z-table). Area tersebut sebenarnya adalah area **b** di sebelah kanan dengan besar $95%-50%=45%$ atau 0,45. Dengan demikian, kita perlu mencari nilai $Z$ yang sesuai dengan proporsi 0,45.
+
+*Ketiga*, kita akan cari nilai yang paling mendekati dengan 0,45 di sel-sel tabel pada Gambar \@ref(fig:bab-5-fig-z-table). Didapatkan nilai $Z = 1,64$ (baris 1,6 dan kolom 0,04) atau $Z = 1,65$ (baris 1,6 dan kolom 0,05). Kita ambil nilai $Z = 1,64$.
+
+*Keempat*, jabarkan kembali variabel $Z$ ini (berkisar `1,64`) ke unit mata uang yang senyata-nyatanya:
+
+$$
+\begin{align}
+x &= 50.000 + (1,64 \cdot 10.000) \\
+&= 50.000 + 16.400 \\
+&= 66.450
+\end{align}
+$$
+
+Ini membeberkan simpulan bahwa seorang mahasiswa akan tergolong di klaster "5% mahasiswa dengan perjalanan kampus tereksklusif" asalkan ia rutin mengeluarkan paling tidak Rp66.450 ribu per bulan.
 :::
 
 
 ::: rmdexercise
-## Soal Evaluasi 5 {.unnumbered}
+## Soal Evaluasi 11 {.unnumbered}
 
-1.  **Studi Kasus Survei Keakraban**. [STP-4.1]{.capaian} Sebuah acara keakraban angkatan Anda akan dilakukan di suatu tempat yang memerlukan biaya sewa tempat. Agar acara Anda dihadiri sebanyak mungkin orang, Anda menanyakan kesediaan kawan-kawan Anda. Anda pun merancang sebuah survei untuk mengetahui persentase kawan Anda yang setuju acara keakraban diadakan di tempat tersebut. Untuk itu Anda menanyakan sebagian kawan Anda sebagai sampel.
+[STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
 
-    a.  Apabila Anda memiliki daftar nama seluruh kawan Anda, apa nama teknik pengambilan sampel yang Anda bisa lakukan?
-    b.  Jelaskan bagaimana metode Anda memilih sampel kawan Anda berdasarkan kondisi di soal ke-1 tersebut.
-    c.  Apabila Anda tidak memiliki daftar nama seluruh kawan Anda, apa nama teknik pengambilan sampel yang Anda bisa lakukan?
-    d.  Jelaskan bagaimana metode Anda memilih sampel kawan Anda berdasarkan kondisi di soal ke-3 tersebut.
+Hitunglah seberapa sering sampel-sampel yang nilainya **lebih kecil** dari statistik sampel kita (rata-rata jarak 7,9 km) ditemukan. Lengkapi penjelasan Anda dengan ilustrasi grafik distribusi normalnya.
 
-2.  Jelaskan perbedaan antara simpangan baku (*standard deviation*) dengan *standard error*! [STP-4.2]{.capaian}
+*Petunjuk:*
 
-3.  **Kasus Jarak Tempat Tinggal**. [STP-4.2]{.capaian} Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.
-
-    a.  Jelaskan perbedaan distribusi sampel dengan distribusi statistik sampel menggunakan kasus ini.
-    b.  Apakah kita dapat menggunakan teorema limit sentral dalam perhitungan probabilitas distribusi statistik sampel kita tersebut? Jelaskan jawaban Anda.
-    c.  Katakanlah parameternya (rata-rata jarak tempat tinggal seluruh pegawai ITERA) diketahui sebesar 7,5 km, Hitunglah nilai standar (z-score) sampel kita.
-    d.  Hitunglah probabilitas kita mendapatkan nilai rata-rata seperti yang ditanyakan dalam 3.c tersebut dan jelaskan maknanya.
+- *'seberapa sering' merujuk pada probabilitas.*
+  
+- *perhatikan betul frasa 'lebih kecil' pada soal dan kaitkan dengan posisi area yang diwarnai seperti pada Gambar \@ref(fig:fig-distribusi-normal-area-bc).*
 :::
