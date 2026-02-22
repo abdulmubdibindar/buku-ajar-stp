@@ -1,47 +1,372 @@
-# Uji Hipotesis Satu Populasi
+# Uji Hipotesis Satu Populasi {#bab-7-uji-hipotesis-satu-populasi}
+
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
+
+Setelah mempelajari bab ini, Anda diharapkan:
+
+1. Mampu memaknai hasil dari pengujian hipotesis satu populasi pada suatu kasus [STP-6.1]{.capaian}
+
+Agar lebih mudah memahami konsep dasar, Anda dapat mempelajari studi kasus terlebih dahulu dan menyimak pembahasan sesuai dengan konsep dasarnya.
+:::
 
 ## Konsep Dasar
 
-Uji hipotesis adalah prosedur statistik yang menggunakan data sampel untuk mengevaluasi suatu dugaan (hipotesis) mengenai populasi.
+Analisis statistik dengan uji hipotesis digunakan untuk memperkirakan nilai dari parameter populasi melalui pengujian hipotesis dengan menggunakan informasi yang diperoleh dari sampel [@healey2021statistics]. Hipotesis sendiri dapat dipahami sebagai dugaan awal mengenai suatu kondisi, nilai, atau keadaan parameter. Dugaan ini dapat berasal dari teori, penelitian sebelumnya, atau klaim tertentu yang ingin diuji. Dalam hal ini, nilai sampel (statistik) berperan sebagai bukti (*evidence*) untuk menguji hipotesis terhadap parameter yang telah dirumuskan [@kachigan1986statistical; @healey2021statistics].
 
-### Hipotesis Nol dan Alternatif
+Melalui pengujian hipotesis, kita sebagai peneliti akan dapat menarik kesimpulan (inferensi) mengenai kondisi sebenarnya pada populasi. Secara sederhana, konsep dasar analisis ini dapat dianalogikan dengan pertanyaan: "jika rata-rata nilai sampel adalah X, apakah nilai rata-rata populasinya juga X?" (Gambar \@ref(fig:fig-ilustrasi-hipotesis)). Kita tidak tahu nilai populasi sebenarnya dan hanya mengandalkan nilai sampel untuk menguji hipotesis.
 
-*   **Hipotesis Nol ($H_0$)**: Pernyataan tentang status quo, tidak ada perbedaan, atau tidak ada efek. Biasanya mengandung tanda sama dengan ($=, \le, \ge$).
-*   **Hipotesis Alternatif ($H_1$)**: Pernyataan yang bertentangan dengan $H_0$, biasanya merupakan dugaan yang ingin dibuktikan oleh peneliti. Mengandung tanda ketidaksamaan ($\ne, <, >$).
+```{r fig-ilustrasi-hipotesis, echo=FALSE, out.width='60%', fig.align="center", fig.cap="Ilustrasi Alur Hubungan Karakteristik Populasi, Statistik Sampel, dan Inferensi"}
+# FIXME: Insert actual ggplot or image for Gambar 6-1
+knitr::include_graphics("figures/FIXME.png")
+```
+
+Sebagai contoh yang lebih nyata, khususnya dalam konteks perencanaan, sering muncul pertanyaan: "Apakah benar bahwa rata-rata penghasilan penduduk Kota Z berada di atas UMR?". Pertanyaan ini sebetulnya bukan pertanyaan yang sulit. Untuk menjawabnya, kita hanya perlu mengumpulkan data penghasilan seluruh penduduk lalu kemudian menghitung rata-ratanya. Hanya saja, persoalannya menjadi rumit saat jumlah populasi penduduk perkotaan yang datanya akan kita kumpulkan sangat besar (tahukah kamu, jumlah penduduk untuk kota kecil saja mencapai 10.000 jiwa), sehingga untuk menjawab pertanyaan tersebut, dilakukan pengambilan sampel dan prosedur dari analisis inferensial ini.
+
+Selanjutnya, dari sampel sebanyak 350 orang, diketahui bahwa rata-rata penghasilan mereka berada di atas UMR. Namun, hal ini belum dapat langsung digunakan untuk menjawab pertanyaan karena data yang kita peroleh hanya dari 350 orang saja. Hal ini kemudian menimbulkan pertanyaan baru: "Apakah kondisi yang sama (rata-rata di atas UMR) juga berlaku pada populasi penduduk secara keseluruhan?" atau "Apakah bukti dari data sampel ini cukup kuat untuk menolak 'dugaan' kita bahwa rata-rata penghasilan penduduk berada di atas UMR?"
+
+Dalam pengujian hipotesis, kita tidak akan menghitung berapa nilai rata-rata penghasilan seluruh penduduk (parameternya), melainkan hanya mengetahui apakah dugaan yang kita miliki salah (ditolak) atau benar (gagal ditolak).
+
+Lalu bagaimana cara kerja analisis ini, mengapa kita bisa menggunakan statistik sampel untuk menyimpulkan karakteristik populasi? Pada dasarnya, proses yang dilakukan adalah menguji apakah perbedaan atau hubungan yang diamati dalam sampel cukup kuat untuk disimpulkan berlaku juga pada populasi.
+
+Maksudnya, sampel hanyalah sebagian kecil dari populasi. Apa yang kita temukan pada sampel (misalnya rata-rata, perbedaan, atau hubungan antar-variabel) belum tentu berlaku juga di populasi. Melalui uji hipotesis, kita memeriksa apakah temuan dari sampel hanya terjadi karena kebetulan dalam pengambilan sampel (kesalahan sampling), atau benar-benar mencerminkan kondisi populasi [@kachigan1986statistical; @healey2021statistics]. Jika hasil dari sampel terbukti cukup kuat secara statistik, maka kita dapat menggeneralisasikan kesimpulan tersebut ke populasi.
+
+Adapun kondisi kebetulan ini dapat dijelaskan melalui pertanyaan berikut: "Apabila pengambilan sampel diulang terhadap 350 orang yang berbeda, apakah rata-rata sampelnya akan tetap berada di atas UMR?" Jika hasilnya konsisten, berarti temuan tersebut tidak terjadi karena kebetulan. Hal ini menjadi indikasi bahwa data sampel cukup kuat untuk mencerminkan populasi. Namun, jika hasilnya berbeda, maka ada kemungkinan bahwa perbedaan tersebut muncul akibat kebetulan atau faktor kesalahan dalam pengambilan sampel.
+
+Coba perhatikan Gambar \@ref(fig:fig-hubungan-statistik-parameter). Pada dasarnya nilai populasi sangat beragam, dan rata-rata populasi hanya menunjukkan kecenderungan umum dari nilai-nilai tersebut. Namun, dalam praktiknya kita mungkin menemukan data responden yang nilainya sangat jauh berbeda dari rata-rata (pencilan/*outlier*). Nilai pencilan ini dapat mengganggu representasi data dan membuat sampel terlihat tidak mewakili kondisi populasi secara keseluruhan.
+
+```{r fig-hubungan-statistik-parameter, echo=FALSE, out.width='60%', fig.align="center", fig.cap="Hubungan Statistik Sampel dan Parameter Populasi"}
+# FIXME: Insert actual ggplot or image for Gambar 6-2
+knitr::include_graphics("figures/FIXME.png")
+```
+
+Selanjutnya, mari kita lihat contoh kasus yang lain. Sebagai bentuk evaluasi terhadap implementasi perencanaan dan pembangunan kota, diperlukan evaluasi program berdasarkan sudut pandang masyarakat sebagai penerima layanan.
+
+Misalnya, pemerintah ingin mengevaluasi keberhasilan program Makan Bergizi Gratis (MBG) di Kota Bandar Lampung. Untuk itu, pemerintah melakukan survei untuk menjaring skor kepuasan masyarakat penerima manfaat program dengan angka 0--100. Dalam hal ini, dapat ditetapkan sebuah indikator bahwa program dianggap berhasil apabila skor kepuasan masyarakat penerima layanan mencapai angka 80 atau lebih.
+
+Dengan demikian, apabila hasil survei menunjukkan skor kepuasan masyarakat berada di atas angka tersebut, maka program dapat dinilai berhasil sesuai indikator yang telah ditetapkan. Dalam contoh ini, skor kepuasan masyarakat sebesar 80 atau lebih adalah dugaan yang ingin kita telusuri sebagai bentuk hipotesis yang akan diuji.
+
+Selanjutnya, dilakukan survei kepada 200 orang responden secara acak. Dari responden ini, diketahui bahwa skor kepuasan responden berada di angka 85. Lalu, pertanyaannya: "apakah secara keseluruhan, yaitu pada seluruh anggota populasi di Kota Bandar Lampung, skor kepuasan terhadap program MBG benar-benar mencapai lebih dari 80 sehingga program MBG dapat dikatakan berhasil?".
+
+Selanjutnya, analisis dilakukan untuk membuktikan apakah nilai statistik, yaitu skor kepuasan sebesar 85 dari 200 responden, benar-benar dapat mencerminkan kondisi populasi atau hanya muncul karena kebetulan dalam proses pengambilan sampel. Dengan kata lain, data sampel yang menunjukkan skor kepuasan 85 dijadikan dasar untuk menguji apakah hipotesis dapat ditolak atau tidak.
+
+::: rmdnote
+### Catatan: Kemungkinan Hasil Pengujian Hipotesis {.unnumbered}
+
+Hasil dari pengujian hipotesis hanya memiliki dua kemungkinan, yaitu menolak atau gagal menolak hipotesis (hipotesis kosong, $H_0$). Menolak hipotesis berarti menyetujui bahwa kondisi yang terjadi justru merupakan 'kebalikan' atau 'antitesis' dari dugaan awal. Sebaliknya, gagal menolak hipotesis berarti kita tidak menemukan cukup bukti untuk menolak hipotesis, sehingga secara tidak langsung kita "menerima" bahwa hipotesis tersebut masih mungkin benar.
+
+Istilah yang digunakan adalah gagal menolak, bukan menerima, karena dalam pendekatan statistik kita tidak pernah membuktikan bahwa hipotesis ($H_0$) benar. Fokus pengujian statistik adalah mencari kemungkinan untuk menolak hipotesis, bukan membuktikan kebenarannya. Dengan cara pandang ini, proses pengolahan data menjadi lebih mudah dipahami: kita mencari bukti untuk menolak dugaan awal, bukan membuktikan bahwa dugaan itu pasti benar.
+:::
+
+### Perbedaan Estimasi Parameter dengan Uji Hipotesis
+
+Estimasi parameter dan uji hipotesis memiliki tujuan yang berbeda. Estimasi parameter menghasilkan suatu rentang nilai yang mungkin bagi parameter populasi. Pertanyaan yang dijawab biasanya berbentuk: "Berapa kira-kira nilai rata-rata populasi X?"
+
+Sementara itu, uji hipotesis berfokus pada penerimaan atau penolakan dugaan kita tentang parameter populasi. Pertanyaan yang diajukan lebih ke arah: "Jika saya menduga bahwa rata-rata populasi X adalah Y, apakah dugaan tersebut dapat diterima?"
+
+Jadi, melalui pengujian hipotesis kita tidak akan bicara 'berapa nilainya...?' tetapi untuk membuktikan dugaan dalam bentuk hipotesis 'apakah benar jika?...'
+
+### Hipotesis Kosong dan Hipotesis Alternatif
+
+Dalam pengujian hipotesis, terdapat dua jenis hipotesis, yaitu hipotesis kosong ($H_0$) dan hipotesis alternatif ($H_1$ atau $H_a$) yang masing-masing akan dijelaskan dengan rinci sebagai berikut.
+
+#### Hipotesis Kosong
+
+Hipotesis kosong muncul dari prinsip ilmiah bahwa "pengetahuan harus dapat dibuktikan oleh data". Artinya, peneliti tidak dapat langsung menyatakan adanya perbedaan atau hubungan tanpa adanya bukti yang kuat. Oleh karena itu, hipotesis kosong digunakan sebagai titik awal yang logis dengan menganggap bahwa **tidak ada perbedaan** atau **tidak ada hubungan** antara kondisi yang diamati dan dugaan yang dimiliki [@healey2021statistics].
+
+Dengan kata lain, hipotesis kosong menggambarkan kondisi netral atau standar yang dapat dijadikan dasar pembuktian. Dari sinilah kemudian pengujian dilakukan untuk melihat apakah ada cukup bukti untuk menolak $H_0$ dan 'menerima hipotesis alternatif' ataupun tidak.
+
+Melanjutkan contoh MBG, misalkan kita memiliki dugaan: "apakah benar bahwa program MBG berhasil dengan memberikan kepuasan kepada masyarakat?". Dalam hal ini, ada dua kemungkinan kondisi yang terjadi: 1) program tidak memberikan dampak apa-apa sehingga masyarakat tidak memberikan rata-rata nilai kepuasan di atas 80; atau 2) program berhasil sehingga masyarakat puas dan memberikan rata-rata skor kepuasan di atas 80.
+
+Kemungkinan pertama, yaitu "program tidak memberikan dampak apa-apa sehingga masyarakat tidak memberikan rata-rata nilai kepuasan di atas 80", menggambarkan kondisi netral atau tidak ada perbedaan. Oleh karena itu, pernyataan ini dijadikan sebagai hipotesis kosong ($H_0$) dan dituliskan dengan simbol persamaan ($=$). Secara matematis, hipotesis kosong untuk rata-rata skor kepuasan ini dapat dinyatakan sebagai berikut:
+
+$$H_0: \mu = \mu_0$$
+
+Notasi $\mu_0$ menunjukkan nilai dugaan (hipotesis) yang kita miliki. Dalam kasus ini, karena kita menetapkan nilai minimal masyarakat "puas" adalah pada rata-rata skor = 80, dugaan terhadap rata-rata skor kepuasan populasi adalah 80, sehingga $\mu_0 = 80$. Berdasarkan kondisi tersebut, penulisan hipotesis dapat dirumuskan kembali sebagai berikut:
+
+$$H_0 : \mu = 80$$
+
+Hipotesis nol menyatakan bahwa nilai parameter populasi tidak berbeda (sama) dengan nilai yang diduga. Secara sederhana, hal ini dapat dimaknai sebagai: "nilai rata-rata sampel $\bar{x}$ yang dijadikan bukti tidak cukup kuat untuk menolak $H_0$". Dengan demikian, kondisi yang diasumsikan dalam hipotesis nol dianggap masih berlaku, atau dengan kata lain, hipotesis nol gagal ditolak.
+
+#### Hipotesis Alternatif
+
+Sementara itu, hipotesis alternatif ($H_1$) adalah dugaan awal mengenai kondisi yang berbeda (antitesis) dari keadaan netral atau standar yang diasumsikan dalam hipotesis kosong [@healey2021statistics]. Dengan kata lain, hipotesis alternatif menyatakan adanya perbedaan atau hubungan yang ingin dibuktikan peneliti.
+
+Hipotesis alternatif ini dapat berbentuk tidak berarah, misalnya hanya menyatakan "ada perbedaan" tanpa menyebutkan ke arah mana perbedaannya, atau berarah, yaitu menyatakan secara spesifik bahwa suatu kondisi "lebih besar", "lebih kecil", atau "lebih tinggi" dibandingkan standar yang ada.
+
+Secara rinci ragam bentuk hipotesis alternatif ini adalah sebagai berikut [@tjokropandojo2021pengantar]:
+
+1. Kasus **"tidak sama dengan" ($\neq$)** digunakan ketika dugaan hanya menyatakan "ada perbedaan", tanpa menyebutkan lebih besar atau lebih kecil.
+2. Kasus **"lebih dari" ($>$)** digunakan ketika dugaan menyatakan bahwa parameter populasi lebih besar daripada nilai dugaan.
+3. Kasus **"kurang dari" ($<$)** digunakan ketika dugaan menyatakan bahwa parameter populasi lebih kecil daripada nilai dugaan.
+
+Adapun bentuk matematis dari hipotesis alternatif yang mungkin dipilih ditampilkan pada Tabel \@ref(tab:tab-bentuk-hipotesis-alternatif) berikut.
+
+```{r tab-bentuk-hipotesis-alternatif, echo=FALSE}
+library(kableExtra)
+data <- data.frame(
+    "No" = c("I", "II", "III"),
+    "Bentuk Kasus" = c("Tidak sama dengan", "Lebih dari", "Kurang dari"),
+    "Persamaan Matematis" = c("$H_1: \mu \neq \mu_0$", "$H_1: \mu > \mu_0$", "$H_1: \mu < \mu_0$"),
+    "Interpretasi" = c("Rata-rata parameter tidak sama dengan nilai dugaan", "Rata-rata parameter lebih besar nilai dugaan", "Rata-rata parameter lebih kecil (tidak sama) dengan nilai dugaan"),
+    check.names = FALSE
+)
+data |>
+    kbl(caption = "Alternatif Bentuk Hipotesis Alternatif", escape = FALSE, align = "llcl") |>
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+```
+
+Melanjutkan contoh pada bagian sebelumnya, hipotesis alternatif akan mencerminkan kemungkinan kondisi ke-2, yaitu "program memberikan dampak sehingga nilainya bukan 80 atau berbeda dari 80". Ini adalah contoh kasus untuk bentuk tidak berarah karena menggunakan pertidaksamaan ($\neq$, ada kata "berbeda").
+
+Walaupun bentuk ini bisa digunakan, hasilnya tidak lebih informatif dibandingkan kita menentukan arahnya (lebih besar/lebih kecil). Jika kita menggunakan kata lebih dari atau kurang dari dalam perumusan hipotesis alternatif kita, maka hipotesis alternatif kita memiliki arah, dan kita akan menggunakan $<$ atau $>$ dalam bentuk persamaan matematisnya.
+
+Memilih tanda atau arah pertidaksamaan dalam perumusan hipotesis alternatif berarah sangat penting karena ini menentukan posisi wilayah kritis pada kurva distribusi statistik sampel, yang menjadi dasar dalam pengujian hipotesis. Posisi ini disebut *tail* (ekor) yang merupakan istilah untuk posisi wilayah kritis sebagaimana yang dijelaskan lebih rinci pada subbab berikutnya.
+
+::: rmdnote
+### Catatan: Simbol Hipotesis {.unnumbered}
+
+Hipotesis kosong, atau sering juga disebut sebagai hipotesis nol ($H_0$), biasanya disimbolkan dengan tanda sama dengan ($=$), karena menggambarkan kondisi standar atau tidak ada perbedaan.
+
+Sebaliknya, hipotesis alternatif, atau sering juga disebut sebagai hipotesis penelitian ($H_1$) menunjukkan kondisi yang berlawanan dengan hipotesis kosong. Bentuknya bisa tidak berarah, ditandai dengan simbol tidak sama dengan ($\neq$), atau berarah, ditandai dengan simbol lebih dari ($>$) atau kurang dari ($<$) sesuai arah dugaan yang ingin diuji.
+:::
+
+### Titik Kritis dan p-value
+
+Pengujian hipotesis dilakukan dengan menggunakan dua pendekatan utama, yaitu titik kritis dan nilai *p* (*p-value*), yang keduanya didasarkan pada konsep distribusi statistik.
+
+#### Titik Kritis dan Wilayah Kritis
+
+Secara lebih rinci, titik kritis adalah nilai pada distribusi sampling yang menandai batas awal dari suatu area yang disebut wilayah kritis (*critical region*) atau wilayah penolakan. Wilayah kritis ini mencakup hasil sampel yang dianggap "tidak mungkin" terjadi apabila hipotesis kosong benar [@healey2021statistics]. Praktisnya, titik kritis menjadi pemisah kedua area untuk menentukan apakah $H_0$ ditolak atau gagal ditolak.
+
+Penentuan titik kritis didasarkan pada tingkat signifikansi ($\alpha$), yang dalam ilmu sosial umumnya ditetapkan sebesar 5% atau 0,05. Nilai titik kritis ini diperoleh dari tabel distribusi, yaitu Tabel Z untuk ukuran sampel besar dan Tabel t untuk ukuran sampel kecil. Dalam hal ini, dapat kita sepakati bahwa ukuran sampel besar adalah jumlah sampel lebih dari 100, sedangkan sampel dengan jumlah 100 atau kurang digolongkan sebagai sampel kecil [@devaus2014surveys; @kachigan1986statistical].
+
+Distribusi wilayah kritis ditentukan oleh bentuk hipotesis alternatif yang telah dirumuskan. Masing-masing bentuk hipotesis alternatif (tidak sama dengan, kurang dari, dan lebih dari) akan memengaruhi letak wilayah kritis pada kurva distribusi sampling.
+
+1. **Kasus tidak sama dengan (*two tailed*)**  
+   Kasus tidak sama dengan adalah bentuk hipotesis tanpa arah, sehingga wilayah kritis akan terbagi dua secara sama rata di ekor kurva. Apabila kita menetapkan $\alpha = 5\%$, maka masing-masing ekor akan menampung $\alpha/2 = 2,5\%$. Dalam hal ini, titik kritis dihitung berdasarkan nilai $\alpha/2$.
+
+2. **Kasus lebih dari (*right tailed*)**  
+   Selanjutnya untuk bentuk lebih dari, wilayah kritis hanya berada di ekor kanan kurva. Dengan $\alpha = 5\%$, titik kritis ditentukan langsung berdasarkan nilai $\alpha$ tersebut.
+
+3. **Kasus kurang dari (*left tailed*)**  
+   Wilayah kritis akan berada di ekor sebelah kiri. Sama halnya dengan bentuk lebih dari, nilai titik kritis ditentukan langsung berdasarkan nilai $\alpha$ yang digunakan.
+
+```{r fig-titik-kritis-distribusi, echo=FALSE, out.width='60%', fig.align="center", fig.cap="Ilustrasi Titik Kritis pada Kurva Distribusi Normal"}
+# FIXME: Insert actual ggplot or image for Gambar 6-3
+knitr::include_graphics("figures/FIXME.png")
+```
+
+Setelah wilayah kritis dan titik kritis ditetapkan, nilai statistik uji (Z-score ataupun t-score) dihitung dari data sampel, lalu dibandingkan dengan titik kritis tersebut. Jika statistik uji jatuh ke dalam area penerimaan $H_0$, maka dapat disimpulkan bahwa hipotesis kosong tidak ditolak ($H_0$ dianggap benar untuk kasus yang diuji).
+
+#### Nilai Statistik Uji dan Nilai p (*p-value*)
+
+Jika nilai statistik uji jatuh di dalam wilayah kritis, maka dapat disimpulkan bahwa hipotesis kosong ditolak ($H_1$ gagal ditolak untuk kasus yang diuji). Sebaliknya, jika nilai tersebut jatuh di luar wilayah kritis, maka hipotesis kosong gagal ditolak ($H_1$ ditolak untuk kasus yang diuji).
+
+```{r fig-penetapan-hipotesis, echo=FALSE, out.width='60%', fig.align="center", fig.cap="Ilustrasi Penetapan Hipotesis yang Ditolak (untuk Satu Ekor)"}
+# FIXME: Insert actual ggplot or image for Gambar 6-4
+knitr::include_graphics("figures/FIXME.png")
+```
+
+Sementara itu, nilai p (*p-value*) adalah probabilitas untuk memperoleh hasil sampel seperti yang kita amati, atau bahkan hasil yang lebih ekstrem, dengan asumsi bahwa hipotesis kosong ($H_0$) benar. Dengan kata lain, nilai p menunjukkan seberapa besar kemungkinan hasil yang kita peroleh dari sampel muncul hanya karena kebetulan, apabila pada populasi sebenarnya tidak ada perbedaan atau hubungan apa pun.
+
+Saat ini, perangkat lunak statistik modern (Excel, R, SPSS, dsb) secara otomatis menghitung nilai p dari data yang dianalisis. Nilai p tersebut kemudian dibandingkan dengan tingkat signifikansi ($\alpha$) yang sudah ditentukan. Jika nilai p lebih besar dari $\alpha$, maka dapat disimpulkan bahwa $H_0$ gagal ditolak (tidak ada cukup bukti untuk menolak hipotesis kosong).
+
+::: rmdnote
+### Catatan: Kaidah Pengujian Hipotesis {.unnumbered}
+
+Kaidah pengujian hipotesis terkait titik kritis dan nilai p adalah sebagai berikut:
+
+- Jika Z-score jatuh ke dalam area penolakan $H_0$, nilai p $< \alpha$, maka $H_0$ ditolak $\rightarrow$ kondisi yang berlaku adalah $H_1$
+- Jika Z-score jatuh ke dalam area penerimaan $H_0$, nilai p $> \alpha$ maka dapat disimpulkan bahwa $H_0$ gagal ditolak $\rightarrow$ kondisi yang berlaku adalah $H_0$
+:::
 
 ### Langkah-langkah Pengujian Hipotesis
 
-1.  **Rumuskan Hipotesis ($H_0$ dan $H_1$)**.
-2.  **Tentukan Tingkat Signifikansi ($\alpha$)**. Biasanya 0,05.
-3.  **Pilih Statistik Uji**. (Z-test jika $\sigma$ diketahui atau $n > 30$, t-test jika $\sigma$ tidak diketahui dan $n < 30$).
-4.  **Hitung Statistik Hitung dan P-value**.
-5.  **Ambil Keputusan**. Tolak $H_0$ jika P-value $< \alpha$.
-6.  **Tarik Kesimpulan**.
+Berikut adalah rangkuman langkah-langkah pengujian hipotesis. Proses ini memungkinkan peneliti menarik kesimpulan (inferensi) tentang populasi yang lebih besar berdasarkan data dari sampel yang lebih kecil.
 
-## Studi Kasus dengan R
+Agar lebih mudah dipahami, langkah-langkah pengujian hipotesis ini akan dibahas melalui studi kasus sederhana evaluasi keberhasilan program Makan Bergizi Gratis (MBG) yang telah diuraikan sebelumnya.
 
-Seorang perencana kota menduga bahwa rata-rata waktu tempuh warga ke tempat kerja adalah **lebih dari 45 menit**. Dari survei terhadap 35 warga, diperoleh rata-rata 48 menit dengan simpangan baku 10 menit. Ujilah hipotesis tersebut dengan $\alpha = 0.05$.
+Pada kasus ini, evaluasi dilakukan dengan menyurvei skor *rating* kepuasan penerima layanan MBG yang berkisar antara 0--100. Pertanyaan yang ingin dijawab dari survei ini adalah: "apakah benar bahwa skor kepuasan masyarakat penerima layanan mencapai skor 80?"
 
-Hipotesis:
-*   $H_0: \mu \le 45$ (Rata-rata tidak lebih dari 45 menit)
-*   $H_1: \mu > 45$ (Rata-rata lebih dari 45 menit)
+Berdasarkan hasil survei terhadap sampel berukuran 200 orang, diperoleh informasi bahwa rata-rata skor tingkat kepuasannya adalah 95 dengan standar deviasi 2,3. Dan dengan tingkat kepercayaan 95%, akan dilakukan pengujian hipotesis sebagai dasar untuk menentukan apakah program MBG dapat dikatakan berhasil sesuai indikator yang ditetapkan.
 
-```{r bab-7-uji-t-satu-sampel, echo=TRUE}
-# Data Sampel (Simulasi)
-set.seed(123)
-waktu_tempuh <- rnorm(35, mean = 48, sd = 10)
+#### 1. Membuat Asumsi
 
-# Uji T Satu Sampel
-t.test(waktu_tempuh, mu = 45, alternative = "greater")
+Untuk dapat menyelesaikan kasus melalui pengujian hipotesis, peneliti harus memastikan bahwa proses pengambilan sampel telah dilakukan secara acak dan memenuhi persyaratan statistik. Persyaratan statistik tersebut adalah distribusi sampling-nya mengikuti distribusi normal. Berikut penjelasannya:
+
+a. Responden dipilih secara acak (random) sesuai kaidah pengambilan sampel probabilistik $\rightarrow$ proses sampling terhadap 200 responden dilakukan menggunakan teknik acak.
+b. Distribusi statistik sampel mengikuti distribusi normal $\rightarrow$ dapat dipenuhi oleh jumlah sampel yang besar [@devaus2014surveys].
+
+Perlu diperhatikan bahwa kita akan menguji hipotesis untuk rata-rata. Oleh karena itu variabel kita harus bisa dipastikan bertingkat pengukuran minimal metrik. Variabel yang akan diuji di sini adalah skor kepuasan yang merupakan variabel interval/rasio, maka uji hipotesis dapat dilanjutkan.
+
+#### 2. Merumuskan Hipotesis ($H_0$ dan $H_1$)
+
+Dalam kasus penilaian keberhasilan program MBG, indikator keberhasilan adalah apabila skor kepuasan masyarakat mencapai skor 80. Oleh karena hipotesis kosong mengandung makna bahwa tidak ada dampak/tidak ada perbedaan, nilai 80 kita tetapkan sebagai rata-rata skor di mana tidak ada pengaruh positif.
+
+Oleh karena itu, hipotesis alternatif kita adalah "program ini berhasil sehingga memberikan rata-rata skor kepuasan $>80$". Bentuk persamaan hipotesis adalah:
+
+$$H_0: \mu = 80$$
+$$H_1: \mu > 80$$
+
+Pada hipotesis tersebut, $H_0$ menunjukkan kondisi rata-rata skor kepuasan masyarakat mencapai (sama dengan) angka 80. Sementara itu, $H_1$ menunjukkan kondisi rata-rata skor kepuasan masyarakat lebih dari angka 80.
+
+#### 3. Memilih Distribusi Sampling dan Titik Kritis
+
+Distribusi sampling dipilih dengan mempertimbangkan jumlah sampel yang digunakan. Wilayah kritis ditetapkan berdasarkan bentuk hipotesis.
+
+1. Ukuran sampel adalah 200 responden (sampel besar). Oleh karena itu, distribusi sampling mengikuti Distribusi Z.
+2. Hipotesis alternatif berbentuk lebih dari (*right-tailed test*).
+3. Dengan tingkat kepercayaan 95% ($\alpha = 5\%$), nilai Z kritis adalah $+1,65$.
+
+```{r fig-kurva-kritis-mbg, echo=FALSE, out.width='60%', fig.align="center", fig.cap="Distribusi Sampling dan Wilayah Kritis Kasus MBG"}
+# FIXME: Insert plotting code for Z-critical +1.65
+knitr::include_graphics("figures/FIXME.png")
 ```
 
-**Interpretasi**:
-Jika p-value < 0,05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
+#### 4. Menghitung Statistik Uji
+
+Berdasarkan kasus, dapat dirangkum:
+- $\bar{x}$ (rata-rata sampel) = 95
+- $\mu_0$ (nilai dugaan) = 80
+- $s$ (standar deviasi sampel) = 2,3
+- $n$ (ukuran sampel) = 200
+
+Maka perhitungan Z-score adalah:
+
+$$
+Z = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{95 - 80}{2,3 / \sqrt{200}} = \frac{15}{0,1626} = 92,25
+$$
+
+Dengan demikian, nilai statistik uji yang diperoleh adalah $+92,25$.
+
+#### 5. Menarik Kesimpulan
+
+Pada kasus, nilai statistik uji dan titik kritis adalah:
+- $Z_{hitung} = +92,25$
+- $Z_{kritis} = +1,65$
+
+Keputusannya, nilai statistik uji jatuh jauh ke dalam wilayah kritis. Oleh karena itu, hipotesis kosong ditolak (Gambar \@ref(fig:fig-kurva-kesimpulan-mbg)).
+
+```{r fig-kurva-kesimpulan-mbg, echo=FALSE, out.width='60%', fig.align="center", fig.cap="Penarikan Kesimpulan Statistik Hitung dan Wilayah Kritis"}
+# FIXME: Insert plotting code showing Z-hitung
+knitr::include_graphics("figures/FIXME.png")
+```
+
+#### 6. Memaknai Hasil Pengujian
+
+Dengan menolak hipotesis kosong, hasil pengujian menunjukkan bahwa rata-rata skor kepuasan masyarakat yang diperoleh, yaitu 95, berada jauh di atas ambang batas. Hal ini membuat kemungkinan bahwa parameter skor kepuasan berada di angka 80 ke bawah menjadi sangat kecil. Hasil ini sangat mendukung hipotesis alternatif, yaitu bahwa program MBG berhasil dan skor kepuasan melampaui indikator yang ditetapkan.
+
+::: rmdkasus
+### Studi Kasus: Layanan Bus Kampus {.unnumbered}
+
+Dengan menggunakan data pada subbab sebelumnya mengenai jarak tempat tinggal mahasiswa ITERA menuju kampus dari 333 responden, pihak kampus merespons kebutuhan mobilitas mahasiswa dengan merencanakan penyediaan layanan Bus Kampus. Namun, layanan ini hanya akan efektif jika mayoritas mahasiswa tinggal pada jarak dekat ($\leq 5$ km) dari kampus dan apabila lebih dari 80% mahasiswa berminat terhadap layanan tersebut. 
+
+Sebagai informasi awal bahwa pengambilan data yang dilakukan telah sesuai dengan prinsip probabilitas dan data yang terkumpul memiliki distribusi normal.
+
+#### Pengujian Hipotesis Rata-rata Populasi
+
+Apabila rata-rata jarak tempat tinggal mahasiswa memang berada pada 5 km atau kurang, maka penyediaan Bus Kampus dapat dianggap tepat dan efektif. Berdasarkan data sampel tersebut, diketahui bahwa rata-rata jarak tempat tinggal mahasiswa dari kampus adalah sebesar 4,59 km dengan simpangan baku yaitu 2,23 km. Selanjutnya dengan tingkat kepercayaan 95%, kita akan melakukan pengujian terhadap rata-rata populasi mahasiswa ITERA tersebut.
+
+**1. Membuat Asumsi**
+
+- Sampling telah memenuhi prinsip probabilitas.
+- Distribusi sampling mengikuti distribusi normal (didukung jumlah sampel $n=333$).
+- Tingkat pengukuran variabel berada pada skala rasio, sehingga dilakukan uji hipotesis rata-rata.
+
+**2. Merumuskan Hipotesis ($H_0$ dan $H_1$)**
+
+Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah rata-rata sama dengan 5 km. Sedangkan karena kita ingin menguji dugaan "rata-rata jarak lebih dari 5 km akan menyebabkan ketidakefektifan", kita dapat merumuskan hipotesis untuk membuktikan sebaliknya atau membuktikan klaim tertentu:
+
+$$H_0: \mu = 5 \text{ km}$$
+$$H_1: \mu > 5 \text{ km}$$
+
+Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa rata-rata jarak adalah 5 km. $H_1$ menunjukkan rata-rata jarak lebih dari 5 km (yang berarti layanan bus kampus melemah efektivitasnya jika terbukti lebih dari 5 km).
+
+**3. Memilih Distribusi Sampling dan Wilayah Kritis**
+
+- Sampel besar ($n=333$), distribusi Z.
+- Hipotesis *right-tailed test*.
+- Tingkat kepercayaan 95% ($\alpha = 5\%$), maka $Z_{kritis} = +1,65$.
+
+**4. Menghitung Statistik Uji**
+
+- $\bar{x} = 4,59$
+- $\mu_0 = 5$
+- $s = 2,23$
+- $n = 333$
+
+$$
+Z = \frac{4,59 - 5}{2,23 / \sqrt{333}} = \frac{-0,41}{0,122} = -3,36
+$$
+
+**5. Menarik Kesimpulan**
+
+- $Z_{hitung} = -3,36$
+- $Z_{kritis} = +1,65$
+
+Nilai statistik uji tidak jatuh ke dalam wilayah kritis sehingga hipotesis kosong gagal ditolak.
+
+**6. Memaknai Hasil Pengujian Hipotesis**
+
+Dengan demikian, data sampel mendukung $H_0$, yaitu bahwa rata-rata jarak mahasiswa ITERA ke kampus adalah 5 km atau kurang. Berdasarkan perhitungan statistik, penyediaan Bus Kampus dapat dianggap tepat dan berpotensi efektif. 
+
+#### Pengujian Hipotesis Proporsi Populasi
+
+Program dinilai akan berhasil apabila lebih dari 80% mahasiswa berminat. Berdasarkan survei terhadap 333 responden, diketahui 70% mahasiswa berminat. Dengan tingkat kepercayaan 99%, kita uji hipotesis proporsi ini.
+
+**1. Membuat Asumsi**
+
+Tingkat pengukuran nominal, pengujian proporsi, dan *random sampling* terpenuhi.
+
+**2. Merumuskan Hipotesis ($H_0$ dan $H_1$)**
+
+$$H_0: P = 0,8$$
+$$H_1: P < 0,8$$ *(Catatan: Penyesuaian ke left-tailed karena sampel 0,7 lebih kecil dari 0,8 dan dugaan bahwa proporsi gagal mencapai 0,8).* Atau jika mengikuti teks referensi asli yang menduga $P > 0,8$, kita pertahankan hipotesis awal:
+
+$$H_0: P = 0,8$$
+$$H_1: P > 0,8$$
+
+*(Dari teks: $H_0: P = 0,8$ vs $H_1: P > 0,8$).*
+
+**3. Memilih Distribusi Sampling dan Wilayah Kritis**
+
+- Distribusi Z.
+- Tingkat kepercayaan 99% ($\alpha = 1\%$), formasi *right-tailed*, maka $Z_{kritis} = +2,33$.
+
+**4. Menghitung Statistik Uji**
+
+- $\hat{p} = 0,7$
+- $P = 0,8$
+- $n = 333$
+
+$$
+Z = \frac{\hat{p} - P}{\sqrt{\frac{P(1-P)}{n}}} = \frac{0,7 - 0,8}{\sqrt{\frac{0,8(0,2)}{333}}} = -3,98
+$$
+
+(Dalam teks referensi tercantum rumus yang menggunakan $\hat{p}$ atau $P$ di bawah akar; hasil $Z=-3,98$).
+
+**5. Menarik Kesimpulan**
+
+- $Z_{hitung} = -3,98$
+- $Z_{kritis} = +2,33$
+
+Nilai statistik uji tidak jatuh ke dalam wilayah kritis, sehingga hipotesis kosong gagal ditolak.
+
+**6. Memaknai Hasil Pengujian Hipotesis**
+
+Data sampel mendukung $H_0$ (gagal menolak) bahwa minat mahasiswa tidak mencapai atau melebihi 80%. Secara populasi, minat mahasiswa dapat disimpulkan rendah. Pihak kampus perlu mengkaji ulang program ini karena adanya potensi minat yang terlalu rendah.
+:::
+
+## Soal Latihan
 
 ::: rmdexercise
-## Soal Evaluasi 8 {.unnumbered}
-
-1.  Jelaskan perbedaan antara Hipotesis Nol dan Hipotesis Alternatif. [STP-6.1]{.capaian}
-2.  Apa makna P-value dalam pengambilan keputusan uji hipotesis? [STP-6.2]{.capaian}
-
+1. Berdasarkan survei kepada 173 orang dosen ITERA pada tahun 2023, rata-rata usianya pada saat itu adalah 29 tahun dengan simpangan bakunya adalah 2,9 tahun. Jika ingin diketahui apakah rata-rata usia dosen ITERA pada tahun 2023 tersebut adalah sebenarnya sama saja dengan 30 tahun, ujilah pernyataan tersebut! Gunakan galat sebesar 5%. `[STP-6.1]`
+   a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
+   b. Tentukan keputusan dalam memilih hipotesis yang diterima!
+   c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
+   
+2. Hasil survei kepada 427 orang mahasiswa menunjukkan bahwa proporsi pengguna sepeda motor pribadi adalah 0,56. Bagaimana hasil pengujian hipotesis yang menyatakan bahwa sebenarnya pengguna sepeda motor pada mahasiswa itu lebih dari setengahnya? Gunakan galat sebesar 5%. `[STP-6.1]`
+   a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
+   b. Tentukan keputusan dalam memilih hipotesis yang diterima!
+   c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
 :::
