@@ -230,7 +230,7 @@ Pelajari kasus yang berisi perbandingan antara data yang tidak rapi dan data yan
 
 Berikut adalah beberapa contoh kesalahan umum dalam struktur data dan perbaikannya:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> Jenis Kesalahan </th>
@@ -265,7 +265,7 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-eleme
 
 Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> ID_rumah </th>
@@ -398,7 +398,7 @@ Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilka
 
 Melanjutkan kasus pengumpulan data pergerakan mahasiswa ITERA dari bab sebelumnya, setelah merumuskan pertanyaan penelitian mengenai keberlanjutan pola pergerakan, kita perlu menentukan variabel yang akan diukur. Berikut adalah variabel-variabel tersebut beserta penjelasannya:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-rancangan-metadata)Penelaahan tingkat pengukuran variabel penelitian</caption>
  <thead>
   <tr>
@@ -433,7 +433,7 @@ Melanjutkan kasus pengumpulan data pergerakan mahasiswa ITERA dari bab sebelumny
 
 Setelah menelaah jenis nilai dan tingkat pengukuran variabel, kita perlu menspesifikasikan nilai isian beserta satuannya. Jika menggunakan kodifikasi, aturannya harus diperjelas. Spesifikasi ini disebut **metadata**, yaitu data yang menjelaskan tentang data.
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-metadata)Metadata variabel penelitian</caption>
  <thead>
   <tr>
@@ -482,7 +482,7 @@ Kita sudah menentukan nilai dari telaahan variabel-variabel yang sudah kita buat
 
 Kita bisa mengubah tingkat pengukuran variabel dari satu tingkat ke lainnya. Misalnya, kita bisa mengubah tingkat pengukuran variabel `jarak` dari metrik (rasio) menjadi ordinal. Karena tingkat pengukuran variabel metrik adalah angka, untuk mengubahnya menjadi ordinal maka kita perlu mengubahnya menjadi kategorikal. Artinya, kita perlu membuat kategori baru dari variabel `jarak` tersebut.
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-ubah-tingkat-pengukuran)Metadata variabel penelitian yang diubah</caption>
  <thead>
   <tr>
@@ -534,7 +534,7 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang tingkat peng
 
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-eval-3-preview)Cuplikan data survei mahasiswa</caption>
  <thead>
   <tr>
@@ -600,7 +600,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-eval-3-metadata)Metadata variabel survei mahasiswa</caption>
  <thead>
   <tr>
@@ -702,7 +702,7 @@ Sekarang kita akan membahas teknik analisis statistik dalam set data (dataset) m
 
 Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta metadatanya:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kasus-dataset)Contoh Set Data Hasil Kuesioner</caption>
  <thead>
   <tr>
@@ -784,7 +784,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
 
 **Metadata:**
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kasus-metadata)Metadata Variabel</caption>
  <thead>
   <tr>
@@ -822,7 +822,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
 
 Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nominal atau ordinal), seperti `kend` dan `tingkat`. Untuk dapat menghitung analisis ini kita harus membuat terlebih dahulu tabel frekuensi untuk kedua variabel ini. Kemudian, barulah kita dapat menghitung frekuensi relatifnya menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif)
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-tabel-frekuensi-kend)Tabel Distribusi Frekuensi Untuk Variabel `kend`</caption>
  <thead>
   <tr>
@@ -878,7 +878,7 @@ Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nom
 </tbody>
 </table>
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-tabel-frekuensi-tingkat)Tabel Distribusi Frekuensi Untuk Variabel `tingkat`</caption>
  <thead>
   <tr>
@@ -957,7 +957,7 @@ Salah satu keunggulan persentase adalah kemampuannya untuk membandingkan dominan
 
 Berdasarkan survei pola mobilitas mahasiswa, diperoleh data sebagai berikut:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-perbandingan-kampus)Data Pengguna Sepeda Motor Pribadi di ITERA dan UBL</caption>
  <thead>
   <tr>
@@ -999,7 +999,7 @@ $$
 \text{Persentase sepeda motor UBL} = \frac{195}{380} \times 100\% = 51,3\%
 $$
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-hasil-perbandingan)Perbandingan Proporsi dan Persentase Pengguna Sepeda Motor</caption>
  <thead>
   <tr>
@@ -1067,7 +1067,7 @@ Misalkan kita memiliki data survei pola mobilitas mahasiswa dari tiga perguruan 
 
 **Data Tahun 2023:**
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-laju-2023)Data Pengguna Sepeda Motor Tahun 2023</caption>
  <thead>
   <tr>
@@ -1097,7 +1097,7 @@ Misalkan kita memiliki data survei pola mobilitas mahasiswa dari tiga perguruan 
 
 **Data Tahun 2024:**
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-laju-2024)Data Pengguna Sepeda Motor Tahun 2024</caption>
  <thead>
   <tr>
@@ -1198,7 +1198,7 @@ Mari kita gunakan data mahasiswa ITERA untuk menghitung rasio penggunaan kendara
 
 Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi sebagai berikut:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-rasio-itera)Distribusi Penggunaan Kendaraan Mahasiswa ITERA</caption>
  <thead>
   <tr>
@@ -1228,7 +1228,7 @@ Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi seb
 
 **Detail per jenis kendaraan:**
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-detail-kendaraan-itera)Detail Jenis Kendaraan yang Digunakan</caption>
  <thead>
   <tr>
@@ -1342,7 +1342,7 @@ $$
 \text{Persentase TO Periode 2} = \frac{32}{429} \times 100\% = 7,5\%
 $$
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-percentage-change)Data Penggunaan Transportasi Online di ITERA</caption>
  <thead>
   <tr>
@@ -1415,7 +1415,7 @@ $$
 
 **Sebenarnya, kenaikan pajak tersebut adalah 9,09%, bukan 1%!**
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kasus-pajak)Perbandingan Interpretasi Kenaikan Pajak</caption>
  <thead>
   <tr>
@@ -1466,7 +1466,7 @@ $$
 \text{Tambahan tahunan} = \text{Rp 100.000} \times 12 = \text{Rp 1.200.000}
 $$
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-dampak-ekonomi)Dampak Kenaikan Pajak pada Penghasilan Rp 10 Juta/Bulan</caption>
  <thead>
   <tr>
@@ -1563,7 +1563,7 @@ Makna yang dihasilkan teknik analisis ini sama saja dengan *mean*, yakni **pusat
 
 Perhatikan data biaya perjalanan sepekan (ribu rupiah) dari 8 mahasiswa ITERA:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-biaya-awal)Biaya Perjalanan Sepekan (Ribu Rupiah)</caption>
  <thead>
   <tr>
@@ -1623,7 +1623,7 @@ $$
 
 Sekarang misalkan Mhs 8 memiliki biaya ekstrem Rp 500.000 (menggunakan layanan *premium*):
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-biaya-outlier)Biaya Perjalanan dengan Pencilan</caption>
  <thead>
   <tr>
@@ -1679,7 +1679,7 @@ $$
 \text{Median} = \frac{65 + 70}{2} = 67,5
 $$
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-perbandingan-mean-median)Perbandingan Mean dan Median</caption>
  <thead>
   <tr>
@@ -1732,7 +1732,7 @@ Modus sangat berguna untuk mengidentifikasi nilai yang paling umum dalam data ka
 
 Dari dataset 8 mahasiswa yang telah digunakan sebelumnya, kita dapat membuat tabel frekuensi untuk variabel `kend`:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-modus-kend)Distribusi Frekuensi Jenis Kendaraan</caption>
  <thead>
   <tr>
@@ -1768,7 +1768,7 @@ Modus untuk variabel `kend` adalah **sepeda motor pribadi** (kode 1) dengan frek
 
 Variabel ini menunjukkan berapa kali mahasiswa melakukan perjalanan di hari Senin. Mari kita buat tabel frekuensinya:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-modus-perjalanan)Distribusi Frekuensi Perjalanan di Hari Senin</caption>
  <thead>
   <tr>
@@ -1838,7 +1838,7 @@ Indeks Variasi Kualitatif (IQV) sangat berguna untuk mengukur tingkat keberagama
 
 Dari set data hasil penyebaran kuesioner yang berisi 400 mahasiswa, kita dapat membuat tabel distribusi frekuensi untuk variabel `Fakultas`:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-iqv-fakultas)Distribusi Mahasiswa UIN Raden Intan Lampung Berdasarkan Fakultas</caption>
  <thead>
   <tr>
@@ -1912,7 +1912,7 @@ $$
 IQV = \frac{8(1 - 0,231)}{8 - 1} = \frac{8 \times 0,769}{7} = \frac{6,152}{7} = 0,879
 $$
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-hasil-iqv)Hasil Perhitungan IQV</caption>
  <thead>
   <tr>
@@ -1960,7 +1960,7 @@ Rentang dapat digunakan untuk membandingkan tingkat keberagaman data antar kelom
 
 Berdasarkan data survei pola mobilitas mahasiswa, kita akan menganalisis variabel `biaya_perjalanan` (biaya perjalanan sepekan dalam rupiah). Perhatikan statistik deskriptif dari kedua kelompok:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-rentang)Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA</caption>
  <thead>
   <tr>
@@ -2036,7 +2036,7 @@ Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$)
 
 Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kuartil-unila)Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = 394)</caption>
  <thead>
   <tr>
@@ -2132,7 +2132,7 @@ $$
 
 **Langkah 2: Buat Tabel Perhitungan $(x_i - \bar{x})^2$**
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-simulasi-variansi)Perhitungan Selisih Kuadrat</caption>
  <thead>
 <tr>
@@ -2225,7 +2225,7 @@ Dalam bidang PWK, wilayah dengan simpangan baku pendapatan atau pengeluaran yang
 
 Pemilihan teknik analisis statistik deskriptif sangat bergantung pada tujuan analisis (apakah melihat pemusatan atau penyebaran) dan tingkat pengukuran variabel yang tersedia. Tabel \@ref(tab:rangkuman-deskriptif) merangkum berbagai teknik yang telah dipelajari beserta syarat penggunaannya.
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:rangkuman-deskriptif)Rangkuman Teknik Analisis Statistik Deskriptif</caption>
  <thead>
   <tr>
@@ -2306,7 +2306,7 @@ Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap ana
 
 Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 responden berikut.
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-eval-4-preview)Cuplikan data survei mahasiswa</caption>
  <thead>
   <tr>
@@ -2372,7 +2372,7 @@ Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 res
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-eval-4-metadata)Metadata variabel survei mahasiswa</caption>
  <thead>
   <tr>
@@ -2481,7 +2481,7 @@ Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang b
 
 Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi (Tabel \@ref(tab:bab-4-diagram-batang)), baru kemudian divisualisasikan.
 
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-diagram-batang)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung</caption>
  <thead>
   <tr>
@@ -2529,7 +2529,7 @@ Atau dalam bentuk grafik batang mendatar (*bar chart*):
 
 Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin (Tabel \@ref(tab:tab-distribusi-2-var)).
 
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tab-distribusi-2-var)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung berdasarkan Jenis Kelamin</caption>
  <thead>
   <tr>
@@ -2592,7 +2592,7 @@ Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data dir
 
 Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
 
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption>(\#tab:bab-4-distribusi-per-prodi)Distribusi Frekuensi Mahasiswa UIN Raden Intan Lampung Per Program Studi</caption>
  <thead>
   <tr>
@@ -2660,7 +2660,7 @@ Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
 
 Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
 
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tab-treemap-data)Distribusi Frekuensi Moda Transportasi berdasarkan Jenis Kelamin untuk Treemap</caption>
  <thead>
   <tr>
@@ -2746,7 +2746,7 @@ Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada k
 
 Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.
 
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tab-pie-data)Distribusi Frekuensi Moda Transportasi untuk Grafik Pai</caption>
  <thead>
   <tr>
@@ -2829,7 +2829,7 @@ Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus
 
 Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
 
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-hist-biaya-prep)Statistik Deskriptif Biaya Perjalanan Mahasiswa ITERA (dalam ribuan rupiah)</caption>
  <thead>
   <tr>
@@ -2885,7 +2885,7 @@ Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi denga
 
 Untuk lebih memahami proses *binning*, mari kita buat tabel frekuensi manual:
 
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-tab-freq-manual)Tabel Frekuensi Biaya Perjalanan dalam Ribuan Rupiah (6 Interval Pertama)</caption>
  <thead>
   <tr>
@@ -2946,7 +2946,7 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 
 Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-boxplot-prep)Statistik Deskriptif Biaya Perjalanan Gabungan (UINRIL &amp; UNILA)</caption>
  <thead>
   <tr>
@@ -3039,7 +3039,7 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 
 *Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
 
-<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-scatter-prep)Contoh Data Biaya Perjalanan dan Jarak Tempuh dalam Ribuan Rupiah (10 Observasi Pertama)</caption>
  <thead>
   <tr>
@@ -3165,7 +3165,7 @@ Silakan kerjakan soal-soal evaluasi berikut terkait visualisasi data kuantitatif
 
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-eval-5-preview)Cuplikan data survei mahasiswa</caption>
  <thead>
   <tr>
@@ -3231,7 +3231,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-eval-5-metadata)Metadata variabel survei mahasiswa</caption>
  <thead>
   <tr>
@@ -3276,7 +3276,7 @@ Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai beri
 
 1. Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut! [STP-3.1]{.capaian}
 
-  <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+  <table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
    <thead>
     <tr>
      <th style="text-align:center;"> # </th>
@@ -3533,7 +3533,7 @@ Table: (\#tab:05-inferensia-toy-cluster)Hasil Cluster Sampling (Terpilih: Blok 4
 
 Jika selama ini kita masih berpikir bahwa ukuran sampel (jumlah sampel yang menjadi bahan data kita) ditentukan berdasarkan ukuran populasinya, maka kita salah kaprah. Menurut @devaus2014surveys, ukuran sampel menentukan galat dari perkiraan kita terhadap populasi, tapi ukuran sampel **bukan ditentukan dari ukuran populasi**. @devaus2014surveys juga menjabarkan jumlah-jumlah sampel yang berbeda untuk setiap galat dari perkiraan kita. Galat perkiraan ini disebut juga dengan *sampling error*. Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) menunjukkan ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%. Ini akan kita pelajari lebih dalam di Bab \@ref(bab-6-estimasi-parameter).
 
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tabel-ukuran-sampel-sampling-error)Ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%</caption>
  <thead>
   <tr>
@@ -3709,7 +3709,7 @@ Agar lebih mudah membayangkan perbedaan antara distribusi objek dan distribusi s
 
 Berikut adalah data populasi lengkap (N=30):
 
-<table class="table" style="margin-left: auto; margin-right: auto;">
+<table class="table" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:05-inferensia-populasi-30)Data Populasi (N=30)</caption>
  <thead>
   <tr>
@@ -3830,7 +3830,7 @@ Sekarang, kita lakukan simulasi: kita mengambil sampel ($n=10$) dari populasi te
 
 Berikut adalah 8 hasil pertama dari 200 pengambilan sampel:
 
-<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:05-inferensia-simulasi-200)Hasil Simulasi Distribusi Sampling (8 Teratas dari 200)</caption>
  <thead>
   <tr>
@@ -4292,114 +4292,769 @@ Hitunglah seberapa sering sampel-sampel yang nilainya **lebih kecil** dari stati
 
 # Estimasi Parameter {#bab-6-estimasi-parameter}
 
-## Konsep Dasar
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
 
-Dalam statistik inferensial, kita menggunakan statistik sampel (seperti $\bar{x}$) untuk mengestimasi parameter populasi (seperti $\mu$).
+Setelah mempelajari bab ini, Anda diharapkan mampu memaknai interval kepercayaan estimasi sebuah parameter [STP-5.1]{.capaian}.
+:::
 
-Ada dua jenis estimasi:
-1.  **Estimasi Titik (Point Estimation)**. Menggunakan satu nilai tunggal. Contoh: "Rata-rata pendapatan adalah 5 juta". Kelemahannya: akurasinya diragukan.
-2.  **Estimasi Rentang (Interval Estimation)**. Menggunakan rentang nilai dengan tingkat kepercayaan tertentu. Contoh: "Rata-rata pendapatan ada di antara 4,8 juta hingga 5,2 juta dengan tingkat kepercayaan 95%". Inilah yang disebut **Confidence Interval (CI)**.
+Estimasi parameter adalah teknik dalam statistika inferensial untuk **memperkirakan nilai karakteristik populasi** (parameter) **berdasarkan data sampel** (statistik) [@healey2021statistics; @tjokropandojo2021pengantar]. Konsep dasar yang akan kita pelajari di antaranya:
 
-## Estimasi Rentang Kepercayaan (Confidence Interval)
+1. perbedaan antara statistik dan parameter,
+2. estimasi titik dan estimasi rentang, serta
+3. tingkat kepercayaan (*confidence level*).
 
-Rumus umum untuk CI rata-rata adalah:
-$$ \bar{x} \pm Z_{\alpha/2} \times SE $$
-Atau:
-$$ \bar{x} - Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} < \mu < \bar{x} + Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} $$
+Selanjutnya, konsep-konsep dasar ini menjadi dasar untuk mempelajari **perhitungan estimasi parameter** untuk **proporsi** dan **rata-rata**, serta interpretasi hasil estimasi.
 
-Nilai $Z_{\alpha/2}$ bergantung pada tingkat kepercayaan (Confidence Level, $1-\alpha$):
-*   Tingkat Kepercayaan 90% ($\alpha=10\%$) $\rightarrow Z = 1.645$
-*   Tingkat Kepercayaan 95% ($\alpha=5\%$) $\rightarrow Z = 1.96$
-*   Tingkat Kepercayaan 99% ($\alpha=1\%$) $\rightarrow Z = 2.575$
+## Statistik vs. Parameter
 
-### Studi Kasus
+Dalam statistika, kita akan sering menjumpai dua istilah penting, yaitu **statistik** dan **parameter**. Keduanya sama-sama merupakan ukuran kuantitatif yang digunakan untuk menggambarkan karakteristik data. Akan tetapi, perbedaannya terletak pada **sumber datanya**. Statistik diperoleh dari data **sampel**, sedangkan parameter adalah ukuran yang menggambarkan kondisi **populasi** secara keseluruhan [@tjokropandojo2021pengantar].
 
-Seorang peneliti ingin mengestimasi rata-rata pengeluaran bulanan mahasiswa. Dari sampel 100 mahasiswa, diperoleh rata-rata 1,5 juta rupiah dengan simpangan baku 500 ribu rupiah. Buatlah selang kepercayaan 95%.
+Karena parameter adalah ukuran untuk populasi, mengukurnya hanya bisa dilakukan dengan melibatkan seluruh populasi, yang disebut juga **sensus**. Karena sulit dilakukan, maka **statistik digunakan untuk mengestimasi parameter**.
 
-Diketahui:
-*   $n = 100$
-*   $\bar{x} = 1.500.000$
-*   $s = 500.000$ (menggantikan $\sigma$)
-*   $Z_{0.025} = 1.96$
+Cara menyatakan ukuran statistik dan parameter, yakni menggunakan simbol-simbol matematis [@healey2021statistics], disajikan dalam tabel berikut.
 
-Standard Error: $SE = 500.000 / \sqrt{100} = 50.000$.
+<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tab-simbol-statistik-parameter)Simbol-simbol yang Digunakan Untuk Statistik dan Parameter</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Ukuran </th>
+   <th style="text-align:left;"> Statistik (Sampel) </th>
+   <th style="text-align:left;"> Parameter (Populasi) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Rata-rata </td>
+   <td style="text-align:left;"> $\bar{x}$ </td>
+   <td style="text-align:left;"> $\mu$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Simpangan baku </td>
+   <td style="text-align:left;"> $s$ </td>
+   <td style="text-align:left;"> $\sigma$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Variansi </td>
+   <td style="text-align:left;"> $s^2$ </td>
+   <td style="text-align:left;"> $\sigma^2$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Proporsi </td>
+   <td style="text-align:left;"> $\hat{p}$ </td>
+   <td style="text-align:left;"> $P$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Jumlah nilai </td>
+   <td style="text-align:left;"> $x$ </td>
+   <td style="text-align:left;"> $X$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ukuran observasi </td>
+   <td style="text-align:left;"> $n$ </td>
+   <td style="text-align:left;"> $N$ </td>
+  </tr>
+</tbody>
+</table>
 
-Batas Bawah: $1.500.000 - (1.96 \times 50.000) = 1.402.000$.
-Batas Atas: $1.500.000 + (1.96 \times 50.000) = 1.598.000$.
+::: rmdkasus
+### Studi Kasus: Statistik vs Parameter {.unnumbered}
 
-Jadi, dengan tingkat kepercayaan 95%, rata-rata pengeluaran mahasiswa berada di antara Rp1.402.000 dan Rp1.598.000.
+Mengingat kembali studi kasus pada bab sebelumnya, diketahui populasi seluruh mahasiswa aktif ITERA pada pertengahan tahun 2023 berjumlah 18.877 orang. Namun, karena keterbatasan biaya dan waktu, survei hanya dilakukan terhadap sebagian mahasiswa, yaitu sebanyak 428 orang sebagai sampel.
+
+Misalkan kita ingin mengetahui rata-rata usia para mahasiswa tersebut. Dengan menghitung usia 428 responden tersebut, kita akan memperoleh rata-rata usianya sebesar 20,90 tahun. Angka ini merupakan sebuah **statistik** karena dihitung berdasarkan data sampel. Kita akan menggunakan simbol $\bar{x}$ untuk menerangkan rata-rata sampel ini, sehingga $\bar{x} = 20,90$ tahun.
+
+Lalu, apa **parameter** dalam kasus ini? Parameternya adalah **nilai rata-rata usia yang sebenarnya dari keseluruhan 18.877 mahasiswa aktif ITERA** tersebut. Angka sesungguhnya ini kita simbolkan dengan $\mu$. Karena parameter hanya bisa diketahui dari sensus terhadap seluruh populasi, nilai $\mu$ ini tidak akan pernah kita ketahui persis jika sensus tidak pernah dilakukan.
+
+Di sinilah statistik digunakan: kita memakai nilai statistik sampel ($\bar{x} = 20,90$) sebagai alat ukur untuk memperkirakan atau mengestimasi besaran parameter populasi ($\mu$).
+:::
+
+## Estimasi Titik vs. Estimasi Rentang
+
+Karena kita jarang mengetahui nilai parameter dan lebih sering bisa memperoleh statistik, maka nilai parameter kita perkirakan dari nilai statistik. Proses menghasilkan perkiraan ini disebut **estimasi**. Estimasi berarti **memperkirakan nilai parameter** (populasi) berdasarkan **hasil perhitungan statistik** (sampel). Terdapat dua jenis estimasi yang umum digunakan, yaitu **estimasi titik** dan **estimasi rentang** [@tjokropandojo2021pengantar].
+
+### Estimasi Titik
+
+Estimasi titik (*point estimate*) adalah estimasi nilai suatu parameter hanya dengan **satu angka tunggal saja**. Angka ini dihasilkan dari statistik sampel yang kita kumpulkan [@kachigan1986statistical].
+
+Ciri utama estimasi titik adalah ia hanya terdiri dari satu nilai tunggal. Karena hanya memiliki satu nilai saja, kemungkinan kesalahannya sangat besar, karena sangat mungkin nilai tersebut berbeda jauh dari parameter yang sebenarnya.
+
+
+
+::: rmdkasus
+### Studi Kasus: Keterbatasan Estimasi Titik {.unnumbered}
+
+Melanjutkan contoh sebelumnya, estimasi titik dari rata-rata usia mahasiswa ITERA adalah sebesar 20,90 tahun. Angka 20,90 tahun ini kita peroleh dari 428 responden, lalu kita gunakan sebagai penduga untuk parameter rata-rata usia seluruh mahasiswa ITERA ($\mu$).
+
+Namun, kita tidak bisa memastikan apakah benar rata-rata populasi seluruh mahasiswa *tepat sama* dengan 20,90 tahun. Mungkin saja rata-rata populasi sebenarnya (parameter) adalah mendekati 20,50 tahun, 21,40 tahun, atau nilai lainnya. Hal inilah yang digambarkan pada Gambar \@ref(fig:fig-ilustrasi-estimasi-titik-usia) berikut.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-ilustrasi-estimasi-titik-usia-1.png" alt="Ilustrasi Estimasi Titik Usia Mahasiswa"  />
+<p class="caption">(\#fig:fig-ilustrasi-estimasi-titik-usia)Ilustrasi Estimasi Titik Usia Mahasiswa</p>
+</div>
+
+Di sinilah keterbatasan estimasi titik terlihat; ia hanya menyajikan satu angka saja, sehingga sangat rentan meleset dari nilai parameter yang sebenarnya. Oleh karena itu, kita membutuhkan estimasi yang lebih "aman", yakni estimasi berupa rentang nilai yang akan kita pelajari pada bagian selanjutnya.
+:::
+
+### Estimasi Rentang
+
+Berbeda dari estimasi titik, estimasi rentang (*interval estimate*) menetapkan parameter populasi dalam sebuah rentang nilai. Rentang inilah yang disebut interval kepercayaan (*confidence interval*), yang memuat nilai parameter populasi yang sebenarnya. Dengan demikian, kita bisa menebak parameter yang sebenarnya dengan kemungkinan yang lebih besar [@kachigan1986statistical].
+
+Rentang kepercayaan dibentuk dari dua nilai batas, yaitu batas bawah (*lower limit*) dan batas atas (*upper limit*). Batas bawah dan batas atas ini diperoleh dari pengurangan dan penambahan margin kesalahan (*margin of error*) dari estimasi titik yang kita hitung dari sampel.
+
+::: rmdkasus
+### Studi Kasus: Keuntungan Estimasi Rentang {.unnumbered}
+
+Telah disebutkan bahwa rentang kepercayaan diperoleh dari pengurangkan dan penambahan margin kesalahan (*margin of error*) atas estimasi titik yang kita hitung dari sampel.
+
+Melanjutkan contoh usia mahasiswa, alih-alih hanya menyatakan estimasi parameter sebesar 20,90 tahun, misalkan kita memperhitungkan pula *margin of error*-nya sebesar $\pm 0,60$ tahun. Hasil pengurangannya memperoleh batas bawah interval pada 20,30 tahun, dan penambahannya menghasilkan batas atas interval usia pada 21,50 tahun. 
+
+Artinya, kita memperkirakan bahwa nilai parameter rata-rata usia seluruh mahasiswa ITERA berada pada rentang antara 20,30 tahun hingga 21,50 tahun. Karena tebakan parameter sesungguhnya ($\mu = 21,4$) berada di dalam wilayah ini, maka tebakan kita jauh lebih akurat.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-ilustrasi-estimasi-rentang-usia-1.png" alt="Ilustrasi Estimasi Rentang Usia Mahasiswa"  />
+<p class="caption">(\#fig:fig-ilustrasi-estimasi-rentang-usia)Ilustrasi Estimasi Rentang Usia Mahasiswa</p>
+</div>
+
+Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi titik sebesar 20,90 tahun tadi. Memperhitungkan ketidakpastian dalam proses pengambilan sampel dengan batas-batas ini membuat kita menemukan rentang parameter seperti yang diilustrasikan oleh area arsir berwarna biru pada Gambar \@ref(fig:fig-ilustrasi-estimasi-rentang-usia) tersebut.
+:::
+
+
+## Tingkat Kepercayaan (*Confidence Level*)
+
+Untuk dapat menghasilkan estimasi rentang, konsep tingkat kepercayaan menjadi hal yang sangat penting untuk dipahami. Tingkat kepercayaan (*confidence level*, CL) berbeda dengan rentang kepercayaan (*confidence interval*) jika rentang kepercayaan adalah hasil berupa interval nilai yang memperkirakan posisi parameter populasi, maka tingkat kepercayaan adalah ukuran seberapa yakin kita terhadap interval tersebut [@chase2000general].
+
+Tingkat kepercayaan berarti pernyataan keyakinan kita akan dimuatnya nilai parameter dalam interval yang kita hasilkan. Keyakinan ini dinyatakan dalam bentuk probabilitas yang merupakan angka persentase atau proporsi, misalnya 90% (0,90), 95% (0,95), atau 99% (0,99). Angka tersebut bermakna dari 100 sampel yang mungkin diambil, sebanyak CL% (*confidence level*) sampel akan memuat nilai parameter.
+
+Semakin tinggi tingkat kepercayaan, semakin besar keyakinan kita bahwa interval estimasi mencakup parameter populasi.
+
+Dalam statistik tidak pernah ada jaminan keyakinan 100%. Hal ini karena setiap proses estimasi selalu melibatkan sampel, dan pengambilan sampel tentu memiliki peluang kesalahan. Tingkat kepercayaan pasti selalu lebih kecil dari 100% karena sisanya adalah kemungkinan kita melakukan kesalahan, yakni menghasilkan nilai rentang yang tidak mencakup parameter. Nilai ini disebut dengan tingkat kesalahan (*error probability*) yang disimbolkan dengan $\alpha$ (dibaca "alpha"). Istilah lain untuk tingkat kesalahan *error probability* adalah signifikansi (*significance*) [@chase2000general].
+
+Dengan demikian, secara matematis, tingkat kepercayaan dituliskan sebagai $1-\alpha$. Apabila $\alpha = 0,05$, maka tingkat kepercayaan adalah $1-0,05 = 0,95$ atau 95%. Ini artinya, kita dapat mengatakan bahwa 95% dari 100 kali sampel yang diambil akan menghasilkan interval yang mencakup nilai parameter, sedangkan 5% sisanya tidak.
+
+Adapun nilai $\alpha$ yang umum digunakan dalam penelitian adalah 0,10 (10%), 0,05 (5%), dan 0,01 (1%), tergantung seberapa besar tingkat keyakinan yang dikehendaki peneliti.
+
+Perbedaan tingkat kepercayaan memengaruhi lebar interval estimasi. Gambar \@ref(fig:fig-pengaruh-nilai-tingkat-kepercayaan) menunjukkan hasil estimasi parameter tinggi badan mahasiswa yang nilai statistiknya adalah 165 cm, simpangan baku 3 cm, dan ukuran sampel 200 orang.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-pengaruh-nilai-tingkat-kepercayaan-1.png" alt="Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang" width="60%" />
+<p class="caption">(\#fig:fig-pengaruh-nilai-tingkat-kepercayaan)Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang</p>
+</div>
+
+Garis hitam putus-putus pada posisi 165 menggambarkan estimasi titik, yaitu satu nilai hasil dari sampel [@chase2000general]. Bidang biru, hijau, dan ungu menggambarkan interval kepercayaan dengan tingkat kepercayaan yang berbeda. Pada tingkat kepercayaan 90% (biru), intervalnya sempit, yakni 164,65-165,35 cm. Pada tingkat kepercayaan 95% (hijau), intervalnya sedikit lebih lebar, yaitu 164,58-165,42 cm. Sementara pada tingkat kepercayaan 99% (ungu), interval semakin melebar menjadi 164,45-165,55 cm. Dari sini terlihat bahwa semakin tinggi tingkat kepercayaan, semakin lebar rentang yang dihasilkan.
+
+::: rmdnote
+### Catatan: Tingkat Kepercayaan {.unnumbered}
+
+Tingkat kepercayaan jangan dimaknai peluang parameter ada di dalam interval. Jadi, nilai tingkat kepercayaan 90% bukan berarti kita 90% yakin bahwa nilai parameter ada dalam rentang kepercayaan kita. Nilai parameter populasi itu tetap, misalnya rata-rata tinggi badan seluruh mahasiswa memang punya satu angka pasti, hanya saja kita tidak tahu berapa nilainya. Oleh karena itu, kita mengambil sampel yang representatif dan menghitung statistiknya untuk mengestimasi parameter.
+
+Dengan tingkat kepercayaan 90%, artinya kita mengatakan bahwa sampel kita tersebut hanya akan salah sebanyak 10 kali pengambilan saja dari 100 kali pengambilan yang mungkin. Dengan kata lain, 90 sampel tersebut akan benar-benar berisi nilai parameter populasi yang sebenarnya.
+:::
+
+### Konsep Perhitungan Rentang Kepercayaan
+
+Rentang kepercayaan dihitung dari estimasi titik ($\bar{x}$ atau $\hat{p}$) yang kita kurangkan dan tambahkan dengan *margin of error* (MoE) [@healey2021statistics]. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.
+
+$$c.i. = \text{estimasi titik} \pm MoE$$
+
+MoE sendiri sebenarnya adalah perkalian antara nilai kritis dan *standard error*. Dengan demikian, rumus dasar *confidence interval* sebenarnya adalah:
+
+$$MoE = Z_{\alpha/2} \times S.E.$$
+$$c.i. = \text{estimasi titik} \pm (Z_{\alpha/2} \times S.E.)$$
+
+Nilai kritis ($Z_{\alpha/2}$) adalah nilai standar dalam distribusi normal yang menjadi pembatas area di bawah kurva yang besarnya sama dengan tingkat kepercayaan kita dikurangi alpha yang dibagi rata ke dua sisi grafik. Ini seperti kebalikan dari proses pencarian nilai Z berdasarkan area peluang yang dibahas pada studi kasus kejadian probabilistik probabilitas standar.
+
+Dalam bagian ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter rata-rata dan proporsi.
+
+## Perhitungan Rentang Kepercayaan Rata-rata
+
+Kita akan mulai dengan estimasi parameter untuk variabel numerik, yakni rata-rata. Estimasi parameter rata-rata, berarti kita memperkirakan nilai rata-rata populasi berdasarkan nilai rata-rata yang diperoleh dari sampel [@kachigan1986statistical].
+
+Dari sampel ini diperoleh sebuah nilai rata-rata ($\bar{x}$) yang berfungsi sebagai estimasi titik. Estimasi titik ini kita tambah dan kurangkan dengan MoE agar menjadi rentang [@healey2021statistics]. Rumus S.E. untuk rata-rata adalah $\frac{s}{\sqrt{n}}$, maka MoE untuk interval rata-rata adalah:
+
+$$MoE = Z_{\alpha/2} \times \frac{s}{\sqrt{n}}$$
+
+dengan keterangan: $s$ adalah simpangan baku sampel dan $n$ adalah ukuran sampel. Dengan demikian, rumus lengkap untuk perhitungan rentang kepercayaan rata-rata adalah:
+
+$$c.i. = \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}}$$
+
+Sebagai contoh, misalkan seorang peneliti ingin memperkirakan rata-rata tinggi badan mahasiswa di sebuah universitas. Dari sampel 100 mahasiswa diperoleh rata-rata ($\bar{x}$) sebesar 165 cm dengan simpangan baku ($s$) 5 cm. Jika digunakan tingkat kepercayaan 95% ($Z=1,96$), maka estimasi rata-rata tinggi badan mahasiswa dapat dihitung dengan rumus di atas.
+
+$$
+\begin{aligned}
+c.i. &= \bar{x} \pm \left(Z_{\alpha/2} \times \frac{s}{\sqrt{n}}\right) \\
+&= 165 \pm \left(1,96 \times \frac{5}{\sqrt{100}}\right) \\
+&= 165 \pm 0,98
+\end{aligned}
+$$
+
+Dari hasil perhitungan, didapatkan interval kepercayaan kita sebesar 164,02 cm hingga 165,98 cm. Ini berarti dengan tingkat kepercayaan 95%, parameter rata-rata tinggi badan seluruh mahasiswa di universitas tersebut diperkirakan berada dalam rentang tersebut.
+
+## Perhitungan Rentang Kepercayaan Proporsi
+
+Perhitungan rentang kepercayaan proporsi hanya berbeda pada rumus *standard error*-nya [@kachigan1986statistical]. *Standard error* untuk distribusi statistik sampel proporsi dihitung dengan rumus berikut.
+
+$$S.E. = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+
+dengan keterangan: $\hat{p}$ adalah proporsi sampel dan $n$ ukuran sampel [@healey2021statistics]. Maka, rumus rentang kepercayaan untuk statistik proporsi adalah:
+
+$$c.i. = \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+
+Misalnya, dari survei terhadap 100 mahasiswa diketahui bahwa 60 mahasiswa (proporsi 0,6) menggunakan sepeda motor untuk pergi ke kampus. Jika digunakan tingkat kepercayaan 95% ($Z=1,96$), maka estimasi proporsi mahasiswa yang menggunakan sepeda motor dapat dihitung dengan rumus di atas.
+
+$$
+\begin{aligned}
+c.i. &= \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
+&= 0,6 \pm 1,96 \sqrt{\frac{0,6(1-0,6)}{100}} \\
+&= 0,6 \pm 1,96 \sqrt{\frac{0,24}{100}} \\
+&= 0,6 \pm 1,96 \times 0,049 \\
+&= 0,6 \pm 0,096
+\end{aligned}
+$$
+
+Artinya, parameter berupa proporsi seluruh mahasiswa pengguna sepeda motor berada pada rentang 0,504 hingga 0,696, atau bila dinyatakan dalam persentase, yaitu 50,4% hingga 69,6% pada tingkat kepercayaan 95%.
+
+## Interpretasi Estimasi Parameter
+
+Interpretasi estimasi parameter berfokus pada pemahaman hasil berupa rentang kepercayaan atau *confidence interval* [@healey2021statistics]. Rentang ini menunjukkan nilai-nilai yang mungkin menjadi parameter populasi, berdasarkan data sampel yang diperoleh. Rentang kepercayaan tidak memberikan jawaban pasti mengenai nilai parameter, melainkan memberikan batas bawah dan batas atas yang menjadi perkiraan dengan tingkat keyakinan tertentu.
+
+Lebar rentang estimasi dapat menjadi indikator kualitas estimasi. Rentang yang sempit menandakan estimasi yang lebih presisi, yang biasanya terjadi karena ukuran sampel cukup besar atau error yang relatif kecil. Sebaliknya, rentang yang lebar menunjukkan tingkat ketidakpastian yang lebih besar, sering kali disebabkan oleh ukuran sampel yang terlalu kecil atau variasi data yang tinggi. Sehingga, pemilihan jumlah sampel dan pengendalian error sangat memengaruhi kualitas estimasi.
+
+Konsep tingkat kepercayaan membantu menjelaskan ketidakpastian dalam estimasi. Misalnya, pada tingkat kepercayaan 95% berarti ada kemungkinan 95 dari 100 sampel yang diambil akan menghasilkan interval yang mencakup parameter populasi sebenarnya. Sebaliknya, 5 dari 100 sampel (atau 5%) akan menghasilkan interval yang tidak mencakup parameter tersebut. Jika hasil sampel berbeda dari dugaan populasi, maka perbedaan itu dapat dijelaskan sebagai bagian dari kemungkinan error yang sudah diperhitungkan dalam tingkat kepercayaan.
+
+Pada akhirnya, hasil estimasi parameter bukanlah angka yang mutlak, melainkan perkiraan yang disertai dengan tingkat kepastian tertentu. Interval kepercayaan memberikan ruang toleransi bagi ketidakpastian yang muncul dari proses pengambilan sampel, sekaligus menjadi alat bantu dalam pengambilan keputusan berbasis data.
+
+::: rmdkasus
+### Studi Kasus: Pola Hunian Mahasiswa ITERA {.unnumbered}
+
+Fenomena alih fungsi lahan menjadi kos atau rumah sewa di sekitar ITERA yang semakin marak dan menimbulkan perhatian serius dalam perencanaan wilayah dan kota. Jika tidak terkendali, alih fungsi ini dapat mengurangi lahan pertanian, menekan ruang terbuka hijau, serta menimbulkan masalah tata ruang seperti kepadatan permukiman, keterbatasan infrastruktur dasar, dan bencana banjir di kawasan sekitar kampus.
+
+Dalam sebuah survei terhadap 428 mahasiswa ITERA, dikumpulkan data yang berkaitan dengan kasus di atas, mengenai dua variabel utama yaitu jenis tempat tinggal dan jarak tempat tinggal ke kampus. Dataset tersebut dapat Anda simak di sini.
+
+Variabel pertama, jenis tempat tinggal, yang dianalisis menggunakan estimasi parameter proporsi untuk mengetahui seberapa besar kecenderungan mahasiswa tinggal di masing-masing jenis hunian.
+
+Sementara itu, variabel kedua, jarak tempat tinggal ke kampus, diukur dalam satuan kilometer dan dianalisis menggunakan estimasi parameter rata-rata untuk memperkirakan jarak rata-rata mahasiswa dari tempat tinggal menuju kampus.
+
+Setelahnya kedua hasil estimasi ini diharapkan dapat memberikan gambaran yang lebih komprehensif mengenai pola hunian mahasiswa ITERA, baik dari sisi pilihan jenis tempat tinggal maupun kedekatannya dengan kampus, yang selanjutnya dapat menjadi dasar dalam perencanaan perumahan sewa atau kos bagi mahasiswa ITERA kedepannya.
+
+#### Estimasi Parameter Proporsi
+
+Dikumpulkan data mengenai jenis tempat tinggal mereka, termasuk kos sendiri, rumah mengontrak bersama-sama, kos bersama-sama, rumah keluarga, asrama, maupun rumah bersama saudara. Dari data tersebut, perlu dilakukan perhitungan untuk mengetahui estimasi proporsi mahasiswa yang tinggal di hunian sewa atau kos. Estimasi proporsi ini dihitung dengan tingkat kepercayaan 95%.
+
+##### Menentukan Proporsi Sampel
+
+Langkah awal dalam estimasi parameter proporsi adalah menghitung proporsi sampel berdasarkan data hasil survei. Proporsi sampel ($\hat{p}$) dihitung dengan:
+
+$$\hat{p} = \frac{x}{n}$$
+
+dengan:
+- $x$ = jumlah responden yang memiliki karakteristik tertentu,
+- $n$ = jumlah seluruh responden.
+
+Pada kasus ini, karakteristik yang dimaksud adalah mahasiswa yang tinggal di hunian sewa atau kos. Kategori ini mencakup kos sendiri, rumah mengontrak bersama-sama, dan kos bersama-sama. Dari hasil survei terhadap 428 mahasiswa, diperoleh mahasiswa yang tinggal di kos sendiri, rumah mengontrak bersama-sama, kos bersama-sama, dan rumah mengontrak pribadi dengan totalnya adalah 333 mahasiswa (batang merah pada Gambar \@ref(fig:fig-sebaran-jenis-tempat-tinggal)).
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-sebaran-jenis-tempat-tinggal-1.png" alt="Grafik Statistik Sebaran Jenis Tempat Tinggal Mahasiswa" width="60%" />
+<p class="caption">(\#fig:fig-sebaran-jenis-tempat-tinggal)Grafik Statistik Sebaran Jenis Tempat Tinggal Mahasiswa</p>
+</div>
+
+Proporsi sampel dapat dihitung sebagai berikut:
+
+$$\hat{p} = \frac{333}{428} = 0,778$$
+
+Proporsi sampel mahasiswa yang tinggal di hunian sewa atau kos adalah 0,778 atau 77,8%. Nilai inilah yang kemudian digunakan sebagai dasar dalam perhitungan estimasi parameter proporsi pada tahap selanjutnya.
+
+##### Menentukan Nilai Kritis Z
+
+Setelah proporsi sampel ditentukan, langkah berikutnya adalah menentukan nilai kritis Z sesuai dengan tingkat kepercayaan yang digunakan. Nilai kritis $Z_{\alpha/2}$ diperoleh dari distribusi normal baku.
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-6-membagi-2-alpha.png" alt="Membagi Dua Nilai Alpha" width="60%" />
+<p class="caption">(\#fig:fig-membagi-dua-nilai-alpha)Membagi Dua Nilai Alpha</p>
+</div>
+
+Nilai tingkat kepercayaan yang kita gunakan adalah luas area di bawah kurva yang berwarna biru terang, yaitu 0,950. Artinya, kita menggunakan nilai $\alpha$ sebesar 0,05 atau 5%. Nilai $\alpha$ ini dibagi 2 ($\alpha/2$) dan ditempatkan di kiri dan kanan kurva normal. Dengan demikian, luas area biru terang menjadi bernilai $0,95 / 2 = 0,475$ dari titik 0 di tengah.
+
+Nilai Z diperoleh dari area seluas 0,475 di bawah kurva normal mulai dari titik tengah (0). Dengan mencocokkan pada tabel distribusi normal, didapatkan nilai $Z=1,96$, yang berasal dari kombinasi angka 1,9 pada sisi vertikal dan 0,06 pada sisi horizontal tabel.
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-6-mencari-z.PNG" alt="Mencari Nilai Z" width="60%" />
+<p class="caption">(\#fig:fig-mencari-nilai-z)Mencari Nilai Z</p>
+</div>
+
+##### Menghitung Rentang Kepercayaan dan Menarik Kesimpulan
+
+Setelah seluruh komponen perhitungan ditentukan, langkah terakhir adalah menghitung rentang kepercayaan proporsi. Dari data yang ada diperoleh proporsi sampel sebesar 0,778 dan nilai kritis $Z=1,96$ pada tingkat kepercayaan 95%. Hasil tersebut kemudian disubstitusikan ke dalam rumus rentang kepercayaan proporsi sebagai berikut.
+
+$$
+\begin{aligned}
+c.i. &= \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
+&= 0,778 \pm 1,96 \times \sqrt{\frac{0,778(1 - 0,778)}{428}} \\
+&= 0,778 \pm 0,0394
+\end{aligned}
+$$
+
+Diperoleh rentang kepercayaan proporsi antara 73,86% hingga 81,74%. Artinya, dapat diperkirakan bahwa proporsi sebenarnya mahasiswa yang tinggal di hunian sewa atau kos di sekitar ITERA berada pada rentang tersebut.
+
+Hasil ini menunjukkan bahwa mayoritas mahasiswa lebih memilih hunian sewa dibandingkan tinggal di rumah keluarga atau asrama, sehingga fenomena maraknya alih fungsi lahan menjadi kos atau rumah kontrakan di kawasan sekitar kampus memiliki dasar empiris yang kuat.
+
+#### Estimasi Parameter Interval Rata-Rata
+
+Dikumpulkan data mengenai jarak tempat tinggal mahasiswa menuju kampus, untuk 333 responden yang berjenis tempat tinggal kos atau rumah sewa, yang menunjukkan variasi jarak hunian. Dari data tersebut, perlu dilakukan perhitungan untuk mengetahui estimasi rata-rata jarak tempuh mahasiswa ke kampus. Estimasi rata-rata ini dihitung dengan tingkat kepercayaan 95%.
+
+##### Menentukan Nilai Kritis Z
+
+Dalam perhitungan estimasi parameter rata-rata, penentuan nilai kritis Z juga diperlukan sebagai batas pengali dari *standar error*. Prosedur penentuannya sama seperti yang telah dijelaskan pada subbab estimasi proporsi.
+
+Menentukan nilai kritis Z, yaitu mengacu pada distribusi normal baku. Dengan tingkat kepercayaan sebesar 95%, maka tingkat kesalahan ($\alpha$) adalah 0,05 yang dibagi dua untuk pendekatan dua sisi, sehingga masing-masing sisi memiliki probabilitas 0,025. Berdasarkan tabel distribusi normal, probabilitas tersebut sesuai dengan nilai kritis $Z=1,96$.
+
+##### Menghitung Rentang Kepercayaan dan Menarik Kesimpulan
+
+Setelah seluruh komponen perhitungan ditentukan, langkah terakhir adalah menghitung rentang kepercayaan rata-rata. Dari data 333 responden, diperoleh rata-rata sampel sebesar 4,59 km dengan simpangan baku yaitu 2,23 km dan nilai kritis $Z = 1,96$ pada tingkat kepercayaan 95%. Hasil tersebut kemudian disubstitusikan ke dalam rumus rentang kepercayaan rata-rata sebagai berikut.
+
+$$
+\begin{aligned}
+c.i. &= \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}} \\
+&= 4,59 \pm 1,96 \times \frac{2,23}{\sqrt{333}} \\
+&= 4,59 \pm 0,2395
+\end{aligned}
+$$
+
+Diperoleh rentang kepercayaan rata-rata antara 4,35 km hingga 4,82 km. Artinya, dapat diperkirakan bahwa rata-rata sebenarnya jarak tempat tinggal mahasiswa ke kampus dengan jenis hunian sewa atau kos di sekitar ITERA berada pada rentang tersebut.
+
+Hasil ini menunjukkan bahwa kawasan dalam *buffer* sejauh rentang perkiraan tersebut dari kampus ITERA merupakan lokasi utama yang dipilih mahasiswa untuk hunian sewa atau kos. Kondisi ini sejalan dengan fenomena maraknya alih fungsi lahan di sekitar kampus menjadi kos atau rumah kontrakan, karena kebutuhan hunian mahasiswa terkonsentrasi di radius tersebut.
+
+#### Interpretasi Hasil Interval Estimasi Parameter
+
+Hasil estimasi parameter tidak hanya memberikan informasi mengenai nilai proporsi atau rata-rata dari sampel, tetapi juga menyajikan gambaran interval estimasi yang dapat digunakan untuk memahami fenomena yang lebih luas.
+
+Hasil estimasi parameter memberikan dua informasi penting, yaitu mengenai proporsi mahasiswa berdasarkan jenis tempat tinggal dan rata-rata jarak tempat tinggal mereka dari kampus. Kedua hasil ini saling melengkapi dalam memahami pola hunian mahasiswa ITERA.
+
+Pertama, hasil estimasi proporsi menunjukkan bahwa mayoritas mahasiswa lebih memilih tinggal di hunian sewa, baik berupa kos maupun rumah kontrakan, dibandingkan dengan tinggal di rumah keluarga atau asrama. Temuan ini memberikan dasar empiris yang kuat atas fenomena maraknya alih fungsi lahan di sekitar kampus menjadi kos atau rumah kontrakan. Tingginya preferensi mahasiswa terhadap hunian sewa mendorong peningkatan permintaan, yang kemudian direspons oleh masyarakat sekitar melalui konversi lahan menjadi bentuk hunian yang sesuai kebutuhan mahasiswa.
+
+Kedua, hasil estimasi rata-rata jarak tempat tinggal mahasiswa ke kampus berada dalam rentang 4,35 km hingga 4,82 km (Gambar \@ref(fig:fig-rentang-kepercayaan-rata-rata)). Konsentrasi hunian mahasiswa pada radius tersebut menunjukkan pola spasial yang erat kaitannya dengan ketersediaan fasilitas transportasi, aksesibilitas, serta keterjangkauan harga sewa. Fenomena alih fungsi lahan menjadi kos atau rumah kontrakan juga banyak ditemukan pada radius tersebut, karena dianggap paling strategis oleh mahasiswa.
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-6-interpretasi.png" alt="Hasil Olahan Rentang Kepercayaan Rata-rata Jarak Tempat Tinggal Mahasiswa" width="60%" />
+<p class="caption">(\#fig:fig-rentang-kepercayaan-rata-rata)Hasil Olahan Rentang Kepercayaan Rata-rata Jarak Tempat Tinggal Mahasiswa</p>
+</div>
+
+Interpretasi dari kedua hasil ini penting karena memberikan gambaran menyeluruh mengenai pola hunian mahasiswa ITERA, baik dari sisi pilihan jenis tempat tinggal maupun kedekatannya dengan kampus. Interval estimasi parameter yang dihasilkan tidak hanya bermanfaat untuk analisis statistik, tetapi juga dapat menjadi dasar dalam perencanaan kawasan perumahan sewa mahasiswa yang lebih terarah.
+
+Seperti disebutkan di awal fenomena maraknya alih fungsi lahan di sekitar kampus juga menimbulkan berbagai dampak serius, seperti berkurangnya lahan pertanian produktif, menurunnya kualitas lingkungan, serta potensi konflik pemanfaatan ruang. Diperlukan solusi yang lebih berkelanjutan. Beberapa alternatif yang dapat dipertimbangkan antara lain:
+
+- Perencanaan kawasan hunian mahasiswa terintegrasi, misalnya melalui penyediaan rumah susun sewa (rusunawa) yang dikelola kampus atau pemerintah daerah yang lebih banyak lagi.
+- Pengaturan zonasi lahan di sekitar kampus, agar alih fungsi lahan tidak merusak tata ruang dan tetap mempertahankan fungsi ekologis wilayah salah satunya ruang terbuka hijau yang juga sebagai kawasan resapan air dalam mencegah terjadinya bencana banjir.
+- Kemitraan dengan masyarakat lokal, sehingga kebutuhan hunian mahasiswa dapat terpenuhi tanpa harus mengorbankan seluruh lahan produktif, misalnya melalui model sewa jangka panjang atau pembangunan kos ramah lingkungan berupa pembangunan hunian vertikal.
+- Pengembangan transportasi aksesibel, yang memungkinkan mahasiswa tinggal lebih jauh dari kampus namun tetap memiliki mobilitas tinggi, sehingga tekanan alih fungsi lahan di sekitar kampus dapat dikurangi.
+
+Secara keseluruhan, pemahaman terhadap hasil estimasi ini diharapkan mampu memberikan gambaran yang lebih komprehensif mengenai kebutuhan hunian mahasiswa ITERA. Informasi ini dapat menjadi landasan dalam penyusunan strategi penyediaan perumahan sewa atau kos yang sesuai, sekaligus mengarahkan pengelolaan ruang di sekitar kampus agar lebih terkendali, adaptif, dan berkelanjutan.
+:::
+
+## Soal Latihan
 
 ::: rmdexercise
-## Soal Evaluasi 7 {.unnumbered}
-
-1.  Apa yang dimaksud dengan tingkat kepercayaan (confidence level)? [STP-5.1]{.capaian}
-2.  Hitunglah Confidence Interval 95% untuk rata-rata jika $\bar{x}=100$, $s=15$, dan $n=36$. [STP-5.2]{.capaian}
-
+1. Dari suatu sampel dosen ITERA berjumlah 73 orang diperoleh rata-rata usianya adalah 30 tahun dan simpangan bakunya 2,9 tahun. Anda diminta menggunakan probabilitas galat, $\alpha = 5\%$ `[STP-5.1]`
+   a. Berapakah tingkat kepercayaan (*confidence level*) yang digunakan?
+   b. Berapakah nilai standar (Z *score*) yang kita pakai?
+   c. Hitunglah rentang kepercayaan (*confidence interval*) rata-rata usia seluruh dosen ITERA menggunakan data sampel kita tadi.
+2. Diketahui bahwa proporsi pengguna mobil pribadi dari suatu sampel mahasiswa berjumlah 429 orang adalah 0,04. `[STP-5.1]`
+   a. Apabila kita menggunakan *confidence level* 93%, berapakah tingkat signifikansi kita?
+   b. Berapakah Z *score* yang kita pakai?
+   c. Hitunglah *confidence interval* proporsi pengguna mobil pribadi pada populasi mahasiswa tersebut.
 :::
 
 <!--chapter:end:06-estimasi-parameter.Rmd-->
 
-# Uji Hipotesis Satu Populasi
+# Uji Hipotesis Satu Populasi {#bab-7-uji-hipotesis-satu-populasi}
+
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
+
+Setelah mempelajari bab ini, Anda diharapkan:
+
+1. Mampu memaknai hasil dari pengujian hipotesis satu populasi pada suatu kasus [STP-6.1]{.capaian}
+
+Agar lebih mudah memahami konsep dasar, Anda dapat mempelajari studi kasus terlebih dahulu dan menyimak pembahasan sesuai dengan konsep dasarnya.
+:::
 
 ## Konsep Dasar
 
-Uji hipotesis adalah prosedur statistik yang menggunakan data sampel untuk mengevaluasi suatu dugaan (hipotesis) mengenai populasi.
+Analisis statistik dengan uji hipotesis digunakan untuk memperkirakan nilai dari parameter populasi melalui pengujian hipotesis dengan menggunakan informasi yang diperoleh dari sampel [@healey2021statistics]. Hipotesis sendiri dapat dipahami sebagai dugaan awal mengenai suatu kondisi, nilai, atau keadaan parameter. Dugaan ini dapat berasal dari teori, penelitian sebelumnya, atau klaim tertentu yang ingin diuji. Dalam hal ini, nilai sampel (statistik) berperan sebagai bukti (*evidence*) untuk menguji hipotesis terhadap parameter yang telah dirumuskan [@kachigan1986statistical; @healey2021statistics].
 
-### Hipotesis Nol dan Alternatif
+Melalui pengujian hipotesis, kita sebagai peneliti akan dapat menarik kesimpulan (inferensi) mengenai kondisi sebenarnya pada populasi. Secara sederhana, konsep dasar analisis ini dapat dianalogikan dengan pertanyaan: "jika rata-rata nilai sampel adalah X, apakah nilai rata-rata populasinya juga X?" (Gambar \@ref(fig:fig-ilustrasi-hipotesis)). Kita tidak tahu nilai populasi sebenarnya dan hanya mengandalkan nilai sampel untuk menguji hipotesis.
 
-*   **Hipotesis Nol ($H_0$)**: Pernyataan tentang status quo, tidak ada perbedaan, atau tidak ada efek. Biasanya mengandung tanda sama dengan ($=, \le, \ge$).
-*   **Hipotesis Alternatif ($H_1$)**: Pernyataan yang bertentangan dengan $H_0$, biasanya merupakan dugaan yang ingin dibuktikan oleh peneliti. Mengandung tanda ketidaksamaan ($\ne, <, >$).
+<div class="figure" style="text-align: center">
+<img src="figures/FIXME.png" alt="Ilustrasi Alur Hubungan Karakteristik Populasi, Statistik Sampel, dan Inferensi" width="60%" />
+<p class="caption">(\#fig:fig-ilustrasi-hipotesis)Ilustrasi Alur Hubungan Karakteristik Populasi, Statistik Sampel, dan Inferensi</p>
+</div>
+
+Sebagai contoh yang lebih nyata, khususnya dalam konteks perencanaan, sering muncul pertanyaan: "Apakah benar bahwa rata-rata penghasilan penduduk Kota Z berada di atas UMR?". Pertanyaan ini sebetulnya bukan pertanyaan yang sulit. Untuk menjawabnya, kita hanya perlu mengumpulkan data penghasilan seluruh penduduk lalu kemudian menghitung rata-ratanya. Hanya saja, persoalannya menjadi rumit saat jumlah populasi penduduk perkotaan yang datanya akan kita kumpulkan sangat besar (tahukah kamu, jumlah penduduk untuk kota kecil saja mencapai 10.000 jiwa), sehingga untuk menjawab pertanyaan tersebut, dilakukan pengambilan sampel dan prosedur dari analisis inferensial ini.
+
+Selanjutnya, dari sampel sebanyak 350 orang, diketahui bahwa rata-rata penghasilan mereka berada di atas UMR. Namun, hal ini belum dapat langsung digunakan untuk menjawab pertanyaan karena data yang kita peroleh hanya dari 350 orang saja. Hal ini kemudian menimbulkan pertanyaan baru: "Apakah kondisi yang sama (rata-rata di atas UMR) juga berlaku pada populasi penduduk secara keseluruhan?" atau "Apakah bukti dari data sampel ini cukup kuat untuk menolak 'dugaan' kita bahwa rata-rata penghasilan penduduk berada di atas UMR?"
+
+Dalam pengujian hipotesis, kita tidak akan menghitung berapa nilai rata-rata penghasilan seluruh penduduk (parameternya), melainkan hanya mengetahui apakah dugaan yang kita miliki salah (ditolak) atau benar (gagal ditolak).
+
+Lalu bagaimana cara kerja analisis ini, mengapa kita bisa menggunakan statistik sampel untuk menyimpulkan karakteristik populasi? Pada dasarnya, proses yang dilakukan adalah menguji apakah perbedaan atau hubungan yang diamati dalam sampel cukup kuat untuk disimpulkan berlaku juga pada populasi.
+
+Maksudnya, sampel hanyalah sebagian kecil dari populasi. Apa yang kita temukan pada sampel (misalnya rata-rata, perbedaan, atau hubungan antar-variabel) belum tentu berlaku juga di populasi. Melalui uji hipotesis, kita memeriksa apakah temuan dari sampel hanya terjadi karena kebetulan dalam pengambilan sampel (kesalahan sampling), atau benar-benar mencerminkan kondisi populasi [@kachigan1986statistical; @healey2021statistics]. Jika hasil dari sampel terbukti cukup kuat secara statistik, maka kita dapat menggeneralisasikan kesimpulan tersebut ke populasi.
+
+Adapun kondisi kebetulan ini dapat dijelaskan melalui pertanyaan berikut: "Apabila pengambilan sampel diulang terhadap 350 orang yang berbeda, apakah rata-rata sampelnya akan tetap berada di atas UMR?" Jika hasilnya konsisten, berarti temuan tersebut tidak terjadi karena kebetulan. Hal ini menjadi indikasi bahwa data sampel cukup kuat untuk mencerminkan populasi. Namun, jika hasilnya berbeda, maka ada kemungkinan bahwa perbedaan tersebut muncul akibat kebetulan atau faktor kesalahan dalam pengambilan sampel.
+
+Coba perhatikan Gambar \@ref(fig:fig-hubungan-statistik-parameter). Pada dasarnya nilai populasi sangat beragam, dan rata-rata populasi hanya menunjukkan kecenderungan umum dari nilai-nilai tersebut. Namun, dalam praktiknya kita mungkin menemukan data responden yang nilainya sangat jauh berbeda dari rata-rata (pencilan/*outlier*). Nilai pencilan ini dapat mengganggu representasi data dan membuat sampel terlihat tidak mewakili kondisi populasi secara keseluruhan.
+
+<div class="figure" style="text-align: center">
+<img src="figures/FIXME.png" alt="Hubungan Statistik Sampel dan Parameter Populasi" width="60%" />
+<p class="caption">(\#fig:fig-hubungan-statistik-parameter)Hubungan Statistik Sampel dan Parameter Populasi</p>
+</div>
+
+Selanjutnya, mari kita lihat contoh kasus yang lain. Sebagai bentuk evaluasi terhadap implementasi perencanaan dan pembangunan kota, diperlukan evaluasi program berdasarkan sudut pandang masyarakat sebagai penerima layanan.
+
+Misalnya, pemerintah ingin mengevaluasi keberhasilan program Makan Bergizi Gratis (MBG) di Kota Bandar Lampung. Untuk itu, pemerintah melakukan survei untuk menjaring skor kepuasan masyarakat penerima manfaat program dengan angka 0--100. Dalam hal ini, dapat ditetapkan sebuah indikator bahwa program dianggap berhasil apabila skor kepuasan masyarakat penerima layanan mencapai angka 80 atau lebih.
+
+Dengan demikian, apabila hasil survei menunjukkan skor kepuasan masyarakat berada di atas angka tersebut, maka program dapat dinilai berhasil sesuai indikator yang telah ditetapkan. Dalam contoh ini, skor kepuasan masyarakat sebesar 80 atau lebih adalah dugaan yang ingin kita telusuri sebagai bentuk hipotesis yang akan diuji.
+
+Selanjutnya, dilakukan survei kepada 200 orang responden secara acak. Dari responden ini, diketahui bahwa skor kepuasan responden berada di angka 85. Lalu, pertanyaannya: "apakah secara keseluruhan, yaitu pada seluruh anggota populasi di Kota Bandar Lampung, skor kepuasan terhadap program MBG benar-benar mencapai lebih dari 80 sehingga program MBG dapat dikatakan berhasil?".
+
+Selanjutnya, analisis dilakukan untuk membuktikan apakah nilai statistik, yaitu skor kepuasan sebesar 85 dari 200 responden, benar-benar dapat mencerminkan kondisi populasi atau hanya muncul karena kebetulan dalam proses pengambilan sampel. Dengan kata lain, data sampel yang menunjukkan skor kepuasan 85 dijadikan dasar untuk menguji apakah hipotesis dapat ditolak atau tidak.
+
+::: rmdnote
+### Catatan: Kemungkinan Hasil Pengujian Hipotesis {.unnumbered}
+
+Hasil dari pengujian hipotesis hanya memiliki dua kemungkinan, yaitu menolak atau gagal menolak hipotesis (hipotesis kosong, $H_0$). Menolak hipotesis berarti menyetujui bahwa kondisi yang terjadi justru merupakan 'kebalikan' atau 'antitesis' dari dugaan awal. Sebaliknya, gagal menolak hipotesis berarti kita tidak menemukan cukup bukti untuk menolak hipotesis, sehingga secara tidak langsung kita "menerima" bahwa hipotesis tersebut masih mungkin benar.
+
+Istilah yang digunakan adalah gagal menolak, bukan menerima, karena dalam pendekatan statistik kita tidak pernah membuktikan bahwa hipotesis ($H_0$) benar. Fokus pengujian statistik adalah mencari kemungkinan untuk menolak hipotesis, bukan membuktikan kebenarannya. Dengan cara pandang ini, proses pengolahan data menjadi lebih mudah dipahami: kita mencari bukti untuk menolak dugaan awal, bukan membuktikan bahwa dugaan itu pasti benar.
+:::
+
+### Perbedaan Estimasi Parameter dengan Uji Hipotesis
+
+Estimasi parameter dan uji hipotesis memiliki tujuan yang berbeda. Estimasi parameter menghasilkan suatu rentang nilai yang mungkin bagi parameter populasi. Pertanyaan yang dijawab biasanya berbentuk: "Berapa kira-kira nilai rata-rata populasi X?"
+
+Sementara itu, uji hipotesis berfokus pada penerimaan atau penolakan dugaan kita tentang parameter populasi. Pertanyaan yang diajukan lebih ke arah: "Jika saya menduga bahwa rata-rata populasi X adalah Y, apakah dugaan tersebut dapat diterima?"
+
+Jadi, melalui pengujian hipotesis kita tidak akan bicara 'berapa nilainya...?' tetapi untuk membuktikan dugaan dalam bentuk hipotesis 'apakah benar jika?...'
+
+### Hipotesis Kosong dan Hipotesis Alternatif
+
+Dalam pengujian hipotesis, terdapat dua jenis hipotesis, yaitu hipotesis kosong ($H_0$) dan hipotesis alternatif ($H_1$ atau $H_a$) yang masing-masing akan dijelaskan dengan rinci sebagai berikut.
+
+#### Hipotesis Kosong
+
+Hipotesis kosong muncul dari prinsip ilmiah bahwa "pengetahuan harus dapat dibuktikan oleh data". Artinya, peneliti tidak dapat langsung menyatakan adanya perbedaan atau hubungan tanpa adanya bukti yang kuat. Oleh karena itu, hipotesis kosong digunakan sebagai titik awal yang logis dengan menganggap bahwa **tidak ada perbedaan** atau **tidak ada hubungan** antara kondisi yang diamati dan dugaan yang dimiliki [@healey2021statistics].
+
+Dengan kata lain, hipotesis kosong menggambarkan kondisi netral atau standar yang dapat dijadikan dasar pembuktian. Dari sinilah kemudian pengujian dilakukan untuk melihat apakah ada cukup bukti untuk menolak $H_0$ dan 'menerima hipotesis alternatif' ataupun tidak.
+
+Melanjutkan contoh MBG, misalkan kita memiliki dugaan: "apakah benar bahwa program MBG berhasil dengan memberikan kepuasan kepada masyarakat?". Dalam hal ini, ada dua kemungkinan kondisi yang terjadi: 1) program tidak memberikan dampak apa-apa sehingga masyarakat tidak memberikan rata-rata nilai kepuasan di atas 80; atau 2) program berhasil sehingga masyarakat puas dan memberikan rata-rata skor kepuasan di atas 80.
+
+Kemungkinan pertama, yaitu "program tidak memberikan dampak apa-apa sehingga masyarakat tidak memberikan rata-rata nilai kepuasan di atas 80", menggambarkan kondisi netral atau tidak ada perbedaan. Oleh karena itu, pernyataan ini dijadikan sebagai hipotesis kosong ($H_0$) dan dituliskan dengan simbol persamaan ($=$). Secara matematis, hipotesis kosong untuk rata-rata skor kepuasan ini dapat dinyatakan sebagai berikut:
+
+$$H_0: \mu = \mu_0$$
+
+Notasi $\mu_0$ menunjukkan nilai dugaan (hipotesis) yang kita miliki. Dalam kasus ini, karena kita menetapkan nilai minimal masyarakat "puas" adalah pada rata-rata skor = 80, dugaan terhadap rata-rata skor kepuasan populasi adalah 80, sehingga $\mu_0 = 80$. Berdasarkan kondisi tersebut, penulisan hipotesis dapat dirumuskan kembali sebagai berikut:
+
+$$H_0 : \mu = 80$$
+
+Hipotesis nol menyatakan bahwa nilai parameter populasi tidak berbeda (sama) dengan nilai yang diduga. Secara sederhana, hal ini dapat dimaknai sebagai: "nilai rata-rata sampel $\bar{x}$ yang dijadikan bukti tidak cukup kuat untuk menolak $H_0$". Dengan demikian, kondisi yang diasumsikan dalam hipotesis nol dianggap masih berlaku, atau dengan kata lain, hipotesis nol gagal ditolak.
+
+#### Hipotesis Alternatif
+
+Sementara itu, hipotesis alternatif ($H_1$) adalah dugaan awal mengenai kondisi yang berbeda (antitesis) dari keadaan netral atau standar yang diasumsikan dalam hipotesis kosong [@healey2021statistics]. Dengan kata lain, hipotesis alternatif menyatakan adanya perbedaan atau hubungan yang ingin dibuktikan peneliti.
+
+Hipotesis alternatif ini dapat berbentuk tidak berarah, misalnya hanya menyatakan "ada perbedaan" tanpa menyebutkan ke arah mana perbedaannya, atau berarah, yaitu menyatakan secara spesifik bahwa suatu kondisi "lebih besar", "lebih kecil", atau "lebih tinggi" dibandingkan standar yang ada.
+
+Secara rinci ragam bentuk hipotesis alternatif ini adalah sebagai berikut [@tjokropandojo2021pengantar]:
+
+1. Kasus **"tidak sama dengan" ($\neq$)** digunakan ketika dugaan hanya menyatakan "ada perbedaan", tanpa menyebutkan lebih besar atau lebih kecil.
+2. Kasus **"lebih dari" ($>$)** digunakan ketika dugaan menyatakan bahwa parameter populasi lebih besar daripada nilai dugaan.
+3. Kasus **"kurang dari" ($<$)** digunakan ketika dugaan menyatakan bahwa parameter populasi lebih kecil daripada nilai dugaan.
+
+Adapun bentuk matematis dari hipotesis alternatif yang mungkin dipilih ditampilkan pada Tabel \@ref(tab:tab-bentuk-hipotesis-alternatif) berikut.
+
+<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tab-bentuk-hipotesis-alternatif)Alternatif Bentuk Hipotesis Alternatif</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> No </th>
+   <th style="text-align:left;"> Bentuk Kasus </th>
+   <th style="text-align:center;"> Persamaan Matematis </th>
+   <th style="text-align:left;"> Interpretasi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> I </td>
+   <td style="text-align:left;"> Tidak sama dengan </td>
+   <td style="text-align:center;"> $H_1: \mu \neq \mu_0$ </td>
+   <td style="text-align:left;"> Rata-rata parameter tidak sama dengan nilai dugaan </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> II </td>
+   <td style="text-align:left;"> Lebih dari </td>
+   <td style="text-align:center;"> $H_1: \mu > \mu_0$ </td>
+   <td style="text-align:left;"> Rata-rata parameter lebih besar nilai dugaan </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> III </td>
+   <td style="text-align:left;"> Kurang dari </td>
+   <td style="text-align:center;"> $H_1: \mu < \mu_0$ </td>
+   <td style="text-align:left;"> Rata-rata parameter lebih kecil (tidak sama) dengan nilai dugaan </td>
+  </tr>
+</tbody>
+</table>
+
+Melanjutkan contoh pada bagian sebelumnya, hipotesis alternatif akan mencerminkan kemungkinan kondisi ke-2, yaitu "program memberikan dampak sehingga nilainya bukan 80 atau berbeda dari 80". Ini adalah contoh kasus untuk bentuk tidak berarah karena menggunakan pertidaksamaan ($\neq$, ada kata "berbeda").
+
+Walaupun bentuk ini bisa digunakan, hasilnya tidak lebih informatif dibandingkan kita menentukan arahnya (lebih besar/lebih kecil). Jika kita menggunakan kata lebih dari atau kurang dari dalam perumusan hipotesis alternatif kita, maka hipotesis alternatif kita memiliki arah, dan kita akan menggunakan $<$ atau $>$ dalam bentuk persamaan matematisnya.
+
+Memilih tanda atau arah pertidaksamaan dalam perumusan hipotesis alternatif berarah sangat penting karena ini menentukan posisi wilayah kritis pada kurva distribusi statistik sampel, yang menjadi dasar dalam pengujian hipotesis. Posisi ini disebut *tail* (ekor) yang merupakan istilah untuk posisi wilayah kritis sebagaimana yang dijelaskan lebih rinci pada subbab berikutnya.
+
+::: rmdnote
+### Catatan: Simbol Hipotesis {.unnumbered}
+
+Hipotesis kosong, atau sering juga disebut sebagai hipotesis nol ($H_0$), biasanya disimbolkan dengan tanda sama dengan ($=$), karena menggambarkan kondisi standar atau tidak ada perbedaan.
+
+Sebaliknya, hipotesis alternatif, atau sering juga disebut sebagai hipotesis penelitian ($H_1$) menunjukkan kondisi yang berlawanan dengan hipotesis kosong. Bentuknya bisa tidak berarah, ditandai dengan simbol tidak sama dengan ($\neq$), atau berarah, ditandai dengan simbol lebih dari ($>$) atau kurang dari ($<$) sesuai arah dugaan yang ingin diuji.
+:::
+
+### Titik Kritis dan p-value
+
+Pengujian hipotesis dilakukan dengan menggunakan dua pendekatan utama, yaitu titik kritis dan nilai *p* (*p-value*), yang keduanya didasarkan pada konsep distribusi statistik.
+
+#### Titik Kritis dan Wilayah Kritis
+
+Secara lebih rinci, titik kritis adalah nilai pada distribusi sampling yang menandai batas awal dari suatu area yang disebut wilayah kritis (*critical region*) atau wilayah penolakan. Wilayah kritis ini mencakup hasil sampel yang dianggap "tidak mungkin" terjadi apabila hipotesis kosong benar [@healey2021statistics]. Praktisnya, titik kritis menjadi pemisah kedua area untuk menentukan apakah $H_0$ ditolak atau gagal ditolak.
+
+Penentuan titik kritis didasarkan pada tingkat signifikansi ($\alpha$), yang dalam ilmu sosial umumnya ditetapkan sebesar 5% atau 0,05. Nilai titik kritis ini diperoleh dari tabel distribusi, yaitu Tabel Z untuk ukuran sampel besar dan Tabel t untuk ukuran sampel kecil. Dalam hal ini, dapat kita sepakati bahwa ukuran sampel besar adalah jumlah sampel lebih dari 100, sedangkan sampel dengan jumlah 100 atau kurang digolongkan sebagai sampel kecil [@devaus2014surveys; @kachigan1986statistical].
+
+Distribusi wilayah kritis ditentukan oleh bentuk hipotesis alternatif yang telah dirumuskan. Masing-masing bentuk hipotesis alternatif (tidak sama dengan, kurang dari, dan lebih dari) akan memengaruhi letak wilayah kritis pada kurva distribusi sampling.
+
+1. **Kasus tidak sama dengan (*two tailed*)**  
+   Kasus tidak sama dengan adalah bentuk hipotesis tanpa arah, sehingga wilayah kritis akan terbagi dua secara sama rata di ekor kurva. Apabila kita menetapkan $\alpha = 5\%$, maka masing-masing ekor akan menampung $\alpha/2 = 2,5\%$. Dalam hal ini, titik kritis dihitung berdasarkan nilai $\alpha/2$.
+
+2. **Kasus lebih dari (*right tailed*)**  
+   Selanjutnya untuk bentuk lebih dari, wilayah kritis hanya berada di ekor kanan kurva. Dengan $\alpha = 5\%$, titik kritis ditentukan langsung berdasarkan nilai $\alpha$ tersebut.
+
+3. **Kasus kurang dari (*left tailed*)**  
+   Wilayah kritis akan berada di ekor sebelah kiri. Sama halnya dengan bentuk lebih dari, nilai titik kritis ditentukan langsung berdasarkan nilai $\alpha$ yang digunakan.
+
+<div class="figure" style="text-align: center">
+<img src="figures/FIXME.png" alt="Ilustrasi Titik Kritis pada Kurva Distribusi Normal" width="60%" />
+<p class="caption">(\#fig:fig-titik-kritis-distribusi)Ilustrasi Titik Kritis pada Kurva Distribusi Normal</p>
+</div>
+
+Setelah wilayah kritis dan titik kritis ditetapkan, nilai statistik uji (Z-score ataupun t-score) dihitung dari data sampel, lalu dibandingkan dengan titik kritis tersebut. Jika statistik uji jatuh ke dalam area penerimaan $H_0$, maka dapat disimpulkan bahwa hipotesis kosong tidak ditolak ($H_0$ dianggap benar untuk kasus yang diuji).
+
+#### Nilai Statistik Uji dan Nilai p (*p-value*)
+
+Jika nilai statistik uji jatuh di dalam wilayah kritis, maka dapat disimpulkan bahwa hipotesis kosong ditolak ($H_1$ gagal ditolak untuk kasus yang diuji). Sebaliknya, jika nilai tersebut jatuh di luar wilayah kritis, maka hipotesis kosong gagal ditolak ($H_1$ ditolak untuk kasus yang diuji).
+
+<div class="figure" style="text-align: center">
+<img src="figures/FIXME.png" alt="Ilustrasi Penetapan Hipotesis yang Ditolak (untuk Satu Ekor)" width="60%" />
+<p class="caption">(\#fig:fig-penetapan-hipotesis)Ilustrasi Penetapan Hipotesis yang Ditolak (untuk Satu Ekor)</p>
+</div>
+
+Sementara itu, nilai p (*p-value*) adalah probabilitas untuk memperoleh hasil sampel seperti yang kita amati, atau bahkan hasil yang lebih ekstrem, dengan asumsi bahwa hipotesis kosong ($H_0$) benar. Dengan kata lain, nilai p menunjukkan seberapa besar kemungkinan hasil yang kita peroleh dari sampel muncul hanya karena kebetulan, apabila pada populasi sebenarnya tidak ada perbedaan atau hubungan apa pun.
+
+Saat ini, perangkat lunak statistik modern (Excel, R, SPSS, dsb) secara otomatis menghitung nilai p dari data yang dianalisis. Nilai p tersebut kemudian dibandingkan dengan tingkat signifikansi ($\alpha$) yang sudah ditentukan. Jika nilai p lebih besar dari $\alpha$, maka dapat disimpulkan bahwa $H_0$ gagal ditolak (tidak ada cukup bukti untuk menolak hipotesis kosong).
+
+::: rmdnote
+### Catatan: Kaidah Pengujian Hipotesis {.unnumbered}
+
+Kaidah pengujian hipotesis terkait titik kritis dan nilai p adalah sebagai berikut:
+
+- Jika Z-score jatuh ke dalam area penolakan $H_0$, nilai p $< \alpha$, maka $H_0$ ditolak $\rightarrow$ kondisi yang berlaku adalah $H_1$
+- Jika Z-score jatuh ke dalam area penerimaan $H_0$, nilai p $> \alpha$ maka dapat disimpulkan bahwa $H_0$ gagal ditolak $\rightarrow$ kondisi yang berlaku adalah $H_0$
+:::
 
 ### Langkah-langkah Pengujian Hipotesis
 
-1.  **Rumuskan Hipotesis ($H_0$ dan $H_1$)**.
-2.  **Tentukan Tingkat Signifikansi ($\alpha$)**. Biasanya 0,05.
-3.  **Pilih Statistik Uji**. (Z-test jika $\sigma$ diketahui atau $n > 30$, t-test jika $\sigma$ tidak diketahui dan $n < 30$).
-4.  **Hitung Statistik Hitung dan P-value**.
-5.  **Ambil Keputusan**. Tolak $H_0$ jika P-value $< \alpha$.
-6.  **Tarik Kesimpulan**.
+Berikut adalah rangkuman langkah-langkah pengujian hipotesis. Proses ini memungkinkan peneliti menarik kesimpulan (inferensi) tentang populasi yang lebih besar berdasarkan data dari sampel yang lebih kecil.
 
-## Studi Kasus dengan R
+Agar lebih mudah dipahami, langkah-langkah pengujian hipotesis ini akan dibahas melalui studi kasus sederhana evaluasi keberhasilan program Makan Bergizi Gratis (MBG) yang telah diuraikan sebelumnya.
 
-Seorang perencana kota menduga bahwa rata-rata waktu tempuh warga ke tempat kerja adalah **lebih dari 45 menit**. Dari survei terhadap 35 warga, diperoleh rata-rata 48 menit dengan simpangan baku 10 menit. Ujilah hipotesis tersebut dengan $\alpha = 0.05$.
+Pada kasus ini, evaluasi dilakukan dengan menyurvei skor *rating* kepuasan penerima layanan MBG yang berkisar antara 0--100. Pertanyaan yang ingin dijawab dari survei ini adalah: "apakah benar bahwa skor kepuasan masyarakat penerima layanan mencapai skor 80?"
 
-Hipotesis:
-*   $H_0: \mu \le 45$ (Rata-rata tidak lebih dari 45 menit)
-*   $H_1: \mu > 45$ (Rata-rata lebih dari 45 menit)
+Berdasarkan hasil survei terhadap sampel berukuran 200 orang, diperoleh informasi bahwa rata-rata skor tingkat kepuasannya adalah 95 dengan standar deviasi 2,3. Dan dengan tingkat kepercayaan 95%, akan dilakukan pengujian hipotesis sebagai dasar untuk menentukan apakah program MBG dapat dikatakan berhasil sesuai indikator yang ditetapkan.
 
+#### 1. Membuat Asumsi
 
-``` r
-# Data Sampel (Simulasi)
-set.seed(123)
-waktu_tempuh <- rnorm(35, mean = 48, sd = 10)
+Untuk dapat menyelesaikan kasus melalui pengujian hipotesis, peneliti harus memastikan bahwa proses pengambilan sampel telah dilakukan secara acak dan memenuhi persyaratan statistik. Persyaratan statistik tersebut adalah distribusi sampling-nya mengikuti distribusi normal. Berikut penjelasannya:
 
-# Uji T Satu Sampel
-t.test(waktu_tempuh, mu = 45, alternative = "greater")
-```
+a. Responden dipilih secara acak (random) sesuai kaidah pengambilan sampel probabilistik $\rightarrow$ proses sampling terhadap 200 responden dilakukan menggunakan teknik acak.
+b. Distribusi statistik sampel mengikuti distribusi normal $\rightarrow$ dapat dipenuhi oleh jumlah sampel yang besar [@devaus2014surveys].
 
-```
-## 
-## 	One Sample t-test
-## 
-## data:  waktu_tempuh
-## t = 2.1102, df = 34, p-value = 0.02114
-## alternative hypothesis: true mean is greater than 45
-## 95 percent confidence interval:
-##  45.67059      Inf
-## sample estimates:
-## mean of x 
-##  48.37518
-```
+Perlu diperhatikan bahwa kita akan menguji hipotesis untuk rata-rata. Oleh karena itu variabel kita harus bisa dipastikan bertingkat pengukuran minimal metrik. Variabel yang akan diuji di sini adalah skor kepuasan yang merupakan variabel interval/rasio, maka uji hipotesis dapat dilanjutkan.
 
-**Interpretasi**:
-Jika p-value < 0,05, maka kita menolak $H_0$ dan menyimpulkan bahwa rata-rata waktu tempuh secara signifikan lebih dari 45 menit.
+#### 2. Merumuskan Hipotesis ($H_0$ dan $H_1$)
+
+Dalam kasus penilaian keberhasilan program MBG, indikator keberhasilan adalah apabila skor kepuasan masyarakat mencapai skor 80. Oleh karena hipotesis kosong mengandung makna bahwa tidak ada dampak/tidak ada perbedaan, nilai 80 kita tetapkan sebagai rata-rata skor di mana tidak ada pengaruh positif.
+
+Oleh karena itu, hipotesis alternatif kita adalah "program ini berhasil sehingga memberikan rata-rata skor kepuasan $>80$". Bentuk persamaan hipotesis adalah:
+
+$$H_0: \mu = 80$$
+$$H_1: \mu > 80$$
+
+Pada hipotesis tersebut, $H_0$ menunjukkan kondisi rata-rata skor kepuasan masyarakat mencapai (sama dengan) angka 80. Sementara itu, $H_1$ menunjukkan kondisi rata-rata skor kepuasan masyarakat lebih dari angka 80.
+
+#### 3. Memilih Distribusi Sampling dan Titik Kritis
+
+Distribusi sampling dipilih dengan mempertimbangkan jumlah sampel yang digunakan. Wilayah kritis ditetapkan berdasarkan bentuk hipotesis.
+
+1. Ukuran sampel adalah 200 responden (sampel besar). Oleh karena itu, distribusi sampling mengikuti Distribusi Z.
+2. Hipotesis alternatif berbentuk lebih dari (*right-tailed test*).
+3. Dengan tingkat kepercayaan 95% ($\alpha = 5\%$), nilai Z kritis adalah $+1,65$.
+
+<div class="figure" style="text-align: center">
+<img src="figures/FIXME.png" alt="Distribusi Sampling dan Wilayah Kritis Kasus MBG" width="60%" />
+<p class="caption">(\#fig:fig-kurva-kritis-mbg)Distribusi Sampling dan Wilayah Kritis Kasus MBG</p>
+</div>
+
+#### 4. Menghitung Statistik Uji
+
+Berdasarkan kasus, dapat dirangkum:
+- $\bar{x}$ (rata-rata sampel) = 95
+- $\mu_0$ (nilai dugaan) = 80
+- $s$ (standar deviasi sampel) = 2,3
+- $n$ (ukuran sampel) = 200
+
+Maka perhitungan Z-score adalah:
+
+$$
+Z = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{95 - 80}{2,3 / \sqrt{200}} = \frac{15}{0,1626} = 92,25
+$$
+
+Dengan demikian, nilai statistik uji yang diperoleh adalah $+92,25$.
+
+#### 5. Menarik Kesimpulan
+
+Pada kasus, nilai statistik uji dan titik kritis adalah:
+- $Z_{hitung} = +92,25$
+- $Z_{kritis} = +1,65$
+
+Keputusannya, nilai statistik uji jatuh jauh ke dalam wilayah kritis. Oleh karena itu, hipotesis kosong ditolak (Gambar \@ref(fig:fig-kurva-kesimpulan-mbg)).
+
+<div class="figure" style="text-align: center">
+<img src="figures/FIXME.png" alt="Penarikan Kesimpulan Statistik Hitung dan Wilayah Kritis" width="60%" />
+<p class="caption">(\#fig:fig-kurva-kesimpulan-mbg)Penarikan Kesimpulan Statistik Hitung dan Wilayah Kritis</p>
+</div>
+
+#### 6. Memaknai Hasil Pengujian
+
+Dengan menolak hipotesis kosong, hasil pengujian menunjukkan bahwa rata-rata skor kepuasan masyarakat yang diperoleh, yaitu 95, berada jauh di atas ambang batas. Hal ini membuat kemungkinan bahwa parameter skor kepuasan berada di angka 80 ke bawah menjadi sangat kecil. Hasil ini sangat mendukung hipotesis alternatif, yaitu bahwa program MBG berhasil dan skor kepuasan melampaui indikator yang ditetapkan.
+
+::: rmdkasus
+### Studi Kasus: Layanan Bus Kampus {.unnumbered}
+
+Dengan menggunakan data pada subbab sebelumnya mengenai jarak tempat tinggal mahasiswa ITERA menuju kampus dari 333 responden, pihak kampus merespons kebutuhan mobilitas mahasiswa dengan merencanakan penyediaan layanan Bus Kampus. Namun, layanan ini hanya akan efektif jika mayoritas mahasiswa tinggal pada jarak dekat ($\leq 5$ km) dari kampus dan apabila lebih dari 80% mahasiswa berminat terhadap layanan tersebut. 
+
+Sebagai informasi awal bahwa pengambilan data yang dilakukan telah sesuai dengan prinsip probabilitas dan data yang terkumpul memiliki distribusi normal.
+
+#### Pengujian Hipotesis Rata-rata Populasi
+
+Apabila rata-rata jarak tempat tinggal mahasiswa memang berada pada 5 km atau kurang, maka penyediaan Bus Kampus dapat dianggap tepat dan efektif. Berdasarkan data sampel tersebut, diketahui bahwa rata-rata jarak tempat tinggal mahasiswa dari kampus adalah sebesar 4,59 km dengan simpangan baku yaitu 2,23 km. Selanjutnya dengan tingkat kepercayaan 95%, kita akan melakukan pengujian terhadap rata-rata populasi mahasiswa ITERA tersebut.
+
+**1. Membuat Asumsi**
+
+- Sampling telah memenuhi prinsip probabilitas.
+- Distribusi sampling mengikuti distribusi normal (didukung jumlah sampel $n=333$).
+- Tingkat pengukuran variabel berada pada skala rasio, sehingga dilakukan uji hipotesis rata-rata.
+
+**2. Merumuskan Hipotesis ($H_0$ dan $H_1$)**
+
+Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah rata-rata sama dengan 5 km. Sedangkan karena kita ingin menguji dugaan "rata-rata jarak lebih dari 5 km akan menyebabkan ketidakefektifan", kita dapat merumuskan hipotesis untuk membuktikan sebaliknya atau membuktikan klaim tertentu:
+
+$$H_0: \mu = 5 \text{ km}$$
+$$H_1: \mu > 5 \text{ km}$$
+
+Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa rata-rata jarak adalah 5 km. $H_1$ menunjukkan rata-rata jarak lebih dari 5 km (yang berarti layanan bus kampus melemah efektivitasnya jika terbukti lebih dari 5 km).
+
+**3. Memilih Distribusi Sampling dan Wilayah Kritis**
+
+- Sampel besar ($n=333$), distribusi Z.
+- Hipotesis *right-tailed test*.
+- Tingkat kepercayaan 95% ($\alpha = 5\%$), maka $Z_{kritis} = +1,65$.
+
+**4. Menghitung Statistik Uji**
+
+- $\bar{x} = 4,59$
+- $\mu_0 = 5$
+- $s = 2,23$
+- $n = 333$
+
+$$
+Z = \frac{4,59 - 5}{2,23 / \sqrt{333}} = \frac{-0,41}{0,122} = -3,36
+$$
+
+**5. Menarik Kesimpulan**
+
+- $Z_{hitung} = -3,36$
+- $Z_{kritis} = +1,65$
+
+Nilai statistik uji tidak jatuh ke dalam wilayah kritis sehingga hipotesis kosong gagal ditolak.
+
+**6. Memaknai Hasil Pengujian Hipotesis**
+
+Dengan demikian, data sampel mendukung $H_0$, yaitu bahwa rata-rata jarak mahasiswa ITERA ke kampus adalah 5 km atau kurang. Berdasarkan perhitungan statistik, penyediaan Bus Kampus dapat dianggap tepat dan berpotensi efektif. 
+
+#### Pengujian Hipotesis Proporsi Populasi
+
+Program dinilai akan berhasil apabila lebih dari 80% mahasiswa berminat. Berdasarkan survei terhadap 333 responden, diketahui 70% mahasiswa berminat. Dengan tingkat kepercayaan 99%, kita uji hipotesis proporsi ini.
+
+**1. Membuat Asumsi**
+
+Tingkat pengukuran nominal, pengujian proporsi, dan *random sampling* terpenuhi.
+
+**2. Merumuskan Hipotesis ($H_0$ dan $H_1$)**
+
+$$H_0: P = 0,8$$
+$$H_1: P < 0,8$$ *(Catatan: Penyesuaian ke left-tailed karena sampel 0,7 lebih kecil dari 0,8 dan dugaan bahwa proporsi gagal mencapai 0,8).* Atau jika mengikuti teks referensi asli yang menduga $P > 0,8$, kita pertahankan hipotesis awal:
+
+$$H_0: P = 0,8$$
+$$H_1: P > 0,8$$
+
+*(Dari teks: $H_0: P = 0,8$ vs $H_1: P > 0,8$).*
+
+**3. Memilih Distribusi Sampling dan Wilayah Kritis**
+
+- Distribusi Z.
+- Tingkat kepercayaan 99% ($\alpha = 1\%$), formasi *right-tailed*, maka $Z_{kritis} = +2,33$.
+
+**4. Menghitung Statistik Uji**
+
+- $\hat{p} = 0,7$
+- $P = 0,8$
+- $n = 333$
+
+$$
+Z = \frac{\hat{p} - P}{\sqrt{\frac{P(1-P)}{n}}} = \frac{0,7 - 0,8}{\sqrt{\frac{0,8(0,2)}{333}}} = -3,98
+$$
+
+(Dalam teks referensi tercantum rumus yang menggunakan $\hat{p}$ atau $P$ di bawah akar; hasil $Z=-3,98$).
+
+**5. Menarik Kesimpulan**
+
+- $Z_{hitung} = -3,98$
+- $Z_{kritis} = +2,33$
+
+Nilai statistik uji tidak jatuh ke dalam wilayah kritis, sehingga hipotesis kosong gagal ditolak.
+
+**6. Memaknai Hasil Pengujian Hipotesis**
+
+Data sampel mendukung $H_0$ (gagal menolak) bahwa minat mahasiswa tidak mencapai atau melebihi 80%. Secara populasi, minat mahasiswa dapat disimpulkan rendah. Pihak kampus perlu mengkaji ulang program ini karena adanya potensi minat yang terlalu rendah.
+:::
+
+## Soal Latihan
 
 ::: rmdexercise
-## Soal Evaluasi 8 {.unnumbered}
-
-1.  Jelaskan perbedaan antara Hipotesis Nol dan Hipotesis Alternatif. [STP-6.1]{.capaian}
-2.  Apa makna P-value dalam pengambilan keputusan uji hipotesis? [STP-6.2]{.capaian}
-
+1. Berdasarkan survei kepada 173 orang dosen ITERA pada tahun 2023, rata-rata usianya pada saat itu adalah 29 tahun dengan simpangan bakunya adalah 2,9 tahun. Jika ingin diketahui apakah rata-rata usia dosen ITERA pada tahun 2023 tersebut adalah sebenarnya sama saja dengan 30 tahun, ujilah pernyataan tersebut! Gunakan galat sebesar 5%. `[STP-6.1]`
+   a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
+   b. Tentukan keputusan dalam memilih hipotesis yang diterima!
+   c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
+   
+2. Hasil survei kepada 427 orang mahasiswa menunjukkan bahwa proporsi pengguna sepeda motor pribadi adalah 0,56. Bagaimana hasil pengujian hipotesis yang menyatakan bahwa sebenarnya pengguna sepeda motor pada mahasiswa itu lebih dari setengahnya? Gunakan galat sebesar 5%. `[STP-6.1]`
+   a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
+   b. Tentukan keputusan dalam memilih hipotesis yang diterima!
+   c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
 :::
 
 <!--chapter:end:07-uji-hipotesis-satu-populasi.Rmd-->
@@ -4750,10 +5405,8 @@ summary(model)
 ## lm(formula = pengeluaran ~ pendapatan)
 ## 
 ## Residuals:
-##          1          2          3          4          5          6 
-##  8.929e-02  3.929e-01 -8.036e-01 -1.804e-16  3.036e-01  1.071e-01 
-##          7 
-## -8.929e-02 
+##          1          2          3          4          5          6          7 
+##  8.929e-02  3.929e-01 -8.036e-01 -1.804e-16  3.036e-01  1.071e-01 -8.929e-02 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>12 Korelasi Antarvariabel Ordinal | Buku Ajar Statistika untuk Perencanaan</title>
-  <meta name="description" content="12 Korelasi Antarvariabel Ordinal | Buku Ajar Statistika untuk Perencanaan" />
+  <title>8 Uji Hipotesis Satu Populasi | Buku Ajar Statistika untuk Perencanaan</title>
+  <meta name="description" content="8 Uji Hipotesis Satu Populasi | Buku Ajar Statistika untuk Perencanaan" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="12 Korelasi Antarvariabel Ordinal | Buku Ajar Statistika untuk Perencanaan" />
+  <meta property="og:title" content="8 Uji Hipotesis Satu Populasi | Buku Ajar Statistika untuk Perencanaan" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="12 Korelasi Antarvariabel Ordinal | Buku Ajar Statistika untuk Perencanaan" />
+  <meta name="twitter:title" content="8 Uji Hipotesis Satu Populasi | Buku Ajar Statistika untuk Perencanaan" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="korelasi-antarvariabel-nominal.html"/>
-<link rel="next" href="korelasi-antarvariabel-metrik.html"/>
+<link rel="prev" href="bab-6-estimasi-parameter.html"/>
+<link rel="next" href="uji-hipotesis-dua-populasi.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -440,60 +440,377 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="korelasi-antarvariabel-ordinal" class="section level1 hasAnchor" number="12">
-<h1><span class="header-section-number">12</span> Korelasi Antarvariabel Ordinal<a href="korelasi-antarvariabel-ordinal.html#korelasi-antarvariabel-ordinal" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="konsep-dasar-4" class="section level2 hasAnchor" number="12.1">
-<h2><span class="header-section-number">12.1</span> Konsep Dasar<a href="korelasi-antarvariabel-ordinal.html#konsep-dasar-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Untuk data ordinal (berjenjang/ranking), kita menggunakan korelasi berbasis peringkat. Dua yang paling populer adalah <strong>Spearman’s Rho (<span class="math inline">\(\rho\)</span>)</strong> dan <strong>Kendall’s Tau (<span class="math inline">\(\tau\)</span>)</strong>.</p>
-</div>
-<div id="studi-kasus-dengan-r-3" class="section level2 hasAnchor" number="12.2">
-<h2><span class="header-section-number">12.2</span> Studi Kasus dengan R<a href="korelasi-antarvariabel-ordinal.html#studi-kasus-dengan-r-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Apakah ada hubungan antara <strong>Tingkat Pendidikan</strong> (SD, SMP, SMA) dengan <strong>Kepuasan Layanan</strong> (Rendah, Sedang, Tinggi)?</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="korelasi-antarvariabel-ordinal.html#cb14-1" tabindex="-1"></a><span class="co"># Data Ordinal (sebagai angka peringkat)</span></span>
-<span id="cb14-2"><a href="korelasi-antarvariabel-ordinal.html#cb14-2" tabindex="-1"></a>pendidikan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb14-3"><a href="korelasi-antarvariabel-ordinal.html#cb14-3" tabindex="-1"></a>kepuasan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb14-4"><a href="korelasi-antarvariabel-ordinal.html#cb14-4" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="korelasi-antarvariabel-ordinal.html#cb14-5" tabindex="-1"></a><span class="co"># Korelasi Spearman</span></span>
-<span id="cb14-6"><a href="korelasi-antarvariabel-ordinal.html#cb14-6" tabindex="-1"></a><span class="fu">cor.test</span>(pendidikan, kepuasan, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-##  Spearman&#39;s rank correlation rho
-## 
-## data:  pendidikan and kepuasan
-## S = 5.6, p-value = 0.005752
-## alternative hypothesis: true rho is not equal to 0
-## sample estimates:
-## rho 
-## 0.9</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="korelasi-antarvariabel-ordinal.html#cb16-1" tabindex="-1"></a><span class="co"># Korelasi Kendall</span></span>
-<span id="cb16-2"><a href="korelasi-antarvariabel-ordinal.html#cb16-2" tabindex="-1"></a><span class="fu">cor.test</span>(pendidikan, kepuasan, <span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-##  Kendall&#39;s rank correlation tau
-## 
-## data:  pendidikan and kepuasan
-## z = 2.3936, p-value = 0.01668
-## alternative hypothesis: true tau is not equal to 0
-## sample estimates:
-##   tau 
-## 0.875</code></pre>
-<p><strong>Interpretasi</strong>:
-Nilai korelasi mendekati +1 menunjukkan hubungan positif kuat (semakin tinggi pendidikan, semakin tinggi kepuasan).</p>
-</div>
-<div id="soal-evaluasi-12" class="section level2 unnumbered hasAnchor rmdexercise">
-<h2>Soal Evaluasi 12<a href="korelasi-antarvariabel-ordinal.html#soal-evaluasi-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="bab-7-uji-hipotesis-satu-populasi" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Uji Hipotesis Satu Populasi<a href="bab-7-uji-hipotesis-satu-populasi.html#bab-7-uji-hipotesis-satu-populasi" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="capaian-pembelajaran-6" class="section level3 unnumbered hasAnchor rmdcapaian">
+<h3>Capaian Pembelajaran<a href="bab-7-uji-hipotesis-satu-populasi.html#capaian-pembelajaran-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Setelah mempelajari bab ini, Anda diharapkan:</p>
 <ol style="list-style-type: decimal">
-<li>Kapan kita sebaiknya menggunakan Kendall’s Tau dibandingkan Spearman’s Rho? <span class="capaian">STP-9.1</span></li>
-<li>Jelaskan makna korelasi negatif pada variabel ordinal! <span class="capaian">STP-9.2</span></li>
+<li>Mampu memaknai hasil dari pengujian hipotesis satu populasi pada suatu kasus <span class="capaian">STP-6.1</span></li>
+</ol>
+<p>Agar lebih mudah memahami konsep dasar, Anda dapat mempelajari studi kasus terlebih dahulu dan menyimak pembahasan sesuai dengan konsep dasarnya.</p>
+</div>
+<div id="konsep-dasar-1" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Konsep Dasar<a href="bab-7-uji-hipotesis-satu-populasi.html#konsep-dasar-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Analisis statistik dengan uji hipotesis digunakan untuk memperkirakan nilai dari parameter populasi melalui pengujian hipotesis dengan menggunakan informasi yang diperoleh dari sampel <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Hipotesis sendiri dapat dipahami sebagai dugaan awal mengenai suatu kondisi, nilai, atau keadaan parameter. Dugaan ini dapat berasal dari teori, penelitian sebelumnya, atau klaim tertentu yang ingin diuji. Dalam hal ini, nilai sampel (statistik) berperan sebagai bukti (<em>evidence</em>) untuk menguji hipotesis terhadap parameter yang telah dirumuskan <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-kachigan1986statistical">Kachigan 1986</a>; <a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>.</p>
+<p>Melalui pengujian hipotesis, kita sebagai peneliti akan dapat menarik kesimpulan (inferensi) mengenai kondisi sebenarnya pada populasi. Secara sederhana, konsep dasar analisis ini dapat dianalogikan dengan pertanyaan: “jika rata-rata nilai sampel adalah X, apakah nilai rata-rata populasinya juga X?” (Gambar <a href="bab-7-uji-hipotesis-satu-populasi.html#fig:fig-ilustrasi-hipotesis">8.1</a>). Kita tidak tahu nilai populasi sebenarnya dan hanya mengandalkan nilai sampel untuk menguji hipotesis.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ilustrasi-hipotesis"></span>
+<img src="figures/FIXME.png" alt="Ilustrasi Alur Hubungan Karakteristik Populasi, Statistik Sampel, dan Inferensi" width="60%" />
+<p class="caption">
+Gambar 8.1: Ilustrasi Alur Hubungan Karakteristik Populasi, Statistik Sampel, dan Inferensi
+</p>
+</div>
+<p>Sebagai contoh yang lebih nyata, khususnya dalam konteks perencanaan, sering muncul pertanyaan: “Apakah benar bahwa rata-rata penghasilan penduduk Kota Z berada di atas UMR?”. Pertanyaan ini sebetulnya bukan pertanyaan yang sulit. Untuk menjawabnya, kita hanya perlu mengumpulkan data penghasilan seluruh penduduk lalu kemudian menghitung rata-ratanya. Hanya saja, persoalannya menjadi rumit saat jumlah populasi penduduk perkotaan yang datanya akan kita kumpulkan sangat besar (tahukah kamu, jumlah penduduk untuk kota kecil saja mencapai 10.000 jiwa), sehingga untuk menjawab pertanyaan tersebut, dilakukan pengambilan sampel dan prosedur dari analisis inferensial ini.</p>
+<p>Selanjutnya, dari sampel sebanyak 350 orang, diketahui bahwa rata-rata penghasilan mereka berada di atas UMR. Namun, hal ini belum dapat langsung digunakan untuk menjawab pertanyaan karena data yang kita peroleh hanya dari 350 orang saja. Hal ini kemudian menimbulkan pertanyaan baru: “Apakah kondisi yang sama (rata-rata di atas UMR) juga berlaku pada populasi penduduk secara keseluruhan?” atau “Apakah bukti dari data sampel ini cukup kuat untuk menolak ‘dugaan’ kita bahwa rata-rata penghasilan penduduk berada di atas UMR?”</p>
+<p>Dalam pengujian hipotesis, kita tidak akan menghitung berapa nilai rata-rata penghasilan seluruh penduduk (parameternya), melainkan hanya mengetahui apakah dugaan yang kita miliki salah (ditolak) atau benar (gagal ditolak).</p>
+<p>Lalu bagaimana cara kerja analisis ini, mengapa kita bisa menggunakan statistik sampel untuk menyimpulkan karakteristik populasi? Pada dasarnya, proses yang dilakukan adalah menguji apakah perbedaan atau hubungan yang diamati dalam sampel cukup kuat untuk disimpulkan berlaku juga pada populasi.</p>
+<p>Maksudnya, sampel hanyalah sebagian kecil dari populasi. Apa yang kita temukan pada sampel (misalnya rata-rata, perbedaan, atau hubungan antar-variabel) belum tentu berlaku juga di populasi. Melalui uji hipotesis, kita memeriksa apakah temuan dari sampel hanya terjadi karena kebetulan dalam pengambilan sampel (kesalahan sampling), atau benar-benar mencerminkan kondisi populasi <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-kachigan1986statistical">Kachigan 1986</a>; <a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Jika hasil dari sampel terbukti cukup kuat secara statistik, maka kita dapat menggeneralisasikan kesimpulan tersebut ke populasi.</p>
+<p>Adapun kondisi kebetulan ini dapat dijelaskan melalui pertanyaan berikut: “Apabila pengambilan sampel diulang terhadap 350 orang yang berbeda, apakah rata-rata sampelnya akan tetap berada di atas UMR?” Jika hasilnya konsisten, berarti temuan tersebut tidak terjadi karena kebetulan. Hal ini menjadi indikasi bahwa data sampel cukup kuat untuk mencerminkan populasi. Namun, jika hasilnya berbeda, maka ada kemungkinan bahwa perbedaan tersebut muncul akibat kebetulan atau faktor kesalahan dalam pengambilan sampel.</p>
+<p>Coba perhatikan Gambar <a href="bab-7-uji-hipotesis-satu-populasi.html#fig:fig-hubungan-statistik-parameter">8.2</a>. Pada dasarnya nilai populasi sangat beragam, dan rata-rata populasi hanya menunjukkan kecenderungan umum dari nilai-nilai tersebut. Namun, dalam praktiknya kita mungkin menemukan data responden yang nilainya sangat jauh berbeda dari rata-rata (pencilan/<em>outlier</em>). Nilai pencilan ini dapat mengganggu representasi data dan membuat sampel terlihat tidak mewakili kondisi populasi secara keseluruhan.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-hubungan-statistik-parameter"></span>
+<img src="figures/FIXME.png" alt="Hubungan Statistik Sampel dan Parameter Populasi" width="60%" />
+<p class="caption">
+Gambar 8.2: Hubungan Statistik Sampel dan Parameter Populasi
+</p>
+</div>
+<p>Selanjutnya, mari kita lihat contoh kasus yang lain. Sebagai bentuk evaluasi terhadap implementasi perencanaan dan pembangunan kota, diperlukan evaluasi program berdasarkan sudut pandang masyarakat sebagai penerima layanan.</p>
+<p>Misalnya, pemerintah ingin mengevaluasi keberhasilan program Makan Bergizi Gratis (MBG) di Kota Bandar Lampung. Untuk itu, pemerintah melakukan survei untuk menjaring skor kepuasan masyarakat penerima manfaat program dengan angka 0–100. Dalam hal ini, dapat ditetapkan sebuah indikator bahwa program dianggap berhasil apabila skor kepuasan masyarakat penerima layanan mencapai angka 80 atau lebih.</p>
+<p>Dengan demikian, apabila hasil survei menunjukkan skor kepuasan masyarakat berada di atas angka tersebut, maka program dapat dinilai berhasil sesuai indikator yang telah ditetapkan. Dalam contoh ini, skor kepuasan masyarakat sebesar 80 atau lebih adalah dugaan yang ingin kita telusuri sebagai bentuk hipotesis yang akan diuji.</p>
+<p>Selanjutnya, dilakukan survei kepada 200 orang responden secara acak. Dari responden ini, diketahui bahwa skor kepuasan responden berada di angka 85. Lalu, pertanyaannya: “apakah secara keseluruhan, yaitu pada seluruh anggota populasi di Kota Bandar Lampung, skor kepuasan terhadap program MBG benar-benar mencapai lebih dari 80 sehingga program MBG dapat dikatakan berhasil?”.</p>
+<p>Selanjutnya, analisis dilakukan untuk membuktikan apakah nilai statistik, yaitu skor kepuasan sebesar 85 dari 200 responden, benar-benar dapat mencerminkan kondisi populasi atau hanya muncul karena kebetulan dalam proses pengambilan sampel. Dengan kata lain, data sampel yang menunjukkan skor kepuasan 85 dijadikan dasar untuk menguji apakah hipotesis dapat ditolak atau tidak.</p>
+<div id="catatan-kemungkinan-hasil-pengujian-hipotesis" class="section level3 unnumbered hasAnchor rmdnote">
+<h3>Catatan: Kemungkinan Hasil Pengujian Hipotesis<a href="bab-7-uji-hipotesis-satu-populasi.html#catatan-kemungkinan-hasil-pengujian-hipotesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hasil dari pengujian hipotesis hanya memiliki dua kemungkinan, yaitu menolak atau gagal menolak hipotesis (hipotesis kosong, <span class="math inline">\(H_0\)</span>). Menolak hipotesis berarti menyetujui bahwa kondisi yang terjadi justru merupakan ‘kebalikan’ atau ‘antitesis’ dari dugaan awal. Sebaliknya, gagal menolak hipotesis berarti kita tidak menemukan cukup bukti untuk menolak hipotesis, sehingga secara tidak langsung kita “menerima” bahwa hipotesis tersebut masih mungkin benar.</p>
+<p>Istilah yang digunakan adalah gagal menolak, bukan menerima, karena dalam pendekatan statistik kita tidak pernah membuktikan bahwa hipotesis (<span class="math inline">\(H_0\)</span>) benar. Fokus pengujian statistik adalah mencari kemungkinan untuk menolak hipotesis, bukan membuktikan kebenarannya. Dengan cara pandang ini, proses pengolahan data menjadi lebih mudah dipahami: kita mencari bukti untuk menolak dugaan awal, bukan membuktikan bahwa dugaan itu pasti benar.</p>
+</div>
+<div id="perbedaan-estimasi-parameter-dengan-uji-hipotesis" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Perbedaan Estimasi Parameter dengan Uji Hipotesis<a href="bab-7-uji-hipotesis-satu-populasi.html#perbedaan-estimasi-parameter-dengan-uji-hipotesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Estimasi parameter dan uji hipotesis memiliki tujuan yang berbeda. Estimasi parameter menghasilkan suatu rentang nilai yang mungkin bagi parameter populasi. Pertanyaan yang dijawab biasanya berbentuk: “Berapa kira-kira nilai rata-rata populasi X?”</p>
+<p>Sementara itu, uji hipotesis berfokus pada penerimaan atau penolakan dugaan kita tentang parameter populasi. Pertanyaan yang diajukan lebih ke arah: “Jika saya menduga bahwa rata-rata populasi X adalah Y, apakah dugaan tersebut dapat diterima?”</p>
+<p>Jadi, melalui pengujian hipotesis kita tidak akan bicara ‘berapa nilainya…?’ tetapi untuk membuktikan dugaan dalam bentuk hipotesis ‘apakah benar jika?…’</p>
+</div>
+<div id="hipotesis-kosong-dan-hipotesis-alternatif" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Hipotesis Kosong dan Hipotesis Alternatif<a href="bab-7-uji-hipotesis-satu-populasi.html#hipotesis-kosong-dan-hipotesis-alternatif" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dalam pengujian hipotesis, terdapat dua jenis hipotesis, yaitu hipotesis kosong (<span class="math inline">\(H_0\)</span>) dan hipotesis alternatif (<span class="math inline">\(H_1\)</span> atau <span class="math inline">\(H_a\)</span>) yang masing-masing akan dijelaskan dengan rinci sebagai berikut.</p>
+<div id="hipotesis-kosong" class="section level4 hasAnchor" number="8.1.2.1">
+<h4><span class="header-section-number">8.1.2.1</span> Hipotesis Kosong<a href="bab-7-uji-hipotesis-satu-populasi.html#hipotesis-kosong" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Hipotesis kosong muncul dari prinsip ilmiah bahwa “pengetahuan harus dapat dibuktikan oleh data”. Artinya, peneliti tidak dapat langsung menyatakan adanya perbedaan atau hubungan tanpa adanya bukti yang kuat. Oleh karena itu, hipotesis kosong digunakan sebagai titik awal yang logis dengan menganggap bahwa <strong>tidak ada perbedaan</strong> atau <strong>tidak ada hubungan</strong> antara kondisi yang diamati dan dugaan yang dimiliki <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>.</p>
+<p>Dengan kata lain, hipotesis kosong menggambarkan kondisi netral atau standar yang dapat dijadikan dasar pembuktian. Dari sinilah kemudian pengujian dilakukan untuk melihat apakah ada cukup bukti untuk menolak <span class="math inline">\(H_0\)</span> dan ‘menerima hipotesis alternatif’ ataupun tidak.</p>
+<p>Melanjutkan contoh MBG, misalkan kita memiliki dugaan: “apakah benar bahwa program MBG berhasil dengan memberikan kepuasan kepada masyarakat?”. Dalam hal ini, ada dua kemungkinan kondisi yang terjadi: 1) program tidak memberikan dampak apa-apa sehingga masyarakat tidak memberikan rata-rata nilai kepuasan di atas 80; atau 2) program berhasil sehingga masyarakat puas dan memberikan rata-rata skor kepuasan di atas 80.</p>
+<p>Kemungkinan pertama, yaitu “program tidak memberikan dampak apa-apa sehingga masyarakat tidak memberikan rata-rata nilai kepuasan di atas 80”, menggambarkan kondisi netral atau tidak ada perbedaan. Oleh karena itu, pernyataan ini dijadikan sebagai hipotesis kosong (<span class="math inline">\(H_0\)</span>) dan dituliskan dengan simbol persamaan (<span class="math inline">\(=\)</span>). Secara matematis, hipotesis kosong untuk rata-rata skor kepuasan ini dapat dinyatakan sebagai berikut:</p>
+<p><span class="math display">\[H_0: \mu = \mu_0\]</span></p>
+<p>Notasi <span class="math inline">\(\mu_0\)</span> menunjukkan nilai dugaan (hipotesis) yang kita miliki. Dalam kasus ini, karena kita menetapkan nilai minimal masyarakat “puas” adalah pada rata-rata skor = 80, dugaan terhadap rata-rata skor kepuasan populasi adalah 80, sehingga <span class="math inline">\(\mu_0 = 80\)</span>. Berdasarkan kondisi tersebut, penulisan hipotesis dapat dirumuskan kembali sebagai berikut:</p>
+<p><span class="math display">\[H_0 : \mu = 80\]</span></p>
+<p>Hipotesis nol menyatakan bahwa nilai parameter populasi tidak berbeda (sama) dengan nilai yang diduga. Secara sederhana, hal ini dapat dimaknai sebagai: “nilai rata-rata sampel <span class="math inline">\(\bar{x}\)</span> yang dijadikan bukti tidak cukup kuat untuk menolak <span class="math inline">\(H_0\)</span>”. Dengan demikian, kondisi yang diasumsikan dalam hipotesis nol dianggap masih berlaku, atau dengan kata lain, hipotesis nol gagal ditolak.</p>
+</div>
+<div id="hipotesis-alternatif" class="section level4 hasAnchor" number="8.1.2.2">
+<h4><span class="header-section-number">8.1.2.2</span> Hipotesis Alternatif<a href="bab-7-uji-hipotesis-satu-populasi.html#hipotesis-alternatif" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Sementara itu, hipotesis alternatif (<span class="math inline">\(H_1\)</span>) adalah dugaan awal mengenai kondisi yang berbeda (antitesis) dari keadaan netral atau standar yang diasumsikan dalam hipotesis kosong <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Dengan kata lain, hipotesis alternatif menyatakan adanya perbedaan atau hubungan yang ingin dibuktikan peneliti.</p>
+<p>Hipotesis alternatif ini dapat berbentuk tidak berarah, misalnya hanya menyatakan “ada perbedaan” tanpa menyebutkan ke arah mana perbedaannya, atau berarah, yaitu menyatakan secara spesifik bahwa suatu kondisi “lebih besar”, “lebih kecil”, atau “lebih tinggi” dibandingkan standar yang ada.</p>
+<p>Secara rinci ragam bentuk hipotesis alternatif ini adalah sebagai berikut <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>Kasus <strong>“tidak sama dengan” (<span class="math inline">\(\neq\)</span>)</strong> digunakan ketika dugaan hanya menyatakan “ada perbedaan”, tanpa menyebutkan lebih besar atau lebih kecil.</li>
+<li>Kasus <strong>“lebih dari” (<span class="math inline">\(&gt;\)</span>)</strong> digunakan ketika dugaan menyatakan bahwa parameter populasi lebih besar daripada nilai dugaan.</li>
+<li>Kasus <strong>“kurang dari” (<span class="math inline">\(&lt;\)</span>)</strong> digunakan ketika dugaan menyatakan bahwa parameter populasi lebih kecil daripada nilai dugaan.</li>
+</ol>
+<p>Adapun bentuk matematis dari hipotesis alternatif yang mungkin dipilih ditampilkan pada Tabel <a href="bab-7-uji-hipotesis-satu-populasi.html#tab:tab-bentuk-hipotesis-alternatif">8.1</a> berikut.</p>
+<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tab-bentuk-hipotesis-alternatif">Tabel 8.1: </span>Alternatif Bentuk Hipotesis Alternatif
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+No
+</th>
+<th style="text-align:left;">
+Bentuk Kasus
+</th>
+<th style="text-align:center;">
+Persamaan Matematis
+</th>
+<th style="text-align:left;">
+Interpretasi
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+I
+</td>
+<td style="text-align:left;">
+Tidak sama dengan
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_1: \mu \neq \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+Rata-rata parameter tidak sama dengan nilai dugaan
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+II
+</td>
+<td style="text-align:left;">
+Lebih dari
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_1: \mu &gt; \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+Rata-rata parameter lebih besar nilai dugaan
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+III
+</td>
+<td style="text-align:left;">
+Kurang dari
+</td>
+<td style="text-align:center;">
+<span class="math inline">\(H_1: \mu &lt; \mu_0\)</span>
+</td>
+<td style="text-align:left;">
+Rata-rata parameter lebih kecil (tidak sama) dengan nilai dugaan
+</td>
+</tr>
+</tbody>
+</table>
+<p>Melanjutkan contoh pada bagian sebelumnya, hipotesis alternatif akan mencerminkan kemungkinan kondisi ke-2, yaitu “program memberikan dampak sehingga nilainya bukan 80 atau berbeda dari 80”. Ini adalah contoh kasus untuk bentuk tidak berarah karena menggunakan pertidaksamaan (<span class="math inline">\(\neq\)</span>, ada kata “berbeda”).</p>
+<p>Walaupun bentuk ini bisa digunakan, hasilnya tidak lebih informatif dibandingkan kita menentukan arahnya (lebih besar/lebih kecil). Jika kita menggunakan kata lebih dari atau kurang dari dalam perumusan hipotesis alternatif kita, maka hipotesis alternatif kita memiliki arah, dan kita akan menggunakan <span class="math inline">\(&lt;\)</span> atau <span class="math inline">\(&gt;\)</span> dalam bentuk persamaan matematisnya.</p>
+<p>Memilih tanda atau arah pertidaksamaan dalam perumusan hipotesis alternatif berarah sangat penting karena ini menentukan posisi wilayah kritis pada kurva distribusi statistik sampel, yang menjadi dasar dalam pengujian hipotesis. Posisi ini disebut <em>tail</em> (ekor) yang merupakan istilah untuk posisi wilayah kritis sebagaimana yang dijelaskan lebih rinci pada subbab berikutnya.</p>
+</div>
+</div>
+<div id="catatan-simbol-hipotesis" class="section level3 unnumbered hasAnchor rmdnote">
+<h3>Catatan: Simbol Hipotesis<a href="bab-7-uji-hipotesis-satu-populasi.html#catatan-simbol-hipotesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Hipotesis kosong, atau sering juga disebut sebagai hipotesis nol (<span class="math inline">\(H_0\)</span>), biasanya disimbolkan dengan tanda sama dengan (<span class="math inline">\(=\)</span>), karena menggambarkan kondisi standar atau tidak ada perbedaan.</p>
+<p>Sebaliknya, hipotesis alternatif, atau sering juga disebut sebagai hipotesis penelitian (<span class="math inline">\(H_1\)</span>) menunjukkan kondisi yang berlawanan dengan hipotesis kosong. Bentuknya bisa tidak berarah, ditandai dengan simbol tidak sama dengan (<span class="math inline">\(\neq\)</span>), atau berarah, ditandai dengan simbol lebih dari (<span class="math inline">\(&gt;\)</span>) atau kurang dari (<span class="math inline">\(&lt;\)</span>) sesuai arah dugaan yang ingin diuji.</p>
+</div>
+<div id="titik-kritis-dan-p-value" class="section level3 hasAnchor" number="8.1.3">
+<h3><span class="header-section-number">8.1.3</span> Titik Kritis dan p-value<a href="bab-7-uji-hipotesis-satu-populasi.html#titik-kritis-dan-p-value" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pengujian hipotesis dilakukan dengan menggunakan dua pendekatan utama, yaitu titik kritis dan nilai <em>p</em> (<em>p-value</em>), yang keduanya didasarkan pada konsep distribusi statistik.</p>
+<div id="titik-kritis-dan-wilayah-kritis" class="section level4 hasAnchor" number="8.1.3.1">
+<h4><span class="header-section-number">8.1.3.1</span> Titik Kritis dan Wilayah Kritis<a href="bab-7-uji-hipotesis-satu-populasi.html#titik-kritis-dan-wilayah-kritis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Secara lebih rinci, titik kritis adalah nilai pada distribusi sampling yang menandai batas awal dari suatu area yang disebut wilayah kritis (<em>critical region</em>) atau wilayah penolakan. Wilayah kritis ini mencakup hasil sampel yang dianggap “tidak mungkin” terjadi apabila hipotesis kosong benar <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Praktisnya, titik kritis menjadi pemisah kedua area untuk menentukan apakah <span class="math inline">\(H_0\)</span> ditolak atau gagal ditolak.</p>
+<p>Penentuan titik kritis didasarkan pada tingkat signifikansi (<span class="math inline">\(\alpha\)</span>), yang dalam ilmu sosial umumnya ditetapkan sebesar 5% atau 0,05. Nilai titik kritis ini diperoleh dari tabel distribusi, yaitu Tabel Z untuk ukuran sampel besar dan Tabel t untuk ukuran sampel kecil. Dalam hal ini, dapat kita sepakati bahwa ukuran sampel besar adalah jumlah sampel lebih dari 100, sedangkan sampel dengan jumlah 100 atau kurang digolongkan sebagai sampel kecil <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-devaus2014surveys">Vaus 2014</a>; <a href="analisis-statistik-multivariat-interdependensi.html#ref-kachigan1986statistical">Kachigan 1986</a>)</span>.</p>
+<p>Distribusi wilayah kritis ditentukan oleh bentuk hipotesis alternatif yang telah dirumuskan. Masing-masing bentuk hipotesis alternatif (tidak sama dengan, kurang dari, dan lebih dari) akan memengaruhi letak wilayah kritis pada kurva distribusi sampling.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Kasus tidak sama dengan (<em>two tailed</em>)</strong><br />
+Kasus tidak sama dengan adalah bentuk hipotesis tanpa arah, sehingga wilayah kritis akan terbagi dua secara sama rata di ekor kurva. Apabila kita menetapkan <span class="math inline">\(\alpha = 5\%\)</span>, maka masing-masing ekor akan menampung <span class="math inline">\(\alpha/2 = 2,5\%\)</span>. Dalam hal ini, titik kritis dihitung berdasarkan nilai <span class="math inline">\(\alpha/2\)</span>.</p></li>
+<li><p><strong>Kasus lebih dari (<em>right tailed</em>)</strong><br />
+Selanjutnya untuk bentuk lebih dari, wilayah kritis hanya berada di ekor kanan kurva. Dengan <span class="math inline">\(\alpha = 5\%\)</span>, titik kritis ditentukan langsung berdasarkan nilai <span class="math inline">\(\alpha\)</span> tersebut.</p></li>
+<li><p><strong>Kasus kurang dari (<em>left tailed</em>)</strong><br />
+Wilayah kritis akan berada di ekor sebelah kiri. Sama halnya dengan bentuk lebih dari, nilai titik kritis ditentukan langsung berdasarkan nilai <span class="math inline">\(\alpha\)</span> yang digunakan.</p></li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-titik-kritis-distribusi"></span>
+<img src="figures/FIXME.png" alt="Ilustrasi Titik Kritis pada Kurva Distribusi Normal" width="60%" />
+<p class="caption">
+Gambar 8.3: Ilustrasi Titik Kritis pada Kurva Distribusi Normal
+</p>
+</div>
+<p>Setelah wilayah kritis dan titik kritis ditetapkan, nilai statistik uji (Z-score ataupun t-score) dihitung dari data sampel, lalu dibandingkan dengan titik kritis tersebut. Jika statistik uji jatuh ke dalam area penerimaan <span class="math inline">\(H_0\)</span>, maka dapat disimpulkan bahwa hipotesis kosong tidak ditolak (<span class="math inline">\(H_0\)</span> dianggap benar untuk kasus yang diuji).</p>
+</div>
+<div id="nilai-statistik-uji-dan-nilai-p-p-value" class="section level4 hasAnchor" number="8.1.3.2">
+<h4><span class="header-section-number">8.1.3.2</span> Nilai Statistik Uji dan Nilai p (<em>p-value</em>)<a href="bab-7-uji-hipotesis-satu-populasi.html#nilai-statistik-uji-dan-nilai-p-p-value" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Jika nilai statistik uji jatuh di dalam wilayah kritis, maka dapat disimpulkan bahwa hipotesis kosong ditolak (<span class="math inline">\(H_1\)</span> gagal ditolak untuk kasus yang diuji). Sebaliknya, jika nilai tersebut jatuh di luar wilayah kritis, maka hipotesis kosong gagal ditolak (<span class="math inline">\(H_1\)</span> ditolak untuk kasus yang diuji).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-penetapan-hipotesis"></span>
+<img src="figures/FIXME.png" alt="Ilustrasi Penetapan Hipotesis yang Ditolak (untuk Satu Ekor)" width="60%" />
+<p class="caption">
+Gambar 8.4: Ilustrasi Penetapan Hipotesis yang Ditolak (untuk Satu Ekor)
+</p>
+</div>
+<p>Sementara itu, nilai p (<em>p-value</em>) adalah probabilitas untuk memperoleh hasil sampel seperti yang kita amati, atau bahkan hasil yang lebih ekstrem, dengan asumsi bahwa hipotesis kosong (<span class="math inline">\(H_0\)</span>) benar. Dengan kata lain, nilai p menunjukkan seberapa besar kemungkinan hasil yang kita peroleh dari sampel muncul hanya karena kebetulan, apabila pada populasi sebenarnya tidak ada perbedaan atau hubungan apa pun.</p>
+<p>Saat ini, perangkat lunak statistik modern (Excel, R, SPSS, dsb) secara otomatis menghitung nilai p dari data yang dianalisis. Nilai p tersebut kemudian dibandingkan dengan tingkat signifikansi (<span class="math inline">\(\alpha\)</span>) yang sudah ditentukan. Jika nilai p lebih besar dari <span class="math inline">\(\alpha\)</span>, maka dapat disimpulkan bahwa <span class="math inline">\(H_0\)</span> gagal ditolak (tidak ada cukup bukti untuk menolak hipotesis kosong).</p>
+</div>
+</div>
+<div id="catatan-kaidah-pengujian-hipotesis" class="section level3 unnumbered hasAnchor rmdnote">
+<h3>Catatan: Kaidah Pengujian Hipotesis<a href="bab-7-uji-hipotesis-satu-populasi.html#catatan-kaidah-pengujian-hipotesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kaidah pengujian hipotesis terkait titik kritis dan nilai p adalah sebagai berikut:</p>
+<ul>
+<li>Jika Z-score jatuh ke dalam area penolakan <span class="math inline">\(H_0\)</span>, nilai p <span class="math inline">\(&lt; \alpha\)</span>, maka <span class="math inline">\(H_0\)</span> ditolak <span class="math inline">\(\rightarrow\)</span> kondisi yang berlaku adalah <span class="math inline">\(H_1\)</span></li>
+<li>Jika Z-score jatuh ke dalam area penerimaan <span class="math inline">\(H_0\)</span>, nilai p <span class="math inline">\(&gt; \alpha\)</span> maka dapat disimpulkan bahwa <span class="math inline">\(H_0\)</span> gagal ditolak <span class="math inline">\(\rightarrow\)</span> kondisi yang berlaku adalah <span class="math inline">\(H_0\)</span></li>
+</ul>
+</div>
+<div id="langkah-langkah-pengujian-hipotesis" class="section level3 hasAnchor" number="8.1.4">
+<h3><span class="header-section-number">8.1.4</span> Langkah-langkah Pengujian Hipotesis<a href="bab-7-uji-hipotesis-satu-populasi.html#langkah-langkah-pengujian-hipotesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Berikut adalah rangkuman langkah-langkah pengujian hipotesis. Proses ini memungkinkan peneliti menarik kesimpulan (inferensi) tentang populasi yang lebih besar berdasarkan data dari sampel yang lebih kecil.</p>
+<p>Agar lebih mudah dipahami, langkah-langkah pengujian hipotesis ini akan dibahas melalui studi kasus sederhana evaluasi keberhasilan program Makan Bergizi Gratis (MBG) yang telah diuraikan sebelumnya.</p>
+<p>Pada kasus ini, evaluasi dilakukan dengan menyurvei skor <em>rating</em> kepuasan penerima layanan MBG yang berkisar antara 0–100. Pertanyaan yang ingin dijawab dari survei ini adalah: “apakah benar bahwa skor kepuasan masyarakat penerima layanan mencapai skor 80?”</p>
+<p>Berdasarkan hasil survei terhadap sampel berukuran 200 orang, diperoleh informasi bahwa rata-rata skor tingkat kepuasannya adalah 95 dengan standar deviasi 2,3. Dan dengan tingkat kepercayaan 95%, akan dilakukan pengujian hipotesis sebagai dasar untuk menentukan apakah program MBG dapat dikatakan berhasil sesuai indikator yang ditetapkan.</p>
+<div id="membuat-asumsi" class="section level4 hasAnchor" number="8.1.4.1">
+<h4><span class="header-section-number">8.1.4.1</span> 1. Membuat Asumsi<a href="bab-7-uji-hipotesis-satu-populasi.html#membuat-asumsi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Untuk dapat menyelesaikan kasus melalui pengujian hipotesis, peneliti harus memastikan bahwa proses pengambilan sampel telah dilakukan secara acak dan memenuhi persyaratan statistik. Persyaratan statistik tersebut adalah distribusi sampling-nya mengikuti distribusi normal. Berikut penjelasannya:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Responden dipilih secara acak (random) sesuai kaidah pengambilan sampel probabilistik <span class="math inline">\(\rightarrow\)</span> proses sampling terhadap 200 responden dilakukan menggunakan teknik acak.</li>
+<li>Distribusi statistik sampel mengikuti distribusi normal <span class="math inline">\(\rightarrow\)</span> dapat dipenuhi oleh jumlah sampel yang besar <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-devaus2014surveys">Vaus 2014</a>)</span>.</li>
+</ol>
+<p>Perlu diperhatikan bahwa kita akan menguji hipotesis untuk rata-rata. Oleh karena itu variabel kita harus bisa dipastikan bertingkat pengukuran minimal metrik. Variabel yang akan diuji di sini adalah skor kepuasan yang merupakan variabel interval/rasio, maka uji hipotesis dapat dilanjutkan.</p>
+</div>
+<div id="merumuskan-hipotesis-h_0-dan-h_1" class="section level4 hasAnchor" number="8.1.4.2">
+<h4><span class="header-section-number">8.1.4.2</span> 2. Merumuskan Hipotesis (<span class="math inline">\(H_0\)</span> dan <span class="math inline">\(H_1\)</span>)<a href="bab-7-uji-hipotesis-satu-populasi.html#merumuskan-hipotesis-h_0-dan-h_1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dalam kasus penilaian keberhasilan program MBG, indikator keberhasilan adalah apabila skor kepuasan masyarakat mencapai skor 80. Oleh karena hipotesis kosong mengandung makna bahwa tidak ada dampak/tidak ada perbedaan, nilai 80 kita tetapkan sebagai rata-rata skor di mana tidak ada pengaruh positif.</p>
+<p>Oleh karena itu, hipotesis alternatif kita adalah “program ini berhasil sehingga memberikan rata-rata skor kepuasan <span class="math inline">\(&gt;80\)</span>”. Bentuk persamaan hipotesis adalah:</p>
+<p><span class="math display">\[H_0: \mu = 80\]</span>
+<span class="math display">\[H_1: \mu &gt; 80\]</span></p>
+<p>Pada hipotesis tersebut, <span class="math inline">\(H_0\)</span> menunjukkan kondisi rata-rata skor kepuasan masyarakat mencapai (sama dengan) angka 80. Sementara itu, <span class="math inline">\(H_1\)</span> menunjukkan kondisi rata-rata skor kepuasan masyarakat lebih dari angka 80.</p>
+</div>
+<div id="memilih-distribusi-sampling-dan-titik-kritis" class="section level4 hasAnchor" number="8.1.4.3">
+<h4><span class="header-section-number">8.1.4.3</span> 3. Memilih Distribusi Sampling dan Titik Kritis<a href="bab-7-uji-hipotesis-satu-populasi.html#memilih-distribusi-sampling-dan-titik-kritis" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Distribusi sampling dipilih dengan mempertimbangkan jumlah sampel yang digunakan. Wilayah kritis ditetapkan berdasarkan bentuk hipotesis.</p>
+<ol style="list-style-type: decimal">
+<li>Ukuran sampel adalah 200 responden (sampel besar). Oleh karena itu, distribusi sampling mengikuti Distribusi Z.</li>
+<li>Hipotesis alternatif berbentuk lebih dari (<em>right-tailed test</em>).</li>
+<li>Dengan tingkat kepercayaan 95% (<span class="math inline">\(\alpha = 5\%\)</span>), nilai Z kritis adalah <span class="math inline">\(+1,65\)</span>.</li>
+</ol>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-kurva-kritis-mbg"></span>
+<img src="figures/FIXME.png" alt="Distribusi Sampling dan Wilayah Kritis Kasus MBG" width="60%" />
+<p class="caption">
+Gambar 8.5: Distribusi Sampling dan Wilayah Kritis Kasus MBG
+</p>
+</div>
+</div>
+<div id="menghitung-statistik-uji" class="section level4 hasAnchor" number="8.1.4.4">
+<h4><span class="header-section-number">8.1.4.4</span> 4. Menghitung Statistik Uji<a href="bab-7-uji-hipotesis-satu-populasi.html#menghitung-statistik-uji" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Berdasarkan kasus, dapat dirangkum:
+- <span class="math inline">\(\bar{x}\)</span> (rata-rata sampel) = 95
+- <span class="math inline">\(\mu_0\)</span> (nilai dugaan) = 80
+- <span class="math inline">\(s\)</span> (standar deviasi sampel) = 2,3
+- <span class="math inline">\(n\)</span> (ukuran sampel) = 200</p>
+<p>Maka perhitungan Z-score adalah:</p>
+<p><span class="math display">\[
+Z = \frac{\bar{x} - \mu_0}{s / \sqrt{n}} = \frac{95 - 80}{2,3 / \sqrt{200}} = \frac{15}{0,1626} = 92,25
+\]</span></p>
+<p>Dengan demikian, nilai statistik uji yang diperoleh adalah <span class="math inline">\(+92,25\)</span>.</p>
+</div>
+<div id="menarik-kesimpulan" class="section level4 hasAnchor" number="8.1.4.5">
+<h4><span class="header-section-number">8.1.4.5</span> 5. Menarik Kesimpulan<a href="bab-7-uji-hipotesis-satu-populasi.html#menarik-kesimpulan" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Pada kasus, nilai statistik uji dan titik kritis adalah:
+- <span class="math inline">\(Z_{hitung} = +92,25\)</span>
+- <span class="math inline">\(Z_{kritis} = +1,65\)</span></p>
+<p>Keputusannya, nilai statistik uji jatuh jauh ke dalam wilayah kritis. Oleh karena itu, hipotesis kosong ditolak (Gambar <a href="bab-7-uji-hipotesis-satu-populasi.html#fig:fig-kurva-kesimpulan-mbg">8.6</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-kurva-kesimpulan-mbg"></span>
+<img src="figures/FIXME.png" alt="Penarikan Kesimpulan Statistik Hitung dan Wilayah Kritis" width="60%" />
+<p class="caption">
+Gambar 8.6: Penarikan Kesimpulan Statistik Hitung dan Wilayah Kritis
+</p>
+</div>
+</div>
+<div id="memaknai-hasil-pengujian" class="section level4 hasAnchor" number="8.1.4.6">
+<h4><span class="header-section-number">8.1.4.6</span> 6. Memaknai Hasil Pengujian<a href="bab-7-uji-hipotesis-satu-populasi.html#memaknai-hasil-pengujian" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dengan menolak hipotesis kosong, hasil pengujian menunjukkan bahwa rata-rata skor kepuasan masyarakat yang diperoleh, yaitu 95, berada jauh di atas ambang batas. Hal ini membuat kemungkinan bahwa parameter skor kepuasan berada di angka 80 ke bawah menjadi sangat kecil. Hasil ini sangat mendukung hipotesis alternatif, yaitu bahwa program MBG berhasil dan skor kepuasan melampaui indikator yang ditetapkan.</p>
+</div>
+</div>
+<div id="studi-kasus-layanan-bus-kampus" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Layanan Bus Kampus<a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-layanan-bus-kampus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dengan menggunakan data pada subbab sebelumnya mengenai jarak tempat tinggal mahasiswa ITERA menuju kampus dari 333 responden, pihak kampus merespons kebutuhan mobilitas mahasiswa dengan merencanakan penyediaan layanan Bus Kampus. Namun, layanan ini hanya akan efektif jika mayoritas mahasiswa tinggal pada jarak dekat (<span class="math inline">\(\leq 5\)</span> km) dari kampus dan apabila lebih dari 80% mahasiswa berminat terhadap layanan tersebut.</p>
+<p>Sebagai informasi awal bahwa pengambilan data yang dilakukan telah sesuai dengan prinsip probabilitas dan data yang terkumpul memiliki distribusi normal.</p>
+<div id="pengujian-hipotesis-rata-rata-populasi" class="section level4 hasAnchor" number="8.1.4.7">
+<h4><span class="header-section-number">8.1.4.7</span> Pengujian Hipotesis Rata-rata Populasi<a href="bab-7-uji-hipotesis-satu-populasi.html#pengujian-hipotesis-rata-rata-populasi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Apabila rata-rata jarak tempat tinggal mahasiswa memang berada pada 5 km atau kurang, maka penyediaan Bus Kampus dapat dianggap tepat dan efektif. Berdasarkan data sampel tersebut, diketahui bahwa rata-rata jarak tempat tinggal mahasiswa dari kampus adalah sebesar 4,59 km dengan simpangan baku yaitu 2,23 km. Selanjutnya dengan tingkat kepercayaan 95%, kita akan melakukan pengujian terhadap rata-rata populasi mahasiswa ITERA tersebut.</p>
+<p><strong>1. Membuat Asumsi</strong></p>
+<ul>
+<li>Sampling telah memenuhi prinsip probabilitas.</li>
+<li>Distribusi sampling mengikuti distribusi normal (didukung jumlah sampel <span class="math inline">\(n=333\)</span>).</li>
+<li>Tingkat pengukuran variabel berada pada skala rasio, sehingga dilakukan uji hipotesis rata-rata.</li>
+</ul>
+<p><strong>2. Merumuskan Hipotesis (<span class="math inline">\(H_0\)</span> dan <span class="math inline">\(H_1\)</span>)</strong></p>
+<p>Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah rata-rata sama dengan 5 km. Sedangkan karena kita ingin menguji dugaan “rata-rata jarak lebih dari 5 km akan menyebabkan ketidakefektifan”, kita dapat merumuskan hipotesis untuk membuktikan sebaliknya atau membuktikan klaim tertentu:</p>
+<p><span class="math display">\[H_0: \mu = 5 \text{ km}\]</span>
+<span class="math display">\[H_1: \mu &gt; 5 \text{ km}\]</span></p>
+<p>Pada hipotesis tersebut, <span class="math inline">\(H_0\)</span> menunjukkan kondisi bahwa rata-rata jarak adalah 5 km. <span class="math inline">\(H_1\)</span> menunjukkan rata-rata jarak lebih dari 5 km (yang berarti layanan bus kampus melemah efektivitasnya jika terbukti lebih dari 5 km).</p>
+<p><strong>3. Memilih Distribusi Sampling dan Wilayah Kritis</strong></p>
+<ul>
+<li>Sampel besar (<span class="math inline">\(n=333\)</span>), distribusi Z.</li>
+<li>Hipotesis <em>right-tailed test</em>.</li>
+<li>Tingkat kepercayaan 95% (<span class="math inline">\(\alpha = 5\%\)</span>), maka <span class="math inline">\(Z_{kritis} = +1,65\)</span>.</li>
+</ul>
+<p><strong>4. Menghitung Statistik Uji</strong></p>
+<ul>
+<li><span class="math inline">\(\bar{x} = 4,59\)</span></li>
+<li><span class="math inline">\(\mu_0 = 5\)</span></li>
+<li><span class="math inline">\(s = 2,23\)</span></li>
+<li><span class="math inline">\(n = 333\)</span></li>
+</ul>
+<p><span class="math display">\[
+Z = \frac{4,59 - 5}{2,23 / \sqrt{333}} = \frac{-0,41}{0,122} = -3,36
+\]</span></p>
+<p><strong>5. Menarik Kesimpulan</strong></p>
+<ul>
+<li><span class="math inline">\(Z_{hitung} = -3,36\)</span></li>
+<li><span class="math inline">\(Z_{kritis} = +1,65\)</span></li>
+</ul>
+<p>Nilai statistik uji tidak jatuh ke dalam wilayah kritis sehingga hipotesis kosong gagal ditolak.</p>
+<p><strong>6. Memaknai Hasil Pengujian Hipotesis</strong></p>
+<p>Dengan demikian, data sampel mendukung <span class="math inline">\(H_0\)</span>, yaitu bahwa rata-rata jarak mahasiswa ITERA ke kampus adalah 5 km atau kurang. Berdasarkan perhitungan statistik, penyediaan Bus Kampus dapat dianggap tepat dan berpotensi efektif.</p>
+</div>
+<div id="pengujian-hipotesis-proporsi-populasi" class="section level4 hasAnchor" number="8.1.4.8">
+<h4><span class="header-section-number">8.1.4.8</span> Pengujian Hipotesis Proporsi Populasi<a href="bab-7-uji-hipotesis-satu-populasi.html#pengujian-hipotesis-proporsi-populasi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Program dinilai akan berhasil apabila lebih dari 80% mahasiswa berminat. Berdasarkan survei terhadap 333 responden, diketahui 70% mahasiswa berminat. Dengan tingkat kepercayaan 99%, kita uji hipotesis proporsi ini.</p>
+<p><strong>1. Membuat Asumsi</strong></p>
+<p>Tingkat pengukuran nominal, pengujian proporsi, dan <em>random sampling</em> terpenuhi.</p>
+<p><strong>2. Merumuskan Hipotesis (<span class="math inline">\(H_0\)</span> dan <span class="math inline">\(H_1\)</span>)</strong></p>
+<p><span class="math display">\[H_0: P = 0,8\]</span>
+<span class="math display">\[H_1: P &lt; 0,8\]</span> <em>(Catatan: Penyesuaian ke left-tailed karena sampel 0,7 lebih kecil dari 0,8 dan dugaan bahwa proporsi gagal mencapai 0,8).</em> Atau jika mengikuti teks referensi asli yang menduga <span class="math inline">\(P &gt; 0,8\)</span>, kita pertahankan hipotesis awal:</p>
+<p><span class="math display">\[H_0: P = 0,8\]</span>
+<span class="math display">\[H_1: P &gt; 0,8\]</span></p>
+<p><em>(Dari teks: <span class="math inline">\(H_0: P = 0,8\)</span> vs <span class="math inline">\(H_1: P &gt; 0,8\)</span>).</em></p>
+<p><strong>3. Memilih Distribusi Sampling dan Wilayah Kritis</strong></p>
+<ul>
+<li>Distribusi Z.</li>
+<li>Tingkat kepercayaan 99% (<span class="math inline">\(\alpha = 1\%\)</span>), formasi <em>right-tailed</em>, maka <span class="math inline">\(Z_{kritis} = +2,33\)</span>.</li>
+</ul>
+<p><strong>4. Menghitung Statistik Uji</strong></p>
+<ul>
+<li><span class="math inline">\(\hat{p} = 0,7\)</span></li>
+<li><span class="math inline">\(P = 0,8\)</span></li>
+<li><span class="math inline">\(n = 333\)</span></li>
+</ul>
+<p><span class="math display">\[
+Z = \frac{\hat{p} - P}{\sqrt{\frac{P(1-P)}{n}}} = \frac{0,7 - 0,8}{\sqrt{\frac{0,8(0,2)}{333}}} = -3,98
+\]</span></p>
+<p>(Dalam teks referensi tercantum rumus yang menggunakan <span class="math inline">\(\hat{p}\)</span> atau <span class="math inline">\(P\)</span> di bawah akar; hasil <span class="math inline">\(Z=-3,98\)</span>).</p>
+<p><strong>5. Menarik Kesimpulan</strong></p>
+<ul>
+<li><span class="math inline">\(Z_{hitung} = -3,98\)</span></li>
+<li><span class="math inline">\(Z_{kritis} = +2,33\)</span></li>
+</ul>
+<p>Nilai statistik uji tidak jatuh ke dalam wilayah kritis, sehingga hipotesis kosong gagal ditolak.</p>
+<p><strong>6. Memaknai Hasil Pengujian Hipotesis</strong></p>
+<p>Data sampel mendukung <span class="math inline">\(H_0\)</span> (gagal menolak) bahwa minat mahasiswa tidak mencapai atau melebihi 80%. Secara populasi, minat mahasiswa dapat disimpulkan rendah. Pihak kampus perlu mengkaji ulang program ini karena adanya potensi minat yang terlalu rendah.</p>
+</div>
+</div>
+</div>
+<div id="soal-latihan-1" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Soal Latihan<a href="bab-7-uji-hipotesis-satu-populasi.html#soal-latihan-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="rmdexercise">
+<ol style="list-style-type: decimal">
+<li>Berdasarkan survei kepada 173 orang dosen ITERA pada tahun 2023, rata-rata usianya pada saat itu adalah 29 tahun dengan simpangan bakunya adalah 2,9 tahun. Jika ingin diketahui apakah rata-rata usia dosen ITERA pada tahun 2023 tersebut adalah sebenarnya sama saja dengan 30 tahun, ujilah pernyataan tersebut! Gunakan galat sebesar 5%. <code>[STP-6.1]</code>
+<ol style="list-style-type: lower-alpha">
+<li>Tentukanlah hipotesis kosong dan hipotesis alternatifnya!</li>
+<li>Tentukan keputusan dalam memilih hipotesis yang diterima!</li>
+<li>Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!</li>
+</ol></li>
+<li>Hasil survei kepada 427 orang mahasiswa menunjukkan bahwa proporsi pengguna sepeda motor pribadi adalah 0,56. Bagaimana hasil pengujian hipotesis yang menyatakan bahwa sebenarnya pengguna sepeda motor pada mahasiswa itu lebih dari setengahnya? Gunakan galat sebesar 5%. <code>[STP-6.1]</code>
+<ol style="list-style-type: lower-alpha">
+<li>Tentukanlah hipotesis kosong dan hipotesis alternatifnya!</li>
+<li>Tentukan keputusan dalam memilih hipotesis yang diterima!</li>
+<li>Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!</li>
+</ol></li>
 </ol>
 </div>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="korelasi-antarvariabel-nominal.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="korelasi-antarvariabel-metrik.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bab-6-estimasi-parameter.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="uji-hipotesis-dua-populasi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
