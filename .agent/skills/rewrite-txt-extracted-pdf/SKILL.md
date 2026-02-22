@@ -11,11 +11,11 @@ This skill cleans and converts raw text extracted from the _Statistics in Planni
 
 1. **Check Encoding**: Check the encoding of the `.txt` files. If the encoding is not UTF-8, convert it to UTF-8.
 2. **Read & Parse**: Read the encoded `.txt` files and parse according to these rules:
-   1. check if it is a chapter or subchapter heading. Indicated by _Bab_ for chaptersor _<number>.<number>_ for subchapters.
+   1. check if it is a chapter or subchapter heading. Indicated by _Bab_ for chaptersor _`<number>`.`<number>`_ for subchapters.
    2. check if there is an intercepting page number. Indicated by number in one line appear between two lines of text. If found, remove it.
    3. check if there is table or picture.
 3. **Verify Against PDF**: Compare the extracted text with the original PDF. Correct any errors to ensure an accurate representation.
-4. **Write to Rmd**: Update the specified existing R Markdown file. Modify its contents as needed to faithfully reflect the PDF.
+4. **Write to Rmd**: Completely overwrite the specified existing R Markdown file to faithfully reflect the PDF. Do not let existing content block the process; simply overwrite everything in the target file.
 
 ## Formatting Rules
 
