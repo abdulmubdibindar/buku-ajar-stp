@@ -1,83 +1,132 @@
 # Menentukan Ukuran Sampel
 
-Penentuan ukuran sampel dalam penelitian kuantitatif bergantung pada beberapa parameter statistik, yaitu tingkat kepercayaan (_level of confidence_), batas toleransi kesalahan (_margin of error_), dan proporsi atau variabilitas dari populasi yang diteliti [1]. Pendekatan probabilitas menuntut ukuran sampel yang cukup agar inferensi statistik dapat dilakukan secara valid dan representatif terhadap populasi target [2].
+Penentuan ukuran sampel dalam penelitian kuantitatif bergantung pada dua faktor analitik utama: (1) derajat akurasi yang diisyaratkan untuk sampel tersebut, dan (2) sejauh mana terdapat variasi atau heterogenitas dalam populasi terkait karakteristik utama yang sedang diteliti [1]. Pendekatan probabilitas menuntut ukuran sampel yang cukup agar inferensi statistik dapat dilakukan secara valid dan representatif terhadap populasi target [2].
 
-## Formula Dasar Penentuan Ukuran Sampel
+## Pendekatan de Vaus: Ukuran Sampel Berbasis _Sampling Error_
 
-Untuk menghitung ukuran sampel minimum yang presisi, persamaan yang digunakan didasarkan pada tingkat kepercayaan, rentang kesalahan, dan estimasi proporsi populasi [3]. Rumus perhitungan ukuran sampel ($n$) dinyatakan sebagai berikut:
+### Prinsip Dasar
 
-$$n = p\% \times q\% \times \left( \frac{z}{e\%} \right)^2$$
+Berlawanan dengan intuisi awam, ukuran populasi asal dari mana sampel ditarik sebagian besar **tidak relevan** terhadap akurasi sampel [1]. Akurasi sebuah sampel ditentukan oleh **ukuran absolut** dari sampel itu sendiri, bukan proporsinya terhadap populasi [1]. Pengecualian terjadi hanya ketika ukuran sampel merepresentasikan proporsi yang substansial dari populasi (misalnya 10% atau lebih); pada kondisi ini diperlukan formula penyesuaian yang disebut _finite population correction_ [1].
 
-**Keterangan:**
+De Vaus oleh karenanya tidak menyusun tabel ukuran sampel berdasarkan besaran populasi, melainkan berdasarkan **tingkat kesalahan (_margin of error_) dan heterogenitas populasi** [1].
 
-- $n$ = ukuran sampel minimum yang dibutuhkan.
-- $p\%$ = persentase subjek yang termasuk dalam kategori spesifik yang diteliti.
-- $q\%$ = persentase subjek yang tidak termasuk dalam kategori spesifik ($100\% - p\%$).
-- $z$ = nilai _z-score_ yang berkorespondensi dengan tingkat kepercayaan yang diinginkan (misalnya, $z = 1,96$ untuk tingkat kepercayaan 95%) [3].
-- $e\%$ = tingkat kesalahan atau _margin of error_ yang disyaratkan [3].
+Dasar matematis yang digunakan adalah _standard error_ binomial:
 
-Apabila proporsi populasi ($p\%$) tidak diketahui sebelum penelitian—misalnya karena tidak ada data _pilot study_—disarankan untuk menggunakan asumsi bahwa 50% sampel memiliki atribut tersebut ($p = 50\%$, $q = 50\%$) [1]. Asumsi $P_u = 0{,}5$ ini merupakan skenario terburuk yang memberikan hasil perkalian maksimum ($0{,}5 \times 0{,}5 = 0{,}25$), sehingga menghasilkan estimasi ukuran sampel yang paling besar (konservatif) [4].
-
-## Penyesuaian Ukuran Sampel untuk Populasi Terhingga
-
-Apabila populasi penarikan sampel relatif kecil (secara umum kurang dari 10.000 kasus), ukuran sampel minimum awal ($n$) yang dihitung dari formula dasar akan melebih-lebihkan jumlah yang sebenarnya dibutuhkan. Dalam situasi populasi terhingga (_finite population_), ukuran sampel dapat diperkecil tanpa mengurangi tingkat akurasi dengan menggunakan rumus penyesuaian berikut [5]:
-
-$$n' = \frac{n}{1 + \left( \dfrac{n}{N} \right)}$$
+$$
+S_B = \sqrt{\frac{P \times Q}{N}}
+$$
 
 **Keterangan:**
 
-- $n'$ = ukuran sampel minimum yang telah disesuaikan (_adjusted minimum sample size_).
-- $n$ = ukuran sampel minimum yang dihitung dari persamaan formula dasar [5].
-- $N$ = ukuran total populasi [5].
+- $S_B$ = estimasi _standard error_
+- $P$ = persentase observasi pada kategori yang menjadi fokus
+- $Q$ = persentase observasi di luar kategori fokus ($100\% - P$)
+- $N$ = jumlah kasus dalam sampel
 
-Konsep penyesuaian ini merupakan aplikasi dari _finite population correction_ (FPC). Sebagai catatan, _formula Slovin_ yang umum dikenal dengan persamaan $n = N / (1 + N \cdot e^2)$ adalah bentuk penyederhanaan matematis dari koreksi ini yang mematok tingkat kepercayaan 95% dan varians maksimal populasi; namun formulasi tersebut tidak dibahas di dalam literatur saintifik yang dirujuk, dan penggunaannya perlu disertai kehati-hatian terkait asumsi yang melandarinya.
+Pada tingkat kepercayaan 95%, nilai parameter populasi yang sesungguhnya secara probabilistik akan jatuh dalam rentang $\pm 2$ unit _standard error_ dari persentase sampel [1].
 
-## Penentuan Ukuran Sampel Berdasarkan _Statistical Power_ dan Teknik Multivariat
+### Tabel 1: Ukuran Sampel Minimum pada Varians 50/50
 
-Selain menggunakan estimasi proporsi, ukuran sampel sangat ditentukan oleh metode analisis data yang digunakan, jumlah variabel, serta kekuatan uji statistik (_statistical power_) yang diharapkan.
+Apabila variasi populasi pada variabel yang diteliti tidak diketahui, asumsi yang paling konservatif adalah menetapkan kondisi heterogenitas ekstrem, yakni pemisahan respons 50/50 [1]. Kondisi ini menghasilkan _standard error_ terbesar dan dengan demikian kebutuhan sampel yang paling besar. Tabel berikut merangkum ukuran sampel minimum pada variasi tingkat _sampling error_ dalam kondisi tersebut, untuk _simple random sampling_ pada tingkat kepercayaan 95%:
 
-### _Power Analysis_
+| _Sampling error_ | Ukuran Sampel Min. | _Sampling error_ | Ukuran Sampel Min. |
+| :--------------: | :----------------: | :--------------: | :----------------: |
+|       1,0%       |       10.000       |       5,5%       |        330         |
+|       1,5%       |       4.500        |       6,0%       |        277         |
+|       2,0%       |       2.500        |       6,5%       |        237         |
+|       2,5%       |       1.600        |       7,0%       |        204         |
+|       3,0%       |       1.100        |       7,5%       |        178         |
+|       3,5%       |        816         |       8,0%       |        156         |
+|       4,0%       |        625         |       8,5%       |        138         |
+|       4,5%       |        494         |       9,0%       |        123         |
+|       5,0%       |        400         |       9,5%       |        110         |
+|                  |                    |      10,0%       |        100         |
 
-Ukuran sampel berhubungan erat dengan peluang menolak hipotesis nol secara tepat. Secara umum, ukuran sampel harus cukup besar untuk mengamankan nilai _statistical power_ minimal 0,80 (80%) pada tingkat signifikansi $\alpha$ (umumnya 0,05 atau 0,01) berdasarkan _effect size_ yang diantisipasi [6], [7]. Semakin kecil _effect size_ yang dihipotesiskan, semakin besar ukuran sampel yang dibutuhkan untuk mendeteksinya secara reliabel [7].
+Hukum yang berlaku secara statistik adalah bahwa untuk mengurangi _sampling error_ menjadi setengahnya (misalnya dari 5,0% menjadi 2,5%), ukuran sampel harus dilipatgandakan sebanyak **empat kali lipat** (dari 400 menjadi 1.600) [1]. Di luar titik tertentu, biaya penambahan unit sampel menjadi tidak proporsional dibandingkan kelebihan presisi yang didapatkan.
 
-### Regresi Multipel
+### Tabel 2: Ukuran Sampel Berdasarkan Tingkat Homogenitas Populasi
 
-Aturan praktis (_rule of thumb_) untuk regresi multipel merekomendasikan rasio minimal 5 observasi untuk setiap variabel independen (5:1). Namun, untuk memastikan hasil yang dapat digeneralisasikan secara optimal, rasio yang diharapkan adalah 15:1 hingga 20:1 [8], [9]. Ukuran sampel juga direkomendasikan berjumlah minimum 50 observasi, dan idealnya 100 atau lebih [9].
+Tabel di atas mengasumsikan distribusi populasi terbelah tepat di tengah (50/50). Untuk populasi di mana proporsi yang besar dari elemennya diharapkan memberikan satu respons yang dominan (lebih homogen), sampel yang lebih kecil cukup tanpa kehilangan presisi [1]. Tabel berikut memetakan kebutuhan ukuran sampel pada variasi ekspektasi respons (_split_) dan berbagai toleransi _sampling error_ pada tingkat kepercayaan 95%:
 
-### Regresi Logistik
+| Toleransi*Sampling Error* | _Split_ 5/95 | _Split_ 10/90 | _Split_ 20/80 | _Split_ 30/70 | _Split_ 40/60 | _Split_ 50/50 |
+| :-----------------------: | :----------: | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: |
+|            1%             |    1.900     |     3.600     |     6.400     |     8.400     |     9.600     |    10.000     |
+|            2%             |     479      |      900      |     1.600     |     2.100     |     2.400     |     2.500     |
+|            3%             |     211      |      400      |      711      |      933      |     1.066     |     1.100     |
+|            4%             |     119      |      225      |      400      |      525      |      600      |      625      |
+|            5%             |      76      |      144      |      226      |      336      |      370      |      400      |
+|            6%             |      —       |      100      |      178      |      233      |      267      |      277      |
+|            7%             |      —       |      73       |      131      |      171      |      192      |      204      |
+|            8%             |      —       |       —       |      100      |      131      |      150      |      156      |
+|            9%             |      —       |       —       |      79       |      104      |      117      |      123      |
+|            10%            |      —       |       —       |       —       |      84       |      96       |      100      |
 
-Karena regresi logistik menggunakan pendekatan _Maximum Likelihood Estimation_ (MLE), kebutuhan ukuran sampelnya lebih besar dibandingkan regresi linier standar. Jumlah sampel pada setiap kategori variabel dependen harus sekurang-kurangnya 10 observasi per parameter yang diestimasi [10], [11].
+Tanda (—) menunjukkan bahwa ukuran sampel pada kondisi tersebut lazimnya terlalu kecil untuk memungkinkan analisis data secara memadai [1].
 
-### Analisis Faktor
+Dalam instrumen penelitian multi-tujuan, tiap variabel dapat memiliki ekspektasi _split_ yang berbeda-beda. Keputusan analitis yang tepat dalam kondisi ini adalah mengambil ukuran sampel berdasarkan asumsi variabilitas terbesar (50/50) untuk memitigasi kekurangan data pada variabel kunci [1].
 
-Untuk mengekstraksi faktor secara stabil, sampel sebaiknya tidak kurang dari 50 observasi, dengan jumlah yang lebih disukai berkisar minimal 100 observasi [12]. Rasio minimum yang disyaratkan adalah 5 observasi per variabel, meskipun rasio 10:1 lebih direkomendasikan guna menghindari _overfitting_ yang spesifik pada sampel tertentu [12], [13].
+### Catatan: _Sampling Error_ pada Subkelompok
+
+_Sampling error_ berlaku secara eksklusif berdasarkan jumlah unit di dalam sebuah subkelompok, bukan ukuran total sampel. Apabila analisis akan memecah sampel ke dalam subkelompok (misalnya berdasarkan gender atau kategori demografi), presisi estimasi akan menurun tajam saat ukuran subkelompok terlalu sempit. Implikasinya, kebutuhan ukuran sampel total harus dihitung dengan mempertimbangkan ukuran subkelompok yang terkecil [1].
+
+---
+
+## Pendekatan _Power Analysis_
+
+### Konsep Dasar: Empat Parameter yang Saling Terkait
+
+_Power analysis_ adalah metode statistik yang digunakan untuk mengestimasi ukuran sampel minimum yang diperlukan agar suatu pengujian hipotesis dapat dilakukan secara andal [3]. Metode ini menghubungkan empat parameter yang saling berkaitan secara matematis:
+
+**1. _Type I Error_ ($\alpha$)**
+Probabilitas menolak hipotesis nol ($H_0$) padahal $H_0$ tersebut sebenarnya benar [4]. Peneliti secara keliru menyimpulkan adanya efek atau perbedaan padahal di populasi hal tersebut tidak ada. Batas toleransi maksimal ditetapkan melalui _alpha level_ ($\alpha$), yang paling umum adalah 0,05 atau 0,01 [4].
+
+**2. _Type II Error_ ($\beta$)**
+Probabilitas gagal menolak hipotesis nol padahal $H_0$ tersebut sebenarnya salah [4]. Peneliti gagal mendeteksi efek atau perbedaan yang sesungguhnya ada di populasi.
+
+**3. _Statistical Power_ ($1 - \beta$)**
+Probabilitas menolak hipotesis nol secara benar ketika $H_0$ seharusnya ditolak [4]. Ini adalah probabilitas bahwa signifikansi statistik akan berhasil dideteksi jika efeknya memang nyata di populasi. Batas _power_ yang direkomendasikan sebagai standar dalam penelitian adalah **0,80 (80%)** [3].
+
+**4. _Effect Size_**
+Estimasi seberapa besar derajat fenomena yang diteliti (misalnya, seberapa kuat korelasi atau seberapa besar selisih rata-rata) di dalam populasi [4]. _Effect size_ memiliki hubungan terbalik dengan kebutuhan ukuran sampel: semakin besar _effect size_ yang diantisipasi, semakin kecil sampel yang dibutuhkan untuk mendeteksinya secara andal [4].
+
+### Prosedur Penentuan Ukuran Sampel
+
+Untuk menentukan ukuran sampel melalui _power analysis_, tiga parameter berikut harus ditetapkan terlebih dahulu [3], [4]:
+
+**Langkah 1 — Mengestimasi _Effect Size_**
+Nilai ini biasanya didasarkan pada tinjauan literatur dari penelitian terdahulu atau ditetapkan pada tingkat minimum yang masih bermakna secara substantif [4]. Jika _effect size_ yang diekspektasikan kecil, ukuran sampel yang diperlukan akan lebih besar.
+
+**Langkah 2 — Menetapkan _Alpha Level_ ($\alpha$)**
+Penggunaan $\alpha = 0{,}01$ (lebih ketat) akan membutuhkan ukuran sampel yang lebih besar dibandingkan $\alpha = 0{,}05$ untuk mencapai tingkat _power_ yang sama [4].
+
+**Langkah 3 — Menetapkan Target _Power Level_ ($1 - \beta$)**
+Target ideal yang umum digunakan adalah 0,80, yang berarti membatasi kemungkinan _Type II error_ ($\beta$) sebesar maksimal 20% [3].
+
+Setelah ketiga parameter ini ditetapkan, perhitungan matematis — yang saat ini sering diotomatisasi dengan perangkat lunak seperti G\*Power, PASS, atau paket `pwr` di R — akan memecahkan persamaan untuk menemukan satu parameter yang tersisa, yaitu jumlah sampel ($N$) yang diperlukan [3].
+
+### Hubungan Antar-Parameter
+
+Hubungan antar-keempat parameter ini bersifat _trade-off_. Tabel berikut merangkum arah perubahan kebutuhan ukuran sampel ketika salah satu parameter diperketat:
+
+| Perubahan parameter                          | Efek terhadap kebutuhan ukuran sampel |
+| -------------------------------------------- | ------------------------------------- |
+| $\alpha$ diperkecil (misal 0,05 → 0,01)      | Sampel**bertambah**                   |
+| Target*power* ditingkatkan (misal 80% → 90%) | Sampel**bertambah**                   |
+| _Effect size_ yang diantisipasi lebih kecil  | Sampel**bertambah**                   |
+| _Effect size_ yang diantisipasi lebih besar  | Sampel**berkurang**                   |
 
 ---
 
 ## Referensi
 
-[1] M. N. K. Saunders, P. Lewis, dan A. Thornhill, _Research Methods for Business Students_, 9th ed. Harlow: Pearson Education Limited, 2023.
+[1] D. de Vaus, _Surveys in Social Research_, 6th ed. Abingdon: Routledge, 2014.
 
 [2] R. Ewing dan K. Park (Eds.), _Basic Quantitative Research Methods for Urban Planners_. New York, NY: Routledge, 2020.
 
-[3] D. de Vaus, _Surveys in Social Research_, 6th ed. Abingdon: Routledge, 2014.
+[3] J. F. Hair, W. C. Black, B. J. Babin, dan R. E. Anderson, _Multivariate Data Analysis_, 7th ed. Upper Saddle River, NJ: Pearson Prentice Hall, 2010.
 
-[4] G. Henry, _Practical Sampling_. Newbury Park, CA: Sage, 1990.
+[4] J. F. Healey dan C. Donoghue, _Statistics: A Tool for Social Research and Data Analysis_, 11th ed. Cengage Learning, 2020.
 
-[5] A. Fink, _How to Sample in Surveys_, 2nd ed. Thousand Oaks: Sage, 2002.
+[5] J. Cohen, _Statistical Power Analysis for the Behavioral Sciences_, 2nd ed. Hillsdale, NJ: Lawrence Erlbaum Associates, 1988.
 
-[6] J. F. Healey dan C. Donoghue, _Statistics: A Tool for Social Research and Data Analysis_, 11th ed. Cengage Learning, 2020.
-
-[7] J. Cohen, _Statistical Power Analysis for the Behavioral Sciences_, 2nd ed. Hillsdale, NJ: Lawrence Erlbaum Associates, 1988.
-
-[8] J. F. Hair, W. C. Black, B. J. Babin, dan R. E. Anderson, _Multivariate Data Analysis_, 7th ed. Upper Saddle River, NJ: Pearson Prentice Hall, 2010.
-
-[9] G. Kalton, _Introduction to Survey Sampling_, Sage University Paper series on Quantitative Applications in the Social Sciences. Beverly Hills: Sage, 1983.
-
-[10] J. F. Hair, W. C. Black, B. J. Babin, dan R. E. Anderson, _Multivariate Data Analysis_, 7th ed. Upper Saddle River, NJ: Pearson Prentice Hall, 2010.
-
-[11] R. Ewing dan K. Park (Eds.), _Basic Quantitative Research Methods for Urban Planners_. New York, NY: Routledge, 2020.
-
-[12] J. F. Hair, W. C. Black, B. J. Babin, dan R. E. Anderson, _Multivariate Data Analysis_, 7th ed. Upper Saddle River, NJ: Pearson Prentice Hall, 2010.
-
-[13] D. de Vaus, _Surveys in Social Research_, 6th ed. Abingdon: Routledge, 2014.
+[6] M. N. K. Saunders, P. Lewis, dan A. Thornhill, _Research Methods for Business Students_, 9th ed. Harlow: Pearson Education Limited, 2023.
