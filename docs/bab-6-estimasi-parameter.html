@@ -326,12 +326,20 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="7" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html"><i class="fa fa-check"></i><b>7</b> Estimasi Parameter</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#konsep-dasar-1"><i class="fa fa-check"></i><b>7.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="7.2" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#estimasi-rentang-kepercayaan-confidence-interval"><i class="fa fa-check"></i><b>7.2</b> Estimasi Rentang Kepercayaan (Confidence Interval)</a>
+<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#capaian-pembelajaran-5"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
+<li class="chapter" data-level="7.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#konsep-dasar-1"><i class="fa fa-check"></i><b>7.1</b> Konsep Dasar</a>
 <ul>
-<li class="chapter" data-level="7.2.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus"><i class="fa fa-check"></i><b>7.2.1</b> Studi Kasus</a></li>
+<li class="chapter" data-level="7.1.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#statistik-vs.-parameter"><i class="fa fa-check"></i><b>7.1.1</b> Statistik vs. Parameter</a></li>
+<li class="chapter" data-level="7.1.2" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#estimasi-titik-vs.-estimasi-rentang"><i class="fa fa-check"></i><b>7.1.2</b> Estimasi Titik vs. Estimasi Rentang</a></li>
+<li class="chapter" data-level="7.1.3" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#tingkat-kepercayaan-confidence-level"><i class="fa fa-check"></i><b>7.1.3</b> Tingkat Kepercayaan (<em>Confidence Level</em>)</a></li>
+<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#catatan-tingkat-kepercayaan"><i class="fa fa-check"></i>Catatan: Tingkat Kepercayaan</a></li>
+<li class="chapter" data-level="7.1.4" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#konsep-perhitungan-rentang-kepercayaan"><i class="fa fa-check"></i><b>7.1.4</b> Konsep Perhitungan Rentang Kepercayaan</a></li>
+<li class="chapter" data-level="7.1.5" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-rata-rata"><i class="fa fa-check"></i><b>7.1.5</b> Perhitungan Rentang Kepercayaan Rata-rata</a></li>
+<li class="chapter" data-level="7.1.6" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-proporsi"><i class="fa fa-check"></i><b>7.1.6</b> Perhitungan Rentang Kepercayaan Proporsi</a></li>
+<li class="chapter" data-level="7.1.7" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#interpretasi-estimasi-parameter"><i class="fa fa-check"></i><b>7.1.7</b> Interpretasi Estimasi Parameter</a></li>
+<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-pola-hunian-mahasiswa-itera"><i class="fa fa-check"></i>Studi Kasus: Pola Hunian Mahasiswa ITERA</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#soal-evaluasi-7-1"><i class="fa fa-check"></i>Soal Evaluasi 7</a></li>
+<li class="chapter" data-level="7.2" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#soal-latihan"><i class="fa fa-check"></i><b>7.2</b> Soal Latihan</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="uji-hipotesis-satu-populasi.html"><a href="uji-hipotesis-satu-populasi.html"><i class="fa fa-check"></i><b>8</b> Uji Hipotesis Satu Populasi</a>
 <ul>
@@ -418,45 +426,350 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="bab-6-estimasi-parameter" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">7</span> Estimasi Parameter<a href="bab-6-estimasi-parameter.html#bab-6-estimasi-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="capaian-pembelajaran-5" class="section level3 unnumbered hasAnchor rmdcapaian">
+<h3>Capaian Pembelajaran<a href="bab-6-estimasi-parameter.html#capaian-pembelajaran-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Setelah mempelajari bab ini, Anda diharapkan:</p>
+<ol style="list-style-type: decimal">
+<li>Mampu memaknai interval kepercayaan estimasi sebuah parameter <code>[STP-5.1]</code>.</li>
+</ol>
+<p>Agar lebih mudah memahami konsep dasar, Anda dapat mempelajari studi kasus terlebih dahulu dan menyimak pembahasan sesuai dengan konsep dasarnya.</p>
+</div>
 <div id="konsep-dasar-1" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Konsep Dasar<a href="bab-6-estimasi-parameter.html#konsep-dasar-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Dalam statistik inferensial, kita menggunakan statistik sampel (seperti <span class="math inline">\(\bar{x}\)</span>) untuk mengestimasi parameter populasi (seperti <span class="math inline">\(\mu\)</span>).</p>
-<p>Ada dua jenis estimasi:
-1. <strong>Estimasi Titik (Point Estimation)</strong>. Menggunakan satu nilai tunggal. Contoh: “Rata-rata pendapatan adalah 5 juta”. Kelemahannya: akurasinya diragukan.
-2. <strong>Estimasi Rentang (Interval Estimation)</strong>. Menggunakan rentang nilai dengan tingkat kepercayaan tertentu. Contoh: “Rata-rata pendapatan ada di antara 4,8 juta hingga 5,2 juta dengan tingkat kepercayaan 95%”. Inilah yang disebut <strong>Confidence Interval (CI)</strong>.</p>
+<p>Estimasi parameter adalah teknik dalam statistika inferensial untuk memperkirakan nilai karakteristik populasi berdasarkan data sampel <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>; <a href="analisis-statistik-multivariat-interdependensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>. Konsep dasar yang dipelajari mencakup perbedaan antara statistik dan parameter, estimasi titik dan estimasi rentang, serta tingkat kepercayaan (<em>confidence level</em>). Selanjutnya, dibahas perhitungan estimasi parameter untuk proporsi dan rata-rata, serta interpretasi hasil estimasi. Pemahaman konsep ini penting agar kesimpulan tentang populasi dapat dibuat secara lebih akurat meskipun hanya menggunakan data sampel.</p>
+<div id="statistik-vs.-parameter" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Statistik vs. Parameter<a href="bab-6-estimasi-parameter.html#statistik-vs.-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dalam statistika, kita sering menjumpai dua istilah penting, yaitu statistik dan parameter. Keduanya sama-sama merupakan ukuran kuantitatif yang digunakan untuk menggambarkan karakteristik data, tetapi sumber datanya berbeda. Statistik diperoleh dari data sampel, sedangkan parameter menggambarkan kondisi populasi secara keseluruhan <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>. Karena populasi biasanya sulit diukur langsung, maka statistik digunakan untuk mengestimasi parameter.</p>
+<div id="statistik" class="section level4 hasAnchor" number="7.1.1.1">
+<h4><span class="header-section-number">7.1.1.1</span> Statistik<a href="bab-6-estimasi-parameter.html#statistik" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Statistik adalah ukuran yang didapatkan dari data sampel, yaitu sebagian kecil dari populasi, yang digunakan untuk mewakili keseluruhan <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>. Dalam analisis inferensial, statistik berfungsi sebagai ringkasan informasi dari sampel yang dapat membantu peneliti memahami pola data dan membuat perkiraan mengenai populasi.</p>
+<p>Jika seorang peneliti ingin mengetahui rata-rata nilai ujian mahasiswa di suatu universitas dengan jumlah mahasiswa 5.000 orang, ia mengambil sampel acak dengan ukuran 100 mahasiswa. Misalkan hasil perhitungan dari sampel tersebut menunjukkan rata-rata nilai ujian sebesar 72 dengan simpangan baku 8. Angka rata-rata 72 dan simpangan baku 8 tersebut merupakan statistik, karena keduanya dihitung dari 100 orang sampel mahasiswa saja, bukan dari seluruh populasi.</p>
 </div>
-<div id="estimasi-rentang-kepercayaan-confidence-interval" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> Estimasi Rentang Kepercayaan (Confidence Interval)<a href="bab-6-estimasi-parameter.html#estimasi-rentang-kepercayaan-confidence-interval" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Rumus umum untuk CI rata-rata adalah:
-<span class="math display">\[ \bar{x} \pm Z_{\alpha/2} \times SE \]</span>
-Atau:
-<span class="math display">\[ \bar{x} - Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} &lt; \mu &lt; \bar{x} + Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \]</span></p>
-<p>Nilai <span class="math inline">\(Z_{\alpha/2}\)</span> bergantung pada tingkat kepercayaan (Confidence Level, <span class="math inline">\(1-\alpha\)</span>):
-* Tingkat Kepercayaan 90% (<span class="math inline">\(\alpha=10\%\)</span>) <span class="math inline">\(\rightarrow Z = 1.645\)</span>
-* Tingkat Kepercayaan 95% (<span class="math inline">\(\alpha=5\%\)</span>) <span class="math inline">\(\rightarrow Z = 1.96\)</span>
-* Tingkat Kepercayaan 99% (<span class="math inline">\(\alpha=1\%\)</span>) <span class="math inline">\(\rightarrow Z = 2.575\)</span></p>
-<div id="studi-kasus" class="section level3 hasAnchor" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Studi Kasus<a href="bab-6-estimasi-parameter.html#studi-kasus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Seorang peneliti ingin mengestimasi rata-rata pengeluaran bulanan mahasiswa. Dari sampel 100 mahasiswa, diperoleh rata-rata 1,5 juta rupiah dengan simpangan baku 500 ribu rupiah. Buatlah selang kepercayaan 95%.</p>
-<p>Diketahui:
-* <span class="math inline">\(n = 100\)</span>
-* <span class="math inline">\(\bar{x} = 1.500.000\)</span>
-* <span class="math inline">\(s = 500.000\)</span> (menggantikan <span class="math inline">\(\sigma\)</span>)
-* <span class="math inline">\(Z_{0.025} = 1.96\)</span></p>
-<p>Standard Error: <span class="math inline">\(SE = 500.000 / \sqrt{100} = 50.000\)</span>.</p>
-<p>Batas Bawah: <span class="math inline">\(1.500.000 - (1.96 \times 50.000) = 1.402.000\)</span>.
-Batas Atas: <span class="math inline">\(1.500.000 + (1.96 \times 50.000) = 1.598.000\)</span>.</p>
-<p>Jadi, dengan tingkat kepercayaan 95%, rata-rata pengeluaran mahasiswa berada di antara Rp1.402.000 dan Rp1.598.000.</p>
+<div id="parameter" class="section level4 hasAnchor" number="7.1.1.2">
+<h4><span class="header-section-number">7.1.1.2</span> Parameter<a href="bab-6-estimasi-parameter.html#parameter" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Parameter adalah ukuran yang menggambarkan karakteristik populasi secara keseluruhan <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>. Populasi di sini mencakup seluruh individu, objek, atau elemen yang menjadi perhatian dalam penelitian. Karena populasi biasanya berjumlah sangat besar dan sulit dijangkau, nilai parameter hampir selalu tidak diketahui secara pasti, kecuali kita melakukan pengumpulan data secara menyeluruh yang disebut sensus.</p>
+<p>Meneruskan contoh mahasiswa, peneliti tadi ternyata berkesempatan melakukan sensus kepada seluruh mahasiswa yang berjumlah 5.000 orang dan menanyakan nilai ujian mereka. Apabila ia mendapatkan hasil rata-rata nilai ujian seluruh mahasiswa tersebut adalah 74, maka nilai 74 tersebut adalah parameter. Nilai inilah yang tidak selalu diketahui dan berusaha diperkirakan berdasarkan nilai statistik.</p>
+<p>Cara menyatakan ukuran statistik dan parameter, yakni menggunakan simbol-simbol matematis <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>, disajikan dalam tabel berikut.</p>
+<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tab-simbol-statistik-parameter">Tabel 7.1: </span>Simbol-simbol yang Digunakan Untuk Statistik dan Parameter
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Ukuran
+</th>
+<th style="text-align:left;">
+Statistik (Sampel)
+</th>
+<th style="text-align:left;">
+Parameter (Populasi)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Rata-rata
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\bar{x}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\mu\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Simpangan baku
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(s\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\sigma\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Variansi
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(s^2\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\sigma^2\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Proporsi
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(\hat{p}\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(P\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jumlah nilai
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(x\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(X\)</span>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ukuran observasi
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(n\)</span>
+</td>
+<td style="text-align:left;">
+<span class="math inline">\(N\)</span>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div id="soal-evaluasi-7-1" class="section level2 unnumbered hasAnchor rmdexercise">
-<h2>Soal Evaluasi 7<a href="bab-6-estimasi-parameter.html#soal-evaluasi-7-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="estimasi-titik-vs.-estimasi-rentang" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Estimasi Titik vs. Estimasi Rentang<a href="bab-6-estimasi-parameter.html#estimasi-titik-vs.-estimasi-rentang" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Karena kita jarang mengetahui nilai parameter dan lebih sering bisa memperoleh statistik, maka nilai parameter diperkirakan dari nilai statistik. Proses menghasilkan perkiraan ini disebut estimasi. Estimasi berarti memperkirakan nilai parameter (populasi) berdasarkan hasil perhitungan statistik (sampel).</p>
+<p>Terdapat dua jenis estimasi yang umum digunakan, yaitu estimasi titik dan estimasi rentang <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>.</p>
+<div id="estimasi-titik" class="section level4 hasAnchor" number="7.1.2.1">
+<h4><span class="header-section-number">7.1.2.1</span> Estimasi Titik<a href="bab-6-estimasi-parameter.html#estimasi-titik" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Estimasi titik (<em>point estimate</em>) adalah estimasi nilai suatu parameter hanya dengan satu angka tunggal saja. Angka ini dihasilkan dari statistik sampel yang kita kumpulkan <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-kachigan1986statistical">Kachigan 1986</a>)</span>.</p>
+<p>Ciri utama estimasi titik adalah ia hanya terdiri dari satu nilai tunggal. Karena hanya memiliki satu nilai saja, kemungkinan kesalahannya sangat besar, karena sangat mungkin nilai tersebut berbeda jauh dari parameter yang sebenarnya.</p>
+<p>Contoh lainnya, seorang peneliti lainnya ingin mengetahui rata-rata tinggi badan seluruh mahasiswa di sebuah universitas. Ia mengambil sampel berukuran 100 mahasiswa secara acak. Setelah dihitung, diperoleh rata-rata tinggi badan dari sampel adalah 165 cm. Angka 165 cm digunakan sebagai pengira dari parameter rata-rata tinggi badan seluruh mahasiswa universitas (<span class="math inline">\(\mu\)</span>).</p>
+<p>Peneliti tidak bisa memastikan apakah benar rata-rata populasi seluruh mahasiswa tepat sama dengan 165 cm, atau mungkin sebenarnya 164 cm, 166 cm, atau nilai lain yang mendekati (Gambar <a href="bab-6-estimasi-parameter.html#fig:fig-ilustrasi-estimasi-titik">7.1</a>). Di sinilah keterbatasan estimasi titik terlihat, karena hanya menyajikan satu angka saja dan rentan meleset dari nilai parameter sebenarnya.</p>
+<p>Pada bagian selanjutnya kita akan mempelajari estimasi yang lebih “aman” dari estimasi titik, yakni estimasi berupa rentang nilai.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ilustrasi-estimasi-titik"></span>
+<img src="figures/fig-ilustrasi-estimasi-titik-1.png" alt="Ilustrasi Estimasi Titik" width="60%" />
+<p class="caption">
+Gambar 7.1: Ilustrasi Estimasi Titik
+</p>
+</div>
+</div>
+<div id="estimasi-rentang" class="section level4 hasAnchor" number="7.1.2.2">
+<h4><span class="header-section-number">7.1.2.2</span> Estimasi Rentang<a href="bab-6-estimasi-parameter.html#estimasi-rentang" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Berbeda dari estimasi titik, estimasi rentang (<em>interval estimate</em>) menetapkan parameter populasi dalam sebuah rentang nilai. Rentang inilah yang disebut interval kepercayaan (<em>confidence interval</em>), yang memuat nilai parameter populasi yang sebenarnya. Dengan demikian, kita bisa menebak parameter yang sebenarnya dengan kemungkinan yang lebih besar <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-kachigan1986statistical">Kachigan 1986</a>)</span>.</p>
+<p>Rentang kepercayaan dibentuk dari dua nilai batas, yaitu batas bawah (<em>lower limit</em>) dan batas atas (<em>upper limit</em>). Batas bawah dan batas atas ini diperoleh dari pengurangan dan penambahan margin kesalahan (<em>margin of error</em>) dari estimasi titik yang kita hitung dari sampel.</p>
+<p>Melanjutkan contoh tinggi badan mahasiswa, alih-alih hanya menyatakan estimasi parameter sebesar 165 cm, peneliti tersebut menghitung <em>margin of error</em>-nya juga dan mendapatkan nilainya sebesar <span class="math inline">\(\pm 2,5\)</span> cm. Hasilnya, diperoleh interval kepercayaan antara 162,5 cm hingga 167,5 cm. Artinya, peneliti memperkirakan bahwa nilai parameter rata-rata tinggi badan seluruh mahasiswa adalah 162,5 cm atau 162,6 cm atau 162,7 cm dan seterusnya hingga 167,5 cm.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ilustrasi-estimasi-rentang"></span>
+<img src="figures/fig-ilustrasi-estimasi-rentang-1.png" alt="Ilustrasi Estimasi Rentang" width="60%" />
+<p class="caption">
+Gambar 7.2: Ilustrasi Estimasi Rentang
+</p>
+</div>
+<p>Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi titik sebesar 165 cm, karena peneliti menyadari adanya variasi dalam data dan memperhitungkan ketidakpastian dalam proses pengambilan sampel.</p>
+</div>
+</div>
+<div id="tingkat-kepercayaan-confidence-level" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Tingkat Kepercayaan (<em>Confidence Level</em>)<a href="bab-6-estimasi-parameter.html#tingkat-kepercayaan-confidence-level" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Untuk dapat menghasilkan estimasi rentang, konsep tingkat kepercayaan menjadi hal yang sangat penting untuk dipahami. Tingkat kepercayaan (<em>confidence level</em>, CL) berbeda dengan rentang kepercayaan (<em>confidence interval</em>) jika rentang kepercayaan adalah hasil berupa interval nilai yang memperkirakan posisi parameter populasi, maka tingkat kepercayaan adalah ukuran seberapa yakin kita terhadap interval tersebut <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-chase2000general">Chase and Bown 2000</a>)</span>.</p>
+<p>Tingkat kepercayaan berarti pernyataan keyakinan kita akan dimuatnya nilai parameter dalam interval yang kita hasilkan. Keyakinan ini dinyatakan dalam bentuk probabilitas yang merupakan angka persentase atau proporsi, misalnya 90% (0,90), 95% (0,95), atau 99% (0,99). Angka tersebut bermakna dari 100 sampel yang mungkin diambil, sebanyak CL% (<em>confidence level</em>) sampel akan memuat nilai parameter.</p>
+<p>Semakin tinggi tingkat kepercayaan, semakin besar keyakinan kita bahwa interval estimasi mencakup parameter populasi.</p>
+<p>Dalam statistik tidak pernah ada jaminan keyakinan 100%. Hal ini karena setiap proses estimasi selalu melibatkan sampel, dan pengambilan sampel tentu memiliki peluang kesalahan. Tingkat kepercayaan pasti selalu lebih kecil dari 100% karena sisanya adalah kemungkinan kita melakukan kesalahan, yakni menghasilkan nilai rentang yang tidak mencakup parameter. Nilai ini disebut dengan tingkat kesalahan (<em>error probability</em>) yang disimbolkan dengan <span class="math inline">\(\alpha\)</span> (dibaca “alpha”). Istilah lain untuk tingkat kesalahan <em>error probability</em> adalah signifikansi (<em>significance</em>) <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-chase2000general">Chase and Bown 2000</a>)</span>.</p>
+<p>Dengan demikian, secara matematis, tingkat kepercayaan dituliskan sebagai <span class="math inline">\(1-\alpha\)</span>. Apabila <span class="math inline">\(\alpha = 0,05\)</span>, maka tingkat kepercayaan adalah <span class="math inline">\(1-0,05 = 0,95\)</span> atau 95%. Ini artinya, kita dapat mengatakan bahwa 95% dari 100 kali sampel yang diambil akan menghasilkan interval yang mencakup nilai parameter, sedangkan 5% sisanya tidak.</p>
+<p>Adapun nilai <span class="math inline">\(\alpha\)</span> yang umum digunakan dalam penelitian adalah 0,10 (10%), 0,05 (5%), dan 0,01 (1%), tergantung seberapa besar tingkat keyakinan yang dikehendaki peneliti.</p>
+<p>Perbedaan tingkat kepercayaan memengaruhi lebar interval estimasi. Gambar <a href="bab-6-estimasi-parameter.html#fig:fig-pengaruh-nilai-tingkat-kepercayaan">7.3</a> menunjukkan hasil estimasi parameter tinggi badan mahasiswa yang nilai statistiknya adalah 165 cm, simpangan baku 3 cm, dan ukuran sampel 200 orang.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-pengaruh-nilai-tingkat-kepercayaan"></span>
+<img src="figures/fig-pengaruh-nilai-tingkat-kepercayaan-1.png" alt="Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang" width="60%" />
+<p class="caption">
+Gambar 7.3: Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang
+</p>
+</div>
+<p>Garis hitam putus-putus pada posisi 165 menggambarkan estimasi titik, yaitu satu nilai hasil dari sampel <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-chase2000general">Chase and Bown 2000</a>)</span>. Bidang biru, hijau, dan ungu menggambarkan interval kepercayaan dengan tingkat kepercayaan yang berbeda. Pada tingkat kepercayaan 90% (biru), intervalnya sempit, yakni 164,65-165,35 cm. Pada tingkat kepercayaan 95% (hijau), intervalnya sedikit lebih lebar, yaitu 164,58-165,42 cm. Sementara pada tingkat kepercayaan 99% (ungu), interval semakin melebar menjadi 164,45-165,55 cm. Dari sini terlihat bahwa semakin tinggi tingkat kepercayaan, semakin lebar rentang yang dihasilkan.</p>
+</div>
+<div id="catatan-tingkat-kepercayaan" class="section level3 unnumbered hasAnchor rmdnote">
+<h3>Catatan: Tingkat Kepercayaan<a href="bab-6-estimasi-parameter.html#catatan-tingkat-kepercayaan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tingkat kepercayaan jangan dimaknai peluang parameter ada di dalam interval. Jadi, nilai tingkat kepercayaan 90% bukan berarti kita 90% yakin bahwa nilai parameter ada dalam rentang kepercayaan kita. Nilai parameter populasi itu tetap, misalnya rata-rata tinggi badan seluruh mahasiswa memang punya satu angka pasti, hanya saja kita tidak tahu berapa nilainya. Oleh karena itu, kita mengambil sampel yang representatif dan menghitung statistiknya untuk mengestimasi parameter.</p>
+<p>Dengan tingkat kepercayaan 90%, artinya kita mengatakan bahwa sampel kita tersebut hanya akan salah sebanyak 10 kali pengambilan saja dari 100 kali pengambilan yang mungkin. Dengan kata lain, 90 sampel tersebut akan benar-benar berisi nilai parameter populasi yang sebenarnya.</p>
+</div>
+<div id="konsep-perhitungan-rentang-kepercayaan" class="section level3 hasAnchor" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Konsep Perhitungan Rentang Kepercayaan<a href="bab-6-estimasi-parameter.html#konsep-perhitungan-rentang-kepercayaan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Rentang kepercayaan dihitung dari estimasi titik (<span class="math inline">\(\bar{x}\)</span> atau <span class="math inline">\(\hat{p}\)</span>) yang kita kurangkan dan tambahkan dengan <em>margin of error</em> (MoE) <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.</p>
+<p><span class="math display">\[c.i. = \text{estimasi titik} \pm MoE\]</span></p>
+<p>MoE sendiri sebenarnya adalah perkalian antara nilai kritis dan <em>standard error</em>. Dengan demikian, rumus dasar <em>confidence interval</em> sebenarnya adalah:</p>
+<p><span class="math display">\[MoE = Z_{\alpha/2} \times S.E.\]</span>
+<span class="math display">\[c.i. = \text{estimasi titik} \pm (Z_{\alpha/2} \times S.E.)\]</span></p>
+<p>Nilai kritis (<span class="math inline">\(Z_{\alpha/2}\)</span>) adalah nilai standar dalam distribusi normal yang menjadi pembatas area di bawah kurva yang besarnya sama dengan tingkat kepercayaan kita dikurangi alpha yang dibagi rata ke dua sisi grafik. Ini seperti kebalikan dari proses pencarian nilai Z berdasarkan area peluang yang dibahas pada studi kasus kejadian probabilistik probabilitas standar.</p>
+<p>Dalam bagian ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter rata-rata dan proporsi.</p>
+</div>
+<div id="perhitungan-rentang-kepercayaan-rata-rata" class="section level3 hasAnchor" number="7.1.5">
+<h3><span class="header-section-number">7.1.5</span> Perhitungan Rentang Kepercayaan Rata-rata<a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-rata-rata" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Kita akan mulai dengan estimasi parameter untuk variabel numerik, yakni rata-rata. Estimasi parameter rata-rata, berarti kita memperkirakan nilai rata-rata populasi berdasarkan nilai rata-rata yang diperoleh dari sampel <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-kachigan1986statistical">Kachigan 1986</a>)</span>.</p>
+<p>Dari sampel ini diperoleh sebuah nilai rata-rata (<span class="math inline">\(\bar{x}\)</span>) yang berfungsi sebagai estimasi titik. Estimasi titik ini kita tambah dan kurangkan dengan MoE agar menjadi rentang <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Rumus S.E. untuk rata-rata adalah <span class="math inline">\(\frac{s}{\sqrt{n}}\)</span>, maka MoE untuk interval rata-rata adalah:</p>
+<p><span class="math display">\[MoE = Z_{\alpha/2} \times \frac{s}{\sqrt{n}}\]</span></p>
+<p>dengan keterangan: <span class="math inline">\(s\)</span> adalah simpangan baku sampel dan <span class="math inline">\(n\)</span> adalah ukuran sampel. Dengan demikian, rumus lengkap untuk perhitungan rentang kepercayaan rata-rata adalah:</p>
+<p><span class="math display">\[c.i. = \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}}\]</span></p>
+<p>Sebagai contoh, misalkan seorang peneliti ingin memperkirakan rata-rata tinggi badan mahasiswa di sebuah universitas. Dari sampel 100 mahasiswa diperoleh rata-rata (<span class="math inline">\(\bar{x}\)</span>) sebesar 165 cm dengan simpangan baku (<span class="math inline">\(s\)</span>) 5 cm. Jika digunakan tingkat kepercayaan 95% (<span class="math inline">\(Z=1,96\)</span>), maka estimasi rata-rata tinggi badan mahasiswa dapat dihitung dengan rumus di atas.</p>
+<p><span class="math display">\[
+\begin{aligned}
+c.i. &amp;= \bar{x} \pm \left(Z_{\alpha/2} \times \frac{s}{\sqrt{n}}\right) \\
+&amp;= 165 \pm \left(1,96 \times \frac{5}{\sqrt{100}}\right) \\
+&amp;= 165 \pm 0,98
+\end{aligned}
+\]</span></p>
+<p>Dari hasil perhitungan, didapatkan interval kepercayaan kita sebesar 164,02 cm hingga 165,98 cm. Ini berarti dengan tingkat kepercayaan 95%, parameter rata-rata tinggi badan seluruh mahasiswa di universitas tersebut diperkirakan berada dalam rentang tersebut.</p>
+</div>
+<div id="perhitungan-rentang-kepercayaan-proporsi" class="section level3 hasAnchor" number="7.1.6">
+<h3><span class="header-section-number">7.1.6</span> Perhitungan Rentang Kepercayaan Proporsi<a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-proporsi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Perhitungan rentang kepercayaan proporsi hanya berbeda pada rumus <em>standard error</em>-nya <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-kachigan1986statistical">Kachigan 1986</a>)</span>. <em>Standard error</em> untuk distribusi statistik sampel proporsi dihitung dengan rumus berikut.</p>
+<p><span class="math display">\[S.E. = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]</span></p>
+<p>dengan keterangan: <span class="math inline">\(\hat{p}\)</span> adalah proporsi sampel dan <span class="math inline">\(n\)</span> ukuran sampel <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Maka, rumus rentang kepercayaan untuk statistik proporsi adalah:</p>
+<p><span class="math display">\[c.i. = \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]</span></p>
+<p>Misalnya, dari survei terhadap 100 mahasiswa diketahui bahwa 60 mahasiswa (proporsi 0,6) menggunakan sepeda motor untuk pergi ke kampus. Jika digunakan tingkat kepercayaan 95% (<span class="math inline">\(Z=1,96\)</span>), maka estimasi proporsi mahasiswa yang menggunakan sepeda motor dapat dihitung dengan rumus di atas.</p>
+<p><span class="math display">\[
+\begin{aligned}
+c.i. &amp;= \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
+&amp;= 0,6 \pm 1,96 \sqrt{\frac{0,6(1-0,6)}{100}} \\
+&amp;= 0,6 \pm 1,96 \sqrt{\frac{0,24}{100}} \\
+&amp;= 0,6 \pm 1,96 \times 0,049 \\
+&amp;= 0,6 \pm 0,096
+\end{aligned}
+\]</span></p>
+<p>Artinya, parameter berupa proporsi seluruh mahasiswa pengguna sepeda motor berada pada rentang 0,504 hingga 0,696, atau bila dinyatakan dalam persentase, yaitu 50,4% hingga 69,6% pada tingkat kepercayaan 95%.</p>
+</div>
+<div id="interpretasi-estimasi-parameter" class="section level3 hasAnchor" number="7.1.7">
+<h3><span class="header-section-number">7.1.7</span> Interpretasi Estimasi Parameter<a href="bab-6-estimasi-parameter.html#interpretasi-estimasi-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Interpretasi estimasi parameter berfokus pada pemahaman hasil berupa rentang kepercayaan atau <em>confidence interval</em> <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Rentang ini menunjukkan nilai-nilai yang mungkin menjadi parameter populasi, berdasarkan data sampel yang diperoleh. Rentang kepercayaan tidak memberikan jawaban pasti mengenai nilai parameter, melainkan memberikan batas bawah dan batas atas yang menjadi perkiraan dengan tingkat keyakinan tertentu.</p>
+<p>Lebar rentang estimasi dapat menjadi indikator kualitas estimasi. Rentang yang sempit menandakan estimasi yang lebih presisi, yang biasanya terjadi karena ukuran sampel cukup besar atau error yang relatif kecil. Sebaliknya, rentang yang lebar menunjukkan tingkat ketidakpastian yang lebih besar, sering kali disebabkan oleh ukuran sampel yang terlalu kecil atau variasi data yang tinggi. Sehingga, pemilihan jumlah sampel dan pengendalian error sangat memengaruhi kualitas estimasi.</p>
+<p>Konsep tingkat kepercayaan membantu menjelaskan ketidakpastian dalam estimasi. Misalnya, pada tingkat kepercayaan 95% berarti ada kemungkinan 95 dari 100 sampel yang diambil akan menghasilkan interval yang mencakup parameter populasi sebenarnya. Sebaliknya, 5 dari 100 sampel (atau 5%) akan menghasilkan interval yang tidak mencakup parameter tersebut. Jika hasil sampel berbeda dari dugaan populasi, maka perbedaan itu dapat dijelaskan sebagai bagian dari kemungkinan error yang sudah diperhitungkan dalam tingkat kepercayaan.</p>
+<p>Pada akhirnya, hasil estimasi parameter bukanlah angka yang mutlak, melainkan perkiraan yang disertai dengan tingkat kepastian tertentu. Interval kepercayaan memberikan ruang toleransi bagi ketidakpastian yang muncul dari proses pengambilan sampel, sekaligus menjadi alat bantu dalam pengambilan keputusan berbasis data.</p>
+</div>
+<div id="studi-kasus-pola-hunian-mahasiswa-itera" class="section level3 unnumbered hasAnchor rmdkasus">
+<h3>Studi Kasus: Pola Hunian Mahasiswa ITERA<a href="bab-6-estimasi-parameter.html#studi-kasus-pola-hunian-mahasiswa-itera" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fenomena alih fungsi lahan menjadi kos atau rumah sewa di sekitar ITERA yang semakin marak dan menimbulkan perhatian serius dalam perencanaan wilayah dan kota. Jika tidak terkendali, alih fungsi ini dapat mengurangi lahan pertanian, menekan ruang terbuka hijau, serta menimbulkan masalah tata ruang seperti kepadatan permukiman, keterbatasan infrastruktur dasar, dan bencana banjir di kawasan sekitar kampus.</p>
+<p>Dalam sebuah survei terhadap 428 mahasiswa ITERA, dikumpulkan data yang berkaitan dengan kasus di atas, mengenai dua variabel utama yaitu jenis tempat tinggal dan jarak tempat tinggal ke kampus. Dataset tersebut dapat Anda simak di sini.</p>
+<p>Variabel pertama, jenis tempat tinggal, yang dianalisis menggunakan estimasi parameter proporsi untuk mengetahui seberapa besar kecenderungan mahasiswa tinggal di masing-masing jenis hunian.</p>
+<p>Sementara itu, variabel kedua, jarak tempat tinggal ke kampus, diukur dalam satuan kilometer dan dianalisis menggunakan estimasi parameter rata-rata untuk memperkirakan jarak rata-rata mahasiswa dari tempat tinggal menuju kampus.</p>
+<p>Setelahnya kedua hasil estimasi ini diharapkan dapat memberikan gambaran yang lebih komprehensif mengenai pola hunian mahasiswa ITERA, baik dari sisi pilihan jenis tempat tinggal maupun kedekatannya dengan kampus, yang selanjutnya dapat menjadi dasar dalam perencanaan perumahan sewa atau kos bagi mahasiswa ITERA kedepannya.</p>
+<div id="estimasi-parameter-proporsi" class="section level4 hasAnchor" number="7.1.7.1">
+<h4><span class="header-section-number">7.1.7.1</span> Estimasi Parameter Proporsi<a href="bab-6-estimasi-parameter.html#estimasi-parameter-proporsi" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dikumpulkan data mengenai jenis tempat tinggal mereka, termasuk kos sendiri, rumah mengontrak bersama-sama, kos bersama-sama, rumah keluarga, asrama, maupun rumah bersama saudara. Dari data tersebut, perlu dilakukan perhitungan untuk mengetahui estimasi proporsi mahasiswa yang tinggal di hunian sewa atau kos. Estimasi proporsi ini dihitung dengan tingkat kepercayaan 95%.</p>
+<div id="menentukan-proporsi-sampel" class="section level5 hasAnchor" number="7.1.7.1.1">
+<h5><span class="header-section-number">7.1.7.1.1</span> Menentukan Proporsi Sampel<a href="bab-6-estimasi-parameter.html#menentukan-proporsi-sampel" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Langkah awal dalam estimasi parameter proporsi adalah menghitung proporsi sampel berdasarkan data hasil survei. Proporsi sampel (<span class="math inline">\(\hat{p}\)</span>) dihitung dengan:</p>
+<p><span class="math display">\[\hat{p} = \frac{x}{n}\]</span></p>
+<p>dengan:
+- <span class="math inline">\(x\)</span> = jumlah responden yang memiliki karakteristik tertentu,
+- <span class="math inline">\(n\)</span> = jumlah seluruh responden.</p>
+<p>Pada kasus ini, karakteristik yang dimaksud adalah mahasiswa yang tinggal di hunian sewa atau kos. Kategori ini mencakup kos sendiri, rumah mengontrak bersama-sama, dan kos bersama-sama. Dari hasil survei terhadap 428 mahasiswa, diperoleh mahasiswa yang tinggal di kos sendiri, rumah mengontrak bersama-sama, kos bersama-sama, dan rumah mengontrak pribadi dengan totalnya adalah 333 mahasiswa (batang merah pada Gambar <a href="bab-6-estimasi-parameter.html#fig:fig-sebaran-jenis-tempat-tinggal">7.4</a>).</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-sebaran-jenis-tempat-tinggal"></span>
+<img src="figures/fig-sebaran-jenis-tempat-tinggal-1.png" alt="Grafik Statistik Sebaran Jenis Tempat Tinggal Mahasiswa" width="60%" />
+<p class="caption">
+Gambar 7.4: Grafik Statistik Sebaran Jenis Tempat Tinggal Mahasiswa
+</p>
+</div>
+<p>Proporsi sampel dapat dihitung sebagai berikut:</p>
+<p><span class="math display">\[\hat{p} = \frac{333}{428} = 0,778\]</span></p>
+<p>Proporsi sampel mahasiswa yang tinggal di hunian sewa atau kos adalah 0,778 atau 77,8%. Nilai inilah yang kemudian digunakan sebagai dasar dalam perhitungan estimasi parameter proporsi pada tahap selanjutnya.</p>
+</div>
+<div id="menentukan-nilai-kritis-z" class="section level5 hasAnchor" number="7.1.7.1.2">
+<h5><span class="header-section-number">7.1.7.1.2</span> Menentukan Nilai Kritis Z<a href="bab-6-estimasi-parameter.html#menentukan-nilai-kritis-z" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Setelah proporsi sampel ditentukan, langkah berikutnya adalah menentukan nilai kritis Z sesuai dengan tingkat kepercayaan yang digunakan. Nilai kritis <span class="math inline">\(Z_{\alpha/2}\)</span> diperoleh dari distribusi normal baku.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-membagi-dua-nilai-alpha"></span>
+<img src="images/bab-6-membagi-2-alpha.png" alt="Membagi Dua Nilai Alpha" width="60%" />
+<p class="caption">
+Gambar 7.5: Membagi Dua Nilai Alpha
+</p>
+</div>
+<p>Nilai tingkat kepercayaan yang kita gunakan adalah luas area di bawah kurva yang berwarna biru terang, yaitu 0,950. Artinya, kita menggunakan nilai <span class="math inline">\(\alpha\)</span> sebesar 0,05 atau 5%. Nilai <span class="math inline">\(\alpha\)</span> ini dibagi 2 (<span class="math inline">\(\alpha/2\)</span>) dan ditempatkan di kiri dan kanan kurva normal. Dengan demikian, luas area biru terang menjadi bernilai <span class="math inline">\(0,95 / 2 = 0,475\)</span> dari titik 0 di tengah.</p>
+<p>Nilai Z diperoleh dari area seluas 0,475 di bawah kurva normal mulai dari titik tengah (0). Dengan mencocokkan pada tabel distribusi normal, didapatkan nilai <span class="math inline">\(Z=1,96\)</span>, yang berasal dari kombinasi angka 1,9 pada sisi vertikal dan 0,06 pada sisi horizontal tabel.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-mencari-nilai-z"></span>
+<img src="images/bab-6-mencari-z.PNG" alt="Mencari Nilai Z" width="60%" />
+<p class="caption">
+Gambar 7.6: Mencari Nilai Z
+</p>
+</div>
+</div>
+<div id="menghitung-rentang-kepercayaan-dan-menarik-kesimpulan" class="section level5 hasAnchor" number="7.1.7.1.3">
+<h5><span class="header-section-number">7.1.7.1.3</span> Menghitung Rentang Kepercayaan dan Menarik Kesimpulan<a href="bab-6-estimasi-parameter.html#menghitung-rentang-kepercayaan-dan-menarik-kesimpulan" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Setelah seluruh komponen perhitungan ditentukan, langkah terakhir adalah menghitung rentang kepercayaan proporsi. Dari data yang ada diperoleh proporsi sampel sebesar 0,778 dan nilai kritis <span class="math inline">\(Z=1,96\)</span> pada tingkat kepercayaan 95%. Hasil tersebut kemudian disubstitusikan ke dalam rumus rentang kepercayaan proporsi sebagai berikut.</p>
+<p><span class="math display">\[
+\begin{aligned}
+c.i. &amp;= \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
+&amp;= 0,778 \pm 1,96 \times \sqrt{\frac{0,778(1 - 0,778)}{428}} \\
+&amp;= 0,778 \pm 0,0394
+\end{aligned}
+\]</span></p>
+<p>Diperoleh rentang kepercayaan proporsi antara 73,86% hingga 81,74%. Artinya, dapat diperkirakan bahwa proporsi sebenarnya mahasiswa yang tinggal di hunian sewa atau kos di sekitar ITERA berada pada rentang tersebut.</p>
+<p>Hasil ini menunjukkan bahwa mayoritas mahasiswa lebih memilih hunian sewa dibandingkan tinggal di rumah keluarga atau asrama, sehingga fenomena maraknya alih fungsi lahan menjadi kos atau rumah kontrakan di kawasan sekitar kampus memiliki dasar empiris yang kuat.</p>
+</div>
+</div>
+<div id="estimasi-parameter-interval-rata-rata" class="section level4 hasAnchor" number="7.1.7.2">
+<h4><span class="header-section-number">7.1.7.2</span> Estimasi Parameter Interval Rata-Rata<a href="bab-6-estimasi-parameter.html#estimasi-parameter-interval-rata-rata" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dikumpulkan data mengenai jarak tempat tinggal mahasiswa menuju kampus, untuk 333 responden yang berjenis tempat tinggal kos atau rumah sewa, yang menunjukkan variasi jarak hunian. Dari data tersebut, perlu dilakukan perhitungan untuk mengetahui estimasi rata-rata jarak tempuh mahasiswa ke kampus. Estimasi rata-rata ini dihitung dengan tingkat kepercayaan 95%.</p>
+<div id="menentukan-nilai-kritis-z-1" class="section level5 hasAnchor" number="7.1.7.2.1">
+<h5><span class="header-section-number">7.1.7.2.1</span> Menentukan Nilai Kritis Z<a href="bab-6-estimasi-parameter.html#menentukan-nilai-kritis-z-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Dalam perhitungan estimasi parameter rata-rata, penentuan nilai kritis Z juga diperlukan sebagai batas pengali dari <em>standar error</em>. Prosedur penentuannya sama seperti yang telah dijelaskan pada subbab estimasi proporsi.</p>
+<p>Menentukan nilai kritis Z, yaitu mengacu pada distribusi normal baku. Dengan tingkat kepercayaan sebesar 95%, maka tingkat kesalahan (<span class="math inline">\(\alpha\)</span>) adalah 0,05 yang dibagi dua untuk pendekatan dua sisi, sehingga masing-masing sisi memiliki probabilitas 0,025. Berdasarkan tabel distribusi normal, probabilitas tersebut sesuai dengan nilai kritis <span class="math inline">\(Z=1,96\)</span>.</p>
+</div>
+<div id="menghitung-rentang-kepercayaan-dan-menarik-kesimpulan-1" class="section level5 hasAnchor" number="7.1.7.2.2">
+<h5><span class="header-section-number">7.1.7.2.2</span> Menghitung Rentang Kepercayaan dan Menarik Kesimpulan<a href="bab-6-estimasi-parameter.html#menghitung-rentang-kepercayaan-dan-menarik-kesimpulan-1" class="anchor-section" aria-label="Anchor link to header"></a></h5>
+<p>Setelah seluruh komponen perhitungan ditentukan, langkah terakhir adalah menghitung rentang kepercayaan rata-rata. Dari data 333 responden, diperoleh rata-rata sampel sebesar 4,59 km dengan simpangan baku yaitu 2,23 km dan nilai kritis <span class="math inline">\(Z = 1,96\)</span> pada tingkat kepercayaan 95%. Hasil tersebut kemudian disubstitusikan ke dalam rumus rentang kepercayaan rata-rata sebagai berikut.</p>
+<p><span class="math display">\[
+\begin{aligned}
+c.i. &amp;= \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}} \\
+&amp;= 4,59 \pm 1,96 \times \frac{2,23}{\sqrt{333}} \\
+&amp;= 4,59 \pm 0,2395
+\end{aligned}
+\]</span></p>
+<p>Diperoleh rentang kepercayaan rata-rata antara 4,35 km hingga 4,82 km. Artinya, dapat diperkirakan bahwa rata-rata sebenarnya jarak tempat tinggal mahasiswa ke kampus dengan jenis hunian sewa atau kos di sekitar ITERA berada pada rentang tersebut.</p>
+<p>Hasil ini menunjukkan bahwa kawasan dalam <em>buffer</em> sejauh rentang perkiraan tersebut dari kampus ITERA merupakan lokasi utama yang dipilih mahasiswa untuk hunian sewa atau kos. Kondisi ini sejalan dengan fenomena maraknya alih fungsi lahan di sekitar kampus menjadi kos atau rumah kontrakan, karena kebutuhan hunian mahasiswa terkonsentrasi di radius tersebut.</p>
+</div>
+</div>
+<div id="interpretasi-hasil-interval-estimasi-parameter" class="section level4 hasAnchor" number="7.1.7.3">
+<h4><span class="header-section-number">7.1.7.3</span> Interpretasi Hasil Interval Estimasi Parameter<a href="bab-6-estimasi-parameter.html#interpretasi-hasil-interval-estimasi-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Hasil estimasi parameter tidak hanya memberikan informasi mengenai nilai proporsi atau rata-rata dari sampel, tetapi juga menyajikan gambaran interval estimasi yang dapat digunakan untuk memahami fenomena yang lebih luas.</p>
+<p>Hasil estimasi parameter memberikan dua informasi penting, yaitu mengenai proporsi mahasiswa berdasarkan jenis tempat tinggal dan rata-rata jarak tempat tinggal mereka dari kampus. Kedua hasil ini saling melengkapi dalam memahami pola hunian mahasiswa ITERA.</p>
+<p>Pertama, hasil estimasi proporsi menunjukkan bahwa mayoritas mahasiswa lebih memilih tinggal di hunian sewa, baik berupa kos maupun rumah kontrakan, dibandingkan dengan tinggal di rumah keluarga atau asrama. Temuan ini memberikan dasar empiris yang kuat atas fenomena maraknya alih fungsi lahan di sekitar kampus menjadi kos atau rumah kontrakan. Tingginya preferensi mahasiswa terhadap hunian sewa mendorong peningkatan permintaan, yang kemudian direspons oleh masyarakat sekitar melalui konversi lahan menjadi bentuk hunian yang sesuai kebutuhan mahasiswa.</p>
+<p>Kedua, hasil estimasi rata-rata jarak tempat tinggal mahasiswa ke kampus berada dalam rentang 4,35 km hingga 4,82 km (Gambar <a href="bab-6-estimasi-parameter.html#fig:fig-rentang-kepercayaan-rata-rata">7.7</a>). Konsentrasi hunian mahasiswa pada radius tersebut menunjukkan pola spasial yang erat kaitannya dengan ketersediaan fasilitas transportasi, aksesibilitas, serta keterjangkauan harga sewa. Fenomena alih fungsi lahan menjadi kos atau rumah kontrakan juga banyak ditemukan pada radius tersebut, karena dianggap paling strategis oleh mahasiswa.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-rentang-kepercayaan-rata-rata"></span>
+<img src="images/bab-6-interpretasi.png" alt="Hasil Olahan Rentang Kepercayaan Rata-rata Jarak Tempat Tinggal Mahasiswa" width="60%" />
+<p class="caption">
+Gambar 7.7: Hasil Olahan Rentang Kepercayaan Rata-rata Jarak Tempat Tinggal Mahasiswa
+</p>
+</div>
+<p>Interpretasi dari kedua hasil ini penting karena memberikan gambaran menyeluruh mengenai pola hunian mahasiswa ITERA, baik dari sisi pilihan jenis tempat tinggal maupun kedekatannya dengan kampus. Interval estimasi parameter yang dihasilkan tidak hanya bermanfaat untuk analisis statistik, tetapi juga dapat menjadi dasar dalam perencanaan kawasan perumahan sewa mahasiswa yang lebih terarah.</p>
+<p>Seperti disebutkan di awal fenomena maraknya alih fungsi lahan di sekitar kampus juga menimbulkan berbagai dampak serius, seperti berkurangnya lahan pertanian produktif, menurunnya kualitas lingkungan, serta potensi konflik pemanfaatan ruang. Diperlukan solusi yang lebih berkelanjutan. Beberapa alternatif yang dapat dipertimbangkan antara lain:</p>
+<ul>
+<li>Perencanaan kawasan hunian mahasiswa terintegrasi, misalnya melalui penyediaan rumah susun sewa (rusunawa) yang dikelola kampus atau pemerintah daerah yang lebih banyak lagi.</li>
+<li>Pengaturan zonasi lahan di sekitar kampus, agar alih fungsi lahan tidak merusak tata ruang dan tetap mempertahankan fungsi ekologis wilayah salah satunya ruang terbuka hijau yang juga sebagai kawasan resapan air dalam mencegah terjadinya bencana banjir.</li>
+<li>Kemitraan dengan masyarakat lokal, sehingga kebutuhan hunian mahasiswa dapat terpenuhi tanpa harus mengorbankan seluruh lahan produktif, misalnya melalui model sewa jangka panjang atau pembangunan kos ramah lingkungan berupa pembangunan hunian vertikal.</li>
+<li>Pengembangan transportasi aksesibel, yang memungkinkan mahasiswa tinggal lebih jauh dari kampus namun tetap memiliki mobilitas tinggi, sehingga tekanan alih fungsi lahan di sekitar kampus dapat dikurangi.</li>
+</ul>
+<p>Secara keseluruhan, pemahaman terhadap hasil estimasi ini diharapkan mampu memberikan gambaran yang lebih komprehensif mengenai kebutuhan hunian mahasiswa ITERA. Informasi ini dapat menjadi landasan dalam penyusunan strategi penyediaan perumahan sewa atau kos yang sesuai, sekaligus mengarahkan pengelolaan ruang di sekitar kampus agar lebih terkendali, adaptif, dan berkelanjutan.</p>
+</div>
+</div>
+</div>
+<div id="soal-latihan" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Soal Latihan<a href="bab-6-estimasi-parameter.html#soal-latihan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="rmdexercise">
 <ol style="list-style-type: decimal">
-<li>Apa yang dimaksud dengan tingkat kepercayaan (confidence level)? <span class="capaian">STP-5.1</span></li>
-<li>Hitunglah Confidence Interval 95% untuk rata-rata jika <span class="math inline">\(\bar{x}=100\)</span>, <span class="math inline">\(s=15\)</span>, dan <span class="math inline">\(n=36\)</span>. <span class="capaian">STP-5.2</span></li>
+<li>Dari suatu sampel dosen ITERA berjumlah 73 orang diperoleh rata-rata usianya adalah 30 tahun dan simpangan bakunya 2,9 tahun. Anda diminta menggunakan probabilitas galat, <span class="math inline">\(\alpha = 5\%\)</span> <code>[STP-5.1]</code>
+<ol style="list-style-type: lower-alpha">
+<li>Berapakah tingkat kepercayaan (<em>confidence level</em>) yang digunakan?</li>
+<li>Berapakah nilai standar (Z <em>score</em>) yang kita pakai?</li>
+<li>Hitunglah rentang kepercayaan (<em>confidence interval</em>) rata-rata usia seluruh dosen ITERA menggunakan data sampel kita tadi.</li>
+</ol></li>
+<li>Diketahui bahwa proporsi pengguna mobil pribadi dari suatu sampel mahasiswa berjumlah 429 orang adalah 0,04. <code>[STP-5.1]</code>
+<ol style="list-style-type: lower-alpha">
+<li>Apabila kita menggunakan <em>confidence level</em> 93%, berapakah tingkat signifikansi kita?</li>
+<li>Berapakah Z <em>score</em> yang kita pakai?</li>
+<li>Hitunglah <em>confidence interval</em> proporsi pengguna mobil pribadi pada populasi mahasiswa tersebut.</li>
+</ol></li>
 </ol>
 </div>
 
+</div>
 </div>
             </section>
 
