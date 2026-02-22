@@ -105,15 +105,15 @@ Adapun bentuk matematis dari hipotesis alternatif yang mungkin dipilih ditampilk
 ```{r tab-bentuk-hipotesis-alternatif, echo=FALSE}
 library(kableExtra)
 data <- data.frame(
-    "No" = c("I", "II", "III"),
-    "Bentuk Kasus" = c("Tidak sama dengan", "Lebih dari", "Kurang dari"),
-    "Persamaan Matematis" = c("$H_1: \mu \neq \mu_0$", "$H_1: \mu > \mu_0$", "$H_1: \mu < \mu_0$"),
-    "Interpretasi" = c("Rata-rata parameter tidak sama dengan nilai dugaan", "Rata-rata parameter lebih besar nilai dugaan", "Rata-rata parameter lebih kecil (tidak sama) dengan nilai dugaan"),
-    check.names = FALSE
+   "No" = c("I", "II", "III"),
+   "Bentuk Kasus" = c("Tidak sama dengan", "Lebih dari", "Kurang dari"),
+   "Persamaan Matematis" = c("$H_1: \\mu \\neq \\mu_0$", "$H_1: \\mu > \\mu_0$", "$H_1: \\mu < \\mu_0$"),
+   "Interpretasi" = c("Rata-rata parameter tidak sama dengan nilai dugaan", "Rata-rata parameter lebih besar nilai dugaan", "Rata-rata parameter lebih kecil (tidak sama) dengan nilai dugaan"),
+   check.names = FALSE
 )
 data |>
-    kbl(caption = "Alternatif Bentuk Hipotesis Alternatif", escape = FALSE, align = "llcl") |>
-    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+   kbl(caption = "Alternatif Bentuk Hipotesis Alternatif", escape = FALSE, align = "llcl") |>
+   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 ```
 
 Melanjutkan contoh pada bagian sebelumnya, hipotesis alternatif akan mencerminkan kemungkinan kondisi ke-2, yaitu "program memberikan dampak sehingga nilainya bukan 80 atau berbeda dari 80". Ini adalah contoh kasus untuk bentuk tidak berarah karena menggunakan pertidaksamaan ($\neq$, ada kata "berbeda").
