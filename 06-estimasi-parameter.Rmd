@@ -3,41 +3,37 @@
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
 
-Setelah mempelajari bab ini, Anda diharapkan:
-
-1. Mampu memaknai interval kepercayaan estimasi sebuah parameter `[STP-5.1]`.
-
-Agar lebih mudah memahami konsep dasar, Anda dapat mempelajari studi kasus terlebih dahulu dan menyimak pembahasan sesuai dengan konsep dasarnya.
+Setelah mempelajari bab ini, Anda diharapkan mampu memaknai interval kepercayaan estimasi sebuah parameter [STP-5.1]{.capaian}.
 :::
 
-## Konsep Dasar
+Estimasi parameter adalah teknik dalam statistika inferensial untuk **memperkirakan nilai karakteristik populasi** (parameter) **berdasarkan data sampel** (statistik) [@healey2021statistics; @tjokropandojo2021pengantar]. Konsep dasar yang akan kita pelajari di antaranya:
 
-Estimasi parameter adalah teknik dalam statistika inferensial untuk memperkirakan nilai karakteristik populasi berdasarkan data sampel [@healey2021statistics; @tjokropandojo2021pengantar]. Konsep dasar yang dipelajari mencakup perbedaan antara statistik dan parameter, estimasi titik dan estimasi rentang, serta tingkat kepercayaan (*confidence level*). Selanjutnya, dibahas perhitungan estimasi parameter untuk proporsi dan rata-rata, serta interpretasi hasil estimasi. Pemahaman konsep ini penting agar kesimpulan tentang populasi dapat dibuat secara lebih akurat meskipun hanya menggunakan data sampel.
+1. perbedaan antara statistik dan parameter,
+2. estimasi titik dan estimasi rentang, serta
+3. tingkat kepercayaan (*confidence level*).
 
-### Statistik vs. Parameter
+Selanjutnya, konsep-konsep dasar ini menjadi dasar untuk mempelajari **perhitungan estimasi parameter** untuk **proporsi** dan **rata-rata**, serta interpretasi hasil estimasi.
 
-Dalam statistika, kita sering menjumpai dua istilah penting, yaitu statistik dan parameter. Keduanya sama-sama merupakan ukuran kuantitatif yang digunakan untuk menggambarkan karakteristik data, tetapi sumber datanya berbeda. Statistik diperoleh dari data sampel, sedangkan parameter menggambarkan kondisi populasi secara keseluruhan [@tjokropandojo2021pengantar]. Karena populasi biasanya sulit diukur langsung, maka statistik digunakan untuk mengestimasi parameter.
+## Statistik vs. Parameter
 
-#### Statistik
+Dalam statistika, kita akan sering menjumpai dua istilah penting, yaitu **statistik** dan **parameter**. Keduanya sama-sama merupakan ukuran kuantitatif yang digunakan untuk menggambarkan karakteristik data. Akan tetapi, perbedaannya terletak pada **sumber datanya**. Statistik diperoleh dari data **sampel**, sedangkan parameter adalah ukuran yang menggambarkan kondisi **populasi** secara keseluruhan [@tjokropandojo2021pengantar].
 
-Statistik adalah ukuran yang didapatkan dari data sampel, yaitu sebagian kecil dari populasi, yang digunakan untuk mewakili keseluruhan [@tjokropandojo2021pengantar]. Dalam analisis inferensial, statistik berfungsi sebagai ringkasan informasi dari sampel yang dapat membantu peneliti memahami pola data dan membuat perkiraan mengenai populasi.
-
-Jika seorang peneliti ingin mengetahui rata-rata nilai ujian mahasiswa di suatu universitas dengan jumlah mahasiswa 5.000 orang, ia mengambil sampel acak dengan ukuran 100 mahasiswa. Misalkan hasil perhitungan dari sampel tersebut menunjukkan rata-rata nilai ujian sebesar 72 dengan simpangan baku 8. Angka rata-rata 72 dan simpangan baku 8 tersebut merupakan statistik, karena keduanya dihitung dari 100 orang sampel mahasiswa saja, bukan dari seluruh populasi.
-
-#### Parameter
-
-Parameter adalah ukuran yang menggambarkan karakteristik populasi secara keseluruhan [@tjokropandojo2021pengantar]. Populasi di sini mencakup seluruh individu, objek, atau elemen yang menjadi perhatian dalam penelitian. Karena populasi biasanya berjumlah sangat besar dan sulit dijangkau, nilai parameter hampir selalu tidak diketahui secara pasti, kecuali kita melakukan pengumpulan data secara menyeluruh yang disebut sensus.
-
-Meneruskan contoh mahasiswa, peneliti tadi ternyata berkesempatan melakukan sensus kepada seluruh mahasiswa yang berjumlah 5.000 orang dan menanyakan nilai ujian mereka. Apabila ia mendapatkan hasil rata-rata nilai ujian seluruh mahasiswa tersebut adalah 74, maka nilai 74 tersebut adalah parameter. Nilai inilah yang tidak selalu diketahui dan berusaha diperkirakan berdasarkan nilai statistik.
+Karena parameter adalah ukuran untuk populasi, mengukurnya hanya bisa dilakukan dengan melibatkan seluruh populasi, yang disebut juga **sensus**. Karena sulit dilakukan, maka **statistik digunakan untuk mengestimasi parameter**.
 
 Cara menyatakan ukuran statistik dan parameter, yakni menggunakan simbol-simbol matematis [@healey2021statistics], disajikan dalam tabel berikut.
 
 ```{r tab-simbol-statistik-parameter, echo=FALSE}
 library(kableExtra)
 data <- data.frame(
-    "Ukuran" = c("Rata-rata", "Simpangan baku", "Variansi", "Proporsi", "Jumlah nilai", "Ukuran observasi"),
-    "Statistik (Sampel)" = c("$\\bar{x}$", "$s$", "$s^2$", "$\\hat{p}$", "$x$", "$n$"),
-    "Parameter (Populasi)" = c("$\\mu$", "$\\sigma$", "$\\sigma^2$", "$P$", "$X$", "$N$"),
+    "Ukuran" = c(
+        "Rata-rata", "Simpangan baku", "Variansi", "Proporsi", "Jumlah nilai", "Ukuran observasi"
+    ),
+    "Statistik (Sampel)" = c(
+        "$\\bar{x}$", "$s$", "$s^2$", "$\\hat{p}$", "$x$", "$n$"
+    ),
+    "Parameter (Populasi)" = c(
+        "$\\mu$", "$\\sigma$", "$\\sigma^2$", "$P$", "$X$", "$N$"
+    ),
     check.names = FALSE
 )
 data |>
@@ -45,67 +41,118 @@ data |>
         caption = "Simbol-simbol yang Digunakan Untuk Statistik dan Parameter",
         escape = FALSE, align = "l"
     ) |>
-    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F)
+    kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F
+    )
 ```
 
-### Estimasi Titik vs. Estimasi Rentang
+::: rmdkasus
+### Studi Kasus: Statistik vs Parameter {.unnumbered}
 
-Karena kita jarang mengetahui nilai parameter dan lebih sering bisa memperoleh statistik, maka nilai parameter diperkirakan dari nilai statistik. Proses menghasilkan perkiraan ini disebut estimasi. Estimasi berarti memperkirakan nilai parameter (populasi) berdasarkan hasil perhitungan statistik (sampel).
+Mengingat kembali studi kasus pada bab sebelumnya, diketahui populasi seluruh mahasiswa aktif ITERA pada pertengahan tahun 2023 berjumlah 18.877 orang. Namun, karena keterbatasan biaya dan waktu, survei hanya dilakukan terhadap sebagian mahasiswa, yaitu sebanyak 428 orang sebagai sampel.
 
-Terdapat dua jenis estimasi yang umum digunakan, yaitu estimasi titik dan estimasi rentang [@tjokropandojo2021pengantar].
+Misalkan kita ingin mengetahui rata-rata usia para mahasiswa tersebut. Dengan menghitung usia 428 responden tersebut, kita akan memperoleh rata-rata usianya sebesar 20,90 tahun. Angka ini merupakan sebuah **statistik** karena dihitung berdasarkan data sampel. Kita akan menggunakan simbol $\bar{x}$ untuk menerangkan rata-rata sampel ini, sehingga $\bar{x} = 20,90$ tahun.
 
-#### Estimasi Titik
+Lalu, apa **parameter** dalam kasus ini? Parameternya adalah **nilai rata-rata usia yang sebenarnya dari keseluruhan 18.877 mahasiswa aktif ITERA** tersebut. Angka sesungguhnya ini kita simbolkan dengan $\mu$. Karena parameter hanya bisa diketahui dari sensus terhadap seluruh populasi, nilai $\mu$ ini tidak akan pernah kita ketahui persis jika sensus tidak pernah dilakukan.
 
-Estimasi titik (*point estimate*) adalah estimasi nilai suatu parameter hanya dengan satu angka tunggal saja. Angka ini dihasilkan dari statistik sampel yang kita kumpulkan [@kachigan1986statistical].
+Di sinilah statistik digunakan: kita memakai nilai statistik sampel ($\bar{x} = 20,90$) sebagai alat ukur untuk memperkirakan atau mengestimasi besaran parameter populasi ($\mu$).
+:::
+
+## Estimasi Titik vs. Estimasi Rentang
+
+Karena kita jarang mengetahui nilai parameter dan lebih sering bisa memperoleh statistik, maka nilai parameter kita perkirakan dari nilai statistik. Proses menghasilkan perkiraan ini disebut **estimasi**. Estimasi berarti **memperkirakan nilai parameter** (populasi) berdasarkan **hasil perhitungan statistik** (sampel). Terdapat dua jenis estimasi yang umum digunakan, yaitu **estimasi titik** dan **estimasi rentang** [@tjokropandojo2021pengantar].
+
+### Estimasi Titik
+
+Estimasi titik (*point estimate*) adalah estimasi nilai suatu parameter hanya dengan **satu angka tunggal saja**. Angka ini dihasilkan dari statistik sampel yang kita kumpulkan [@kachigan1986statistical].
 
 Ciri utama estimasi titik adalah ia hanya terdiri dari satu nilai tunggal. Karena hanya memiliki satu nilai saja, kemungkinan kesalahannya sangat besar, karena sangat mungkin nilai tersebut berbeda jauh dari parameter yang sebenarnya.
 
-Contoh lainnya, seorang peneliti lainnya ingin mengetahui rata-rata tinggi badan seluruh mahasiswa di sebuah universitas. Ia mengambil sampel berukuran 100 mahasiswa secara acak. Setelah dihitung, diperoleh rata-rata tinggi badan dari sampel adalah 165 cm. Angka 165 cm digunakan sebagai pengira dari parameter rata-rata tinggi badan seluruh mahasiswa universitas ($\mu$).
 
-Peneliti tidak bisa memastikan apakah benar rata-rata populasi seluruh mahasiswa tepat sama dengan 165 cm, atau mungkin sebenarnya 164 cm, 166 cm, atau nilai lain yang mendekati (Gambar \@ref(fig:fig-ilustrasi-estimasi-titik)). Di sinilah keterbatasan estimasi titik terlihat, karena hanya menyajikan satu angka saja dan rentan meleset dari nilai parameter sebenarnya.
 
-Pada bagian selanjutnya kita akan mempelajari estimasi yang lebih "aman" dari estimasi titik, yakni estimasi berupa rentang nilai.
+::: rmdkasus
+### Studi Kasus: Keterbatasan Estimasi Titik {.unnumbered}
 
-```{r fig-ilustrasi-estimasi-titik, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Estimasi Titik", out.width='60%', fig.align="center"}
+Melanjutkan contoh sebelumnya, estimasi titik dari rata-rata usia mahasiswa ITERA adalah sebesar 20,90 tahun. Angka 20,90 tahun ini kita peroleh dari 428 responden, lalu kita gunakan sebagai penduga untuk parameter rata-rata usia seluruh mahasiswa ITERA ($\mu$).
+
+Namun, kita tidak bisa memastikan apakah benar rata-rata populasi seluruh mahasiswa *tepat sama* dengan 20,90 tahun. Mungkin saja rata-rata populasi sebenarnya (parameter) adalah mendekati 20,50 tahun, 21,40 tahun, atau nilai lainnya. Hal inilah yang digambarkan pada Gambar \@ref(fig:fig-ilustrasi-estimasi-titik-usia) berikut.
+
+```{r fig-ilustrasi-estimasi-titik-usia, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Estimasi Titik Usia Mahasiswa", fig.align="center"}
 library(ggplot2)
 ggplot() +
-    geom_vline(xintercept = 165.0, linetype = "dashed", color = "blue", size = 1) +
-    geom_vline(xintercept = 167.5, linetype = "solid", color = "red", size = 1) +
-    annotate("text", x = 165.0, y = 1.05, label = expression(bar(x) == 165.0), color = "blue", vjust = -0.5) +
-    annotate("text", x = 167.5, y = 1.05, label = expression(mu == 167.5), color = "red", vjust = -0.5) +
+    geom_vline(
+        xintercept = 20.9,
+        linetype = "dashed",
+        color = "blue",
+        size = 1
+    ) +
+    geom_vline(
+        xintercept = 21.4,
+        linetype = "solid",
+        color = "red",
+        size = 1
+    ) +
+    annotate(
+        "text",
+        x = 20.9,
+        y = 1.05,
+        label = expression(bar(x) == 20.9),
+        color = "blue",
+        vjust = -0.5
+    ) +
+    annotate(
+        "text",
+        x = 21.4,
+        y = 1.05,
+        label = expression(mu == 21.4),
+        color = "red",
+        vjust = -0.5
+    ) +
     scale_y_continuous(labels = NULL, breaks = NULL) +
-    scale_x_continuous(breaks = c(160, 162.5, 165.0, 167.5, 170.0), limits = c(160, 170)) +
-    labs(x = "Tinggi Badan (cm)", y = NULL) +
+    scale_x_continuous(breaks = c(20.0, 20.5, 20.9, 21.4, 22.0), limits = c(20.0, 22.0)) +
+    labs(x = "Usia Mahasiswa (Tahun)", y = NULL) +
     theme_minimal() +
     theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank())
 ```
 
-#### Estimasi Rentang
+Di sinilah keterbatasan estimasi titik terlihat; ia hanya menyajikan satu angka saja, sehingga sangat rentan meleset dari nilai parameter yang sebenarnya. Oleh karena itu, kita membutuhkan estimasi yang lebih "aman", yakni estimasi berupa rentang nilai yang akan kita pelajari pada bagian selanjutnya.
+:::
+
+### Estimasi Rentang
 
 Berbeda dari estimasi titik, estimasi rentang (*interval estimate*) menetapkan parameter populasi dalam sebuah rentang nilai. Rentang inilah yang disebut interval kepercayaan (*confidence interval*), yang memuat nilai parameter populasi yang sebenarnya. Dengan demikian, kita bisa menebak parameter yang sebenarnya dengan kemungkinan yang lebih besar [@kachigan1986statistical].
 
 Rentang kepercayaan dibentuk dari dua nilai batas, yaitu batas bawah (*lower limit*) dan batas atas (*upper limit*). Batas bawah dan batas atas ini diperoleh dari pengurangan dan penambahan margin kesalahan (*margin of error*) dari estimasi titik yang kita hitung dari sampel.
 
-Melanjutkan contoh tinggi badan mahasiswa, alih-alih hanya menyatakan estimasi parameter sebesar 165 cm, peneliti tersebut menghitung *margin of error*-nya juga dan mendapatkan nilainya sebesar $\pm 2,5$ cm. Hasilnya, diperoleh interval kepercayaan antara 162,5 cm hingga 167,5 cm. Artinya, peneliti memperkirakan bahwa nilai parameter rata-rata tinggi badan seluruh mahasiswa adalah 162,5 cm atau 162,6 cm atau 162,7 cm dan seterusnya hingga 167,5 cm.
+::: rmdkasus
+### Studi Kasus: Keuntungan Estimasi Rentang {.unnumbered}
 
-```{r fig-ilustrasi-estimasi-rentang, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Estimasi Rentang", out.width='60%', fig.align="center"}
+Telah disebutkan bahwa rentang kepercayaan diperoleh dari pengurangkan dan penambahan margin kesalahan (*margin of error*) atas estimasi titik yang kita hitung dari sampel.
+
+Melanjutkan contoh usia mahasiswa, alih-alih hanya menyatakan estimasi parameter sebesar 20,90 tahun, misalkan kita memperhitungkan pula *margin of error*-nya sebesar $\pm 0,60$ tahun. Hasil pengurangannya memperoleh batas bawah interval pada 20,30 tahun, dan penambahannya menghasilkan batas atas interval usia pada 21,50 tahun. 
+
+Artinya, kita memperkirakan bahwa nilai parameter rata-rata usia seluruh mahasiswa ITERA berada pada rentang antara 20,30 tahun hingga 21,50 tahun. Karena tebakan parameter sesungguhnya ($\mu = 21,4$) berada di dalam wilayah ini, maka tebakan kita jauh lebih akurat.
+
+```{r fig-ilustrasi-estimasi-rentang-usia, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Estimasi Rentang Usia Mahasiswa", fig.align="center"}
 library(ggplot2)
 ggplot() +
-    annotate("rect", xmin = 165.0 - 2.5, xmax = 165.0 + 2.5, ymin = -Inf, ymax = Inf, alpha = 0.3, fill = "blue") +
-    geom_vline(xintercept = 165.0, linetype = "dashed", color = "blue", size = 1) +
-    geom_vline(xintercept = 167.5, linetype = "solid", color = "red", size = 1) +
-    annotate("text", x = 165.0, y = 1.05, label = expression(bar(x) == 165.0), color = "blue", vjust = -0.5) +
-    annotate("text", x = 167.5, y = 1.05, label = expression(mu == 167.5), color = "red", vjust = -0.5) +
+    annotate("rect", xmin = 20.9 - 0.6, xmax = 20.9 + 0.6, ymin = -Inf, ymax = Inf, alpha = 0.3, fill = "blue") +
+    geom_vline(xintercept = 20.9, linetype = "dashed", color = "blue", size = 1) +
+    geom_vline(xintercept = 21.4, linetype = "solid", color = "red", size = 1) +
+    annotate("text", x = 20.9, y = 1.05, label = expression(bar(x) == 20.9), color = "blue", vjust = -0.5) +
+    annotate("text", x = 21.4, y = 1.05, label = expression(mu == 21.4), color = "red", vjust = -0.5) +
     scale_y_continuous(labels = NULL, breaks = NULL) +
-    scale_x_continuous(breaks = c(160, 162.5, 165.0, 167.5, 170.0), limits = c(160, 170)) +
-    labs(x = "Tinggi Badan (cm)", y = NULL) +
+    scale_x_continuous(breaks = c(20.0, 20.3, 20.9, 21.5, 22.0), limits = c(20.0, 22.0)) +
+    labs(x = "Usia Mahasiswa (Tahun)", y = NULL) +
     theme_minimal() +
     theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank())
 ```
 
-Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi titik sebesar 165 cm, karena peneliti menyadari adanya variasi dalam data dan memperhitungkan ketidakpastian dalam proses pengambilan sampel.
+Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi titik sebesar 20,90 tahun tadi. Memperhitungkan ketidakpastian dalam proses pengambilan sampel dengan batas-batas ini membuat kita menemukan rentang parameter seperti yang diilustrasikan oleh area arsir berwarna biru pada Gambar \@ref(fig:fig-ilustrasi-estimasi-rentang-usia) tersebut.
+:::
 
-### Tingkat Kepercayaan (*Confidence Level*)
+
+## Tingkat Kepercayaan (*Confidence Level*)
 
 Untuk dapat menghasilkan estimasi rentang, konsep tingkat kepercayaan menjadi hal yang sangat penting untuk dipahami. Tingkat kepercayaan (*confidence level*, CL) berbeda dengan rentang kepercayaan (*confidence interval*) jika rentang kepercayaan adalah hasil berupa interval nilai yang memperkirakan posisi parameter populasi, maka tingkat kepercayaan adalah ukuran seberapa yakin kita terhadap interval tersebut [@chase2000general].
 
@@ -173,7 +220,7 @@ Nilai kritis ($Z_{\alpha/2}$) adalah nilai standar dalam distribusi normal yang 
 
 Dalam bagian ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter rata-rata dan proporsi.
 
-### Perhitungan Rentang Kepercayaan Rata-rata
+## Perhitungan Rentang Kepercayaan Rata-rata
 
 Kita akan mulai dengan estimasi parameter untuk variabel numerik, yakni rata-rata. Estimasi parameter rata-rata, berarti kita memperkirakan nilai rata-rata populasi berdasarkan nilai rata-rata yang diperoleh dari sampel [@kachigan1986statistical].
 
@@ -197,7 +244,7 @@ $$
 
 Dari hasil perhitungan, didapatkan interval kepercayaan kita sebesar 164,02 cm hingga 165,98 cm. Ini berarti dengan tingkat kepercayaan 95%, parameter rata-rata tinggi badan seluruh mahasiswa di universitas tersebut diperkirakan berada dalam rentang tersebut.
 
-### Perhitungan Rentang Kepercayaan Proporsi
+## Perhitungan Rentang Kepercayaan Proporsi
 
 Perhitungan rentang kepercayaan proporsi hanya berbeda pada rumus *standard error*-nya [@kachigan1986statistical]. *Standard error* untuk distribusi statistik sampel proporsi dihitung dengan rumus berikut.
 
@@ -221,7 +268,7 @@ $$
 
 Artinya, parameter berupa proporsi seluruh mahasiswa pengguna sepeda motor berada pada rentang 0,504 hingga 0,696, atau bila dinyatakan dalam persentase, yaitu 50,4% hingga 69,6% pada tingkat kepercayaan 95%.
 
-### Interpretasi Estimasi Parameter
+## Interpretasi Estimasi Parameter
 
 Interpretasi estimasi parameter berfokus pada pemahaman hasil berupa rentang kepercayaan atau *confidence interval* [@healey2021statistics]. Rentang ini menunjukkan nilai-nilai yang mungkin menjadi parameter populasi, berdasarkan data sampel yang diperoleh. Rentang kepercayaan tidak memberikan jawaban pasti mengenai nilai parameter, melainkan memberikan batas bawah dan batas atas yang menjadi perkiraan dengan tingkat keyakinan tertentu.
 
