@@ -759,7 +759,7 @@ Mari kita buktikan CLT dengan melakukan simulasi pengambilan sampel berulang. Ka
 
 Berikut adalah baris perintah untuk melakukan simulasi tersebut dalam R. Dataset yang digunakan dapat diakses pada [tautan ini]('https://github.com/abdulmubdibindar/buku-ajar-stp/blob/main/datasets/DataUtama_mhsITERA.csv').
 
-```{r fig-05-inferensia-2-clt-studi-kasus-simulasi, echo=TRUE, fig.cap="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)", fig.width=10}
+```{r fig-05-inferensia-2-clt-studi-kasus-simulasi, echo=TRUE, fig.cap="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)", fig.width=10}
 library(ggplot2)
 library(gridExtra)
 library(dplyr)
@@ -781,7 +781,7 @@ p1 <- ggplot(data_populasi, aes(x = jarak)) +
   labs(title = paste0("Distribusi Populasi (N=", N, ")"), x = "Jarak (km)") +
   theme_minimal()
 
-# 2. Distribusi Sampling (Rata-rata dari 1000 sampel)  --> SIMULASI
+# 2. Distribusi Statistik Sampel (Rata-rata dari 50 sampel yang diambil 1000 kali)  --> SIMULASI
 set.seed(999)
 means_1000 <- replicate(1000, mean(sample(data_populasi$jarak, 50)))
 df_means <- data.frame(means = means_1000)
