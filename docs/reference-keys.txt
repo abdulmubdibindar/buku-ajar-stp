@@ -206,7 +206,7 @@ estimasi-parameter-interval-rata-rata
 menentukan-nilai-kritis-z-1
 menghitung-rentang-kepercayaan-dan-menarik-kesimpulan-1
 interpretasi-hasil-interval-estimasi-parameter
-soal-latihan
+soal-evaluasi
 bab-7-uji-hipotesis-satu-populasi
 konsep-dasar-1
 perbedaan-estimasi-parameter-dengan-uji-hipotesis
@@ -225,7 +225,7 @@ menarik-kesimpulan
 memaknai-hasil-pengujian
 pengujian-hipotesis-rata-rata-populasi
 pengujian-hipotesis-proporsi-populasi
-soal-latihan-1
+soal-latihan
 uji-hipotesis-dua-populasi
 konsep-dasar-2
 uji-beda-rata-rata-independent-samples-t-test
