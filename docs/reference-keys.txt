@@ -108,6 +108,8 @@ tab:tab-simbol-statistik-parameter
 fig:fig-ilustrasi-estimasi-titik-usia
 fig:fig-ilustrasi-estimasi-rentang-usia
 fig:fig-pengaruh-nilai-tingkat-kepercayaan
+eq:confidence-interval
+eq:margin-of-error
 fig:fig-sebaran-jenis-tempat-tinggal
 fig:fig-membagi-dua-nilai-alpha
 fig:fig-mencari-nilai-z

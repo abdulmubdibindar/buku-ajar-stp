@@ -1443,7 +1443,7 @@ Gambar 6.13: Distribusi Statistik (200 Rata-rata)
 <span id="cb1-19"><a href="pengantar-analisis-statistik-inferensial.html#cb1-19" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">&quot;Distribusi Populasi (N=&quot;</span>, N, <span class="st">&quot;)&quot;</span>), <span class="at">x =</span> <span class="st">&quot;Jarak (km)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb1-20"><a href="pengantar-analisis-statistik-inferensial.html#cb1-20" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb1-21"><a href="pengantar-analisis-statistik-inferensial.html#cb1-21" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="pengantar-analisis-statistik-inferensial.html#cb1-22" tabindex="-1"></a><span class="co"># 2. Distribusi Sampling (Rata-rata dari 1000 sampel)  --&gt; SIMULASI</span></span>
+<span id="cb1-22"><a href="pengantar-analisis-statistik-inferensial.html#cb1-22" tabindex="-1"></a><span class="co"># 2. Distribusi Statistik Sampel (Rata-rata dari 50 sampel yang diambil 1000 kali)  --&gt; SIMULASI</span></span>
 <span id="cb1-23"><a href="pengantar-analisis-statistik-inferensial.html#cb1-23" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">999</span>)</span>
 <span id="cb1-24"><a href="pengantar-analisis-statistik-inferensial.html#cb1-24" tabindex="-1"></a>means_1000 <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, <span class="fu">mean</span>(<span class="fu">sample</span>(data_populasi<span class="sc">$</span>jarak, <span class="dv">50</span>)))</span>
 <span id="cb1-25"><a href="pengantar-analisis-statistik-inferensial.html#cb1-25" tabindex="-1"></a>df_means <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">means =</span> means_1000)</span>
@@ -1456,9 +1456,9 @@ Gambar 6.13: Distribusi Statistik (200 Rata-rata)
 <span id="cb1-32"><a href="pengantar-analisis-statistik-inferensial.html#cb1-32" tabindex="-1"></a></span>
 <span id="cb1-33"><a href="pengantar-analisis-statistik-inferensial.html#cb1-33" tabindex="-1"></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">ncol =</span> <span class="dv">2</span>)</span></code></pre></div>
 <div class="figure"><span style="display:block;" id="fig:fig-05-inferensia-2-clt-studi-kasus-simulasi"></span>
-<img src="figures/fig-05-inferensia-2-clt-studi-kasus-simulasi-1.png" alt="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)"  />
+<img src="figures/fig-05-inferensia-2-clt-studi-kasus-simulasi-1.png" alt="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)"  />
 <p class="caption">
-Gambar 6.14: Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)
+Gambar 6.14: Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)
 </p>
 </div>
 <p>Gambar <a href="pengantar-analisis-statistik-inferensial.html#fig:fig-05-inferensia-2-clt-studi-kasus-simulasi">6.14</a> menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat “miring” (<em>skewed</em>) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna <strong>normal</strong>. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya (<span class="math inline">\(\mu = 5.01\)</span>).</p>

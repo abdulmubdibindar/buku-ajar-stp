@@ -3945,7 +3945,7 @@ p1 <- ggplot(data_populasi, aes(x = jarak)) +
   labs(title = paste0("Distribusi Populasi (N=", N, ")"), x = "Jarak (km)") +
   theme_minimal()
 
-# 2. Distribusi Sampling (Rata-rata dari 1000 sampel)  --> SIMULASI
+# 2. Distribusi Statistik Sampel (Rata-rata dari 50 sampel yang diambil 1000 kali)  --> SIMULASI
 set.seed(999)
 means_1000 <- replicate(1000, mean(sample(data_populasi$jarak, 50)))
 df_means <- data.frame(means = means_1000)
@@ -3960,8 +3960,8 @@ grid.arrange(p1, p2, ncol = 2)
 ```
 
 <div class="figure">
-<img src="figures/fig-05-inferensia-2-clt-studi-kasus-simulasi-1.png" alt="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)"  />
-<p class="caption">(\#fig:fig-05-inferensia-2-clt-studi-kasus-simulasi)Perbandingan Distribusi Populasi (Kiri) dan Distribusi Sampling (Kanan)</p>
+<img src="figures/fig-05-inferensia-2-clt-studi-kasus-simulasi-1.png" alt="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)"  />
+<p class="caption">(\#fig:fig-05-inferensia-2-clt-studi-kasus-simulasi)Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)</p>
 </div>
 
 Gambar \@ref(fig:fig-05-inferensia-2-clt-studi-kasus-simulasi) menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat "miring" (*skewed*) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna **normal**. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = 5.01$).
@@ -4471,24 +4471,30 @@ Perbedaan tingkat kepercayaan memengaruhi lebar interval estimasi. Gambar \@ref(
 <p class="caption">(\#fig:fig-pengaruh-nilai-tingkat-kepercayaan)Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang</p>
 </div>
 
-Garis hitam putus-putus pada posisi 165 menggambarkan estimasi titik, yaitu satu nilai hasil dari sampel [@chase2000general]. Bidang biru, hijau, dan ungu menggambarkan interval kepercayaan dengan tingkat kepercayaan yang berbeda. Pada tingkat kepercayaan 90% (biru), intervalnya sempit, yakni 164,65-165,35 cm. Pada tingkat kepercayaan 95% (hijau), intervalnya sedikit lebih lebar, yaitu 164,58-165,42 cm. Sementara pada tingkat kepercayaan 99% (ungu), interval semakin melebar menjadi 164,45-165,55 cm. Dari sini terlihat bahwa semakin tinggi tingkat kepercayaan, semakin lebar rentang yang dihasilkan.
+Garis hitam putus-putus pada posisi 165 menggambarkan estimasi titik, yaitu satu nilai hasil dari sampel [@chase2000general]. Garis horisontal biru, hijau, dan ungu menggambarkan interval kepercayaan dengan tingkat kepercayaan yang berbeda. Pada tingkat kepercayaan 90% (biru), intervalnya sempit, yakni 164,65-165,35 cm. Pada tingkat kepercayaan 95% (hijau), intervalnya sedikit lebih lebar, yaitu 164,58-165,42 cm. Sementara pada tingkat kepercayaan 99% (ungu), interval semakin melebar menjadi 164,45-165,55 cm. Dari sini terlihat bahwa semakin tinggi tingkat kepercayaan, semakin lebar rentang yang dihasilkan.
 
-**Interpretasi**: menaikkan tingkat kepercayaan
+**Interpretasi**: menaikkan tingkat kepercayaan artinya memperbesar cakupan area probabilitas pada kurva distribusi statistik (ingat aturan empiris pada Gambar \@ref(fig:fig-bab-5-aturan-689599)). Cakupan area probabilitas yang semakin besar berarti menambah cakupan nilai Z di distribusi tersebut.
+
+Karena nilai Z mencerminkan nilai statistik yang salah satunya adalah parameter yang kita perkirakan, tingkat kepercayaan yang lebih besar memperlebar rentang perkiraan kita sehingga nilai parameter dapat tercakup dan "tertangkap" di dalam rentang perkiraan kita.
 :::
 
 
 ## Konsep Perhitungan Rentang Kepercayaan
 
-Rentang kepercayaan dihitung dari estimasi titik ($\bar{x}$ atau $\hat{p}$) yang kita kurangkan dan tambahkan dengan *margin of error* (MoE) [@healey2021statistics]. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.
+Rentang kepercayaan dihitung dari **estimasi titik** ($\bar{x}$ atau $\hat{p}$) **yang kita kurangkan dan tambahkan dengan** ***margin of error*** (MoE) [@healey2021statistics]. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.
 
-$$c.i. = \text{estimasi titik} \pm MoE$$
+$$
+\begin{equation}
+c.i. = \text{estimasi titik} \pm MoE
+(\#eq:confidence-interval)
+\end{equation}$$
 
-MoE sendiri sebenarnya adalah perkalian antara nilai kritis dan *standard error*. Dengan demikian, rumus dasar *confidence interval* sebenarnya adalah:
+Sedangkan MoE sendiri sebenarnya adalah perkalian antara **nilai kritis** dan *standard error*. Dengan demikian, rumus dasar *confidence interval* sebenarnya adalah:
 
-$$MoE = Z_{\alpha/2} \times S.E.$$
+$$MoE = Z_{\alpha/2} \times S.E.(\#eq:margin-of-error)$$
 $$c.i. = \text{estimasi titik} \pm (Z_{\alpha/2} \times S.E.)$$
 
-Nilai kritis ($Z_{\alpha/2}$) adalah nilai standar dalam distribusi normal yang menjadi pembatas area di bawah kurva yang besarnya sama dengan tingkat kepercayaan kita dikurangi alpha yang dibagi rata ke dua sisi grafik. Ini seperti kebalikan dari proses pencarian nilai Z berdasarkan area peluang yang dibahas pada studi kasus kejadian probabilistik probabilitas standar.
+Nilai kritis ($Z_{\alpha/2}$) ini adalah nilai standar dalam distribusi statistik yang diasumsikan berbentuk normal yang menjadi pembatas area di bawah kurva yang besarnya sama dengan tingkat kepercayaan kita dikurangi alpha yang dibagi rata ke dua sisi grafik. Ini seperti kebalikan dari proses pencarian nilai Z berdasarkan area peluang yang dibahas pada studi kasus kejadian probabilistik probabilitas standar.
 
 Dalam bagian ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter rata-rata dan proporsi.
 

@@ -611,17 +611,22 @@ Gambar 7.2: Ilustrasi Estimasi Rentang Usia Mahasiswa
 Gambar 7.3: Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang
 </p>
 </div>
-<p>Garis hitam putus-putus pada posisi 165 menggambarkan estimasi titik, yaitu satu nilai hasil dari sampel <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-chase2000general">Chase and Bown 2000</a>)</span>. Bidang biru, hijau, dan ungu menggambarkan interval kepercayaan dengan tingkat kepercayaan yang berbeda. Pada tingkat kepercayaan 90% (biru), intervalnya sempit, yakni 164,65-165,35 cm. Pada tingkat kepercayaan 95% (hijau), intervalnya sedikit lebih lebar, yaitu 164,58-165,42 cm. Sementara pada tingkat kepercayaan 99% (ungu), interval semakin melebar menjadi 164,45-165,55 cm. Dari sini terlihat bahwa semakin tinggi tingkat kepercayaan, semakin lebar rentang yang dihasilkan.</p>
-<p><strong>Interpretasi</strong>: menaikkan tingkat kepercayaan</p>
+<p>Garis hitam putus-putus pada posisi 165 menggambarkan estimasi titik, yaitu satu nilai hasil dari sampel <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-chase2000general">Chase and Bown 2000</a>)</span>. Garis horisontal biru, hijau, dan ungu menggambarkan interval kepercayaan dengan tingkat kepercayaan yang berbeda. Pada tingkat kepercayaan 90% (biru), intervalnya sempit, yakni 164,65-165,35 cm. Pada tingkat kepercayaan 95% (hijau), intervalnya sedikit lebih lebar, yaitu 164,58-165,42 cm. Sementara pada tingkat kepercayaan 99% (ungu), interval semakin melebar menjadi 164,45-165,55 cm. Dari sini terlihat bahwa semakin tinggi tingkat kepercayaan, semakin lebar rentang yang dihasilkan.</p>
+<p><strong>Interpretasi</strong>: menaikkan tingkat kepercayaan artinya memperbesar cakupan area probabilitas pada kurva distribusi statistik (ingat aturan empiris pada Gambar <a href="pengantar-analisis-statistik-inferensial.html#fig:fig-bab-5-aturan-689599">6.11</a>). Cakupan area probabilitas yang semakin besar berarti menambah cakupan nilai Z di distribusi tersebut.</p>
+<p>Karena nilai Z mencerminkan nilai statistik yang salah satunya adalah parameter yang kita perkirakan, tingkat kepercayaan yang lebih besar memperlebar rentang perkiraan kita sehingga nilai parameter dapat tercakup dan “tertangkap” di dalam rentang perkiraan kita.</p>
 </div>
 <div id="konsep-perhitungan-rentang-kepercayaan" class="section level2 hasAnchor" number="7.4">
 <h2><span class="header-section-number">7.4</span> Konsep Perhitungan Rentang Kepercayaan<a href="bab-6-estimasi-parameter.html#konsep-perhitungan-rentang-kepercayaan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Rentang kepercayaan dihitung dari estimasi titik (<span class="math inline">\(\bar{x}\)</span> atau <span class="math inline">\(\hat{p}\)</span>) yang kita kurangkan dan tambahkan dengan <em>margin of error</em> (MoE) <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.</p>
-<p><span class="math display">\[c.i. = \text{estimasi titik} \pm MoE\]</span></p>
-<p>MoE sendiri sebenarnya adalah perkalian antara nilai kritis dan <em>standard error</em>. Dengan demikian, rumus dasar <em>confidence interval</em> sebenarnya adalah:</p>
-<p><span class="math display">\[MoE = Z_{\alpha/2} \times S.E.\]</span>
+<p>Rentang kepercayaan dihitung dari <strong>estimasi titik</strong> (<span class="math inline">\(\bar{x}\)</span> atau <span class="math inline">\(\hat{p}\)</span>) <strong>yang kita kurangkan dan tambahkan dengan</strong> <strong><em>margin of error</em></strong> (MoE) <span class="citation">(<a href="analisis-statistik-multivariat-interdependensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.</p>
+<p><span class="math display" id="eq:confidence-interval">\[
+\begin{equation}
+c.i. = \text{estimasi titik} \pm MoE
+\tag{7.1}
+\end{equation}\]</span></p>
+<p>Sedangkan MoE sendiri sebenarnya adalah perkalian antara <strong>nilai kritis</strong> dan <em>standard error</em>. Dengan demikian, rumus dasar <em>confidence interval</em> sebenarnya adalah:</p>
+<p><span class="math display" id="eq:margin-of-error">\[MoE = \tag{7.2}.E.(#eq:margin-of-error)\]</span>
 <span class="math display">\[c.i. = \text{estimasi titik} \pm (Z_{\alpha/2} \times S.E.)\]</span></p>
-<p>Nilai kritis (<span class="math inline">\(Z_{\alpha/2}\)</span>) adalah nilai standar dalam distribusi normal yang menjadi pembatas area di bawah kurva yang besarnya sama dengan tingkat kepercayaan kita dikurangi alpha yang dibagi rata ke dua sisi grafik. Ini seperti kebalikan dari proses pencarian nilai Z berdasarkan area peluang yang dibahas pada studi kasus kejadian probabilistik probabilitas standar.</p>
+<p>Nilai kritis (<span class="math inline">\(Z_{\alpha/2}\)</span>) ini adalah nilai standar dalam distribusi statistik yang diasumsikan berbentuk normal yang menjadi pembatas area di bawah kurva yang besarnya sama dengan tingkat kepercayaan kita dikurangi alpha yang dibagi rata ke dua sisi grafik. Ini seperti kebalikan dari proses pencarian nilai Z berdasarkan area peluang yang dibahas pada studi kasus kejadian probabilistik probabilitas standar.</p>
 <p>Dalam bagian ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter rata-rata dan proporsi.</p>
 </div>
 <div id="perhitungan-rentang-kepercayaan-rata-rata" class="section level2 hasAnchor" number="7.5">
