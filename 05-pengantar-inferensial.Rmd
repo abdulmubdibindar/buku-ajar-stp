@@ -1110,7 +1110,7 @@ Nilai **0,19146** ini adalah probabilitas area **b**, yaitu probabilitas bahwa r
 
 :::
 
-### Menentukan Nilai yang Menjadi Pembatas Suatu Probabilitas
+### Menentukan Nilai yang Menjadi Pembatas Suatu Probabilitas {#untuk-z-kritis}
 
 Terdapat saatnya kita bekerja secara berkebalikan: kita sudah menetapkan batasan luasan persentase atau target probabilitas di awal, lalu ingin mengetahui berapa sebenarnya nilai konkret ($X$ tunggal ataupun $\bar{x}$ rata-rata sampel) dari batas tersebut. 
 
