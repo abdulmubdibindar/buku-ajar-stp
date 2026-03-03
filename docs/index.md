@@ -65,7 +65,7 @@ Tim Penulis
 
 ------------------------------------
 
-# Lembar Persembahan
+# Lembar Persembahan {.unnumbered}
 
 Buku ini kami dedikasikan untuk guru-guru kami, Ibu **Dewi Sawitri Tjokropandojo** dan Ibu **Sri Maryati**, atas ilmu dan teladan yang tak ternilai
 
@@ -4247,7 +4247,7 @@ Nilai **0,19146** ini adalah probabilitas area **b**, yaitu probabilitas bahwa r
 
 :::
 
-### Menentukan Nilai yang Menjadi Pembatas Suatu Probabilitas
+### Menentukan Nilai yang Menjadi Pembatas Suatu Probabilitas {#untuk-z-kritis}
 
 Terdapat saatnya kita bekerja secara berkebalikan: kita sudah menetapkan batasan luasan persentase atau target probabilitas di awal, lalu ingin mengetahui berapa sebenarnya nilai konkret ($X$ tunggal ataupun $\bar{x}$ rata-rata sampel) dari batas tersebut. 
 
@@ -4399,8 +4399,6 @@ Estimasi titik (*point estimate*) adalah estimasi nilai suatu parameter hanya de
 
 Ciri utama estimasi titik adalah ia hanya terdiri dari satu nilai tunggal. Karena hanya memiliki satu nilai saja, kemungkinan kesalahannya sangat besar, karena sangat mungkin nilai tersebut berbeda jauh dari parameter yang sebenarnya.
 
-
-
 ::: rmdkasus
 ### Studi Kasus: Keterbatasan Estimasi Titik {.unnumbered}
 
@@ -4439,30 +4437,363 @@ Artinya, kita memperkirakan bahwa nilai parameter rata-rata usia seluruh mahasis
 Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi titik sebesar 20,90 tahun tadi. Memperhitungkan ketidakpastian dalam proses pengambilan sampel dengan batas-batas ini membuat kita menemukan rentang parameter seperti yang diilustrasikan oleh area arsir berwarna biru pada Gambar \@ref(fig:fig-ilustrasi-estimasi-rentang-usia) tersebut.
 :::
 
+## Konsep Perhitungan Rentang Kepercayaan Sebagai Estimasi Rentang
 
-## Tingkat Kepercayaan (*Confidence Level*)
+**Rentang kepercayaan** atau **interval kepercayaan** *(confidence interval)* adalah bentuk estimasi rentang dalam statistika inferensial yang merupakan **estimasi titik** ($\bar{x}$ atau $\hat{p}$) **yang kita kurangkan dan tambahkan dengan** ***margin of error*** (MoE) [@healey2021statistics]. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.
 
-Untuk dapat menghasilkan estimasi rentang, konsep tingkat kepercayaan menjadi hal yang sangat penting untuk dipahami. **Tingkat kepercayaan (*confidence level*, CL) berbeda dengan rentang kepercayaan (*confidence interval*)**. Jika rentang kepercayaan adalah hasil berupa interval nilai yang memperkirakan posisi parameter populasi, maka tingkat kepercayaan adalah **ukuran seberapa yakin kita terhadap interval tersebut** [@chase2000general]. Apa yang kita yakini?
+$$
+\begin{equation}
+c.i. = \text{estimasi titik} \pm MoE
+(\#eq:confidence-interval)
+\end{equation}
+$$
 
-Tingkat kepercayaan berarti pernyataan keyakinan kita **akan dimuatnya nilai parameter dalam interval yang kita hasilkan**. Keyakinan ini dinyatakan dalam bentuk probabilitas yang merupakan angka persentase atau proporsi, misalnya 90% (0,90), 95% (0,95), atau 99% (0,99). Angka tersebut bermakna **dari 100 sampel yang mungkin diambil, sebanyak x% sampel akan memuat nilai parameter**. Semakin tinggi tingkat kepercayaan, semakin besar keyakinan kita bahwa interval estimasi mencakup parameter populasi.
+Sedangkan $MoE$ sendiri sebenarnya adalah perkalian antara **nilai kritis** dan *standard error*. Dengan demikian, rumus dasar *confidence interval* sebenarnya adalah:
 
-Dalam statistik tidak pernah ada jaminan keyakinan 100%. Tentu saja karena setiap proses estimasi selalu melibatkan sampel, dan pengambilan sampel tentu memiliki peluang kesalahan. Tingkat kepercayaan **pasti selalu lebih kecil dari 100%** karena sisanya adalah kemungkinan kita melakukan kesalahan, yakni menghasilkan nilai rentang yang tidak mencakup parameter. Nilai ini disebut dengan **tingkat kesalahan** (*error probability*) yang disimbolkan dengan $\alpha$ (dibaca "alpha"). Istilah lain untuk tingkat kesalahan *error probability* adalah **signifikansi** (*significance*) [@chase2000general].
+$$
+MoE = Z_{\alpha/2} \times \text{S.E.}
+(\#eq:margin-of-error)
+$$
 
-Dengan demikian, secara matematis, tingkat kepercayaan dituliskan sebagai $1-\alpha$. Apabila $\alpha = 0,05$, maka tingkat kepercayaan adalah $1-0,05 = 0,95$ atau 95%. Ini artinya, kita dapat mengatakan bahwa 95 kali dari 100 kali sampel yang diambil akan menghasilkan interval yang mencakup nilai parameter, sedangkan 5 kali tidak.
+Maka, dengan mensubstitusi $MoE$ dengan persamaan \@ref(eq:margin-of-error), persamaan \@ref(eq:confidence-interval) menjadi:
 
-Adapun nilai $\alpha$ yang umum digunakan dalam penelitian adalah 0,10 (10%), 0,05 (5%), dan 0,01 (1%), tergantung seberapa besar tingkat keyakinan yang dikehendaki peneliti.
+$$
+c.i. = \text{estimasi titik} \pm (Z_{\alpha/2} \times \text{S.E.})
+(\#eq:confidence-int-verbose)
+$$
+
+Nilai kritis ($Z_{\alpha/2}$) ini adalah nilai yang berkaitan dengan **tingkat kepercayaan** dan **signifikansi** ($\alpha$). Singkatnya, tingkat kepercayaan + signifikansi harus menghasilkan angka 100%. Konsepnya akan kita dalami di subbab \@ref(tingkat-kepercayaan).
+
+Nilai kritis dicari dengan membagi 2 terlebih dahulu nilai $\alpha$ di kiri dan kanan kurva distribusi statistik, kemudian menemukan nilai yang menjadi pembatasnya dengan tabel nilai Z seperti yang sudah kita lakukan pada \@ref(untuk-z-kritis). Gambar \@ref(fig:fig-ilustrasi-z-alpha) berikut mengilustrasikan pencarian nilai kritis pada signifikansi sebesar 10%.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-ilustrasi-z-alpha-1.png" alt="Ilustrasi Nilai Kritis Z pada Distribusi Normal, contoh $lpha = 10%$" width="60%" />
+<p class="caption">(\#fig:fig-ilustrasi-z-alpha)Ilustrasi Nilai Kritis Z pada Distribusi Normal, contoh $lpha = 10%$</p>
+</div>
+
+Dalam bab ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter **rata-rata** ($\mu$) dan **proporsi** ($P$).
+
+### Perhitungan Rentang Kepercayaan Rata-rata
+
+Kita akan mulai dengan estimasi parameter untuk variabel numerik, yakni rata-rata. Estimasi parameter rata-rata, berarti kita memperkirakan nilai rata-rata populasi berdasarkan nilai rata-rata yang diperoleh dari sampel [@kachigan1986statistical].
+
+Dari sampel ini diperoleh sebuah nilai rata-rata ($\bar{x}$) yang berfungsi sebagai estimasi titik. Estimasi titik ini kita tambah dan kurangkan dengan MoE agar menjadi rentang [@healey2021statistics].
+
+Rumus S.E. untuk rata-rata ditunjukkan oleh Persamaan \@ref(eq:konsep-se-pake-sd), maka, berdasarkan Persamaan \@ref(eq:margin-of-error), MoE untuk interval rata-rata adalah:
+
+$$
+MoE = Z_{\alpha/2} \times \frac{s}{\sqrt{n}}
+(\#eq:ci-mean)
+$$
+
+dengan keterangan: $s$ adalah simpangan baku sampel dan $n$ adalah ukuran sampel. Dengan demikian, rumus lengkap untuk perhitungan rentang kepercayaan rata-rata adalah:
+
+$$
+c.i. = \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}}
+(\#eq:ci-mean-verbose)
+$$
+
+::: rmdkasus
+### Studi Kasus: Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya {.unnumbered}
+
+Diketahui dari hasil survei terhadap 333 sampel mahasiswa ITERA, sebaran jenis tempat tinggalnya, beserta statistik jarak tempat tinggalnya, ditampilkan sebagai berikut.
+
+<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tabel-komponen-ci-jarak)Statistik Jarak Tempat Tinggal per Jenis Hunian</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Jenis Tempat Tinggal </th>
+   <th style="text-align:center;"> $n$ </th>
+   <th style="text-align:center;"> $\bar{x}$ (km) </th>
+   <th style="text-align:center;"> $s$ (km) </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Kos Bersama-sama </td>
+   <td style="text-align:center;"> 25 </td>
+   <td style="text-align:center;"> 4,91 </td>
+   <td style="text-align:center;"> 2,87 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kos Sendiri </td>
+   <td style="text-align:center;"> 200 </td>
+   <td style="text-align:center;"> 4,78 </td>
+   <td style="text-align:center;"> 2,21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rumah Mengontrak Bersama </td>
+   <td style="text-align:center;"> 107 </td>
+   <td style="text-align:center;"> 4,79 </td>
+   <td style="text-align:center;"> 2,13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rumah Mengontrak Pribadi </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 3,90 </td>
+   <td style="text-align:center;"> NA </td>
+  </tr>
+</tbody>
+</table>
+
+Kita akan menghitung rentang kepercayaan rata-rata jarak tempat tinggal mahasiswa untuk setiap jenis tempat tinggal dengan tingkat kepercayaan 95%.
+
+**Jawaban:**
+
+**Langkah-1: Menghitung Statistik**
+
+Dari Tabel \@ref(tab:tabel-komponen-ci-jarak) tersebut kita dapat melihat bahwa rata-rata jarak tempat tinggal mahasiswa sudah tersedia dan bervariasi menurut jenis hunian.
+
+**Langkah-2: Menentukan Nilai Kritis Z**
+
+Langkah berikutnya adalah menentukan nilai kritis $Z_{\alpha/2}$ sesuai dengan tingkat kepercayaan yang digunakan. Nilai kritis $Z_{\alpha/2}$ diperoleh dari distribusi normal baku.
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-6-membagi-2-alpha.png" alt="Membagi Dua Nilai Alpha" width="60%" />
+<p class="caption">(\#fig:fig-membagi-dua-nilai-alpha-mean)Membagi Dua Nilai Alpha</p>
+</div>
+
+Nilai tingkat kepercayaan yang kita gunakan adalah luas area di bawah kurva yang berwarna biru terang, yaitu 0,950. Artinya, kita menggunakan nilai $\alpha$ sebesar 0,05 atau 5%. Nilai $\alpha$ ini dibagi 2 ($\alpha/2$) dan ditempatkan di kiri dan kanan kurva normal. Dengan demikian, luas area biru terang menjadi bernilai $0,95 / 2 = 0,475$ dari titik 0 di tengah.
+
+Nilai Z diperoleh dari area seluas 0,475 di bawah kurva normal mulai dari titik tengah (0). Dengan mencocokkan pada tabel distribusi normal, didapatkan nilai $Z=1,96$, yang berasal dari kombinasi angka 1,9 pada sisi vertikal dan 0,06 pada sisi horizontal tabel.
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-6-mencari-z.PNG" alt="Mencari Nilai Z" width="60%" />
+<p class="caption">(\#fig:fig-mencari-nilai-z-mean)Mencari Nilai Z</p>
+</div>
+
+**Langkah-3: Menghitung Rentang Kepercayaan dan Menarik Kesimpulan**
+
+Dengan $Z_{\alpha/2} = 1,96$, rentang kepercayaan dihitung per kategori menggunakan simpangan baku dan jumlah objek masing-masing. Mensubstitusi nilai-nilai per kategori dari Tabel \@ref(tab:tabel-komponen-ci-jarak) ke dalam rumus Persamaan \@ref(eq:ci-mean-verbose) menghasilkan:
+
+**Kos Sendiri** ($n = 200$, $\bar{x} = 4,78$, $s = 2,21$):
+
+$$
+\begin{aligned}
+c.i. &= 4,78 \pm 1,96 \times \frac{2,21}{\sqrt{200}} \\
+&= 4,78 \pm 0,3062 \\
+&= [4,47 \text{ km};\ 5,09 \text{ km}]
+\end{aligned}
+$$
+
+**Rumah Mengontrak Bersama** ($n = 107$, $\bar{x} = 4,79$, $s = 2,13$):
+
+$$
+\begin{aligned}
+c.i. &= 4,79 \pm 1,96 \times \frac{2,13}{\sqrt{107}} \\
+&= 4,79 \pm 0,4038 \\
+&= [4,39 \text{ km};\ 5,19 \text{ km}]
+\end{aligned}
+$$
+
+**Kos Bersama-sama** ($n = 25$, $\bar{x} = 4,91$, $s = 2,87$):
+
+$$
+\begin{aligned}
+c.i. &= 4,91 \pm 1,96 \times \frac{2,87}{\sqrt{25}} \\
+&= 4,91 \pm 1,1252 \\
+&= [3,78 \text{ km};\ 6,04 \text{ km}]
+\end{aligned}
+$$
+
+***Catatan:** Kategori Rumah Mengontrak Pribadi hanya memiliki 1 responden ($n = 1$), sehingga simpangan baku tidak dapat dihitung dan rentang kepercayaan tidak dapat diestimasi. Kategori ini tidak disertakan dalam perhitungan.*
+
+Dari ketiga hasil di atas, terlihat bahwa rata-rata jarak tempat tinggal ketiga jenis hunian relatif serupa, berkisar antara **4,47 km hingga 5,19 km** dari kampus. Perbedaan yang paling mencolok terletak pada lebar rentang: kategori **Kos Bersama-sama** memiliki rentang paling lebar ($\pm 1,13$ km) karena ukuran sampelnya jauh lebih kecil ($n = 25$), yang mencerminkan ketidakpastian estimasi yang lebih besar. Sebaliknya, **Kos Sendiri** dan **Rumah Mengontrak Bersama** memiliki rentang lebih sempit karena jumlah respondennya lebih besar.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-ci-jarak-per-hunian-1.png" alt="Interval Kepercayaan 95% Rata-rata Jarak Tempat Tinggal per Jenis Hunian" width="60%" />
+<p class="caption">(\#fig:fig-ci-jarak-per-hunian)Interval Kepercayaan 95% Rata-rata Jarak Tempat Tinggal per Jenis Hunian</p>
+</div>
+
+:::
+
+
+Jawablah soal berikut untuk melatih keterampilan Anda menghitung rentang kepercayaan rata-rata.
+
+::: rmdexercise
+## Soal Evaluasi 12 {.unnumbered}
+
+Dari suatu sampel dosen ITERA berjumlah 73 orang diperoleh rata-rata usianya adalah 30 tahun dan simpangan bakunya 2,9 tahun. Anda diminta menggunakan probabilitas galat, $\alpha = 5\%$ [STP-5.1]{.capaian}
+
+   a. Berapakah tingkat kepercayaan (*confidence level*) yang digunakan?
+   b. Berapakah nilai standar (Z-*score*) yang kita pakai?
+   c. Hitunglah rentang kepercayaan (*confidence interval*) rata-rata usia seluruh dosen ITERA menggunakan data sampel kita tadi.
+:::
+
+
+### Perhitungan Rentang Kepercayaan Proporsi
+
+Perhitungan rentang kepercayaan proporsi hanya berbeda pada rumus S.E.-nya [@kachigan1986statistical]. S.E.untuk distribusi statistik sampel proporsi dihitung dengan rumus berikut.
+
+$$
+\text{S.E.} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+(\#eq:se-proporsi)
+$$
+
+dengan keterangan: $\hat{p}$ adalah proporsi sampel dan $n$ ukuran sampel [@healey2021statistics]. Maka, rumus rentang kepercayaan untuk statistik proporsi adalah:
+
+$$
+c.i. = \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+(\#eq:confidence-interval-proportion-verbose)
+$$
+
+::: rmdkasus
+### Studi Kasus: Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal {.unnumbered}
+
+Masih berdasarkan data dari kasus sebelumnya, kita akang menghitung parameter proporsi mahasiswa yang tinggal berdasarkan jenis tempat tinggal, akan tetapi, kita menurunkan tingkat kepercayaan kita menjadi 91%.
+
+**Jawaban:**
+
+**Langkah-1: Menghitung Statistik**
+
+Langkah awal dalam estimasi parameter proporsi adalah menghitung proporsi sampel berdasarkan data hasil survei. Proporsi sampel ($\hat{p}$) dihitung dengan:
+
+$$\hat{p} = \frac{x}{n}$$
+
+dengan:
+
+- $x$ = jumlah responden yang memiliki karakteristik tertentu,
+- $n$ = jumlah seluruh responden.
+
+Berdasarkan Tabel \@ref(tab:tabel-komponen-ci-jarak), kita dapat menghitung proporsi tiap-tiap kategori jenis tempat tinggal. Hasilnya ditunjukkan oleh Tabel \@ref(tab:tabel-proporsi-jenis-tempat-tinggal) berikut.
+
+<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tabel-proporsi-jenis-tempat-tinggal)Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Jenis Tempat Tinggal </th>
+   <th style="text-align:center;"> $n$ </th>
+   <th style="text-align:center;"> $\hat{p}$ </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Kos Bersama-sama </td>
+   <td style="text-align:center;"> 25 </td>
+   <td style="text-align:center;"> 0,075 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Kos Sendiri </td>
+   <td style="text-align:center;"> 200 </td>
+   <td style="text-align:center;"> 0,601 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rumah Mengontrak Bersama </td>
+   <td style="text-align:center;"> 107 </td>
+   <td style="text-align:center;"> 0,321 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rumah Mengontrak Pribadi </td>
+   <td style="text-align:center;"> 1 </td>
+   <td style="text-align:center;"> 0,003 </td>
+  </tr>
+</tbody>
+</table>
+
+**Langkah-2: Menentukan Nilai Kritis Z**
+
+Sama konsepnya seperti kasus sebelumnya, sebelumnya kita akan menghitung terlebih dahulu nilai $\alpha$. Karena tingkat kepercayaan kita 91%, maka $\alpha=9\%$ atau $0,09$. Gambar \@ref(fig:fig-membagi-dua-nilai-alpha-proporsi-91) berikut menunjukkan area yang kita cari nilai $Z_{\alpha/2}$-nya, yakni $0,405$. 
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-6-membagi-2-alpha-91.png" alt="Membagi Dua Nilai Alpha" width="60%" />
+<p class="caption">(\#fig:fig-membagi-dua-nilai-alpha-proporsi-91)Membagi Dua Nilai Alpha</p>
+</div>
+
+Dari tabel nilai Z di Gambar \@ref(fig:bab-5-fig-z-table), kita dapat memperoleh nilai Z untuk tingkat kepercayaan 91% sebagai berikut.
+
+<div class="figure" style="text-align: center">
+<img src="images/bab-6-mencari-z-91.png" alt="Mencari Nilai Z" width="60%" />
+<p class="caption">(\#fig:fig-mencari-nilai-z-proporsi-91)Mencari Nilai Z</p>
+</div>
+
+**Langkah-3: Menghitung Rentang Kepercayaan dan Menarik Kesimpulan**
+
+Setelah seluruh komponen perhitungan ditentukan, langkah terakhir adalah menghitung rentang kepercayaan proporsi untuk setiap kategori. Nilai kritis yang digunakan adalah $Z_{\alpha/2} = 1,31$ dan $n = 333$. Nilai-nilai $\hat{p}$ dari Tabel \@ref(tab:tabel-proporsi-jenis-tempat-tinggal) disubstitusikan ke dalam rumus Persamaan \@ref(eq:confidence-interval-proportion-verbose) untuk masing-masing kategori.
+
+**Kos Sendiri** ($\hat{p} = 0,601$):
+
+$$
+\begin{aligned}
+c.i. &= 0,601 \pm 1,31 \times \sqrt{\frac{0,601(1 - 0,601)}{333}} \\
+&= 0,601 \pm 0,0351 \\
+&= [56,59\%;\ 63,61\%]
+\end{aligned}
+$$
+
+**Rumah Mengontrak Bersama** ($\hat{p} = 0,321$):
+
+$$
+\begin{aligned}
+c.i. &= 0,321 \pm 1,31 \times \sqrt{\frac{0,321(1 - 0,321)}{333}} \\
+&= 0,321 \pm 0,0335 \\
+&= [28,75\%;\ 35,45\%]
+\end{aligned}
+$$
+
+**Kos Bersama-sama** ($\hat{p} = 0,075$):
+
+$$
+\begin{aligned}
+c.i. &= 0,075 \pm 1,31 \times \sqrt{\frac{0,075(1 - 0,075)}{333}} \\
+&= 0,075 \pm 0,0189 \\
+&= [5,61\%;\ 9,39\%]
+\end{aligned}
+$$
+
+*Catatan: Kategori Rumah Mengontrak Pribadi ($n = 1$) tidak disertakan karena tidak representatif.*
+
+Dari ketiga hasil di atas, terlihat bahwa **Kos Sendiri** mendominasi dengan estimasi proporsi antara 56,59% hingga 63,61% dari seluruh mahasiswa yang menyewa hunian. **Rumah Mengontrak Bersama** berada di posisi kedua (28,75%–35,45%), disusul **Kos Bersama-sama** (5,61%–9,39%). Temuan ini menunjukkan bahwa mayoritas mahasiswa ITERA memilih hunian sewa mandiri.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-ci-proporsi-per-hunian-1.png" alt="Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian" width="60%" />
+<p class="caption">(\#fig:fig-ci-proporsi-per-hunian)Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian</p>
+</div>
+
+:::
+
+Jawablah soal berikut untuk melatih keterampilan Anda menghitung rentang kepercayaan proporsi.
+
+::: rmdexercise
+## Soal Evaluasi 13  {.unnumbered}
+
+Diketahui bahwa proporsi pengguna mobil pribadi dari suatu sampel mahasiswa berjumlah 429 orang adalah 0,04. [STP-5.1]{.capaian}
+
+   a. Apabila kita menggunakan *confidence level* 93%, berapakah tingkat signifikansi kita?
+   b. Berapakah Z-*score* yang kita pakai?
+   c. Hitunglah *confidence interval* proporsi pengguna mobil pribadi pada populasi mahasiswa tersebut.
+:::
+
+
+## Lebih Dalam tentang Tingkat Kepercayaan (*Confidence Level*) {#tingkat-kepercayaan}
+
+Kita sudah mengetahui bahwa tingkat kepercayaan penting dalam perhitungan rentang kepercayaan. Di bagian ini, kita akan menganalisis lebih dalam apa yang dinyatakan oleh angka tingkat kepercayaan dan pengaruhnya terhadap perhitungan rentang kepercayaan.
+
+Sebelum lebih lanjut, kita harus sadar bahwa **tingkat kepercayaan (*confidence level*, CL) berbeda dengan rentang kepercayaan (*confidence interval*)**. Jika rentang kepercayaan adalah hasil berupa interval nilai yang memperkirakan posisi parameter populasi, maka tingkat kepercayaan adalah **ukuran seberapa yakin kita terhadap interval tersebut** [@chase2000general].
+
+Apa yang kita yakini? Yang kita yakini adalah **dimuatnya nilai parameter dalam interval yang kita hasilkan**. Keyakinan ini dinyatakan dalam bentuk **probabilitas** yang merupakan angka persentase atau proporsi. Misalnya pada kasus rata-rata jarak tempat tinggal mahasiswa yang mengekos sendiri. Tingkat kepercayaan 95% (0,95) bermakna **dari 100 sampel yang mungkin diambil, sebanyak 95% sampel akan memuat nilai parameter**. Dalam kasus ini, maka kita yakin bahwa **95% sampel yang kita ambil, yang menghasilkan rentang 4,47 km hingga 5,09 km, mencakup nilai parameter sebenarnya**.
+
+Banyak orang salah dalam menginterpretasikan angka tingkat kepercayaan. Simak pembahasan berikut untuk memahaminya.
 
 ::: rmdnote
-## Catatan: Tingkat Kepercayaan {.unnumbered}
+### Catatan: Salah Kaprah Tingkat Kepercayaan {.unnumbered}
 
 Tingkat kepercayaan sering disalahmaknai sebagai **peluang parameter ada di dalam interval**. Jadi, nilai tingkat kepercayaan 90% bukan berarti kita 90% yakin bahwa nilai parameter ada dalam rentang kepercayaan kita. Nilai parameter populasi itu tetap, misalnya rata-rata tinggi badan seluruh mahasiswa memang punya satu angka pasti, hanya saja kita tidak tahu berapa nilainya. Oleh karena itu, kita mengambil sampel yang representatif dan menghitung statistiknya untuk mengestimasi parameter.
 
 Dengan tingkat kepercayaan 90%, artinya kita mengatakan bahwa sampel kita tersebut hanya akan salah sebanyak 10 kali pengambilan saja dari 100 kali pengambilan yang mungkin. Dengan kata lain, 90 sampel tersebut akan benar-benar berisi nilai parameter populasi yang sebenarnya.
 :::
 
-::: rmdkasus
 
-## Studi Kasus: Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan {.unnumbered}
+Satu lagi besaran yang berpengaruh terhadap perhitungan rentang kepercayaan dalam statistika inferensial adalah **tingkat kesalahan** atau **signifikansi**. Dalam literatur statistika berbahasa Inggris, istilah ini disebut juga ***error term*** atau ***significance level***, atau ***significance*** saja [@chase2000general]. Karena dalam statistika proses estimasi selalu melibatkan sampel yang pengambilannya tidak pernah pasti, pasti akan terdapat peluang kesalahan. Peluang kesalahan inilah yang menjadi pengertian dari tingkat kesalahan atau signifikansi tersebut. Peluang kesalahan dilambangkan dengan $\alpha$ (/alfa/).
+
+Dengan demikian, secara matematis, tingkat kepercayaan dituliskan sebagai $1-\alpha$. Apabila $\alpha = 0,05$, maka tingkat kepercayaan adalah $1-0,05 = 0,95$ atau 95%. Ini artinya, kita dapat mengatakan bahwa 95% dari 100 kali sampel yang diambil akan menghasilkan interval yang mencakup nilai parameter, sedangkan 5% sisanya tidak.
+
+Adapun nilai $\alpha$ yang umum digunakan dalam penelitian adalah 0,10 (10%), 0,05 (5%), dan 0,01 (1%), tergantung seberapa besar tingkat keyakinan yang dikehendaki peneliti.
+
+
+Bagaimana kaitan antara tingkat kepercayaan dengan rentang kepercayaan yang dihasilkan? Simak kasus berikut untuk memahaminya.
+
+::: rmdkasus
+### Studi Kasus: Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan {.unnumbered}
 
 Perbedaan tingkat kepercayaan memengaruhi lebar interval estimasi. Gambar \@ref(fig:fig-pengaruh-nilai-tingkat-kepercayaan) menunjukkan hasil estimasi parameter tinggi badan mahasiswa yang nilai statistiknya adalah 165 cm, simpangan baku 3 cm, dan ukuran sampel 200 orang.
 
@@ -4479,223 +4810,15 @@ Karena nilai Z mencerminkan nilai statistik yang salah satunya adalah parameter 
 :::
 
 
-## Konsep Perhitungan Rentang Kepercayaan
+## Kesimpulan: Interpretasi Estimasi Parameter
 
-Rentang kepercayaan dihitung dari **estimasi titik** ($\bar{x}$ atau $\hat{p}$) **yang kita kurangkan dan tambahkan dengan** ***margin of error*** (MoE) [@healey2021statistics]. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.
-
-$$
-\begin{equation}
-c.i. = \text{estimasi titik} \pm MoE
-(\#eq:confidence-interval)
-\end{equation}$$
-
-Sedangkan MoE sendiri sebenarnya adalah perkalian antara **nilai kritis** dan *standard error*. Dengan demikian, rumus dasar *confidence interval* sebenarnya adalah:
-
-$$MoE = Z_{\alpha/2} \times S.E.(\#eq:margin-of-error)$$
-$$c.i. = \text{estimasi titik} \pm (Z_{\alpha/2} \times S.E.)$$
-
-Nilai kritis ($Z_{\alpha/2}$) ini adalah nilai standar dalam distribusi statistik yang diasumsikan berbentuk normal yang menjadi pembatas area di bawah kurva yang besarnya sama dengan tingkat kepercayaan kita dikurangi alpha yang dibagi rata ke dua sisi grafik. Ini seperti kebalikan dari proses pencarian nilai Z berdasarkan area peluang yang dibahas pada studi kasus kejadian probabilistik probabilitas standar.
-
-Dalam bagian ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter rata-rata dan proporsi.
-
-## Perhitungan Rentang Kepercayaan Rata-rata
-
-Kita akan mulai dengan estimasi parameter untuk variabel numerik, yakni rata-rata. Estimasi parameter rata-rata, berarti kita memperkirakan nilai rata-rata populasi berdasarkan nilai rata-rata yang diperoleh dari sampel [@kachigan1986statistical].
-
-Dari sampel ini diperoleh sebuah nilai rata-rata ($\bar{x}$) yang berfungsi sebagai estimasi titik. Estimasi titik ini kita tambah dan kurangkan dengan MoE agar menjadi rentang [@healey2021statistics]. Rumus S.E. untuk rata-rata adalah $\frac{s}{\sqrt{n}}$, maka MoE untuk interval rata-rata adalah:
-
-$$MoE = Z_{\alpha/2} \times \frac{s}{\sqrt{n}}$$
-
-dengan keterangan: $s$ adalah simpangan baku sampel dan $n$ adalah ukuran sampel. Dengan demikian, rumus lengkap untuk perhitungan rentang kepercayaan rata-rata adalah:
-
-$$c.i. = \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}}$$
-
-Sebagai contoh, misalkan seorang peneliti ingin memperkirakan rata-rata tinggi badan mahasiswa di sebuah universitas. Dari sampel 100 mahasiswa diperoleh rata-rata ($\bar{x}$) sebesar 165 cm dengan simpangan baku ($s$) 5 cm. Jika digunakan tingkat kepercayaan 95% ($Z=1,96$), maka estimasi rata-rata tinggi badan mahasiswa dapat dihitung dengan rumus di atas.
-
-$$
-\begin{aligned}
-c.i. &= \bar{x} \pm \left(Z_{\alpha/2} \times \frac{s}{\sqrt{n}}\right) \\
-&= 165 \pm \left(1,96 \times \frac{5}{\sqrt{100}}\right) \\
-&= 165 \pm 0,98
-\end{aligned}
-$$
-
-Dari hasil perhitungan, didapatkan interval kepercayaan kita sebesar 164,02 cm hingga 165,98 cm. Ini berarti dengan tingkat kepercayaan 95%, parameter rata-rata tinggi badan seluruh mahasiswa di universitas tersebut diperkirakan berada dalam rentang tersebut.
-
-## Perhitungan Rentang Kepercayaan Proporsi
-
-Perhitungan rentang kepercayaan proporsi hanya berbeda pada rumus *standard error*-nya [@kachigan1986statistical]. *Standard error* untuk distribusi statistik sampel proporsi dihitung dengan rumus berikut.
-
-$$S.E. = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
-
-dengan keterangan: $\hat{p}$ adalah proporsi sampel dan $n$ ukuran sampel [@healey2021statistics]. Maka, rumus rentang kepercayaan untuk statistik proporsi adalah:
-
-$$c.i. = \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
-
-Misalnya, dari survei terhadap 100 mahasiswa diketahui bahwa 60 mahasiswa (proporsi 0,6) menggunakan sepeda motor untuk pergi ke kampus. Jika digunakan tingkat kepercayaan 95% ($Z=1,96$), maka estimasi proporsi mahasiswa yang menggunakan sepeda motor dapat dihitung dengan rumus di atas.
-
-$$
-\begin{aligned}
-c.i. &= \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
-&= 0,6 \pm 1,96 \sqrt{\frac{0,6(1-0,6)}{100}} \\
-&= 0,6 \pm 1,96 \sqrt{\frac{0,24}{100}} \\
-&= 0,6 \pm 1,96 \times 0,049 \\
-&= 0,6 \pm 0,096
-\end{aligned}
-$$
-
-Artinya, parameter berupa proporsi seluruh mahasiswa pengguna sepeda motor berada pada rentang 0,504 hingga 0,696, atau bila dinyatakan dalam persentase, yaitu 50,4% hingga 69,6% pada tingkat kepercayaan 95%.
-
-## Interpretasi Estimasi Parameter
-
-Interpretasi estimasi parameter berfokus pada pemahaman hasil berupa rentang kepercayaan atau *confidence interval* [@healey2021statistics]. Rentang ini menunjukkan nilai-nilai yang mungkin menjadi parameter populasi, berdasarkan data sampel yang diperoleh. Rentang kepercayaan tidak memberikan jawaban pasti mengenai nilai parameter, melainkan memberikan batas bawah dan batas atas yang menjadi perkiraan dengan tingkat keyakinan tertentu.
+Interpretasi estimasi parameter berfokus pada pemahaman hasil berupa **rentang kepercayaan** atau *confidence interval* [@healey2021statistics]. Rentang ini menunjukkan **nilai-nilai yang mungkin menjadi parameter populasi**, berdasarkan data sampel yang diperoleh. Rentang kepercayaan tidak memberikan jawaban pasti mengenai nilai parameter, melainkan memberikan batas bawah dan batas atas yang menjadi perkiraan parameter tersebut dengan tingkat keyakinan tertentu.
 
 Lebar rentang estimasi dapat menjadi indikator kualitas estimasi. Rentang yang sempit menandakan estimasi yang lebih presisi, yang biasanya terjadi karena ukuran sampel cukup besar atau error yang relatif kecil. Sebaliknya, rentang yang lebar menunjukkan tingkat ketidakpastian yang lebih besar, sering kali disebabkan oleh ukuran sampel yang terlalu kecil atau variasi data yang tinggi. Sehingga, pemilihan jumlah sampel dan pengendalian error sangat memengaruhi kualitas estimasi.
 
 Konsep tingkat kepercayaan membantu menjelaskan ketidakpastian dalam estimasi. Misalnya, pada tingkat kepercayaan 95% berarti ada kemungkinan 95 dari 100 sampel yang diambil akan menghasilkan interval yang mencakup parameter populasi sebenarnya. Sebaliknya, 5 dari 100 sampel (atau 5%) akan menghasilkan interval yang tidak mencakup parameter tersebut. Jika hasil sampel berbeda dari dugaan populasi, maka perbedaan itu dapat dijelaskan sebagai bagian dari kemungkinan error yang sudah diperhitungkan dalam tingkat kepercayaan.
 
 Pada akhirnya, hasil estimasi parameter bukanlah angka yang mutlak, melainkan perkiraan yang disertai dengan tingkat kepastian tertentu. Interval kepercayaan memberikan ruang toleransi bagi ketidakpastian yang muncul dari proses pengambilan sampel, sekaligus menjadi alat bantu dalam pengambilan keputusan berbasis data.
-
-::: rmdkasus
-### Studi Kasus: Pola Hunian Mahasiswa ITERA {.unnumbered}
-
-Fenomena alih fungsi lahan menjadi kos atau rumah sewa di sekitar ITERA yang semakin marak dan menimbulkan perhatian serius dalam perencanaan wilayah dan kota. Jika tidak terkendali, alih fungsi ini dapat mengurangi lahan pertanian, menekan ruang terbuka hijau, serta menimbulkan masalah tata ruang seperti kepadatan permukiman, keterbatasan infrastruktur dasar, dan bencana banjir di kawasan sekitar kampus.
-
-Dalam sebuah survei terhadap 428 mahasiswa ITERA, dikumpulkan data yang berkaitan dengan kasus di atas, mengenai dua variabel utama yaitu jenis tempat tinggal dan jarak tempat tinggal ke kampus. Dataset tersebut dapat Anda simak di sini.
-
-Variabel pertama, jenis tempat tinggal, yang dianalisis menggunakan estimasi parameter proporsi untuk mengetahui seberapa besar kecenderungan mahasiswa tinggal di masing-masing jenis hunian.
-
-Sementara itu, variabel kedua, jarak tempat tinggal ke kampus, diukur dalam satuan kilometer dan dianalisis menggunakan estimasi parameter rata-rata untuk memperkirakan jarak rata-rata mahasiswa dari tempat tinggal menuju kampus.
-
-Setelahnya kedua hasil estimasi ini diharapkan dapat memberikan gambaran yang lebih komprehensif mengenai pola hunian mahasiswa ITERA, baik dari sisi pilihan jenis tempat tinggal maupun kedekatannya dengan kampus, yang selanjutnya dapat menjadi dasar dalam perencanaan perumahan sewa atau kos bagi mahasiswa ITERA kedepannya.
-
-#### Estimasi Parameter Proporsi
-
-Dikumpulkan data mengenai jenis tempat tinggal mereka, termasuk kos sendiri, rumah mengontrak bersama-sama, kos bersama-sama, rumah keluarga, asrama, maupun rumah bersama saudara. Dari data tersebut, perlu dilakukan perhitungan untuk mengetahui estimasi proporsi mahasiswa yang tinggal di hunian sewa atau kos. Estimasi proporsi ini dihitung dengan tingkat kepercayaan 95%.
-
-##### Menentukan Proporsi Sampel
-
-Langkah awal dalam estimasi parameter proporsi adalah menghitung proporsi sampel berdasarkan data hasil survei. Proporsi sampel ($\hat{p}$) dihitung dengan:
-
-$$\hat{p} = \frac{x}{n}$$
-
-dengan:
-- $x$ = jumlah responden yang memiliki karakteristik tertentu,
-- $n$ = jumlah seluruh responden.
-
-Pada kasus ini, karakteristik yang dimaksud adalah mahasiswa yang tinggal di hunian sewa atau kos. Kategori ini mencakup kos sendiri, rumah mengontrak bersama-sama, dan kos bersama-sama. Dari hasil survei terhadap 428 mahasiswa, diperoleh mahasiswa yang tinggal di kos sendiri, rumah mengontrak bersama-sama, kos bersama-sama, dan rumah mengontrak pribadi dengan totalnya adalah 333 mahasiswa (batang merah pada Gambar \@ref(fig:fig-sebaran-jenis-tempat-tinggal)).
-
-<div class="figure" style="text-align: center">
-<img src="figures/fig-sebaran-jenis-tempat-tinggal-1.png" alt="Grafik Statistik Sebaran Jenis Tempat Tinggal Mahasiswa" width="60%" />
-<p class="caption">(\#fig:fig-sebaran-jenis-tempat-tinggal)Grafik Statistik Sebaran Jenis Tempat Tinggal Mahasiswa</p>
-</div>
-
-Proporsi sampel dapat dihitung sebagai berikut:
-
-$$\hat{p} = \frac{333}{428} = 0,778$$
-
-Proporsi sampel mahasiswa yang tinggal di hunian sewa atau kos adalah 0,778 atau 77,8%. Nilai inilah yang kemudian digunakan sebagai dasar dalam perhitungan estimasi parameter proporsi pada tahap selanjutnya.
-
-##### Menentukan Nilai Kritis Z
-
-Setelah proporsi sampel ditentukan, langkah berikutnya adalah menentukan nilai kritis Z sesuai dengan tingkat kepercayaan yang digunakan. Nilai kritis $Z_{\alpha/2}$ diperoleh dari distribusi normal baku.
-
-<div class="figure" style="text-align: center">
-<img src="images/bab-6-membagi-2-alpha.png" alt="Membagi Dua Nilai Alpha" width="60%" />
-<p class="caption">(\#fig:fig-membagi-dua-nilai-alpha)Membagi Dua Nilai Alpha</p>
-</div>
-
-Nilai tingkat kepercayaan yang kita gunakan adalah luas area di bawah kurva yang berwarna biru terang, yaitu 0,950. Artinya, kita menggunakan nilai $\alpha$ sebesar 0,05 atau 5%. Nilai $\alpha$ ini dibagi 2 ($\alpha/2$) dan ditempatkan di kiri dan kanan kurva normal. Dengan demikian, luas area biru terang menjadi bernilai $0,95 / 2 = 0,475$ dari titik 0 di tengah.
-
-Nilai Z diperoleh dari area seluas 0,475 di bawah kurva normal mulai dari titik tengah (0). Dengan mencocokkan pada tabel distribusi normal, didapatkan nilai $Z=1,96$, yang berasal dari kombinasi angka 1,9 pada sisi vertikal dan 0,06 pada sisi horizontal tabel.
-
-<div class="figure" style="text-align: center">
-<img src="images/bab-6-mencari-z.PNG" alt="Mencari Nilai Z" width="60%" />
-<p class="caption">(\#fig:fig-mencari-nilai-z)Mencari Nilai Z</p>
-</div>
-
-##### Menghitung Rentang Kepercayaan dan Menarik Kesimpulan
-
-Setelah seluruh komponen perhitungan ditentukan, langkah terakhir adalah menghitung rentang kepercayaan proporsi. Dari data yang ada diperoleh proporsi sampel sebesar 0,778 dan nilai kritis $Z=1,96$ pada tingkat kepercayaan 95%. Hasil tersebut kemudian disubstitusikan ke dalam rumus rentang kepercayaan proporsi sebagai berikut.
-
-$$
-\begin{aligned}
-c.i. &= \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \\
-&= 0,778 \pm 1,96 \times \sqrt{\frac{0,778(1 - 0,778)}{428}} \\
-&= 0,778 \pm 0,0394
-\end{aligned}
-$$
-
-Diperoleh rentang kepercayaan proporsi antara 73,86% hingga 81,74%. Artinya, dapat diperkirakan bahwa proporsi sebenarnya mahasiswa yang tinggal di hunian sewa atau kos di sekitar ITERA berada pada rentang tersebut.
-
-Hasil ini menunjukkan bahwa mayoritas mahasiswa lebih memilih hunian sewa dibandingkan tinggal di rumah keluarga atau asrama, sehingga fenomena maraknya alih fungsi lahan menjadi kos atau rumah kontrakan di kawasan sekitar kampus memiliki dasar empiris yang kuat.
-
-#### Estimasi Parameter Interval Rata-Rata
-
-Dikumpulkan data mengenai jarak tempat tinggal mahasiswa menuju kampus, untuk 333 responden yang berjenis tempat tinggal kos atau rumah sewa, yang menunjukkan variasi jarak hunian. Dari data tersebut, perlu dilakukan perhitungan untuk mengetahui estimasi rata-rata jarak tempuh mahasiswa ke kampus. Estimasi rata-rata ini dihitung dengan tingkat kepercayaan 95%.
-
-##### Menentukan Nilai Kritis Z
-
-Dalam perhitungan estimasi parameter rata-rata, penentuan nilai kritis Z juga diperlukan sebagai batas pengali dari *standar error*. Prosedur penentuannya sama seperti yang telah dijelaskan pada subbab estimasi proporsi.
-
-Menentukan nilai kritis Z, yaitu mengacu pada distribusi normal baku. Dengan tingkat kepercayaan sebesar 95%, maka tingkat kesalahan ($\alpha$) adalah 0,05 yang dibagi dua untuk pendekatan dua sisi, sehingga masing-masing sisi memiliki probabilitas 0,025. Berdasarkan tabel distribusi normal, probabilitas tersebut sesuai dengan nilai kritis $Z=1,96$.
-
-##### Menghitung Rentang Kepercayaan dan Menarik Kesimpulan
-
-Setelah seluruh komponen perhitungan ditentukan, langkah terakhir adalah menghitung rentang kepercayaan rata-rata. Dari data 333 responden, diperoleh rata-rata sampel sebesar 4,59 km dengan simpangan baku yaitu 2,23 km dan nilai kritis $Z = 1,96$ pada tingkat kepercayaan 95%. Hasil tersebut kemudian disubstitusikan ke dalam rumus rentang kepercayaan rata-rata sebagai berikut.
-
-$$
-\begin{aligned}
-c.i. &= \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}} \\
-&= 4,59 \pm 1,96 \times \frac{2,23}{\sqrt{333}} \\
-&= 4,59 \pm 0,2395
-\end{aligned}
-$$
-
-Diperoleh rentang kepercayaan rata-rata antara 4,35 km hingga 4,82 km. Artinya, dapat diperkirakan bahwa rata-rata sebenarnya jarak tempat tinggal mahasiswa ke kampus dengan jenis hunian sewa atau kos di sekitar ITERA berada pada rentang tersebut.
-
-Hasil ini menunjukkan bahwa kawasan dalam *buffer* sejauh rentang perkiraan tersebut dari kampus ITERA merupakan lokasi utama yang dipilih mahasiswa untuk hunian sewa atau kos. Kondisi ini sejalan dengan fenomena maraknya alih fungsi lahan di sekitar kampus menjadi kos atau rumah kontrakan, karena kebutuhan hunian mahasiswa terkonsentrasi di radius tersebut.
-
-#### Interpretasi Hasil Interval Estimasi Parameter
-
-Hasil estimasi parameter tidak hanya memberikan informasi mengenai nilai proporsi atau rata-rata dari sampel, tetapi juga menyajikan gambaran interval estimasi yang dapat digunakan untuk memahami fenomena yang lebih luas.
-
-Hasil estimasi parameter memberikan dua informasi penting, yaitu mengenai proporsi mahasiswa berdasarkan jenis tempat tinggal dan rata-rata jarak tempat tinggal mereka dari kampus. Kedua hasil ini saling melengkapi dalam memahami pola hunian mahasiswa ITERA.
-
-Pertama, hasil estimasi proporsi menunjukkan bahwa mayoritas mahasiswa lebih memilih tinggal di hunian sewa, baik berupa kos maupun rumah kontrakan, dibandingkan dengan tinggal di rumah keluarga atau asrama. Temuan ini memberikan dasar empiris yang kuat atas fenomena maraknya alih fungsi lahan di sekitar kampus menjadi kos atau rumah kontrakan. Tingginya preferensi mahasiswa terhadap hunian sewa mendorong peningkatan permintaan, yang kemudian direspons oleh masyarakat sekitar melalui konversi lahan menjadi bentuk hunian yang sesuai kebutuhan mahasiswa.
-
-Kedua, hasil estimasi rata-rata jarak tempat tinggal mahasiswa ke kampus berada dalam rentang 4,35 km hingga 4,82 km (Gambar \@ref(fig:fig-rentang-kepercayaan-rata-rata)). Konsentrasi hunian mahasiswa pada radius tersebut menunjukkan pola spasial yang erat kaitannya dengan ketersediaan fasilitas transportasi, aksesibilitas, serta keterjangkauan harga sewa. Fenomena alih fungsi lahan menjadi kos atau rumah kontrakan juga banyak ditemukan pada radius tersebut, karena dianggap paling strategis oleh mahasiswa.
-
-<div class="figure" style="text-align: center">
-<img src="images/bab-6-interpretasi.png" alt="Hasil Olahan Rentang Kepercayaan Rata-rata Jarak Tempat Tinggal Mahasiswa" width="60%" />
-<p class="caption">(\#fig:fig-rentang-kepercayaan-rata-rata)Hasil Olahan Rentang Kepercayaan Rata-rata Jarak Tempat Tinggal Mahasiswa</p>
-</div>
-
-Interpretasi dari kedua hasil ini penting karena memberikan gambaran menyeluruh mengenai pola hunian mahasiswa ITERA, baik dari sisi pilihan jenis tempat tinggal maupun kedekatannya dengan kampus. Interval estimasi parameter yang dihasilkan tidak hanya bermanfaat untuk analisis statistik, tetapi juga dapat menjadi dasar dalam perencanaan kawasan perumahan sewa mahasiswa yang lebih terarah.
-
-Seperti disebutkan di awal fenomena maraknya alih fungsi lahan di sekitar kampus juga menimbulkan berbagai dampak serius, seperti berkurangnya lahan pertanian produktif, menurunnya kualitas lingkungan, serta potensi konflik pemanfaatan ruang. Diperlukan solusi yang lebih berkelanjutan. Beberapa alternatif yang dapat dipertimbangkan antara lain:
-
-- Perencanaan kawasan hunian mahasiswa terintegrasi, misalnya melalui penyediaan rumah susun sewa (rusunawa) yang dikelola kampus atau pemerintah daerah yang lebih banyak lagi.
-- Pengaturan zonasi lahan di sekitar kampus, agar alih fungsi lahan tidak merusak tata ruang dan tetap mempertahankan fungsi ekologis wilayah salah satunya ruang terbuka hijau yang juga sebagai kawasan resapan air dalam mencegah terjadinya bencana banjir.
-- Kemitraan dengan masyarakat lokal, sehingga kebutuhan hunian mahasiswa dapat terpenuhi tanpa harus mengorbankan seluruh lahan produktif, misalnya melalui model sewa jangka panjang atau pembangunan kos ramah lingkungan berupa pembangunan hunian vertikal.
-- Pengembangan transportasi aksesibel, yang memungkinkan mahasiswa tinggal lebih jauh dari kampus namun tetap memiliki mobilitas tinggi, sehingga tekanan alih fungsi lahan di sekitar kampus dapat dikurangi.
-
-Secara keseluruhan, pemahaman terhadap hasil estimasi ini diharapkan mampu memberikan gambaran yang lebih komprehensif mengenai kebutuhan hunian mahasiswa ITERA. Informasi ini dapat menjadi landasan dalam penyusunan strategi penyediaan perumahan sewa atau kos yang sesuai, sekaligus mengarahkan pengelolaan ruang di sekitar kampus agar lebih terkendali, adaptif, dan berkelanjutan.
-:::
-
-
-::: rmdexercise
-## Soal Evaluasi
-1. Dari suatu sampel dosen ITERA berjumlah 73 orang diperoleh rata-rata usianya adalah 30 tahun dan simpangan bakunya 2,9 tahun. Anda diminta menggunakan probabilitas galat, $\alpha = 5\%$ [STP-5.1]{.capaian}
-   a. Berapakah tingkat kepercayaan (*confidence level*) yang digunakan?
-   b. Berapakah nilai standar (Z *score*) yang kita pakai?
-   c. Hitunglah rentang kepercayaan (*confidence interval*) rata-rata usia seluruh dosen ITERA menggunakan data sampel kita tadi.
-
-2. Diketahui bahwa proporsi pengguna mobil pribadi dari suatu sampel mahasiswa berjumlah 429 orang adalah 0,04. [STP-5.1]{.capaian}
-   a. Apabila kita menggunakan *confidence level* 93%, berapakah tingkat signifikansi kita?
-   b. Berapakah Z *score* yang kita pakai?
-   c. Hitunglah *confidence interval* proporsi pengguna mobil pribadi pada populasi mahasiswa tersebut.
-:::
 
 <!--chapter:end:06-estimasi-parameter.Rmd-->
 
