@@ -1,4 +1,4 @@
-# Uji Hipotesis Lebih dari Dua Populasi
+# Uji Hipotesis Parameter Lebih dari Dua Populasi
 
 ## Analisis Variansi (ANOVA)
 

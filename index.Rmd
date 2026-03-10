@@ -46,9 +46,9 @@ Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan
     1. Visualisasi Data Kuantitatif
     1. Pengantar Statistik Inferensial
     1. Estimasi Parameter
-    1. Uji Hipotesis Satu Populasi
-    1. Uji Hipotesis Dua Populasi
-    1. Uji Hipotesis Lebih dari Dua Populasi
+    1. Uji Hipotesis Parameter Satu Populasi
+    1. Uji Hipotesis Parameter Dua Populasi
+    1. Uji Hipotesis Parameter Lebih dari Dua Populasi
 3. Statistika Bivariat
     1. Korelasi Antarvariabel Nominal
     1. Korelasi Antarvariabel Ordinal

@@ -1,4 +1,4 @@
-# Uji Hipotesis Dua Populasi
+# Uji Hipotesis Parameter Dua Populasi
 
 ## Konsep Dasar
 
