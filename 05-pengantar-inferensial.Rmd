@@ -1059,7 +1059,7 @@ Jika diketahui parameter (rata-rata jarak tempat tinggal seluruh pegawai ITERA) 
 
 
 
-### Menentukan Probabilitas Terjadinya Suatu Nilai
+### Menentukan Probabilitas Terjadinya Suatu Nilai {#probabilitas-nilai-di-distribusi-statistik}
 
 Probabilitas terjadinya suatu nilai dalam distribusi statistik yang berbentuk normal ditunjukkan oleh **luasan area di bawah kurva distribusi tersebut**. Luasan area di bawah kurva distribusi statistik ini dapat dihitung dengan terlebih dahulu menentukan nilai *Z-score* dari nilai tersebut.
 
