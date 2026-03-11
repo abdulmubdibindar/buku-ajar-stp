@@ -94,15 +94,15 @@ Adapun bentuk matematis dari hipotesis alternatif yang mungkin dipilih ditampilk
 ```{r tab-bentuk-hipotesis-alternatif, echo=FALSE}
 library(kableExtra)
 data <- data.frame(
-   "No" = c(1, 2, 3),
-   "Bentuk Kasus" = c("Tidak sama dengan", "Lebih dari", "Kurang dari"),
-   "Persamaan Matematis" = c("$H_1: \\mu \\neq \\mu_0$", "$H_1: \\mu > \\mu_0$", "$H_1: \\mu < \\mu_0$"),
-   "Interpretasi" = c("Rata-rata parameter tidak sama dengan nilai dugaan", "Rata-rata parameter lebih besar nilai dugaan", "Rata-rata parameter lebih kecil (tidak sama) dengan nilai dugaan"),
-   check.names = FALSE
+  "No" = c(1, 2, 3),
+  "Bentuk Kasus" = c("Tidak sama dengan", "Lebih dari", "Kurang dari"),
+  "Persamaan Matematis" = c("$H_1: \\mu \\neq \\mu_0$", "$H_1: \\mu > \\mu_0$", "$H_1: \\mu < \\mu_0$"),
+  "Interpretasi" = c("Rata-rata parameter tidak sama dengan nilai dugaan", "Rata-rata parameter lebih besar nilai dugaan", "Rata-rata parameter lebih kecil (tidak sama) dengan nilai dugaan"),
+  check.names = FALSE
 )
 data |>
-   kbl(caption = "Alternatif Bentuk Hipotesis Alternatif", escape = FALSE, align = "llcl") |>
-   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+  kbl(caption = "Alternatif Bentuk Hipotesis Alternatif", escape = FALSE, align = "llcl") |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 ```
 
 ::: rmdkasus
@@ -161,11 +161,11 @@ Ketiga bentuk hipotesis alternatif ini akan menghasilkan wilayah kritis yang ber
 knitr::include_graphics("images/bab7-bentuk-tail.png")
 # library(ggplot2)
 # library(patchwork)
-# 
+#
 # x <- seq(-4, 4, length.out = 1000)
 # df <- data.frame(x = x, y = dnorm(x))
-# 
-# base_theme <- theme_minimal() + 
+#
+# base_theme <- theme_minimal() +
 #   theme(
 #     axis.text.y = element_blank(),
 #     axis.ticks.y = element_blank(),
@@ -174,7 +174,7 @@ knitr::include_graphics("images/bab7-bentuk-tail.png")
 #     plot.title = element_text(hjust = 0.5, face = "bold", size = 11),
 #     axis.line.x = element_line(color = "black")
 #   )
-# 
+#
 # p_two <- ggplot(df, aes(x, y)) +
 #   geom_area(data = subset(df, x < -1.96), fill = "grey40") +
 #   geom_area(data = subset(df, x > 1.96), fill = "grey40") +
@@ -191,7 +191,7 @@ knitr::include_graphics("images/bab7-bentuk-tail.png")
 #   labs(title = "(a) Uji Dua Ekor (Two-tailed)") +
 #   scale_x_continuous(breaks = c(-1.96, 0, 1.96), labels = c(expression(-Z[alpha/2]), "0", expression(Z[alpha/2])), limits = c(-4, 4)) +
 #   base_theme
-# 
+#
 # p_right <- ggplot(df, aes(x, y)) +
 #   geom_area(data = subset(df, x > 1.645), fill = "grey40") +
 #   geom_area(data = subset(df, x <= 1.645), fill = "white", color = NA) +
@@ -204,7 +204,7 @@ knitr::include_graphics("images/bab7-bentuk-tail.png")
 #   labs(title = "(b) Uji Ekor Kanan (Right-tailed)") +
 #   scale_x_continuous(breaks = c(0, 1.645), labels = c("0", expression(Z[alpha])), limits = c(-4, 4)) +
 #   base_theme
-# 
+#
 # p_left <- ggplot(df, aes(x, y)) +
 #   geom_area(data = subset(df, x < -1.645), fill = "grey40") +
 #   geom_area(data = subset(df, x >= -1.645), fill = "white", color = NA) +
@@ -217,7 +217,7 @@ knitr::include_graphics("images/bab7-bentuk-tail.png")
 #   labs(title = "(c) Uji Ekor Kiri (Left-tailed)") +
 #   scale_x_continuous(breaks = c(-1.645, 0), labels = c(expression(-Z[alpha]), "0"), limits = c(-4, 4)) +
 #   base_theme
-# 
+#
 # design <- "
 #   1122
 #   #33#
@@ -282,7 +282,7 @@ library(patchwork)
 x <- seq(-3.5, 3.5, length.out = 1000)
 df <- data.frame(x = x, y = dnorm(x))
 
-base_theme <- theme_minimal() + 
+base_theme <- theme_minimal() +
   theme(
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
@@ -307,8 +307,10 @@ p_A <- ggplot(df, aes(x, y)) +
   annotate("text", x = 2.0, y = 0.05, label = "wilayah\nkritis", size = 3, color = "darkred") +
   annotate("text", x = 3.0, y = 0.02, label = "p-value", size = 3, color = "darkblue") +
   scale_x_continuous(breaks = c(0, z_crit, z_stat_A), labels = c("0", expression(Z[alpha]), "Z"), limits = c(-3.5, 3.5)) +
-  labs(title = expression(paste("(a) p-value < ", alpha, " (", H[0], " Ditolak)")),
-       subtitle = "Statistik hitung di dalam wilayah kritis\np-value (biru) merupakan bagian dari wilayah kritis (merah)") +
+  labs(
+    title = expression(paste("(a) p-value < ", alpha, " (", H[0], " Ditolak)")),
+    subtitle = "Statistik hitung di dalam wilayah kritis\np-value (biru) merupakan bagian dari wilayah kritis (merah)"
+  ) +
   base_theme
 
 z_stat_B <- 0.8
@@ -319,13 +321,23 @@ p_B <- ggplot(df, aes(x, y)) +
   geom_line(linewidth = 0.8) +
   geom_vline(xintercept = z_crit, linetype = "dashed", color = "red") +
   geom_vline(xintercept = z_stat_B, linetype = "dashed", color = "blue", linewidth = 1) +
-  annotate("text", x = z_crit, y = 0.43, label = "titik\nkritis", size = 3, color = "red") +
-  annotate("text", x = z_stat_B, y = 0.35, label = "statistik\nhitung", size = 3, color = "blue") +
-  annotate("text", x = 2.4, y = 0.05, label = "wilayah\nkritis", size = 3, color = "darkred") +
-  annotate("text", x = 1.2, y = 0.05, label = "p-value", size = 3, color = "darkblue") +
+  annotate("text",
+    x = z_crit, y = 0.43, label = "titik\nkritis", size = 3, color = "red"
+  ) +
+  annotate("text",
+    x = z_stat_B, y = 0.35, label = "statistik\nhitung", size = 3, color = "blue"
+  ) +
+  annotate("text",
+    x = 2.4, y = 0.05, label = "wilayah\nkritis", size = 3, color = "darkred"
+  ) +
+  annotate("text",
+    x = 1.2, y = 0.05, label = "p-value", size = 3, color = "darkblue"
+  ) +
   scale_x_continuous(breaks = c(0, z_stat_B, z_crit), labels = c("0", "Z", expression(Z[alpha])), limits = c(-3.5, 3.5)) +
-  labs(title = expression(paste("(b) p-value > ", alpha, " (", H[0], " Gagal Ditolak)")),
-       subtitle = "Statistik hitung di luar wilayah kritis\nWilayah kritis (merah) merupakan bagian dari p-value (biru)") +
+  labs(
+    title = expression(paste("(b) p-value > ", alpha, " (", H[0], " Gagal Ditolak)")),
+    subtitle = "Statistik hitung di luar wilayah kritis\nWilayah kritis (merah) merupakan bagian dari p-value (biru)"
+  ) +
   base_theme
 
 p_A + p_B
@@ -368,12 +380,18 @@ ggplot(df, aes(x, y)) +
   geom_area(data = subset(df, x <= 1.645), fill = "white", color = NA) +
   geom_line(linewidth = 0.8) +
   geom_vline(xintercept = 1.645, linetype = "dashed", color = "black") +
-  annotate("text", x = 0, y = 0.15, label = "area gagal\npenolakan H0", size = 3.5) +
-  annotate("text", x = 2.6, y = 0.08, label = "area\npenolakan H0", size = 3.5, color = "black") +
+  annotate("text",
+    x = 0, y = 0.15, label = "area gagal\npenolakan H0", size = 3.5
+  ) +
+  annotate("text",
+    x = 2.6, y = 0.08, label = "area\npenolakan H0", size = 3.5, color = "black"
+  ) +
   annotate("segment", x = 1.645, xend = 1.645, y = dnorm(1.645), yend = 0.4) +
   annotate("text", x = 1.645, y = 0.43, label = "titik kritis", size = 3) +
-  scale_x_continuous(breaks = c(0, 1.645), labels = c("0", "1,65"), limits = c(-3.5, 3.5)) +
-  theme_minimal() + 
+  scale_x_continuous(
+    breaks = c(0, 1.645), labels = c("0", "1,65"), limits = c(-3.5, 3.5)
+  ) +
+  theme_minimal() +
   theme(
     axis.text.y = element_blank(), axis.ticks.y = element_blank(),
     axis.title = element_blank(), panel.grid = element_blank(),
@@ -421,39 +439,66 @@ Mari kita pelajari kasus lain yang langkah-langkahnya lebih terlihat dari awal s
 
 ##### Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$) {.unnumbered}
 
-Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah **rata-rata sama dengan 5 km**. Sedangkan karena kita ingin menguji dugaan "rata-rata jarak lebih dari 5 km akan menyebabkan ketidakefektifan", kita dapat merumuskan hipotesis untuk membuktikan dugaan sebaliknya:
+Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah **rata-rata sama dengan 5 km**. Untuk bentuk hipotesis alternatifnya, kita berusaha membuktikan agar klaim kita bahwa "penyediaan bus akan efektif saat rata-rata jarak tempuh dari tempat tinggal <5 km" bisa menolak hipotesis kosong. Dengan demikian, bentuk hipotesis alternatif kita adalah kondisi di mana penyediaan bus akan efektif (<5 km).
 
-$$H_0: \mu = 5 \text{ km}$$
-$$H_1: \mu > 5 \text{ km}$$
+$$
+H_0: \mu = 5 \text{ km}\\
+H_1: \mu < 5 \text{ km}
+$$
 
-Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa rata-rata jarak adalah 5 km. $H_1$ menunjukkan rata-rata jarak lebih dari 5 km (yang berarti layanan bus kampus melemah efektivitasnya).
+Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa rata-rata jarak adalah 5 km. $H_1$ berusaha menolak hipotesis kosong dengan mengeklaim bahwa penyediaan bus efisien, di saat rata-rata <5 km.
 
 ##### Menetapkan Wilayah Kritis dari Signifikansi {.unnumbered}
 
 Karena kita menggunakan sampel besar, kita menggunakan distribusi Z. Lalu, kita menggunakan tingkat kepercayaan 95%, yang berarti tingkat kepercayaan kita adalah $\alpha = 5\% = 0,05$.
 
-Berdasarkan subbab \@ref(titik-kritis-wilayah-kritis), dan Gambar \@ref(fig:fig-titik-kritis-distribusi), kita menggunakan bentuk (b) atau *right-tailed*.
+Berdasarkan subbab \@ref(titik-kritis-wilayah-kritis), dan Gambar \@ref(fig:fig-titik-kritis-distribusi), kita menggunakan bentuk (b) atau *left-tailed*.
 
 
 ##### Mencari Nilai Titik Kritis {-}
 
-Berdasarkan tabel Distribusi Z, nilai titik kritis untuk $\alpha = 5\%$ *right-tailed* adalah $+1,65$.
+Berdasarkan tabel Distribusi Z, nilai titik kritis untuk $\alpha = 5\%$ *left-tailed* adalah $-1,65$.
 
 ```{r fig-kurva-kritis-bus-kampus, echo=FALSE, fig.align="center", fig.cap="Distribusi Sampling dan Wilayah Kritis Kasus Rata-rata Jarak ke Kampus ITERA", warning=FALSE, message=FALSE}
 library(ggplot2)
 x <- seq(-3.5, 3.5, length.out = 1000)
 df <- data.frame(x = x, y = dnorm(x))
 ggplot(df, aes(x, y)) +
-  geom_area(data = subset(df, x > 1.645), fill = "grey40") +
-  geom_area(data = subset(df, x <= 1.645), fill = "white", color = NA) +
+  geom_area(data = subset(df, x < -1.645), fill = "grey40") +
+  geom_area(data = subset(df, x >= -1.645), fill = "white", color = NA) +
   geom_line(linewidth = 0.8) +
-  geom_vline(xintercept = 1.645, linetype = "dashed", color = "black") +
-  annotate("text", x = 0, y = 0.15, label = "area gagal\npenolakan H0", size = 3.5) +
-  annotate("text", x = 2.6, y = 0.08, label = "area\npenolakan H0", size = 3.5, color = "black") +
-  annotate("segment", x = 1.645, xend = 1.645, y = dnorm(1.645), yend = 0.4) +
-  annotate("text", x = 1.645, y = 0.43, label = "titik kritis", size = 3) +
-  scale_x_continuous(breaks = c(0, 1.645), labels = c("0", "1,65"), limits = c(-3.5, 3.5)) +
-  theme_minimal() + 
+  geom_vline(xintercept = -1.645, linetype = "dashed", color = "black") +
+  annotate("text",
+    x = 0,
+    y = 0.15,
+    label = "area gagal\npenolakan H0",
+    size = 3.5
+  ) +
+  annotate("text",
+    x = -2.6,
+    y = 0.08,
+    label = "area\npenolakan H0",
+    size = 3.5,
+    color = "black"
+  ) +
+  annotate("segment",
+    x = -1.645,
+    xend = -1.645,
+    y = dnorm(-1.645),
+    yend = 0.4
+  ) +
+  annotate("text",
+    x = -1.645,
+    y = 0.43,
+    label = "titik kritis",
+    size = 3
+  ) +
+  scale_x_continuous(
+    breaks = c(-1.645, 0),
+    labels = c("-1,65", "0"),
+    limits = c(-3.5, 3.5)
+  ) +
+  theme_minimal() +
   theme(
     axis.text.y = element_blank(), axis.ticks.y = element_blank(),
     axis.title = element_blank(), panel.grid = element_blank(),
@@ -482,81 +527,271 @@ $$
 ##### Membandingkan Nilai Statistik Uji dan Titik Kritis {-}
 
 - $Z_{hitung} = -3,36$
-- $Z_{kritis} = +1,65$
+- $Z_{kritis} = -1,65$
 
-Nilai statistik uji **tidak jatuh ke dalam wilayah kritis** karena titik kritis bertanda (+) yang berarti berada di kanan sementara statistik uji bertanda (-) yang berarti berada di kiri.
+Nilai statistik uji **jatuh ke dalam wilayah kritis** karena nilai $Z_{hitung}$ (-3,36) lebih kecil dari $Z_{kritis}$ (-1,65) sehingga berada di sebelah kirinya (masuk ke dalam area penolakan $H_0$) (Gambar \@ref(fig:fig-perbandingan-z-jarak)).
+
+```{rservr fig-perbandingan-z-jarak, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.cap="Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Jarak ke Kampus ITERA)"}
+library(ggplot2)
+x <- seq(-4, 4, length.out = 1000)
+df <- data.frame(x = x, y = dnorm(x))
+ggplot(df, aes(x, y)) +
+  geom_area(data = subset(df, x < -1.65), fill = "grey40") +
+  geom_area(data = subset(df, x >= -1.65), fill = "white", color = NA) +
+  geom_line(linewidth = 0.8) +
+  geom_vline(xintercept = -1.65, linetype = "dashed", color = "black") +
+  geom_vline(
+    xintercept = -3.36,
+    linetype = "dashed",
+    color = "blue",
+    linewidth = 1
+  ) +
+  annotate("text",
+    x = 0,
+    y = 0.15,
+    label = "area gagal\npenolakan H0",
+    size = 3.5
+  ) +
+  annotate("text",
+    x = -2.6,
+    y = 0.08,
+    label = "area\npenolakan H0",
+    size = 3.5,
+    color = "black"
+  ) +
+  annotate("segment",
+    x = -1.65,
+    xend = -1.65,
+    y = dnorm(-1.65),
+    yend = 0.4
+  ) +
+  annotate("text",
+    x = -1.65,
+    y = 0.43,
+    label = "titik kritis\n(-1,65)",
+    size = 3
+  ) +
+  annotate("segment",
+    x = -3.36,
+    xend = -3.36,
+    y = dnorm(-3.36),
+    yend = 0.3
+  ) +
+  annotate("text",
+    x = -3.36,
+    y = 0.33,
+    label = "statistik uji\n(-3,36)",
+    size = 3,
+    color = "blue"
+  ) +
+  scale_x_continuous(
+    breaks = c(-3.36, -1.65, 0),
+    labels = c("-3,36", "-1,65", "0"),
+    limits = c(-4, 4)
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    axis.line.x = element_line(color = "black")
+  )
+```
 
 ##### Menarik Kesimpulan dan Memaknai Hasil {-}
 
-Dengan demikian, data sampel kita tidak cukup untuk dapat menolak $H_0$, yaitu bahwa rata-rata jarak mahasiswa ITERA ke kampus adalah 5 km atau kurang. Berdasarkan perhitungan statistik, penyediaan Bus Kampus dapat dianggap tepat dan berpotensi efektif. 
-
-**4. Menghitung Statistik Uji**
+Dengan demikian, data sampel kita cukup untuk dapat menolak $H_0$, yaitu bahwa rata-rata jarak mahasiswa ITERA ke kampus adalah 5 km atau kurang. Berdasarkan perhitungan statistik, penyediaan Bus Kampus dapat dianggap tepat dan berpotensi efektif. 
 
 
-**5. Menarik Kesimpulan**
+#### Pengujian Hipotesis Proporsi Populasi {.unnumbered}
 
+*Program dinilai akan berhasil apabila lebih dari 80% mahasiswa berminat. Berdasarkan survei terhadap 333 responden, diketahui 82% mahasiswa berminat. Dengan tingkat kepercayaan 99%, kita uji hipotesis parameter proporsi ini.*
 
+##### Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$) {-}
 
-**6. Memaknai Hasil Pengujian Hipotesis**
+Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah **proporsi mahasiswa yang berminat sama dengan 80%**. Untuk bentuk hipotesis alternatifnya, kita berusaha untuk membuktikan klaim bahwa program akan berhasil jika minat melebihi 80%. Dengan demikian, bentuk hipotesis alternatif kita adalah $H_1: P > 0,8$.
 
+$$
+H_0: P = 0,8 \\
+H_1: P > 0,8
+$$
 
-#### Pengujian Hipotesis Proporsi Populasi
+Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa besaran proporsi adalah 0,8. $H_1$ berusaha menolak hipotesis kosong dengan mengeklaim bahwa program akan berhasil di saat proporsi > 0,8.
 
-Program dinilai akan berhasil apabila lebih dari 80% mahasiswa berminat. Berdasarkan survei terhadap 333 responden, diketahui 70% mahasiswa berminat. Dengan tingkat kepercayaan 99%, kita uji hipotesis parameter proporsi ini.
+##### Menetapkan Wilayah Kritis dari Signifikansi {-}
 
-**1. Membuat Asumsi**
+Oleh karena kita menguji proporsi, kita menggunakan metode sampel besar, sehingga titik statistik acuan adalah distribusi Z. Lalu, kita menggunakan tingkat kepercayaan 99%, yang berarti tingkat signifikansi kita adalah $\alpha = 1\% = 0,01$.
 
-Tingkat pengukuran nominal, pengujian proporsi, dan *random sampling* terpenuhi.
+Berdasarkan hipotesis alternatif $H_1$ yang berarah "lebih dari" (>), kita menggunakan uji ekor kanan (*right-tailed*).
 
-**2. Merumuskan Hipotesis ($H_0$ dan $H_1$)**
+##### Mencari Nilai Titik Kritis {-}
 
-$$H_0: P = 0,8$$
-$$H_1: P < 0,8$$ *(Catatan: Penyesuaian ke left-tailed karena sampel 0,7 lebih kecil dari 0,8 dan dugaan bahwa proporsi gagal mencapai 0,8).* Atau jika mengikuti teks referensi asli yang menduga $P > 0,8$, kita pertahankan hipotesis awal:
+Berdasarkan tabel Distribusi Z, nilai titik kritis untuk $\alpha = 1\%$ *right-tailed* adalah $+2,33$.
 
-$$H_0: P = 0,8$$
-$$H_1: P > 0,8$$
+```{r fig-kurva-kritis-proporsi-bus, echo=FALSE, fig.align="center", fig.cap="Distribusi Sampling dan Wilayah Kritis Kasus Proporsi Minat Bus Kampus", warning=FALSE, message=FALSE}
+library(ggplot2)
+x <- seq(-4.5, 4.5, length.out = 1000)
+df <- data.frame(x = x, y = dnorm(x))
+ggplot(df, aes(x, y)) +
+  geom_area(data = subset(df, x > 2.33), fill = "grey40") +
+  geom_area(data = subset(df, x <= 2.33), fill = "white", color = NA) +
+  geom_line(linewidth = 0.8) +
+  geom_vline(xintercept = 2.33, linetype = "dashed", color = "black") +
+  annotate("text",
+    x = 0,
+    y = 0.15,
+    label = "area gagal\npenolakan H0",
+    size = 3.5
+  ) +
+  annotate("text",
+    x = 3.4,
+    y = 0.08,
+    label = "area\npenolakan H0",
+    size = 3.5,
+    color = "black"
+  ) +
+  annotate("segment",
+    x = 2.33,
+    xend = 2.33,
+    y = dnorm(2.33),
+    yend = 0.4
+  ) +
+  annotate("text",
+    x = 2.33,
+    y = 0.43,
+    label = "titik kritis\n(+2,33)",
+    size = 3
+  ) +
+  scale_x_continuous(
+    breaks = c(0, 2.33),
+    labels = c("0", "2,33"),
+    limits = c(-4.5, 4.5)
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_blank(), axis.ticks.y = element_blank(),
+    axis.title = element_blank(), panel.grid = element_blank(),
+    axis.line.x = element_line(color = "black")
+  )
+```
 
-*(Dari teks: $H_0: P = 0,8$ vs $H_1: P > 0,8$).*
+##### Mencari Nilai Statistik Uji {-}
 
-**3. Memilih Distribusi Sampling dan Wilayah Kritis**
+Kita menggunakan persamaan \@ref(eq:statistik-uji-proporsi) untuk menghitung statistik uji kita.
 
-- Distribusi Z.
-- Tingkat kepercayaan 99% ($\alpha = 1\%$), formasi *right-tailed*, maka $Z_{kritis} = +2,33$.
-
-**4. Menghitung Statistik Uji**
-
-- $\hat{p} = 0,7$
-- $P = 0,8$
+- $\hat{p} = 0,82$
+- $p_0 = 0,8$
 - $n = 333$
 
 $$
-Z = \frac{\hat{p} - P}{\sqrt{\frac{P(1-P)}{n}}} = \frac{0,7 - 0,8}{\sqrt{\frac{0,8(0,2)}{333}}} = -3,98
+\begin{aligned}
+Z &= \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} \\
+&= \frac{0,82 - 0,8}{\sqrt{\frac{0,8(1-0,8)}{333}}} \\
+&= \frac{0,02}{0,0219} \\
+&= 0,91
+\end{aligned}
 $$
 
-(Dalam teks referensi tercantum rumus yang menggunakan $\hat{p}$ atau $P$ di bawah akar; hasil $Z=-3,98$).
+##### Membandingkan Nilai Statistik Uji dan Titik Kritis {-}
 
-**5. Menarik Kesimpulan**
-
-- $Z_{hitung} = -3,98$
+- $Z_{hitung} = +0,91$
 - $Z_{kritis} = +2,33$
 
-Nilai statistik uji tidak jatuh ke dalam wilayah kritis, sehingga hipotesis kosong gagal ditolak.
+Nilai statistik uji **tidak jatuh ke dalam wilayah kritis** karena nilai $Z_{hitung}$ (0,91) tidak melampaui dan lebih kecil dari titik kritis $Z_{kritis}$ (+2,33). Titik wilayah kritis kita berada di ekor sebelah kanan (+2,33), sementara statistik uji jatuh jauh di sebelah kiri kurva sumbu nol (Gambar \@ref(fig:fig-perbandingan-z-proporsi)). Oleh karena itu, kita **gagal menolak hipotesis kosong ($H_0$)**.
 
-**6. Memaknai Hasil Pengujian Hipotesis**
+```{r fig-perbandingan-z-proporsi, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.cap="Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Proporsi Minat Bus Kampus)"}
+library(ggplot2)
+x <- seq(-5.5, 5.5, length.out = 1000)
+df <- data.frame(x = x, y = dnorm(x))
+ggplot(df, aes(x, y)) +
+  geom_area(data = subset(df, x > 2.33), fill = "grey40") +
+  geom_area(data = subset(df, x <= 2.33), fill = "white", color = NA) +
+  geom_line(linewidth = 0.8) +
+  geom_vline(
+    xintercept = 2.33,
+    linetype = "dashed",
+    color = "black"
+  ) +
+  geom_vline(
+    xintercept = 0.91,
+    linetype = "dashed",
+    color = "blue",
+    linewidth = 1
+  ) +
+  annotate("text",
+    x = 0,
+    y = 0.15,
+    label = "area gagal\npenolakan H0",
+    size = 3.5
+  ) +
+  annotate("text",
+    x = 3.6,
+    y = 0.08,
+    label = "area\npenolakan H0",
+    size = 3.5,
+    color = "black"
+  ) +
+  annotate("segment",
+    x = 2.33,
+    xend = 2.33,
+    y = dnorm(2.33),
+    yend = 0.4
+  ) +
+  annotate("text",
+    x = 2.33,
+    y = 0.43,
+    label = "titik kritis\n(+2,33)",
+    size = 3
+  ) +
+  annotate("segment",
+    x = 0.91,
+    xend = 0.91,
+    y = dnorm(0.91),
+    yend = 0.3
+  ) +
+  annotate("text",
+    x = 0.91,
+    y = 0.33,
+    label = "statistik uji\n(+0,91)",
+    size = 3,
+    color = "blue"
+  ) +
+  scale_x_continuous(
+    breaks = c(0, 0.91, 2.33),
+    labels = c("0", "0,91", "2,33"),
+    limits = c(-5.5, 5.5)
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    axis.line.x = element_line(color = "black")
+  )
+```
 
-Data sampel mendukung $H_0$ (gagal menolak) bahwa minat mahasiswa tidak mencapai atau melebihi 80%. Secara populasi, minat mahasiswa dapat disimpulkan rendah. Pihak kampus perlu mengkaji ulang program ini karena adanya potensi minat yang terlalu rendah.
+##### Menarik Kesimpulan dan Memaknai Hasil {-}
+
+Karena kita gagal menolak $H_0$, terbukti bahwa statistik proporsi sebesar 0,82 atau 82% belum memiliki cukup bukti empiris untuk menolak pernyataan bahwasanya proporsi mahasiswa yang berminat hanya 80%. Walaupun kita mendapat sampel dengan nilai 82% (>80%), hasil pengujian hipotesis menyatakan bahwa sampel kita tersebut didapatkan secara kebetulan. Oleh karena itu, secara populasi, kita bisa menyimpulkan bahwa proporsi minat mahasiswa belum mencukupi standar target kelayakan. Pihak kampus perlu mengkaji ulang atau mempertimbangkan kembali penyediaan Bus Kampus ini mengingat minimnya potensi minat mahasiswa.
 :::
 
-## Soal Latihan
+Kerjakanlah soal evaluasi berikut untuk mengasah pemahaman Anda tentang pengujian hipotesis parameter baik untuk rata-rata maupun proporsi. 
 
 ::: rmdexercise
-1. Berdasarkan survei kepada 173 orang dosen ITERA pada tahun 2023, rata-rata usianya pada saat itu adalah 29 tahun dengan simpangan bakunya adalah 2,9 tahun. Jika ingin diketahui apakah rata-rata usia dosen ITERA pada tahun 2023 tersebut adalah sebenarnya sama saja dengan 30 tahun, ujilah pernyataan tersebut! Gunakan galat sebesar 5%. `[STP-6.1]`
+
+## Soal Evaluasi 14 {.unnumbered}
+
+1. Berdasarkan survei kepada 173 orang dosen ITERA pada tahun 2023, rata-rata usianya pada saat itu adalah 29 tahun dengan simpangan bakunya adalah 2,9 tahun. Jika ingin diketahui apakah rata-rata usia dosen ITERA pada tahun 2023 tersebut adalah sebenarnya sama saja dengan 30 tahun, ujilah pernyataan tersebut! Gunakan galat sebesar 5%. `[STP-6.1]{.capaian}`
    a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
    b. Tentukan keputusan dalam memilih hipotesis yang diterima!
    c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
    
-2. Hasil survei kepada 427 orang mahasiswa menunjukkan bahwa proporsi pengguna sepeda motor pribadi adalah 0,56. Bagaimana hasil pengujian hipotesis yang menyatakan bahwa sebenarnya pengguna sepeda motor pada mahasiswa itu lebih dari setengahnya? Gunakan galat sebesar 5%. `[STP-6.1]`
+2. Hasil survei kepada 427 orang mahasiswa menunjukkan bahwa proporsi pengguna sepeda motor pribadi adalah 0,56. Bagaimana hasil pengujian hipotesis yang menyatakan bahwa sebenarnya pengguna sepeda motor pada mahasiswa itu lebih dari setengahnya? Gunakan galat sebesar 5%. `[STP-6.1]{.capaian}`
    a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
    b. Tentukan keputusan dalam memilih hipotesis yang diterima!
    c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
+   
+**Penting! Tuliskan langkah demi langkah secara berurutan. Gambar seluruh hal yang berkaitan dengan distribusi statistik, seperti wilayah kritis, posisi titik kritis, dan posisi statistik ujinya.**
 :::
