@@ -531,7 +531,7 @@ $$
 
 Nilai statistik uji **jatuh ke dalam wilayah kritis** karena nilai $Z_{hitung}$ (-3,36) lebih kecil dari $Z_{kritis}$ (-1,65) sehingga berada di sebelah kirinya (masuk ke dalam area penolakan $H_0$) (Gambar \@ref(fig:fig-perbandingan-z-jarak)).
 
-```{rservr fig-perbandingan-z-jarak, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.cap="Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Jarak ke Kampus ITERA)"}
+```{r fig-perbandingan-z-jarak, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.cap="Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Jarak ke Kampus ITERA)"}
 library(ggplot2)
 x <- seq(-4, 4, length.out = 1000)
 df <- data.frame(x = x, y = dnorm(x))
