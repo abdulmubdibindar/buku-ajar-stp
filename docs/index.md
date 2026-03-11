@@ -5183,7 +5183,10 @@ $$
 
 Nilai statistik uji **jatuh ke dalam wilayah kritis** karena nilai $Z_{hitung}$ (-3,36) lebih kecil dari $Z_{kritis}$ (-1,65) sehingga berada di sebelah kirinya (masuk ke dalam area penolakan $H_0$) (Gambar \@ref(fig:fig-perbandingan-z-jarak)).
 
-
+<div class="figure" style="text-align: center">
+<img src="figures/fig-perbandingan-z-jarak-1.png" alt="Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Jarak ke Kampus ITERA)"  />
+<p class="caption">(\#fig:fig-perbandingan-z-jarak)Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Jarak ke Kampus ITERA)</p>
+</div>
 
 ##### Menarik Kesimpulan dan Memaknai Hasil {-}
 
@@ -5260,12 +5263,12 @@ Kerjakanlah soal evaluasi berikut untuk mengasah pemahaman Anda tentang pengujia
 
 ## Soal Evaluasi 14 {.unnumbered}
 
-1. Berdasarkan survei kepada 173 orang dosen ITERA pada tahun 2023, rata-rata usianya pada saat itu adalah 29 tahun dengan simpangan bakunya adalah 2,9 tahun. Jika ingin diketahui apakah rata-rata usia dosen ITERA pada tahun 2023 tersebut adalah sebenarnya sama saja dengan 30 tahun, ujilah pernyataan tersebut! Gunakan galat sebesar 5%. `[STP-6.1]{.capaian}`
+1. Berdasarkan survei kepada 173 orang dosen ITERA pada tahun 2023, rata-rata usianya pada saat itu adalah 29 tahun dengan simpangan bakunya adalah 2,9 tahun. Jika ingin diketahui apakah rata-rata usia dosen ITERA pada tahun 2023 tersebut adalah sebenarnya sama saja dengan 30 tahun, ujilah pernyataan tersebut! Gunakan galat sebesar 5%. [STP-6.1]{.capaian}
    a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
    b. Tentukan keputusan dalam memilih hipotesis yang diterima!
    c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
    
-2. Hasil survei kepada 427 orang mahasiswa menunjukkan bahwa proporsi pengguna sepeda motor pribadi adalah 0,56. Bagaimana hasil pengujian hipotesis yang menyatakan bahwa sebenarnya pengguna sepeda motor pada mahasiswa itu lebih dari setengahnya? Gunakan galat sebesar 5%. `[STP-6.1]{.capaian}`
+2. Hasil survei kepada 427 orang mahasiswa menunjukkan bahwa proporsi pengguna sepeda motor pribadi adalah 0,56. Bagaimana hasil pengujian hipotesis yang menyatakan bahwa sebenarnya pengguna sepeda motor pada mahasiswa itu lebih dari setengahnya? Gunakan galat sebesar 5%. [STP-6.1]{.capaian}
    a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
    b. Tentukan keputusan dalam memilih hipotesis yang diterima!
    c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!

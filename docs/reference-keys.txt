@@ -134,6 +134,7 @@ eq:statistik-uji-proporsi
 fig:fig-penetapan-hipotesis
 fig:fig-kurva-kritis-mbg
 fig:fig-kurva-kritis-bus-kampus
+fig:fig-perbandingan-z-jarak
 fig:fig-kurva-kritis-proporsi-bus
 fig:fig-perbandingan-z-proporsi
 konsep-dasar-statistika-dalam-perencanaan
