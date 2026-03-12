@@ -1,8 +1,24 @@
-# Uji Hipotesis Parameter Dua Populasi
+# Uji Hipotesis Parameter Dua Populasi Atau Lebih
 
-## Konsep Dasar
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
 
-Uji ini digunakan untuk membandingkan parameter (rata-rata atau proporsi) dari dua populasi yang berbeda. Tujuannya adalah untuk mengetahui apakah ada perbedaan yang signifikan di antara keduanya.
+Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil dari pengujian hipotesis parameter dua populasi atau lebih pada suatu kasus [STP-7.1]{.capaian}
+:::
+
+## Konsep Dasar Uji Hipotesis Parameter Dua Populasi Atau Lebih {#konsep-dasar-uji-hipotesis-dua-populasi}
+
+Pengertian *lebih dari satu populasi* mengacu pada dua sudut pandang, yaitu:
+
+1. Cakupan populasi yang kita definisikan pada penelitian kita. Jika satu populasi pada penelitian kita adalah *“seluruh mahasiswa ITERA”*, maka dua populasi dapat menjadi *“seluruh mahasiswa ITERA”* dan *“seluruh mahasiswa UIN RIL”*, dan sebagainya.
+   
+   Akan ada hal yang kita bandingkan dari kedua ataupun seluruh populasi tersebut. Dalam hal ini, kita akan membuktikan bahwa *“ada atau tidaknya perbedaan karakteristik dari mahasiswa ITERA dan mahasiswa UIN RIL”*. Perbedaan karakteristik ini dapat berupa parameter tertentu, seperti rata-rata, median, atau proporsi pada dua atau lebih populasi yang diujikan.
+
+2. Waktu pengambilan data. Jika kita mengambil data dari suatu populasi pada dua tahap yang berbeda, misalnya sebelum dan sesudah suatu program, kita dapat menganggap populasi sebelum program sebagai populasi pertama, dan populasi setelah program sebagai populasi kedua.
+
+Sudut pandang pertama juga bisa dibagi lagi menjadi dua populasi *berpasangan* dan *independen*. Populasi berpasangan adalah dua populasi yang terikat hubungan satu sama lain secara logis. Misalnya, kita mengambil data suami dan istri dalam suatu kelurahan. Dalam hal tersebut, suami adalah populasi pertama, sementara istri adalah populasi kedua. Sudut pandang kedua juga kita bisa katakan sebagai populasi yang berpasangan.
+
+Dengan demikian, berdasarkan sudut pandangnya, penjelasan uji hipotesis lebih dari satu populasi ini dapat dikelompokkan ke dalam tiga bentuk kasus, yaitu **dua populasi tidak berpasangan**, **dua populasi berpasangan**, dan **lebih dari dua populasi**.
 
 ### Uji Beda Rata-rata (Independent Samples t-test)
 
