@@ -852,14 +852,16 @@ Kerjakanlah soal evaluasi berikut untuk mengasah pemahaman Anda tentang pengujia
 ## Soal Evaluasi 14 {.unnumbered}
 
 1. Berdasarkan survei kepada 173 orang dosen ITERA pada tahun 2023, rata-rata usianya pada saat itu adalah 29 tahun dengan simpangan bakunya adalah 2,9 tahun. Jika ingin diketahui apakah rata-rata usia dosen ITERA pada tahun 2023 tersebut adalah sebenarnya sama saja dengan 30 tahun, ujilah pernyataan tersebut! Gunakan galat sebesar 5%. [STP-6.1]{.capaian}
-   a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
-   b. Tentukan keputusan dalam memilih hipotesis yang diterima!
-   c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
+   a. Tuliskan asumsi awal pengujian hipotesis!
+   b. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
+   c. Tentukan keputusan dalam memilih hipotesis yang diterima!
+   d. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
    
 2. Hasil survei kepada 427 orang mahasiswa menunjukkan bahwa proporsi pengguna sepeda motor pribadi adalah 0,56. Bagaimana hasil pengujian hipotesis yang menyatakan bahwa sebenarnya pengguna sepeda motor pada mahasiswa itu lebih dari setengahnya? Gunakan galat sebesar 5%. [STP-6.1]{.capaian}
-   a. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
-   b. Tentukan keputusan dalam memilih hipotesis yang diterima!
-   c. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
+   a. Tuliskan asumsi awal pengujian hipotesis!
+   b. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
+   c. Tentukan keputusan dalam memilih hipotesis yang diterima!
+   d. Simpulkanlah makna dari hasil pemilihan hipotesis tersebut!
    
 **Penting! Tuliskan langkah demi langkah secara berurutan. Gambar seluruh hal yang berkaitan dengan distribusi statistik, seperti wilayah kritis, posisi titik kritis, dan posisi statistik ujinya.**
 :::
