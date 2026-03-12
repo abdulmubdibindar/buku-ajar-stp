@@ -218,6 +218,7 @@ kesimpulan-interpretasi-estimasi-parameter
 bab-7-uji-hipotesis-satu-populasi
 konsep-dasar-uji-hipotesis-1samp
 perbedaan-uji-hipotesis-estimasi-parameter
+asumsi-dasar-uji-hipotesis
 hipotesis-kosong-dan-alternatif
 konsep-hipotesis-kosong
 konsep-hipotesis-alternatif
@@ -227,7 +228,7 @@ menentukan-hasil-pengujian-hipotesis-parameter
 titik-kritis-wilayah-kritis
 nilai-statistik-uji-nilai-p
 langkah-langkah-pengujian-hipotesis
-uji-hipotesis-parameter-dua-populasi
+uji-hipotesis-parameter-dua-populasi-atau-lebih
 konsep-dasar-1
 uji-beda-rata-rata-independent-samples-t-test
 uji-beda-rata-rata-berpasangan-paired-samples-t-test

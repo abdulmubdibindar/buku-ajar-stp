@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>12 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan</title>
-  <meta name="description" content="12 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan" />
+  <title>8 Uji Hipotesis Parameter Dua Populasi Atau Lebih | Buku Ajar Statistika untuk Perencanaan</title>
+  <meta name="description" content="8 Uji Hipotesis Parameter Dua Populasi Atau Lebih | Buku Ajar Statistika untuk Perencanaan" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="12 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan" />
+  <meta property="og:title" content="8 Uji Hipotesis Parameter Dua Populasi Atau Lebih | Buku Ajar Statistika untuk Perencanaan" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="12 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan" />
+  <meta name="twitter:title" content="8 Uji Hipotesis Parameter Dua Populasi Atau Lebih | Buku Ajar Statistika untuk Perencanaan" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="korelasi-antarvariabel-ordinal.html"/>
-<link rel="next" href="regresi-linear-sederhana.html"/>
+<link rel="prev" href="bab-7-uji-hipotesis-satu-populasi.html"/>
+<link rel="next" href="uji-hipotesis-parameter-lebih-dari-dua-populasi.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -455,40 +455,72 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="korelasi-antarvariabel-metrik" class="section level1 hasAnchor" number="12">
-<h1><span class="header-section-number">12</span> Korelasi Antarvariabel Metrik<a href="korelasi-antarvariabel-metrik.html#korelasi-antarvariabel-metrik" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="konsep-dasar-4" class="section level2 hasAnchor" number="12.1">
-<h2><span class="header-section-number">12.1</span> Konsep Dasar<a href="korelasi-antarvariabel-metrik.html#konsep-dasar-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Untuk dua variabel numerik (interval/rasio), ukuran asosiasi yang paling umum adalah <strong>Pearson Product-Moment Correlation (<span class="math inline">\(r\)</span>)</strong>. Nilai <span class="math inline">\(r\)</span> berkisar antara -1 hingga +1.</p>
+<div id="uji-hipotesis-parameter-dua-populasi-atau-lebih" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> Uji Hipotesis Parameter Dua Populasi Atau Lebih<a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#uji-hipotesis-parameter-dua-populasi-atau-lebih" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="konsep-dasar-1" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Konsep Dasar<a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#konsep-dasar-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Uji ini digunakan untuk membandingkan parameter (rata-rata atau proporsi) dari dua populasi yang berbeda. Tujuannya adalah untuk mengetahui apakah ada perbedaan yang signifikan di antara keduanya.</p>
+<div id="uji-beda-rata-rata-independent-samples-t-test" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Uji Beda Rata-rata (Independent Samples t-test)<a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#uji-beda-rata-rata-independent-samples-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Digunakan untuk dua kelompok sampel yang tidak saling berhubungan (independen). Contoh: Membandingkan rata-rata pendapatan warga di Kota A dan Kota B.</p>
+<p>Hipotesis:
+* <span class="math inline">\(H_0: \mu_A = \mu_B\)</span>
+* <span class="math inline">\(H_1: \mu_A \ne \mu_B\)</span></p>
 </div>
-<div id="studi-kasus-dengan-r-4" class="section level2 hasAnchor" number="12.2">
-<h2><span class="header-section-number">12.2</span> Studi Kasus dengan R<a href="korelasi-antarvariabel-metrik.html#studi-kasus-dengan-r-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Hubungan antara <strong>Pendapatan</strong> dan <strong>Pengeluaran</strong>.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="korelasi-antarvariabel-metrik.html#cb18-1" tabindex="-1"></a>pendapatan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
-<span id="cb18-2"><a href="korelasi-antarvariabel-metrik.html#cb18-2" tabindex="-1"></a>pengeluaran <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="fl">3.5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="dv">7</span>)</span>
-<span id="cb18-3"><a href="korelasi-antarvariabel-metrik.html#cb18-3" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="korelasi-antarvariabel-metrik.html#cb18-4" tabindex="-1"></a><span class="co"># Scatterplot</span></span>
-<span id="cb18-5"><a href="korelasi-antarvariabel-metrik.html#cb18-5" tabindex="-1"></a><span class="fu">plot</span>(pendapatan, pengeluaran)</span></code></pre></div>
-<p><img src="figures/bab-12-korelasi-pearson-1.png" /><!-- --></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="korelasi-antarvariabel-metrik.html#cb19-1" tabindex="-1"></a><span class="co"># Korelasi Pearson</span></span>
-<span id="cb19-2"><a href="korelasi-antarvariabel-metrik.html#cb19-2" tabindex="-1"></a><span class="fu">cor.test</span>(pendapatan, pengeluaran, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<div id="uji-beda-rata-rata-berpasangan-paired-samples-t-test" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Uji Beda Rata-rata Berpasangan (Paired Samples t-test)<a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#uji-beda-rata-rata-berpasangan-paired-samples-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Digunakan untuk dua kelompok sampel yang saling berhubungan (berpasangan). Contoh: Membandingkan kemacetan di jalan yang sama <strong>sebelum</strong> dan <strong>sesudah</strong> penerapan kebijakan ganjil-genap.</p>
+</div>
+</div>
+<div id="studi-kasus-dengan-r" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Studi Kasus dengan R<a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-dengan-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="independent-t-test" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Independent t-test<a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#independent-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Membandingkan pendapatan (dalam juta) antara pria dan wanita.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb2-1" tabindex="-1"></a><span class="co"># Data Contoh</span></span>
+<span id="cb2-2"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb2-2" tabindex="-1"></a>pria <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">5</span>)</span>
+<span id="cb2-3"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb2-3" tabindex="-1"></a>wanita <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span>
+<span id="cb2-4"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb2-5" tabindex="-1"></a><span class="co"># Uji t independen</span></span>
+<span id="cb2-6"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb2-6" tabindex="-1"></a><span class="fu">t.test</span>(pria, wanita, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
-##  Pearson&#39;s product-moment correlation
+##  Two Sample t-test
 ## 
-## data:  pendapatan and pengeluaran
-## t = 8.5927, df = 5, p-value = 0.0003521
-## alternative hypothesis: true correlation is not equal to 0
+## data:  pria and wanita
+## t = 2.4648, df = 12, p-value = 0.02978
+## alternative hypothesis: true difference in means is not equal to 0
 ## 95 percent confidence interval:
-##  0.7916653 0.9953960
+##  0.1491572 2.4222714
 ## sample estimates:
-##       cor 
-## 0.9677688</code></pre>
+## mean of x mean of y 
+##  6.000000  4.714286</code></pre>
 </div>
-<div id="soal-evaluasi-13-1" class="section level2 unnumbered hasAnchor rmdexercise">
-<h2>Soal Evaluasi 13<a href="korelasi-antarvariabel-metrik.html#soal-evaluasi-13-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="paired-t-test" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Paired t-test<a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#paired-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Membandingkan waktu tempuh (menit) sebelum dan sesudah pembangunan tol.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb4-1" tabindex="-1"></a>sebelum <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">70</span>, <span class="dv">65</span>, <span class="dv">80</span>)</span>
+<span id="cb4-2"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb4-2" tabindex="-1"></a>sesudah <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>)</span>
+<span id="cb4-3"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb4-4" tabindex="-1"></a><span class="co"># Uji t berpasangan</span></span>
+<span id="cb4-5"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#cb4-5" tabindex="-1"></a><span class="fu">t.test</span>(sebelum, sesudah, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## 
+##  Paired t-test
+## 
+## data:  sebelum and sesudah
+## t = 6.532, df = 4, p-value = 0.002838
+## alternative hypothesis: true mean difference is not equal to 0
+## 95 percent confidence interval:
+##   9.199126 22.800874
+## sample estimates:
+## mean difference 
+##              16</code></pre>
+</div>
+</div>
+<div id="soal-evaluasi-9-1" class="section level2 unnumbered hasAnchor rmdexercise">
+<h2>Soal Evaluasi 9<a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#soal-evaluasi-9-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
-<li>Apa syarat utama penggunaan korelasi Pearson? <span class="capaian">STP-10.1</span></li>
-<li>Jika <span class="math inline">\(r = 0\)</span>, apakah artinya tidak ada hubungan sama sekali? Jelaskan! <span class="capaian">STP-10.2</span></li>
+<li>Kapan kita menggunakan uji t independen dan kapan menggunakan uji t berpasangan? Berikan contoh kasus perencanaannya! <span class="capaian">STP-7.1</span></li>
+<li>Lakukan uji beda rata-rata untuk data berikut… <span class="capaian">STP-7.2</span></li>
 </ol>
 </div>
 
@@ -498,8 +530,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="korelasi-antarvariabel-ordinal.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="regresi-linear-sederhana.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bab-7-uji-hipotesis-satu-populasi.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="uji-hipotesis-parameter-lebih-dari-dua-populasi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4855,6 +4855,27 @@ Estimasi parameter dan uji hipotesis parameter **sama-sama bertujuan memperkirak
 
 Sementara itu, uji hipotesis parameter berfokus pada **penerimaan atau penolakan dugaan** kita tentang hipotesis terhadap parameter. Pertanyaan yang dijawab berupa *"Jika saya menduga bahwa rata-rata populasi adalah $b$, apakah dugaan tersebut dapat diterima?"*
 
+## Asumsi-asumsi yang Harus Dipenuhi dalam Menguji Hipotesis Parameter {#asumsi-dasar-uji-hipotesis}
+
+Sebelum menguji hipotesis untuk parameter yang kita ingin inferensi, kita harus menyatakan sejumlah asumsi yang harus dipenuhi. Mengapa hal ini penting? Setiap alat uji statistik **dibangun di atas model probabilitas teoretis tertentu**. Apabila data kita melanggar asumsi-asumsi dasar tersebut, maka keakuratan perhitungan probabilitasnya (seperti perolehan p-value) akan terganggu, sehingga simpulan inferensi ke populasi menjadi tidak valid.
+
+Secara umum, ada tiga asumsi yang harus dipenuhi dalam menguji hipotesis parameter, yaitu:
+
+1. **Independensi**: Sampel harus diambil secara acak dan independen.
+2. **Tingkat pengukuran**: Variabel yang diukur harus berada pada tingkat pengukuran yang sesuai dengan alat uji yang digunakan.
+3. **Bentuk distribusi statistik**: Distribusi statistik (*sampling distribution*) berbentuk normal
+
+::: rmdkasus
+### Studi Kasus: Memeriksa Asumsi pada Evaluasi MBG {.unnumbered}
+
+Mari kita perhatikan kembali kasus evaluasi program Makan Bergizi Gratis (MBG) yang melibatkan 200 responden sebelumnya. Apakah kasus tersebut terbukti memenuhi ketiga asumsi pengujian hipotesis?
+
+1. **Independensi**: Pengambilan sampel 200 responden dilakukan secara **acak**. Artinya, setiap responden memiliki peluang yang sama untuk terpilih sehingga nilai satu observasi tidak terkait dengan observasi lainnya. Asumsi independensi terpenuhi.
+2. **Tingkat pengukuran**: Variabel yang diukur adalah skor kepuasan, sebuah takaran numerik (seperti skor rata-rata $95$) dengan standar ukur yang konstan (interval-rasio). Asumsi tingkat pengukuran terpenuhi.
+3. **Bentuk distribusi statistik**: Berhubung kita mengukur sampel berukuran besar ($n = 200$, lebih dari 100), Teorema Limit Sentral menjamin bahwa distribusi probabilitas nilai rata-ratanya mendekati distribusi normal secara praktis. Asumsi kenormalan kurva dapat terpenuhi.
+
+Oleh karena seluruh prasyarat dasarnya terpenuhi, barulah tahapan inferensi berikutnya berhak kita lanjutkan secara ilmiah.
+:::
 
 ## Hipotesis Kosong dan Hipotesis Alternatif {#hipotesis-kosong-dan-alternatif}
 
@@ -5065,12 +5086,13 @@ Penolakan $H_0$ didasarkan pada perbandingannya dengan nilai signifikansi ($\alp
 
 Berdasarkan konsep-konsep yang sudah kita pelajari sebelunya, berikut adalah rangkuman langkah-langkah pengujian hipotesis.
 
-a. Menetapkan hipotesis kosong dan alternatif (\@ref(konsep-hipotesis-kosong) dan \@ref(konsep-hipotesis-alternatif))
-b. Menetapkan wilayah kritis dari signifikansi (\@ref(titik-kritis-wilayah-kritis))
-c. Mencari nilai titik kritis (\@ref(titik-kritis-wilayah-kritis))
-d. Mencari nilai statistik uji (\@ref(nilai-statistik-uji-nilai-p))
-e. Membandingkan nilai statistik uji dan titik kritis (\@ref(nilai-statistik-uji-nilai-p))
-f. Menarik kesimpulan dan memaknai hasil pengujian.
+a. Menyatakan asumsi awal (\@ref(asumsi-dasar-uji-hipotesis))
+b. Menetapkan hipotesis kosong dan alternatif (\@ref(konsep-hipotesis-kosong) dan \@ref(konsep-hipotesis-alternatif))
+c. Menetapkan wilayah kritis dari signifikansi (\@ref(titik-kritis-wilayah-kritis))
+d. Mencari nilai titik kritis (\@ref(titik-kritis-wilayah-kritis))
+e. Mencari nilai statistik uji (\@ref(nilai-statistik-uji-nilai-p))
+f. Membandingkan nilai statistik uji dan titik kritis (\@ref(nilai-statistik-uji-nilai-p))
+g. Menarik kesimpulan dan memaknai hasil pengujian.
 
 ::: rmdkasus
 ### Studi Kasus: Melanjutkan Langkah Pengujian Hipotesis MBG {.unnumbered}
@@ -5130,6 +5152,12 @@ Mari kita pelajari kasus lain yang langkah-langkahnya lebih terlihat dari awal s
 #### Pengujian Hipotesis Rata-rata Populasi {.unnumbered}
 
 *Pada tingkat kepercayaan 95%, apakah layanan Bus Kampus akan efektif melayani seluruh mahasiswa ITERA, yang dengan bentuk pertanyaan lain, apakah benar mahasiswa ITERA tinggal $\leq 5$ km dari kampus?*
+
+##### Memeriksa Asumsi Pengujian {.unnumbered}
+
+1. **Independensi**: Pengambilan sampel 333 responden diasumsikan dilakukan secara acak sehingga hasil pengamatan antarmahasiswa saling bebas. Asumsi independensi terpenuhi.
+2. **Tingkat pengukuran**: Variabel yang dikaji adalah jarak tempuh (km), sebuah skor ukur yang numerik dan konstan (interval-rasio). Asumsi tingkat pengukuran terpenuhi.
+3. **Bentuk distribusi statistik**: Oleh karena jumlah sampel tergolong besar ($n = 333 > 100$), Teorema Limit Sentral dapat digunakan sehingga distribusi probabilitas rata-rata ukurnya diasumsikan berdistribusi normal secara praktis. Asumsi kenormalan terpenuhi.
 
 ##### Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$) {.unnumbered}
 
@@ -5196,6 +5224,12 @@ Dengan demikian, data sampel kita cukup untuk dapat menolak $H_0$, yaitu bahwa r
 #### Pengujian Hipotesis Proporsi Populasi {.unnumbered}
 
 *Program dinilai akan berhasil apabila lebih dari 80% mahasiswa berminat. Berdasarkan survei terhadap 333 responden, diketahui 82% mahasiswa berminat. Dengan tingkat kepercayaan 99%, kita uji hipotesis parameter proporsi ini.*
+
+##### Memeriksa Asumsi Pengujian {-}
+
+1. **Independensi**: Sebagaimana pada uji rata-rata, sampel 333 responden ini diasumsikan ditarik secara acak. Asumsi independensi terpenuhi.
+2. **Tingkat pengukuran**: Respons yang diberikan mahasiswa bersifat kategorik nominal dikotomis (hanya ada dua kemungkinan: "berminat" atau "tidak berminat"), sesuai dengan alat ukur proporsi. Asumsi tingkat pengukuran terpenuhi.
+3. **Bentuk distribusi statistik**: Mempertimbangkan bahwa ukuran sampel yang digunakan sangat besar ($n = 333$), distribusi statistik dari proporsi sampel tersebut cukup memadai untuk didekati dengan distribusi normal. Asumsi kenormalan terpenuhi.
 
 ##### Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$) {-}
 
@@ -5278,7 +5312,7 @@ Kerjakanlah soal evaluasi berikut untuk mengasah pemahaman Anda tentang pengujia
 
 <!--chapter:end:07-uji-hipotesis-satu-populasi.Rmd-->
 
-# Uji Hipotesis Parameter Dua Populasi
+# Uji Hipotesis Parameter Dua Populasi Atau Lebih
 
 ## Konsep Dasar
 
