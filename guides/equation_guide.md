@@ -2,40 +2,38 @@
 
 ## Daftar Isi
 
-1.  [Pengenalan](#pengenalan)
-2.  [Environment Rumus Bernomor](#environment-rumus-bernomor)
-3.  [Memberikan Label pada Rumus](#memberikan-label-pada-rumus)
-4.  [Me-refer Rumus di Badan Dokumen](#me-refer-rumus-di-badan-dokumen)
-5.  [Contoh Lengkap Berbagai Kasus](#contoh-lengkap-berbagai-kasus)
-6.  [Tips dan Best Practices](#tips-dan-best-practices)
-7.  [Troubleshooting](#troubleshooting)
-8.  [Referensi Tambahan](#referensi-tambahan)
+1. [Pengenalan](#pengenalan)
+2. [Environment Rumus Bernomor](#environment-rumus-bernomor)
+3. [Memberikan Label pada Rumus](#memberikan-label-pada-rumus)
+4. [Me-refer Rumus di Badan Dokumen](#me-refer-rumus-di-badan-dokumen)
+5. [Contoh Lengkap Berbagai Kasus](#contoh-lengkap-berbagai-kasus)
+6. [Tips dan Best Practices](#tips-dan-best-practices)
+7. [Troubleshooting](#troubleshooting)
+8. [Referensi Tambahan		](#referensi-tambahan)
 
-------------------------------------------------------------------------
+---
 
-## Pengenalan {#pengenalan}
+## Pengenalan
 
 Dalam penulisan dokumen ilmiah, rumus matematis sering kali perlu diberi nomor untuk memudahkan referensi dalam teks. R Markdown/Bookdown mendukung penomoran otomatis rumus LaTeX dengan menggunakan sintaks khusus.
 
 ### Perbedaan Rumus Display vs Inline
 
--   **Inline math**: Rumus dalam teks menggunakan `$...$` (tidak bernomor)
+- **Inline math**: Rumus dalam teks menggunakan `$...$` (tidak bernomor)
 
-    -   Contoh: `$E = mc^2$` menghasilkan $E = mc^2$
+  - Contoh: `$E = mc^2$` menghasilkan $E = mc^2$
+- **Display math tanpa nomor**: Rumus tersendiri menggunakan `$$...$$` (tidak bernomor)
 
--   **Display math tanpa nomor**: Rumus tersendiri menggunakan `$$...$$` (tidak bernomor)
+  ```latex
+  $$
+  y = mx + c
+  $$
+  ```
+- **Display math dengan nomor**: Menggunakan environment khusus seperti `equation`, `align`, dll.
 
-    ``` latex
-    $$
-    y = mx + c
-    $$
-    ```
+---
 
--   **Display math dengan nomor**: Menggunakan environment khusus seperti `equation`, `align`, dll.
-
-------------------------------------------------------------------------
-
-## Environment Rumus Bernomor {#environment-rumus-bernomor}
+## Environment Rumus Bernomor
 
 ### 1. Environment `equation`
 
@@ -43,7 +41,7 @@ Untuk **rumus tunggal yang bernomor**.
 
 **Sintaks:**
 
-``` latex
+```latex
 \begin{equation}
 rumus_matematika
 (\#eq:label-unik)
@@ -52,7 +50,7 @@ rumus_matematika
 
 **Contoh:**
 
-``` latex
+```latex
 \begin{equation}
 E = mc^2
 (\#eq:einstein)
@@ -61,11 +59,11 @@ E = mc^2
 
 **Kapan digunakan:**
 
--   Rumus tunggal yang penting dan perlu dirujuk
--   Definisi matematika dasar
--   Persamaan utama dalam analisis
+- Rumus tunggal yang penting dan perlu dirujuk
+- Definisi matematika dasar
+- Persamaan utama dalam analisis
 
-------------------------------------------------------------------------
+---
 
 ### 2. Environment `align`
 
@@ -73,7 +71,7 @@ Untuk **beberapa rumus yang sejajar** (biasanya pada tanda sama dengan).
 
 **Sintaks:**
 
-``` latex
+```latex
 \begin{align}
 rumus_1 (\#eq:label-1)\\
 rumus_2 (\#eq:label-2)\\
@@ -83,7 +81,7 @@ rumus_3 (\#eq:label-3)
 
 **Contoh:**
 
-``` latex
+```latex
 \begin{align}
 \bar{x} &= \frac{\sum x_i}{n} (\#eq:mean)\\
 s^2 &= \frac{\sum (x_i - \bar{x})^2}{n-1} (\#eq:variance)\\
@@ -93,17 +91,17 @@ s &= \sqrt{s^2} (\#eq:stdev)
 
 **Catatan penting:**
 
--   Gunakan `&` untuk menandai titik penjajaran (alignment point)
--   Gunakan `\\` untuk pindah baris
--   Setiap baris mendapat nomor tersendiri
+- Gunakan `&` untuk menandai titik penjajaran (alignment point)
+- Gunakan `\\` untuk pindah baris
+- Setiap baris mendapat nomor tersendiri
 
 **Kapan digunakan:**
 
--   Serangkaian rumus yang berhubungan
--   Derivasi matematis langkah demi langkah
--   Definisi beberapa statistik deskriptif
+- Serangkaian rumus yang berhubungan
+- Derivasi matematis langkah demi langkah
+- Definisi beberapa statistik deskriptif
 
-------------------------------------------------------------------------
+---
 
 ### 3. Environment `align` dengan `\nonumber`
 
@@ -111,7 +109,7 @@ Untuk **menyembunyikan nomor pada baris tertentu**.
 
 **Sintaks:**
 
-``` latex
+```latex
 \begin{align}
 rumus_1 \nonumber\\
 rumus_2 (\#eq:label-penting)\\
@@ -121,7 +119,7 @@ rumus_3 \nonumber
 
 **Contoh:**
 
-``` latex
+```latex
 \begin{align}
 \text{Diketahui: } y &= 2x + 3 \nonumber\\
 \text{Maka: } 2y &= 4x + 6 (\#eq:hasil-kali-dua)\\
@@ -131,11 +129,11 @@ rumus_3 \nonumber
 
 **Kapan digunakan:**
 
--   Hanya beberapa baris yang perlu diberi nomor
--   Langkah antara yang tidak perlu dirujuk
--   Penjelasan atau keterangan dalam deretan rumus
+- Hanya beberapa baris yang perlu diberi nomor
+- Langkah antara yang tidak perlu dirujuk
+- Penjelasan atau keterangan dalam deretan rumus
 
-------------------------------------------------------------------------
+---
 
 ### 4. Environment `split` di dalam `equation`
 
@@ -143,7 +141,7 @@ Untuk **rumus panjang yang dipecah beberapa baris** dengan **satu nomor saja**.
 
 **Sintaks:**
 
-``` latex
+```latex
 \begin{equation}
 \begin{split}
 baris_1\\
@@ -156,7 +154,7 @@ baris_3
 
 **Contoh:**
 
-``` latex
+```latex
 \begin{equation}
 \begin{split}
 \text{Total} &= variabel_1 + variabel_2 + variabel_3 \\
@@ -169,11 +167,11 @@ baris_3
 
 **Kapan digunakan:**
 
--   Rumus yang terlalu panjang untuk satu baris
--   Rumus yang merupakan satu kesatuan konsep
--   Ekspansi aljabar yang panjang
+- Rumus yang terlalu panjang untuk satu baris
+- Rumus yang merupakan satu kesatuan konsep
+- Ekspansi aljabar yang panjang
 
-------------------------------------------------------------------------
+---
 
 ### 5. Environment `gather`
 
@@ -181,7 +179,7 @@ Untuk **beberapa rumus terpusat tanpa penjajaran**.
 
 **Sintaks:**
 
-``` latex
+```latex
 \begin{gather}
 rumus_1 (\#eq:label-1)\\
 rumus_2 (\#eq:label-2)
@@ -190,7 +188,7 @@ rumus_2 (\#eq:label-2)
 
 **Contoh:**
 
-``` latex
+```latex
 \begin{gather}
 a^2 + b^2 = c^2 (\#eq:pythagoras)\\
 E = mc^2 (\#eq:einstein-2)\\
@@ -200,11 +198,11 @@ F = ma (\#eq:newton)
 
 **Kapan digunakan:**
 
--   Kumpulan rumus yang tidak perlu disejajarkan
--   Rumus-rumus dengan panjang berbeda
--   Daftar persamaan penting
+- Kumpulan rumus yang tidak perlu disejajarkan
+- Rumus-rumus dengan panjang berbeda
+- Daftar persamaan penting
 
-------------------------------------------------------------------------
+---
 
 ### 6. Environment `multline`
 
@@ -212,7 +210,7 @@ Untuk **satu rumus panjang** yang dipecah beberapa baris (baris pertama rata kir
 
 **Sintaks:**
 
-``` latex
+```latex
 \begin{multline}
 baris_pertama \\
 baris_tengah \\
@@ -223,7 +221,7 @@ baris_terakhir
 
 **Contoh:**
 
-``` latex
+```latex
 \begin{multline}
 \sum_{i=1}^{n} (x_i - \bar{x})^2 = \\
 (x_1 - \bar{x})^2 + (x_2 - \bar{x})^2 + \cdots + (x_n - \bar{x})^2
@@ -233,10 +231,10 @@ baris_terakhir
 
 **Kapan digunakan:**
 
--   Rumus sangat panjang yang merupakan satu kesatuan
--   Ekspansi yang perlu ditampilkan secara penuh
+- Rumus sangat panjang yang merupakan satu kesatuan
+- Ekspansi yang perlu ditampilkan secara penuh
 
-------------------------------------------------------------------------
+---
 
 ### 7. Environment `aligned` di dalam `equation`
 
@@ -244,7 +242,7 @@ Alternatif dari `split`, memberikan kontrol lebih pada penjajaran.
 
 **Sintaks:**
 
-``` latex
+```latex
 \begin{equation}
 \begin{aligned}
 baris_1\\
@@ -256,7 +254,7 @@ baris_2
 
 **Contoh:**
 
-``` latex
+```latex
 \begin{equation}
 \begin{aligned}
 y &= mx + c \\
@@ -266,24 +264,24 @@ y &= mx + c \\
 \end{equation}
 ```
 
-------------------------------------------------------------------------
+---
 
-## Memberikan Label pada Rumus {#memberikan-label-pada-rumus}
+## Memberikan Label pada Rumus
 
 ### Format Label di Bookdown
 
 **Aturan umum:**
 
-``` latex
+```latex
 (\#eq:nama-label)
 ```
 
 **Komponen:**
 
--   `(\#` - pembuka label khusus Bookdown
--   `eq:` - prefix untuk equation (rumus)
--   `nama-label` - identifier unik
--   `)` - penutup label
+- `(\#` - pembuka label khusus Bookdown
+- `eq:` - prefix untuk equation (rumus)
+- `nama-label` - identifier unik
+- `)` - penutup label
 
 ### Konvensi Penamaan Label
 
@@ -291,7 +289,7 @@ y &= mx + c \\
 
 **Benar:**
 
-``` latex
+```latex
 (\#eq:persamaan-linear)
 (\#eq:mean)
 (\#eq:variance)
@@ -299,7 +297,7 @@ y &= mx + c \\
 
 **Salah:**
 
-``` latex
+```latex
 (\#persamaan-linear)  # Tidak ada prefix
 (\#fig:mean)          # Prefix salah (fig untuk gambar)
 ```
@@ -308,13 +306,13 @@ y &= mx + c \\
 
 **Benar:**
 
-``` latex
+```latex
 (\#eq:teorema-pythagoras)
 ```
 
 **Salah:**
 
-``` latex
+```latex
 (\#eq:Teorema-Pythagoras)  # Huruf kapital
 (\#eq:MEAN)                 # Semua kapital
 ```
@@ -323,14 +321,14 @@ y &= mx + c \\
 
 **Benar:**
 
-``` latex
+```latex
 (\#eq:standar-deviasi-sampel)
 (\#eq:rumus-kuartil-bawah)
 ```
 
 **Salah:**
 
-``` latex
+```latex
 (\#eq:standar_deviasi_sampel)  # Underscore
 (\#eq:rumusKuartilBawah)       # camelCase
 (\#eq:rumus kuartil bawah)     # Spasi (akan error!)
@@ -340,7 +338,7 @@ y &= mx + c \\
 
 **Baik:**
 
-``` latex
+```latex
 (\#eq:mean-populasi)
 (\#eq:variance-sampel)
 (\#eq:teorema-limit-pusat)
@@ -348,7 +346,7 @@ y &= mx + c \\
 
 **Kurang baik:**
 
-``` latex
+```latex
 (\#eq:rumus1)
 (\#eq:eq2)
 (\#eq:x)
@@ -358,7 +356,7 @@ y &= mx + c \\
 
 Untuk proyek besar, tambahkan konteks bab:
 
-``` latex
+```latex
 (\#eq:bab2-mean)
 (\#eq:bab3-regresi-linear)
 (\#eq:statistik-inferensial-t-test)
@@ -368,7 +366,7 @@ Untuk proyek besar, tambahkan konteks bab:
 
 #### Dalam `equation`:
 
-``` latex
+```latex
 \begin{equation}
 rumus
 (\#eq:label)      # Label di baris terakhir sebelum \end{equation}
@@ -377,7 +375,7 @@ rumus
 
 #### Dalam `align`:
 
-``` latex
+```latex
 \begin{align}
 rumus_1 (\#eq:label-1)\\     # Label di akhir baris
 rumus_2 (\#eq:label-2)       # Tanpa \\ di baris terakhir
@@ -386,7 +384,7 @@ rumus_2 (\#eq:label-2)       # Tanpa \\ di baris terakhir
 
 #### Dalam `split` atau `aligned`:
 
-``` latex
+```latex
 \begin{equation}
 \begin{split}
 baris_1\\
@@ -396,21 +394,21 @@ baris_2
 \end{equation}
 ```
 
-------------------------------------------------------------------------
+---
 
-## Me-refer Rumus di Badan Dokumen {#me-refer-rumus-di-badan-dokumen}
+## Me-refer Rumus di Badan Dokumen
 
 ### Sintaks Dasar
 
 **Format:**
 
-``` markdown
+```markdown
 \@ref(eq:nama-label)
 ```
 
 **Contoh penggunaan:**
 
-``` markdown
+```markdown
 Seperti yang ditunjukkan pada Persamaan \@ref(eq:mean), rata-rata dihitung dengan...
 ```
 
@@ -422,31 +420,31 @@ Seperti yang ditunjukkan pada Persamaan \@ref(eq:mean), rata-rata dihitung denga
 
 #### 1. Di Awal Kalimat
 
-``` markdown
+```markdown
 Persamaan \@ref(eq:variance) menunjukkan rumus untuk variansi sampel.
 ```
 
 #### 2. Di Tengah Kalimat
 
-``` markdown
+```markdown
 Berdasarkan Persamaan \@ref(eq:mean), kita dapat menghitung rata-rata data.
 ```
 
 #### 3. Di Akhir Kalimat
 
-``` markdown
+```markdown
 Standar deviasi adalah akar kuadrat dari variansi (Persamaan \@ref(eq:stdev)).
 ```
 
 #### 4. Merujuk Beberapa Persamaan
 
-``` markdown
+```markdown
 Persamaan \@ref(eq:mean), \@ref(eq:variance), dan \@ref(eq:stdev) adalah statistik deskriptif dasar.
 ```
 
 Atau dengan rentang:
 
-``` markdown
+```markdown
 Persamaan \@ref(eq:mean) hingga \@ref(eq:stdev) menunjukkan statistik deskriptif dasar.
 ```
 
@@ -454,7 +452,7 @@ Persamaan \@ref(eq:mean) hingga \@ref(eq:stdev) menunjukkan statistik deskriptif
 
 #### Formal (untuk jurnal/tesis):
 
-``` markdown
+```markdown
 Seperti yang ditunjukkan pada Persamaan \@ref(eq:mean), ...
 Berdasarkan Persamaan \@ref(eq:variance), dapat disimpulkan bahwa...
 Substitusi nilai ke Persamaan \@ref(eq:stdev) menghasilkan...
@@ -462,14 +460,14 @@ Substitusi nilai ke Persamaan \@ref(eq:stdev) menghasilkan...
 
 #### Informal (untuk catatan/slide):
 
-``` markdown
+```markdown
 Lihat Persamaan \@ref(eq:mean) untuk detailnya.
 Gunakan rumus di Persamaan \@ref(eq:variance).
 ```
 
 #### Dalam Kurung:
 
-``` markdown
+```markdown
 Rata-rata dihitung dengan menjumlahkan semua nilai lalu dibagi jumlah observasi (Persamaan \@ref(eq:mean)).
 ```
 
@@ -477,19 +475,19 @@ Rata-rata dihitung dengan menjumlahkan semua nilai lalu dibagi jumlah observasi 
 
 Referensi `\@ref(eq:...)` akan otomatis menjadi:
 
--   **Link klikabel** yang menuju ke rumus yang dirujuk
--   **Nomor yang tepat** sesuai urutan dalam dokumen
--   **Update otomatis** jika urutan rumus berubah
+- **Link klikabel** yang menuju ke rumus yang dirujuk
+- **Nomor yang tepat** sesuai urutan dalam dokumen
+- **Update otomatis** jika urutan rumus berubah
 
-------------------------------------------------------------------------
+---
 
-## Contoh Lengkap Berbagai Kasus {#contoh-lengkap-berbagai-kasus}
+## Contoh Lengkap Berbagai Kasus
 
 ### Contoh 1: Statistik Deskriptif
 
 **Kode R Markdown:**
 
-``` markdown
+```markdown
 ## Ukuran Pemusatan Data
 
 ### Mean (Rata-rata)
@@ -549,7 +547,7 @@ memiliki satuan yang sama dengan data asli.
 
 **Kode R Markdown:**
 
-``` markdown
+```markdown
 ## Ekspansi Jumlah Kuadrat
 
 Dalam analisis regresi, kita sering perlu menghitung jumlah kuadrat. Ekspansi lengkapnya
@@ -571,7 +569,7 @@ adalah penjumlahan dari kuadrat selisih setiap nilai dengan mean.
 
 **Kode R Markdown:**
 
-``` markdown
+```markdown
 ## Derivasi Rumus Variansi
 
 Kita dapat menurunkan rumus alternatif untuk variansi:
@@ -592,7 +590,7 @@ Persamaan \@ref(eq:variance-alternatif), yang sering lebih efisien untuk komputa
 
 **Kode R Markdown:**
 
-``` markdown
+```markdown
 ## Regresi Linear Sederhana
 
 Dalam regresi linear sederhana, kita mencari persamaan garis:
@@ -621,7 +619,7 @@ dan \@ref(eq:intercept), kita dapat memprediksi nilai $Y$ untuk nilai $X$ terten
 
 **Kode R Markdown:**
 
-``` markdown
+```markdown
 ## Distribusi Normal
 
 Fungsi kepadatan probabilitas (probability density function) dari distribusi normal adalah:
@@ -655,7 +653,7 @@ Persamaan \@ref(eq:pdf-normal) menghasilkan fungsi kepadatan probabilitas normal
 
 **Kode R Markdown:**
 
-``` markdown
+```markdown
 ## Sifat-sifat Expected Value
 
 Expected value memiliki beberapa sifat penting:
@@ -672,15 +670,15 @@ Di mana $c$ adalah konstanta, dan $X$ serta $Y$ adalah variabel acak. Persamaan
 yang sering digunakan dalam derivasi statistik.
 ```
 
-------------------------------------------------------------------------
+---
 
-## Tips dan Best Practices {#tips-dan-best-practices}
+## Tips dan Best Practices
 
 ### 1. Konsistensi Penamaan
 
 **Buat sistem penamaan yang konsisten:**
 
-``` latex
+```latex
 # Statistik deskriptif
 (\#eq:mean-sampel)
 (\#eq:mean-populasi)
@@ -703,7 +701,7 @@ yang sering digunakan dalam derivasi statistik.
 
 **Buat daftar label di awal dokumen atau di file terpisah:**
 
-``` markdown
+```markdown
 <!-- Daftar Label Persamaan:
 - eq:mean-sampel: Mean sampel (Bab 3)
 - eq:variance-sampel: Variansi sampel (Bab 3)
@@ -716,7 +714,7 @@ yang sering digunakan dalam derivasi statistik.
 
 **Selalu jelaskan simbol setelah rumus:**
 
-``` markdown
+```markdown
 \begin{equation}
 \bar{x} = \frac{\sum\_{i=1}^{n} x_i}{n}
 (\#eq:mean)
@@ -733,7 +731,7 @@ Di mana:
 
 **Berikan konteks sebelum menampilkan rumus:**
 
-``` markdown
+```markdown
 Mean atau rata-rata merupakan ukuran tendensi sentral yang dihitung dengan:
 
 \begin{equation}
@@ -748,13 +746,13 @@ Mean atau rata-rata merupakan ukuran tendensi sentral yang dihitung dengan:
 
 **Baik:**
 
-``` markdown
+```markdown
 Berdasarkan Persamaan \@ref(eq:mean), kita dapat menghitung rata-rata.
 ```
 
 **Kurang baik:**
 
-``` markdown
+```markdown
 Lihat eq:mean untuk mean.
 ```
 
@@ -762,33 +760,33 @@ Lihat eq:mean untuk mean.
 
 **Benar:**
 
-``` latex
+```latex
 (\#eq:variansi-sampel)
 (\#eq:standar-deviasi)
 ```
 
 **Salah (akan error):**
 
-``` latex
+```latex
 (\#eq:variansi sampel)     # Spasi akan menyebabkan error!
 (\#eq: standar-deviasi)     # Spasi setelah : juga error!
 ```
 
 ### 7. Gunakan Environment yang Tepat
 
-| Situasi | Environment yang Disarankan |
-|---------------------------------------------|---------------------------|
-| Satu rumus penting | `equation` |
-| Beberapa rumus sejajar | `align` |
-| Rumus panjang (satu nomor) | `equation` + `split` |
-| Beberapa rumus tidak sejajar | `gather` |
-| Derivasi dengan hanya beberapa langkah penting | `align` + `\nonumber` |
+| Situasi                                        | Environment yang Disarankan |
+| ---------------------------------------------- | --------------------------- |
+| Satu rumus penting                             | `equation`                |
+| Beberapa rumus sejajar                         | `align`                   |
+| Rumus panjang (satu nomor)                     | `equation` + `split`    |
+| Beberapa rumus tidak sejajar                   | `gather`                  |
+| Derivasi dengan hanya beberapa langkah penting | `align` + `\nonumber`   |
 
 ### 8. Format Penulisan yang Rapi
 
 **Beri indent untuk readability:**
 
-``` latex
+```latex
 \begin{equation}
   \begin{split}
     hasil &= variabel_1 + variabel_2 \\
@@ -802,7 +800,7 @@ Lihat eq:mean untuk mean.
 
 **Tambahkan komentar untuk rumus yang rumit:**
 
-``` latex
+```latex
 <!-- Rumus berikut adalah derivasi dari teorema Bayes -->
 \begin{equation}
 P(A|B) = \frac{P(B|A)P(A)}{P(B)}
@@ -816,30 +814,30 @@ P(A|B) = \frac{P(B|A)P(A)}{P(B)}
 
 **Informatif:**
 
-``` markdown
+```markdown
 Sesuai dengan definisi mean pada Persamaan \@ref(eq:mean), ...
 ```
 
 **Kurang informatif:**
 
-``` markdown
+```markdown
 Sesuai Persamaan \@ref(eq:mean), ...
 ```
 
-------------------------------------------------------------------------
+---
 
-## Troubleshooting {#troubleshooting}
+## Troubleshooting
 
 ### Masalah 1: Nomor Persamaan Tidak Muncul
 
 **Penyebab:**
 
--   Menggunakan `$$...$$` alih-alih environment `equation`
--   Lupa menutup environment dengan `\end{equation}`, `\end{align}`, dll.
+- Menggunakan `$$...$$` alih-alih environment `equation`
+- Lupa menutup environment dengan `\end{equation}`, `\end{align}`, dll.
 
 **Solusi:**
 
-``` latex
+```latex
 <!-- SALAH: Tidak akan ada nomor -->
 $$
 y = mx + c
@@ -856,53 +854,52 @@ y = mx + c
 
 **Penyebab:**
 
--   Label salah eja
--   Lupa prefix `eq:`
--   Dokumen perlu di-render ulang
+- Label salah eja
+- Lupa prefix `eq:`
+- Dokumen perlu di-render ulang
 
 **Solusi:**
 
-1.  Pastikan label sama persis:
+1. Pastikan label sama persis:
 
-    ``` latex
-    # Di rumus:
-    (\#eq:mean-sampel)
+   ```latex
+   # Di rumus:
+   (\#eq:mean-sampel)
 
-    # Di teks:
-    \@ref(eq:mean-sampel)  # Harus persis sama!
-    ```
+   # Di teks:
+   \@ref(eq:mean-sampel)  # Harus persis sama!
+   ```
+2. Re-render dokumen (kadang perlu 2x):
 
-2.  Re-render dokumen (kadang perlu 2x):
-
-    ``` r
-    bookdown::render_book("index.Rmd")
-    ```
+   ```r
+   bookdown::render_book("index.Rmd")
+   ```
 
 ### Masalah 3: Error "Duplicate label"
 
 **Penyebab:**
 
--   Dua rumus menggunakan label yang sama
+- Dua rumus menggunakan label yang sama
 
 **Solusi:**
 
--   Cari dan ganti salah satu label dengan yang unik:
+- Cari dan ganti salah satu label dengan yang unik:
 
-    ``` bash
-    # Di terminal/command line, cari label duplikat:
-    grep -r "eq:mean" *.Rmd
-    ```
+  ```bash
+  # Di terminal/command line, cari label duplikat:
+  grep -r "eq:mean" *.Rmd
+  ```
 
 ### Masalah 4: Environment Tidak Ditutup
 
 **Gejala:**
 
--   Error saat rendering
--   Rumus berantakan
+- Error saat rendering
+- Rumus berantakan
 
 **Penyebab:**
 
-``` latex
+```latex
 \begin{equation}
 y = mx + c
 (\#eq:linear)
@@ -911,17 +908,17 @@ y = mx + c
 
 **Solusi:**
 
--   Selalu pastikan setiap `\begin{...}` punya pasangan `\end{...}`
+- Selalu pastikan setiap `\begin{...}` punya pasangan `\end{...}`
 
 ### Masalah 5: Alignment Tidak Berfungsi di `align`
 
 **Penyebab:**
 
--   Lupa tanda `&` untuk alignment point
+- Lupa tanda `&` untuk alignment point
 
 **Solusi:**
 
-``` latex
+```latex
 <!-- SALAH: Tidak sejajar -->
 \begin{align}
 x = 1 (\#eq:x)\\
@@ -939,19 +936,19 @@ y &= 2 (\#eq:y)
 
 **Gejala:**
 
--   Error parsing
--   Referensi tidak berfungsi
+- Error parsing
+- Referensi tidak berfungsi
 
 **Penyebab:**
 
-``` latex
+```latex
 (\#eq:mean sampel)    # SALAH: Ada spasi!
 (\#eq: mean-sampel)   # SALAH: Spasi setelah :
 ```
 
 **Solusi:**
 
-``` latex
+```latex
 (\#eq:mean-sampel)    # BENAR
 ```
 
@@ -959,75 +956,74 @@ y &= 2 (\#eq:y)
 
 **Penyebab:**
 
--   Rumus terlalu panjang untuk satu baris
+- Rumus terlalu panjang untuk satu baris
 
 **Solusi:**
 
--   Gunakan `split` atau `multline`:
+- Gunakan `split` atau `multline`:
 
-    ``` latex
-    \begin{equation}
-    \begin{split}
-    hasil &= bagian_awal \\
-          &+ bagian_akhir
-    \end{split}
-    (\#eq:hasil)
-    \end{equation}
-    ```
+  ```latex
+  \begin{equation}
+  \begin{split}
+  hasil &= bagian_awal \\
+        &+ bagian_akhir
+  \end{split}
+  (\#eq:hasil)
+  \end{equation}
+  ```
 
 ### Masalah 8: Simbol Khusus Tidak Muncul
 
 **Penyebab:**
 
--   Package LaTeX tidak ter-load
+- Package LaTeX tidak ter-load
 
 **Solusi:**
 
--   Tambahkan di YAML header `index.Rmd`:
+- Tambahkan di YAML header `index.Rmd`:
 
-    ``` yaml
-    output:
-      bookdown::gitbook:
-        includes:
-          in_header: preamble.tex
-    ```
+  ```yaml
+  output:
+    bookdown::gitbook:
+      includes:
+        in_header: preamble.tex
+  ```
+- Di `preamble.tex`:
 
--   Di `preamble.tex`:
-
-    ``` latex
-    \usepackage{amsmath}
-    \usepackage{amssymb}
-    ```
+  ```latex
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  ```
 
 ### Masalah 9: Penomoran Restart di Setiap Bab
 
 **Gejala:**
 
--   Nomor persamaan kembali ke 1 di setiap bab baru
+- Nomor persamaan kembali ke 1 di setiap bab baru
 
 **Penyebab:**
 
--   Ini sebenarnya behavior normal untuk bookdown (penomoran per bab: 1.1, 1.2, 2.1, 2.2, dst.)
+- Ini sebenarnya behavior normal untuk bookdown (penomoran per bab: 1.1, 1.2, 2.1, 2.2, dst.)
 
 **Solusi (jika ingin continuous):**
 
--   Tambahkan di YAML:
+- Tambahkan di YAML:
 
-    ``` yaml
-    output:
-      bookdown::gitbook:
-        number_sections: yes
-    ```
+  ```yaml
+  output:
+    bookdown::gitbook:
+      number_sections: yes
+  ```
 
 ### Masalah 10: Referensi Muncul Sebagai Link Rusak
 
 **Penyebab:**
 
--   Salah format sintaks
+- Salah format sintaks
 
 **Solusi:**
 
-``` markdown
+```markdown
 <!-- SALAH -->
 
 @ref(eq:mean) # Lupa backslash
@@ -1039,30 +1035,30 @@ y &= 2 (\#eq:y)
 \@ref(eq:mean) # Ini yang benar!
 ```
 
-------------------------------------------------------------------------
+---
 
-## Referensi Tambahan {#referensi-tambahan}
+## Referensi Tambahan
 
 ### Resource Online
 
-1.  **Bookdown Official Documentation:**
-    -   https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations
-    -   Dokumentasi resmi tentang penomoran persamaan di Bookdown
-2.  **R Markdown Cookbook:**
-    -   https://bookdown.org/yihui/rmarkdown-cookbook/
-    -   Bab tentang mathematical expressions
-3.  **LaTeX Mathematics:**
-    -   https://en.wikibooks.org/wiki/LaTeX/Mathematics
-    -   Referensi lengkap tentang matematika di LaTeX
-4.  **AMS Math Package Documentation:**
-    -   http://mirrors.ctan.org/macros/latex/required/amsmath/amsldoc.pdf
-    -   Dokumentasi package amsmath (align, gather, dll.)
+1. **Bookdown Official Documentation:**
+   - https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html#equations
+   - Dokumentasi resmi tentang penomoran persamaan di Bookdown
+2. **R Markdown Cookbook:**
+   - https://bookdown.org/yihui/rmarkdown-cookbook/
+   - Bab tentang mathematical expressions
+3. **LaTeX Mathematics:**
+   - https://en.wikibooks.org/wiki/LaTeX/Mathematics
+   - Referensi lengkap tentang matematika di LaTeX
+4. **AMS Math Package Documentation:**
+   - http://mirrors.ctan.org/macros/latex/required/amsmath/amsldoc.pdf
+   - Dokumentasi package amsmath (align, gather, dll.)
 
 ### Cheat Sheet Quick Reference
 
 **Environment untuk rumus bernomor:**
 
-``` latex
+```latex
 equation    # Satu rumus, satu nomor
 align       # Beberapa rumus sejajar, masing-masing bernomor
 gather      # Beberapa rumus tengah, masing-masing bernomor
@@ -1072,19 +1068,19 @@ multline    # Rumus panjang, satu nomor, alignment khusus
 
 **Format label:**
 
-``` latex
+```latex
 (\#eq:nama-label)    # Di dalam environment
 ```
 
 **Format referensi:**
 
-``` markdown
+```markdown
 \@ref(eq:nama-label) # Di body teks
 ```
 
 **Menyembunyikan nomor:**
 
-``` latex
+```latex
 \nonumber    # Di akhir baris dalam align/gather
 ```
 
@@ -1092,7 +1088,7 @@ multline    # Rumus panjang, satu nomor, alignment khusus
 
 **File: `example.Rmd`**
 
-``` markdown
+```markdown
 ---
 title: "Contoh Penomoran Rumus"
 output: bookdown::gitbook
@@ -1116,22 +1112,22 @@ Berdasarkan Persamaan \@ref(eq:mean), kita dapat menghitung rata-rata.
 
 ### Saran Workflow
 
-1.  **Tulis rumus dulu tanpa label** untuk memastikan syntax LaTeX benar
-2.  **Tambahkan label** setelah yakin rumus sudah benar
-3.  **Render dokumen** untuk melihat penomoran
-4.  **Tambahkan referensi** di teks
-5.  **Render ulang** untuk memastikan referensi berfungsi
+1. **Tulis rumus dulu tanpa label** untuk memastikan syntax LaTeX benar
+2. **Tambahkan label** setelah yakin rumus sudah benar
+3. **Render dokumen** untuk melihat penomoran
+4. **Tambahkan referensi** di teks
+5. **Render ulang** untuk memastikan referensi berfungsi
 
-------------------------------------------------------------------------
+---
 
 ## Penutup
 
 Panduan ini mencakup semua aspek penting dalam penomoran dan referensi rumus LaTeX di R Markdown/Bookdown. Dengan mengikuti konvensi dan best practices yang dijelaskan, Anda dapat:
 
--   ✅ Membuat rumus bernomor dengan berbagai environment
--   ✅ Memberikan label yang konsisten dan deskriptif
--   ✅ Me-refer rumus dengan link klikabel otomatis
--   ✅ Menghindari error umum
--   ✅ Menghasilkan dokumen yang profesional dan mudah dinavigasi
+- ✅ Membuat rumus bernomor dengan berbagai environment
+- ✅ Memberikan label yang konsisten dan deskriptif
+- ✅ Me-refer rumus dengan link klikabel otomatis
+- ✅ Menghindari error umum
+- ✅ Menghasilkan dokumen yang profesional dan mudah dinavigasi
 
 Selamat menulis dokumen ilmiah! 📊✨
