@@ -399,7 +399,7 @@ p_A + p_B
 ```
 
 
-### Langkah-langkah Pengujian Hipotesis
+### Langkah-langkah Pengujian Hipotesis {#langkah-pengujian-hipotesis}
 
 Berdasarkan konsep-konsep yang sudah kita pelajari sebelunya, berikut adalah rangkuman langkah-langkah pengujian hipotesis.
 
