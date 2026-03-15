@@ -14,7 +14,29 @@ Pengertian *lebih dari satu populasi* mengacu pada dua sudut pandang, yaitu:
    
    Akan ada hal yang kita bandingkan dari kedua ataupun seluruh populasi tersebut. Dalam hal ini, kita akan membuktikan bahwa *“ada atau tidaknya perbedaan karakteristik dari mahasiswa ITERA dan mahasiswa UIN RIL”*. Perbedaan karakteristik ini dapat berupa parameter tertentu, seperti rata-rata, median, atau proporsi pada dua atau lebih populasi yang diujikan.
 
+::: rmdkasus
+### Studi Kasus: Batasan Cakupan Sebagai Dasar Penentuan Populasi {.unnumbered}
+
+Cakupan populasi sangat bergantung pada batasan penelitian. Mari bandingkan dua situasi berikut:
+
+-   **Situasi 1**: Penelitian mengamati mahasiswa di suatu kampus tingkat universitas, misalnya UBL. Dalam hal ini, seluruh mahasiswa UBL adalah **satu populasi**. Jika kita membandingkannya dengan kampus lain, maka mahasiswa kampus lain tersebut (misalnya UIN RIL) akan menjadi **populasi kedua**.
+-   **Situasi 2**: Penelitian mengamati seluruh mahasiswa di Kota Bandar Lampung. Dalam kasus ini, mahasiswa UBL dan mahasiswa UIN RIL melebur menjadi **satu populasi yang sama**, yaitu populasi mahasiswa Kota Bandar Lampung. Populasi kedua, misalnya, bisa jadi adalah *seluruh mahasiswa di **Kota Metro***.
+
+Sebagai kesimpulan, penentuan "satu populasi" dapat berubah menyesuaikan lingkup pengamatan yang ditetapkan.
+:::
+
 2. **Waktu pengambilan data**. Jika kita mengambil data dari suatu populasi pada dua tahap yang berbeda, misalnya sebelum dan sesudah suatu program, kita dapat menganggap populasi sebelum program sebagai populasi pertama, dan populasi setelah program sebagai populasi kedua.
+
+::: rmdkasus
+### Studi Kasus: Waktu Pengambilan Data Sebagai Dasar Penentuan Populasi {.unnumbered}
+
+Batasan populasi juga dapat dibedakan berdasarkan waktu. Sebagai contoh, kita ingin mengevaluasi dampak pembangunan jalan layang (*flyover*) terhadap waktu tempuh mahasiswa UBL menuju kampus.
+
+-   **Populasi 1**: Waktu tempuh perjalanan seluruh mahasiswa UBL **sebelum** adanya *flyover*.
+-   **Populasi 2**: Waktu tempuh perjalanan seluruh mahasiswa UBL **sesudah** *flyover* tersebut beroperasi.
+
+Meski kelompok subjek yang diamati sama (mahasiswa UBL), perbedaan waktu pengambilan data (sebelum dan sesudah) secara praktis membagi kelompok tersebut menjadi **dua populasi**.
+:::
 
 Sudut pandang pertama juga bisa dibagi lagi menjadi dua populasi **berpasangan** dan **independen**. Populasi berpasangan adalah dua populasi yang terikat hubungan satu sama lain secara logis. Misalnya, kita mengambil data suami dan istri dalam suatu kelurahan. Dalam hal tersebut, suami adalah populasi pertama, sementara istri adalah populasi kedua. Sudut pandang kedua juga kita bisa katakan sebagai populasi yang berpasangan.
 
@@ -22,7 +44,7 @@ Dengan demikian, berdasarkan sudut pandangnya, penjelasan uji hipotesis lebih da
 
 ## Tahapan Pengujian Hipotesis Parameter Dua Populasi atau Lebih
 
-Secara umum, tahapan pengujian hipotesis parameter dua populasi atau lebih **tidak berbeda jauh** dengan tahapan pengujian hipotesis parameter satu populasi (subbab \@ref(langkah-pengujian-hipotesis). Perbedaannya hanya terletak pada **bentuk hipotesis** yang akan diuji dan cara perhitungan statistik ujinya.
+Secara umum, tahapan pengujian hipotesis parameter dua populasi atau lebih **tidak berbeda jauh** dengan tahapan pengujian hipotesis parameter satu populasi (subbab \@ref(langkah-pengujian-hipotesis). Perbedaannya hanya terletak pada **bentuk hipotesis** yang akan diuji dan **cara menghitung statistik ujinya**.
 
 Untuk menyegarkan ingatan kita, berikut adalah langkah-langkah dalam pengujian hipotesis parameter satu populasi:
 
@@ -34,11 +56,15 @@ Untuk menyegarkan ingatan kita, berikut adalah langkah-langkah dalam pengujian h
 6. Membandingkan nilai statistik uji dan titik kritis
 7. Menarik kesimpulan dan memaknai hasil pengujian.
 
-Langkah-langkah ini akan kita gunakan dalam melakukan uji hipotesis parameter dua populasi atau lebih.
+Langkah-langkah ini juga akan kita gunakan dalam melakukan uji hipotesis parameter dua populasi atau lebih.
 
 ## Uji Hipotesis Parameter Dua Populasi Independen
 
-Pada uji hipotesis dua populasi independen, hanya terdapat **dua populasi** yang diujikan. Dua populasi ini adalah populasi yang **berbeda satu sama lain/tidak saling berkaitan**. Dalam uji ini, hipotesis kosong ($H_0$) yang menunjukkan kondisi netral dapat dirumuskan sebagai **tidak adanya perbedaan parameter antara kedua populasi yang dibandingkan**. Bentuk penulisan hipotesis kosong ini dapat dilihat pada tabel berikut:
+Dalam subbab ini, kita akan membahas **perumusan hipotesis kosong dan alternatif** serta **perhitungan statistik ujinya**, sesuai penjelasan sebelumnya yang mengatakan bahwa dua hal tersebut merupakan hal yang membedakan uji hipotesis parameter dua populasi atau lebih dengan uji hipotesis parameter satu populasi.
+
+### Hipotesis Kosong dan Alternatif Uji Hipotesis Parameter Dua Populasi Independen
+
+Pada uji hipotesis dua populasi independen, hanya terdapat **dua populasi** yang diujikan. Dua populasi ini adalah populasi yang **berbeda satu sama lain/tidak saling berkaitan**. Dalam uji ini, hipotesis kosong ($H_0$) yang menunjukkan kondisi netral dapat dirumuskan sebagai **tidak adanya perbedaan parameter antara kedua populasi yang dibandingkan**. Bentuk penulisan hipotesis kosong ini dapat dilihat pada Tabel \@ref(tab:tab-hipotesis-kosong-dua-populasi) berikut.
 
 ```{r tab-hipotesis-kosong-dua-populasi, echo=FALSE, message=FALSE, warning=FALSE, fig.align="center", out.width="60%"}
 library(dplyr)
@@ -54,7 +80,9 @@ data.frame(
   kable_styling(full_width = FALSE)
 ```
 
-Sementara itu, hipotesis alternatif ($H_1$) menunjukkan kondisi adanya perbedaan antara kedua populasi tersebut — baik perbedaan yang memiliki arah (lebih besar atau lebih kecil), maupun yang tidak memiliki arah (lihat Tabel \\@ref(tab:tab-bentuk-hipotesis-alternatif)). Bentuk penulisan hipotesis alternatif tidak berarah (dua arah) dapat dilihat pada tabel berikut:
+Dalam Tabel \@ref(tab:tab-hipotesis-kosong-dua-populasi), kita dapat melihat bahwa hipotesis kosong ini dapat dirumuskan dengan dua bentuk, yaitu **bentuk umum** dan **bentuk selisih**. Kedua bentuk ini sebenarnya memiliki arti yang sama, yaitu tidak adanya perbedaan antara kedua populasi yang dibandingkan. Hanya saja, bentuk selisih lebih mudah diterapkan ketika **kita hanya berfokus pada perbedaan nilai parameter antara kedua populasi tersebut** alih-alih nilai absolut parameter-parameternya. 
+
+Sementara itu, hipotesis alternatif ($H_1$) menunjukkan kondisi **adanya perbedaan antara kedua populasi tersebut** — baik perbedaan yang memiliki arah (lebih besar atau lebih kecil), maupun yang tidak memiliki arah (tidak sama dengan). Perhatikan Tabel \@ref(tab:tab-hipotesis-alternatif-dua-populasi) berikut֫.
 
 ```{r tab-hipotesis-alternatif-dua-populasi, echo=FALSE, message=FALSE, warning=FALSE, fig.align="center", out.width="60%"}
 library(dplyr)
@@ -71,6 +99,84 @@ data.frame(
   kbl(caption = "Bentuk Hipotesis Alternatif Dua Populasi", escape = FALSE, align = "c") |> 
   kable_styling(full_width = FALSE)
 ```
+
+### Perhitungan Statistik Uji dalam Uji Hipotesis Parameter Dua Populasi Independen
+
+Secara matematis, perhitungan statistik uji pada beda dua rata-rata independen diawali dengan membandingkan selisih rata-rata dari kedua sampel ($\bar{X}_1 - \bar{X}_2$) terhadap hipotesis selisih dari kedua rata-rata populasinya ($\mu_1 - \mu_2$), untuk kemudian dibagikan dengan standar *error*-nya:
+
+$$
+Z_{hitung} = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{SE_{\bar{X}_1 - \bar{X}_2}}
+(\#eq:statistik-uji-dua-populasi-independen)
+$$
+
+Di mana:
+
+- $\bar{X}_1, \bar{X}_2$ = Rata-rata sampel 1 dan sampel 2 
+- $\mu_1, \mu_2$ = Rata-rata populasi 1 dan populasi 2
+- $SE_{\bar{X}_1 - \bar{X}_2}$ = Standar *error* dari selisih rata-rata sampel 1 dan sampel 2
+
+Perhitungan *standard error* dari selisih rata-rata sampel 1 dan sampel 2 adalah sebagai berikut:
+
+$$
+SE_{\bar{X}_1 - \bar{X}_2} = \sqrt{ \frac{s_1^2}{N_1 - 1} + \frac{s_2^2}{N_2 - 1} }
+(\#eq:standard-error-dua-populasi-independen)
+$$
+
+Di mana:
+
+- $s_1^2, s_2^2$ = Varians (standar deviasi yang dikuadratkan) dari sampel 1 dan sampel 2
+- $N_1, N_2$ = Jumlah total masing-masing observasi sampel 1 dan sampel 2
+
+Dengan demikian, menggabungkan persamaan \@ref(eq:statistik-uji-dua-populasi-independen) dan \@ref(eq:standard-error-dua-populasi-independen), perhitungan statistik uji beda dua rata-rata independen menjadi:
+
+$$
+Z_{hitung} = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{ \frac{s_1^2}{N_1 - 1} + \frac{s_2^2}{N_2 - 1} }}
+(\#eq:statistik-uji-dua-populasi-independen-2)
+$$
+
+Di mana:
+
+- $\bar{X}_1, \bar{X}_2$ = Rata-rata sampel 1 dan sampel 2 
+- $s_1^2, s_2^2$ = Varians (standar deviasi yang dikuadratkan) dari sampel 1 dan sampel 2
+- $N_1, N_2$ = Jumlah total masing-masing observasi sampel 1 dan sampel 2
+
+Setelah memperoleh nilai dari hitungan statistik ujinya, tugas selanjutnya adalah membandingkannya terhadap nilai titik kritis ($Z_{kritis}$) dari tabel distribusi di tingkat signifikansi ($\alpha$) tertentu. Aturan pengambilan keputusannya senantiasa mengikuti kaidah berikut ini:
+
+- Jika nilai statistik uji **jatuh di dalam wilayah kritis**, maka hasil pengujian kita adalah hipotesis kosong dapat ditolak (**tolak $H_0$**). Ini berarti statistik yang telah dihitung ternyata memiliki bukti yang cukup untuk menyimpulkan telah terjadi perbedaan yang signifikan antara keadaan rata-rata kedua populasi tersebut.
+- Sebaliknya, jika nilai statistik uji **tidak jatuh ke dalam wilayah kritis**, maka hasil pengujian kita adalah hipotesis kosong gagal ditolak (**gagal tolak $H_0$**). Ini mengindikasikan bahwa data yang dihasilkan nyatanya belum memiliki cukup kekuatan meyakinkan untuk menolak dugaan ketiadaan perbedaan kondisi dari rata-rata kedua populasinya.
+
+::: rmdkasus
+### Studi Kasus: Uji Rata-Rata Waktu Tempuh Mahasiswa ITERA dan UNILA {.unnumbered}
+
+Dinas Perhubungan ingin mengetahui apakah rata-rata waktu tempuh perjalanan menuju kampus bagi mahasiswa ITERA berbeda dengan mahasiswa UNILA. Survei taktis pun dilakukan kepada mahasiswa kedua kampus dan berhasil menghimpun data dari 
+
+kita merumuskan langkah-langkah pengujian hipotesis parameter dua populasi independen untuk memutuskan hal tersebut:
+
+**a. Menyatakan Asumsi Awal**  
+Pengujian ini mensyaratkan bahwa kelompok data observasi mahasiswa ITERA dan UNILA adalah **independen** satu sama lain. Selain itu, tingkat ukurnya memenuhi syarat berjenis numerik (waktu tempuh berskala interval-rasio) dan ukuran sampel keduanya diasumsikan memadai besar sehingga distribusinya mendekati **normal**.
+
+**b. Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**  
+-   **Hipotesis Kosong** ($H_0: \mu_{\text{ITERA}} = \mu_{\text{UNILA}}$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA adalah sama. (Kondisi dasar netral/tidak ada perbedaan).
+-   **Hipotesis Alternatif** ($H_1: \mu_{\text{ITERA}} \ne \mu_{\text{UNILA}}$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA berbeda. (Kondisi terdapat perbedaan).
+
+**c. Menetapkan Wilayah Kritis dari Signifikansi**  
+Oleh karena hipotesis alternatif kita tidak memiliki arah spesifik (menggunakan tanda $\ne$), wilayah penolakan terbagi sama rata di dua unjung kurva penolakan (uji dua ekor/ *two-tailed*).
+
+**d. Mencari Nilai Titik Kritis**  
+Berdasarkan tingkat signifikansi yang ditetapkan (secara umum $\alpha = 5\%$), nilai batas penolakan akan dicari dengan mengakses tabel berdistribusi probabilitas teoretis (misalnya menggunakan Tabel Z). Titik dari batas ini akan menandai mulainya wilayah kritis di masing-masing area ekor.
+
+**e. Mencari Nilai Statistik Uji**  
+Perhitungan nilai statistik uji (misalnya $Z_{hitung}$) dieksekusi berdasarkan selisih jarak proporsi rata-rata kedua sampel waktu tempuh tersebut setelah dikalibrasi oleh gabungan standar *error* (*standard error* dari beda rata-rata independen).
+
+**f. Membandingkan Nilai Statistik Uji dan Titik Kritis**  
+Setelah nilainya diperoleh, ia diukur posisinya di dalam kurva:
+-   Bila $Z_{hitung}$ melampaui batas dan menerobos ke dalam **wilayah kritis**, maka keputusannya **tolak $H_0$**.
+-   Sebaliknya, jika tidak, rentang penerimaan kita membuat keputusannya menjadi **gagal tolak $H_0$**.
+
+**g. Menarik Kesimpulan dan Memaknai Hasil**  
+-   Bila **tolak $H_0$**, kesimpulannya ada bukti dari sampel observasi yang menyatakan perbedaan rata-rata waktu tempuh kedua kampus secara sangat kuat (signifikan).
+-   Bila **gagal tolak $H_0$**, kesimpulan kembalinya ialah tidak cukup kuat bukti observasi yang mendukun beda dari rata-rata waktu tempuhnya.
+:::
 
 
 ## Uji Hipotesis Parameter Dua Populasi Berpasangan
