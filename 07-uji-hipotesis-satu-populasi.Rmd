@@ -155,7 +155,7 @@ Jika bukti dari data sampel *sangat kuat dan meyakinkan*, maka pengujian akan **
 :::
 
 
-### Menentukan Hasil Pengujian Hipotesis Parameter
+## Menentukan Hasil Pengujian Hipotesis Parameter
 
 Penentuan hasil pengujian hipotesis dilakukan dengan menggabungkan tiga besaran penting: **titik kritis**, **wilayah kritis** dan **nilai *p* (*p-value*)**. Seluruhnya didasarkan pada konsep perhitungan probabilitas pada distribusi statistik sebagaimana yang dijelaskan pada subbab \@ref(probabilitas-nilai-di-distribusi-statistik).
 
@@ -399,7 +399,7 @@ p_A + p_B
 ```
 
 
-### Langkah-langkah Pengujian Hipotesis {#langkah-pengujian-hipotesis}
+## Langkah-langkah Pengujian Hipotesis {#langkah-pengujian-hipotesis}
 
 Berdasarkan konsep-konsep yang sudah kita pelajari sebelunya, berikut adalah rangkuman langkah-langkah pengujian hipotesis.
 
