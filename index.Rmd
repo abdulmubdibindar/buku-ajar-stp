@@ -25,16 +25,6 @@ link-citations: true
 # Opsi ini penting untuk mencegah error LaTeX karena karakter khusus dari pesan warning/error
 options(cli.hyperlink = FALSE)
 
-# Mengatur pemisah desimal menjadi koma dan ribuan menjadi titik
-options(OutDec = ",")
-knitr::knit_hooks$set(inline = function(x) {
-  if (is.numeric(x)) {
-    format(x, decimal.mark = ",", big.mark = ".")
-  } else {
-    x
-  }
-})
-
 # Konfigurasi knitr untuk output gambar
 knitr::opts_chunk$set(
     echo = FALSE,
