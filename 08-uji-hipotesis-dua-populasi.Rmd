@@ -71,13 +71,13 @@ library(dplyr)
 library(kableExtra)
 
 data.frame(
-  Bentuk = c("Bentuk Umum", "Bentuk Selisih"),
-  `Parameter Rata-rata` = c("$H_0: \\mu_A = \\mu_B$", "$H_0: \\mu_A - \\mu_B = 0$"),
-  `Parameter Proporsi` = c("$H_0: P_A = P_B$", "$H_0: P_A - P_B = 0$"),
-  check.names = FALSE
-) |> 
-  kbl(caption = "Bentuk Hipotesis Kosong Dua Populasi", escape = FALSE, align = "c") |> 
-  kable_styling(full_width = FALSE)
+    Bentuk = c("Bentuk Umum", "Bentuk Selisih"),
+    `Parameter Rata-rata` = c("$H_0: \\mu_A = \\mu_B$", "$H_0: \\mu_A - \\mu_B = 0$"),
+    `Parameter Proporsi` = c("$H_0: P_A = P_B$", "$H_0: P_A - P_B = 0$"),
+    check.names = FALSE
+) |>
+    kbl(caption = "Bentuk Hipotesis Kosong Dua Populasi", escape = FALSE, align = "c") |>
+    kable_styling(full_width = FALSE)
 ```
 
 Dalam Tabel \@ref(tab:tab-hipotesis-kosong-dua-populasi), kita dapat melihat bahwa hipotesis kosong ini dapat dirumuskan dengan dua bentuk, yaitu **bentuk umum** dan **bentuk selisih**. Kedua bentuk ini sebenarnya memiliki arti yang sama, yaitu tidak adanya perbedaan antara kedua populasi yang dibandingkan. Hanya saja, bentuk selisih lebih mudah diterapkan ketika **kita hanya berfokus pada perbedaan nilai parameter antara kedua populasi tersebut** alih-alih nilai absolut parameter-parameternya. 
@@ -89,36 +89,44 @@ library(dplyr)
 library(kableExtra)
 
 data.frame(
-  Bentuk = c("Bentuk Umum", "Bentuk Selisih"),
-  `Parameter Rata-rata` = c(paste("$H_1: \\mu_A \\ne \\mu_B$", "$H_1: \\mu_A > \\mu_B$", "$H_1: \\mu_A < \\mu_B$", sep = "<br>"), 
-                            paste("$H_1: \\mu_A - \\mu_B \\ne 0$", "$H_1: \\mu_A - \\mu_B > 0$", "$H_1: \\mu_A - \\mu_B < 0$", sep = "<br>")),
-  `Parameter Proporsi` = c(paste("$H_1: P_A \\ne P_B$", "$H_1: P_A > P_B$", "$H_1: P_A < P_B$", sep = "<br>"), 
-                           paste("$H_1: P_A - P_B \\ne 0$", "$H_1: P_A - P_B > 0$", "$H_1: P_A - P_B < 0$", sep = "<br>")),
-  check.names = FALSE
-) |> 
-  kbl(caption = "Bentuk Hipotesis Alternatif Dua Populasi", escape = FALSE, align = "c") |> 
-  kable_styling(full_width = FALSE)
+    Bentuk = c("Bentuk Umum", "Bentuk Selisih"),
+    `Parameter Rata-rata` = c(
+        paste("$H_1: \\mu_A \\ne \\mu_B$", "$H_1: \\mu_A > \\mu_B$", "$H_1: \\mu_A < \\mu_B$", sep = "<br>"),
+        paste("$H_1: \\mu_A - \\mu_B \\ne 0$", "$H_1: \\mu_A - \\mu_B > 0$", "$H_1: \\mu_A - \\mu_B < 0$", sep = "<br>")
+    ),
+    `Parameter Proporsi` = c(
+        paste("$H_1: P_A \\ne P_B$", "$H_1: P_A > P_B$", "$H_1: P_A < P_B$", sep = "<br>"),
+        paste("$H_1: P_A - P_B \\ne 0$", "$H_1: P_A - P_B > 0$", "$H_1: P_A - P_B < 0$", sep = "<br>")
+    ),
+    check.names = FALSE
+) |>
+    kbl(caption = "Bentuk Hipotesis Alternatif Dua Populasi", escape = FALSE, align = "c") |>
+    kable_styling(full_width = FALSE)
 ```
 
 ### Perhitungan Statistik Uji dalam Uji Hipotesis Parameter Dua Populasi Independen
 
-Secara matematis, perhitungan statistik uji pada beda dua rata-rata independen diawali dengan membandingkan selisih rata-rata dari kedua sampel ($\bar{X}_1 - \bar{X}_2$) terhadap hipotesis selisih dari kedua rata-rata populasinya ($\mu_1 - \mu_2$), untuk kemudian dibagikan dengan standar *error*-nya:
+Secara matematis, perhitungan statistik uji pada beda dua rata-rata independen diawali dengan membandingkan selisih rata-rata dari kedua sampel ($\bar{x}_1 - \bar{x}_2$) terhadap hipotesis selisih dari kedua rata-rata populasinya ($\mu_1 - \mu_2$), untuk kemudian dibagikan dengan standar *error*-nya.
+
+Untuk **parameter rata-rata**, statistik uji yang digunakan adalah sebagai berikut:
 
 $$
-Z_{hitung} = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{SE_{\bar{X}_1 - \bar{X}_2}}
+Z_{hitung} = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{SE_{\bar{x}_1 - \bar{x}_2}}
 (\#eq:statistik-uji-dua-populasi-independen)
 $$
 
 Di mana:
 
-- $\bar{X}_1, \bar{X}_2$ = Rata-rata sampel 1 dan sampel 2 
+- $\bar{x}_1, \bar{x}_2$ = Rata-rata sampel 1 dan sampel 2 
 - $\mu_1, \mu_2$ = Rata-rata populasi 1 dan populasi 2
-- $SE_{\bar{X}_1 - \bar{X}_2}$ = Standar *error* dari selisih rata-rata sampel 1 dan sampel 2
+- $SE_{\bar{x}_1 - \bar{x}_2}$ = Standar *error* dari selisih rata-rata sampel 1 dan sampel 2
+
+Perlu diperhatikan bahwa $(\mu_1 - \mu_2)$ pada persamaan \@ref(eq:statistik-uji-dua-populasi-independen) mencerminkan **nilai hipotesis selisih rata-rata kedua populasi**. Dalam pengujian hipotesis, nilai tersebut ditetapkan sesuai dengan hipotesis kosong ($H_0$). Karena $H_0$ pada umumnya menyatakan tidak adanya perbedaan antar populasi (yakni $\mu_1 - \mu_2 = 0$), maka suku $(\mu_1 - \mu_2)$ ini **bernilai nol dan gugur dari perhitungan**.
 
 Perhitungan *standard error* dari selisih rata-rata sampel 1 dan sampel 2 adalah sebagai berikut:
 
 $$
-SE_{\bar{X}_1 - \bar{X}_2} = \sqrt{ \frac{s_1^2}{N_1 - 1} + \frac{s_2^2}{N_2 - 1} }
+SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{ \frac{s_1^2}{N_1 - 1} + \frac{s_2^2}{N_2 - 1} }
 (\#eq:standard-error-dua-populasi-independen)
 $$
 
@@ -130,15 +138,44 @@ Di mana:
 Dengan demikian, menggabungkan persamaan \@ref(eq:statistik-uji-dua-populasi-independen) dan \@ref(eq:standard-error-dua-populasi-independen), perhitungan statistik uji beda dua rata-rata independen menjadi:
 
 $$
-Z_{hitung} = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{ \frac{s_1^2}{N_1 - 1} + \frac{s_2^2}{N_2 - 1} }}
+Z_{hitung} = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{ \frac{s_1^2}{N_1 - 1} + \frac{s_2^2}{N_2 - 1} }}
 (\#eq:statistik-uji-dua-populasi-independen-2)
 $$
 
 Di mana:
 
-- $\bar{X}_1, \bar{X}_2$ = Rata-rata sampel 1 dan sampel 2 
+- $\bar{x}_1, \bar{x}_2$ = Rata-rata sampel 1 dan sampel 2 
 - $s_1^2, s_2^2$ = Varians (standar deviasi yang dikuadratkan) dari sampel 1 dan sampel 2
 - $N_1, N_2$ = Jumlah total masing-masing observasi sampel 1 dan sampel 2
+
+Sementara itu, untuk **parameter proporsi**, statistik uji untuk beda dua proporsi independen dihitung dengan cara yang mirip dengan beda dua rata-rata, yaitu membandingkan selisih proporsi sampel ($\hat{p}_1 - \hat{p}_2$) terhadap nilai nol (karena $H_0: P_1 - P_2 = 0$), dikalibrasi dengan *standard error*-nya:
+
+$$
+Z_{hitung} = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left(\dfrac{1}{N_1} + \dfrac{1}{N_2}\right)}}
+(\#eq:statistik-uji-proporsi-dua-populasi)
+$$
+
+Di mana:
+
+- $\hat{p}_1, \hat{p}_2$ = Proporsi sampel dari populasi 1 dan populasi 2
+- $N_1, N_2$ = Jumlah total observasi sampel populasi 1 dan populasi 2
+- $\hat{p}$ = Proporsi gabungan (*pooled proportion*), dihitung sebagai:
+
+$$
+\hat{p} = \frac{x_1 + x_2}{N_1 + N_2} = \frac{N_1 \hat{p}_1 + N_2 \hat{p}_2}{N_1 + N_2}
+(\#eq:proporsi-gabungan)
+$$
+
+Di mana: 
+
+- $x_1$ dan $x_2$ adalah jumlah observasi yang memenuhi kategori yang diuji pada masing-masing sampel
+- $N_1$ dan $N_2$ adalah jumlah observasi sampel 1 dan sampel 2
+- $\hat{p}_1$ dan $\hat{p}_2$ adalah proporsi sampel 1 dan sampel 2
+
+Perlu dicatat bahwa pada persamaan \@ref(eq:statistik-uji-proporsi-dua-populasi), standar *error* dihitung menggunakan **proporsi gabungan** ($\hat{p}$) — bukan proporsi masing-masing sampel. Ini dilakukan karena, di bawah asumsi $H_0$ (bahwa kedua proporsi populasi sesungguhnya adalah sama), kita memiliki basis yang lebih kuat jika mengestimasi proporsi populasi tersebut dari kedua sampel secara bersamaan.
+
+Aturan pengambilan keputusan untuk uji proporsi ini sama dengan yang berlaku pada uji rata-rata, yakni: jika statistik uji **jatuh di dalam wilayah kritis**, kita tolak $H_0$; sebaliknya, kita **gagal menolak $H_0$**.
+
 
 Setelah memperoleh nilai dari hitungan statistik ujinya, tugas selanjutnya adalah membandingkannya terhadap nilai titik kritis ($Z_{kritis}$) dari tabel distribusi di tingkat signifikansi ($\alpha$) tertentu. Aturan pengambilan keputusannya senantiasa mengikuti kaidah berikut ini:
 
@@ -148,48 +185,524 @@ Setelah memperoleh nilai dari hitungan statistik ujinya, tugas selanjutnya adala
 ::: rmdkasus
 ### Studi Kasus: Uji Rata-Rata Waktu Tempuh Mahasiswa ITERA dan UNILA {.unnumbered}
 
-Dinas Perhubungan ingin mengetahui apakah rata-rata waktu tempuh perjalanan menuju kampus bagi mahasiswa ITERA berbeda dengan mahasiswa UNILA. Survei taktis pun dilakukan kepada mahasiswa kedua kampus dan berhasil menghimpun data dari 
+Dinas Perhubungan ingin mengetahui apakah rata-rata waktu tempuh perjalanan menuju kampus bagi mahasiswa ITERA berbeda dengan mahasiswa UNILA. Survei taktis pun dilakukan kepada mahasiswa kedua kampus dan berhasil menghimpun sampel sebanyak 428 mahasiswa ITERA yang menghasilkan rata-rata dan simpangan baku, berturut-turut, 5,01 km dan 2,82 km. Sampel mahasiswa UNILA juga berhasil dikumpulkan, yakni sebanyak 394 orang, menghasilkan rata-rata dan simpangan baku, berturut-turut, 2,78 km dan 2,53 km.
 
-kita merumuskan langkah-langkah pengujian hipotesis parameter dua populasi independen untuk memutuskan hal tersebut:
+Dari data tersebut, menggunakan tingkat kepercayaan 90%, kita akan mencari tahu apakah:
 
-**a. Menyatakan Asumsi Awal**  
-Pengujian ini mensyaratkan bahwa kelompok data observasi mahasiswa ITERA dan UNILA adalah **independen** satu sama lain. Selain itu, tingkat ukurnya memenuhi syarat berjenis numerik (waktu tempuh berskala interval-rasio) dan ukuran sampel keduanya diasumsikan memadai besar sehingga distribusinya mendekati **normal**.
+a. nilai rata-rata jarak tempuh ke kampus masing-masing, sebesar 5,01 km dan 2,78 km, benar-benar berbeda satu sama lain?
+b. Jika ya, bagaimana pernyataan ""*mahasiswa UNILA secara keseluruhan lebih dekat jarak tempuh ke kampus mereka sendiri ketimbang mahasiswa ITERA?"*
 
-**b. Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**  
--   **Hipotesis Kosong** ($H_0: \mu_{\text{ITERA}} = \mu_{\text{UNILA}}$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA adalah sama. (Kondisi dasar netral/tidak ada perbedaan).
--   **Hipotesis Alternatif** ($H_1: \mu_{\text{ITERA}} \ne \mu_{\text{UNILA}}$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA berbeda. (Kondisi terdapat perbedaan).
 
-**c. Menetapkan Wilayah Kritis dari Signifikansi**  
-Oleh karena hipotesis alternatif kita tidak memiliki arah spesifik (menggunakan tanda $\ne$), wilayah penolakan terbagi sama rata di dua unjung kurva penolakan (uji dua ekor/ *two-tailed*).
+**Jawaban:**
 
-**d. Mencari Nilai Titik Kritis**  
-Berdasarkan tingkat signifikansi yang ditetapkan (secara umum $\alpha = 5\%$), nilai batas penolakan akan dicari dengan mengakses tabel berdistribusi probabilitas teoretis (misalnya menggunakan Tabel Z). Titik dari batas ini akan menandai mulainya wilayah kritis di masing-masing area ekor.
+Kita menjalankan langkah-langkah pengujian hipotesis parameter dua populasi independen untuk memutuskan hal tersebut:
 
-**e. Mencari Nilai Statistik Uji**  
-Perhitungan nilai statistik uji (misalnya $Z_{hitung}$) dieksekusi berdasarkan selisih jarak proporsi rata-rata kedua sampel waktu tempuh tersebut setelah dikalibrasi oleh gabungan standar *error* (*standard error* dari beda rata-rata independen).
+a. **Menyatakan Asumsi Awal**  
+   Pengujian ini mensyaratkan bahwa kelompok data observasi mahasiswa ITERA dan UNILA adalah **independen** satu sama lain. Selain itu, tingkat pengukurannya adalah rasio (variabel yang diujikan: jarak tempuh) dan ukuran sampel keduanya memadai (ukuran besar, 428 dan 394) sehingga distribusi statistiknya mendekati **normal**.
 
-**f. Membandingkan Nilai Statistik Uji dan Titik Kritis**  
-Setelah nilainya diperoleh, ia diukur posisinya di dalam kurva:
--   Bila $Z_{hitung}$ melampaui batas dan menerobos ke dalam **wilayah kritis**, maka keputusannya **tolak $H_0$**.
--   Sebaliknya, jika tidak, rentang penerimaan kita membuat keputusannya menjadi **gagal tolak $H_0$**.
+b. **Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**
+   Dalam kasus ini, kita akan menguji apakah rata-rata waktu tempuh mahasiswa ITERA dan UNILA **berbeda** satu sama lain. Setelah itu, jika berbeda, kita akan menguji apakah rata-rata waktu tempuh mahasiswa UNILA **lebih kecil** dari mahasiswa ITERA. Dengan demikian, kita menggunakan hipotesis alternatif bentuk **tidak berarah** dan **berarah** secara berurutan.
 
-**g. Menarik Kesimpulan dan Memaknai Hasil**  
--   Bila **tolak $H_0$**, kesimpulannya ada bukti dari sampel observasi yang menyatakan perbedaan rata-rata waktu tempuh kedua kampus secara sangat kuat (signifikan).
--   Bila **gagal tolak $H_0$**, kesimpulan kembalinya ialah tidak cukup kuat bukti observasi yang mendukun beda dari rata-rata waktu tempuhnya.
+   Karena kita berurusan dengan dua populasi, kita misalkan populasi ITERA = 1 dan UNILA = 2. Dengan demikian, kita dapat menuliskan hipotesis alternatif sebagai berikut:
+
+   **Bentuk tidak berarah:**
+
+   -   **Hipotesis Kosong** ($H_0: \mu_1 = \mu_2$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA adalah sama. (Kondisi dasar netral/tidak ada perbedaan).
+   -   **Hipotesis Alternatif** ($H_1: \mu_1 \ne \mu_2$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA berbeda. (Kondisi terdapat perbedaan).
+
+   **Bentuk berarah:**
+
+   -   **Hipotesis Kosong** ($H_0: \mu_1 = \mu_2$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA adalah sama.
+   -   **Hipotesis Alternatif** ($H_1: \mu_1 > \mu_2$): Rata-rata waktu tempuh mahasiswa ITERA lebih besar dari mahasiswa UNILA.
+
+c. **Menetapkan Wilayah Kritis dari Signifikansi**  
+   Untuk hipotesis alternatif **bentuk tidak berarah**, wilayah penolakan **terbagi sama rata di dua unjung kurva penolakan** (uji dua ekor/ *two-tailed*). Sementara itu, untuk hipotesis alternatif **bentuk berarah**, wilayah penolakan berada di salah satu ujung kurva penolakan (uji satu ekor/ *one-tailed*).
+   
+   Karena kita menggunakan bentuk pertidaksamaan "lebih besar", posisi wilayah kritis kita ada di **kanan** kurva distribusi statisik kita.
+
+   Kita diberi tahu bahwa tingkat kepercayaan yang digunakan adalah 90%, sehingga tingkat signifikansi $\alpha$ adalah 10% atau 0,10. Dengan demikian, kita dapat menentukan wilayah kritis sebagai berikut:
+
+```{r fig-wilayah-kritis-dua-vs-satu-ekor, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', out.width='90%', fig.cap='Ilustrasi wilayah kritis: uji dua ekor (kiri) dan uji satu ekor kanan (kanan) pada tingkat signifikansi $\\alpha$ = 10%'}
+library(ggplot2)
+library(patchwork)
+
+alpha <- 0.10
+z_kritis_dua <- qnorm(1 - alpha / 2)
+z_kritis_satu <- qnorm(1 - alpha)
+
+warna_tolak <- "#e74c3c"
+warna_terima <- "#2ecc71"
+warna_kurva <- "#2c3e50"
+
+x_seq <- seq(-4, 4, length.out = 500)
+df <- data.frame(x = x_seq, y = dnorm(x_seq))
+
+# --- Plot 1: Uji Dua Ekor ---
+p1 <- ggplot(df, aes(x, y)) +
+    geom_area(
+        data = subset(df, x <= -z_kritis_dua),
+        aes(y = y), fill = warna_tolak, alpha = 0.85
+    ) +
+    geom_area(
+        data = subset(df, x >= z_kritis_dua),
+        aes(y = y), fill = warna_tolak, alpha = 0.85
+    ) +
+    geom_area(
+        data = subset(df, x >= -z_kritis_dua & x <= z_kritis_dua),
+        aes(y = y), fill = warna_terima, alpha = 0.35
+    ) +
+    geom_line(color = warna_kurva, linewidth = 0.9) +
+    geom_vline(
+        xintercept = c(-z_kritis_dua, z_kritis_dua),
+        linetype = "dashed", color = warna_tolak, linewidth = 0.7
+    ) +
+    annotate("text",
+        x = -2.8, y = 0.07,
+        label = "Tolak", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = -2.8, y = 0.03,
+        label = "H0", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 2.8, y = 0.07,
+        label = "Tolak", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 2.8, y = 0.03,
+        label = "H0", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 0, y = 0.16,
+        label = "Gagal Tolak H0", parse = FALSE,
+        size = 3.2, color = "#1a6b3a", fontface = "bold"
+    ) +
+    annotate("text",
+        x = -3.5, y = 0.38,
+        label = paste0('alpha/2 == "', format(alpha / 2, decimal.mark = ","), '"'),
+        parse = TRUE, size = 3, color = warna_tolak
+    ) +
+    annotate("text",
+        x = 3.5, y = 0.38,
+        label = paste0('alpha/2 == "', format(alpha / 2, decimal.mark = ","), '"'),
+        parse = TRUE, size = 3, color = warna_tolak
+    ) +
+    scale_x_continuous(breaks = NULL) +
+    scale_y_continuous(expand = expansion(mult = c(0.08, 0.05))) +
+    labs(
+        title = "Uji Dua Ekor (Two-Tailed)",
+        subtitle = expression(H[1]:mu[1] != mu[2]),
+        x = NULL, y = NULL
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+        plot.title    = element_text(face = "bold", hjust = 0.5, size = 11),
+        plot.subtitle = element_text(hjust = 0.5, size = 10, color = "#555555"),
+        axis.text.y   = element_blank(),
+        panel.grid    = element_blank(),
+        axis.line.x   = element_line(color = warna_kurva, linewidth = 0.5)
+    )
+
+# --- Plot 2: Uji Satu Ekor Kanan ---
+p2 <- ggplot(df, aes(x, y)) +
+    geom_area(
+        data = subset(df, x >= z_kritis_satu),
+        aes(y = y), fill = warna_tolak, alpha = 0.85
+    ) +
+    geom_area(
+        data = subset(df, x < z_kritis_satu),
+        aes(y = y), fill = warna_terima, alpha = 0.35
+    ) +
+    geom_line(color = warna_kurva, linewidth = 0.9) +
+    geom_vline(
+        xintercept = z_kritis_satu,
+        linetype = "dashed", color = warna_tolak, linewidth = 0.7
+    ) +
+    annotate("text",
+        x = 3, y = 0.07,
+        label = "Tolak", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 3, y = 0.03,
+        label = "H0", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = -0.5, y = 0.16,
+        label = "Gagal Tolak H0", parse = FALSE,
+        size = 3.2, color = "#1a6b3a", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 3.3, y = 0.38,
+        label = paste0('alpha == "', format(alpha, decimal.mark = ","), '"'),
+        parse = TRUE, size = 3, color = warna_tolak
+    ) +
+    scale_x_continuous(breaks = NULL) +
+    scale_y_continuous(expand = expansion(mult = c(0.08, 0.05))) +
+    labs(
+        title = "Uji Satu Ekor Kanan (Right One-Tailed)",
+        subtitle = expression(H[1]:mu[1] > mu[2]),
+        x = NULL, y = NULL
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+        plot.title    = element_text(face = "bold", hjust = 0.5, size = 11),
+        plot.subtitle = element_text(hjust = 0.5, size = 10, color = "#555555"),
+        axis.text.y   = element_blank(),
+        panel.grid    = element_blank(),
+        axis.line.x   = element_line(color = warna_kurva, linewidth = 0.5)
+    )
+
+p1 + p2
+```
+
+d. **Mencari Nilai Titik Kritis**  
+   Berdasarkan tingkat signifikansi yang ditetapkan ($\alpha = 10\% = 0,10$) dan bentuk hipotesis alternatif kita (tidak berarah & berarah), nilai titik kritis kita:
+     
+   -   Uji dua ekor: $Z_{kritis} = \pm `r round(z_kritis_dua, 2)`$
+   -   Uji satu ekor kanan: $Z_{kritis} = `r round(z_kritis_satu, 2)`$
+
+e. **Mencari Nilai Statistik Uji**  
+   Perhitungan nilai statistik uji (misalnya $Z_{hitung}$) dieksekusi berdasarkan selisih jarak proporsi   rata-rata kedua sampel waktu tempuh tersebut setelah dikalibrasi oleh gabungan *standard error* dari beda rata-rata independen (Persamaan \@ref(eq:statistik-uji-dua-populasi-independen-2)).
+
+   \begin{align}
+   Z_{hitung} &= \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{ \dfrac{s_1^2}{N_1 - 1} + \dfrac{s_2^2}{N_2 - 1} }} \nonumber\\
+              &= \frac{5{,}01 - 2{,}78}{\sqrt{ \dfrac{2{,}82^2}{428 - 1} + \dfrac{2{,}53^2}{394 - 1} }} \nonumber\\
+              &= \frac{2{,}23}{\sqrt{ \dfrac{7{,}9524}{427} + \dfrac{6{,}4009}{393} }} \nonumber\\
+              &= \frac{2{,}23}{\sqrt{0{,}01863 + 0{,}01629}} \nonumber\\
+              &= \frac{2{,}23}{\sqrt{0{,}03492}} \nonumber\\
+              &= \frac{2{,}23}{0{,}1869} \nonumber\\
+              &\approx 11{,}93
+              % (\#eq:z-hitung-itera-unila)
+   \end{align}
+
+
+f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**  
+   Setelah nilainya statistik uji kita peroleh, kita bandingkan posisinya di dalam kurva dengan titik:
+   -   Bila $Z_{hitung}$ **melampaui titik kritis** sehingga jatuh di dalam **wilayah kritis**, maka keputusannya kita **menolak $H_0$**.
+   -   Sebaliknya, jika tidak, kita **gagal menolak $H_0$**.
+   
+   Berdasarkan hasil perhitungan statistik uji yang telah kita lakukan, nilainya adalah $+11{,}93$. Karena nilai ini berada jauh di sebelah **kanan** titik kritis, maka ia jatuh **di dalam wilayah kritis**. Bahkan, jika kita perhatikan Gambar \@ref(fig:fig-hasil-pengujian-dua-vs-satu-ekor), posisi statistik uji kita berada jauh sekali sampai di luar grafik.
+   
+```{r fig-hasil-pengujian-dua-vs-satu-ekor, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', out.width='90%', fig.cap='Hasil pengujian hipotesis populasi ITERA dan UNILA'}
+library(ggplot2)
+library(patchwork)
+
+alpha <- 0.10
+z_kritis_dua <- qnorm(1 - alpha / 2)
+z_kritis_satu <- qnorm(1 - alpha)
+test_stat <- 11.98
+
+warna_tolak <- "#e74c3c"
+warna_terima <- "#2ecc71"
+warna_kurva <- "#2c3e50"
+
+x_seq <- seq(-4, 4, length.out = 500)
+df <- data.frame(x = x_seq, y = dnorm(x_seq))
+
+# --- Plot 1: Uji Dua Ekor ---
+p1 <- ggplot(df, aes(x, y)) +
+    geom_area(
+        data = subset(df, x <= -z_kritis_dua),
+        aes(y = y), fill = warna_tolak, alpha = 0.85
+    ) +
+    geom_area(
+        data = subset(df, x >= z_kritis_dua),
+        aes(y = y), fill = warna_tolak, alpha = 0.85
+    ) +
+    geom_area(
+        data = subset(df, x >= -z_kritis_dua & x <= z_kritis_dua),
+        aes(y = y), fill = warna_terima, alpha = 0.35
+    ) +
+    geom_line(color = warna_kurva, linewidth = 0.9) +
+    geom_vline(
+        xintercept = c(-z_kritis_dua, z_kritis_dua),
+        linetype = "dashed", color = warna_tolak, linewidth = 0.7
+    ) +
+    geom_vline(
+        xintercept = test_stat,
+        linetype = "dashed", color = "#bb0010cc", linewidth = 0.7
+    ) +
+    annotate("text",
+        x = -2.8, y = 0.07,
+        label = "Tolak", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = -2.8, y = 0.03,
+        label = "H0", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 2.8, y = 0.07,
+        label = "Tolak", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 2.8, y = 0.03,
+        label = "H0", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 0, y = 0.16,
+        label = "Gagal Tolak H0", parse = FALSE,
+        size = 3.2, color = "#1a6b3a", fontface = "bold"
+    ) +
+    annotate("text",
+        x = -3.5, y = 0.38,
+        label = paste0('alpha/2 == "', format(alpha / 2, decimal.mark = ","), '"'),
+        parse = TRUE, size = 3, color = warna_tolak
+    ) +
+    annotate("text",
+        x = 3.5, y = 0.38,
+        label = paste0('alpha/2 == "', format(alpha / 2, decimal.mark = ","), '"'),
+        parse = TRUE, size = 3, color = warna_tolak
+    ) +
+    scale_x_continuous(breaks = NULL) +
+    scale_y_continuous(expand = expansion(mult = c(0.08, 0.05))) +
+    labs(
+        title = "Uji Dua Ekor (Two-Tailed)",
+        subtitle = expression(H[1]:mu[1] != mu[2]),
+        x = NULL, y = NULL
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+        plot.title    = element_text(face = "bold", hjust = 0.5, size = 11),
+        plot.subtitle = element_text(hjust = 0.5, size = 10, color = "#555555"),
+        axis.text.y   = element_blank(),
+        panel.grid    = element_blank(),
+        axis.line.x   = element_line(color = warna_kurva, linewidth = 0.5)
+    )
+
+# --- Plot 2: Uji Satu Ekor Kanan ---
+p2 <- ggplot(df, aes(x, y)) +
+    geom_area(
+        data = subset(df, x >= z_kritis_satu),
+        aes(y = y), fill = warna_tolak, alpha = 0.85
+    ) +
+    geom_area(
+        data = subset(df, x < z_kritis_satu),
+        aes(y = y), fill = warna_terima, alpha = 0.35
+    ) +
+    geom_line(color = warna_kurva, linewidth = 0.9) +
+    geom_vline(
+        xintercept = z_kritis_satu,
+        linetype = "dashed", color = warna_tolak, linewidth = 0.7
+    ) +
+    geom_vline(
+        xintercept = test_stat,
+        linetype = "dashed", color = "#bb0010cc", linewidth = 0.7
+    ) +
+    annotate("text",
+        x = 3, y = 0.07,
+        label = "Tolak", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 3, y = 0.03,
+        label = "H0", parse = FALSE,
+        size = 3.2, color = "white", fontface = "bold"
+    ) +
+    annotate("text",
+        x = -0.5, y = 0.16,
+        label = "Gagal Tolak H0", parse = FALSE,
+        size = 3.2, color = "#1a6b3a", fontface = "bold"
+    ) +
+    annotate("text",
+        x = 3.3, y = 0.38,
+        label = paste0('alpha == "', format(alpha, decimal.mark = ","), '"'),
+        parse = TRUE, size = 3, color = warna_tolak
+    ) +
+    scale_x_continuous(breaks = NULL) +
+    scale_y_continuous(expand = expansion(mult = c(0.08, 0.05))) +
+    labs(
+        title = "Uji Satu Ekor Kanan (Right One-Tailed)",
+        subtitle = expression(H[1]:mu[1] > mu[2]),
+        x = NULL, y = NULL
+    ) +
+    theme_minimal(base_size = 11) +
+    theme(
+        plot.title    = element_text(face = "bold", hjust = 0.5, size = 11),
+        plot.subtitle = element_text(hjust = 0.5, size = 10, color = "#555555"),
+        axis.text.y   = element_blank(),
+        panel.grid    = element_blank(),
+        axis.line.x   = element_line(color = warna_kurva, linewidth = 0.5)
+    )
+
+p1 + p2
+```
+
+g. **Menarik Kesimpulan dan Memaknai Hasil**  
+   Hasil perhitungan statistik uji kita jelas menunjukkan bahwa posisinya berada di dalam wilayah kritis, oleh karena kitu, kesimpulan kita adalah kita dapat **menolak $H_0$**. Kesimpulannya, sampel observasi cukup untuk membuktikan perbedaan rata-rata waktu tempuh kedua kampus secara kuat (signifikan). Artinya, rata-rata jarak tempuh mahasiswa UNILA ke kampus dibandingkan dengan mahasiswa ITERA **memang lebih pendek**.
+   
+**Interpretasi ke dalam bidang PWK:** rata-rata jarak tempuh mahasiswa UNILA yang lebih pendek mengindikasikan bahwa kampus UNILA mempunyai struktur ruang yang lebih kompak *(kompak)* dibandingkan ITERA. Ini dapat dikaitkan dengan pola jaringan jalan yang dimiliki lingkungan di sekitar UNILA yang berbentuk *grid* sehingga banyak blok-blok guna lahan di sekitarnya yang dapat dimanfaatkan sebagai tempat tinggal.
+
+Lain halnya dengan ITERA, pola jarinagan jalan di sekitar ITERA adalah satu jalan raya memanjang, Jalan Terusan Ryacudu, yang di sekitarnya lebih tersebar *(disepersed)*, mengakibatkan tempat tinggal di sekitarnya juga jadi berjauhan.
+
+```{r fig-perbandingan-itera-unila, echo=FALSE, fig.align="center", fig.cap='Gambaran Struktur Ruang ITERA *(dispersed)* vs. UNILA *(compact)*'}
+knitr::include_graphics('images/perbandingan-itera-unila.png')
+```
 :::
 
+Simak juga kasus untuk uji hipotesis parameter proporsi untuk dua populasi independen berikut.
+
+::: rmdkasus
+### Studi Kasus: Uji Proporsi Pengguna Sepeda Motor Mahasiswa ITERA dan UNILA {.unnumbered}
+
+Dinas Perhubungan ingin mengetahui apakah proporsi mahasiswa yang menggunakan **sepeda motor pribadi** sebagai kendaraan utama menuju kampus berbeda antara mahasiswa ITERA dan mahasiswa UNILA. Dari data observasi yang ada, tercatat bahwa dari 428 mahasiswa ITERA, sebanyak 260 orang menggunakan sepeda motor, sementara dari 394 mahasiswa UNILA, sebanyak 230 orang juga menggunakan sepeda motor.
+
+Dengan menggunakan **tingkat kepercayaan 90%**, kita akan menguji apakah proporsi pengguna sepeda motor dari kedua kampus tersebut berbeda secara signifikan.
+
+**Jawaban:**
+
+Kita jalankan langkah-langkah pengujian hipotesis proporsi dua populasi independen:
+
+a. **Menyatakan Asumsi Awal**  
+   Data yang diamati merupakan dua kelompok sampel yang **independen** — tidak ada hubungan berpasangan antara mahasiswa ITERA dan UNILA. Variabel yang diuji adalah **kategorikal dikotomis** (menggunakan sepeda motor atau tidak), dan ukuran sampel keduanya cukup besar sehingga memenuhi syarat distribusi normal untuk proporsi.
+
+b. **Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**  
+   Kita misalkan populasi ITERA = 1 dan UNILA = 2. Karena kita ingin mengetahui apakah ada perbedaan (tanpa menentukan arah), kita gunakan hipotesis alternatif **tidak berarah**:
+
+   - **Hipotesis Kosong** ($H_0: P_1 = P_2$): Proporsi pengguna sepeda motor mahasiswa ITERA dan UNILA adalah sama.
+   - **Hipotesis Alternatif** ($H_1: P_1 \ne P_2$): Proporsi pengguna sepeda motor mahasiswa ITERA dan UNILA berbeda.
+
+c. **Menetapkan Wilayah Kritis dari Signifikansi**  
+   Karena hipotesis alternatif kita **tidak berarah**, ini merupakan **uji dua ekor** (*two-tailed*). Tingkat kepercayaan 90% berarti tingkat signifikansi $\alpha = 0{,}10$, sehingga masing-masing ujung kurva memuat luas $\alpha/2 = 0{,}05$.
+
+d. **Mencari Nilai Titik Kritis**  
+   Berdasarkan tabel distribusi normal standar dengan $\alpha/2 = 0{,}05$:
+   
+   $$Z_{kritis} = \pm 1{,}645$$
+
+e. **Mencari Nilai Statistik Uji**  
+   Terlebih dahulu kita hitung proporsi masing-masing sampel dan proporsi gabungannya (Persamaan \@ref(eq:proporsi-gabungan)):
+
+   \begin{align}
+   \hat{p}_1 &= \frac{260}{428} \approx 0{,}607 \nonumber\\
+   \hat{p}_2 &= \frac{230}{394} \approx 0{,}584 \nonumber\\
+   \hat{p}   &= \frac{260 + 230}{428 + 394} = \frac{490}{822} \approx 0{,}596 \nonumber
+   \end{align}
+
+   Kemudian kita hitung nilai statistik ujinya (Persamaan \@ref(eq:statistik-uji-proporsi-dua-populasi)):
+
+   \begin{align}
+   Z_{hitung} &= \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left(\dfrac{1}{N_1} + \dfrac{1}{N_2}\right)}} \nonumber\\
+              &= \frac{0{,}607 - 0{,}584}{\sqrt{0{,}596 \times 0{,}404 \times \left(\dfrac{1}{428} + \dfrac{1}{394}\right)}} \nonumber\\
+              &= \frac{0{,}023}{\sqrt{0{,}2408 \times 0{,}00487}} \nonumber\\
+              &= \frac{0{,}023}{\sqrt{0{,}001173}} \nonumber\\
+              &= \frac{0{,}023}{0{,}0343} \nonumber\\
+              &\approx 0{,}69
+   \end{align}
+
+f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**  
+   Nilai $Z_{hitung} \approx 0{,}69$ berada **di antara $-1{,}645$ dan $+1{,}645$**, sehingga ia **tidak jatuh ke dalam wilayah kritis** di kedua ujung kurva.
+
+g. **Menarik Kesimpulan dan Memaknai Hasil**  
+   Karena statistik uji tidak berada di dalam wilayah kritis, keputusan kita adalah **gagal menolak $H_0$**. Artinya, data yang tersedia **belum cukup untuk membuktikan** adanya perbedaan yang signifikan antara proporsi pengguna sepeda motor mahasiswa ITERA dan UNILA pada tingkat kepercayaan 90%.
+
+   **Interpretasi ke dalam bidang PWK:** meskipun proporsi pengguna sepeda motor di ITERA (≈60,7%) tampak lebih tinggi dari UNILA (≈58,4%), selisih tersebut tidak cukup signifikan secara statistik. Ini menunjukkan bahwa **budaya penggunaan kendaraan bermotor pribadi cenderung serupa** di kedua kampus. Dalam konteks perencanaan transportasi, hal ini mengindikasikan bahwa intervensi kebijakan untuk mendorong moda transportasi alternatif — seperti angkutan umum atau sepeda — kemungkinan perlu diformulasikan secara bersamaan untuk kedua kawasan kampus tersebut.
+:::
 
 ## Uji Hipotesis Parameter Dua Populasi Berpasangan
 
-Digunakan untuk dua kelompok sampel yang saling berhubungan (berpasangan). Contoh: Membandingkan kemacetan di jalan yang sama **sebelum** dan **sesudah** penerapan kebijakan ganjil-genap.
+Kasus dua populasi berpasangan merujuk pada kondisi di mana terdapat **dua populasi yang sama dan saling berkaitan**. Kedua populasi ini sebenarnya berasal dari satu populasi yang sama, tetapi diamati dalam dua kondisi yang berbeda, misalnya kondisi sebelum dan sesudah suatu intervensi kebijakan. Atau juga bisa merujuk pada dua populasi yang berbeda namun memiliki karakteristik yang sama sehingga dapat dibandingkan, misalnya membandingkan usia suami dan istri.
+
+Oleh karena populasinya berpasangan, dalam kasus ini kita **hanya bisa menghitung rata-rata dari selisih variabel kedua populasi** tersebut. Selisih ini biasanya disimbolkan dengan $D$ [@tjokropandojo2021pengantar].
+
+Karena kita hanya mempunyai 1 angka tunggal, maka pernyataan hipotesis dan juga perhitungan statistik ujinya sama persis teknisnya dengan uji hipotesis satu populasi:
+
+\begin{equation}
+Z_{hitung} = \frac{\bar{D} - \mu_{D_0}}{s_D / \sqrt{n}}
+(\#eq:statistik-uji-dua-populasi-berpasangan)
+\end{equation}
+
+Di mana:
+
+- $\bar{D}$ = rata-rata selisih antara dua pengamatan berpasangan
+- $\mu_{D_0}$ = nilai hipotesis rata-rata selisih (bernilai 0 pada $H_0$)
+- $s_D$ = simpangan baku dari selisih pengamatan
+- $n$ = jumlah pasangan pengamatan
+
+::: rmdkasus
+### Studi Kasus: Uji Beda Biaya Perjalanan Mahasiswa Sebelum dan Sesudah Pemberlakuan Sistem Angkutan Umum Kampus {.unnumbered}
+
+Pihak pengelola kampus ingin mengevaluasi efektivitas sistem angkutan umum kampus yang baru diluncurkan dalam menekan biaya transportasi harian mahasiswa. Untuk itu, dilakukan pengambilan data terhadap 35 mahasiswa mengenai biaya perjalanan harian mereka sebelum dan sesudah sistem tersebut beroperasi. 
+
+Dari hasil survei, diperoleh rata-rata selisih penurunan biaya perjalanan ($\bar{D}$) sebesar Rp5.300,00 dengan simpangan baku selisih ($s_D$) sebesar Rp1.800,00. Dengan menggunakan **tingkat kepercayaan 95%**, apakah kita dapat menyimpulkan bahwa terdapat perbedaan biaya perjalanan yang signifikan akibat adanya sistem angkutan umum tersebut?
+
+**Jawaban:**
+
+Kita menjalankan langkah-langkah pengujian hipotesis dua populasi berpasangan:
+
+a. **Menyatakan Asumsi Awal**  
+   Data yang digunakan adalah **berpasangan** karena berasal dari subjek yang sama (35 mahasiswa yang sama) pada dua kondisi waktu yang berbeda. Diasumsikan selisih biaya perjalanan berdistribusi normal dengan ukuran sampel $n = 35$ yang mencukupi untuk pendekatan distribusi normal.
+
+b. **Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**  
+   Kita ingin menguji apakah terdapat perbedaan yang signifikan:
+   
+   - **Hipotesis Kosong** ($H_0: \mu_D = 0$): Tidak terdapat perbedaan rata-rata biaya perjalanan mahasiswa antara sebelum dan sesudah adanya angkutan umum.
+   - **Hipotesis Alternatif** ($H_1: \mu_D \ne 0$): Terdapat perbedaan rata-rata biaya perjalanan mahasiswa antara sebelum dan sesudah adanya angkutan umum.
+
+c. **Menetapkan Wilayah Kritis dari Signifikansi**  
+   Tingkat kepercayaan 95% berarti tingkat signifikansi $\alpha = 0,05$. Karena uji dua ekor, maka wilayah penolakan berada di kedua ujung kurva dengan luas masing-masing $\alpha/2 = 0,025$.
+
+d. **Mencari Nilai Titik Kritis**  
+   Berdasarkan tabel distribusi normal standar ($Z$):
+   
+   $$Z_{kritis} = \pm 1,96$$
+
+e. **Mencari Nilai Statistik Uji**  
+   Kita menghitung nilai statistik uji $Z_{hitung}$ untuk data berpasangan:
+
+   \begin{align}
+   Z_{hitung} &= \frac{\bar{D} - \mu_{D_0}}{s_D / \sqrt{n}} \nonumber\\
+              &= \frac{5.300 - 0}{1.800 / \sqrt{35}} \nonumber\\
+              &= \frac{5.300}{1.800 / 5{,}916} \nonumber\\
+              &= \frac{5.300}{304{,}26} \nonumber\\
+              &\approx 17{,}42 (\#eq:z-hitung-biaya-perjalanan)
+   \end{align}
+
+f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**  
+   Nilai $Z_{hitung} \approx 17{,}42$ jauh lebih besar daripada $+1,96$, sehingga statistik uji **jatuh di dalam wilayah kritis** sebelah kanan.
+
+g. **Menarik Kesimpulan dan Memaknai Hasil**  
+   Karena statistik uji berada di wilayah kritis, maka kita **menolak $H_0$**. Ini berarti terdapat bukti statistik yang sangat kuat untuk menyatakan bahwa ada perbedaan biaya perjalanan mahasiswa yang signifikan setelah pemberlakuan sistem angkutan umum kampus.
+
+**Interpretasi ke dalam bidang PWK:** Penurunan biaya perjalanan yang signifikan menunjukkan bahwa penyediaan infrastruktur transportasi umum yang terintegrasi di kawasan pendidikan efektif dalam meningkatkan efisiensi ekonomi bagi pengguna. Dalam perencanaan wilayah, keberhasilan ini dapat menjadi dasar untuk memperluas jangkauan layanan angkutan umum guna mendorong pergeseran moda (*modal shift*) dari kendaraan pribadi ke transportasi publik yang lebih berkelanjutan.
+:::
 
 ## Uji Hipotesis Parameter Lebih dari Dua Populasi
 
-Digunakan untuk lebih dari dua kelompok sampel. Contoh: Membandingkan rata-rata pendapatan warga di Kota A, Kota B, dan Kota C.
+Selanjutnya, untuk kasus lebih dari dua populasi, konsep dasarnya **sama seperti pada kasus dua populasi yang tidak saling berhubungan (independen)**. Perbedaannya terletak pada **jumlah populasi yang dibandingkan, yaitu lebih dari dua** dan **parameter yang dapat diujikan hanyalah rata-rata**.
 
-Hipotesis:
-*   $H_0: \mu_A = \mu_B = \mu_C$
-*   $H_1: \mu_A \ne \mu_B \ne \mu_C$
+Selain itu, dalam pengujian ini tidak ada istilah "bentuk hipotesis alternatif", karena bentuk hipotesis alternatif dalam pengujian ini hanyalah "ada perbedaan".
+
+### Hipotesis Kosong dan Alternatif
+
+Bentuk hipotesis kosong dari uji hipoteis parameter lebih dari dua populasi adalah "tidak ada perbedaan rata-rata dalam populasi-populasi yang dibandingkan".
+
+$$
+H_0: \mu_A = \mu_B = \mu_C = ...
+$$
+
+Sementara itu, bentuk hipotesis alternatifnya hanyalah "salah satu atau lebih dari dua populasi memiliki rata-rata yang berbeda". Hal ini mengakibatkan tidak ada bentuk pernyataan hipotesis alternatif yang spesifik.
+
+### Konsep *Analysis of Variance* (ANOVA)
+
+Pengujian hipotesis parameter lebih dari dua populasi menggunakan teknik yang disebut **ANOVA (Analysis of Variance)**. ANOVA merupakan metode statistik inferensial yang dirancang khusus **untuk membandingkan rata-rata dari lebih dari dua populasi atau kelompok**.
+
+Teknik ini digunakan untuk menentukan, berdasarkan satu variabel metrik (interval-rasio), apakah sampel-sampel berasal dari populasi yang memiliki rata-rata yang sama.
+
+Secara konsep, ANOVA membandingkan **variasi antar kelompok** (*between-group variance*) dengan **variasi di dalam kelompok** (*within-group variance*) untuk menilai apakah perbedaan rata-rata yang muncul bersifat signifikan secara statistik atau hanya terjadi karena faktor kebetulan (*random error*).
+
+### Langkah Pengujian Hipotesis dengan ANOVA
+
+
 
 ::: rmdexercise
 ## Soal Evaluasi 9 {.unnumbered}
