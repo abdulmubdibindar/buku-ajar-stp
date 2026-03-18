@@ -1,0 +1,130 @@
+=== ITERA columns ===
+kampus
+nomor.urut
+jenis.kelamin
+usia
+fakultas
+prodi
+tingkat.semester
+uang.saku
+jumlah.mobil
+jumlah.motor
+jumlah.sepeda
+kendaraan.utama
+jenis.tempat.tinggal
+alamat
+alasan.lokasi
+jarak.km
+biaya.dalam.ribu2
+jumlah.perjalanan.senin
+Jumlah.perjalanan.Selasa
+Jumlah.perjalanan.Rabu
+Jumlah.perjalanan.Kamis
+Jumlah.perjalanan.Jumat
+Jumlah.perjalanan.Sabtu
+Jumlah.perjalanan.Ahad 
+
+=== UNILA columns ===
+kampus
+nomor.urut
+usia
+jenis.kelamin
+fakultas
+prodi
+tingkat.semester
+uang.saku
+jumlah.mobil
+Jumlah.motor
+jumlah.sepeda
+kendaraan.utama
+Jenis.Tempat.Tinggal
+Alamat
+alasan.lokasi
+biaya.dalam.ribu2
+jarak.km
+Jumlah.Perjalanan.Senin
+jumlah.perjalanan.selasa
+jumlah.perjalanan.rabu
+jumlah.perjalanan.kamis
+jumlah.perjalanan.jumat
+jumlah.perjalanan.sabtu
+jumlah.perjalanan.minggu 
+
+=== UBL columns ===
+kampus
+nomor.urut
+jenis.kelamin
+usia
+fakultas
+prodi
+tingkat.semester
+uang.saku
+jumlah.mobil
+jumlah.motor
+jumlah.sepeda
+kendaraan.utama
+jenis.tempat.tinggal
+alamat
+jarak.km
+alasan.lokasi
+jumlah.perjalanan.senin
+jumlah.perjalanan.selasa
+jumlah.perjalanan.rabu
+jumlah.perjalanan.kamis
+jumlah.perjalanan.jumat
+jumlah.perjalanan.sabtu
+jumlah.perjalanan.minggu
+biaya.dalam.ribu 
+
+=== UINRIL columns ===
+kampus
+nomor.urut
+jenis.kelamin
+usia
+fakultas
+prodi
+tingkat.semester
+uang.saku
+jumlah.mobil
+jumlah.motor
+jumlah.sepeda
+kendaraan.utama
+jenis.tempat.tinggal
+alamat
+alasan.lokasi
+jarak.km
+biaya.dalam.ribu2
+Jumlah.Perjalanan.Senin
+jumlah.perjalanan.selasa
+jumlah.perjalanan.rabu
+jumlah.perjalanan.kamis
+jumlah.perjalanan.jumat
+jumlah.perjalanan.sabtu
+jumlah.perjalanan.minggu 
+
+=== ITERA jarak.km stats ===
+N= 428 
+Mean= 5.009 
+SD= 2.817 
+
+=== UNILA jarak.km stats ===
+N= 394 
+Mean= 2.783 
+SD= 2.536 
+
+=== UBL jarak.km stats ===
+N= 378 
+Mean= 3.372 
+SD= 3.738 
+
+=== UINRIL jarak.km stats ===
+N= 400 
+Mean= 3.215 
+SD= 3.739 
+
+=== ITERA waktu.tempuh check ===
+ 
+
+=== UNILA waktu.tempuh check ===
+ 
+

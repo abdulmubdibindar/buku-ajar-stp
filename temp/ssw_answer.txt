@@ -1,0 +1,174 @@
+Continuing conversation 
+57cb047a...
+Answer:
+**Menghitung *Sum of 
+Squares Within* (SSW) 
+dalam Analisis Varians**
+
+Dalam prosedur Analisis 
+Varians (ANOVA), variasi 
+total dari seluruh skor 
+dibagi menjadi dua 
+komponen utama [1]. 
+Komponen pertama 
+mencerminkan pola variasi 
+di dalam masing-masing 
+kategori, yang disebut 
+sebagai *Sum of Squares 
+Within* (SSW) [1]. 
+Komponen kedua didasarkan 
+pada variasi antar 
+kategori, yang disebut 
+sebagai *Sum of Squares 
+Between* (SSB) [1]. 
+Hubungan antara kedua 
+komponen ini dengan 
+variasi total (*Total Sum 
+of Squares* atau SST) 
+dinyatakan dalam persamaan
+matematika dasar ANOVA, 
+yaitu bahwa total variasi 
+adalah hasil penjumlahan 
+variasi antar kategori dan
+variasi di dalam kategori 
+[2].
+
+Secara matematis, 
+persamaan dasarnya adalah:
+
+$$SST = SSB + SSW$$ [2]
+
+Melalui penyesuaian 
+aljabar secara sederhana, 
+persamaan di atas dapat 
+disusun ulang untuk 
+menemukan nilai SSW dengan
+cara pengurangan [3]. Oleh
+karena itu, formula 
+operasional untuk 
+menghitung SSW adalah:
+
+$$SSW = SST - SSB$$ [3]
+
+**Penjelasan 
+Komponen-Komponen 
+Pembentuk**
+
+Untuk mendapatkan nilai 
+SSW, dua komponen yang 
+harus dihitung terlebih 
+dahulu adalah SST dan SSB.
+
+1. **SST (*Total Sum of 
+Squares*)**
+SST merupakan ukuran total
+variasi dari seluruh skor 
+data [4]. Formula untuk 
+SST adalah:
+
+$$SST = \sum X^2 - 
+N\bar{X}^2$$ [4]
+
+Keterangan komponen:
+* $\sum X^2$: Jumlah dari 
+kuadrat masing-masing skor
+observasi [4].
+* $N$: Jumlah total kasus 
+atau observasi dalam 
+sampel [4].
+* $\bar{X}$: Rata-rata 
+dari keseluruhan skor 
+observasi (*grand mean*) 
+[4].
+
+2. **SSB (*Sum of Squares 
+Between*)**
+SSB adalah ukuran variasi 
+yang terjadi di antara 
+kategori-kategori kelompok
+yang dianalisis [1]. 
+Formula untuk SSB adalah:
+
+$$SSB = \sum N_i(\bar{X}_i
+- \bar{X})^2$$ [2]
+
+Keterangan komponen:
+* $N_i$: Jumlah kasus atau
+observasi yang ada di 
+dalam suatu kategori 
+tertentu [5].
+* $\bar{X}_i$: Rata-rata 
+skor dari kategori 
+tersebut [5].
+* $\bar{X}$: Rata-rata 
+keseluruhan dari seluruh 
+skor [5].
+
+**Langkah-Langkah 
+Perhitungan**
+
+Proses komputasi untuk 
+mendapatkan nilai SSW 
+dilakukan melalui 
+rangkaian langkah 
+sistematis berikut:
+
+*Langkah 1: Menghitung 
+nilai SST*
+Pertama, kuadratkan setiap
+skor secara individual, 
+kemudian jumlahkan seluruh
+skor yang telah 
+dikuadratkan tersebut [6].
+Kedua, hitung kuadrat dari
+nilai rata-rata 
+keseluruhan ($\bar{X}^2$),
+lalu kalikan nilai 
+tersebut dengan jumlah 
+total observasi ($N$) [6].
+Terakhir, kurangkan hasil 
+perkalian ini dari jumlah 
+kuadrat skor yang 
+diperoleh pada tahap 
+pertama untuk mendapatkan 
+nilai akhir SST [6].
+
+*Langkah 2: Menghitung 
+nilai SSB*
+Untuk setiap kategori, 
+kurangkan rata-rata 
+keseluruhan ($\bar{X}$) 
+dari rata-rata kategori 
+($\bar{X}_i$) untuk 
+mendapatkan nilai selisih 
+atau deviasi, lalu 
+kuadratkan setiap deviasi 
+tersebut [6]. Selanjutnya,
+kalikan setiap deviasi 
+yang telah dikuadratkan 
+dengan jumlah kasus di 
+dalam kategori yang 
+bersangkutan ($N_i$) [6]. 
+Jumlahkan semua hasil 
+perkalian tersebut pada 
+seluruh kategori yang ada 
+guna mendapatkan nilai 
+total SSB [6].
+
+*Langkah 3: Menghitung 
+nilai SSW*
+Setelah nilai total 
+variasi (SST) dan variasi 
+antar kategori (SSB) 
+berhasil dihitung, langkah
+terakhir adalah 
+mengurangkan nilai SSB 
+dari nilai SST [7]. 
+Selisih dari pengurangan 
+inilah yang menghasilkan 
+nilai *Sum of Squares 
+Within* (SSW) [7].
+
+Resumed conversation: 
+57cb047a-3bda-41aa-bd7e-a0
+8861dc864d
