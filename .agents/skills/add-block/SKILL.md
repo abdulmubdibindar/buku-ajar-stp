@@ -18,30 +18,37 @@ Follow these instructions when asked to add a custom block to an R Markdown docu
 ## Formatting the Block Container
 
 ### Titles and Headings
+
 - Inside each container (such as `rmdnote` or `rmdkasus`), format the first line of the container such that it becomes the appropriate heading for the title.
 - Use `{.unnumbered}` at the end of the title of each block.
-- For `rmdkasus` (cases), use a 3rd-level heading (`###`), and begin the title with "Studi Kasus: ". Modify details for the title based on the context of the case. 
+- For `rmdkasus` (cases), use a 3rd-level heading (`###`), and begin the title with "Studi Kasus: ". Modify details for the title based on the context of the case.
 - For `rmdnote` (notes), use a 3rd-level heading (`###`), and begin the title with "Catatan: ".
 - For `rmdexercise` (exercises), use a 2nd-level heading (`##`).
 
 ### Exercises (`rmdexercise`)
+
 - Add learning outcome code provided by `rmdcapaian` for each problem sentence.
-- Add a sequential number that spans across all parts of the module. Be aware of the current order of the numbering.
+- Use "Soal Evaluasi" in the beginning, followed by a sequential number that spans across all parts of the module. Be aware of the current order of the numbering.
 
 ### Cases (`rmdkasus`)
+
 - Prioritize using datasets in the `datasets` folder as the foundation of the case.
+- Use "Studi Kasus: " followed by appropriate title of the case.
 - Prefer simpler, more concise, and more efficient language use.
 
 ## General R Markdown Formatting
 
 ### Text and Numbers
+
 - Use `,` for decimal and `.` for thousand separator.
 
 ### Code Chunks
+
 - Use single apostrophe for naming strings.
 - Use `|>` for the pipe operator.
 
 ### Images
+
 1. Create chunk id with "-" as separator, e.g. `fig-proses-perencanaan-rasional`.
 2. Use `knitr::include_graphics()` to include images.
 3. Use `out.width = '60%'` and `fig.align = "center"` to control image size and alignment.
@@ -50,10 +57,12 @@ Follow these instructions when asked to add a custom block to an R Markdown docu
 6. For data viz, use `ggplot2` mainly to construct the diagrams.
 
 ### Tables
+
 1. Use function `kbl` to create tables.
 2. Use `kable_styling` to style tables.
 3. Use similar styling as in Images from number 3--5.
 4. Use `dplyr` package mainly to process dataset.
 
 ### Equations
+
 - Follow how to format equations from `@guides/equation_guide.md`.

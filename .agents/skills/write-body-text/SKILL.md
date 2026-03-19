@@ -47,3 +47,17 @@ Whenever you write, rewrite, or edit the body text for this educational project,
     - Paris
     - Magelang
     ```
+
+## 5. Procedural Step Numbering
+
+- **Alphabetical Steps**: Use lowercase alphabetical bullets (`a.`, `b.`, `c.`, etc.) for sequential steps in a process (e.g., hypothesis testing procedures).
+- **Bolded Step Titles**: Start each numbered step with a bolded title (`**Judul Langkah**`) followed by the explanation.
+- **Nested Content**: Explanations can include multiple paragraphs, lists, or even R code chunks (for visualizations) while maintaining the indentation of the alphabetical bullet.
+- **Example**:
+  ```markdown
+  a. **Menyatakan Asumsi Awal**  
+     Pengujian ini mensyaratkan bahwa kelompok data observasi mahasiswa ITERA dan UNILA adalah **independen** satu sama lain.
+  
+  b. **Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**
+     Dalam kasus ini, kita akan menguji apakah rata-rata waktu tempuh mahasiswa...
+  ```
