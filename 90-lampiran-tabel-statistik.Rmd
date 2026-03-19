@@ -1,0 +1,254 @@
+# (APPENDIX) Lampiran {-}
+
+# Tabel Statistik {.unnumbered}
+
+## Tabel Distribusi Normal Standar (Z) {.unnumbered} {#appendix-tabel-normdist}
+
+Tabel berikut menyajikan luas area di bawah kurva distribusi normal standar dari $Z = 0$ hingga nilai $Z$ tertentu, yaitu $P(0 \leq Z \leq z)$.
+
+```{r fig-ilustrasi-z-table, echo=FALSE, fig.align='center', out.width='45%', fig.cap='Luas area yang dicari pada Tabel Distribusi Normal Standar: $P(0 \\leq Z \\leq z)$'}
+library(ggplot2)
+
+x <- seq(-3.5, 3.5, length.out = 500)
+d <- data.frame(x = x, y = dnorm(x))
+z_ex <- 1.5
+
+ggplot(d, aes(x, y)) +
+  geom_area(
+    data = subset(d, x >= 0 & x <= z_ex),
+    aes(y = y), fill = '#2980b9', alpha = 0.75
+  ) +
+  geom_area(
+    data = subset(d, x < 0 | x > z_ex),
+    aes(y = y), fill = '#bdc3c7', alpha = 0.4
+  ) +
+  geom_line(linewidth = 0.9, color = '#2c3e50') +
+  geom_vline(xintercept = 0, linetype = 'dashed', color = '#7f8c8d', linewidth = 0.5) +
+  geom_vline(xintercept = z_ex, linetype = 'dashed', color = '#2980b9', linewidth = 0.7) +
+  annotate('text', x = 0.75, y = 0.12,
+           label = 'P(0 \u2264 Z \u2264 z)', parse = FALSE,
+           color = '#1a5276', size = 3.5, fontface = 'bold') +
+  annotate('text', x = z_ex, y = -0.018,
+           label = 'z', parse = TRUE,
+           color = '#2980b9', size = 4) +
+  annotate('text', x = 0, y = -0.018,
+           label = '0', parse = FALSE,
+           color = '#7f8c8d', size = 4) +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL, expand = expansion(mult = c(0.08, 0.05))) +
+  labs(x = 'Nilai Z', y = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(
+    panel.grid  = element_blank(),
+    axis.line.x = element_line(color = '#2c3e50', linewidth = 0.5)
+  )
+```
+
+```{r tab-distribusi-z, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(kableExtra)
+
+# Z rows: 0.0 to 3.4 in steps of 0.1
+# Z cols: second decimal 0.00 to 0.09
+z_rows <- seq(0.0, 3.4, by = 0.1)
+z_cols <- seq(0.00, 0.09, by = 0.01)
+
+fmt_z <- function(val) formatC(val, digits = 4, format = 'f', decimal.mark = ',')
+
+mat_z <- outer(z_rows, z_cols, function(r, c) {
+  fmt_z(pnorm(r + c) - pnorm(0))
+})
+
+tbl_z <- as.data.frame(mat_z)
+colnames(tbl_z) <- formatC(z_cols, digits = 2, format = 'f', decimal.mark = ',')
+tbl_z <- cbind(
+  `z` = formatC(z_rows, digits = 1, format = 'f', decimal.mark = ','),
+  tbl_z
+)
+
+tbl_z |>
+  kbl(
+    caption  = 'Tabel Distribusi Normal Standar $P(0 \\leq Z \\leq z)$',
+    align    = c('c', rep('c', length(z_cols))),
+    escape   = FALSE,
+    booktabs = TRUE
+  ) |>
+  kable_styling(
+    full_width        = FALSE,
+    bootstrap_options = c('striped', 'hover', 'condensed'),
+    latex_options     = c('scale_down', 'HOLD_position')
+  ) |>
+  add_header_above(
+    c(' ' = 1, 'Desimal kedua nilai z' = length(z_cols))
+  ) |>
+  column_spec(1, bold = TRUE) |>
+  scroll_box(width = '100%', height = '450px')
+```
+
+\FloatBarrier
+
+## Tabel Distribusi F ($\alpha = 10\%$) {.unnumbered} {#appendix-tabel-f-5}
+
+Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 10\%$, yaitu nilai $F$ yang membatasi luas area sebesar 10% di ekor kanan distribusi F, $P(F > F_{tabel}) = 0{,}10$.
+
+```{r fig-ilustrasi-f-table-10, echo=FALSE, fig.align='center', out.width='45%', fig.cap='Luas area yang dicari pada Tabel Distribusi F ($\\alpha = 10\\%$): $P(F > F_{tabel}) = 0{,}10$'}
+library(ggplot2)
+
+df1 <- 5; df2 <- 20; alpha <- 0.10
+f_kritis <- qf(1 - alpha, df1, df2)
+
+x <- seq(0, 6, length.out = 500)
+d <- data.frame(x = x, y = df(x, df1, df2))
+
+ggplot(d, aes(x, y)) +
+  geom_area(
+    data = subset(d, x >= f_kritis),
+    aes(y = y), fill = '#e74c3c', alpha = 0.8
+  ) +
+  geom_area(
+    data = subset(d, x < f_kritis),
+    aes(y = y), fill = '#bdc3c7', alpha = 0.4
+  ) +
+  geom_line(linewidth = 0.9, color = '#2c3e50') +
+  geom_vline(
+    xintercept = f_kritis,
+    linetype = 'dashed', color = '#e74c3c', linewidth = 0.7
+  ) +
+  annotate('text', x = f_kritis + 1, y = 0.06,
+           label = 'alpha == 0.10', parse = TRUE,
+           color = '#c0392b', size = 3.5, fontface = 'bold') +
+  annotate('text', x = 1.3, y = 0.15,
+           label = '1 - alpha == 0.90', parse = TRUE,
+           color = '#7f8c8d', size = 3.2) +
+  annotate('text', x = f_kritis, y = -0.018,
+           label = 'F[tabel]', parse = TRUE,
+           color = '#c0392b', size = 3.5) +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL, expand = expansion(mult = c(0.08, 0.05))) +
+  labs(x = 'Nilai F', y = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(
+    panel.grid  = element_blank(),
+    axis.line.x = element_line(color = '#2c3e50', linewidth = 0.5)
+  )
+```
+
+```{r tab-distribusi-f-10persen, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(kableExtra)
+
+dfb_vals <- c(1:30, 40, 60, 120, 1000)
+dfw_vals <- c(1:30, 40, 60, 120, 1000)
+lbl      <- c(as.character(1:30), '40', '60', '120', '\u221e')
+
+fmt_f <- function(x) formatC(x, digits = 2, format = 'f', decimal.mark = ',')
+
+mat_f10 <- outer(dfw_vals, dfb_vals, function(dfw, dfb) {
+  fmt_f(qf(0.90, dfb, dfw))
+})
+
+tbl_f10 <- as.data.frame(mat_f10)
+colnames(tbl_f10) <- lbl
+tbl_f10 <- cbind(`dfw` = lbl, tbl_f10)
+
+tbl_f10 |>
+  kbl(
+    caption  = 'Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 10\\%$',
+    align    = c('c', rep('c', length(dfb_vals))),
+    escape   = FALSE,
+    booktabs = TRUE
+  ) |>
+  kable_styling(
+    full_width        = FALSE,
+    bootstrap_options = c('striped', 'hover', 'condensed'),
+    latex_options     = c('scale_down', 'HOLD_position'),
+    font_size         = 10
+  ) |>
+  add_header_above(c(' ' = 1, 'dfb' = length(dfb_vals))) |>
+  column_spec(1, bold = TRUE) |>
+  scroll_box(width = '100%', height = '450px')
+```
+
+\FloatBarrier
+
+## Tabel Distribusi F ($\alpha = 5\%$) {.unnumbered} {#appendix-tabel-f-10}
+
+Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 5\%$, yaitu nilai $F$ yang membatasi luas area sebesar 5% di ekor kanan distribusi F, $P(F > F_{tabel}) = 0{,}05$.
+
+```{r fig-ilustrasi-f-table-05, echo=FALSE, fig.align='center', out.width='45%', fig.cap='Luas area yang dicari pada Tabel Distribusi F ($\\alpha = 5\\%$): $P(F > F_{tabel}) = 0{,}05$'}
+library(ggplot2)
+
+df1 <- 5; df2 <- 20; alpha <- 0.05
+f_kritis <- qf(1 - alpha, df1, df2)
+
+x <- seq(0, 6, length.out = 500)
+d <- data.frame(x = x, y = df(x, df1, df2))
+
+ggplot(d, aes(x, y)) +
+  geom_area(
+    data = subset(d, x >= f_kritis),
+    aes(y = y), fill = '#e74c3c', alpha = 0.8
+  ) +
+  geom_area(
+    data = subset(d, x < f_kritis),
+    aes(y = y), fill = '#bdc3c7', alpha = 0.4
+  ) +
+  geom_line(linewidth = 0.9, color = '#2c3e50') +
+  geom_vline(
+    xintercept = f_kritis,
+    linetype = 'dashed', color = '#e74c3c', linewidth = 0.7
+  ) +
+  annotate('text', x = f_kritis + 1, y = 0.06,
+           label = 'alpha == 0.05', parse = TRUE,
+           color = '#c0392b', size = 3.5, fontface = 'bold') +
+  annotate('text', x = 1.3, y = 0.15,
+           label = '1 - alpha == 0.95', parse = TRUE,
+           color = '#7f8c8d', size = 3.2) +
+  annotate('text', x = f_kritis, y = -0.018,
+           label = 'F[tabel]', parse = TRUE,
+           color = '#c0392b', size = 3.5) +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL, expand = expansion(mult = c(0.08, 0.05))) +
+  labs(x = 'Nilai F', y = NULL) +
+  theme_minimal(base_size = 11) +
+  theme(
+    panel.grid  = element_blank(),
+    axis.line.x = element_line(color = '#2c3e50', linewidth = 0.5)
+  )
+```
+
+```{r tab-distribusi-f-5persen-lampiran, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(kableExtra)
+
+dfb_vals <- c(1:30, 40, 60, 120, 1000)
+dfw_vals <- c(1:30, 40, 60, 120, 1000)
+lbl      <- c(as.character(1:30), '40', '60', '120', '\u221e')
+
+fmt_f <- function(x) formatC(x, digits = 2, format = 'f', decimal.mark = ',')
+
+mat_f05 <- outer(dfw_vals, dfb_vals, function(dfw, dfb) {
+  fmt_f(qf(0.95, dfb, dfw))
+})
+
+tbl_f05 <- as.data.frame(mat_f05)
+colnames(tbl_f05) <- lbl
+tbl_f05 <- cbind(`dfw` = lbl, tbl_f05)
+
+tbl_f05 |>
+  kbl(
+    caption  = 'Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 5\\%$',
+    align    = c('c', rep('c', length(dfb_vals))),
+    escape   = FALSE,
+    booktabs = TRUE
+  ) |>
+  kable_styling(
+    full_width        = FALSE,
+    bootstrap_options = c('striped', 'hover', 'condensed'),
+    latex_options     = c('scale_down', 'HOLD_position'),
+    font_size         = 10
+  ) |>
+  add_header_above(c(' ' = 1, 'dfb' = length(dfb_vals))) |>
+  column_spec(1, bold = TRUE) |>
+  scroll_box(width = '100%', height = '450px')
+```
