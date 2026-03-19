@@ -13,8 +13,7 @@ rmd_files:
   - 05-pengantar-inferensial.Rmd
   - 06-estimasi-parameter.Rmd
   - 07-uji-hipotesis-satu-populasi.Rmd
-  - 08-uji-hipotesis-dua-populasi.Rmd
-  - 09-uji-hipotesis-lebih-dua-populasi.Rmd
+  - 08-uji-hipotesis-dua-dan-lebih-populasi.Rmd
   - 10-korelasi-nominal.Rmd
   - 11-korelasi-ordinal.Rmd
   - 12-korelasi-metrik.Rmd
@@ -22,4 +21,4 @@ rmd_files:
   - 14-regresi-berganda.Rmd
   - 15-multivariat-interdependensi.Rmd
   - 89-referensi.Rmd
-  - 90-lampiran-tabel-statistik.Rmd
+  - 90-lampiran-tabel-statistik.Rmd
