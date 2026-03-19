@@ -230,7 +230,7 @@ Pelajari kasus yang berisi perbandingan antara data yang tidak rapi dan data yan
 
 Berikut adalah beberapa contoh kesalahan umum dalam struktur data dan perbaikannya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> Jenis Kesalahan </th>
@@ -265,7 +265,7 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-eleme
 
 Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:left;"> ID_rumah </th>
@@ -281,28 +281,28 @@ Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian
    <td style="text-align:right;width: 40%; "> 55 </td>
    <td style="text-align:right;width: 40%; "> 2 </td>
    <td style="text-align:right;"> 101 </td>
-   <td style="text-align:right;"> 3.3 </td>
+   <td style="text-align:right;"> 3,3 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 20%; font-weight: bold;"> 002 </td>
    <td style="text-align:right;width: 40%; "> 64 </td>
    <td style="text-align:right;width: 40%; "> 5 </td>
    <td style="text-align:right;"> 245 </td>
-   <td style="text-align:right;"> 6.0 </td>
+   <td style="text-align:right;"> 6,0 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 20%; font-weight: bold;"> 003 </td>
    <td style="text-align:right;width: 40%; "> 33 </td>
    <td style="text-align:right;width: 40%; "> 7 </td>
    <td style="text-align:right;"> 69 </td>
-   <td style="text-align:right;"> 3.5 </td>
+   <td style="text-align:right;"> 3,5 </td>
   </tr>
   <tr>
    <td style="text-align:left;width: 20%; font-weight: bold;"> 004 </td>
    <td style="text-align:right;width: 40%; "> 28 </td>
    <td style="text-align:right;width: 40%; "> 2 </td>
    <td style="text-align:right;"> 44 </td>
-   <td style="text-align:right;"> 27.0 </td>
+   <td style="text-align:right;"> 27,0 </td>
   </tr>
 </tbody>
 </table>
@@ -398,7 +398,7 @@ Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilka
 
 Melanjutkan kasus pengumpulan data pergerakan mahasiswa ITERA dari bab sebelumnya, setelah merumuskan pertanyaan penelitian mengenai keberlanjutan pola pergerakan, kita perlu menentukan variabel yang akan diukur. Berikut adalah variabel-variabel tersebut beserta penjelasannya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-rancangan-metadata)Penelaahan tingkat pengukuran variabel penelitian</caption>
  <thead>
   <tr>
@@ -433,7 +433,7 @@ Melanjutkan kasus pengumpulan data pergerakan mahasiswa ITERA dari bab sebelumny
 
 Setelah menelaah jenis nilai dan tingkat pengukuran variabel, kita perlu menspesifikasikan nilai isian beserta satuannya. Jika menggunakan kodifikasi, aturannya harus diperjelas. Spesifikasi ini disebut **metadata**, yaitu data yang menjelaskan tentang data.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-metadata)Metadata variabel penelitian</caption>
  <thead>
   <tr>
@@ -482,7 +482,7 @@ Kita sudah menentukan nilai dari telaahan variabel-variabel yang sudah kita buat
 
 Kita bisa mengubah tingkat pengukuran variabel dari satu tingkat ke lainnya. Misalnya, kita bisa mengubah tingkat pengukuran variabel `jarak` dari metrik (rasio) menjadi ordinal. Karena tingkat pengukuran variabel metrik adalah angka, untuk mengubahnya menjadi ordinal maka kita perlu mengubahnya menjadi kategorikal. Artinya, kita perlu membuat kategori baru dari variabel `jarak` tersebut.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-ubah-tingkat-pengukuran)Metadata variabel penelitian yang diubah</caption>
  <thead>
   <tr>
@@ -534,7 +534,7 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang tingkat peng
 
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-eval-3-preview)Cuplikan data survei mahasiswa</caption>
  <thead>
   <tr>
@@ -553,7 +553,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 2020 </td>
    <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 19.27 </td>
+   <td style="text-align:center;"> 19,27 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 002 </td>
@@ -561,7 +561,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 2020 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.58 </td>
+   <td style="text-align:center;"> 0,58 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 003 </td>
@@ -569,7 +569,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 2021 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.56 </td>
+   <td style="text-align:center;"> 0,56 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 004 </td>
@@ -577,7 +577,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> 2022 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.05 </td>
+   <td style="text-align:center;"> 1,05 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 005 </td>
@@ -585,7 +585,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 2021 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.69 </td>
+   <td style="text-align:center;"> 1,69 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 006 </td>
@@ -593,14 +593,14 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 2020 </td>
    <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 1.37 </td>
+   <td style="text-align:center;"> 1,37 </td>
   </tr>
 </tbody>
 </table>
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-2-eval-3-metadata)Metadata variabel survei mahasiswa</caption>
  <thead>
   <tr>
@@ -702,7 +702,7 @@ Sekarang kita akan membahas teknik analisis statistik dalam set data (dataset) m
 
 Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta metadatanya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kasus-dataset)Contoh Set Data Hasil Kuesioner</caption>
  <thead>
   <tr>
@@ -719,7 +719,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
    <td style="text-align:center;"> 117 </td>
    <td style="text-align:center;"> 5 </td>
    <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 2.34 </td>
+   <td style="text-align:center;"> 2,34 </td>
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> 0 </td>
   </tr>
@@ -727,7 +727,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
    <td style="text-align:center;"> 118 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 2.66 </td>
+   <td style="text-align:center;"> 2,66 </td>
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 40 </td>
   </tr>
@@ -735,7 +735,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
    <td style="text-align:center;"> 119 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 3.84 </td>
+   <td style="text-align:center;"> 3,84 </td>
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 30 </td>
   </tr>
@@ -743,7 +743,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
    <td style="text-align:center;"> 120 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 3.64 </td>
+   <td style="text-align:center;"> 3,64 </td>
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> 40 </td>
   </tr>
@@ -751,7 +751,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
    <td style="text-align:center;"> 121 </td>
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 3.17 </td>
+   <td style="text-align:center;"> 3,17 </td>
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 45 </td>
   </tr>
@@ -759,7 +759,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
    <td style="text-align:center;"> 138 </td>
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 3.84 </td>
+   <td style="text-align:center;"> 3,84 </td>
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> 15 </td>
   </tr>
@@ -767,7 +767,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
    <td style="text-align:center;"> 139 </td>
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 3.84 </td>
+   <td style="text-align:center;"> 3,84 </td>
    <td style="text-align:center;"> 4 </td>
    <td style="text-align:center;"> 60 </td>
   </tr>
@@ -775,7 +775,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
    <td style="text-align:center;"> 161 </td>
    <td style="text-align:center;"> 5 </td>
    <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 3.52 </td>
+   <td style="text-align:center;"> 3,52 </td>
    <td style="text-align:center;"> 4 </td>
    <td style="text-align:center;"> 0 </td>
   </tr>
@@ -784,7 +784,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
 
 **Metadata:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kasus-metadata)Metadata Variabel</caption>
  <thead>
   <tr>
@@ -822,7 +822,7 @@ Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta met
 
 Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nominal atau ordinal), seperti `kend` dan `tingkat`. Untuk dapat menghitung analisis ini kita harus membuat terlebih dahulu tabel frekuensi untuk kedua variabel ini. Kemudian, barulah kita dapat menghitung frekuensi relatifnya menggunakan Persamaan \@ref(eq:konsep-frekuensi-relatif)
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-tabel-frekuensi-kend)Tabel Distribusi Frekuensi Untuk Variabel `kend`</caption>
  <thead>
   <tr>
@@ -837,48 +837,48 @@ Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nom
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> Sepeda motor pribadi </td>
    <td style="text-align:center;"> 4 </td>
-   <td style="text-align:center;"> 0.50 </td>
+   <td style="text-align:center;"> 0,50 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> Mobil pribadi </td>
    <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.00 </td>
+   <td style="text-align:center;"> 0,00 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> Layanan online </td>
    <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.25 </td>
+   <td style="text-align:center;"> 0,25 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 4 </td>
    <td style="text-align:center;"> Menumpang kawan </td>
    <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.00 </td>
+   <td style="text-align:center;"> 0,00 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 5 </td>
    <td style="text-align:center;"> Sepeda </td>
    <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.25 </td>
+   <td style="text-align:center;"> 0,25 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 6 </td>
    <td style="text-align:center;"> Berjalan kaki </td>
    <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.00 </td>
+   <td style="text-align:center;"> 0,00 </td>
   </tr>
   <tr>
    <td style="text-align:center;font-weight: bold;"> Total </td>
    <td style="text-align:center;font-weight: bold;">  </td>
    <td style="text-align:center;font-weight: bold;"> 8 </td>
-   <td style="text-align:center;font-weight: bold;"> 1.00 </td>
+   <td style="text-align:center;font-weight: bold;"> 1,00 </td>
   </tr>
 </tbody>
 </table>
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-tabel-frekuensi-tingkat)Tabel Distribusi Frekuensi Untuk Variabel `tingkat`</caption>
  <thead>
   <tr>
@@ -893,37 +893,37 @@ Ukuran frekuensi dapat dilakukan pada variabel kategorik (tingkat pengukuran nom
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> Tahun pertama </td>
    <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0,000 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> Tahun kedua </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.125 </td>
+   <td style="text-align:center;"> 0,125 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> Tahun ketiga </td>
    <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 0.250 </td>
+   <td style="text-align:center;"> 0,250 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 4 </td>
    <td style="text-align:center;"> Tahun keempat </td>
    <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 0.625 </td>
+   <td style="text-align:center;"> 0,625 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 5 </td>
    <td style="text-align:center;"> Swasta (tingkat akhir) </td>
    <td style="text-align:center;"> 0 </td>
-   <td style="text-align:center;"> 0.000 </td>
+   <td style="text-align:center;"> 0,000 </td>
   </tr>
   <tr>
    <td style="text-align:center;font-weight: bold;"> Total </td>
    <td style="text-align:center;font-weight: bold;">  </td>
    <td style="text-align:center;font-weight: bold;"> 8 </td>
-   <td style="text-align:center;font-weight: bold;"> 1.000 </td>
+   <td style="text-align:center;font-weight: bold;"> 1,000 </td>
   </tr>
 </tbody>
 </table>
@@ -957,7 +957,7 @@ Salah satu keunggulan persentase adalah kemampuannya untuk membandingkan dominan
 
 Berdasarkan survei pola mobilitas mahasiswa, diperoleh data sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-perbandingan-kampus)Data Pengguna Sepeda Motor Pribadi di ITERA dan UBL</caption>
  <thead>
   <tr>
@@ -999,7 +999,7 @@ $$
 \text{Persentase sepeda motor UBL} = \frac{195}{380} \times 100\% = 51,3\%
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-hasil-perbandingan)Perbandingan Proporsi dan Persentase Pengguna Sepeda Motor</caption>
  <thead>
   <tr>
@@ -1015,14 +1015,14 @@ $$
    <td style="text-align:center;"> ITERA </td>
    <td style="text-align:center;"> 429 </td>
    <td style="text-align:center;"> 276 </td>
-   <td style="text-align:center;"> 0.643 </td>
+   <td style="text-align:center;"> 0,643 </td>
    <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 64,3% </td>
   </tr>
   <tr>
    <td style="text-align:center;"> UBL </td>
    <td style="text-align:center;"> 380 </td>
    <td style="text-align:center;"> 195 </td>
-   <td style="text-align:center;"> 0.513 </td>
+   <td style="text-align:center;"> 0,513 </td>
    <td style="text-align:center;font-weight: bold;background-color: rgba(232, 244, 248, 255) !important;"> 51,3% </td>
   </tr>
 </tbody>
@@ -1067,7 +1067,7 @@ Misalkan kita memiliki data survei pola mobilitas mahasiswa dari tiga perguruan 
 
 **Data Tahun 2023:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-laju-2023)Data Pengguna Sepeda Motor Tahun 2023</caption>
  <thead>
   <tr>
@@ -1097,7 +1097,7 @@ Misalkan kita memiliki data survei pola mobilitas mahasiswa dari tiga perguruan 
 
 **Data Tahun 2024:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-laju-2024)Data Pengguna Sepeda Motor Tahun 2024</caption>
  <thead>
   <tr>
@@ -1198,7 +1198,7 @@ Mari kita gunakan data mahasiswa ITERA untuk menghitung rasio penggunaan kendara
 
 Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-rasio-itera)Distribusi Penggunaan Kendaraan Mahasiswa ITERA</caption>
  <thead>
   <tr>
@@ -1228,7 +1228,7 @@ Dari dataset yang berisi 429 responden mahasiswa ITERA, diperoleh distribusi seb
 
 **Detail per jenis kendaraan:**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-detail-kendaraan-itera)Detail Jenis Kendaraan yang Digunakan</caption>
  <thead>
   <tr>
@@ -1342,7 +1342,7 @@ $$
 \text{Persentase TO Periode 2} = \frac{32}{429} \times 100\% = 7,5\%
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-percentage-change)Data Penggunaan Transportasi Online di ITERA</caption>
  <thead>
   <tr>
@@ -1415,7 +1415,7 @@ $$
 
 **Sebenarnya, kenaikan pajak tersebut adalah 9,09%, bukan 1%!**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kasus-pajak)Perbandingan Interpretasi Kenaikan Pajak</caption>
  <thead>
   <tr>
@@ -1466,7 +1466,7 @@ $$
 \text{Tambahan tahunan} = \text{Rp 100.000} \times 12 = \text{Rp 1.200.000}
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-dampak-ekonomi)Dampak Kenaikan Pajak pada Penghasilan Rp 10 Juta/Bulan</caption>
  <thead>
   <tr>
@@ -1563,7 +1563,7 @@ Makna yang dihasilkan teknik analisis ini sama saja dengan *mean*, yakni **pusat
 
 Perhatikan data biaya perjalanan sepekan (ribu rupiah) dari 8 mahasiswa ITERA:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-biaya-awal)Biaya Perjalanan Sepekan (Ribu Rupiah)</caption>
  <thead>
   <tr>
@@ -1623,7 +1623,7 @@ $$
 
 Sekarang misalkan Mhs 8 memiliki biaya ekstrem Rp 500.000 (menggunakan layanan *premium*):
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-biaya-outlier)Biaya Perjalanan dengan Pencilan</caption>
  <thead>
   <tr>
@@ -1679,7 +1679,7 @@ $$
 \text{Median} = \frac{65 + 70}{2} = 67,5
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-perbandingan-mean-median)Perbandingan Mean dan Median</caption>
  <thead>
   <tr>
@@ -1732,7 +1732,7 @@ Modus sangat berguna untuk mengidentifikasi nilai yang paling umum dalam data ka
 
 Dari dataset 8 mahasiswa yang telah digunakan sebelumnya, kita dapat membuat tabel frekuensi untuk variabel `kend`:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-modus-kend)Distribusi Frekuensi Jenis Kendaraan</caption>
  <thead>
   <tr>
@@ -1768,7 +1768,7 @@ Modus untuk variabel `kend` adalah **sepeda motor pribadi** (kode 1) dengan frek
 
 Variabel ini menunjukkan berapa kali mahasiswa melakukan perjalanan di hari Senin. Mari kita buat tabel frekuensinya:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-modus-perjalanan)Distribusi Frekuensi Perjalanan di Hari Senin</caption>
  <thead>
   <tr>
@@ -1838,7 +1838,7 @@ Indeks Variasi Kualitatif (IQV) sangat berguna untuk mengukur tingkat keberagama
 
 Dari set data hasil penyebaran kuesioner yang berisi 400 mahasiswa, kita dapat membuat tabel distribusi frekuensi untuk variabel `Fakultas`:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-iqv-fakultas)Distribusi Mahasiswa UIN Raden Intan Lampung Berdasarkan Fakultas</caption>
  <thead>
   <tr>
@@ -1851,42 +1851,42 @@ Dari set data hasil penyebaran kuesioner yang berisi 400 mahasiswa, kita dapat m
   <tr>
    <td style="text-align:center;"> Ekonomi dan Bisnis Islam </td>
    <td style="text-align:center;"> 44 </td>
-   <td style="text-align:center;"> 0.110 </td>
+   <td style="text-align:center;"> 0,110 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Syariah </td>
    <td style="text-align:center;"> 118 </td>
-   <td style="text-align:center;"> 0.295 </td>
+   <td style="text-align:center;"> 0,295 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Ushuluddin dan Studi Agama </td>
    <td style="text-align:center;"> 58 </td>
-   <td style="text-align:center;"> 0.145 </td>
+   <td style="text-align:center;"> 0,145 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Dakwah dan Ilmu Komunikasi </td>
    <td style="text-align:center;"> 130 </td>
-   <td style="text-align:center;"> 0.325 </td>
+   <td style="text-align:center;"> 0,325 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Tarbiyah dan Keguruan </td>
    <td style="text-align:center;"> 15 </td>
-   <td style="text-align:center;"> 0.038 </td>
+   <td style="text-align:center;"> 0,038 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Sains dan Teknologi </td>
    <td style="text-align:center;"> 20 </td>
-   <td style="text-align:center;"> 0.050 </td>
+   <td style="text-align:center;"> 0,050 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Ilmu Sosial dan Ilmu Politik </td>
    <td style="text-align:center;"> 10 </td>
-   <td style="text-align:center;"> 0.025 </td>
+   <td style="text-align:center;"> 0,025 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> Adab </td>
    <td style="text-align:center;"> 5 </td>
-   <td style="text-align:center;"> 0.013 </td>
+   <td style="text-align:center;"> 0,013 </td>
   </tr>
 </tbody>
 </table>
@@ -1912,7 +1912,7 @@ $$
 IQV = \frac{8(1 - 0,231)}{8 - 1} = \frac{8 \times 0,769}{7} = \frac{6,152}{7} = 0,879
 $$
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-hasil-iqv)Hasil Perhitungan IQV</caption>
  <thead>
   <tr>
@@ -1960,7 +1960,7 @@ Rentang dapat digunakan untuk membandingkan tingkat keberagaman data antar kelom
 
 Berdasarkan data survei pola mobilitas mahasiswa, kita akan menganalisis variabel `biaya_perjalanan` (biaya perjalanan sepekan dalam rupiah). Perhatikan statistik deskriptif dari kedua kelompok:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-data-rentang)Perbandingan Rentang Biaya Perjalanan Sepekan Mahasiswa UIN RIL dan UNILA</caption>
  <thead>
   <tr>
@@ -2036,7 +2036,7 @@ Terdapat tiga jenis kuartil, yaitu kuartil bawah ($Q_1$), kuartil tengah ($Q_2$)
 
 Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-kuartil-unila)Nilai Kuartil Biaya Perjalanan Mahasiswa UNILA (n = 394)</caption>
  <thead>
   <tr>
@@ -2132,7 +2132,7 @@ $$
 
 **Langkah 2: Buat Tabel Perhitungan $(x_i - \bar{x})^2$**
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-simulasi-variansi)Perhitungan Selisih Kuadrat</caption>
  <thead>
 <tr>
@@ -2225,7 +2225,7 @@ Dalam bidang PWK, wilayah dengan simpangan baku pendapatan atau pengeluaran yang
 
 Pemilihan teknik analisis statistik deskriptif sangat bergantung pada tujuan analisis (apakah melihat pemusatan atau penyebaran) dan tingkat pengukuran variabel yang tersedia. Tabel \@ref(tab:rangkuman-deskriptif) merangkum berbagai teknik yang telah dipelajari beserta syarat penggunaannya.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:rangkuman-deskriptif)Rangkuman Teknik Analisis Statistik Deskriptif</caption>
  <thead>
   <tr>
@@ -2306,7 +2306,7 @@ Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap ana
 
 Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 responden berikut.
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-eval-4-preview)Cuplikan data survei mahasiswa</caption>
  <thead>
   <tr>
@@ -2325,7 +2325,7 @@ Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 res
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 2020 </td>
    <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 19.27 </td>
+   <td style="text-align:center;"> 19,27 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 002 </td>
@@ -2333,7 +2333,7 @@ Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 res
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 2020 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.58 </td>
+   <td style="text-align:center;"> 0,58 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 003 </td>
@@ -2341,7 +2341,7 @@ Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 res
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 2021 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.56 </td>
+   <td style="text-align:center;"> 0,56 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 004 </td>
@@ -2349,7 +2349,7 @@ Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 res
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> 2022 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.05 </td>
+   <td style="text-align:center;"> 1,05 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 005 </td>
@@ -2357,7 +2357,7 @@ Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 res
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 2021 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.69 </td>
+   <td style="text-align:center;"> 1,69 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 006 </td>
@@ -2365,14 +2365,14 @@ Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 res
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 2020 </td>
    <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 1.37 </td>
+   <td style="text-align:center;"> 1,37 </td>
   </tr>
 </tbody>
 </table>
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-3-eval-4-metadata)Metadata variabel survei mahasiswa</caption>
  <thead>
   <tr>
@@ -2481,7 +2481,7 @@ Untuk lebih memahami bagaimana mengubah data terstruktur menjadi grafik batang b
 
 Untuk memahami pembuatan grafik batang, kita akan menganalisis data moda transportasi mahasiswa UIN Raden Intan Lampung. Langkah pertama adalah mengubah data mentah menjadi tabel distribusi frekuensi (Tabel \@ref(tab:bab-4-diagram-batang)), baru kemudian divisualisasikan.
 
-<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-diagram-batang)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung</caption>
  <thead>
   <tr>
@@ -2529,7 +2529,7 @@ Atau dalam bentuk grafik batang mendatar (*bar chart*):
 
 Untuk **grafik batang bertumpuk**, kita memerlukan dua variabel kategorikal. Kita akan membandingkan moda transportasi berdasarkan jenis kelamin (Tabel \@ref(tab:tab-distribusi-2-var)).
 
-<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tab-distribusi-2-var)Distribusi Frekuensi Moda Transportasi Mahasiswa UIN Raden Intan Lampung berdasarkan Jenis Kelamin</caption>
  <thead>
   <tr>
@@ -2592,7 +2592,7 @@ Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data dir
 
 Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
 
-<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption>(\#tab:bab-4-distribusi-per-prodi)Distribusi Frekuensi Mahasiswa UIN Raden Intan Lampung Per Program Studi</caption>
  <thead>
   <tr>
@@ -2660,7 +2660,7 @@ Proses pembuatannya sama persis seperti dengan grafik batang bertumpuk.
 
 Treemap menggunakan luas area persegi untuk menunjukkan proporsi kategori. Seperti pada grafik batang bertumpuk, kita mulai dari tabel distribusi frekuensi dua variabel.
 
-<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tab-treemap-data)Distribusi Frekuensi Moda Transportasi berdasarkan Jenis Kelamin untuk Treemap</caption>
  <thead>
   <tr>
@@ -2746,7 +2746,7 @@ Proses pembuatannya sama seperti pembuatan grafik batang yang ditunjukkan pada k
 
 Grafik pai dan donat menggunakan juring lingkaran untuk menunjukkan proporsi kategori. Prosesnya sama dengan grafik batang, dimulai dari tabel distribusi frekuensi.
 
-<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tab-pie-data)Distribusi Frekuensi Moda Transportasi untuk Grafik Pai</caption>
  <thead>
   <tr>
@@ -2829,7 +2829,7 @@ Proses pembuatan histogram dari tabel data terstruktur diilustrasikan oleh kasus
 
 Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam interval (bin). Mari kita visualisasikan biaya perjalanan mahasiswa ITERA.
 
-<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-hist-biaya-prep)Statistik Deskriptif Biaya Perjalanan Mahasiswa ITERA (dalam ribuan rupiah)</caption>
  <thead>
   <tr>
@@ -2840,31 +2840,31 @@ Histogram menunjukkan distribusi nilai numerik dengan mengelompokkannya ke dalam
 <tbody>
   <tr>
    <td style="text-align:left;"> Min </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Q1 </td>
-   <td style="text-align:right;"> 20000.00 </td>
+   <td style="text-align:right;"> 20000,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Median </td>
-   <td style="text-align:right;"> 30000.00 </td>
+   <td style="text-align:right;"> 30000,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Mean </td>
-   <td style="text-align:right;"> 38665.89 </td>
+   <td style="text-align:right;"> 38665,89 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Q3 </td>
-   <td style="text-align:right;"> 45000.00 </td>
+   <td style="text-align:right;"> 45000,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Max </td>
-   <td style="text-align:right;"> 400000.00 </td>
+   <td style="text-align:right;"> 400000,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NA </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0,00 </td>
   </tr>
 </tbody>
 </table>
@@ -2885,7 +2885,7 @@ Kita juga dapat mengatur jumlah bin secara manual untuk melihat distribusi denga
 
 Untuk lebih memahami proses *binning*, mari kita buat tabel frekuensi manual:
 
-<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-tab-freq-manual)Tabel Frekuensi Biaya Perjalanan dalam Ribuan Rupiah (6 Interval Pertama)</caption>
  <thead>
   <tr>
@@ -2895,27 +2895,27 @@ Untuk lebih memahami proses *binning*, mari kita buat tabel frekuensi manual:
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> [0,4.44e+04] </td>
+   <td style="text-align:left;"> [0,4,44e+04] </td>
    <td style="text-align:right;"> 318 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (4.44e+04,8.89e+04] </td>
+   <td style="text-align:left;"> (4,44e+04,8,89e+04] </td>
    <td style="text-align:right;"> 80 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (8.89e+04,1.33e+05] </td>
+   <td style="text-align:left;"> (8,89e+04,1,33e+05] </td>
    <td style="text-align:right;"> 13 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (1.33e+05,1.78e+05] </td>
+   <td style="text-align:left;"> (1,33e+05,1,78e+05] </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (1.78e+05,2.22e+05] </td>
+   <td style="text-align:left;"> (1,78e+05,2,22e+05] </td>
    <td style="text-align:right;"> 7 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> (2.22e+05,2.67e+05] </td>
+   <td style="text-align:left;"> (2,22e+05,2,67e+05] </td>
    <td style="text-align:right;"> 1 </td>
   </tr>
 </tbody>
@@ -2946,7 +2946,7 @@ Setiap elemen pada boxplot memiliki makna ukuran penyebaran. Ini dijelaskan pada
 
 Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat boxplot untuk menganalisis distribusi biaya perjalanan mahasiswa dari berbagai universitas.
 
-<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-boxplot-prep)Statistik Deskriptif Biaya Perjalanan Gabungan (UINRIL &amp; UNILA)</caption>
  <thead>
   <tr>
@@ -2957,31 +2957,31 @@ Boxplot menampilkan ukuran penyebaran data numerik secara grafis. Mari kita buat
 <tbody>
   <tr>
    <td style="text-align:left;"> Min </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Q1 </td>
-   <td style="text-align:right;"> 30.00 </td>
+   <td style="text-align:right;"> 30,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Median </td>
-   <td style="text-align:right;"> 50.00 </td>
+   <td style="text-align:right;"> 50,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Mean </td>
-   <td style="text-align:right;"> 56.54 </td>
+   <td style="text-align:right;"> 56,54 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Q3 </td>
-   <td style="text-align:right;"> 65.00 </td>
+   <td style="text-align:right;"> 65,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Max </td>
-   <td style="text-align:right;"> 400.00 </td>
+   <td style="text-align:right;"> 400,00 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NA </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 0,00 </td>
   </tr>
 </tbody>
 </table>
@@ -3039,7 +3039,7 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 
 *Scatterplot* memperlihatkan hubungan antara dua variabel numerik. Setiap titik mewakili satu observasi dengan nilai pada sumbu X dan Y. Mari kita analisis hubungan antara biaya perjalanan dan jarak tempuh mahasiswa ITERA.
 
-<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-scatter-prep)Contoh Data Biaya Perjalanan dan Jarak Tempuh dalam Ribuan Rupiah (10 Observasi Pertama)</caption>
  <thead>
   <tr>
@@ -3050,43 +3050,43 @@ Area plot secara prinsip sama saja dengan line plot, hanya saja ruang di bawah g
 <tbody>
   <tr>
    <td style="text-align:right;"> 10000 </td>
-   <td style="text-align:right;"> 6.69 </td>
+   <td style="text-align:right;"> 6,69 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 21000 </td>
-   <td style="text-align:right;"> 2.82 </td>
+   <td style="text-align:right;"> 2,82 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 40000 </td>
-   <td style="text-align:right;"> 5.17 </td>
+   <td style="text-align:right;"> 5,17 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 30000 </td>
-   <td style="text-align:right;"> 6.95 </td>
+   <td style="text-align:right;"> 6,95 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 25000 </td>
-   <td style="text-align:right;"> 5.57 </td>
+   <td style="text-align:right;"> 5,57 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 40000 </td>
-   <td style="text-align:right;"> 4.75 </td>
+   <td style="text-align:right;"> 4,75 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 30000 </td>
-   <td style="text-align:right;"> 8.27 </td>
+   <td style="text-align:right;"> 8,27 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 0 </td>
-   <td style="text-align:right;"> 3.70 </td>
+   <td style="text-align:right;"> 3,70 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 100000 </td>
-   <td style="text-align:right;"> 3.77 </td>
+   <td style="text-align:right;"> 3,77 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 30000 </td>
-   <td style="text-align:right;"> 2.08 </td>
+   <td style="text-align:right;"> 2,08 </td>
   </tr>
 </tbody>
 </table>
@@ -3165,7 +3165,7 @@ Silakan kerjakan soal-soal evaluasi berikut terkait visualisasi data kuantitatif
 
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-eval-5-preview)Cuplikan data survei mahasiswa</caption>
  <thead>
   <tr>
@@ -3184,7 +3184,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 2020 </td>
    <td style="text-align:center;"> 2 </td>
-   <td style="text-align:center;"> 19.27 </td>
+   <td style="text-align:center;"> 19,27 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 002 </td>
@@ -3192,7 +3192,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 2020 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.58 </td>
+   <td style="text-align:center;"> 0,58 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 003 </td>
@@ -3200,7 +3200,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 2021 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 0.56 </td>
+   <td style="text-align:center;"> 0,56 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 004 </td>
@@ -3208,7 +3208,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 3 </td>
    <td style="text-align:center;"> 2022 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.05 </td>
+   <td style="text-align:center;"> 1,05 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 005 </td>
@@ -3216,7 +3216,7 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 2 </td>
    <td style="text-align:center;"> 2021 </td>
    <td style="text-align:center;"> 1 </td>
-   <td style="text-align:center;"> 1.69 </td>
+   <td style="text-align:center;"> 1,69 </td>
   </tr>
   <tr>
    <td style="text-align:center;"> 006 </td>
@@ -3224,14 +3224,14 @@ Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
    <td style="text-align:center;"> 1 </td>
    <td style="text-align:center;"> 2020 </td>
    <td style="text-align:center;"> 3 </td>
-   <td style="text-align:center;"> 1.37 </td>
+   <td style="text-align:center;"> 1,37 </td>
   </tr>
 </tbody>
 </table>
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:bab-4-eval-5-metadata)Metadata variabel survei mahasiswa</caption>
  <thead>
   <tr>
@@ -3276,7 +3276,7 @@ Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai beri
 
 1. Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut! [STP-3.1]{.capaian}
 
-  <table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+  <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
    <thead>
     <tr>
      <th style="text-align:center;"> # </th>
@@ -3392,14 +3392,14 @@ Table: (\#tab:05-inferensia-setup-toy-populasi)Daftar Lengkap Populasi (N=16)
 
 | ID| Jarak|Kelompok |Blok   | ID| Jarak|Kelompok |Blok   |
 |--:|-----:|:--------|:------|--:|-----:|:--------|:------|
-|  1|   2.5|A        |Blok 1 |  9|  10.5|A        |Blok 3 |
-|  2|   1.0|B        |Blok 1 | 10|  11.2|B        |Blok 3 |
-|  3|   5.2|C        |Blok 1 | 11|   9.8|C        |Blok 3 |
-|  4|   3.8|D        |Blok 1 | 12|   8.5|D        |Blok 3 |
-|  5|   0.5|A        |Blok 2 | 13|  15.0|A        |Blok 4 |
-|  6|   1.2|B        |Blok 2 | 14|  14.2|B        |Blok 4 |
-|  7|   4.0|C        |Blok 2 | 15|  16.5|C        |Blok 4 |
-|  8|   6.1|D        |Blok 2 | 16|  13.8|D        |Blok 4 |
+|  1|   2,5|A        |Blok 1 |  9|  10,5|A        |Blok 3 |
+|  2|   1,0|B        |Blok 1 | 10|  11,2|B        |Blok 3 |
+|  3|   5,2|C        |Blok 1 | 11|   9,8|C        |Blok 3 |
+|  4|   3,8|D        |Blok 1 | 12|   8,5|D        |Blok 3 |
+|  5|   0,5|A        |Blok 2 | 13|  15,0|A        |Blok 4 |
+|  6|   1,2|B        |Blok 2 | 14|  14,2|B        |Blok 4 |
+|  7|   4,0|C        |Blok 2 | 15|  16,5|C        |Blok 4 |
+|  8|   6,1|D        |Blok 2 | 16|  13,8|D        |Blok 4 |
 
 Mari kita terapkan keempat teknik *sampling* untuk memilih sampel dari 16 orang ini.
 :::
@@ -3429,10 +3429,10 @@ Table: (\#tab:05-inferensia-toy-srs)Hasil SRS (n=4)
 
 | ID| Jarak|Kelompok |Blok   |
 |--:|-----:|:--------|:------|
-|  9|  10.5|A        |Blok 3 |
-| 16|  13.8|D        |Blok 4 |
-| 14|  14.2|B        |Blok 4 |
-|  7|   4.0|C        |Blok 2 |
+|  9|  10,5|A        |Blok 3 |
+| 16|  13,8|D        |Blok 4 |
+| 14|  14,2|B        |Blok 4 |
+|  7|   4,0|C        |Blok 2 |
 :::
 
 ### *Systematic Random Sampling*
@@ -3454,10 +3454,10 @@ Table: (\#tab:05-inferensia-toy-systematic)Hasil Systematic Sampling (Interval k
 
 | ID| Jarak|Kelompok |Blok   |
 |--:|-----:|:--------|:------|
-|  4|   3.8|D        |Blok 1 |
-|  8|   6.1|D        |Blok 2 |
-| 12|   8.5|D        |Blok 3 |
-| 16|  13.8|D        |Blok 4 |
+|  4|   3,8|D        |Blok 1 |
+|  8|   6,1|D        |Blok 2 |
+| 12|   8,5|D        |Blok 3 |
+| 16|  13,8|D        |Blok 4 |
 
 *Perhatikan pola ID yang terpilih selalu berjarak 4 angka.*
 :::
@@ -3481,10 +3481,10 @@ Table: (\#tab:05-inferensia-toy-stratified)Hasil Stratified Sampling (1 wakil pe
 
 | ID| Jarak|Kelompok |Blok   |
 |--:|-----:|:--------|:------|
-|  9|  10.5|A        |Blok 3 |
-|  6|   1.2|B        |Blok 2 |
-|  3|   5.2|C        |Blok 1 |
-| 16|  13.8|D        |Blok 4 |
+|  9|  10,5|A        |Blok 3 |
+|  6|   1,2|B        |Blok 2 |
+|  3|   5,2|C        |Blok 1 |
+| 16|  13,8|D        |Blok 4 |
 
 *Hasilnya menjamin ada masing-masing satu perwakilan dari Kelompok A, B, C, dan D.*
 :::
@@ -3508,10 +3508,10 @@ Table: (\#tab:05-inferensia-toy-cluster)Hasil Cluster Sampling (Terpilih: Blok 4
 
 | ID| Jarak|Kelompok |Blok   |
 |--:|-----:|:--------|:------|
-| 13|  15.0|A        |Blok 4 |
-| 14|  14.2|B        |Blok 4 |
-| 15|  16.5|C        |Blok 4 |
-| 16|  13.8|D        |Blok 4 |
+| 13|  15,0|A        |Blok 4 |
+| 14|  14,2|B        |Blok 4 |
+| 15|  16,5|C        |Blok 4 |
+| 16|  13,8|D        |Blok 4 |
 
 *Kita hanya perlu mendatangi satu lokasi (Blok), tapi mendapatkan 4 responden sekaligus.*
 :::
@@ -3533,7 +3533,7 @@ Table: (\#tab:05-inferensia-toy-cluster)Hasil Cluster Sampling (Terpilih: Blok 4
 
 Jika selama ini kita masih berpikir bahwa ukuran sampel (jumlah sampel yang menjadi bahan data kita) ditentukan berdasarkan ukuran populasinya, maka kita salah kaprah. Menurut @devaus2014surveys, ukuran sampel menentukan galat dari perkiraan kita terhadap populasi, tapi ukuran sampel **bukan ditentukan dari ukuran populasi**. @devaus2014surveys juga menjabarkan jumlah-jumlah sampel yang berbeda untuk setiap galat dari perkiraan kita. Galat perkiraan ini disebut juga dengan *sampling error*. Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) menunjukkan ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%. Ini akan kita pelajari lebih dalam di Bab \@ref(bab-6-estimasi-parameter).
 
-<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tabel-ukuran-sampel-sampling-error)Ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%</caption>
  <thead>
   <tr>
@@ -3709,7 +3709,7 @@ Agar lebih mudah membayangkan perbedaan antara distribusi objek dan distribusi s
 
 Berikut adalah data populasi lengkap (N=30):
 
-<table class="table" style="color: black; margin-left: auto; margin-right: auto;">
+<table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>(\#tab:05-inferensia-populasi-30)Data Populasi (N=30)</caption>
  <thead>
   <tr>
@@ -3722,98 +3722,98 @@ Berikut adalah data populasi lengkap (N=30):
 <tbody>
   <tr>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:right;"> 0.44 </td>
+   <td style="text-align:right;"> 0,44 </td>
    <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 5.01 </td>
+   <td style="text-align:right;"> 5,01 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 0.72 </td>
+   <td style="text-align:right;"> 0,72 </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:right;"> 5.19 </td>
+   <td style="text-align:right;"> 5,19 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 17 </td>
-   <td style="text-align:right;"> 1.76 </td>
+   <td style="text-align:right;"> 1,76 </td>
    <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 5.24 </td>
+   <td style="text-align:right;"> 5,24 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 28 </td>
-   <td style="text-align:right;"> 2.05 </td>
+   <td style="text-align:right;"> 2,05 </td>
    <td style="text-align:right;"> 15 </td>
-   <td style="text-align:right;"> 5.30 </td>
+   <td style="text-align:right;"> 5,30 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 7 </td>
-   <td style="text-align:right;"> 2.24 </td>
+   <td style="text-align:right;"> 2,24 </td>
    <td style="text-align:right;"> 20 </td>
-   <td style="text-align:right;"> 5.40 </td>
+   <td style="text-align:right;"> 5,40 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 23 </td>
-   <td style="text-align:right;"> 2.75 </td>
+   <td style="text-align:right;"> 2,75 </td>
    <td style="text-align:right;"> 26 </td>
-   <td style="text-align:right;"> 5.57 </td>
+   <td style="text-align:right;"> 5,57 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 2.78 </td>
+   <td style="text-align:right;"> 2,78 </td>
    <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 5.99 </td>
+   <td style="text-align:right;"> 5,99 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 2.79 </td>
+   <td style="text-align:right;"> 2,79 </td>
    <td style="text-align:right;"> 10 </td>
-   <td style="text-align:right;"> 6.50 </td>
+   <td style="text-align:right;"> 6,50 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 3.57 </td>
+   <td style="text-align:right;"> 3,57 </td>
    <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 6.59 </td>
+   <td style="text-align:right;"> 6,59 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 19 </td>
-   <td style="text-align:right;"> 3.77 </td>
+   <td style="text-align:right;"> 3,77 </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 6.78 </td>
+   <td style="text-align:right;"> 6,78 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 30 </td>
-   <td style="text-align:right;"> 3.77 </td>
+   <td style="text-align:right;"> 3,77 </td>
    <td style="text-align:right;"> 14 </td>
-   <td style="text-align:right;"> 7.07 </td>
+   <td style="text-align:right;"> 7,07 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 27 </td>
-   <td style="text-align:right;"> 4.47 </td>
+   <td style="text-align:right;"> 4,47 </td>
    <td style="text-align:right;"> 13 </td>
-   <td style="text-align:right;"> 7.82 </td>
+   <td style="text-align:right;"> 7,82 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 4.85 </td>
+   <td style="text-align:right;"> 4,85 </td>
    <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 8.70 </td>
+   <td style="text-align:right;"> 8,70 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 16 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4,88 </td>
    <td style="text-align:right;"> 11 </td>
-   <td style="text-align:right;"> 10.44 </td>
+   <td style="text-align:right;"> 10,44 </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 25 </td>
-   <td style="text-align:right;"> 4.88 </td>
+   <td style="text-align:right;"> 4,88 </td>
    <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 12.41 </td>
+   <td style="text-align:right;"> 12,41 </td>
   </tr>
 </tbody>
 </table>
 
-Rata-rata populasi adalah $\mu = 4.99$ km dengan simpangan baku $\sigma = 2.67$ km.
+Rata-rata populasi adalah $\mu = 4,99$ km dengan simpangan baku $\sigma = 2,67$ km.
 
 Sekarang, kita ambil **1 sampel** berukuran $n=10$ secara acak (*Simple Random Sampling*). Pengambilan menghasilkan sampel dengan ID 3, 9, 14, 17, 22, 23, 24, 25, 27, dan 30.
 
@@ -3830,7 +3830,7 @@ Sekarang, kita lakukan simulasi: kita mengambil sampel ($n=10$) dari populasi te
 
 Berikut adalah 8 hasil pertama dari 200 pengambilan sampel:
 
-<table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:05-inferensia-simulasi-200)Hasil Simulasi Distribusi Sampling (8 Teratas dari 200)</caption>
  <thead>
   <tr>
@@ -3841,35 +3841,35 @@ Berikut adalah 8 hasil pertama dari 200 pengambilan sampel:
 <tbody>
   <tr>
    <td style="text-align:left;"> 1 </td>
-   <td style="text-align:left;"> 3.79 </td>
+   <td style="text-align:left;"> 3,79 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 2 </td>
-   <td style="text-align:left;"> 4.72 </td>
+   <td style="text-align:left;"> 4,72 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 3 </td>
-   <td style="text-align:left;"> 4.7 </td>
+   <td style="text-align:left;"> 4,7 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 4 </td>
-   <td style="text-align:left;"> 4.62 </td>
+   <td style="text-align:left;"> 4,62 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 5 </td>
-   <td style="text-align:left;"> 6.76 </td>
+   <td style="text-align:left;"> 6,76 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 6 </td>
-   <td style="text-align:left;"> 5.94 </td>
+   <td style="text-align:left;"> 5,94 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 7 </td>
-   <td style="text-align:left;"> 3.89 </td>
+   <td style="text-align:left;"> 3,89 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> 8 </td>
-   <td style="text-align:left;"> 3.82 </td>
+   <td style="text-align:left;"> 3,82 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ... </td>
@@ -3964,7 +3964,7 @@ grid.arrange(p1, p2, ncol = 2)
 <p class="caption">(\#fig:fig-05-inferensia-2-clt-studi-kasus-simulasi)Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)</p>
 </div>
 
-Gambar \@ref(fig:fig-05-inferensia-2-clt-studi-kasus-simulasi) menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat "miring" (*skewed*) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna **normal**. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = 5.01$).
+Gambar \@ref(fig:fig-05-inferensia-2-clt-studi-kasus-simulasi) menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat "miring" (*skewed*) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna **normal**. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = 5,01$).
 :::
 
 ::: rmdkasus
@@ -4058,17 +4058,17 @@ Misalkan kita mengambil **satu sampel** acak berukuran $n=100$ mahasiswa dari po
 
 
 
-Dari sampel ini, kita peroleh rata-rata jarak $\bar{x} = 5.16$ km. Kita tahu simpangan baku populasi $\sigma = 2.82$ km. Maka *Standard error* adalah:
+Dari sampel ini, kita peroleh rata-rata jarak $\bar{x} = 5,16$ km. Kita tahu simpangan baku populasi $\sigma = 2,82$ km. Maka *Standard error* adalah:
 
 $$
 \begin{align}
 SE &=\frac{s}{\sqrt{n}}\\
-&= \frac{2.82}{\sqrt{100}} \\
-&= 0.2817
+&= \frac{2,82}{\sqrt{100}} \\
+&= 0,2817
 \end{align}
 $$
 
-Nilai ini memberitahu kita bahwa rata-rata sampel kita (5.16) diperkirakan menyimpang sekitar $\pm 0.28$ km dari rata-rata populasi sebenarnya.
+Nilai ini memberitahu kita bahwa rata-rata sampel kita (5,16) diperkirakan menyimpang sekitar $\pm 0,28$ km dari rata-rata populasi sebenarnya.
 :::
 
 ::: rmdexercise
@@ -4334,7 +4334,7 @@ Karena parameter adalah ukuran untuk populasi, mengukurnya hanya bisa dilakukan 
 
 Cara menyatakan ukuran statistik dan parameter, yakni menggunakan simbol-simbol matematis [@healey2021statistics], disajikan dalam tabel berikut.
 
-<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tab-simbol-statistik-parameter)Simbol-simbol yang Digunakan Untuk Statistik dan Parameter</caption>
  <thead>
   <tr>
@@ -4498,7 +4498,7 @@ $$
 
 Diketahui dari hasil survei terhadap 333 sampel mahasiswa ITERA, sebaran jenis tempat tinggalnya, beserta statistik jarak tempat tinggalnya, ditampilkan sebagai berikut.
 
-<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tabel-komponen-ci-jarak)Statistik Jarak Tempat Tinggal per Jenis Hunian</caption>
  <thead>
   <tr>
@@ -4657,7 +4657,7 @@ dengan:
 
 Berdasarkan Tabel \@ref(tab:tabel-komponen-ci-jarak), kita dapat menghitung proporsi tiap-tiap kategori jenis tempat tinggal. Hasilnya ditunjukkan oleh Tabel \@ref(tab:tabel-proporsi-jenis-tempat-tinggal) berikut.
 
-<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tabel-proporsi-jenis-tempat-tinggal)Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal</caption>
  <thead>
   <tr>
@@ -4937,7 +4937,7 @@ Secara rinci ragam bentuk hipotesis alternatif ini adalah sebagai berikut [@tjok
 
 Adapun bentuk matematis dari hipotesis alternatif yang mungkin dipilih ditampilkan pada Tabel \@ref(tab:tab-bentuk-hipotesis-alternatif) berikut.
 
-<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>(\#tab:tab-bentuk-hipotesis-alternatif)Alternatif Bentuk Hipotesis Alternatif</caption>
  <thead>
   <tr>
@@ -4998,7 +4998,7 @@ Jika bukti dari data sampel *sangat kuat dan meyakinkan*, maka pengujian akan **
 :::
 
 
-### Menentukan Hasil Pengujian Hipotesis Parameter
+## Menentukan Hasil Pengujian Hipotesis Parameter
 
 Penentuan hasil pengujian hipotesis dilakukan dengan menggabungkan tiga besaran penting: **titik kritis**, **wilayah kritis** dan **nilai *p* (*p-value*)**. Seluruhnya didasarkan pada konsep perhitungan probabilitas pada distribusi statistik sebagaimana yang dijelaskan pada subbab \@ref(probabilitas-nilai-di-distribusi-statistik).
 
@@ -5082,7 +5082,7 @@ Penolakan $H_0$ didasarkan pada perbandingannya dengan nilai signifikansi ($\alp
 </div>
 
 
-### Langkah-langkah Pengujian Hipotesis
+## Langkah-langkah Pengujian Hipotesis {#langkah-pengujian-hipotesis}
 
 Berdasarkan konsep-konsep yang sudah kita pelajari sebelunya, berikut adalah rangkuman langkah-langkah pengujian hipotesis.
 
@@ -5316,84 +5316,732 @@ Kerjakanlah soal evaluasi berikut untuk mengasah pemahaman Anda tentang pengujia
 
 # Uji Hipotesis Parameter Dua Populasi Atau Lebih
 
-## Konsep Dasar
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
 
-Uji ini digunakan untuk membandingkan parameter (rata-rata atau proporsi) dari dua populasi yang berbeda. Tujuannya adalah untuk mengetahui apakah ada perbedaan yang signifikan di antara keduanya.
+Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil dari pengujian hipotesis parameter dua populasi atau lebih pada suatu kasus [STP-7.1]{.capaian}
+:::
 
-### Uji Beda Rata-rata (Independent Samples t-test)
+## Konsep Dasar Uji Hipotesis Parameter Dua Populasi Atau Lebih {#konsep-dasar-uji-hipotesis-dua-populasi}
 
-Digunakan untuk dua kelompok sampel yang tidak saling berhubungan (independen). Contoh: Membandingkan rata-rata pendapatan warga di Kota A dan Kota B.
+Pengertian *lebih dari satu populasi* mengacu pada dua sudut pandang, yaitu:
 
-Hipotesis:
-*   $H_0: \mu_A = \mu_B$
-*   $H_1: \mu_A \ne \mu_B$
+1. **Cakupan populasi yang kita definisikan pada penelitian kita**. Jika satu populasi pada penelitian kita adalah *“seluruh mahasiswa ITERA”*, maka dua populasi dapat menjadi *“seluruh mahasiswa ITERA”* dan *“seluruh mahasiswa UIN RIL”*, dan sebagainya.
+   
+   Akan ada hal yang kita bandingkan dari kedua ataupun seluruh populasi tersebut. Dalam hal ini, kita akan membuktikan bahwa *“ada atau tidaknya perbedaan karakteristik dari mahasiswa ITERA dan mahasiswa UIN RIL”*. Perbedaan karakteristik ini dapat berupa parameter tertentu, seperti rata-rata, median, atau proporsi pada dua atau lebih populasi yang diujikan.
 
-### Uji Beda Rata-rata Berpasangan (Paired Samples t-test)
+::: rmdkasus
+### Studi Kasus: Batasan Cakupan Sebagai Dasar Penentuan Populasi {.unnumbered}
 
-Digunakan untuk dua kelompok sampel yang saling berhubungan (berpasangan). Contoh: Membandingkan kemacetan di jalan yang sama **sebelum** dan **sesudah** penerapan kebijakan ganjil-genap.
+Cakupan populasi sangat bergantung pada batasan penelitian. Mari bandingkan dua situasi berikut:
 
-## Studi Kasus dengan R
+-   **Situasi 1**: Penelitian mengamati mahasiswa di suatu kampus tingkat universitas, misalnya UBL. Dalam hal ini, seluruh mahasiswa UBL adalah **satu populasi**. Jika kita membandingkannya dengan kampus lain, maka mahasiswa kampus lain tersebut (misalnya UIN RIL) akan menjadi **populasi kedua**.
+-   **Situasi 2**: Penelitian mengamati seluruh mahasiswa di Kota Bandar Lampung. Dalam kasus ini, mahasiswa UBL dan mahasiswa UIN RIL melebur menjadi **satu populasi yang sama**, yaitu populasi mahasiswa Kota Bandar Lampung. Populasi kedua, misalnya, bisa jadi adalah *seluruh mahasiswa di **Kota Metro***.
 
-### Independent t-test
+Sebagai kesimpulan, penentuan "satu populasi" dapat berubah menyesuaikan lingkup pengamatan yang ditetapkan.
+:::
 
-Membandingkan pendapatan (dalam juta) antara pria dan wanita.
+2. **Waktu pengambilan data**. Jika kita mengambil data dari suatu populasi pada dua tahap yang berbeda, misalnya sebelum dan sesudah suatu program, kita dapat menganggap populasi sebelum program sebagai populasi pertama, dan populasi setelah program sebagai populasi kedua.
+
+::: rmdkasus
+### Studi Kasus: Waktu Pengambilan Data Sebagai Dasar Penentuan Populasi {.unnumbered}
+
+Batasan populasi juga dapat dibedakan berdasarkan waktu. Sebagai contoh, kita ingin mengevaluasi dampak pembangunan jalan layang (*flyover*) terhadap waktu tempuh mahasiswa UBL menuju kampus.
+
+-   **Populasi 1**: Waktu tempuh perjalanan seluruh mahasiswa UBL **sebelum** adanya *flyover*.
+-   **Populasi 2**: Waktu tempuh perjalanan seluruh mahasiswa UBL **sesudah** *flyover* tersebut beroperasi.
+
+Meski kelompok subjek yang diamati sama (mahasiswa UBL), perbedaan waktu pengambilan data (sebelum dan sesudah) secara praktis membagi kelompok tersebut menjadi **dua populasi**.
+:::
+
+Sudut pandang pertama juga bisa dibagi lagi menjadi dua populasi **berpasangan** dan **independen**. Populasi berpasangan adalah dua populasi yang terikat hubungan satu sama lain secara logis. Misalnya, kita mengambil data suami dan istri dalam suatu kelurahan. Dalam hal tersebut, suami adalah populasi pertama, sementara istri adalah populasi kedua. Sudut pandang kedua juga kita bisa katakan sebagai populasi yang berpasangan.
+
+Dengan demikian, berdasarkan sudut pandangnya, penjelasan uji hipotesis lebih dari satu populasi ini dapat dikelompokkan ke dalam tiga bentuk kasus, yaitu **dua populasi tidak berpasangan**, **dua populasi berpasangan**, dan **lebih dari dua populasi**. Sedangkan berdasarkan statistiknya, kita akan membahas uji hipotesis parameter **rata-rata** dan **proporsi**.
+
+## Tahapan Pengujian Hipotesis Parameter Dua Populasi atau Lebih
+
+Secara umum, tahapan pengujian hipotesis parameter dua populasi atau lebih **tidak berbeda jauh** dengan tahapan pengujian hipotesis parameter satu populasi (subbab \@ref(langkah-pengujian-hipotesis). Perbedaannya hanya terletak pada **bentuk hipotesis** yang akan diuji dan **cara menghitung statistik ujinya**.
+
+Untuk menyegarkan ingatan kita, berikut adalah langkah-langkah dalam pengujian hipotesis parameter satu populasi:
+
+1. Menyatakan asumsi awal
+2. Menetapkan hipotesis kosong dan alternatif
+3. Menetapkan wilayah kritis dari signifikansi
+4. Mencari nilai titik kritis
+5. Mencari nilai statistik uji
+6. Membandingkan nilai statistik uji dan titik kritis
+7. Menarik kesimpulan dan memaknai hasil pengujian.
+
+Langkah-langkah ini juga akan kita gunakan dalam melakukan uji hipotesis parameter dua populasi atau lebih.
+
+## Uji Hipotesis Parameter Dua Populasi Independen
+
+Dalam subbab ini, kita akan membahas **perumusan hipotesis kosong dan alternatif** serta **perhitungan statistik ujinya**, sesuai penjelasan sebelumnya yang mengatakan bahwa dua hal tersebut merupakan hal yang membedakan uji hipotesis parameter dua populasi atau lebih dengan uji hipotesis parameter satu populasi.
+
+### Hipotesis Kosong dan Alternatif Uji Hipotesis Parameter Dua Populasi Independen
+
+Pada uji hipotesis dua populasi independen, hanya terdapat **dua populasi** yang diujikan. Dua populasi ini adalah populasi yang **berbeda satu sama lain/tidak saling berkaitan**. Dalam uji ini, hipotesis kosong ($H_0$) yang menunjukkan kondisi netral dapat dirumuskan sebagai **tidak adanya perbedaan parameter antara kedua populasi yang dibandingkan**. Bentuk penulisan hipotesis kosong ini dapat dilihat pada Tabel \@ref(tab:tab-hipotesis-kosong-dua-populasi) berikut.
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tab-hipotesis-kosong-dua-populasi)Bentuk Hipotesis Kosong Dua Populasi</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Bentuk </th>
+   <th style="text-align:center;"> Parameter Rata-rata </th>
+   <th style="text-align:center;"> Parameter Proporsi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Bentuk Umum </td>
+   <td style="text-align:center;"> $H_0: \mu_A = \mu_B$ </td>
+   <td style="text-align:center;"> $H_0: P_A = P_B$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Bentuk Selisih </td>
+   <td style="text-align:center;"> $H_0: \mu_A - \mu_B = 0$ </td>
+   <td style="text-align:center;"> $H_0: P_A - P_B = 0$ </td>
+  </tr>
+</tbody>
+</table>
+
+Dalam Tabel \@ref(tab:tab-hipotesis-kosong-dua-populasi), kita dapat melihat bahwa hipotesis kosong ini dapat dirumuskan dengan dua bentuk, yaitu **bentuk umum** dan **bentuk selisih**. Kedua bentuk ini sebenarnya memiliki arti yang sama, yaitu tidak adanya perbedaan antara kedua populasi yang dibandingkan. Hanya saja, bentuk selisih lebih mudah diterapkan ketika **kita hanya berfokus pada perbedaan nilai parameter antara kedua populasi tersebut** alih-alih nilai absolut parameter-parameternya. 
+
+Sementara itu, hipotesis alternatif ($H_1$) menunjukkan kondisi **adanya perbedaan antara kedua populasi tersebut** — baik perbedaan yang memiliki arah (lebih besar atau lebih kecil), maupun yang tidak memiliki arah (tidak sama dengan). Perhatikan Tabel \@ref(tab:tab-hipotesis-alternatif-dua-populasi) berikut֫.
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tab-hipotesis-alternatif-dua-populasi)Bentuk Hipotesis Alternatif Dua Populasi</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Bentuk </th>
+   <th style="text-align:center;"> Parameter Rata-rata </th>
+   <th style="text-align:center;"> Parameter Proporsi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> Bentuk Umum </td>
+   <td style="text-align:center;"> $H_1: \mu_A \ne \mu_B$<br>$H_1: \mu_A > \mu_B$<br>$H_1: \mu_A < \mu_B$ </td>
+   <td style="text-align:center;"> $H_1: P_A \ne P_B$<br>$H_1: P_A > P_B$<br>$H_1: P_A < P_B$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Bentuk Selisih </td>
+   <td style="text-align:center;"> $H_1: \mu_A - \mu_B \ne 0$<br>$H_1: \mu_A - \mu_B > 0$<br>$H_1: \mu_A - \mu_B < 0$ </td>
+   <td style="text-align:center;"> $H_1: P_A - P_B \ne 0$<br>$H_1: P_A - P_B > 0$<br>$H_1: P_A - P_B < 0$ </td>
+  </tr>
+</tbody>
+</table>
+
+### Perhitungan Statistik Uji dalam Uji Hipotesis Parameter Dua Populasi Independen
+
+Secara matematis, perhitungan statistik uji pada beda dua rata-rata independen diawali dengan membandingkan selisih rata-rata dari kedua sampel ($\bar{x}_1 - \bar{x}_2$) terhadap hipotesis selisih dari kedua rata-rata populasinya ($\mu_1 - \mu_2$), untuk kemudian dibagikan dengan standar *error*-nya.
+
+Untuk **parameter rata-rata**, statistik uji yang digunakan adalah sebagai berikut:
+
+$$
+Z_{hitung} = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{SE_{\bar{x}_1 - \bar{x}_2}}
+(\#eq:statistik-uji-dua-populasi-independen)
+$$
+
+Di mana:
+
+- $\bar{x}_1, \bar{x}_2$ = Rata-rata sampel 1 dan sampel 2 
+- $\mu_1, \mu_2$ = Rata-rata populasi 1 dan populasi 2
+- $SE_{\bar{x}_1 - \bar{x}_2}$ = Standar *error* dari selisih rata-rata sampel 1 dan sampel 2
+
+Perlu diperhatikan bahwa $(\mu_1 - \mu_2)$ pada persamaan \@ref(eq:statistik-uji-dua-populasi-independen) mencerminkan **nilai hipotesis selisih rata-rata kedua populasi**. Dalam pengujian hipotesis, nilai tersebut ditetapkan sesuai dengan hipotesis kosong ($H_0$). Karena $H_0$ pada umumnya menyatakan tidak adanya perbedaan antar populasi (yakni $\mu_1 - \mu_2 = 0$), maka suku $(\mu_1 - \mu_2)$ ini **bernilai nol dan gugur dari perhitungan**.
+
+Perhitungan *standard error* dari selisih rata-rata sampel 1 dan sampel 2 adalah sebagai berikut:
+
+$$
+SE_{\bar{x}_1 - \bar{x}_2} = \sqrt{ \frac{s_1^2}{N_1 - 1} + \frac{s_2^2}{N_2 - 1} }
+(\#eq:standard-error-dua-populasi-independen)
+$$
+
+Di mana:
+
+- $s_1^2, s_2^2$ = Varians (standar deviasi yang dikuadratkan) dari sampel 1 dan sampel 2
+- $N_1, N_2$ = Jumlah total masing-masing observasi sampel 1 dan sampel 2
+
+Dengan demikian, menggabungkan persamaan \@ref(eq:statistik-uji-dua-populasi-independen) dan \@ref(eq:standard-error-dua-populasi-independen), perhitungan statistik uji beda dua rata-rata independen menjadi:
+
+$$
+Z_{hitung} = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{ \frac{s_1^2}{N_1 - 1} + \frac{s_2^2}{N_2 - 1} }}
+(\#eq:statistik-uji-dua-populasi-independen-2)
+$$
+
+Di mana:
+
+- $\bar{x}_1, \bar{x}_2$ = Rata-rata sampel 1 dan sampel 2 
+- $s_1^2, s_2^2$ = Varians (standar deviasi yang dikuadratkan) dari sampel 1 dan sampel 2
+- $N_1, N_2$ = Jumlah total masing-masing observasi sampel 1 dan sampel 2
+
+Sementara itu, untuk **parameter proporsi**, statistik uji untuk beda dua proporsi independen dihitung dengan cara yang mirip dengan beda dua rata-rata, yaitu membandingkan selisih proporsi sampel ($\hat{p}_1 - \hat{p}_2$) terhadap nilai nol (karena $H_0: P_1 - P_2 = 0$), dikalibrasi dengan *standard error*-nya:
+
+$$
+Z_{hitung} = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left(\dfrac{1}{N_1} + \dfrac{1}{N_2}\right)}}
+(\#eq:statistik-uji-proporsi-dua-populasi)
+$$
+
+Di mana:
+
+- $\hat{p}_1, \hat{p}_2$ = Proporsi sampel dari populasi 1 dan populasi 2
+- $N_1, N_2$ = Jumlah total observasi sampel populasi 1 dan populasi 2
+- $\hat{p}$ = Proporsi gabungan (*pooled proportion*), dihitung sebagai:
+
+$$
+\hat{p} = \frac{x_1 + x_2}{N_1 + N_2} = \frac{N_1 \hat{p}_1 + N_2 \hat{p}_2}{N_1 + N_2}
+(\#eq:proporsi-gabungan)
+$$
+
+Di mana: 
+
+- $x_1$ dan $x_2$ adalah jumlah observasi yang memenuhi kategori yang diuji pada masing-masing sampel
+- $N_1$ dan $N_2$ adalah jumlah observasi sampel 1 dan sampel 2
+- $\hat{p}_1$ dan $\hat{p}_2$ adalah proporsi sampel 1 dan sampel 2
+
+Perlu dicatat bahwa pada persamaan \@ref(eq:statistik-uji-proporsi-dua-populasi), standar *error* dihitung menggunakan **proporsi gabungan** ($\hat{p}$) — bukan proporsi masing-masing sampel. Ini dilakukan karena, di bawah asumsi $H_0$ (bahwa kedua proporsi populasi sesungguhnya adalah sama), kita memiliki basis yang lebih kuat jika mengestimasi proporsi populasi tersebut dari kedua sampel secara bersamaan.
+
+Aturan pengambilan keputusan untuk uji proporsi ini sama dengan yang berlaku pada uji rata-rata, yakni: jika statistik uji **jatuh di dalam wilayah kritis**, kita tolak $H_0$; sebaliknya, kita **gagal menolak $H_0$**.
 
 
-``` r
-# Data Contoh
-pria <- c(5, 6, 5, 7, 6, 8, 5)
-wanita <- c(4, 5, 4, 6, 5, 5, 4)
+Setelah memperoleh nilai dari hitungan statistik ujinya, tugas selanjutnya adalah membandingkannya terhadap nilai titik kritis ($Z_{kritis}$) dari tabel distribusi di tingkat signifikansi ($\alpha$) tertentu. Aturan pengambilan keputusannya senantiasa mengikuti kaidah berikut ini:
 
-# Uji t independen
-t.test(pria, wanita, var.equal = TRUE)
-```
+- Jika nilai statistik uji **jatuh di dalam wilayah kritis**, maka hasil pengujian kita adalah hipotesis kosong dapat ditolak (**tolak $H_0$**). Ini berarti statistik yang telah dihitung ternyata memiliki bukti yang cukup untuk menyimpulkan telah terjadi perbedaan yang signifikan antara keadaan rata-rata kedua populasi tersebut.
+- Sebaliknya, jika nilai statistik uji **tidak jatuh ke dalam wilayah kritis**, maka hasil pengujian kita adalah hipotesis kosong gagal ditolak (**gagal tolak $H_0$**). Ini mengindikasikan bahwa data yang dihasilkan nyatanya belum memiliki cukup kekuatan meyakinkan untuk menolak dugaan ketiadaan perbedaan kondisi dari rata-rata kedua populasinya.
 
-```
-## 
-## 	Two Sample t-test
-## 
-## data:  pria and wanita
-## t = 2.4648, df = 12, p-value = 0.02978
-## alternative hypothesis: true difference in means is not equal to 0
-## 95 percent confidence interval:
-##  0.1491572 2.4222714
-## sample estimates:
-## mean of x mean of y 
-##  6.000000  4.714286
-```
+::: rmdkasus
+### Studi Kasus: Uji Rata-Rata Waktu Tempuh Mahasiswa ITERA dan UNILA {.unnumbered}
 
-### Paired t-test
+Dinas Perhubungan ingin mengetahui apakah rata-rata waktu tempuh perjalanan menuju kampus bagi mahasiswa ITERA berbeda dengan mahasiswa UNILA. Survei taktis pun dilakukan kepada mahasiswa kedua kampus dan berhasil menghimpun sampel sebanyak 428 mahasiswa ITERA yang menghasilkan rata-rata dan simpangan baku, berturut-turut, 5,01 km dan 2,82 km. Sampel mahasiswa UNILA juga berhasil dikumpulkan, yakni sebanyak 394 orang, menghasilkan rata-rata dan simpangan baku, berturut-turut, 2,78 km dan 2,53 km.
 
-Membandingkan waktu tempuh (menit) sebelum dan sesudah pembangunan tol.
+Dari data tersebut, menggunakan tingkat kepercayaan 90%, kita akan mencari tahu apakah:
+
+a. nilai rata-rata jarak tempuh ke kampus masing-masing, sebesar 5,01 km dan 2,78 km, benar-benar berbeda satu sama lain?
+b. Jika ya, bagaimana pernyataan ""*mahasiswa UNILA secara keseluruhan lebih dekat jarak tempuh ke kampus mereka sendiri ketimbang mahasiswa ITERA?"*
 
 
-``` r
-sebelum <- c(60, 55, 70, 65, 80)
-sesudah <- c(40, 45, 50, 55, 60)
+**Jawaban:**
 
-# Uji t berpasangan
-t.test(sebelum, sesudah, paired = TRUE)
-```
+Kita menjalankan langkah-langkah pengujian hipotesis parameter dua populasi independen untuk memutuskan hal tersebut:
 
-```
-## 
-## 	Paired t-test
-## 
-## data:  sebelum and sesudah
-## t = 6.532, df = 4, p-value = 0.002838
-## alternative hypothesis: true mean difference is not equal to 0
-## 95 percent confidence interval:
-##   9.199126 22.800874
-## sample estimates:
-## mean difference 
-##              16
-```
+a. **Menyatakan Asumsi Awal**  
+   Pengujian ini mensyaratkan bahwa kelompok data observasi mahasiswa ITERA dan UNILA adalah **independen** satu sama lain. Selain itu, tingkat pengukurannya adalah rasio (variabel yang diujikan: jarak tempuh) dan ukuran sampel keduanya memadai (ukuran besar, 428 dan 394) sehingga distribusi statistiknya mendekati **normal**.
+
+b. **Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**
+   Dalam kasus ini, kita akan menguji apakah rata-rata waktu tempuh mahasiswa ITERA dan UNILA **berbeda** satu sama lain. Setelah itu, jika berbeda, kita akan menguji apakah rata-rata waktu tempuh mahasiswa UNILA **lebih kecil** dari mahasiswa ITERA. Dengan demikian, kita menggunakan hipotesis alternatif bentuk **tidak berarah** dan **berarah** secara berurutan.
+
+   Karena kita berurusan dengan dua populasi, kita misalkan populasi ITERA = 1 dan UNILA = 2. Dengan demikian, kita dapat menuliskan hipotesis alternatif sebagai berikut:
+
+   **Bentuk tidak berarah:**
+
+   -   **Hipotesis Kosong** ($H_0: \mu_1 = \mu_2$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA adalah sama. (Kondisi dasar netral/tidak ada perbedaan).
+   -   **Hipotesis Alternatif** ($H_1: \mu_1 \ne \mu_2$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA berbeda. (Kondisi terdapat perbedaan).
+
+   **Bentuk berarah:**
+
+   -   **Hipotesis Kosong** ($H_0: \mu_1 = \mu_2$): Rata-rata waktu tempuh mahasiswa ITERA dan UNILA adalah sama.
+   -   **Hipotesis Alternatif** ($H_1: \mu_1 > \mu_2$): Rata-rata waktu tempuh mahasiswa ITERA lebih besar dari mahasiswa UNILA.
+
+c. **Menetapkan Wilayah Kritis dari Signifikansi**  
+   Untuk hipotesis alternatif **bentuk tidak berarah**, wilayah penolakan **terbagi sama rata di dua unjung kurva penolakan** (uji dua ekor/ *two-tailed*). Sementara itu, untuk hipotesis alternatif **bentuk berarah**, wilayah penolakan berada di salah satu ujung kurva penolakan (uji satu ekor/ *one-tailed*).
+   
+   Karena kita menggunakan bentuk pertidaksamaan "lebih besar", posisi wilayah kritis kita ada di **kanan** kurva distribusi statisik kita.
+
+   Kita diberi tahu bahwa tingkat kepercayaan yang digunakan adalah 90%, sehingga tingkat signifikansi $\alpha$ adalah 10% atau 0,10. Dengan demikian, kita dapat menentukan wilayah kritis sebagai berikut:
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-wilayah-kritis-dua-vs-satu-ekor-1.png" alt="Ilustrasi wilayah kritis: uji dua ekor (kiri) dan uji satu ekor kanan (kanan) pada tingkat signifikansi $\alpha$ = 10%" width="90%" />
+<p class="caption">(\#fig:fig-wilayah-kritis-dua-vs-satu-ekor)Ilustrasi wilayah kritis: uji dua ekor (kiri) dan uji satu ekor kanan (kanan) pada tingkat signifikansi $\alpha$ = 10%</p>
+</div>
+
+d. **Mencari Nilai Titik Kritis**  
+   Berdasarkan tingkat signifikansi yang ditetapkan ($\alpha = 10\% = 0,10$) dan bentuk hipotesis alternatif kita (tidak berarah & berarah), nilai titik kritis kita:
+     
+   -   Uji dua ekor: $Z_{kritis} = \pm 1,64$
+   -   Uji satu ekor kanan: $Z_{kritis} = 1,28$
+
+e. **Mencari Nilai Statistik Uji**  
+   Perhitungan nilai statistik uji (misalnya $Z_{hitung}$) dieksekusi berdasarkan selisih jarak proporsi   rata-rata kedua sampel waktu tempuh tersebut setelah dikalibrasi oleh gabungan *standard error* dari beda rata-rata independen (Persamaan \@ref(eq:statistik-uji-dua-populasi-independen-2)).
+
+   \begin{align}
+   Z_{hitung} &= \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{ \dfrac{s_1^2}{N_1 - 1} + \dfrac{s_2^2}{N_2 - 1} }} \nonumber\\
+              &= \frac{5{,}01 - 2{,}78}{\sqrt{ \dfrac{2{,}82^2}{428 - 1} + \dfrac{2{,}53^2}{394 - 1} }} \nonumber\\
+              &= \frac{2{,}23}{\sqrt{ \dfrac{7{,}9524}{427} + \dfrac{6{,}4009}{393} }} \nonumber\\
+              &= \frac{2{,}23}{\sqrt{0{,}01863 + 0{,}01629}} \nonumber\\
+              &= \frac{2{,}23}{\sqrt{0{,}03492}} \nonumber\\
+              &= \frac{2{,}23}{0{,}1869} \nonumber\\
+              &\approx 11{,}93
+              % (\#eq:z-hitung-itera-unila)
+   \end{align}
+
+
+f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**  
+   Setelah nilainya statistik uji kita peroleh, kita bandingkan posisinya di dalam kurva dengan titik:
+   -   Bila $Z_{hitung}$ **melampaui titik kritis** sehingga jatuh di dalam **wilayah kritis**, maka keputusannya kita **menolak $H_0$**.
+   -   Sebaliknya, jika tidak, kita **gagal menolak $H_0$**.
+   
+   Berdasarkan hasil perhitungan statistik uji yang telah kita lakukan, nilainya adalah $+11{,}93$. Karena nilai ini berada jauh di sebelah **kanan** titik kritis, maka ia jatuh **di dalam wilayah kritis**. Bahkan, jika kita perhatikan Gambar \@ref(fig:fig-hasil-pengujian-dua-vs-satu-ekor), posisi statistik uji kita berada jauh sekali sampai di luar grafik.
+   
+<div class="figure" style="text-align: center">
+<img src="figures/fig-hasil-pengujian-dua-vs-satu-ekor-1.png" alt="Hasil pengujian hipotesis populasi ITERA dan UNILA" width="90%" />
+<p class="caption">(\#fig:fig-hasil-pengujian-dua-vs-satu-ekor)Hasil pengujian hipotesis populasi ITERA dan UNILA</p>
+</div>
+
+g. **Menarik Kesimpulan dan Memaknai Hasil**  
+   Hasil perhitungan statistik uji kita jelas menunjukkan bahwa posisinya berada di dalam wilayah kritis, oleh karena kitu, kesimpulan kita adalah kita dapat **menolak $H_0$**. Kesimpulannya, sampel observasi cukup untuk membuktikan perbedaan rata-rata waktu tempuh kedua kampus secara kuat (signifikan). Artinya, rata-rata jarak tempuh mahasiswa UNILA ke kampus dibandingkan dengan mahasiswa ITERA **memang lebih pendek**.
+   
+**Interpretasi ke dalam bidang PWK:** rata-rata jarak tempuh mahasiswa UNILA yang lebih pendek mengindikasikan bahwa kampus UNILA mempunyai struktur ruang yang lebih kompak *(kompak)* dibandingkan ITERA. Ini dapat dikaitkan dengan pola jaringan jalan yang dimiliki lingkungan di sekitar UNILA yang berbentuk *grid* sehingga banyak blok-blok guna lahan di sekitarnya yang dapat dimanfaatkan sebagai tempat tinggal.
+
+Lain halnya dengan ITERA, pola jarinagan jalan di sekitar ITERA adalah satu jalan raya memanjang, Jalan Terusan Ryacudu, yang di sekitarnya lebih tersebar *(disepersed)*, mengakibatkan tempat tinggal di sekitarnya juga jadi berjauhan.
+
+<div class="figure" style="text-align: center">
+<img src="images/perbandingan-itera-unila.png" alt="Gambaran Struktur Ruang ITERA *(dispersed)* vs. UNILA *(compact)*" width="4099" />
+<p class="caption">(\#fig:fig-perbandingan-itera-unila)Gambaran Struktur Ruang ITERA *(dispersed)* vs. UNILA *(compact)*</p>
+</div>
+:::
+
+Simak juga kasus untuk uji hipotesis parameter proporsi untuk dua populasi independen berikut.
+
+::: rmdkasus
+### Studi Kasus: Uji Proporsi Pengguna Sepeda Motor Mahasiswa ITERA dan UNILA {.unnumbered}
+
+Dinas Perhubungan ingin mengetahui apakah proporsi mahasiswa yang menggunakan **sepeda motor pribadi** sebagai kendaraan utama menuju kampus berbeda antara mahasiswa ITERA dan mahasiswa UNILA. Dari data observasi yang ada, tercatat bahwa dari 428 mahasiswa ITERA, sebanyak 260 orang menggunakan sepeda motor, sementara dari 394 mahasiswa UNILA, sebanyak 230 orang juga menggunakan sepeda motor.
+
+Dengan menggunakan **tingkat kepercayaan 90%**, kita akan menguji apakah proporsi pengguna sepeda motor dari kedua kampus tersebut berbeda secara signifikan.
+
+**Jawaban:**
+
+Kita jalankan langkah-langkah pengujian hipotesis proporsi dua populasi independen:
+
+a. **Menyatakan Asumsi Awal**  
+   Data yang diamati merupakan dua kelompok sampel yang **independen** — tidak ada hubungan berpasangan antara mahasiswa ITERA dan UNILA. Variabel yang diuji adalah **kategorikal dikotomis** (menggunakan sepeda motor atau tidak), dan ukuran sampel keduanya cukup besar sehingga memenuhi syarat distribusi normal untuk proporsi.
+
+b. **Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**  
+   Kita misalkan populasi ITERA = 1 dan UNILA = 2. Karena kita ingin mengetahui apakah ada perbedaan (tanpa menentukan arah), kita gunakan hipotesis alternatif **tidak berarah**:
+
+   - **Hipotesis Kosong** ($H_0: P_1 = P_2$): Proporsi pengguna sepeda motor mahasiswa ITERA dan UNILA adalah sama.
+   - **Hipotesis Alternatif** ($H_1: P_1 \ne P_2$): Proporsi pengguna sepeda motor mahasiswa ITERA dan UNILA berbeda.
+
+c. **Menetapkan Wilayah Kritis dari Signifikansi**  
+   Karena hipotesis alternatif kita **tidak berarah**, ini merupakan **uji dua ekor** (*two-tailed*). Tingkat kepercayaan 90% berarti tingkat signifikansi $\alpha = 0{,}10$, sehingga masing-masing ujung kurva memuat luas $\alpha/2 = 0{,}05$.
+
+d. **Mencari Nilai Titik Kritis**  
+   Berdasarkan tabel distribusi normal standar dengan $\alpha/2 = 0{,}05$:
+   
+   $$Z_{kritis} = \pm 1{,}645$$
+
+e. **Mencari Nilai Statistik Uji**  
+   Terlebih dahulu kita hitung proporsi masing-masing sampel dan proporsi gabungannya (Persamaan \@ref(eq:proporsi-gabungan)):
+
+   \begin{align}
+   \hat{p}_1 &= \frac{260}{428} \approx 0{,}607 \nonumber\\
+   \hat{p}_2 &= \frac{230}{394} \approx 0{,}584 \nonumber\\
+   \hat{p}   &= \frac{260 + 230}{428 + 394} = \frac{490}{822} \approx 0{,}596 \nonumber
+   \end{align}
+
+   Kemudian kita hitung nilai statistik ujinya (Persamaan \@ref(eq:statistik-uji-proporsi-dua-populasi)):
+
+   \begin{align}
+   Z_{hitung} &= \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left(\dfrac{1}{N_1} + \dfrac{1}{N_2}\right)}} \nonumber\\
+              &= \frac{0{,}607 - 0{,}584}{\sqrt{0{,}596 \times 0{,}404 \times \left(\dfrac{1}{428} + \dfrac{1}{394}\right)}} \nonumber\\
+              &= \frac{0{,}023}{\sqrt{0{,}2408 \times 0{,}00487}} \nonumber\\
+              &= \frac{0{,}023}{\sqrt{0{,}001173}} \nonumber\\
+              &= \frac{0{,}023}{0{,}0343} \nonumber\\
+              &\approx 0{,}69
+   \end{align}
+
+f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**  
+   Nilai $Z_{hitung} \approx 0{,}69$ berada **di antara $-1{,}645$ dan $+1{,}645$**, sehingga ia **tidak jatuh ke dalam wilayah kritis** di kedua ujung kurva.
+
+g. **Menarik Kesimpulan dan Memaknai Hasil**  
+   Karena statistik uji tidak berada di dalam wilayah kritis, keputusan kita adalah **gagal menolak $H_0$**. Artinya, data yang tersedia **belum cukup untuk membuktikan** adanya perbedaan yang signifikan antara proporsi pengguna sepeda motor mahasiswa ITERA dan UNILA pada tingkat kepercayaan 90%.
+
+   **Interpretasi ke dalam bidang PWK:** meskipun proporsi pengguna sepeda motor di ITERA (≈60,7%) tampak lebih tinggi dari UNILA (≈58,4%), selisih tersebut tidak cukup signifikan secara statistik. Ini menunjukkan bahwa **budaya penggunaan kendaraan bermotor pribadi cenderung serupa** di kedua kampus. Dalam konteks perencanaan transportasi, hal ini mengindikasikan bahwa intervensi kebijakan untuk mendorong moda transportasi alternatif — seperti angkutan umum atau sepeda — kemungkinan perlu diformulasikan secara bersamaan untuk kedua kawasan kampus tersebut.
+:::
+
+Kerjakan soal evaluasi berikut untuk mengaplikasikan pemahaman kalian mengenai uji hipotesis dua populasi independen.
 
 ::: rmdexercise
-## Soal Evaluasi 9 {.unnumbered}
+## Soal Evaluasi 15 {.unnumbered}
 
-1.  Kapan kita menggunakan uji t independen dan kapan menggunakan uji t berpasangan? Berikan contoh kasus perencanaannya! [STP-7.1]{.capaian}
-2.  Lakukan uji beda rata-rata untuk data berikut... [STP-7.2]{.capaian}
+1. Gilang ingin mengetahui apakah selisih rata-rata usia antara seluruh Dosen dengan Tenaga Kependidikan di ITERA sama dengan 1 tahun atau sebenarnya lebih. Dari 73 sampel Dosen, Gilang mendapatkan rata-rata usianya yaitu 30 tahun, sementara dari 69 sampel Tenaga Kependidikan, rata-rata usianya 29 tahun. Simpangan baku sampel Dosen dan Tenaga Kependidikan yang didapatkan Gilang adalah 2,9 tahun dan 2,5 tahun secara berturut-turut. Dengan galat 10%, bantulah Gilang menganalisis hipotesis tersebut. [STP-7.1]{.capaian}
+2. Masih dari data yang sama, Gilang juga ingin mengetahui apakah proporsi Dosen yang sudah menikah di ITERA **lebih besar** dari proporsi Tenaga Kependidikan yang sudah menikah. Dari 73 sampel Dosen, sebanyak 54 orang sudah menikah, sementara dari 69 sampel Tenaga Kependidikan, sebanyak 38 orang sudah menikah. Dengan tingkat kepercayaan 95%, bantulah Gilang menganalisis hipotesis tersebut. [STP-7.1]{.capaian}
+
+Untuk kedua nomor:
+
+a. Nyatakan formulasi hipotesis kosong dan alternatifnya
+b. Gambarkan distribusi statistiknya untuk menampilkan wilayah dan titik kritis
+c. Hitung nilai statistik uji. Gambarkan juga dalam distribusi statistik pada poin b.
+d. Tuliskan keputusan pemilihan hipotesis dan interpretasikan hasilnya.
+:::
+
+## Uji Hipotesis Parameter Dua Populasi Berpasangan
+
+Kasus dua populasi berpasangan merujuk pada kondisi di mana terdapat **dua populasi yang sama dan saling berkaitan**. Kedua populasi ini sebenarnya berasal dari satu populasi yang sama, tetapi diamati dalam dua kondisi yang berbeda, misalnya kondisi sebelum dan sesudah suatu intervensi kebijakan. Atau juga bisa merujuk pada dua populasi yang berbeda namun memiliki karakteristik yang sama sehingga dapat dibandingkan, misalnya membandingkan usia suami dan istri.
+
+Oleh karena populasinya berpasangan, dalam kasus ini kita **hanya bisa menghitung rata-rata dari selisih variabel kedua populasi** tersebut. Selisih ini biasanya disimbolkan dengan $D$ [@tjokropandojo2021pengantar].
+
+Karena kita hanya mempunyai 1 angka tunggal, maka pernyataan hipotesis dan juga perhitungan statistik ujinya sama persis teknisnya dengan uji hipotesis satu populasi:
+
+\begin{equation}
+Z_{hitung} = \frac{\bar{D} - \mu_{D_0}}{s_D / \sqrt{n}}
+(\#eq:statistik-uji-dua-populasi-berpasangan)
+\end{equation}
+
+Di mana:
+
+- $\bar{D}$ = rata-rata selisih antara dua pengamatan berpasangan
+- $\mu_{D_0}$ = nilai hipotesis rata-rata selisih (bernilai 0 pada $H_0$)
+- $s_D$ = simpangan baku dari selisih pengamatan
+- $n$ = jumlah pasangan pengamatan
+
+::: rmdkasus
+### Studi Kasus: Uji Beda Biaya Perjalanan Mahasiswa Sebelum dan Sesudah Pemberlakuan Sistem Angkutan Umum Kampus {.unnumbered}
+
+Pihak pengelola kampus ingin mengevaluasi efektivitas sistem angkutan umum kampus yang baru diluncurkan dalam menekan biaya transportasi harian mahasiswa. Untuk itu, dilakukan pengambilan data terhadap 35 mahasiswa mengenai biaya perjalanan harian mereka sebelum dan sesudah sistem tersebut beroperasi. 
+
+Dari hasil survei, diperoleh rata-rata selisih penurunan biaya perjalanan ($\bar{D}$) sebesar Rp5.300,00 dengan simpangan baku selisih ($s_D$) sebesar Rp1.800,00. Dengan menggunakan **tingkat kepercayaan 95%**, apakah kita dapat menyimpulkan bahwa terdapat perbedaan biaya perjalanan yang signifikan akibat adanya sistem angkutan umum tersebut?
+
+**Jawaban:**
+
+Kita menjalankan langkah-langkah pengujian hipotesis dua populasi berpasangan:
+
+a. **Menyatakan Asumsi Awal**  
+   Data yang digunakan adalah **berpasangan** karena berasal dari subjek yang sama (35 mahasiswa yang sama) pada dua kondisi waktu yang berbeda. Diasumsikan selisih biaya perjalanan berdistribusi normal dengan ukuran sampel $n = 35$ yang mencukupi untuk pendekatan distribusi normal.
+
+b. **Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**  
+   Kita ingin menguji apakah terdapat perbedaan yang signifikan:
+   
+   - **Hipotesis Kosong** ($H_0: \mu_D = 0$): Tidak terdapat perbedaan rata-rata biaya perjalanan mahasiswa antara sebelum dan sesudah adanya angkutan umum.
+   - **Hipotesis Alternatif** ($H_1: \mu_D \ne 0$): Terdapat perbedaan rata-rata biaya perjalanan mahasiswa antara sebelum dan sesudah adanya angkutan umum.
+
+c. **Menetapkan Wilayah Kritis dari Signifikansi**  
+   Tingkat kepercayaan 95% berarti tingkat signifikansi $\alpha = 0,05$. Karena uji dua ekor, maka wilayah penolakan berada di kedua ujung kurva dengan luas masing-masing $\alpha/2 = 0,025$.
+
+d. **Mencari Nilai Titik Kritis**  
+   Berdasarkan tabel distribusi normal standar ($Z$):
+   
+   $$Z_{kritis} = \pm 1,96$$
+
+e. **Mencari Nilai Statistik Uji**  
+   Kita menghitung nilai statistik uji $Z_{hitung}$ untuk data berpasangan:
+
+   \begin{align}
+   Z_{hitung} &= \frac{\bar{D} - \mu_{D_0}}{s_D / \sqrt{n}} \nonumber\\
+              &= \frac{5.300 - 0}{1.800 / \sqrt{35}} \nonumber\\
+              &= \frac{5.300}{1.800 / 5{,}916} \nonumber\\
+              &= \frac{5.300}{304{,}26} \nonumber\\
+              &\approx 17{,}42 (\#eq:z-hitung-biaya-perjalanan)
+   \end{align}
+
+f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**  
+   Nilai $Z_{hitung} \approx 17{,}42$ jauh lebih besar daripada $+1,96$, sehingga statistik uji **jatuh di dalam wilayah kritis** sebelah kanan.
+
+g. **Menarik Kesimpulan dan Memaknai Hasil**  
+   Karena statistik uji berada di wilayah kritis, maka kita **menolak $H_0$**. Ini berarti terdapat bukti statistik yang sangat kuat untuk menyatakan bahwa ada perbedaan biaya perjalanan mahasiswa yang signifikan setelah pemberlakuan sistem angkutan umum kampus.
+
+**Interpretasi ke dalam bidang PWK:** Penurunan biaya perjalanan yang signifikan menunjukkan bahwa penyediaan infrastruktur transportasi umum yang terintegrasi di kawasan pendidikan efektif dalam meningkatkan efisiensi ekonomi bagi pengguna. Dalam perencanaan wilayah, keberhasilan ini dapat menjadi dasar untuk memperluas jangkauan layanan angkutan umum guna mendorong pergeseran moda (*modal shift*) dari kendaraan pribadi ke transportasi publik yang lebih berkelanjutan.
+:::
+
+Kerjakan soal evaluasi berikut untuk mengaplikasikan pemahaman kalian mengenai uji hipotesis dua populasi berpasangan.
+
+::: rmdexercise
+## Soal Evaluasi 16 {.unnumbered}
+
+Kampus ITERA melakukan penilaian terhadap Program Bus Kampus, khusus untuk segmen pegawai dan Tenaga Kependidikan (Tendik). Sebanyak 120 orang pegawai dipilih secara acak dan diamati beberapa bulan sebelum dan setelah program berjalan. Hasilnya, rata-rata selisih biaya perjalanan harian (sesudah dikurangi sebelum) yang diperoleh adalah $-$Rp250.000 dengan simpangan baku Rp120.000. Dengan galat 10%, buktikanlah apakah selisih tersebut signifikan secara statistik. [STP-7.1]{.capaian}
+
+a. Nyatakan hipotesis nol dan hipotesis alternatif.
+b. Gambarkan distribusi statistiknya untuk menampilkan wilayah dan titik kritis.
+c. Hitung nilai statistik uji. Gambarkan juga dalam distribusi statistik pada poin b.
+d. Tuliskan keputusan pemilihan hipotesis dan interpretasikan hasilnya.
+:::
+
+## Uji Hipotesis Parameter Lebih dari Dua Populasi
+
+Selanjutnya, untuk kasus lebih dari dua populasi, konsep dasarnya **sama seperti pada kasus dua populasi yang tidak saling berhubungan (independen)**. Perbedaannya terletak pada **jumlah populasi yang dibandingkan, yaitu lebih dari dua** dan **parameter yang dapat diujikan hanyalah rata-rata**.
+
+Selain itu, dalam pengujian ini tidak ada istilah "bentuk hipotesis alternatif", karena bentuk hipotesis alternatif dalam pengujian ini hanyalah "ada perbedaan".
+
+
+### Konsep *Analysis of Variance* (ANOVA)
+
+Pengujian hipotesis parameter lebih dari dua populasi menggunakan teknik yang disebut **ANOVA (*Analysis of Variance*)**. ANOVA merupakan metode statistik inferensial yang dirancang khusus **untuk membandingkan rata-rata dari lebih dari dua populasi atau kelompok**.
+
+Teknik ini digunakan untuk menentukan, berdasarkan satu variabel metrik (interval-rasio), apakah sampel-sampel berasal dari populasi yang memiliki rata-rata yang sama.
+
+Secara konsep, ANOVA membandingkan **variasi antar kelompok** (*between-group variance*) dengan **variasi di dalam kelompok** (*within-group variance*) untuk menilai apakah perbedaan rata-rata yang muncul bersifat signifikan secara statistik atau hanya terjadi karena faktor kebetulan (*random error*).
+
+
+### Hipotesis Kosong dan Alternatif ANOVA {#hipotesis-kosong-alternatif-anova}
+
+Bentuk hipotesis kosong dari uji hipoteis parameter lebih dari dua populasi adalah "tidak ada perbedaan rata-rata dalam populasi-populasi yang dibandingkan".
+
+$$
+H_0: \mu_A = \mu_B = \mu_C = ...
+$$
+
+Sementara itu, bentuk hipotesis alternatifnya hanyalah **"salah satu atau lebih dari dua populasi memiliki rata-rata yang berbeda"**. Hal ini mengakibatkan tidak ada bentuk pernyataan hipotesis alternatif yang spesifik.
+
+
+### Langkah Pengujian Hipotesis dengan ANOVA
+
+Langkah-langkah pengujian hipotesis menggunakan prosedur ANOVA akan dijelaskan sebagai berikut.
+
+#### Menyatakan Asumsi Awal
+
+Agar prosedur ANOVA dapat dilakukan, terdapat beberapa asumsi yang harus dipenuhi [@healey2021statistics; @devaus2014surveys], di antaranya
+
+a. Sampel harus acak dan independen satu sama lain; 
+b. Tingkat pengukuran variabel yang diuji adalah interval-rasio; 
+c. Data terdistribusi normal. Pada dasarnya, ANOVA toleran terhadap beberapa pelanggaran, tetapi keberadaan *outlier* yang parah akan mengganggu hasil analisis sehingga akan lebih baik jika asumsi ini terpenuhi; 
+d. Variansi kelompok harus kira-kira sama untuk semua populasi.
+
+#### Merumuskan Hipotesis Kosong dan Alternatif
+
+Pada dasarnya, hipotesis dalam prosedur ANOVA memiliki bentuk yang seragam. Peneliti hanya perlu menyesuaikan notasinya sesuai dengan konteks atau kebutuhan penelitian yang dilakukan. Adapun bentuk matematis dari hipotesis dalam analisis ANOVA telah dijelaskan dalam subbab \@ref(hipotesis-kosong-alternatif-anova).
+
+
+::: rmdkasus
+### Studi Kasus: Uji ANOVA Biaya Perjalanan Tiga Kampus {.unnumbered}
+
+Dinas Perhubungan melakukan survei biaya perjalanan per bulan (dalam ribu rupiah) dari mahasiswa di tiga kampus yang ada di Bandar Lampung: UIN RIL, UNILA, dan UBL. Ringkasan datanya dihimpun dalam metrik berikut:
+
+| Kampus      | Ukuran Sampel | Rata-rata (ribu rupiah) |
+| ----------- | ------------- | ----------------------- |
+| UINRIL      | 400           | 39,33                   |
+| UNILA       | 394           | 74,00                   |
+| UBL         | 378           | 99,18                   |
+| Tiga kampus | 1.172         | 70,29                   |
+
+Dengan tingkat signifikansi sebesar 5%, apakah perbedaan rata-rata biaya perjalanan di antara ketiga kampus tersebut nyata secara statistik? 
+
+**Jawaban:**
+
+a. **Menyatakan Asumsi Awal**  
+  Setiap subjek beserta catatan biayanya dipilah ke dalam sampel pengamatan secara acak dari ketiga kampus tanpa saling mencampuri observasi lainnya (**independen**). Objek yang diteliti, yaitu biaya, berderajat numerik (**interval-rasio**). Mengingat besaran cakupan seluruh sampel melintasi rekomendasi kenormalan (>100), sebaran statistik diyakini memadai asumsi berdistribusi **normal**. Disertai pula asusmi kesetaraan disparitas keberagaman nilainya di rentang proporsi populasi (**homogenitas varians**).
+
+b. **Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**  
+   -   **Hipotesis Kosong** ($H_0: \mu_{UIN} = \mu_{UNILA} = \mu_{UBL}$): Tidak terdapat perbedaan signifikan dalam parameter rata-rata rasio biaya perjalanan populasi mahasiswa di ketiga kampus tersebut.
+   -   **Hipotesis Alternatif** ($H_1$): Terdapat setidaknya kelompok dari salah satu kampus yang rata-rata biaya perjalanannya berlainan dibandingkan yang lain.
+:::
+
+
+#### Menentukan Wilayah dan Titik Kritis
+
+Dalam prosedur ANOVA, distribusi sampling yang digunakan adalah **distribusi F**. Distribusi ini memungkinkan peneliti untuk menguji hipotesis kosong ($H_0$) mengenai *ada tidaknya perbedaan rata-rata di antara dua kelompok atau lebih*.
+
+Bentuk distribusi F bersifat asimetris (miring ke kanan) dan nilainya selalu positif (Gambar \@ref(fig:fig-distribusi-f)). Hal ini karena nilai F diperoleh dari **perbandingan antara dua parameter penting**, yaitu **variansi antar kelompok** (*between groups*) dan **variansi dalam kelompok** (*within groups*).
+
+$$
+F = \frac{Variansi\ Antar\ Kelompok}{Variansi\ Dalam\ Kelompok}
+(\#eq:rumus-dasar-f)
+$$
+
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-distribusi-f-1.png" alt="Bentuk Distribusi F dan Wilayah Kritisnya" width="100%" />
+<p class="caption">(\#fig:fig-distribusi-f)Bentuk Distribusi F dan Wilayah Kritisnya</p>
+</div>
+
+Makna nilai $F$ yang besar menunjukkan bahwa perbedaan rata-rata antarkelompok signifikan secara statistik, sedangkan nilai $F$ yang mendekati 1 menunjukkan bahwa perbedaan antarkelompok cenderung terjadi karena kebetulan.
+
+Menentukan $F_{kritis}$ dan wilayah kritis pada ANOVA membutuhkan 3 parameter penting: **derajat kebebasan di dalam kelompok** (*degree of freedom within group*, $dfw$), **derajat kebebasan di antara kelompok** (*degree of freedom between group*, $dfb$), dan **tingkat signifikansi** ($\alpha$) sebagai **wilayah kritis**. Ketiga parameter tersebut menjadi penentu nilai $F_{kritis}$ dari **tabel distribusi F**.
+
+Nilai $\alpha$ menjadi variasi tabel, sementara itu di setiap tabel kita menentukan nilai $F_{kritis}$ berdasarkan nilai **$dfw$** yang bertindak sebagai **baris** dan **$dfb$** yang bertindak sebagai **kolom**.
+
+Tabel tersebut dapat kita lihat pada Tabel \@ref(tab:tab-distribusi-f-5persen-lampiran) untuk $\alpha = 5\%$ dan Tabel \@ref(tab:tab-distribusi-f-10persen) untuk $\alpha = 10\%$ di bagian Lampiran.
+
+#### Menghitung Statistik Uji
+
+Perhitungan statistik uji, dalam hal ini adalah nilai F dihitung dengan persamaan \@ref(eq:rumus-f-anova) berikut yang merupakan penjabaran dari persamaan \@ref(eq:rumus-dasar-f).
+
+$$
+F = \frac{MSB}{MSW}
+(\#eq:rumus-f-anova)
+$$
+
+Di mana $MSB$ adalah *Mean Square Between* atau variansi antar kelompok, dan $MSW$ adalah *Mean Square Within* atau variansi dalam kelompok.
+
+- Untuk menghitung $MSB$ sendiri kita menggunakan persamaan berikut
+
+  $$ 
+  MSB = \frac{SSB}{dfb}
+  (\#eq:rumus-msb-anova)
+  $$
+
+  $SSB$ sendiri kita hitung dengan persamaan berikut
+
+  $$ 
+  SSB = \sum_{i=1}^{k} n_i (\bar{x}_i - \bar{x})^2
+  (\#eq:rumus-ssb-anova)
+  $$
+
+  dengan
+
+  - $n_i$ adalah ukuran sampel dari populasi ke-$i$
+  - $\bar{x}_i$ adalah rata-rata sampel dari populasi ke-$i$
+  - $\bar{x}$ adalah rata-rata gabungan sampel dari keseluruhan populasi
+
+- Untuk menghitung $MSW$ kita menggunakan persamaan berikut
+
+  $$ 
+  MSW = \frac{SSW}{dfw}
+  (\#eq:rumus-msw-anova)
+  $$ 
+
+  Dalam prosedur ANOVA, variasi total dari seluruh skor dibagi menjadi dua komponen utama: variasi **di dalam** kelompok ($SSW$) dan variasi **antar** kelompok ($SSB$). Jika keduanya dijumlahkan, kita mendapatkan nilai variasi total (*Total Sum of Squares*, $SST$) yang dinyatakan sebagai
+
+  $$
+  SST = SSB + SSW
+  (\#eq:rumus-sst-anova)
+  $$
+
+  sehingga $SSW$ dapat diperoleh dengan
+
+  $$ 
+  SSW = SST - SSB
+  (\#eq:rumus-ssw-anova)
+  $$ 
+
+  $SST$ sendiri terlebih dahulu dihitung dengan persamaan
+
+  $$
+  SST = \sum x^2 - N\bar{x}^2
+  (\#eq:rumus-sst-detail-anova)
+  $$
+
+  dengan
+
+  - $\sum x^2$ adalah jumlah dari kuadrat masing-masing skor observasi
+  - $N$ adalah jumlah total observasi dari seluruh kelompok
+  - $\bar{x}$ adalah rata-rata gabungan dari seluruh skor (*grand mean*)
+
+  **Langkah-langkah menghitung SSW:**
+
+  1. *Menghitung $SST$*: Kuadratkan setiap skor secara individual, lalu jumlahkan seluruh hasilnya untuk mendapatkan $\sum x^2$. Selanjutnya, kuadratkan *grand mean* $\bar{x}$ dan kalikan dengan jumlah total observasi $N$. Kurangkan hasil perkalian tersebut dari $\sum x^2$ untuk mendapatkan nilai $SST$.
+
+  2. *Menghitung $SSB$*: Untuk setiap kelompok ke-$i$, hitung selisih antara rata-rata kelompok $\bar{x}_i$ dan *grand mean* $\bar{x}$, lalu kuadratkan. Kalikan deviasi yang telah dikuadratkan tersebut dengan jumlah sampel kelompok $n_i$. Jumlahkan hasil perkalian dari seluruh kelompok untuk mendapatkan nilai $SSB$ (Persamaan \@ref(eq:rumus-ssb-anova)).
+
+  3. *Menghitung $SSW$*: Kurangkan nilai $SSB$ dari nilai $SST$. Selisih inilah yang merupakan nilai $SSW$ (Persamaan \@ref(eq:rumus-ssw-anova)).
+
+#### Menarik Kesimpulan
+Penarikan kesimpulan dilakukan dengan membandingkan nilai statistik uji, yaitu nilai $F$ hasil perhitungan ($F_{uji}$) terhadap nilai $F_{kritis}$ dari tabel. $H_0$ akan **ditolak** apabila nilai **$F_{uji}$ lebih besar dari nilai $F_{kritis}$** atau $F_{uji} > F_{kritis}$, sementara apabila nilai **$F_{uji} < F_{kritis}$**, maka hasil pengujian **gagal menolak $H_0$**.
+
+Jika kita menggunakan pendekatan *p-value* yang digunakan di banyak perangkat lunak statistik seperti bahasa R atau SPSS, *p-value* < signifikansi ($\alpha$) berarti kita menolak $H_0$, sementara jika *p-value* > signifikansi ($\alpha$) maka kita gagal menolak $H_0$.
+
+::: rmdkasus
+### Lanjutan Studi Kasus: Uji ANOVA Biaya Perjalanan Tiga Kampus {.unnumbered}
+
+Setelah menyatakan asumsi dan merumuskan hipotesis, langkah selanjutnya adalah menguji hipotesis tersebut dengan membandingkan $F_{kritis}$ atau $F_{tabel}$ dengan $F_{hitung}$ yang dilakukan sebagai berikut.
+
+c. **Menetapkan Wilayah Kritis dan Titik Kritis**  
+   Wilayah kritis kita adalah nilai $\alpha$ yang digunakan untuk pengujian, yakni 5%. Untuk mencari titik kritisnya, maka kita harus menggunakan Tabel $F$ dengan $\alpha = 5\%$.
+   Untuk menentukan titik kritisnya, kita menggunakan dua besaran derajat kebebasan $dfb$ dan $dfw$.
+   
+   $$
+   \begin{align}
+   dfb &= K - 1 \\
+       &= 3 - 1 \\
+       &= 2 \\
+   dfw &= N - K \\
+       &= 1.172 - 3 \\
+       &= 1.169
+   \end{align}
+   $$
+   
+   Oleh karena nilai $dfw$ sangat besar, kita menggunakan angka tak hingga ($\infty$).
+   Dari nilai $dfb$ yang menjadi kolom dan $dfw$ yang menjadi baris, kita mendapatkan titik kritis kita sebesar 3,00.
+
+d. **Menghitung Statistik Uji** 
+   Menghitung nilai $F_{hitung}$ (persamaan \@ref(eq:rumus-f-anova)) memerlukan nilai $MSB$ dan $MSW$. Nilai $MSB$ dan $MSW$ dihitung dengan persamaan \@ref(eq:rumus-msb-anova) dan \@ref(eq:rumus-msw-anova) yang dihasilkan dari nilai $SSB$ dan $SSW$ (persamaan \@ref(eq:rumus-ssb-anova) dan \@ref(eq:rumus-ssw-anova)).
+
+   - **Nilai Total Variasi ($SST$)**: Variansi ditelaah pada setiap individu responden untuk dikurangkan terhadap *grand mean* yang diketahui sebesar 70,29. Mengutip 5 nilai sampel pertama (diketahui berasal dari UNILA: 150, 150, 25, 25, 25), kita menghitung SST sesuai persamaan \@ref(eq:rumus-sst-anova):
+
+     | $x_i$   | $x_i^2$ |
+     | ------- | ------- |
+     | 150     | 22.500  |
+     | 150     | 22.500  |
+     | 25      | 625     |
+     | 25      | 625     |
+     | 25      | 625     |
+     | $\dots$ | $\dots$ |
+
+     $$
+     \begin{align}
+     \sum x_i^2 &= 22.500 + 22.500 + 625 + 625 + 625 + \dots = 11.205.372 \nonumber\\
+     SST &= \sum x_i^2 - N\bar{x}^2 \nonumber\\
+     &= 11.205.372 - 1.172(70,29)^2 \nonumber\\
+     &\approx \mathbf{5.414.663} \nonumber
+     \end{align}
+     $$
+
+   - **Nilai Variasi Antar-Kelompok ($SSB$)**: Variansi ini mengukur seberapa jauh perbedaan rata-rata tiap kampus ($\bar{x}_j$) terhadap rata-rata gabungan keseluruhannya (*grand mean*). Karena jumlah sampel kita sangat banyak, perhitungannya bisa dipersingkat. Kita cukup mencari selisih rata-rata tiap kampus dengan *grand mean*, mengkuadratkannya, lalu mengalikannya dengan jumlah sampel di kampus tersebut ($n_j$):  
+
+     | Kampus ($j$) | $n_j$ | $\bar{x}_j$ | $(\bar{x}_j - \bar{x})$ | $(\bar{x}_j - \bar{x})^2$ | $n_j(\bar{x}_j - \bar{x})^2$ |
+     | ------------ | ----- | ----------- | ----------------------- | ------------------------- | ---------------------------- |
+     | UINRIL       | 400   | 39,33       | -30,96                  | 958,52                    | **383.408,6**                |
+     | UNILA        | 394   | 74,00       | 3,71                    | 13,76                     | **5.423,1**                  |
+     | UBL          | 378   | 99,18       | 28,89                   | 834,63                    | **315.490,9**                |
+
+     $$
+     \begin{align}
+     SSB &= \sum n_j(\bar{x}_j - \bar{x})^2 \\
+     &= 383.408{,}6 + 5.423{,}1 + 315.490{,}9 \\
+     &= \mathbf{704.322{,}6} \approx \mathbf{704.352{,}5}
+     \end{align}
+     $$
+     
+   - **Nilai Variasi Dalam-Kelompok ($SSW$)**: Nilai ini mewakili variasi alami yang memang terjadi di dalam observasi masing-masing kelompok kampus. Alih-alih menghitung rumusnya dari awal satu per satu, kita bisa memanfaatkan sifat penjumlahan komponen variasi secara langsung. Kita cukup mengurangkan variasi total ($SST$) dengan variasi antar-kelompok ($SSB$):  
+   
+     $$
+     \begin{align}
+     SSW &= SST - SSB \nonumber\\
+         &= 5.414.663 - 704.352{,}5 \nonumber\\
+         &= \mathbf{4.710.310{,}5} \nonumber
+     \end{align}
+     $$
+
+     Nilai variasi $SSB$ dan $SSW$ yang baru saja kita dapatkan belum bisa dibandingkan secara langsung. Kita harus menstandarkannya terlebih dahulu dengan membaginya menggunakan besaran derajat kebebasannya ($df$) masing-masing untuk memperoleh nilai rata-rata kuadrat atau *Mean Square* ($MSB$ dan $MSW$). Setelah itu, barulah kita bisa mendapatkan nilai $F_{hitung}$ dari pembagian antara $MSB$ dan $MSW$:  
+   
+     $$
+     \begin{align}
+     MSB &= \frac{SSB}{dfb} \\
+         &= \frac{704.352{,}5}{2} \\
+         &= 352.176{,}2 \\
+     MSW &= \frac{SSW}{dfw} \\
+         &= \frac{4.710.310{,}5}{1.169} \\
+         &= 4.029{,}3 \\
+     F_{hitung} &= \frac{MSB}{MSW} \\
+         &= \frac{352.176{,}2}{4.029{,}3} \\
+         &= \mathbf{87{,}4}
+     \end{align}
+     $$
+
+e. **Menarik Kesimpulan**  
+   Nilai $F_{hitung}$ yang kita peroleh sebesar 87,4 jauh melampaui rentang nilai penerimaan wajar karena nilainya lebih besar daripada nilai $F_{kritis}$ sebesar 3,00 ($F_{hitung} > F_{kritis}$). Dengan jatuhnya nilai statistik uji ini ke dalam wilayah kritis, keputusan akhir kita adalah **menolak hipotesis kosong ($H_0$)**. 
+
+f. **Membahas Interpretasi**  
+   Ditolaknya hipotesis kosong menunjukkan bahwa, secara komparatif statistik probabilitas, dapat disimpulkan bahwa **terdapat perbedaan rata-rata biaya perjalanan yang nyata (signifikan)** minimal untuk salah satu populasi mahasiswa di ketiga kampus tersebut. Asumsi netral ($H_0$) bahwa beban pengeluaran transportasi mahasiswa sama berapapun biayanya di setiap kampus kita tolak.
+
+   Secara realita di lapangan, perbedaan ini bisa menunjukkan adanya karakteristik khas dari kampus tertentu yang membuat mahasiswanya butuh biaya keseharian transportasi mobilitas lebih tinggi (misalnya terkait kepemilikan dan pilihan moda kendaraan pribadi yang lebih mahal, atau keterpencilan lokasi). Bagi instansi pemerintah dan perencana transportasi, pembuktian kesenjangan aksesibilitas ekonomi antarwilayah kampus ini dapat menjadi basis dasar analitik dalam merumuskan penyediaan infrastruktur transportasi massal, program penyediaan *bus school*, atau kebijakan tarif subsidi publik yang tepat sasaran.
+:::
+
+::: rmdexercise
+## Soal Evaluasi 17 {.unnumbered}
+
+Sebagai bagian dari upaya peningkatan keselamatan di lingkungan  kampus, mahasiswa  ITERA  diwajibkan mematuhi peraturan berkendara, salah satunya adalah menggunakan helm saat mengendarai kendaraan bermotor, termasuk  ketika berpindah antar gedung untuk mengikuti perkuliahan.
+
+Rektorat berhipotesis bahwa tingkat kepatuhan mahasiswa terhadap peraturan berkendara, khususnya pemakaian helm, berbeda antar tingkat perkuliahan. Untuk menguji hipotesis tersebut, dilakukan survei selama 30 hari dengan memasang kamera pengawas di beberapa ttiik strategis. Plat nomor motor setiap mahasiswa didata dan dicocokkan dengan identitas mahasiswa yang terdaftar. Algoritma pengenalan plat nomor kendaraan dan pemakaian helm dari rekaman video pun dikembangkan untuk memudahkan pendataan pelanggar. Setiap pelanggar per hari dicatat dan rata-rata jumlah pelanggar dihitung untuk setiap tingkat perkuliahan. Hasil surveinya adalah sebagai berikut
+
+| Tingkat Perkuliahan | Jumlah Sampel | Rata-rata Jumlah Pelanggar |
+| ------------------- | ------------- | -------------------------- |
+| Tahun Pertama       | 200           | 30                         |
+| Tahun Kedua         | 220           | 32                         |
+| Tahun Ketiga        | 310           | 59                         |
+| Tahun Keempat       | 175           | 33                         |
+
+Dari data tersebut diperoleh SST sebesar 36.193.660 dan SSB sebesar 153.660. Dengan tingkat signifikansi 0,05 tentukan apakah hipotesis rektorat tersebut berlaku? [STP-7.1]{.capaian}
 
 :::
 
@@ -5430,10 +6078,11 @@ summary(model_anova)
 
 ```
 ##             Df Sum Sq Mean Sq F value   Pr(>F)    
-## zona         2  160.1   80.07   42.14 3.75e-06 ***
-## Residuals   12   22.8    1.90                     
+## zona         2  160,1   80,07   42,14 3,75e-06 ***
+## Residuals   12   22,8    1,90                     
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Signif. codes:  
+## 0 '***' 0,001 '**' 0,01 '*' 0,05 '.' 0,1 ' ' 1
 ```
 
 **Interpretasi**:
@@ -5452,9 +6101,9 @@ TukeyHSD(model_anova)
 ## 
 ## $zona
 ##                diff       lwr      upr     p adj
-## Rural-Pusat    -8.0 -10.32579 -5.67421 0.0000025
-## Suburban-Pusat -3.8  -6.12579 -1.47421 0.0024733
-## Suburban-Rural  4.2   1.87421  6.52579 0.0011306
+## Rural-Pusat    -8,0 -10,32579 -5,67421 0,0000025
+## Suburban-Pusat -3,8  -6,12579 -1,47421 0,0024733
+## Suburban-Rural  4,2   1,87421  6,52579 0,0011306
 ```
 
 ::: rmdexercise
@@ -5505,7 +6154,7 @@ chisq.test(tabel)
 ## 	Pearson's Chi-squared test
 ## 
 ## data:  tabel
-## X-squared = 3.75, df = 2, p-value = 0.1534
+## X-squared = 3,75, df = 2, p-value = 0,1534
 ```
 
 **Interpretasi**:
@@ -5546,11 +6195,11 @@ cor.test(pendidikan, kepuasan, method = "spearman")
 ## 	Spearman's rank correlation rho
 ## 
 ## data:  pendidikan and kepuasan
-## S = 5.6, p-value = 0.005752
+## S = 5,6, p-value = 0,005752
 ## alternative hypothesis: true rho is not equal to 0
 ## sample estimates:
 ## rho 
-## 0.9
+## 0,9
 ```
 
 ``` r
@@ -5563,11 +6212,11 @@ cor.test(pendidikan, kepuasan, method = "kendall")
 ## 	Kendall's rank correlation tau
 ## 
 ## data:  pendidikan and kepuasan
-## z = 2.3936, p-value = 0.01668
+## z = 2,3936, p-value = 0,01668
 ## alternative hypothesis: true tau is not equal to 0
 ## sample estimates:
 ##   tau 
-## 0.875
+## 0,875
 ```
 
 **Interpretasi**:
@@ -5614,13 +6263,13 @@ cor.test(pendapatan, pengeluaran, method = "pearson")
 ## 	Pearson's product-moment correlation
 ## 
 ## data:  pendapatan and pengeluaran
-## t = 8.5927, df = 5, p-value = 0.0003521
+## t = 8,5927, df = 5, p-value = 0,0003521
 ## alternative hypothesis: true correlation is not equal to 0
 ## 95 percent confidence interval:
-##  0.7916653 0.9953960
+##  0,7916653 0,9953960
 ## sample estimates:
 ##       cor 
-## 0.9677688
+## 0,9677688
 ```
 
 ::: rmdexercise
@@ -5660,19 +6309,22 @@ summary(model)
 ## lm(formula = pengeluaran ~ pendapatan)
 ## 
 ## Residuals:
-##          1          2          3          4          5          6          7 
-##  8.929e-02  3.929e-01 -8.036e-01 -1.804e-16  3.036e-01  1.071e-01 -8.929e-02 
+##          1          2          3          4 
+##  8,929e-02  3,929e-01 -8,036e-01 -1,804e-16 
+##          5          6          7 
+##  3,036e-01  1,071e-01 -8,929e-02 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) -0.57143    0.66834  -0.855 0.431606    
-## pendapatan   0.69643    0.08105   8.593 0.000352 ***
+## (Intercept) -0,57143    0,66834  -0,855 0,431606    
+## pendapatan   0,69643    0,08105   8,593 0,000352 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Signif. codes:  
+## 0 '***' 0,001 '**' 0,01 '*' 0,05 '.' 0,1 ' ' 1
 ## 
-## Residual standard error: 0.4289 on 5 degrees of freedom
-## Multiple R-squared:  0.9366,	Adjusted R-squared:  0.9239 
-## F-statistic: 73.83 on 1 and 5 DF,  p-value: 0.0003521
+## Residual standard error: 0,4289 on 5 degrees of freedom
+## Multiple R-squared:  0,9366,	Adjusted R-squared:  0,9239 
+## F-statistic: 73,83 on 1 and 5 DF,  p-value: 0,0003521
 ```
 
 ``` r
@@ -5682,7 +6334,7 @@ coef(model)
 
 ```
 ## (Intercept)  pendapatan 
-##  -0.5714286   0.6964286
+##  -0,5714286   0,6964286
 ```
 
 **Interpretasi**:
@@ -5727,17 +6379,17 @@ summary(model_berganda)
 ## 
 ## Residuals:
 ##       1       2       3       4       5 
-## -22.901  -6.107  16.031  32.824 -19.847 
+## -22,901  -6,107  16,031  32,824 -19,847 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)
-## (Intercept)  156.489    104.150   1.503    0.272
-## luas           3.053      1.724   1.771    0.219
-## kamar         30.534     50.865   0.600    0.609
+## (Intercept)  156,489    104,150   1,503    0,272
+## luas           3,053      1,724   1,771    0,219
+## kamar         30,534     50,865   0,600    0,609
 ## 
-## Residual standard error: 33.84 on 2 degrees of freedom
-## Multiple R-squared:  0.9771,	Adjusted R-squared:  0.9542 
-## F-statistic: 42.67 on 2 and 2 DF,  p-value: 0.0229
+## Residual standard error: 33,84 on 2 degrees of freedom
+## Multiple R-squared:  0,9771,	Adjusted R-squared:  0,9542 
+## F-statistic: 42,67 on 2 and 2 DF,  p-value: 0,0229
 ```
 
 ::: rmdexercise
@@ -5775,10 +6427,14 @@ summary(pca_result)
 
 ```
 ## Importance of components:
-##                           PC1    PC2    PC3    PC4    PC5
-## Standard deviation     1.1077 1.0610 1.0191 0.9468 0.8440
-## Proportion of Variance 0.2454 0.2251 0.2077 0.1793 0.1425
-## Cumulative Proportion  0.2454 0.4705 0.6783 0.8575 1.0000
+##                           PC1    PC2    PC3    PC4
+## Standard deviation     1,1077 1,0610 1,0191 0,9468
+## Proportion of Variance 0,2454 0,2251 0,2077 0,1793
+## Cumulative Proportion  0,2454 0,4705 0,6783 0,8575
+##                           PC5
+## Standard deviation     0,8440
+## Proportion of Variance 0,1425
+## Cumulative Proportion  1,0000
 ```
 
 ``` r
@@ -5787,12 +6443,18 @@ pca_result$rotation
 ```
 
 ```
-##            PC1        PC2        PC3        PC4       PC5
-## Q1  0.67277300  0.3292034 -0.1275847 -0.1588174 0.6304766
-## Q2  0.19353433 -0.6901072  0.1205644  0.6023990 0.3299640
-## Q3 -0.28920162 -0.4912642 -0.5283287 -0.5405369 0.3220413
-## Q4  0.01926618 -0.2337862  0.8146660 -0.5122828 0.1373262
-## Q5 -0.65261949  0.3455152  0.1624021  0.2393297 0.6091420
+##            PC1        PC2        PC3        PC4
+## Q1  0,67277300  0,3292034 -0,1275847 -0,1588174
+## Q2  0,19353433 -0,6901072  0,1205644  0,6023990
+## Q3 -0,28920162 -0,4912642 -0,5283287 -0,5405369
+## Q4  0,01926618 -0,2337862  0,8146660 -0,5122828
+## Q5 -0,65261949  0,3455152  0,1624021  0,2393297
+##          PC5
+## Q1 0,6304766
+## Q2 0,3299640
+## Q3 0,3220413
+## Q4 0,1373262
+## Q5 0,6091420
 ```
 
 ::: rmdexercise
@@ -5804,4 +6466,3141 @@ pca_result$rotation
 :::
 
 <!--chapter:end:15-multivariat-interdependensi.Rmd-->
+
+# Referensi {-}
+
+<div id="refs"></div>
+
+<!--chapter:end:89-referensi.Rmd-->
+
+# (APPENDIX) Lampiran {-}
+
+# Tabel Statistik {.unnumbered}
+
+## Tabel Distribusi Normal Standar (Z) {.unnumbered} {#appendix-tabel-normdist}
+
+Tabel berikut menyajikan luas area di bawah kurva distribusi normal standar dari $Z = 0$ hingga nilai $Z$ tertentu, yaitu $P(0 \leq Z \leq z)$.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-ilustrasi-z-table-1.png" alt="Luas area yang dicari pada Tabel Distribusi Normal Standar: $P(0 \leq Z \leq z)$" width="45%" />
+<p class="caption">(\#fig:fig-ilustrasi-z-table)Luas area yang dicari pada Tabel Distribusi Normal Standar: $P(0 \leq Z \leq z)$</p>
+</div>
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:450px; overflow-x: scroll; width:100%; "><table class="table table-striped table-hover table-condensed" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tab-distribusi-z)Tabel Distribusi Normal Standar $P(0 \leq Z \leq z)$</caption>
+ <thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;position: sticky; top:0; background-color: #FFFFFF;" colspan="1"></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; position: sticky; top:0; background-color: #FFFFFF;" colspan="10"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Desimal kedua nilai z</div></th>
+</tr>
+  <tr>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> z </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,00 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,01 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,02 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,03 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,04 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,05 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,06 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,07 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,08 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 0,09 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,0 </td>
+   <td style="text-align:center;"> 0,0000 </td>
+   <td style="text-align:center;"> 0,0040 </td>
+   <td style="text-align:center;"> 0,0080 </td>
+   <td style="text-align:center;"> 0,0120 </td>
+   <td style="text-align:center;"> 0,0160 </td>
+   <td style="text-align:center;"> 0,0199 </td>
+   <td style="text-align:center;"> 0,0239 </td>
+   <td style="text-align:center;"> 0,0279 </td>
+   <td style="text-align:center;"> 0,0319 </td>
+   <td style="text-align:center;"> 0,0359 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,1 </td>
+   <td style="text-align:center;"> 0,0398 </td>
+   <td style="text-align:center;"> 0,0438 </td>
+   <td style="text-align:center;"> 0,0478 </td>
+   <td style="text-align:center;"> 0,0517 </td>
+   <td style="text-align:center;"> 0,0557 </td>
+   <td style="text-align:center;"> 0,0596 </td>
+   <td style="text-align:center;"> 0,0636 </td>
+   <td style="text-align:center;"> 0,0675 </td>
+   <td style="text-align:center;"> 0,0714 </td>
+   <td style="text-align:center;"> 0,0753 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,2 </td>
+   <td style="text-align:center;"> 0,0793 </td>
+   <td style="text-align:center;"> 0,0832 </td>
+   <td style="text-align:center;"> 0,0871 </td>
+   <td style="text-align:center;"> 0,0910 </td>
+   <td style="text-align:center;"> 0,0948 </td>
+   <td style="text-align:center;"> 0,0987 </td>
+   <td style="text-align:center;"> 0,1026 </td>
+   <td style="text-align:center;"> 0,1064 </td>
+   <td style="text-align:center;"> 0,1103 </td>
+   <td style="text-align:center;"> 0,1141 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,3 </td>
+   <td style="text-align:center;"> 0,1179 </td>
+   <td style="text-align:center;"> 0,1217 </td>
+   <td style="text-align:center;"> 0,1255 </td>
+   <td style="text-align:center;"> 0,1293 </td>
+   <td style="text-align:center;"> 0,1331 </td>
+   <td style="text-align:center;"> 0,1368 </td>
+   <td style="text-align:center;"> 0,1406 </td>
+   <td style="text-align:center;"> 0,1443 </td>
+   <td style="text-align:center;"> 0,1480 </td>
+   <td style="text-align:center;"> 0,1517 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,4 </td>
+   <td style="text-align:center;"> 0,1554 </td>
+   <td style="text-align:center;"> 0,1591 </td>
+   <td style="text-align:center;"> 0,1628 </td>
+   <td style="text-align:center;"> 0,1664 </td>
+   <td style="text-align:center;"> 0,1700 </td>
+   <td style="text-align:center;"> 0,1736 </td>
+   <td style="text-align:center;"> 0,1772 </td>
+   <td style="text-align:center;"> 0,1808 </td>
+   <td style="text-align:center;"> 0,1844 </td>
+   <td style="text-align:center;"> 0,1879 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,5 </td>
+   <td style="text-align:center;"> 0,1915 </td>
+   <td style="text-align:center;"> 0,1950 </td>
+   <td style="text-align:center;"> 0,1985 </td>
+   <td style="text-align:center;"> 0,2019 </td>
+   <td style="text-align:center;"> 0,2054 </td>
+   <td style="text-align:center;"> 0,2088 </td>
+   <td style="text-align:center;"> 0,2123 </td>
+   <td style="text-align:center;"> 0,2157 </td>
+   <td style="text-align:center;"> 0,2190 </td>
+   <td style="text-align:center;"> 0,2224 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,6 </td>
+   <td style="text-align:center;"> 0,2257 </td>
+   <td style="text-align:center;"> 0,2291 </td>
+   <td style="text-align:center;"> 0,2324 </td>
+   <td style="text-align:center;"> 0,2357 </td>
+   <td style="text-align:center;"> 0,2389 </td>
+   <td style="text-align:center;"> 0,2422 </td>
+   <td style="text-align:center;"> 0,2454 </td>
+   <td style="text-align:center;"> 0,2486 </td>
+   <td style="text-align:center;"> 0,2517 </td>
+   <td style="text-align:center;"> 0,2549 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,7 </td>
+   <td style="text-align:center;"> 0,2580 </td>
+   <td style="text-align:center;"> 0,2611 </td>
+   <td style="text-align:center;"> 0,2642 </td>
+   <td style="text-align:center;"> 0,2673 </td>
+   <td style="text-align:center;"> 0,2704 </td>
+   <td style="text-align:center;"> 0,2734 </td>
+   <td style="text-align:center;"> 0,2764 </td>
+   <td style="text-align:center;"> 0,2794 </td>
+   <td style="text-align:center;"> 0,2823 </td>
+   <td style="text-align:center;"> 0,2852 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,8 </td>
+   <td style="text-align:center;"> 0,2881 </td>
+   <td style="text-align:center;"> 0,2910 </td>
+   <td style="text-align:center;"> 0,2939 </td>
+   <td style="text-align:center;"> 0,2967 </td>
+   <td style="text-align:center;"> 0,2995 </td>
+   <td style="text-align:center;"> 0,3023 </td>
+   <td style="text-align:center;"> 0,3051 </td>
+   <td style="text-align:center;"> 0,3078 </td>
+   <td style="text-align:center;"> 0,3106 </td>
+   <td style="text-align:center;"> 0,3133 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 0,9 </td>
+   <td style="text-align:center;"> 0,3159 </td>
+   <td style="text-align:center;"> 0,3186 </td>
+   <td style="text-align:center;"> 0,3212 </td>
+   <td style="text-align:center;"> 0,3238 </td>
+   <td style="text-align:center;"> 0,3264 </td>
+   <td style="text-align:center;"> 0,3289 </td>
+   <td style="text-align:center;"> 0,3315 </td>
+   <td style="text-align:center;"> 0,3340 </td>
+   <td style="text-align:center;"> 0,3365 </td>
+   <td style="text-align:center;"> 0,3389 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,0 </td>
+   <td style="text-align:center;"> 0,3413 </td>
+   <td style="text-align:center;"> 0,3438 </td>
+   <td style="text-align:center;"> 0,3461 </td>
+   <td style="text-align:center;"> 0,3485 </td>
+   <td style="text-align:center;"> 0,3508 </td>
+   <td style="text-align:center;"> 0,3531 </td>
+   <td style="text-align:center;"> 0,3554 </td>
+   <td style="text-align:center;"> 0,3577 </td>
+   <td style="text-align:center;"> 0,3599 </td>
+   <td style="text-align:center;"> 0,3621 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,1 </td>
+   <td style="text-align:center;"> 0,3643 </td>
+   <td style="text-align:center;"> 0,3665 </td>
+   <td style="text-align:center;"> 0,3686 </td>
+   <td style="text-align:center;"> 0,3708 </td>
+   <td style="text-align:center;"> 0,3729 </td>
+   <td style="text-align:center;"> 0,3749 </td>
+   <td style="text-align:center;"> 0,3770 </td>
+   <td style="text-align:center;"> 0,3790 </td>
+   <td style="text-align:center;"> 0,3810 </td>
+   <td style="text-align:center;"> 0,3830 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,2 </td>
+   <td style="text-align:center;"> 0,3849 </td>
+   <td style="text-align:center;"> 0,3869 </td>
+   <td style="text-align:center;"> 0,3888 </td>
+   <td style="text-align:center;"> 0,3907 </td>
+   <td style="text-align:center;"> 0,3925 </td>
+   <td style="text-align:center;"> 0,3944 </td>
+   <td style="text-align:center;"> 0,3962 </td>
+   <td style="text-align:center;"> 0,3980 </td>
+   <td style="text-align:center;"> 0,3997 </td>
+   <td style="text-align:center;"> 0,4015 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,3 </td>
+   <td style="text-align:center;"> 0,4032 </td>
+   <td style="text-align:center;"> 0,4049 </td>
+   <td style="text-align:center;"> 0,4066 </td>
+   <td style="text-align:center;"> 0,4082 </td>
+   <td style="text-align:center;"> 0,4099 </td>
+   <td style="text-align:center;"> 0,4115 </td>
+   <td style="text-align:center;"> 0,4131 </td>
+   <td style="text-align:center;"> 0,4147 </td>
+   <td style="text-align:center;"> 0,4162 </td>
+   <td style="text-align:center;"> 0,4177 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,4 </td>
+   <td style="text-align:center;"> 0,4192 </td>
+   <td style="text-align:center;"> 0,4207 </td>
+   <td style="text-align:center;"> 0,4222 </td>
+   <td style="text-align:center;"> 0,4236 </td>
+   <td style="text-align:center;"> 0,4251 </td>
+   <td style="text-align:center;"> 0,4265 </td>
+   <td style="text-align:center;"> 0,4279 </td>
+   <td style="text-align:center;"> 0,4292 </td>
+   <td style="text-align:center;"> 0,4306 </td>
+   <td style="text-align:center;"> 0,4319 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,5 </td>
+   <td style="text-align:center;"> 0,4332 </td>
+   <td style="text-align:center;"> 0,4345 </td>
+   <td style="text-align:center;"> 0,4357 </td>
+   <td style="text-align:center;"> 0,4370 </td>
+   <td style="text-align:center;"> 0,4382 </td>
+   <td style="text-align:center;"> 0,4394 </td>
+   <td style="text-align:center;"> 0,4406 </td>
+   <td style="text-align:center;"> 0,4418 </td>
+   <td style="text-align:center;"> 0,4429 </td>
+   <td style="text-align:center;"> 0,4441 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,6 </td>
+   <td style="text-align:center;"> 0,4452 </td>
+   <td style="text-align:center;"> 0,4463 </td>
+   <td style="text-align:center;"> 0,4474 </td>
+   <td style="text-align:center;"> 0,4484 </td>
+   <td style="text-align:center;"> 0,4495 </td>
+   <td style="text-align:center;"> 0,4505 </td>
+   <td style="text-align:center;"> 0,4515 </td>
+   <td style="text-align:center;"> 0,4525 </td>
+   <td style="text-align:center;"> 0,4535 </td>
+   <td style="text-align:center;"> 0,4545 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,7 </td>
+   <td style="text-align:center;"> 0,4554 </td>
+   <td style="text-align:center;"> 0,4564 </td>
+   <td style="text-align:center;"> 0,4573 </td>
+   <td style="text-align:center;"> 0,4582 </td>
+   <td style="text-align:center;"> 0,4591 </td>
+   <td style="text-align:center;"> 0,4599 </td>
+   <td style="text-align:center;"> 0,4608 </td>
+   <td style="text-align:center;"> 0,4616 </td>
+   <td style="text-align:center;"> 0,4625 </td>
+   <td style="text-align:center;"> 0,4633 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,8 </td>
+   <td style="text-align:center;"> 0,4641 </td>
+   <td style="text-align:center;"> 0,4649 </td>
+   <td style="text-align:center;"> 0,4656 </td>
+   <td style="text-align:center;"> 0,4664 </td>
+   <td style="text-align:center;"> 0,4671 </td>
+   <td style="text-align:center;"> 0,4678 </td>
+   <td style="text-align:center;"> 0,4686 </td>
+   <td style="text-align:center;"> 0,4693 </td>
+   <td style="text-align:center;"> 0,4699 </td>
+   <td style="text-align:center;"> 0,4706 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1,9 </td>
+   <td style="text-align:center;"> 0,4713 </td>
+   <td style="text-align:center;"> 0,4719 </td>
+   <td style="text-align:center;"> 0,4726 </td>
+   <td style="text-align:center;"> 0,4732 </td>
+   <td style="text-align:center;"> 0,4738 </td>
+   <td style="text-align:center;"> 0,4744 </td>
+   <td style="text-align:center;"> 0,4750 </td>
+   <td style="text-align:center;"> 0,4756 </td>
+   <td style="text-align:center;"> 0,4761 </td>
+   <td style="text-align:center;"> 0,4767 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,0 </td>
+   <td style="text-align:center;"> 0,4772 </td>
+   <td style="text-align:center;"> 0,4778 </td>
+   <td style="text-align:center;"> 0,4783 </td>
+   <td style="text-align:center;"> 0,4788 </td>
+   <td style="text-align:center;"> 0,4793 </td>
+   <td style="text-align:center;"> 0,4798 </td>
+   <td style="text-align:center;"> 0,4803 </td>
+   <td style="text-align:center;"> 0,4808 </td>
+   <td style="text-align:center;"> 0,4812 </td>
+   <td style="text-align:center;"> 0,4817 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,1 </td>
+   <td style="text-align:center;"> 0,4821 </td>
+   <td style="text-align:center;"> 0,4826 </td>
+   <td style="text-align:center;"> 0,4830 </td>
+   <td style="text-align:center;"> 0,4834 </td>
+   <td style="text-align:center;"> 0,4838 </td>
+   <td style="text-align:center;"> 0,4842 </td>
+   <td style="text-align:center;"> 0,4846 </td>
+   <td style="text-align:center;"> 0,4850 </td>
+   <td style="text-align:center;"> 0,4854 </td>
+   <td style="text-align:center;"> 0,4857 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,2 </td>
+   <td style="text-align:center;"> 0,4861 </td>
+   <td style="text-align:center;"> 0,4864 </td>
+   <td style="text-align:center;"> 0,4868 </td>
+   <td style="text-align:center;"> 0,4871 </td>
+   <td style="text-align:center;"> 0,4875 </td>
+   <td style="text-align:center;"> 0,4878 </td>
+   <td style="text-align:center;"> 0,4881 </td>
+   <td style="text-align:center;"> 0,4884 </td>
+   <td style="text-align:center;"> 0,4887 </td>
+   <td style="text-align:center;"> 0,4890 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,3 </td>
+   <td style="text-align:center;"> 0,4893 </td>
+   <td style="text-align:center;"> 0,4896 </td>
+   <td style="text-align:center;"> 0,4898 </td>
+   <td style="text-align:center;"> 0,4901 </td>
+   <td style="text-align:center;"> 0,4904 </td>
+   <td style="text-align:center;"> 0,4906 </td>
+   <td style="text-align:center;"> 0,4909 </td>
+   <td style="text-align:center;"> 0,4911 </td>
+   <td style="text-align:center;"> 0,4913 </td>
+   <td style="text-align:center;"> 0,4916 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,4 </td>
+   <td style="text-align:center;"> 0,4918 </td>
+   <td style="text-align:center;"> 0,4920 </td>
+   <td style="text-align:center;"> 0,4922 </td>
+   <td style="text-align:center;"> 0,4925 </td>
+   <td style="text-align:center;"> 0,4927 </td>
+   <td style="text-align:center;"> 0,4929 </td>
+   <td style="text-align:center;"> 0,4931 </td>
+   <td style="text-align:center;"> 0,4932 </td>
+   <td style="text-align:center;"> 0,4934 </td>
+   <td style="text-align:center;"> 0,4936 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,5 </td>
+   <td style="text-align:center;"> 0,4938 </td>
+   <td style="text-align:center;"> 0,4940 </td>
+   <td style="text-align:center;"> 0,4941 </td>
+   <td style="text-align:center;"> 0,4943 </td>
+   <td style="text-align:center;"> 0,4945 </td>
+   <td style="text-align:center;"> 0,4946 </td>
+   <td style="text-align:center;"> 0,4948 </td>
+   <td style="text-align:center;"> 0,4949 </td>
+   <td style="text-align:center;"> 0,4951 </td>
+   <td style="text-align:center;"> 0,4952 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,6 </td>
+   <td style="text-align:center;"> 0,4953 </td>
+   <td style="text-align:center;"> 0,4955 </td>
+   <td style="text-align:center;"> 0,4956 </td>
+   <td style="text-align:center;"> 0,4957 </td>
+   <td style="text-align:center;"> 0,4959 </td>
+   <td style="text-align:center;"> 0,4960 </td>
+   <td style="text-align:center;"> 0,4961 </td>
+   <td style="text-align:center;"> 0,4962 </td>
+   <td style="text-align:center;"> 0,4963 </td>
+   <td style="text-align:center;"> 0,4964 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,7 </td>
+   <td style="text-align:center;"> 0,4965 </td>
+   <td style="text-align:center;"> 0,4966 </td>
+   <td style="text-align:center;"> 0,4967 </td>
+   <td style="text-align:center;"> 0,4968 </td>
+   <td style="text-align:center;"> 0,4969 </td>
+   <td style="text-align:center;"> 0,4970 </td>
+   <td style="text-align:center;"> 0,4971 </td>
+   <td style="text-align:center;"> 0,4972 </td>
+   <td style="text-align:center;"> 0,4973 </td>
+   <td style="text-align:center;"> 0,4974 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,8 </td>
+   <td style="text-align:center;"> 0,4974 </td>
+   <td style="text-align:center;"> 0,4975 </td>
+   <td style="text-align:center;"> 0,4976 </td>
+   <td style="text-align:center;"> 0,4977 </td>
+   <td style="text-align:center;"> 0,4977 </td>
+   <td style="text-align:center;"> 0,4978 </td>
+   <td style="text-align:center;"> 0,4979 </td>
+   <td style="text-align:center;"> 0,4979 </td>
+   <td style="text-align:center;"> 0,4980 </td>
+   <td style="text-align:center;"> 0,4981 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2,9 </td>
+   <td style="text-align:center;"> 0,4981 </td>
+   <td style="text-align:center;"> 0,4982 </td>
+   <td style="text-align:center;"> 0,4982 </td>
+   <td style="text-align:center;"> 0,4983 </td>
+   <td style="text-align:center;"> 0,4984 </td>
+   <td style="text-align:center;"> 0,4984 </td>
+   <td style="text-align:center;"> 0,4985 </td>
+   <td style="text-align:center;"> 0,4985 </td>
+   <td style="text-align:center;"> 0,4986 </td>
+   <td style="text-align:center;"> 0,4986 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 3,0 </td>
+   <td style="text-align:center;"> 0,4987 </td>
+   <td style="text-align:center;"> 0,4987 </td>
+   <td style="text-align:center;"> 0,4987 </td>
+   <td style="text-align:center;"> 0,4988 </td>
+   <td style="text-align:center;"> 0,4988 </td>
+   <td style="text-align:center;"> 0,4989 </td>
+   <td style="text-align:center;"> 0,4989 </td>
+   <td style="text-align:center;"> 0,4989 </td>
+   <td style="text-align:center;"> 0,4990 </td>
+   <td style="text-align:center;"> 0,4990 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 3,1 </td>
+   <td style="text-align:center;"> 0,4990 </td>
+   <td style="text-align:center;"> 0,4991 </td>
+   <td style="text-align:center;"> 0,4991 </td>
+   <td style="text-align:center;"> 0,4991 </td>
+   <td style="text-align:center;"> 0,4992 </td>
+   <td style="text-align:center;"> 0,4992 </td>
+   <td style="text-align:center;"> 0,4992 </td>
+   <td style="text-align:center;"> 0,4992 </td>
+   <td style="text-align:center;"> 0,4993 </td>
+   <td style="text-align:center;"> 0,4993 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 3,2 </td>
+   <td style="text-align:center;"> 0,4993 </td>
+   <td style="text-align:center;"> 0,4993 </td>
+   <td style="text-align:center;"> 0,4994 </td>
+   <td style="text-align:center;"> 0,4994 </td>
+   <td style="text-align:center;"> 0,4994 </td>
+   <td style="text-align:center;"> 0,4994 </td>
+   <td style="text-align:center;"> 0,4994 </td>
+   <td style="text-align:center;"> 0,4995 </td>
+   <td style="text-align:center;"> 0,4995 </td>
+   <td style="text-align:center;"> 0,4995 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 3,3 </td>
+   <td style="text-align:center;"> 0,4995 </td>
+   <td style="text-align:center;"> 0,4995 </td>
+   <td style="text-align:center;"> 0,4995 </td>
+   <td style="text-align:center;"> 0,4996 </td>
+   <td style="text-align:center;"> 0,4996 </td>
+   <td style="text-align:center;"> 0,4996 </td>
+   <td style="text-align:center;"> 0,4996 </td>
+   <td style="text-align:center;"> 0,4996 </td>
+   <td style="text-align:center;"> 0,4996 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 3,4 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+   <td style="text-align:center;"> 0,4997 </td>
+   <td style="text-align:center;"> 0,4998 </td>
+  </tr>
+</tbody>
+</table></div>
+
+\FloatBarrier
+
+## Tabel Distribusi F ($\alpha = 10\%$) {.unnumbered} {#appendix-tabel-f-5}
+
+Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 10\%$, yaitu nilai $F$ yang membatasi luas area sebesar 10% di ekor kanan distribusi F, $P(F > F_{tabel}) = 0{,}10$.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-ilustrasi-f-table-10-1.png" alt="Luas area yang dicari pada Tabel Distribusi F ($\alpha = 10\%$): $P(F &gt; F_{tabel}) = 0{,}10$" width="45%" />
+<p class="caption">(\#fig:fig-ilustrasi-f-table-10)Luas area yang dicari pada Tabel Distribusi F ($\alpha = 10\%$): $P(F > F_{tabel}) = 0{,}10$</p>
+</div>
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:450px; overflow-x: scroll; width:100%; "><table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">(\#tab:tab-distribusi-f-10persen)Tabel Distribusi F pada Tingkat Signifikansi $\alpha = 10\%$</caption>
+ <thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;position: sticky; top:0; background-color: #FFFFFF;" colspan="1"></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; position: sticky; top:0; background-color: #FFFFFF;" colspan="34"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">dfb</div></th>
+</tr>
+  <tr>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> dfw </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 1 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 2 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 3 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 4 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 5 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 6 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 7 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 8 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 9 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 10 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 11 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 12 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 13 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 14 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 15 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 16 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 17 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 18 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 19 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 20 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 21 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 22 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 23 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 24 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 25 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 26 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 27 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 28 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 29 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 30 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 40 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 60 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 120 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> ∞ </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1 </td>
+   <td style="text-align:center;"> 39,86 </td>
+   <td style="text-align:center;"> 49,50 </td>
+   <td style="text-align:center;"> 53,59 </td>
+   <td style="text-align:center;"> 55,83 </td>
+   <td style="text-align:center;"> 57,24 </td>
+   <td style="text-align:center;"> 58,20 </td>
+   <td style="text-align:center;"> 58,91 </td>
+   <td style="text-align:center;"> 59,44 </td>
+   <td style="text-align:center;"> 59,86 </td>
+   <td style="text-align:center;"> 60,19 </td>
+   <td style="text-align:center;"> 60,47 </td>
+   <td style="text-align:center;"> 60,71 </td>
+   <td style="text-align:center;"> 60,90 </td>
+   <td style="text-align:center;"> 61,07 </td>
+   <td style="text-align:center;"> 61,22 </td>
+   <td style="text-align:center;"> 61,35 </td>
+   <td style="text-align:center;"> 61,46 </td>
+   <td style="text-align:center;"> 61,57 </td>
+   <td style="text-align:center;"> 61,66 </td>
+   <td style="text-align:center;"> 61,74 </td>
+   <td style="text-align:center;"> 61,81 </td>
+   <td style="text-align:center;"> 61,88 </td>
+   <td style="text-align:center;"> 61,95 </td>
+   <td style="text-align:center;"> 62,00 </td>
+   <td style="text-align:center;"> 62,05 </td>
+   <td style="text-align:center;"> 62,10 </td>
+   <td style="text-align:center;"> 62,15 </td>
+   <td style="text-align:center;"> 62,19 </td>
+   <td style="text-align:center;"> 62,23 </td>
+   <td style="text-align:center;"> 62,26 </td>
+   <td style="text-align:center;"> 62,53 </td>
+   <td style="text-align:center;"> 62,79 </td>
+   <td style="text-align:center;"> 63,06 </td>
+   <td style="text-align:center;"> 63,30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2 </td>
+   <td style="text-align:center;"> 8,53 </td>
+   <td style="text-align:center;"> 9,00 </td>
+   <td style="text-align:center;"> 9,16 </td>
+   <td style="text-align:center;"> 9,24 </td>
+   <td style="text-align:center;"> 9,29 </td>
+   <td style="text-align:center;"> 9,33 </td>
+   <td style="text-align:center;"> 9,35 </td>
+   <td style="text-align:center;"> 9,37 </td>
+   <td style="text-align:center;"> 9,38 </td>
+   <td style="text-align:center;"> 9,39 </td>
+   <td style="text-align:center;"> 9,40 </td>
+   <td style="text-align:center;"> 9,41 </td>
+   <td style="text-align:center;"> 9,41 </td>
+   <td style="text-align:center;"> 9,42 </td>
+   <td style="text-align:center;"> 9,42 </td>
+   <td style="text-align:center;"> 9,43 </td>
+   <td style="text-align:center;"> 9,43 </td>
+   <td style="text-align:center;"> 9,44 </td>
+   <td style="text-align:center;"> 9,44 </td>
+   <td style="text-align:center;"> 9,44 </td>
+   <td style="text-align:center;"> 9,44 </td>
+   <td style="text-align:center;"> 9,45 </td>
+   <td style="text-align:center;"> 9,45 </td>
+   <td style="text-align:center;"> 9,45 </td>
+   <td style="text-align:center;"> 9,45 </td>
+   <td style="text-align:center;"> 9,45 </td>
+   <td style="text-align:center;"> 9,45 </td>
+   <td style="text-align:center;"> 9,46 </td>
+   <td style="text-align:center;"> 9,46 </td>
+   <td style="text-align:center;"> 9,46 </td>
+   <td style="text-align:center;"> 9,47 </td>
+   <td style="text-align:center;"> 9,47 </td>
+   <td style="text-align:center;"> 9,48 </td>
+   <td style="text-align:center;"> 9,49 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 3 </td>
+   <td style="text-align:center;"> 5,54 </td>
+   <td style="text-align:center;"> 5,46 </td>
+   <td style="text-align:center;"> 5,39 </td>
+   <td style="text-align:center;"> 5,34 </td>
+   <td style="text-align:center;"> 5,31 </td>
+   <td style="text-align:center;"> 5,28 </td>
+   <td style="text-align:center;"> 5,27 </td>
+   <td style="text-align:center;"> 5,25 </td>
+   <td style="text-align:center;"> 5,24 </td>
+   <td style="text-align:center;"> 5,23 </td>
+   <td style="text-align:center;"> 5,22 </td>
+   <td style="text-align:center;"> 5,22 </td>
+   <td style="text-align:center;"> 5,21 </td>
+   <td style="text-align:center;"> 5,20 </td>
+   <td style="text-align:center;"> 5,20 </td>
+   <td style="text-align:center;"> 5,20 </td>
+   <td style="text-align:center;"> 5,19 </td>
+   <td style="text-align:center;"> 5,19 </td>
+   <td style="text-align:center;"> 5,19 </td>
+   <td style="text-align:center;"> 5,18 </td>
+   <td style="text-align:center;"> 5,18 </td>
+   <td style="text-align:center;"> 5,18 </td>
+   <td style="text-align:center;"> 5,18 </td>
+   <td style="text-align:center;"> 5,18 </td>
+   <td style="text-align:center;"> 5,17 </td>
+   <td style="text-align:center;"> 5,17 </td>
+   <td style="text-align:center;"> 5,17 </td>
+   <td style="text-align:center;"> 5,17 </td>
+   <td style="text-align:center;"> 5,17 </td>
+   <td style="text-align:center;"> 5,17 </td>
+   <td style="text-align:center;"> 5,16 </td>
+   <td style="text-align:center;"> 5,15 </td>
+   <td style="text-align:center;"> 5,14 </td>
+   <td style="text-align:center;"> 5,13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 4 </td>
+   <td style="text-align:center;"> 4,54 </td>
+   <td style="text-align:center;"> 4,32 </td>
+   <td style="text-align:center;"> 4,19 </td>
+   <td style="text-align:center;"> 4,11 </td>
+   <td style="text-align:center;"> 4,05 </td>
+   <td style="text-align:center;"> 4,01 </td>
+   <td style="text-align:center;"> 3,98 </td>
+   <td style="text-align:center;"> 3,95 </td>
+   <td style="text-align:center;"> 3,94 </td>
+   <td style="text-align:center;"> 3,92 </td>
+   <td style="text-align:center;"> 3,91 </td>
+   <td style="text-align:center;"> 3,90 </td>
+   <td style="text-align:center;"> 3,89 </td>
+   <td style="text-align:center;"> 3,88 </td>
+   <td style="text-align:center;"> 3,87 </td>
+   <td style="text-align:center;"> 3,86 </td>
+   <td style="text-align:center;"> 3,86 </td>
+   <td style="text-align:center;"> 3,85 </td>
+   <td style="text-align:center;"> 3,85 </td>
+   <td style="text-align:center;"> 3,84 </td>
+   <td style="text-align:center;"> 3,84 </td>
+   <td style="text-align:center;"> 3,84 </td>
+   <td style="text-align:center;"> 3,83 </td>
+   <td style="text-align:center;"> 3,83 </td>
+   <td style="text-align:center;"> 3,83 </td>
+   <td style="text-align:center;"> 3,83 </td>
+   <td style="text-align:center;"> 3,82 </td>
+   <td style="text-align:center;"> 3,82 </td>
+   <td style="text-align:center;"> 3,82 </td>
+   <td style="text-align:center;"> 3,82 </td>
+   <td style="text-align:center;"> 3,80 </td>
+   <td style="text-align:center;"> 3,79 </td>
+   <td style="text-align:center;"> 3,78 </td>
+   <td style="text-align:center;"> 3,76 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 5 </td>
+   <td style="text-align:center;"> 4,06 </td>
+   <td style="text-align:center;"> 3,78 </td>
+   <td style="text-align:center;"> 3,62 </td>
+   <td style="text-align:center;"> 3,52 </td>
+   <td style="text-align:center;"> 3,45 </td>
+   <td style="text-align:center;"> 3,40 </td>
+   <td style="text-align:center;"> 3,37 </td>
+   <td style="text-align:center;"> 3,34 </td>
+   <td style="text-align:center;"> 3,32 </td>
+   <td style="text-align:center;"> 3,30 </td>
+   <td style="text-align:center;"> 3,28 </td>
+   <td style="text-align:center;"> 3,27 </td>
+   <td style="text-align:center;"> 3,26 </td>
+   <td style="text-align:center;"> 3,25 </td>
+   <td style="text-align:center;"> 3,24 </td>
+   <td style="text-align:center;"> 3,23 </td>
+   <td style="text-align:center;"> 3,22 </td>
+   <td style="text-align:center;"> 3,22 </td>
+   <td style="text-align:center;"> 3,21 </td>
+   <td style="text-align:center;"> 3,21 </td>
+   <td style="text-align:center;"> 3,20 </td>
+   <td style="text-align:center;"> 3,20 </td>
+   <td style="text-align:center;"> 3,19 </td>
+   <td style="text-align:center;"> 3,19 </td>
+   <td style="text-align:center;"> 3,19 </td>
+   <td style="text-align:center;"> 3,18 </td>
+   <td style="text-align:center;"> 3,18 </td>
+   <td style="text-align:center;"> 3,18 </td>
+   <td style="text-align:center;"> 3,18 </td>
+   <td style="text-align:center;"> 3,17 </td>
+   <td style="text-align:center;"> 3,16 </td>
+   <td style="text-align:center;"> 3,14 </td>
+   <td style="text-align:center;"> 3,12 </td>
+   <td style="text-align:center;"> 3,11 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 6 </td>
+   <td style="text-align:center;"> 3,78 </td>
+   <td style="text-align:center;"> 3,46 </td>
+   <td style="text-align:center;"> 3,29 </td>
+   <td style="text-align:center;"> 3,18 </td>
+   <td style="text-align:center;"> 3,11 </td>
+   <td style="text-align:center;"> 3,05 </td>
+   <td style="text-align:center;"> 3,01 </td>
+   <td style="text-align:center;"> 2,98 </td>
+   <td style="text-align:center;"> 2,96 </td>
+   <td style="text-align:center;"> 2,94 </td>
+   <td style="text-align:center;"> 2,92 </td>
+   <td style="text-align:center;"> 2,90 </td>
+   <td style="text-align:center;"> 2,89 </td>
+   <td style="text-align:center;"> 2,88 </td>
+   <td style="text-align:center;"> 2,87 </td>
+   <td style="text-align:center;"> 2,86 </td>
+   <td style="text-align:center;"> 2,85 </td>
+   <td style="text-align:center;"> 2,85 </td>
+   <td style="text-align:center;"> 2,84 </td>
+   <td style="text-align:center;"> 2,84 </td>
+   <td style="text-align:center;"> 2,83 </td>
+   <td style="text-align:center;"> 2,83 </td>
+   <td style="text-align:center;"> 2,82 </td>
+   <td style="text-align:center;"> 2,82 </td>
+   <td style="text-align:center;"> 2,81 </td>
+   <td style="text-align:center;"> 2,81 </td>
+   <td style="text-align:center;"> 2,81 </td>
+   <td style="text-align:center;"> 2,81 </td>
+   <td style="text-align:center;"> 2,80 </td>
+   <td style="text-align:center;"> 2,80 </td>
+   <td style="text-align:center;"> 2,78 </td>
+   <td style="text-align:center;"> 2,76 </td>
+   <td style="text-align:center;"> 2,74 </td>
+   <td style="text-align:center;"> 2,72 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 7 </td>
+   <td style="text-align:center;"> 3,59 </td>
+   <td style="text-align:center;"> 3,26 </td>
+   <td style="text-align:center;"> 3,07 </td>
+   <td style="text-align:center;"> 2,96 </td>
+   <td style="text-align:center;"> 2,88 </td>
+   <td style="text-align:center;"> 2,83 </td>
+   <td style="text-align:center;"> 2,78 </td>
+   <td style="text-align:center;"> 2,75 </td>
+   <td style="text-align:center;"> 2,72 </td>
+   <td style="text-align:center;"> 2,70 </td>
+   <td style="text-align:center;"> 2,68 </td>
+   <td style="text-align:center;"> 2,67 </td>
+   <td style="text-align:center;"> 2,65 </td>
+   <td style="text-align:center;"> 2,64 </td>
+   <td style="text-align:center;"> 2,63 </td>
+   <td style="text-align:center;"> 2,62 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,60 </td>
+   <td style="text-align:center;"> 2,59 </td>
+   <td style="text-align:center;"> 2,59 </td>
+   <td style="text-align:center;"> 2,58 </td>
+   <td style="text-align:center;"> 2,58 </td>
+   <td style="text-align:center;"> 2,58 </td>
+   <td style="text-align:center;"> 2,57 </td>
+   <td style="text-align:center;"> 2,57 </td>
+   <td style="text-align:center;"> 2,56 </td>
+   <td style="text-align:center;"> 2,56 </td>
+   <td style="text-align:center;"> 2,56 </td>
+   <td style="text-align:center;"> 2,56 </td>
+   <td style="text-align:center;"> 2,54 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,47 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 8 </td>
+   <td style="text-align:center;"> 3,46 </td>
+   <td style="text-align:center;"> 3,11 </td>
+   <td style="text-align:center;"> 2,92 </td>
+   <td style="text-align:center;"> 2,81 </td>
+   <td style="text-align:center;"> 2,73 </td>
+   <td style="text-align:center;"> 2,67 </td>
+   <td style="text-align:center;"> 2,62 </td>
+   <td style="text-align:center;"> 2,59 </td>
+   <td style="text-align:center;"> 2,56 </td>
+   <td style="text-align:center;"> 2,54 </td>
+   <td style="text-align:center;"> 2,52 </td>
+   <td style="text-align:center;"> 2,50 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,48 </td>
+   <td style="text-align:center;"> 2,46 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,44 </td>
+   <td style="text-align:center;"> 2,43 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,41 </td>
+   <td style="text-align:center;"> 2,41 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,36 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 9 </td>
+   <td style="text-align:center;"> 3,36 </td>
+   <td style="text-align:center;"> 3,01 </td>
+   <td style="text-align:center;"> 2,81 </td>
+   <td style="text-align:center;"> 2,69 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,55 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,47 </td>
+   <td style="text-align:center;"> 2,44 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,36 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,26 </td>
+   <td style="text-align:center;"> 2,26 </td>
+   <td style="text-align:center;"> 2,26 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 10 </td>
+   <td style="text-align:center;"> 3,29 </td>
+   <td style="text-align:center;"> 2,92 </td>
+   <td style="text-align:center;"> 2,73 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,52 </td>
+   <td style="text-align:center;"> 2,46 </td>
+   <td style="text-align:center;"> 2,41 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,26 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,06 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 11 </td>
+   <td style="text-align:center;"> 3,23 </td>
+   <td style="text-align:center;"> 2,86 </td>
+   <td style="text-align:center;"> 2,66 </td>
+   <td style="text-align:center;"> 2,54 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,98 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 12 </td>
+   <td style="text-align:center;"> 3,18 </td>
+   <td style="text-align:center;"> 2,81 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,48 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,91 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 13 </td>
+   <td style="text-align:center;"> 3,14 </td>
+   <td style="text-align:center;"> 2,76 </td>
+   <td style="text-align:center;"> 2,56 </td>
+   <td style="text-align:center;"> 2,43 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,85 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 14 </td>
+   <td style="text-align:center;"> 3,10 </td>
+   <td style="text-align:center;"> 2,73 </td>
+   <td style="text-align:center;"> 2,52 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 15 </td>
+   <td style="text-align:center;"> 3,07 </td>
+   <td style="text-align:center;"> 2,70 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,36 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,76 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 16 </td>
+   <td style="text-align:center;"> 3,05 </td>
+   <td style="text-align:center;"> 2,67 </td>
+   <td style="text-align:center;"> 2,46 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,72 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 17 </td>
+   <td style="text-align:center;"> 3,03 </td>
+   <td style="text-align:center;"> 2,64 </td>
+   <td style="text-align:center;"> 2,44 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,69 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 18 </td>
+   <td style="text-align:center;"> 3,01 </td>
+   <td style="text-align:center;"> 2,62 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,66 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 19 </td>
+   <td style="text-align:center;"> 2,99 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,64 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 20 </td>
+   <td style="text-align:center;"> 2,97 </td>
+   <td style="text-align:center;"> 2,59 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,61 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 21 </td>
+   <td style="text-align:center;"> 2,96 </td>
+   <td style="text-align:center;"> 2,57 </td>
+   <td style="text-align:center;"> 2,36 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,59 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 22 </td>
+   <td style="text-align:center;"> 2,95 </td>
+   <td style="text-align:center;"> 2,56 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,60 </td>
+   <td style="text-align:center;"> 1,57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 23 </td>
+   <td style="text-align:center;"> 2,94 </td>
+   <td style="text-align:center;"> 2,55 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,59 </td>
+   <td style="text-align:center;"> 1,55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 24 </td>
+   <td style="text-align:center;"> 2,93 </td>
+   <td style="text-align:center;"> 2,54 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,61 </td>
+   <td style="text-align:center;"> 1,57 </td>
+   <td style="text-align:center;"> 1,54 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 25 </td>
+   <td style="text-align:center;"> 2,92 </td>
+   <td style="text-align:center;"> 2,53 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,59 </td>
+   <td style="text-align:center;"> 1,56 </td>
+   <td style="text-align:center;"> 1,52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 26 </td>
+   <td style="text-align:center;"> 2,91 </td>
+   <td style="text-align:center;"> 2,52 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,61 </td>
+   <td style="text-align:center;"> 1,58 </td>
+   <td style="text-align:center;"> 1,54 </td>
+   <td style="text-align:center;"> 1,51 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 27 </td>
+   <td style="text-align:center;"> 2,90 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,60 </td>
+   <td style="text-align:center;"> 1,57 </td>
+   <td style="text-align:center;"> 1,53 </td>
+   <td style="text-align:center;"> 1,50 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 28 </td>
+   <td style="text-align:center;"> 2,89 </td>
+   <td style="text-align:center;"> 2,50 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,59 </td>
+   <td style="text-align:center;"> 1,56 </td>
+   <td style="text-align:center;"> 1,52 </td>
+   <td style="text-align:center;"> 1,48 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 29 </td>
+   <td style="text-align:center;"> 2,89 </td>
+   <td style="text-align:center;"> 2,50 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,58 </td>
+   <td style="text-align:center;"> 1,55 </td>
+   <td style="text-align:center;"> 1,51 </td>
+   <td style="text-align:center;"> 1,47 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 30 </td>
+   <td style="text-align:center;"> 2,88 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,61 </td>
+   <td style="text-align:center;"> 1,61 </td>
+   <td style="text-align:center;"> 1,57 </td>
+   <td style="text-align:center;"> 1,54 </td>
+   <td style="text-align:center;"> 1,50 </td>
+   <td style="text-align:center;"> 1,46 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 40 </td>
+   <td style="text-align:center;"> 2,84 </td>
+   <td style="text-align:center;"> 2,44 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,61 </td>
+   <td style="text-align:center;"> 1,61 </td>
+   <td style="text-align:center;"> 1,60 </td>
+   <td style="text-align:center;"> 1,59 </td>
+   <td style="text-align:center;"> 1,58 </td>
+   <td style="text-align:center;"> 1,57 </td>
+   <td style="text-align:center;"> 1,57 </td>
+   <td style="text-align:center;"> 1,56 </td>
+   <td style="text-align:center;"> 1,56 </td>
+   <td style="text-align:center;"> 1,55 </td>
+   <td style="text-align:center;"> 1,55 </td>
+   <td style="text-align:center;"> 1,54 </td>
+   <td style="text-align:center;"> 1,51 </td>
+   <td style="text-align:center;"> 1,47 </td>
+   <td style="text-align:center;"> 1,42 </td>
+   <td style="text-align:center;"> 1,38 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 60 </td>
+   <td style="text-align:center;"> 2,79 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,60 </td>
+   <td style="text-align:center;"> 1,59 </td>
+   <td style="text-align:center;"> 1,58 </td>
+   <td style="text-align:center;"> 1,56 </td>
+   <td style="text-align:center;"> 1,55 </td>
+   <td style="text-align:center;"> 1,54 </td>
+   <td style="text-align:center;"> 1,53 </td>
+   <td style="text-align:center;"> 1,53 </td>
+   <td style="text-align:center;"> 1,52 </td>
+   <td style="text-align:center;"> 1,51 </td>
+   <td style="text-align:center;"> 1,50 </td>
+   <td style="text-align:center;"> 1,50 </td>
+   <td style="text-align:center;"> 1,49 </td>
+   <td style="text-align:center;"> 1,49 </td>
+   <td style="text-align:center;"> 1,48 </td>
+   <td style="text-align:center;"> 1,48 </td>
+   <td style="text-align:center;"> 1,44 </td>
+   <td style="text-align:center;"> 1,40 </td>
+   <td style="text-align:center;"> 1,35 </td>
+   <td style="text-align:center;"> 1,30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 120 </td>
+   <td style="text-align:center;"> 2,75 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,60 </td>
+   <td style="text-align:center;"> 1,58 </td>
+   <td style="text-align:center;"> 1,56 </td>
+   <td style="text-align:center;"> 1,55 </td>
+   <td style="text-align:center;"> 1,53 </td>
+   <td style="text-align:center;"> 1,52 </td>
+   <td style="text-align:center;"> 1,50 </td>
+   <td style="text-align:center;"> 1,49 </td>
+   <td style="text-align:center;"> 1,48 </td>
+   <td style="text-align:center;"> 1,47 </td>
+   <td style="text-align:center;"> 1,46 </td>
+   <td style="text-align:center;"> 1,46 </td>
+   <td style="text-align:center;"> 1,45 </td>
+   <td style="text-align:center;"> 1,44 </td>
+   <td style="text-align:center;"> 1,43 </td>
+   <td style="text-align:center;"> 1,43 </td>
+   <td style="text-align:center;"> 1,42 </td>
+   <td style="text-align:center;"> 1,41 </td>
+   <td style="text-align:center;"> 1,41 </td>
+   <td style="text-align:center;"> 1,37 </td>
+   <td style="text-align:center;"> 1,32 </td>
+   <td style="text-align:center;"> 1,26 </td>
+   <td style="text-align:center;"> 1,20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> ∞ </td>
+   <td style="text-align:center;"> 2,71 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,61 </td>
+   <td style="text-align:center;"> 1,58 </td>
+   <td style="text-align:center;"> 1,55 </td>
+   <td style="text-align:center;"> 1,53 </td>
+   <td style="text-align:center;"> 1,51 </td>
+   <td style="text-align:center;"> 1,49 </td>
+   <td style="text-align:center;"> 1,48 </td>
+   <td style="text-align:center;"> 1,46 </td>
+   <td style="text-align:center;"> 1,45 </td>
+   <td style="text-align:center;"> 1,44 </td>
+   <td style="text-align:center;"> 1,43 </td>
+   <td style="text-align:center;"> 1,42 </td>
+   <td style="text-align:center;"> 1,41 </td>
+   <td style="text-align:center;"> 1,40 </td>
+   <td style="text-align:center;"> 1,39 </td>
+   <td style="text-align:center;"> 1,38 </td>
+   <td style="text-align:center;"> 1,38 </td>
+   <td style="text-align:center;"> 1,37 </td>
+   <td style="text-align:center;"> 1,36 </td>
+   <td style="text-align:center;"> 1,36 </td>
+   <td style="text-align:center;"> 1,35 </td>
+   <td style="text-align:center;"> 1,30 </td>
+   <td style="text-align:center;"> 1,25 </td>
+   <td style="text-align:center;"> 1,18 </td>
+   <td style="text-align:center;"> 1,08 </td>
+  </tr>
+</tbody>
+</table></div>
+
+\FloatBarrier
+
+## Tabel Distribusi F ($\alpha = 5\%$) {.unnumbered} {#appendix-tabel-f-10}
+
+Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 5\%$, yaitu nilai $F$ yang membatasi luas area sebesar 5% di ekor kanan distribusi F, $P(F > F_{tabel}) = 0{,}05$.
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-ilustrasi-f-table-05-1.png" alt="Luas area yang dicari pada Tabel Distribusi F ($\alpha = 5\%$): $P(F &gt; F_{tabel}) = 0{,}05$" width="45%" />
+<p class="caption">(\#fig:fig-ilustrasi-f-table-05)Luas area yang dicari pada Tabel Distribusi F ($\alpha = 5\%$): $P(F > F_{tabel}) = 0{,}05$</p>
+</div>
+
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:450px; overflow-x: scroll; width:100%; "><table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">(\#tab:tab-distribusi-f-5persen-lampiran)Tabel Distribusi F pada Tingkat Signifikansi $\alpha = 5\%$</caption>
+ <thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;position: sticky; top:0; background-color: #FFFFFF;" colspan="1"></th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; position: sticky; top:0; background-color: #FFFFFF;" colspan="34"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">dfb</div></th>
+</tr>
+  <tr>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> dfw </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 1 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 2 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 3 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 4 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 5 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 6 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 7 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 8 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 9 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 10 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 11 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 12 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 13 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 14 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 15 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 16 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 17 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 18 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 19 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 20 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 21 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 22 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 23 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 24 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 25 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 26 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 27 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 28 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 29 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 30 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 40 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 60 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> 120 </th>
+   <th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;"> ∞ </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 1 </td>
+   <td style="text-align:center;"> 161,45 </td>
+   <td style="text-align:center;"> 199,50 </td>
+   <td style="text-align:center;"> 215,71 </td>
+   <td style="text-align:center;"> 224,58 </td>
+   <td style="text-align:center;"> 230,16 </td>
+   <td style="text-align:center;"> 233,99 </td>
+   <td style="text-align:center;"> 236,77 </td>
+   <td style="text-align:center;"> 238,88 </td>
+   <td style="text-align:center;"> 240,54 </td>
+   <td style="text-align:center;"> 241,88 </td>
+   <td style="text-align:center;"> 242,98 </td>
+   <td style="text-align:center;"> 243,91 </td>
+   <td style="text-align:center;"> 244,69 </td>
+   <td style="text-align:center;"> 245,36 </td>
+   <td style="text-align:center;"> 245,95 </td>
+   <td style="text-align:center;"> 246,46 </td>
+   <td style="text-align:center;"> 246,92 </td>
+   <td style="text-align:center;"> 247,32 </td>
+   <td style="text-align:center;"> 247,69 </td>
+   <td style="text-align:center;"> 248,01 </td>
+   <td style="text-align:center;"> 248,31 </td>
+   <td style="text-align:center;"> 248,58 </td>
+   <td style="text-align:center;"> 248,83 </td>
+   <td style="text-align:center;"> 249,05 </td>
+   <td style="text-align:center;"> 249,26 </td>
+   <td style="text-align:center;"> 249,45 </td>
+   <td style="text-align:center;"> 249,63 </td>
+   <td style="text-align:center;"> 249,80 </td>
+   <td style="text-align:center;"> 249,95 </td>
+   <td style="text-align:center;"> 250,10 </td>
+   <td style="text-align:center;"> 251,14 </td>
+   <td style="text-align:center;"> 252,20 </td>
+   <td style="text-align:center;"> 253,25 </td>
+   <td style="text-align:center;"> 254,19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 2 </td>
+   <td style="text-align:center;"> 18,51 </td>
+   <td style="text-align:center;"> 19,00 </td>
+   <td style="text-align:center;"> 19,16 </td>
+   <td style="text-align:center;"> 19,25 </td>
+   <td style="text-align:center;"> 19,30 </td>
+   <td style="text-align:center;"> 19,33 </td>
+   <td style="text-align:center;"> 19,35 </td>
+   <td style="text-align:center;"> 19,37 </td>
+   <td style="text-align:center;"> 19,38 </td>
+   <td style="text-align:center;"> 19,40 </td>
+   <td style="text-align:center;"> 19,40 </td>
+   <td style="text-align:center;"> 19,41 </td>
+   <td style="text-align:center;"> 19,42 </td>
+   <td style="text-align:center;"> 19,42 </td>
+   <td style="text-align:center;"> 19,43 </td>
+   <td style="text-align:center;"> 19,43 </td>
+   <td style="text-align:center;"> 19,44 </td>
+   <td style="text-align:center;"> 19,44 </td>
+   <td style="text-align:center;"> 19,44 </td>
+   <td style="text-align:center;"> 19,45 </td>
+   <td style="text-align:center;"> 19,45 </td>
+   <td style="text-align:center;"> 19,45 </td>
+   <td style="text-align:center;"> 19,45 </td>
+   <td style="text-align:center;"> 19,45 </td>
+   <td style="text-align:center;"> 19,46 </td>
+   <td style="text-align:center;"> 19,46 </td>
+   <td style="text-align:center;"> 19,46 </td>
+   <td style="text-align:center;"> 19,46 </td>
+   <td style="text-align:center;"> 19,46 </td>
+   <td style="text-align:center;"> 19,46 </td>
+   <td style="text-align:center;"> 19,47 </td>
+   <td style="text-align:center;"> 19,48 </td>
+   <td style="text-align:center;"> 19,49 </td>
+   <td style="text-align:center;"> 19,49 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 3 </td>
+   <td style="text-align:center;"> 10,13 </td>
+   <td style="text-align:center;"> 9,55 </td>
+   <td style="text-align:center;"> 9,28 </td>
+   <td style="text-align:center;"> 9,12 </td>
+   <td style="text-align:center;"> 9,01 </td>
+   <td style="text-align:center;"> 8,94 </td>
+   <td style="text-align:center;"> 8,89 </td>
+   <td style="text-align:center;"> 8,85 </td>
+   <td style="text-align:center;"> 8,81 </td>
+   <td style="text-align:center;"> 8,79 </td>
+   <td style="text-align:center;"> 8,76 </td>
+   <td style="text-align:center;"> 8,74 </td>
+   <td style="text-align:center;"> 8,73 </td>
+   <td style="text-align:center;"> 8,71 </td>
+   <td style="text-align:center;"> 8,70 </td>
+   <td style="text-align:center;"> 8,69 </td>
+   <td style="text-align:center;"> 8,68 </td>
+   <td style="text-align:center;"> 8,67 </td>
+   <td style="text-align:center;"> 8,67 </td>
+   <td style="text-align:center;"> 8,66 </td>
+   <td style="text-align:center;"> 8,65 </td>
+   <td style="text-align:center;"> 8,65 </td>
+   <td style="text-align:center;"> 8,64 </td>
+   <td style="text-align:center;"> 8,64 </td>
+   <td style="text-align:center;"> 8,63 </td>
+   <td style="text-align:center;"> 8,63 </td>
+   <td style="text-align:center;"> 8,63 </td>
+   <td style="text-align:center;"> 8,62 </td>
+   <td style="text-align:center;"> 8,62 </td>
+   <td style="text-align:center;"> 8,62 </td>
+   <td style="text-align:center;"> 8,59 </td>
+   <td style="text-align:center;"> 8,57 </td>
+   <td style="text-align:center;"> 8,55 </td>
+   <td style="text-align:center;"> 8,53 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 4 </td>
+   <td style="text-align:center;"> 7,71 </td>
+   <td style="text-align:center;"> 6,94 </td>
+   <td style="text-align:center;"> 6,59 </td>
+   <td style="text-align:center;"> 6,39 </td>
+   <td style="text-align:center;"> 6,26 </td>
+   <td style="text-align:center;"> 6,16 </td>
+   <td style="text-align:center;"> 6,09 </td>
+   <td style="text-align:center;"> 6,04 </td>
+   <td style="text-align:center;"> 6,00 </td>
+   <td style="text-align:center;"> 5,96 </td>
+   <td style="text-align:center;"> 5,94 </td>
+   <td style="text-align:center;"> 5,91 </td>
+   <td style="text-align:center;"> 5,89 </td>
+   <td style="text-align:center;"> 5,87 </td>
+   <td style="text-align:center;"> 5,86 </td>
+   <td style="text-align:center;"> 5,84 </td>
+   <td style="text-align:center;"> 5,83 </td>
+   <td style="text-align:center;"> 5,82 </td>
+   <td style="text-align:center;"> 5,81 </td>
+   <td style="text-align:center;"> 5,80 </td>
+   <td style="text-align:center;"> 5,79 </td>
+   <td style="text-align:center;"> 5,79 </td>
+   <td style="text-align:center;"> 5,78 </td>
+   <td style="text-align:center;"> 5,77 </td>
+   <td style="text-align:center;"> 5,77 </td>
+   <td style="text-align:center;"> 5,76 </td>
+   <td style="text-align:center;"> 5,76 </td>
+   <td style="text-align:center;"> 5,75 </td>
+   <td style="text-align:center;"> 5,75 </td>
+   <td style="text-align:center;"> 5,75 </td>
+   <td style="text-align:center;"> 5,72 </td>
+   <td style="text-align:center;"> 5,69 </td>
+   <td style="text-align:center;"> 5,66 </td>
+   <td style="text-align:center;"> 5,63 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 5 </td>
+   <td style="text-align:center;"> 6,61 </td>
+   <td style="text-align:center;"> 5,79 </td>
+   <td style="text-align:center;"> 5,41 </td>
+   <td style="text-align:center;"> 5,19 </td>
+   <td style="text-align:center;"> 5,05 </td>
+   <td style="text-align:center;"> 4,95 </td>
+   <td style="text-align:center;"> 4,88 </td>
+   <td style="text-align:center;"> 4,82 </td>
+   <td style="text-align:center;"> 4,77 </td>
+   <td style="text-align:center;"> 4,74 </td>
+   <td style="text-align:center;"> 4,70 </td>
+   <td style="text-align:center;"> 4,68 </td>
+   <td style="text-align:center;"> 4,66 </td>
+   <td style="text-align:center;"> 4,64 </td>
+   <td style="text-align:center;"> 4,62 </td>
+   <td style="text-align:center;"> 4,60 </td>
+   <td style="text-align:center;"> 4,59 </td>
+   <td style="text-align:center;"> 4,58 </td>
+   <td style="text-align:center;"> 4,57 </td>
+   <td style="text-align:center;"> 4,56 </td>
+   <td style="text-align:center;"> 4,55 </td>
+   <td style="text-align:center;"> 4,54 </td>
+   <td style="text-align:center;"> 4,53 </td>
+   <td style="text-align:center;"> 4,53 </td>
+   <td style="text-align:center;"> 4,52 </td>
+   <td style="text-align:center;"> 4,52 </td>
+   <td style="text-align:center;"> 4,51 </td>
+   <td style="text-align:center;"> 4,50 </td>
+   <td style="text-align:center;"> 4,50 </td>
+   <td style="text-align:center;"> 4,50 </td>
+   <td style="text-align:center;"> 4,46 </td>
+   <td style="text-align:center;"> 4,43 </td>
+   <td style="text-align:center;"> 4,40 </td>
+   <td style="text-align:center;"> 4,37 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 6 </td>
+   <td style="text-align:center;"> 5,99 </td>
+   <td style="text-align:center;"> 5,14 </td>
+   <td style="text-align:center;"> 4,76 </td>
+   <td style="text-align:center;"> 4,53 </td>
+   <td style="text-align:center;"> 4,39 </td>
+   <td style="text-align:center;"> 4,28 </td>
+   <td style="text-align:center;"> 4,21 </td>
+   <td style="text-align:center;"> 4,15 </td>
+   <td style="text-align:center;"> 4,10 </td>
+   <td style="text-align:center;"> 4,06 </td>
+   <td style="text-align:center;"> 4,03 </td>
+   <td style="text-align:center;"> 4,00 </td>
+   <td style="text-align:center;"> 3,98 </td>
+   <td style="text-align:center;"> 3,96 </td>
+   <td style="text-align:center;"> 3,94 </td>
+   <td style="text-align:center;"> 3,92 </td>
+   <td style="text-align:center;"> 3,91 </td>
+   <td style="text-align:center;"> 3,90 </td>
+   <td style="text-align:center;"> 3,88 </td>
+   <td style="text-align:center;"> 3,87 </td>
+   <td style="text-align:center;"> 3,86 </td>
+   <td style="text-align:center;"> 3,86 </td>
+   <td style="text-align:center;"> 3,85 </td>
+   <td style="text-align:center;"> 3,84 </td>
+   <td style="text-align:center;"> 3,83 </td>
+   <td style="text-align:center;"> 3,83 </td>
+   <td style="text-align:center;"> 3,82 </td>
+   <td style="text-align:center;"> 3,82 </td>
+   <td style="text-align:center;"> 3,81 </td>
+   <td style="text-align:center;"> 3,81 </td>
+   <td style="text-align:center;"> 3,77 </td>
+   <td style="text-align:center;"> 3,74 </td>
+   <td style="text-align:center;"> 3,70 </td>
+   <td style="text-align:center;"> 3,67 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 7 </td>
+   <td style="text-align:center;"> 5,59 </td>
+   <td style="text-align:center;"> 4,74 </td>
+   <td style="text-align:center;"> 4,35 </td>
+   <td style="text-align:center;"> 4,12 </td>
+   <td style="text-align:center;"> 3,97 </td>
+   <td style="text-align:center;"> 3,87 </td>
+   <td style="text-align:center;"> 3,79 </td>
+   <td style="text-align:center;"> 3,73 </td>
+   <td style="text-align:center;"> 3,68 </td>
+   <td style="text-align:center;"> 3,64 </td>
+   <td style="text-align:center;"> 3,60 </td>
+   <td style="text-align:center;"> 3,57 </td>
+   <td style="text-align:center;"> 3,55 </td>
+   <td style="text-align:center;"> 3,53 </td>
+   <td style="text-align:center;"> 3,51 </td>
+   <td style="text-align:center;"> 3,49 </td>
+   <td style="text-align:center;"> 3,48 </td>
+   <td style="text-align:center;"> 3,47 </td>
+   <td style="text-align:center;"> 3,46 </td>
+   <td style="text-align:center;"> 3,44 </td>
+   <td style="text-align:center;"> 3,43 </td>
+   <td style="text-align:center;"> 3,43 </td>
+   <td style="text-align:center;"> 3,42 </td>
+   <td style="text-align:center;"> 3,41 </td>
+   <td style="text-align:center;"> 3,40 </td>
+   <td style="text-align:center;"> 3,40 </td>
+   <td style="text-align:center;"> 3,39 </td>
+   <td style="text-align:center;"> 3,39 </td>
+   <td style="text-align:center;"> 3,38 </td>
+   <td style="text-align:center;"> 3,38 </td>
+   <td style="text-align:center;"> 3,34 </td>
+   <td style="text-align:center;"> 3,30 </td>
+   <td style="text-align:center;"> 3,27 </td>
+   <td style="text-align:center;"> 3,23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 8 </td>
+   <td style="text-align:center;"> 5,32 </td>
+   <td style="text-align:center;"> 4,46 </td>
+   <td style="text-align:center;"> 4,07 </td>
+   <td style="text-align:center;"> 3,84 </td>
+   <td style="text-align:center;"> 3,69 </td>
+   <td style="text-align:center;"> 3,58 </td>
+   <td style="text-align:center;"> 3,50 </td>
+   <td style="text-align:center;"> 3,44 </td>
+   <td style="text-align:center;"> 3,39 </td>
+   <td style="text-align:center;"> 3,35 </td>
+   <td style="text-align:center;"> 3,31 </td>
+   <td style="text-align:center;"> 3,28 </td>
+   <td style="text-align:center;"> 3,26 </td>
+   <td style="text-align:center;"> 3,24 </td>
+   <td style="text-align:center;"> 3,22 </td>
+   <td style="text-align:center;"> 3,20 </td>
+   <td style="text-align:center;"> 3,19 </td>
+   <td style="text-align:center;"> 3,17 </td>
+   <td style="text-align:center;"> 3,16 </td>
+   <td style="text-align:center;"> 3,15 </td>
+   <td style="text-align:center;"> 3,14 </td>
+   <td style="text-align:center;"> 3,13 </td>
+   <td style="text-align:center;"> 3,12 </td>
+   <td style="text-align:center;"> 3,12 </td>
+   <td style="text-align:center;"> 3,11 </td>
+   <td style="text-align:center;"> 3,10 </td>
+   <td style="text-align:center;"> 3,10 </td>
+   <td style="text-align:center;"> 3,09 </td>
+   <td style="text-align:center;"> 3,08 </td>
+   <td style="text-align:center;"> 3,08 </td>
+   <td style="text-align:center;"> 3,04 </td>
+   <td style="text-align:center;"> 3,01 </td>
+   <td style="text-align:center;"> 2,97 </td>
+   <td style="text-align:center;"> 2,93 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 9 </td>
+   <td style="text-align:center;"> 5,12 </td>
+   <td style="text-align:center;"> 4,26 </td>
+   <td style="text-align:center;"> 3,86 </td>
+   <td style="text-align:center;"> 3,63 </td>
+   <td style="text-align:center;"> 3,48 </td>
+   <td style="text-align:center;"> 3,37 </td>
+   <td style="text-align:center;"> 3,29 </td>
+   <td style="text-align:center;"> 3,23 </td>
+   <td style="text-align:center;"> 3,18 </td>
+   <td style="text-align:center;"> 3,14 </td>
+   <td style="text-align:center;"> 3,10 </td>
+   <td style="text-align:center;"> 3,07 </td>
+   <td style="text-align:center;"> 3,05 </td>
+   <td style="text-align:center;"> 3,03 </td>
+   <td style="text-align:center;"> 3,01 </td>
+   <td style="text-align:center;"> 2,99 </td>
+   <td style="text-align:center;"> 2,97 </td>
+   <td style="text-align:center;"> 2,96 </td>
+   <td style="text-align:center;"> 2,95 </td>
+   <td style="text-align:center;"> 2,94 </td>
+   <td style="text-align:center;"> 2,93 </td>
+   <td style="text-align:center;"> 2,92 </td>
+   <td style="text-align:center;"> 2,91 </td>
+   <td style="text-align:center;"> 2,90 </td>
+   <td style="text-align:center;"> 2,89 </td>
+   <td style="text-align:center;"> 2,89 </td>
+   <td style="text-align:center;"> 2,88 </td>
+   <td style="text-align:center;"> 2,87 </td>
+   <td style="text-align:center;"> 2,87 </td>
+   <td style="text-align:center;"> 2,86 </td>
+   <td style="text-align:center;"> 2,83 </td>
+   <td style="text-align:center;"> 2,79 </td>
+   <td style="text-align:center;"> 2,75 </td>
+   <td style="text-align:center;"> 2,71 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 10 </td>
+   <td style="text-align:center;"> 4,96 </td>
+   <td style="text-align:center;"> 4,10 </td>
+   <td style="text-align:center;"> 3,71 </td>
+   <td style="text-align:center;"> 3,48 </td>
+   <td style="text-align:center;"> 3,33 </td>
+   <td style="text-align:center;"> 3,22 </td>
+   <td style="text-align:center;"> 3,14 </td>
+   <td style="text-align:center;"> 3,07 </td>
+   <td style="text-align:center;"> 3,02 </td>
+   <td style="text-align:center;"> 2,98 </td>
+   <td style="text-align:center;"> 2,94 </td>
+   <td style="text-align:center;"> 2,91 </td>
+   <td style="text-align:center;"> 2,89 </td>
+   <td style="text-align:center;"> 2,86 </td>
+   <td style="text-align:center;"> 2,85 </td>
+   <td style="text-align:center;"> 2,83 </td>
+   <td style="text-align:center;"> 2,81 </td>
+   <td style="text-align:center;"> 2,80 </td>
+   <td style="text-align:center;"> 2,79 </td>
+   <td style="text-align:center;"> 2,77 </td>
+   <td style="text-align:center;"> 2,76 </td>
+   <td style="text-align:center;"> 2,75 </td>
+   <td style="text-align:center;"> 2,75 </td>
+   <td style="text-align:center;"> 2,74 </td>
+   <td style="text-align:center;"> 2,73 </td>
+   <td style="text-align:center;"> 2,72 </td>
+   <td style="text-align:center;"> 2,72 </td>
+   <td style="text-align:center;"> 2,71 </td>
+   <td style="text-align:center;"> 2,70 </td>
+   <td style="text-align:center;"> 2,70 </td>
+   <td style="text-align:center;"> 2,66 </td>
+   <td style="text-align:center;"> 2,62 </td>
+   <td style="text-align:center;"> 2,58 </td>
+   <td style="text-align:center;"> 2,54 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 11 </td>
+   <td style="text-align:center;"> 4,84 </td>
+   <td style="text-align:center;"> 3,98 </td>
+   <td style="text-align:center;"> 3,59 </td>
+   <td style="text-align:center;"> 3,36 </td>
+   <td style="text-align:center;"> 3,20 </td>
+   <td style="text-align:center;"> 3,09 </td>
+   <td style="text-align:center;"> 3,01 </td>
+   <td style="text-align:center;"> 2,95 </td>
+   <td style="text-align:center;"> 2,90 </td>
+   <td style="text-align:center;"> 2,85 </td>
+   <td style="text-align:center;"> 2,82 </td>
+   <td style="text-align:center;"> 2,79 </td>
+   <td style="text-align:center;"> 2,76 </td>
+   <td style="text-align:center;"> 2,74 </td>
+   <td style="text-align:center;"> 2,72 </td>
+   <td style="text-align:center;"> 2,70 </td>
+   <td style="text-align:center;"> 2,69 </td>
+   <td style="text-align:center;"> 2,67 </td>
+   <td style="text-align:center;"> 2,66 </td>
+   <td style="text-align:center;"> 2,65 </td>
+   <td style="text-align:center;"> 2,64 </td>
+   <td style="text-align:center;"> 2,63 </td>
+   <td style="text-align:center;"> 2,62 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,60 </td>
+   <td style="text-align:center;"> 2,59 </td>
+   <td style="text-align:center;"> 2,59 </td>
+   <td style="text-align:center;"> 2,58 </td>
+   <td style="text-align:center;"> 2,58 </td>
+   <td style="text-align:center;"> 2,57 </td>
+   <td style="text-align:center;"> 2,53 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,41 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 12 </td>
+   <td style="text-align:center;"> 4,75 </td>
+   <td style="text-align:center;"> 3,89 </td>
+   <td style="text-align:center;"> 3,49 </td>
+   <td style="text-align:center;"> 3,26 </td>
+   <td style="text-align:center;"> 3,11 </td>
+   <td style="text-align:center;"> 3,00 </td>
+   <td style="text-align:center;"> 2,91 </td>
+   <td style="text-align:center;"> 2,85 </td>
+   <td style="text-align:center;"> 2,80 </td>
+   <td style="text-align:center;"> 2,75 </td>
+   <td style="text-align:center;"> 2,72 </td>
+   <td style="text-align:center;"> 2,69 </td>
+   <td style="text-align:center;"> 2,66 </td>
+   <td style="text-align:center;"> 2,64 </td>
+   <td style="text-align:center;"> 2,62 </td>
+   <td style="text-align:center;"> 2,60 </td>
+   <td style="text-align:center;"> 2,58 </td>
+   <td style="text-align:center;"> 2,57 </td>
+   <td style="text-align:center;"> 2,56 </td>
+   <td style="text-align:center;"> 2,54 </td>
+   <td style="text-align:center;"> 2,53 </td>
+   <td style="text-align:center;"> 2,52 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,50 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,48 </td>
+   <td style="text-align:center;"> 2,48 </td>
+   <td style="text-align:center;"> 2,47 </td>
+   <td style="text-align:center;"> 2,47 </td>
+   <td style="text-align:center;"> 2,43 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 13 </td>
+   <td style="text-align:center;"> 4,67 </td>
+   <td style="text-align:center;"> 3,81 </td>
+   <td style="text-align:center;"> 3,41 </td>
+   <td style="text-align:center;"> 3,18 </td>
+   <td style="text-align:center;"> 3,03 </td>
+   <td style="text-align:center;"> 2,92 </td>
+   <td style="text-align:center;"> 2,83 </td>
+   <td style="text-align:center;"> 2,77 </td>
+   <td style="text-align:center;"> 2,71 </td>
+   <td style="text-align:center;"> 2,67 </td>
+   <td style="text-align:center;"> 2,63 </td>
+   <td style="text-align:center;"> 2,60 </td>
+   <td style="text-align:center;"> 2,58 </td>
+   <td style="text-align:center;"> 2,55 </td>
+   <td style="text-align:center;"> 2,53 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,50 </td>
+   <td style="text-align:center;"> 2,48 </td>
+   <td style="text-align:center;"> 2,47 </td>
+   <td style="text-align:center;"> 2,46 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,44 </td>
+   <td style="text-align:center;"> 2,43 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,41 </td>
+   <td style="text-align:center;"> 2,41 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,21 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 14 </td>
+   <td style="text-align:center;"> 4,60 </td>
+   <td style="text-align:center;"> 3,74 </td>
+   <td style="text-align:center;"> 3,34 </td>
+   <td style="text-align:center;"> 3,11 </td>
+   <td style="text-align:center;"> 2,96 </td>
+   <td style="text-align:center;"> 2,85 </td>
+   <td style="text-align:center;"> 2,76 </td>
+   <td style="text-align:center;"> 2,70 </td>
+   <td style="text-align:center;"> 2,65 </td>
+   <td style="text-align:center;"> 2,60 </td>
+   <td style="text-align:center;"> 2,57 </td>
+   <td style="text-align:center;"> 2,53 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,48 </td>
+   <td style="text-align:center;"> 2,46 </td>
+   <td style="text-align:center;"> 2,44 </td>
+   <td style="text-align:center;"> 2,43 </td>
+   <td style="text-align:center;"> 2,41 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,37 </td>
+   <td style="text-align:center;"> 2,36 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 15 </td>
+   <td style="text-align:center;"> 4,54 </td>
+   <td style="text-align:center;"> 3,68 </td>
+   <td style="text-align:center;"> 3,29 </td>
+   <td style="text-align:center;"> 3,06 </td>
+   <td style="text-align:center;"> 2,90 </td>
+   <td style="text-align:center;"> 2,79 </td>
+   <td style="text-align:center;"> 2,71 </td>
+   <td style="text-align:center;"> 2,64 </td>
+   <td style="text-align:center;"> 2,59 </td>
+   <td style="text-align:center;"> 2,54 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,48 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,37 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,26 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,07 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 16 </td>
+   <td style="text-align:center;"> 4,49 </td>
+   <td style="text-align:center;"> 3,63 </td>
+   <td style="text-align:center;"> 3,24 </td>
+   <td style="text-align:center;"> 3,01 </td>
+   <td style="text-align:center;"> 2,85 </td>
+   <td style="text-align:center;"> 2,74 </td>
+   <td style="text-align:center;"> 2,66 </td>
+   <td style="text-align:center;"> 2,59 </td>
+   <td style="text-align:center;"> 2,54 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,46 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,37 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,26 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,02 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 17 </td>
+   <td style="text-align:center;"> 4,45 </td>
+   <td style="text-align:center;"> 3,59 </td>
+   <td style="text-align:center;"> 3,20 </td>
+   <td style="text-align:center;"> 2,96 </td>
+   <td style="text-align:center;"> 2,81 </td>
+   <td style="text-align:center;"> 2,70 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,55 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,41 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,26 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 1,97 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 18 </td>
+   <td style="text-align:center;"> 4,41 </td>
+   <td style="text-align:center;"> 3,55 </td>
+   <td style="text-align:center;"> 3,16 </td>
+   <td style="text-align:center;"> 2,93 </td>
+   <td style="text-align:center;"> 2,77 </td>
+   <td style="text-align:center;"> 2,66 </td>
+   <td style="text-align:center;"> 2,58 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,46 </td>
+   <td style="text-align:center;"> 2,41 </td>
+   <td style="text-align:center;"> 2,37 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,92 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 19 </td>
+   <td style="text-align:center;"> 4,38 </td>
+   <td style="text-align:center;"> 3,52 </td>
+   <td style="text-align:center;"> 3,13 </td>
+   <td style="text-align:center;"> 2,90 </td>
+   <td style="text-align:center;"> 2,74 </td>
+   <td style="text-align:center;"> 2,63 </td>
+   <td style="text-align:center;"> 2,54 </td>
+   <td style="text-align:center;"> 2,48 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,26 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,88 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 20 </td>
+   <td style="text-align:center;"> 4,35 </td>
+   <td style="text-align:center;"> 3,49 </td>
+   <td style="text-align:center;"> 3,10 </td>
+   <td style="text-align:center;"> 2,87 </td>
+   <td style="text-align:center;"> 2,71 </td>
+   <td style="text-align:center;"> 2,60 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,85 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 21 </td>
+   <td style="text-align:center;"> 4,32 </td>
+   <td style="text-align:center;"> 3,47 </td>
+   <td style="text-align:center;"> 3,07 </td>
+   <td style="text-align:center;"> 2,84 </td>
+   <td style="text-align:center;"> 2,68 </td>
+   <td style="text-align:center;"> 2,57 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,37 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,82 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 22 </td>
+   <td style="text-align:center;"> 4,30 </td>
+   <td style="text-align:center;"> 3,44 </td>
+   <td style="text-align:center;"> 3,05 </td>
+   <td style="text-align:center;"> 2,82 </td>
+   <td style="text-align:center;"> 2,66 </td>
+   <td style="text-align:center;"> 2,55 </td>
+   <td style="text-align:center;"> 2,46 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,26 </td>
+   <td style="text-align:center;"> 2,23 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,79 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 23 </td>
+   <td style="text-align:center;"> 4,28 </td>
+   <td style="text-align:center;"> 3,42 </td>
+   <td style="text-align:center;"> 3,03 </td>
+   <td style="text-align:center;"> 2,80 </td>
+   <td style="text-align:center;"> 2,64 </td>
+   <td style="text-align:center;"> 2,53 </td>
+   <td style="text-align:center;"> 2,44 </td>
+   <td style="text-align:center;"> 2,37 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,76 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 24 </td>
+   <td style="text-align:center;"> 4,26 </td>
+   <td style="text-align:center;"> 3,40 </td>
+   <td style="text-align:center;"> 3,01 </td>
+   <td style="text-align:center;"> 2,78 </td>
+   <td style="text-align:center;"> 2,62 </td>
+   <td style="text-align:center;"> 2,51 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,36 </td>
+   <td style="text-align:center;"> 2,30 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,74 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 25 </td>
+   <td style="text-align:center;"> 4,24 </td>
+   <td style="text-align:center;"> 3,39 </td>
+   <td style="text-align:center;"> 2,99 </td>
+   <td style="text-align:center;"> 2,76 </td>
+   <td style="text-align:center;"> 2,60 </td>
+   <td style="text-align:center;"> 2,49 </td>
+   <td style="text-align:center;"> 2,40 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,72 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 26 </td>
+   <td style="text-align:center;"> 4,23 </td>
+   <td style="text-align:center;"> 3,37 </td>
+   <td style="text-align:center;"> 2,98 </td>
+   <td style="text-align:center;"> 2,74 </td>
+   <td style="text-align:center;"> 2,59 </td>
+   <td style="text-align:center;"> 2,47 </td>
+   <td style="text-align:center;"> 2,39 </td>
+   <td style="text-align:center;"> 2,32 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,07 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,70 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 27 </td>
+   <td style="text-align:center;"> 4,21 </td>
+   <td style="text-align:center;"> 3,35 </td>
+   <td style="text-align:center;"> 2,96 </td>
+   <td style="text-align:center;"> 2,73 </td>
+   <td style="text-align:center;"> 2,57 </td>
+   <td style="text-align:center;"> 2,46 </td>
+   <td style="text-align:center;"> 2,37 </td>
+   <td style="text-align:center;"> 2,31 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,20 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,68 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 28 </td>
+   <td style="text-align:center;"> 4,20 </td>
+   <td style="text-align:center;"> 3,34 </td>
+   <td style="text-align:center;"> 2,95 </td>
+   <td style="text-align:center;"> 2,71 </td>
+   <td style="text-align:center;"> 2,56 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,36 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,24 </td>
+   <td style="text-align:center;"> 2,19 </td>
+   <td style="text-align:center;"> 2,15 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,66 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 29 </td>
+   <td style="text-align:center;"> 4,18 </td>
+   <td style="text-align:center;"> 3,33 </td>
+   <td style="text-align:center;"> 2,93 </td>
+   <td style="text-align:center;"> 2,70 </td>
+   <td style="text-align:center;"> 2,55 </td>
+   <td style="text-align:center;"> 2,43 </td>
+   <td style="text-align:center;"> 2,35 </td>
+   <td style="text-align:center;"> 2,28 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,14 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,05 </td>
+   <td style="text-align:center;"> 2,03 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,94 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,65 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 30 </td>
+   <td style="text-align:center;"> 4,17 </td>
+   <td style="text-align:center;"> 3,32 </td>
+   <td style="text-align:center;"> 2,92 </td>
+   <td style="text-align:center;"> 2,69 </td>
+   <td style="text-align:center;"> 2,53 </td>
+   <td style="text-align:center;"> 2,42 </td>
+   <td style="text-align:center;"> 2,33 </td>
+   <td style="text-align:center;"> 2,27 </td>
+   <td style="text-align:center;"> 2,21 </td>
+   <td style="text-align:center;"> 2,16 </td>
+   <td style="text-align:center;"> 2,13 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,06 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,01 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,98 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,93 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,88 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,63 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 40 </td>
+   <td style="text-align:center;"> 4,08 </td>
+   <td style="text-align:center;"> 3,23 </td>
+   <td style="text-align:center;"> 2,84 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,34 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,12 </td>
+   <td style="text-align:center;"> 2,08 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 2,00 </td>
+   <td style="text-align:center;"> 1,97 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,90 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,85 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,81 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,79 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,77 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,74 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,58 </td>
+   <td style="text-align:center;"> 1,52 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 60 </td>
+   <td style="text-align:center;"> 4,00 </td>
+   <td style="text-align:center;"> 3,15 </td>
+   <td style="text-align:center;"> 2,76 </td>
+   <td style="text-align:center;"> 2,53 </td>
+   <td style="text-align:center;"> 2,37 </td>
+   <td style="text-align:center;"> 2,25 </td>
+   <td style="text-align:center;"> 2,17 </td>
+   <td style="text-align:center;"> 2,10 </td>
+   <td style="text-align:center;"> 2,04 </td>
+   <td style="text-align:center;"> 1,99 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,92 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,86 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,82 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,72 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,59 </td>
+   <td style="text-align:center;"> 1,53 </td>
+   <td style="text-align:center;"> 1,47 </td>
+   <td style="text-align:center;"> 1,40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> 120 </td>
+   <td style="text-align:center;"> 3,92 </td>
+   <td style="text-align:center;"> 3,07 </td>
+   <td style="text-align:center;"> 2,68 </td>
+   <td style="text-align:center;"> 2,45 </td>
+   <td style="text-align:center;"> 2,29 </td>
+   <td style="text-align:center;"> 2,18 </td>
+   <td style="text-align:center;"> 2,09 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 1,96 </td>
+   <td style="text-align:center;"> 1,91 </td>
+   <td style="text-align:center;"> 1,87 </td>
+   <td style="text-align:center;"> 1,83 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,78 </td>
+   <td style="text-align:center;"> 1,75 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,71 </td>
+   <td style="text-align:center;"> 1,69 </td>
+   <td style="text-align:center;"> 1,67 </td>
+   <td style="text-align:center;"> 1,66 </td>
+   <td style="text-align:center;"> 1,64 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,62 </td>
+   <td style="text-align:center;"> 1,61 </td>
+   <td style="text-align:center;"> 1,60 </td>
+   <td style="text-align:center;"> 1,59 </td>
+   <td style="text-align:center;"> 1,58 </td>
+   <td style="text-align:center;"> 1,57 </td>
+   <td style="text-align:center;"> 1,56 </td>
+   <td style="text-align:center;"> 1,55 </td>
+   <td style="text-align:center;"> 1,50 </td>
+   <td style="text-align:center;"> 1,43 </td>
+   <td style="text-align:center;"> 1,35 </td>
+   <td style="text-align:center;"> 1,27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;font-weight: bold;"> ∞ </td>
+   <td style="text-align:center;"> 3,85 </td>
+   <td style="text-align:center;"> 3,00 </td>
+   <td style="text-align:center;"> 2,61 </td>
+   <td style="text-align:center;"> 2,38 </td>
+   <td style="text-align:center;"> 2,22 </td>
+   <td style="text-align:center;"> 2,11 </td>
+   <td style="text-align:center;"> 2,02 </td>
+   <td style="text-align:center;"> 1,95 </td>
+   <td style="text-align:center;"> 1,89 </td>
+   <td style="text-align:center;"> 1,84 </td>
+   <td style="text-align:center;"> 1,80 </td>
+   <td style="text-align:center;"> 1,76 </td>
+   <td style="text-align:center;"> 1,73 </td>
+   <td style="text-align:center;"> 1,70 </td>
+   <td style="text-align:center;"> 1,68 </td>
+   <td style="text-align:center;"> 1,65 </td>
+   <td style="text-align:center;"> 1,63 </td>
+   <td style="text-align:center;"> 1,61 </td>
+   <td style="text-align:center;"> 1,60 </td>
+   <td style="text-align:center;"> 1,58 </td>
+   <td style="text-align:center;"> 1,57 </td>
+   <td style="text-align:center;"> 1,55 </td>
+   <td style="text-align:center;"> 1,54 </td>
+   <td style="text-align:center;"> 1,53 </td>
+   <td style="text-align:center;"> 1,52 </td>
+   <td style="text-align:center;"> 1,51 </td>
+   <td style="text-align:center;"> 1,50 </td>
+   <td style="text-align:center;"> 1,49 </td>
+   <td style="text-align:center;"> 1,48 </td>
+   <td style="text-align:center;"> 1,47 </td>
+   <td style="text-align:center;"> 1,41 </td>
+   <td style="text-align:center;"> 1,33 </td>
+   <td style="text-align:center;"> 1,24 </td>
+   <td style="text-align:center;"> 1,11 </td>
+  </tr>
+</tbody>
+</table></div>
+
+<!--chapter:end:90-lampiran-tabel-statistik.Rmd-->
 
