@@ -52,6 +52,39 @@ When the decimal is a constant, just hardcode it with a period inside the `expre
 annotate("text", x = 0, y = 0, label = expression(mu == 2.5))
 ```
 
+## Safe Use of `paste()` with `OutDec = ","`
+
+When `options(OutDec = ",")` is active, `paste()` and `paste0()` auto-coerce numbers using `format()` internally, which respects `OutDec`. This means:
+
+| Value type | `paste()` output | Safe? |
+|---|---|---|
+| Integer (`nrow()`, `length()`) | `"25"` (no decimal) | ✅ Always safe |
+| Decimal in plain text/footnote | `"3,14"` | ✅ OK for HTML; risky in PDF LaTeX body text |
+| Decimal inside `$...$` math | `"3,14"` → LaTeX parse error | ❌ Breaks PDF |
+
+### Rule: Use `format()` with explicit `decimal.mark`
+
+Rather than relying on `OutDec` autocorrection, be explicit:
+
+```r
+# For display in plain text (e.g., kableExtra footnote, body text):
+paste0("Rata-rata: ", format(mean(x), decimal.mark = ",", big.mark = "."))
+
+# For use inside LaTeX math expressions (fig.cap, equation labels):
+paste0("$\\bar{x} = ", format(mean(x), decimal.mark = "."), "$")
+```
+
+### kableExtra `footnote()` with integers
+
+`nrow()` and similar integer-returning functions are always safe inside `paste()` — no decimal point means `OutDec` has no effect:
+
+```r
+footnote(
+  general = paste0("Menampilkan 6 dari ", nrow(tabel), " baris"),
+  ...
+)
+```
+
 ## Workflows
 
 1. **Check for OutDec**: Verify if `getOption("OutDec")` is `","`.
