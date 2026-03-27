@@ -1,4 +1,4 @@
-# Regresi Linear Sederhana
+# Regresi Linear Sederhana {#bab-13-regresi-sederhana}
 
 ## Konsep Dasar
 

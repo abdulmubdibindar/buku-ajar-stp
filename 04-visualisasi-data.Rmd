@@ -1,4 +1,4 @@
-# Visualisasi Data Kuantitatif
+# Visualisasi Data Kuantitatif {#bab-4-visualisasi-data-kuantitatif}
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -199,6 +199,8 @@ Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilk
 # Install package ggplot2 jika belum ada
 # install.packages('ggplot2')
 library(ggplot2)
+library(dplyr)
+library(kableExtra)
 
 # Memuat data dan membuat tabel frekuensi prodi
 data_uinril <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep = ";")
@@ -211,13 +213,13 @@ kbl(
   head(tabel_prodi, 6),
   col.names = c("Nama Program Studi", "Frekuensi"),
   caption = "Distribusi Frekuensi Mahasiswa UIN Raden Intan Lampung Per Program Studi"
-) %>%
+) |>
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE,
     position = "center"
-  ) %>%
-  footnote(
+  ) |>
+  kableExtra::footnote(
     general = paste0("Menampilkan 6 dari ", nrow(tabel_prodi), " program studi"),
     general_title = "Catatan:",
     footnote_as_chunk = TRUE

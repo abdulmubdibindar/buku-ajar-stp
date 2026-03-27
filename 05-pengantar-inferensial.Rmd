@@ -1,4 +1,4 @@
-# Pengantar Analisis Statistik Inferensial
+# Pengantar Analisis Statistik Inferensial {#bab-5-pengantar-inferensial}
 
 ::: rmdcapaian
 ## Capaian Pembelajaran {.unnumbered}

@@ -1,33 +1,918 @@
 # Korelasi Antarvariabel Nominal
 
-## Konsep Dasar
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
 
-Analisis ini digunakan untuk mengukur kekuatan hubungan antara dua variabel kategori (nominal). Teknik yang umum digunakan adalah **Chi-Square ($X^2$)** untuk signifikansi dan **Cramer's V**, **Phi**, atau **Lambda** untuk kekuatan hubungan.
+Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran nominal dengan tepat [STP-9.1]{.capaian}
+:::
 
-## Studi Kasus dengan R
+## Konsep Dasar Analisis Bivariat
 
-Apakah ada hubungan antara **Fakultas** dengan **Moda Transportasi** yang digunakan?
+Mulai bab ini kita akan bergeser dari analisis statistik univariat, analisis statistik yang hanya memperhatikan satu variabel saja, ke analisis statistik **bivariat**, yaitu analisis statistik yang memperhatikan dua variabel secara bersamaan.
 
-```{r bab-10-uji-chi-square, echo=TRUE}
-# Data Contoh
-fakultas <- c("Saintek", "Soshum", "Saintek", "Soshum", "Saintek", "Saintek")
-moda <- c("Motor", "Mobil", "Motor", "Jalan Kaki", "Mobil", "Motor")
+Beberapa kasus yang sudah kita bahas dalam bab-bab sebelumnya yang mencerminkan analisis univariat adalah sebagai berikut.
 
-# Membuat Tabel Kontingensi
-tabel <- table(fakultas, moda)
-print(tabel)
+```{r tbl-analisis-univariat, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
 
-# Uji Chi-Square
-chisq.test(tabel)
+data_univariat <- data.frame(
+  Bab = c("\\@ref(bab-3-analisis-statistik-deskriptif)", 
+          "\\@ref(bab-4-visualisasi-data-kuantitatif)", 
+          "\\@ref(bab-5-pengantar-inferensial)", 
+          "\\@ref(bab-6-estimasi-parameter)",
+          "\\@ref(bab-7-uji-hipotesis-satu-populasi)"),
+  Pembahasan = c(
+    "Menghitung persentase/proporsi mahasiswa pengguna sepeda motor ke kampus",
+    "Memvisualkan sebaran moda yang digunakan mahasiswa ke kampus",
+    "Menghitung nilai standar untuk biaya perjalanan mahasiswa",
+    "Menghitung interval kepercayaan untuk parameter rata-rata jarak ke kampus populasi mahasiswa Itera",
+    "Pengujian hipotesis skor kepuasan program MBG"
+  ),
+  Variabel = c(
+    "Pengguna sepeda motor ke kampus",
+    "Moda yang digunakan mahasiswa ke kampus",
+    "Biaya perjalanan mahasiswa",
+    "Jarak tempuh tempat tinggal ke kampus",
+    "Skor kepuasan program MBG"
+  )
+)
+
+kbl(data_univariat,
+  align = c("c", "l", "c"),
+  caption = "Contoh Analisis Univariat pada Bab-Bab Sebelumnya",
+  escape = FALSE,
+  col.names = c("Bab", "Pembahasan", "Variabel")
+) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
 ```
 
-**Interpretasi**:
-Jika P-value < 0,05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
+Dari Tabel \@ref(tab:tbl-analisis-univariat), dapat kita lihat bahwa pada bab-bab sebelumnya, kita hanya menganalisis **satu variabel saja**. Namun, mulai bab ini, kita akan menganalisis **dua variabel secara bersamaan**.
+
+## Konsep Dasar Analisis Asosiasi
+
+Ketika kita menganalisis dua variabel secara bersamaan, kita akan berfokus pada **hubungan atau asosiasi** antar kedua variabel tersebut. Kita akan mempelajari mengidentifikasi hubungan/asosiasi pada sepasang variabel dan apa saja bentuk hubungan/asosiasi tersebut.
+
+### Mengidentifikasi Asosiasi Sepasang Variabel Secara Empiris
+
+Bagaimana mengidentifikasi adanya hubungan/asosiasi pada sepasang variabel? Kita bisa memperhatikan tiga karakteristik hubungan berikut: **kekuatan**, **arah**, dan **pola** hubungan. Ketiga karakteristik ini, lagi-lagi, **erat kaitannya dengan tingkat pengukuran variabel**. Mari kita simak ulasan berikut mengenai masing-masing karakteristik **secara empiris** (tampak secara langsung) [@devaus2014surveys].
+
+#### Kekuatan Hubungan
+
+Kekuatan hubungan mengacu pada seberapa besar **besarnya perbedaan** yang teramati pada distribusi nilai variabel kedua ketika kita membandingkan nilai variabel pertama. Semakin besar perbedaan tersebut, semakin kuat hubungan antar kedua variabel. Sebaliknya, semakin kecil perbedaan tersebut, semakin lemah hubungan antar kedua variabel.
+
+::: rmdkasus
+#### Studi Kasus: Mengukur Kekuatan {.unnumbered}
+
+Mari kita amati hubungan antara asal `Fakultas` secara umum dengan kebiasaan `Penggunaan Transportasi Umum` menggunakan tabel silang (*contingency table*). *Kekuatan* hubungan dapat dievaluasi secara manual dengan melihat besarnya selisih angka persentase pada selisih kolom antar-baris yang berlawanan. 
+
+Pertama, mari kita lihat contoh data hipotetis yang mengindikasikan hubungan **lemah**:
+
+```{r tbl-kekuatan-lemah-hipotetis, echo=FALSE, out.width='80%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+df_lemah <- data.frame(
+  Fakultas = c("Fakultas A", "Fakultas B", "Fakultas C"),
+  `Sering` = c("45%", "48%", "46%"),
+  `Jarang` = c("55%", "52%", "54%"),
+  check.names = FALSE
+)
+
+kbl(df_lemah, align = "lcc", caption = "Skenario Asosiasi Lemah: Persentase Seragam", escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+Pada Tabel \@ref(tab:tbl-kekuatan-lemah-hipotetis), perbedaan persentase untuk kelompok "Sering" di antara ketiga fakultas amatlah berdempetan (berkisar sempit antara $45\%-48\%$). Nilai yang saling menyerupai dan tanpa selisih riil ini menyatakan bahwa ciri kebiasaan fakultas nyaris tidak membuat pengaruh yang jelas terhadap penggunaan transportasi. Dapat disimpulkan, hubungan ini diklasifikasikan sebagai asosiasi yang **lemah**.
+
+Sebagai perbandingan, silakan bandingkan dengan susunan skenario tabel di bawah ini yang mengilustrasikan kondisi asosiasi **kuat**:
+
+```{r tbl-kekuatan-kuat-hipotetis, echo=FALSE, out.width='80%', fig.align='center'}
+df_kuat <- data.frame(
+  Fakultas = c("Fakultas A", "Fakultas B", "Fakultas C"),
+  `Sering` = c("90%", "20%", "50%"),
+  `Jarang` = c("10%", "80%", "50%"),
+  check.names = FALSE
+)
+
+kbl(df_kuat, align = "lcc", caption = "Skenario Asosiasi Kuat: Perbedaan Ekstrem", escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+Pada Tabel \@ref(tab:tbl-kekuatan-kuat-hipotetis), kita bisa menarik garis selisih persentase yang teramat ekstrem lintas fakultas (Fakultas A mencapai sentuhan angka $90\%$, sementara Fakultas B jeblok di $20\%$). Rentang kesenjangan distribusi yang sangat mencolok secara visual pada tabel kontingensi inilah yang menjadi indikator empirik sahih dari suatu korelasi asimetris yang **kuat**.
+:::
+
+#### Arah Hubungan
+
+Arah hubungan mengacu pada **arah perubahan** yang teramati pada distribusi nilai variabel kedua ketika kita membandingkan nilai variabel pertama. Arah hubungan bisa berupa **positif** yang berarti **searah** atau **negatif** yang berarti **berlawanan arah**. Arah hubungan positif berarti ketika **nilai variabel pertama meningkat, nilai variabel kedua juga cenderung meningkat**. Arah hubungan negatif berarti ketika **nilai variabel pertama meningkat, nilai variabel kedua cenderung menurun**.
+
+::: rmdkasus
+#### Studi Kasus: Arah Hubungan {.unnumbered}
+
+Arah hubungan hanya dapat ditentukan jika data memiliki tingkatan atau urutan logis berjenjang (besaran rasio atau skala ordinal). Mari kita cermati hubungan hipotetis antara jenjang `Kepadatan Kuliah` dengan `Tingkat Stres` mahasiswa. Jika kita melihat persentase dalam sel tabel silang, arahnya tercermin secara teratur dari mana letak angka puncaknya berkonsentrasi membelah baris dan kolom:
+
+```{r tbl-arah-positif-hipotetis, echo=FALSE, out.width='80%', fig.align='center'}
+df_arah_pos <- data.frame(
+  `Kepadatan Kuliah` = c("Rendah", "Sedang", "Tinggi"),
+  `Stres Rendah` = c("70%", "20%", "10%"),
+  `Stres Sedang` = c("20%", "60%", "20%"),
+  `Stres Tinggi` = c("10%", "20%", "70%"),
+  check.names = FALSE
+)
+
+kbl(df_arah_pos, align = "lccc", caption = "Arah Hubungan Positif di Tabel Kontingensi", escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+Di Tabel \@ref(tab:tbl-arah-positif-hipotetis) untuk skenario *Arah Positif*, angka tertinggi ($70\%$, $60\%$, $70\%$) berkumpul mengisi sel-sel diagonal urut yang membentang dari kiri atas turun ke kanan bawah. Artinya, makin padat jadwal kuliahnya, makin tinggi pula tingkat stres yang dialami mahasiswa. Ini menandakan hubungan yang **searah** antara kepadatan jadwal kuliah dengan tingkat stres mahasiswa.
+
+Sebaliknya, mari kita observasi bila pilar angkanya diputarbalik menata sebaran **negatif**:
+
+```{r tbl-arah-negatif-hipotetis, echo=FALSE, out.width='80%', fig.align='center'}
+df_arah_neg <- data.frame(
+  `Kepadatan Kuliah` = c("Rendah", "Sedang", "Tinggi"),
+  `Stres Rendah` = c("10%", "20%", "70%"),
+  `Stres Sedang` = c("20%", "60%", "20%"),
+  `Stres Tinggi` = c("70%", "20%", "10%"),
+  check.names = FALSE
+)
+
+kbl(df_arah_neg, align = "lccc", caption = "Arah Hubungan Negatif di Tabel Kontingensi", escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+Dalam skenario di Tabel \@ref(tab:tbl-arah-negatif-hipotetis), konsentrasi datanya menumpuk membentuk diagonal terbalik. Hal ini diartikan makin padat jadwal kuliah, tingkat stres cenderung rendah. Ini menandakan hubungan yang **berlawanan arah** sehingga dikatakan memiliki arah yang **negatif**.
+:::
+
+#### Pola Hubungan
+
+Pola hubungan mengacu pada **bentuk hubungan** yang teramati pada distribusi nilai variabel kedua ketika kita membandingkan nilai variabel pertama. Pola hubungan bisa berupa **linear** atau **non-linear**. Pola hubungan linear berarti hubungan antar kedua variabel dapat digambarkan sebagai garis lurus. Pola hubungan non-linear berarti hubungan antar kedua variabel tidak dapat digambarkan sebagai garis lurus.
+
+::: rmdkasus
+#### Studi Kasus: Pola Hubungan Jarak Tempuh dan Biaya Perjalanan {.unnumbered}
+
+Untuk menjelaskan **pola hubungan**, mari kita gunakan variabel rasio yang sifatnya numerik kontinyu, seperti `jarak.km` dengan `biaya.dalam.ribu2` (biaya perjalanan dalam ribuan rupiah) dari dataset mahasiswa kampus UIN Raden Intan Lampung. Sesuai kaidah analisis, *scatterplot* akan menyingkap bentuk formasi lintasan datanya secara visual, apakah berpola linear (membentuk garis lurus teratur) atau non-linear (berbelok-belok, misalnya kurva):
+
+```{r fig-pola-jarak-biaya, echo=FALSE, out.width='60%', fig.align='center', fig.cap="Pola Hubungan Jarak Tempuh dan Biaya Perjalanan"}
+library(ggplot2)
+library(dplyr)
+
+df_uinril <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep=";")
+
+df_uinril |>
+  # Preprocessing karena variabel jarak masih menggunakan koma sebagai desimal
+  mutate(jarak.km = as.numeric(gsub(",", ".", jarak.km))) |>
+  filter(!is.na(jarak.km) & !is.na(biaya.dalam.ribu2)) |>
+  ggplot(aes(x = jarak.km, y = biaya.dalam.ribu2)) +
+  geom_point(alpha = 0.5, color = "steelblue") +
+  theme_minimal() +
+  labs(
+    x = "Jarak Tempuh (km)",
+    y = "Biaya Perjalanan (Ribuan Rupiah)"
+  )
+```
+
+Melalui Gambar \@ref(fig:fig-pola-jarak-biaya), sebaran titik-titik koordinatnya menampilkan konsentrasi yang membentuk sebuah lintasan terarah. 
+
+Sebagai perbandingan agar lebih mudah diidentifikasi, mari amati bentuk plot yang membentuk pola teoretis (garis lurus linear) serta kondisi yang sama sekali tidak berpola pada skenario data hipotetis berikut ini:
+
+```{r fig-perbandingan-pola, echo=FALSE, out.width='80%', fig.align='center', fig.cap="Perbandingan Pola Linear dan Kondisi Tidak Berpola (Hipotetis)", message=FALSE, warning=FALSE}
+library(ggplot2)
+
+set.seed(42)
+jarak_hyp <- runif(100, 1, 20)
+# Skenario Linear
+biaya_lin <- 10 + 2 * jarak_hyp + rnorm(100, sd=3)
+# Skenario Tidak Berpola (Acak)
+biaya_non <- runif(100, 10, 50)
+
+df_contoh <- data.frame(
+  Jarak = rep(jarak_hyp, 2),
+  Biaya = c(biaya_lin, biaya_non),
+  Pola = factor(rep(c("Pola Linear", "Tidak Berpola (Acak)"), each = 100), 
+                levels=c("Pola Linear", "Tidak Berpola (Acak)"))
+)
+
+ggplot(df_contoh, aes(x = Jarak, y = Biaya)) +
+  geom_point(color = "steelblue", alpha = 0.6) +
+  facet_wrap(~ Pola, scales = "free_y") +
+  theme_minimal() +
+  labs(
+    x = "Jarak Tempuh Hipotetis (km)",
+    y = "Biaya Hipotetis"
+  )
+```
+
+Anda dapat membandingkan titik-titik sebaran kampus UINRIL pada observasi pertama dengan kedua skenario referensi di atas untuk melihat apakah grafik tersebut mencontoh wujud *trend* model linear yang rapi, atau malah bersifat acak. Kemampuan mendiagnosis wujud pola empirik inilah yang krusial sebelum menentukan jenis probabilitas regresi selanjutnya!
+:::
+
+### Identifikasi Hubungan Antar Variabel Secara Matematis
+Mengidentifikasi hubungan antarvariabel secara empiris tidak selalu mudah, oleh karena itu, dikembangkan **koefisien-koefisien asosiasi** yang dapat menginformasikan ketiga karakteristik tersebut secara ringkas.
+
+Secara umum, koefisien asosiasi memiliki **rentang nilai antara 0 sampai dengan 1** dan tanda **positif (+) atau negatif (-)**. Rinciannya adalah sebagai berikut:
+
+- Semakin mendekati 1 nilainya, semakin **kuat** hubungan antara kedua variabel. Sebaliknya, semakin mendekati 0 nilainya, semakin **lemah** hubungan antara kedua variabel.
+- Tanda **positif (+)** menunjukkan hubungan yang searah, sedangkan tanda **negatif (-)** menunjukkan hubungan yang berlawanan arah.
+
+Koefisien yang menerangkan pola **khusus hanya ada pada hubungan antar variabel metrik** dan berbeda dengan koefisien asosiasi yang dimaksud sebelumnya. Kita akan mempelajarinya pada bab \@ref(bab-13-regresi-sederhana).
+
+#### Karakteristik Hubungan dan Tingkat Pengukuran Variabel
+
+Di subbab sebelumnya kita telah mengenal karakteristik-karakteristik yang dapat diidentifikasi dalam sebuah hubungan antara dua variabel. Karakteristik ini **sangat berhubungan erat** dengan **tingkat pengukuran variabel-variabel yang dianalisis**. Berikut adalah penjelasan mengenai perbedaan karakteristik-karakteristik hubungan yang bisa diidentifikasi berdasarkan **tingkat pengukuran yang sama** untuk kedua variabel.
+
+```{r tbl-karakteristik-hubungan, echo=FALSE, fig.align='center'}
+df_karakteristik_tingkat_pengukuran <- data.frame(
+  `Tingkat Pengukuran` = c("Nominal", "Ordinal", "Interval", "Rasio"),
+  `Kekuatan` = c("✅", "✅", "✅", "✅"),
+  `Arah` = c("❌", "✅", "✅", "✅"),
+  `Pola` = c("❌", "❌", "✅", "✅")
+)
+
+kbl(df_karakteristik_tingkat_pengukuran, align = "lccc", caption = "Karakteristik Hubungan dan Tingkat Pengukuran Variabel", escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+Dari seluruh tingkat pengukuran, hanya tingkat pengukuran **nominal** yang tidak memiliki karakteristik **arah** dan **pola**. Ini dikarenakan sifat alami variabel nominal yang hanya berfungsi sebagai **label** atau **kategori** tanpa memiliki urutan atau nilai numerik yang dapat diinterpretasikan secara matematis. Mulai variabel **ordinal** dan seterusnya, **arah** bisa diidentifikasi, karena mulai tingkat ini urutan antar kategori sudah bisa diinterpretasikan secara logis.
+
+Sementara itu, **pola** hanya bisa diidentifikasi pada tingkat pengukuran **interval** dan **rasio**, karena pola hanya bisa diidentifikasi pada nilai yang berupa angka.
+
+Bagaimana jika dua variabel kita memiliki tingkat pengukuran yang berbeda? Kita harus melihat variabel yang **tingkat pengukurannya lebih rendah**. Mari simak contoh kasus berikut.
+
+::: rmdkasus
+#### Studi Kasus: Karakteristik Hubungan Berdasarkan Tingkat Pengukuran Variabel {.unnumbered}
+
+Perhatikan dataset contoh berikut.
+
+```{r tbl-dataset-beda-tingkat-pengukuran, echo=FALSE, fig.align='center'}
+df_dataset_beda_tingkat_pengukuran <- data.frame(
+  `ID` = c(1, 2, 3, 4, 5),
+  `Jarak` = c(23, 12, 34, 45, 56),
+  `Uang_saku` = c("<1 Juta rupiah", "2-3 Juta rupiah", "3-4 Juta rupiah", ">4 Juta rupiah", "<1 Juta rupiah")
+  )
+
+kbl(df_dataset_beda_tingkat_pengukuran, align = "lccc", caption = "Dataset Beda Tingkat Pengukuran", escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+Variabel `jarak` dan `uang_saku` memiliki tingkat pengukuran yang berbeda (rasio dan ordinal). Oleh karena itu, kita tidak dapat langsung menentukan karakteristik hubungan antara kedua variabel tersebut berdasarkan Tabel \@ref(tab:tbl-karakteristik-hubungan).
+
+Oleh karena variabel yang lebih rendah tingkat pengukurannya adalah `uang_saku` (ordinal), maka kita perlu melakukan transformasi terlebih dahulu variabel `jarak` menjadi ordinal agar dapat dianalisis lebih lanjut:
+
+```{r tbl-dataset-beda-tingkat-pengukuran-transformasi, echo=FALSE, fig.align='center'}
+df_dataset_beda_tingkat_pengukuran_transformasi <- data.frame(
+  `ID` = c(1, 2, 3, 4, 5),
+  `Jarak` = c("20-30 km", "10-20 km", "30-40 km", "40-50 km", "<10 km"),
+  `Uang_saku` = c("<1 Juta rupiah", "2-3 Juta rupiah", "3-4 Juta rupiah", ">4 Juta rupiah", "<1 Juta rupiah")
+  )
+
+kbl(df_dataset_beda_tingkat_pengukuran_transformasi, align = "lccc", caption = "Dataset Beda Tingkat Pengukuran (Transformasi)", escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+Dengan demikian, kita dapat mengidentifikasi karakteristik hubungan antara kedua variabel tersebut berdasarkan Tabel \@ref(tab:tbl-karakteristik-hubungan) yakni untuk variabel **ordinal**, yakni **kekuatan** dan **arah**. Koefisien asosiasinya juga berarti memiliki kisaran angka antara 0 sampai dengan 1 dan tanda positif (+) atau negatif (-).
+:::
+
+### Bentuk Asosiasi Sepasang Variabel
+
+Setelah mempelajari karakteristik hubungan antarvariabel, kita perlu menguasai bentuk-bentuk asosiasi yang ada di antara kedua variabel. Penguasaan bentuk ini penting karena bentuk asosiasi tersebut **sangat menentukan jenis analisis asosiasi yang akan kita gunakan** selanjutnya, dan keduanya **sangat berlainan satu sama lain**.
+
+Bentuk asosiasi dua variabel dapat dibagi menjadi  **keterkaitan** atau **korelasi** dan **pengaruh** atau **kausalitas**.
+
+- **Keterkaitan** atau **korelasi** adalah bentuk hubungan yang biasanya teridentifikasi secara kebetulan, setelah data dianalisis. Kekuatan, arah, dan pola yang terjadi pada dua variabel dipandang sebagai sesuatu yang terjadi secara alami dan belum bisa dijelaskan penyebabnya.
+- **Pengaruh** atau **kausalitas** adalah bentuk hubungan yang terjadi karena adanya **sebab dan akibat** antara dua variabel tersebut. Dalam hal ini, perubahan pada satu variabel menyebabkan perubahan pada variabel lainnya. Dalam bentuk ini, kita sudah memiliki asumsi awal mengenai variabel mana yang menjadi sebab dan mana yang menjadi akibat.
+
+Penting untuk memiliki pemahaman bahwa **korelasi belum tentu sebuah kausalitas**, akan tetapi **kausalitas sudah pasti memiliki korelasi**. Mengapa demikian? Hubungan korelasi menunjukkan **indikasi** adanya pengaruh antara kedua variabel tersebut. Akan tetapi, kita belum bisa mengatakan salah satu menjadi pemengaruh yang lain tanpa menelaah secara mendalam. Walaupun bisa jadi ada pengaruh di antara kedua variabel tersebut, pengaruh ini bisa jadi disebabkan oleh adanya variabel antara atau variabel pengganggu, yang disebut juga ***confounding variable***. Simak studi kasus berikut. 
+
+::: rmdkasus
+#### Studi Kasus: Konsumsi Cokelat dan Peraih Nobel {.unnumbered}
+
+Sebagai ilustrasi klasik nan menggelitik tentang perbedaan antara korelasi dan kausalitas, mari kita telaah sebuah temuan populer yang dipublikasikan oleh Dr. Franz Messerli pada tahun 2012 [@messerli2012chocolate]. Melalui observasinya, beliau menganalisis data statistik penduduk dari puluhan negara dan memplot korelasi antara *rata-rata konsumsi cokelat per kapita* (kg/tahun) dengan *jumlah peraih hadiah Nobel per 10 juta penduduk*.
+
+Hasil *scatterplot*-nya secara mengejutkan menunjukkan bahwa terdapat **korelasi linear positif yang sangat kuat** (sangat signifikan) antara angka konsumsi cokelat sebuah negara dengan proporsi pemenang Nobel dari negara tersebut (Gambar \@ref(fig:scatterplot-cokelat-nobel)). Semakin tinggi tingkat konsumsi batangan cokelat penduduk negaranya, diiringi pula dengan melesatnya jumlah peraih penghargaan Nobel (di posisi teratas diduduki oleh negara Swiss dan Swedia).
+
+```{r scatterplot-cokelat-nobel, echo=FALSE, fig.align='center', width='60%', fig.cap="Scatterplot Konsumsi Cokelat dan Peraih Nobel. Sumber: data.europa.eu"}
+knitr::include_graphics("images/chocolate_countries_large.jpg")
+```
+
+Namun, apakah korelasi statistik riil yang sangat kuat ini berarti bahwa memakan cokelat secara masif **"menyebabkan"** atau meningkatkan kecerdasan kognitif yang seketika membuat seseorang memenangkan Nobel (*kausalitas*)? 
+
+Tentu saja kesimpulan tersebut keliru. Kendati secara hitungan matematis keduanya berkorelasi sangat tinggi, fenomena ini kemungkinan besar hanyalah imbas dari sebuah **variabel antara** (*confounding variable*) yang "menjembatani" tingkat konsumsi coklat dan jumlah peraih penghargaan Nobel, yakni tingkat **kesejahteraan sosial ekonomi makro**. Negara yang makmur dan tergolong sangat maju tentu memiliki daya beli yang lebih baik terhadap komoditas tersier seperti cokelat. Di lain sisi, wujud kemakmuran finansial tersebut merupakan fondasi dasar bagi ekosistem edukasi kelas dunia dan sokongan dana riset sains yang sangat dominan, sehingga sudah sewajarnya secara terpisah berujung pada tingginya kuantitas masyarakat yang sukses meraih Nobel.
+:::
+
+## Koefisien Korelasi Variabel Nominal
+Dalam bab ini kita akan mempelajari **koefisien-koefisien korelasi** untuk dua variabel **nominal**. Koefisien-koefisien yang akan kita pelajari di antaranya adalah koefisien yang termasuk ke dalam kategori berbasis chi-kuadrat (*chi-square*, $\chi^2$) dan berbasis galat (*error*).
+
+Koefisien yang termasuk ke dalam kategori berbasis chi-kuadrat yang akan kita bahas di antaranya adalah **koefisien *phi*** ($\phi$), **koefisien *Cramer's V*** (V), dan **koefisien *contingency*** (C). Sementara itu, koefisien yang termasuk ke dalam kategori berbasis galat (*error*) adalah **koefisien *Lambda*** ($\lambda$).
+
+### Koefisien Korelasi Variabel Nominal Berbasis Chi-Kuadrat ($\chi^2$)
+Chi-kuadrat (*chi-square*, dibaca "kai-square") sebenarnya adalah adalah salah satu teknik statistik yang biasa digunakan untuk menganalisis hubungan antara dua variabel **kategoris** dengan menguji apakah perbedaan yang diamati dalam distribusi frekuensi suatu sampel dapat dijelaskan hanya oleh peluang acak (*random chance*), atau justru mencerminkan perbedaan yang nyata (*genuine differences*) dalam populasi [@ewing2020basic].
+
+Karena digunakan untuk dua variabel kategoris, Uji *Chi-square* menggunakan **tabel silang**, yakni tabel yang menampilkan frekuensi objek berdasarkan dua variabel. Dalam tabel silang, berbeda dengan tabel data terstruktur, **baris bukan lagi objek dan kolom bukan lagi variabel**. Baik baris maupun kolom **memuat kategori nilai dari seluruh variabel** yang dianalisis. 
+
+Jumlah kategori dari variabel pertama akan menjadi **jumlah baris**, sementara jumlah kategori dari variabel kedua akan menjadi **jumlah kolom**. Dari situlah kita menyebutkan ukuran tabel silang sebagai **"tabel silang $b \times k$"**, dengan $b$ adalah jumlah baris dan $k$ adalah jumlah kolom. Sebagai contoh, jika variabel pertama memiliki 3 kategori dan variabel kedua memiliki 4 kategori, maka tabel silangnya berukuran $3 \times 4$.
+
+Sel-sel tabel akan memuat rangkuman **nilai frekuensi yang diamati** (Tabel \@ref(tab:contoh-tabel-silang)). Dari tabel silang ini, tujuan kita adalah menganalisis **frekuensi teramati** (*observed frequency*) dan **frekuensi yang diharapkan** (*expected frequency*) untuk uji *Chi-square*. Perhatikan kasus berikut ini.
+
+
+::: rmdkasus
+### Studi Kasus: Tabel Silang Variabel Nominal {.unnumbered}
+Korelasi antara variabel `jenis.tempat.tinggal` dan `kendaraan.utama` mahasiswa UNILA akan dianalisis pada tingkat kepercayaan 95%. Berikut adalah tabel silang dari kedua variabel tersebut.
+
+```{r contoh-tabel-silang, echo=FALSE}
+library(tidyverse)
+library(gtsummary)
+library(flextable)
+
+bahan_crosstab <- read.csv("datasets/DataUtama_mhsUNILA.csv", sep = ";")
+
+bahan_crosstab |> 
+  select(Jenis.Tempat.Tinggal, kendaraan.utama) |>
+  rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |> 
+  tbl_summary(
+    by = jenis.tempat.tinggal,
+    label = list(kendaraan.utama = "Jenis Kendaraan"),
+    statistic = list(all_categorical() ~ "{n}")
+    ) |> 
+  modify_header(
+    label ~ "",
+    all_stat_cols() ~ "**{level}**") |> 
+  modify_spanning_header(all_stat_cols() ~ "**Jenis Tempat Tinggal**") |> 
+  remove_footnote_header(columns = all_stat_cols()) |> 
+  as_flex_table() |>
+  bg(bg = "white", part = "all") |>
+  autofit() |>
+  set_caption("Tabel Silang Variabel Jenis Tempat Tinggal dan Kendaraan Utama Mahasiswa UNILA")
+```
+
+**Penjelasan Tabel Silang**
+
+- Baris tabel tersebut adalah kategori dari variabel `kendaraan.utama`. Terdapat 5 kategori dari variabel tersebut, sehingga ada **5 baris**.
+- Kolomnya adalah kategori dari variabel `jenis.tempat.tinggal`. Terdapat 7 kategori dari variabel tersebut, sehingga ada **7 kolom**.
+- Ukuran tabel silang ini adalah $5 \times 7$.
+:::
+
+### Frekuensi Harapan dan Nilai *Chi-square* ($\chi^2$) {#frekuensi-harapan-dan-nilai-chi-square}
+Frekuensi harapan (*expected frequency*, $f_e$) dari tabel silang dihitung dengan persamaan berikut.
+
+$$
+f_e = \frac{\text{total baris}\times \text{total kolom}}{\text{total keseluruhan}}
+(\#eq:rumus-frekuensi-harapan)
+$$
+
+Bersama dengan frekuensi yang teramati (*observed frequency*, $f_o$), $f_e$ digunakan untuk menghitung nilai $\chi^2$ sebagai berikut.
+
+$$
+\chi^2 = \sum \frac{(f_o - f_e)^2}{f_e}
+(\#eq:rumus-chi-square)
+$$
+
+::: rmdnote
+[Catatan]{.tajuksaya}
+
+$\chi^2$ pada dasarnya adalah sebuah **distribusi statistik** sekaligus **uji hipotesis**. Dengan demikian, $\chi^2$ memiliki tabel distribusi dan  juga hipotesis kosong dan alternatif. Hipotesis kosongnya adalah tidak ada hubungan antara kedua variabel, sementara hipotesis alternatifnya adalah ada hubungan antara kedua variabel.
+
+Tabel distribusi $\chi^2$ menampilkan nilai-nilai kritis untuk setiap **derajat kebebasan** (*degree of freedom*, $df$) dan **tingkat signifikansi** ($\alpha$). Derajat kebebasan adalah hasil dari perhitungan $(b-1)(k-1)$, dengan $b$ adalah jumlah baris dan $k$ adalah jumlah kolom.
+
+Dengan membandingkan nilai $\chi^2$ yang diperoleh dari perhitungan dengan nilai kritis pada tabel distribusi $\chi^2$, kita dapat menyatakan menolak hipotesis kosong (artinya ada hubungan antara kedua variabel) atau gagal menolak hipotesis kosong (artinya tidak ada hubungan antara kedua variabel). Hipotesis kosong **ditolak** jika nilai $\chi^2$ yang diperoleh **lebih besar** dari nilai kritis pada tabel distribusi $\chi^2$.
+:::
+
+Mari perhatikan lanjutan kasus sebelumnya untuk menghitung frekuensi harapan dan nilai $\chi^2$.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Frekuensi Harapan dan Uji Chi-Square {.unnumbered}
+
+Melanjutkan studi kasus tabel silang mahasiswa UNILA, kita akan menghitung **frekuensi harapan** ($f_e$) dan nilai **Chi-square** ($\chi^2$).
+
+**1. Frekuensi Aktual (Teramati)**
+
+Sebelum menghitung frekuensi harapan, mari kita visualisasikan kembali tabel silang aktual/teramati dari variabel `jenis.tempat.tinggal` dan `kendaraan.utama`. Kali ini, tabel tersebut telah dilengkapi dengan jumlahan total margin untuk masing-masing baris dan kolom:
+
+```{r frekuensi-observasi-unila, echo=FALSE}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+
+bahan_crosstab |> 
+  select(Jenis.Tempat.Tinggal, kendaraan.utama) |>
+  rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |> 
+  tbl_summary(
+    by = jenis.tempat.tinggal,
+    label = list(kendaraan.utama = "Jenis Kendaraan"),
+    statistic = list(all_categorical() ~ "{n}")
+    ) |> 
+  modify_header(
+    label ~ "",
+    all_stat_cols() ~ "**{level}**") |> 
+  modify_spanning_header(all_stat_cols() ~ "**Jenis Tempat Tinggal**") |> 
+  remove_footnote_header(columns = all_stat_cols()) |> 
+  as_flex_table() |>
+  bg(bg = "white", part = "all") |>
+  autofit() |>
+  set_caption("Tabel Silang Frekuensi Teramati")
+
+# Commented for later used as educational purpose
+# -----------------------------------------------
+# tbl_observed <- table(
+#   kendaraan.utama = bahan_crosstab$kendaraan.utama,
+#   jenis.tempat.tinggal = bahan_crosstab$Jenis.Tempat.Tinggal
+# )
+# 
+# # Menambahkan margin (total baris dan kolom)
+# tbl_obs_with_margins <- addmargins(tbl_observed)
+# 
+# # Konversi ke data frame
+# df_obs <- as.data.frame.matrix(tbl_obs_with_margins)
+# 
+# # Merapikan kolom nama baris
+# df_obs$Kendaraan_Utama <- rownames(df_obs)
+# df_obs <- df_obs |> select(Kendaraan_Utama, everything())
+# rownames(df_obs) <- NULL
+# 
+# # Mengganti 'Sum' menjadi 'Total'
+# df_obs$Kendaraan_Utama <- gsub("Sum", "Total", df_obs$Kendaraan_Utama)
+# colnames(df_obs)[ncol(df_obs)] <- "Total"
+# 
+# tbl_obs_out <- kbl(df_obs, 
+#     align = "lcccccccc", 
+#     caption = "Tabel Silang Frekuensi Aktual/Teramati",
+#     format.args = list(big.mark = "."),
+#     escape = FALSE) |>
+#   kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = c("scale_down", "HOLD_position")) |>
+#   add_header_above(c(" " = 1, "Jenis Tempat Tinggal" = 7, " " = 1)) |>
+#   column_spec(1, width = "2.8cm") |>
+#   column_spec(2:8, width = "1.5cm") |>
+#   column_spec(9, width = "1.2cm")
+# 
+# if (knitr::is_html_output()) {
+#   tbl_obs_out <- tbl_obs_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+# }
+# tbl_obs_out
+```
+
+**2. Frekuensi Harapan**
+
+Frekuensi harapan dihitung menggunakan Persamaan \@ref(eq:rumus-frekuensi-harapan) berdasarkan nilai total baris dan total kolom dari frekuensi yang teramati pada masing-masing sel. Sebagai contoh, frekuensi harapan untuk mahasiswa yang menggunakan "Transportasi daring" dan tinggal di "Rumah pribadi/keluarga" (dengan total baris 64 dan total kolom 121 dari total keseluruhan 394 mahasiswa) dihitung sebagai berikut:
+$$ f_e = \frac{64 \times 121}{394} = 19,65 $$
+
+Berikut adalah tabel frekuensi harapan untuk seluruh sel, berisikan nilai-nilai $f_e$ beserta total kolom dan barisnya.
+
+```{r frekuensi-harapan-unila, echo=FALSE}
+library(knitr)
+library(kableExtra)
+library(flextable)
+library(officer)
+
+bahan_crosstab <- read.csv("datasets/DataUtama_mhsUNILA.csv", sep = ";")
+
+# Membuat tabel kontingensi dasar
+tbl_observed <- table(
+  kendaraan.utama = bahan_crosstab$kendaraan.utama,
+  jenis.tempat.tinggal = bahan_crosstab$Jenis.Tempat.Tinggal
+)
+
+uji_chisq <- chisq.test(tbl_observed)
+
+# Menambahkan total baris dan kolom pad frekuensi harapan
+tbl_expected_with_margins <- addmargins(uji_chisq$expected)
+
+# Mengubah format ke data frame untuk ditampilkan
+df_expected <- as.data.frame.matrix(tbl_expected_with_margins)
+df_expected <- round(df_expected, 2)
+
+# Variabel nama baris agar tampil di tabel
+df_expected$Kendaraan_Utama <- rownames(df_expected)
+df_expected <- df_expected |> select(Kendaraan_Utama, everything())
+rownames(df_expected) <- NULL
+
+# Merapikan nama kategori 'Sum' menjadi 'Total'
+df_expected$Kendaraan_Utama <- gsub("Sum", "Total", df_expected$Kendaraan_Utama)
+colnames(df_expected)[ncol(df_expected)] <- "Total"
+
+# Membuat salinan df_expected untuk dimanipulasi tata letaknya
+df_exp_layout <- df_expected
+
+# 1. Menambahkan baris "Jenis Kendaraan" tanpa nilai (NA) seperti gtsummary
+empty_row <- df_exp_layout[1, ]
+empty_row[1, ] <- NA
+empty_row$Kendaraan_Utama <- "Jenis Kendaraan"
+df_exp_layout <- rbind(empty_row, df_exp_layout)
+
+df_exp_layout |> 
+  flextable() |>
+  # 1. Terapkan theme di awal agar tidak menimpa modifikasi kustom (bold, rata tengah)
+  theme_booktabs() |>
+  
+  # Mewajibkan nilai NA dicetak kosong, bukan 'NA'
+  colformat_double(na_str = "") |>
+  colformat_num(na_str = "") |>
+  
+  # Menambahkan spanning header "Jenis Tempat Tinggal"
+  add_header_row(
+    values = c("", "Jenis Tempat Tinggal", ""),
+    colwidths = c(1, ncol(df_exp_layout) - 2, 1)
+  ) |>
+  # Menghapus nama kolom pertama di baris bawah header
+  set_header_labels(Kendaraan_Utama = "") |>
+  
+  # Format penataan huruf (bold, center-aligned)
+  bold(part = "header") |>
+  bold(i = 1, j = 1, part = "body") |> # Bold eksklusif untuk 'Jenis Kendaraan'
+  align(align = "center", part = "header") |>
+  align(align = "center", part = "body") |>
+  align(j = 1, align = "left", part = "all") |>
+  
+  # Menambahkan garis bawah eksklusif di bawah spanning header "Jenis Tempat Tinggal"
+  hline(i = 1, j = 2:(ncol(df_exp_layout) - 1), part = "header", border = fp_border(width = 1)) |>
+  
+  # Memberikan efek indentasi (menjorok ke kanan) untuk sub-kategori seperti gtsummary
+  padding(i = 2:nrow(df_exp_layout), j = 1, padding.left = 15, part = "body") |>
+  
+  # Garis pemisah atas dan dasar setebal gtsummary
+  hline_top(part = "header", border = fp_border(width = 2)) |>
+  hline_bottom(part = "body", border = fp_border(width = 2)) |>
+  
+  bg(bg = "white", part = "all") |>
+  autofit() |>
+  set_caption("Tabel Silang Frekuensi Harapan")
+
+# Commented for later used as educational purpose
+# -----------------------------------------------
+# tbl_exp_out <- kbl(df_expected, 
+#     align = "lcccccccc", 
+#     caption = "Tabel Silang Frekuensi Harapan",
+#     format.args = list(decimal.mark = ",", big.mark = "."),
+#     escape = FALSE) |>
+#   kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = c("scale_down", "HOLD_position")) |>
+#   add_header_above(c(" " = 1, "Jenis Tempat Tinggal" = 7, " " = 1)) |>
+#   column_spec(1, width = "2.8cm") |>
+#   column_spec(2:8, width = "1.5cm") |>
+#   column_spec(9, width = "1.2cm")
+
+# if (knitr::is_html_output()) {
+#   tbl_exp_out <- tbl_exp_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+# }
+# tbl_exp_out
+```
+
+**3. Perhitungan Chi-Square**
+
+Berdasarkan Persamaan \@ref(eq:rumus-chi-square), nilai uji $\chi^2$ dihitung dengan menjumlahkan kuadrat dari selisih antara nilai sel pada tabel observasi ($f_o$) dengan frekuensi harapannya ($f_e$), lalu dibagi dengan frekuensi harapannya.
+
+Berikut adalah contoh perhitungan masing-masing selnya. Kita akan mulai dari sel paling kiri-atas, yakni $\text{Berjalan kaki} \times \text{Asrama}$, berjalan ke kanan pada baris $\text{Berjalan Kaki}$, yakni ke kolom $\text{Kos bersama-sama}$, kemudian $\text{Kos Sendiri}$, sampai ke sel paling kanan-bawah, $\text{Transportasi daring} \times \text{Rumah pribadi/rumah keluarga}$
+
+$$
+\begin{align}
+\chi^2 &= \sum \frac{(f_o - f_e)^2}{f_e} \\
+&= \frac{(10 - 19{,}65)^2}{19{,}65} + \frac{(5 - 4{,}47)^2}{4{,}47} + \dots + \frac{(16 - 19{,}65)^2}{19{,}65} \\
+&= \frac{93{,}1225}{19{,}65} + \frac{0{,}2304}{4{,}47} + \dots + \frac{10{,}5625}{19{,}65} \\
+&= 4{,}739 + 0{,}051 + \dots + 0{,}549 \\
+&= 146{,}4233
+\end{align}
+$$
+
+Dengan derajat kebebasan `r uji_chisq$parameter` ($(b-1)\times(k-1)=(5-1)\times(7-1)=6\times4$), pada tingkat kepercayaan 95% ($\alpha=5\%$), nilai $\chi^2_{kritis}$ kita adalah `r format(qchisq(0.95, df = uji_chisq$parameter), digits = 4)`. Bila dibandingkan dengan nilai $\chi^2_{hitung}$ yang diperoleh, yakni 146,4233, maka nilai tersebut **lebih besar** dari nilai $\chi^2_{kritis}$.
+
+Menurut kaidah pengambilan keputusan yang telah dibahas pada subbab \@ref(frekuensi-harapan-dan-nilai-chi-square), maka **hipotesis kosong ditolak**. Dapat disimpulkan, terdapat **hubungan (korelasi) yang signifikan** antara `jenis.tempat.tinggal` dengan `kendaraan.utama` yang digunakan oleh mahasiswa UNILA.
+
+Langkah selanjutnya adalah menentukan **kekuatan** hubungan tersebut dengan alat-alat yang sudah kita bahas di awal: koeifisien kontingensi, koefisien Cramer's V, dan koefisien $\phi$.
+:::
+
+### Koefisien phi ($\phi$), Cramer's-V, dan Kontingensi (C)
+Ketiga koefisien ini dihitung berdasarkan nilai $\chi^2$ yang diperoleh sebelumnya untuk menyatakan **kekuatan** hubungan dua variabel yang dianalisis. Seperti yang juga sudah dibahas, nilai koefisien ini berkisar di antara **0 hingga 1**, dari **tidak ada hubungan sama sekali** (kekuatan yang sangat lemah), sampai **sangat berhubungan**. Berikut adalah penjelasan ketiga koefisien tersebut yang mencakup cara perhitungan dan situasi koefisien tersebut dapat digunakan.
+
+```{r tbl-koefisien-nominal, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+
+df_koefisien <- data.frame(
+  Koefisien = c('phi ($\\phi$)', "Cramer's V", 'Kontingensi (C)'),
+  Perhitungan = c('$\\phi = \\sqrt{\\frac{\\chi^2}{n}}$', 
+                  '$V = \\sqrt{\\frac{\\chi^2}{n(k-1)}}$', 
+                  '$C = \\sqrt{\\frac{\\chi^2}{n+\\chi^2}}$'),
+  Keterangan = c('Digunakan untuk tabel kontingensi $2 \\times 2$',
+                 'Digunakan untuk tabel kontingensi $b \\times k$',
+                 'Digunakan untuk tabel kontingensi $b \\times k$'),
+  check.names = FALSE
+)
+
+tbl_koef_out <- kbl(df_koefisien,
+    align = 'ccc',
+    caption = 'Koefisien Korelasi Variabel Nominal Berbasis Chi-Kuadrat',
+    escape = FALSE) |>
+  kable_styling(bootstrap_options = c('striped', 'hover', 'responsive'), full_width = FALSE, latex_options = 'HOLD_position') |>
+  collapse_rows(columns = 3, valign = 'middle')
+
+if (knitr::is_html_output()) {
+  tbl_koef_out <- tbl_koef_out |> scroll_box(width = '100%', box_css = 'border: 0px;')
+}
+tbl_koef_out
+```
+
+di mana:
+
+- $\chi^2$ adalah nilai uji chi-kuadrat
+- $n$ adalah jumlah observasi
+- $b$ adalah jumlah baris
+- $k$ adalah jumlah kolom
+
+Koefisien C cenderung lebih sulit untuk diinterpretasikan dibandingkan Cramer's V karena nilainya hampir tidak pernah menyentuh nilai maksimum 1, yang dengan kata lain **tidak terstandardisasi**. Oleh karena itu, Cramer's V lebih sering digunakan dalam penelitian. Kita dapat menggunakan kriteria berikut untuk menginterpretasikan kekuatan hubungan dua variabel nominal [@devaus2014surveys].
+
+```{r tbl-interpretasi-koefisien-nominal, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+
+df_interpretasi <- data.frame(
+  Nilai = c('0,00', '0,01 - 0,09', '0,10 - 0,29', '0,30 - 0,49', '0,50 - 0,69', '0,70 - 0,89', '0,90 - 1,00'),
+  Keterangan = c('Tidak ada hubungan', 'Hubungan sangat kecil', 'Hubungan rendah hingga sedang', 'Hubungan sedang hingga kuat', 'Hubungan kuat hingga sangat kuat', 'Hubungan sangat kuat', 'Hubungan sempurna'),
+  check.names = FALSE
+)
+
+tbl_interpretasi_out <- kbl(df_interpretasi,
+    align = 'ccc',
+    caption = 'Kriteria Koefisien Korelasi Variabel Nominal menurut @devaus2014surveys',
+    escape = FALSE) |>
+  kable_styling(bootstrap_options = c('striped', 'hover', 'responsive'), full_width = FALSE, latex_options = 'HOLD_position')
+
+if (knitr::is_html_output()) {
+  tbl_interpretasi_out <- tbl_interpretasi_out |> 
+    scroll_box(
+      width = '100%',
+      box_css = 'border: 0px;'
+      )
+}
+tbl_interpretasi_out
+```
+
+
+## Koefisien Korelasi Variabel Nominal Berbasis *Error* (Koefisien Lambda, $\lambda$)
+Selain pengujian asosiasi dan perhitungan koefisien berbasis *Chi-square*, terdapat pula pengujian asosiasi dan perhitungan koefisien berbasis eror, atau lengkapnya disebut *proportional reduction of error* (PRE). Koefisien ini menggunakan logika yang berbeda dari uji *Chi-square*, karena berfokus pada kemampuan suatu variabel dalam meningkatkan ketepatan prediksi terhadap variabel lain.
+
+Secara sederhana, konsep PRE dapat dijelaskan melalui logika pengurangan kesalahan prediksi (*error reduction*), yaitu sejauh mana prediksi frekuensi suatu variabel berkurang dengan adanya tambahan informasi dari variabel lain. Dalam konteks ini, **variabel yang memberikan informasi tambahan** disebut sebagai **variabel independen**, sedangkan **variabel yang diprediksi** disebut sebagai **variabel dependen**.
+
+Kesalahan prediksi pada variabel dependen, sebelum adanya informasi dari variabel independen, disebut sebagai **kesalahan prediksi awal** (diberi kode $E_1$), sedangkan kesalahan prediksi pada variabel dependen, setelah adanya informasi dari variabel independen, disebut sebagai **kesalahan prediksi akhir** (diberi kode $E_2$).
+
+Kedua variabel **dikatakan berhubungan** jika jumlah kesalahan prediksi pada kondisi kedua ($E_2$) **lebih kecil** daripada pada kondisi pertama ($E_1$). Dengan demikian, **semakin besar pengurangan kesalahan yang terjadi, semakin kuat hubungan antara kedua variabel tersebut**. 
+
+::: rmdkasus
+### Studi Kasus: Logika Pengurangan Kesalahan Prediksi (PRE) {.unnumbered}
+
+Sebagai contoh ilustrasi bagaimana pengetahuan tentang suatu variabel dapat mengurangi kesalahan prediksi (*error*) terhadap variabel lainnya, bayangkan kita memiliki data dari 100 orang responden. Kita ingin memprediksi sikap mereka tentang preferensi menggunakan kendaraan umum atau tidak (variabel dependen, Y).
+
+Untuk mengetahui sejauh mana kesalahan prediksi kita bisa ditekan, kita perlu membandingkan jumlah kesalahan dari dua kondisi: saat kita membuat prediksi tanpa informasi tambahan apa pun, dan saat kita memprediksi dengan bantuan informasi dari variabel lain.
+
+Pada **kondisi pertama**, kita memprediksi tanpa memiliki informasi tambahan apa pun mengenai tiap responden. Dalam kondisi buta informasi ini, cara paling logis untuk meminimalkan potensi kesalahan prediksi adalah dengan merujuk pada probabilitas tertinggi. Artinya, kita menggunakan kategori yang paling banyak muncul (modus) pada populasi tersebut sebagai dasar prediksi untuk seluruh responden.
+
+```{r tbl-pre-e1-hipotetis, echo=FALSE, out.width='60%', fig.align='center'}
+library(knitr)
+library(kableExtra)
+
+df_pre_y <- data.frame(
+  `Preferensi (Y)` = c('Setuju transport publik', 'Tidak setuju', 'Total'),
+  Jumlah = c(60, 40, 100),
+  check.names = FALSE
+)
+
+kbl(df_pre_y, align = 'lc', caption = 'Distribusi Preferensi Penggunaan Transportasi Publik', escape = FALSE) |>
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = FALSE) |>
+  row_spec(nrow(df_pre_y), bold = TRUE)
+```
+
+Berdasarkan Tabel \@ref(tab:tbl-pre-e1-hipotetis), **modus** atau preferensi mayoritas adalah **"Setuju transport publik"** (60 orang). Kategori ini pun menjadi prediksi kita. Jadi, jika kita memprediksi seluruh 100 responden tersebut menjawab "Setuju transport publik", maka prediksi kita hanya akan tepat untuk 60 orang. Di sisi lain, untuk 40 responden ($100 - 60$) yang sebenarnya menjawab "Tidak setuju", ini menjadi **kesalahan prediksi** kita. Angka 40 inilah yang menjadi dasar mula **jumlah kesalahan prediksi pertama ($E_1 = 40$)**.
+
+Selanjutnya, mari kita masuk ke **kondisi kedua ($E_2$)**. Kali ini, kita diberikan tambahan pengetahuan mengenai karakteristik operasional tiap responden berupa kepemilikan kendaraannya (variabel independen, X). Kita ingin mengevaluasi sejauh mana pengetahuan tentang variabel independen ini **mampu mengurangi kesalahan prediksi** kita yang berjumlah 40 tadi.
+
+Mari perhatikan tabel silang berikut.
+
+```{r tbl-pre-e2-hipotetis, echo=FALSE, out.width='80%', fig.align='center'}
+df_pre_xy <- data.frame(
+  `Kepemilikan Kendaraan (X)` = c('Punya Kendaraan', 'Tidak Punya Kendaraan', 'Total'),
+  `Setuju transport publik` = c(10, 50, 60),
+  `Tidak setuju` = c(35, 5, 40),
+  Total = c(45, 55, 100),
+  check.names = FALSE
+)
+
+kbl(df_pre_xy, align = 'lccc', caption = 'Tabel Silang Kepemilikan Kendaraan dan Preferensi Transportasi', escape = FALSE) |>
+  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = FALSE) |>
+  row_spec(nrow(df_pre_xy), bold = TRUE)
+```
+
+Dengan mengetahui kelompok kepemilikan kendaraan (X) setiap responden, kita dapat menyesuaikan pendekatan prediksi. Alih-alih membuat satu prediksi seragam untuk seluruh populasi, kita memprediksi preferensi (Y) menggunakan modus dari masing-masing sub-kelompok X:
+
+- Untuk 45 orang di kelompok "Punya Kendaraan", mayoritas dari mereka (35 orang) memilih "Tidak setuju". Apabila kita memprediksi seluruh 45 orang ini sebagai "Tidak setuju", maka prediksi kita akan meleset pada 10 orang penyimpang. Ini menyumbang **10 kesalahan**.
+- Untuk 55 orang di kelompok "Tidak Punya Kendaraan", mayoritas dari mereka (50 orang) memilih "Setuju transport publik". Apabila kita memprediksi seluruh kelompok ini sebagai "Setuju transport publik", kita akan meleset pada 5 orang lainnya. Ini menyumbang **5 kesalahan**.
+
+Ternyata, dengan beralih menggunakan modus per sub-kelompok, kita tetap melakukan kesalahan. Namun, bila kita totalkan keseluruhan kesalahan pada kondisi kedua ini, jumlahnya adalah $10 + 5 = 15$. Angka ini didefinisikan sebagai **jumlah kesalahan prediksi kedua ($E_2 = 15$)**.
+
+Evaluasi akhirnya adalah, alih-alih melakukan 40 kesalahan seperti pada kondisi pertama, pengetahuan kita tentang variabel kepemilikan kendaraan secara efektif sukses **mengurangi jumlah kesalahan prediksi** hingga tersisa 15 kesalahan saja. Berdasarkan logika inilah korelasi ditentukan: karena pengetahuan tentang suatu variabel suskes mengurangi kesalahan prediksi kita terhadap variabel lainnya (*error reduction*), **maka kita simpulkan bahwa kedua variabel tersebut saling berkorelasi atau berhubungan**. Semakin besar pengurangan kesalahan yang timbul, semakin kuat pula tingkat hubungan antara kedua variabel.
+:::
+
+Setelah mengetahui ada/tidaknya hubungan dari perbandingan jumlah prediksi sebelum dan sesudah penambahan informasi variabel independen, kekuatan hubungan antara kedua variabel dihitung menggunakan rumus berikut:
+
+$$\lambda = \frac{E_1 - E_2}{E_1} = 1 - \frac{E_2}{E_1}$$
+
+dengan:
+
+- $\lambda$ adalah koefisien korelasi berbasis eror (koefisien lambda)
+- $E_1$ adalah jumlah kesalahan prediksi pada kondisi pertama
+- $E_2$ adalah jumlah kesalahan prediksi pada kondisi kedua.
+
+Nilai koefisien $\lambda$ berkisar antara 0 hingga 1. Semakin besar nilai $\lambda$, semakin kuat hubungan antara kedua variabel. Kita bisa menggunakan kriteria pada Tabel \@ref(tab:tbl-interpretasi-koefisien-nominal) untuk menilai kekuatan hubungan antara kedua variabel yang kita analisis.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Koefisien Korelasi Lambda {.unnumbered}
+Dari kasus sebelumnya, kita mendapatkan nilai $E_1 = 40$ dan $E_2 = 15$. Dengan demikian, koefisien korelasi lambda dapat dihitung sebagai berikut:
+
+$$\lambda = \frac{40 - 15}{40} = \frac{25}{40} = 0.625$$
+
+Oleh karena itu, kita dapat menyimpulkan bahwa terdapat hubungan yang kuat antara variabel kepemilikan kendaraan dan preferensi penggunaan transportasi publik. Berdasarkan Tabel \@ref(tab:tbl-pre-e2-hipotetis), kita dapat mengatakan bahwa pemilik kendaraan *cenderung* tidak setuju menggunakan transportasi publik, sedangkan mereka yang tidak memiliki kendaraan *cenderung* setuju menggunakan transportasi publik.
+
+[**Penting!**]{.tajuksaya} Di sini kita tidak menyatakan klaim bahwa "kepemilikan kendaraan otomatis menyebabkan seseorang menolak penggunaan transportasi publik". Kita secara terukur menggunakan kata sifat **cenderung** untuk menerangkan bahwa terdapat **korelasi** atau hubungan antara variabel kepemilikan kendaraan dengan preferensi penggunaan transportasi publik. 
+
+Akan tetapi, kita **belum bisa** menyimpulkan secara gamblang bahwa *"kepemilikan kendaraan menyebabkan ketidaksetujuan menggunakan transportasi publik"* (**kausalitas**). Ibarat kasus konsumsi cokelat dan peraih Nobel yang sudah dibahas pada awal bab, adanya korelasi yang tampak teramat kuat sekalipun belum tentu membuktikan secara empiris adanya **sebab-akibat**. 
+:::
+
+Mari kita terapkan analisis korelasi menggunakan koefisien $\lambda$ pada kasus **jenis tempat tinggal** versus **kendaraan utama**.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Koefisien Korelasi Lambda {.unnumbered}
+
+Mari kita aplikasikan logika pengurangan kesalahan prediksi (PRE) untuk menghitung koefisien Lambda ($\lambda$) pada hubungan antara `jenis.tempat.tinggal` (sebagai variabel independen, X) dengan `kendaraan.utama` yang digunakan (sebagai variabel dependen, Y) oleh mahasiswa UNILA.
+
+Variabel `jenis.tempat.tinggal` ditentukan sebagai **variabel independen** karena secara logika lebih masuk jika dikatakan *"jenis kendaraan yang digunakan untuk mengakses kampus ditentukan oleh jenis tempat tinggalnya"* daripada sebaliknya.
+
+**1. Menghitung Prediksi Pertama ($E_1$)**
+
+Langkah pertama adalah menghitung seberapa besar tingkat probabilitas tebakan kita akan keliru apabila kita **hanya** mendasarkan tebakan pada informasi dari variabel dependen (`kendaraan.utama`) tanpa mempertimbangkan jenis tempat tinggal responden sama sekali. 
+
+Tebakan terbaik kita pada kondisi ini adalah memilih jenis kendaraan yang paling banyak digunakan (modus) oleh populasi secara keseluruhan. Mari perhatikan tabel distribusi frekuensi tunggalnya:
+
+```{r frekuensi-e1-unila, echo=FALSE, warning=FALSE}
+library(tidyverse)
+library(gtsummary)
+library(flextable)
+
+bahan_unila <- read.csv('datasets/DataUtama_mhsUNILA.csv', sep = ';')
+
+bahan_unila |> 
+  select(kendaraan.utama) |>
+  tbl_summary(
+    label = list(kendaraan.utama = 'Jenis Kendaraan'),
+    statistic = list(all_categorical() ~ '{n}')
+  ) |>
+  modify_header(label ~ '**Variabel**', all_stat_cols() ~ '**Jumlah**') |>
+  remove_footnote_header() |> 
+  as_flex_table() |>
+  bg(bg = 'white', part = 'all') |>
+  autofit() |>
+  set_caption('Tabel Frekuensi Kendaraan Utama Mahasiswa UNILA')
+
+n_semua <- length(bahan_unila$kendaraan.utama)
+n_motor_unila <- length(bahan_unila$kendaraan.utama[bahan_unila$kendaraan.utama == "Sepeda motor pribadi"])
+```
+
+Berdasarkan Tabel \@ref(tab:frekuensi-e1-unila), total keseluruhan data populasi pendataan adalah $N = `r n_semua`$ mahasiswa. Dari jumlah tersebut, kategori yang menjadi modus adalah **Sepeda motor pribadi** yang digunakan oleh $n = `r n_motor_unila`$ mahasiswa. Karenanya, tebakan logis kita untuk jenis kendaraan yang digunakan setiap responden adalah "Sepeda motor pribadi".
+
+Bila tebakan seragam itu dipaksakan untuk seluruh `r n_semua` mahasiswa, maka prediksi tersebut akan tepat hanya untuk `r n_motor_unila` orang dan meleset, atau **salah** untuk sisanya ($`r n_semua - n_motor_unila`$).
+
+Angka `r n_semua - n_motor_unila` perhitungan error inilah yang diplot sebagai **jumlah kesalahan prediksi awal ($E_1 = `r n_semua - n_motor_unila`$)**.
+
+**2. Menghitung Prediksi Kedua ($E_2$)**
+
+Langkah berikutnya adalah memasukkan informasi dari variabel tambahan, yakni jenis tempat tinggalnya (`jenis.tempat.tinggal`). Kita memprediksi ulang secara lebih spesifik menggunakan patokan modus dari **masing-masing kelompok tempat tinggal tersebut**.
+
+```{r frekuensi-e2-unila, echo=FALSE}
+bahan_unila |> 
+  select(Jenis.Tempat.Tinggal, kendaraan.utama) |>
+  rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |> 
+  tbl_cross(
+    row = jenis.tempat.tinggal,
+    col = kendaraan.utama
+  ) |>
+  as_flex_table() |>
+  bg(bg = 'white', part = 'all') |>
+  autofit() |>
+  set_caption('Tabel Silang Kendaraan Utama Berdasarkan Jenis Tempat Tinggal')
+
+e2_unila <- 154
+e1_unila <- 164
+lambda_unila <- (e1_unila - e2_unila)/e1_unila
+```
+
+Berdasarkan Tabel \@ref(tab:frekuensi-e2-unila) di atas, kita menghitung selisih frekuensi total per kategori pada variabel X (total per kategori variabel `jenis.tempat.tinggal`) dengan modus pada kategori variabel `kendaraan.utama` untuk tiap kategori variabel `jenis.tempat.tinggal`:
+
+- **Asrama:** Total 10 $\rightarrow$ Modusnya $\text{Berjalan kaki}$ (10). Kesalahan meleset $= 10 - 10 = 0$
+- **Kos bersama-sama:** Total 43 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (22). Kesalahan $= 43 - 22 = 21$
+- **Kos sendiri:** Total 81 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (51). Kesalahan $= 81 - 51 = 30$
+- **Rumah bersama saudara:** Total 57 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (39). Kesalahan $= 57 - 39 = 18$
+- **Rumah ngontrak bersama-sama:** Total 47 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (25). Kesalahan $= 47 - 25 = 22$
+- **Rumah ngontrak pribadi:** Total 35 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (17). Kesalahan $= 35 - 17 = 18$
+- **Rumah pribadi/keluarga:** Total 121 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (76). Kesalahan $= 121 - 76 = 45$
+
+Selisih frekuensi total per kategori pada variabel X adalah:
+$$ E_2 = 0 + 21 + 30 + 18 + 22 + 18 + 45 = 154 $$
+Maka **jumlah kesalahan prediksi akhir ($E_2$) adalah 154**.
+
+**3. Perhitungan Koefisien Lambda ($\lambda$)**
+
+Berdasarkan angka $E_1$ dan $E_2$ yang sudah dihitung sebelumnya, besaran koefisien Lambda ($\lambda$) adalah:
+
+$$
+\begin{align}
+\lambda &= \frac{E_1 - E_2}{E_1} \\
+&= \frac{`r e1_unila` - `r e2_unila`}{`r e1_unila`} 
+&= \frac{`r e1_unila - e2_unila`}{`r e1_unila`} \approx `r format(lambda_unila, digits = 3)`
+\end{align}
+$$
+
+**4. Interpretasi Koefisien Lambda ($\lambda$)**
+
+Nilai $\lambda = `r format(lambda_unila, digits = 3)`$ menunjukkan bahwa informasi mengenai jenis tempat tinggal (variabel independen) hanya mampu mengurangi kesalahan prediksi kendaraan utama (variabel dependen) mahasiswa sebesar **`r format(lambda_unila*100, digits = 3)` %** saja.
+
+Berdasarkan Tabel \@ref(tab:tbl-interpretasi-koefisien-nominal), nilai tersebut berada pada rentang $0,01 - 0,09$ yang berarti kedua variabel memiliki **hubungan yang sangat kecil (sangat lemah/nyaris tanpa pengaruh)**. Kesimpulannya, jenis tempat tinggal mahasiswa UNILA hampir tidak memiliki hubungan apapun terhadap jenis kendaraan utama yang mereka gunakan sehari-hari.
+:::
+
+Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda mengenai materi yang telah dipelajari pada subbab ini.
 
 ::: rmdexercise
-## Soal Evaluasi 11 {.unnumbered}
+## Soal Evaluasi 18 {.unnumbered}
 
-1.  Apa perbedaan Chi-Square Test dengan Lambda sebagai ukuran asosiasi? [STP-8.1]{.capaian}
-2.  Hitunglah nilai Cramer's V untuk tabel kontingensi berikut... [STP-8.2]{.capaian}
+1. Perhatikan tabel silang yang menunjukkan distribusi frekuensi pandangan mahasiswa terhadap kegiatan ekstrakurikuler (ekskul) berdasarkan variabel pandangan mereka dan apakah mereka anggota sebuah himpunan. [STP-9.1]{.capaian}
+
+  ```{r tbl-evaluasi-ekskul, echo=FALSE, message=FALSE, warning=FALSE}
+  library(knitr)
+  library(kableExtra)
+
+  df_eval18 <- data.frame(
+    Pendapat = c("Semua mahasiswa wajib ikut", "Mahasiswa seharusnya bebas menentukan sendiri", "Kegiatan ekskul hanya membuang waktu"),
+    `Ya` = c(466, 345, 38),
+    `Tidak` = c(488, 383, 46),
+    check.names = FALSE
+  )
+
+  tbl_eval18_out <- kbl(df_eval18, 
+    align = "lcc", 
+    col.names = c("Bagaimana pendapat Anda tentang kegiatan ekstrakurikuler (ekskul) mahasiswa?", "Ya", "Tidak"),
+    caption = "Tabel Silang Pandangan Mahasiswa terhadap Kegiatan Ekstrakurikuler",
+    format.args = list(big.mark = ".", decimal.mark = ","),
+    escape = FALSE) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "responsive"), 
+    full_width = FALSE, 
+    latex_options = c("scale_down", "HOLD_position")
+  ) |>
+  add_header_above(c(" " = 1, "Apakah Anda anggota himpunan/organisasi mahasiswa?" = 2)) |>
+  column_spec(1, width = "8cm") |>
+  column_spec(2:3, width = "3cm")
+
+  if (knitr::is_html_output()) {
+    tbl_eval18_out <- tbl_eval18_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+  }
+  tbl_eval18_out
+  ```
+  
+   a. Tentukan koefisien berbasis $\chi^2$ yang pas digunakan untuk menyatakan korelasi kedua variabel tersebut (phi, Cramer’s V, atau C, bisa lebih dari satu) 
+   b. Hitung dan interpretasikan nilai koefisien tersebut sesuai makna koefisien tersebut dalam konsepnya (pilih salah satu dari jawaban Anda di a). 
+   c. Apa yang bisa kita simpulkan dari hasil perhitungan koefisien tersebut? 
+
+2. Perhatikan tabel silang yang menyajikan data hipotesis pola utama pengelolaan sampah berdasarkan tipe tempat tinggal 1.000 rumah tangga berikut. [STP-9.1]{.capaian}
+
+  ```{r tbl-evaluasi-sampah, echo=FALSE, message=FALSE, warning=FALSE}
+  library(knitr)
+  library(kableExtra)
+
+  df_eval_sampah <- data.frame(
+    Metode = c("Diangkut oleh petugas kebersihan", "Dibakar atau dibuang ke lahan kosong", "Disetorkan ke bank sampah terpadu"),
+    `Apartemen` = c(465, 20, 15),
+    `Perumahan Tapak` = c(25, 450, 25),
+    check.names = FALSE
+  )
+
+  tbl_eval_sampah_out <- kbl(df_eval_sampah, 
+    align = "lcc", 
+    col.names = c("Pola utama pengelolaan sampah rumah tangga", "Apartemen", "Perumahan Tapak"),
+    caption = "Tabel Silang Pola Pengelolaan Sampah berdasarkan Tipe Tempat Tinggal",
+    format.args = list(big.mark = ".", decimal.mark = ","),
+    escape = FALSE) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "responsive"), 
+    full_width = FALSE, 
+    latex_options = c("scale_down", "HOLD_position")
+  ) |>
+  add_header_above(c(" " = 1, "Tipe Tempat Tinggal" = 2)) |>
+  column_spec(1, width = "8cm") |>
+  column_spec(2:3, width = "3cm")
+
+  if (knitr::is_html_output()) {
+    tbl_eval_sampah_out <- tbl_eval_sampah_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+  }
+  tbl_eval_sampah_out
+  ```
+  
+   a. Berapakah jumlah kesalahan prediksi awal ($E_1$) sebelum adanya informasi tambahan mengenai jenis tempat tinggal warganya?
+   b. Berapakah jumlah kesalahan prediksi akhir ($E_2$) pasca diketahuinya informasi spesifik membagi warga per tipe tempat tinggal masing-masing?
+   c. Hitung besaran koefisien Lambda ($\lambda$) menggunakan reduksi galat observasi $E_1$ dan $E_2$ yang Anda dapatkan di atas!
+   d. Interpretasikan seberapa kuat atau solid nilai koefisien korelasi $\lambda$ yang diukur tersebut mengukuhkan hipotesis bahwa tipe hunian sangat berpengaruh pada rutinitas penanganan sampah warganya.
 
 :::
