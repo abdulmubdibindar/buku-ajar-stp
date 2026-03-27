@@ -649,7 +649,7 @@ Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data ters
 
 <!--chapter:end:02-data-terstruktur.Rmd-->
 
-# Analisis Statistik Deskriptif
+# Analisis Statistik Deskriptif {#bab-3-analisis-statistik-deskriptif}
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -2428,7 +2428,7 @@ Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai beri
 
 <!--chapter:end:03-statistik-deskriptif.Rmd-->
 
-# Visualisasi Data Kuantitatif
+# Visualisasi Data Kuantitatif {#bab-4-visualisasi-data-kuantitatif}
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -3334,7 +3334,7 @@ Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai beri
 
 <!--chapter:end:04-visualisasi-data.Rmd-->
 
-# Pengantar Analisis Statistik Inferensial
+# Pengantar Analisis Statistik Inferensial {#bab-5-pengantar-inferensial}
 
 ::: rmdcapaian
 ## Capaian Pembelajaran {.unnumbered}
@@ -6047,124 +6047,884 @@ Dari data tersebut diperoleh SST sebesar 36.193.660 dan SSB sebesar 153.660. Den
 
 <!--chapter:end:08-uji-hipotesis-dua-populasi.Rmd-->
 
-# Uji Hipotesis Parameter Lebih dari Dua Populasi
-
-## Analisis Variansi (ANOVA)
-
-Ketika kita ingin membandingkan rata-rata dari **lebih dari dua** kelompok populasi, kita menggunakan **Analysis of Variance (ANOVA)**. Jika kita menggunakan uji t berulang kali untuk setiap pasangan kelompok, risiko kesalahan Tipe I (False Positive) akan meningkat. ANOVA mengatasi masalah ini dengan menguji perbedaan secara simultan.
-
-Hipotesis ANOVA Satu Arah (One-Way ANOVA):
-*   $H_0: \mu_1 = \mu_2 = \dots = \mu_k$ (Semua rata-rata kelompok sama)
-*   $H_1$: Setidaknya ada satu pasang rata-rata yang berbeda.
-
-## Studi Kasus dengan R
-
-Kita ingin membandingkan rata-rata harga tanah di tiga zona: Pusat Kota, Suburban, dan Rural.
-
-
-``` r
-# Data Contoh
-harga_tanah <- c(10, 12, 11, 13, 15, # Pusat
-                 8, 9, 7, 8, 10,       # Suburban
-                 4, 5, 3, 5, 4)        # Rural
-zona <- factor(rep(c("Pusat", "Suburban", "Rural"), each = 5))
-
-data_tanah <- data.frame(harga = harga_tanah, zona = zona)
-
-# ANOVA Satu Arah
-model_anova <- aov(harga ~ zona, data = data_tanah)
-summary(model_anova)
-```
-
-```
-##             Df Sum Sq Mean Sq F value   Pr(>F)    
-## zona         2  160,1   80,07   42,14 3,75e-06 ***
-## Residuals   12   22,8    1,90                     
-## ---
-## Signif. codes:  
-## 0 '***' 0,001 '**' 0,01 '*' 0,05 '.' 0,1 ' ' 1
-```
-
-**Interpretasi**:
-Jika nilai Pr(>F) pada tabel ANOVA kurang dari 0,05, maka tolak $H_0$. Artinya, terdapat perbedaan signifikan rata-rata harga tanah antar zona tersebut. Untuk mengetahui zona mana yang berbeda, dapat dilanjutkan dengan uji lanjut (Post Hoc Test) seperti Tukey HSD.
-
-
-``` r
-TukeyHSD(model_anova)
-```
-
-```
-##   Tukey multiple comparisons of means
-##     95% family-wise confidence level
-## 
-## Fit: aov(formula = harga ~ zona, data = data_tanah)
-## 
-## $zona
-##                diff       lwr      upr     p adj
-## Rural-Pusat    -8,0 -10,32579 -5,67421 0,0000025
-## Suburban-Pusat -3,8  -6,12579 -1,47421 0,0024733
-## Suburban-Rural  4,2   1,87421  6,52579 0,0011306
-```
-
-::: rmdexercise
-## Soal Evaluasi 10 {.unnumbered}
-
-1.  Mengapa kita tidak dianjurkan menggunakan uji t berulang kali untuk membandingkan 3 kelompok atau lebih? [STP-7.3]{.capaian}
-2.  Apa kesimpulan jika P-value ANOVA > 0,05? [STP-7.4]{.capaian}
-
-:::
-
-<!--chapter:end:09-uji-hipotesis-lebih-dua-populasi.Rmd-->
-
 # Korelasi Antarvariabel Nominal
 
-## Konsep Dasar
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
 
-Analisis ini digunakan untuk mengukur kekuatan hubungan antara dua variabel kategori (nominal). Teknik yang umum digunakan adalah **Chi-Square ($X^2$)** untuk signifikansi dan **Cramer's V**, **Phi**, atau **Lambda** untuk kekuatan hubungan.
+Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran nominal dengan tepat [STP-9.1]{.capaian}
+:::
 
-## Studi Kasus dengan R
+## Konsep Dasar Analisis Bivariat
 
-Apakah ada hubungan antara **Fakultas** dengan **Moda Transportasi** yang digunakan?
+Mulai bab ini kita akan bergeser dari analisis statistik univariat, analisis statistik yang hanya memperhatikan satu variabel saja, ke analisis statistik **bivariat**, yaitu analisis statistik yang memperhatikan dua variabel secara bersamaan.
+
+Beberapa kasus yang sudah kita bahas dalam bab-bab sebelumnya yang mencerminkan analisis univariat adalah sebagai berikut.
+
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-analisis-univariat)Contoh Analisis Univariat pada Bab-Bab Sebelumnya</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Bab </th>
+   <th style="text-align:left;"> Pembahasan </th>
+   <th style="text-align:center;"> Variabel </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> \@ref(bab-3-analisis-statistik-deskriptif) </td>
+   <td style="text-align:left;"> Menghitung persentase/proporsi mahasiswa pengguna sepeda motor ke kampus </td>
+   <td style="text-align:center;"> Pengguna sepeda motor ke kampus </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> \@ref(bab-4-visualisasi-data-kuantitatif) </td>
+   <td style="text-align:left;"> Memvisualkan sebaran moda yang digunakan mahasiswa ke kampus </td>
+   <td style="text-align:center;"> Moda yang digunakan mahasiswa ke kampus </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> \@ref(bab-5-pengantar-inferensial) </td>
+   <td style="text-align:left;"> Menghitung nilai standar untuk biaya perjalanan mahasiswa </td>
+   <td style="text-align:center;"> Biaya perjalanan mahasiswa </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> \@ref(bab-6-estimasi-parameter) </td>
+   <td style="text-align:left;"> Menghitung interval kepercayaan untuk parameter rata-rata jarak ke kampus populasi mahasiswa Itera </td>
+   <td style="text-align:center;"> Jarak tempuh tempat tinggal ke kampus </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> \@ref(bab-7-uji-hipotesis-satu-populasi) </td>
+   <td style="text-align:left;"> Pengujian hipotesis skor kepuasan program MBG </td>
+   <td style="text-align:center;"> Skor kepuasan program MBG </td>
+  </tr>
+</tbody>
+</table>
+
+Dari Tabel \@ref(tab:tbl-analisis-univariat), dapat kita lihat bahwa pada bab-bab sebelumnya, kita hanya menganalisis **satu variabel saja**. Namun, mulai bab ini, kita akan menganalisis **dua variabel secara bersamaan**.
+
+## Konsep Dasar Analisis Asosiasi
+
+Ketika kita menganalisis dua variabel secara bersamaan, kita akan berfokus pada **hubungan atau asosiasi** antar kedua variabel tersebut. Kita akan mempelajari mengidentifikasi hubungan/asosiasi pada sepasang variabel dan apa saja bentuk hubungan/asosiasi tersebut.
+
+### Mengidentifikasi Asosiasi Sepasang Variabel Secara Empiris
+
+Bagaimana mengidentifikasi adanya hubungan/asosiasi pada sepasang variabel? Kita bisa memperhatikan tiga karakteristik hubungan berikut: **kekuatan**, **arah**, dan **pola** hubungan. Ketiga karakteristik ini, lagi-lagi, **erat kaitannya dengan tingkat pengukuran variabel**. Mari kita simak ulasan berikut mengenai masing-masing karakteristik **secara empiris** (tampak secara langsung) [@devaus2014surveys].
+
+#### Kekuatan Hubungan
+
+Kekuatan hubungan mengacu pada seberapa besar **besarnya perbedaan** yang teramati pada distribusi nilai variabel kedua ketika kita membandingkan nilai variabel pertama. Semakin besar perbedaan tersebut, semakin kuat hubungan antar kedua variabel. Sebaliknya, semakin kecil perbedaan tersebut, semakin lemah hubungan antar kedua variabel.
+
+::: rmdkasus
+#### Studi Kasus: Mengukur Kekuatan {.unnumbered}
+
+Mari kita amati hubungan antara asal `Fakultas` secara umum dengan kebiasaan `Penggunaan Transportasi Umum` menggunakan tabel silang (*contingency table*). *Kekuatan* hubungan dapat dievaluasi secara manual dengan melihat besarnya selisih angka persentase pada selisih kolom antar-baris yang berlawanan. 
+
+Pertama, mari kita lihat contoh data hipotetis yang mengindikasikan hubungan **lemah**:
+
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-kekuatan-lemah-hipotetis)Skenario Asosiasi Lemah: Persentase Seragam</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Fakultas </th>
+   <th style="text-align:center;"> Sering </th>
+   <th style="text-align:center;"> Jarang </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Fakultas A </td>
+   <td style="text-align:center;"> 45% </td>
+   <td style="text-align:center;"> 55% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fakultas B </td>
+   <td style="text-align:center;"> 48% </td>
+   <td style="text-align:center;"> 52% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fakultas C </td>
+   <td style="text-align:center;"> 46% </td>
+   <td style="text-align:center;"> 54% </td>
+  </tr>
+</tbody>
+</table>
+
+Pada Tabel \@ref(tab:tbl-kekuatan-lemah-hipotetis), perbedaan persentase untuk kelompok "Sering" di antara ketiga fakultas amatlah berdempetan (berkisar sempit antara $45\%-48\%$). Nilai yang saling menyerupai dan tanpa selisih riil ini menyatakan bahwa ciri kebiasaan fakultas nyaris tidak membuat pengaruh yang jelas terhadap penggunaan transportasi. Dapat disimpulkan, hubungan ini diklasifikasikan sebagai asosiasi yang **lemah**.
+
+Sebagai perbandingan, silakan bandingkan dengan susunan skenario tabel di bawah ini yang mengilustrasikan kondisi asosiasi **kuat**:
+
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-kekuatan-kuat-hipotetis)Skenario Asosiasi Kuat: Perbedaan Ekstrem</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Fakultas </th>
+   <th style="text-align:center;"> Sering </th>
+   <th style="text-align:center;"> Jarang </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Fakultas A </td>
+   <td style="text-align:center;"> 90% </td>
+   <td style="text-align:center;"> 10% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fakultas B </td>
+   <td style="text-align:center;"> 20% </td>
+   <td style="text-align:center;"> 80% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Fakultas C </td>
+   <td style="text-align:center;"> 50% </td>
+   <td style="text-align:center;"> 50% </td>
+  </tr>
+</tbody>
+</table>
+
+Pada Tabel \@ref(tab:tbl-kekuatan-kuat-hipotetis), kita bisa menarik garis selisih persentase yang teramat ekstrem lintas fakultas (Fakultas A mencapai sentuhan angka $90\%$, sementara Fakultas B jeblok di $20\%$). Rentang kesenjangan distribusi yang sangat mencolok secara visual pada tabel kontingensi inilah yang menjadi indikator empirik sahih dari suatu korelasi asimetris yang **kuat**.
+:::
+
+#### Arah Hubungan
+
+Arah hubungan mengacu pada **arah perubahan** yang teramati pada distribusi nilai variabel kedua ketika kita membandingkan nilai variabel pertama. Arah hubungan bisa berupa **positif** yang berarti **searah** atau **negatif** yang berarti **berlawanan arah**. Arah hubungan positif berarti ketika **nilai variabel pertama meningkat, nilai variabel kedua juga cenderung meningkat**. Arah hubungan negatif berarti ketika **nilai variabel pertama meningkat, nilai variabel kedua cenderung menurun**.
+
+::: rmdkasus
+#### Studi Kasus: Arah Hubungan {.unnumbered}
+
+Arah hubungan hanya dapat ditentukan jika data memiliki tingkatan atau urutan logis berjenjang (besaran rasio atau skala ordinal). Mari kita cermati hubungan hipotetis antara jenjang `Kepadatan Kuliah` dengan `Tingkat Stres` mahasiswa. Jika kita melihat persentase dalam sel tabel silang, arahnya tercermin secara teratur dari mana letak angka puncaknya berkonsentrasi membelah baris dan kolom:
+
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-arah-positif-hipotetis)Arah Hubungan Positif di Tabel Kontingensi</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Kepadatan Kuliah </th>
+   <th style="text-align:center;"> Stres Rendah </th>
+   <th style="text-align:center;"> Stres Sedang </th>
+   <th style="text-align:center;"> Stres Tinggi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Rendah </td>
+   <td style="text-align:center;"> 70% </td>
+   <td style="text-align:center;"> 20% </td>
+   <td style="text-align:center;"> 10% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sedang </td>
+   <td style="text-align:center;"> 20% </td>
+   <td style="text-align:center;"> 60% </td>
+   <td style="text-align:center;"> 20% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tinggi </td>
+   <td style="text-align:center;"> 10% </td>
+   <td style="text-align:center;"> 20% </td>
+   <td style="text-align:center;"> 70% </td>
+  </tr>
+</tbody>
+</table>
+
+Di Tabel \@ref(tab:tbl-arah-positif-hipotetis) untuk skenario *Arah Positif*, angka tertinggi ($70\%$, $60\%$, $70\%$) berkumpul mengisi sel-sel diagonal urut yang membentang dari kiri atas turun ke kanan bawah. Artinya, makin padat jadwal kuliahnya, makin tinggi pula tingkat stres yang dialami mahasiswa. Ini menandakan hubungan yang **searah** antara kepadatan jadwal kuliah dengan tingkat stres mahasiswa.
+
+Sebaliknya, mari kita observasi bila pilar angkanya diputarbalik menata sebaran **negatif**:
+
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-arah-negatif-hipotetis)Arah Hubungan Negatif di Tabel Kontingensi</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Kepadatan Kuliah </th>
+   <th style="text-align:center;"> Stres Rendah </th>
+   <th style="text-align:center;"> Stres Sedang </th>
+   <th style="text-align:center;"> Stres Tinggi </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Rendah </td>
+   <td style="text-align:center;"> 10% </td>
+   <td style="text-align:center;"> 20% </td>
+   <td style="text-align:center;"> 70% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Sedang </td>
+   <td style="text-align:center;"> 20% </td>
+   <td style="text-align:center;"> 60% </td>
+   <td style="text-align:center;"> 20% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tinggi </td>
+   <td style="text-align:center;"> 70% </td>
+   <td style="text-align:center;"> 20% </td>
+   <td style="text-align:center;"> 10% </td>
+  </tr>
+</tbody>
+</table>
+
+Dalam skenario di Tabel \@ref(tab:tbl-arah-negatif-hipotetis), konsentrasi datanya menumpuk membentuk diagonal terbalik. Hal ini diartikan makin padat jadwal kuliah, tingkat stres cenderung rendah. Ini menandakan hubungan yang **berlawanan arah** sehingga dikatakan memiliki arah yang **negatif**.
+:::
+
+#### Pola Hubungan
+
+Pola hubungan mengacu pada **bentuk hubungan** yang teramati pada distribusi nilai variabel kedua ketika kita membandingkan nilai variabel pertama. Pola hubungan bisa berupa **linear** atau **non-linear**. Pola hubungan linear berarti hubungan antar kedua variabel dapat digambarkan sebagai garis lurus. Pola hubungan non-linear berarti hubungan antar kedua variabel tidak dapat digambarkan sebagai garis lurus.
+
+::: rmdkasus
+#### Studi Kasus: Pola Hubungan Jarak Tempuh dan Biaya Perjalanan {.unnumbered}
+
+Untuk menjelaskan **pola hubungan**, mari kita gunakan variabel rasio yang sifatnya numerik kontinyu, seperti `jarak.km` dengan `biaya.dalam.ribu2` (biaya perjalanan dalam ribuan rupiah) dari dataset mahasiswa kampus UIN Raden Intan Lampung. Sesuai kaidah analisis, *scatterplot* akan menyingkap bentuk formasi lintasan datanya secara visual, apakah berpola linear (membentuk garis lurus teratur) atau non-linear (berbelok-belok, misalnya kurva):
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-pola-jarak-biaya-1.png" alt="Pola Hubungan Jarak Tempuh dan Biaya Perjalanan" width="60%" />
+<p class="caption">(\#fig:fig-pola-jarak-biaya)Pola Hubungan Jarak Tempuh dan Biaya Perjalanan</p>
+</div>
+
+Melalui Gambar \@ref(fig:fig-pola-jarak-biaya), sebaran titik-titik koordinatnya menampilkan konsentrasi yang membentuk sebuah lintasan terarah. 
+
+Sebagai perbandingan agar lebih mudah diidentifikasi, mari amati bentuk plot yang membentuk pola teoretis (garis lurus linear) serta kondisi yang sama sekali tidak berpola pada skenario data hipotetis berikut ini:
+
+<div class="figure" style="text-align: center">
+<img src="figures/fig-perbandingan-pola-1.png" alt="Perbandingan Pola Linear dan Kondisi Tidak Berpola (Hipotetis)" width="80%" />
+<p class="caption">(\#fig:fig-perbandingan-pola)Perbandingan Pola Linear dan Kondisi Tidak Berpola (Hipotetis)</p>
+</div>
+
+Anda dapat membandingkan titik-titik sebaran kampus UINRIL pada observasi pertama dengan kedua skenario referensi di atas untuk melihat apakah grafik tersebut mencontoh wujud *trend* model linear yang rapi, atau malah bersifat acak. Kemampuan mendiagnosis wujud pola empirik inilah yang krusial sebelum menentukan jenis probabilitas regresi selanjutnya!
+:::
+
+### Identifikasi Hubungan Antar Variabel Secara Matematis
+Mengidentifikasi hubungan antarvariabel secara empiris tidak selalu mudah, oleh karena itu, dikembangkan **koefisien-koefisien asosiasi** yang dapat menginformasikan ketiga karakteristik tersebut secara ringkas.
+
+Secara umum, koefisien asosiasi memiliki **rentang nilai antara 0 sampai dengan 1** dan tanda **positif (+) atau negatif (-)**. Rinciannya adalah sebagai berikut:
+
+- Semakin mendekati 1 nilainya, semakin **kuat** hubungan antara kedua variabel. Sebaliknya, semakin mendekati 0 nilainya, semakin **lemah** hubungan antara kedua variabel.
+- Tanda **positif (+)** menunjukkan hubungan yang searah, sedangkan tanda **negatif (-)** menunjukkan hubungan yang berlawanan arah.
+
+Koefisien yang menerangkan pola **khusus hanya ada pada hubungan antar variabel metrik** dan berbeda dengan koefisien asosiasi yang dimaksud sebelumnya. Kita akan mempelajarinya pada bab \@ref(bab-13-regresi-sederhana).
+
+#### Karakteristik Hubungan dan Tingkat Pengukuran Variabel
+
+Di subbab sebelumnya kita telah mengenal karakteristik-karakteristik yang dapat diidentifikasi dalam sebuah hubungan antara dua variabel. Karakteristik ini **sangat berhubungan erat** dengan **tingkat pengukuran variabel-variabel yang dianalisis**. Berikut adalah penjelasan mengenai perbedaan karakteristik-karakteristik hubungan yang bisa diidentifikasi berdasarkan **tingkat pengukuran yang sama** untuk kedua variabel.
+
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-karakteristik-hubungan)Karakteristik Hubungan dan Tingkat Pengukuran Variabel</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Tingkat.Pengukuran </th>
+   <th style="text-align:center;"> Kekuatan </th>
+   <th style="text-align:center;"> Arah </th>
+   <th style="text-align:center;"> Pola </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Nominal </td>
+   <td style="text-align:center;"> ✅ </td>
+   <td style="text-align:center;"> ❌ </td>
+   <td style="text-align:center;"> ❌ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ordinal </td>
+   <td style="text-align:center;"> ✅ </td>
+   <td style="text-align:center;"> ✅ </td>
+   <td style="text-align:center;"> ❌ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Interval </td>
+   <td style="text-align:center;"> ✅ </td>
+   <td style="text-align:center;"> ✅ </td>
+   <td style="text-align:center;"> ✅ </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Rasio </td>
+   <td style="text-align:center;"> ✅ </td>
+   <td style="text-align:center;"> ✅ </td>
+   <td style="text-align:center;"> ✅ </td>
+  </tr>
+</tbody>
+</table>
+
+Dari seluruh tingkat pengukuran, hanya tingkat pengukuran **nominal** yang tidak memiliki karakteristik **arah** dan **pola**. Ini dikarenakan sifat alami variabel nominal yang hanya berfungsi sebagai **label** atau **kategori** tanpa memiliki urutan atau nilai numerik yang dapat diinterpretasikan secara matematis. Mulai variabel **ordinal** dan seterusnya, **arah** bisa diidentifikasi, karena mulai tingkat ini urutan antar kategori sudah bisa diinterpretasikan secara logis.
+
+Sementara itu, **pola** hanya bisa diidentifikasi pada tingkat pengukuran **interval** dan **rasio**, karena pola hanya bisa diidentifikasi pada nilai yang berupa angka.
+
+Bagaimana jika dua variabel kita memiliki tingkat pengukuran yang berbeda? Kita harus melihat variabel yang **tingkat pengukurannya lebih rendah**. Mari simak contoh kasus berikut.
+
+::: rmdkasus
+#### Studi Kasus: Karakteristik Hubungan Berdasarkan Tingkat Pengukuran Variabel {.unnumbered}
+
+Perhatikan dataset contoh berikut.
+
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-dataset-beda-tingkat-pengukuran)Dataset Beda Tingkat Pengukuran</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> ID </th>
+   <th style="text-align:center;"> Jarak </th>
+   <th style="text-align:center;"> Uang_saku </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:center;"> 23 </td>
+   <td style="text-align:center;"> &lt;1 Juta rupiah </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:center;"> 12 </td>
+   <td style="text-align:center;"> 2-3 Juta rupiah </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:center;"> 34 </td>
+   <td style="text-align:center;"> 3-4 Juta rupiah </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:center;"> 45 </td>
+   <td style="text-align:center;"> &gt;4 Juta rupiah </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:center;"> 56 </td>
+   <td style="text-align:center;"> &lt;1 Juta rupiah </td>
+  </tr>
+</tbody>
+</table>
+
+Variabel `jarak` dan `uang_saku` memiliki tingkat pengukuran yang berbeda (rasio dan ordinal). Oleh karena itu, kita tidak dapat langsung menentukan karakteristik hubungan antara kedua variabel tersebut berdasarkan Tabel \@ref(tab:tbl-karakteristik-hubungan).
+
+Oleh karena variabel yang lebih rendah tingkat pengukurannya adalah `uang_saku` (ordinal), maka kita perlu melakukan transformasi terlebih dahulu variabel `jarak` menjadi ordinal agar dapat dianalisis lebih lanjut:
+
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-dataset-beda-tingkat-pengukuran-transformasi)Dataset Beda Tingkat Pengukuran (Transformasi)</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> ID </th>
+   <th style="text-align:center;"> Jarak </th>
+   <th style="text-align:center;"> Uang_saku </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> 1 </td>
+   <td style="text-align:center;"> 20-30 km </td>
+   <td style="text-align:center;"> &lt;1 Juta rupiah </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 2 </td>
+   <td style="text-align:center;"> 10-20 km </td>
+   <td style="text-align:center;"> 2-3 Juta rupiah </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 3 </td>
+   <td style="text-align:center;"> 30-40 km </td>
+   <td style="text-align:center;"> 3-4 Juta rupiah </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 4 </td>
+   <td style="text-align:center;"> 40-50 km </td>
+   <td style="text-align:center;"> &gt;4 Juta rupiah </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> 5 </td>
+   <td style="text-align:center;"> &lt;10 km </td>
+   <td style="text-align:center;"> &lt;1 Juta rupiah </td>
+  </tr>
+</tbody>
+</table>
+
+Dengan demikian, kita dapat mengidentifikasi karakteristik hubungan antara kedua variabel tersebut berdasarkan Tabel \@ref(tab:tbl-karakteristik-hubungan) yakni untuk variabel **ordinal**, yakni **kekuatan** dan **arah**. Koefisien asosiasinya juga berarti memiliki kisaran angka antara 0 sampai dengan 1 dan tanda positif (+) atau negatif (-).
+:::
+
+### Bentuk Asosiasi Sepasang Variabel
+
+Setelah mempelajari karakteristik hubungan antarvariabel, kita perlu menguasai bentuk-bentuk asosiasi yang ada di antara kedua variabel. Penguasaan bentuk ini penting karena bentuk asosiasi tersebut **sangat menentukan jenis analisis asosiasi yang akan kita gunakan** selanjutnya, dan keduanya **sangat berlainan satu sama lain**.
+
+Bentuk asosiasi dua variabel dapat dibagi menjadi  **keterkaitan** atau **korelasi** dan **pengaruh** atau **kausalitas**.
+
+- **Keterkaitan** atau **korelasi** adalah bentuk hubungan yang biasanya teridentifikasi secara kebetulan, setelah data dianalisis. Kekuatan, arah, dan pola yang terjadi pada dua variabel dipandang sebagai sesuatu yang terjadi secara alami dan belum bisa dijelaskan penyebabnya.
+- **Pengaruh** atau **kausalitas** adalah bentuk hubungan yang terjadi karena adanya **sebab dan akibat** antara dua variabel tersebut. Dalam hal ini, perubahan pada satu variabel menyebabkan perubahan pada variabel lainnya. Dalam bentuk ini, kita sudah memiliki asumsi awal mengenai variabel mana yang menjadi sebab dan mana yang menjadi akibat.
+
+Penting untuk memiliki pemahaman bahwa **korelasi belum tentu sebuah kausalitas**, akan tetapi **kausalitas sudah pasti memiliki korelasi**. Mengapa demikian? Hubungan korelasi menunjukkan **indikasi** adanya pengaruh antara kedua variabel tersebut. Akan tetapi, kita belum bisa mengatakan salah satu menjadi pemengaruh yang lain tanpa menelaah secara mendalam. Walaupun bisa jadi ada pengaruh di antara kedua variabel tersebut, pengaruh ini bisa jadi disebabkan oleh adanya variabel antara atau variabel pengganggu, yang disebut juga ***confounding variable***. Simak studi kasus berikut. 
+
+::: rmdkasus
+#### Studi Kasus: Konsumsi Cokelat dan Peraih Nobel {.unnumbered}
+
+Sebagai ilustrasi klasik nan menggelitik tentang perbedaan antara korelasi dan kausalitas, mari kita telaah sebuah temuan populer yang dipublikasikan oleh Dr. Franz Messerli pada tahun 2012 [@messerli2012chocolate]. Melalui observasinya, beliau menganalisis data statistik penduduk dari puluhan negara dan memplot korelasi antara *rata-rata konsumsi cokelat per kapita* (kg/tahun) dengan *jumlah peraih hadiah Nobel per 10 juta penduduk*.
+
+Hasil *scatterplot*-nya secara mengejutkan menunjukkan bahwa terdapat **korelasi linear positif yang sangat kuat** (sangat signifikan) antara angka konsumsi cokelat sebuah negara dengan proporsi pemenang Nobel dari negara tersebut (Gambar \@ref(fig:scatterplot-cokelat-nobel)). Semakin tinggi tingkat konsumsi batangan cokelat penduduk negaranya, diiringi pula dengan melesatnya jumlah peraih penghargaan Nobel (di posisi teratas diduduki oleh negara Swiss dan Swedia).
+
+<div class="figure" style="text-align: center">
+<img src="images/chocolate_countries_large.jpg" alt="Scatterplot Konsumsi Cokelat dan Peraih Nobel. Sumber: data.europa.eu" width="1009" />
+<p class="caption">(\#fig:scatterplot-cokelat-nobel)Scatterplot Konsumsi Cokelat dan Peraih Nobel. Sumber: data.europa.eu</p>
+</div>
+
+Namun, apakah korelasi statistik riil yang sangat kuat ini berarti bahwa memakan cokelat secara masif **"menyebabkan"** atau meningkatkan kecerdasan kognitif yang seketika membuat seseorang memenangkan Nobel (*kausalitas*)? 
+
+Tentu saja kesimpulan tersebut keliru. Kendati secara hitungan matematis keduanya berkorelasi sangat tinggi, fenomena ini kemungkinan besar hanyalah imbas dari sebuah **variabel antara** (*confounding variable*) yang "menjembatani" tingkat konsumsi coklat dan jumlah peraih penghargaan Nobel, yakni tingkat **kesejahteraan sosial ekonomi makro**. Negara yang makmur dan tergolong sangat maju tentu memiliki daya beli yang lebih baik terhadap komoditas tersier seperti cokelat. Di lain sisi, wujud kemakmuran finansial tersebut merupakan fondasi dasar bagi ekosistem edukasi kelas dunia dan sokongan dana riset sains yang sangat dominan, sehingga sudah sewajarnya secara terpisah berujung pada tingginya kuantitas masyarakat yang sukses meraih Nobel.
+:::
+
+## Koefisien Korelasi Variabel Nominal
+Dalam bab ini kita akan mempelajari **koefisien-koefisien korelasi** untuk dua variabel **nominal**. Koefisien-koefisien yang akan kita pelajari di antaranya adalah koefisien yang termasuk ke dalam kategori berbasis chi-kuadrat (*chi-square*, $\chi^2$) dan berbasis galat (*error*).
+
+Koefisien yang termasuk ke dalam kategori berbasis chi-kuadrat yang akan kita bahas di antaranya adalah **koefisien *phi*** ($\phi$), **koefisien *Cramer's V*** (V), dan **koefisien *contingency*** (C). Sementara itu, koefisien yang termasuk ke dalam kategori berbasis galat (*error*) adalah **koefisien *Lambda*** ($\lambda$).
+
+### Koefisien Korelasi Variabel Nominal Berbasis Chi-Kuadrat ($\chi^2$)
+Chi-kuadrat (*chi-square*, dibaca "kai-square") sebenarnya adalah adalah salah satu teknik statistik yang biasa digunakan untuk menganalisis hubungan antara dua variabel **kategoris** dengan menguji apakah perbedaan yang diamati dalam distribusi frekuensi suatu sampel dapat dijelaskan hanya oleh peluang acak (*random chance*), atau justru mencerminkan perbedaan yang nyata (*genuine differences*) dalam populasi [@ewing2020basic].
+
+Karena digunakan untuk dua variabel kategoris, Uji *Chi-square* menggunakan **tabel silang**, yakni tabel yang menampilkan frekuensi objek berdasarkan dua variabel. Dalam tabel silang, berbeda dengan tabel data terstruktur, **baris bukan lagi objek dan kolom bukan lagi variabel**. Baik baris maupun kolom **memuat kategori nilai dari seluruh variabel** yang dianalisis. 
+
+Jumlah kategori dari variabel pertama akan menjadi **jumlah baris**, sementara jumlah kategori dari variabel kedua akan menjadi **jumlah kolom**. Dari situlah kita menyebutkan ukuran tabel silang sebagai **"tabel silang $b \times k$"**, dengan $b$ adalah jumlah baris dan $k$ adalah jumlah kolom. Sebagai contoh, jika variabel pertama memiliki 3 kategori dan variabel kedua memiliki 4 kategori, maka tabel silangnya berukuran $3 \times 4$.
+
+Sel-sel tabel akan memuat rangkuman **nilai frekuensi yang diamati** (Tabel \@ref(tab:contoh-tabel-silang)). Dari tabel silang ini, tujuan kita adalah menganalisis **frekuensi teramati** (*observed frequency*) dan **frekuensi yang diharapkan** (*expected frequency*) untuk uji *Chi-square*. Perhatikan kasus berikut ini.
 
 
-``` r
-# Data Contoh
-fakultas <- c("Saintek", "Soshum", "Saintek", "Soshum", "Saintek", "Saintek")
-moda <- c("Motor", "Mobil", "Motor", "Jalan Kaki", "Mobil", "Motor")
+::: rmdkasus
+### Studi Kasus: Tabel Silang Variabel Nominal {.unnumbered}
+Korelasi antara variabel `jenis.tempat.tinggal` dan `kendaraan.utama` mahasiswa UNILA akan dianalisis pada tingkat kepercayaan 95%. Berikut adalah tabel silang dari kedua variabel tersebut.
 
-# Membuat Tabel Kontingensi
-tabel <- table(fakultas, moda)
-print(tabel)
+
+```{=html}
+<div class="tabwid"><style>.cl-4875e46c{}.cl-485e9942{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-485e9956{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-486cb1a8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2pt;padding-top:2pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-486cb1bc{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2pt;padding-top:2pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-486cb1c6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-486cb1c7{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-486cb1d0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:15pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-486ce240{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce24a{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce25e{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce268{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce269{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce272{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce27c{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce286{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce290{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce29a{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce29b{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce2a4{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce2ae{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce2b8{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce2c2{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce2d6{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce2e0{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce2ea{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce2f4{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce2fe{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce308{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce312{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce31c{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce326{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce330{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce33a{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce344{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce34e{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce358{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce362{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce376{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce380{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce38a{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce38b{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce394{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce395{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce39e{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3a8{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3b2{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3b3{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3c6{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3c7{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3d0{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3da{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3e4{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3e5{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3ee{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3f8{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce3f9{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce40c{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce416{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce417{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce420{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce42a{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce434{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce43e{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce452{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce453{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce45c{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce466{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce470{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce471{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce47a{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-486ce484{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing='true' class='cl-4875e46c'>
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">(#tab:contoh-tabel-silang)<span>Tabel Silang Variabel Jenis Tempat Tinggal dan Kendaraan Utama Mahasiswa UNILA</span></caption>
+<thead><tr style="overflow-wrap:break-word;"><th class="cl-486ce240"><p class="cl-486cb1a8"><span class="cl-485e9942"> </span></p></th><th  colspan="7"class="cl-486ce24a"><p class="cl-486cb1bc"><span class="cl-485e9956">Jenis Tempat Tinggal</span></p></th></tr><tr style="overflow-wrap:break-word;"><th class="cl-486ce290"><p class="cl-486cb1a8"><span class="cl-485e9942"></span></p></th><th class="cl-486ce29a"><p class="cl-486cb1bc"><span class="cl-485e9956">Asrama</span></p></th><th class="cl-486ce29b"><p class="cl-486cb1bc"><span class="cl-485e9956">Kos bersama-sama</span></p></th><th class="cl-486ce2a4"><p class="cl-486cb1bc"><span class="cl-485e9956">Kos sendiri</span></p></th><th class="cl-486ce2ae"><p class="cl-486cb1bc"><span class="cl-485e9956">Rumah bersama saudara</span></p></th><th class="cl-486ce2b8"><p class="cl-486cb1bc"><span class="cl-485e9956">Rumah ngontrak bersama-sama</span></p></th><th class="cl-486ce2c2"><p class="cl-486cb1bc"><span class="cl-485e9956">Rumah ngontrak pribadi</span></p></th><th class="cl-486ce2d6"><p class="cl-486cb1bc"><span class="cl-485e9956">Rumah pribadi/rumah keluarga</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-486ce2e0"><p class="cl-486cb1c6"><span class="cl-485e9942">Jenis Kendaraan</span></p></td><td class="cl-486ce2ea"><p class="cl-486cb1c7"><span class="cl-485e9942"></span></p></td><td class="cl-486ce2f4"><p class="cl-486cb1c7"><span class="cl-485e9942"></span></p></td><td class="cl-486ce2fe"><p class="cl-486cb1c7"><span class="cl-485e9942"></span></p></td><td class="cl-486ce308"><p class="cl-486cb1c7"><span class="cl-485e9942"></span></p></td><td class="cl-486ce312"><p class="cl-486cb1c7"><span class="cl-485e9942"></span></p></td><td class="cl-486ce31c"><p class="cl-486cb1c7"><span class="cl-485e9942"></span></p></td><td class="cl-486ce326"><p class="cl-486cb1c7"><span class="cl-485e9942"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-486ce330"><p class="cl-486cb1d0"><span class="cl-485e9942">Berjalan kaki</span></p></td><td class="cl-486ce33a"><p class="cl-486cb1c7"><span class="cl-485e9942">10</span></p></td><td class="cl-486ce344"><p class="cl-486cb1c7"><span class="cl-485e9942">5</span></p></td><td class="cl-486ce34e"><p class="cl-486cb1c7"><span class="cl-485e9942">6</span></p></td><td class="cl-486ce358"><p class="cl-486cb1c7"><span class="cl-485e9942">0</span></p></td><td class="cl-486ce362"><p class="cl-486cb1c7"><span class="cl-485e9942">10</span></p></td><td class="cl-486ce376"><p class="cl-486cb1c7"><span class="cl-485e9942">10</span></p></td><td class="cl-486ce380"><p class="cl-486cb1c7"><span class="cl-485e9942">0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-486ce38a"><p class="cl-486cb1d0"><span class="cl-485e9942">Menumpang kendaraan bermotor teman/keluarga</span></p></td><td class="cl-486ce38b"><p class="cl-486cb1c7"><span class="cl-485e9942">0</span></p></td><td class="cl-486ce394"><p class="cl-486cb1c7"><span class="cl-485e9942">3</span></p></td><td class="cl-486ce395"><p class="cl-486cb1c7"><span class="cl-485e9942">1</span></p></td><td class="cl-486ce39e"><p class="cl-486cb1c7"><span class="cl-485e9942">0</span></p></td><td class="cl-486ce3a8"><p class="cl-486cb1c7"><span class="cl-485e9942">1</span></p></td><td class="cl-486ce3b2"><p class="cl-486cb1c7"><span class="cl-485e9942">0</span></p></td><td class="cl-486ce3b3"><p class="cl-486cb1c7"><span class="cl-485e9942">3</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-486ce3c6"><p class="cl-486cb1d0"><span class="cl-485e9942">Mobil pribadi</span></p></td><td class="cl-486ce3c7"><p class="cl-486cb1c7"><span class="cl-485e9942">0</span></p></td><td class="cl-486ce3d0"><p class="cl-486cb1c7"><span class="cl-485e9942">3</span></p></td><td class="cl-486ce3da"><p class="cl-486cb1c7"><span class="cl-485e9942">7</span></p></td><td class="cl-486ce3e4"><p class="cl-486cb1c7"><span class="cl-485e9942">9</span></p></td><td class="cl-486ce3e5"><p class="cl-486cb1c7"><span class="cl-485e9942">4</span></p></td><td class="cl-486ce3ee"><p class="cl-486cb1c7"><span class="cl-485e9942">2</span></p></td><td class="cl-486ce3f8"><p class="cl-486cb1c7"><span class="cl-485e9942">26</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-486ce3f9"><p class="cl-486cb1d0"><span class="cl-485e9942">Sepeda motor pribadi</span></p></td><td class="cl-486ce40c"><p class="cl-486cb1c7"><span class="cl-485e9942">0</span></p></td><td class="cl-486ce416"><p class="cl-486cb1c7"><span class="cl-485e9942">22</span></p></td><td class="cl-486ce417"><p class="cl-486cb1c7"><span class="cl-485e9942">51</span></p></td><td class="cl-486ce420"><p class="cl-486cb1c7"><span class="cl-485e9942">39</span></p></td><td class="cl-486ce42a"><p class="cl-486cb1c7"><span class="cl-485e9942">25</span></p></td><td class="cl-486ce434"><p class="cl-486cb1c7"><span class="cl-485e9942">17</span></p></td><td class="cl-486ce43e"><p class="cl-486cb1c7"><span class="cl-485e9942">76</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-486ce452"><p class="cl-486cb1d0"><span class="cl-485e9942">Transportasi daring</span></p></td><td class="cl-486ce453"><p class="cl-486cb1c7"><span class="cl-485e9942">0</span></p></td><td class="cl-486ce45c"><p class="cl-486cb1c7"><span class="cl-485e9942">10</span></p></td><td class="cl-486ce466"><p class="cl-486cb1c7"><span class="cl-485e9942">16</span></p></td><td class="cl-486ce470"><p class="cl-486cb1c7"><span class="cl-485e9942">9</span></p></td><td class="cl-486ce471"><p class="cl-486cb1c7"><span class="cl-485e9942">7</span></p></td><td class="cl-486ce47a"><p class="cl-486cb1c7"><span class="cl-485e9942">6</span></p></td><td class="cl-486ce484"><p class="cl-486cb1c7"><span class="cl-485e9942">16</span></p></td></tr></tbody></table></div>
 ```
 
-```
-##          moda
-## fakultas  Jalan Kaki Mobil Motor
-##   Saintek          0     1     3
-##   Soshum           1     1     0
+**Penjelasan Tabel Silang**
+
+- Baris tabel tersebut adalah kategori dari variabel `kendaraan.utama`. Terdapat 5 kategori dari variabel tersebut, sehingga ada **5 baris**.
+- Kolomnya adalah kategori dari variabel `jenis.tempat.tinggal`. Terdapat 7 kategori dari variabel tersebut, sehingga ada **7 kolom**.
+- Ukuran tabel silang ini adalah $5 \times 7$.
+:::
+
+### Frekuensi Harapan dan Nilai *Chi-square* ($\chi^2$) {#frekuensi-harapan-dan-nilai-chi-square}
+Frekuensi harapan (*expected frequency*, $f_e$) dari tabel silang dihitung dengan persamaan berikut.
+
+$$
+f_e = \frac{\text{total baris}\times \text{total kolom}}{\text{total keseluruhan}}
+(\#eq:rumus-frekuensi-harapan)
+$$
+
+Bersama dengan frekuensi yang teramati (*observed frequency*, $f_o$), $f_e$ digunakan untuk menghitung nilai $\chi^2$ sebagai berikut.
+
+$$
+\chi^2 = \sum \frac{(f_o - f_e)^2}{f_e}
+(\#eq:rumus-chi-square)
+$$
+
+::: rmdnote
+[Catatan]{.tajuksaya}
+
+$\chi^2$ pada dasarnya adalah sebuah **distribusi statistik** sekaligus **uji hipotesis**. Dengan demikian, $\chi^2$ memiliki tabel distribusi dan  juga hipotesis kosong dan alternatif. Hipotesis kosongnya adalah tidak ada hubungan antara kedua variabel, sementara hipotesis alternatifnya adalah ada hubungan antara kedua variabel.
+
+Tabel distribusi $\chi^2$ menampilkan nilai-nilai kritis untuk setiap **derajat kebebasan** (*degree of freedom*, $df$) dan **tingkat signifikansi** ($\alpha$). Derajat kebebasan adalah hasil dari perhitungan $(b-1)(k-1)$, dengan $b$ adalah jumlah baris dan $k$ adalah jumlah kolom.
+
+Dengan membandingkan nilai $\chi^2$ yang diperoleh dari perhitungan dengan nilai kritis pada tabel distribusi $\chi^2$, kita dapat menyatakan menolak hipotesis kosong (artinya ada hubungan antara kedua variabel) atau gagal menolak hipotesis kosong (artinya tidak ada hubungan antara kedua variabel). Hipotesis kosong **ditolak** jika nilai $\chi^2$ yang diperoleh **lebih besar** dari nilai kritis pada tabel distribusi $\chi^2$.
+:::
+
+Mari perhatikan lanjutan kasus sebelumnya untuk menghitung frekuensi harapan dan nilai $\chi^2$.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Frekuensi Harapan dan Uji Chi-Square {.unnumbered}
+
+Melanjutkan studi kasus tabel silang mahasiswa UNILA, kita akan menghitung **frekuensi harapan** ($f_e$) dan nilai **Chi-square** ($\chi^2$).
+
+**1. Frekuensi Aktual (Teramati)**
+
+Sebelum menghitung frekuensi harapan, mari kita visualisasikan kembali tabel silang aktual/teramati dari variabel `jenis.tempat.tinggal` dan `kendaraan.utama`. Kali ini, tabel tersebut telah dilengkapi dengan jumlahan total margin untuk masing-masing baris dan kolom:
+
+
+```{=html}
+<div class="tabwid"><style>.cl-49c5c4f4{}.cl-49b6828c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-49b682a0{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-49bd11f6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2pt;padding-top:2pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-49bd120a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2pt;padding-top:2pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-49bd120b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-49bd1214{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-49bd121e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:15pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-49bd3e1a{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e24{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e2e{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e38{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e42{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e56{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e60{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e6a{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e7e{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e88{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e89{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e92{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e9c{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3e9d{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ea6{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3eb0{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3eb1{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ec4{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ece{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ecf{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ed8{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ed9{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ee2{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3eec{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ef6{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ef7{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f00{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f01{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f0a{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f14{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f15{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f1e{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f28{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f32{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f3c{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f46{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f50{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f5a{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f64{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f65{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f6e{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f78{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f82{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f8c{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f96{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3f97{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3fa0{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3faa{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3fb4{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3fb5{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3fbe{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3fc8{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3fd2{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3fdc{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3fe6{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ff0{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ff1{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd3ffa{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd4004{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd400e{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd400f{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd4018{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd4022{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-49bd402c{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing='true' class='cl-49c5c4f4'>
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">(#tab:frekuensi-observasi-unila)<span>Tabel Silang Frekuensi Teramati</span></caption>
+<thead><tr style="overflow-wrap:break-word;"><th class="cl-49bd3e1a"><p class="cl-49bd11f6"><span class="cl-49b6828c"> </span></p></th><th  colspan="7"class="cl-49bd3e24"><p class="cl-49bd120a"><span class="cl-49b682a0">Jenis Tempat Tinggal</span></p></th></tr><tr style="overflow-wrap:break-word;"><th class="cl-49bd3e7e"><p class="cl-49bd11f6"><span class="cl-49b6828c"></span></p></th><th class="cl-49bd3e88"><p class="cl-49bd120a"><span class="cl-49b682a0">Asrama</span></p></th><th class="cl-49bd3e89"><p class="cl-49bd120a"><span class="cl-49b682a0">Kos bersama-sama</span></p></th><th class="cl-49bd3e92"><p class="cl-49bd120a"><span class="cl-49b682a0">Kos sendiri</span></p></th><th class="cl-49bd3e9c"><p class="cl-49bd120a"><span class="cl-49b682a0">Rumah bersama saudara</span></p></th><th class="cl-49bd3e9d"><p class="cl-49bd120a"><span class="cl-49b682a0">Rumah ngontrak bersama-sama</span></p></th><th class="cl-49bd3ea6"><p class="cl-49bd120a"><span class="cl-49b682a0">Rumah ngontrak pribadi</span></p></th><th class="cl-49bd3eb0"><p class="cl-49bd120a"><span class="cl-49b682a0">Rumah pribadi/rumah keluarga</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-49bd3eb1"><p class="cl-49bd120b"><span class="cl-49b6828c">Jenis Kendaraan</span></p></td><td class="cl-49bd3ec4"><p class="cl-49bd1214"><span class="cl-49b6828c"></span></p></td><td class="cl-49bd3ece"><p class="cl-49bd1214"><span class="cl-49b6828c"></span></p></td><td class="cl-49bd3ecf"><p class="cl-49bd1214"><span class="cl-49b6828c"></span></p></td><td class="cl-49bd3ed8"><p class="cl-49bd1214"><span class="cl-49b6828c"></span></p></td><td class="cl-49bd3ed9"><p class="cl-49bd1214"><span class="cl-49b6828c"></span></p></td><td class="cl-49bd3ee2"><p class="cl-49bd1214"><span class="cl-49b6828c"></span></p></td><td class="cl-49bd3eec"><p class="cl-49bd1214"><span class="cl-49b6828c"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-49bd3ef6"><p class="cl-49bd121e"><span class="cl-49b6828c">Berjalan kaki</span></p></td><td class="cl-49bd3ef7"><p class="cl-49bd1214"><span class="cl-49b6828c">10</span></p></td><td class="cl-49bd3f00"><p class="cl-49bd1214"><span class="cl-49b6828c">5</span></p></td><td class="cl-49bd3f01"><p class="cl-49bd1214"><span class="cl-49b6828c">6</span></p></td><td class="cl-49bd3f0a"><p class="cl-49bd1214"><span class="cl-49b6828c">0</span></p></td><td class="cl-49bd3f14"><p class="cl-49bd1214"><span class="cl-49b6828c">10</span></p></td><td class="cl-49bd3f15"><p class="cl-49bd1214"><span class="cl-49b6828c">10</span></p></td><td class="cl-49bd3f1e"><p class="cl-49bd1214"><span class="cl-49b6828c">0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-49bd3f28"><p class="cl-49bd121e"><span class="cl-49b6828c">Menumpang kendaraan bermotor teman/keluarga</span></p></td><td class="cl-49bd3f32"><p class="cl-49bd1214"><span class="cl-49b6828c">0</span></p></td><td class="cl-49bd3f3c"><p class="cl-49bd1214"><span class="cl-49b6828c">3</span></p></td><td class="cl-49bd3f46"><p class="cl-49bd1214"><span class="cl-49b6828c">1</span></p></td><td class="cl-49bd3f50"><p class="cl-49bd1214"><span class="cl-49b6828c">0</span></p></td><td class="cl-49bd3f5a"><p class="cl-49bd1214"><span class="cl-49b6828c">1</span></p></td><td class="cl-49bd3f64"><p class="cl-49bd1214"><span class="cl-49b6828c">0</span></p></td><td class="cl-49bd3f65"><p class="cl-49bd1214"><span class="cl-49b6828c">3</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-49bd3f6e"><p class="cl-49bd121e"><span class="cl-49b6828c">Mobil pribadi</span></p></td><td class="cl-49bd3f78"><p class="cl-49bd1214"><span class="cl-49b6828c">0</span></p></td><td class="cl-49bd3f82"><p class="cl-49bd1214"><span class="cl-49b6828c">3</span></p></td><td class="cl-49bd3f8c"><p class="cl-49bd1214"><span class="cl-49b6828c">7</span></p></td><td class="cl-49bd3f96"><p class="cl-49bd1214"><span class="cl-49b6828c">9</span></p></td><td class="cl-49bd3f97"><p class="cl-49bd1214"><span class="cl-49b6828c">4</span></p></td><td class="cl-49bd3fa0"><p class="cl-49bd1214"><span class="cl-49b6828c">2</span></p></td><td class="cl-49bd3faa"><p class="cl-49bd1214"><span class="cl-49b6828c">26</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-49bd3fb4"><p class="cl-49bd121e"><span class="cl-49b6828c">Sepeda motor pribadi</span></p></td><td class="cl-49bd3fb5"><p class="cl-49bd1214"><span class="cl-49b6828c">0</span></p></td><td class="cl-49bd3fbe"><p class="cl-49bd1214"><span class="cl-49b6828c">22</span></p></td><td class="cl-49bd3fc8"><p class="cl-49bd1214"><span class="cl-49b6828c">51</span></p></td><td class="cl-49bd3fd2"><p class="cl-49bd1214"><span class="cl-49b6828c">39</span></p></td><td class="cl-49bd3fdc"><p class="cl-49bd1214"><span class="cl-49b6828c">25</span></p></td><td class="cl-49bd3fe6"><p class="cl-49bd1214"><span class="cl-49b6828c">17</span></p></td><td class="cl-49bd3ff0"><p class="cl-49bd1214"><span class="cl-49b6828c">76</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-49bd3ff1"><p class="cl-49bd121e"><span class="cl-49b6828c">Transportasi daring</span></p></td><td class="cl-49bd3ffa"><p class="cl-49bd1214"><span class="cl-49b6828c">0</span></p></td><td class="cl-49bd4004"><p class="cl-49bd1214"><span class="cl-49b6828c">10</span></p></td><td class="cl-49bd400e"><p class="cl-49bd1214"><span class="cl-49b6828c">16</span></p></td><td class="cl-49bd400f"><p class="cl-49bd1214"><span class="cl-49b6828c">9</span></p></td><td class="cl-49bd4018"><p class="cl-49bd1214"><span class="cl-49b6828c">7</span></p></td><td class="cl-49bd4022"><p class="cl-49bd1214"><span class="cl-49b6828c">6</span></p></td><td class="cl-49bd402c"><p class="cl-49bd1214"><span class="cl-49b6828c">16</span></p></td></tr></tbody></table></div>
 ```
 
-``` r
-# Uji Chi-Square
-chisq.test(tabel)
+**2. Frekuensi Harapan**
+
+Frekuensi harapan dihitung menggunakan Persamaan \@ref(eq:rumus-frekuensi-harapan) berdasarkan nilai total baris dan total kolom dari frekuensi yang teramati pada masing-masing sel. Sebagai contoh, frekuensi harapan untuk mahasiswa yang menggunakan "Transportasi daring" dan tinggal di "Rumah pribadi/keluarga" (dengan total baris 64 dan total kolom 121 dari total keseluruhan 394 mahasiswa) dihitung sebagai berikut:
+$$ f_e = \frac{64 \times 121}{394} = 19,65 $$
+
+Berikut adalah tabel frekuensi harapan untuk seluruh sel, berisikan nilai-nilai $f_e$ beserta total kolom dan barisnya.
+
+
+```{=html}
+<div class="tabwid"><style>.cl-4a334074{}.cl-4a129c2a{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4a129c3e{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4a1cc3da{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4a1cc3ee{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4a1cc402{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:15pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4a1d86c6{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d86da{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d86e4{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d86f8{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d86f9{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8702{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d870c{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8720{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8734{width:0.65in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d873e{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8748{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8752{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d875c{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8766{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8770{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d877a{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8784{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8798{width:0.65in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87a2{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87ac{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87b6{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87c0{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87ca{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87d4{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87de{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87f2{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87fc{width:0.65in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d87fd{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8810{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8811{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d881a{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8824{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8825{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d882e{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8838{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d884c{width:0.65in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d884d{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8856{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8860{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8861{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d886a{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8874{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d887e{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8888{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8892{width:0.65in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8893{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d889c{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d88a6{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d88b0{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d88c4{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d88ce{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d88d8{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d88ec{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8900{width:0.65in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d890a{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8914{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d891e{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8928{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8932{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d893c{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8946{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8950{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d895a{width:0.65in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8964{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d896e{width:0.846in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8978{width:1.686in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8979{width:1.117in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8982{width:2.102in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d898c{width:2.612in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d8996{width:2.051in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d89a0{width:2.535in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a1d89aa{width:0.65in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing='true' class='cl-4a334074'>
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">(#tab:frekuensi-harapan-unila)<span>Tabel Silang Frekuensi Harapan</span></caption>
+<thead><tr style="overflow-wrap:break-word;"><th class="cl-4a1d86c6"><p class="cl-4a1cc3da"><span class="cl-4a129c2a"></span></p></th><th  colspan="7"class="cl-4a1d86da"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a">Jenis Tempat Tinggal</span></p></th><th class="cl-4a1d8734"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a"></span></p></th></tr><tr style="overflow-wrap:break-word;"><th class="cl-4a1d873e"><p class="cl-4a1cc3da"><span class="cl-4a129c2a"></span></p></th><th class="cl-4a1d8748"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a">Asrama</span></p></th><th class="cl-4a1d8752"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a">Kos bersama-sama</span></p></th><th class="cl-4a1d875c"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a">Kos sendiri</span></p></th><th class="cl-4a1d8766"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a">Rumah bersama saudara</span></p></th><th class="cl-4a1d8770"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a">Rumah ngontrak bersama-sama</span></p></th><th class="cl-4a1d877a"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a">Rumah ngontrak pribadi</span></p></th><th class="cl-4a1d8784"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a">Rumah pribadi/rumah keluarga</span></p></th><th class="cl-4a1d8798"><p class="cl-4a1cc3ee"><span class="cl-4a129c2a">Total</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-4a1d87a2"><p class="cl-4a1cc3da"><span class="cl-4a129c2a">Jenis Kendaraan</span></p></td><td class="cl-4a1d87ac"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e"></span></p></td><td class="cl-4a1d87b6"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e"></span></p></td><td class="cl-4a1d87c0"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e"></span></p></td><td class="cl-4a1d87ca"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e"></span></p></td><td class="cl-4a1d87d4"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e"></span></p></td><td class="cl-4a1d87de"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e"></span></p></td><td class="cl-4a1d87f2"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e"></span></p></td><td class="cl-4a1d87fc"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a1d87fd"><p class="cl-4a1cc402"><span class="cl-4a129c3e">Berjalan kaki</span></p></td><td class="cl-4a1d8810"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">1.04</span></p></td><td class="cl-4a1d8811"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">4.47</span></p></td><td class="cl-4a1d881a"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">8.43</span></p></td><td class="cl-4a1d8824"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">5.93</span></p></td><td class="cl-4a1d8825"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">4.89</span></p></td><td class="cl-4a1d882e"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">3.64</span></p></td><td class="cl-4a1d8838"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">12.59</span></p></td><td class="cl-4a1d884c"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">41</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a1d884d"><p class="cl-4a1cc402"><span class="cl-4a129c3e">Menumpang kendaraan bermotor teman/keluarga</span></p></td><td class="cl-4a1d8856"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">0.20</span></p></td><td class="cl-4a1d8860"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">0.87</span></p></td><td class="cl-4a1d8861"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">1.64</span></p></td><td class="cl-4a1d886a"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">1.16</span></p></td><td class="cl-4a1d8874"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">0.95</span></p></td><td class="cl-4a1d887e"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">0.71</span></p></td><td class="cl-4a1d8888"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">2.46</span></p></td><td class="cl-4a1d8892"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">8</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a1d8893"><p class="cl-4a1cc402"><span class="cl-4a129c3e">Mobil pribadi</span></p></td><td class="cl-4a1d889c"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">1.29</span></p></td><td class="cl-4a1d88a6"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">5.57</span></p></td><td class="cl-4a1d88b0"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">10.48</span></p></td><td class="cl-4a1d88c4"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">7.38</span></p></td><td class="cl-4a1d88ce"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">6.08</span></p></td><td class="cl-4a1d88d8"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">4.53</span></p></td><td class="cl-4a1d88ec"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">15.66</span></p></td><td class="cl-4a1d8900"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">51</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a1d890a"><p class="cl-4a1cc402"><span class="cl-4a129c3e">Sepeda motor pribadi</span></p></td><td class="cl-4a1d8914"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">5.84</span></p></td><td class="cl-4a1d891e"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">25.10</span></p></td><td class="cl-4a1d8928"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">47.28</span></p></td><td class="cl-4a1d8932"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">33.27</span></p></td><td class="cl-4a1d893c"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">27.44</span></p></td><td class="cl-4a1d8946"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">20.43</span></p></td><td class="cl-4a1d8950"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">70.63</span></p></td><td class="cl-4a1d895a"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">230</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a1d87fd"><p class="cl-4a1cc402"><span class="cl-4a129c3e">Transportasi daring</span></p></td><td class="cl-4a1d8810"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">1.62</span></p></td><td class="cl-4a1d8811"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">6.98</span></p></td><td class="cl-4a1d881a"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">13.16</span></p></td><td class="cl-4a1d8824"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">9.26</span></p></td><td class="cl-4a1d8825"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">7.63</span></p></td><td class="cl-4a1d882e"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">5.69</span></p></td><td class="cl-4a1d8838"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">19.65</span></p></td><td class="cl-4a1d884c"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a1d8964"><p class="cl-4a1cc402"><span class="cl-4a129c3e">Total</span></p></td><td class="cl-4a1d896e"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">10.00</span></p></td><td class="cl-4a1d8978"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">43.00</span></p></td><td class="cl-4a1d8979"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">81.00</span></p></td><td class="cl-4a1d8982"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">57.00</span></p></td><td class="cl-4a1d898c"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">47.00</span></p></td><td class="cl-4a1d8996"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">35.00</span></p></td><td class="cl-4a1d89a0"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">121.00</span></p></td><td class="cl-4a1d89aa"><p class="cl-4a1cc3ee"><span class="cl-4a129c3e">394</span></p></td></tr></tbody></table></div>
 ```
 
-```
-## 
-## 	Pearson's Chi-squared test
-## 
-## data:  tabel
-## X-squared = 3,75, df = 2, p-value = 0,1534
+**3. Perhitungan Chi-Square**
+
+Berdasarkan Persamaan \@ref(eq:rumus-chi-square), nilai uji $\chi^2$ dihitung dengan menjumlahkan kuadrat dari selisih antara nilai sel pada tabel observasi ($f_o$) dengan frekuensi harapannya ($f_e$), lalu dibagi dengan frekuensi harapannya.
+
+Berikut adalah contoh perhitungan masing-masing selnya. Kita akan mulai dari sel paling kiri-atas, yakni $\text{Berjalan kaki} \times \text{Asrama}$, berjalan ke kanan pada baris $\text{Berjalan Kaki}$, yakni ke kolom $\text{Kos bersama-sama}$, kemudian $\text{Kos Sendiri}$, sampai ke sel paling kanan-bawah, $\text{Transportasi daring} \times \text{Rumah pribadi/rumah keluarga}$
+
+$$
+\begin{align}
+\chi^2 &= \sum \frac{(f_o - f_e)^2}{f_e} \\
+&= \frac{(10 - 19{,}65)^2}{19{,}65} + \frac{(5 - 4{,}47)^2}{4{,}47} + \dots + \frac{(16 - 19{,}65)^2}{19{,}65} \\
+&= \frac{93{,}1225}{19{,}65} + \frac{0{,}2304}{4{,}47} + \dots + \frac{10{,}5625}{19{,}65} \\
+&= 4{,}739 + 0{,}051 + \dots + 0{,}549 \\
+&= 146{,}4233
+\end{align}
+$$
+
+Dengan derajat kebebasan 24 ($(b-1)\times(k-1)=(5-1)\times(7-1)=6\times4$), pada tingkat kepercayaan 95% ($\alpha=5\%$), nilai $\chi^2_{kritis}$ kita adalah 36,42. Bila dibandingkan dengan nilai $\chi^2_{hitung}$ yang diperoleh, yakni 146,4233, maka nilai tersebut **lebih besar** dari nilai $\chi^2_{kritis}$.
+
+Menurut kaidah pengambilan keputusan yang telah dibahas pada subbab \@ref(frekuensi-harapan-dan-nilai-chi-square), maka **hipotesis kosong ditolak**. Dapat disimpulkan, terdapat **hubungan (korelasi) yang signifikan** antara `jenis.tempat.tinggal` dengan `kendaraan.utama` yang digunakan oleh mahasiswa UNILA.
+
+Langkah selanjutnya adalah menentukan **kekuatan** hubungan tersebut dengan alat-alat yang sudah kita bahas di awal: koeifisien kontingensi, koefisien Cramer's V, dan koefisien $\phi$.
+:::
+
+### Koefisien phi ($\phi$), Cramer's-V, dan Kontingensi (C)
+Ketiga koefisien ini dihitung berdasarkan nilai $\chi^2$ yang diperoleh sebelumnya untuk menyatakan **kekuatan** hubungan dua variabel yang dianalisis. Seperti yang juga sudah dibahas, nilai koefisien ini berkisar di antara **0 hingga 1**, dari **tidak ada hubungan sama sekali** (kekuatan yang sangat lemah), sampai **sangat berhubungan**. Berikut adalah penjelasan ketiga koefisien tersebut yang mencakup cara perhitungan dan situasi koefisien tersebut dapat digunakan.
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-koefisien-nominal)Koefisien Korelasi Variabel Nominal Berbasis Chi-Kuadrat</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Koefisien </th>
+   <th style="text-align:center;"> Perhitungan </th>
+   <th style="text-align:center;"> Keterangan </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> phi ($\phi$) </td>
+   <td style="text-align:center;"> $\phi = \sqrt{\frac{\chi^2}{n}}$ </td>
+   <td style="text-align:center;"> Digunakan untuk tabel kontingensi $2 \times 2$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Cramer's V </td>
+   <td style="text-align:center;"> $V = \sqrt{\frac{\chi^2}{n(k-1)}}$ </td>
+   <td style="text-align:center;vertical-align: middle !important;" rowspan="2"> Digunakan untuk tabel kontingensi $b \times k$ </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> Kontingensi (C) </td>
+   <td style="text-align:center;"> $C = \sqrt{\frac{\chi^2}{n+\chi^2}}$ </td>
+   
+  </tr>
+</tbody>
+</table></div>
+
+di mana:
+
+- $\chi^2$ adalah nilai uji chi-kuadrat
+- $n$ adalah jumlah observasi
+- $b$ adalah jumlah baris
+- $k$ adalah jumlah kolom
+
+Koefisien C cenderung lebih sulit untuk diinterpretasikan dibandingkan Cramer's V karena nilainya hampir tidak pernah menyentuh nilai maksimum 1, yang dengan kata lain **tidak terstandardisasi**. Oleh karena itu, Cramer's V lebih sering digunakan dalam penelitian. Kita dapat menggunakan kriteria berikut untuk menginterpretasikan kekuatan hubungan dua variabel nominal [@devaus2014surveys].
+
+<div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-interpretasi-koefisien-nominal)Kriteria Koefisien Korelasi Variabel Nominal menurut @devaus2014surveys</caption>
+ <thead>
+  <tr>
+   <th style="text-align:center;"> Nilai </th>
+   <th style="text-align:center;"> Keterangan </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:center;"> 0,00 </td>
+   <td style="text-align:center;"> Tidak ada hubungan </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0,01 - 0,09 </td>
+   <td style="text-align:center;"> Hubungan sangat kecil </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0,10 - 0,29 </td>
+   <td style="text-align:center;"> Hubungan rendah hingga sedang </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0,30 - 0,49 </td>
+   <td style="text-align:center;"> Hubungan sedang hingga kuat </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0,50 - 0,69 </td>
+   <td style="text-align:center;"> Hubungan kuat hingga sangat kuat </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0,70 - 0,89 </td>
+   <td style="text-align:center;"> Hubungan sangat kuat </td>
+  </tr>
+  <tr>
+   <td style="text-align:center;"> 0,90 - 1,00 </td>
+   <td style="text-align:center;"> Hubungan sempurna </td>
+  </tr>
+</tbody>
+</table></div>
+
+
+## Koefisien Korelasi Variabel Nominal Berbasis *Error* (Koefisien Lambda, $\lambda$)
+Selain pengujian asosiasi dan perhitungan koefisien berbasis *Chi-square*, terdapat pula pengujian asosiasi dan perhitungan koefisien berbasis eror, atau lengkapnya disebut *proportional reduction of error* (PRE). Koefisien ini menggunakan logika yang berbeda dari uji *Chi-square*, karena berfokus pada kemampuan suatu variabel dalam meningkatkan ketepatan prediksi terhadap variabel lain.
+
+Secara sederhana, konsep PRE dapat dijelaskan melalui logika pengurangan kesalahan prediksi (*error reduction*), yaitu sejauh mana prediksi frekuensi suatu variabel berkurang dengan adanya tambahan informasi dari variabel lain. Dalam konteks ini, **variabel yang memberikan informasi tambahan** disebut sebagai **variabel independen**, sedangkan **variabel yang diprediksi** disebut sebagai **variabel dependen**.
+
+Kesalahan prediksi pada variabel dependen, sebelum adanya informasi dari variabel independen, disebut sebagai **kesalahan prediksi awal** (diberi kode $E_1$), sedangkan kesalahan prediksi pada variabel dependen, setelah adanya informasi dari variabel independen, disebut sebagai **kesalahan prediksi akhir** (diberi kode $E_2$).
+
+Kedua variabel **dikatakan berhubungan** jika jumlah kesalahan prediksi pada kondisi kedua ($E_2$) **lebih kecil** daripada pada kondisi pertama ($E_1$). Dengan demikian, **semakin besar pengurangan kesalahan yang terjadi, semakin kuat hubungan antara kedua variabel tersebut**. 
+
+::: rmdkasus
+### Studi Kasus: Logika Pengurangan Kesalahan Prediksi (PRE) {.unnumbered}
+
+Sebagai contoh ilustrasi bagaimana pengetahuan tentang suatu variabel dapat mengurangi kesalahan prediksi (*error*) terhadap variabel lainnya, bayangkan kita memiliki data dari 100 orang responden. Kita ingin memprediksi sikap mereka tentang preferensi menggunakan kendaraan umum atau tidak (variabel dependen, Y).
+
+Untuk mengetahui sejauh mana kesalahan prediksi kita bisa ditekan, kita perlu membandingkan jumlah kesalahan dari dua kondisi: saat kita membuat prediksi tanpa informasi tambahan apa pun, dan saat kita memprediksi dengan bantuan informasi dari variabel lain.
+
+Pada **kondisi pertama**, kita memprediksi tanpa memiliki informasi tambahan apa pun mengenai tiap responden. Dalam kondisi buta informasi ini, cara paling logis untuk meminimalkan potensi kesalahan prediksi adalah dengan merujuk pada probabilitas tertinggi. Artinya, kita menggunakan kategori yang paling banyak muncul (modus) pada populasi tersebut sebagai dasar prediksi untuk seluruh responden.
+
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-pre-e1-hipotetis)Distribusi Preferensi Penggunaan Transportasi Publik</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Preferensi (Y) </th>
+   <th style="text-align:center;"> Jumlah </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Setuju transport publik </td>
+   <td style="text-align:center;"> 60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tidak setuju </td>
+   <td style="text-align:center;"> 40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Total </td>
+   <td style="text-align:center;font-weight: bold;"> 100 </td>
+  </tr>
+</tbody>
+</table>
+
+Berdasarkan Tabel \@ref(tab:tbl-pre-e1-hipotetis), **modus** atau preferensi mayoritas adalah **"Setuju transport publik"** (60 orang). Kategori ini pun menjadi prediksi kita. Jadi, jika kita memprediksi seluruh 100 responden tersebut menjawab "Setuju transport publik", maka prediksi kita hanya akan tepat untuk 60 orang. Di sisi lain, untuk 40 responden ($100 - 60$) yang sebenarnya menjawab "Tidak setuju", ini menjadi **kesalahan prediksi** kita. Angka 40 inilah yang menjadi dasar mula **jumlah kesalahan prediksi pertama ($E_1 = 40$)**.
+
+Selanjutnya, mari kita masuk ke **kondisi kedua ($E_2$)**. Kali ini, kita diberikan tambahan pengetahuan mengenai karakteristik operasional tiap responden berupa kepemilikan kendaraannya (variabel independen, X). Kita ingin mengevaluasi sejauh mana pengetahuan tentang variabel independen ini **mampu mengurangi kesalahan prediksi** kita yang berjumlah 40 tadi.
+
+Mari perhatikan tabel silang berikut.
+
+<table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>(\#tab:tbl-pre-e2-hipotetis)Tabel Silang Kepemilikan Kendaraan dan Preferensi Transportasi</caption>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Kepemilikan Kendaraan (X) </th>
+   <th style="text-align:center;"> Setuju transport publik </th>
+   <th style="text-align:center;"> Tidak setuju </th>
+   <th style="text-align:center;"> Total </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Punya Kendaraan </td>
+   <td style="text-align:center;"> 10 </td>
+   <td style="text-align:center;"> 35 </td>
+   <td style="text-align:center;"> 45 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Tidak Punya Kendaraan </td>
+   <td style="text-align:center;"> 50 </td>
+   <td style="text-align:center;"> 5 </td>
+   <td style="text-align:center;"> 55 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;font-weight: bold;"> Total </td>
+   <td style="text-align:center;font-weight: bold;"> 60 </td>
+   <td style="text-align:center;font-weight: bold;"> 40 </td>
+   <td style="text-align:center;font-weight: bold;"> 100 </td>
+  </tr>
+</tbody>
+</table>
+
+Dengan mengetahui kelompok kepemilikan kendaraan (X) setiap responden, kita dapat menyesuaikan pendekatan prediksi. Alih-alih membuat satu prediksi seragam untuk seluruh populasi, kita memprediksi preferensi (Y) menggunakan modus dari masing-masing sub-kelompok X:
+
+- Untuk 45 orang di kelompok "Punya Kendaraan", mayoritas dari mereka (35 orang) memilih "Tidak setuju". Apabila kita memprediksi seluruh 45 orang ini sebagai "Tidak setuju", maka prediksi kita akan meleset pada 10 orang penyimpang. Ini menyumbang **10 kesalahan**.
+- Untuk 55 orang di kelompok "Tidak Punya Kendaraan", mayoritas dari mereka (50 orang) memilih "Setuju transport publik". Apabila kita memprediksi seluruh kelompok ini sebagai "Setuju transport publik", kita akan meleset pada 5 orang lainnya. Ini menyumbang **5 kesalahan**.
+
+Ternyata, dengan beralih menggunakan modus per sub-kelompok, kita tetap melakukan kesalahan. Namun, bila kita totalkan keseluruhan kesalahan pada kondisi kedua ini, jumlahnya adalah $10 + 5 = 15$. Angka ini didefinisikan sebagai **jumlah kesalahan prediksi kedua ($E_2 = 15$)**.
+
+Evaluasi akhirnya adalah, alih-alih melakukan 40 kesalahan seperti pada kondisi pertama, pengetahuan kita tentang variabel kepemilikan kendaraan secara efektif sukses **mengurangi jumlah kesalahan prediksi** hingga tersisa 15 kesalahan saja. Berdasarkan logika inilah korelasi ditentukan: karena pengetahuan tentang suatu variabel suskes mengurangi kesalahan prediksi kita terhadap variabel lainnya (*error reduction*), **maka kita simpulkan bahwa kedua variabel tersebut saling berkorelasi atau berhubungan**. Semakin besar pengurangan kesalahan yang timbul, semakin kuat pula tingkat hubungan antara kedua variabel.
+:::
+
+Setelah mengetahui ada/tidaknya hubungan dari perbandingan jumlah prediksi sebelum dan sesudah penambahan informasi variabel independen, kekuatan hubungan antara kedua variabel dihitung menggunakan rumus berikut:
+
+$$\lambda = \frac{E_1 - E_2}{E_1} = 1 - \frac{E_2}{E_1}$$
+
+dengan:
+
+- $\lambda$ adalah koefisien korelasi berbasis eror (koefisien lambda)
+- $E_1$ adalah jumlah kesalahan prediksi pada kondisi pertama
+- $E_2$ adalah jumlah kesalahan prediksi pada kondisi kedua.
+
+Nilai koefisien $\lambda$ berkisar antara 0 hingga 1. Semakin besar nilai $\lambda$, semakin kuat hubungan antara kedua variabel. Kita bisa menggunakan kriteria pada Tabel \@ref(tab:tbl-interpretasi-koefisien-nominal) untuk menilai kekuatan hubungan antara kedua variabel yang kita analisis.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Koefisien Korelasi Lambda {.unnumbered}
+Dari kasus sebelumnya, kita mendapatkan nilai $E_1 = 40$ dan $E_2 = 15$. Dengan demikian, koefisien korelasi lambda dapat dihitung sebagai berikut:
+
+$$\lambda = \frac{40 - 15}{40} = \frac{25}{40} = 0.625$$
+
+Oleh karena itu, kita dapat menyimpulkan bahwa terdapat hubungan yang kuat antara variabel kepemilikan kendaraan dan preferensi penggunaan transportasi publik. Berdasarkan Tabel \@ref(tab:tbl-pre-e2-hipotetis), kita dapat mengatakan bahwa pemilik kendaraan *cenderung* tidak setuju menggunakan transportasi publik, sedangkan mereka yang tidak memiliki kendaraan *cenderung* setuju menggunakan transportasi publik.
+
+[**Penting!**]{.tajuksaya} Di sini kita tidak menyatakan klaim bahwa "kepemilikan kendaraan otomatis menyebabkan seseorang menolak penggunaan transportasi publik". Kita secara terukur menggunakan kata sifat **cenderung** untuk menerangkan bahwa terdapat **korelasi** atau hubungan antara variabel kepemilikan kendaraan dengan preferensi penggunaan transportasi publik. 
+
+Akan tetapi, kita **belum bisa** menyimpulkan secara gamblang bahwa *"kepemilikan kendaraan menyebabkan ketidaksetujuan menggunakan transportasi publik"* (**kausalitas**). Ibarat kasus konsumsi cokelat dan peraih Nobel yang sudah dibahas pada awal bab, adanya korelasi yang tampak teramat kuat sekalipun belum tentu membuktikan secara empiris adanya **sebab-akibat**. 
+:::
+
+Mari kita terapkan analisis korelasi menggunakan koefisien $\lambda$ pada kasus **jenis tempat tinggal** versus **kendaraan utama**.
+
+::: rmdkasus
+### Studi Kasus: Menghitung Koefisien Korelasi Lambda {.unnumbered}
+
+Mari kita aplikasikan logika pengurangan kesalahan prediksi (PRE) untuk menghitung koefisien Lambda ($\lambda$) pada hubungan antara `jenis.tempat.tinggal` (sebagai variabel independen, X) dengan `kendaraan.utama` yang digunakan (sebagai variabel dependen, Y) oleh mahasiswa UNILA.
+
+Variabel `jenis.tempat.tinggal` ditentukan sebagai **variabel independen** karena secara logika lebih masuk jika dikatakan *"jenis kendaraan yang digunakan untuk mengakses kampus ditentukan oleh jenis tempat tinggalnya"* daripada sebaliknya.
+
+**1. Menghitung Prediksi Pertama ($E_1$)**
+
+Langkah pertama adalah menghitung seberapa besar tingkat probabilitas tebakan kita akan keliru apabila kita **hanya** mendasarkan tebakan pada informasi dari variabel dependen (`kendaraan.utama`) tanpa mempertimbangkan jenis tempat tinggal responden sama sekali. 
+
+Tebakan terbaik kita pada kondisi ini adalah memilih jenis kendaraan yang paling banyak digunakan (modus) oleh populasi secara keseluruhan. Mari perhatikan tabel distribusi frekuensi tunggalnya:
+
+
+```{=html}
+<div class="tabwid"><style>.cl-4b52b746{}.cl-4b46d480{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4b46d4a8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4b4bfd16{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2pt;padding-top:2pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4b4bfd2a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2pt;padding-top:2pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4b4bfd34{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4b4bfd3e{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4b4bfd52{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:15pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4b4c25fc{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c2610{width:0.82in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c261a{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c2624{width:0.82in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c262e{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c2638{width:0.82in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c2639{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c2642{width:0.82in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c2643{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c264c{width:0.82in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c2656{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c2660{width:0.82in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c266a{width:3.833in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4b4c266b{width:0.82in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing='true' class='cl-4b52b746'>
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">(#tab:frekuensi-e1-unila)<span>Tabel Frekuensi Kendaraan Utama Mahasiswa UNILA</span></caption>
+<thead><tr style="overflow-wrap:break-word;"><th class="cl-4b4c25fc"><p class="cl-4b4bfd16"><span class="cl-4b46d480">Variabel</span></p></th><th class="cl-4b4c2610"><p class="cl-4b4bfd2a"><span class="cl-4b46d480">Jumlah</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-4b4c261a"><p class="cl-4b4bfd34"><span class="cl-4b46d4a8">Jenis Kendaraan</span></p></td><td class="cl-4b4c2624"><p class="cl-4b4bfd3e"><span class="cl-4b46d4a8"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4b4c262e"><p class="cl-4b4bfd52"><span class="cl-4b46d4a8">Berjalan kaki</span></p></td><td class="cl-4b4c2638"><p class="cl-4b4bfd3e"><span class="cl-4b46d4a8">41</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4b4c2639"><p class="cl-4b4bfd52"><span class="cl-4b46d4a8">Menumpang kendaraan bermotor teman/keluarga</span></p></td><td class="cl-4b4c2642"><p class="cl-4b4bfd3e"><span class="cl-4b46d4a8">8</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4b4c2643"><p class="cl-4b4bfd52"><span class="cl-4b46d4a8">Mobil pribadi</span></p></td><td class="cl-4b4c264c"><p class="cl-4b4bfd3e"><span class="cl-4b46d4a8">51</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4b4c2656"><p class="cl-4b4bfd52"><span class="cl-4b46d4a8">Sepeda motor pribadi</span></p></td><td class="cl-4b4c2660"><p class="cl-4b4bfd3e"><span class="cl-4b46d4a8">230</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4b4c266a"><p class="cl-4b4bfd52"><span class="cl-4b46d4a8">Transportasi daring</span></p></td><td class="cl-4b4c266b"><p class="cl-4b4bfd3e"><span class="cl-4b46d4a8">64</span></p></td></tr></tbody></table></div>
 ```
 
-**Interpretasi**:
-Jika P-value < 0,05, maka ada hubungan signifikan antara Fakultas dan Moda Transportasi.
+Berdasarkan Tabel \@ref(tab:frekuensi-e1-unila), total keseluruhan data populasi pendataan adalah $N = 394$ mahasiswa. Dari jumlah tersebut, kategori yang menjadi modus adalah **Sepeda motor pribadi** yang digunakan oleh $n = 230$ mahasiswa. Karenanya, tebakan logis kita untuk jenis kendaraan yang digunakan setiap responden adalah "Sepeda motor pribadi".
+
+Bila tebakan seragam itu dipaksakan untuk seluruh 394 mahasiswa, maka prediksi tersebut akan tepat hanya untuk 230 orang dan meleset, atau **salah** untuk sisanya ($164$).
+
+Angka 164 perhitungan error inilah yang diplot sebagai **jumlah kesalahan prediksi awal ($E_1 = 164$)**.
+
+**2. Menghitung Prediksi Kedua ($E_2$)**
+
+Langkah berikutnya adalah memasukkan informasi dari variabel tambahan, yakni jenis tempat tinggalnya (`jenis.tempat.tinggal`). Kita memprediksi ulang secara lebih spesifik menggunakan patokan modus dari **masing-masing kelompok tempat tinggal tersebut**.
+
+
+```{=html}
+<div class="tabwid"><style>.cl-4d67e89e{}.cl-4d5b7500{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4d605066{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2pt;padding-top:2pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4d60507a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2pt;padding-top:2pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4d605084{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4d605085{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4d60508e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:15pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4d6083a6{width:2.661in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6083ba{width:1.16in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6083c4{width:3.648in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6083ce{width:1.151in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6083d8{width:1.746in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6083e2{width:1.601in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6083ec{width:0.625in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6083f6{width:2.661in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6083f7{width:1.16in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608400{width:3.648in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608401{width:1.151in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608414{width:1.746in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608415{width:1.601in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608428{width:0.625in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d60843c{width:2.661in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d60843d{width:1.16in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608446{width:3.648in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608447{width:1.151in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d60845a{width:1.746in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608464{width:1.601in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d60846e{width:0.625in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608478{width:2.661in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608482{width:1.16in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d60848c{width:3.648in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608496{width:1.151in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608497{width:1.746in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084a0{width:1.601in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084aa{width:0.625in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084ab{width:2.661in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084b4{width:1.16in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084be{width:3.648in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084bf{width:1.151in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084d2{width:1.746in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084dc{width:1.601in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084e6{width:0.625in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084e7{width:2.661in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084f0{width:1.16in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d6084fa{width:3.648in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608504{width:1.151in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d60850e{width:1.746in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608518{width:1.601in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608522{width:0.625in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d60852c{width:2.661in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608536{width:1.16in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608540{width:3.648in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608554{width:1.151in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d60855e{width:1.746in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d60855f{width:1.601in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4d608568{width:0.625in;background-color:rgba(255, 255, 255, 1.00);vertical-align: top;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing='true' class='cl-4d67e89e'>
+<caption style="display:table-caption;margin:0pt;text-align:center;border-bottom: 0.00pt solid transparent;border-top: 0.00pt solid transparent;border-left: 0.00pt solid transparent;border-right: 0.00pt solid transparent;padding-top:3pt;padding-bottom:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;">(#tab:frekuensi-e2-unila)<span>Tabel Silang Kendaraan Utama Berdasarkan Jenis Tempat Tinggal</span></caption>
+<thead><tr style="overflow-wrap:break-word;"><th class="cl-4d6083a6"><p class="cl-4d605066"><span class="cl-4d5b7500"> </span></p></th><th  colspan="5"class="cl-4d6083ba"><p class="cl-4d60507a"><span class="cl-4d5b7500">kendaraan.utama</span></p></th><th class="cl-4d6083ec"><p class="cl-4d60507a"><span class="cl-4d5b7500"> </span></p></th></tr><tr style="overflow-wrap:break-word;"><th class="cl-4d6083f6"><p class="cl-4d605066"><span class="cl-4d5b7500"></span></p></th><th class="cl-4d6083f7"><p class="cl-4d60507a"><span class="cl-4d5b7500">Berjalan kaki</span></p></th><th class="cl-4d608400"><p class="cl-4d60507a"><span class="cl-4d5b7500">Menumpang kendaraan bermotor teman/keluarga</span></p></th><th class="cl-4d608401"><p class="cl-4d60507a"><span class="cl-4d5b7500">Mobil pribadi</span></p></th><th class="cl-4d608414"><p class="cl-4d60507a"><span class="cl-4d5b7500">Sepeda motor pribadi</span></p></th><th class="cl-4d608415"><p class="cl-4d60507a"><span class="cl-4d5b7500">Transportasi daring</span></p></th><th class="cl-4d608428"><p class="cl-4d60507a"><span class="cl-4d5b7500">Total</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-4d60843c"><p class="cl-4d605084"><span class="cl-4d5b7500">jenis.tempat.tinggal</span></p></td><td class="cl-4d60843d"><p class="cl-4d605085"><span class="cl-4d5b7500"></span></p></td><td class="cl-4d608446"><p class="cl-4d605085"><span class="cl-4d5b7500"></span></p></td><td class="cl-4d608447"><p class="cl-4d605085"><span class="cl-4d5b7500"></span></p></td><td class="cl-4d60845a"><p class="cl-4d605085"><span class="cl-4d5b7500"></span></p></td><td class="cl-4d608464"><p class="cl-4d605085"><span class="cl-4d5b7500"></span></p></td><td class="cl-4d60846e"><p class="cl-4d605085"><span class="cl-4d5b7500"></span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4d608478"><p class="cl-4d60508e"><span class="cl-4d5b7500">Asrama</span></p></td><td class="cl-4d608482"><p class="cl-4d605085"><span class="cl-4d5b7500">10</span></p></td><td class="cl-4d60848c"><p class="cl-4d605085"><span class="cl-4d5b7500">0</span></p></td><td class="cl-4d608496"><p class="cl-4d605085"><span class="cl-4d5b7500">0</span></p></td><td class="cl-4d608497"><p class="cl-4d605085"><span class="cl-4d5b7500">0</span></p></td><td class="cl-4d6084a0"><p class="cl-4d605085"><span class="cl-4d5b7500">0</span></p></td><td class="cl-4d6084aa"><p class="cl-4d605085"><span class="cl-4d5b7500">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4d6084ab"><p class="cl-4d60508e"><span class="cl-4d5b7500">Kos bersama-sama</span></p></td><td class="cl-4d6084b4"><p class="cl-4d605085"><span class="cl-4d5b7500">5</span></p></td><td class="cl-4d6084be"><p class="cl-4d605085"><span class="cl-4d5b7500">3</span></p></td><td class="cl-4d6084bf"><p class="cl-4d605085"><span class="cl-4d5b7500">3</span></p></td><td class="cl-4d6084d2"><p class="cl-4d605085"><span class="cl-4d5b7500">22</span></p></td><td class="cl-4d6084dc"><p class="cl-4d605085"><span class="cl-4d5b7500">10</span></p></td><td class="cl-4d6084e6"><p class="cl-4d605085"><span class="cl-4d5b7500">43</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4d608478"><p class="cl-4d60508e"><span class="cl-4d5b7500">Kos sendiri</span></p></td><td class="cl-4d608482"><p class="cl-4d605085"><span class="cl-4d5b7500">6</span></p></td><td class="cl-4d60848c"><p class="cl-4d605085"><span class="cl-4d5b7500">1</span></p></td><td class="cl-4d608496"><p class="cl-4d605085"><span class="cl-4d5b7500">7</span></p></td><td class="cl-4d608497"><p class="cl-4d605085"><span class="cl-4d5b7500">51</span></p></td><td class="cl-4d6084a0"><p class="cl-4d605085"><span class="cl-4d5b7500">16</span></p></td><td class="cl-4d6084aa"><p class="cl-4d605085"><span class="cl-4d5b7500">81</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4d6084ab"><p class="cl-4d60508e"><span class="cl-4d5b7500">Rumah bersama saudara</span></p></td><td class="cl-4d6084b4"><p class="cl-4d605085"><span class="cl-4d5b7500">0</span></p></td><td class="cl-4d6084be"><p class="cl-4d605085"><span class="cl-4d5b7500">0</span></p></td><td class="cl-4d6084bf"><p class="cl-4d605085"><span class="cl-4d5b7500">9</span></p></td><td class="cl-4d6084d2"><p class="cl-4d605085"><span class="cl-4d5b7500">39</span></p></td><td class="cl-4d6084dc"><p class="cl-4d605085"><span class="cl-4d5b7500">9</span></p></td><td class="cl-4d6084e6"><p class="cl-4d605085"><span class="cl-4d5b7500">57</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4d60843c"><p class="cl-4d60508e"><span class="cl-4d5b7500">Rumah ngontrak bersama-sama</span></p></td><td class="cl-4d60843d"><p class="cl-4d605085"><span class="cl-4d5b7500">10</span></p></td><td class="cl-4d608446"><p class="cl-4d605085"><span class="cl-4d5b7500">1</span></p></td><td class="cl-4d608447"><p class="cl-4d605085"><span class="cl-4d5b7500">4</span></p></td><td class="cl-4d60845a"><p class="cl-4d605085"><span class="cl-4d5b7500">25</span></p></td><td class="cl-4d608464"><p class="cl-4d605085"><span class="cl-4d5b7500">7</span></p></td><td class="cl-4d60846e"><p class="cl-4d605085"><span class="cl-4d5b7500">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4d60843c"><p class="cl-4d60508e"><span class="cl-4d5b7500">Rumah ngontrak pribadi</span></p></td><td class="cl-4d60843d"><p class="cl-4d605085"><span class="cl-4d5b7500">10</span></p></td><td class="cl-4d608446"><p class="cl-4d605085"><span class="cl-4d5b7500">0</span></p></td><td class="cl-4d608447"><p class="cl-4d605085"><span class="cl-4d5b7500">2</span></p></td><td class="cl-4d60845a"><p class="cl-4d605085"><span class="cl-4d5b7500">17</span></p></td><td class="cl-4d608464"><p class="cl-4d605085"><span class="cl-4d5b7500">6</span></p></td><td class="cl-4d60846e"><p class="cl-4d605085"><span class="cl-4d5b7500">35</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4d6084e7"><p class="cl-4d60508e"><span class="cl-4d5b7500">Rumah pribadi/rumah keluarga</span></p></td><td class="cl-4d6084f0"><p class="cl-4d605085"><span class="cl-4d5b7500">0</span></p></td><td class="cl-4d6084fa"><p class="cl-4d605085"><span class="cl-4d5b7500">3</span></p></td><td class="cl-4d608504"><p class="cl-4d605085"><span class="cl-4d5b7500">26</span></p></td><td class="cl-4d60850e"><p class="cl-4d605085"><span class="cl-4d5b7500">76</span></p></td><td class="cl-4d608518"><p class="cl-4d605085"><span class="cl-4d5b7500">16</span></p></td><td class="cl-4d608522"><p class="cl-4d605085"><span class="cl-4d5b7500">121</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4d60852c"><p class="cl-4d605084"><span class="cl-4d5b7500">Total</span></p></td><td class="cl-4d608536"><p class="cl-4d605085"><span class="cl-4d5b7500">41</span></p></td><td class="cl-4d608540"><p class="cl-4d605085"><span class="cl-4d5b7500">8</span></p></td><td class="cl-4d608554"><p class="cl-4d605085"><span class="cl-4d5b7500">51</span></p></td><td class="cl-4d60855e"><p class="cl-4d605085"><span class="cl-4d5b7500">230</span></p></td><td class="cl-4d60855f"><p class="cl-4d605085"><span class="cl-4d5b7500">64</span></p></td><td class="cl-4d608568"><p class="cl-4d605085"><span class="cl-4d5b7500">394</span></p></td></tr></tbody></table></div>
+```
+
+Berdasarkan Tabel \@ref(tab:frekuensi-e2-unila) di atas, kita menghitung selisih frekuensi total per kategori pada variabel X (total per kategori variabel `jenis.tempat.tinggal`) dengan modus pada kategori variabel `kendaraan.utama` untuk tiap kategori variabel `jenis.tempat.tinggal`:
+
+- **Asrama:** Total 10 $\rightarrow$ Modusnya $\text{Berjalan kaki}$ (10). Kesalahan meleset $= 10 - 10 = 0$
+- **Kos bersama-sama:** Total 43 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (22). Kesalahan $= 43 - 22 = 21$
+- **Kos sendiri:** Total 81 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (51). Kesalahan $= 81 - 51 = 30$
+- **Rumah bersama saudara:** Total 57 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (39). Kesalahan $= 57 - 39 = 18$
+- **Rumah ngontrak bersama-sama:** Total 47 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (25). Kesalahan $= 47 - 25 = 22$
+- **Rumah ngontrak pribadi:** Total 35 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (17). Kesalahan $= 35 - 17 = 18$
+- **Rumah pribadi/keluarga:** Total 121 $\rightarrow$ Modusnya $\text{Sepeda motor pribadi}$ (76). Kesalahan $= 121 - 76 = 45$
+
+Selisih frekuensi total per kategori pada variabel X adalah:
+$$ E_2 = 0 + 21 + 30 + 18 + 22 + 18 + 45 = 154 $$
+Maka **jumlah kesalahan prediksi akhir ($E_2$) adalah 154**.
+
+**3. Perhitungan Koefisien Lambda ($\lambda$)**
+
+Berdasarkan angka $E_1$ dan $E_2$ yang sudah dihitung sebelumnya, besaran koefisien Lambda ($\lambda$) adalah:
+
+$$
+\begin{align}
+\lambda &= \frac{E_1 - E_2}{E_1} \\
+&= \frac{164 - 154}{164} 
+&= \frac{10}{164} \approx 0,061
+\end{align}
+$$
+
+**4. Interpretasi Koefisien Lambda ($\lambda$)**
+
+Nilai $\lambda = 0,061$ menunjukkan bahwa informasi mengenai jenis tempat tinggal (variabel independen) hanya mampu mengurangi kesalahan prediksi kendaraan utama (variabel dependen) mahasiswa sebesar **6,1 %** saja.
+
+Berdasarkan Tabel \@ref(tab:tbl-interpretasi-koefisien-nominal), nilai tersebut berada pada rentang $0,01 - 0,09$ yang berarti kedua variabel memiliki **hubungan yang sangat kecil (sangat lemah/nyaris tanpa pengaruh)**. Kesimpulannya, jenis tempat tinggal mahasiswa UNILA hampir tidak memiliki hubungan apapun terhadap jenis kendaraan utama yang mereka gunakan sehari-hari.
+:::
+
+Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda mengenai materi yang telah dipelajari pada subbab ini.
 
 ::: rmdexercise
-## Soal Evaluasi 11 {.unnumbered}
+## Soal Evaluasi 18 {.unnumbered}
 
-1.  Apa perbedaan Chi-Square Test dengan Lambda sebagai ukuran asosiasi? [STP-8.1]{.capaian}
-2.  Hitunglah nilai Cramer's V untuk tabel kontingensi berikut... [STP-8.2]{.capaian}
+1. Perhatikan tabel silang yang menunjukkan distribusi frekuensi pandangan mahasiswa terhadap kegiatan ekstrakurikuler (ekskul) berdasarkan variabel pandangan mereka dan apakah mereka anggota sebuah himpunan. [STP-9.1]{.capaian}
+
+  <div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+  <caption>(\#tab:tbl-evaluasi-ekskul)Tabel Silang Pandangan Mahasiswa terhadap Kegiatan Ekstrakurikuler</caption>
+   <thead>
+  <tr>
+  <th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
+  <th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Apakah Anda anggota himpunan/organisasi mahasiswa?</div></th>
+  </tr>
+    <tr>
+     <th style="text-align:left;"> Bagaimana pendapat Anda tentang kegiatan ekstrakurikuler (ekskul) mahasiswa? </th>
+     <th style="text-align:center;"> Ya </th>
+     <th style="text-align:center;"> Tidak </th>
+    </tr>
+   </thead>
+  <tbody>
+    <tr>
+     <td style="text-align:left;width: 8cm; "> Semua mahasiswa wajib ikut </td>
+     <td style="text-align:center;width: 3cm; "> 466 </td>
+     <td style="text-align:center;width: 3cm; "> 488 </td>
+    </tr>
+    <tr>
+     <td style="text-align:left;width: 8cm; "> Mahasiswa seharusnya bebas menentukan sendiri </td>
+     <td style="text-align:center;width: 3cm; "> 345 </td>
+     <td style="text-align:center;width: 3cm; "> 383 </td>
+    </tr>
+    <tr>
+     <td style="text-align:left;width: 8cm; "> Kegiatan ekskul hanya membuang waktu </td>
+     <td style="text-align:center;width: 3cm; "> 38 </td>
+     <td style="text-align:center;width: 3cm; "> 46 </td>
+    </tr>
+  </tbody>
+  </table></div>
+  
+   a. Tentukan koefisien berbasis $\chi^2$ yang pas digunakan untuk menyatakan korelasi kedua variabel tersebut (phi, Cramer’s V, atau C, bisa lebih dari satu) 
+   b. Hitung dan interpretasikan nilai koefisien tersebut sesuai makna koefisien tersebut dalam konsepnya (pilih salah satu dari jawaban Anda di a). 
+   c. Apa yang bisa kita simpulkan dari hasil perhitungan koefisien tersebut? 
+
+2. Perhatikan tabel silang yang menyajikan data hipotesis pola utama pengelolaan sampah berdasarkan tipe tempat tinggal 1.000 rumah tangga berikut. [STP-9.1]{.capaian}
+
+  <div style="border: 0px;overflow-x: scroll; width:100%; "><table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+  <caption>(\#tab:tbl-evaluasi-sampah)Tabel Silang Pola Pengelolaan Sampah berdasarkan Tipe Tempat Tinggal</caption>
+   <thead>
+  <tr>
+  <th style="empty-cells: hide;border-bottom:hidden;" colspan="1"></th>
+  <th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">Tipe Tempat Tinggal</div></th>
+  </tr>
+    <tr>
+     <th style="text-align:left;"> Pola utama pengelolaan sampah rumah tangga </th>
+     <th style="text-align:center;"> Apartemen </th>
+     <th style="text-align:center;"> Perumahan Tapak </th>
+    </tr>
+   </thead>
+  <tbody>
+    <tr>
+     <td style="text-align:left;width: 8cm; "> Diangkut oleh petugas kebersihan </td>
+     <td style="text-align:center;width: 3cm; "> 465 </td>
+     <td style="text-align:center;width: 3cm; "> 25 </td>
+    </tr>
+    <tr>
+     <td style="text-align:left;width: 8cm; "> Dibakar atau dibuang ke lahan kosong </td>
+     <td style="text-align:center;width: 3cm; "> 20 </td>
+     <td style="text-align:center;width: 3cm; "> 450 </td>
+    </tr>
+    <tr>
+     <td style="text-align:left;width: 8cm; "> Disetorkan ke bank sampah terpadu </td>
+     <td style="text-align:center;width: 3cm; "> 15 </td>
+     <td style="text-align:center;width: 3cm; "> 25 </td>
+    </tr>
+  </tbody>
+  </table></div>
+  
+   a. Berapakah jumlah kesalahan prediksi awal ($E_1$) sebelum adanya informasi tambahan mengenai jenis tempat tinggal warganya?
+   b. Berapakah jumlah kesalahan prediksi akhir ($E_2$) pasca diketahuinya informasi spesifik membagi warga per tipe tempat tinggal masing-masing?
+   c. Hitung besaran koefisien Lambda ($\lambda$) menggunakan reduksi galat observasi $E_1$ dan $E_2$ yang Anda dapatkan di atas!
+   d. Interpretasikan seberapa kuat atau solid nilai koefisien korelasi $\lambda$ yang diukur tersebut mengukuhkan hipotesis bahwa tipe hunian sangat berpengaruh pada rutinitas penanganan sampah warganya.
 
 :::
 
@@ -6282,7 +7042,7 @@ cor.test(pendapatan, pengeluaran, method = "pearson")
 
 <!--chapter:end:12-korelasi-metrik.Rmd-->
 
-# Regresi Linear Sederhana
+# Regresi Linear Sederhana {#bab-13-regresi-sederhana}
 
 ## Konsep Dasar
 
@@ -6309,18 +7069,15 @@ summary(model)
 ## lm(formula = pengeluaran ~ pendapatan)
 ## 
 ## Residuals:
-##          1          2          3          4 
-##  8,929e-02  3,929e-01 -8,036e-01 -1,804e-16 
-##          5          6          7 
-##  3,036e-01  1,071e-01 -8,929e-02 
+##          1          2          3          4          5          6          7 
+##  8,929e-02  3,929e-01 -8,036e-01 -1,804e-16  3,036e-01  1,071e-01 -8,929e-02 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
 ## (Intercept) -0,57143    0,66834  -0,855 0,431606    
 ## pendapatan   0,69643    0,08105   8,593 0,000352 ***
 ## ---
-## Signif. codes:  
-## 0 '***' 0,001 '**' 0,01 '*' 0,05 '.' 0,1 ' ' 1
+## Signif. codes:  0 '***' 0,001 '**' 0,01 '*' 0,05 '.' 0,1 ' ' 1
 ## 
 ## Residual standard error: 0,4289 on 5 degrees of freedom
 ## Multiple R-squared:  0,9366,	Adjusted R-squared:  0,9239 
@@ -6427,14 +7184,10 @@ summary(pca_result)
 
 ```
 ## Importance of components:
-##                           PC1    PC2    PC3    PC4
-## Standard deviation     1,1077 1,0610 1,0191 0,9468
-## Proportion of Variance 0,2454 0,2251 0,2077 0,1793
-## Cumulative Proportion  0,2454 0,4705 0,6783 0,8575
-##                           PC5
-## Standard deviation     0,8440
-## Proportion of Variance 0,1425
-## Cumulative Proportion  1,0000
+##                           PC1    PC2    PC3    PC4    PC5
+## Standard deviation     1,1077 1,0610 1,0191 0,9468 0,8440
+## Proportion of Variance 0,2454 0,2251 0,2077 0,1793 0,1425
+## Cumulative Proportion  0,2454 0,4705 0,6783 0,8575 1,0000
 ```
 
 ``` r
@@ -6443,18 +7196,12 @@ pca_result$rotation
 ```
 
 ```
-##            PC1        PC2        PC3        PC4
-## Q1  0,67277300  0,3292034 -0,1275847 -0,1588174
-## Q2  0,19353433 -0,6901072  0,1205644  0,6023990
-## Q3 -0,28920162 -0,4912642 -0,5283287 -0,5405369
-## Q4  0,01926618 -0,2337862  0,8146660 -0,5122828
-## Q5 -0,65261949  0,3455152  0,1624021  0,2393297
-##          PC5
-## Q1 0,6304766
-## Q2 0,3299640
-## Q3 0,3220413
-## Q4 0,1373262
-## Q5 0,6091420
+##            PC1        PC2        PC3        PC4       PC5
+## Q1  0,67277300  0,3292034 -0,1275847 -0,1588174 0,6304766
+## Q2  0,19353433 -0,6901072  0,1205644  0,6023990 0,3299640
+## Q3 -0,28920162 -0,4912642 -0,5283287 -0,5405369 0,3220413
+## Q4  0,01926618 -0,2337862  0,8146660 -0,5122828 0,1373262
+## Q5 -0,65261949  0,3455152  0,1624021  0,2393297 0,6091420
 ```
 
 ::: rmdexercise
