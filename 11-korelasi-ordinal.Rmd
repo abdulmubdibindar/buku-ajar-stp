@@ -1,27 +1,119 @@
-# Korelasi Antarvariabel Ordinal
+# Korelasi Antarvariabel Ordinal {#korelasi-antarvariabel-ordinal}
 
-## Konsep Dasar
+::: rmdcapaian
+### Capaian Pembelajaran {.unnumbered}
 
-Untuk data ordinal (berjenjang/ranking), kita menggunakan korelasi berbasis peringkat. Dua yang paling populer adalah **Spearman's Rho ($\rho$)** dan **Kendall's Tau ($\tau$)**.
+Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran ordinal dengan tepat [STP-10.1]{.capaian}
+:::
 
-## Studi Kasus dengan R
+Pada bab ini, penjelasan analisis asosiasi bivariat sama dengan yang telah dijelaskan pada bab sebelumnya. Hanya saja, pada bab ini jenis variabel yang akan dianalisis adalah **variabel ordinal**. Sebagai pengingat, variabel dengan jenis ordinal ini adalah variabel yang memiliki ragam nilai kategori yang dapat diurutkan (contoh: tinggi – sedang – rendah, dsb).
 
-Apakah ada hubungan antara **Tingkat Pendidikan** (SD, SMP, SMA) dengan **Kepuasan Layanan** (Rendah, Sedang, Tinggi)?
+Untuk mengukur korelasi antarvariabel ordinal, kita akan mempelajari koefisien-koefisien yang sesuai, di antaranya Gamma ($\gamma$) dari Goodman dan Kruskal, $d$ dari Sommer, dan tau-b ($\tau$-b) dari Kendall yang secara konseptual sama dengan korelasi berbasis proporsi kesalahan yang dikurangi (PRE) seperti yang dibahas pada subbab \@ref(koefisien-korelasi-nominal-error).
 
-```{r bab-11-korelasi-rank, echo=TRUE}
-# Data Ordinal (sebagai angka peringkat)
-pendidikan <- c(1, 2, 3, 2, 3, 1, 2)
-kepuasan <- c(1, 1, 3, 2, 3, 1, 2)
+## Koefisien Gamma ($\gamma$) dari Goodman dan Kruskal {#gamma}
+Goodman and Kruskal's $\gamma$ digunakan untuk mengukur korelasi antarvariabel ordinal, khususnya variabel yang **memiliki kategori nilai yang relatif lebih sedikit** (tidak lebih dari lima atau enam kategori) [@devaus2014surveys].
 
-# Korelasi Spearman
-cor.test(pendidikan, kepuasan, method = "spearman")
+Pengukuran koefisien Gamma dapat menjawab tiga pertanyaan dasar mengenai asosiasi bivariat pada variabel ordinal sebagai berikut:
 
-# Korelasi Kendall
-cor.test(pendidikan, kepuasan, method = "kendall")
+a. Apakah variabel yang diuji memiliki asosiasi (saling terkait)? 
+b. Seberapa kuat asosiasinya? 
+c. Bagaimana arah asosiasinya? (positif atau negatif)
+
+Logika pengukuran koefisien korelasi $\gamma$ adalah **berbasis galat (PRE)** dengan menentukan seberapa besar kemampuan untuk memprediksi peringkat (atau urutan) dari nilai suatu variabel ditingkatkan dengan mengetahui peringkat nilai variabel lainnya [@healey2021statistics]. Hubungan antar variabel akan disimpulkan berdasarkan **kesesuaian (*concordant*) dan ketidaksesuaian (*discordant*)** terhadap urutan dari kategori nilai variabel tersebut.
+
+Rumus untuk menghitung koefisien Gamma adalah sebagai berikut:
+
+$$
+\gamma = \frac{C - D}{C + D}
+(\#eq:gamma)
+$$
+
+dengan:
+
+- $C$ adalah jumlah pasangan kategori yang *concordant*
+- $D$ adalah jumlah pasangan kategori yang *discordant*
+
+Simak kasus berikut untuk mempelajari apa yang dimaksud dengan pasangan kategori *concordant* dan *discordant*.
+
+::: rmdkasus
+## Studi Kasus: Pasangan Kategori Concordant* dan *Discordant* {.unnumbered}
+Kita akan meninjau korelasi antara variabel **"tingkat uang saku"** dan **"tingkat semester perkuliahan"**. Perhatikan kategori nilai dalam kedua variabel tersebut sebagai berikut beserta kode yang akan digunakan pada tabel silangnya.
+
+```{r tbl-variabel-ordinal, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+
+df_var <- data.frame(
+  'Nama Variabel' = c(rep('Tingkat uang saku', 5), rep('Tingkat semester', 4)),
+  'Kategori' = c('< Rp1 Juta', 'Rp1 Juta - Rp2 Juta', 'Rp2,1 Juta - Rp3 Juta', 'Rp3,1 Juta - Rp4 Juta', '> Rp4 Juta',
+                 'Semester 1 - Semester 2', 'Semester 3 - Semester 4', 'Semester 5 - Semester 6', 'Semester 7 - Semester 8'),
+  'Kode' = c('a', 'b', 'c', 'd', 'e', 'w', 'x', 'y', 'z'),
+  check.names = FALSE
+)
+
+tbl_out <- kbl(df_var, 
+    caption = 'Kategori Nilai pada Variabel Tingkat Uang Saku dan Tingkat Semester',
+    format.args = list(big.mark = '.', decimal.mark = ','),
+    escape = FALSE) |>
+  kable_styling(
+    bootstrap_options = c('striped', 'hover', 'responsive'), 
+    full_width = FALSE, 
+    latex_options = c('scale_down', 'HOLD_position')
+  ) |>
+  collapse_rows(columns = 1, valign = "top")
+
+if (knitr::is_html_output()) {
+  tbl_out <- tbl_out |> scroll_box(width = '100%', box_css = 'border: 0px;')
+}
+tbl_out
 ```
 
-**Interpretasi**:
-Nilai korelasi mendekati +1 menunjukkan hubungan positif kuat (semakin tinggi pendidikan, semakin tinggi kepuasan).
+Setelah diobservasi, tabel silangnya adalah sebagai berikut.
+
+```{r tbl-crosstab-ordinal, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+
+df_cross <- data.frame(
+  'Kode Uang Saku' = c('a', 'b', 'c', 'd', 'e', 'Total'),
+  'w' = c(58, 87, 40, 34, 7, 226),
+  'x' = c(89, 118, 57, 19, 4, 287),
+  'y' = c(81, 181, 53, 24, 5, 344),
+  'z' = c(159, 350, 142, 37, 12, 700),
+  'Total' = c(407, 736, 292, 114, 28, 1577),
+  check.names = FALSE
+)
+
+tbl_out <- kbl(df_cross, 
+    caption = 'Tabel Silang Antara Tingkat Uang Saku dan Tingkat Semester',
+    format.args = list(big.mark = '.', decimal.mark = ','),
+    align = c('l', rep('c', 5)),
+    escape = FALSE) |>
+  kable_styling(
+    bootstrap_options = c('striped', 'hover', 'responsive'), 
+    full_width = FALSE, 
+    latex_options = c('scale_down', 'HOLD_position')
+  ) |>
+  add_header_above(c(' ' = 1, 'Kode TingkatSemester' = 4, ' ' = 1))
+
+if (knitr::is_html_output()) {
+  tbl_out <- tbl_out |> scroll_box(width = '100%', box_css = 'border: 0px;')
+}
+tbl_out
+```
+
+**Pembahasan**
+
+Dari metadata di Tabel \@ref(tab:tbl-variabel-ordinal) tersebut, sangat jelas bahwa kedua variabel memiliki tingkat pengukuran **ordinal**, karena pada masing-masing variabel kita dapat melihat ada **tingkatan yang logis** dari tiap nilainya. Kemudian, pada kedua variabel tersebut, nilai-nilai yang ada hanyalah nilai-nilai diskret atau **kategoris**. Misalnya, jika dilihat dari kategorinya saja, kita tidak akan tahu pasti "<Rp1 juta" itu apakah Rp900 ribu atau Rp500 ribu.
+
+Pada Tabel \@ref(tab:tbl-crosstab-ordinal) tersebut, nilai-nilai yang ada pada baris dan kolom adalah nilai-nilai **frekuensi** atau jumlah responden yang memiliki kombinasi kategori nilai tertentu. Misalnya, pada baris pertama kolom pertama, kita dapat melihat bahwa ada **58 responden** yang memiliki tingkat uang saku "<Rp1 juta" dan tingkat semester "Semester 1 - Semester 2" (kode $a$ dan $w$).
+
+Yang dinamakan pasangan ***concordant*** adalah pasangan kategori yang memiliki urutan yang sama pada kedua variabel. Pasangan kategori ***concordant*** dari tabel tersebut adalah pasangan kategori $a$-$w$, $a$-$x$, $a$-$y$, $a$-$z$, $b$-$w$, $b$-$x$, $b$-$y$, $b$-$z$, $c$-$w$, $c$-$x$, $c$-$y$, $c$-$z$, $d$-$w$, $d$-$x$, $d$-$y$, $d$-$z$, $e$-$w$, $e$-$x$, $e$-$y$, dan $e$-$z$. Sebaliknya, yang dinamakan pasangan ***discordant*** adalah pasangan kategori yang memiliki urutan yang berbeda pada kedua variabel. Pasangan kategori ***discordant*** dari tabel tersebut adalah pasangan kategori $a$-$z$, $a$-$y$, $a$-$x$, $a$-$w$, $b$-$z$, $b$-$y$, $b$-$x$, $b$-$w$, $c$-$z$, $c$-$y$, $c$-$x$, $c$-$w$, $d$-$z$, $d$-$y$, $d$-$x$, $d$-$w$, $e$-$z$, $e$-$y$, $e$-$x$, dan $e$-$w$.
+:::
+
+
+
+## Koefisien $d$ dari Sommer {#sommersd}
+
+## Koefisien tau-b ($\tau$-b) dari Kendall {#kendall}
 
 ::: rmdexercise
 ## Soal Evaluasi 12 {.unnumbered}
