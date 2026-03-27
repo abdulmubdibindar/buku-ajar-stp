@@ -15,7 +15,6 @@ rmd_files:
   - 06-estimasi-parameter.Rmd
   - 07-uji-hipotesis-satu-populasi.Rmd
   - 08-uji-hipotesis-dua-populasi.Rmd
-  - 09-uji-hipotesis-lebih-dua-populasi.Rmd
   - 10-korelasi-nominal.Rmd
   - 11-korelasi-ordinal.Rmd
   - 12-korelasi-metrik.Rmd
