@@ -247,7 +247,7 @@ Perhatikan dataset contoh berikut.
 df_dataset_beda_tingkat_pengukuran <- data.frame(
   `ID` = c(1, 2, 3, 4, 5),
   `Jarak` = c(23, 12, 34, 45, 56),
-  `Uang_saku` = c("<1 Juta rupiah", "2-3 Juta rupiah", "3-4 Juta rupiah", ">4 Juta rupiah", "<1 Juta rupiah")
+  `Uang_saku` = c("&lt;1 Juta rupiah", "2-3 Juta rupiah", "3-4 Juta rupiah", "&gt;4 Juta rupiah", "&lt;1 Juta rupiah")
   )
 
 kbl(df_dataset_beda_tingkat_pengukuran, align = "lccc", caption = "Dataset Beda Tingkat Pengukuran", escape = FALSE) |>
@@ -261,8 +261,8 @@ Oleh karena variabel yang lebih rendah tingkat pengukurannya adalah `uang_saku` 
 ```{r tbl-dataset-beda-tingkat-pengukuran-transformasi, echo=FALSE, fig.align='center'}
 df_dataset_beda_tingkat_pengukuran_transformasi <- data.frame(
   `ID` = c(1, 2, 3, 4, 5),
-  `Jarak` = c("20-30 km", "10-20 km", "30-40 km", "40-50 km", "<10 km"),
-  `Uang_saku` = c("<1 Juta rupiah", "2-3 Juta rupiah", "3-4 Juta rupiah", ">4 Juta rupiah", "<1 Juta rupiah")
+  `Jarak` = c("20-30 km", "10-20 km", "30-40 km", "40-50 km", "&lt;10 km"),
+  `Uang_saku` = c("&lt;1 Juta rupiah", "2-3 Juta rupiah", "3-4 Juta rupiah", "&gt;4 Juta rupiah", "&lt;1 Juta rupiah")
   )
 
 kbl(df_dataset_beda_tingkat_pengukuran_transformasi, align = "lccc", caption = "Dataset Beda Tingkat Pengukuran (Transformasi)", escape = FALSE) |>
