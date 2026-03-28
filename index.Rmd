@@ -33,6 +33,15 @@ knitr::opts_chunk$set(
     message = FALSE,
     warning = FALSE
 )
+
+# Fungsi untuk mengamankan karakter < dan > agar tidak merusak sidebar HTML
+safe_html <- function(x) {
+  if (knitr::is_html_output()) {
+    x <- gsub("<", "&lt;", x)
+    x <- gsub(">", "&gt;", x)
+  }
+  return(x)
+}
 ```
 
 # Statistika untuk Perencanaan {.unnumbered}
