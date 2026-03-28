@@ -4,7 +4,7 @@ language:
     tab: "Tabel "
 chapter_name: "Bab "
 output_dir: "docs"
-delete_merged_file: true
+delete_merged_file: false
 rmd_files:
   - index.Rmd
   - 01-konsep-dasar.Rmd
