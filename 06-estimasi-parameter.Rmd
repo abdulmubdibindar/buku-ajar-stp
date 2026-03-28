@@ -243,6 +243,21 @@ $$
 
 Diketahui dari hasil survei terhadap 333 sampel mahasiswa ITERA, sebaran jenis tempat tinggalnya, beserta statistik jarak tempat tinggalnya, ditampilkan sebagai berikut.
 
+```{r prep-data-sewa, include=FALSE}
+library(dplyr)
+df_itera <- read.csv("datasets/DataUtama_mhsITERA.csv", sep=";")
+df_itera$jarak.km <- as.numeric(gsub(",", ".", df_itera$jarak.km))
+
+data_sewa <- df_itera |>
+  filter(jenis.tempat.tinggal %in% c("Kos sendiri", "Kos bersama-sama", "Rumah mengontrak bersama-sama", "Rumah mengontrak sendiri")) |>
+  mutate(jenis.tempat.tinggal = case_when(
+    jenis.tempat.tinggal == "Kos sendiri" ~ "Kos Sendiri",
+    jenis.tempat.tinggal == "Rumah mengontrak bersama-sama" ~ "Rumah Mengontrak Bersama",
+    jenis.tempat.tinggal %in% c("Kos bersama-sama", "Rumah mengontrak sendiri") ~ "Kos Bersama-sama",
+    TRUE ~ jenis.tempat.tinggal
+  ))
+```
+
 ```{r tabel-komponen-ci-jarak, echo=FALSE, message=FALSE, warning=FALSE}
 data_sewa |>
   group_by(jenis.tempat.tinggal) |>
