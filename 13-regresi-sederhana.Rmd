@@ -77,3 +77,546 @@ knitr::include_graphics("images/variabel-sebab-akibat.png")
 Dalam banyak literatur statistik, istilah kedua variabel ini bermacam-macam (Gambar \@ref(fig:fig-variabel-sebab-akibat)). Misalnya, variabel yang menjadi penyebab disebut sebagai **variabel bebas** atau *independent variable* dalam bahasa Inggris, dan variabel yang menjadi akibat disebut sebagai **variabel terikat** atau *dependent variable*. Selain itu, variabel bebas juga sering disebut sebagai **variabel prediktor** atau *predictor variable*, sedangkan variabel terikat juga sering disebut sebagai **variabel respon** atau *response variable*. Ada juga yang menyebut variabel bebas sebagai **variabel penjelas** (*explanatory variable*) dan variabel terikat sebagai **variabel hasil** (*outcome variable*).
 
 Model regresi linear berfungsi sebagai alat untuk **memodelkan, menganalisis, dan memprediksi hubungan antara variabel-variabel yang diamati**. Model ini juga merupakan alat kita memahami **arah** dan **kekuatan pengaruh** dari variabel independen terhadap variabel dependen, serta menilai sejauh mana model mampu menjelaskan variasi data yang terjadi di lapangan dengan baik.
+
+## Model Regresi Linear Sederhana
+
+Regresi linear sederhana merupakan salah satu bentuk model statistik yang digunakan untuk menjelaskan **hubungan kausal antara dua variabel**, yaitu **variabel independen dan variabel dependen**. Model regresi digunakan untuk **mengetahui sejauh mana perubahan nilai pada variabel independen dapat memengaruhi perubahan nilai variabel Y secara linier**, atau dengan kata lain, apakah ada hubungan sebab-akibat yang bersifat proporsional di antara keduanya.
+
+Bentuk umum dari persamaan regresi linear sederhana dapat ditulis sebagai:
+
+$$
+Y = a + bX + e
+(\#eq:bentuk-umum-regresi-linear)
+$$
+
+dengan:
+
+- $Y$ adalah variabel dependen,
+- $X$ adalah variabel independen,
+- $a$ adalah angka konstanta atau *intercept*,
+- $b$ adalah angka koefisien regresi atau *slope*,
+- $e$ adalah galat atau *error*.
+
+### Memaknai Persamaan Regresi Linear Sederhana
+
+Seperti yang ditunjukkan pada persamaan \@ref(eq:bentuk-umum-regresi-linear), bentuk umum persamaan regresi linear sederhana, yang terdiri atas variabel dependen--yang disepakati untuk dilambangkan dengan $Y$, variabel independen--yang disepakati untuk dilambangkan dengan $X$, konstanta, koefisien regresi, dan galat--menjelaskan beberapa hal. Perlu dipahami, istilah "sederhana" mengacu pada penggunaan **satu variabel independen** saja untuk menjelaskan penyebab variabel dependen. Jika ada lebih dari satu variabel independen, maka model yang terbentuk adalah model **regresi linear berganda**, yang akan dibahas pada bab selanjutnya.
+
+Pertama, **angka koefisien** $b$ menjelaskan besar perubahan nilai $X$ terhadap $Y$. Jika $X$ berubah **1 satuan**, maka nilai $Y$ akan berubah sebesar **$b$ satuan**. Kedua, **nilai konstanta**, $a$, menjelaskan nilai $Y$ ketika nilai $X$ adalah 0. Artinya, konstanta pada dasarnya adalah **nilai ketika pengaruh dari variabel independen tidak ada** terhadap variabel dependen. Ketiga, *error* atau galat adalah komponen yang menyebabkan terjadinya keacakan terhadap nilai $Y$ dari nilai prediksi berdasarkan nilai $X$. Komponen ini tidak pernah diketahui, sehingga jarang ditulis dalam pendefinisian persamaan regresi linear sederhana.
+
+::: rmdnote
+
+Di sini, kami menekankan kembali peran persamaan regresi sebagai **model**, yakni "perwakilan" terhadap penjelasan suatu fenomena yang kompleks. Disebut perwakilan karena di sini kita menyederhanakan hubungan kausal antara suatu variabel, dalam hal ini $Y$, dengan satu variabel saja, yaitu $X$. Padahal, dalam kenyataannya, nilai $Y$ dipengaruhi oleh banyak sekali variabel. 
+
+:::
+
+Mari simak studi kasus berikut untuk lebih memahami bagaimana memaknai persamaan regresi linear sederhana.
+
+::: rmdkasus
+
+### Studi Kasus: Memaknai Persamaan Regresi Linear untuk Jarak Taman dan Kualitas Udara {.unnumbered}
+
+```{r hitung-regresi-taman-iku, echo=FALSE}
+# Data Jarak ke Taman Kota dan Indeks Kualitas Udara (dari Bab 12)
+jarak_km <- c(0.5, 1.2, 2.5, 3.0, 4.5)
+iku <- c(80, 75, 60, 55, 40)
+
+model_taman <- lm(iku ~ jarak_km)
+a_taman <- coef(model_taman)[1] # intercept
+b_taman <- coef(model_taman)[2] # slope
+```
+
+Seorang perencana kota ingin memahami hubungan antara jarak suatu lokasi ke taman kota terdekat ($X$, dalam km) dengan Indeks Kualitas Udara ($Y$) di lokasi tersebut. Berdasarkan data dari 5 lokasi pengamatan yang sudah tersedia, persamaan regresi linear sederhana yang diperoleh adalah sebagai berikut.
+
+$$\hat{Y} = `r format(a_taman, decimal.mark = ",", nsmall = 2)` + (`r format(b_taman, decimal.mark = ",", nsmall = 2)`)X$$
+
+dengan:
+
+- $\hat{Y}$ adalah prediksi Indeks Kualitas Udara
+- $X$ adalah jarak ke taman kota (dalam km)
+
+Dari persamaan tersebut, kita dapat menganalisis bahwa:
+
+- **Koefisien regresi** sebesar $`r format(b_taman, decimal.mark = ",", nsmall = 2)`$ menunjukkan bahwa setiap penambahan jarak ke taman kota sejauh 1 km dikaitkan dengan **penurunan Indeks Kualitas Udara sebesar `r format(abs(b_taman), decimal.mark = ",", nsmall = 2)` poin**. Tanda negatif pada koefisien menunjukkan bahwa hubungan antara jarak dan kualitas udara bersifat berlawanan arah—semakin jauh dari taman, semakin rendah kualitas udara.
+- **Konstanta** sebesar $`r format(a_taman, decimal.mark = ",", nsmall = 2)`$ menunjukkan bahwa prediksi Indeks Kualitas Udara ketika sebuah lokasi tepat berada di taman kota (jarak = 0 km) adalah sebesar $`r format(a_taman, decimal.mark = ",", nsmall = 2)`$ poin.
+
+:::
+
+Apa yang dimaksud dengan *linear*? Istilah *linear* mengacu pada **hubungan yang konstan** antara variabel independen dan variabel dependen karena sifat matematis dari persamaan regresi ini. Artinya, jika nilai variabel independen meningkat sebesar 1 satuan, maka nilai variabel dependen akan meningkat sebesar $b$ satuan, dan begitu seterusnya. Ini akan menghasilkan **garis lurus** ketika persamaan regresi digambarkan dalam diagram pencar. Ini berbeda dengan hubungan non-linear seperti contohnya hubungan kuadratik atau eksponensial, yang merupakan **pola dari sebuah hubungan** (pelajari kembali pola hubungan pada subbab \@ref(pola-hubungan-data-metrik)).
+
+::: rmdkasus
+
+### Studi Kasus: Memaknai Bentuk Linear pada Persamaan Regresi untuk Jarak Taman dan Kualitas Udara {.unnumbered}
+
+Berdasarkan persamaan regresi linear sederhana pada studi kasus sebelumnya, kita dapat menggambarkan garis regresi pada diagram pencar dengan cara berikut.
+
+Pertama, kita buat tabel yang menyandingkan nilai jarak ke taman ($X$) dengan nilai Indeks Kualitas Udara yang diprediksi ($\hat{Y}$) berdasarkan persamaan regresi yang diperoleh.
+
+```{r tbl-bahan-regresi, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+
+# Ambil 5 data pertama dari dataset 30 observasi di Bab 12
+set.seed(42)
+jarak_30 <- round(runif(30, 0.5, 10), 1)
+jarak_5  <- head(jarak_30, 5)
+y_pred_5 <- round(a_taman + b_taman * jarak_5, 2)
+
+df_regresi <- data.frame(
+    X      = jarak_5,
+    Y_pred = y_pred_5
+)
+
+# Bangun label kolom secara programatik (inline r tidak bisa di dalam string argumen)
+a_label <- format(round(a_taman, 2), decimal.mark = ",", nsmall = 2)
+b_label <- format(abs(round(b_taman, 2)), decimal.mark = ",", nsmall = 2)
+col_ypred <- paste0("IKU Prediksi ($\\hat{Y} = ", a_label, " - ", b_label, "X$)")
+
+kbl(df_regresi,
+    caption = "Nilai Prediksi Indeks Kualitas Udara ($\\hat{Y}$) Berdasarkan Persamaan Regresi",
+    format.args = list(big.mark = ".", decimal.mark = ","),
+    col.names = c(
+        "Jarak ke Taman ($X$, km)",
+        col_ypred
+    ),
+    align = "c",
+    escape = FALSE
+) |>
+    kable_styling(
+        bootstrap_options = c("striped", "hover", "responsive"),
+        full_width = FALSE,
+        latex_options = c("scale_down", "HOLD_position"),
+        position = "center"
+    )
+```
+
+Kedua, kita petakan nilai-nilai pada Tabel \@ref(tab:tbl-bahan-regresi) ke dalam diagram pencar berikut.
+
+```{r fig-garis-regresi, echo=FALSE, fig.cap="Garis Regresi Linear Sederhana untuk Jarak Taman Kota dan Indeks Kualitas Udara", fig.align='center', out.width='70%'}
+library(tidyverse)
+
+df_line <- data.frame(X = jarak_5, Y = y_pred_5)
+
+ggplot(df_line, aes(x = X, y = Y)) +
+    geom_point(size = 3, color = "#2C7BB6") +
+    geom_line(color = "#2C7BB6") +
+    labs(
+        x = "Jarak ke Taman Kota (km)",
+        y = "IKU Prediksi"
+    ) +
+    theme_bw()
+```
+
+Titik-titik hasil prediksi tersebut akan membentuk garis lurus ketika dihubungkan satu sama lain. Inilah yang dimaksud dengan sifat *linear* dari persamaan regresi linear sederhana—nilai $\hat{Y}$ berubah secara **konstan** seiring perubahan nilai $X$, menghasilkan pola garis lurus.
+
+:::
+
+
+### Memperoleh Persamaan Regresi Linear Sederhana
+
+Untuk memperoleh persamaan regresi linear, kita memerlukan nilai dari konstanta ($a$) dan koefisien regresi ($b$). Kedua nilai tersebut diperoleh dengan **mengolah data yang kita kumpulkan sebelumnya**. Data yang kita peroleh harus memenuhi asumsi-asumsi dasar sebagai berikut:
+
+- **Tingkat pengukuran variabel metrik untuk kedua variabel**. Baik variabel independen maupun variabel dependen kita harus berada pada tingkat pengukuran interval atau rasio. Hal ini disebabkan karena penentuan persamaan regresi linear melibatkan operasi matematis seperti penjumlahan, pengurangan, perkalian, dan pembagian.
+- **Hubungan linear antara variabel independen dan variabel dependen**. Maksud dari hubungan linear adalah jika nilai variabel independen meningkat sebesar 1 satuan, maka nilai variabel dependen akan meningkat sebesar $b$ satuan, dan begitu seterusnya.
+- **Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain**. Komponen galat yang terdistribusi acak membuat titik-titik data berada di atas dan di bawah garis regresi secara merata, tidak membentuk pola tertentu.
+
+Setelah terpenuhinya asumsi-asumsi tersebut, kita bisa menghitung nilai $a$ dan $b$ untuk menghasilkan persamaan regresi linear kita. Kita perlu memulai dari nilai $b$ terlebih dahulu, nilai $a$ baru bisa kita dapatkan setelah kita memperoleh nilai $b$ tersebut. Berikut adalah rumus untuk memperoleh nilai $b$.
+
+$$
+b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \bar{X})^2}
+(\#eq:rumus-koefisien-regresi-linear)
+$$
+
+dengan:
+
+- $X_i$ adalah nilai variabel independen untuk objek ke $i$
+- $Y_i$ adalah nilai variabel dependen untuk objek ke $i$
+- $\bar{X}$ adalah rata-rata nilai variabel independen
+- $\bar{Y}$ adalah rata-rata nilai variabel dependen
+- $n$ adalah jumlah objek
+
+Setelah kita memperoleh nilai $b$ atau koefisiennya, kita bisa menghitung konstanta $a$ dengan rumus berikut.
+
+$$
+a = \bar{Y} - b\bar{X}
+(\#eq:rumus-konstanta-regresi-linear)
+$$
+
+dengan:
+
+- $\bar{X}$ adalah rata-rata nilai variabel independen
+- $\bar{Y}$ adalah rata-rata nilai variabel dependen
+- $b$ adalah koefisien regresi hasil perhitungan sebelumnya
+
+Mari kita pelajari studi kasus berikut untuk lebih memahami bagaimana memperoleh persamaan regresi linear sederhana.
+
+::: rmdkasus
+
+### Studi Kasus: Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara {.unnumbered}
+
+Sebuah survei dilakukan terhadap 30 lokasi di sebuah kota untuk mengetahui pengaruh jarak ke taman kota terdekat ($X$, dalam km) terhadap Indeks Kualitas Udara ($Y$). Data hasil survei disajikan pada tabel berikut.
+
+```{r tbl-data-jarak-iku, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+
+# Dataset 30 observasi dari Bab 12
+set.seed(42)
+n_obs <- 30
+jarak_obs <- round(runif(n_obs, 0.5, 10), 1)
+iku_obs <- round(90 - 6.5 * jarak_obs + rnorm(n_obs, 0, 6), 0)
+iku_obs[iku_obs < 0] <- 0
+iku_obs[iku_obs > 100] <- 100
+
+df_raw <- data.frame(No = 1:30, X = jarak_obs, Y = iku_obs)
+
+df1 <- df_raw[1:10, ]
+df2 <- df_raw[11:20, ]
+df3 <- df_raw[21:30, ]
+df_wide <- cbind(df1, df2, df3)
+
+kbl(df_wide,
+    caption = "Data Jarak ke Taman Kota dan Indeks Kualitas Udara 30 Lokasi",
+    format.args = list(big.mark = ".", decimal.mark = ","),
+    col.names = rep(c("No.", "$X$ (km)", "$Y$ (IKU)"), 3),
+    escape = FALSE,
+    align = "c"
+) |>
+    kable_styling(
+        bootstrap_options = c("striped", "hover", "responsive"),
+        full_width = FALSE,
+        latex_options = c("scale_down", "HOLD_position"),
+        position = "center"
+    )
+```
+
+[Langkah 1: Periksa Diagram Pencar]{.tajuksaya}
+
+Sebelum menghitung persamaan regresi, kita perlu memastikan bahwa data memenuhi asumsi-asumsi yang diperlukan. Langkah pertama adalah menyajikan **diagram pencar** (*scatterplot*) dari data di atas.
+
+```{r fig-scatter-jarak-iku, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Diagram Pencar Hubungan Jarak ke Taman Kota dan Indeks Kualitas Udara", fig.align='center', out.width='70%'}
+library(tidyverse)
+
+df_scatter <- data.frame(X = jarak_obs, Y = iku_obs)
+
+ggplot(df_scatter, aes(x = X, y = Y)) +
+    geom_point(size = 2.5, color = "#2C7BB6") +
+    labs(
+        x = "Jarak ke Taman Kota (km)",
+        y = "Indeks Kualitas Udara (IKU)"
+    ) +
+    theme_bw()
+```
+
+Berdasarkan diagram pencar pada Gambar \@ref(fig:fig-scatter-jarak-iku), kita dapat mengevaluasi keterpenuhan tiga asumsi dasar regresi linear berikut.
+
+- **Tingkat pengukuran variabel metrik untuk kedua variabel.** Variabel jarak ke taman ($X$) dan Indeks Kualitas Udara ($Y$) keduanya berada pada tingkat pengukuran rasio—keduanya bersifat numerik dan dapat dikenai operasi matematis secara penuh. Asumsi ini **terpenuhi**.
+- **Hubungan linear antara variabel independen dan variabel dependen.** Dari diagram pencar, terlihat bahwa titik-titik data tersebar mengikuti pola yang cenderung menurun dari kiri ke kanan, mengindikasikan adanya hubungan yang bersifat linear antara jarak ke taman dan kualitas udara. Asumsi ini **terpenuhi**.
+- **Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain.** Titik-titik data tampak tersebar secara acak di sekitar pola linear tersebut—sebagian berada di atas dan sebagian berada di bawah garis kecenderungan—tanpa membentuk pola khusus seperti kipas atau lengkungan. Asumsi ini **terpenuhi**.
+
+[Langkah 2: Hitung Rata-Rata $X$ dan $Y$]{.tajuksaya}
+
+Sebelum mengisi tabel pembantu, kita hitung terlebih dahulu rata-rata dari variabel jarak ($\bar{X}$) dan Indeks Kualitas Udara ($\bar{Y}$).
+
+```{r hitung-mean, echo=FALSE}
+mean_X <- mean(jarak_obs)
+mean_Y <- mean(iku_obs)
+```
+
+$$\bar{X} = \frac{\sum_{i=1}^{30} X_i}{30} = `r format(mean_X, decimal.mark = ",", nsmall = 2)`$$
+
+$$\bar{Y} = \frac{\sum_{i=1}^{30} Y_i}{30} = `r format(mean_Y, decimal.mark = ",", nsmall = 2)`$$
+
+[Langkah 3: Susun Tabel Pembantu]{.tajuksaya}
+
+Untuk mempermudah penghitungan nilai $b$ menggunakan Persamaan \@ref(eq:rumus-koefisien-regresi-linear), kita susun tabel pembantu berikut. Tabel ini memuat selisih setiap nilai $X_i$ dan $Y_i$ dari rata-ratanya masing-masing, hasil perkalian selisih tersebut per objek, serta kuadrat selisih nilai $X_i$ dari rata-ratanya.
+
+```{r tbl-pembantu-regresi, echo=FALSE, message=FALSE, warning=FALSE}
+library(kableExtra)
+
+mX <- mean_X
+mY <- mean_Y
+
+df_tb <- data.frame(
+    No   = 1:30,
+    Xi   = jarak_obs,
+    Yi   = iku_obs,
+    dX   = jarak_obs - mX,
+    dY   = iku_obs - mY,
+    dXdY = (jarak_obs - mX) * (iku_obs - mY),
+    dX2  = (jarak_obs - mX)^2
+)
+
+sum_dXdY <- sum(df_tb$dXdY)
+sum_dX2 <- sum(df_tb$dX2)
+
+df_tb_show <- rbind(
+    df_tb,
+    data.frame(
+        No = NA, Xi = NA, Yi = NA, dX = NA, dY = NA,
+        dXdY = sum_dXdY, dX2 = sum_dX2
+    )
+)
+df_tb_show[31, "No"] <- NA
+
+tbl_out2 <- kbl(df_tb_show,
+    caption = "Tabel Pembantu Perhitungan Koefisien Regresi $b$",
+    format.args = list(big.mark = ".", decimal.mark = ","),
+    col.names = c(
+        "No.", "$X_i$", "$Y_i$",
+        "$X_i - \\bar{X}$", "$Y_i - \\bar{Y}$",
+        "$(X_i-\\bar{X})(Y_i-\\bar{Y})$", "$(X_i-\\bar{X})^2$"
+    ),
+    escape = FALSE,
+    align = "c",
+    na = "**Jumlah**"
+) |>
+    kable_styling(
+        bootstrap_options = c("striped", "hover", "responsive"),
+        full_width = FALSE,
+        latex_options = c("scale_down", "HOLD_position"),
+        position = "center"
+    ) |>
+    row_spec(31, bold = TRUE)
+
+if (knitr::is_html_output()) {
+    tbl_out2 <- tbl_out2 |> scroll_box(width = "100%", box_css = "border: 0px;")
+}
+tbl_out2
+```
+
+[Langkah 4: Hitung Nilai $b$]{.tajuksaya}
+
+Dengan menggunakan hasil penjumlahan dari tabel pembantu di atas, kita dapat menghitung nilai koefisien regresi $b$ menggunakan Persamaan \@ref(eq:rumus-koefisien-regresi-linear).
+
+```{r hitung-b, echo=FALSE}
+b_val <- sum_dXdY / sum_dX2
+```
+
+\begin{equation}
+\begin{split}
+b &= \frac{\sum_{i=1}^{n}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^{n}(X_i - \bar{X})^2} \\
+  &= \frac{`r format(sum_dXdY, decimal.mark = ",", big.mark = ".", nsmall = 2)`}{`r format(sum_dX2, decimal.mark = ",", big.mark = ".", nsmall = 2)`} \\
+  &= `r format(b_val, decimal.mark = ",", nsmall = 2)`
+\end{split}
+(\#eq:hitung-b-kasus)
+\end{equation}
+
+[Langkah 5: Hitung Nilai $a$]{.tajuksaya}
+
+Setelah memperoleh nilai $b$, kita gunakan Persamaan \@ref(eq:rumus-konstanta-regresi-linear) untuk menghitung konstanta $a$.
+
+```{r hitung-a, echo=FALSE}
+a_val <- mean_Y - b_val * mean_X
+```
+
+\begin{equation}
+\begin{split}
+a &= \bar{Y} - b\bar{X} \\
+  &= `r format(mean_Y, decimal.mark = ",", nsmall = 2)` - (`r format(b_val, decimal.mark = ",", nsmall = 2)`) \times `r format(mean_X, decimal.mark = ",", nsmall = 2)` \\
+  &= `r format(a_val, decimal.mark = ",", nsmall = 2)`
+\end{split}
+(\#eq:hitung-a-kasus)
+\end{equation}
+
+[Persamaan Regresi yang Terbentuk]{.tajuksaya}
+
+Dari hasil perhitungan di atas, diperoleh nilai $b \approx `r format(round(b_val, 1), decimal.mark = ",")`$ dan $a \approx `r format(round(a_val, 1), decimal.mark = ",")`$. Dengan demikian, persamaan regresi linear sederhana yang menjelaskan pengaruh jarak ke taman kota terhadap Indeks Kualitas Udara adalah:
+
+$$\hat{Y} = `r format(round(a_val, 2), decimal.mark = ",")` + (`r format(round(b_val, 2), decimal.mark = ",")`)X$$
+
+Persamaan ini menyatakan bahwa setiap penambahan jarak ke taman kota sejauh 1 km dikaitkan dengan **penurunan IKU sebesar `r format(abs(round(b_val, 2)), decimal.mark = ",")` poin**. Konstanta sebesar `r format(round(a_val, 2), decimal.mark = ",")` menunjukkan bahwa prediksi IKU ketika suatu lokasi berada tepat di taman kota (jarak = 0 km) adalah sebesar `r format(round(a_val, 2), decimal.mark = ",")` poin.
+
+Jika kita gabungkan dengan diagram pencar dataset kita, hasilnya adalah sebagai berikut.
+
+```{r scatter-plot-with-regression-line, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Diagram Pencar dengan Garis Regresi Linear untuk Jarak Taman Kota dan IKU", fig.align='center', out.width='70%'}
+library(ggplot2)
+
+df_scatter2 <- data.frame(X = jarak_obs, Y = iku_obs)
+
+ggplot(df_scatter2, aes(x = X, y = Y)) +
+    geom_point(size = 2.5, color = "#2C7BB6") +
+    geom_abline(
+        intercept = a_val,
+        slope     = b_val,
+        color     = "#D7191C",
+        linewidth = 1
+    ) +
+    labs(
+        x = "Jarak ke Taman Kota (km)",
+        y = "Indeks Kualitas Udara (IKU)"
+    ) +
+    theme_bw()
+```
+
+[Pemanfaatan Persamaan Regresi Linear]{.tajuksaya}
+
+Dengan memperoleh persamaan regresi linear sederhana, kita dapat menggunakannya untuk memprediksi nilai variabel dependen berdasarkan nilai variabel independen. Misalnya, jika kita ingin memprediksi IKU suatu lokasi yang berjarak 8 km dari taman kota, kita cukup substitusikan $X = 8$ ke dalam persamaan regresi yang diperoleh. Hasilnya adalah $\hat{Y} = `r format(round(a_val, 2), decimal.mark = ",")` + (`r format(round(b_val, 2), decimal.mark = ",")`) \times 8 = `r format(round(a_val + b_val * 8, 2), decimal.mark = ",")` poin IKU.
+
+:::
+
+
+
+::: rmdnote
+
+Pada studi kasus sebelumnya, terdapat dua jenis notasi untuk $Y$ (selain $\bar{Y}$) yaitu $Y$ dan $\hat{Y}$. Notasi $\hat{Y}$ dibaca "Y-topi" atau *"y-hat"* melambangkan nilai variabel dependen yang dihasilkan oleh **prediksi model**. Ini dimaksudkan untuk membedakannya dengan $Y$ yang merupakan nilai variabel dependen pada data hasil pengumpulan (empiris).
+
+:::
+
+## Kualitas Model Regresi Linear Sederhana {#kualitas-model-regresi-linear-sederhana}
+
+Sebagaimana dijelaskan sebelumnya, model regresi merupakan hasil estimasi dari data sampel. Artinya, setiap model regresi yang diperoleh dari data sampel memiliki **indikator-indikator untuk menilai kualitas model tersebut**. Indikator-indikator tersebut antara lain adalah sebagai berikut.
+
+### Estimasi Standar *Error* (*Standard Error Estimate*)
+
+Estimasi standar *error* adalah **ukuran akurasi prediksi model** [@healey2021statistics]. Ukuran ini merupakan standardisasi selisih antara nilai $Y$ dari data empiris dengan nilai $\hat{Y}$ dari model regresi (komponen *error* atau galat itu sendiri). Secara matematis, estimasi standar *error* dirumuskan sebagai berikut.
+
+$$
+\begin{equation}
+s_{y \cdot x} = \sqrt{\frac{\sum_{i=1}^{n}(Y_i - \hat{Y}_i)^2}{n-2}}
+(\#eq:rumus-standar-error-estimation)
+\end{equation}
+$$
+
+dengan
+
+- $s_{y \cdot x}$ adalah estimasi standar *error*
+- $Y_i$ adalah nilai variabel dependen pada data empiris
+- $\hat{Y}_i$ adalah nilai variabel dependen dari model regresi
+- $n$ adalah jumlah objek
+
+Semakin kecil nilai estimasi standar *error* mendekati nol, maka semakin presisi model regresi tersebut dalam memprediksi nilai variabel dependen. Nilai estimasi standar *error* yang baik pun adalah yang **lebih kecil dibanding nilai simpangan baku variabel $Y$**. Nilai estimasi standar *error* memiliki satuan yang sama dengan **variabel dependennya**.
+
+
+::: rmdkasus
+### Studi Kasus: Estimasi Standar *Error* {.unnumbered}
+
+Melanjutkan kasus sebelumnya, kita hitung estimasi standar *error* untuk model regresi jarak ke taman kota dan Indeks Kualitas Udara menggunakan Persamaan \@ref(eq:rumus-standar-error-estimation).
+
+```{r hitung-sse, echo=FALSE}
+y_hat <- a_val + b_val * jarak_obs
+residual_sq <- (iku_obs - y_hat)^2
+sse <- sqrt(sum(residual_sq) / (length(jarak_obs) - 2))
+sd_y <- sd(iku_obs)
+```
+
+$$s_{y \cdot x} = \sqrt{\frac{\sum_{i=1}^{30}(Y_i - \hat{Y}_i)^2}{30 - 2}} = `r format(sse, decimal.mark = ",", nsmall = 2)`$$
+
+Simpangan baku variabel $Y$ (IKU) dari data kita adalah $s_Y = `r format(sd_y, decimal.mark = ",", nsmall = 2)`$. Karena estimasi standar *error* sebesar $`r format(sse, decimal.mark = ",", nsmall = 2)`$ **lebih kecil dari simpangan baku $Y$**, maka model regresi ini dapat dinyatakan cukup presisi—prediksi model lebih "ketat" dibandingkan sekadar menggunakan rata-rata $Y$ sebagai patokan. Nilai ini memiliki satuan yang sama dengan variabel dependen, yaitu **poin IKU**.
+
+:::
+
+
+### Koefisien Determinasi ($R^2$)
+
+Koefisien determinasi (*coefficient of determination*) yang dinotasikan dengan $R^2$ (dibaca "r-kuadrat") adalah proporsi variasi pada variabel dependen yang dapat dijelaskan oleh variabel independen. Dengan demikian, ukuran ini dapat disebut juga **ukuran kekuatan hubungan**. Secara matematis, koefisien determinasi dirumuskan sebagai berikut.
+
+$$
+\begin{equation}
+R^2 = \frac{SS_{reg}}{SS_{tot}} = \frac{\sum{(\hat{Y}_i - \bar{Y})^2}}{\sum{(Y_i - \bar{Y})^2}}
+(\#eq:rumus-r-square)
+\end{equation}
+$$
+
+dengan
+
+- $R^2$ adalah koefisien determinasi
+- $SS_{reg}$ adalah jumlah kuadrat regresi (*sum of squares regression*)
+- $SS_{tot}$ adalah jumlah kuadrat total (*sum of squares total*)
+- $\hat{Y}_i$ adalah nilai variabel dependen dari model regresi
+- $\bar{Y}$ adalah rata-rata nilai variabel dependen
+- $Y_i$ adalah nilai variabel dependen pada data empiris
+
+Nilai $R^2$ berkisar antara 0 hingga +1 (tidak ada nilai minus) dan dapat dinyatakan dalam bentuk **persentase**. Proporsi atau persentase ini menunjukkan berapa porsi variasi pada variabel dependen yang dapat dijelaskan oleh variabel independen [@healey2021statistics]. Sementara itu, sisa dari 100% atau 1,0 adalah **variasi yang tidak dapat dijelaskan oleh variabel independen**. Dengan kata lain, sisa variasi tersebut dijelaskan oleh komponen galat atau variabel lain yang tidak termasuk dalam model. **Semakin besar nilai $R^2$ mendekati +1, atau 100% maka semakin baik model regresi tersebut dalam menjelaskan perubahan nilai $Y$**, yang menandakan kekuatan hubungan antara variabel independen dan dependen.
+
+::: rmdkasus
+### Studi Kasus: Koefisien Determinasi {.unnumbered}
+
+Berikut adalah perhitungan koefisien determinasi ($R^2$) untuk model regresi jarak ke taman kota dan IKU menggunakan Persamaan \@ref(eq:rumus-r-square).
+
+```{r hitung-r2, echo=FALSE}
+y_hat_r2 <- a_val + b_val * jarak_obs
+ss_reg <- sum((y_hat_r2 - mean_Y)^2)
+ss_tot <- sum((iku_obs - mean_Y)^2)
+r2 <- ss_reg / ss_tot
+```
+
+$$R^2 = \frac{SS_{reg}}{SS_{tot}} = \frac{`r format(ss_reg, decimal.mark = ",", big.mark = ".", nsmall = 2)`}{`r format(ss_tot, decimal.mark = ",", big.mark = ".", nsmall = 2)`} = `r format(r2, decimal.mark = ",", nsmall = 4)`$$
+
+Nilai $R^2 = `r format(r2, decimal.mark = ",", nsmall = 4)`$ berarti bahwa **`r format(round(r2 * 100, 2), decimal.mark = ",")`% variasi Indeks Kualitas Udara dapat dijelaskan oleh jarak ke taman kota**. Sementara itu, sisa `r format(round((1 - r2) * 100, 2), decimal.mark = ",")`% dipengaruhi oleh faktor-faktor lain yang tidak masuk dalam model, seperti kepadatan lalu lintas, keberadaan industri, atau pola angin.
+
+:::
+
+
+### Koefisien Signifikansi Model dan Variabel Independen
+
+Koefisien signifikansi model dan variabel independen diuji menggunakan uji F dan uji t. Uji F digunakan untuk menguji **signifikansi model secara keseluruhan**, sedangkan uji t digunakan untuk menguji **signifikansi variabel independen secara individual**.
+
+Signifikansi model diartikan sebagai **keberartian hubungan pengaruh antara variabel independen dengan variabel dependennya**. Jika uji F menunjukkan hasil yang signifikan, maka dikatakan bahwa hubungan antara variabel independen dengan variabel dependennya memiliki keberartian. Sebaliknya, jika uji F menunjukkan hasil yang tidak signifikan, maka dikatakan bahwa hubungan antara variabel independen dengan variabel dependennya tidak memiliki keberartian. 
+
+Sama seperti uji F, uji t juga digunakan untuk menguji signifikansi variabel independen secara individual. Jika uji t menunjukkan hasil yang signifikan, maka dikatakan bahwa variabel independen memiliki keberartian dalam menjelaskan variabel dependen. Sebaliknya, jika uji t menunjukkan hasil yang tidak signifikan, maka dikatakan bahwa variabel independen tidak memiliki keberartian dalam menjelaskan variabel dependen.
+
+Kedua ukuran ini pada hakikatnya adalah sebuah **pengujian hipotesis** yang hipotesis kosongnya adalah "seluruh koefisien regresi adalah nol"
+
+$$H_0: \beta_1 = \beta_2 = \dots = \beta_k = 0$$
+
+dengan $\beta_k$ adalah koefisien regresi untuk variabel independen ke-$k$. Di sisi lain, hipotesis alternatifnya adalah $H_a: \text{Minimal ada satu } \beta_i \neq 0, \text{ untuk } i = 1, 2, \dots, k$.
+
+Jika **hipotesis kosong gagal ditolak**, maka **seluruh koefisien bernilai nol**, yang berarti **tidak ada pengaruh antara seluruh variabel independen dengan variabel dependen**. Sebaliknya, jika hipotesis kosong ditolak, maka dikatakan bahwa hubungan antara variabel independen dengan variabel dependennya memiliki keberartian.
+
+Karena kita hanya menggunakan satu variabel independen, maka hipotesis kosong yang diuji adalah $H_0: \beta_1 = 0$. Ini akan berbeda ceritanya jika kita mengkaji model regresi linear berganda yang menggunakan lebih dari satu variabel independen.
+
+Untuk uji t, kita menggunakan hipotesis kosong $H_0: \beta_1 = 0$ dan hipotesis alternatif $H_a: \beta_1 \neq 0$. Ini juga sama dengan kasus pengujian hipotesis parameter satu populasi yang jika hipotesis kosong kita gagal ditolak, maka kesimpulannya variabel tersebut memiliki koefisien = 0 yang berarti tidak ada pengaruh dari variabel independen tersebut terhadap variabel dependennya.
+
+Kedua uji hipotesis ini menggunakan patokan yang sama, yakni nilai signifikansi (p-value) yang diperoleh dari hasil perhitungan. Jika **nilai signifikansi lebih kecil dari tingkat signifikansi yang ditetapkan** (biasanya 0,05), maka **hipotesis kosong ditolak**. Sebaliknya, jika **nilai signifikansi lebih besar dari tingkat signifikansi yang ditetapkan**, maka **hipotesis kosong gagal ditolak**.
+
+::: rmdkasus
+### Studi Kasus: Signifikansi Model dan Variabel Independen {.unnumbered}
+
+Kita uji signifikansi model regresi jarak ke taman kota dan IKU menggunakan fungsi `lm()` di R.
+
+```{r hitung-signifikansi, echo=FALSE}
+model_iku <- lm(iku_obs ~ jarak_obs)
+model_sum <- summary(model_iku)
+
+f_stat <- model_sum$fstatistic[1]
+f_df1  <- model_sum$fstatistic[2]
+f_df2  <- model_sum$fstatistic[3]
+f_pval <- pf(f_stat, f_df1, f_df2, lower.tail = FALSE)
+
+t_stat <- model_sum$coefficients["jarak_obs", "t value"]
+t_pval <- model_sum$coefficients["jarak_obs", "Pr(>|t|)"]
+```
+
+Hasil uji F menunjukkan nilai $F_{(`r f_df1`,`r f_df2`)} = `r format(f_stat, decimal.mark = ",", nsmall = 2)`$ dengan nilai signifikansi $p = `r format(f_pval, decimal.mark = ",", scientific = FALSE, nsmall = 4)`$. Karena $p < 0{,}05$, maka **hipotesis kosong ditolak**---model secara keseluruhan signifikan, artinya jarak ke taman kota memiliki keberartian dalam menjelaskan Indeks Kualitas Udara.
+
+Hasil uji t untuk variabel jarak ke taman menunjukkan $t = `r format(t_stat, decimal.mark = ",", nsmall = 2)`$ dengan $p = `r format(t_pval, decimal.mark = ",", scientific = FALSE, nsmall = 4)`$. Karena $p < 0{,}05$, maka **variabel jarak ke taman kota secara individual signifikan** dalam memengaruhi Indeks Kualitas Udara.
+
+:::
+
+Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap capaian pembelajaran pada bab ini.
+
+::: rmdexercise
+
+## Soal Evaluasi 14 {.unnumbered}
+
+1.  Berikan tanda centang pada kotak yang sesuai dengan masing-masing pernyataan berikut. *(Petunjuk: ingat kembali apa makna 'kausalitas')* [STP-12.1]{.capaian}
+    
+    |      Pernyataan        | Korelasi  |  Kausalitas   |
+    |:-----------------------|:---------:|:-------------:|
+    | Daerah dengan banyak ruang hijau biasanya memiliki suhu udara lebih rendah. | [ ]      |       [ ]       |
+    | Peningkatan harga bahan bakar menyebabkan masyarakat lebih banyak menggunakan transportasi umum. | [ ]      |       [ ]       |
+    | Wilayah dengan tingkat pendidikan tinggi cenderung memiliki angka kemiskinan rendah. | [ ]      |       [ ]       |
+    | Semakin tinggi curah hujan, semakin sering terjadi banjir. | [ ]      |       [ ]       |
+    | Peningkatan jumlah kendaraan menyebabkan peningkatan polusi udara. | [ ]      |       [ ]       |
+    | Kota dengan pendapatan tinggi cenderung memiliki indeks kebahagiaan yang tinggi. | [ ]      |       [ ]       |
+    | Kota besar memiliki tingkat kemacetan yang tinggi. | [ ]      |       [ ]       |
+    | Kurangnya sistem drainase menyebabkan genangan air di jalan. | [ ]      |       [ ]       |
+    | Penggundulan hutan menyebabkan meningkatnya risiko longsor. | [ ]      |       [ ]       |
+    | Kegiatan industri yang tidak terkendali menyebabkan pencemaran sungai. | [ ]      |       [ ]       |
+
+2.  [STP-12.2]{.capaian} Setelah dianalisis menggunakan regresi linear, berikut adalah persamaan yang menunjukkan hubungan kausal variabel kepadatan penduduk (X) dengan variabel luas ruang terbuka hijau (Y):
+    
+    $$Y = 120 - 0{,}5X$$
+
+    Persamaan tersebut menunjukkan bahwa kepadatan penduduk ($X$) memengaruhi luas ruang terbuka hijau ($Y$). Uraikan hubungan antara variabel $Y$ dengan $X$ berdasarkan persamaan tersebut!
+
+
+:::
