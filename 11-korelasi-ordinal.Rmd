@@ -65,9 +65,9 @@ tbl_out <- kbl(df_var,
   ) |>
   collapse_rows(columns = 1, valign = "top")
 
-if (knitr::is_html_output()) {
-  tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
-}
+# if (knitr::is_html_output()) {
+#   tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+# }
 tbl_out
 ```
 
@@ -99,9 +99,9 @@ tbl_out <- kbl(df_cross,
   ) |>
   add_header_above(c(" " = 1, "Kode TingkatSemester" = 4, " " = 1))
 
-if (knitr::is_html_output()) {
-  tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
-}
+# if (knitr::is_html_output()) {
+#   tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+# }
 tbl_out
 ```
 
@@ -318,15 +318,15 @@ tbl_out <- kbl(df_perbandingan,
   column_spec(1, width = "15em") |>
   column_spec(2:4, width = "12em")
 
-if (knitr::is_html_output()) {
-  tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
-}
+# if (knitr::is_html_output()) {
+#   tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+# }
 tbl_out
 ```
 
 ::: rmdkasus
 
-## Studi Kasus: Menghitung Kendall's $\tau_b$ {.unnumbered}
+### Studi Kasus: Menghitung Kendall's $\tau_b$ {.unnumbered}
 
 Nilai *tied ranks* sudah kita hitung untuk variabel independen yang ada di kolom pada perhitungan koefisien $d$ Sommer, yaitu sebesar $T_x = 245.191$. Sekarang, kita perlu menghitung nilai $T$ untuk variabel dependen yang ada di baris, yaitu $T_y$.
 
