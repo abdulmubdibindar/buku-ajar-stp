@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Bab 12 Regresi Linear Sederhana | Buku Ajar Statistika untuk Perencanaan</title>
+<title>Bab 12 Kausalitas dengan Regresi Linear Sederhana | Buku Ajar Statistika untuk Perencanaan</title>
 <meta name="author" content="Muhammad Abdul Mubdi Bindar">
 <meta name="author" content="Husna Tiara Putri">
 <meta name="author" content="Valendya Rilansari">
 <meta name="generator" content="bookdown 0.46 with bs4_book()">
-<meta property="og:title" content="Bab 12 Regresi Linear Sederhana | Buku Ajar Statistika untuk Perencanaan">
+<meta property="og:title" content="Bab 12 Kausalitas dengan Regresi Linear Sederhana | Buku Ajar Statistika untuk Perencanaan">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bab 12 Regresi Linear Sederhana | Buku Ajar Statistika untuk Perencanaan">
+<meta name="twitter:title" content="Bab 12 Kausalitas dengan Regresi Linear Sederhana | Buku Ajar Statistika untuk Perencanaan">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -46,9 +46,9 @@
     }
   </style>
 <link rel="stylesheet" href="style.css">
-<meta name="description" content="12.1 Konsep Dasar Regresi linear sederhana digunakan untuk memprediksi nilai satu variabel dependen (\(Y\)) berdasarkan satu variabel independen (\(X\)). Persamaannya: \[ Y = a + bX + \epsilon \] ...">
-<meta property="og:description" content="12.1 Konsep Dasar Regresi linear sederhana digunakan untuk memprediksi nilai satu variabel dependen (\(Y\)) berdasarkan satu variabel independen (\(X\)). Persamaannya: \[ Y = a + bX + \epsilon \] ...">
-<meta name="twitter:description" content="12.1 Konsep Dasar Regresi linear sederhana digunakan untuk memprediksi nilai satu variabel dependen (\(Y\)) berdasarkan satu variabel independen (\(X\)). Persamaannya: \[ Y = a + bX + \epsilon \] ...">
+<meta name="description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan: Mampu membedakan korelasi dan kausalitas dengan tepat STP-12.1 Mampu menguraikan hubungan antara variabel independen dengan...">
+<meta property="og:description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan: Mampu membedakan korelasi dan kausalitas dengan tepat STP-12.1 Mampu menguraikan hubungan antara variabel independen dengan...">
+<meta name="twitter:description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan: Mampu membedakan korelasi dan kausalitas dengan tepat STP-12.1 Mampu menguraikan hubungan antara variabel independen dengan...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -84,8 +84,8 @@
 <li><a class="" href="korelasi-antarvariabel-nominal.html"><span class="header-section-number">9</span> Korelasi Antarvariabel Nominal</a></li>
 <li><a class="" href="korelasi-antarvariabel-ordinal.html"><span class="header-section-number">10</span> Korelasi Antarvariabel Ordinal</a></li>
 <li><a class="" href="korelasi-antarvariabel-metrik.html"><span class="header-section-number">11</span> Korelasi Antarvariabel Metrik</a></li>
-<li><a class="active" href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Regresi Linear Sederhana</a></li>
-<li><a class="" href="regresi-linear-berganda.html"><span class="header-section-number">13</span> Regresi Linear Berganda</a></li>
+<li><a class="active" href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Kausalitas dengan Regresi Linear Sederhana</a></li>
+<li><a class="" href="bab-regresi-berganda.html"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a></li>
 <li><a class="" href="analisis-statistik-multivariat-interdependensi.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi</a></li>
 <li><a class="" href="referensi.html">Referensi</a></li>
 <li class="book-part">Lampiran</li>
@@ -99,60 +99,1588 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="bab-13-regresi-sederhana" class="section level1" number="12">
 <h1>
-<span class="header-section-number">Bab 12</span> Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#bab-13-regresi-sederhana"><i class="fas fa-link"></i></a>
+<span class="header-section-number">Bab 12</span> Kausalitas dengan Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#bab-13-regresi-sederhana"><i class="fas fa-link"></i></a>
 </h1>
-<div id="konsep-dasar-1" class="section level2" number="12.1">
-<h2>
-<span class="header-section-number">12.1</span> Konsep Dasar<a class="anchor" aria-label="anchor" href="#konsep-dasar-1"><i class="fas fa-link"></i></a>
-</h2>
-<p>Regresi linear sederhana digunakan untuk memprediksi nilai satu variabel dependen (<span class="math inline">\(Y\)</span>) berdasarkan satu variabel independen (<span class="math inline">\(X\)</span>). Persamaannya:
-<span class="math display">\[ Y = a + bX + \epsilon \]</span></p>
+<div id="capaian-pembelajaran-11" class="section level3 unnumbered rmdcapaian">
+<h3>Capaian Pembelajaran<a class="anchor" aria-label="anchor" href="#capaian-pembelajaran-11"><i class="fas fa-link"></i></a>
+</h3>
+<p>Setelah mempelajari bab ini, Anda diharapkan:</p>
+<ol style="list-style-type: decimal">
+<li>Mampu membedakan korelasi dan kausalitas dengan tepat <span class="capaian">STP-12.1</span>
+</li>
+<li>Mampu menguraikan hubungan antara variabel independen dengan variabel dependennya secara tepat sesuai dengan bentuk persamaan regresi linear sederhana <span class="capaian">STP-12.2</span>
+</li>
+</ol>
 </div>
-<div id="studi-kasus-dengan-r" class="section level2" number="12.2">
+<p>Dalam subbab <a href="korelasi-antarvariabel-nominal.html#bentuk-asosiasi-sepasang-variabel">9.2.3</a>, kita sudah mempelajari dua bentuk dalam sebuah hubungan antara dua variabel: <strong>korelasi</strong> dan <strong>kausalitas</strong>. Tiga bab sebelumnya membahas korelasi antara dua variabel. Mulai bab ini, kita akan bergeser pada pembahasan mengenai <strong>kausalitas</strong> antara dua variabel.</p>
+<div id="apa-yang-menentukan-sebuah-hubungan-adalah-kausalitas" class="section level2" number="12.1">
 <h2>
-<span class="header-section-number">12.2</span> Studi Kasus dengan R<a class="anchor" aria-label="anchor" href="#studi-kasus-dengan-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.1</span> Apa yang Menentukan Sebuah Hubungan adalah Kausalitas?<a class="anchor" aria-label="anchor" href="#apa-yang-menentukan-sebuah-hubungan-adalah-kausalitas"><i class="fas fa-link"></i></a>
 </h2>
-<p>Memprediksi <strong>Pengeluaran</strong> berdasarkan <strong>Pendapatan</strong>.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">pendapatan</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">10</span>, <span class="fl">11</span><span class="op">)</span></span>
-<span><span class="va">pengeluaran</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">3.5</span>, <span class="fl">5</span>, <span class="fl">6</span>, <span class="fl">6.5</span>, <span class="fl">7</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Membuat Model Regresi</span></span>
-<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">pengeluaran</span> <span class="op">~</span> <span class="va">pendapatan</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## 
-## Call:
-## lm(formula = pengeluaran ~ pendapatan)
-## 
-## Residuals:
-##          1          2          3          4          5          6          7 
-##  8,929e-02  3,929e-01 -8,036e-01 -1,804e-16  3,036e-01  1,071e-01 -8,929e-02 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) -0,57143    0,66834  -0,855 0,431606    
-## pendapatan   0,69643    0,08105   8,593 0,000352 ***
-## ---
-## Signif. codes:  0 '***' 0,001 '**' 0,01 '*' 0,05 '.' 0,1 ' ' 1
-## 
-## Residual standard error: 0,4289 on 5 degrees of freedom
-## Multiple R-squared:  0,9366, Adjusted R-squared:  0,9239 
-## F-statistic: 73,83 on 1 and 5 DF,  p-value: 0,0003521</code></pre>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Melihat koefisien</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span></code></pre></div>
-<pre><code>## (Intercept)  pendapatan 
-##  -0,5714286   0,6964286</code></pre>
-<p><strong>Interpretasi</strong>:
-Nilai Intercept (<span class="math inline">\(a\)</span>) dan Slope (<span class="math inline">\(b\)</span>) menentukan persamaan garis prediksi. <span class="math inline">\(R^2\)</span> menunjukkan seberapa baik model menjelaskan variasi data.</p>
+<p>Pada subbab <a href="korelasi-antarvariabel-nominal.html#bentuk-asosiasi-sepasang-variabel">9.2.3</a> kita sudah membahas dasar dari perbedaan antara korelasi dan kausalitas. Di sana ditekankan bahwa <em>“korelasi belum tentu adalah sebuah kausalitas.”</em> Jadi, apa yang menentukan sebuah hubungan antara dua variabel adalah kausalitas?</p>
+<p>Jawaban dari pertanyaan ini adalah <strong>kondisi prasyarat</strong> yang harus dipenuhi sebuah hubungan agar dapat dikatakan bersifat kausalitas <span class="citation">(<a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>. Ada empat hal dalam kondisi prasyarat tersebut, yaitu:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Plausibilitas Konseptual</strong> (<em>Conceptual Plausibility</em>). Kondisi ini menyatakan bahwa harus ada teori atau dasar konseptual yang mendukung hubungan antara <strong>variabel yang menjadi penyebab</strong> dan <strong>variabel yang menjadi akibat</strong>. Hubungan tersebut harus <strong>masuk akal secara ilmiah</strong> dan sesuai dengan kerangka teori yang relevan.</li>
+<li>
+<strong>Asosiasi Kuat</strong> (<em>Strong Association</em>). Hubungan pengaruh antarvariabel harus menunjukkan korelasi yang cukup kuat dan signifikan secara statistik. Semakin tinggi korelasi, semakin besar kemungkinan bahwa hubungan tersebut bersifat kausal.</li>
+<li>
+<strong>Urutan Waktu</strong> (<em>Time Sequence</em>). <strong>Variabel penyebab harus mendahului variabel akibat</strong> dalam urutan waktu. Artinya, perubahan pada variabel penyebab harus terjadi sebelum perubahan pada variabel akibat.</li>
+<li>
+<strong>Eliminasi Alternatif Penjelasan</strong> (<em>Elimination of Alternative Explanations</em>). Semua faktor pengganggu, atau <strong>variabel antara</strong> (<em>confounding variables</em>), yang dapat menjelaskan hubungan tersebut harus dikendalikan. Hal ini dapat dilakukan dengan menambahkan variabel kontrol dalam model statistik, membuat kelompok yang sebanding, menetapkan batasan konteks penelitian, randomisasi, dan menggunakan instrumen atau prosedur yang konsisten agar hubungan yang diamati benar-benar mencerminkan pengaruh dari variabel penyebab.</li>
+</ol>
+<p>Jadi, untuk menyimpulkan adanya hubungan kausal, kita harus bisa <strong>membuktikan seluruh kondisi prasyarat tersebut terpenuhi</strong>. Pembuktian ini dilakukan dengan <strong>menggabungkan logika teori, bukti statistik, urutan waktu yang jelas, dan pengendalian variabel luar</strong>. Pendekatan ini membantu memastikan bahwa hasil penelitian tidak hanya menunjukkan korelasi, tetapi <strong>benar-benar mencerminkan mekanisme sebab-akibat</strong> yang dapat dipertanggungjawabkan secara ilmiah.</p>
+</div>
+<div id="pemakaian-analisis-kausalitas-dalam-konteks-perencanaan-wilayah-dan-kota" class="section level2" number="12.2">
+<h2>
+<span class="header-section-number">12.2</span> Pemakaian Analisis Kausalitas dalam Konteks Perencanaan Wilayah dan Kota<a class="anchor" aria-label="anchor" href="#pemakaian-analisis-kausalitas-dalam-konteks-perencanaan-wilayah-dan-kota"><i class="fas fa-link"></i></a>
+</h2>
+<p>Analisis kausalitas dapat digunakan dalam berbagai kasus perencanaan wilayah dan kota, di antaranya:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Memahami variabel kunci dalam suatu konteks.</strong> Analisis kausalitas memungkinkan perencana untuk mampu menyimpulkan hubungan suatu variabel dengan variabel lainnya. Hubungan variabel ini akan menunjukkan pola perubahan variabel oleh variabel kunci yang mempengaruhinya.</li>
+<li>
+<strong>Melakukan prediksi</strong>. Analisis kausalitas dapat digunakan untuk memperkirakan nilai suatu variabel berdasarkan nilai variabel-variabel kuncinya sehingga dapat menjadi dasar intervensi ataupun antisipasi terhadap kondisi yang akan datang.</li>
+<li>
+<strong>Melakukan eksperimen</strong>. Analisis asosiasi dapat digunakan untuk melakukan penyelidikan lebih lanjut terhadap suatu variabel dalam sistem yang terkontrol. Hal ini juga dapat dilakukan sebagai dasar berbagai penelitian lanjutan yang dapat memperkaya pengetahuan.</li>
+<li>
+<strong>Melakukan identifikasi variabel pengganti</strong>. Analisis asosiasi dapat digunakan sebagai dasar untuk memilih suatu variabel sebagai ganti dari variabel lain.</li>
+</ol>
+<div id="studi-kasus-pemakaian-analisis-kausalitas-dalam-konteks-pwk" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus Pemakaian Analisis Kausalitas dalam Konteks PWK<a class="anchor" aria-label="anchor" href="#studi-kasus-pemakaian-analisis-kausalitas-dalam-konteks-pwk"><i class="fas fa-link"></i></a>
+</h3>
+<p>Sesuai dengan pembahasan hal-hal yang dapat dilakukan dengan analisis kausalitas dalam bidang PWK, berikut adalah beberapa contoh kasus yang dapat dipecahkan dengan analisis kausalitas:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Memahami variabel kunci dalam suatu konteks</strong>
+<ol style="list-style-type: lower-alpha">
+<li>faktor-faktor yang memengaruhi perilaku masyarakat membuang sampah di tempat sampah</li>
+<li>faktor-faktor yang memengaruhi tingkat partisipasi masyarakat dalam kegiatan musyawarah perencanaan pembangunan (musrenbang)</li>
+<li>variabel kunci dalam fenomena migrasi penduduk di Provinsi Lampung</li>
+</ol>
+</li>
+<li>
+<strong>Melakukan prediksi</strong>
+<ol style="list-style-type: lower-alpha">
+<li>perubahan luas lahan pertanian berdasarkan variabel jumlah penduduk dan PDRB</li>
+<li>nilai investasi daerah berdasarkan variabel inflasi dan jumlah UMKM</li>
+<li>ketinggian muka genangan air laut berdasarkan variabel suhu harian rata-rata dan kecepatan angin</li>
+</ol>
+</li>
+<li>
+<strong>Melakukan eksperimen</strong>
+<ol style="list-style-type: lower-alpha">
+<li>identifikasi pengaruh jenis kelamin penduduk terhadap pemilihan moda transportasi publik</li>
+<li>pengaruh tarif PDAM terhadap tingkat pemakaian air rumah tangga</li>
+<li>pengaruh tingkat pendidikan terhadap ketahanan masyarakat pesisir terhadap perubahan iklim</li>
+</ol>
+</li>
+<li>
+<strong>Melakukan identifikasi variabel pengganti</strong>. Apabila diketahui bahwa masyarakat membutuhkan ruang untuk berkumpul, sementara lahan yang tersedia sangat terbatas, apakah ada alternatif pengganti ketersediaan ruang terbuka hijau (RTH) bagi masyarakat?</li>
+</ol>
+</div>
+</div>
+<div id="mengenal-model" class="section level2" number="12.3">
+<h2>
+<span class="header-section-number">12.3</span> Mengenal Model<a class="anchor" aria-label="anchor" href="#mengenal-model"><i class="fas fa-link"></i></a>
+</h2>
+<p>Model adalah <strong>representasi sederhana dari kenyataan yang kompleks</strong>. Dalam konteks analisis kausalitas,fenomena yang ada di sekitar kita sangat rumit dan terdiri atas banyak sekali variabel yang saling berhubungan, bahkan saling memengaruhi. Agar kita dapat lebih mudah memahami dan menjelaskan suatu fenomena, maka kita mengambil <strong>sebagian</strong> variabel-variabel yang berkaitan tersebut sebagai “perwakilan” (ingat bahwa makna “representasi” = “wakil”) untuk menyederhanakan penjelasan fenomena yang kompleks tersebut. Pembuatan model juga dilakukan agar peneliti dapat menjelaskan fenomena secara lebih sistematis dan terukur.</p>
+<p>Berdasarkan sifatnya, model dapat dibagi menjadi <strong>model konseptual</strong>, <strong>matematis</strong>, dan <strong>statistik</strong></p>
+<ul>
+<li>Model konseptual menggambarkan hubungan logis antarvariabel berdasarkan teori atau konsep yang mendasari penelitian.</li>
+<li>Model matematis menyatakan hubungan tersebut dalam bentuk persamaan matematis.</li>
+<li>Model statistik adalah model matematis yang melibatkan unsur ketidakpastian dan data empiris, misalnya model regresi.</li>
+</ul>
+<p>Salah satu bentuk model statistik yang paling umum digunakan dalam analisis data kuantitatif adalah <strong>model regresi linear</strong>. Model ini digunakan untuk menggambarkan hubungan antara <strong>satu (atau lebih) variabel yang menjadi penyebab</strong> dengan <strong>satu variabel yang menjadi akibat</strong>.</p>
+<div class="figure">
+<span style="display:block;" id="fig:fig-variabel-sebab-akibat"></span>
+<img src="images/variabel-sebab-akibat.png" alt="Variabel sebab, akibat, dan nama-nama lainnya" width="1486"><p class="caption">
+Gambar 12.1: Variabel sebab, akibat, dan nama-nama lainnya
+</p>
+</div>
+<p>Dalam banyak literatur statistik, istilah kedua variabel ini bermacam-macam (Gambar <a href="bab-13-regresi-sederhana.html#fig:fig-variabel-sebab-akibat">12.1</a>). Misalnya, variabel yang menjadi penyebab disebut sebagai <strong>variabel bebas</strong> atau <em>independent variable</em> dalam bahasa Inggris, dan variabel yang menjadi akibat disebut sebagai <strong>variabel terikat</strong> atau <em>dependent variable</em>. Selain itu, variabel bebas juga sering disebut sebagai <strong>variabel prediktor</strong> atau <em>predictor variable</em>, sedangkan variabel terikat juga sering disebut sebagai <strong>variabel respon</strong> atau <em>response variable</em>. Ada juga yang menyebut variabel bebas sebagai <strong>variabel penjelas</strong> (<em>explanatory variable</em>) dan variabel terikat sebagai <strong>variabel hasil</strong> (<em>outcome variable</em>).</p>
+<p>Model regresi linear berfungsi sebagai alat untuk <strong>memodelkan, menganalisis, dan memprediksi hubungan antara variabel-variabel yang diamati</strong>. Model ini juga merupakan alat kita memahami <strong>arah</strong> dan <strong>kekuatan pengaruh</strong> dari variabel independen terhadap variabel dependen, serta menilai sejauh mana model mampu menjelaskan variasi data yang terjadi di lapangan dengan baik.</p>
+</div>
+<div id="model-regresi-linear-sederhana" class="section level2" number="12.4">
+<h2>
+<span class="header-section-number">12.4</span> Model Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#model-regresi-linear-sederhana"><i class="fas fa-link"></i></a>
+</h2>
+<p>Regresi linear sederhana merupakan salah satu bentuk model statistik yang digunakan untuk menjelaskan <strong>hubungan kausal antara dua variabel</strong>, yaitu <strong>variabel independen dan variabel dependen</strong>. Model regresi digunakan untuk <strong>mengetahui sejauh mana perubahan nilai pada variabel independen dapat memengaruhi perubahan nilai variabel Y secara linier</strong>, atau dengan kata lain, apakah ada hubungan sebab-akibat yang bersifat proporsional di antara keduanya.</p>
+<p>Bentuk umum dari persamaan regresi linear sederhana dapat ditulis sebagai:</p>
+<p><span class="math display" id="eq:bentuk-umum-regresi-linear">\[
+Y = a + bX + e
+\tag{12.1}
+\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(Y\)</span> adalah variabel dependen,</li>
+<li>
+<span class="math inline">\(X\)</span> adalah variabel independen,</li>
+<li>
+<span class="math inline">\(a\)</span> adalah angka konstanta atau <em>intercept</em>,</li>
+<li>
+<span class="math inline">\(b\)</span> adalah angka koefisien regresi atau <em>slope</em>,</li>
+<li>
+<span class="math inline">\(e\)</span> adalah galat atau <em>error</em>.</li>
+</ul>
+<div id="memaknai-persamaan-regresi-linear-sederhana" class="section level3" number="12.4.1">
+<h3>
+<span class="header-section-number">12.4.1</span> Memaknai Persamaan Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#memaknai-persamaan-regresi-linear-sederhana"><i class="fas fa-link"></i></a>
+</h3>
+<p>Seperti yang ditunjukkan pada persamaan <a href="bab-13-regresi-sederhana.html#eq:bentuk-umum-regresi-linear">(12.1)</a>, bentuk umum persamaan regresi linear sederhana, yang terdiri atas variabel dependen–yang disepakati untuk dilambangkan dengan <span class="math inline">\(Y\)</span>, variabel independen–yang disepakati untuk dilambangkan dengan <span class="math inline">\(X\)</span>, konstanta, koefisien regresi, dan galat–menjelaskan beberapa hal. Perlu dipahami, istilah “sederhana” mengacu pada penggunaan <strong>satu variabel independen</strong> saja untuk menjelaskan penyebab variabel dependen. Jika ada lebih dari satu variabel independen, maka model yang terbentuk adalah model <strong>regresi linear berganda</strong>, yang akan dibahas pada bab selanjutnya.</p>
+<p>Pertama, <strong>angka koefisien</strong> <span class="math inline">\(b\)</span> menjelaskan besar perubahan nilai <span class="math inline">\(X\)</span> terhadap <span class="math inline">\(Y\)</span>. Jika <span class="math inline">\(X\)</span> berubah <strong>1 satuan</strong>, maka nilai <span class="math inline">\(Y\)</span> akan berubah sebesar <strong><span class="math inline">\(b\)</span> satuan</strong>. Kedua, <strong>nilai konstanta</strong>, <span class="math inline">\(a\)</span>, menjelaskan nilai <span class="math inline">\(Y\)</span> ketika nilai <span class="math inline">\(X\)</span> adalah 0. Artinya, konstanta pada dasarnya adalah <strong>nilai ketika pengaruh dari variabel independen tidak ada</strong> terhadap variabel dependen. Ketiga, <em>error</em> atau galat adalah komponen yang menyebabkan terjadinya keacakan terhadap nilai <span class="math inline">\(Y\)</span> dari nilai prediksi berdasarkan nilai <span class="math inline">\(X\)</span>. Komponen ini tidak pernah diketahui, sehingga jarang ditulis dalam pendefinisian persamaan regresi linear sederhana.</p>
+<div class="rmdnote">
+<p>Di sini, kami menekankan kembali peran persamaan regresi sebagai <strong>model</strong>, yakni “perwakilan” terhadap penjelasan suatu fenomena yang kompleks. Disebut perwakilan karena di sini kita menyederhanakan hubungan kausal antara suatu variabel, dalam hal ini <span class="math inline">\(Y\)</span>, dengan satu variabel saja, yaitu <span class="math inline">\(X\)</span>. Padahal, dalam kenyataannya, nilai <span class="math inline">\(Y\)</span> dipengaruhi oleh banyak sekali variabel.</p>
+</div>
+<p>Mari simak studi kasus berikut untuk lebih memahami bagaimana memaknai persamaan regresi linear sederhana.</p>
+</div>
+<div id="studi-kasus-memaknai-persamaan-regresi-linear-untuk-jarak-taman-dan-kualitas-udara" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Memaknai Persamaan Regresi Linear untuk Jarak Taman dan Kualitas Udara<a class="anchor" aria-label="anchor" href="#studi-kasus-memaknai-persamaan-regresi-linear-untuk-jarak-taman-dan-kualitas-udara"><i class="fas fa-link"></i></a>
+</h3>
+<p>Seorang perencana kota ingin memahami hubungan antara jarak suatu lokasi ke taman kota terdekat (<span class="math inline">\(X\)</span>, dalam km) dengan Indeks Kualitas Udara (<span class="math inline">\(Y\)</span>) di lokasi tersebut. Berdasarkan data dari 5 lokasi pengamatan yang sudah tersedia, persamaan regresi linear sederhana yang diperoleh adalah sebagai berikut.</p>
+<p><span class="math display">\[\hat{Y} = 85,94374 + (-10,23237)X\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(\hat{Y}\)</span> adalah prediksi Indeks Kualitas Udara</li>
+<li>
+<span class="math inline">\(X\)</span> adalah jarak ke taman kota (dalam km)</li>
+</ul>
+<p>Dari persamaan tersebut, kita dapat menganalisis bahwa:</p>
+<ul>
+<li>
+<strong>Koefisien regresi</strong> sebesar <span class="math inline">\(-10,23237\)</span> menunjukkan bahwa setiap penambahan jarak ke taman kota sejauh 1 km dikaitkan dengan <strong>penurunan Indeks Kualitas Udara sebesar 10,23237 poin</strong>. Tanda negatif pada koefisien menunjukkan bahwa hubungan antara jarak dan kualitas udara bersifat berlawanan arah—semakin jauh dari taman, semakin rendah kualitas udara.</li>
+<li>
+<strong>Konstanta</strong> sebesar <span class="math inline">\(85,94374\)</span> menunjukkan bahwa prediksi Indeks Kualitas Udara ketika sebuah lokasi tepat berada di taman kota (jarak = 0 km) adalah sebesar <span class="math inline">\(85,94374\)</span> poin.</li>
+</ul>
+</div>
+<p>Apa yang dimaksud dengan <em>linear</em>? Istilah <em>linear</em> mengacu pada <strong>hubungan yang konstan</strong> antara variabel independen dan variabel dependen karena sifat matematis dari persamaan regresi ini. Artinya, jika nilai variabel independen meningkat sebesar 1 satuan, maka nilai variabel dependen akan meningkat sebesar <span class="math inline">\(b\)</span> satuan, dan begitu seterusnya. Ini akan menghasilkan <strong>garis lurus</strong> ketika persamaan regresi digambarkan dalam diagram pencar. Ini berbeda dengan hubungan non-linear seperti contohnya hubungan kuadratik atau eksponensial, yang merupakan <strong>pola dari sebuah hubungan</strong> (pelajari kembali pola hubungan pada subbab <a href="korelasi-antarvariabel-metrik.html#pola-hubungan-data-metrik">11.3</a>).</p>
+<div id="studi-kasus-memaknai-bentuk-linear-pada-persamaan-regresi-untuk-jarak-taman-dan-kualitas-udara" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Memaknai Bentuk Linear pada Persamaan Regresi untuk Jarak Taman dan Kualitas Udara<a class="anchor" aria-label="anchor" href="#studi-kasus-memaknai-bentuk-linear-pada-persamaan-regresi-untuk-jarak-taman-dan-kualitas-udara"><i class="fas fa-link"></i></a>
+</h3>
+<p>Berdasarkan persamaan regresi linear sederhana pada studi kasus sebelumnya, kita dapat menggambarkan garis regresi pada diagram pencar dengan cara berikut.</p>
+<p>Pertama, kita buat tabel yang menyandingkan nilai jarak ke taman (<span class="math inline">\(X\)</span>) dengan nilai Indeks Kualitas Udara yang diprediksi (<span class="math inline">\(\hat{Y}\)</span>) berdasarkan persamaan regresi yang diperoleh.</p>
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-bahan-regresi">Tabel 12.1: </span>Nilai Prediksi Indeks Kualitas Udara (<span class="math inline">\(\hat{Y}\)</span>) Berdasarkan Persamaan Regresi
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Jarak ke Taman (<span class="math inline">\(X\)</span>, km)
+</th>
+<th style="text-align:center;">
+IKU Prediksi (<span class="math inline">\(\hat{Y} = 85,94 - 10,23X\)</span>)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+9,2
+</td>
+<td style="text-align:center;">
+-8,19
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9,4
+</td>
+<td style="text-align:center;">
+-10,24
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3,2
+</td>
+<td style="text-align:center;">
+53,20
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8,4
+</td>
+<td style="text-align:center;">
+-0,01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6,6
+</td>
+<td style="text-align:center;">
+18,41
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Kedua, kita petakan nilai-nilai pada Tabel <a href="bab-13-regresi-sederhana.html#tab:tbl-bahan-regresi">12.1</a> ke dalam diagram pencar berikut.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-garis-regresi"></span>
+<img src="figures/fig-garis-regresi-1.png" alt="Garis Regresi Linear Sederhana untuk Jarak Taman Kota dan Indeks Kualitas Udara" width="70%"><p class="caption">
+Gambar 12.2: Garis Regresi Linear Sederhana untuk Jarak Taman Kota dan Indeks Kualitas Udara
+</p>
+</div>
+<p>Titik-titik hasil prediksi tersebut akan membentuk garis lurus ketika dihubungkan satu sama lain. Inilah yang dimaksud dengan sifat <em>linear</em> dari persamaan regresi linear sederhana—nilai <span class="math inline">\(\hat{Y}\)</span> berubah secara <strong>konstan</strong> seiring perubahan nilai <span class="math inline">\(X\)</span>, menghasilkan pola garis lurus.</p>
+</div>
+<div id="memperoleh-persamaan-regresi-linear-sederhana" class="section level3" number="12.4.2">
+<h3>
+<span class="header-section-number">12.4.2</span> Memperoleh Persamaan Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#memperoleh-persamaan-regresi-linear-sederhana"><i class="fas fa-link"></i></a>
+</h3>
+<p>Untuk memperoleh persamaan regresi linear, kita memerlukan nilai dari konstanta (<span class="math inline">\(a\)</span>) dan koefisien regresi (<span class="math inline">\(b\)</span>). Kedua nilai tersebut diperoleh dengan <strong>mengolah data yang kita kumpulkan sebelumnya</strong>. Data yang kita peroleh harus memenuhi asumsi-asumsi dasar sebagai berikut:</p>
+<ul>
+<li>
+<strong>Tingkat pengukuran variabel metrik untuk kedua variabel</strong>. Baik variabel independen maupun variabel dependen kita harus berada pada tingkat pengukuran interval atau rasio. Hal ini disebabkan karena penentuan persamaan regresi linear melibatkan operasi matematis seperti penjumlahan, pengurangan, perkalian, dan pembagian.</li>
+<li>
+<strong>Hubungan linear antara variabel independen dan variabel dependen</strong>. Maksud dari hubungan linear adalah jika nilai variabel independen meningkat sebesar 1 satuan, maka nilai variabel dependen akan meningkat sebesar <span class="math inline">\(b\)</span> satuan, dan begitu seterusnya.</li>
+<li>
+<strong>Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain</strong>. Komponen galat yang terdistribusi acak membuat titik-titik data berada di atas dan di bawah garis regresi secara merata, tidak membentuk pola tertentu.</li>
+</ul>
+<p>Setelah terpenuhinya asumsi-asumsi tersebut, kita bisa menghitung nilai <span class="math inline">\(a\)</span> dan <span class="math inline">\(b\)</span> untuk menghasilkan persamaan regresi linear kita. Kita perlu memulai dari nilai <span class="math inline">\(b\)</span> terlebih dahulu, nilai <span class="math inline">\(a\)</span> baru bisa kita dapatkan setelah kita memperoleh nilai <span class="math inline">\(b\)</span> tersebut. Berikut adalah rumus untuk memperoleh nilai <span class="math inline">\(b\)</span>.</p>
+<p><span class="math display" id="eq:rumus-koefisien-regresi-linear">\[
+b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \bar{X})^2}
+\tag{12.2}
+\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(X_i\)</span> adalah nilai variabel independen untuk objek ke <span class="math inline">\(i\)</span>
+</li>
+<li>
+<span class="math inline">\(Y_i\)</span> adalah nilai variabel dependen untuk objek ke <span class="math inline">\(i\)</span>
+</li>
+<li>
+<span class="math inline">\(\bar{X}\)</span> adalah rata-rata nilai variabel independen</li>
+<li>
+<span class="math inline">\(\bar{Y}\)</span> adalah rata-rata nilai variabel dependen</li>
+<li>
+<span class="math inline">\(n\)</span> adalah jumlah objek</li>
+</ul>
+<p>Setelah kita memperoleh nilai <span class="math inline">\(b\)</span> atau koefisiennya, kita bisa menghitung konstanta <span class="math inline">\(a\)</span> dengan rumus berikut.</p>
+<p><span class="math display" id="eq:rumus-konstanta-regresi-linear">\[
+a = \bar{Y} - b\bar{X}
+\tag{12.3}
+\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(\bar{X}\)</span> adalah rata-rata nilai variabel independen</li>
+<li>
+<span class="math inline">\(\bar{Y}\)</span> adalah rata-rata nilai variabel dependen</li>
+<li>
+<span class="math inline">\(b\)</span> adalah koefisien regresi hasil perhitungan sebelumnya</li>
+</ul>
+<p>Mari kita pelajari studi kasus berikut untuk lebih memahami bagaimana memperoleh persamaan regresi linear sederhana.</p>
+</div>
+<div id="studi-kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk-jarak-taman-dan-kualitas-udara" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara<a class="anchor" aria-label="anchor" href="#studi-kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk-jarak-taman-dan-kualitas-udara"><i class="fas fa-link"></i></a>
+</h3>
+<p>Sebuah survei dilakukan terhadap 30 lokasi di sebuah kota untuk mengetahui pengaruh jarak ke taman kota terdekat (<span class="math inline">\(X\)</span>, dalam km) terhadap Indeks Kualitas Udara (<span class="math inline">\(Y\)</span>). Data hasil survei disajikan pada tabel berikut.</p>
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-data-jarak-iku">Tabel 12.2: </span>Data Jarak ke Taman Kota dan Indeks Kualitas Udara 30 Lokasi
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+No. 
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(X\)</span> (km)
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(Y\)</span> (IKU)
+</th>
+<th style="text-align:center;">
+No. 
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(X\)</span> (km)
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(Y\)</span> (IKU)
+</th>
+<th style="text-align:center;">
+No. 
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(X\)</span> (km)
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(Y\)</span> (IKU)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+9,2
+</td>
+<td style="text-align:center;">
+34
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+4,8
+</td>
+<td style="text-align:center;">
+56
+</td>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+9,1
+</td>
+<td style="text-align:center;">
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+9,4
+</td>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+7,3
+</td>
+<td style="text-align:center;">
+41
+</td>
+<td style="text-align:center;">
+22
+</td>
+<td style="text-align:center;">
+1,8
+</td>
+<td style="text-align:center;">
+74
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3,2
+</td>
+<td style="text-align:center;">
+53
+</td>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+9,4
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+23
+</td>
+<td style="text-align:center;">
+9,9
+</td>
+<td style="text-align:center;">
+21
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+8,4
+</td>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+2,9
+</td>
+<td style="text-align:center;">
+74
+</td>
+<td style="text-align:center;">
+24
+</td>
+<td style="text-align:center;">
+9,5
+</td>
+<td style="text-align:center;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+6,6
+</td>
+<td style="text-align:center;">
+55
+</td>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+4,9
+</td>
+<td style="text-align:center;">
+54
+</td>
+<td style="text-align:center;">
+25
+</td>
+<td style="text-align:center;">
+1,3
+</td>
+<td style="text-align:center;">
+82
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+5,4
+</td>
+<td style="text-align:center;">
+53
+</td>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+9,4
+</td>
+<td style="text-align:center;">
+32
+</td>
+<td style="text-align:center;">
+26
+</td>
+<td style="text-align:center;">
+5,4
+</td>
+<td style="text-align:center;">
+56
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+7,5
+</td>
+<td style="text-align:center;">
+31
+</td>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+9,8
+</td>
+<td style="text-align:center;">
+31
+</td>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+4,2
+</td>
+<td style="text-align:center;">
+61
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+1,8
+</td>
+<td style="text-align:center;">
+77
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+1,6
+</td>
+<td style="text-align:center;">
+86
+</td>
+<td style="text-align:center;">
+28
+</td>
+<td style="text-align:center;">
+9,1
+</td>
+<td style="text-align:center;">
+35
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+6,7
+</td>
+<td style="text-align:center;">
+54
+</td>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+5,0
+</td>
+<td style="text-align:center;">
+54
+</td>
+<td style="text-align:center;">
+29
+</td>
+<td style="text-align:center;">
+4,7
+</td>
+<td style="text-align:center;">
+55
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+7,2
+</td>
+<td style="text-align:center;">
+55
+</td>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+5,8
+</td>
+<td style="text-align:center;">
+55
+</td>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+8,4
+</td>
+<td style="text-align:center;">
+27
+</td>
+</tr>
+</tbody>
+</table></div>
+<p><span class="tajuksaya">Langkah 1: Periksa Diagram Pencar</span></p>
+<p>Sebelum menghitung persamaan regresi, kita perlu memastikan bahwa data memenuhi asumsi-asumsi yang diperlukan. Langkah pertama adalah menyajikan <strong>diagram pencar</strong> (<em>scatterplot</em>) dari data di atas.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-scatter-jarak-iku"></span>
+<img src="figures/fig-scatter-jarak-iku-1.png" alt="Diagram Pencar Hubungan Jarak ke Taman Kota dan Indeks Kualitas Udara" width="70%"><p class="caption">
+Gambar 12.3: Diagram Pencar Hubungan Jarak ke Taman Kota dan Indeks Kualitas Udara
+</p>
+</div>
+<p>Berdasarkan diagram pencar pada Gambar <a href="bab-13-regresi-sederhana.html#fig:fig-scatter-jarak-iku">12.3</a>, kita dapat mengevaluasi keterpenuhan tiga asumsi dasar regresi linear berikut.</p>
+<ul>
+<li>
+<strong>Tingkat pengukuran variabel metrik untuk kedua variabel.</strong> Variabel jarak ke taman (<span class="math inline">\(X\)</span>) dan Indeks Kualitas Udara (<span class="math inline">\(Y\)</span>) keduanya berada pada tingkat pengukuran rasio—keduanya bersifat numerik dan dapat dikenai operasi matematis secara penuh. Asumsi ini <strong>terpenuhi</strong>.</li>
+<li>
+<strong>Hubungan linear antara variabel independen dan variabel dependen.</strong> Dari diagram pencar, terlihat bahwa titik-titik data tersebar mengikuti pola yang cenderung menurun dari kiri ke kanan, mengindikasikan adanya hubungan yang bersifat linear antara jarak ke taman dan kualitas udara. Asumsi ini <strong>terpenuhi</strong>.</li>
+<li>
+<strong>Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain.</strong> Titik-titik data tampak tersebar secara acak di sekitar pola linear tersebut—sebagian berada di atas dan sebagian berada di bawah garis kecenderungan—tanpa membentuk pola khusus seperti kipas atau lengkungan. Asumsi ini <strong>terpenuhi</strong>.</li>
+</ul>
+<p><span class="tajuksaya">Langkah 2: Hitung Rata-Rata <span class="math inline">\(X\)</span> dan <span class="math inline">\(Y\)</span></span></p>
+<p>Sebelum mengisi tabel pembantu, kita hitung terlebih dahulu rata-rata dari variabel jarak (<span class="math inline">\(\bar{X}\)</span>) dan Indeks Kualitas Udara (<span class="math inline">\(\bar{Y}\)</span>).</p>
+<p><span class="math display">\[\bar{X} = \frac{\sum_{i=1}^{30} X_i}{30} = 6,323333\]</span></p>
+<p><span class="math display">\[\bar{Y} = \frac{\sum_{i=1}^{30} Y_i}{30} = 46,90\]</span></p>
+<p><span class="tajuksaya">Langkah 3: Susun Tabel Pembantu</span></p>
+<p>Untuk mempermudah penghitungan nilai <span class="math inline">\(b\)</span> menggunakan Persamaan <a href="bab-13-regresi-sederhana.html#eq:rumus-koefisien-regresi-linear">(12.2)</a>, kita susun tabel pembantu berikut. Tabel ini memuat selisih setiap nilai <span class="math inline">\(X_i\)</span> dan <span class="math inline">\(Y_i\)</span> dari rata-ratanya masing-masing, hasil perkalian selisih tersebut per objek, serta kuadrat selisih nilai <span class="math inline">\(X_i\)</span> dari rata-ratanya.</p>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-pembantu-regresi">Tabel 12.3: </span>Tabel Pembantu Perhitungan Koefisien Regresi <span class="math inline">\(b\)</span>
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+No. 
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(X_i\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(Y_i\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(X_i - \bar{X}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(Y_i - \bar{Y}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\((X_i-\bar{X})(Y_i-\bar{Y})\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\((X_i-\bar{X})^2\)</span>
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+9,2
+</td>
+<td style="text-align:center;">
+34
+</td>
+<td style="text-align:center;">
+2,8766667
+</td>
+<td style="text-align:center;">
+-12,9
+</td>
+<td style="text-align:center;">
+-37,109000
+</td>
+<td style="text-align:center;">
+8,2752111
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+9,4
+</td>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+3,0766667
+</td>
+<td style="text-align:center;">
+-19,9
+</td>
+<td style="text-align:center;">
+-61,225667
+</td>
+<td style="text-align:center;">
+9,4658778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3,2
+</td>
+<td style="text-align:center;">
+53
+</td>
+<td style="text-align:center;">
+-3,1233333
+</td>
+<td style="text-align:center;">
+6,1
+</td>
+<td style="text-align:center;">
+-19,052333
+</td>
+<td style="text-align:center;">
+9,7552111
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+8,4
+</td>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+2,0766667
+</td>
+<td style="text-align:center;">
+-25,9
+</td>
+<td style="text-align:center;">
+-53,785667
+</td>
+<td style="text-align:center;">
+4,3125444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+6,6
+</td>
+<td style="text-align:center;">
+55
+</td>
+<td style="text-align:center;">
+0,2766667
+</td>
+<td style="text-align:center;">
+8,1
+</td>
+<td style="text-align:center;">
+2,241000
+</td>
+<td style="text-align:center;">
+0,0765444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+5,4
+</td>
+<td style="text-align:center;">
+53
+</td>
+<td style="text-align:center;">
+-0,9233333
+</td>
+<td style="text-align:center;">
+6,1
+</td>
+<td style="text-align:center;">
+-5,632333
+</td>
+<td style="text-align:center;">
+0,8525444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+7,5
+</td>
+<td style="text-align:center;">
+31
+</td>
+<td style="text-align:center;">
+1,1766667
+</td>
+<td style="text-align:center;">
+-15,9
+</td>
+<td style="text-align:center;">
+-18,709000
+</td>
+<td style="text-align:center;">
+1,3845444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+1,8
+</td>
+<td style="text-align:center;">
+77
+</td>
+<td style="text-align:center;">
+-4,5233333
+</td>
+<td style="text-align:center;">
+30,1
+</td>
+<td style="text-align:center;">
+-136,152333
+</td>
+<td style="text-align:center;">
+20,4605444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+6,7
+</td>
+<td style="text-align:center;">
+54
+</td>
+<td style="text-align:center;">
+0,3766667
+</td>
+<td style="text-align:center;">
+7,1
+</td>
+<td style="text-align:center;">
+2,674333
+</td>
+<td style="text-align:center;">
+0,1418778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+7,2
+</td>
+<td style="text-align:center;">
+55
+</td>
+<td style="text-align:center;">
+0,8766667
+</td>
+<td style="text-align:center;">
+8,1
+</td>
+<td style="text-align:center;">
+7,101000
+</td>
+<td style="text-align:center;">
+0,7685444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+4,8
+</td>
+<td style="text-align:center;">
+56
+</td>
+<td style="text-align:center;">
+-1,5233333
+</td>
+<td style="text-align:center;">
+9,1
+</td>
+<td style="text-align:center;">
+-13,862333
+</td>
+<td style="text-align:center;">
+2,3205444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+7,3
+</td>
+<td style="text-align:center;">
+41
+</td>
+<td style="text-align:center;">
+0,9766667
+</td>
+<td style="text-align:center;">
+-5,9
+</td>
+<td style="text-align:center;">
+-5,762333
+</td>
+<td style="text-align:center;">
+0,9538778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+9,4
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+3,0766667
+</td>
+<td style="text-align:center;">
+-28,9
+</td>
+<td style="text-align:center;">
+-88,915667
+</td>
+<td style="text-align:center;">
+9,4658778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+2,9
+</td>
+<td style="text-align:center;">
+74
+</td>
+<td style="text-align:center;">
+-3,4233333
+</td>
+<td style="text-align:center;">
+27,1
+</td>
+<td style="text-align:center;">
+-92,772333
+</td>
+<td style="text-align:center;">
+11,7192111
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+4,9
+</td>
+<td style="text-align:center;">
+54
+</td>
+<td style="text-align:center;">
+-1,4233333
+</td>
+<td style="text-align:center;">
+7,1
+</td>
+<td style="text-align:center;">
+-10,105667
+</td>
+<td style="text-align:center;">
+2,0258778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+9,4
+</td>
+<td style="text-align:center;">
+32
+</td>
+<td style="text-align:center;">
+3,0766667
+</td>
+<td style="text-align:center;">
+-14,9
+</td>
+<td style="text-align:center;">
+-45,842333
+</td>
+<td style="text-align:center;">
+9,4658778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+9,8
+</td>
+<td style="text-align:center;">
+31
+</td>
+<td style="text-align:center;">
+3,4766667
+</td>
+<td style="text-align:center;">
+-15,9
+</td>
+<td style="text-align:center;">
+-55,279000
+</td>
+<td style="text-align:center;">
+12,0872111
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+1,6
+</td>
+<td style="text-align:center;">
+86
+</td>
+<td style="text-align:center;">
+-4,7233333
+</td>
+<td style="text-align:center;">
+39,1
+</td>
+<td style="text-align:center;">
+-184,682333
+</td>
+<td style="text-align:center;">
+22,3098778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+5,0
+</td>
+<td style="text-align:center;">
+54
+</td>
+<td style="text-align:center;">
+-1,3233333
+</td>
+<td style="text-align:center;">
+7,1
+</td>
+<td style="text-align:center;">
+-9,395667
+</td>
+<td style="text-align:center;">
+1,7512111
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+20
+</td>
+<td style="text-align:center;">
+5,8
+</td>
+<td style="text-align:center;">
+55
+</td>
+<td style="text-align:center;">
+-0,5233333
+</td>
+<td style="text-align:center;">
+8,1
+</td>
+<td style="text-align:center;">
+-4,239000
+</td>
+<td style="text-align:center;">
+0,2738778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+9,1
+</td>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+2,7766667
+</td>
+<td style="text-align:center;">
+-25,9
+</td>
+<td style="text-align:center;">
+-71,915667
+</td>
+<td style="text-align:center;">
+7,7098778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+22
+</td>
+<td style="text-align:center;">
+1,8
+</td>
+<td style="text-align:center;">
+74
+</td>
+<td style="text-align:center;">
+-4,5233333
+</td>
+<td style="text-align:center;">
+27,1
+</td>
+<td style="text-align:center;">
+-122,582333
+</td>
+<td style="text-align:center;">
+20,4605444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+23
+</td>
+<td style="text-align:center;">
+9,9
+</td>
+<td style="text-align:center;">
+21
+</td>
+<td style="text-align:center;">
+3,5766667
+</td>
+<td style="text-align:center;">
+-25,9
+</td>
+<td style="text-align:center;">
+-92,635667
+</td>
+<td style="text-align:center;">
+12,7925444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+24
+</td>
+<td style="text-align:center;">
+9,5
+</td>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+3,1766667
+</td>
+<td style="text-align:center;">
+-32,9
+</td>
+<td style="text-align:center;">
+-104,512333
+</td>
+<td style="text-align:center;">
+10,0912111
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+25
+</td>
+<td style="text-align:center;">
+1,3
+</td>
+<td style="text-align:center;">
+82
+</td>
+<td style="text-align:center;">
+-5,0233333
+</td>
+<td style="text-align:center;">
+35,1
+</td>
+<td style="text-align:center;">
+-176,319000
+</td>
+<td style="text-align:center;">
+25,2338778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+26
+</td>
+<td style="text-align:center;">
+5,4
+</td>
+<td style="text-align:center;">
+56
+</td>
+<td style="text-align:center;">
+-0,9233333
+</td>
+<td style="text-align:center;">
+9,1
+</td>
+<td style="text-align:center;">
+-8,402333
+</td>
+<td style="text-align:center;">
+0,8525444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+4,2
+</td>
+<td style="text-align:center;">
+61
+</td>
+<td style="text-align:center;">
+-2,1233333
+</td>
+<td style="text-align:center;">
+14,1
+</td>
+<td style="text-align:center;">
+-29,939000
+</td>
+<td style="text-align:center;">
+4,5085444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+28
+</td>
+<td style="text-align:center;">
+9,1
+</td>
+<td style="text-align:center;">
+35
+</td>
+<td style="text-align:center;">
+2,7766667
+</td>
+<td style="text-align:center;">
+-11,9
+</td>
+<td style="text-align:center;">
+-33,042333
+</td>
+<td style="text-align:center;">
+7,7098778
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+29
+</td>
+<td style="text-align:center;">
+4,7
+</td>
+<td style="text-align:center;">
+55
+</td>
+<td style="text-align:center;">
+-1,6233333
+</td>
+<td style="text-align:center;">
+8,1
+</td>
+<td style="text-align:center;">
+-13,149000
+</td>
+<td style="text-align:center;">
+2,6352111
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+8,4
+</td>
+<td style="text-align:center;">
+27
+</td>
+<td style="text-align:center;">
+2,0766667
+</td>
+<td style="text-align:center;">
+-19,9
+</td>
+<td style="text-align:center;">
+-41,325667
+</td>
+<td style="text-align:center;">
+4,3125444
+</td>
+</tr>
+<tr>
+<td style="text-align:center;font-weight: bold;">
+NA
+</td>
+<td style="text-align:center;font-weight: bold;">
+NA
+</td>
+<td style="text-align:center;font-weight: bold;">
+NA
+</td>
+<td style="text-align:center;font-weight: bold;">
+NA
+</td>
+<td style="text-align:center;font-weight: bold;">
+NA
+</td>
+<td style="text-align:center;font-weight: bold;">
+-1.524,330000
+</td>
+<td style="text-align:center;font-weight: bold;">
+224,1736667
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><span class="tajuksaya">Langkah 4: Hitung Nilai <span class="math inline">\(b\)</span></span></p>
+<p>Dengan menggunakan hasil penjumlahan dari tabel pembantu di atas, kita dapat menghitung nilai koefisien regresi <span class="math inline">\(b\)</span> menggunakan Persamaan <a href="bab-13-regresi-sederhana.html#eq:rumus-koefisien-regresi-linear">(12.2)</a>.</p>
+<p><span class="math display" id="eq:hitung-b-kasus">\[\begin{equation}
+\begin{split}
+b &amp;= \frac{\sum_{i=1}^{n}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^{n}(X_i - \bar{X})^2} \\
+  &amp;= \frac{-1.524,33}{224,1737} \\
+  &amp;= -6,799773
+\end{split}
+\tag{12.4}
+\end{equation}\]</span></p>
+<p><span class="tajuksaya">Langkah 5: Hitung Nilai <span class="math inline">\(a\)</span></span></p>
+<p>Setelah memperoleh nilai <span class="math inline">\(b\)</span>, kita gunakan Persamaan <a href="bab-13-regresi-sederhana.html#eq:rumus-konstanta-regresi-linear">(12.3)</a> untuk menghitung konstanta <span class="math inline">\(a\)</span>.</p>
+<p><span class="math display" id="eq:hitung-a-kasus">\[\begin{equation}
+\begin{split}
+a &amp;= \bar{Y} - b\bar{X} \\
+  &amp;= 46,90 - (-6,799773) \times 6,323333 \\
+  &amp;= 89,89723
+\end{split}
+\tag{12.5}
+\end{equation}\]</span></p>
+<p><span class="tajuksaya">Persamaan Regresi yang Terbentuk</span></p>
+<p>Dari hasil perhitungan di atas, diperoleh nilai <span class="math inline">\(b \approx -6,8\)</span> dan <span class="math inline">\(a \approx 89,9\)</span>. Dengan demikian, persamaan regresi linear sederhana yang menjelaskan pengaruh jarak ke taman kota terhadap Indeks Kualitas Udara adalah:</p>
+<p><span class="math display">\[\hat{Y} = 89,9 + (-6,8)X\]</span></p>
+<p>Persamaan ini menyatakan bahwa setiap penambahan jarak ke taman kota sejauh 1 km dikaitkan dengan <strong>penurunan IKU sebesar 6,8 poin</strong>. Konstanta sebesar 89,9 menunjukkan bahwa prediksi IKU ketika suatu lokasi berada tepat di taman kota (jarak = 0 km) adalah sebesar 89,9 poin.</p>
+<p>Jika kita gabungkan dengan diagram pencar dataset kita, hasilnya adalah sebagai berikut.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:scatter-plot-with-regression-line"></span>
+<img src="figures/scatter-plot-with-regression-line-1.png" alt="Diagram Pencar dengan Garis Regresi Linear untuk Jarak Taman Kota dan IKU" width="70%"><p class="caption">
+Gambar 12.4: Diagram Pencar dengan Garis Regresi Linear untuk Jarak Taman Kota dan IKU
+</p>
+</div>
+<p><span class="tajuksaya">Pemanfaatan Persamaan Regresi Linear</span></p>
+<p>Dengan memperoleh persamaan regresi linear sederhana, kita dapat menggunakannya untuk memprediksi nilai variabel dependen berdasarkan nilai variabel independen. Misalnya, jika kita ingin memprediksi IKU suatu lokasi yang berjarak 8 km dari taman kota, kita cukup substitusikan <span class="math inline">\(X = 8\)</span> ke dalam persamaan regresi yang diperoleh. Hasilnya adalah $ = 89,9 + (-6,8) = 35,5 poin IKU.</p>
+</div>
+<div class="rmdnote">
+<p>Pada studi kasus sebelumnya, terdapat dua jenis notasi untuk <span class="math inline">\(Y\)</span> (selain <span class="math inline">\(\bar{Y}\)</span>) yaitu <span class="math inline">\(Y\)</span> dan <span class="math inline">\(\hat{Y}\)</span>. Notasi <span class="math inline">\(\hat{Y}\)</span> dibaca “Y-topi” atau <em>“y-hat”</em> melambangkan nilai variabel dependen yang dihasilkan oleh <strong>prediksi model</strong>. Ini dimaksudkan untuk membedakannya dengan <span class="math inline">\(Y\)</span> yang merupakan nilai variabel dependen pada data hasil pengumpulan (empiris).</p>
+</div>
+</div>
+<div id="kualitas-model-regresi-linear-sederhana" class="section level2" number="12.5">
+<h2>
+<span class="header-section-number">12.5</span> Kualitas Model Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#kualitas-model-regresi-linear-sederhana"><i class="fas fa-link"></i></a>
+</h2>
+<p>Sebagaimana dijelaskan sebelumnya, model regresi merupakan hasil estimasi dari data sampel. Artinya, setiap model regresi yang diperoleh dari data sampel memiliki <strong>indikator-indikator untuk menilai kualitas model tersebut</strong>. Indikator-indikator tersebut antara lain adalah sebagai berikut.</p>
+<div id="estimasi-standar-error-standard-error-estimate" class="section level3" number="12.5.1">
+<h3>
+<span class="header-section-number">12.5.1</span> Estimasi Standar <em>Error</em> (<em>Standard Error Estimate</em>)<a class="anchor" aria-label="anchor" href="#estimasi-standar-error-standard-error-estimate"><i class="fas fa-link"></i></a>
+</h3>
+<p>Estimasi standar <em>error</em> adalah <strong>ukuran akurasi prediksi model</strong> <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Ukuran ini merupakan standardisasi selisih antara nilai <span class="math inline">\(Y\)</span> dari data empiris dengan nilai <span class="math inline">\(\hat{Y}\)</span> dari model regresi (komponen <em>error</em> atau galat itu sendiri). Secara matematis, estimasi standar <em>error</em> dirumuskan sebagai berikut.</p>
+<p><span class="math display" id="eq:rumus-standar-error-estimation">\[
+\begin{equation}
+s_{y \cdot x} = \sqrt{\frac{\sum_{i=1}^{n}(Y_i - \hat{Y}_i)^2}{n-2}}
+\tag{12.6}
+\end{equation}
+\]</span></p>
+<p>dengan</p>
+<ul>
+<li>
+<span class="math inline">\(s_{y \cdot x}\)</span> adalah estimasi standar <em>error</em>
+</li>
+<li>
+<span class="math inline">\(Y_i\)</span> adalah nilai variabel dependen pada data empiris</li>
+<li>
+<span class="math inline">\(\hat{Y}_i\)</span> adalah nilai variabel dependen dari model regresi</li>
+<li>
+<span class="math inline">\(n\)</span> adalah jumlah objek</li>
+</ul>
+<p>Semakin kecil nilai estimasi standar <em>error</em> mendekati nol, maka semakin presisi model regresi tersebut dalam memprediksi nilai variabel dependen. Nilai estimasi standar <em>error</em> yang baik pun adalah yang <strong>lebih kecil dibanding nilai simpangan baku variabel <span class="math inline">\(Y\)</span></strong>. Nilai estimasi standar <em>error</em> memiliki satuan yang sama dengan <strong>variabel dependennya</strong>.</p>
+</div>
+<div id="studi-kasus-estimasi-standar-error" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Estimasi Standar <em>Error</em><a class="anchor" aria-label="anchor" href="#studi-kasus-estimasi-standar-error"><i class="fas fa-link"></i></a>
+</h3>
+<p>Melanjutkan kasus sebelumnya, kita hitung estimasi standar <em>error</em> untuk model regresi jarak ke taman kota dan Indeks Kualitas Udara menggunakan Persamaan <a href="bab-13-regresi-sederhana.html#eq:rumus-standar-error-estimation">(12.6)</a>.</p>
+<p><span class="math display">\[s_{y \cdot x} = \sqrt{\frac{\sum_{i=1}^{30}(Y_i - \hat{Y}_i)^2}{30 - 2}} = 7,11036\]</span></p>
+<p>Simpangan baku variabel <span class="math inline">\(Y\)</span> (IKU) dari data kita adalah <span class="math inline">\(s_Y = 20,15517\)</span>. Karena estimasi standar <em>error</em> sebesar <span class="math inline">\(7,11036\)</span> <strong>lebih kecil dari simpangan baku <span class="math inline">\(Y\)</span></strong>, maka model regresi ini dapat dinyatakan cukup presisi—prediksi model lebih “ketat” dibandingkan sekadar menggunakan rata-rata <span class="math inline">\(Y\)</span> sebagai patokan. Nilai ini memiliki satuan yang sama dengan variabel dependen, yaitu <strong>poin IKU</strong>.</p>
+</div>
+<div id="koefisien-determinasi-r2" class="section level3" number="12.5.2">
+<h3>
+<span class="header-section-number">12.5.2</span> Koefisien Determinasi (<span class="math inline">\(R^2\)</span>)<a class="anchor" aria-label="anchor" href="#koefisien-determinasi-r2"><i class="fas fa-link"></i></a>
+</h3>
+<p>Koefisien determinasi (<em>coefficient of determination</em>) yang dinotasikan dengan <span class="math inline">\(R^2\)</span> (dibaca “r-kuadrat”) adalah proporsi variasi pada variabel dependen yang dapat dijelaskan oleh variabel independen. Dengan demikian, ukuran ini dapat disebut juga <strong>ukuran kekuatan hubungan</strong>. Secara matematis, koefisien determinasi dirumuskan sebagai berikut.</p>
+<p><span class="math display" id="eq:rumus-r-square">\[
+\begin{equation}
+R^2 = \frac{SS_{reg}}{SS_{tot}} = \frac{\sum{(\hat{Y}_i - \bar{Y})^2}}{\sum{(Y_i - \bar{Y})^2}}
+\tag{12.7}
+\end{equation}
+\]</span></p>
+<p>dengan</p>
+<ul>
+<li>
+<span class="math inline">\(R^2\)</span> adalah koefisien determinasi</li>
+<li>
+<span class="math inline">\(SS_{reg}\)</span> adalah jumlah kuadrat regresi (<em>sum of squares regression</em>)</li>
+<li>
+<span class="math inline">\(SS_{tot}\)</span> adalah jumlah kuadrat total (<em>sum of squares total</em>)</li>
+<li>
+<span class="math inline">\(\hat{Y}_i\)</span> adalah nilai variabel dependen dari model regresi</li>
+<li>
+<span class="math inline">\(\bar{Y}\)</span> adalah rata-rata nilai variabel dependen</li>
+<li>
+<span class="math inline">\(Y_i\)</span> adalah nilai variabel dependen pada data empiris</li>
+</ul>
+<p>Nilai <span class="math inline">\(R^2\)</span> berkisar antara 0 hingga +1 (tidak ada nilai minus) dan dapat dinyatakan dalam bentuk <strong>persentase</strong>. Proporsi atau persentase ini menunjukkan berapa porsi variasi pada variabel dependen yang dapat dijelaskan oleh variabel independen <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Sementara itu, sisa dari 100% atau 1,0 adalah <strong>variasi yang tidak dapat dijelaskan oleh variabel independen</strong>. Dengan kata lain, sisa variasi tersebut dijelaskan oleh komponen galat atau variabel lain yang tidak termasuk dalam model. <strong>Semakin besar nilai <span class="math inline">\(R^2\)</span> mendekati +1, atau 100% maka semakin baik model regresi tersebut dalam menjelaskan perubahan nilai <span class="math inline">\(Y\)</span></strong>, yang menandakan kekuatan hubungan antara variabel independen dan dependen.</p>
+</div>
+<div id="studi-kasus-koefisien-determinasi" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Koefisien Determinasi<a class="anchor" aria-label="anchor" href="#studi-kasus-koefisien-determinasi"><i class="fas fa-link"></i></a>
+</h3>
+<p>Berikut adalah perhitungan koefisien determinasi (<span class="math inline">\(R^2\)</span>) untuk model regresi jarak ke taman kota dan IKU menggunakan Persamaan <a href="bab-13-regresi-sederhana.html#eq:rumus-r-square">(12.7)</a>.</p>
+<p><span class="math display">\[R^2 = \frac{SS_{reg}}{SS_{tot}} = \frac{10.365,10}{11.780,70} = 0,8798372\]</span></p>
+<p>Nilai <span class="math inline">\(R^2 = 0,8798372\)</span> berarti bahwa <strong>87,98% variasi Indeks Kualitas Udara dapat dijelaskan oleh jarak ke taman kota</strong>. Sementara itu, sisa 12,02% dipengaruhi oleh faktor-faktor lain yang tidak masuk dalam model, seperti kepadatan lalu lintas, keberadaan industri, atau pola angin.</p>
+</div>
+<div id="koefisien-signifikansi-model-dan-variabel-independen" class="section level3" number="12.5.3">
+<h3>
+<span class="header-section-number">12.5.3</span> Koefisien Signifikansi Model dan Variabel Independen<a class="anchor" aria-label="anchor" href="#koefisien-signifikansi-model-dan-variabel-independen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Koefisien signifikansi model dan variabel independen diuji menggunakan uji F dan uji t. Uji F digunakan untuk menguji <strong>signifikansi model secara keseluruhan</strong>, sedangkan uji t digunakan untuk menguji <strong>signifikansi variabel independen secara individual</strong>.</p>
+<p>Signifikansi model diartikan sebagai <strong>keberartian hubungan pengaruh antara variabel independen dengan variabel dependennya</strong>. Jika uji F menunjukkan hasil yang signifikan, maka dikatakan bahwa hubungan antara variabel independen dengan variabel dependennya memiliki keberartian. Sebaliknya, jika uji F menunjukkan hasil yang tidak signifikan, maka dikatakan bahwa hubungan antara variabel independen dengan variabel dependennya tidak memiliki keberartian.</p>
+<p>Sama seperti uji F, uji t juga digunakan untuk menguji signifikansi variabel independen secara individual. Jika uji t menunjukkan hasil yang signifikan, maka dikatakan bahwa variabel independen memiliki keberartian dalam menjelaskan variabel dependen. Sebaliknya, jika uji t menunjukkan hasil yang tidak signifikan, maka dikatakan bahwa variabel independen tidak memiliki keberartian dalam menjelaskan variabel dependen.</p>
+<p>Kedua ukuran ini pada hakikatnya adalah sebuah <strong>pengujian hipotesis</strong> yang hipotesis kosongnya adalah “seluruh koefisien regresi adalah nol”</p>
+<p><span class="math display">\[H_0: \beta_1 = \beta_2 = \dots = \beta_k = 0\]</span></p>
+<p>dengan <span class="math inline">\(\beta_k\)</span> adalah koefisien regresi untuk variabel independen ke-<span class="math inline">\(k\)</span>. Di sisi lain, hipotesis alternatifnya adalah <span class="math inline">\(H_a: \text{Minimal ada satu } \beta_i \neq 0, \text{ untuk } i = 1, 2, \dots, k\)</span>.</p>
+<p>Jika <strong>hipotesis kosong gagal ditolak</strong>, maka <strong>seluruh koefisien bernilai nol</strong>, yang berarti <strong>tidak ada pengaruh antara seluruh variabel independen dengan variabel dependen</strong>. Sebaliknya, jika hipotesis kosong ditolak, maka dikatakan bahwa hubungan antara variabel independen dengan variabel dependennya memiliki keberartian.</p>
+<p>Karena kita hanya menggunakan satu variabel independen, maka hipotesis kosong yang diuji adalah <span class="math inline">\(H_0: \beta_1 = 0\)</span>. Ini akan berbeda ceritanya jika kita mengkaji model regresi linear berganda yang menggunakan lebih dari satu variabel independen.</p>
+<p>Untuk uji t, kita menggunakan hipotesis kosong <span class="math inline">\(H_0: \beta_1 = 0\)</span> dan hipotesis alternatif <span class="math inline">\(H_a: \beta_1 \neq 0\)</span>. Ini juga sama dengan kasus pengujian hipotesis parameter satu populasi yang jika hipotesis kosong kita gagal ditolak, maka kesimpulannya variabel tersebut memiliki koefisien = 0 yang berarti tidak ada pengaruh dari variabel independen tersebut terhadap variabel dependennya.</p>
+<p>Kedua uji hipotesis ini menggunakan patokan yang sama, yakni nilai signifikansi (p-value) yang diperoleh dari hasil perhitungan. Jika <strong>nilai signifikansi lebih kecil dari tingkat signifikansi yang ditetapkan</strong> (biasanya 0,05), maka <strong>hipotesis kosong ditolak</strong>. Sebaliknya, jika <strong>nilai signifikansi lebih besar dari tingkat signifikansi yang ditetapkan</strong>, maka <strong>hipotesis kosong gagal ditolak</strong>.</p>
+</div>
+<div id="studi-kasus-signifikansi-model-dan-variabel-independen" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Signifikansi Model dan Variabel Independen<a class="anchor" aria-label="anchor" href="#studi-kasus-signifikansi-model-dan-variabel-independen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Kita uji signifikansi model regresi jarak ke taman kota dan IKU menggunakan fungsi <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> di R.</p>
+<p>Hasil uji F menunjukkan nilai <span class="math inline">\(F_{(1,28)} = 205,0171\)</span> dengan nilai signifikansi <span class="math inline">\(p = 0,00000000000002075434\)</span>. Karena <span class="math inline">\(p &lt; 0{,}05\)</span>, maka <strong>hipotesis kosong ditolak</strong>—model secara keseluruhan signifikan, artinya jarak ke taman kota memiliki keberartian dalam menjelaskan Indeks Kualitas Udara.</p>
+<p>Hasil uji t untuk variabel jarak ke taman menunjukkan <span class="math inline">\(t = -14,31842\)</span> dengan <span class="math inline">\(p = 0,00000000000002075434\)</span>. Karena <span class="math inline">\(p &lt; 0{,}05\)</span>, maka <strong>variabel jarak ke taman kota secara individual signifikan</strong> dalam memengaruhi Indeks Kualitas Udara.</p>
+</div>
+<p>Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap capaian pembelajaran pada bab ini.</p>
 </div>
 <div id="soal-evaluasi-14-1" class="section level2 unnumbered rmdexercise">
 <h2>Soal Evaluasi 14<a class="anchor" aria-label="anchor" href="#soal-evaluasi-14-1"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
-<li>Apa perbedaan antara korelasi dan regresi? <span class="capaian">STP-11.1</span>
+<li>
+<p>Berikan tanda centang pada kotak yang sesuai dengan masing-masing pernyataan berikut. <em>(Petunjuk: ingat kembali apa makna ‘kausalitas’)</em> <span class="capaian">STP-12.1</span></p>
+<table class="table table-sm">
+<colgroup>
+<col width="48%">
+<col width="22%">
+<col width="30%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Pernyataan</th>
+<th align="center">Korelasi</th>
+<th align="center">Kausalitas</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Daerah dengan banyak ruang hijau biasanya memiliki suhu udara lebih rendah.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+<tr class="even">
+<td align="left">Peningkatan harga bahan bakar menyebabkan masyarakat lebih banyak menggunakan transportasi umum.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+<tr class="odd">
+<td align="left">Wilayah dengan tingkat pendidikan tinggi cenderung memiliki angka kemiskinan rendah.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+<tr class="even">
+<td align="left">Semakin tinggi curah hujan, semakin sering terjadi banjir.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+<tr class="odd">
+<td align="left">Peningkatan jumlah kendaraan menyebabkan peningkatan polusi udara.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+<tr class="even">
+<td align="left">Kota dengan pendapatan tinggi cenderung memiliki indeks kebahagiaan yang tinggi.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+<tr class="odd">
+<td align="left">Kota besar memiliki tingkat kemacetan yang tinggi.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+<tr class="even">
+<td align="left">Kurangnya sistem drainase menyebabkan genangan air di jalan.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+<tr class="odd">
+<td align="left">Penggundulan hutan menyebabkan meningkatnya risiko longsor.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+<tr class="even">
+<td align="left">Kegiatan industri yang tidak terkendali menyebabkan pencemaran sungai.</td>
+<td align="center">[ ]</td>
+<td align="center">[ ]</td>
+</tr>
+</tbody>
+</table>
 </li>
-<li>Jelaskan makna <span class="math inline">\(R^2\)</span> (Koefisien Determinasi)! <span class="capaian">STP-11.2</span>
+<li>
+<p><span class="capaian">STP-12.2</span> Setelah dianalisis menggunakan regresi linear, berikut adalah persamaan yang menunjukkan hubungan kausal variabel kepadatan penduduk (X) dengan variabel luas ruang terbuka hijau (Y):</p>
+<p><span class="math display">\[Y = 120 - 0{,}5X\]</span></p>
+<p>Persamaan tersebut menunjukkan bahwa kepadatan penduduk (<span class="math inline">\(X\)</span>) memengaruhi luas ruang terbuka hijau (<span class="math inline">\(Y\)</span>). Uraikan hubungan antara variabel <span class="math inline">\(Y\)</span> dengan <span class="math inline">\(X\)</span> berdasarkan persamaan tersebut!</p>
 </li>
 </ol>
 </div>
@@ -160,13 +1688,37 @@ Nilai Intercept (<span class="math inline">\(a\)</span>) dan Slope (<span class=
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="korelasi-antarvariabel-metrik.html"><span class="header-section-number">11</span> Korelasi Antarvariabel Metrik</a></div>
-<div class="next"><a href="regresi-linear-berganda.html"><span class="header-section-number">13</span> Regresi Linear Berganda</a></div>
+<div class="next"><a href="bab-regresi-berganda.html"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#bab-13-regresi-sederhana"><span class="header-section-number">12</span> Regresi Linear Sederhana</a></li>
-<li><a class="nav-link" href="#konsep-dasar-1"><span class="header-section-number">12.1</span> Konsep Dasar</a></li>
-<li><a class="nav-link" href="#studi-kasus-dengan-r"><span class="header-section-number">12.2</span> Studi Kasus dengan R</a></li>
+<li>
+<a class="nav-link" href="#bab-13-regresi-sederhana"><span class="header-section-number">12</span> Kausalitas dengan Regresi Linear Sederhana</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#capaian-pembelajaran-11">Capaian Pembelajaran</a></li></ul>
+</li>
+<li><a class="nav-link" href="#apa-yang-menentukan-sebuah-hubungan-adalah-kausalitas"><span class="header-section-number">12.1</span> Apa yang Menentukan Sebuah Hubungan adalah Kausalitas?</a></li>
+<li>
+<a class="nav-link" href="#pemakaian-analisis-kausalitas-dalam-konteks-perencanaan-wilayah-dan-kota"><span class="header-section-number">12.2</span> Pemakaian Analisis Kausalitas dalam Konteks Perencanaan Wilayah dan Kota</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#studi-kasus-pemakaian-analisis-kausalitas-dalam-konteks-pwk">Studi Kasus Pemakaian Analisis Kausalitas dalam Konteks PWK</a></li></ul>
+</li>
+<li><a class="nav-link" href="#mengenal-model"><span class="header-section-number">12.3</span> Mengenal Model</a></li>
+<li>
+<a class="nav-link" href="#model-regresi-linear-sederhana"><span class="header-section-number">12.4</span> Model Regresi Linear Sederhana</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#memaknai-persamaan-regresi-linear-sederhana"><span class="header-section-number">12.4.1</span> Memaknai Persamaan Regresi Linear Sederhana</a></li>
+<li><a class="nav-link" href="#studi-kasus-memaknai-persamaan-regresi-linear-untuk-jarak-taman-dan-kualitas-udara">Studi Kasus: Memaknai Persamaan Regresi Linear untuk Jarak Taman dan Kualitas Udara</a></li>
+<li><a class="nav-link" href="#studi-kasus-memaknai-bentuk-linear-pada-persamaan-regresi-untuk-jarak-taman-dan-kualitas-udara">Studi Kasus: Memaknai Bentuk Linear pada Persamaan Regresi untuk Jarak Taman dan Kualitas Udara</a></li>
+<li><a class="nav-link" href="#memperoleh-persamaan-regresi-linear-sederhana"><span class="header-section-number">12.4.2</span> Memperoleh Persamaan Regresi Linear Sederhana</a></li>
+<li><a class="nav-link" href="#studi-kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk-jarak-taman-dan-kualitas-udara">Studi Kasus: Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#kualitas-model-regresi-linear-sederhana"><span class="header-section-number">12.5</span> Kualitas Model Regresi Linear Sederhana</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#estimasi-standar-error-standard-error-estimate"><span class="header-section-number">12.5.1</span> Estimasi Standar Error (Standard Error Estimate)</a></li>
+<li><a class="nav-link" href="#studi-kasus-estimasi-standar-error">Studi Kasus: Estimasi Standar Error</a></li>
+<li><a class="nav-link" href="#koefisien-determinasi-r2"><span class="header-section-number">12.5.2</span> Koefisien Determinasi (\(R^2\))</a></li>
+<li><a class="nav-link" href="#studi-kasus-koefisien-determinasi">Studi Kasus: Koefisien Determinasi</a></li>
+<li><a class="nav-link" href="#koefisien-signifikansi-model-dan-variabel-independen"><span class="header-section-number">12.5.3</span> Koefisien Signifikansi Model dan Variabel Independen</a></li>
+<li><a class="nav-link" href="#studi-kasus-signifikansi-model-dan-variabel-independen">Studi Kasus: Signifikansi Model dan Variabel Independen</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#soal-evaluasi-14-1">Soal Evaluasi 14</a></li>
 </ul>
 

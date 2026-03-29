@@ -84,8 +84,8 @@
 <li><a class="" href="korelasi-antarvariabel-nominal.html"><span class="header-section-number">9</span> Korelasi Antarvariabel Nominal</a></li>
 <li><a class="" href="korelasi-antarvariabel-ordinal.html"><span class="header-section-number">10</span> Korelasi Antarvariabel Ordinal</a></li>
 <li><a class="" href="korelasi-antarvariabel-metrik.html"><span class="header-section-number">11</span> Korelasi Antarvariabel Metrik</a></li>
-<li><a class="" href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Regresi Linear Sederhana</a></li>
-<li><a class="" href="regresi-linear-berganda.html"><span class="header-section-number">13</span> Regresi Linear Berganda</a></li>
+<li><a class="" href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Kausalitas dengan Regresi Linear Sederhana</a></li>
+<li><a class="" href="bab-regresi-berganda.html"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a></li>
 <li><a class="active" href="analisis-statistik-multivariat-interdependensi.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi</a></li>
 <li><a class="" href="referensi.html">Referensi</a></li>
 <li class="book-part">Lampiran</li>
@@ -101,19 +101,19 @@
 <h1>
 <span class="header-section-number">Bab 14</span> Analisis Statistik Multivariat Interdependensi<a class="anchor" aria-label="anchor" href="#analisis-statistik-multivariat-interdependensi"><i class="fas fa-link"></i></a>
 </h1>
-<div id="konsep-dasar-3" class="section level2" number="14.1">
+<div id="konsep-dasar-2" class="section level2" number="14.1">
 <h2>
-<span class="header-section-number">14.1</span> Konsep Dasar<a class="anchor" aria-label="anchor" href="#konsep-dasar-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.1</span> Konsep Dasar<a class="anchor" aria-label="anchor" href="#konsep-dasar-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>Analisis multivariat interdependensi tidak membedakan variabel menjadi dependen dan independen. Tujuannya adalah untuk mencari struktur dasar dari sekumpulan variabel.
 Contoh: <strong>Analisis Faktor</strong> dan <strong>Principal Component Analysis (PCA)</strong>. Biasanya digunakan untuk mereduksi dimensi data (menyederhanakan banyak variabel menjadi beberapa faktor utama).</p>
 </div>
-<div id="studi-kasus-dengan-r-2" class="section level2" number="14.2">
+<div id="studi-kasus-dengan-r-1" class="section level2" number="14.2">
 <h2>
-<span class="header-section-number">14.2</span> Studi Kasus dengan R<a class="anchor" aria-label="anchor" href="#studi-kasus-dengan-r-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2</span> Studi Kasus dengan R<a class="anchor" aria-label="anchor" href="#studi-kasus-dengan-r-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>Mereduksi 5 indikator kepuasan menjadi faktor-faktor utama.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Simulasi Data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
 <span><span class="va">data_survei</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fl">5</span><span class="op">)</span>, ncol<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
@@ -127,7 +127,7 @@ Contoh: <strong>Analisis Faktor</strong> dan <strong>Principal Component Analysi
 ## Standard deviation     1,1077 1,0610 1,0191 0,9468 0,8440
 ## Proportion of Variance 0,2454 0,2251 0,2077 0,1793 0,1425
 ## Cumulative Proportion  0,2454 0,4705 0,6783 0,8575 1,0000</code></pre>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Melihat beban faktor (loadings)</span></span>
 <span><span class="va">pca_result</span><span class="op">$</span><span class="va">rotation</span></span></code></pre></div>
 <pre><code>##            PC1        PC2        PC3        PC4       PC5
@@ -150,14 +150,14 @@ Contoh: <strong>Analisis Faktor</strong> dan <strong>Principal Component Analysi
 
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="regresi-linear-berganda.html"><span class="header-section-number">13</span> Regresi Linear Berganda</a></div>
+<div class="prev"><a href="bab-regresi-berganda.html"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a></div>
 <div class="next"><a href="referensi.html">Referensi</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#analisis-statistik-multivariat-interdependensi"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi</a></li>
-<li><a class="nav-link" href="#konsep-dasar-3"><span class="header-section-number">14.1</span> Konsep Dasar</a></li>
-<li><a class="nav-link" href="#studi-kasus-dengan-r-2"><span class="header-section-number">14.2</span> Studi Kasus dengan R</a></li>
+<li><a class="nav-link" href="#konsep-dasar-2"><span class="header-section-number">14.1</span> Konsep Dasar</a></li>
+<li><a class="nav-link" href="#studi-kasus-dengan-r-1"><span class="header-section-number">14.2</span> Studi Kasus dengan R</a></li>
 <li><a class="nav-link" href="#soal-evaluasi-16-1">Soal Evaluasi 16</a></li>
 </ul>
 
