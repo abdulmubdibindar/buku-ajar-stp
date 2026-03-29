@@ -394,7 +394,7 @@ Nilai koefisien korelasi Pearson adalah `r format(cor_km, decimal.mark = ",", bi
 
 :::
 
-## Pola Hubungan Data Metrik
+## Pola Hubungan Data Metrik {#pola-hubungan-data-metrik}
 Pola hubungan data metrik adalah **bentuk visual** dari **titik-titik yang ada dalam *scatter plot*** antara variabel-variabel metrik yang kita analisis. Dari pola dalam *scatter plot* kita juga sebenarnya dapat menelaah elemen-elemen hubungan lainnya: **keberadaan dan kekuatan** serta **arah hubungan**. Gambar \@ref(fig:fig-pola-hubungan) menjelaskan maksud hal tersebut.
 
 ```{r fig-pola-hubungan, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Pola Hubungan Linear dan Ketiadaan Hubungan pada Scatter Plot'}
@@ -446,7 +446,7 @@ Berdasarkan pengamatan visual terhadap titik-titik koordinat tersebut, kita dapa
 Kerjakanlah soal-soal berikut untuk menguji pemahaman Anda mengenai korelasi variabel metrik.
 
 ::: rmdexercise
-### Soal Evaluasi 13 {.unnumbered}
+## Soal Evaluasi 13 {.unnumbered}
 Perhatikan tabel terkait jarak rumah ke fasilitas kesehatan, frekuensi kunjungan per tahun, dan tingkat kepuasan terhadap fasilitas kesehatan berikut. Lakukanlah pengujian asosiasi pada masing-masing variabel berikut: (i) jarak dan frekuensi kunjungan; dan (ii) frekuensi kunjungan dan kepuasan.
 
 ```{r tbl-evaluasi-13, echo=FALSE, out.width='60%', fig.align='center'}
