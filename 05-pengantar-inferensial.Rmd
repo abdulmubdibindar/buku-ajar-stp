@@ -1,7 +1,7 @@
 # Pengantar Analisis Statistik Inferensial {#bab-5-pengantar-inferensial}
 
 ::: rmdcapaian
-## Capaian Pembelajaran {.unnumbered}
+### Capaian Pembelajaran {.unnumbered}
 
 Setelah mempelajari bab ini, Anda diharapkan:
 

@@ -1,7 +1,7 @@
 # Korelasi Antarvariabel Metrik
 
 ::: rmdcapaian
-## Capaian Pembelajaran {.unnumbered}
+### Capaian Pembelajaran {.unnumbered}
 Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran metrik dengan tepat [STP-11.1]{.capaian}
 :::
 
