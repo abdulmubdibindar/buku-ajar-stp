@@ -44,26 +44,29 @@ Kita akan meninjau korelasi antara variabel **"tingkat uang saku"** dan **"tingk
 library(kableExtra)
 
 df_var <- data.frame(
-  'Nama Variabel' = c(rep('Tingkat uang saku', 5), rep('Tingkat semester', 4)),
-  'Kategori' = c('&lt; Rp1 Juta', 'Rp1 Juta - Rp2 Juta', 'Rp2,1 Juta - Rp3 Juta', 'Rp3,1 Juta - Rp4 Juta', '&gt; Rp4 Juta',
-                 'Semester 1 - Semester 2', 'Semester 3 - Semester 4', 'Semester 5 - Semester 6', 'Semester 7 - Semester 8'),
-  'Kode' = c('a', 'b', 'c', 'd', 'e', 'w', 'x', 'y', 'z'),
+  "Nama Variabel" = c(rep("Tingkat uang saku", 5), rep("Tingkat semester", 4)),
+  "Kategori" = c(
+    "&lt; Rp1 Juta", "Rp1 Juta - Rp2 Juta", "Rp2,1 Juta - Rp3 Juta", "Rp3,1 Juta - Rp4 Juta", "&gt; Rp4 Juta",
+    "Semester 1 - Semester 2", "Semester 3 - Semester 4", "Semester 5 - Semester 6", "Semester 7 - Semester 8"
+  ),
+  "Kode" = c("a", "b", "c", "d", "e", "w", "x", "y", "z"),
   check.names = FALSE
 )
 
-tbl_out <- kbl(df_var, 
-    caption = 'Kategori Nilai pada Variabel Tingkat Uang Saku dan Tingkat Semester',
-    format.args = list(big.mark = '.', decimal.mark = ','),
-    escape = FALSE) |>
+tbl_out <- kbl(df_var,
+  caption = "Kategori Nilai pada Variabel Tingkat Uang Saku dan Tingkat Semester",
+  format.args = list(big.mark = ".", decimal.mark = ","),
+  escape = FALSE
+) |>
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'responsive'), 
-    full_width = FALSE, 
-    latex_options = c('scale_down', 'HOLD_position')
+    bootstrap_options = c("striped", "hover", "responsive"),
+    full_width = FALSE,
+    latex_options = c("scale_down", "HOLD_position")
   ) |>
   collapse_rows(columns = 1, valign = "top")
 
 if (knitr::is_html_output()) {
-  tbl_out <- tbl_out |> scroll_box(width = '100%', box_css = 'border: 0px;')
+  tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
 }
 tbl_out
 ```
@@ -74,29 +77,30 @@ Setelah diobservasi, tabel silangnya adalah sebagai berikut.
 library(kableExtra)
 
 df_cross <- data.frame(
-  'Kode Uang Saku' = c('a', 'b', 'c', 'd', 'e', 'Total'),
-  'w' = c(58, 87, 40, 34, 7, 226),
-  'x' = c(89, 118, 57, 19, 4, 287),
-  'y' = c(81, 181, 53, 24, 5, 344),
-  'z' = c(159, 350, 142, 37, 12, 700),
-  'Total' = c(407, 736, 292, 114, 28, 1577),
+  "Kode Uang Saku" = c("a", "b", "c", "d", "e", "Total"),
+  "w" = c(58, 87, 40, 34, 7, 226),
+  "x" = c(89, 118, 57, 19, 4, 287),
+  "y" = c(81, 181, 53, 24, 5, 344),
+  "z" = c(159, 350, 142, 37, 12, 700),
+  "Total" = c(407, 736, 292, 114, 28, 1577),
   check.names = FALSE
 )
 
-tbl_out <- kbl(df_cross, 
-    caption = 'Tabel Silang Antara Tingkat Uang Saku dan Tingkat Semester',
-    format.args = list(big.mark = '.', decimal.mark = ','),
-    align = c('l', rep('c', 5)),
-    escape = FALSE) |>
+tbl_out <- kbl(df_cross,
+  caption = "Tabel Silang Antara Tingkat Uang Saku dan Tingkat Semester",
+  format.args = list(big.mark = ".", decimal.mark = ","),
+  align = c("l", rep("c", 5)),
+  escape = FALSE
+) |>
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'responsive'), 
-    full_width = FALSE, 
-    latex_options = c('scale_down', 'HOLD_position')
+    bootstrap_options = c("striped", "hover", "responsive"),
+    full_width = FALSE,
+    latex_options = c("scale_down", "HOLD_position")
   ) |>
-  add_header_above(c(' ' = 1, 'Kode TingkatSemester' = 4, ' ' = 1))
+  add_header_above(c(" " = 1, "Kode TingkatSemester" = 4, " " = 1))
 
 if (knitr::is_html_output()) {
-  tbl_out <- tbl_out |> scroll_box(width = '100%', box_css = 'border: 0px;')
+  tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
 }
 tbl_out
 ```
@@ -115,44 +119,19 @@ Pasangan $aw$-$ax$ **bukan pasangan *concordant***, karena walaupun variabel Tin
 
 Jika diilustrasikan, bentuk pasangan *concordant* dan *discordant* adalah sebagai berikut.
 
-```{r tbl-ilustrasi-concordant-discordant, echo=FALSE, message=FALSE, warning=FALSE}
-library(kableExtra)
-
-img_conc <- ifelse(knitr::is_html_output(),
-                   '<img src="images/ilustrasi-concordant.png" style="width:100%;" />',
-                   '\\includegraphics[width=1\\linewidth]{images/ilustrasi-concordant.png}')
-img_disc <- ifelse(knitr::is_html_output(),
-                   '<img src="images/ilustrasi-discordant.png" style="width:100%;" />',
-                   '\\includegraphics[width=1\\linewidth]{images/ilustrasi-discordant.png}')
-
-df_img <- data.frame(
-  '(a) Pasangan Concordant' = img_conc,
-  '(b) Pasangan Discordant' = img_disc,
-  check.names = FALSE
-)
-
-tbl_out <- kbl(df_img, 
-    caption = 'Ilustrasi Pasangan Frekuensi Concordant dan Discordant',
-    align = 'c',
-    escape = FALSE) |>
-  kable_styling(
-    full_width = FALSE, 
-    latex_options = 'HOLD_position'
-  ) |>
-  column_spec(1:2, width = "49%")
-
-tbl_out
+```{r fig-ilustrasi-concordant-discordant, echo=FALSE, fig.cap="Ilustrasi Pasangan Frekuensi Concordant dan Discordant", fig.show="hold", fig.align="center"}
+knitr::include_graphics("images/gabungin-ae-lah-capek.png")
 ```
 
 Nilai $C$ pada persamaan \@ref(eq:gamma) adalah penjumlahan dari perkalian seluruh frekuensi pasangan ***concordant***, sedangkan nilai $D$ adalah penjumlahan dari perkalian seluruh frekuensi pasangan ***discordant***.
 
 ::: rmdkasus
-### Studi Kasus: Menghitung Goodman & Kruskal's Gamma ($\\gamma$) {.unnumbered}
+### Studi Kasus: Menghitung Goodman & Kruskal's Gamma ($\gamma$) {.unnumbered}
 Setelah kita memahami apa yang dimaksud dengan pasangan frekuensi ***concordant*** dan ***discordant***, mari kita hitung nilai $C$ dan $D$ dari Tabel \@ref(tab:tbl-crosstab-ordinal).
 
 **Total perkalian seluruh frekuensi pasangan *concordant* ($C$)**
 
-Berdasarkan pada Gambar \@ref(fig:tbl-ilustrasi-concordant-discordant)(a) dan disesuaikan dengan Tabel \@ref(tab:tbl-crosstab-ordinal), maka nilai $C$ adalah sebagai berikut.
+Berdasarkan pada Gambar \@ref(fig:fig-ilustrasi-concordant-discordant) (a) dan disesuaikan dengan Tabel \@ref(tab:tbl-crosstab-ordinal), maka nilai $C$ adalah sebagai berikut.
 
 $$
 \begin{aligned}
@@ -172,7 +151,7 @@ $$
 
 **Total perkalian seluruh frekuensi pasangan *discordant* ($D$)**
 
-Berdasarkan pada Gambar \@ref(fig:tbl-ilustrasi-concordant-discordant)(b) dan disesuaikan dengan Tabel \@ref(tab:tbl-crosstab-ordinal), maka nilai $D$ adalah sebagai berikut.
+Berdasarkan pada Gambar \@ref(fig:fig-ilustrasi-concordant-discordant) (b) dan disesuaikan dengan Tabel \@ref(tab:tbl-crosstab-ordinal), maka nilai $D$ adalah sebagai berikut.
 
 $$
 \begin{aligned}
@@ -242,7 +221,7 @@ Perhitungan T adalah jumlah dari perkalian pasangan-pasangan *concordant* dari t
 Seperti halnya perhitungan $C$ dan $D$ pada koefisien $\gamma$ sebelumnya, perhitungan $T$ diilustrasikan sebagai berikut.
 
 ```{r fig-ilustrasi-tied-rank, echo=FALSE, out.width = '60%', fig.align = "center", fig.cap = 'Ilustrasi Perhitungan Pasangan Terikat (Tied Ranks)'}
-knitr::include_graphics('images/ilustrasi-tied-rank.png')
+knitr::include_graphics("images/ilustrasi-tied-rank.png")
 ```
 
 Dengan demikian, perhitungan lengkap untuk $T$ adalah sebagai berikut
@@ -308,32 +287,39 @@ Secara keseluruhan, perbandingan penggunaan ketiga koefisien korelasi variabel o
 library(kableExtra)
 
 df_perbandingan <- data.frame(
-  'Kriteria' = c('Penggunaan', 'Dasar perhitungan', 'Sifat hubungan yang diukur'),
-  '$\\gamma$' = c('Matriks korelasi persegi sederhana ($2\\times2$), ($3\\times3$), dll', 
-                  'Jumlah pasangan frekuensi *concordant* dan *discordant*', 
-                  'Simetris, tidak membedakan variabel dependen dan independen'),
-  '$d$ Sommer' = c('Semua jenis matriks korelasi', 
-                   'Jumlah pasangan frekuensi *concordant*, *discordant*, dan *tied ranks* pada variabel independen', 
-                   'Asimetris, variabel dependen dan independen dibedakan'),
-  '$\\tau_b$ Kendall' = c('Matriks korelasi dengan jumlah kasus ($n$) besar', 
-                          'Jumlah pasangan frekuensi *concordant*, *discordant*, dan *tied ranks* pada variabel independen dan dependen', 
-                          'Simetris, variabel dependen dan independen dibedakan'),
+  "Kriteria" = c("Penggunaan", "Dasar perhitungan", "Sifat hubungan yang diukur"),
+  "$\\gamma$" = c(
+    "Matriks korelasi persegi sederhana ($2\\times2$), ($3\\times3$), dll",
+    "Jumlah pasangan frekuensi *concordant* dan *discordant*",
+    "Simetris, tidak membedakan variabel dependen dan independen"
+  ),
+  "$d$ Sommer" = c(
+    "Semua jenis matriks korelasi",
+    "Jumlah pasangan frekuensi *concordant*, *discordant*, dan *tied ranks* pada variabel independen",
+    "Asimetris, variabel dependen dan independen dibedakan"
+  ),
+  "$\\tau_b$ Kendall" = c(
+    "Matriks korelasi dengan jumlah kasus ($n$) besar",
+    "Jumlah pasangan frekuensi *concordant*, *discordant*, dan *tied ranks* pada variabel independen dan dependen",
+    "Simetris, variabel dependen dan independen dibedakan"
+  ),
   check.names = FALSE
 )
 
-tbl_out <- kbl(df_perbandingan, 
-    caption = 'Perbandingan Karakteristik Koefisien Korelasi Ordinal',
-    escape = FALSE) |>
+tbl_out <- kbl(df_perbandingan,
+  caption = "Perbandingan Karakteristik Koefisien Korelasi Ordinal",
+  escape = FALSE
+) |>
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'responsive'), 
-    full_width = FALSE, 
-    latex_options = c('scale_down', 'HOLD_position')
+    bootstrap_options = c("striped", "hover", "responsive"),
+    full_width = FALSE,
+    latex_options = c("scale_down", "HOLD_position")
   ) |>
-  column_spec(1, width = '15em') |>
-  column_spec(2:4, width = '12em')
+  column_spec(1, width = "15em") |>
+  column_spec(2:4, width = "12em")
 
 if (knitr::is_html_output()) {
-  tbl_out <- tbl_out |> scroll_box(width = '100%', box_css = 'border: 0px;')
+  tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
 }
 tbl_out
 ```
@@ -392,26 +378,27 @@ Perhatikan tabel silang yang menunjukkan distribusi frekuensi  dari 100 orang pe
 library(kableExtra)
 
 df_eval <- data.frame(
-  'Persepsi' = c('Kurang dari ekspektasi', 'Sesuai ekspektasi', 'Melebihi ekspektasi'),
-  'Hadir 1 kali' = c(20, 10, 8),
-  'Hadir 2 kali' = c(6, 15, 11),
-  'Hadir >3 kali' = c(4, 5, 21),
+  "Persepsi" = c("Kurang dari ekspektasi", "Sesuai ekspektasi", "Melebihi ekspektasi"),
+  "Hadir 1 kali" = c(20, 10, 8),
+  "Hadir 2 kali" = c(6, 15, 11),
+  "Hadir >3 kali" = c(4, 5, 21),
   check.names = FALSE
 )
 
 # Gunakan safe_html untuk mengamankan karakter khusus pada nama kolom
 names(df_eval) <- safe_html(names(df_eval))
 
-tbl_out <- kbl(df_eval, 
-    caption = 'Distribusi Frekuensi Persepsi vs Kehadiran Peserta Musrenbang',
-    format.args = list(big.mark = '.', decimal.mark = ','),
-    align = c('l', 'c', 'c', 'c')) |>
+tbl_out <- kbl(df_eval,
+  caption = "Distribusi Frekuensi Persepsi vs Kehadiran Peserta Musrenbang",
+  format.args = list(big.mark = ".", decimal.mark = ","),
+  align = c("l", "c", "c", "c")
+) |>
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'responsive'), 
-    full_width = FALSE, 
-    latex_options = c('HOLD_position')
+    bootstrap_options = c("striped", "hover", "responsive"),
+    full_width = FALSE,
+    latex_options = c("HOLD_position")
   ) |>
-  add_header_above(c(' ' = 1, 'Tingkat Kehadiran' = 3))
+  add_header_above(c(" " = 1, "Tingkat Kehadiran" = 3))
 
 tbl_out
 ```
