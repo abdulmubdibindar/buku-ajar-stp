@@ -66,3 +66,22 @@ p {
     font-size: 1.1em;
     font-weight: 700;
 }
+
+/* Memaksa figur untuk bisa bersandingan */
+.figure {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 1%;
+    /* Memberi jarak antar gambar */
+}
+
+/* Memastikan gambar di dalam figur mengikuti lebar yang ditentukan R */
+.figure img {
+    width: 100%;
+}
+
+/* Menyesuaikan caption agar tetap di tengah */
+.caption {
+    text-align: center;
+    font-size: 0.9em;
+}
