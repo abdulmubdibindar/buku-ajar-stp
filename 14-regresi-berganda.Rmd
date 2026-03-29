@@ -1,4 +1,4 @@
-# Regresi Linear Berganda
+# Kausalitas dengan Regresi Linear Berganda {#bab-regresi-berganda}
 
 ## Konsep Dasar
 
