@@ -6,16 +6,18 @@ author:
   - "Valendya Rilansari"
 site: bookdown::bookdown_site
 output:
-    bookdown::gitbook:
-        css: style.css
-        split_bib: false
-        keep_md: true
-    bookdown::pdf_book:
-        latex_engine: xelatex
-        citation_package: natbib
-        keep_tex: true
-        includes:
-            in_header: preamble.tex
+  bookdown::bs4_book:
+    css: style.css
+    theme:
+      primary: "#2c3e50"
+    repo: "https://github.com/abdulmubdibindar/buku-ajar-stp"
+  bookdown::pdf_book:
+    latex_engine: xelatex
+    citation_package: natbib
+    keep_tex: true
+    includes:
+      in_header: preamble.tex
+    extra_dependencies: ["subfig"]
 bibliography: referensi.bib
 biblio-title: "Referensi"
 link-citations: true
@@ -28,10 +30,10 @@ options(OutDec = ",")
 
 # Konfigurasi knitr untuk output gambar
 knitr::opts_chunk$set(
-    echo = FALSE,
-    fig.path = "figures/", # Gunakan folder tanpa underscore untuk GitHub Pages
-    message = FALSE,
-    warning = FALSE
+  echo = FALSE,
+  fig.path = "figures/", # Gunakan folder tanpa underscore untuk GitHub Pages
+  message = FALSE,
+  warning = FALSE
 )
 
 # Fungsi untuk mengamankan karakter < dan > agar tidak merusak sidebar HTML
