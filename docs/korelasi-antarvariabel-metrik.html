@@ -1,613 +1,1466 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Bab 11 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan</title>
-  <meta name="description" content="Bab 11 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan" />
-  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Bab 11 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan" />
-  <meta property="og:type" content="book" />
-  
-  
-  
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bab 11 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan" />
-  
-  
-  
-
-<meta name="author" content="Muhammad Abdul Mubdi Bindar" />
-<meta name="author" content="Husna Tiara Putri" />
-<meta name="author" content="Valendya Rilansari" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="korelasi-antarvariabel-ordinal.html"/>
-<link rel="next" href="bab-13-regresi-sederhana.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
-<link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet" />
-<script src="libs/tabwid-1.1.3/tabwid.js"></script>
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bab 11 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan</title>
+<meta name="author" content="Muhammad Abdul Mubdi Bindar">
+<meta name="author" content="Husna Tiara Putri">
+<meta name="author" content="Valendya Rilansari">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta property="og:title" content="Bab 11 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bab 11 Korelasi Antarvariabel Metrik | Buku Ajar Statistika untuk Perencanaan">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
-
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran metrik dengan tepat STP-11.1 Setelah mempelajari...">
+<meta property="og:description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran metrik dengan tepat STP-11.1 Setelah mempelajari...">
+<meta name="twitter:description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran metrik dengan tepat STP-11.1 Setelah mempelajari...">
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Statistika untuk Perencanaan</a></li>
-<li class="chapter" data-level="" data-path="pengantar.html"><a href="pengantar.html"><i class="fa fa-check"></i>Pengantar</a></li>
-<li class="chapter" data-level="" data-path="lembar-persembahan.html"><a href="lembar-persembahan.html"><i class="fa fa-check"></i>Lembar Persembahan</a></li>
-<li class="chapter" data-level="1" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html"><i class="fa fa-check"></i><b>1</b> Konsep Dasar Statistika dalam Perencanaan</a>
-<ul>
-<li class="chapter" data-level="" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#capaian-pembelajaran"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="1.1" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#kedudukan-dan-peran-analisis-data-dalam-perencanaan"><i class="fa fa-check"></i><b>1.1</b> Kedudukan dan Peran Analisis Data dalam Perencanaan</a>
-<ul>
-<li class="chapter" data-level="" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#kasus-analisis-data-dalam-perencanaan"><i class="fa fa-check"></i>Studi Kasus: Analisis Data dalam Perencanaan Transportasi Berkelanjutan di Kampus ITERA</a></li>
-</ul></li>
-<li class="chapter" data-level="1.2" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#penelitian-kuantitatif-vs.-penelitian-kualitatif-dan-kedudukan-statistik"><i class="fa fa-check"></i><b>1.2</b> Penelitian Kuantitatif vs. Penelitian Kualitatif dan Kedudukan Statistik</a>
-<ul>
-<li class="chapter" data-level="1.2.1" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#analisis-kuantitatif-vs-kualitatif"><i class="fa fa-check"></i><b>1.2.1</b> Analisis Kuantitatif vs. Analisis Kualitatif</a></li>
-<li class="chapter" data-level="" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#studi-kasus-penelitian-mengenai-pola-pergerakan-mahasiswa-dan-pegawai-di-kampus-itera"><i class="fa fa-check"></i>Studi Kasus: Penelitian Mengenai Pola Pergerakan Mahasiswa dan Pegawai di Kampus ITERA</a></li>
-<li class="chapter" data-level="1.2.2" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#analisis-statistik-sebagai-analisis-kuantitatif"><i class="fa fa-check"></i><b>1.2.2</b> Analisis Statistik sebagai Analisis Kuantitatif</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#soal-evaluasi-1"><i class="fa fa-check"></i>Soal Evaluasi 1</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="data-terstruktur.html"><a href="data-terstruktur.html"><i class="fa fa-check"></i><b>2</b> Data Terstruktur</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#capaian-pembelajaran-1"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="2.1" data-path="data-terstruktur.html"><a href="data-terstruktur.html#kasus-elemen-data-terstruktur"><i class="fa fa-check"></i><b>2.1</b> Elemen Data Terstruktur</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#studi-kasus-elemen-data-terstruktur"><i class="fa fa-check"></i>Studi Kasus: Elemen Data Terstruktur</a></li>
-</ul></li>
-<li class="chapter" data-level="2.2" data-path="data-terstruktur.html"><a href="data-terstruktur.html#tabulasi-data-terstruktur-yang-baik"><i class="fa fa-check"></i><b>2.2</b> Tabulasi Data Terstruktur yang Baik</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#studi-kasus-perbandingan-data-yang-tidak-rapi-dan-data-yang-rapi"><i class="fa fa-check"></i>Studi Kasus: Perbandingan Data yang Tidak Rapi dan Data yang Rapi</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#soal-evaluasi-2"><i class="fa fa-check"></i>Soal Evaluasi 2</a></li>
-<li class="chapter" data-level="2.3" data-path="data-terstruktur.html"><a href="data-terstruktur.html#tingkat-pengukuran-variabel"><i class="fa fa-check"></i><b>2.3</b> Tingkat Pengukuran Variabel</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#studi-kasus-tingkat-pengukuran-variabel"><i class="fa fa-check"></i>Studi Kasus: Tingkat Pengukuran Variabel</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="data-terstruktur.html"><a href="data-terstruktur.html#jenis-jenis-tingkat-pengukuran-variabel"><i class="fa fa-check"></i><b>2.4</b> Jenis-jenis Tingkat Pengukuran Variabel</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="data-terstruktur.html"><a href="data-terstruktur.html#nominal"><i class="fa fa-check"></i><b>2.4.1</b> Nominal</a></li>
-<li class="chapter" data-level="2.4.2" data-path="data-terstruktur.html"><a href="data-terstruktur.html#ordinal"><i class="fa fa-check"></i><b>2.4.2</b> Ordinal</a></li>
-<li class="chapter" data-level="2.4.3" data-path="data-terstruktur.html"><a href="data-terstruktur.html#metrik-angka"><i class="fa fa-check"></i><b>2.4.3</b> Metrik (Angka)</a></li>
-</ul></li>
-<li class="chapter" data-level="2.5" data-path="data-terstruktur.html"><a href="data-terstruktur.html#menentukan-tingkat-pengukuran-variabel"><i class="fa fa-check"></i><b>2.5</b> Menentukan Tingkat Pengukuran Variabel</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#studi-kasus-menentukan-tingkat-pengukuran-variabel"><i class="fa fa-check"></i>Studi Kasus: Menentukan Tingkat Pengukuran Variabel</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#soal-evaluasi-3"><i class="fa fa-check"></i>Soal Evaluasi 3</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html"><i class="fa fa-check"></i><b>3</b> Analisis Statistik Deskriptif</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#capaian-pembelajaran-2"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="3.1" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#makna-analisis-statistik-deskriptif"><i class="fa fa-check"></i><b>3.1</b> Makna Analisis Statistik Deskriptif</a></li>
-<li class="chapter" data-level="3.2" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#ukuran-frekuensi"><i class="fa fa-check"></i><b>3.2</b> Ukuran Frekuensi</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-penerapan-ukuran-frekuensi-dari-dataset-hasil-survei"><i class="fa fa-check"></i>Studi Kasus: Penerapan Ukuran Frekuensi dari Dataset Hasil Survei</a></li>
-<li class="chapter" data-level="3.2.1" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#persentase-dan-proporsi"><i class="fa fa-check"></i><b>3.2.1</b> Persentase dan Proporsi</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-penerapan-persentase-dan-proporsi"><i class="fa fa-check"></i>Studi Kasus: Penerapan Persentase dan Proporsi</a></li>
-<li class="chapter" data-level="3.2.2" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#laju-rate"><i class="fa fa-check"></i><b>3.2.2</b> Laju <em>(Rate)</em></a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-perhitungan-laju"><i class="fa fa-check"></i>Studi Kasus: Perhitungan Laju</a></li>
-<li class="chapter" data-level="3.2.3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#rasio"><i class="fa fa-check"></i><b>3.2.3</b> Rasio</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-perhitungan-rasio-penggunaan-kendaraan"><i class="fa fa-check"></i>Studi Kasus: Perhitungan Rasio Penggunaan Kendaraan</a></li>
-<li class="chapter" data-level="3.2.4" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#perubahan-persentase-percentage-change"><i class="fa fa-check"></i><b>3.2.4</b> Perubahan Persentase (<em>Percentage Change</em>)</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-perubahan-persentase-penggunaan-transportasi-online"><i class="fa fa-check"></i>Studi Kasus: Perubahan Persentase Penggunaan Transportasi Online</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-kesalahan-umum-dalam-menafsirkan-kenaikan-pajak"><i class="fa fa-check"></i>Studi Kasus: Kesalahan Umum dalam Menafsirkan Kenaikan Pajak</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#ukuran-kecenderungan-pemusatan-measure-central-tendency"><i class="fa fa-check"></i><b>3.3</b> Ukuran Kecenderungan Pemusatan (<em>Measure Central Tendency</em>)</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#rata-rata-mean"><i class="fa fa-check"></i><b>3.3.1</b> Rata-rata (<em>mean</em>)</a></li>
-<li class="chapter" data-level="3.3.2" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#median"><i class="fa fa-check"></i><b>3.3.2</b> Median</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-mean-dan-median-pada-data-dengan-pencilan"><i class="fa fa-check"></i>Studi Kasus: Mean dan Median pada Data dengan Pencilan</a></li>
-<li class="chapter" data-level="3.3.3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#modus"><i class="fa fa-check"></i><b>3.3.3</b> Modus</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-analisis-modus"><i class="fa fa-check"></i>Studi Kasus: Analisis Modus</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#ukuran-penyebaran-measure-of-dispersion"><i class="fa fa-check"></i><b>3.4</b> Ukuran Penyebaran (<em>Measure of Dispersion</em>)</a>
-<ul>
-<li class="chapter" data-level="3.4.1" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#indeks-variasi-kualitatif-index-of-qualitative-variance-iqv"><i class="fa fa-check"></i><b>3.4.1</b> Indeks Variasi Kualitatif (<em>Index of Qualitative Variance</em>, IQV)</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-keberagaman-distribusi-mahasiswa-antar-fakultas"><i class="fa fa-check"></i>Studi Kasus: Keberagaman Distribusi Mahasiswa Antar Fakultas</a></li>
-<li class="chapter" data-level="3.4.2" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#rentang-range"><i class="fa fa-check"></i><b>3.4.2</b> Rentang (<em>Range</em>)</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-perbandingan-rentang-biaya-perjalanan-mahasiswa"><i class="fa fa-check"></i>Studi Kasus: Perbandingan Rentang Biaya Perjalanan Mahasiswa</a></li>
-<li class="chapter" data-level="3.4.3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#kuartil-desil-dan-persentil"><i class="fa fa-check"></i><b>3.4.3</b> Kuartil, Desil, dan Persentil</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-analisis-posisi-data-dengan-kuartil"><i class="fa fa-check"></i>Studi Kasus: Analisis Posisi Data dengan Kuartil</a></li>
-<li class="chapter" data-level="3.4.4" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#variansi-variance-dan-simpangan-baku-standard-deviation"><i class="fa fa-check"></i><b>3.4.4</b> Variansi (<em>Variance</em>) dan Simpangan Baku (<em>Standard Deviation</em>)</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-menghitung-variansi-dan-simpangan-baku-biaya-perjalanan"><i class="fa fa-check"></i>Studi Kasus: Menghitung Variansi dan Simpangan Baku Biaya Perjalanan</a></li>
-<li class="chapter" data-level="3.4.5" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#rangkuman-teknik-analisis-statistik-deskriptif"><i class="fa fa-check"></i><b>3.4.5</b> Rangkuman Teknik Analisis Statistik Deskriptif</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#soal-evaluasi-4"><i class="fa fa-check"></i>Soal Evaluasi 4</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html"><i class="fa fa-check"></i><b>4</b> Visualisasi Data Kuantitatif</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#capaian-pembelajaran-3"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="4.1" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#konsep-dasar"><i class="fa fa-check"></i><b>4.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="4.2" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#jenis-jenis-diagram"><i class="fa fa-check"></i><b>4.2</b> Jenis-jenis Diagram</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#variabel-kategorikal"><i class="fa fa-check"></i><b>4.2.1</b> Variabel Kategorikal</a></li>
-<li class="chapter" data-level="4.2.2" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#variabel-numerik"><i class="fa fa-check"></i><b>4.2.2</b> Variabel Numerik</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#penggunaan-dan-interpretasi-diagram"><i class="fa fa-check"></i><b>4.3</b> Penggunaan dan Interpretasi Diagram</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-tujuan"><i class="fa fa-check"></i><b>4.3.1</b> Pemilihan Diagram Berdasarkan Tujuan</a></li>
-<li class="chapter" data-level="4.3.2" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-jumlah-variabel"><i class="fa fa-check"></i><b>4.3.2</b> Pemilihan Diagram Berdasarkan Jumlah Variabel</a></li>
-<li class="chapter" data-level="4.3.3" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-tingkat-pengukuran-variabel"><i class="fa fa-check"></i><b>4.3.3</b> Pemilihan Diagram Berdasarkan Tingkat Pengukuran Variabel</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#soal-evaluasi-5"><i class="fa fa-check"></i>Soal Evaluasi 5</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html"><i class="fa fa-check"></i><b>5</b> Pengantar Analisis Statistik Inferensial</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#capaian-pembelajaran-4"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="5.1" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#konsep-dasar-statistika-inferensial"><i class="fa fa-check"></i><b>5.1</b> Konsep Dasar Statistika Inferensial</a></li>
-<li class="chapter" data-level="5.2" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#populasi-vs.-sampel"><i class="fa fa-check"></i><b>5.2</b> Populasi vs. Sampel</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-populasi-vs.-sampel"><i class="fa fa-check"></i>Studi Kasus: Populasi vs. Sampel</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#teknik-teknik-pengambilan-sampel-sampling-techniques"><i class="fa fa-check"></i><b>5.3</b> Teknik-Teknik Pengambilan Sampel <em>(Sampling Techniques)</em></a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-pengambilan-sampel-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: Pengambilan Sampel dengan Populasi Kecil</a></li>
-<li class="chapter" data-level="5.3.1" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#simple-random-sampling"><i class="fa fa-check"></i><b>5.3.1</b> <em>Simple Random Sampling</em></a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#catatan-miskonsepsi-tentang-istilah-random"><i class="fa fa-check"></i>Catatan: Miskonsepsi tentang Istilah Random</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-simple-random-sampling-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: <em>Simple Random Sampling</em> dengan Populasi Kecil</a></li>
-<li class="chapter" data-level="5.3.2" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#systematic-random-sampling"><i class="fa fa-check"></i><b>5.3.2</b> <em>Systematic Random Sampling</em></a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-systematic-sampling-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: <em>Systematic Sampling</em> dengan Populasi Kecil</a></li>
-<li class="chapter" data-level="5.3.3" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#stratified-random-sampling"><i class="fa fa-check"></i><b>5.3.3</b> <em>Stratified Random Sampling</em></a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-stratified-random-sampling-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: <em>Stratified Random Sampling</em> dengan Populasi Kecil</a></li>
-<li class="chapter" data-level="5.3.4" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#multi-stage-cluster-sampling"><i class="fa fa-check"></i><b>5.3.4</b> <em>Multi-Stage Cluster Sampling</em></a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-multi-stage-cluster-sampling-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: <em>Multi-Stage Cluster Sampling</em> dengan Populasi Kecil</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-6"><i class="fa fa-check"></i>Soal Evaluasi 6</a></li>
-<li class="chapter" data-level="5.4" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#menentukan-ukuran-sampel"><i class="fa fa-check"></i><b>5.4</b> Menentukan Ukuran Sampel</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menentukan-jumlah-sampel-dari-tabel"><i class="fa fa-check"></i>Studi Kasus: Menentukan Jumlah Sampel dari Tabel</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#konsep-distribusi-dalam-statistik"><i class="fa fa-check"></i><b>5.5</b> Konsep Distribusi dalam Statistik</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#model-model-distribusi-statistik"><i class="fa fa-check"></i><b>5.5.1</b> Model-model Distribusi Statistik</a></li>
-<li class="chapter" data-level="5.5.2" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#bab-5-distribusi-normal"><i class="fa fa-check"></i><b>5.5.2</b> Distribusi Normal</a></li>
-<li class="chapter" data-level="5.5.3" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#distribusi-objek-dan-distribusi-statistik"><i class="fa fa-check"></i><b>5.5.3</b> Distribusi Objek dan Distribusi Statistik</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-distribusi-objek-vs-distribusi-statistik"><i class="fa fa-check"></i>Studi Kasus: Distribusi Objek vs Distribusi Statistik</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-7"><i class="fa fa-check"></i>Soal Evaluasi 7</a></li>
-<li class="chapter" data-level="5.6" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#teorema-limit-sentral"><i class="fa fa-check"></i><b>5.6</b> Teorema Limit Sentral</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-simulasi-teorema-limit-sentral"><i class="fa fa-check"></i>Studi Kasus: Simulasi Teorema Limit Sentral</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-efek-ukuran-sampel-terhadap-variasi"><i class="fa fa-check"></i>Studi Kasus: Efek Ukuran Sampel terhadap Variasi</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-8"><i class="fa fa-check"></i>Soal Evaluasi 8</a></li>
-<li class="chapter" data-level="5.7" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#menghitung-peluang-kemunculan-nilai-tertentu-dari-distribusi-statistik-yang-berbentuk-normal."><i class="fa fa-check"></i><b>5.7</b> Menghitung Peluang Kemunculan Nilai Tertentu dari Distribusi Statistik yang Berbentuk Normal.</a>
-<ul>
-<li class="chapter" data-level="5.7.1" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#standard-error-se"><i class="fa fa-check"></i><b>5.7.1</b> <em>Standard Error</em> (SE)</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menghitung-standard-error"><i class="fa fa-check"></i>Studi Kasus: Menghitung Standard Error</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-9"><i class="fa fa-check"></i>Soal Evaluasi 9</a></li>
-<li class="chapter" data-level="5.7.2" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#nilai-standar-z-score"><i class="fa fa-check"></i><b>5.7.2</b> Nilai Standar (<em>Z-Score</em>)</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menghitung-z-score-suatu-nilai"><i class="fa fa-check"></i>Studi Kasus: Menghitung <em>Z-Score</em> Suatu Nilai</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menghitung-z-score-rata-rata-sampel"><i class="fa fa-check"></i>Studi Kasus: Menghitung <em>Z-Score</em> Rata-rata Sampel</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-10"><i class="fa fa-check"></i>Soal Evaluasi 10</a></li>
-<li class="chapter" data-level="5.7.3" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#probabilitas-nilai-di-distribusi-statistik"><i class="fa fa-check"></i><b>5.7.3</b> Menentukan Probabilitas Terjadinya Suatu Nilai</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-probabilitas-ditemukannya-suatu-sampel-dengan-rata-rata-tertentu-dibandingkan-dengan-rata-rata-populasi"><i class="fa fa-check"></i>Studi Kasus: Probabilitas Ditemukannya Suatu Sampel dengan Rata-rata Tertentu Dibandingkan dengan Rata-rata Populasi</a></li>
-<li class="chapter" data-level="5.7.4" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#untuk-z-kritis"><i class="fa fa-check"></i><b>5.7.4</b> Menentukan Nilai yang Menjadi Pembatas Suatu Probabilitas</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menentukan-batas-biaya-perjalanan-ekstrem-distribusi-objek"><i class="fa fa-check"></i>Studi Kasus: Menentukan Batas Biaya Perjalanan Ekstrem (Distribusi Objek)</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-11"><i class="fa fa-check"></i>Soal Evaluasi 11</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html"><i class="fa fa-check"></i><b>6</b> Estimasi Parameter</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#capaian-pembelajaran-5"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="6.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#statistik-vs.-parameter"><i class="fa fa-check"></i><b>6.1</b> Statistik vs. Parameter</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-statistik-vs-parameter"><i class="fa fa-check"></i>Studi Kasus: Statistik vs Parameter</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#estimasi-titik-vs.-estimasi-rentang"><i class="fa fa-check"></i><b>6.2</b> Estimasi Titik vs. Estimasi Rentang</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#estimasi-titik"><i class="fa fa-check"></i><b>6.2.1</b> Estimasi Titik</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-keterbatasan-estimasi-titik"><i class="fa fa-check"></i>Studi Kasus: Keterbatasan Estimasi Titik</a></li>
-<li class="chapter" data-level="6.2.2" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#estimasi-rentang"><i class="fa fa-check"></i><b>6.2.2</b> Estimasi Rentang</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-keuntungan-estimasi-rentang"><i class="fa fa-check"></i>Studi Kasus: Keuntungan Estimasi Rentang</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#konsep-perhitungan-rentang-kepercayaan-sebagai-estimasi-rentang"><i class="fa fa-check"></i><b>6.3</b> Konsep Perhitungan Rentang Kepercayaan Sebagai Estimasi Rentang</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-rata-rata"><i class="fa fa-check"></i><b>6.3.1</b> Perhitungan Rentang Kepercayaan Rata-rata</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-menghitung-rata-rata-jarak-tempat-tinggal-mahasiswa-itera-berdasarkan-jenis-tempat-tinggalnya"><i class="fa fa-check"></i>Studi Kasus: Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#soal-evaluasi-12"><i class="fa fa-check"></i>Soal Evaluasi 12</a></li>
-<li class="chapter" data-level="6.3.2" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-proporsi"><i class="fa fa-check"></i><b>6.3.2</b> Perhitungan Rentang Kepercayaan Proporsi</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-proporsi-mahasiswa-berdasarkan-jenis-tempat-tinggal"><i class="fa fa-check"></i>Studi Kasus: Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#soal-evaluasi-13"><i class="fa fa-check"></i>Soal Evaluasi 13</a></li>
-<li class="chapter" data-level="6.4" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#tingkat-kepercayaan"><i class="fa fa-check"></i><b>6.4</b> Lebih Dalam tentang Tingkat Kepercayaan (<em>Confidence Level</em>)</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#catatan-salah-kaprah-tingkat-kepercayaan"><i class="fa fa-check"></i>Catatan: Salah Kaprah Tingkat Kepercayaan</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-pengaruh-tingkat-kepercayaan-terhadap-lebar-rentang-kepercayaan"><i class="fa fa-check"></i>Studi Kasus: Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#kesimpulan-interpretasi-estimasi-parameter"><i class="fa fa-check"></i><b>6.5</b> Kesimpulan: Interpretasi Estimasi Parameter</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html"><i class="fa fa-check"></i><b>7</b> Uji Hipotesis Parameter Satu Populasi</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#capaian-pembelajaran-6"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="7.1" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#konsep-dasar-uji-hipotesis-1samp"><i class="fa fa-check"></i><b>7.1</b> Konsep Dasar Uji Hipotesis Parameter</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-alur-logika-evaluasi-makan-bergizi-gratis-mbg"><i class="fa fa-check"></i>Studi Kasus: Alur Logika Evaluasi Makan Bergizi Gratis (MBG)</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#perbedaan-uji-hipotesis-estimasi-parameter"><i class="fa fa-check"></i><b>7.2</b> Perbedaan Uji Hipotesis Parameter dengan Estimasi Parameter</a></li>
-<li class="chapter" data-level="7.3" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#asumsi-dasar-uji-hipotesis"><i class="fa fa-check"></i><b>7.3</b> Asumsi-asumsi yang Harus Dipenuhi dalam Menguji Hipotesis Parameter</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-memeriksa-asumsi-pada-evaluasi-mbg"><i class="fa fa-check"></i>Studi Kasus: Memeriksa Asumsi pada Evaluasi MBG</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#hipotesis-kosong-dan-alternatif"><i class="fa fa-check"></i><b>7.4</b> Hipotesis Kosong dan Hipotesis Alternatif</a>
-<ul>
-<li class="chapter" data-level="7.4.1" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#konsep-hipotesis-kosong"><i class="fa fa-check"></i><b>7.4.1</b> Hipotesis Kosong</a></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-menentukan-hipotesis-kosong-pada-evaluasi-mbg"><i class="fa fa-check"></i>Studi Kasus: Menentukan Hipotesis Kosong pada Evaluasi MBG</a></li>
-<li class="chapter" data-level="7.4.2" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#konsep-hipotesis-alternatif"><i class="fa fa-check"></i><b>7.4.2</b> Hipotesis Alternatif</a></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-menentukan-hipotesis-alternatif-pada-evaluasi-mbg"><i class="fa fa-check"></i>Studi Kasus: Menentukan Hipotesis Alternatif pada Evaluasi MBG</a></li>
-<li class="chapter" data-level="7.4.3" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#pentingnya-menentukan-bentuk-h1"><i class="fa fa-check"></i><b>7.4.3</b> Pentingnya Menentukan Bentuk Hipotesis Alternatif</a></li>
-<li class="chapter" data-level="7.4.4" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#kemungkinan-hasil-pengujian-hipotesis-menerima-h_0-atau-gagal-menolak-h_0"><i class="fa fa-check"></i><b>7.4.4</b> Kemungkinan Hasil Pengujian Hipotesis: “Menerima <span class="math inline">\(H_0\)</span>” atau “Gagal Menolak <span class="math inline">\(H_0\)</span>”?</a></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#catatan-analogi-pengadilan"><i class="fa fa-check"></i>Catatan: Analogi Pengadilan</a></li>
-</ul></li>
-<li class="chapter" data-level="7.5" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#menentukan-hasil-pengujian-hipotesis-parameter"><i class="fa fa-check"></i><b>7.5</b> Menentukan Hasil Pengujian Hipotesis Parameter</a></li>
-<li class="chapter" data-level="7.6" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#langkah-pengujian-hipotesis"><i class="fa fa-check"></i><b>7.6</b> Langkah-langkah Pengujian Hipotesis</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-melanjutkan-langkah-pengujian-hipotesis-mbg"><i class="fa fa-check"></i>Studi Kasus: Melanjutkan Langkah Pengujian Hipotesis MBG</a></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-layanan-bus-kampus"><i class="fa fa-check"></i>Studi Kasus: Layanan Bus Kampus</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#soal-evaluasi-14"><i class="fa fa-check"></i>Soal Evaluasi 14</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><i class="fa fa-check"></i><b>8</b> Uji Hipotesis Parameter Dua Populasi Atau Lebih</a>
-<ul>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#capaian-pembelajaran-7"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="8.1" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#konsep-dasar-uji-hipotesis-dua-populasi"><i class="fa fa-check"></i><b>8.1</b> Konsep Dasar Uji Hipotesis Parameter Dua Populasi Atau Lebih</a>
-<ul>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-batasan-cakupan-sebagai-dasar-penentuan-populasi"><i class="fa fa-check"></i>Studi Kasus: Batasan Cakupan Sebagai Dasar Penentuan Populasi</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-waktu-pengambilan-data-sebagai-dasar-penentuan-populasi"><i class="fa fa-check"></i>Studi Kasus: Waktu Pengambilan Data Sebagai Dasar Penentuan Populasi</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#tahapan-pengujian-hipotesis-parameter-dua-populasi-atau-lebih"><i class="fa fa-check"></i><b>8.2</b> Tahapan Pengujian Hipotesis Parameter Dua Populasi atau Lebih</a></li>
-<li class="chapter" data-level="8.3" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#uji-hipotesis-parameter-dua-populasi-independen"><i class="fa fa-check"></i><b>8.3</b> Uji Hipotesis Parameter Dua Populasi Independen</a>
-<ul>
-<li class="chapter" data-level="8.3.1" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#hipotesis-kosong-dan-alternatif-uji-hipotesis-parameter-dua-populasi-independen"><i class="fa fa-check"></i><b>8.3.1</b> Hipotesis Kosong dan Alternatif Uji Hipotesis Parameter Dua Populasi Independen</a></li>
-<li class="chapter" data-level="8.3.2" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#perhitungan-statistik-uji-dalam-uji-hipotesis-parameter-dua-populasi-independen"><i class="fa fa-check"></i><b>8.3.2</b> Perhitungan Statistik Uji dalam Uji Hipotesis Parameter Dua Populasi Independen</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-uji-rata-rata-waktu-tempuh-mahasiswa-itera-dan-unila"><i class="fa fa-check"></i>Studi Kasus: Uji Rata-Rata Waktu Tempuh Mahasiswa ITERA dan UNILA</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-uji-proporsi-pengguna-sepeda-motor-mahasiswa-itera-dan-unila"><i class="fa fa-check"></i>Studi Kasus: Uji Proporsi Pengguna Sepeda Motor Mahasiswa ITERA dan UNILA</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#soal-evaluasi-15"><i class="fa fa-check"></i>Soal Evaluasi 15</a></li>
-<li class="chapter" data-level="8.4" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#uji-hipotesis-parameter-dua-populasi-berpasangan"><i class="fa fa-check"></i><b>8.4</b> Uji Hipotesis Parameter Dua Populasi Berpasangan</a>
-<ul>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-uji-beda-biaya-perjalanan-mahasiswa-sebelum-dan-sesudah-pemberlakuan-sistem-angkutan-umum-kampus"><i class="fa fa-check"></i>Studi Kasus: Uji Beda Biaya Perjalanan Mahasiswa Sebelum dan Sesudah Pemberlakuan Sistem Angkutan Umum Kampus</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#soal-evaluasi-16"><i class="fa fa-check"></i>Soal Evaluasi 16</a></li>
-<li class="chapter" data-level="8.5" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#uji-hipotesis-parameter-lebih-dari-dua-populasi"><i class="fa fa-check"></i><b>8.5</b> Uji Hipotesis Parameter Lebih dari Dua Populasi</a>
-<ul>
-<li class="chapter" data-level="8.5.1" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#konsep-analysis-of-variance-anova"><i class="fa fa-check"></i><b>8.5.1</b> Konsep <em>Analysis of Variance</em> (ANOVA)</a></li>
-<li class="chapter" data-level="8.5.2" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#hipotesis-kosong-alternatif-anova"><i class="fa fa-check"></i><b>8.5.2</b> Hipotesis Kosong dan Alternatif ANOVA</a></li>
-<li class="chapter" data-level="8.5.3" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#langkah-pengujian-hipotesis-dengan-anova"><i class="fa fa-check"></i><b>8.5.3</b> Langkah Pengujian Hipotesis dengan ANOVA</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-uji-anova-biaya-perjalanan-tiga-kampus"><i class="fa fa-check"></i>Studi Kasus: Uji ANOVA Biaya Perjalanan Tiga Kampus</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#lanjutan-studi-kasus-uji-anova-biaya-perjalanan-tiga-kampus"><i class="fa fa-check"></i>Lanjutan Studi Kasus: Uji ANOVA Biaya Perjalanan Tiga Kampus</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#soal-evaluasi-17"><i class="fa fa-check"></i>Soal Evaluasi 17</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html"><i class="fa fa-check"></i><b>9</b> Korelasi Antarvariabel Nominal</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#capaian-pembelajaran-8"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="9.1" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#konsep-dasar-analisis-bivariat"><i class="fa fa-check"></i><b>9.1</b> Konsep Dasar Analisis Bivariat</a></li>
-<li class="chapter" data-level="9.2" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#konsep-dasar-analisis-asosiasi"><i class="fa fa-check"></i><b>9.2</b> Konsep Dasar Analisis Asosiasi</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#mengidentifikasi-asosiasi-sepasang-variabel-secara-empiris"><i class="fa fa-check"></i><b>9.2.1</b> Mengidentifikasi Asosiasi Sepasang Variabel Secara Empiris</a></li>
-<li class="chapter" data-level="9.2.2" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#identifikasi-hubungan-antar-variabel-secara-matematis"><i class="fa fa-check"></i><b>9.2.2</b> Identifikasi Hubungan Antar Variabel Secara Matematis</a></li>
-<li class="chapter" data-level="9.2.3" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#bentuk-asosiasi-sepasang-variabel"><i class="fa fa-check"></i><b>9.2.3</b> Bentuk Asosiasi Sepasang Variabel</a></li>
-</ul></li>
-<li class="chapter" data-level="9.3" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#koefisien-korelasi-variabel-nominal"><i class="fa fa-check"></i><b>9.3</b> Koefisien Korelasi Variabel Nominal</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#koefisien-korelasi-variabel-nominal-berbasis-chi-kuadrat-chi2"><i class="fa fa-check"></i><b>9.3.1</b> Koefisien Korelasi Variabel Nominal Berbasis Chi-Kuadrat (<span class="math inline">\(\chi^2\)</span>)</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-tabel-silang-variabel-nominal"><i class="fa fa-check"></i>Studi Kasus: Tabel Silang Variabel Nominal</a></li>
-<li class="chapter" data-level="9.3.2" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#frekuensi-harapan-dan-nilai-chi-square"><i class="fa fa-check"></i><b>9.3.2</b> Frekuensi Harapan dan Nilai <em>Chi-square</em> (<span class="math inline">\(\chi^2\)</span>)</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-menghitung-frekuensi-harapan-dan-uji-chi-square"><i class="fa fa-check"></i>Studi Kasus: Menghitung Frekuensi Harapan dan Uji Chi-Square</a></li>
-<li class="chapter" data-level="9.3.3" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#koefisien-phi-phi-cramers-v-dan-kontingensi-c"><i class="fa fa-check"></i><b>9.3.3</b> Koefisien phi (<span class="math inline">\(\phi\)</span>), Cramer’s-V, dan Kontingensi (C)</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#koefisien-korelasi-nominal-error"><i class="fa fa-check"></i><b>9.4</b> Koefisien Korelasi Variabel Nominal Berbasis <em>Error</em> (Koefisien Lambda, <span class="math inline">\(\lambda\)</span>)</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-logika-pengurangan-kesalahan-prediksi-pre"><i class="fa fa-check"></i>Studi Kasus: Logika Pengurangan Kesalahan Prediksi (PRE)</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-menghitung-koefisien-korelasi-lambda"><i class="fa fa-check"></i>Studi Kasus: Menghitung Koefisien Korelasi Lambda</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-menghitung-koefisien-korelasi-lambda-1"><i class="fa fa-check"></i>Studi Kasus: Menghitung Koefisien Korelasi Lambda</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#soal-evaluasi-18"><i class="fa fa-check"></i>Soal Evaluasi 18</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html"><i class="fa fa-check"></i><b>10</b> Korelasi Antarvariabel Ordinal</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#capaian-pembelajaran-9"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="10.1" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#gamma"><i class="fa fa-check"></i><b>10.1</b> Koefisien Gamma (<span class="math inline">\(\gamma\)</span>) dari Goodman dan Kruskal</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-pasangan-frekuensi-concordant-dan-discordant"><i class="fa fa-check"></i>Studi Kasus: Pasangan Frekuensi Concordant* dan <em>Discordant</em></a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-menghitung-goodman-kruskals-gamma-gamma"><i class="fa fa-check"></i>Studi Kasus: Menghitung Goodman &amp; Kruskal’s Gamma (<span class="math inline">\(\\gamma\)</span>)</a></li>
-</ul></li>
-<li class="chapter" data-level="10.2" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#sommersd"><i class="fa fa-check"></i><b>10.2</b> Koefisien <span class="math inline">\(d\)</span> dari Sommer</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-menghitung-sommers-d"><i class="fa fa-check"></i>Studi Kasus: Menghitung Sommer’s <span class="math inline">\(d\)</span></a></li>
-</ul></li>
-<li class="chapter" data-level="10.3" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#kendall"><i class="fa fa-check"></i><b>10.3</b> Koefisien tau-b (<span class="math inline">\(\tau\)</span>-b) dari Kendall</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-menghitung-kendalls-tau_b"><i class="fa fa-check"></i>Studi Kasus: Menghitung Kendall’s <span class="math inline">\(\tau_b\)</span></a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#soal-evaluasi-12-1"><i class="fa fa-check"></i>Soal Evaluasi 12</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html"><i class="fa fa-check"></i><b>11</b> Korelasi Antarvariabel Metrik</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#konsep-dasar-1"><i class="fa fa-check"></i><b>11.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="11.2" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#studi-kasus-dengan-r"><i class="fa fa-check"></i><b>11.2</b> Studi Kasus dengan R</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#soal-evaluasi-13-1"><i class="fa fa-check"></i>Soal Evaluasi 13</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="bab-13-regresi-sederhana.html"><a href="bab-13-regresi-sederhana.html"><i class="fa fa-check"></i><b>12</b> Regresi Linear Sederhana</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="bab-13-regresi-sederhana.html"><a href="bab-13-regresi-sederhana.html#konsep-dasar-2"><i class="fa fa-check"></i><b>12.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="12.2" data-path="bab-13-regresi-sederhana.html"><a href="bab-13-regresi-sederhana.html#studi-kasus-dengan-r-1"><i class="fa fa-check"></i><b>12.2</b> Studi Kasus dengan R</a></li>
-<li class="chapter" data-level="" data-path="bab-13-regresi-sederhana.html"><a href="bab-13-regresi-sederhana.html#soal-evaluasi-14-1"><i class="fa fa-check"></i>Soal Evaluasi 14</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html"><i class="fa fa-check"></i><b>13</b> Regresi Linear Berganda</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#konsep-dasar-3"><i class="fa fa-check"></i><b>13.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="13.2" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#studi-kasus-dengan-r-2"><i class="fa fa-check"></i><b>13.2</b> Studi Kasus dengan R</a></li>
-<li class="chapter" data-level="" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#soal-evaluasi-15-1"><i class="fa fa-check"></i>Soal Evaluasi 15</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html"><i class="fa fa-check"></i><b>14</b> Analisis Statistik Multivariat Interdependensi</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#konsep-dasar-4"><i class="fa fa-check"></i><b>14.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="14.2" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#studi-kasus-dengan-r-3"><i class="fa fa-check"></i><b>14.2</b> Studi Kasus dengan R</a></li>
-<li class="chapter" data-level="" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#soal-evaluasi-16-1"><i class="fa fa-check"></i>Soal Evaluasi 16</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="referensi.html"><a href="referensi.html"><i class="fa fa-check"></i>Referensi</a></li>
-<li class="appendix"><span><b>Lampiran</b></span></li>
-<li class="chapter" data-level="" data-path="tabel-statistik.html"><a href="tabel-statistik.html"><i class="fa fa-check"></i>Tabel Statistik</a>
-<ul>
-<li class="chapter" data-level="3" data-path="tabel-statistik.html"><a href="tabel-statistik.html#appendix-tabel-normdist"><i class="fa fa-check"></i><b>3</b> Tabel Distribusi Normal Standar (Z) {.unnumbered}</a></li>
-<li class="chapter" data-level="4" data-path="tabel-statistik.html"><a href="tabel-statistik.html#appendix-tabel-f-5"><i class="fa fa-check"></i><b>4</b> Tabel Distribusi F (<span class="math inline">\(\alpha = 10\%\)</span>) {.unnumbered}</a></li>
-<li class="chapter" data-level="5" data-path="tabel-statistik.html"><a href="tabel-statistik.html#appendix-tabel-f-10"><i class="fa fa-check"></i><b>5</b> Tabel Distribusi F (<span class="math inline">\(\alpha = 5\%\)</span>) {.unnumbered}</a></li>
-</ul></li>
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Buku Ajar Statistika untuk Perencanaan</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Buku Ajar Statistika untuk Perencanaan</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Statistika untuk Perencanaan</a></li>
+<li><a class="" href="pengantar.html">Pengantar</a></li>
+<li><a class="" href="lembar-persembahan.html">Lembar Persembahan</a></li>
+<li><a class="" href="konsep-dasar-statistika-dalam-perencanaan.html"><span class="header-section-number">1</span> Konsep Dasar Statistika dalam Perencanaan</a></li>
+<li><a class="" href="data-terstruktur.html"><span class="header-section-number">2</span> Data Terstruktur</a></li>
+<li><a class="" href="bab-3-analisis-statistik-deskriptif.html"><span class="header-section-number">3</span> Analisis Statistik Deskriptif</a></li>
+<li><a class="" href="bab-4-visualisasi-data-kuantitatif.html"><span class="header-section-number">4</span> Visualisasi Data Kuantitatif</a></li>
+<li><a class="" href="bab-5-pengantar-inferensial.html"><span class="header-section-number">5</span> Pengantar Analisis Statistik Inferensial</a></li>
+<li><a class="" href="bab-6-estimasi-parameter.html"><span class="header-section-number">6</span> Estimasi Parameter</a></li>
+<li><a class="" href="bab-7-uji-hipotesis-satu-populasi.html"><span class="header-section-number">7</span> Uji Hipotesis Parameter Satu Populasi</a></li>
+<li><a class="" href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><span class="header-section-number">8</span> Uji Hipotesis Parameter Dua Populasi Atau Lebih</a></li>
+<li><a class="" href="korelasi-antarvariabel-nominal.html"><span class="header-section-number">9</span> Korelasi Antarvariabel Nominal</a></li>
+<li><a class="" href="korelasi-antarvariabel-ordinal.html"><span class="header-section-number">10</span> Korelasi Antarvariabel Ordinal</a></li>
+<li><a class="active" href="korelasi-antarvariabel-metrik.html"><span class="header-section-number">11</span> Korelasi Antarvariabel Metrik</a></li>
+<li><a class="" href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Regresi Linear Sederhana</a></li>
+<li><a class="" href="regresi-linear-berganda.html"><span class="header-section-number">13</span> Regresi Linear Berganda</a></li>
+<li><a class="" href="analisis-statistik-multivariat-interdependensi.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi</a></li>
+<li><a class="" href="referensi.html">Referensi</a></li>
+<li class="book-part">Lampiran</li>
+<li><a class="" href="tabel-statistik.html">Tabel Statistik</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/abdulmubdibindar/buku-ajar-stp">View book source <i class="fab fa-github"></i></a></p>
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="korelasi-antarvariabel-metrik" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">Bab 11</span> Korelasi Antarvariabel Metrik<a href="korelasi-antarvariabel-metrik.html#korelasi-antarvariabel-metrik" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="konsep-dasar-1" class="section level2 hasAnchor" number="11.1">
-<h2><span class="header-section-number">11.1</span> Konsep Dasar<a href="korelasi-antarvariabel-metrik.html#konsep-dasar-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Untuk dua variabel numerik (interval/rasio), ukuran asosiasi yang paling umum adalah <strong>Pearson Product-Moment Correlation (<span class="math inline">\(r\)</span>)</strong>. Nilai <span class="math inline">\(r\)</span> berkisar antara -1 hingga +1.</p>
+      </nav>
 </div>
-<div id="studi-kasus-dengan-r" class="section level2 hasAnchor" number="11.2">
-<h2><span class="header-section-number">11.2</span> Studi Kasus dengan R<a href="korelasi-antarvariabel-metrik.html#studi-kasus-dengan-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Hubungan antara <strong>Pendapatan</strong> dan <strong>Pengeluaran</strong>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="korelasi-antarvariabel-metrik.html#cb2-1" tabindex="-1"></a>pendapatan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
-<span id="cb2-2"><a href="korelasi-antarvariabel-metrik.html#cb2-2" tabindex="-1"></a>pengeluaran <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="fl">3.5</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="fl">6.5</span>, <span class="dv">7</span>)</span>
-<span id="cb2-3"><a href="korelasi-antarvariabel-metrik.html#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="korelasi-antarvariabel-metrik.html#cb2-4" tabindex="-1"></a><span class="co"># Scatterplot</span></span>
-<span id="cb2-5"><a href="korelasi-antarvariabel-metrik.html#cb2-5" tabindex="-1"></a><span class="fu">plot</span>(pendapatan, pengeluaran)</span></code></pre></div>
-<p><img src="figures/bab-12-korelasi-pearson-1.png" /><!-- --></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="korelasi-antarvariabel-metrik.html#cb3-1" tabindex="-1"></a><span class="co"># Korelasi Pearson</span></span>
-<span id="cb3-2"><a href="korelasi-antarvariabel-metrik.html#cb3-2" tabindex="-1"></a><span class="fu">cor.test</span>(pendapatan, pengeluaran, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
-<pre><code>## 
-##  Pearson&#39;s product-moment correlation
-## 
-## data:  pendapatan and pengeluaran
-## t = 8,5927, df = 5, p-value = 0,0003521
-## alternative hypothesis: true correlation is not equal to 0
-## 95 percent confidence interval:
-##  0,7916653 0,9953960
-## sample estimates:
-##       cor 
-## 0,9677688</code></pre>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="korelasi-antarvariabel-metrik" class="section level1" number="11">
+<h1>
+<span class="header-section-number">Bab 11</span> Korelasi Antarvariabel Metrik<a class="anchor" aria-label="anchor" href="#korelasi-antarvariabel-metrik"><i class="fas fa-link"></i></a>
+</h1>
+<div id="capaian-pembelajaran-10" class="section level2 unnumbered rmdcapaian">
+<h2>Capaian Pembelajaran<a class="anchor" aria-label="anchor" href="#capaian-pembelajaran-10"><i class="fas fa-link"></i></a>
+</h2>
+<p>Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran metrik dengan tepat <span class="capaian">STP-11.1</span></p>
 </div>
-<div id="soal-evaluasi-13-1" class="section level2 unnumbered hasAnchor rmdexercise">
-<h2>Soal Evaluasi 13<a href="korelasi-antarvariabel-metrik.html#soal-evaluasi-13-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Setelah mempelajari korelasi antara dua variabel nominal dan ordinal, pada bab ini kita akan membahas bentuk pengujian asosiasi yang lebih kompleks, yaitu pengujian pada pasangan variabel berjenis <strong>metrik</strong>. Variabel metrik mencakup data dengan skala pengukuran <strong>interval</strong> maupun <strong>rasio</strong>. Variabel jenis ini <strong>memiliki nilai yang beragam</strong> dan <strong>bersifat numerik</strong>, sehingga <strong>dapat langsung diolah secara matematis</strong>.</p>
+<p>Dalam analisis asosiasi, pengujian hubungan antarvariabel metrik dapat memberikan informasi yang lebih lengkap, meliputi (1) kekuatan hubungan, (2) arah hubungan (positif/searah atau negatif/berlawanan arah), dan (3) <strong>pola hubungan</strong> (linear atau non-linear).</p>
+<p>Untuk asosiasi antarvariabel metrik, kita akan mempelajari dua koefisien, yaitu koefisien korelasi <span class="math inline">\(\rho\)</span> (rho) Spearman dan koefisien <span class="math inline">\(r\)</span> Pearson. Kedua ukuran ini didasarkan pada logika pengurangan kesalahan prediksi <strong>(Proportional Reduction of Error, PRE)</strong>, seperti halnya <span class="math inline">\(\lambda\)</span> pada ukuran asosiasi antarvariabel nominal dan pada ukuran-ukuran asosiasi antarvariabel ordinal. Artinya, pengujian dilakukan untuk melihat sejauh mana informasi dari satu variabel dapat mengurangi kesalahan prediksi terhadap nilai variabel lainnya.</p>
+<div id="koefisien-korelasi-rho-spearman" class="section level2" number="11.1">
+<h2>
+<span class="header-section-number">11.1</span> Koefisien Korelasi <span class="math inline">\(\rho\)</span> Spearman<a class="anchor" aria-label="anchor" href="#koefisien-korelasi-rho-spearman"><i class="fas fa-link"></i></a>
+</h2>
+<p>Koefisien <span class="math inline">\(\rho\)</span> Spearman digunakan untuk mengukur tingkat asosiasi antara dua variabel interval (atau bisa salah satunya saja) dan <strong>tidak mensyaratkan distribusi data yang normal</strong>. Kondisi ini menjadikan pengukuran asosiasi menggunakan <span class="math inline">\(\rho\)</span> Spearman lebih fleksibel, karena dapat <strong>diterapkan tanpa perlu terlebih dahulu mengidentifikasi bentuk distribusi datanya</strong>.</p>
+<div class="rmdnote">
+<p><span class="tajuksaya">Catatan</span></p>
+<p>Ingat kembali perbedaan mendasar antara tingkat pengukuran variabel interval dan rasio, yakni bahwa variabel interval adalah <strong>variabel angka yang titik nolnya tidak absolut</strong>.</p>
+<p>Yang dimaksud dengan “tidak absolut” adalah <strong>tidak ada posisi nilai nol mutlak yang berarti untuk variabel tersebut</strong>. Contoh paling mudah adalah variabel <em>rating</em> yang memiliki rentang panjang, seperti 0 hingga 10 (apalagi jika menggunakan desimal).Tidak ada makna nol absolut dalam sebuah rating, karena rating bersifat subjektif tidak bisa dibuat titik nol universal.</p>
+<p>Contoh lain adalah temperatur/suhu, yang memiliki titik nol berbeda-beda tergantung dari termometernya, serta tahun, tergantung dari kalendernya</p>
+</div>
+<p>Secara konseptual, logika pengukuran <span class="math inline">\(\rho\)</span> Spearman serupa dengan koefisien <span class="math inline">\(\gamma\)</span>, <span class="math inline">\(d\)</span> Sommer, maupun <span class="math inline">\(\tau_b\)</span> Kendall, yaitu dengan mempertimbangkan urutan (peringkat) pasangan kasus untuk mengetahui ada tidaknya hubungan antara dua variabel. Dalam analisis ini, nilai setiap variabel terlebih dahulu <strong>diubah menjadi peringkat</strong> sebelum dilakukan perhitungan asosiasinya.</p>
+<p>Koefisien <span class="math inline">\(\rho\)</span> Spearman ini dapat diukur dengan rumus:</p>
+<p><span class="math display" id="eq:rumus-rho-spearman">\[
+\rho = 1 - \frac{6 \sum D_i^2}{n(n^2 - 1)}
+\tag{11.1}
+\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(D_i\)</span> adalah selisih peringkat antara dua variabel</li>
+<li>
+<span class="math inline">\(n\)</span> adalah jumlah pasangan kasus</li>
+</ul>
+<p>Nilai koefisien <span class="math inline">\(\rho\)</span> Spearman berkisar <strong>antara 0 hingga 1</strong>, yang menggambarkan <strong>kekuatan hubungan</strong> antardua variabel (lihat Tabel <a href="korelasi-antarvariabel-nominal.html#tab:tbl-interpretasi-koefisien-nominal">9.13</a> untuk pedoman interpretasi kekuatan hubungan koefisien korelasi). Selain itu, nilai <span class="math inline">\(\rho\)</span> Spearman dapat bernilai positif (+) maupun negatif (−), yang menunjukkan <strong>arah hubungan</strong> antar kedua variabel.</p>
+<p>Hasil kuadrat dari koefisien <span class="math inline">\(\rho\)</span> Spearman (<span class="math inline">\(\rho^2\)</span>) menggambarkan <strong>besarnya kemampuan peningkatan keakuratan prediksi</strong> suatu variabel berdasarkan informasi dari variabel lainnya. Dengan kata lain, semakin besar nilai <span class="math inline">\(\rho^2\)</span>, semakin tinggi pula kemampuan satu variabel dalam menjelaskan variasi yang terjadi pada variabel pasangannya.</p>
+<p>Mari pelajari kasus berikut untuk lebih memahami penggunaan koefisien korelasi <span class="math inline">\(\rho\)</span> Spearman.</p>
+<div id="studi-kasus-mengukur-asosiasi-antarvariabel-metrik-dengan-rho-spearman" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Mengukur Asosiasi Antarvariabel Metrik dengan <span class="math inline">\(\rho\)</span> Spearman<a class="anchor" aria-label="anchor" href="#studi-kasus-mengukur-asosiasi-antarvariabel-metrik-dengan-rho-spearman"><i class="fas fa-link"></i></a>
+</h3>
+<p>Agar proses perhitungan <span class="math inline">\(\rho\)</span> Spearman lebih mudah dipahami, kita akan menggunakan data sampel berukuran kecil. Dari 12 mahasiswa, kita mendapatkan data berupa jarak tempuh tempat tinggal ke kampus (dalam km) dan skor kepuasan berkuliah dari 0 sampai 20. Datanya ditampilkan dalam Tabel <a href="korelasi-antarvariabel-metrik.html#tab:tbl-data-sampel-rho-spearman">11.1</a>.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-data-sampel-rho-spearman">Tabel 11.1: </span>Data Sampel Jarak Tempuh dan Skor Kepuasan Berkuliah
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Mahasiswa
+</th>
+<th style="text-align:center;">
+Jarak Tempuh (km)
+</th>
+<th style="text-align:center;">
+Skor Kepuasan Berkuliah
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+14
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Langkah awal untuk menghitung koefisien <span class="math inline">\(\rho\)</span> Spearman adalah dengan memberikan <strong>peringkat</strong> pada setiap nilai dari masing-masing variabel yang akan diuji. Dalam hal ini, seluruh nilai pada <strong>kedua variabel</strong> diberi peringkat berdasarkan urutannya, dari nilai terkecil hingga terbesar.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-data-sampel-rho-spearman-ranking">Tabel 11.2: </span>Data Sampel Jarak Tempuh dan Skor Kepuasan Berkuliah Beserta Peringkatnya
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Mahasiswa
+</th>
+<th style="text-align:center;">
+Jarak Tempuh (km)
+</th>
+<th style="text-align:center;">
+Peringkat Jarak
+</th>
+<th style="text-align:center;">
+Skor Kepuasan Berkuliah
+</th>
+<th style="text-align:center;">
+Peringkat Skor Kepuasan
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+19
+</td>
+<td style="text-align:center;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+7
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Setelah proses pemberian peringkat dilakukan, langkah berikutnya adalah menghitung selisih peringkat (<span class="math inline">\(D\)</span>) antara kedua variabel untuk setiap responden. Untuk meringkas demonstrasi, kolom nilai asli disembunyikan sehingga kita fokus pada peringkat dan selisihnya.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-data-sampel-rho-spearman-selisih">Tabel 11.3: </span>Pengolahan Data untuk Menghitung Koefisien Korelasi <span class="math inline">\(ho\)</span> Spearman
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Mahasiswa
+</th>
+<th style="text-align:center;">
+Peringkat Jarak
+</th>
+<th style="text-align:center;">
+Peringkat Skor Kepuasan
+</th>
+<th style="text-align:center;">
+Selisih Peringkat (D)
+</th>
+<th style="text-align:center;">
+Kuadrat Selisih Peringkat (D^2)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+-9
+</td>
+<td style="text-align:center;">
+81
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+-3
+</td>
+<td style="text-align:center;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+-7
+</td>
+<td style="text-align:center;">
+49
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+49
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+-11
+</td>
+<td style="text-align:center;">
+121
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+121
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+81
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+-5
+</td>
+<td style="text-align:center;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+-1
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Dari Tabel <a href="korelasi-antarvariabel-metrik.html#tab:tbl-data-sampel-rho-spearman-selisih">11.3</a> kolom terakhir, dapat kita hitung bahwa total kuadrat selisih peringkat (<span class="math inline">\(\sum D^2\)</span>) adalah sebesar <strong>572</strong>. Dengan persamaan <a href="korelasi-antarvariabel-metrik.html#eq:rumus-rho-spearman">(11.1)</a>, maka koefisien korelasi <span class="math inline">\(\rho\)</span> Spearman dapat dihitung sebagai berikut.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\rho &amp;= 1 - \frac{6 \sum D_i^2}{n(n^2 - 1)} \\
+&amp;= 1 - \frac{6 \times 572}{12(12^2 - 1)} \\
+&amp;= 1 - \frac{3432}{12(144 - 1)} \\
+&amp;= 1 - \frac{3432}{12(143)} \\
+&amp;= 1 - \frac{3432}{1716} \\
+&amp;= 1 - 2 \\
+&amp;= -1
+\end{aligned}
+\]</span></p>
+<p>Berdasarkan hasil perhitungan, diketahui bahwa nilai <span class="math inline">\(\rho = -1{,}00\)</span> yang menunjukkan <strong>hubungan sempurna antara jarak tempuh dan tingkat kepuasan</strong>. Nilai koefisien ini juga bernilai <strong>negatif</strong> yang menunjukkan <strong>arah yang berlawanan</strong> antara kedua variabel tersebut. Interpretasinya adalah <strong>apabila jarak perjalanan semakin jauh maka tingkat kepuasan akan semakin rendah</strong>.</p>
+</div>
+</div>
+<div id="koefisien-korelasi-r-pearson" class="section level2" number="11.2">
+<h2>
+<span class="header-section-number">11.2</span> Koefisien Korelasi <span class="math inline">\(r\)</span> Pearson<a class="anchor" aria-label="anchor" href="#koefisien-korelasi-r-pearson"><i class="fas fa-link"></i></a>
+</h2>
+<p>Sebelum mempelajari lebih lanjut tentang koefisien korelasi <span class="math inline">\(r\)</span> Pearson, mari kita pahami terlebih dahulu konsep dari <strong>kovariansi</strong>. Perlu dipahami terlebih dahulu bahwa kovariansi digunakan untuk mengukur <strong>hubungan antara dua variabel dengan skala interval maupun rasio</strong> <span class="citation">(<a href="referensi.html#ref-chan2021introduction">Chan 2021b</a>)</span>. Dalam hubungan antara dua variabel metrik, kita menilai bahwa ada hubungan antara kedua variabel tersebut berdasarkan adanya <strong>kovariansi</strong> (<em>covariance</em>).</p>
+<div id="dari-variansi-ke-kovariansi" class="section level3" number="11.2.1">
+<h3>
+<span class="header-section-number">11.2.1</span> Dari Variansi ke Kovariansi<a class="anchor" aria-label="anchor" href="#dari-variansi-ke-kovariansi"><i class="fas fa-link"></i></a>
+</h3>
+<p>Untuk memahami kovariansi, ingatlah kembali konsep varians. Varians mengukur sejauh mana data dalam satu variabel menyebar dari nilai rata-ratanya. Jika kita memiliki variabel <span class="math inline">\(X\)</span>, maka varians (<span class="math inline">\(s^2\)</span>) dihitung dengan menjumlahkan kuadrat selisih antara setiap data (<span class="math inline">\(x_i\)</span>) dengan rata-ratanya (<span class="math inline">\(\bar{x}\)</span>):</p>
+<p><span class="math display">\[
+s^2_x = \frac{\sum (x_i - \bar{x})^2}{n-1}
+\]</span></p>
+<p>Sekarang, bayangkan kita memiliki dua variabel, <span class="math inline">\(x\)</span> dan <span class="math inline">\(y\)</span>. Kita ingin tahu apakah ketika <span class="math inline">\(x\)</span> menyimpang dari rata-ratanya, <span class="math inline">\(y\)</span> juga cenderung menyimpang dalam arah yang sama atau berlawanan. Konsep ini disebut <strong>kovariansi</strong>.</p>
+<p>Secara matematis, alih-alih menguadratkan selisih satu variabel, kita mengalikan selisih <span class="math inline">\(x\)</span> dengan selisih <span class="math inline">\(y\)</span>:</p>
+<p><span class="math display" id="eq:rumus-kovariansi">\[
+cov(x, y) = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{n-1}
+\tag{11.2}
+\]</span></p>
+<p>Logika kovariansi:</p>
 <ol style="list-style-type: decimal">
-<li>Apa syarat utama penggunaan korelasi Pearson? <span class="capaian">STP-10.1</span></li>
-<li>Jika <span class="math inline">\(r = 0\)</span>, apakah artinya tidak ada hubungan sama sekali? Jelaskan! <span class="capaian">STP-10.2</span></li>
+<li>
+<strong>Positif</strong>: Jika saat <span class="math inline">\(x\)</span> berada di atas rata-rata, <span class="math inline">\(y\)</span> juga cenderung berada di atas rata-rata, maka hasil perkaliannya positif. Jika keduanya di bawah rata-rata, hasil perkaliannya juga positif. Ini menunjukkan hubungan searah.</li>
+<li>
+<strong>Negatif</strong>: Jika saat <span class="math inline">\(x\)</span> di atas rata-rata, <span class="math inline">\(y\)</span> justru di bawah rata-rata, hasil perkaliannya menjadi negatif. Ini menunjukkan hubungan berlawanan arah.</li>
+<li>
+<strong>Mendekati Nol</strong>: Jika tidak ada pola yang konsisten, nilai positif dan negatif akan saling meniadakan saat dijumlahkan, menghasilkan kovariansi yang mendekati nol.</li>
+</ol>
+</div>
+<div id="masalah-pada-kovariansi-skala-dan-unit" class="section level3" number="11.2.2">
+<h3>
+<span class="header-section-number">11.2.2</span> Masalah pada Kovariansi: Skala dan Unit<a class="anchor" aria-label="anchor" href="#masalah-pada-kovariansi-skala-dan-unit"><i class="fas fa-link"></i></a>
+</h3>
+<p>Kovariansi sangat berguna untuk mengetahui arah hubungan, namun ia memiliki kelemahan besar: besaran nilainya sangat bergantung pada unit pengukuran.</p>
+<p>Jika kita mengukur jarak dalam meter alih-alih kilometer, <strong>nilai kovariansinya akan melonjak drastis meskipun hubungan aslinya tidak berubah</strong>. Hal ini membuat kita sulit menentukan seberapa “kuat” hubungan tersebut hanya dengan melihat angka kovariansi.</p>
+</div>
+<div id="studi-kasus-masalah-skala-dan-unit-pada-kovariansi" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Masalah Skala dan Unit pada Kovariansi<a class="anchor" aria-label="anchor" href="#studi-kasus-masalah-skala-dan-unit-pada-kovariansi"><i class="fas fa-link"></i></a>
+</h3>
+<p>Seorang perencana ingin menguji hubungan antara Jarak ke Taman Kota (<span class="math inline">\(x\)</span>) dan Indeks Kualitas Udara (<span class="math inline">\(y\)</span>) di 5 lokasi. Data awalnya adalah sebagai berikut:</p>
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-jarak-iku">Tabel 11.4: </span>Data Jarak ke Taman dan Kualitas Udara
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Lokasi
+</th>
+<th style="text-align:center;">
+Jarak (km)
+</th>
+<th style="text-align:center;">
+Kualitas Udara (Indeks)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+0,5
+</td>
+<td style="text-align:center;">
+80
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+1,2
+</td>
+<td style="text-align:center;">
+75
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+C
+</td>
+<td style="text-align:center;">
+2,5
+</td>
+<td style="text-align:center;">
+60
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+D
+</td>
+<td style="text-align:center;">
+3,0
+</td>
+<td style="text-align:center;">
+55
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+E
+</td>
+<td style="text-align:center;">
+4,5
+</td>
+<td style="text-align:center;">
+40
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Perhitungan kovariansi untuk data tersebut kita mulai dengan perhitungan rata-rata dari masing-masing variabel. Untuk variabel jarak tempuh dalam kilometer, rata-ratanya adalah <span class="math inline">\(\bar{x} = \frac{0{,}5 + 1{,}2 + 2{,}5 + 3{,}0 + 4{,}5}{5} = 2,34\)</span> kilometer. Sementara itu, rata-rata kualitas udara adalah <span class="math inline">\(\bar{y} = \frac{80 + 75 + 60 + 55 + 40}{5} = 62\)</span>.</p>
+<p>Sekarang kita akan menghitung kovariansinya menggunakan persamaan <a href="korelasi-antarvariabel-metrik.html#eq:rumus-kovariansi">(11.2)</a>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{cov}(X, Y) &amp;= \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{n-1} \\
+&amp;= \frac{(0{,}5 - 2,34)(80 - 62) + (1,2 - 2,34)(75 - 62) + \dots}{5-1} \\
+&amp;= \frac{-100,4}{4} \\
+&amp;= -25,1
+\end{aligned}
+\]</span></p>
+<p>Bagaimana jika kita mengubah satuan jarak tempuh dari kilometer menjadi meter? Berikut adalah dataset yang kita miliki:</p>
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-jarak-iku-meter">Tabel 11.5: </span>Data Jarak ke Taman dan Kualitas Udara (Satuan Meter)
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Lokasi
+</th>
+<th style="text-align:center;">
+Jarak (meter)
+</th>
+<th style="text-align:center;">
+Kualitas Udara (Indeks)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+500
+</td>
+<td style="text-align:center;">
+80
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+1.200
+</td>
+<td style="text-align:center;">
+75
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+C
+</td>
+<td style="text-align:center;">
+2.500
+</td>
+<td style="text-align:center;">
+60
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+D
+</td>
+<td style="text-align:center;">
+3.000
+</td>
+<td style="text-align:center;">
+55
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+E
+</td>
+<td style="text-align:center;">
+4.500
+</td>
+<td style="text-align:center;">
+40
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Rata-rata jarak tempuh dalam meter sekarang adalah <span class="math inline">\(2.340\)</span> meter. Dan ketika kita menghitung kovariansinya, nilainya menjadi:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{cov}(X, Y) &amp;= \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{n-1} \\
+&amp;= \frac{(500 - 2.340)(80 - 62) + (1200 - 2.340)(75 - 62) + \dots}{5-1} \\
+&amp;= \frac{-100.400}{4} \\
+&amp;= -25.100
+\end{aligned}
+\]</span></p>
+<p>Karena nilai selisih <span class="math inline">\((x_i - \bar{x})\)</span> membesar 1000 kali lipat, maka nilai total kovariansi juga akan membesar 1000 kali lipat. Hal ini menunjukkan bahwa kovariansi <strong>tidak stabil terhadap perubahan unit pengukuran</strong>.</p>
+</div>
+<div id="standardisasi-kovariansi-dengan-koefisien-korelasi-r-pearson" class="section level3" number="11.2.3">
+<h3>
+<span class="header-section-number">11.2.3</span> Standardisasi Kovariansi dengan Koefisien Korelasi <span class="math inline">\(r\)</span> Pearson<a class="anchor" aria-label="anchor" href="#standardisasi-kovariansi-dengan-koefisien-korelasi-r-pearson"><i class="fas fa-link"></i></a>
+</h3>
+<p>Untuk mengatasi masalah unit tersebut, Karl Pearson <span class="citation">(<a href="referensi.html#ref-pearson1895note">1895</a>)</span> mengusulkan agar kovariansi “distandarisasi”. Caranya adalah dengan membagi kovariansi dengan hasil kali standar deviasi kedua variabel (<span class="math inline">\(s_x\)</span> dan <span class="math inline">\(s_y\)</span>). Indeks hasil standardisasi ini dikenal sebagai <strong>Koefisien Korelasi Pearson</strong> (<span class="math inline">\(r\)</span>):</p>
+<p><span class="math display" id="eq:rumus-korelasi-pearson">\[
+r = \frac{Cov(x,y)}{s_x s_y}\tag{11.3}
+\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(Cov(x,y)\)</span> adalah kovariansi antara variabel x dan y</li>
+<li>
+<span class="math inline">\(s_x\)</span> adalah simpangan baku variabel x</li>
+<li>
+<span class="math inline">\(s_y\)</span> adalah simpangan baku variabel y</li>
+</ul>
+<p>atau jika kita nyatakan dalam bentuk variabel-variabel yang dianalisis, maka persamaannya adalah:</p>
+<p><span class="math display" id="eq:rumus-korelasi-pearson-variabel">\[
+r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2} \sqrt{\sum_{i=1}^{n} (y_i - \bar{y})^2}}\tag{11.4}
+\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(x_i\)</span> adalah nilai variabel x ke-i</li>
+<li>
+<span class="math inline">\(y_i\)</span> adalah nilai variabel y ke-i</li>
+<li>
+<span class="math inline">\(\bar{x}\)</span> adalah rata-rata variabel x</li>
+<li>
+<span class="math inline">\(\bar{y}\)</span> adalah rata-rata variabel y</li>
+<li>
+<span class="math inline">\(n\)</span> adalah jumlah observasi</li>
+</ul>
+<p>Interpretasi dari nilai ini juga lebih sederhana: rentang nilai <span class="math inline">\(r\)</span> selalu berada di antara <span class="math inline">\(-1{,}00\)</span> sampai dengan <span class="math inline">\(+1{,}00\)</span>, yang berarti jika tandanya positif maka kedua variabel <strong>bergerak searah</strong>, sedangkan jika tandanya negatif maka kedua variabel <strong>bergerak berlawanan arah</strong>. Semakin mendekati nilai mutlak 1, maka <strong>semakin kuat hubungan antara kedua variabel tersebut</strong>.</p>
+</div>
+<div id="studi-kasus-menghitung-korelasi-pearson" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Menghitung Korelasi Pearson<a class="anchor" aria-label="anchor" href="#studi-kasus-menghitung-korelasi-pearson"><i class="fas fa-link"></i></a>
+</h3>
+<p>Kita akan menggunakan kembali data Jarak ke Taman Kota (<span class="math inline">\(x\)</span>) dalam kilometer dan Indeks Kualitas Udara (<span class="math inline">\(y\)</span>) dari contoh sebelumnya. Kita telah mengetahui bahwa:</p>
+<ul>
+<li>
+<span class="math inline">\(Cov(x,y) = -25,1\)</span><br>
+</li>
+<li>
+<span class="math inline">\(\bar{x} = 2,34\)</span><br>
+</li>
+<li>
+<span class="math inline">\(\bar{y} = 62\)</span><br>
+</li>
+<li>
+<span class="math inline">\(s_x = 1,566206\)</span><br>
+</li>
+<li><span class="math inline">\(s_y = 16,04681\)</span></li>
+</ul>
+<p>Dengan menggunakan persamaan <a href="korelasi-antarvariabel-metrik.html#eq:rumus-korelasi-pearson">(11.3)</a>, kita dapat menghitung nilai korelasi sebagai berikut:</p>
+<p><span class="math display">\[
+\begin{aligned}
+r &amp;= \frac{Cov(x,y)}{s_x s_y} \\
+&amp;= \frac{-25,1}{1,566206 \times 16,04681} \\
+&amp;= \frac{-25,1}{25,1326} \\
+&amp;= -0,9987029
+\end{aligned}
+\]</span></p>
+<p>Bila dihitung menggunakan persamaan dalam bentuk variabel-variabel yang dianalisis seperti pada <a href="korelasi-antarvariabel-metrik.html#eq:rumus-korelasi-pearson-variabel">(11.4)</a>, maka hasilnya adalah:</p>
+<p><span class="math display">\[
+\begin{aligned}
+r &amp;= \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2} \sqrt{\sum_{i=1}^{n} (y_i - \bar{y})^2}} \\
+&amp;= \frac{(0{,}5 - 2,34)(80 - 62) + (1{,}2 - 2,34)(75 - 62) + \dots}{\sqrt{((0{,}5 - 2,34)^2 + (1{,}2 - 2,34)^2 + \dots)} \sqrt{((80 - 62)^2 + (75 - 62)^2 + \dots)}} \\
+&amp;= \frac{-0,9987029}{25,1326} \\
+&amp;= -0,9987029
+\end{aligned}
+\]</span></p>
+<p>Untuk memudahkan pengecekan, berikut adalah hasil pengolahan dari data mentah yang kita miliki:</p>
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-jarak-iku-2">Tabel 11.6: </span>Data Jarak ke Taman dan Kualitas Udara (diulang)
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Lokasi
+</th>
+<th style="text-align:center;">
+Jarak (km)
+</th>
+<th style="text-align:center;">
+Kualitas Udara (Indeks)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+A
+</td>
+<td style="text-align:center;">
+0,5
+</td>
+<td style="text-align:center;">
+80
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+B
+</td>
+<td style="text-align:center;">
+1,2
+</td>
+<td style="text-align:center;">
+75
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+C
+</td>
+<td style="text-align:center;">
+2,5
+</td>
+<td style="text-align:center;">
+60
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+D
+</td>
+<td style="text-align:center;">
+3,0
+</td>
+<td style="text-align:center;">
+55
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+E
+</td>
+<td style="text-align:center;">
+4,5
+</td>
+<td style="text-align:center;">
+40
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Nilai koefisien korelasi Pearson adalah -0,9987029, yang menunjukkan adanya hubungan linear negatif yang kuat antara jarak ke taman kota dan kualitas udara. Semakin jauh jarak ke taman kota, semakin rendah kualitas udaranya.</p>
+</div>
+</div>
+<div id="pola-hubungan-data-metrik" class="section level2" number="11.3">
+<h2>
+<span class="header-section-number">11.3</span> Pola Hubungan Data Metrik<a class="anchor" aria-label="anchor" href="#pola-hubungan-data-metrik"><i class="fas fa-link"></i></a>
+</h2>
+<p>Pola hubungan data metrik adalah <strong>bentuk visual</strong> dari <strong>titik-titik yang ada dalam <em>scatter plot</em></strong> antara variabel-variabel metrik yang kita analisis. Dari pola dalam <em>scatter plot</em> kita juga sebenarnya dapat menelaah elemen-elemen hubungan lainnya: <strong>keberadaan dan kekuatan</strong> serta <strong>arah hubungan</strong>. Gambar <a href="korelasi-antarvariabel-metrik.html#fig:fig-pola-hubungan">11.1</a> menjelaskan maksud hal tersebut.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-pola-hubungan"></span>
+<img src="images/pola-hubungan-metrik.png" alt="Pola Hubungan Linear dan Ketiadaan Hubungan pada Scatter Plot" width="60%"><p class="caption">
+Gambar 11.1: Pola Hubungan Linear dan Ketiadaan Hubungan pada Scatter Plot
+</p>
+</div>
+<p>Grafik (a) dan (b) menunjukkan <strong>pola hubungan linear</strong> karena sebaran titik-titik membentuk pola garis lurus yang berarti keberadaan hubungan antara variabel-variabel metrik yang dianalisis dapat dikonfirmasi. Sementara itu, <strong>ketiadaan hubungan</strong> diperlihatkan oleh grafik (c) dan (d) yang kumpulannya tidak membentuk pola apapun (tidak beraturan).</p>
+<p><strong>Kekuatan</strong> hubungan dilihat dari kerapatan titik-titik. Titik-titik yang mengumpul dengan <strong>rapat</strong> menandakan hubungan yang <strong>kuat</strong>, sementara hubungan yang <strong>lemah</strong> diperlihatkan oleh kumpulan titik-titik yang <strong>renggang</strong>.</p>
+<p><strong>Arah</strong> hubungan dilihat dari <strong>arah kemiringan</strong> garis. Kemiringan <strong>ke atas</strong> menandakan hubungan yang <strong>positif atau searah</strong>. Hal ini dapat dilihat dari titik-titik yang berada di bawah garis merah (horizontal)—lebih kecil—juga berada di kiri garis biru (vertikal)—lebih kecil juga. Di sisi lain, kemiringan <strong>ke bawah</strong> menandakan hubungan yang <strong>negatif atau berlawanan</strong>. Titik-titik yang berada di bawah garis merah (horizontal)—lebih kecil—berada di kanan garis biru (vertikal)—lebih besar.</p>
+<p>Pola hubungan lain adalah <strong>nonlinear</strong>. Hubungan nonlinear adalah hubungan yang, seperti namanya, tidak linear. Hubungan-hubungan nonlinear ini biasanya mengandung fungsi-fungsi matematis nonlinear seperti fungsi kuadrat (quadratic, <span class="math inline">\(x^2\)</span>), kubik (cubic, <span class="math inline">\(x^3\)</span>), eksponensial (exponential, <span class="math inline">\(e^x\)</span>) atau sinusoidal (<span class="math inline">\(sin(x)\)</span>). Hal ini diperjelas dengan ilustrasi yang ada di Gambar <a href="korelasi-antarvariabel-metrik.html#fig:fig-pola-hubungan-nonlinear">11.2</a> berikut.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-pola-hubungan-nonlinear"></span>
+<img src="images/pola-hubungan-nonlinear.png" alt="Pola Hubungan Linear dan Ketiadaan Hubungan pada Scatter Plot" width="60%"><p class="caption">
+Gambar 11.2: Pola Hubungan Linear dan Ketiadaan Hubungan pada Scatter Plot
+</p>
+</div>
+<div id="studi-kasus-pola-hubungan-jarak-dengan-iku" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Pola Hubungan Jarak dengan IKU<a class="anchor" aria-label="anchor" href="#studi-kasus-pola-hubungan-jarak-dengan-iku"><i class="fas fa-link"></i></a>
+</h3>
+<p>Untuk memahami gambaran hubungan antarvariabel metrik secara lebih luas, mari kita perhatikan hasil pengolahan data jarak ke taman dan kualitas udara dari 30 lokasi yang disajikan dalam Gambar <a href="korelasi-antarvariabel-metrik.html#fig:fig-scatter-jarak-iku-30">11.3</a>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-scatter-jarak-iku-30"></span>
+<img src="figures/fig-scatter-jarak-iku-30-1.png" alt="Scatter Plot Hubungan Jarak ke Taman dengan IKU" width="70%"><p class="caption">
+Gambar 11.3: Scatter Plot Hubungan Jarak ke Taman dengan IKU
+</p>
+</div>
+<p>Berdasarkan pengamatan visual terhadap titik-titik koordinat tersebut, kita dapat menelaah elemen hubungan sebagai berikut:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Keberadaan</strong>: Terdapat pola yang jelas di mana titik-titik tersebut tidak menyebar secara acak, melainkan mengikuti kecenderungan arah tertentu. Hal ini mengonfirmasi adanya hubungan antara jarak ke taman dan kualitas udara.</li>
+<li>
+<strong>Kekuatan</strong>: Hubungan ini dapat dikategorikan cukup kuat hingga kuat karena kumpulan titik-titik tersebut mengelompok dengan relatif rapat mengikuti satu garis imajiner, bukan menyebar luas secara berjauhan.</li>
+<li>
+<strong>Arah</strong>: Hubungan bersifat negatif atau berlawanan arah. Hal ini ditunjukkan oleh kemiringan pola yang menurun dari kiri atas ke kanan bawah, yang berarti semakin jauh jarak ke taman (nilai <span class="math inline">\(x\)</span> membesar), maka kualitas udara cenderung semakin rendah (nilai <span class="math inline">\(y\)</span> mengecil).</li>
+<li>
+<strong>Pola</strong>: Secara visual, sebaran titik-titik tersebut lebih mendekati bentuk garis lurus (linear) daripada bentuk melengkung (nonlinear). Oleh karena itu, kita dapat menyimpulkan bahwa hubungan kedua variabel ini mengikuti pola hubungan linear.</li>
+</ol>
+</div>
+<p>Kerjakanlah soal-soal berikut untuk menguji pemahaman Anda mengenai korelasi variabel metrik.</p>
+<div id="soal-evaluasi-13-1" class="section level3 unnumbered rmdexercise">
+<h3>Soal Evaluasi 13<a class="anchor" aria-label="anchor" href="#soal-evaluasi-13-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Perhatikan tabel terkait jarak rumah ke fasilitas kesehatan, frekuensi kunjungan per tahun, dan tingkat kepuasan terhadap fasilitas kesehatan berikut. Lakukanlah pengujian asosiasi pada masing-masing variabel berikut: (i) jarak dan frekuensi kunjungan; dan (ii) frekuensi kunjungan dan kepuasan.</p>
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-evaluasi-13">Tabel 11.7: </span>Data Jarak ke Taman dan Kualitas Udara (diulang)
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Responden
+</th>
+<th style="text-align:center;">
+Jarak (km)
+</th>
+<th style="text-align:center;">
+Frekuensi Kunjungan
+</th>
+<th style="text-align:center;">
+Tingkat Kepuasan terhadap Faskes (0-20)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1,2
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2,5
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+3,8
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+5,0
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+14
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+0,8
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+4,5
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+6,2
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+2,0
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+3,2
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+5,5
+</td>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+7,0
+</td>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+1,0
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+4,0
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+15
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+6,8
+</td>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+3,5
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+16
+</td>
+</tr>
+</tbody>
+</table></div>
+<ol style="list-style-type: lower-alpha">
+<li>Tentukan koefisien yang pas digunakan untuk menyatakan korelasi kedua variabel pada masing-masing pasangan korelasi variabel (i, ii) (<span class="math inline">\(\rho\)</span> Spearman atau <span class="math inline">\(r\)</span> Pearson).</li>
+<li>Hitung dan interpretasikan nilai-nilai tersebut sesuai makna koefisien tersebut dalam konsepnya (Tuliskan langkah-langkah sesuai penjelasan pada bagian konsep).</li>
+<li>Apa yang bisa kita simpulkan dari hasil perhitungan koefisien-koefisien tersebut?</li>
 </ol>
 </div>
 
 </div>
-            </section>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="korelasi-antarvariabel-ordinal.html"><span class="header-section-number">10</span> Korelasi Antarvariabel Ordinal</a></div>
+<div class="next"><a href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Regresi Linear Sederhana</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#korelasi-antarvariabel-metrik"><span class="header-section-number">11</span> Korelasi Antarvariabel Metrik</a></li>
+<li><a class="nav-link" href="#capaian-pembelajaran-10">Capaian Pembelajaran</a></li>
+<li>
+<a class="nav-link" href="#koefisien-korelasi-rho-spearman"><span class="header-section-number">11.1</span> Koefisien Korelasi \(\rho\) Spearman</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#studi-kasus-mengukur-asosiasi-antarvariabel-metrik-dengan-rho-spearman">Studi Kasus: Mengukur Asosiasi Antarvariabel Metrik dengan \(\rho\) Spearman</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#koefisien-korelasi-r-pearson"><span class="header-section-number">11.2</span> Koefisien Korelasi \(r\) Pearson</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#dari-variansi-ke-kovariansi"><span class="header-section-number">11.2.1</span> Dari Variansi ke Kovariansi</a></li>
+<li><a class="nav-link" href="#masalah-pada-kovariansi-skala-dan-unit"><span class="header-section-number">11.2.2</span> Masalah pada Kovariansi: Skala dan Unit</a></li>
+<li><a class="nav-link" href="#studi-kasus-masalah-skala-dan-unit-pada-kovariansi">Studi Kasus: Masalah Skala dan Unit pada Kovariansi</a></li>
+<li><a class="nav-link" href="#standardisasi-kovariansi-dengan-koefisien-korelasi-r-pearson"><span class="header-section-number">11.2.3</span> Standardisasi Kovariansi dengan Koefisien Korelasi \(r\) Pearson</a></li>
+<li><a class="nav-link" href="#studi-kasus-menghitung-korelasi-pearson">Studi Kasus: Menghitung Korelasi Pearson</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#pola-hubungan-data-metrik"><span class="header-section-number">11.3</span> Pola Hubungan Data Metrik</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#studi-kasus-pola-hubungan-jarak-dengan-iku">Studi Kasus: Pola Hubungan Jarak dengan IKU</a></li>
+<li><a class="nav-link" href="#soal-evaluasi-13-1">Soal Evaluasi 13</a></li>
+</ul>
+</li>
+</ul>
 
-          </div>
-        </div>
-      </div>
-<a href="korelasi-antarvariabel-ordinal.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bab-13-regresi-sederhana.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/abdulmubdibindar/buku-ajar-stp/blob/master/12-korelasi-metrik.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/abdulmubdibindar/buku-ajar-stp/edit/master/12-korelasi-metrik.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Buku Ajar Statistika untuk Perencanaan</strong>" was written by Muhammad Abdul Mubdi Bindar, Husna Tiara Putri, Valendya Rilansari. </p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-  "sharing": {
-    "github": false,
-    "facebook": true,
-    "twitter": true,
-    "linkedin": false,
-    "weibo": false,
-    "instapaper": false,
-    "vk": false,
-    "whatsapp": false,
-    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-  },
-  "fontsettings": {
-    "theme": "white",
-    "family": "sans",
-    "size": 2
-  },
-  "edit": {
-    "link": null,
-    "text": null
-  },
-  "history": {
-    "link": null,
-    "text": null
-  },
-  "view": {
-    "link": null,
-    "text": null
-  },
-  "download": null,
-  "search": {
-    "engine": "fuse",
-    "options": null
-  },
-  "toc": {
-    "collapse": "subsection"
-  }
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -619,7 +1472,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>

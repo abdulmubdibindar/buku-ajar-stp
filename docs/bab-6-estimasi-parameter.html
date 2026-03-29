@@ -1,537 +1,130 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Bab 6 Estimasi Parameter | Buku Ajar Statistika untuk Perencanaan</title>
-  <meta name="description" content="Bab 6 Estimasi Parameter | Buku Ajar Statistika untuk Perencanaan" />
-  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="Bab 6 Estimasi Parameter | Buku Ajar Statistika untuk Perencanaan" />
-  <meta property="og:type" content="book" />
-  
-  
-  
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bab 6 Estimasi Parameter | Buku Ajar Statistika untuk Perencanaan" />
-  
-  
-  
-
-<meta name="author" content="Muhammad Abdul Mubdi Bindar" />
-<meta name="author" content="Husna Tiara Putri" />
-<meta name="author" content="Valendya Rilansari" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="bab-5-pengantar-inferensial.html"/>
-<link rel="next" href="bab-7-uji-hipotesis-satu-populasi.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
-<link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet" />
-<script src="libs/tabwid-1.1.3/tabwid.js"></script>
-
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bab 6 Estimasi Parameter | Buku Ajar Statistika untuk Perencanaan</title>
+<meta name="author" content="Muhammad Abdul Mubdi Bindar">
+<meta name="author" content="Husna Tiara Putri">
+<meta name="author" content="Valendya Rilansari">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta property="og:title" content="Bab 6 Estimasi Parameter | Buku Ajar Statistika untuk Perencanaan">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bab 6 Estimasi Parameter | Buku Ajar Statistika untuk Perencanaan">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
-
-<style type="text/css">
-  
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-</style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
-
-<link rel="stylesheet" href="style.css" type="text/css" />
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+          margin-bottom: 0em;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan mampu memaknai interval kepercayaan estimasi sebuah parameter STP-5.1. Estimasi parameter adalah teknik dalam statistika...">
+<meta property="og:description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan mampu memaknai interval kepercayaan estimasi sebuah parameter STP-5.1. Estimasi parameter adalah teknik dalam statistika...">
+<meta name="twitter:description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan mampu memaknai interval kepercayaan estimasi sebuah parameter STP-5.1. Estimasi parameter adalah teknik dalam statistika...">
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Statistika untuk Perencanaan</a></li>
-<li class="chapter" data-level="" data-path="pengantar.html"><a href="pengantar.html"><i class="fa fa-check"></i>Pengantar</a></li>
-<li class="chapter" data-level="" data-path="lembar-persembahan.html"><a href="lembar-persembahan.html"><i class="fa fa-check"></i>Lembar Persembahan</a></li>
-<li class="chapter" data-level="1" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html"><i class="fa fa-check"></i><b>1</b> Konsep Dasar Statistika dalam Perencanaan</a>
-<ul>
-<li class="chapter" data-level="" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#capaian-pembelajaran"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="1.1" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#kedudukan-dan-peran-analisis-data-dalam-perencanaan"><i class="fa fa-check"></i><b>1.1</b> Kedudukan dan Peran Analisis Data dalam Perencanaan</a>
-<ul>
-<li class="chapter" data-level="" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#kasus-analisis-data-dalam-perencanaan"><i class="fa fa-check"></i>Studi Kasus: Analisis Data dalam Perencanaan Transportasi Berkelanjutan di Kampus ITERA</a></li>
-</ul></li>
-<li class="chapter" data-level="1.2" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#penelitian-kuantitatif-vs.-penelitian-kualitatif-dan-kedudukan-statistik"><i class="fa fa-check"></i><b>1.2</b> Penelitian Kuantitatif vs. Penelitian Kualitatif dan Kedudukan Statistik</a>
-<ul>
-<li class="chapter" data-level="1.2.1" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#analisis-kuantitatif-vs-kualitatif"><i class="fa fa-check"></i><b>1.2.1</b> Analisis Kuantitatif vs. Analisis Kualitatif</a></li>
-<li class="chapter" data-level="" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#studi-kasus-penelitian-mengenai-pola-pergerakan-mahasiswa-dan-pegawai-di-kampus-itera"><i class="fa fa-check"></i>Studi Kasus: Penelitian Mengenai Pola Pergerakan Mahasiswa dan Pegawai di Kampus ITERA</a></li>
-<li class="chapter" data-level="1.2.2" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#analisis-statistik-sebagai-analisis-kuantitatif"><i class="fa fa-check"></i><b>1.2.2</b> Analisis Statistik sebagai Analisis Kuantitatif</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="konsep-dasar-statistika-dalam-perencanaan.html"><a href="konsep-dasar-statistika-dalam-perencanaan.html#soal-evaluasi-1"><i class="fa fa-check"></i>Soal Evaluasi 1</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="data-terstruktur.html"><a href="data-terstruktur.html"><i class="fa fa-check"></i><b>2</b> Data Terstruktur</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#capaian-pembelajaran-1"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="2.1" data-path="data-terstruktur.html"><a href="data-terstruktur.html#kasus-elemen-data-terstruktur"><i class="fa fa-check"></i><b>2.1</b> Elemen Data Terstruktur</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#studi-kasus-elemen-data-terstruktur"><i class="fa fa-check"></i>Studi Kasus: Elemen Data Terstruktur</a></li>
-</ul></li>
-<li class="chapter" data-level="2.2" data-path="data-terstruktur.html"><a href="data-terstruktur.html#tabulasi-data-terstruktur-yang-baik"><i class="fa fa-check"></i><b>2.2</b> Tabulasi Data Terstruktur yang Baik</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#studi-kasus-perbandingan-data-yang-tidak-rapi-dan-data-yang-rapi"><i class="fa fa-check"></i>Studi Kasus: Perbandingan Data yang Tidak Rapi dan Data yang Rapi</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#soal-evaluasi-2"><i class="fa fa-check"></i>Soal Evaluasi 2</a></li>
-<li class="chapter" data-level="2.3" data-path="data-terstruktur.html"><a href="data-terstruktur.html#tingkat-pengukuran-variabel"><i class="fa fa-check"></i><b>2.3</b> Tingkat Pengukuran Variabel</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#studi-kasus-tingkat-pengukuran-variabel"><i class="fa fa-check"></i>Studi Kasus: Tingkat Pengukuran Variabel</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="data-terstruktur.html"><a href="data-terstruktur.html#jenis-jenis-tingkat-pengukuran-variabel"><i class="fa fa-check"></i><b>2.4</b> Jenis-jenis Tingkat Pengukuran Variabel</a>
-<ul>
-<li class="chapter" data-level="2.4.1" data-path="data-terstruktur.html"><a href="data-terstruktur.html#nominal"><i class="fa fa-check"></i><b>2.4.1</b> Nominal</a></li>
-<li class="chapter" data-level="2.4.2" data-path="data-terstruktur.html"><a href="data-terstruktur.html#ordinal"><i class="fa fa-check"></i><b>2.4.2</b> Ordinal</a></li>
-<li class="chapter" data-level="2.4.3" data-path="data-terstruktur.html"><a href="data-terstruktur.html#metrik-angka"><i class="fa fa-check"></i><b>2.4.3</b> Metrik (Angka)</a></li>
-</ul></li>
-<li class="chapter" data-level="2.5" data-path="data-terstruktur.html"><a href="data-terstruktur.html#menentukan-tingkat-pengukuran-variabel"><i class="fa fa-check"></i><b>2.5</b> Menentukan Tingkat Pengukuran Variabel</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#studi-kasus-menentukan-tingkat-pengukuran-variabel"><i class="fa fa-check"></i>Studi Kasus: Menentukan Tingkat Pengukuran Variabel</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="data-terstruktur.html"><a href="data-terstruktur.html#soal-evaluasi-3"><i class="fa fa-check"></i>Soal Evaluasi 3</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html"><i class="fa fa-check"></i><b>3</b> Analisis Statistik Deskriptif</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#capaian-pembelajaran-2"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="3.1" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#makna-analisis-statistik-deskriptif"><i class="fa fa-check"></i><b>3.1</b> Makna Analisis Statistik Deskriptif</a></li>
-<li class="chapter" data-level="3.2" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#ukuran-frekuensi"><i class="fa fa-check"></i><b>3.2</b> Ukuran Frekuensi</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-penerapan-ukuran-frekuensi-dari-dataset-hasil-survei"><i class="fa fa-check"></i>Studi Kasus: Penerapan Ukuran Frekuensi dari Dataset Hasil Survei</a></li>
-<li class="chapter" data-level="3.2.1" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#persentase-dan-proporsi"><i class="fa fa-check"></i><b>3.2.1</b> Persentase dan Proporsi</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-penerapan-persentase-dan-proporsi"><i class="fa fa-check"></i>Studi Kasus: Penerapan Persentase dan Proporsi</a></li>
-<li class="chapter" data-level="3.2.2" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#laju-rate"><i class="fa fa-check"></i><b>3.2.2</b> Laju <em>(Rate)</em></a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-perhitungan-laju"><i class="fa fa-check"></i>Studi Kasus: Perhitungan Laju</a></li>
-<li class="chapter" data-level="3.2.3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#rasio"><i class="fa fa-check"></i><b>3.2.3</b> Rasio</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-perhitungan-rasio-penggunaan-kendaraan"><i class="fa fa-check"></i>Studi Kasus: Perhitungan Rasio Penggunaan Kendaraan</a></li>
-<li class="chapter" data-level="3.2.4" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#perubahan-persentase-percentage-change"><i class="fa fa-check"></i><b>3.2.4</b> Perubahan Persentase (<em>Percentage Change</em>)</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-perubahan-persentase-penggunaan-transportasi-online"><i class="fa fa-check"></i>Studi Kasus: Perubahan Persentase Penggunaan Transportasi Online</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-kesalahan-umum-dalam-menafsirkan-kenaikan-pajak"><i class="fa fa-check"></i>Studi Kasus: Kesalahan Umum dalam Menafsirkan Kenaikan Pajak</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#ukuran-kecenderungan-pemusatan-measure-central-tendency"><i class="fa fa-check"></i><b>3.3</b> Ukuran Kecenderungan Pemusatan (<em>Measure Central Tendency</em>)</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#rata-rata-mean"><i class="fa fa-check"></i><b>3.3.1</b> Rata-rata (<em>mean</em>)</a></li>
-<li class="chapter" data-level="3.3.2" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#median"><i class="fa fa-check"></i><b>3.3.2</b> Median</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-mean-dan-median-pada-data-dengan-pencilan"><i class="fa fa-check"></i>Studi Kasus: Mean dan Median pada Data dengan Pencilan</a></li>
-<li class="chapter" data-level="3.3.3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#modus"><i class="fa fa-check"></i><b>3.3.3</b> Modus</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-analisis-modus"><i class="fa fa-check"></i>Studi Kasus: Analisis Modus</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#ukuran-penyebaran-measure-of-dispersion"><i class="fa fa-check"></i><b>3.4</b> Ukuran Penyebaran (<em>Measure of Dispersion</em>)</a>
-<ul>
-<li class="chapter" data-level="3.4.1" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#indeks-variasi-kualitatif-index-of-qualitative-variance-iqv"><i class="fa fa-check"></i><b>3.4.1</b> Indeks Variasi Kualitatif (<em>Index of Qualitative Variance</em>, IQV)</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-keberagaman-distribusi-mahasiswa-antar-fakultas"><i class="fa fa-check"></i>Studi Kasus: Keberagaman Distribusi Mahasiswa Antar Fakultas</a></li>
-<li class="chapter" data-level="3.4.2" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#rentang-range"><i class="fa fa-check"></i><b>3.4.2</b> Rentang (<em>Range</em>)</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-perbandingan-rentang-biaya-perjalanan-mahasiswa"><i class="fa fa-check"></i>Studi Kasus: Perbandingan Rentang Biaya Perjalanan Mahasiswa</a></li>
-<li class="chapter" data-level="3.4.3" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#kuartil-desil-dan-persentil"><i class="fa fa-check"></i><b>3.4.3</b> Kuartil, Desil, dan Persentil</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-analisis-posisi-data-dengan-kuartil"><i class="fa fa-check"></i>Studi Kasus: Analisis Posisi Data dengan Kuartil</a></li>
-<li class="chapter" data-level="3.4.4" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#variansi-variance-dan-simpangan-baku-standard-deviation"><i class="fa fa-check"></i><b>3.4.4</b> Variansi (<em>Variance</em>) dan Simpangan Baku (<em>Standard Deviation</em>)</a></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#studi-kasus-menghitung-variansi-dan-simpangan-baku-biaya-perjalanan"><i class="fa fa-check"></i>Studi Kasus: Menghitung Variansi dan Simpangan Baku Biaya Perjalanan</a></li>
-<li class="chapter" data-level="3.4.5" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#rangkuman-teknik-analisis-statistik-deskriptif"><i class="fa fa-check"></i><b>3.4.5</b> Rangkuman Teknik Analisis Statistik Deskriptif</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-3-analisis-statistik-deskriptif.html"><a href="bab-3-analisis-statistik-deskriptif.html#soal-evaluasi-4"><i class="fa fa-check"></i>Soal Evaluasi 4</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html"><i class="fa fa-check"></i><b>4</b> Visualisasi Data Kuantitatif</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#capaian-pembelajaran-3"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="4.1" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#konsep-dasar"><i class="fa fa-check"></i><b>4.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="4.2" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#jenis-jenis-diagram"><i class="fa fa-check"></i><b>4.2</b> Jenis-jenis Diagram</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#variabel-kategorikal"><i class="fa fa-check"></i><b>4.2.1</b> Variabel Kategorikal</a></li>
-<li class="chapter" data-level="4.2.2" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#variabel-numerik"><i class="fa fa-check"></i><b>4.2.2</b> Variabel Numerik</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#penggunaan-dan-interpretasi-diagram"><i class="fa fa-check"></i><b>4.3</b> Penggunaan dan Interpretasi Diagram</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-tujuan"><i class="fa fa-check"></i><b>4.3.1</b> Pemilihan Diagram Berdasarkan Tujuan</a></li>
-<li class="chapter" data-level="4.3.2" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-jumlah-variabel"><i class="fa fa-check"></i><b>4.3.2</b> Pemilihan Diagram Berdasarkan Jumlah Variabel</a></li>
-<li class="chapter" data-level="4.3.3" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#pemilihan-diagram-berdasarkan-tingkat-pengukuran-variabel"><i class="fa fa-check"></i><b>4.3.3</b> Pemilihan Diagram Berdasarkan Tingkat Pengukuran Variabel</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-4-visualisasi-data-kuantitatif.html"><a href="bab-4-visualisasi-data-kuantitatif.html#soal-evaluasi-5"><i class="fa fa-check"></i>Soal Evaluasi 5</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html"><i class="fa fa-check"></i><b>5</b> Pengantar Analisis Statistik Inferensial</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#capaian-pembelajaran-4"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="5.1" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#konsep-dasar-statistika-inferensial"><i class="fa fa-check"></i><b>5.1</b> Konsep Dasar Statistika Inferensial</a></li>
-<li class="chapter" data-level="5.2" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#populasi-vs.-sampel"><i class="fa fa-check"></i><b>5.2</b> Populasi vs. Sampel</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-populasi-vs.-sampel"><i class="fa fa-check"></i>Studi Kasus: Populasi vs. Sampel</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#teknik-teknik-pengambilan-sampel-sampling-techniques"><i class="fa fa-check"></i><b>5.3</b> Teknik-Teknik Pengambilan Sampel <em>(Sampling Techniques)</em></a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-pengambilan-sampel-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: Pengambilan Sampel dengan Populasi Kecil</a></li>
-<li class="chapter" data-level="5.3.1" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#simple-random-sampling"><i class="fa fa-check"></i><b>5.3.1</b> <em>Simple Random Sampling</em></a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#catatan-miskonsepsi-tentang-istilah-random"><i class="fa fa-check"></i>Catatan: Miskonsepsi tentang Istilah Random</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-simple-random-sampling-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: <em>Simple Random Sampling</em> dengan Populasi Kecil</a></li>
-<li class="chapter" data-level="5.3.2" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#systematic-random-sampling"><i class="fa fa-check"></i><b>5.3.2</b> <em>Systematic Random Sampling</em></a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-systematic-sampling-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: <em>Systematic Sampling</em> dengan Populasi Kecil</a></li>
-<li class="chapter" data-level="5.3.3" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#stratified-random-sampling"><i class="fa fa-check"></i><b>5.3.3</b> <em>Stratified Random Sampling</em></a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-stratified-random-sampling-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: <em>Stratified Random Sampling</em> dengan Populasi Kecil</a></li>
-<li class="chapter" data-level="5.3.4" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#multi-stage-cluster-sampling"><i class="fa fa-check"></i><b>5.3.4</b> <em>Multi-Stage Cluster Sampling</em></a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-multi-stage-cluster-sampling-dengan-populasi-kecil"><i class="fa fa-check"></i>Studi Kasus: <em>Multi-Stage Cluster Sampling</em> dengan Populasi Kecil</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-6"><i class="fa fa-check"></i>Soal Evaluasi 6</a></li>
-<li class="chapter" data-level="5.4" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#menentukan-ukuran-sampel"><i class="fa fa-check"></i><b>5.4</b> Menentukan Ukuran Sampel</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menentukan-jumlah-sampel-dari-tabel"><i class="fa fa-check"></i>Studi Kasus: Menentukan Jumlah Sampel dari Tabel</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#konsep-distribusi-dalam-statistik"><i class="fa fa-check"></i><b>5.5</b> Konsep Distribusi dalam Statistik</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#model-model-distribusi-statistik"><i class="fa fa-check"></i><b>5.5.1</b> Model-model Distribusi Statistik</a></li>
-<li class="chapter" data-level="5.5.2" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#bab-5-distribusi-normal"><i class="fa fa-check"></i><b>5.5.2</b> Distribusi Normal</a></li>
-<li class="chapter" data-level="5.5.3" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#distribusi-objek-dan-distribusi-statistik"><i class="fa fa-check"></i><b>5.5.3</b> Distribusi Objek dan Distribusi Statistik</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-distribusi-objek-vs-distribusi-statistik"><i class="fa fa-check"></i>Studi Kasus: Distribusi Objek vs Distribusi Statistik</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-7"><i class="fa fa-check"></i>Soal Evaluasi 7</a></li>
-<li class="chapter" data-level="5.6" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#teorema-limit-sentral"><i class="fa fa-check"></i><b>5.6</b> Teorema Limit Sentral</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-simulasi-teorema-limit-sentral"><i class="fa fa-check"></i>Studi Kasus: Simulasi Teorema Limit Sentral</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-efek-ukuran-sampel-terhadap-variasi"><i class="fa fa-check"></i>Studi Kasus: Efek Ukuran Sampel terhadap Variasi</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-8"><i class="fa fa-check"></i>Soal Evaluasi 8</a></li>
-<li class="chapter" data-level="5.7" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#menghitung-peluang-kemunculan-nilai-tertentu-dari-distribusi-statistik-yang-berbentuk-normal."><i class="fa fa-check"></i><b>5.7</b> Menghitung Peluang Kemunculan Nilai Tertentu dari Distribusi Statistik yang Berbentuk Normal.</a>
-<ul>
-<li class="chapter" data-level="5.7.1" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#standard-error-se"><i class="fa fa-check"></i><b>5.7.1</b> <em>Standard Error</em> (SE)</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menghitung-standard-error"><i class="fa fa-check"></i>Studi Kasus: Menghitung Standard Error</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-9"><i class="fa fa-check"></i>Soal Evaluasi 9</a></li>
-<li class="chapter" data-level="5.7.2" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#nilai-standar-z-score"><i class="fa fa-check"></i><b>5.7.2</b> Nilai Standar (<em>Z-Score</em>)</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menghitung-z-score-suatu-nilai"><i class="fa fa-check"></i>Studi Kasus: Menghitung <em>Z-Score</em> Suatu Nilai</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menghitung-z-score-rata-rata-sampel"><i class="fa fa-check"></i>Studi Kasus: Menghitung <em>Z-Score</em> Rata-rata Sampel</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-10"><i class="fa fa-check"></i>Soal Evaluasi 10</a></li>
-<li class="chapter" data-level="5.7.3" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#probabilitas-nilai-di-distribusi-statistik"><i class="fa fa-check"></i><b>5.7.3</b> Menentukan Probabilitas Terjadinya Suatu Nilai</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-probabilitas-ditemukannya-suatu-sampel-dengan-rata-rata-tertentu-dibandingkan-dengan-rata-rata-populasi"><i class="fa fa-check"></i>Studi Kasus: Probabilitas Ditemukannya Suatu Sampel dengan Rata-rata Tertentu Dibandingkan dengan Rata-rata Populasi</a></li>
-<li class="chapter" data-level="5.7.4" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#untuk-z-kritis"><i class="fa fa-check"></i><b>5.7.4</b> Menentukan Nilai yang Menjadi Pembatas Suatu Probabilitas</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#studi-kasus-menentukan-batas-biaya-perjalanan-ekstrem-distribusi-objek"><i class="fa fa-check"></i>Studi Kasus: Menentukan Batas Biaya Perjalanan Ekstrem (Distribusi Objek)</a></li>
-<li class="chapter" data-level="" data-path="bab-5-pengantar-inferensial.html"><a href="bab-5-pengantar-inferensial.html#soal-evaluasi-11"><i class="fa fa-check"></i>Soal Evaluasi 11</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html"><i class="fa fa-check"></i><b>6</b> Estimasi Parameter</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#capaian-pembelajaran-5"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="6.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#statistik-vs.-parameter"><i class="fa fa-check"></i><b>6.1</b> Statistik vs. Parameter</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-statistik-vs-parameter"><i class="fa fa-check"></i>Studi Kasus: Statistik vs Parameter</a></li>
-</ul></li>
-<li class="chapter" data-level="6.2" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#estimasi-titik-vs.-estimasi-rentang"><i class="fa fa-check"></i><b>6.2</b> Estimasi Titik vs. Estimasi Rentang</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#estimasi-titik"><i class="fa fa-check"></i><b>6.2.1</b> Estimasi Titik</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-keterbatasan-estimasi-titik"><i class="fa fa-check"></i>Studi Kasus: Keterbatasan Estimasi Titik</a></li>
-<li class="chapter" data-level="6.2.2" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#estimasi-rentang"><i class="fa fa-check"></i><b>6.2.2</b> Estimasi Rentang</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-keuntungan-estimasi-rentang"><i class="fa fa-check"></i>Studi Kasus: Keuntungan Estimasi Rentang</a></li>
-</ul></li>
-<li class="chapter" data-level="6.3" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#konsep-perhitungan-rentang-kepercayaan-sebagai-estimasi-rentang"><i class="fa fa-check"></i><b>6.3</b> Konsep Perhitungan Rentang Kepercayaan Sebagai Estimasi Rentang</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-rata-rata"><i class="fa fa-check"></i><b>6.3.1</b> Perhitungan Rentang Kepercayaan Rata-rata</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-menghitung-rata-rata-jarak-tempat-tinggal-mahasiswa-itera-berdasarkan-jenis-tempat-tinggalnya"><i class="fa fa-check"></i>Studi Kasus: Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#soal-evaluasi-12"><i class="fa fa-check"></i>Soal Evaluasi 12</a></li>
-<li class="chapter" data-level="6.3.2" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-proporsi"><i class="fa fa-check"></i><b>6.3.2</b> Perhitungan Rentang Kepercayaan Proporsi</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-proporsi-mahasiswa-berdasarkan-jenis-tempat-tinggal"><i class="fa fa-check"></i>Studi Kasus: Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#soal-evaluasi-13"><i class="fa fa-check"></i>Soal Evaluasi 13</a></li>
-<li class="chapter" data-level="6.4" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#tingkat-kepercayaan"><i class="fa fa-check"></i><b>6.4</b> Lebih Dalam tentang Tingkat Kepercayaan (<em>Confidence Level</em>)</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#catatan-salah-kaprah-tingkat-kepercayaan"><i class="fa fa-check"></i>Catatan: Salah Kaprah Tingkat Kepercayaan</a></li>
-<li class="chapter" data-level="" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#studi-kasus-pengaruh-tingkat-kepercayaan-terhadap-lebar-rentang-kepercayaan"><i class="fa fa-check"></i>Studi Kasus: Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan</a></li>
-</ul></li>
-<li class="chapter" data-level="6.5" data-path="bab-6-estimasi-parameter.html"><a href="bab-6-estimasi-parameter.html#kesimpulan-interpretasi-estimasi-parameter"><i class="fa fa-check"></i><b>6.5</b> Kesimpulan: Interpretasi Estimasi Parameter</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html"><i class="fa fa-check"></i><b>7</b> Uji Hipotesis Parameter Satu Populasi</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#capaian-pembelajaran-6"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="7.1" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#konsep-dasar-uji-hipotesis-1samp"><i class="fa fa-check"></i><b>7.1</b> Konsep Dasar Uji Hipotesis Parameter</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-alur-logika-evaluasi-makan-bergizi-gratis-mbg"><i class="fa fa-check"></i>Studi Kasus: Alur Logika Evaluasi Makan Bergizi Gratis (MBG)</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#perbedaan-uji-hipotesis-estimasi-parameter"><i class="fa fa-check"></i><b>7.2</b> Perbedaan Uji Hipotesis Parameter dengan Estimasi Parameter</a></li>
-<li class="chapter" data-level="7.3" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#asumsi-dasar-uji-hipotesis"><i class="fa fa-check"></i><b>7.3</b> Asumsi-asumsi yang Harus Dipenuhi dalam Menguji Hipotesis Parameter</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-memeriksa-asumsi-pada-evaluasi-mbg"><i class="fa fa-check"></i>Studi Kasus: Memeriksa Asumsi pada Evaluasi MBG</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#hipotesis-kosong-dan-alternatif"><i class="fa fa-check"></i><b>7.4</b> Hipotesis Kosong dan Hipotesis Alternatif</a>
-<ul>
-<li class="chapter" data-level="7.4.1" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#konsep-hipotesis-kosong"><i class="fa fa-check"></i><b>7.4.1</b> Hipotesis Kosong</a></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-menentukan-hipotesis-kosong-pada-evaluasi-mbg"><i class="fa fa-check"></i>Studi Kasus: Menentukan Hipotesis Kosong pada Evaluasi MBG</a></li>
-<li class="chapter" data-level="7.4.2" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#konsep-hipotesis-alternatif"><i class="fa fa-check"></i><b>7.4.2</b> Hipotesis Alternatif</a></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-menentukan-hipotesis-alternatif-pada-evaluasi-mbg"><i class="fa fa-check"></i>Studi Kasus: Menentukan Hipotesis Alternatif pada Evaluasi MBG</a></li>
-<li class="chapter" data-level="7.4.3" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#pentingnya-menentukan-bentuk-h1"><i class="fa fa-check"></i><b>7.4.3</b> Pentingnya Menentukan Bentuk Hipotesis Alternatif</a></li>
-<li class="chapter" data-level="7.4.4" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#kemungkinan-hasil-pengujian-hipotesis-menerima-h_0-atau-gagal-menolak-h_0"><i class="fa fa-check"></i><b>7.4.4</b> Kemungkinan Hasil Pengujian Hipotesis: “Menerima <span class="math inline">\(H_0\)</span>” atau “Gagal Menolak <span class="math inline">\(H_0\)</span>”?</a></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#catatan-analogi-pengadilan"><i class="fa fa-check"></i>Catatan: Analogi Pengadilan</a></li>
-</ul></li>
-<li class="chapter" data-level="7.5" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#menentukan-hasil-pengujian-hipotesis-parameter"><i class="fa fa-check"></i><b>7.5</b> Menentukan Hasil Pengujian Hipotesis Parameter</a></li>
-<li class="chapter" data-level="7.6" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#langkah-pengujian-hipotesis"><i class="fa fa-check"></i><b>7.6</b> Langkah-langkah Pengujian Hipotesis</a>
-<ul>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-melanjutkan-langkah-pengujian-hipotesis-mbg"><i class="fa fa-check"></i>Studi Kasus: Melanjutkan Langkah Pengujian Hipotesis MBG</a></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#studi-kasus-layanan-bus-kampus"><i class="fa fa-check"></i>Studi Kasus: Layanan Bus Kampus</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="bab-7-uji-hipotesis-satu-populasi.html"><a href="bab-7-uji-hipotesis-satu-populasi.html#soal-evaluasi-14"><i class="fa fa-check"></i>Soal Evaluasi 14</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><i class="fa fa-check"></i><b>8</b> Uji Hipotesis Parameter Dua Populasi Atau Lebih</a>
-<ul>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#capaian-pembelajaran-7"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="8.1" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#konsep-dasar-uji-hipotesis-dua-populasi"><i class="fa fa-check"></i><b>8.1</b> Konsep Dasar Uji Hipotesis Parameter Dua Populasi Atau Lebih</a>
-<ul>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-batasan-cakupan-sebagai-dasar-penentuan-populasi"><i class="fa fa-check"></i>Studi Kasus: Batasan Cakupan Sebagai Dasar Penentuan Populasi</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-waktu-pengambilan-data-sebagai-dasar-penentuan-populasi"><i class="fa fa-check"></i>Studi Kasus: Waktu Pengambilan Data Sebagai Dasar Penentuan Populasi</a></li>
-</ul></li>
-<li class="chapter" data-level="8.2" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#tahapan-pengujian-hipotesis-parameter-dua-populasi-atau-lebih"><i class="fa fa-check"></i><b>8.2</b> Tahapan Pengujian Hipotesis Parameter Dua Populasi atau Lebih</a></li>
-<li class="chapter" data-level="8.3" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#uji-hipotesis-parameter-dua-populasi-independen"><i class="fa fa-check"></i><b>8.3</b> Uji Hipotesis Parameter Dua Populasi Independen</a>
-<ul>
-<li class="chapter" data-level="8.3.1" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#hipotesis-kosong-dan-alternatif-uji-hipotesis-parameter-dua-populasi-independen"><i class="fa fa-check"></i><b>8.3.1</b> Hipotesis Kosong dan Alternatif Uji Hipotesis Parameter Dua Populasi Independen</a></li>
-<li class="chapter" data-level="8.3.2" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#perhitungan-statistik-uji-dalam-uji-hipotesis-parameter-dua-populasi-independen"><i class="fa fa-check"></i><b>8.3.2</b> Perhitungan Statistik Uji dalam Uji Hipotesis Parameter Dua Populasi Independen</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-uji-rata-rata-waktu-tempuh-mahasiswa-itera-dan-unila"><i class="fa fa-check"></i>Studi Kasus: Uji Rata-Rata Waktu Tempuh Mahasiswa ITERA dan UNILA</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-uji-proporsi-pengguna-sepeda-motor-mahasiswa-itera-dan-unila"><i class="fa fa-check"></i>Studi Kasus: Uji Proporsi Pengguna Sepeda Motor Mahasiswa ITERA dan UNILA</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#soal-evaluasi-15"><i class="fa fa-check"></i>Soal Evaluasi 15</a></li>
-<li class="chapter" data-level="8.4" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#uji-hipotesis-parameter-dua-populasi-berpasangan"><i class="fa fa-check"></i><b>8.4</b> Uji Hipotesis Parameter Dua Populasi Berpasangan</a>
-<ul>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-uji-beda-biaya-perjalanan-mahasiswa-sebelum-dan-sesudah-pemberlakuan-sistem-angkutan-umum-kampus"><i class="fa fa-check"></i>Studi Kasus: Uji Beda Biaya Perjalanan Mahasiswa Sebelum dan Sesudah Pemberlakuan Sistem Angkutan Umum Kampus</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#soal-evaluasi-16"><i class="fa fa-check"></i>Soal Evaluasi 16</a></li>
-<li class="chapter" data-level="8.5" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#uji-hipotesis-parameter-lebih-dari-dua-populasi"><i class="fa fa-check"></i><b>8.5</b> Uji Hipotesis Parameter Lebih dari Dua Populasi</a>
-<ul>
-<li class="chapter" data-level="8.5.1" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#konsep-analysis-of-variance-anova"><i class="fa fa-check"></i><b>8.5.1</b> Konsep <em>Analysis of Variance</em> (ANOVA)</a></li>
-<li class="chapter" data-level="8.5.2" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#hipotesis-kosong-alternatif-anova"><i class="fa fa-check"></i><b>8.5.2</b> Hipotesis Kosong dan Alternatif ANOVA</a></li>
-<li class="chapter" data-level="8.5.3" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#langkah-pengujian-hipotesis-dengan-anova"><i class="fa fa-check"></i><b>8.5.3</b> Langkah Pengujian Hipotesis dengan ANOVA</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#studi-kasus-uji-anova-biaya-perjalanan-tiga-kampus"><i class="fa fa-check"></i>Studi Kasus: Uji ANOVA Biaya Perjalanan Tiga Kampus</a></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#lanjutan-studi-kasus-uji-anova-biaya-perjalanan-tiga-kampus"><i class="fa fa-check"></i>Lanjutan Studi Kasus: Uji ANOVA Biaya Perjalanan Tiga Kampus</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><a href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html#soal-evaluasi-17"><i class="fa fa-check"></i>Soal Evaluasi 17</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html"><i class="fa fa-check"></i><b>9</b> Korelasi Antarvariabel Nominal</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#capaian-pembelajaran-8"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="9.1" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#konsep-dasar-analisis-bivariat"><i class="fa fa-check"></i><b>9.1</b> Konsep Dasar Analisis Bivariat</a></li>
-<li class="chapter" data-level="9.2" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#konsep-dasar-analisis-asosiasi"><i class="fa fa-check"></i><b>9.2</b> Konsep Dasar Analisis Asosiasi</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#mengidentifikasi-asosiasi-sepasang-variabel-secara-empiris"><i class="fa fa-check"></i><b>9.2.1</b> Mengidentifikasi Asosiasi Sepasang Variabel Secara Empiris</a></li>
-<li class="chapter" data-level="9.2.2" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#identifikasi-hubungan-antar-variabel-secara-matematis"><i class="fa fa-check"></i><b>9.2.2</b> Identifikasi Hubungan Antar Variabel Secara Matematis</a></li>
-<li class="chapter" data-level="9.2.3" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#bentuk-asosiasi-sepasang-variabel"><i class="fa fa-check"></i><b>9.2.3</b> Bentuk Asosiasi Sepasang Variabel</a></li>
-</ul></li>
-<li class="chapter" data-level="9.3" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#koefisien-korelasi-variabel-nominal"><i class="fa fa-check"></i><b>9.3</b> Koefisien Korelasi Variabel Nominal</a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#koefisien-korelasi-variabel-nominal-berbasis-chi-kuadrat-chi2"><i class="fa fa-check"></i><b>9.3.1</b> Koefisien Korelasi Variabel Nominal Berbasis Chi-Kuadrat (<span class="math inline">\(\chi^2\)</span>)</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-tabel-silang-variabel-nominal"><i class="fa fa-check"></i>Studi Kasus: Tabel Silang Variabel Nominal</a></li>
-<li class="chapter" data-level="9.3.2" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#frekuensi-harapan-dan-nilai-chi-square"><i class="fa fa-check"></i><b>9.3.2</b> Frekuensi Harapan dan Nilai <em>Chi-square</em> (<span class="math inline">\(\chi^2\)</span>)</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-menghitung-frekuensi-harapan-dan-uji-chi-square"><i class="fa fa-check"></i>Studi Kasus: Menghitung Frekuensi Harapan dan Uji Chi-Square</a></li>
-<li class="chapter" data-level="9.3.3" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#koefisien-phi-phi-cramers-v-dan-kontingensi-c"><i class="fa fa-check"></i><b>9.3.3</b> Koefisien phi (<span class="math inline">\(\phi\)</span>), Cramer’s-V, dan Kontingensi (C)</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#koefisien-korelasi-nominal-error"><i class="fa fa-check"></i><b>9.4</b> Koefisien Korelasi Variabel Nominal Berbasis <em>Error</em> (Koefisien Lambda, <span class="math inline">\(\lambda\)</span>)</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-logika-pengurangan-kesalahan-prediksi-pre"><i class="fa fa-check"></i>Studi Kasus: Logika Pengurangan Kesalahan Prediksi (PRE)</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-menghitung-koefisien-korelasi-lambda"><i class="fa fa-check"></i>Studi Kasus: Menghitung Koefisien Korelasi Lambda</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#studi-kasus-menghitung-koefisien-korelasi-lambda-1"><i class="fa fa-check"></i>Studi Kasus: Menghitung Koefisien Korelasi Lambda</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-nominal.html"><a href="korelasi-antarvariabel-nominal.html#soal-evaluasi-18"><i class="fa fa-check"></i>Soal Evaluasi 18</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html"><i class="fa fa-check"></i><b>10</b> Korelasi Antarvariabel Ordinal</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#capaian-pembelajaran-9"><i class="fa fa-check"></i>Capaian Pembelajaran</a></li>
-<li class="chapter" data-level="10.1" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#gamma"><i class="fa fa-check"></i><b>10.1</b> Koefisien Gamma (<span class="math inline">\(\gamma\)</span>) dari Goodman dan Kruskal</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-pasangan-frekuensi-concordant-dan-discordant"><i class="fa fa-check"></i>Studi Kasus: Pasangan Frekuensi Concordant* dan <em>Discordant</em></a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-menghitung-goodman-kruskals-gamma-gamma"><i class="fa fa-check"></i>Studi Kasus: Menghitung Goodman &amp; Kruskal’s Gamma (<span class="math inline">\(\\gamma\)</span>)</a></li>
-</ul></li>
-<li class="chapter" data-level="10.2" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#sommersd"><i class="fa fa-check"></i><b>10.2</b> Koefisien <span class="math inline">\(d\)</span> dari Sommer</a>
-<ul>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-menghitung-sommers-d"><i class="fa fa-check"></i>Studi Kasus: Menghitung Sommer’s <span class="math inline">\(d\)</span></a></li>
-</ul></li>
-<li class="chapter" data-level="10.3" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#kendall"><i class="fa fa-check"></i><b>10.3</b> Koefisien tau-b (<span class="math inline">\(\tau\)</span>-b) dari Kendall</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#studi-kasus-menghitung-kendalls-tau_b"><i class="fa fa-check"></i>Studi Kasus: Menghitung Kendall’s <span class="math inline">\(\tau_b\)</span></a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-ordinal.html"><a href="korelasi-antarvariabel-ordinal.html#soal-evaluasi-12-1"><i class="fa fa-check"></i>Soal Evaluasi 12</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html"><i class="fa fa-check"></i><b>11</b> Korelasi Antarvariabel Metrik</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#konsep-dasar-1"><i class="fa fa-check"></i><b>11.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="11.2" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#studi-kasus-dengan-r"><i class="fa fa-check"></i><b>11.2</b> Studi Kasus dengan R</a></li>
-<li class="chapter" data-level="" data-path="korelasi-antarvariabel-metrik.html"><a href="korelasi-antarvariabel-metrik.html#soal-evaluasi-13-1"><i class="fa fa-check"></i>Soal Evaluasi 13</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="bab-13-regresi-sederhana.html"><a href="bab-13-regresi-sederhana.html"><i class="fa fa-check"></i><b>12</b> Regresi Linear Sederhana</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="bab-13-regresi-sederhana.html"><a href="bab-13-regresi-sederhana.html#konsep-dasar-2"><i class="fa fa-check"></i><b>12.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="12.2" data-path="bab-13-regresi-sederhana.html"><a href="bab-13-regresi-sederhana.html#studi-kasus-dengan-r-1"><i class="fa fa-check"></i><b>12.2</b> Studi Kasus dengan R</a></li>
-<li class="chapter" data-level="" data-path="bab-13-regresi-sederhana.html"><a href="bab-13-regresi-sederhana.html#soal-evaluasi-14-1"><i class="fa fa-check"></i>Soal Evaluasi 14</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html"><i class="fa fa-check"></i><b>13</b> Regresi Linear Berganda</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#konsep-dasar-3"><i class="fa fa-check"></i><b>13.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="13.2" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#studi-kasus-dengan-r-2"><i class="fa fa-check"></i><b>13.2</b> Studi Kasus dengan R</a></li>
-<li class="chapter" data-level="" data-path="regresi-linear-berganda.html"><a href="regresi-linear-berganda.html#soal-evaluasi-15-1"><i class="fa fa-check"></i>Soal Evaluasi 15</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html"><i class="fa fa-check"></i><b>14</b> Analisis Statistik Multivariat Interdependensi</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#konsep-dasar-4"><i class="fa fa-check"></i><b>14.1</b> Konsep Dasar</a></li>
-<li class="chapter" data-level="14.2" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#studi-kasus-dengan-r-3"><i class="fa fa-check"></i><b>14.2</b> Studi Kasus dengan R</a></li>
-<li class="chapter" data-level="" data-path="analisis-statistik-multivariat-interdependensi.html"><a href="analisis-statistik-multivariat-interdependensi.html#soal-evaluasi-16-1"><i class="fa fa-check"></i>Soal Evaluasi 16</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="referensi.html"><a href="referensi.html"><i class="fa fa-check"></i>Referensi</a></li>
-<li class="appendix"><span><b>Lampiran</b></span></li>
-<li class="chapter" data-level="" data-path="tabel-statistik.html"><a href="tabel-statistik.html"><i class="fa fa-check"></i>Tabel Statistik</a>
-<ul>
-<li class="chapter" data-level="3" data-path="tabel-statistik.html"><a href="tabel-statistik.html#appendix-tabel-normdist"><i class="fa fa-check"></i><b>3</b> Tabel Distribusi Normal Standar (Z) {.unnumbered}</a></li>
-<li class="chapter" data-level="4" data-path="tabel-statistik.html"><a href="tabel-statistik.html#appendix-tabel-f-5"><i class="fa fa-check"></i><b>4</b> Tabel Distribusi F (<span class="math inline">\(\alpha = 10\%\)</span>) {.unnumbered}</a></li>
-<li class="chapter" data-level="5" data-path="tabel-statistik.html"><a href="tabel-statistik.html#appendix-tabel-f-10"><i class="fa fa-check"></i><b>5</b> Tabel Distribusi F (<span class="math inline">\(\alpha = 5\%\)</span>) {.unnumbered}</a></li>
-</ul></li>
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Buku Ajar Statistika untuk Perencanaan</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Buku Ajar Statistika untuk Perencanaan</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Statistika untuk Perencanaan</a></li>
+<li><a class="" href="pengantar.html">Pengantar</a></li>
+<li><a class="" href="lembar-persembahan.html">Lembar Persembahan</a></li>
+<li><a class="" href="konsep-dasar-statistika-dalam-perencanaan.html"><span class="header-section-number">1</span> Konsep Dasar Statistika dalam Perencanaan</a></li>
+<li><a class="" href="data-terstruktur.html"><span class="header-section-number">2</span> Data Terstruktur</a></li>
+<li><a class="" href="bab-3-analisis-statistik-deskriptif.html"><span class="header-section-number">3</span> Analisis Statistik Deskriptif</a></li>
+<li><a class="" href="bab-4-visualisasi-data-kuantitatif.html"><span class="header-section-number">4</span> Visualisasi Data Kuantitatif</a></li>
+<li><a class="" href="bab-5-pengantar-inferensial.html"><span class="header-section-number">5</span> Pengantar Analisis Statistik Inferensial</a></li>
+<li><a class="active" href="bab-6-estimasi-parameter.html"><span class="header-section-number">6</span> Estimasi Parameter</a></li>
+<li><a class="" href="bab-7-uji-hipotesis-satu-populasi.html"><span class="header-section-number">7</span> Uji Hipotesis Parameter Satu Populasi</a></li>
+<li><a class="" href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><span class="header-section-number">8</span> Uji Hipotesis Parameter Dua Populasi Atau Lebih</a></li>
+<li><a class="" href="korelasi-antarvariabel-nominal.html"><span class="header-section-number">9</span> Korelasi Antarvariabel Nominal</a></li>
+<li><a class="" href="korelasi-antarvariabel-ordinal.html"><span class="header-section-number">10</span> Korelasi Antarvariabel Ordinal</a></li>
+<li><a class="" href="korelasi-antarvariabel-metrik.html"><span class="header-section-number">11</span> Korelasi Antarvariabel Metrik</a></li>
+<li><a class="" href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Regresi Linear Sederhana</a></li>
+<li><a class="" href="regresi-linear-berganda.html"><span class="header-section-number">13</span> Regresi Linear Berganda</a></li>
+<li><a class="" href="analisis-statistik-multivariat-interdependensi.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi</a></li>
+<li><a class="" href="referensi.html">Referensi</a></li>
+<li class="book-part">Lampiran</li>
+<li><a class="" href="tabel-statistik.html">Tabel Statistik</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/abdulmubdibindar/buku-ajar-stp">View book source <i class="fab fa-github"></i></a></p>
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="bab-6-estimasi-parameter" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Bab 6</span> Estimasi Parameter<a href="bab-6-estimasi-parameter.html#bab-6-estimasi-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="capaian-pembelajaran-5" class="section level3 unnumbered hasAnchor rmdcapaian">
-<h3>Capaian Pembelajaran<a href="bab-6-estimasi-parameter.html#capaian-pembelajaran-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="bab-6-estimasi-parameter" class="section level1" number="6">
+<h1>
+<span class="header-section-number">Bab 6</span> Estimasi Parameter<a class="anchor" aria-label="anchor" href="#bab-6-estimasi-parameter"><i class="fas fa-link"></i></a>
+</h1>
+<div id="capaian-pembelajaran-5" class="section level3 unnumbered rmdcapaian">
+<h3>Capaian Pembelajaran<a class="anchor" aria-label="anchor" href="#capaian-pembelajaran-5"><i class="fas fa-link"></i></a>
+</h3>
 <p>Setelah mempelajari bab ini, Anda diharapkan mampu memaknai interval kepercayaan estimasi sebuah parameter <span class="capaian">STP-5.1</span>.</p>
 </div>
-<p>Estimasi parameter adalah teknik dalam statistika inferensial untuk <strong>memperkirakan nilai karakteristik populasi</strong> (parameter) <strong>berdasarkan data sampel</strong> (statistik) <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>; <a href="referensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo et al. 2021</a>)</span>. Konsep dasar yang akan kita pelajari di antaranya:</p>
+<p>Estimasi parameter adalah teknik dalam statistika inferensial untuk <strong>memperkirakan nilai karakteristik populasi</strong> (parameter) <strong>berdasarkan data sampel</strong> (statistik) <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>; <a href="referensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>. Konsep dasar yang akan kita pelajari di antaranya:</p>
 <ol style="list-style-type: decimal">
 <li>perbedaan antara statistik dan parameter,</li>
 <li>estimasi titik dan estimasi rentang, serta</li>
 <li>tingkat kepercayaan (<em>confidence level</em>).</li>
 </ol>
 <p>Selanjutnya, konsep-konsep dasar ini menjadi dasar untuk mempelajari <strong>perhitungan estimasi parameter</strong> untuk <strong>proporsi</strong> dan <strong>rata-rata</strong>, serta interpretasi hasil estimasi.</p>
-<div id="statistik-vs.-parameter" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Statistik vs. Parameter<a href="bab-6-estimasi-parameter.html#statistik-vs.-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Dalam statistika, kita akan sering menjumpai dua istilah penting, yaitu <strong>statistik</strong> dan <strong>parameter</strong>. Keduanya sama-sama merupakan ukuran kuantitatif yang digunakan untuk menggambarkan karakteristik data. Akan tetapi, perbedaannya terletak pada <strong>sumber datanya</strong>. Statistik diperoleh dari data <strong>sampel</strong>, sedangkan parameter adalah ukuran yang menggambarkan kondisi <strong>populasi</strong> secara keseluruhan <span class="citation">(<a href="referensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo et al. 2021</a>)</span>.</p>
+<div id="statistik-vs.-parameter" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Statistik vs. Parameter<a class="anchor" aria-label="anchor" href="#statistik-vs.-parameter"><i class="fas fa-link"></i></a>
+</h2>
+<p>Dalam statistika, kita akan sering menjumpai dua istilah penting, yaitu <strong>statistik</strong> dan <strong>parameter</strong>. Keduanya sama-sama merupakan ukuran kuantitatif yang digunakan untuk menggambarkan karakteristik data. Akan tetapi, perbedaannya terletak pada <strong>sumber datanya</strong>. Statistik diperoleh dari data <strong>sampel</strong>, sedangkan parameter adalah ukuran yang menggambarkan kondisi <strong>populasi</strong> secara keseluruhan <span class="citation">(<a href="referensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>.</p>
 <p>Karena parameter adalah ukuran untuk populasi, mengukurnya hanya bisa dilakukan dengan melibatkan seluruh populasi, yang disebut juga <strong>sensus</strong>. Karena sulit dilakukan, maka <strong>statistik digunakan untuk mengestimasi parameter</strong>.</p>
 <p>Cara menyatakan ukuran statistik dan parameter, yakni menggunakan simbol-simbol matematis <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>, disajikan dalam tabel berikut.</p>
-<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tab-simbol-statistik-parameter">Tabel 6.1: </span>Simbol-simbol yang Digunakan Untuk Statistik dan Parameter
 </caption>
-<thead>
-<tr>
+<thead><tr>
 <th style="text-align:left;">
 Ukuran
 </th>
@@ -541,8 +134,7 @@ Statistik (Sampel)
 <th style="text-align:left;">
 Parameter (Populasi)
 </th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
@@ -611,56 +203,67 @@ Ukuran observasi
 </td>
 </tr>
 </tbody>
-</table>
-<div id="studi-kasus-statistik-vs-parameter" class="section level3 unnumbered hasAnchor rmdkasus">
-<h3>Studi Kasus: Statistik vs Parameter<a href="bab-6-estimasi-parameter.html#studi-kasus-statistik-vs-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</table></div>
+<div id="studi-kasus-statistik-vs-parameter" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Statistik vs Parameter<a class="anchor" aria-label="anchor" href="#studi-kasus-statistik-vs-parameter"><i class="fas fa-link"></i></a>
+</h3>
 <p>Mengingat kembali studi kasus pada bab sebelumnya, diketahui populasi seluruh mahasiswa aktif ITERA pada pertengahan tahun 2023 berjumlah 18.877 orang. Namun, karena keterbatasan biaya dan waktu, survei hanya dilakukan terhadap sebagian mahasiswa, yaitu sebanyak 428 orang sebagai sampel.</p>
 <p>Misalkan kita ingin mengetahui rata-rata usia para mahasiswa tersebut. Dengan menghitung usia 428 responden tersebut, kita akan memperoleh rata-rata usianya sebesar 20,90 tahun. Angka ini merupakan sebuah <strong>statistik</strong> karena dihitung berdasarkan data sampel. Kita akan menggunakan simbol <span class="math inline">\(\bar{x}\)</span> untuk menerangkan rata-rata sampel ini, sehingga <span class="math inline">\(\bar{x} = 20,90\)</span> tahun.</p>
 <p>Lalu, apa <strong>parameter</strong> dalam kasus ini? Parameternya adalah <strong>nilai rata-rata usia yang sebenarnya dari keseluruhan 18.877 mahasiswa aktif ITERA</strong> tersebut. Angka sesungguhnya ini kita simbolkan dengan <span class="math inline">\(\mu\)</span>. Karena parameter hanya bisa diketahui dari sensus terhadap seluruh populasi, nilai <span class="math inline">\(\mu\)</span> ini tidak akan pernah kita ketahui persis jika sensus tidak pernah dilakukan.</p>
 <p>Di sinilah statistik digunakan: kita memakai nilai statistik sampel (<span class="math inline">\(\bar{x} = 20,90\)</span>) sebagai alat ukur untuk memperkirakan atau mengestimasi besaran parameter populasi (<span class="math inline">\(\mu\)</span>).</p>
 </div>
 </div>
-<div id="estimasi-titik-vs.-estimasi-rentang" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Estimasi Titik vs. Estimasi Rentang<a href="bab-6-estimasi-parameter.html#estimasi-titik-vs.-estimasi-rentang" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Karena kita jarang mengetahui nilai parameter dan lebih sering bisa memperoleh statistik, maka nilai parameter kita perkirakan dari nilai statistik. Proses menghasilkan perkiraan ini disebut <strong>estimasi</strong>. Estimasi berarti <strong>memperkirakan nilai parameter</strong> (populasi) berdasarkan <strong>hasil perhitungan statistik</strong> (sampel). Terdapat dua jenis estimasi yang umum digunakan, yaitu <strong>estimasi titik</strong> dan <strong>estimasi rentang</strong> <span class="citation">(<a href="referensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo et al. 2021</a>)</span>.</p>
-<div id="estimasi-titik" class="section level3 hasAnchor" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Estimasi Titik<a href="bab-6-estimasi-parameter.html#estimasi-titik" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="estimasi-titik-vs.-estimasi-rentang" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Estimasi Titik vs. Estimasi Rentang<a class="anchor" aria-label="anchor" href="#estimasi-titik-vs.-estimasi-rentang"><i class="fas fa-link"></i></a>
+</h2>
+<p>Karena kita jarang mengetahui nilai parameter dan lebih sering bisa memperoleh statistik, maka nilai parameter kita perkirakan dari nilai statistik. Proses menghasilkan perkiraan ini disebut <strong>estimasi</strong>. Estimasi berarti <strong>memperkirakan nilai parameter</strong> (populasi) berdasarkan <strong>hasil perhitungan statistik</strong> (sampel). Terdapat dua jenis estimasi yang umum digunakan, yaitu <strong>estimasi titik</strong> dan <strong>estimasi rentang</strong> <span class="citation">(<a href="referensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>.</p>
+<div id="estimasi-titik" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> Estimasi Titik<a class="anchor" aria-label="anchor" href="#estimasi-titik"><i class="fas fa-link"></i></a>
+</h3>
 <p>Estimasi titik (<em>point estimate</em>) adalah estimasi nilai suatu parameter hanya dengan <strong>satu angka tunggal saja</strong>. Angka ini dihasilkan dari statistik sampel yang kita kumpulkan <span class="citation">(<a href="referensi.html#ref-kachigan1986statistical">Kachigan 1986</a>)</span>.</p>
 <p>Ciri utama estimasi titik adalah ia hanya terdiri dari satu nilai tunggal. Karena hanya memiliki satu nilai saja, kemungkinan kesalahannya sangat besar, karena sangat mungkin nilai tersebut berbeda jauh dari parameter yang sebenarnya.</p>
 </div>
-<div id="studi-kasus-keterbatasan-estimasi-titik" class="section level3 unnumbered hasAnchor rmdkasus">
-<h3>Studi Kasus: Keterbatasan Estimasi Titik<a href="bab-6-estimasi-parameter.html#studi-kasus-keterbatasan-estimasi-titik" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="studi-kasus-keterbatasan-estimasi-titik" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Keterbatasan Estimasi Titik<a class="anchor" aria-label="anchor" href="#studi-kasus-keterbatasan-estimasi-titik"><i class="fas fa-link"></i></a>
+</h3>
 <p>Melanjutkan contoh sebelumnya, estimasi titik dari rata-rata usia mahasiswa ITERA adalah sebesar 20,90 tahun. Angka 20,90 tahun ini kita peroleh dari 428 responden, lalu kita gunakan sebagai penduga untuk parameter rata-rata usia seluruh mahasiswa ITERA (<span class="math inline">\(\mu\)</span>).</p>
 <p>Namun, kita tidak bisa memastikan apakah benar rata-rata populasi seluruh mahasiswa <em>tepat sama</em> dengan 20,90 tahun. Mungkin saja rata-rata populasi sebenarnya (parameter) adalah mendekati 20,50 tahun, 21,40 tahun, atau nilai lainnya. Hal inilah yang digambarkan pada Gambar <a href="bab-6-estimasi-parameter.html#fig:fig-ilustrasi-estimasi-titik-usia">6.1</a> berikut.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ilustrasi-estimasi-titik-usia"></span>
-<img src="figures/fig-ilustrasi-estimasi-titik-usia-1.png" alt="Ilustrasi Estimasi Titik Usia Mahasiswa"  />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-ilustrasi-estimasi-titik-usia"></span>
+<img src="figures/fig-ilustrasi-estimasi-titik-usia-1.png" alt="Ilustrasi Estimasi Titik Usia Mahasiswa" width="672"><p class="caption">
 Gambar 6.1: Ilustrasi Estimasi Titik Usia Mahasiswa
 </p>
 </div>
 <p>Di sinilah keterbatasan estimasi titik terlihat; ia hanya menyajikan satu angka saja, sehingga sangat rentan meleset dari nilai parameter yang sebenarnya. Oleh karena itu, kita membutuhkan estimasi yang lebih “aman”, yakni estimasi berupa rentang nilai yang akan kita pelajari pada bagian selanjutnya.</p>
 </div>
-<div id="estimasi-rentang" class="section level3 hasAnchor" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> Estimasi Rentang<a href="bab-6-estimasi-parameter.html#estimasi-rentang" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="estimasi-rentang" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> Estimasi Rentang<a class="anchor" aria-label="anchor" href="#estimasi-rentang"><i class="fas fa-link"></i></a>
+</h3>
 <p>Berbeda dari estimasi titik, estimasi rentang (<em>interval estimate</em>) menetapkan parameter populasi dalam sebuah rentang nilai. Rentang inilah yang disebut interval kepercayaan (<em>confidence interval</em>), yang memuat nilai parameter populasi yang sebenarnya. Dengan demikian, kita bisa menebak parameter yang sebenarnya dengan kemungkinan yang lebih besar <span class="citation">(<a href="referensi.html#ref-kachigan1986statistical">Kachigan 1986</a>)</span>.</p>
 <p>Rentang kepercayaan dibentuk dari dua nilai batas, yaitu batas bawah (<em>lower limit</em>) dan batas atas (<em>upper limit</em>). Batas bawah dan batas atas ini diperoleh dari pengurangan dan penambahan margin kesalahan (<em>margin of error</em>) dari estimasi titik yang kita hitung dari sampel.</p>
 </div>
-<div id="studi-kasus-keuntungan-estimasi-rentang" class="section level3 unnumbered hasAnchor rmdkasus">
-<h3>Studi Kasus: Keuntungan Estimasi Rentang<a href="bab-6-estimasi-parameter.html#studi-kasus-keuntungan-estimasi-rentang" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="studi-kasus-keuntungan-estimasi-rentang" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Keuntungan Estimasi Rentang<a class="anchor" aria-label="anchor" href="#studi-kasus-keuntungan-estimasi-rentang"><i class="fas fa-link"></i></a>
+</h3>
 <p>Telah disebutkan bahwa rentang kepercayaan diperoleh dari pengurangan dan penambahan margin kesalahan (<em>margin of error</em>) atas estimasi titik yang kita hitung dari sampel.</p>
 <p>Melanjutkan contoh usia mahasiswa, alih-alih hanya menyatakan estimasi parameter sebesar 20,90 tahun, misalkan kita memperhitungkan pula <em>margin of error</em>-nya sebesar <span class="math inline">\(\pm 0,60\)</span> tahun. Hasil pengurangannya memperoleh batas bawah interval pada 20,30 tahun, dan penambahannya menghasilkan batas atas interval usia pada 21,50 tahun.</p>
 <p>Artinya, kita memperkirakan bahwa nilai parameter rata-rata usia seluruh mahasiswa ITERA berada pada rentang antara 20,30 tahun hingga 21,50 tahun. Karena tebakan parameter sesungguhnya (<span class="math inline">\(\mu = 21,4\)</span>) berada di dalam wilayah ini, maka tebakan kita jauh lebih akurat.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ilustrasi-estimasi-rentang-usia"></span>
-<img src="figures/fig-ilustrasi-estimasi-rentang-usia-1.png" alt="Ilustrasi Estimasi Rentang Usia Mahasiswa"  />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-ilustrasi-estimasi-rentang-usia"></span>
+<img src="figures/fig-ilustrasi-estimasi-rentang-usia-1.png" alt="Ilustrasi Estimasi Rentang Usia Mahasiswa" width="672"><p class="caption">
 Gambar 6.2: Ilustrasi Estimasi Rentang Usia Mahasiswa
 </p>
 </div>
 <p>Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi titik sebesar 20,90 tahun tadi. Memperhitungkan ketidakpastian dalam proses pengambilan sampel dengan batas-batas ini membuat kita menemukan rentang parameter seperti yang diilustrasikan oleh area arsir berwarna biru pada Gambar <a href="bab-6-estimasi-parameter.html#fig:fig-ilustrasi-estimasi-rentang-usia">6.2</a> tersebut.</p>
 </div>
 </div>
-<div id="konsep-perhitungan-rentang-kepercayaan-sebagai-estimasi-rentang" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Konsep Perhitungan Rentang Kepercayaan Sebagai Estimasi Rentang<a href="bab-6-estimasi-parameter.html#konsep-perhitungan-rentang-kepercayaan-sebagai-estimasi-rentang" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="konsep-perhitungan-rentang-kepercayaan-sebagai-estimasi-rentang" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Konsep Perhitungan Rentang Kepercayaan Sebagai Estimasi Rentang<a class="anchor" aria-label="anchor" href="#konsep-perhitungan-rentang-kepercayaan-sebagai-estimasi-rentang"><i class="fas fa-link"></i></a>
+</h2>
 <p><strong>Rentang kepercayaan</strong> atau <strong>interval kepercayaan</strong> <em>(confidence interval)</em> adalah bentuk estimasi rentang dalam statistika inferensial yang merupakan <strong>estimasi titik</strong> (<span class="math inline">\(\bar{x}\)</span> atau <span class="math inline">\(\hat{p}\)</span>) <strong>yang kita kurangkan dan tambahkan dengan</strong> <strong><em>margin of error</em></strong> (MoE) <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.</p>
 <p><span class="math display" id="eq:confidence-interval">\[
 \begin{equation}
@@ -680,15 +283,17 @@ c.i. = \text{estimasi titik} \pm (Z_{\alpha/2} \times \text{S.E.})
 \]</span></p>
 <p>Nilai kritis (<span class="math inline">\(Z_{\alpha/2}\)</span>) ini adalah nilai yang berkaitan dengan <strong>tingkat kepercayaan</strong> dan <strong>signifikansi</strong> (<span class="math inline">\(\alpha\)</span>). Singkatnya, tingkat kepercayaan + signifikansi harus menghasilkan angka 100%. Konsepnya akan kita dalami di subbab <a href="bab-6-estimasi-parameter.html#tingkat-kepercayaan">6.4</a>.</p>
 <p>Nilai kritis dicari dengan membagi 2 terlebih dahulu nilai <span class="math inline">\(\alpha\)</span> di kiri dan kanan kurva distribusi statistik, kemudian menemukan nilai yang menjadi pembatasnya dengan tabel nilai Z seperti yang sudah kita lakukan pada <a href="bab-5-pengantar-inferensial.html#untuk-z-kritis">5.7.4</a>. Gambar <a href="bab-6-estimasi-parameter.html#fig:fig-ilustrasi-z-alpha">6.3</a> berikut mengilustrasikan pencarian nilai kritis pada signifikansi sebesar 10%.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ilustrasi-z-alpha"></span>
-<img src="figures/fig-ilustrasi-z-alpha-1.png" alt="Ilustrasi Nilai Kritis Z pada Distribusi Normal, contoh $lpha = 10%$" width="60%" />
-<p class="caption">
-Gambar 6.3: Ilustrasi Nilai Kritis Z pada Distribusi Normal, contoh <span class="math inline">\(lpha = 10%\)</span>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-ilustrasi-z-alpha"></span>
+<img src="figures/fig-ilustrasi-z-alpha-1.png" alt="Ilustrasi Nilai Kritis Z pada Distribusi Normal, contoh $lpha = 10%$" width="60%"><p class="caption">
+Gambar 6.3: Ilustrasi Nilai Kritis Z pada Distribusi Normal, contoh <span class="math inline">\(lpha = 10%\)</span>
 </p>
 </div>
 <p>Dalam bab ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter <strong>rata-rata</strong> (<span class="math inline">\(\mu\)</span>) dan <strong>proporsi</strong> (<span class="math inline">\(P\)</span>).</p>
-<div id="perhitungan-rentang-kepercayaan-rata-rata" class="section level3 hasAnchor" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> Perhitungan Rentang Kepercayaan Rata-rata<a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-rata-rata" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="perhitungan-rentang-kepercayaan-rata-rata" class="section level3" number="6.3.1">
+<h3>
+<span class="header-section-number">6.3.1</span> Perhitungan Rentang Kepercayaan Rata-rata<a class="anchor" aria-label="anchor" href="#perhitungan-rentang-kepercayaan-rata-rata"><i class="fas fa-link"></i></a>
+</h3>
 <p>Kita akan mulai dengan estimasi parameter untuk variabel numerik, yakni rata-rata. Estimasi parameter rata-rata, berarti kita memperkirakan nilai rata-rata populasi berdasarkan nilai rata-rata yang diperoleh dari sampel <span class="citation">(<a href="referensi.html#ref-kachigan1986statistical">Kachigan 1986</a>)</span>.</p>
 <p>Dari sampel ini diperoleh sebuah nilai rata-rata (<span class="math inline">\(\bar{x}\)</span>) yang berfungsi sebagai estimasi titik. Estimasi titik ini kita tambah dan kurangkan dengan MoE agar menjadi rentang <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>.</p>
 <p>Rumus S.E. untuk rata-rata ditunjukkan oleh Persamaan <a href="bab-5-pengantar-inferensial.html#eq:konsep-se-pake-sd">(5.3)</a>, maka, berdasarkan Persamaan <a href="bab-6-estimasi-parameter.html#eq:margin-of-error">(6.2)</a>, MoE untuk interval rata-rata adalah:</p>
@@ -702,15 +307,15 @@ c.i. = \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}}
 \tag{6.5}
 \]</span></p>
 </div>
-<div id="studi-kasus-menghitung-rata-rata-jarak-tempat-tinggal-mahasiswa-itera-berdasarkan-jenis-tempat-tinggalnya" class="section level3 unnumbered hasAnchor rmdkasus">
-<h3>Studi Kasus: Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya<a href="bab-6-estimasi-parameter.html#studi-kasus-menghitung-rata-rata-jarak-tempat-tinggal-mahasiswa-itera-berdasarkan-jenis-tempat-tinggalnya" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="studi-kasus-menghitung-rata-rata-jarak-tempat-tinggal-mahasiswa-itera-berdasarkan-jenis-tempat-tinggalnya" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya<a class="anchor" aria-label="anchor" href="#studi-kasus-menghitung-rata-rata-jarak-tempat-tinggal-mahasiswa-itera-berdasarkan-jenis-tempat-tinggalnya"><i class="fas fa-link"></i></a>
+</h3>
 <p>Diketahui dari hasil survei terhadap 333 sampel mahasiswa ITERA, sebaran jenis tempat tinggalnya, beserta statistik jarak tempat tinggalnya, ditampilkan sebagai berikut.</p>
-<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tabel-komponen-ci-jarak">Tabel 6.2: </span>Statistik Jarak Tempat Tinggal per Jenis Hunian
 </caption>
-<thead>
-<tr>
+<thead><tr>
 <th style="text-align:left;">
 Jenis Tempat Tinggal
 </th>
@@ -723,8 +328,7 @@ Jenis Tempat Tinggal
 <th style="text-align:center;">
 <span class="math inline">\(s\)</span> (km)
 </th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
@@ -769,24 +373,24 @@ Rumah Mengontrak Bersama
 </td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p>Kita akan menghitung rentang kepercayaan rata-rata jarak tempat tinggal mahasiswa untuk setiap jenis tempat tinggal dengan tingkat kepercayaan 95%.</p>
 <p><strong>Jawaban:</strong></p>
 <p><strong>Langkah-1: Menghitung Statistik</strong></p>
 <p>Dari Tabel <a href="bab-6-estimasi-parameter.html#tab:tabel-komponen-ci-jarak">6.2</a> tersebut kita dapat melihat bahwa rata-rata jarak tempat tinggal mahasiswa sudah tersedia dan bervariasi menurut jenis hunian.</p>
 <p><strong>Langkah-2: Menentukan Nilai Kritis Z</strong></p>
 <p>Langkah berikutnya adalah menentukan nilai kritis <span class="math inline">\(Z_{\alpha/2}\)</span> sesuai dengan tingkat kepercayaan yang digunakan. Nilai kritis <span class="math inline">\(Z_{\alpha/2}\)</span> diperoleh dari distribusi normal baku.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-membagi-dua-nilai-alpha-mean"></span>
-<img src="images/bab-6-membagi-2-alpha.png" alt="Membagi Dua Nilai Alpha" width="60%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-membagi-dua-nilai-alpha-mean"></span>
+<img src="images/bab-6-membagi-2-alpha.png" alt="Membagi Dua Nilai Alpha" width="60%"><p class="caption">
 Gambar 6.4: Membagi Dua Nilai Alpha
 </p>
 </div>
 <p>Nilai tingkat kepercayaan yang kita gunakan adalah luas area di bawah kurva yang berwarna biru terang, yaitu 0,950. Artinya, kita menggunakan nilai <span class="math inline">\(\alpha\)</span> sebesar 0,05 atau 5%. Nilai <span class="math inline">\(\alpha\)</span> ini dibagi 2 (<span class="math inline">\(\alpha/2\)</span>) dan ditempatkan di kiri dan kanan kurva normal. Dengan demikian, luas area biru terang menjadi bernilai <span class="math inline">\(0,95 / 2 = 0,475\)</span> dari titik 0 di tengah.</p>
 <p>Nilai Z diperoleh dari area seluas 0,475 di bawah kurva normal mulai dari titik tengah (0). Dengan mencocokkan pada tabel distribusi normal, didapatkan nilai <span class="math inline">\(Z=1,96\)</span>, yang berasal dari kombinasi angka 1,9 pada sisi vertikal dan 0,06 pada sisi horizontal tabel.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-mencari-nilai-z-mean"></span>
-<img src="images/bab-6-mencari-z.PNG" alt="Mencari Nilai Z" width="60%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-mencari-nilai-z-mean"></span>
+<img src="images/bab-6-mencari-z.PNG" alt="Mencari Nilai Z" width="60%"><p class="caption">
 Gambar 6.5: Mencari Nilai Z
 </p>
 </div>
@@ -818,17 +422,18 @@ c.i. &amp;= 4,91 \pm 1,96 \times \frac{2,87}{\sqrt{25}} \\
 \]</span></p>
 <p><em><strong>Catatan:</strong> Kategori Rumah Mengontrak Pribadi hanya memiliki 1 responden (<span class="math inline">\(n = 1\)</span>), sehingga simpangan baku tidak dapat dihitung dan rentang kepercayaan tidak dapat diestimasi. Kategori ini tidak disertakan dalam perhitungan.</em></p>
 <p>Dari ketiga hasil di atas, terlihat bahwa rata-rata jarak tempat tinggal ketiga jenis hunian relatif serupa, berkisar antara <strong>4,47 km hingga 5,19 km</strong> dari kampus. Perbedaan yang paling mencolok terletak pada lebar rentang: kategori <strong>Kos Bersama-sama</strong> memiliki rentang paling lebar (<span class="math inline">\(\pm 1,13\)</span> km) karena ukuran sampelnya jauh lebih kecil (<span class="math inline">\(n = 25\)</span>), yang mencerminkan ketidakpastian estimasi yang lebih besar. Sebaliknya, <strong>Kos Sendiri</strong> dan <strong>Rumah Mengontrak Bersama</strong> memiliki rentang lebih sempit karena jumlah respondennya lebih besar.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ci-jarak-per-hunian"></span>
-<img src="figures/fig-ci-jarak-per-hunian-1.png" alt="Interval Kepercayaan 95% Rata-rata Jarak Tempat Tinggal per Jenis Hunian" width="60%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-ci-jarak-per-hunian"></span>
+<img src="figures/fig-ci-jarak-per-hunian-1.png" alt="Interval Kepercayaan 95% Rata-rata Jarak Tempat Tinggal per Jenis Hunian" width="60%"><p class="caption">
 Gambar 6.6: Interval Kepercayaan 95% Rata-rata Jarak Tempat Tinggal per Jenis Hunian
 </p>
 </div>
 </div>
 <p>Jawablah soal berikut untuk melatih keterampilan Anda menghitung rentang kepercayaan rata-rata.</p>
 </div>
-<div id="soal-evaluasi-12" class="section level2 unnumbered hasAnchor rmdexercise">
-<h2>Soal Evaluasi 12<a href="bab-6-estimasi-parameter.html#soal-evaluasi-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="soal-evaluasi-12" class="section level2 unnumbered rmdexercise">
+<h2>Soal Evaluasi 12<a class="anchor" aria-label="anchor" href="#soal-evaluasi-12"><i class="fas fa-link"></i></a>
+</h2>
 <p>Dari suatu sampel dosen ITERA berjumlah 73 orang diperoleh rata-rata usianya adalah 30 tahun dan simpangan bakunya 2,9 tahun. Anda diminta menggunakan probabilitas galat, <span class="math inline">\(\alpha = 5\%\)</span> <span class="capaian">STP-5.1</span></p>
 <ol style="list-style-type: lower-alpha">
 <li>Berapakah tingkat kepercayaan (<em>confidence level</em>) yang digunakan?</li>
@@ -836,8 +441,10 @@ Gambar 6.6: Interval Kepercayaan 95% Rata-rata Jarak Tempat Tinggal per Jenis Hu
 <li>Hitunglah rentang kepercayaan (<em>confidence interval</em>) rata-rata usia seluruh dosen ITERA menggunakan data sampel kita tadi.</li>
 </ol>
 </div>
-<div id="perhitungan-rentang-kepercayaan-proporsi" class="section level3 hasAnchor" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> Perhitungan Rentang Kepercayaan Proporsi<a href="bab-6-estimasi-parameter.html#perhitungan-rentang-kepercayaan-proporsi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="perhitungan-rentang-kepercayaan-proporsi" class="section level3" number="6.3.2">
+<h3>
+<span class="header-section-number">6.3.2</span> Perhitungan Rentang Kepercayaan Proporsi<a class="anchor" aria-label="anchor" href="#perhitungan-rentang-kepercayaan-proporsi"><i class="fas fa-link"></i></a>
+</h3>
 <p>Perhitungan rentang kepercayaan proporsi hanya berbeda pada rumus S.E.-nya <span class="citation">(<a href="referensi.html#ref-kachigan1986statistical">Kachigan 1986</a>)</span>. S.E.untuk distribusi statistik sampel proporsi dihitung dengan rumus berikut.</p>
 <p><span class="math display" id="eq:se-proporsi">\[
 \text{S.E.} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
@@ -849,8 +456,9 @@ c.i. = \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 \tag{6.7}
 \]</span></p>
 </div>
-<div id="studi-kasus-proporsi-mahasiswa-berdasarkan-jenis-tempat-tinggal" class="section level3 unnumbered hasAnchor rmdkasus">
-<h3>Studi Kasus: Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal<a href="bab-6-estimasi-parameter.html#studi-kasus-proporsi-mahasiswa-berdasarkan-jenis-tempat-tinggal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="studi-kasus-proporsi-mahasiswa-berdasarkan-jenis-tempat-tinggal" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal<a class="anchor" aria-label="anchor" href="#studi-kasus-proporsi-mahasiswa-berdasarkan-jenis-tempat-tinggal"><i class="fas fa-link"></i></a>
+</h3>
 <p>Masih berdasarkan data dari kasus sebelumnya, kita akang menghitung parameter proporsi mahasiswa yang tinggal berdasarkan jenis tempat tinggal, akan tetapi, kita menurunkan tingkat kepercayaan kita menjadi 91%.</p>
 <p><strong>Jawaban:</strong></p>
 <p><strong>Langkah-1: Menghitung Statistik</strong></p>
@@ -858,16 +466,17 @@ c.i. = \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 <p><span class="math display">\[\hat{p} = \frac{x}{n}\]</span></p>
 <p>dengan:</p>
 <ul>
-<li><span class="math inline">\(x\)</span> = jumlah responden yang memiliki karakteristik tertentu,</li>
-<li><span class="math inline">\(n\)</span> = jumlah seluruh responden.</li>
+<li>
+<span class="math inline">\(x\)</span> = jumlah responden yang memiliki karakteristik tertentu,</li>
+<li>
+<span class="math inline">\(n\)</span> = jumlah seluruh responden.</li>
 </ul>
 <p>Berdasarkan Tabel <a href="bab-6-estimasi-parameter.html#tab:tabel-komponen-ci-jarak">6.2</a>, kita dapat menghitung proporsi tiap-tiap kategori jenis tempat tinggal. Hasilnya ditunjukkan oleh Tabel <a href="bab-6-estimasi-parameter.html#tab:tabel-proporsi-jenis-tempat-tinggal">6.3</a> berikut.</p>
-<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-striped table-hover table-condensed table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tabel-proporsi-jenis-tempat-tinggal">Tabel 6.3: </span>Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal
 </caption>
-<thead>
-<tr>
+<thead><tr>
 <th style="text-align:left;">
 Jenis Tempat Tinggal
 </th>
@@ -877,8 +486,7 @@ Jenis Tempat Tinggal
 <th style="text-align:center;">
 <span class="math inline">\(\hat{p}\)</span>
 </th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
@@ -914,19 +522,19 @@ Rumah Mengontrak Bersama
 </td>
 </tr>
 </tbody>
-</table>
+</table></div>
 <p><strong>Langkah-2: Menentukan Nilai Kritis Z</strong></p>
 <p>Sama konsepnya seperti kasus sebelumnya, sebelumnya kita akan menghitung terlebih dahulu nilai <span class="math inline">\(\alpha\)</span>. Karena tingkat kepercayaan kita 91%, maka <span class="math inline">\(\alpha=9\%\)</span> atau <span class="math inline">\(0,09\)</span>. Gambar <a href="bab-6-estimasi-parameter.html#fig:fig-membagi-dua-nilai-alpha-proporsi-91">6.7</a> berikut menunjukkan area yang kita cari nilai <span class="math inline">\(Z_{\alpha/2}\)</span>-nya, yakni <span class="math inline">\(0,405\)</span>.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-membagi-dua-nilai-alpha-proporsi-91"></span>
-<img src="images/bab-6-membagi-2-alpha-91.png" alt="Membagi Dua Nilai Alpha" width="60%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-membagi-dua-nilai-alpha-proporsi-91"></span>
+<img src="images/bab-6-membagi-2-alpha-91.png" alt="Membagi Dua Nilai Alpha" width="60%"><p class="caption">
 Gambar 6.7: Membagi Dua Nilai Alpha
 </p>
 </div>
 <p>Dari tabel nilai Z di Gambar <a href="bab-5-pengantar-inferensial.html#fig:bab-5-fig-z-table">5.17</a>, kita dapat memperoleh nilai Z untuk tingkat kepercayaan 91% sebagai berikut.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-mencari-nilai-z-proporsi-91"></span>
-<img src="images/bab-6-mencari-z-91.png" alt="Mencari Nilai Z" width="60%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-mencari-nilai-z-proporsi-91"></span>
+<img src="images/bab-6-mencari-z-91.png" alt="Mencari Nilai Z" width="60%"><p class="caption">
 Gambar 6.8: Mencari Nilai Z
 </p>
 </div>
@@ -958,16 +566,17 @@ c.i. &amp;= 0,075 \pm 1,31 \times \sqrt{\frac{0,075(1 - 0,075)}{333}} \\
 \]</span></p>
 <p><em>Catatan: Kategori Rumah Mengontrak Pribadi (<span class="math inline">\(n = 1\)</span>) tidak disertakan karena tidak representatif.</em></p>
 <p>Dari ketiga hasil di atas, terlihat bahwa <strong>Kos Sendiri</strong> mendominasi dengan estimasi proporsi antara 56,59% hingga 63,61% dari seluruh mahasiswa yang menyewa hunian. <strong>Rumah Mengontrak Bersama</strong> berada di posisi kedua (28,75%–35,45%), disusul <strong>Kos Bersama-sama</strong> (5,61%–9,39%). Temuan ini menunjukkan bahwa mayoritas mahasiswa ITERA memilih hunian sewa mandiri.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-ci-proporsi-per-hunian"></span>
-<img src="figures/fig-ci-proporsi-per-hunian-1.png" alt="Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian" width="60%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-ci-proporsi-per-hunian"></span>
+<img src="figures/fig-ci-proporsi-per-hunian-1.png" alt="Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian" width="60%"><p class="caption">
 Gambar 6.9: Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian
 </p>
 </div>
 </div>
 <p>Jawablah soal berikut untuk melatih keterampilan Anda menghitung rentang kepercayaan proporsi.</p>
-<div id="soal-evaluasi-13" class="section level2 unnumbered hasAnchor rmdexercise">
-<h2>Soal Evaluasi 13<a href="bab-6-estimasi-parameter.html#soal-evaluasi-13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="soal-evaluasi-13" class="section level2 unnumbered rmdexercise">
+<h2>Soal Evaluasi 13<a class="anchor" aria-label="anchor" href="#soal-evaluasi-13"><i class="fas fa-link"></i></a>
+</h2>
 <p>Diketahui bahwa proporsi pengguna mobil pribadi dari suatu sampel mahasiswa berjumlah 429 orang adalah 0,04. <span class="capaian">STP-5.1</span></p>
 <ol style="list-style-type: lower-alpha">
 <li>Apabila kita menggunakan <em>confidence level</em> 93%, berapakah tingkat signifikansi kita?</li>
@@ -975,14 +584,17 @@ Gambar 6.9: Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian
 <li>Hitunglah <em>confidence interval</em> proporsi pengguna mobil pribadi pada populasi mahasiswa tersebut.</li>
 </ol>
 </div>
-<div id="tingkat-kepercayaan" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Lebih Dalam tentang Tingkat Kepercayaan (<em>Confidence Level</em>)<a href="bab-6-estimasi-parameter.html#tingkat-kepercayaan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tingkat-kepercayaan" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Lebih Dalam tentang Tingkat Kepercayaan (<em>Confidence Level</em>)<a class="anchor" aria-label="anchor" href="#tingkat-kepercayaan"><i class="fas fa-link"></i></a>
+</h2>
 <p>Kita sudah mengetahui bahwa tingkat kepercayaan penting dalam perhitungan rentang kepercayaan. Di bagian ini, kita akan menganalisis lebih dalam apa yang dinyatakan oleh angka tingkat kepercayaan dan pengaruhnya terhadap perhitungan rentang kepercayaan.</p>
 <p>Sebelum lebih lanjut, kita harus sadar bahwa <strong>tingkat kepercayaan (<em>confidence level</em>, CL) berbeda dengan rentang kepercayaan (<em>confidence interval</em>)</strong>. Jika rentang kepercayaan adalah hasil berupa interval nilai yang memperkirakan posisi parameter populasi, maka tingkat kepercayaan adalah <strong>ukuran seberapa yakin kita terhadap interval tersebut</strong> <span class="citation">(<a href="referensi.html#ref-chase2000general">Chase and Bown 2000</a>)</span>.</p>
 <p>Apa yang kita yakini? Yang kita yakini adalah <strong>dimuatnya nilai parameter dalam interval yang kita hasilkan</strong>. Keyakinan ini dinyatakan dalam bentuk <strong>probabilitas</strong> yang merupakan angka persentase atau proporsi. Misalnya pada kasus rata-rata jarak tempat tinggal mahasiswa yang mengekos sendiri. Tingkat kepercayaan 95% (0,95) bermakna <strong>dari 100 sampel yang mungkin diambil, sebanyak 95% sampel akan memuat nilai parameter</strong>. Dalam kasus ini, maka kita yakin bahwa <strong>95% sampel yang kita ambil, yang menghasilkan rentang 4,47 km hingga 5,09 km, mencakup nilai parameter sebenarnya</strong>.</p>
 <p>Banyak orang salah dalam menginterpretasikan angka tingkat kepercayaan. Simak pembahasan berikut untuk memahaminya.</p>
-<div id="catatan-salah-kaprah-tingkat-kepercayaan" class="section level3 unnumbered hasAnchor rmdnote">
-<h3>Catatan: Salah Kaprah Tingkat Kepercayaan<a href="bab-6-estimasi-parameter.html#catatan-salah-kaprah-tingkat-kepercayaan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="catatan-salah-kaprah-tingkat-kepercayaan" class="section level3 unnumbered rmdnote">
+<h3>Catatan: Salah Kaprah Tingkat Kepercayaan<a class="anchor" aria-label="anchor" href="#catatan-salah-kaprah-tingkat-kepercayaan"><i class="fas fa-link"></i></a>
+</h3>
 <p>Tingkat kepercayaan sering disalahmaknai sebagai <strong>peluang parameter ada di dalam interval</strong>. Jadi, nilai tingkat kepercayaan 90% bukan berarti kita 90% yakin bahwa nilai parameter ada dalam rentang kepercayaan kita. Nilai parameter populasi itu tetap, misalnya rata-rata tinggi badan seluruh mahasiswa memang punya satu angka pasti, hanya saja kita tidak tahu berapa nilainya. Oleh karena itu, kita mengambil sampel yang representatif dan menghitung statistiknya untuk mengestimasi parameter.</p>
 <p>Dengan tingkat kepercayaan 90%, artinya kita mengatakan bahwa sampel kita tersebut hanya akan salah sebanyak 10 kali pengambilan saja dari 100 kali pengambilan yang mungkin. Dengan kata lain, 90 sampel tersebut akan benar-benar berisi nilai parameter populasi yang sebenarnya.</p>
 </div>
@@ -990,12 +602,13 @@ Gambar 6.9: Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian
 <p>Dengan demikian, secara matematis, tingkat kepercayaan dituliskan sebagai <span class="math inline">\(1-\alpha\)</span>. Apabila <span class="math inline">\(\alpha = 0,05\)</span>, maka tingkat kepercayaan adalah <span class="math inline">\(1-0,05 = 0,95\)</span> atau 95%. Ini artinya, kita dapat mengatakan bahwa 95% dari 100 kali sampel yang diambil akan menghasilkan interval yang mencakup nilai parameter, sedangkan 5% sisanya tidak.</p>
 <p>Adapun nilai <span class="math inline">\(\alpha\)</span> yang umum digunakan dalam penelitian adalah 0,10 (10%), 0,05 (5%), dan 0,01 (1%), tergantung seberapa besar tingkat keyakinan yang dikehendaki peneliti.</p>
 <p>Bagaimana kaitan antara tingkat kepercayaan dengan rentang kepercayaan yang dihasilkan? Simak kasus berikut untuk memahaminya.</p>
-<div id="studi-kasus-pengaruh-tingkat-kepercayaan-terhadap-lebar-rentang-kepercayaan" class="section level3 unnumbered hasAnchor rmdkasus">
-<h3>Studi Kasus: Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan<a href="bab-6-estimasi-parameter.html#studi-kasus-pengaruh-tingkat-kepercayaan-terhadap-lebar-rentang-kepercayaan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="studi-kasus-pengaruh-tingkat-kepercayaan-terhadap-lebar-rentang-kepercayaan" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan<a class="anchor" aria-label="anchor" href="#studi-kasus-pengaruh-tingkat-kepercayaan-terhadap-lebar-rentang-kepercayaan"><i class="fas fa-link"></i></a>
+</h3>
 <p>Perbedaan tingkat kepercayaan memengaruhi lebar interval estimasi. Gambar <a href="bab-6-estimasi-parameter.html#fig:fig-pengaruh-nilai-tingkat-kepercayaan">6.10</a> menunjukkan hasil estimasi parameter tinggi badan mahasiswa yang nilai statistiknya adalah 165 cm, simpangan baku 3 cm, dan ukuran sampel 200 orang.</p>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:fig-pengaruh-nilai-tingkat-kepercayaan"></span>
-<img src="figures/fig-pengaruh-nilai-tingkat-kepercayaan-1.png" alt="Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang" width="60%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-pengaruh-nilai-tingkat-kepercayaan"></span>
+<img src="figures/fig-pengaruh-nilai-tingkat-kepercayaan-1.png" alt="Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang" width="60%"><p class="caption">
 Gambar 6.10: Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang
 </p>
 </div>
@@ -1004,8 +617,10 @@ Gambar 6.10: Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentan
 <p>Karena nilai Z mencerminkan nilai statistik yang salah satunya adalah parameter yang kita perkirakan, tingkat kepercayaan yang lebih besar memperlebar rentang perkiraan kita sehingga nilai parameter dapat tercakup dan “tertangkap” di dalam rentang perkiraan kita.</p>
 </div>
 </div>
-<div id="kesimpulan-interpretasi-estimasi-parameter" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Kesimpulan: Interpretasi Estimasi Parameter<a href="bab-6-estimasi-parameter.html#kesimpulan-interpretasi-estimasi-parameter" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="kesimpulan-interpretasi-estimasi-parameter" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Kesimpulan: Interpretasi Estimasi Parameter<a class="anchor" aria-label="anchor" href="#kesimpulan-interpretasi-estimasi-parameter"><i class="fas fa-link"></i></a>
+</h2>
 <p>Interpretasi estimasi parameter berfokus pada pemahaman hasil berupa <strong>rentang kepercayaan</strong> atau <em>confidence interval</em> <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Rentang ini menunjukkan <strong>nilai-nilai yang mungkin menjadi parameter populasi</strong>, berdasarkan data sampel yang diperoleh. Rentang kepercayaan tidak memberikan jawaban pasti mengenai nilai parameter, melainkan memberikan batas bawah dan batas atas yang menjadi perkiraan parameter tersebut dengan tingkat keyakinan tertentu.</p>
 <p>Lebar rentang estimasi dapat menjadi indikator kualitas estimasi. Rentang yang sempit menandakan estimasi yang lebih presisi, yang biasanya terjadi karena ukuran sampel cukup besar atau error yang relatif kecil. Sebaliknya, rentang yang lebar menunjukkan tingkat ketidakpastian yang lebih besar, sering kali disebabkan oleh ukuran sampel yang terlalu kecil atau variasi data yang tinggi. Sehingga, pemilihan jumlah sampel dan pengendalian error sangat memengaruhi kualitas estimasi.</p>
 <p>Konsep tingkat kepercayaan membantu menjelaskan ketidakpastian dalam estimasi. Misalnya, pada tingkat kepercayaan 95% berarti ada kemungkinan 95 dari 100 sampel yang diambil akan menghasilkan interval yang mencakup parameter populasi sebenarnya. Sebaliknya, 5 dari 100 sampel (atau 5%) akan menghasilkan interval yang tidak mencakup parameter tersebut. Jika hasil sampel berbeda dari dugaan populasi, maka perbedaan itu dapat dijelaskan sebagai bagian dari kemungkinan error yang sudah diperhitungkan dalam tingkat kepercayaan.</p>
@@ -1013,68 +628,72 @@ Gambar 6.10: Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentan
 
 </div>
 </div>
-            </section>
+  <div class="chapter-nav">
+<div class="prev"><a href="bab-5-pengantar-inferensial.html"><span class="header-section-number">5</span> Pengantar Analisis Statistik Inferensial</a></div>
+<div class="next"><a href="bab-7-uji-hipotesis-satu-populasi.html"><span class="header-section-number">7</span> Uji Hipotesis Parameter Satu Populasi</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li>
+<a class="nav-link" href="#bab-6-estimasi-parameter"><span class="header-section-number">6</span> Estimasi Parameter</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#capaian-pembelajaran-5">Capaian Pembelajaran</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#statistik-vs.-parameter"><span class="header-section-number">6.1</span> Statistik vs. Parameter</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#studi-kasus-statistik-vs-parameter">Studi Kasus: Statistik vs Parameter</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#estimasi-titik-vs.-estimasi-rentang"><span class="header-section-number">6.2</span> Estimasi Titik vs. Estimasi Rentang</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#estimasi-titik"><span class="header-section-number">6.2.1</span> Estimasi Titik</a></li>
+<li><a class="nav-link" href="#studi-kasus-keterbatasan-estimasi-titik">Studi Kasus: Keterbatasan Estimasi Titik</a></li>
+<li><a class="nav-link" href="#estimasi-rentang"><span class="header-section-number">6.2.2</span> Estimasi Rentang</a></li>
+<li><a class="nav-link" href="#studi-kasus-keuntungan-estimasi-rentang">Studi Kasus: Keuntungan Estimasi Rentang</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#konsep-perhitungan-rentang-kepercayaan-sebagai-estimasi-rentang"><span class="header-section-number">6.3</span> Konsep Perhitungan Rentang Kepercayaan Sebagai Estimasi Rentang</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#perhitungan-rentang-kepercayaan-rata-rata"><span class="header-section-number">6.3.1</span> Perhitungan Rentang Kepercayaan Rata-rata</a></li>
+<li><a class="nav-link" href="#studi-kasus-menghitung-rata-rata-jarak-tempat-tinggal-mahasiswa-itera-berdasarkan-jenis-tempat-tinggalnya">Studi Kasus: Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#soal-evaluasi-12">Soal Evaluasi 12</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#perhitungan-rentang-kepercayaan-proporsi"><span class="header-section-number">6.3.2</span> Perhitungan Rentang Kepercayaan Proporsi</a></li>
+<li><a class="nav-link" href="#studi-kasus-proporsi-mahasiswa-berdasarkan-jenis-tempat-tinggal">Studi Kasus: Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#soal-evaluasi-13">Soal Evaluasi 13</a></li>
+<li>
+<a class="nav-link" href="#tingkat-kepercayaan"><span class="header-section-number">6.4</span> Lebih Dalam tentang Tingkat Kepercayaan (Confidence Level)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#catatan-salah-kaprah-tingkat-kepercayaan">Catatan: Salah Kaprah Tingkat Kepercayaan</a></li>
+<li><a class="nav-link" href="#studi-kasus-pengaruh-tingkat-kepercayaan-terhadap-lebar-rentang-kepercayaan">Studi Kasus: Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#kesimpulan-interpretasi-estimasi-parameter"><span class="header-section-number">6.5</span> Kesimpulan: Interpretasi Estimasi Parameter</a></li>
+</ul>
 
-          </div>
-        </div>
-      </div>
-<a href="bab-5-pengantar-inferensial.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bab-7-uji-hipotesis-satu-populasi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/abdulmubdibindar/buku-ajar-stp/blob/master/06-estimasi-parameter.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/abdulmubdibindar/buku-ajar-stp/edit/master/06-estimasi-parameter.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Buku Ajar Statistika untuk Perencanaan</strong>" was written by Muhammad Abdul Mubdi Bindar, Husna Tiara Putri, Valendya Rilansari. </p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-  "sharing": {
-    "github": false,
-    "facebook": true,
-    "twitter": true,
-    "linkedin": false,
-    "weibo": false,
-    "instapaper": false,
-    "vk": false,
-    "whatsapp": false,
-    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-  },
-  "fontsettings": {
-    "theme": "white",
-    "family": "sans",
-    "size": 2
-  },
-  "edit": {
-    "link": null,
-    "text": null
-  },
-  "history": {
-    "link": null,
-    "text": null
-  },
-  "view": {
-    "link": null,
-    "text": null
-  },
-  "download": null,
-  "search": {
-    "engine": "fuse",
-    "options": null
-  },
-  "toc": {
-    "collapse": "subsection"
-  }
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -1086,7 +705,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>
