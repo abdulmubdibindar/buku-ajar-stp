@@ -17,11 +17,13 @@ library(knitr)
 library(kableExtra)
 
 data_univariat <- data.frame(
-  Bab = c("\\@ref(bab-3-analisis-statistik-deskriptif)", 
-          "\\@ref(bab-4-visualisasi-data-kuantitatif)", 
-          "\\@ref(bab-5-pengantar-inferensial)", 
-          "\\@ref(bab-6-estimasi-parameter)",
-          "\\@ref(bab-7-uji-hipotesis-satu-populasi)"),
+  Bab = c(
+    "\\@ref(bab-3-analisis-statistik-deskriptif)",
+    "\\@ref(bab-4-visualisasi-data-kuantitatif)",
+    "\\@ref(bab-5-pengantar-inferensial)",
+    "\\@ref(bab-6-estimasi-parameter)",
+    "\\@ref(bab-7-uji-hipotesis-satu-populasi)"
+  ),
   Pembahasan = c(
     "Menghitung persentase/proporsi mahasiswa pengguna sepeda motor ke kampus",
     "Memvisualkan sebaran moda yang digunakan mahasiswa ke kampus",
@@ -157,7 +159,7 @@ Untuk menjelaskan **pola hubungan**, mari kita gunakan variabel rasio yang sifat
 library(ggplot2)
 library(dplyr)
 
-df_uinril <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep=";")
+df_uinril <- read.csv("datasets/DataUtama_mhsUINRIL.csv", sep = ";")
 
 df_uinril |>
   # Preprocessing karena variabel jarak masih menggunakan koma sebagai desimal
@@ -182,20 +184,21 @@ library(ggplot2)
 set.seed(42)
 jarak_hyp <- runif(100, 1, 20)
 # Skenario Linear
-biaya_lin <- 10 + 2 * jarak_hyp + rnorm(100, sd=3)
+biaya_lin <- 10 + 2 * jarak_hyp + rnorm(100, sd = 3)
 # Skenario Tidak Berpola (Acak)
 biaya_non <- runif(100, 10, 50)
 
 df_contoh <- data.frame(
   Jarak = rep(jarak_hyp, 2),
   Biaya = c(biaya_lin, biaya_non),
-  Pola = factor(rep(c("Pola Linear", "Tidak Berpola (Acak)"), each = 100), 
-                levels=c("Pola Linear", "Tidak Berpola (Acak)"))
+  Pola = factor(rep(c("Pola Linear", "Tidak Berpola (Acak)"), each = 100),
+    levels = c("Pola Linear", "Tidak Berpola (Acak)")
+  )
 )
 
 ggplot(df_contoh, aes(x = Jarak, y = Biaya)) +
   geom_point(color = "steelblue", alpha = 0.6) +
-  facet_wrap(~ Pola, scales = "free_y") +
+  facet_wrap(~Pola, scales = "free_y") +
   theme_minimal() +
   labs(
     x = "Jarak Tempuh Hipotetis (km)",
@@ -248,7 +251,7 @@ df_dataset_beda_tingkat_pengukuran <- data.frame(
   `ID` = c(1, 2, 3, 4, 5),
   `Jarak` = c(23, 12, 34, 45, 56),
   `Uang_saku` = c("&lt;1 Juta rupiah", "2-3 Juta rupiah", "3-4 Juta rupiah", "&gt;4 Juta rupiah", "&lt;1 Juta rupiah")
-  )
+)
 
 kbl(df_dataset_beda_tingkat_pengukuran, align = "lccc", caption = "Dataset Beda Tingkat Pengukuran", escape = FALSE) |>
   kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
@@ -263,7 +266,7 @@ df_dataset_beda_tingkat_pengukuran_transformasi <- data.frame(
   `ID` = c(1, 2, 3, 4, 5),
   `Jarak` = c("20-30 km", "10-20 km", "30-40 km", "40-50 km", "&lt;10 km"),
   `Uang_saku` = c("&lt;1 Juta rupiah", "2-3 Juta rupiah", "3-4 Juta rupiah", "&gt;4 Juta rupiah", "&lt;1 Juta rupiah")
-  )
+)
 
 kbl(df_dataset_beda_tingkat_pengukuran_transformasi, align = "lccc", caption = "Dataset Beda Tingkat Pengukuran (Transformasi)", escape = FALSE) |>
   kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
@@ -272,7 +275,7 @@ kbl(df_dataset_beda_tingkat_pengukuran_transformasi, align = "lccc", caption = "
 Dengan demikian, kita dapat mengidentifikasi karakteristik hubungan antara kedua variabel tersebut berdasarkan Tabel \@ref(tab:tbl-karakteristik-hubungan) yakni untuk variabel **ordinal**, yakni **kekuatan** dan **arah**. Koefisien asosiasinya juga berarti memiliki kisaran angka antara 0 sampai dengan 1 dan tanda positif (+) atau negatif (-).
 :::
 
-### Bentuk Asosiasi Sepasang Variabel
+### Bentuk Asosiasi Sepasang Variabel {#bentuk-asosiasi-sepasang-variabel}
 
 Setelah mempelajari karakteristik hubungan antarvariabel, kita perlu menguasai bentuk-bentuk asosiasi yang ada di antara kedua variabel. Penguasaan bentuk ini penting karena bentuk asosiasi tersebut **sangat menentukan jenis analisis asosiasi yang akan kita gunakan** selanjutnya, dan keduanya **sangat berlainan satu sama lain**.
 
@@ -325,19 +328,20 @@ library(flextable)
 
 bahan_crosstab <- read.csv("datasets/DataUtama_mhsUNILA.csv", sep = ";")
 
-bahan_crosstab |> 
+bahan_crosstab |>
   select(Jenis.Tempat.Tinggal, kendaraan.utama) |>
-  rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |> 
+  rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |>
   tbl_summary(
     by = jenis.tempat.tinggal,
     label = list(kendaraan.utama = "Jenis Kendaraan"),
     statistic = list(all_categorical() ~ "{n}")
-    ) |> 
+  ) |>
   modify_header(
     label ~ "",
-    all_stat_cols() ~ "**{level}**") |> 
-  modify_spanning_header(all_stat_cols() ~ "**Jenis Tempat Tinggal**") |> 
-  remove_footnote_header(columns = all_stat_cols()) |> 
+    all_stat_cols() ~ "**{level}**"
+  ) |>
+  modify_spanning_header(all_stat_cols() ~ "**Jenis Tempat Tinggal**") |>
+  remove_footnote_header(columns = all_stat_cols()) |>
   as_flex_table() |>
   bg(bg = "white", part = "all") |>
   autofit() |>
@@ -393,19 +397,20 @@ library(kableExtra)
 library(dplyr)
 
 
-bahan_crosstab |> 
+bahan_crosstab |>
   select(Jenis.Tempat.Tinggal, kendaraan.utama) |>
-  rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |> 
+  rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |>
   tbl_summary(
     by = jenis.tempat.tinggal,
     label = list(kendaraan.utama = "Jenis Kendaraan"),
     statistic = list(all_categorical() ~ "{n}")
-    ) |> 
+  ) |>
   modify_header(
     label ~ "",
-    all_stat_cols() ~ "**{level}**") |> 
-  modify_spanning_header(all_stat_cols() ~ "**Jenis Tempat Tinggal**") |> 
-  remove_footnote_header(columns = all_stat_cols()) |> 
+    all_stat_cols() ~ "**{level}**"
+  ) |>
+  modify_spanning_header(all_stat_cols() ~ "**Jenis Tempat Tinggal**") |>
+  remove_footnote_header(columns = all_stat_cols()) |>
   as_flex_table() |>
   bg(bg = "white", part = "all") |>
   autofit() |>
@@ -417,24 +422,24 @@ bahan_crosstab |>
 #   kendaraan.utama = bahan_crosstab$kendaraan.utama,
 #   jenis.tempat.tinggal = bahan_crosstab$Jenis.Tempat.Tinggal
 # )
-# 
+#
 # # Menambahkan margin (total baris dan kolom)
 # tbl_obs_with_margins <- addmargins(tbl_observed)
-# 
+#
 # # Konversi ke data frame
 # df_obs <- as.data.frame.matrix(tbl_obs_with_margins)
-# 
+#
 # # Merapikan kolom nama baris
 # df_obs$Kendaraan_Utama <- rownames(df_obs)
 # df_obs <- df_obs |> select(Kendaraan_Utama, everything())
 # rownames(df_obs) <- NULL
-# 
+#
 # # Mengganti 'Sum' menjadi 'Total'
 # df_obs$Kendaraan_Utama <- gsub("Sum", "Total", df_obs$Kendaraan_Utama)
 # colnames(df_obs)[ncol(df_obs)] <- "Total"
-# 
-# tbl_obs_out <- kbl(df_obs, 
-#     align = "lcccccccc", 
+#
+# tbl_obs_out <- kbl(df_obs,
+#     align = "lcccccccc",
 #     caption = "Tabel Silang Frekuensi Aktual/Teramati",
 #     format.args = list(big.mark = "."),
 #     escape = FALSE) |>
@@ -443,7 +448,7 @@ bahan_crosstab |>
 #   column_spec(1, width = "2.8cm") |>
 #   column_spec(2:8, width = "1.5cm") |>
 #   column_spec(9, width = "1.2cm")
-# 
+#
 # if (knitr::is_html_output()) {
 #   tbl_obs_out <- tbl_obs_out |> scroll_box(width = "100%", box_css = "border: 0px;")
 # }
@@ -498,15 +503,13 @@ empty_row[1, ] <- NA
 empty_row$Kendaraan_Utama <- "Jenis Kendaraan"
 df_exp_layout <- rbind(empty_row, df_exp_layout)
 
-df_exp_layout |> 
+df_exp_layout |>
   flextable() |>
   # 1. Terapkan theme di awal agar tidak menimpa modifikasi kustom (bold, rata tengah)
   theme_booktabs() |>
-  
   # Mewajibkan nilai NA dicetak kosong, bukan 'NA'
   colformat_double(na_str = "") |>
   colformat_num(na_str = "") |>
-  
   # Menambahkan spanning header "Jenis Tempat Tinggal"
   add_header_row(
     values = c("", "Jenis Tempat Tinggal", ""),
@@ -514,32 +517,27 @@ df_exp_layout |>
   ) |>
   # Menghapus nama kolom pertama di baris bawah header
   set_header_labels(Kendaraan_Utama = "") |>
-  
   # Format penataan huruf (bold, center-aligned)
   bold(part = "header") |>
   bold(i = 1, j = 1, part = "body") |> # Bold eksklusif untuk 'Jenis Kendaraan'
   align(align = "center", part = "header") |>
   align(align = "center", part = "body") |>
   align(j = 1, align = "left", part = "all") |>
-  
   # Menambahkan garis bawah eksklusif di bawah spanning header "Jenis Tempat Tinggal"
   hline(i = 1, j = 2:(ncol(df_exp_layout) - 1), part = "header", border = fp_border(width = 1)) |>
-  
   # Memberikan efek indentasi (menjorok ke kanan) untuk sub-kategori seperti gtsummary
   padding(i = 2:nrow(df_exp_layout), j = 1, padding.left = 15, part = "body") |>
-  
   # Garis pemisah atas dan dasar setebal gtsummary
   hline_top(part = "header", border = fp_border(width = 2)) |>
   hline_bottom(part = "body", border = fp_border(width = 2)) |>
-  
   bg(bg = "white", part = "all") |>
   autofit() |>
   set_caption("Tabel Silang Frekuensi Harapan")
 
 # Commented for later used as educational purpose
 # -----------------------------------------------
-# tbl_exp_out <- kbl(df_expected, 
-#     align = "lcccccccc", 
+# tbl_exp_out <- kbl(df_expected,
+#     align = "lcccccccc",
 #     caption = "Tabel Silang Frekuensi Harapan",
 #     format.args = list(decimal.mark = ",", big.mark = "."),
 #     escape = FALSE) |>
@@ -586,25 +584,30 @@ library(knitr)
 library(kableExtra)
 
 df_koefisien <- data.frame(
-  Koefisien = c('phi ($\\phi$)', "Cramer's V", 'Kontingensi (C)'),
-  Perhitungan = c('$\\phi = \\sqrt{\\frac{\\chi^2}{n}}$', 
-                  '$V = \\sqrt{\\frac{\\chi^2}{n(k-1)}}$', 
-                  '$C = \\sqrt{\\frac{\\chi^2}{n+\\chi^2}}$'),
-  Keterangan = c('Digunakan untuk tabel kontingensi $2 \\times 2$',
-                 'Digunakan untuk tabel kontingensi $b \\times k$',
-                 'Digunakan untuk tabel kontingensi $b \\times k$'),
+  Koefisien = c("phi ($\\phi$)", "Cramer's V", "Kontingensi (C)"),
+  Perhitungan = c(
+    "$\\phi = \\sqrt{\\frac{\\chi^2}{n}}$",
+    "$V = \\sqrt{\\frac{\\chi^2}{n(k-1)}}$",
+    "$C = \\sqrt{\\frac{\\chi^2}{n+\\chi^2}}$"
+  ),
+  Keterangan = c(
+    "Digunakan untuk tabel kontingensi $2 \\times 2$",
+    "Digunakan untuk tabel kontingensi $b \\times k$",
+    "Digunakan untuk tabel kontingensi $b \\times k$"
+  ),
   check.names = FALSE
 )
 
 tbl_koef_out <- kbl(df_koefisien,
-    align = 'ccc',
-    caption = 'Koefisien Korelasi Variabel Nominal Berbasis Chi-Kuadrat',
-    escape = FALSE) |>
-  kable_styling(bootstrap_options = c('striped', 'hover', 'responsive'), full_width = FALSE, latex_options = 'HOLD_position') |>
-  collapse_rows(columns = 3, valign = 'middle')
+  align = "ccc",
+  caption = "Koefisien Korelasi Variabel Nominal Berbasis Chi-Kuadrat",
+  escape = FALSE
+) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = "HOLD_position") |>
+  collapse_rows(columns = 3, valign = "middle")
 
 if (knitr::is_html_output()) {
-  tbl_koef_out <- tbl_koef_out |> scroll_box(width = '100%', box_css = 'border: 0px;')
+  tbl_koef_out <- tbl_koef_out |> scroll_box(width = "100%", box_css = "border: 0px;")
 }
 tbl_koef_out
 ```
@@ -623,23 +626,24 @@ library(knitr)
 library(kableExtra)
 
 df_interpretasi <- data.frame(
-  Nilai = c('0,00', '0,01 - 0,09', '0,10 - 0,29', '0,30 - 0,49', '0,50 - 0,69', '0,70 - 0,89', '0,90 - 1,00'),
-  Keterangan = c('Tidak ada hubungan', 'Hubungan sangat kecil', 'Hubungan rendah hingga sedang', 'Hubungan sedang hingga kuat', 'Hubungan kuat hingga sangat kuat', 'Hubungan sangat kuat', 'Hubungan sempurna'),
+  Nilai = c("0,00", "0,01 - 0,09", "0,10 - 0,29", "0,30 - 0,49", "0,50 - 0,69", "0,70 - 0,89", "0,90 - 1,00"),
+  Keterangan = c("Tidak ada hubungan", "Hubungan sangat kecil", "Hubungan rendah hingga sedang", "Hubungan sedang hingga kuat", "Hubungan kuat hingga sangat kuat", "Hubungan sangat kuat", "Hubungan sempurna"),
   check.names = FALSE
 )
 
 tbl_interpretasi_out <- kbl(df_interpretasi,
-    align = 'ccc',
-    caption = 'Kriteria Koefisien Korelasi Variabel Nominal menurut @devaus2014surveys',
-    escape = FALSE) |>
-  kable_styling(bootstrap_options = c('striped', 'hover', 'responsive'), full_width = FALSE, latex_options = 'HOLD_position')
+  align = "ccc",
+  caption = "Kriteria Koefisien Korelasi Variabel Nominal menurut @devaus2014surveys",
+  escape = FALSE
+) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = "HOLD_position")
 
 if (knitr::is_html_output()) {
-  tbl_interpretasi_out <- tbl_interpretasi_out |> 
+  tbl_interpretasi_out <- tbl_interpretasi_out |>
     scroll_box(
-      width = '100%',
-      box_css = 'border: 0px;'
-      )
+      width = "100%",
+      box_css = "border: 0px;"
+    )
 }
 tbl_interpretasi_out
 ```
@@ -668,13 +672,13 @@ library(knitr)
 library(kableExtra)
 
 df_pre_y <- data.frame(
-  `Preferensi (Y)` = c('Setuju transport publik', 'Tidak setuju', 'Total'),
+  `Preferensi (Y)` = c("Setuju transport publik", "Tidak setuju", "Total"),
   Jumlah = c(60, 40, 100),
   check.names = FALSE
 )
 
-kbl(df_pre_y, align = 'lc', caption = 'Distribusi Preferensi Penggunaan Transportasi Publik', escape = FALSE) |>
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = FALSE) |>
+kbl(df_pre_y, align = "lc", caption = "Distribusi Preferensi Penggunaan Transportasi Publik", escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE) |>
   row_spec(nrow(df_pre_y), bold = TRUE)
 ```
 
@@ -686,15 +690,15 @@ Mari perhatikan tabel silang berikut.
 
 ```{r tbl-pre-e2-hipotetis, echo=FALSE, out.width='80%', fig.align='center'}
 df_pre_xy <- data.frame(
-  `Kepemilikan Kendaraan (X)` = c('Punya Kendaraan', 'Tidak Punya Kendaraan', 'Total'),
+  `Kepemilikan Kendaraan (X)` = c("Punya Kendaraan", "Tidak Punya Kendaraan", "Total"),
   `Setuju transport publik` = c(10, 50, 60),
   `Tidak setuju` = c(35, 5, 40),
   Total = c(45, 55, 100),
   check.names = FALSE
 )
 
-kbl(df_pre_xy, align = 'lccc', caption = 'Tabel Silang Kepemilikan Kendaraan dan Preferensi Transportasi', escape = FALSE) |>
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = FALSE) |>
+kbl(df_pre_xy, align = "lccc", caption = "Tabel Silang Kepemilikan Kendaraan dan Preferensi Transportasi", escape = FALSE) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE) |>
   row_spec(nrow(df_pre_xy), bold = TRUE)
 ```
 
@@ -753,20 +757,20 @@ library(tidyverse)
 library(gtsummary)
 library(flextable)
 
-bahan_unila <- read.csv('datasets/DataUtama_mhsUNILA.csv', sep = ';')
+bahan_unila <- read.csv("datasets/DataUtama_mhsUNILA.csv", sep = ";")
 
-bahan_unila |> 
+bahan_unila |>
   select(kendaraan.utama) |>
   tbl_summary(
-    label = list(kendaraan.utama = 'Jenis Kendaraan'),
-    statistic = list(all_categorical() ~ '{n}')
+    label = list(kendaraan.utama = "Jenis Kendaraan"),
+    statistic = list(all_categorical() ~ "{n}")
   ) |>
-  modify_header(label ~ '**Variabel**', all_stat_cols() ~ '**Jumlah**') |>
-  remove_footnote_header() |> 
+  modify_header(label ~ "**Variabel**", all_stat_cols() ~ "**Jumlah**") |>
+  remove_footnote_header() |>
   as_flex_table() |>
-  bg(bg = 'white', part = 'all') |>
+  bg(bg = "white", part = "all") |>
   autofit() |>
-  set_caption('Tabel Frekuensi Kendaraan Utama Mahasiswa UNILA')
+  set_caption("Tabel Frekuensi Kendaraan Utama Mahasiswa UNILA")
 
 n_semua <- length(bahan_unila$kendaraan.utama)
 n_motor_unila <- length(bahan_unila$kendaraan.utama[bahan_unila$kendaraan.utama == "Sepeda motor pribadi"])
@@ -783,21 +787,21 @@ Angka `r n_semua - n_motor_unila` perhitungan error inilah yang diplot sebagai *
 Langkah berikutnya adalah memasukkan informasi dari variabel tambahan, yakni jenis tempat tinggalnya (`jenis.tempat.tinggal`). Kita memprediksi ulang secara lebih spesifik menggunakan patokan modus dari **masing-masing kelompok tempat tinggal tersebut**.
 
 ```{r frekuensi-e2-unila, echo=FALSE}
-bahan_unila |> 
+bahan_unila |>
   select(Jenis.Tempat.Tinggal, kendaraan.utama) |>
-  rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |> 
+  rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |>
   tbl_cross(
     row = jenis.tempat.tinggal,
     col = kendaraan.utama
   ) |>
   as_flex_table() |>
-  bg(bg = 'white', part = 'all') |>
+  bg(bg = "white", part = "all") |>
   autofit() |>
-  set_caption('Tabel Silang Kendaraan Utama Berdasarkan Jenis Tempat Tinggal')
+  set_caption("Tabel Silang Kendaraan Utama Berdasarkan Jenis Tempat Tinggal")
 
 e2_unila <- 154
 e1_unila <- 164
-lambda_unila <- (e1_unila - e2_unila)/e1_unila
+lambda_unila <- (e1_unila - e2_unila) / e1_unila
 ```
 
 Berdasarkan Tabel \@ref(tab:frekuensi-e2-unila) di atas, kita menghitung selisih frekuensi total per kategori pada variabel X (total per kategori variabel `jenis.tempat.tinggal`) dengan modus pada kategori variabel `kendaraan.utama` untuk tiap kategori variabel `jenis.tempat.tinggal`:
@@ -841,35 +845,36 @@ Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda mengenai materi yang
 1. Perhatikan tabel silang yang menunjukkan distribusi frekuensi pandangan mahasiswa terhadap kegiatan ekstrakurikuler (ekskul) berdasarkan variabel pandangan mereka dan apakah mereka anggota sebuah himpunan. [STP-9.1]{.capaian}
 
   ```{r tbl-evaluasi-ekskul, echo=FALSE, message=FALSE, warning=FALSE}
-  library(knitr)
-  library(kableExtra)
+library(knitr)
+library(kableExtra)
 
-  df_eval18 <- data.frame(
-    Pendapat = c("Semua mahasiswa wajib ikut", "Mahasiswa seharusnya bebas menentukan sendiri", "Kegiatan ekskul hanya membuang waktu"),
-    `Ya` = c(466, 345, 38),
-    `Tidak` = c(488, 383, 46),
-    check.names = FALSE
-  )
+df_eval18 <- data.frame(
+  Pendapat = c("Semua mahasiswa wajib ikut", "Mahasiswa seharusnya bebas menentukan sendiri", "Kegiatan ekskul hanya membuang waktu"),
+  `Ya` = c(466, 345, 38),
+  `Tidak` = c(488, 383, 46),
+  check.names = FALSE
+)
 
-  tbl_eval18_out <- kbl(df_eval18, 
-    align = "lcc", 
-    col.names = c("Bagaimana pendapat Anda tentang kegiatan ekstrakurikuler (ekskul) mahasiswa?", "Ya", "Tidak"),
-    caption = "Tabel Silang Pandangan Mahasiswa terhadap Kegiatan Ekstrakurikuler",
-    format.args = list(big.mark = ".", decimal.mark = ","),
-    escape = FALSE) |>
+tbl_eval18_out <- kbl(df_eval18,
+  align = "lcc",
+  col.names = c("Bagaimana pendapat Anda tentang kegiatan ekstrakurikuler (ekskul) mahasiswa?", "Ya", "Tidak"),
+  caption = "Tabel Silang Pandangan Mahasiswa terhadap Kegiatan Ekstrakurikuler",
+  format.args = list(big.mark = ".", decimal.mark = ","),
+  escape = FALSE
+) |>
   kable_styling(
-    bootstrap_options = c("striped", "hover", "responsive"), 
-    full_width = FALSE, 
+    bootstrap_options = c("striped", "hover", "responsive"),
+    full_width = FALSE,
     latex_options = c("scale_down", "HOLD_position")
   ) |>
   add_header_above(c(" " = 1, "Apakah Anda anggota himpunan/organisasi mahasiswa?" = 2)) |>
   column_spec(1, width = "8cm") |>
   column_spec(2:3, width = "3cm")
 
-  if (knitr::is_html_output()) {
-    tbl_eval18_out <- tbl_eval18_out |> scroll_box(width = "100%", box_css = "border: 0px;")
-  }
-  tbl_eval18_out
+if (knitr::is_html_output()) {
+  tbl_eval18_out <- tbl_eval18_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+}
+tbl_eval18_out
   ```
   
    a. Tentukan koefisien berbasis $\chi^2$ yang pas digunakan untuk menyatakan korelasi kedua variabel tersebut (phi, Cramer’s V, atau C, bisa lebih dari satu) 
@@ -879,35 +884,36 @@ Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda mengenai materi yang
 2. Perhatikan tabel silang yang menyajikan data hipotesis pola utama pengelolaan sampah berdasarkan tipe tempat tinggal 1.000 rumah tangga berikut. [STP-9.1]{.capaian}
 
   ```{r tbl-evaluasi-sampah, echo=FALSE, message=FALSE, warning=FALSE}
-  library(knitr)
-  library(kableExtra)
+library(knitr)
+library(kableExtra)
 
-  df_eval_sampah <- data.frame(
-    Metode = c("Diangkut oleh petugas kebersihan", "Dibakar atau dibuang ke lahan kosong", "Disetorkan ke bank sampah terpadu"),
-    `Apartemen` = c(465, 20, 15),
-    `Perumahan Tapak` = c(25, 450, 25),
-    check.names = FALSE
-  )
+df_eval_sampah <- data.frame(
+  Metode = c("Diangkut oleh petugas kebersihan", "Dibakar atau dibuang ke lahan kosong", "Disetorkan ke bank sampah terpadu"),
+  `Apartemen` = c(465, 20, 15),
+  `Perumahan Tapak` = c(25, 450, 25),
+  check.names = FALSE
+)
 
-  tbl_eval_sampah_out <- kbl(df_eval_sampah, 
-    align = "lcc", 
-    col.names = c("Pola utama pengelolaan sampah rumah tangga", "Apartemen", "Perumahan Tapak"),
-    caption = "Tabel Silang Pola Pengelolaan Sampah berdasarkan Tipe Tempat Tinggal",
-    format.args = list(big.mark = ".", decimal.mark = ","),
-    escape = FALSE) |>
+tbl_eval_sampah_out <- kbl(df_eval_sampah,
+  align = "lcc",
+  col.names = c("Pola utama pengelolaan sampah rumah tangga", "Apartemen", "Perumahan Tapak"),
+  caption = "Tabel Silang Pola Pengelolaan Sampah berdasarkan Tipe Tempat Tinggal",
+  format.args = list(big.mark = ".", decimal.mark = ","),
+  escape = FALSE
+) |>
   kable_styling(
-    bootstrap_options = c("striped", "hover", "responsive"), 
-    full_width = FALSE, 
+    bootstrap_options = c("striped", "hover", "responsive"),
+    full_width = FALSE,
     latex_options = c("scale_down", "HOLD_position")
   ) |>
   add_header_above(c(" " = 1, "Tipe Tempat Tinggal" = 2)) |>
   column_spec(1, width = "8cm") |>
   column_spec(2:3, width = "3cm")
 
-  if (knitr::is_html_output()) {
-    tbl_eval_sampah_out <- tbl_eval_sampah_out |> scroll_box(width = "100%", box_css = "border: 0px;")
-  }
-  tbl_eval_sampah_out
+if (knitr::is_html_output()) {
+  tbl_eval_sampah_out <- tbl_eval_sampah_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+}
+tbl_eval_sampah_out
   ```
   
    a. Berapakah jumlah kesalahan prediksi awal ($E_1$) sebelum adanya informasi tambahan mengenai jenis tempat tinggal warganya?
