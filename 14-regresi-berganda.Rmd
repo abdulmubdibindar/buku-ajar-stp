@@ -1,9 +1,60 @@
 # Kausalitas dengan Regresi Linear Berganda {#bab-regresi-berganda}
 
-## Konsep Dasar
+::: rmdcapaian
 
-Regresi linear berganda melibatkan **lebih dari satu** variabel independen untuk memprediksi variabel dependen.
-$$ Y = a + b_1X_1 + b_2X_2 + \dots + \epsilon $$
+### Capaian Pembelajaran {-}
+
+Setelah mempelajari bab ini, Anda diharapkan mampu:
+
+1. menyebutkan perbedaan analisis regresi linear berganda dengan analisis regresi linear sederhana [STP-13.1]{.capaian}
+2. menguraikan hubungan antara variabel independen dengan variabel dependennya secara tepat dalam sebuah persamaan regresi linear berganda [STP-13.2]{.capaian}
+
+:::
+
+## Jenis-jenis Asosiasi Multivariat
+
+Kita sudah mempelajari hubungan antara 1 variabel dependen dan 1 variabel independen pada bab sebelumnya. Namun, pada kenyataannya, bentuk hubungan antarvariabel tidak selalu sesederhana itu. Hubungan antarvariabel bisa berupa **asosiasi multivariat** yang melibatkan **lebih dari 2 variabel**.
+
+Terdapat dua kelompok besar asosiasi multivariat: **interdependensi** dan **dependensi**. interdependensi adalah jenis asosiasi yang **tidak memiliki hubungan ketergantungan antara variabel-variabel yang dianalisis**. Sebaliknya, dependensi adalah jenis asosiasi yang **memiliki hubungan ketergantungan antara variabel-variabel yang dianalisis**. Yang dimaksud dengan "ketergantungan" adalah hubungan *memengaruhi-dipengaruhi* seperti yang sudah kalian pelajari dalam analisis hubungan regresi linear sederhana. Diagram berikut menunjukkan bagaimana semua teknik analisis multivariat dikelompokkan berdasarkan kedua jenis asosiasi tersebut.
+
+```{r diagram-asosiasi-multivariat, echo=FALSE, message=FALSE, fig.align='center', fig.cap="Diagram Pohon Keputusan Asosiasi Multivariat"}
+knitr::include_graphics("images/diagram_dependensi.drawio.png")
+```
+
+Pada jalur dependensi, langkah pertama adalah melihat jumlah variabel dependen yang ingin dianalisis. Jika hanya terdapat satu variabel dependen, maka teknik analisis dipilih berdasarkan tingkat pengukuran variabel dependen tersebut. Apabila variabel dependen berskala metrik (interval maupun rasio), maka teknik yang sesuai adalah **regresi linear berganda**, khususnya ketika variabel independen dapat berupa campuran metrik dan non-metrik. Namun apabila variabel dependen berskala non-metrik (nominal atau ordinal), maka analisis yang digunakan dapat berupa **logistic regression** untuk data biner, atau **conjoint analysis** untuk analisis preferensi dalam konteks pemasaran atau perilaku pilihan.
+
+Jika penelitian melibatkan lebih dari satu variabel dependen dalam satu hubungan analisis, maka peneliti perlu kembali mengidentifikasi tingkat pengukuran dari variabel dependen. Untuk variabel dependen berskala metrik, terdapat dua kemungkinan teknik. Apabila variabel independen bersifat metrik, maka teknik yang direkomendasikan adalah **canonical correlation analysis**, yaitu analisis yang menghubungkan dua set variabel secara simultan. Namun jika variabel independen bersifat non-metrik, maka metode yang tepat adalah **Multivariate Analysis of Variance (MANOVA)**. Sebaliknya, untuk variabel dependen non-metrik, metode yang digunakan adalah **multiple discriminant analysis**, yang bertujuan mengklasifikasikan objek ke dalam kelompok tertentu berdasarkan kombinasi variabel prediktor.
+
+Dalam bab ini kita akan fokus pada salah satu analisis statistik yang menggunakan hubungan dependensi, yaitu **regresi linear berganda**. Untuk salah satu contoh hubungan interdependensi, yakni analisis faktor, akan kita pelajari di bab selanjutnya.
+
+## Perbedaan dengan Regresi Linear Sederhana
+
+Analisis regresi merupakan salah satu metode analisis statistik yang digunakan untuk **memahami hubungan antara variabel dependen (variabel yang diprediksi) dan variabel independen (variabel yang memengaruhi)**. Pada dasarnya, perbedaan utama antara regresi linear sederhana dan regresi linear berganda terletak pada **jumlah variabel independen** yang digunakan dalam pemodelan.
+
+Regresi linear **sederhana** hanya melibatkan **satu variabel independen** untuk menjelaskan atau memprediksi variabel dependen. Model ini digunakan untuk melihat pengaruh satu faktor saja terhadap suatu perubahan pada variabel terikat.
+
+Sementara itu, regresi linear **berganda** digunakan ketika variabel dependen dipengaruhi oleh **lebih dari satu variabel independen**. Model ini memberikan gambaran yang lebih komprehensif karena dapat **menangkap pengaruh simultan dari beberapa faktor terhadap variabel terikat**. Bentuk umum model regresi linear berganda adalah sebagai berikut.
+
+$$
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_k X_k + \epsilon
+(\#eq:bentuk-dasar-regresi-linear-berganda)
+$$
+
+dengan:
+
+- $Y$ adalah variabel dependen
+- $k$ adalah jumlah variabel independen
+- $\beta_0$ adalah intersep
+- $\beta_1, \beta_2, ..., \beta_k$ adalah koefisien regresi untuk variabel independen $X_1, X_2, ..., X_k$
+- $\epsilon$ adalah galat
+
+Lagi-lagi, karena kita tidak tahu berapa nilai komponen acak, $\epsilon$, maka komponen tersebut jarang ditulis dalam persamaan.
+
+Karena jumlah variabel yang terlibat adalah lebih dari 2, **kemampuan prediksi** variabel dependen dengan model regresi linear berganda akan **lebih baik** dibandingkan dengan model regresi linear sederhana. Akan tetapi, kelebihan kemampuan prediksi tersebut juga mengakibatkan **hubungan yang lebih kompleks antarvariabelnya**. Misalnya adalah **multikolinearitas** yang merupakan hubungan antarvariabel independen dalam persamaan model. Ini menambahkan kompleksitas dalam perumusan dan analisis model regresi linear berganda.
+
+## Hal-hal Penting yang Perlu Diperhatikan dalam Regresi Linear Berganda
+
+Model regresi linear berganda merupakan pengembangan dari regresi linear sederhana yang digunakan ketika variabel dependen dipengaruhi oleh lebih dari satu variabel independen. Regresi linear berganda melibatkan beberapa variabel independen sekaligus, terdapat dua hal penting yang perlu diperhatikan agar model tetap valid dan dapat diinterpretasikan dengan baik. Pertama, **multikolinearitas** yang merupakan hubungan antarvariabel independen dalam persamaan model. Kedua, **adjusted R-squared** yang merupakan ukuran kecocokan model dengan data.
 
 ## Studi Kasus dengan R
 
