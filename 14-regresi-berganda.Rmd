@@ -21,7 +21,7 @@ Terdapat dua kelompok besar asosiasi multivariat: **interdependensi** dan **depe
 knitr::include_graphics("images/diagram_dependensi.drawio.png")
 ```
 
-Pada jalur dependensi, langkah pertama adalah melihat jumlah variabel dependen yang ingin dianalisis. Jika hanya terdapat satu variabel dependen, maka teknik analisis dipilih berdasarkan tingkat pengukuran variabel dependen tersebut. Apabila variabel dependen berskala metrik (interval maupun rasio), maka teknik yang sesuai adalah **regresi linear berganda**, khususnya ketika variabel independen dapat berupa campuran metrik dan non-metrik. Namun apabila variabel dependen berskala non-metrik (nominal atau ordinal), maka analisis yang digunakan dapat berupa **logistic regression** untuk data biner, atau **conjoint analysis** untuk analisis preferensi dalam konteks pemasaran atau perilaku pilihan.
+Pada jalur dependensi, langkah pertama adalah melihat jumlah variabel dependen yang ingin dianalisis. Jika hanya terdapat satu variabel dependen, maka teknik analisis dipilih berdasarkan tingkat pengukuran variabel dependen tersebut. Apabila variabel dependen berskala metrik (interval maupun rasio), maka teknik yang sesuai adalah **regresi linear berganda**, khususnya ketika variabel independen dapat berupa campuran metrik dan non-metrik. Namun apabila variabel dependen berskala non-metrik (nominal atau ordinal), maka analisis yang digunakan dapat berupa ***logistic regression*** untuk data biner, atau ***conjoint analysis*** untuk analisis preferensi dalam konteks pemasaran atau perilaku pilihan.
 
 Jika penelitian melibatkan lebih dari satu variabel dependen dalam satu hubungan analisis, maka peneliti perlu kembali mengidentifikasi tingkat pengukuran dari variabel dependen. Untuk variabel dependen berskala metrik, terdapat dua kemungkinan teknik. Apabila variabel independen bersifat metrik, maka teknik yang direkomendasikan adalah **canonical correlation analysis**, yaitu analisis yang menghubungkan dua set variabel secara simultan. Namun jika variabel independen bersifat non-metrik, maka metode yang tepat adalah **Multivariate Analysis of Variance (MANOVA)**. Sebaliknya, untuk variabel dependen non-metrik, metode yang digunakan adalah **multiple discriminant analysis**, yang bertujuan mengklasifikasikan objek ke dalam kelompok tertentu berdasarkan kombinasi variabel prediktor.
 
@@ -52,9 +52,66 @@ Lagi-lagi, karena kita tidak tahu berapa nilai komponen acak, $\epsilon$, maka k
 
 Karena jumlah variabel yang terlibat adalah lebih dari 2, **kemampuan prediksi** variabel dependen dengan model regresi linear berganda akan **lebih baik** dibandingkan dengan model regresi linear sederhana. Akan tetapi, kelebihan kemampuan prediksi tersebut juga mengakibatkan **hubungan yang lebih kompleks antarvariabelnya**. Misalnya adalah **multikolinearitas** yang merupakan hubungan antarvariabel independen dalam persamaan model. Ini menambahkan kompleksitas dalam perumusan dan analisis model regresi linear berganda.
 
+```{r bab14-dataset-regresi-linear-berganda, include=FALSE}
+set.seed(42)
+n <- 30
+
+# Variabel kontinu
+jarak_taman    <- round(runif(n, 0.5, 10), 1)  # km
+jarak_industri <- round(runif(n, 0.5, 8), 1)   # km
+vegetasi       <- round(runif(n, 5, 60), 1)     # %
+
+# Variabel kategoris (zona fungsi lahan)
+zona <- sample(
+  c("Perumahan", "Komersial", "Industri"),
+  n, replace = TRUE,
+  prob = c(0.5, 0.3, 0.2)
+)
+
+# Dummy variables
+d_komersial <- as.integer(zona == "Komersial")
+d_industri  <- as.integer(zona == "Industri")
+
+# Generate IKU
+iku <- round(
+  75
+  - 4.5 * jarak_taman
+  + 3.0 * jarak_industri
+  + 0.4 * vegetasi
+  - 5   * d_komersial
+  - 12  * d_industri
+  + rnorm(n, 0, 4),
+  0
+)
+iku[iku < 0] <- 0
+iku[iku > 100] <- 100
+
+df_berganda <- data.frame(
+  No             = 1:n,
+  jarak_taman    = jarak_taman,
+  jarak_industri = jarak_industri,
+  vegetasi       = vegetasi,
+  zona           = zona,
+  iku            = iku
+)
+
+```
+
+
 ## Hal-hal Penting yang Perlu Diperhatikan dalam Regresi Linear Berganda
 
-Model regresi linear berganda merupakan pengembangan dari regresi linear sederhana yang digunakan ketika variabel dependen dipengaruhi oleh lebih dari satu variabel independen. Regresi linear berganda melibatkan beberapa variabel independen sekaligus, terdapat dua hal penting yang perlu diperhatikan agar model tetap valid dan dapat diinterpretasikan dengan baik. Pertama, **multikolinearitas** yang merupakan hubungan antarvariabel independen dalam persamaan model. Kedua, **adjusted R-squared** yang merupakan ukuran kecocokan model dengan data.
+Model regresi linear berganda merupakan pengembangan dari regresi linear sederhana yang digunakan ketika variabel dependen dipengaruhi oleh lebih dari satu variabel independen. Regresi linear berganda melibatkan beberapa variabel independen sekaligus, terdapat dua hal penting yang perlu diperhatikan agar model tetap valid dan dapat diinterpretasikan dengan baik. Pertama, **multikolinearitas** yang merupakan hubungan antarvariabel independen dalam persamaan model. Kedua, ***adjusted R-squared*** yang merupakan ukuran kecocokan model dengan data.
+
+### Hubungan Antarvariabel Independen (Multikolinearitas)
+
+Dalam regresi linear berganda, antarvariabel independen **tidak boleh memiliki hubungan korelatif yang kuat**, terlebih lagi hubungan kausalitas satu sama lain. Jika terjadi hubungan yang terlalu tinggi antarvariabel independen, kondisi ini disebut **multikolinearitas**. Multikolinearitas menyebabkan informasi yang diberikan menjadi redundan, ini juga berakibat pada model yang tidak dapat memisahkan kontribusi masing-masing variabel, sehingga:
+
+- koefisien regresi menjadi tidak stabil,
+- nilai signifikansi (uji t) menjadi tidak akurat,
+- interpretasi pengaruh tiap variabel menjadi menyesatkan,
+- model tampak baik secara keseluruhan (uji F signifikan), tetapi variabel satu per satu tidak signifikan.
+
+Dalam konteks penelitian perencanaan wilayah dan kota, multikolinearitas perlu dihindari karena banyak fenomena perkotaan memiliki hubungan yang saling berkorelasi. Misalnya, kepadatan penduduk dan kepadatan bangunan sering bergerak dalam arah yang sama sehingga tidak tepat dimasukkan bersamaan tanpa pengecekan diagnostik.
 
 ## Studi Kasus dengan R
 
