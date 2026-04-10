@@ -545,7 +545,7 @@ Nilai $R^2 = `r format(r2, decimal.mark = ",", nsmall = 4)`$ berarti bahwa **`r 
 :::
 
 
-### Koefisien Signifikansi Model dan Variabel Independen
+### Koefisien Signifikansi Model dan Variabel Independen {#signifikansi-model}
 
 Koefisien signifikansi model dan variabel independen diuji menggunakan uji F dan uji t. Uji F digunakan untuk menguji **signifikansi model secara keseluruhan**, sedangkan uji t digunakan untuk menguji **signifikansi variabel independen secara individual**.
 
