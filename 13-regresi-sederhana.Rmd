@@ -157,7 +157,7 @@ library(kableExtra)
 # Ambil 5 data pertama dari dataset 30 observasi di Bab 12
 set.seed(42)
 jarak_30 <- round(runif(30, 0.5, 10), 1)
-jarak_5  <- head(jarak_30, 5)
+jarak_5 <- head(jarak_30, 5)
 y_pred_5 <- round(a_taman + b_taman * jarak_5, 2)
 
 df_regresi <- data.frame(
@@ -210,7 +210,7 @@ Titik-titik hasil prediksi tersebut akan membentuk garis lurus ketika dihubungka
 :::
 
 
-### Memperoleh Persamaan Regresi Linear Sederhana
+### Memperoleh Persamaan Regresi Linear Sederhana {#memperoleh-persamaan-regresi-linear-sederhana}
 
 Untuk memperoleh persamaan regresi linear, kita memerlukan nilai dari konstanta ($a$) dan koefisien regresi ($b$). Kedua nilai tersebut diperoleh dengan **mengolah data yang kita kumpulkan sebelumnya**. Data yang kita peroleh harus memenuhi asumsi-asumsi dasar sebagai berikut:
 
@@ -577,8 +577,8 @@ model_iku <- lm(iku_obs ~ jarak_obs)
 model_sum <- summary(model_iku)
 
 f_stat <- model_sum$fstatistic[1]
-f_df1  <- model_sum$fstatistic[2]
-f_df2  <- model_sum$fstatistic[3]
+f_df1 <- model_sum$fstatistic[2]
+f_df2 <- model_sum$fstatistic[3]
 f_pval <- pf(f_stat, f_df1, f_df2, lower.tail = FALSE)
 
 t_stat <- model_sum$coefficients["jarak_obs", "t value"]
