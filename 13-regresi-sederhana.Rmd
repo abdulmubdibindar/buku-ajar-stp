@@ -35,7 +35,7 @@ Analisis kausalitas dapat digunakan dalam berbagai kasus perencanaan wilayah dan
 
 ::: rmdkasus
 
-### Studi Kasus Pemakaian Analisis Kausalitas dalam Konteks PWK {.unnumbered}
+## Studi Kasus Pemakaian Analisis Kausalitas dalam Konteks PWK {.unnumbered}
 
 Sesuai dengan pembahasan hal-hal yang dapat dilakukan dengan analisis kausalitas dalam bidang PWK, berikut adalah beberapa contoh kasus yang dapat dipecahkan dengan analisis kausalitas:
 
@@ -209,8 +209,105 @@ Titik-titik hasil prediksi tersebut akan membentuk garis lurus ketika dihubungka
 
 :::
 
+## Uji Asumsi Klasik
 
-### Memperoleh Persamaan Regresi Linear Sederhana {#memperoleh-persamaan-regresi-linear-sederhana}
+Saat membuat model regresi linear dari data, kita berasumsi bahwa model tersebut mampu mewakili pola hubungan yang sebenarnya dengan akurat. Untuk memastikannya, kita harus melakukan **uji asumsi klasik**. Uji ini merupakan tahapan pemeriksaan statistik guna memastikan bahwa persamaan regresi yang kita peroleh nantinya valid, tidak bias (tidak condong sebelah), dan dapat diandalkan sebagai alat prediksi.
+
+Apabila seluruh syarat uji ini terpenuhi, barulah model regresi kita aman untuk digunakan menarik kesimpulan. Beberapa referensi utama seperti @Hair-Multivariate, @ewing2020basic, @healey2021statistics, dan @ModernStatR-Home merangkum kelima asumsi klasik tersebut sebagai berikut:
+
+### Linearitas
+Asumsi ini mengharuskan bahwa hubungan antara variabel independen ($X$) dan variabel dependen ($Y$) berupa sebuah **garis lurus** (bersifat linear) [@healey2021statistics]. Apabila pola hubungan di dunia nyata ternyata melengkung tetapi kita bersikeras memaksanya menggunakan bentuk garis lurus, maka model tebakan kita akan meleset jauh dan menghasilkan simpangan kesalahan (galat/eror) yang besar [@ewing2020basic].
+
+Terpenuhinya asumsi ini dapat dicek lewat dua cara. Pertama, dengan memeriksa **diagram pencar (*scatter plot*)** antardata sebelum model dibuat. Kedua, dengan memeriksa bentuk grafik **plot galat terhadap nilai prediksi (*Residuals vs Fitted plot*)** setelah model dibuat, guna memastikan tidak ada pola melengkung pada diagram.
+
+### Normalitas Residual
+Ada kesalahpahaman umum yang menyangka bahwa data mentahlah ($X$ dan $Y$) yang wajib disyaratkan berdistribusi normal. Kenyataannya, yang benar-benar wajib berdistribusi normal adalah titik-titik **residual** atau galat dari tebakan model kita ($\epsilon$) [@Hair-Multivariate; @healey2021statistics]. Residual ini adalah angka selisih antara nilai $Y$ di data asli dengan nilai tebakan si model. Uji normalitas residual ini sangat krusial agar pengujian hipotesis dan penentuan batas interval kita akurat, terutama apabila kita meneliti menggunakan data sampel yang jumlahnya sedikit [@ewing2020basic].
+
+Pemenuhan asumsi ini sering kali diuji secara rupa visual dengan melihat kemiripan bentuk **Histogram** deretan galatnya dengan lekuk gundukan kurva normal, atau lewat kesejajaran sebaran titiknya melintasi batas diagonal pada ***Normal Q-Q Plot***. Mengingat ukuran sampel kecil rentan mengecoh penilaian mata pembaca, pembuktian angka pasti dan objektif dengan **Uji Shapiro-Wilk** jadi pilihan sarana pembuktian utama yang sangat direkomendasikan karena paling terstandardisasi.
+
+### Non-Multikolinearitas
+Asumsi ini secara eksklusif hanya diperiksa **pada pemodelan analisis regresi linear berganda**, yakni manakala pemodelan kita melibatkan **lebih dari satu variabel independen**. Kondisi multikolinearitas terjadi jika variabel-variabel independen tersebut saling berkorelasi terlampau kuat satu sama lain [@Hair-Multivariate]. Kalau masalah ini dibiarkan, rumus matematika model kita akan kebingungan menghitung jernih seberapa besar sumbangan efek murni dari tiap-tiap variabel independen terhadap variabel dependennya. Akibat buruknya, angka acuan penghitungan standar eror prediksinya kelak membengkak tanpa dasar yang riil [@ewing2020basic].
+
+### Homoskedastisitas
+Syarat homoskedastisitas berarti **besar varians (keragaman sebaran) dari galat model harus senantiasa konstan dan seragam** tanpa memedulikan seberapa besar nilai target prediksinya [@ModernStatR-Home]. Sebaliknya, jika sebaran galatnya tidak merata—misalnya menyempit di awal namun semakin melebar bebas di akhir mirip seperti bentuk corong—maka kondisi ini dinamakan **heteroskedastisitas** [@Hair-Multivariate]. Pelanggaran ini berdampak fatal karena dapat menipu nilai uji signifikansi model sehingga kesimpulan tebakannya seolah meyakinkan padahal menyesatkan.
+
+### Non-Autokorelasi
+Asumsi ini mengharuskan supaya galat prediksi pada suatu subjek pengamatan berdiri sendiri dan tidak saling memengaruhi nilai galat di pengamatan lainnya [@Hair-Multivariate]. Kondisi di mana galat saling menular (autokorelasi) umumnya sering terjadi pada **data deret waktu (*time series*)**, karena sebuah nilai di suatu waktu sangat bergantung erat pada nilainya di masa lalu (seperti angka tingkat inflasi bulanan atau suhu harian) [@ewing2020basic]. Namun untungnya, bagi riset yang pengumpulan datanya hanya bergantung pada **data silang tempat (*cross-section*)**—di mana sekelompok banyak data dari subjek berbeda direkam bersamaan secara serentak—peluang pelanggaran autokorelasi ini nyaris mustahil bisa terjadi.
+
+
+::: rmdkasus
+
+## Studi Kasus: Uji Asumsi Klasik untuk Hubungan Jarak Taman dan Kualitas Udara {.unnumbered}
+
+Mari kita peragakan bagaimana asumsi-asumsi klasik ini diuji. Kita akan menggunakan dataset yang memiliki **30 data pengamatan** mengenai jarak ke taman kota dan Indeks Kualitas Udara (IKU) sebagai berikut.
+
+```{r bangkitkan-data-asumsi, echo=FALSE, message=FALSE, warning=FALSE}
+# Dataset 30 observasi dari Bab 12
+set.seed(42)
+n_obs <- 30
+jarak_obs <- round(runif(n_obs, 0.5, 10), 1)
+iku_obs <- round(90 - 6.5 * jarak_obs + rnorm(n_obs, 0, 6), 0)
+iku_obs[iku_obs < 0] <- 0
+iku_obs[iku_obs > 100] <- 100
+
+df_raw <- data.frame(No = 1:30, X = jarak_obs, Y = iku_obs)
+
+df1 <- df_raw[1:10, ]
+df2 <- df_raw[11:20, ]
+df3 <- df_raw[21:30, ]
+df_wide <- cbind(df1, df2, df3)
+
+kbl(df_wide,
+    caption = "Data Jarak ke Taman Kota dan Indeks Kualitas Udara 30 Lokasi",
+    format.args = list(big.mark = ".", decimal.mark = ","),
+    col.names = rep(c("No.", "$X$ (km)", "$Y$ (IKU)"), 3),
+    escape = FALSE,
+    align = "c"
+) |>
+    kable_styling(
+        bootstrap_options = c("striped", "hover", "responsive"),
+        full_width = FALSE,
+        latex_options = c("scale_down", "HOLD_position"),
+        position = "center"
+    )
+```
+
+```{r bab-12-model-regresi, include=FALSE}
+# Membentuk model regresi
+model_iku_30 <- lm(iku_obs ~ jarak_obs)
+```
+
+
+Mengingat analisis ini hanya melibatkan **satu variabel independen** (jarak), maka asumsi **non-multikolinearitas secara otomatis tidak diperlukan**. Selain itu, memandang pengamatan dilakukan pada beberapa lokasi berbeda pada satu waktu yang sama (*cross-section*), asumsi **non-autokorelasi umumnya juga dipandang telah terpenuhi secara konseptual**. Oleh karena itu, kita hanya akan melakukan uji diagnostik atas asumsi yang tersisa, yaitu **linearitas & homoskedastisitas**, serta **normalitas residual**.
+
+[Uji Linearitas dan Homoskedastisitas]{.tajuksaya}
+
+Pemeriksaan linearitas dan pemerataan varians galat (homoskedastisitas) paling mudah dilakukan secara visual menggunakan diagram *Residuals vs Fitted* (plot titik galat terhadap titik prediksi).
+
+```{r fig-cek-linearitas-homoskedastisitas, echo=FALSE, fig.cap="Plot Residual vs Fitted untuk Pengecekan Linearitas dan Homoskedastisitas", fig.align="center", out.width="70%"}
+# Menampilkan plot diagram residual regresi
+plot(fitted(model_iku_30), resid(model_iku_30),
+    xlab = "Nilai Prediksi", ylab = "Galat (Error)"
+)
+abline(h = 0, lty = 2, col = "red")
+```
+
+Pada *output* pengujian ($n = 30$) ini, titik-titik residual tersebut idealnya tersebar secara acak di sekitar batas atas dan bawah dari garis $0$ secara simetris, tanpa membentuk pola pelebaran/penyempitan seperti corong (sebagai representasi persetujuan asumsi homoskedastisitas) maupun garis tren berwarna merah yang terlihat melengkung tajam memanjang (sebagai representasi pemenuhan asumsi linearitas).
+
+[Uji Normalitas Residual]{.tajuksaya}
+
+Untuk memastikan tingkat keyakinan yang akurat dalam analisis kita nanti, galat model perlu berdistribusi normal. Salah satu alat uji yang sangat umum dan direkomendasikan adalah uji Shapiro-Wilk.
+
+```{r uji-shapiro-taman, echo=FALSE, collapse=TRUE}
+# Menguji kenormalan distribusi probabilitas nilai residual
+shapiro.test(resid(model_iku_30))
+```
+
+Berdasarkan *output* uji normalitas di atas, diperoleh nilai $p\text{-value}$ sebesar $0{,}9533$. Oleh karena angka signifikansi ini secara mutlak jauh lebih besar dari batas uji umum $\alpha = 0{,}05$, maka hipotesis nol gagal ditolak. Dengan demikian, kita dapat mengambil kesimpulan meyakinkan yang mendukung asumsi bahwa **residual model tesebut terdistribusi secara normal**.
+
+:::
+
+## Memperoleh Persamaan Regresi Linear Sederhana {#memperoleh-persamaan-regresi-linear-sederhana}
 
 Untuk memperoleh persamaan regresi linear, kita memerlukan nilai dari konstanta ($a$) dan koefisien regresi ($b$). Kedua nilai tersebut diperoleh dengan **mengolah data yang kita kumpulkan sebelumnya**. Data yang kita peroleh harus memenuhi asumsi-asumsi dasar sebagai berikut:
 
@@ -250,42 +347,9 @@ Mari kita pelajari studi kasus berikut untuk lebih memahami bagaimana memperoleh
 
 ::: rmdkasus
 
-### Studi Kasus: Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara {.unnumbered}
+## Studi Kasus: Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara {.unnumbered}
 
-Sebuah survei dilakukan terhadap 30 lokasi di sebuah kota untuk mengetahui pengaruh jarak ke taman kota terdekat ($X$, dalam km) terhadap Indeks Kualitas Udara ($Y$). Data hasil survei disajikan pada tabel berikut.
-
-```{r tbl-data-jarak-iku, echo=FALSE, message=FALSE, warning=FALSE}
-library(kableExtra)
-
-# Dataset 30 observasi dari Bab 12
-set.seed(42)
-n_obs <- 30
-jarak_obs <- round(runif(n_obs, 0.5, 10), 1)
-iku_obs <- round(90 - 6.5 * jarak_obs + rnorm(n_obs, 0, 6), 0)
-iku_obs[iku_obs < 0] <- 0
-iku_obs[iku_obs > 100] <- 100
-
-df_raw <- data.frame(No = 1:30, X = jarak_obs, Y = iku_obs)
-
-df1 <- df_raw[1:10, ]
-df2 <- df_raw[11:20, ]
-df3 <- df_raw[21:30, ]
-df_wide <- cbind(df1, df2, df3)
-
-kbl(df_wide,
-    caption = "Data Jarak ke Taman Kota dan Indeks Kualitas Udara 30 Lokasi",
-    format.args = list(big.mark = ".", decimal.mark = ","),
-    col.names = rep(c("No.", "$X$ (km)", "$Y$ (IKU)"), 3),
-    escape = FALSE,
-    align = "c"
-) |>
-    kable_styling(
-        bootstrap_options = c("striped", "hover", "responsive"),
-        full_width = FALSE,
-        latex_options = c("scale_down", "HOLD_position"),
-        position = "center"
-    )
-```
+Menggunakan data dari studi kasus sebelumnya, kita akan memperoleh persamaan regresi linear sederhana untuk hubungan antara jarak ke taman kota dan Indeks Kualitas Udara (IKU).
 
 [Langkah 1: Periksa Diagram Pencar]{.tajuksaya}
 
