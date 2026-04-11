@@ -112,10 +112,10 @@ vegetasi <- round(runif(n, 5, 60), 1) # %
 
 # Variabel kategoris (zona fungsi lahan)
 zona <- sample(
-    c("Perumahan", "Komersial", "Industri"),
-    n,
-    replace = TRUE,
-    prob = c(0.5, 0.3, 0.2)
+  c("Perumahan", "Komersial", "Industri"),
+  n,
+  replace = TRUE,
+  prob = c(0.5, 0.3, 0.2)
 )
 
 # Dummy variables
@@ -124,25 +124,25 @@ d_industri <- as.integer(zona == "Industri")
 
 # Generate IKU
 iku <- round(
-    75
-    - 4.5 * jarak_taman
-        + 3.0 * jarak_industri
-        + 0.4 * vegetasi
-        - 5 * d_komersial
-        - 12 * d_industri
-        + rnorm(n, 0, 4),
-    0
+  75
+  - 4.5 * jarak_taman
+    + 3.0 * jarak_industri
+    + 0.4 * vegetasi
+    - 5 * d_komersial
+    - 12 * d_industri
+    + rnorm(n, 0, 4),
+  0
 )
 iku[iku < 0] <- 0
 iku[iku > 100] <- 100
 
 df_berganda <- data.frame(
-    No             = 1:n,
-    jarak_taman    = jarak_taman,
-    jarak_industri = jarak_industri,
-    vegetasi       = vegetasi,
-    zona           = zona,
-    iku            = iku
+  No             = 1:n,
+  jarak_taman    = jarak_taman,
+  jarak_industri = jarak_industri,
+  vegetasi       = vegetasi,
+  zona           = zona,
+  iku            = iku
 )
 ```
 
@@ -161,10 +161,10 @@ vegetasi_mk <- round(runif(n_mk, 5, 60), 1)
 
 # Variabel kategoris (zona fungsi lahan)
 zona_mk <- sample(
-    c("Perumahan", "Komersial", "Industri"),
-    n_mk,
-    replace = TRUE,
-    prob = c(0.5, 0.3, 0.2)
+  c("Perumahan", "Komersial", "Industri"),
+  n_mk,
+  replace = TRUE,
+  prob = c(0.5, 0.3, 0.2)
 )
 
 # Dummy variables
@@ -173,24 +173,24 @@ d_industri_mk <- as.integer(zona_mk == "Industri")
 
 # Generate IKU dengan formula yang sama
 iku_mk <- round(
-    75
-    - 4.5 * jarak_taman_mk
-        + 3.0 * jarak_industri_mk
-        + 0.4 * vegetasi_mk
-        - 5 * d_komersial_mk
-        - 12 * d_industri_mk
-        + rnorm(n_mk, 0, 4),
-    0
+  75
+  - 4.5 * jarak_taman_mk
+    + 3.0 * jarak_industri_mk
+    + 0.4 * vegetasi_mk
+    - 5 * d_komersial_mk
+    - 12 * d_industri_mk
+    + rnorm(n_mk, 0, 4),
+  0
 )
 iku_mk[iku_mk < 0] <- 0
 iku_mk[iku_mk > 100] <- 100
 
 df_mk <- data.frame(
-    jarak_taman    = jarak_taman_mk,
-    jarak_industri = jarak_industri_mk,
-    vegetasi       = vegetasi_mk,
-    zona           = zona_mk,
-    iku            = iku_mk
+  jarak_taman    = jarak_taman_mk,
+  jarak_industri = jarak_industri_mk,
+  vegetasi       = vegetasi_mk,
+  zona           = zona_mk,
+  iku            = iku_mk
 )
 ```
 
@@ -206,8 +206,8 @@ library(kableExtra)
 
 # Hitung matriks korelasi hanya untuk variabel independen metrik
 mat_kor <- df_mk[, c("jarak_taman", "jarak_industri", "vegetasi")] |>
-    cor() |>
-    round(2)
+  cor() |>
+  round(2)
 
 # Beri nama kolom dan baris yang lebih rapi
 kolom_nama <- c("Jarak Taman", "Jarak Industri", "Vegetasi")
@@ -215,19 +215,19 @@ colnames(mat_kor) <- kolom_nama
 rownames(mat_kor) <- kolom_nama
 
 tbl_out <- kbl(
-    mat_kor,
-    caption = "Matriks Korelasi Antarvariabel Independen",
-    format.args = list(big.mark = ".", decimal.mark = ","),
-    escape = FALSE
+  mat_kor,
+  caption = "Matriks Korelasi Antarvariabel Independen",
+  format.args = list(big.mark = ".", decimal.mark = ","),
+  escape = FALSE
 ) |>
-    kable_styling(
-        bootstrap_options = c("striped", "hover", "responsive"),
-        full_width        = FALSE,
-        latex_options     = c("scale_down", "HOLD_position")
-    )
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width        = FALSE,
+    latex_options     = c("scale_down", "HOLD_position")
+  )
 
 if (knitr::is_html_output()) {
-    tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
+  tbl_out <- tbl_out |> scroll_box(width = "100%", box_css = "border: 0px;")
 }
 tbl_out
 ```
@@ -235,6 +235,55 @@ tbl_out
 Hasil tabel di atas menunjukkan bahwa `jarak_taman` dan `jarak_industri` memiliki nilai korelasi `r round(cor(df_mk$jarak_taman, df_mk$jarak_industri), 2)`, yang mendekati −1. Ini merupakan tanda **multikolinearitas yang serius**: kedua variabel membawa informasi yang hampir identik (berlawanan arah), sehingga model tidak mampu memisahkan kontribusi masing-masing terhadap IKU. Sebaliknya, `vegetasi` berkorelasi rendah dengan kedua variabel lainnya, sehingga tidak menimbulkan masalah. Dalam situasi seperti ini, peneliti harus memilih salah satu dari `jarak_taman` atau `jarak_industri` untuk dimasukkan ke dalam model, atau menggabungkannya menjadi satu indeks komposit.
 
 :::
+
+Selain mengamatinya melalui tabel korelasi silang, adanya multikolinearitas juga dapat dideteksi melalui nilai **Variance Inflation Factor (VIF)**. VIF mengukur seberapa besar varians dari koefisien regresi meningkat akibat adanya multikolinearitas. Nilai VIF yang tinggi menunjukkan adanya multikolinearitas yang serius. Umumnya, nilai VIF > 10 dianggap sebagai indikator multikolinearitas yang serius.
+
+
+::: rmdkasus
+
+### Studi Kasus: Deteksi Multikolinearitas dengan VIF {.unnumbered}
+
+Indikasi multikolinearitas pada ketiga variabel independen metrik di atas juga dapat dipastikan melalui nilai VIF. Berikut adalah hasil perhitungan VIF untuk `jarak_taman`, `jarak_industri`, dan `vegetasi`.
+
+```{r tbl-vif-mk, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(car)
+
+# Model regresi dengan variabel metrik saja untuk cek VIF
+model_mk <- lm(iku ~ jarak_taman + jarak_industri + vegetasi, data = df_mk)
+nilai_vif <- vif(model_mk)
+
+# Buat dataframe untuk tabel
+df_vif <- data.frame(
+  Variabel = c("Jarak Taman", "Jarak Industri", "Vegetasi"),
+  VIF = unname(nilai_vif)[1:3]
+)
+
+tbl_vif <- kbl(
+  df_vif,
+  caption = "Nilai Variance Inflation Factor (VIF)",
+  digits = 2,
+  format.args = list(big.mark = ".", decimal.mark = ","),
+  align = c("l", "c")
+) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width        = FALSE,
+    latex_options     = c("HOLD_position")
+  )
+
+if (knitr::is_html_output()) {
+  tbl_vif <- tbl_vif |> scroll_box(width = "100%", box_css = "border: 0px;")
+}
+tbl_vif
+```
+
+Variabel `jarak_taman` dan `jarak_industri` memiliki nilai VIF jauh melampaui ambang batas 10. Nilai ini menegaskan keberadaan multikolinearitas, karena informasi kedua variabel tersebut saling tumpang tindih berlebihan jika dimasukkan serentak ke dalam model. Sebaliknya, variabel `vegetasi` memiliki nilai VIF mendekati 1, yang menandakan variabel tersebut bebas dari masalah multikolinearitas dengan variabel lainnya.
+
+:::
+
+
 
 ### Variabel independen bertingkat pengukuran nonmetrik (variabel *dummy*)
 
@@ -257,25 +306,25 @@ library(knitr)
 library(kableExtra)
 
 df_dummy3 <- data.frame(
-    Kategori = c("Perumahan", "Komersial", "Industri"),
-    D_Perumahan = c(1, 0, 0),
-    D_Komersial = c(0, 1, 0),
-    D_Industri = c(0, 0, 1)
+  Kategori = c("Perumahan", "Komersial", "Industri"),
+  D_Perumahan = c(1, 0, 0),
+  D_Komersial = c(0, 1, 0),
+  D_Industri = c(0, 0, 1)
 )
 
 kbl(
-    df_dummy3,
-    col.names = c(
-        "Kategori",
-        "$D_{\\text{Perumahan}}$",
-        "$D_{\\text{Komersial}}$",
-        "$D_{\\text{Industri}}$"
-    ),
-    align = "c",
-    escape = FALSE,
-    caption = "Variabel Baru untuk 3 Kategori"
+  df_dummy3,
+  col.names = c(
+    "Kategori",
+    "$D_{\\text{Perumahan}}$",
+    "$D_{\\text{Komersial}}$",
+    "$D_{\\text{Industri}}$"
+  ),
+  align = "c",
+  escape = FALSE,
+  caption = "Variabel Baru untuk 3 Kategori"
 ) |>
-    kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE)
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
 ```
 
 Mari kita pusatkan pembahasan pada dua kolom variabel pertama, yakni $D_{\text{Perumahan}}$ dan $D_{\text{Komersial}}$. Pada baris terakhir (kategori Industri), nilai pada dua variabel tesebut adalah nol secara bersamaan. Ini berarti, ketika sebuah observasi bernilai 0 baik pada variabel $D_{\text{Perumahan}}$ maupun $D_{\text{Komersial}}$, kita sudah bisa memastikan bahwa observasi tersebut memuat nilai 1 pada $D_{\text{Industri}}$--yang artinya masuk ke kategori Industri. Kombinasi unik pada dua variabel *dummy* pertama ini menunjukkan bahwa informasi keberadaan kategori Industri sudah tercakup di dua variabel pertamanya, sehingga variabel ketiga ($D_{\text{Industri}}$) menjadi **redundan** dan tidak lagi kita perlukan.
@@ -286,27 +335,27 @@ Sebagai penekanan, mari kita lihat apa yang terjadi jika kita memiliki empat kat
 
 ```{r tbl-dummy-4-kategori, echo=FALSE, message=FALSE}
 df_dummy4 <- data.frame(
-    Kategori = c("Perumahan", "Komersial", "Industri", "Taman"),
-    D_Perumahan = c(1, 0, 0, 0),
-    D_Komersial = c(0, 1, 0, 0),
-    D_Industri = c(0, 0, 1, 0),
-    D_Taman = c(0, 0, 0, 1)
+  Kategori = c("Perumahan", "Komersial", "Industri", "Taman"),
+  D_Perumahan = c(1, 0, 0, 0),
+  D_Komersial = c(0, 1, 0, 0),
+  D_Industri = c(0, 0, 1, 0),
+  D_Taman = c(0, 0, 0, 1)
 )
 
 kbl(
-    df_dummy4,
-    col.names = c(
-        "Kategori",
-        "$D_{\\text{Perumahan}}$",
-        "$D_{\\text{Komersial}}$",
-        "$D_{\\text{Industri}}$",
-        "$D_{\\text{Taman}}$"
-    ),
-    align = "c",
-    escape = FALSE,
-    caption = "Variabel Baru untuk 4 Kategori"
+  df_dummy4,
+  col.names = c(
+    "Kategori",
+    "$D_{\\text{Perumahan}}$",
+    "$D_{\\text{Komersial}}$",
+    "$D_{\\text{Industri}}$",
+    "$D_{\\text{Taman}}$"
+  ),
+  align = "c",
+  escape = FALSE,
+  caption = "Variabel Baru untuk 4 Kategori"
 ) |>
-    kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE)
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
 ```
 
 Pada baris kategori Taman, kita mendapati bahwa nilainya adalah 0 secara keseluruhan pada ketiga variabel *dummy* yang lain. Informasi "bukan Perumahan, bukan Komersial, dan bukan Industri" sudah cukup untuk menyimpulkan secara mutlak bahwa observasi tersebut termasuk Taman tanpa perlu adanya variabel $D_{\text{Taman}}$. Praktik menyembunyikan variabel kategori referensi inilah yang menyebabkan kita hanya akan mendapati variabel *dummy* masuk ke dalam model regresi berganda sebanyak satu unit lebih sedikit daripada jumlah kategori semula.
@@ -316,7 +365,10 @@ Pada baris kategori Taman, kita mendapati bahwa nilainya adalah 0 secara keselur
 Dengan diubahnya variabel kategorik $\text{zona}$ menjadi variabel *dummy*, maka persamaan regresi berganda yang akan kita gunakan adalah sebagai berikut.
 
 $$
-IKU = \beta_0 + \beta_1 D_{\text{Perumahan}} + \beta_2 D_{\text{Komersial}} + \beta_3 \text{jarak_taman} + \beta_4 \text{jarak_industri} + \beta_5 \text{vegetasi}
+\begin{aligned}
+IKU = &\beta_0 + \beta_1 D_{\text{Perumahan}} + \beta_2 D_{\text{Komersial}} + \beta_3 \text{jarak_taman} + \\
+&\beta_4 \text{jarak_industri} + \beta_5 \text{vegetasi}
+\end{aligned}
 $$
 
 Dengan interpretasi koefisien dan konstanta sebagai berikut:
@@ -330,7 +382,7 @@ Dengan interpretasi koefisien dan konstanta sebagai berikut:
 
 :::
 
-Dari kasus tersebut, kita dapat menyimpulkan bahwa **variabel kategorik akan menjadi variabel *dummy* dengan jumlah $k-1$**, dengan $k$ merupakan total jumlah kategori variabel tersebut. Setiap variabel *dummy* tersebut akan memiliki koefisiennya masing-masing yang menunjukkan pengaruhnya terhadap variabel dependen, dibandingkan dengan kategori referensi.
+Dari kasus tersebut, kita dapat menyimpulkan bahwa **variabel kategorik akan menjadi variabel *dummy* dengan jumlah $k-1$**, dengan $k$ merupakan total jumlah kategori variabel tersebut. Setiap variabel *dummy* tersebut akan memiliki koefisiennya masing-masing yang menunjukkan pengaruhnya terhadap variabel dependen. Adapun kategori yang tidak memiliki variabel *dummy* disebut sebagai **kategori referensi**.
 
 ## Mencari Koefisien Variabel Independen Regresi Linear Berganda
 
@@ -340,10 +392,117 @@ $$
 b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \bar{X})^2}
 $$
 
-Rumus tersebut menghitung selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikalikan dengan selisih antara nilai variabel dependen dengan nilai rata-ratanya. Hasilnya kemudian dibagi dengan selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikuadratkan. Ini hanya bisa dilakukan pada 2 variabel saja: satu variabel independen dan satu variabel dependen. Untuk yang lebih dari 2 variabel, kita perlu menggunakan rumus yang lebih kompleks, yaitu seperti yang ditunjukkan pada Persamaan \@ref(eq:rumus-koefisien-regresi-linear).
+Rumus tersebut menghitung selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikalikan dengan selisih antara nilai variabel dependen dengan nilai rata-ratanya. Hasilnya kemudian dibagi dengan selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikuadratkan. Ini hanya bisa dilakukan pada 2 variabel saja: satu variabel independen dan satu variabel dependen. Untuk yang lebih dari 2 variabel, kita perlu menggunakan rumus yang lebih kompleks, yaitu seperti yang ditunjukkan pada Persamaan \@ref(eq:rumus-koefisien-regresi-linear) [@chan2021introduction].
 
 $$
 \mathbf{b} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}
-(\#eq:rumus-koefisien-regresi-linear)
+(\#eq:rumus-koefisien-regresi-linear-berganda)
 $$
+
+Penjelasan dari rumus tersebut adalah sebagai berikut:
+
+- $\mathbf{b}$ adalah vektor koefisien regresi
+- $\mathbf{X}$ adalah matriks variabel independen
+- $\mathbf{y}$ adalah vektor variabel dependen
+
+Rumus tersebut tidak akan dibahas terlalu dalam di buku ini karena buku ini fokus kepada penggunaan praktis dari alat-alat analisis statistik ke dalam kasus-kasus perencanaan alih-alih pembahasan matematisnya. Secara praktis, di sinilah peran perangkat lunak statistik seperti R, SPSS, atau Stata menjadi sangat penting.
+
+## Diagnosis Model Regresi Linear Berganda
+
+Ketika kita menggunakan lebih dari satu variabel independen, kita bisa menghasilkan beberapa alternatif model regresi. Dengan demikian, persoalannya sekarang bukan lagi sekadar bagaimana menghasilkan persamaan regresi, tetapi juga bagaimana memastikan bahwa **model yang dibangun merupakan model terbaik (*best-fit model*)** dari beberapa alternatif model yang mungkin. Diagnosis model dilakukan untuk memilih model yang paling sesuai berdasarkan keseimbangan antara **kualitas prediksi**, **signifikansi model dan variabel independen**, dan **kesederhanaan model (*parsimony*)**.
+
+### Uji Asumsi Klasik
+
+Sama seperti halnya regresi linear sederhana, regresi linear berganda juga menerapkan uji asumsi klasik sebelum menganalisis model secara lebih lanjut. Uji-uji tersebut meliputi:
+
+1. **Linearitas**, memastikan tidak ada pola melengkung pada model, diperiksa menggunakan plot *Residuals vs Fitted*.
+2. **Normalitas Residual**, memastikan galat terdistribusi normal, diuji menggunakan uji Shapiro-Wilk. Galat dikatakan terdistribusi normal jika *p-value* > 0,05.
+3. **Non-Multikolinearitas**, memastikan tidak ada korelasi berlebih antarvariabel independen, dipastikan lewat nilai *Variance Inflation Factor* (VIF) yang lebih kecil dari 10.
+4. **Homoskedastisitas**, memastikan varians galat konstan, diperiksa lewat plot *Residuals vs Fitted* atau Galat vs Prediksi.
+5. **Non-Autokorelasi**, memastikan galat antarobservasi saling bebas. Ini umumnya terpenuhi pada data silang tempat (*cross-section*), atau dapat diuji dengan uji Durbin-Watson. Nilai Durbin-Watson dikatakan tidak ada autokorelasi jika 1,5 < DW < 2,5.
+
+### Kualitas Prediksi (Koefisien Determinasi)
+
+Tingkat kualitas prediksi model diukur dengan menggunakan nilai **koefisien determinasi** atau ***R-squared***, atau dalam konteks regresi linear berganda, menggunakan ***Adjusted R-squared***.
+
+Nilai *R-squared* pada dasarnya akan selalu meningkat ketika jumlah variabel independen dalam model bertambah. Hal ini karena penambahan variabel independen akan selalu meningkatkan kemampuan model untuk menjelaskan variasi dalam variabel dependen, meskipun variabel independen tersebut tidak memiliki hubungan yang signifikan dengan variabel dependen. Dengan demikian, agar lebih objektif, nilai R-squared tersebut disesuaikan (adjusted) dengan jumlah variabel independen dan ukuran sampel sehingga menjadi ***Adjusted R-squared***. Oleh karena inilah kita menggunakan nilai *adjusted R-squared* ketika membandingkan kualitas sejumlah model.
+
+### Signifikansi Model dan Variabel Independen (Uji F dan Uji t)
+
+Uji ini sama persis dengan yang sudah dibahas pada subbab \@ref(signifikansi-model), yakni menilai **keberartian hubungan pengaruh antara variabel independen dengan variabel dependennya**. Perbedaannya terletak pada **jumlah variabel independen** yang diuji. Pada regresi linear sederhana, kita hanya menguji satu variabel independen, sedangkan pada regresi linear berganda, kita menguji lebih dari satu variabel independen.
+
+Oleh karena pada regresi linear sederhana kita hanya menggunakan satu variabel independen, maka uji signifikansi model sama saja dengan uji signifikansi variabel independennya. Namun, pada regresi linear berganda, kita perlu melakukan kedua uji tersebut secara terpisah.
+
+Uji signifikansi variabel menggunakan nilai uji statistik t, yakni pengujian hipotesis yang hipotesis kosongnya adalah **"koefisien variabel sama dengan nol secara statistik"**. Dalam berbagai perangkat lunak statistik, uji ini biasanya dilaporkan dalam bentuk *p-value*, yaitu probabilitas untuk mendapatkan nilai uji statistik t sebesar itu atau lebih ekstrem jika hipotesis kosong benar. Jika nilai ***p-value* lebih kecil dari tingkat signifikansi yang ditentukan** (misalnya 0,05), maka **hipotesis kosong ditolak**, yang berarti **variabel tersebut signifikan secara statistik**. Sebaliknya, jika nilai *p-value* lebih besar dari tingkat signifikansi, maka **hipotesis kosong diterima**, yang berarti **variabel tersebut tidak signifikan secara statistik**.
+
+### Kesederhanaan Model (*Parsimony*)
+
+@ewing2020basic menyatakan bahwa model yang dipilih harus mengedepankan prinsip kesederhanaan model atau yang disebut juga *parsimony*, yakni kemampuan menjelaskan variabel dependen dengan variabel independen secukupnya tanpa menambah kompleksitas yang tidak perlu. Untuk mencapai model seperti ini, kita memerlukan perbandingan nilai-nilai koefisien determinasi yang sudah disesuaikan (*adjusted R-squared*) dari model-model yang ditinjau. Apabila menambahkan variabel hanya meningkatkan sedikit sekali nilai koefisien determinasi yang sudah disesuaikan (*adjusted R-squared*), maka variabel tersebut sebaiknya tidak dimasukkan ke dalam model.
+
+Untuk merealisasikan prinsip ***parsimony*** secara objektif, salah satu metode pencarian sekuensial yang sangat direkomendasikan adalah **metode *stepwise***. Metode ini secara iteratif **menyeleksi dan mengeliminasi** variabel independen dari dalam persamaan regresi berdasarkan **nilai uji F parsial**. Pada prosesnya, *stepwise* akan **memasukkan variabel baru** yang menyumbangkan akurasi prediksi signifikan, sekaligus **mengevaluasi ulang** variabel-variabel yang sudah lebih dahulu ada di dalam model. Jika ada variabel lama yang informasinya menjadi **tumpang tindih** dan **kehilangan signifikansi** akibat penambahan tersebut, **variabel lama itu akan dibuang**. Mekanisme seleksi ketat ini menjamin bahwa model akhir **hanya memuat variabel-variabel paling esensial** tanpa risiko ***overfitting***, sehingga keseimbangan antara **kesederhanaan model** dan **kebaikan suai (*goodness-of-fit*)** dapat tercapai secara maksimal.
+
+::: rmdkasus
+
+### Studi Kasus: Evaluasi dan Pemilihan Model Parsimoni {.unnumbered}
+
+Mari kita aplikasikan prinsip evaluasi dan seleksi *stepwise* pada *dataset* kasus multikolinearitas yang sebelumnya telah kita singgung. Pertama-tama, kita buat model regresi penuh (*full model*) yang memasukkan seluruh variabel independen ke dalam persamaan.
+
+```{r bab14-model-penuh-evaluasi}
+# Membuat model regresi dengan seluruh variabel
+model_mk_penuh <- lm(iku ~ jarak_taman + jarak_industri + vegetasi + zona, data = df_mk)
+
+# Menampilkan ringkasan model
+summary(model_mk_penuh)
+```
+
+Jika dicermati pada *output* model penuh, nilai *p-value* untuk variabel `jarak_industri` adalah 0,471 (jauh lebih besar dari batas kekeliruan 0,05). Hal ini berarti secara parsial variabel tersebut **tidak mencapai signifikansi statistik**. Padahal, uji keseluruhan model sangat signifikan dengan F-statistik sebesar 137,2 (*p-value* < 0,05) dan memiliki nilai *adjusted R-squared* sebesar 0,9591. Inilah dampak nyata dari multikolinearitas: model tampak sukses secara keseluruhan, namun variabel yang saling bertumpang-tindih di dalamnya menjadi gagal menunjukkan nilai prediksinya yang sebenarnya.
+
+Untuk menanggulangi penumpukan variabel redundan tersebut dan mencari model yang paling parsimoni, kita menggunakan fungsi `step()` di R sebagai implementasi mekanisme *stepwise*.
+
+```{r bab14-model-stepwise-evaluasi}
+# Melakukan seleksi stepwise
+model_mk_stepwise <- step(model_mk_penuh, direction = "both", trace = 0)
+
+# Menampilkan ringkasan model parsimoni
+summary(model_mk_stepwise)
+```
+
+Metode *stepwise* mengevaluasi setiap variabel berdasarkan uji kontribusi dan otomatis mengeliminasi `jarak_industri` dari model baru. Perhatikan tiga perubahan positif pada *output* model parsimoni yang kita capai:
+
+1.  **Signifikansi Variabel Independen**: Seluruh variabel tersisa kini secara individu terbukti **signifikan** (*p-value* pada setiap koefisien regresi < 0,05).
+2.  **Kualitas Prediksi**: Nilai *adjusted R-squared* model **meningkat** menjadi 0,9599 dari yang semula hanya 0,9591. Meskipun jumlah variabel berkurang, metrik ini membuktikan bahwa penyesuaian yang kita lakukan telah membuat model ini justru memprediksi lebih baik dan efisien atas data kita.
+3.  **Signifikansi Model Secara Keseluruhan**: Nilai F-statistik melonjak tajam dari 137,2 menjadi 174,6, yang berarti keberartian (signifikansi) dan keandalan model baru jauh melampaui kemampuan model pertama.
+
+Demonstrasi tersebut membuktikan secara konklusif bahwa pembuangan variabel-variabel tumpang tindih secara efektif akan meningkatkan kemurnian dan performa model sembari memastikannya tetap representatif dan *parsimoni* (*Occam's razor*).
+
+:::
+
+
+
+::: rmdexercise
+
+## Soal Evaluasi 15 {-}
+
+1. [STP-13.1]{.capaian} Sebuah penelitian ingin mengetahui hubungan kausal antara Tingkat Penggunaan Transportasi Umum dengan sejumlah variabel. Peneliti pertama menghasilkan persamaan model seperti berikut.
+   
+   $$Y = 11{,}2 + 0{,}7X_1$$
+
+   dengan $X_1$ adalah variabel kepadatan penduduk, dalam jiwa/hektar, dan $Y$ adalah tingkat penggunaan transportasi umum, dalam nilai 0-100.
+
+   Peneliti kedua menghasilkan persamaan model seperti berikut.
+
+   $$Y = 12{,}5 + 0{,}45X_1 + 0{,}30X_2 - 0{,}25X_3$$
+
+   dengan keterangan nilai:
+
+   - $Y$, tingkat penggunaan transportasi umum, nilai 0-100,
+   - $X_1$, kepadatan penduduk, dalam jiwa/hektar,
+   - $X_2$, aksesibilitas transportasi, nilai kemudahan akses dari permukiman ke halte bus terdekat, dalam menit,
+   - $X_3$, kualitas ruang terbuka hijau, nilai kemudahan akses dari permukiman ke ruang terbuka hijau terdekat, dalam menit.
+
+   Ulaslah perbedaan antara model yang digunakan oleh peneliti pertama dengan peneliti kedua. *Petunjuk: mulai dari menyebutkan nama model yang digunakan oleh kedua peneliti dan dari situ tuliskan apa perbedaan keduanya.*   
+
+2. [STP-13.2]{.capaian} Uraikan hubungan antara variabel dependen dan independen dari persamaan model yang dihasilkan peneliti kedua di soal nomor (1) sebelumnya. *Petunjuk: ulas berapa perubahan variabel dependen jika satu unit perubahan variabel independen terjadi.*
+
+:::
 
