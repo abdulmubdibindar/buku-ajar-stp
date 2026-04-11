@@ -8,7 +8,7 @@
 <meta name="author" content="Muhammad Abdul Mubdi Bindar">
 <meta name="author" content="Husna Tiara Putri">
 <meta name="author" content="Valendya Rilansari">
-<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta name="generator" content="bookdown 0.45 with bs4_book()">
 <meta property="og:title" content="Bab 5 Pengantar Analisis Statistik Inferensial | Buku Ajar Statistika untuk Perencanaan">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
@@ -27,7 +27,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -125,7 +124,7 @@
 </h2>
 <p><strong>Populasi</strong> adalah seluruh kelompok objek (baik orang, benda, maupun kejadian) yang menjadi target penelitian kita. Ukuran statistik deskriptif dari populasi, seperti rata-rata (<span class="math inline">\(\mu\)</span>) atau simpangan baku (<span class="math inline">\(\sigma\)</span>), disebut <strong>parameter</strong>. Parameter inilah yang sebenarnya ingin diketahui oleh peneliti. Namun, karena jumlah populasi biasanya sangat besar, sering kali kita tidak mungkin mengukur seluruh anggota populasi secara langsung.</p>
 <p>Sebaliknya, <strong>sampel</strong> adalah sebagian kecil dari populasi yang kita ambil untuk diamati. Sampel yang baik harus bisa mewakili sifat keseluruhan populasinya <strong>(representatif)</strong>. Ukuran statistik deskriptif dari sampel inilah yang disebut <strong>statistik</strong> (seperti rata-rata <span class="math inline">\(\bar{x}\)</span> atau simpangan baku <span class="math inline">\(s\)</span>). Nilai statistik ini digunakan untuk menduga nilai parameter populasi.</p>
-<p><strong>Mengapa kita mengambil sampel?</strong> Alasan utamanya adalah <strong>efisiensi</strong> dan <strong>kelayakan</strong>. Menurut <span class="citation">Saunders, Lewis, and Thornhill (<a href="referensi.html#ref-saunders2023">2023</a>)</span>, melakukan sensus terhadap populasi yang besar sering kali tidak praktis karena membutuhkan <strong>biaya</strong> yang sangat mahal dan <strong>waktu</strong> yang lama. Selain itu, <span class="citation">de Vaus (<a href="referensi.html#ref-devaus2014surveys">2014</a>)</span> menekankan bahwa sensus tidak menjamin data yang lebih akurat. Sebaliknya, sampel yang dipilih dengan hati-hati memungkinkan peneliti untuk mengontrol kualitas data dengan lebih ketat (misalnya melalui pelatihan pewawancara yang lebih intensif), sehingga justru dapat menghasilkan tingkat <strong>akurasi</strong> yang lebih tinggi dibandingkan sensus yang rentan terhadap <em>non-sampling error</em>.</p>
+<p><strong>Mengapa kita mengambil sampel?</strong> Alasan utamanya adalah <strong>efisiensi</strong> dan <strong>kelayakan</strong>. Menurut <span class="citation">Saunders et al. (<a href="referensi.html#ref-saunders2023">2023</a>)</span>, melakukan sensus terhadap populasi yang besar sering kali tidak praktis karena membutuhkan <strong>biaya</strong> yang sangat mahal dan <strong>waktu</strong> yang lama. Selain itu, <span class="citation"><span class="nocase">de Vaus</span> (<a href="referensi.html#ref-devaus2014surveys">2014</a>)</span> menekankan bahwa sensus tidak menjamin data yang lebih akurat. Sebaliknya, sampel yang dipilih dengan hati-hati memungkinkan peneliti untuk mengontrol kualitas data dengan lebih ketat (misalnya melalui pelatihan pewawancara yang lebih intensif), sehingga justru dapat menghasilkan tingkat <strong>akurasi</strong> yang lebih tinggi dibandingkan sensus yang rentan terhadap <em>non-sampling error</em>.</p>
 <div id="studi-kasus-populasi-vs.-sampel" class="section level3 unnumbered rmdkasus">
 <h3>Studi Kasus: Populasi vs. Sampel<a class="anchor" aria-label="anchor" href="#studi-kasus-populasi-vs.-sampel"><i class="fas fa-link"></i></a>
 </h3>
@@ -145,7 +144,7 @@ Gambar 5.1: Ilustrasi Perbandingan Populasi Mahasiswa ITERA dan Sampel
 <span class="header-section-number">5.3</span> Teknik-Teknik Pengambilan Sampel <em>(Sampling Techniques)</em><a class="anchor" aria-label="anchor" href="#teknik-teknik-pengambilan-sampel-sampling-techniques"><i class="fas fa-link"></i></a>
 </h2>
 <p>Teknik pengambilan sampel bertujuan memastikan bahwa sampel yang dipilih benar-benar dapat mewakili populasinya. <span class="citation">Healey (<a href="referensi.html#ref-healey2021statistics">2021</a>)</span> menekankan prinsip EPSEM (<em>Equal Probability of Selection Method</em>), yakni prinsip yang menekankan bahwa <strong>setiap anggota populasi memiliki kesempatan yang sama untuk dipilih</strong>. Hal ini penting untuk menghasilkan sampel yang representatif.</p>
-<p>Teknik probabilitas adalah teknik yang menggunakan prinsip EPSEM. Untuk dapat menggunakannya, kita harus memiliki <strong>kerangka sampel</strong>. Kerangka sampel adalah daftar seluruh anggota populasi yang akan menjadi acuan kita untuk memilih sampel nantinya. Ada empat jenis teknik yang termasuk ke dalam teknik pengambilan sampel probabilitas <span class="citation">Saunders, Lewis, and Thornhill (<a href="referensi.html#ref-saunders2023">2023</a>)</span>: <em>simple random sampling</em>, <em>systematic sampling</em>, <em>stratified sampling</em>, dan <em>multi-stage cluster sampling</em>.</p>
+<p>Teknik probabilitas adalah teknik yang menggunakan prinsip EPSEM. Untuk dapat menggunakannya, kita harus memiliki <strong>kerangka sampel</strong>. Kerangka sampel adalah daftar seluruh anggota populasi yang akan menjadi acuan kita untuk memilih sampel nantinya. Ada empat jenis teknik yang termasuk ke dalam teknik pengambilan sampel probabilitas <span class="citation">Saunders et al. (<a href="referensi.html#ref-saunders2023">2023</a>)</span>: <em>simple random sampling</em>, <em>systematic sampling</em>, <em>stratified sampling</em>, dan <em>multi-stage cluster sampling</em>.</p>
 <div id="studi-kasus-pengambilan-sampel-dengan-populasi-kecil" class="section level3 unnumbered rmdkasus">
 <h3>Studi Kasus: Pengambilan Sampel dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-pengambilan-sampel-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
 </h3>
@@ -485,8 +484,8 @@ Gambar 5.5: Ilustrasi Multi-Stage Cluster Sampling
 <h2>
 <span class="header-section-number">5.4</span> Menentukan Ukuran Sampel<a class="anchor" aria-label="anchor" href="#menentukan-ukuran-sampel"><i class="fas fa-link"></i></a>
 </h2>
-<p>Jika selama ini kita masih berpikir bahwa ukuran sampel (jumlah sampel yang menjadi bahan data kita) ditentukan berdasarkan ukuran populasinya, maka kita salah kaprah. Menurut <span class="citation">de Vaus (<a href="referensi.html#ref-devaus2014surveys">2014</a>)</span>, ukuran sampel menentukan galat dari perkiraan kita terhadap populasi, tapi ukuran sampel <strong>bukan ditentukan dari ukuran populasi</strong>. <span class="citation">de Vaus (<a href="referensi.html#ref-devaus2014surveys">2014</a>)</span> juga menjabarkan jumlah-jumlah sampel yang berbeda untuk setiap galat dari perkiraan kita. Galat perkiraan ini disebut juga dengan <em>sampling error</em>. Tabel <a href="bab-5-pengantar-inferensial.html#tab:tabel-ukuran-sampel-sampling-error">5.6</a> menunjukkan ukuran sampel minimum berdasarkan <em>sampling error</em> pada varians 50/50, tingkat kepercayaan 95%. Ini akan kita pelajari lebih dalam di Bab <a href="bab-6-estimasi-parameter.html#bab-6-estimasi-parameter">6</a>.</p>
-<div class="inline-table"><table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<p>Jika selama ini kita masih berpikir bahwa ukuran sampel (jumlah sampel yang menjadi bahan data kita) ditentukan berdasarkan ukuran populasinya, maka kita salah kaprah. Menurut <span class="citation"><span class="nocase">de Vaus</span> (<a href="referensi.html#ref-devaus2014surveys">2014</a>)</span>, ukuran sampel menentukan galat dari perkiraan kita terhadap populasi, tapi ukuran sampel <strong>bukan ditentukan dari ukuran populasi</strong>. <span class="citation"><span class="nocase">de Vaus</span> (<a href="referensi.html#ref-devaus2014surveys">2014</a>)</span> juga menjabarkan jumlah-jumlah sampel yang berbeda untuk setiap galat dari perkiraan kita. Galat perkiraan ini disebut juga dengan <em>sampling error</em>. Tabel <a href="bab-5-pengantar-inferensial.html#tab:tabel-ukuran-sampel-sampling-error">5.6</a> menunjukkan ukuran sampel minimum berdasarkan <em>sampling error</em> pada varians 50/50, tingkat kepercayaan 95%. Ini akan kita pelajari lebih dalam di Bab <a href="bab-6-estimasi-parameter.html#bab-6-estimasi-parameter">6</a>.</p>
+<div class="inline-table"><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tabel-ukuran-sampel-sampling-error">Tabel 5.6: </span>Ukuran sampel minimum berdasarkan <em>sampling error</em> pada varians 50/50, tingkat kepercayaan 95%
 </caption>
@@ -679,7 +678,7 @@ Gambar 5.6: Ragam Bentuk Distribusi Statistik
 <h3>
 <span class="header-section-number">5.5.2</span> Distribusi Normal<a class="anchor" aria-label="anchor" href="#bab-5-distribusi-normal"><i class="fas fa-link"></i></a>
 </h3>
-<p>Distribusi normal adalah salah satu jenis distribusi nilai yang memiliki karakteristik berbentuk seperti lonceng, simetris, dan membentang tanpa batas di kedua sisi sumbu horizontal <span class="citation">(<a href="referensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo, Maryati, and Faoziyah 2021</a>)</span>. Oleh karena itu, model distribusi ini juga disebut <em>bell curve</em> atau kurva lonceng <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span> (Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-bab-5-hist-normal">5.7</a>).</p>
+<p>Distribusi normal adalah salah satu jenis distribusi nilai yang memiliki karakteristik berbentuk seperti lonceng, simetris, dan membentang tanpa batas di kedua sisi sumbu horizontal <span class="citation">(<a href="referensi.html#ref-tjokropandojo2021pengantar">Tjokropandojo et al. 2021</a>)</span>. Oleh karena itu, model distribusi ini juga disebut <em>bell curve</em> atau kurva lonceng <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span> (Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-bab-5-hist-normal">5.7</a>).</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-bab-5-hist-normal"></span>
 <img src="figures/fig-bab-5-hist-normal-1.png" alt="Distribusi Normal" width="80%"><p class="caption">
@@ -698,11 +697,11 @@ Gambar 5.8: Perbandingan Distribusi Normal dengan Rata-rata Sama namun Standar D
 </p>
 </div>
 <ol start="2" style="list-style-type: decimal">
-<li><p><strong>Simetri Sempurna:</strong> Pada distribusi normal yang sempurna, nilai <em>mean</em> (rata-rata), <em>median</em> (nilai tengah), dan <em>mode</em> (nilai yang paling sering muncul) adalah identik dan berada <strong>tepat di tengah distribusi</strong> <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>; <a href="referensi.html#ref-devaus2014surveys">de Vaus 2014</a>)</span>.</p></li>
+<li><p><strong>Simetri Sempurna:</strong> Pada distribusi normal yang sempurna, nilai <em>mean</em> (rata-rata), <em>median</em> (nilai tengah), dan <em>mode</em> (nilai yang paling sering muncul) adalah identik dan berada <strong>tepat di tengah distribusi</strong> <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>; <a href="referensi.html#ref-devaus2014surveys"><span class="nocase">de Vaus</span> 2014</a>)</span>.</p></li>
 <li>
 <p><strong>Skewness dan Kurtosis:</strong></p>
 <ul>
-<li><p><strong>Skewness (Kemencengan):</strong> Distribusi normal memiliki nilai <em>skewness</em> 0, yang menunjukkan simetri sempurna. Jika data menumpuk di kiri, itu disebut <em>positive skew</em>, dan jika di kanan disebut <em>negative skew</em> <span class="citation">(<a href="referensi.html#ref-devaus2014surveys">de Vaus 2014</a>; <a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>.</p></li>
+<li><p><strong>Skewness (Kemencengan):</strong> Distribusi normal memiliki nilai <em>skewness</em> 0, yang menunjukkan simetri sempurna. Jika data menumpuk di kiri, itu disebut <em>positive skew</em>, dan jika di kanan disebut <em>negative skew</em> <span class="citation">(<a href="referensi.html#ref-devaus2014surveys"><span class="nocase">de Vaus</span> 2014</a>; <a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>.</p></li>
 <li><p><strong>Kurtosis (Keruncingan):</strong> Mengukur keruncingan atau kedataran puncak distribusi relatif terhadap distribusi normal. Distribusi normal memiliki nilai kurtosis 3. Distribusi yang lebih runcing disebut leptokurtik (&gt;3), dan yang lebih datar disebut platikurtik (&lt;3) <span class="citation">(<a href="referensi.html#ref-Chan-IntroProb">Chan 2021a</a>; <a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>.</p></li>
 </ul>
 </li>
@@ -754,7 +753,7 @@ Gambar 5.11: Ilustrasi Aturan 68-95-99 (Aturan Empiris)
 <p>Agar lebih mudah membayangkan perbedaan antara distribusi objek dan distribusi statistik, mari kita gunakan <strong>populasi kecil</strong> yang hanya terdiri dari <strong>30 mahasiswa</strong> (diambil dari data ITERA). Kita akan melihat variabel <strong>Jarak Tempuh (km)</strong>.</p>
 <p><strong>1. Distribusi Objek (Sebaran Data Individu)</strong></p>
 <p>Berikut adalah data populasi lengkap (N=30):</p>
-<div class="inline-table"><table class="table" style="color: black; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:05-inferensia-populasi-30">Tabel 5.7: </span>Data Populasi (N=30)
 </caption>
@@ -997,7 +996,7 @@ Gambar 5.12: Histogram Distribusi Objek (n=10)
 <p><strong>2. Distribusi Statistik (Sebaran Rata-rata)</strong></p>
 <p>Sekarang, kita lakukan simulasi: kita mengambil sampel (<span class="math inline">\(n=10\)</span>) dari populasi tersebut sebanyak <strong>200 kali</strong>. Setiap kali ambil, kita catat rata-ratanya.</p>
 <p>Berikut adalah 8 hasil pertama dari 200 pengambilan sampel:</p>
-<div class="inline-table"><table class="table" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:05-inferensia-simulasi-200">Tabel 5.8: </span>Hasil Simulasi Distribusi Sampling (8 Teratas dari 200)
 </caption>
@@ -1115,12 +1114,12 @@ Gambar 5.13: Distribusi Statistik (200 Rata-rata)
 <li><p>rata-rata dari distribusi statistik ini akan <strong>tepat sama dengan rata-rata populasi sebenarnya</strong>, dengan variasi yang semakin kecil seiring bertambahnya ukuran sampel. Ini adalah jaminan yang paling krusial dari teorema ini.</p></li>
 </ol>
 <p>Kombinasi bentuk normal dan akurasi inilah yang memungkinkan kita melakukan estimasi dan uji statistik dengan percaya diri.</p>
-<p>Berdasarkan teorema ini, kita dapat membagi analisis statistika inferensial menjadi analisis statistik inferensial <strong>parametrik</strong> dan <strong>nonparametrik</strong>. Analisis inferensial parametrik adalah analisis inferensial yang mengasumsikan bahwa populasi kita berdistribusi normal. Asumsi ini diuji dengan teknik pengujian kenormalan seperti <a href="'https://www.statistikian.com/2013/01/saphiro-wilk.html'">uji Shapiro-Wilk</a> atau <a href="'https://online.stat.psu.edu/stat501/lesson/4/4.6'">P-P plot</a>.</p>
+<p>Berdasarkan teorema ini, kita dapat membagi analisis statistika inferensial menjadi analisis statistik inferensial <strong>parametrik</strong> dan <strong>nonparametrik</strong>. Analisis inferensial parametrik adalah analisis inferensial yang mengasumsikan bahwa populasi kita berdistribusi normal. Asumsi ini diuji dengan teknik pengujian kenormalan seperti <a href="" title="https://www.statistikian.com/2013/01/saphiro-wilk.html">uji Shapiro-Wilk</a> atau <a href="" title="https://online.stat.psu.edu/stat501/lesson/4/4.6">P-P plot</a>.</p>
 <div id="studi-kasus-simulasi-teorema-limit-sentral" class="section level3 unnumbered rmdkasus">
 <h3>Studi Kasus: Simulasi Teorema Limit Sentral<a class="anchor" aria-label="anchor" href="#studi-kasus-simulasi-teorema-limit-sentral"><i class="fas fa-link"></i></a>
 </h3>
 <p>Mari kita buktikan CLT dengan melakukan simulasi pengambilan sampel berulang. Katakanlah kita memiliki <strong>428 mahasiswa</strong> sebagai populasi. Kita akan mengambil 1000 kali sampel berukuran 50 orang, lalu menghitung rata-ratanya dan memplot histogramnya.</p>
-<p>Berikut adalah baris perintah untuk melakukan simulasi tersebut dalam R. Dataset yang digunakan dapat diakses pada <a href="'https://github.com/abdulmubdibindar/buku-ajar-stp/blob/main/datasets/DataUtama_mhsITERA.csv'">tautan ini</a>.</p>
+<p>Berikut adalah baris perintah untuk melakukan simulasi tersebut dalam R. Dataset yang digunakan dapat diakses pada <a href="" title="https://github.com/abdulmubdibindar/buku-ajar-stp/blob/main/datasets/DataUtama_mhsITERA.csv">tautan ini</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span>

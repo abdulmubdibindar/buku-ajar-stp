@@ -8,7 +8,7 @@
 <meta name="author" content="Muhammad Abdul Mubdi Bindar">
 <meta name="author" content="Husna Tiara Putri">
 <meta name="author" content="Valendya Rilansari">
-<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta name="generator" content="bookdown 0.45 with bs4_book()">
 <meta property="og:title" content="Bab 14 Analisis Statistik Multivariat Interdependensi | Buku Ajar Statistika untuk Perencanaan">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
@@ -27,7 +27,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -101,19 +100,19 @@
 <h1>
 <span class="header-section-number">Bab 14</span> Analisis Statistik Multivariat Interdependensi<a class="anchor" aria-label="anchor" href="#analisis-statistik-multivariat-interdependensi"><i class="fas fa-link"></i></a>
 </h1>
-<div id="konsep-dasar-2" class="section level2" number="14.1">
+<div id="konsep-dasar-1" class="section level2" number="14.1">
 <h2>
-<span class="header-section-number">14.1</span> Konsep Dasar<a class="anchor" aria-label="anchor" href="#konsep-dasar-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.1</span> Konsep Dasar<a class="anchor" aria-label="anchor" href="#konsep-dasar-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>Analisis multivariat interdependensi tidak membedakan variabel menjadi dependen dan independen. Tujuannya adalah untuk mencari struktur dasar dari sekumpulan variabel.
 Contoh: <strong>Analisis Faktor</strong> dan <strong>Principal Component Analysis (PCA)</strong>. Biasanya digunakan untuk mereduksi dimensi data (menyederhanakan banyak variabel menjadi beberapa faktor utama).</p>
 </div>
-<div id="studi-kasus-dengan-r-1" class="section level2" number="14.2">
+<div id="studi-kasus-dengan-r" class="section level2" number="14.2">
 <h2>
-<span class="header-section-number">14.2</span> Studi Kasus dengan R<a class="anchor" aria-label="anchor" href="#studi-kasus-dengan-r-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">14.2</span> Studi Kasus dengan R<a class="anchor" aria-label="anchor" href="#studi-kasus-dengan-r"><i class="fas fa-link"></i></a>
 </h2>
 <p>Mereduksi 5 indikator kepuasan menjadi faktor-faktor utama.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Simulasi Data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
 <span><span class="va">data_survei</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fl">5</span><span class="op">)</span>, ncol<span class="op">=</span><span class="fl">5</span><span class="op">)</span></span>
@@ -127,7 +126,7 @@ Contoh: <strong>Analisis Faktor</strong> dan <strong>Principal Component Analysi
 ## Standard deviation     1,1077 1,0610 1,0191 0,9468 0,8440
 ## Proportion of Variance 0,2454 0,2251 0,2077 0,1793 0,1425
 ## Cumulative Proportion  0,2454 0,4705 0,6783 0,8575 1,0000</code></pre>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Melihat beban faktor (loadings)</span></span>
 <span><span class="va">pca_result</span><span class="op">$</span><span class="va">rotation</span></span></code></pre></div>
 <pre><code>##            PC1        PC2        PC3        PC4       PC5
@@ -156,8 +155,8 @@ Contoh: <strong>Analisis Faktor</strong> dan <strong>Principal Component Analysi
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#analisis-statistik-multivariat-interdependensi"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi</a></li>
-<li><a class="nav-link" href="#konsep-dasar-2"><span class="header-section-number">14.1</span> Konsep Dasar</a></li>
-<li><a class="nav-link" href="#studi-kasus-dengan-r-1"><span class="header-section-number">14.2</span> Studi Kasus dengan R</a></li>
+<li><a class="nav-link" href="#konsep-dasar-1"><span class="header-section-number">14.1</span> Konsep Dasar</a></li>
+<li><a class="nav-link" href="#studi-kasus-dengan-r"><span class="header-section-number">14.2</span> Studi Kasus dengan R</a></li>
 <li><a class="nav-link" href="#soal-evaluasi-16-1">Soal Evaluasi 16</a></li>
 </ul>
 

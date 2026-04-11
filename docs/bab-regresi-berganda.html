@@ -8,7 +8,7 @@
 <meta name="author" content="Muhammad Abdul Mubdi Bindar">
 <meta name="author" content="Husna Tiara Putri">
 <meta name="author" content="Valendya Rilansari">
-<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta name="generator" content="bookdown 0.45 with bs4_book()">
 <meta property="og:title" content="Bab 13 Kausalitas dengan Regresi Linear Berganda | Buku Ajar Statistika untuk Perencanaan">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
@@ -27,7 +27,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -46,9 +45,9 @@
     }
   </style>
 <link rel="stylesheet" href="style.css">
-<meta name="description" content="13.1 Konsep Dasar Regresi linear berganda melibatkan lebih dari satu variabel independen untuk memprediksi variabel dependen. \[ Y = a + b_1X_1 + b_2X_2 + \dots + \epsilon \]  13.2 Studi Kasus...">
-<meta property="og:description" content="13.1 Konsep Dasar Regresi linear berganda melibatkan lebih dari satu variabel independen untuk memprediksi variabel dependen. \[ Y = a + b_1X_1 + b_2X_2 + \dots + \epsilon \]  13.2 Studi Kasus...">
-<meta name="twitter:description" content="13.1 Konsep Dasar Regresi linear berganda melibatkan lebih dari satu variabel independen untuk memprediksi variabel dependen. \[ Y = a + b_1X_1 + b_2X_2 + \dots + \epsilon \]  13.2 Studi Kasus...">
+<meta name="description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan mampu: menyebutkan perbedaan analisis regresi linear berganda dengan analisis regresi linear sederhana STP-13.1 menguraikan...">
+<meta property="og:description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan mampu: menyebutkan perbedaan analisis regresi linear berganda dengan analisis regresi linear sederhana STP-13.1 menguraikan...">
+<meta name="twitter:description" content="Capaian Pembelajaran Setelah mempelajari bab ini, Anda diharapkan mampu: menyebutkan perbedaan analisis regresi linear berganda dengan analisis regresi linear sederhana STP-13.1 menguraikan...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -101,52 +100,581 @@
 <h1>
 <span class="header-section-number">Bab 13</span> Kausalitas dengan Regresi Linear Berganda<a class="anchor" aria-label="anchor" href="#bab-regresi-berganda"><i class="fas fa-link"></i></a>
 </h1>
-<div id="konsep-dasar-1" class="section level2" number="13.1">
-<h2>
-<span class="header-section-number">13.1</span> Konsep Dasar<a class="anchor" aria-label="anchor" href="#konsep-dasar-1"><i class="fas fa-link"></i></a>
-</h2>
-<p>Regresi linear berganda melibatkan <strong>lebih dari satu</strong> variabel independen untuk memprediksi variabel dependen.
-<span class="math display">\[ Y = a + b_1X_1 + b_2X_2 + \dots + \epsilon \]</span></p>
+<div id="capaian-pembelajaran-12" class="section level3 unnumbered rmdcapaian">
+<h3>Capaian Pembelajaran<a class="anchor" aria-label="anchor" href="#capaian-pembelajaran-12"><i class="fas fa-link"></i></a>
+</h3>
+<p>Setelah mempelajari bab ini, Anda diharapkan mampu:</p>
+<ol style="list-style-type: decimal">
+<li>menyebutkan perbedaan analisis regresi linear berganda dengan analisis regresi linear sederhana <span class="capaian">STP-13.1</span>
+</li>
+<li>menguraikan hubungan antara variabel independen dengan variabel dependennya secara tepat dalam sebuah persamaan regresi linear berganda <span class="capaian">STP-13.2</span>
+</li>
+</ol>
 </div>
-<div id="studi-kasus-dengan-r" class="section level2" number="13.2">
+<div id="jenis-jenis-asosiasi-multivariat" class="section level2" number="13.1">
 <h2>
-<span class="header-section-number">13.2</span> Studi Kasus dengan R<a class="anchor" aria-label="anchor" href="#studi-kasus-dengan-r"><i class="fas fa-link"></i></a>
+<span class="header-section-number">13.1</span> Jenis-jenis Asosiasi Multivariat<a class="anchor" aria-label="anchor" href="#jenis-jenis-asosiasi-multivariat"><i class="fas fa-link"></i></a>
 </h2>
-<p>Memprediksi <strong>Harga Rumah</strong> berdasarkan <strong>Luas Tanah</strong> dan <strong>Jumlah Kamar</strong>.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">harga</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">500</span>, <span class="fl">700</span>, <span class="fl">600</span>, <span class="fl">800</span>, <span class="fl">900</span><span class="op">)</span></span>
-<span><span class="va">luas</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">150</span>, <span class="fl">120</span>, <span class="fl">160</span>, <span class="fl">200</span><span class="op">)</span></span>
-<span><span class="va">kamar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">2</span>, <span class="fl">4</span>, <span class="fl">5</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Model Regresi Berganda</span></span>
-<span><span class="va">model_berganda</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">harga</span> <span class="op">~</span> <span class="va">luas</span> <span class="op">+</span> <span class="va">kamar</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_berganda</span><span class="op">)</span></span></code></pre></div>
+<p>Kita sudah mempelajari hubungan antara 1 variabel dependen dan 1 variabel independen pada bab sebelumnya. Namun, pada kenyataannya, bentuk hubungan antarvariabel tidak selalu sesederhana itu. Hubungan antarvariabel bisa berupa <strong>asosiasi multivariat</strong> yang melibatkan <strong>lebih dari 2 variabel</strong>.</p>
+<p>Terdapat dua kelompok besar asosiasi multivariat: <strong>interdependensi</strong> dan <strong>dependensi</strong>. interdependensi adalah jenis asosiasi yang <strong>tidak memiliki hubungan ketergantungan antara variabel-variabel yang dianalisis</strong>. Sebaliknya, dependensi adalah jenis asosiasi yang <strong>memiliki hubungan ketergantungan antara variabel-variabel yang dianalisis</strong>. Yang dimaksud dengan “ketergantungan” adalah hubungan <em>memengaruhi-dipengaruhi</em> seperti yang sudah kalian pelajari dalam analisis hubungan regresi linear sederhana. Diagram berikut menunjukkan bagaimana semua teknik analisis multivariat dikelompokkan berdasarkan kedua jenis asosiasi tersebut.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:diagram-asosiasi-multivariat"></span>
+<img src="images/diagram_dependensi.drawio.png" alt="Diagram Pohon Keputusan Asosiasi Multivariat" width="790"><p class="caption">
+Gambar 13.1: Diagram Pohon Keputusan Asosiasi Multivariat
+</p>
+</div>
+<p>Pada jalur dependensi, langkah pertama adalah melihat jumlah variabel dependen yang ingin dianalisis. Jika hanya terdapat satu variabel dependen, maka teknik analisis dipilih berdasarkan tingkat pengukuran variabel dependen tersebut. Apabila variabel dependen berskala metrik (interval maupun rasio), maka teknik yang sesuai adalah <strong>regresi linear berganda</strong>, khususnya ketika variabel independen dapat berupa campuran metrik dan non-metrik. Namun apabila variabel dependen berskala non-metrik (nominal atau ordinal), maka analisis yang digunakan dapat berupa <strong><em>logistic regression</em></strong> untuk data biner, atau <strong><em>conjoint analysis</em></strong> untuk analisis preferensi dalam konteks pemasaran atau perilaku pilihan.</p>
+<p>Jika penelitian melibatkan lebih dari satu variabel dependen dalam satu hubungan analisis, maka peneliti perlu kembali mengidentifikasi tingkat pengukuran dari variabel dependen. Untuk variabel dependen berskala metrik, terdapat dua kemungkinan teknik. Apabila variabel independen bersifat metrik, maka teknik yang direkomendasikan adalah <strong>canonical correlation analysis</strong>, yaitu analisis yang menghubungkan dua set variabel secara simultan. Namun jika variabel independen bersifat non-metrik, maka metode yang tepat adalah <strong>Multivariate Analysis of Variance (MANOVA)</strong>. Sebaliknya, untuk variabel dependen non-metrik, metode yang digunakan adalah <strong>multiple discriminant analysis</strong>, yang bertujuan mengklasifikasikan objek ke dalam kelompok tertentu berdasarkan kombinasi variabel prediktor.</p>
+<p>Dalam bab ini kita akan fokus pada salah satu analisis statistik yang menggunakan hubungan dependensi, yaitu <strong>regresi linear berganda</strong>. Untuk salah satu contoh hubungan interdependensi, yakni analisis faktor, akan kita pelajari di bab selanjutnya.</p>
+</div>
+<div id="perbedaan-dengan-regresi-linear-sederhana" class="section level2" number="13.2">
+<h2>
+<span class="header-section-number">13.2</span> Perbedaan dengan Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#perbedaan-dengan-regresi-linear-sederhana"><i class="fas fa-link"></i></a>
+</h2>
+<p>Analisis regresi merupakan salah satu metode analisis statistik yang digunakan untuk <strong>memahami hubungan antara variabel dependen (variabel yang diprediksi) dan variabel independen (variabel yang memengaruhi)</strong>. Pada dasarnya, perbedaan utama antara regresi linear sederhana dan regresi linear berganda terletak pada <strong>jumlah variabel independen</strong> yang digunakan dalam pemodelan.</p>
+<p>Regresi linear <strong>sederhana</strong> hanya melibatkan <strong>satu variabel independen</strong> untuk menjelaskan atau memprediksi variabel dependen. Model ini digunakan untuk melihat pengaruh satu faktor saja terhadap suatu perubahan pada variabel terikat.</p>
+<p>Sementara itu, regresi linear <strong>berganda</strong> digunakan ketika variabel dependen dipengaruhi oleh <strong>lebih dari satu variabel independen</strong>. Model ini memberikan gambaran yang lebih komprehensif karena dapat <strong>menangkap pengaruh simultan dari beberapa faktor terhadap variabel terikat</strong>. Bentuk umum model regresi linear berganda adalah sebagai berikut.</p>
+<p><span class="math display" id="eq:bentuk-dasar-regresi-linear-berganda">\[
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_k X_k + \epsilon
+\tag{13.1}
+\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(Y\)</span> adalah variabel dependen</li>
+<li>
+<span class="math inline">\(k\)</span> adalah jumlah variabel independen</li>
+<li>
+<span class="math inline">\(\beta_0\)</span> adalah intersep</li>
+<li>
+<span class="math inline">\(\beta_1, \beta_2, ..., \beta_k\)</span> adalah koefisien regresi untuk variabel independen <span class="math inline">\(X_1, X_2, ..., X_k\)</span>
+</li>
+<li>
+<span class="math inline">\(\epsilon\)</span> adalah galat</li>
+</ul>
+<p>Lagi-lagi, karena kita tidak tahu berapa nilai komponen acak, <span class="math inline">\(\epsilon\)</span>, maka komponen tersebut jarang ditulis dalam persamaan.</p>
+<p>Karena jumlah variabel yang terlibat adalah lebih dari 2, <strong>kemampuan prediksi</strong> variabel dependen dengan model regresi linear berganda akan <strong>lebih baik</strong> dibandingkan dengan model regresi linear sederhana. Akan tetapi, kelebihan kemampuan prediksi tersebut juga mengakibatkan <strong>hubungan yang lebih kompleks antarvariabelnya</strong>. Misalnya adalah <strong>multikolinearitas</strong> yang merupakan hubungan antarvariabel independen dalam persamaan model. Ini menambahkan kompleksitas dalam perumusan dan analisis model regresi linear berganda.</p>
+</div>
+<div id="studi-kasus-regresi-linear-sederhana-vs-berganda" class="section level2 unnumbered rmdkasus">
+<h2>Studi Kasus: Regresi Linear Sederhana vs Berganda<a class="anchor" aria-label="anchor" href="#studi-kasus-regresi-linear-sederhana-vs-berganda"><i class="fas fa-link"></i></a>
+</h2>
+<p>Pada bab sebelumnya, kita sudah mempelajari kasus penerapan regresi linear sederhana untuk memprediksi Indeks Kualitas Udara (IKU) berdasarkan jarak ke taman kota. Pada kasus tersebut, kita menemukan bahwa IKU dapat diprediksi dengan baik menggunakan jarak ke taman kota. Namun, kita juga menyadari bahwa IKU dipengaruhi oleh faktor lain, seperti jarak ke kawasan industri dan tutupan vegetasi. Oleh karena itu, pada kasus ini kita akan mempelajari penerapan regresi linear berganda untuk memprediksi IKU berdasarkan beberapa variabel independen yang menjadi faktor-faktor lain tersebut.</p>
+<p>Variabel-variabel independen yang akan kita perhitungkan di antaranya adalah</p>
+<ul>
+<li>jarak ke taman kota (dilambangkan dengan <span class="math inline">\(\text{jarak_taman}\)</span>)</li>
+<li>jarak ke kawasan industri (<span class="math inline">\(\text{jarak_industri}\)</span>)</li>
+<li>persentase tutupan vegetasi di sekitar lokasi pengamatan (<span class="math inline">\(\text{vegetasi}\)</span>)</li>
+<li>zona fungsi lahan (perumahan, komersial, atau industri) (<span class="math inline">\(\text{zona}\)</span>)</li>
+</ul>
+<p>Jika kita melambangkan IKU dengan <span class="math inline">\(\text{iku}\)</span>, maka persamaan regresi linear berganda yang akan kita gunakan adalah sebagai berikut.</p>
+<p><span class="math display">\[
+\text{IKU} = \beta_0 + \beta_1 \text{jarak_taman} + \beta_2 \text{jarak_industri} + \beta_3 \text{vegetasi} + \beta_4 \text{zona}
+\]</span></p>
+<p><span class="tajuksaya">Makna Konstanta dan Koefisien</span></p>
+<p>Berdasarkan persamaan tersebut, kita dapat menginterpretasikan konstanta dan koefisien sebagai berikut.</p>
+<ul>
+<li>
+<span class="math inline">\(\beta_0\)</span> adalah konstanta, yaitu nilai IKU ketika semua variabel independen bernilai 0.</li>
+<li>
+<span class="math inline">\(\beta_1\)</span> adalah koefisien regresi untuk variabel <span class="math inline">\(\text{jarak_taman}\)</span>, yaitu perubahan nilai IKU ketika <span class="math inline">\(\text{jarak_taman}\)</span> bertambah 1 unit, dengan asumsi variabel independen lainnya konstan.</li>
+<li>
+<span class="math inline">\(\beta_2\)</span> adalah koefisien regresi untuk variabel <span class="math inline">\(\text{jarak_industri}\)</span>, yaitu perubahan nilai IKU ketika <span class="math inline">\(\text{jarak_industri}\)</span> bertambah 1 unit, dengan asumsi variabel independen lainnya konstan.</li>
+<li>
+<span class="math inline">\(\beta_3\)</span> adalah koefisien regresi untuk variabel <span class="math inline">\(\text{vegetasi}\)</span>, yaitu perubahan nilai IKU ketika <span class="math inline">\(\text{vegetasi}\)</span> bertambah 1 unit, dengan asumsi variabel independen lainnya konstan.</li>
+<li>
+<span class="math inline">\(\beta_4\)</span> adalah koefisien regresi untuk variabel <span class="math inline">\(\text{zona}\)</span>, yaitu perubahan nilai IKU ketika <span class="math inline">\(\text{zona}\)</span> bertambah 1 unit, dengan asumsi variabel independen lainnya konstan.</li>
+</ul>
+<p>Konstanta dan koefisien-koefisien inilah yang akan kita tentukan dalam bab ini.</p>
+</div>
+<div id="hal-hal-penting-yang-perlu-diperhatikan-dalam-regresi-linear-berganda" class="section level2" number="13.3">
+<h2>
+<span class="header-section-number">13.3</span> Hal-hal Penting yang Perlu Diperhatikan dalam Regresi Linear Berganda<a class="anchor" aria-label="anchor" href="#hal-hal-penting-yang-perlu-diperhatikan-dalam-regresi-linear-berganda"><i class="fas fa-link"></i></a>
+</h2>
+<p>Model regresi linear berganda merupakan pengembangan dari regresi linear sederhana yang digunakan ketika variabel dependen dipengaruhi oleh lebih dari satu variabel independen. Regresi linear berganda melibatkan beberapa variabel independen sekaligus, terdapat dua hal penting yang perlu diperhatikan agar model tetap valid dan dapat diinterpretasikan dengan baik. Pertama, <strong>multikolinearitas</strong> yang merupakan hubungan antarvariabel independen dalam persamaan model. Kedua, <strong><em>adjusted R-squared</em></strong> yang merupakan ukuran kecocokan model dengan data.</p>
+<div id="hubungan-antarvariabel-independen-multikolinearitas" class="section level3" number="13.3.1">
+<h3>
+<span class="header-section-number">13.3.1</span> Hubungan Antarvariabel Independen (Multikolinearitas)<a class="anchor" aria-label="anchor" href="#hubungan-antarvariabel-independen-multikolinearitas"><i class="fas fa-link"></i></a>
+</h3>
+<p>Dalam regresi linear berganda, antarvariabel independen <strong>tidak boleh memiliki hubungan korelatif yang kuat</strong> satu sama lain. Jika terjadi hubungan yang terlalu tinggi antarvariabel independen, kondisi ini disebut <strong>multikolinearitas</strong>. Multikolinearitas menyebabkan informasi yang diberikan menjadi redundan, ini juga berakibat pada model yang tidak dapat memisahkan kontribusi masing-masing variabel, sehingga:</p>
+<ul>
+<li>koefisien regresi menjadi tidak stabil,</li>
+<li>nilai signifikansi (uji t) menjadi tidak akurat,</li>
+<li>interpretasi pengaruh tiap variabel menjadi menyesatkan,</li>
+<li>model tampak baik secara keseluruhan (uji F signifikan), tetapi variabel satu per satu tidak signifikan.</li>
+</ul>
+<p>Dalam konteks penelitian perencanaan wilayah dan kota, multikolinearitas perlu dihindari karena banyak fenomena perkotaan memiliki hubungan yang saling berkorelasi. Misalnya, kepadatan penduduk dan kepadatan bangunan sering bergerak dalam arah yang sama sehingga tidak tepat dimasukkan bersamaan tanpa pengecekan diagnostik.</p>
+</div>
+<div id="studi-kasus-multikolinearitas" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Multikolinearitas<a class="anchor" aria-label="anchor" href="#studi-kasus-multikolinearitas"><i class="fas fa-link"></i></a>
+</h3>
+<p>Misalkan seorang peneliti mengumpulkan data untuk memodelkan Indeks Kualitas Udara (IKU) menggunakan tiga variabel independen metrik: jarak ke taman kota (<code>jarak_taman</code>), jarak ke kawasan industri (<code>jarak_industri</code>), dan persentase tutupan vegetasi (<code>vegetasi</code>). Sebelum membangun model, peneliti membuat <strong>tabel korelasi silang</strong> untuk memeriksa hubungan antarvariabel independen.</p>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-korelasi-mk">Tabel 13.1: </span>Matriks Korelasi Antarvariabel Independen
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Jarak Taman
+</th>
+<th style="text-align:right;">
+Jarak Industri
+</th>
+<th style="text-align:right;">
+Vegetasi
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Jarak Taman
+</td>
+<td style="text-align:right;">
+1,00
+</td>
+<td style="text-align:right;">
+-0,99
+</td>
+<td style="text-align:right;">
+0,04
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jarak Industri
+</td>
+<td style="text-align:right;">
+-0,99
+</td>
+<td style="text-align:right;">
+1,00
+</td>
+<td style="text-align:right;">
+-0,02
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vegetasi
+</td>
+<td style="text-align:right;">
+0,04
+</td>
+<td style="text-align:right;">
+-0,02
+</td>
+<td style="text-align:right;">
+1,00
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Hasil tabel di atas menunjukkan bahwa <code>jarak_taman</code> dan <code>jarak_industri</code> memiliki nilai korelasi -0,99, yang mendekati −1. Ini merupakan tanda <strong>multikolinearitas yang serius</strong>: kedua variabel membawa informasi yang hampir identik (berlawanan arah), sehingga model tidak mampu memisahkan kontribusi masing-masing terhadap IKU. Sebaliknya, <code>vegetasi</code> berkorelasi rendah dengan kedua variabel lainnya, sehingga tidak menimbulkan masalah. Dalam situasi seperti ini, peneliti harus memilih salah satu dari <code>jarak_taman</code> atau <code>jarak_industri</code> untuk dimasukkan ke dalam model, atau menggabungkannya menjadi satu indeks komposit.</p>
+</div>
+<p>Selain mengamatinya melalui tabel korelasi silang, adanya multikolinearitas juga dapat dideteksi melalui nilai <strong>Variance Inflation Factor (VIF)</strong>. VIF mengukur seberapa besar varians dari koefisien regresi meningkat akibat adanya multikolinearitas. Nilai VIF yang tinggi menunjukkan adanya multikolinearitas yang serius. Umumnya, nilai VIF &gt; 10 dianggap sebagai indikator multikolinearitas yang serius.</p>
+<div id="studi-kasus-deteksi-multikolinearitas-dengan-vif" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Deteksi Multikolinearitas dengan VIF<a class="anchor" aria-label="anchor" href="#studi-kasus-deteksi-multikolinearitas-dengan-vif"><i class="fas fa-link"></i></a>
+</h3>
+<p>Indikasi multikolinearitas pada ketiga variabel independen metrik di atas juga dapat dipastikan melalui nilai VIF. Berikut adalah hasil perhitungan VIF untuk <code>jarak_taman</code>, <code>jarak_industri</code>, dan <code>vegetasi</code>.</p>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-vif-mk">Tabel 13.2: </span>Nilai Variance Inflation Factor (VIF)
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Variabel
+</th>
+<th style="text-align:center;">
+VIF
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Jarak Taman
+</td>
+<td style="text-align:center;">
+48,30
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Jarak Industri
+</td>
+<td style="text-align:center;">
+48,25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vegetasi
+</td>
+<td style="text-align:center;">
+1,02
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Variabel <code>jarak_taman</code> dan <code>jarak_industri</code> memiliki nilai VIF jauh melampaui ambang batas 10. Nilai ini menegaskan keberadaan multikolinearitas, karena informasi kedua variabel tersebut saling tumpang tindih berlebihan jika dimasukkan serentak ke dalam model. Sebaliknya, variabel <code>vegetasi</code> memiliki nilai VIF mendekati 1, yang menandakan variabel tersebut bebas dari masalah multikolinearitas dengan variabel lainnya.</p>
+</div>
+<div id="variabel-independen-bertingkat-pengukuran-nonmetrik-variabel-dummy" class="section level3" number="13.3.2">
+<h3>
+<span class="header-section-number">13.3.2</span> Variabel independen bertingkat pengukuran nonmetrik (variabel <em>dummy</em>)<a class="anchor" aria-label="anchor" href="#variabel-independen-bertingkat-pengukuran-nonmetrik-variabel-dummy"><i class="fas fa-link"></i></a>
+</h3>
+<p>Dalam beberapa kasus, <strong>variabel independen</strong> yang digunakan dalam model regresi <strong>tidak selalu berbentuk data numerik</strong>. Variabel yang bersifat kategorik, yakni variabel nominal atau ordinal, dapat digunakan sebagai variabel independen dalam model regresi. Akan tetapi, variabel tersebut perlu diubah terlebih dahulu menjadi <strong>variabel <em>dummy</em></strong>. Variabel <em>dummy</em> adalah variabel <strong>yang hanya memiliki nilai 0 dan 1</strong>. Nilai 0 menunjukkan variabel tersebut bernilai “tidak” atau “salah”, sedangkan nilai 1 menunjukkan variabel tersebut bernilai “ya” atau “benar”. Proses ini memungkinkan variabel kategorik untuk diolah dalam model regresi sehingga pengaruhnya terhadap variabel dependen tetap dapat dianalisis secara kuantitatif.</p>
+<p>Perhatikan kasus berikut untuk memahami bagaimana variabel <em>dummy</em> bekerja.</p>
+</div>
+<div id="studi-kasus-variabel-dummy" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Variabel <em>Dummy</em><a class="anchor" aria-label="anchor" href="#studi-kasus-variabel-dummy"><i class="fas fa-link"></i></a>
+</h3>
+<p>Dalam kasus sebelumnya, kita melibatkan satu variabel nominal, yakni <span class="math inline">\(\text{zona}\)</span> yang terdiri atas tiga kategori: <strong>Perumahan</strong>, <strong>Komersial</strong>, dan <strong>Industri</strong>. Untuk dapat memasukkan variabel ini ke dalam model regresi, kita perlu mengubahnya menjadi variabel <em>dummy</em>. Proses pembentukan variabel dummy adalah sebagai berikut.</p>
+<p>Karena variabel <span class="math inline">\(\text{zona}\)</span> memiliki tiga kategori, kita pertama-tama akan membuat tiga variabel baru berdasarkan masing-masing kategori. Kita misalkan variabel tersebut adalah <span class="math inline">\(D_{\text{Perumahan}}\)</span>, <span class="math inline">\(D_{\text{Komersial}}\)</span>, dan <span class="math inline">\(D_{\text{Industri}}\)</span>. Nilainya diisi dengan 1 jika observasi benar berada pada kategori tersebut, dan 0 jika salah.</p>
+<p>Berikut adalah tabel ilustrasi nilai ketiga variabel baru tersebut. Kategori <strong>Industri</strong> diletakkan di baris paling bawah sebagai <strong>kategori referensi</strong>. Oleh karena itu, variabel <span class="math inline">\(D_{\text{Industri}}\)</span> juga ditempatkan di kolom paling kanan.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-dummy-3-kategori">Tabel 13.3: </span>Variabel Baru untuk 3 Kategori
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Kategori
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(D_{\text{Perumahan}}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(D_{\text{Komersial}}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(D_{\text{Industri}}\)</span>
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Perumahan
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Komersial
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Industri
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Mari kita pusatkan pembahasan pada dua kolom variabel pertama, yakni <span class="math inline">\(D_{\text{Perumahan}}\)</span> dan <span class="math inline">\(D_{\text{Komersial}}\)</span>. Pada baris terakhir (kategori Industri), nilai pada dua variabel tesebut adalah nol secara bersamaan. Ini berarti, ketika sebuah observasi bernilai 0 baik pada variabel <span class="math inline">\(D_{\text{Perumahan}}\)</span> maupun <span class="math inline">\(D_{\text{Komersial}}\)</span>, kita sudah bisa memastikan bahwa observasi tersebut memuat nilai 1 pada <span class="math inline">\(D_{\text{Industri}}\)</span>–yang artinya masuk ke kategori Industri. Kombinasi unik pada dua variabel <em>dummy</em> pertama ini menunjukkan bahwa informasi keberadaan kategori Industri sudah tercakup di dua variabel pertamanya, sehingga variabel ketiga (<span class="math inline">\(D_{\text{Industri}}\)</span>) menjadi <strong>redundan</strong> dan tidak lagi kita perlukan.</p>
+<p>Prinsip ini menegaskan bahwa <strong>jumlah variabel <em>dummy</em> yang akan kita masukkan untuk suatu variabel kategoris akan selalu sebanyak <span class="math inline">\(k-1\)</span></strong>, dengan <span class="math inline">\(k\)</span> merupakan total jumlah kategori.</p>
+<p>Sebagai penekanan, mari kita lihat apa yang terjadi jika kita memiliki empat kategori, misalnya ditambahkan kategori <strong>Taman</strong>. Jika kita juga menjadikan Taman sebagai kategori referensi, ilustrasinya adalah sebagai berikut.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tbl-dummy-4-kategori">Tabel 13.4: </span>Variabel Baru untuk 4 Kategori
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Kategori
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(D_{\text{Perumahan}}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(D_{\text{Komersial}}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(D_{\text{Industri}}\)</span>
+</th>
+<th style="text-align:center;">
+<span class="math inline">\(D_{\text{Taman}}\)</span>
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Perumahan
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Komersial
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Industri
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Taman
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Pada baris kategori Taman, kita mendapati bahwa nilainya adalah 0 secara keseluruhan pada ketiga variabel <em>dummy</em> yang lain. Informasi “bukan Perumahan, bukan Komersial, dan bukan Industri” sudah cukup untuk menyimpulkan secara mutlak bahwa observasi tersebut termasuk Taman tanpa perlu adanya variabel <span class="math inline">\(D_{\text{Taman}}\)</span>. Praktik menyembunyikan variabel kategori referensi inilah yang menyebabkan kita hanya akan mendapati variabel <em>dummy</em> masuk ke dalam model regresi berganda sebanyak satu unit lebih sedikit daripada jumlah kategori semula.</p>
+<p><span class="tajuksaya">Kaitan dengan Persamaan Regresi</span></p>
+<p>Dengan diubahnya variabel kategorik <span class="math inline">\(\text{zona}\)</span> menjadi variabel <em>dummy</em>, maka persamaan regresi berganda yang akan kita gunakan adalah sebagai berikut.</p>
+<p><span class="math display">\[
+\begin{aligned}
+IKU = &amp;\beta_0 + \beta_1 D_{\text{Perumahan}} + \beta_2 D_{\text{Komersial}} + \beta_3 \text{jarak_taman} + \\
+&amp;\beta_4 \text{jarak_industri} + \beta_5 \text{vegetasi}
+\end{aligned}
+\]</span></p>
+<p>Dengan interpretasi koefisien dan konstanta sebagai berikut:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Konstanta</strong> (<span class="math inline">\(\beta_0\)</span>): nilai IKU ketika semua variabel independen bernilai 0. Dalam kasus ini, konstanta menunjukkan nilai IKU pada zona Industri dengan jarak taman 0 km dan jarak industri 0 km, serta vegetasi 0%.</li>
+<li>
+<strong>Koefisien</strong> (<span class="math inline">\(\beta_1\)</span>): perubahan nilai IKU ketika variabel <span class="math inline">\(D_{\text{Perumahan}}\)</span> bernilai 1 (observasi berada di zona Perumahan) dibandingkan dengan kategori referensi (zona Industri).</li>
+<li>
+<strong>Koefisien</strong> (<span class="math inline">\(\beta_2\)</span>): perubahan nilai IKU ketika variabel <span class="math inline">\(D_{\text{Komersial}}\)</span> bernilai 1 (observasi berada di zona Komersial) dibandingkan dengan kategori referensi (zona Industri).</li>
+<li>
+<strong>Koefisien</strong> (<span class="math inline">\(\beta_3\)</span>): perubahan nilai IKU ketika jarak taman bertambah 1 km, dengan asumsi zona Perumahan dan Komersial bernilai 0 (observasi berada di zona Industri).</li>
+<li>
+<strong>Koefisien</strong> (<span class="math inline">\(\beta_4\)</span>): perubahan nilai IKU ketika jarak industri bertambah 1 km, dengan asumsi zona Perumahan dan Komersial bernilai 0 (observasi berada di zona Industri).</li>
+<li>
+<strong>Koefisien</strong> (<span class="math inline">\(\beta_5\)</span>): perubahan nilai IKU ketika vegetasi bertambah 1%, dengan asumsi zona Perumahan dan Komersial bernilai 0 (observasi berada di zona Industri).</li>
+</ol>
+</div>
+<p>Dari kasus tersebut, kita dapat menyimpulkan bahwa <strong>variabel kategorik akan menjadi variabel <em>dummy</em> dengan jumlah <span class="math inline">\(k-1\)</span></strong>, dengan <span class="math inline">\(k\)</span> merupakan total jumlah kategori variabel tersebut. Setiap variabel <em>dummy</em> tersebut akan memiliki koefisiennya masing-masing yang menunjukkan pengaruhnya terhadap variabel dependen. Adapun kategori yang tidak memiliki variabel <em>dummy</em> disebut sebagai <strong>kategori referensi</strong>.</p>
+</div>
+<div id="mencari-koefisien-variabel-independen-regresi-linear-berganda" class="section level2" number="13.4">
+<h2>
+<span class="header-section-number">13.4</span> Mencari Koefisien Variabel Independen Regresi Linear Berganda<a class="anchor" aria-label="anchor" href="#mencari-koefisien-variabel-independen-regresi-linear-berganda"><i class="fas fa-link"></i></a>
+</h2>
+<p>Untuk persamaan regresi linear sederhana, rumus untuk menghitung koefisien variabel independen adalah seperti yang ditunjukkan pada Persamaan <a href="bab-13-regresi-sederhana.html#eq:rumus-koefisien-regresi-linear">(12.2)</a> yang ditulis ulang sebagai berikut.</p>
+<p><span class="math display">\[
+b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \bar{X})^2}
+\]</span></p>
+<p>Rumus tersebut menghitung selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikalikan dengan selisih antara nilai variabel dependen dengan nilai rata-ratanya. Hasilnya kemudian dibagi dengan selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikuadratkan. Ini hanya bisa dilakukan pada 2 variabel saja: satu variabel independen dan satu variabel dependen. Untuk yang lebih dari 2 variabel, kita perlu menggunakan rumus yang lebih kompleks, yaitu seperti yang ditunjukkan pada Persamaan <a href="bab-13-regresi-sederhana.html#eq:rumus-koefisien-regresi-linear">(12.2)</a> <span class="citation">(<a href="referensi.html#ref-chan2021introduction">Chan 2021b</a>)</span>.</p>
+<p><span class="math display" id="eq:rumus-koefisien-regresi-linear-berganda">\[
+\mathbf{b} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}
+\tag{13.2}
+\]</span></p>
+<p>Penjelasan dari rumus tersebut adalah sebagai berikut:</p>
+<ul>
+<li>
+<span class="math inline">\(\mathbf{b}\)</span> adalah vektor koefisien regresi</li>
+<li>
+<span class="math inline">\(\mathbf{X}\)</span> adalah matriks variabel independen</li>
+<li>
+<span class="math inline">\(\mathbf{y}\)</span> adalah vektor variabel dependen</li>
+</ul>
+<p>Rumus tersebut tidak akan dibahas terlalu dalam di buku ini karena buku ini fokus kepada penggunaan praktis dari alat-alat analisis statistik ke dalam kasus-kasus perencanaan alih-alih pembahasan matematisnya. Secara praktis, di sinilah peran perangkat lunak statistik seperti R, SPSS, atau Stata menjadi sangat penting.</p>
+</div>
+<div id="diagnosis-model-regresi-linear-berganda" class="section level2" number="13.5">
+<h2>
+<span class="header-section-number">13.5</span> Diagnosis Model Regresi Linear Berganda<a class="anchor" aria-label="anchor" href="#diagnosis-model-regresi-linear-berganda"><i class="fas fa-link"></i></a>
+</h2>
+<p>Ketika kita menggunakan lebih dari satu variabel independen, kita bisa menghasilkan beberapa alternatif model regresi. Dengan demikian, persoalannya sekarang bukan lagi sekadar bagaimana menghasilkan persamaan regresi, tetapi juga bagaimana memastikan bahwa <strong>model yang dibangun merupakan model terbaik (<em>best-fit model</em>)</strong> dari beberapa alternatif model yang mungkin. Diagnosis model dilakukan untuk memilih model yang paling sesuai berdasarkan keseimbangan antara <strong>kualitas prediksi</strong>, <strong>signifikansi model dan variabel independen</strong>, dan <strong>kesederhanaan model (<em>parsimony</em>)</strong>.</p>
+<div id="uji-asumsi-klasik-1" class="section level3" number="13.5.1">
+<h3>
+<span class="header-section-number">13.5.1</span> Uji Asumsi Klasik<a class="anchor" aria-label="anchor" href="#uji-asumsi-klasik-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Sama seperti halnya regresi linear sederhana, regresi linear berganda juga menerapkan uji asumsi klasik sebelum menganalisis model secara lebih lanjut. Uji-uji tersebut meliputi:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Linearitas</strong>, memastikan tidak ada pola melengkung pada model, diperiksa menggunakan plot <em>Residuals vs Fitted</em>.</li>
+<li>
+<strong>Normalitas Residual</strong>, memastikan galat terdistribusi normal, diuji menggunakan uji Shapiro-Wilk. Galat dikatakan terdistribusi normal jika <em>p-value</em> &gt; 0,05.</li>
+<li>
+<strong>Non-Multikolinearitas</strong>, memastikan tidak ada korelasi berlebih antarvariabel independen, dipastikan lewat nilai <em>Variance Inflation Factor</em> (VIF) yang lebih kecil dari 10.</li>
+<li>
+<strong>Homoskedastisitas</strong>, memastikan varians galat konstan, diperiksa lewat plot <em>Residuals vs Fitted</em> atau Galat vs Prediksi.</li>
+<li>
+<strong>Non-Autokorelasi</strong>, memastikan galat antarobservasi saling bebas. Ini umumnya terpenuhi pada data silang tempat (<em>cross-section</em>), atau dapat diuji dengan uji Durbin-Watson. Nilai Durbin-Watson dikatakan tidak ada autokorelasi jika 1,5 &lt; DW &lt; 2,5.</li>
+</ol>
+</div>
+<div id="kualitas-prediksi-koefisien-determinasi" class="section level3" number="13.5.2">
+<h3>
+<span class="header-section-number">13.5.2</span> Kualitas Prediksi (Koefisien Determinasi)<a class="anchor" aria-label="anchor" href="#kualitas-prediksi-koefisien-determinasi"><i class="fas fa-link"></i></a>
+</h3>
+<p>Tingkat kualitas prediksi model diukur dengan menggunakan nilai <strong>koefisien determinasi</strong> atau <strong><em>R-squared</em></strong>, atau dalam konteks regresi linear berganda, menggunakan <strong><em>Adjusted R-squared</em></strong>.</p>
+<p>Nilai <em>R-squared</em> pada dasarnya akan selalu meningkat ketika jumlah variabel independen dalam model bertambah. Hal ini karena penambahan variabel independen akan selalu meningkatkan kemampuan model untuk menjelaskan variasi dalam variabel dependen, meskipun variabel independen tersebut tidak memiliki hubungan yang signifikan dengan variabel dependen. Dengan demikian, agar lebih objektif, nilai R-squared tersebut disesuaikan (adjusted) dengan jumlah variabel independen dan ukuran sampel sehingga menjadi <strong><em>Adjusted R-squared</em></strong>. Oleh karena inilah kita menggunakan nilai <em>adjusted R-squared</em> ketika membandingkan kualitas sejumlah model.</p>
+</div>
+<div id="signifikansi-model-dan-variabel-independen-uji-f-dan-uji-t" class="section level3" number="13.5.3">
+<h3>
+<span class="header-section-number">13.5.3</span> Signifikansi Model dan Variabel Independen (Uji F dan Uji t)<a class="anchor" aria-label="anchor" href="#signifikansi-model-dan-variabel-independen-uji-f-dan-uji-t"><i class="fas fa-link"></i></a>
+</h3>
+<p>Uji ini sama persis dengan yang sudah dibahas pada subbab <a href="bab-13-regresi-sederhana.html#signifikansi-model">12.7.3</a>, yakni menilai <strong>keberartian hubungan pengaruh antara variabel independen dengan variabel dependennya</strong>. Perbedaannya terletak pada <strong>jumlah variabel independen</strong> yang diuji. Pada regresi linear sederhana, kita hanya menguji satu variabel independen, sedangkan pada regresi linear berganda, kita menguji lebih dari satu variabel independen.</p>
+<p>Oleh karena pada regresi linear sederhana kita hanya menggunakan satu variabel independen, maka uji signifikansi model sama saja dengan uji signifikansi variabel independennya. Namun, pada regresi linear berganda, kita perlu melakukan kedua uji tersebut secara terpisah.</p>
+<p>Uji signifikansi variabel menggunakan nilai uji statistik t, yakni pengujian hipotesis yang hipotesis kosongnya adalah <strong>“koefisien variabel sama dengan nol secara statistik”</strong>. Dalam berbagai perangkat lunak statistik, uji ini biasanya dilaporkan dalam bentuk <em>p-value</em>, yaitu probabilitas untuk mendapatkan nilai uji statistik t sebesar itu atau lebih ekstrem jika hipotesis kosong benar. Jika nilai <strong><em>p-value</em> lebih kecil dari tingkat signifikansi yang ditentukan</strong> (misalnya 0,05), maka <strong>hipotesis kosong ditolak</strong>, yang berarti <strong>variabel tersebut signifikan secara statistik</strong>. Sebaliknya, jika nilai <em>p-value</em> lebih besar dari tingkat signifikansi, maka <strong>hipotesis kosong diterima</strong>, yang berarti <strong>variabel tersebut tidak signifikan secara statistik</strong>.</p>
+</div>
+<div id="kesederhanaan-model-parsimony" class="section level3" number="13.5.4">
+<h3>
+<span class="header-section-number">13.5.4</span> Kesederhanaan Model (<em>Parsimony</em>)<a class="anchor" aria-label="anchor" href="#kesederhanaan-model-parsimony"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="citation">Ewing and Park (<a href="referensi.html#ref-ewing2020basic">2020</a>)</span> menyatakan bahwa model yang dipilih harus mengedepankan prinsip kesederhanaan model atau yang disebut juga <em>parsimony</em>, yakni kemampuan menjelaskan variabel dependen dengan variabel independen secukupnya tanpa menambah kompleksitas yang tidak perlu. Untuk mencapai model seperti ini, kita memerlukan perbandingan nilai-nilai koefisien determinasi yang sudah disesuaikan (<em>adjusted R-squared</em>) dari model-model yang ditinjau. Apabila menambahkan variabel hanya meningkatkan sedikit sekali nilai koefisien determinasi yang sudah disesuaikan (<em>adjusted R-squared</em>), maka variabel tersebut sebaiknya tidak dimasukkan ke dalam model.</p>
+<p>Untuk merealisasikan prinsip <strong><em>parsimony</em></strong> secara objektif, salah satu metode pencarian sekuensial yang sangat direkomendasikan adalah <strong>metode <em>stepwise</em></strong>. Metode ini secara iteratif <strong>menyeleksi dan mengeliminasi</strong> variabel independen dari dalam persamaan regresi berdasarkan <strong>nilai uji F parsial</strong>. Pada prosesnya, <em>stepwise</em> akan <strong>memasukkan variabel baru</strong> yang menyumbangkan akurasi prediksi signifikan, sekaligus <strong>mengevaluasi ulang</strong> variabel-variabel yang sudah lebih dahulu ada di dalam model. Jika ada variabel lama yang informasinya menjadi <strong>tumpang tindih</strong> dan <strong>kehilangan signifikansi</strong> akibat penambahan tersebut, <strong>variabel lama itu akan dibuang</strong>. Mekanisme seleksi ketat ini menjamin bahwa model akhir <strong>hanya memuat variabel-variabel paling esensial</strong> tanpa risiko <strong><em>overfitting</em></strong>, sehingga keseimbangan antara <strong>kesederhanaan model</strong> dan <strong>kebaikan suai (<em>goodness-of-fit</em>)</strong> dapat tercapai secara maksimal.</p>
+</div>
+<div id="studi-kasus-evaluasi-dan-pemilihan-model-parsimoni" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Evaluasi dan Pemilihan Model Parsimoni<a class="anchor" aria-label="anchor" href="#studi-kasus-evaluasi-dan-pemilihan-model-parsimoni"><i class="fas fa-link"></i></a>
+</h3>
+<p>Mari kita aplikasikan prinsip evaluasi dan seleksi <em>stepwise</em> pada <em>dataset</em> kasus multikolinearitas yang sebelumnya telah kita singgung. Pertama-tama, kita buat model regresi penuh (<em>full model</em>) yang memasukkan seluruh variabel independen ke dalam persamaan.</p>
 <pre><code>## 
 ## Call:
-## lm(formula = harga ~ luas + kamar)
+## lm(formula = iku ~ jarak_taman + jarak_industri + vegetasi + 
+##     zona, data = df_mk)
 ## 
 ## Residuals:
-##       1       2       3       4       5 
-## -22,901  -6,107  16,031  32,824 -19,847 
+##     Min      1Q  Median      3Q     Max 
+## -6,8701 -2,7724 -0,2212  2,4952  7,8249 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)
-## (Intercept)  156,489    104,150   1,503    0,272
-## luas           3,053      1,724   1,771    0,219
-## kamar         30,534     50,865   0,600    0,609
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)     76,9413    18,6579   4,124 0,000385 ***
+## jarak_taman     -5,8254     2,0256  -2,876 0,008318 ** 
+## jarak_industri   1,6921     2,3139   0,731 0,471678    
+## vegetasi         0,3701     0,0523   7,076 2,58e-07 ***
+## zonaKomersial    5,3945     2,0537   2,627 0,014785 *  
+## zonaPerumahan   10,6390     2,0319   5,236 2,29e-05 ***
+## ---
+## Signif. codes:  0 '***' 0,001 '**' 0,01 '*' 0,05 '.' 0,1 ' ' 1
 ## 
-## Residual standard error: 33,84 on 2 degrees of freedom
-## Multiple R-squared:  0,9771, Adjusted R-squared:  0,9542 
-## F-statistic: 42,67 on 2 and 2 DF,  p-value: 0,0229</code></pre>
+## Residual standard error: 4,335 on 24 degrees of freedom
+## Multiple R-squared:  0,9662, Adjusted R-squared:  0,9591 
+## F-statistic: 137,2 on 5 and 24 DF,  p-value: &lt; 2,2e-16</code></pre>
+<p>Jika dicermati pada <em>output</em> model penuh, nilai <em>p-value</em> untuk variabel <code>jarak_industri</code> adalah 0,471 (jauh lebih besar dari batas kekeliruan 0,05). Hal ini berarti secara parsial variabel tersebut <strong>tidak mencapai signifikansi statistik</strong>. Padahal, uji keseluruhan model sangat signifikan dengan F-statistik sebesar 137,2 (<em>p-value</em> &lt; 0,05) dan memiliki nilai <em>adjusted R-squared</em> sebesar 0,9591. Inilah dampak nyata dari multikolinearitas: model tampak sukses secara keseluruhan, namun variabel yang saling bertumpang-tindih di dalamnya menjadi gagal menunjukkan nilai prediksinya yang sebenarnya.</p>
+<p>Untuk menanggulangi penumpukan variabel redundan tersebut dan mencari model yang paling parsimoni, kita menggunakan fungsi <code><a href="https://rdrr.io/r/stats/step.html">step()</a></code> di R sebagai implementasi mekanisme <em>stepwise</em>.</p>
+<pre><code>## 
+## Call:
+## lm(formula = iku ~ jarak_taman + vegetasi + zona, data = df_mk)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -6,9290 -2,4374 -0,6375  2,5480  8,2230 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)   90,42161    2,85886  31,629  &lt; 2e-16 ***
+## jarak_taman   -7,29122    0,28942 -25,193  &lt; 2e-16 ***
+## vegetasi       0,37480    0,05142   7,289 1,23e-07 ***
+## zonaKomersial  5,19178    2,01593   2,575   0,0163 *  
+## zonaPerumahan 10,51665    2,00604   5,242 1,99e-05 ***
+## ---
+## Signif. codes:  0 '***' 0,001 '**' 0,01 '*' 0,05 '.' 0,1 ' ' 1
+## 
+## Residual standard error: 4,294 on 25 degrees of freedom
+## Multiple R-squared:  0,9654, Adjusted R-squared:  0,9599 
+## F-statistic: 174,6 on 4 and 25 DF,  p-value: &lt; 2,2e-16</code></pre>
+<p>Metode <em>stepwise</em> mengevaluasi setiap variabel berdasarkan uji kontribusi dan otomatis mengeliminasi <code>jarak_industri</code> dari model baru. Perhatikan tiga perubahan positif pada <em>output</em> model parsimoni yang kita capai:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong>Signifikansi Variabel Independen</strong>: Seluruh variabel tersisa kini secara individu terbukti <strong>signifikan</strong> (<em>p-value</em> pada setiap koefisien regresi &lt; 0,05).</li>
+<li>
+<strong>Kualitas Prediksi</strong>: Nilai <em>adjusted R-squared</em> model <strong>meningkat</strong> menjadi 0,9599 dari yang semula hanya 0,9591. Meskipun jumlah variabel berkurang, metrik ini membuktikan bahwa penyesuaian yang kita lakukan telah membuat model ini justru memprediksi lebih baik dan efisien atas data kita.</li>
+<li>
+<strong>Signifikansi Model Secara Keseluruhan</strong>: Nilai F-statistik melonjak tajam dari 137,2 menjadi 174,6, yang berarti keberartian (signifikansi) dan keandalan model baru jauh melampaui kemampuan model pertama.</li>
+</ol>
+<p>Demonstrasi tersebut membuktikan secara konklusif bahwa pembuangan variabel-variabel tumpang tindih secara efektif akan meningkatkan kemurnian dan performa model sembari memastikannya tetap representatif dan <em>parsimoni</em> (<em>Occam’s razor</em>).</p>
+</div>
 </div>
 <div id="soal-evaluasi-15-1" class="section level2 unnumbered rmdexercise">
 <h2>Soal Evaluasi 15<a class="anchor" aria-label="anchor" href="#soal-evaluasi-15-1"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
-<li>Apa itu multikolinearitas dalam regresi berganda? <span class="capaian">STP-12.1</span>
+<li>
+<p><span class="capaian">STP-13.1</span> Sebuah penelitian ingin mengetahui hubungan kausal antara Tingkat Penggunaan Transportasi Umum dengan sejumlah variabel. Peneliti pertama menghasilkan persamaan model seperti berikut.</p>
+<p><span class="math display">\[Y = 11{,}2 + 0{,}7X_1\]</span></p>
+<p>dengan <span class="math inline">\(X_1\)</span> adalah variabel kepadatan penduduk, dalam jiwa/hektar, dan <span class="math inline">\(Y\)</span> adalah tingkat penggunaan transportasi umum, dalam nilai 0-100.</p>
+<p>Peneliti kedua menghasilkan persamaan model seperti berikut.</p>
+<p><span class="math display">\[Y = 12{,}5 + 0{,}45X_1 + 0{,}30X_2 - 0{,}25X_3\]</span></p>
+<p>dengan keterangan nilai:</p>
+<ul>
+<li>
+<span class="math inline">\(Y\)</span>, tingkat penggunaan transportasi umum, nilai 0-100,</li>
+<li>
+<span class="math inline">\(X_1\)</span>, kepadatan penduduk, dalam jiwa/hektar,</li>
+<li>
+<span class="math inline">\(X_2\)</span>, aksesibilitas transportasi, nilai kemudahan akses dari permukiman ke halte bus terdekat, dalam menit,</li>
+<li>
+<span class="math inline">\(X_3\)</span>, kualitas ruang terbuka hijau, nilai kemudahan akses dari permukiman ke ruang terbuka hijau terdekat, dalam menit.</li>
+</ul>
+<p>Ulaslah perbedaan antara model yang digunakan oleh peneliti pertama dengan peneliti kedua. <em>Petunjuk: mulai dari menyebutkan nama model yang digunakan oleh kedua peneliti dan dari situ tuliskan apa perbedaan keduanya.</em></p>
 </li>
-<li>Bagaimana cara menginterpretasikan Adjusted <span class="math inline">\(R^2\)</span>? <span class="capaian">STP-12.2</span>
-</li>
+<li><p><span class="capaian">STP-13.2</span> Uraikan hubungan antara variabel dependen dan independen dari persamaan model yang dihasilkan peneliti kedua di soal nomor (1) sebelumnya. <em>Petunjuk: ulas berapa perubahan variabel dependen jika satu unit perubahan variabel independen terjadi.</em></p></li>
 </ol>
 </div>
 
@@ -157,9 +685,31 @@
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#bab-regresi-berganda"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a></li>
-<li><a class="nav-link" href="#konsep-dasar-1"><span class="header-section-number">13.1</span> Konsep Dasar</a></li>
-<li><a class="nav-link" href="#studi-kasus-dengan-r"><span class="header-section-number">13.2</span> Studi Kasus dengan R</a></li>
+<li>
+<a class="nav-link" href="#bab-regresi-berganda"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#capaian-pembelajaran-12">Capaian Pembelajaran</a></li></ul>
+</li>
+<li><a class="nav-link" href="#jenis-jenis-asosiasi-multivariat"><span class="header-section-number">13.1</span> Jenis-jenis Asosiasi Multivariat</a></li>
+<li><a class="nav-link" href="#perbedaan-dengan-regresi-linear-sederhana"><span class="header-section-number">13.2</span> Perbedaan dengan Regresi Linear Sederhana</a></li>
+<li><a class="nav-link" href="#studi-kasus-regresi-linear-sederhana-vs-berganda">Studi Kasus: Regresi Linear Sederhana vs Berganda</a></li>
+<li>
+<a class="nav-link" href="#hal-hal-penting-yang-perlu-diperhatikan-dalam-regresi-linear-berganda"><span class="header-section-number">13.3</span> Hal-hal Penting yang Perlu Diperhatikan dalam Regresi Linear Berganda</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#hubungan-antarvariabel-independen-multikolinearitas"><span class="header-section-number">13.3.1</span> Hubungan Antarvariabel Independen (Multikolinearitas)</a></li>
+<li><a class="nav-link" href="#studi-kasus-multikolinearitas">Studi Kasus: Multikolinearitas</a></li>
+<li><a class="nav-link" href="#studi-kasus-deteksi-multikolinearitas-dengan-vif">Studi Kasus: Deteksi Multikolinearitas dengan VIF</a></li>
+<li><a class="nav-link" href="#variabel-independen-bertingkat-pengukuran-nonmetrik-variabel-dummy"><span class="header-section-number">13.3.2</span> Variabel independen bertingkat pengukuran nonmetrik (variabel dummy)</a></li>
+<li><a class="nav-link" href="#studi-kasus-variabel-dummy">Studi Kasus: Variabel Dummy</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#mencari-koefisien-variabel-independen-regresi-linear-berganda"><span class="header-section-number">13.4</span> Mencari Koefisien Variabel Independen Regresi Linear Berganda</a></li>
+<li>
+<a class="nav-link" href="#diagnosis-model-regresi-linear-berganda"><span class="header-section-number">13.5</span> Diagnosis Model Regresi Linear Berganda</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#uji-asumsi-klasik-1"><span class="header-section-number">13.5.1</span> Uji Asumsi Klasik</a></li>
+<li><a class="nav-link" href="#kualitas-prediksi-koefisien-determinasi"><span class="header-section-number">13.5.2</span> Kualitas Prediksi (Koefisien Determinasi)</a></li>
+<li><a class="nav-link" href="#signifikansi-model-dan-variabel-independen-uji-f-dan-uji-t"><span class="header-section-number">13.5.3</span> Signifikansi Model dan Variabel Independen (Uji F dan Uji t)</a></li>
+<li><a class="nav-link" href="#kesederhanaan-model-parsimony"><span class="header-section-number">13.5.4</span> Kesederhanaan Model (Parsimony)</a></li>
+<li><a class="nav-link" href="#studi-kasus-evaluasi-dan-pemilihan-model-parsimoni">Studi Kasus: Evaluasi dan Pemilihan Model Parsimoni</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#soal-evaluasi-15-1">Soal Evaluasi 15</a></li>
 </ul>
 

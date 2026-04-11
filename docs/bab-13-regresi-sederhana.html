@@ -8,7 +8,7 @@
 <meta name="author" content="Muhammad Abdul Mubdi Bindar">
 <meta name="author" content="Husna Tiara Putri">
 <meta name="author" content="Valendya Rilansari">
-<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta name="generator" content="bookdown 0.45 with bs4_book()">
 <meta property="og:title" content="Bab 12 Kausalitas dengan Regresi Linear Sederhana | Buku Ajar Statistika untuk Perencanaan">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
@@ -27,7 +27,6 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
-          margin-bottom: 0em;
         }
     .hanging div.csl-entry {
       margin-left:2em;
@@ -146,9 +145,10 @@
 <li>
 <strong>Melakukan identifikasi variabel pengganti</strong>. Analisis asosiasi dapat digunakan sebagai dasar untuk memilih suatu variabel sebagai ganti dari variabel lain.</li>
 </ol>
-<div id="studi-kasus-pemakaian-analisis-kausalitas-dalam-konteks-pwk" class="section level3 unnumbered rmdkasus">
-<h3>Studi Kasus Pemakaian Analisis Kausalitas dalam Konteks PWK<a class="anchor" aria-label="anchor" href="#studi-kasus-pemakaian-analisis-kausalitas-dalam-konteks-pwk"><i class="fas fa-link"></i></a>
-</h3>
+</div>
+<div id="studi-kasus-pemakaian-analisis-kausalitas-dalam-konteks-pwk" class="section level2 unnumbered rmdkasus">
+<h2>Studi Kasus Pemakaian Analisis Kausalitas dalam Konteks PWK<a class="anchor" aria-label="anchor" href="#studi-kasus-pemakaian-analisis-kausalitas-dalam-konteks-pwk"><i class="fas fa-link"></i></a>
+</h2>
 <p>Sesuai dengan pembahasan hal-hal yang dapat dilakukan dengan analisis kausalitas dalam bidang PWK, berikut adalah beberapa contoh kasus yang dapat dipecahkan dengan analisis kausalitas:</p>
 <ol style="list-style-type: decimal">
 <li>
@@ -178,7 +178,6 @@
 <li>
 <strong>Melakukan identifikasi variabel pengganti</strong>. Apabila diketahui bahwa masyarakat membutuhkan ruang untuk berkumpul, sementara lahan yang tersedia sangat terbatas, apakah ada alternatif pengganti ketersediaan ruang terbuka hijau (RTH) bagi masyarakat?</li>
 </ol>
-</div>
 </div>
 <div id="mengenal-model" class="section level2" number="12.3">
 <h2>
@@ -261,7 +260,7 @@ Y = a + bX + e
 </h3>
 <p>Berdasarkan persamaan regresi linear sederhana pada studi kasus sebelumnya, kita dapat menggambarkan garis regresi pada diagram pencar dengan cara berikut.</p>
 <p>Pertama, kita buat tabel yang menyandingkan nilai jarak ke taman (<span class="math inline">\(X\)</span>) dengan nilai Indeks Kualitas Udara yang diprediksi (<span class="math inline">\(\hat{Y}\)</span>) berdasarkan persamaan regresi yang diperoleh.</p>
-<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tbl-bahan-regresi">Tabel 12.1: </span>Nilai Prediksi Indeks Kualitas Udara (<span class="math inline">\(\hat{Y}\)</span>) Berdasarkan Persamaan Regresi
 </caption>
@@ -325,62 +324,53 @@ Gambar 12.2: Garis Regresi Linear Sederhana untuk Jarak Taman Kota dan Indeks Ku
 </div>
 <p>Titik-titik hasil prediksi tersebut akan membentuk garis lurus ketika dihubungkan satu sama lain. Inilah yang dimaksud dengan sifat <em>linear</em> dari persamaan regresi linear sederhana—nilai <span class="math inline">\(\hat{Y}\)</span> berubah secara <strong>konstan</strong> seiring perubahan nilai <span class="math inline">\(X\)</span>, menghasilkan pola garis lurus.</p>
 </div>
-<div id="memperoleh-persamaan-regresi-linear-sederhana" class="section level3" number="12.4.2">
-<h3>
-<span class="header-section-number">12.4.2</span> Memperoleh Persamaan Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#memperoleh-persamaan-regresi-linear-sederhana"><i class="fas fa-link"></i></a>
-</h3>
-<p>Untuk memperoleh persamaan regresi linear, kita memerlukan nilai dari konstanta (<span class="math inline">\(a\)</span>) dan koefisien regresi (<span class="math inline">\(b\)</span>). Kedua nilai tersebut diperoleh dengan <strong>mengolah data yang kita kumpulkan sebelumnya</strong>. Data yang kita peroleh harus memenuhi asumsi-asumsi dasar sebagai berikut:</p>
-<ul>
-<li>
-<strong>Tingkat pengukuran variabel metrik untuk kedua variabel</strong>. Baik variabel independen maupun variabel dependen kita harus berada pada tingkat pengukuran interval atau rasio. Hal ini disebabkan karena penentuan persamaan regresi linear melibatkan operasi matematis seperti penjumlahan, pengurangan, perkalian, dan pembagian.</li>
-<li>
-<strong>Hubungan linear antara variabel independen dan variabel dependen</strong>. Maksud dari hubungan linear adalah jika nilai variabel independen meningkat sebesar 1 satuan, maka nilai variabel dependen akan meningkat sebesar <span class="math inline">\(b\)</span> satuan, dan begitu seterusnya.</li>
-<li>
-<strong>Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain</strong>. Komponen galat yang terdistribusi acak membuat titik-titik data berada di atas dan di bawah garis regresi secara merata, tidak membentuk pola tertentu.</li>
-</ul>
-<p>Setelah terpenuhinya asumsi-asumsi tersebut, kita bisa menghitung nilai <span class="math inline">\(a\)</span> dan <span class="math inline">\(b\)</span> untuk menghasilkan persamaan regresi linear kita. Kita perlu memulai dari nilai <span class="math inline">\(b\)</span> terlebih dahulu, nilai <span class="math inline">\(a\)</span> baru bisa kita dapatkan setelah kita memperoleh nilai <span class="math inline">\(b\)</span> tersebut. Berikut adalah rumus untuk memperoleh nilai <span class="math inline">\(b\)</span>.</p>
-<p><span class="math display" id="eq:rumus-koefisien-regresi-linear">\[
-b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \bar{X})^2}
-\tag{12.2}
-\]</span></p>
-<p>dengan:</p>
-<ul>
-<li>
-<span class="math inline">\(X_i\)</span> adalah nilai variabel independen untuk objek ke <span class="math inline">\(i\)</span>
-</li>
-<li>
-<span class="math inline">\(Y_i\)</span> adalah nilai variabel dependen untuk objek ke <span class="math inline">\(i\)</span>
-</li>
-<li>
-<span class="math inline">\(\bar{X}\)</span> adalah rata-rata nilai variabel independen</li>
-<li>
-<span class="math inline">\(\bar{Y}\)</span> adalah rata-rata nilai variabel dependen</li>
-<li>
-<span class="math inline">\(n\)</span> adalah jumlah objek</li>
-</ul>
-<p>Setelah kita memperoleh nilai <span class="math inline">\(b\)</span> atau koefisiennya, kita bisa menghitung konstanta <span class="math inline">\(a\)</span> dengan rumus berikut.</p>
-<p><span class="math display" id="eq:rumus-konstanta-regresi-linear">\[
-a = \bar{Y} - b\bar{X}
-\tag{12.3}
-\]</span></p>
-<p>dengan:</p>
-<ul>
-<li>
-<span class="math inline">\(\bar{X}\)</span> adalah rata-rata nilai variabel independen</li>
-<li>
-<span class="math inline">\(\bar{Y}\)</span> adalah rata-rata nilai variabel dependen</li>
-<li>
-<span class="math inline">\(b\)</span> adalah koefisien regresi hasil perhitungan sebelumnya</li>
-</ul>
-<p>Mari kita pelajari studi kasus berikut untuk lebih memahami bagaimana memperoleh persamaan regresi linear sederhana.</p>
 </div>
-<div id="studi-kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk-jarak-taman-dan-kualitas-udara" class="section level3 unnumbered rmdkasus">
-<h3>Studi Kasus: Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara<a class="anchor" aria-label="anchor" href="#studi-kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk-jarak-taman-dan-kualitas-udara"><i class="fas fa-link"></i></a>
+<div id="uji-asumsi-klasik" class="section level2" number="12.5">
+<h2>
+<span class="header-section-number">12.5</span> Uji Asumsi Klasik<a class="anchor" aria-label="anchor" href="#uji-asumsi-klasik"><i class="fas fa-link"></i></a>
+</h2>
+<p>Saat membuat model regresi linear dari data, kita berasumsi bahwa model tersebut mampu mewakili pola hubungan yang sebenarnya dengan akurat. Untuk memastikannya, kita harus melakukan <strong>uji asumsi klasik</strong>. Uji ini merupakan tahapan pemeriksaan statistik guna memastikan bahwa persamaan regresi yang kita peroleh nantinya valid, tidak bias (tidak condong sebelah), dan dapat diandalkan sebagai alat prediksi.</p>
+<p>Apabila seluruh syarat uji ini terpenuhi, barulah model regresi kita aman untuk digunakan menarik kesimpulan. Beberapa referensi utama seperti <span class="citation">Hair et al. (<a href="referensi.html#ref-Hair-Multivariate">2013</a>)</span>, <span class="citation">Ewing and Park (<a href="referensi.html#ref-ewing2020basic">2020</a>)</span>, <span class="citation">Healey (<a href="referensi.html#ref-healey2021statistics">2021</a>)</span>, dan <span class="citation">Thulin (<a href="referensi.html#ref-ModernStatR-Home">2021</a>)</span> merangkum kelima asumsi klasik tersebut sebagai berikut:</p>
+<div id="linearitas" class="section level3" number="12.5.1">
+<h3>
+<span class="header-section-number">12.5.1</span> Linearitas<a class="anchor" aria-label="anchor" href="#linearitas"><i class="fas fa-link"></i></a>
 </h3>
-<p>Sebuah survei dilakukan terhadap 30 lokasi di sebuah kota untuk mengetahui pengaruh jarak ke taman kota terdekat (<span class="math inline">\(X\)</span>, dalam km) terhadap Indeks Kualitas Udara (<span class="math inline">\(Y\)</span>). Data hasil survei disajikan pada tabel berikut.</p>
-<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<p>Asumsi ini mengharuskan bahwa hubungan antara variabel independen (<span class="math inline">\(X\)</span>) dan variabel dependen (<span class="math inline">\(Y\)</span>) berupa sebuah <strong>garis lurus</strong> (bersifat linear) <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Apabila pola hubungan di dunia nyata ternyata melengkung tetapi kita bersikeras memaksanya menggunakan bentuk garis lurus, maka model tebakan kita akan meleset jauh dan menghasilkan simpangan kesalahan (galat/eror) yang besar <span class="citation">(<a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>.</p>
+<p>Terpenuhinya asumsi ini dapat dicek lewat dua cara. Pertama, dengan memeriksa <strong>diagram pencar (<em>scatter plot</em>)</strong> antardata sebelum model dibuat. Kedua, dengan memeriksa bentuk grafik <strong>plot galat terhadap nilai prediksi (<em>Residuals vs Fitted plot</em>)</strong> setelah model dibuat, guna memastikan tidak ada pola melengkung pada diagram.</p>
+</div>
+<div id="normalitas-residual" class="section level3" number="12.5.2">
+<h3>
+<span class="header-section-number">12.5.2</span> Normalitas Residual<a class="anchor" aria-label="anchor" href="#normalitas-residual"><i class="fas fa-link"></i></a>
+</h3>
+<p>Ada kesalahpahaman umum yang menyangka bahwa data mentahlah (<span class="math inline">\(X\)</span> dan <span class="math inline">\(Y\)</span>) yang wajib disyaratkan berdistribusi normal. Kenyataannya, yang benar-benar wajib berdistribusi normal adalah titik-titik <strong>residual</strong> atau galat dari tebakan model kita (<span class="math inline">\(\epsilon\)</span>) <span class="citation">(<a href="referensi.html#ref-Hair-Multivariate">Hair et al. 2013</a>; <a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Residual ini adalah angka selisih antara nilai <span class="math inline">\(Y\)</span> di data asli dengan nilai tebakan si model. Uji normalitas residual ini sangat krusial agar pengujian hipotesis dan penentuan batas interval kita akurat, terutama apabila kita meneliti menggunakan data sampel yang jumlahnya sedikit <span class="citation">(<a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>.</p>
+<p>Pemenuhan asumsi ini sering kali diuji secara rupa visual dengan melihat kemiripan bentuk <strong>Histogram</strong> deretan galatnya dengan lekuk gundukan kurva normal, atau lewat kesejajaran sebaran titiknya melintasi batas diagonal pada <strong><em>Normal Q-Q Plot</em></strong>. Mengingat ukuran sampel kecil rentan mengecoh penilaian mata pembaca, pembuktian angka pasti dan objektif dengan <strong>Uji Shapiro-Wilk</strong> jadi pilihan sarana pembuktian utama yang sangat direkomendasikan karena paling terstandardisasi.</p>
+</div>
+<div id="non-multikolinearitas" class="section level3" number="12.5.3">
+<h3>
+<span class="header-section-number">12.5.3</span> Non-Multikolinearitas<a class="anchor" aria-label="anchor" href="#non-multikolinearitas"><i class="fas fa-link"></i></a>
+</h3>
+<p>Asumsi ini secara eksklusif hanya diperiksa <strong>pada pemodelan analisis regresi linear berganda</strong>, yakni manakala pemodelan kita melibatkan <strong>lebih dari satu variabel independen</strong>. Kondisi multikolinearitas terjadi jika variabel-variabel independen tersebut saling berkorelasi terlampau kuat satu sama lain <span class="citation">(<a href="referensi.html#ref-Hair-Multivariate">Hair et al. 2013</a>)</span>. Kalau masalah ini dibiarkan, rumus matematika model kita akan kebingungan menghitung jernih seberapa besar sumbangan efek murni dari tiap-tiap variabel independen terhadap variabel dependennya. Akibat buruknya, angka acuan penghitungan standar eror prediksinya kelak membengkak tanpa dasar yang riil <span class="citation">(<a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>.</p>
+</div>
+<div id="homoskedastisitas" class="section level3" number="12.5.4">
+<h3>
+<span class="header-section-number">12.5.4</span> Homoskedastisitas<a class="anchor" aria-label="anchor" href="#homoskedastisitas"><i class="fas fa-link"></i></a>
+</h3>
+<p>Syarat homoskedastisitas berarti <strong>besar varians (keragaman sebaran) dari galat model harus senantiasa konstan dan seragam</strong> tanpa memedulikan seberapa besar nilai target prediksinya <span class="citation">(<a href="referensi.html#ref-ModernStatR-Home">Thulin 2021</a>)</span>. Sebaliknya, jika sebaran galatnya tidak merata—misalnya menyempit di awal namun semakin melebar bebas di akhir mirip seperti bentuk corong—maka kondisi ini dinamakan <strong>heteroskedastisitas</strong> <span class="citation">(<a href="referensi.html#ref-Hair-Multivariate">Hair et al. 2013</a>)</span>. Pelanggaran ini berdampak fatal karena dapat menipu nilai uji signifikansi model sehingga kesimpulan tebakannya seolah meyakinkan padahal menyesatkan.</p>
+</div>
+<div id="non-autokorelasi" class="section level3" number="12.5.5">
+<h3>
+<span class="header-section-number">12.5.5</span> Non-Autokorelasi<a class="anchor" aria-label="anchor" href="#non-autokorelasi"><i class="fas fa-link"></i></a>
+</h3>
+<p>Asumsi ini mengharuskan supaya galat prediksi pada suatu subjek pengamatan berdiri sendiri dan tidak saling memengaruhi nilai galat di pengamatan lainnya <span class="citation">(<a href="referensi.html#ref-Hair-Multivariate">Hair et al. 2013</a>)</span>. Kondisi di mana galat saling menular (autokorelasi) umumnya sering terjadi pada <strong>data deret waktu (<em>time series</em>)</strong>, karena sebuah nilai di suatu waktu sangat bergantung erat pada nilainya di masa lalu (seperti angka tingkat inflasi bulanan atau suhu harian) <span class="citation">(<a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>. Namun untungnya, bagi riset yang pengumpulan datanya hanya bergantung pada <strong>data silang tempat (<em>cross-section</em>)</strong>—di mana sekelompok banyak data dari subjek berbeda direkam bersamaan secara serentak—peluang pelanggaran autokorelasi ini nyaris mustahil bisa terjadi.</p>
+</div>
+</div>
+<div id="studi-kasus-uji-asumsi-klasik-untuk-hubungan-jarak-taman-dan-kualitas-udara" class="section level2 unnumbered rmdkasus">
+<h2>Studi Kasus: Uji Asumsi Klasik untuk Hubungan Jarak Taman dan Kualitas Udara<a class="anchor" aria-label="anchor" href="#studi-kasus-uji-asumsi-klasik-untuk-hubungan-jarak-taman-dan-kualitas-udara"><i class="fas fa-link"></i></a>
+</h2>
+<p>Mari kita peragakan bagaimana asumsi-asumsi klasik ini diuji. Kita akan menggunakan dataset yang memiliki <strong>30 data pengamatan</strong> mengenai jarak ke taman kota dan Indeks Kualitas Udara (IKU) sebagai berikut.</p>
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:tbl-data-jarak-iku">Tabel 12.2: </span>Data Jarak ke Taman Kota dan Indeks Kualitas Udara 30 Lokasi
+<span id="tab:bangkitkan-data-asumsi">Tabel 12.2: </span>Data Jarak ke Taman Kota dan Indeks Kualitas Udara 30 Lokasi
 </caption>
 <thead><tr>
 <th style="text-align:center;">
@@ -704,15 +694,87 @@ No. 
 </tr>
 </tbody>
 </table></div>
+<p>Mengingat analisis ini hanya melibatkan <strong>satu variabel independen</strong> (jarak), maka asumsi <strong>non-multikolinearitas secara otomatis tidak diperlukan</strong>. Selain itu, memandang pengamatan dilakukan pada beberapa lokasi berbeda pada satu waktu yang sama (<em>cross-section</em>), asumsi <strong>non-autokorelasi umumnya juga dipandang telah terpenuhi secara konseptual</strong>. Oleh karena itu, kita hanya akan melakukan uji diagnostik atas asumsi yang tersisa, yaitu <strong>linearitas &amp; homoskedastisitas</strong>, serta <strong>normalitas residual</strong>.</p>
+<p><span class="tajuksaya">Uji Linearitas dan Homoskedastisitas</span></p>
+<p>Pemeriksaan linearitas dan pemerataan varians galat (homoskedastisitas) paling mudah dilakukan secara visual menggunakan diagram <em>Residuals vs Fitted</em> (plot titik galat terhadap titik prediksi).</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-cek-linearitas-homoskedastisitas"></span>
+<img src="figures/fig-cek-linearitas-homoskedastisitas-1.png" alt="Plot Residual vs Fitted untuk Pengecekan Linearitas dan Homoskedastisitas" width="70%"><p class="caption">
+Gambar 12.3: Plot Residual vs Fitted untuk Pengecekan Linearitas dan Homoskedastisitas
+</p>
+</div>
+<p>Pada <em>output</em> pengujian (<span class="math inline">\(n = 30\)</span>) ini, titik-titik residual tersebut idealnya tersebar secara acak di sekitar batas atas dan bawah dari garis <span class="math inline">\(0\)</span> secara simetris, tanpa membentuk pola pelebaran/penyempitan seperti corong (sebagai representasi persetujuan asumsi homoskedastisitas) maupun garis tren berwarna merah yang terlihat melengkung tajam memanjang (sebagai representasi pemenuhan asumsi linearitas).</p>
+<p><span class="tajuksaya">Uji Normalitas Residual</span></p>
+<p>Untuk memastikan tingkat keyakinan yang akurat dalam analisis kita nanti, galat model perlu berdistribusi normal. Salah satu alat uji yang sangat umum dan direkomendasikan adalah uji Shapiro-Wilk.</p>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  resid(model_iku_30)
+## W = 0,98602, p-value = 0,9533</code></pre>
+<p>Berdasarkan <em>output</em> uji normalitas di atas, diperoleh nilai <span class="math inline">\(p\text{-value}\)</span> sebesar <span class="math inline">\(0{,}9533\)</span>. Oleh karena angka signifikansi ini secara mutlak jauh lebih besar dari batas uji umum <span class="math inline">\(\alpha = 0{,}05\)</span>, maka hipotesis nol gagal ditolak. Dengan demikian, kita dapat mengambil kesimpulan meyakinkan yang mendukung asumsi bahwa <strong>residual model tesebut terdistribusi secara normal</strong>.</p>
+</div>
+<div id="memperoleh-persamaan-regresi-linear-sederhana" class="section level2" number="12.6">
+<h2>
+<span class="header-section-number">12.6</span> Memperoleh Persamaan Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#memperoleh-persamaan-regresi-linear-sederhana"><i class="fas fa-link"></i></a>
+</h2>
+<p>Untuk memperoleh persamaan regresi linear, kita memerlukan nilai dari konstanta (<span class="math inline">\(a\)</span>) dan koefisien regresi (<span class="math inline">\(b\)</span>). Kedua nilai tersebut diperoleh dengan <strong>mengolah data yang kita kumpulkan sebelumnya</strong>. Data yang kita peroleh harus memenuhi asumsi-asumsi dasar sebagai berikut:</p>
+<ul>
+<li>
+<strong>Tingkat pengukuran variabel metrik untuk kedua variabel</strong>. Baik variabel independen maupun variabel dependen kita harus berada pada tingkat pengukuran interval atau rasio. Hal ini disebabkan karena penentuan persamaan regresi linear melibatkan operasi matematis seperti penjumlahan, pengurangan, perkalian, dan pembagian.</li>
+<li>
+<strong>Hubungan linear antara variabel independen dan variabel dependen</strong>. Maksud dari hubungan linear adalah jika nilai variabel independen meningkat sebesar 1 satuan, maka nilai variabel dependen akan meningkat sebesar <span class="math inline">\(b\)</span> satuan, dan begitu seterusnya.</li>
+<li>
+<strong>Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain</strong>. Komponen galat yang terdistribusi acak membuat titik-titik data berada di atas dan di bawah garis regresi secara merata, tidak membentuk pola tertentu.</li>
+</ul>
+<p>Setelah terpenuhinya asumsi-asumsi tersebut, kita bisa menghitung nilai <span class="math inline">\(a\)</span> dan <span class="math inline">\(b\)</span> untuk menghasilkan persamaan regresi linear kita. Kita perlu memulai dari nilai <span class="math inline">\(b\)</span> terlebih dahulu, nilai <span class="math inline">\(a\)</span> baru bisa kita dapatkan setelah kita memperoleh nilai <span class="math inline">\(b\)</span> tersebut. Berikut adalah rumus untuk memperoleh nilai <span class="math inline">\(b\)</span>.</p>
+<p><span class="math display" id="eq:rumus-koefisien-regresi-linear">\[
+b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \bar{X})^2}
+\tag{12.2}
+\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(X_i\)</span> adalah nilai variabel independen untuk objek ke <span class="math inline">\(i\)</span>
+</li>
+<li>
+<span class="math inline">\(Y_i\)</span> adalah nilai variabel dependen untuk objek ke <span class="math inline">\(i\)</span>
+</li>
+<li>
+<span class="math inline">\(\bar{X}\)</span> adalah rata-rata nilai variabel independen</li>
+<li>
+<span class="math inline">\(\bar{Y}\)</span> adalah rata-rata nilai variabel dependen</li>
+<li>
+<span class="math inline">\(n\)</span> adalah jumlah objek</li>
+</ul>
+<p>Setelah kita memperoleh nilai <span class="math inline">\(b\)</span> atau koefisiennya, kita bisa menghitung konstanta <span class="math inline">\(a\)</span> dengan rumus berikut.</p>
+<p><span class="math display" id="eq:rumus-konstanta-regresi-linear">\[
+a = \bar{Y} - b\bar{X}
+\tag{12.3}
+\]</span></p>
+<p>dengan:</p>
+<ul>
+<li>
+<span class="math inline">\(\bar{X}\)</span> adalah rata-rata nilai variabel independen</li>
+<li>
+<span class="math inline">\(\bar{Y}\)</span> adalah rata-rata nilai variabel dependen</li>
+<li>
+<span class="math inline">\(b\)</span> adalah koefisien regresi hasil perhitungan sebelumnya</li>
+</ul>
+<p>Mari kita pelajari studi kasus berikut untuk lebih memahami bagaimana memperoleh persamaan regresi linear sederhana.</p>
+</div>
+<div id="studi-kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk-jarak-taman-dan-kualitas-udara" class="section level2 unnumbered rmdkasus">
+<h2>Studi Kasus: Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara<a class="anchor" aria-label="anchor" href="#studi-kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk-jarak-taman-dan-kualitas-udara"><i class="fas fa-link"></i></a>
+</h2>
+<p>Menggunakan data dari studi kasus sebelumnya, kita akan memperoleh persamaan regresi linear sederhana untuk hubungan antara jarak ke taman kota dan Indeks Kualitas Udara (IKU).</p>
 <p><span class="tajuksaya">Langkah 1: Periksa Diagram Pencar</span></p>
 <p>Sebelum menghitung persamaan regresi, kita perlu memastikan bahwa data memenuhi asumsi-asumsi yang diperlukan. Langkah pertama adalah menyajikan <strong>diagram pencar</strong> (<em>scatterplot</em>) dari data di atas.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-scatter-jarak-iku"></span>
 <img src="figures/fig-scatter-jarak-iku-1.png" alt="Diagram Pencar Hubungan Jarak ke Taman Kota dan Indeks Kualitas Udara" width="70%"><p class="caption">
-Gambar 12.3: Diagram Pencar Hubungan Jarak ke Taman Kota dan Indeks Kualitas Udara
+Gambar 12.4: Diagram Pencar Hubungan Jarak ke Taman Kota dan Indeks Kualitas Udara
 </p>
 </div>
-<p>Berdasarkan diagram pencar pada Gambar <a href="bab-13-regresi-sederhana.html#fig:fig-scatter-jarak-iku">12.3</a>, kita dapat mengevaluasi keterpenuhan tiga asumsi dasar regresi linear berikut.</p>
+<p>Berdasarkan diagram pencar pada Gambar <a href="bab-13-regresi-sederhana.html#fig:fig-scatter-jarak-iku">12.4</a>, kita dapat mengevaluasi keterpenuhan tiga asumsi dasar regresi linear berikut.</p>
 <ul>
 <li>
 <strong>Tingkat pengukuran variabel metrik untuk kedua variabel.</strong> Variabel jarak ke taman (<span class="math inline">\(X\)</span>) dan Indeks Kualitas Udara (<span class="math inline">\(Y\)</span>) keduanya berada pada tingkat pengukuran rasio—keduanya bersifat numerik dan dapat dikenai operasi matematis secara penuh. Asumsi ini <strong>terpenuhi</strong>.</li>
@@ -728,7 +790,7 @@ Gambar 12.3: Diagram Pencar Hubungan Jarak ke Taman Kota dan Indeks Kualitas Uda
 <p><span class="tajuksaya">Langkah 3: Susun Tabel Pembantu</span></p>
 <p>Untuk mempermudah penghitungan nilai <span class="math inline">\(b\)</span> menggunakan Persamaan <a href="bab-13-regresi-sederhana.html#eq:rumus-koefisien-regresi-linear">(12.2)</a>, kita susun tabel pembantu berikut. Tabel ini memuat selisih setiap nilai <span class="math inline">\(X_i\)</span> dan <span class="math inline">\(Y_i\)</span> dari rata-ratanya masing-masing, hasil perkalian selisih tersebut per objek, serta kuadrat selisih nilai <span class="math inline">\(X_i\)</span> dari rata-ratanya.</p>
 <div style="border: 0px;overflow-x: scroll; width:100%; ">
-<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tbl-pembantu-regresi">Tabel 12.3: </span>Tabel Pembantu Perhitungan Koefisien Regresi <span class="math inline">\(b\)</span>
 </caption>
@@ -1500,7 +1562,7 @@ a &amp;= \bar{Y} - b\bar{X} \\
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:scatter-plot-with-regression-line"></span>
 <img src="figures/scatter-plot-with-regression-line-1.png" alt="Diagram Pencar dengan Garis Regresi Linear untuk Jarak Taman Kota dan IKU" width="70%"><p class="caption">
-Gambar 12.4: Diagram Pencar dengan Garis Regresi Linear untuk Jarak Taman Kota dan IKU
+Gambar 12.5: Diagram Pencar dengan Garis Regresi Linear untuk Jarak Taman Kota dan IKU
 </p>
 </div>
 <p><span class="tajuksaya">Pemanfaatan Persamaan Regresi Linear</span></p>
@@ -1509,15 +1571,14 @@ Gambar 12.4: Diagram Pencar dengan Garis Regresi Linear untuk Jarak Taman Kota d
 <div class="rmdnote">
 <p>Pada studi kasus sebelumnya, terdapat dua jenis notasi untuk <span class="math inline">\(Y\)</span> (selain <span class="math inline">\(\bar{Y}\)</span>) yaitu <span class="math inline">\(Y\)</span> dan <span class="math inline">\(\hat{Y}\)</span>. Notasi <span class="math inline">\(\hat{Y}\)</span> dibaca “Y-topi” atau <em>“y-hat”</em> melambangkan nilai variabel dependen yang dihasilkan oleh <strong>prediksi model</strong>. Ini dimaksudkan untuk membedakannya dengan <span class="math inline">\(Y\)</span> yang merupakan nilai variabel dependen pada data hasil pengumpulan (empiris).</p>
 </div>
-</div>
-<div id="kualitas-model-regresi-linear-sederhana" class="section level2" number="12.5">
+<div id="kualitas-model-regresi-linear-sederhana" class="section level2" number="12.7">
 <h2>
-<span class="header-section-number">12.5</span> Kualitas Model Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#kualitas-model-regresi-linear-sederhana"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.7</span> Kualitas Model Regresi Linear Sederhana<a class="anchor" aria-label="anchor" href="#kualitas-model-regresi-linear-sederhana"><i class="fas fa-link"></i></a>
 </h2>
 <p>Sebagaimana dijelaskan sebelumnya, model regresi merupakan hasil estimasi dari data sampel. Artinya, setiap model regresi yang diperoleh dari data sampel memiliki <strong>indikator-indikator untuk menilai kualitas model tersebut</strong>. Indikator-indikator tersebut antara lain adalah sebagai berikut.</p>
-<div id="estimasi-standar-error-standard-error-estimate" class="section level3" number="12.5.1">
+<div id="estimasi-standar-error-standard-error-estimate" class="section level3" number="12.7.1">
 <h3>
-<span class="header-section-number">12.5.1</span> Estimasi Standar <em>Error</em> (<em>Standard Error Estimate</em>)<a class="anchor" aria-label="anchor" href="#estimasi-standar-error-standard-error-estimate"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.7.1</span> Estimasi Standar <em>Error</em> (<em>Standard Error Estimate</em>)<a class="anchor" aria-label="anchor" href="#estimasi-standar-error-standard-error-estimate"><i class="fas fa-link"></i></a>
 </h3>
 <p>Estimasi standar <em>error</em> adalah <strong>ukuran akurasi prediksi model</strong> <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Ukuran ini merupakan standardisasi selisih antara nilai <span class="math inline">\(Y\)</span> dari data empiris dengan nilai <span class="math inline">\(\hat{Y}\)</span> dari model regresi (komponen <em>error</em> atau galat itu sendiri). Secara matematis, estimasi standar <em>error</em> dirumuskan sebagai berikut.</p>
 <p><span class="math display" id="eq:rumus-standar-error-estimation">\[
@@ -1547,9 +1608,9 @@ s_{y \cdot x} = \sqrt{\frac{\sum_{i=1}^{n}(Y_i - \hat{Y}_i)^2}{n-2}}
 <p><span class="math display">\[s_{y \cdot x} = \sqrt{\frac{\sum_{i=1}^{30}(Y_i - \hat{Y}_i)^2}{30 - 2}} = 7,11036\]</span></p>
 <p>Simpangan baku variabel <span class="math inline">\(Y\)</span> (IKU) dari data kita adalah <span class="math inline">\(s_Y = 20,15517\)</span>. Karena estimasi standar <em>error</em> sebesar <span class="math inline">\(7,11036\)</span> <strong>lebih kecil dari simpangan baku <span class="math inline">\(Y\)</span></strong>, maka model regresi ini dapat dinyatakan cukup presisi—prediksi model lebih “ketat” dibandingkan sekadar menggunakan rata-rata <span class="math inline">\(Y\)</span> sebagai patokan. Nilai ini memiliki satuan yang sama dengan variabel dependen, yaitu <strong>poin IKU</strong>.</p>
 </div>
-<div id="koefisien-determinasi-r2" class="section level3" number="12.5.2">
+<div id="koefisien-determinasi-r2" class="section level3" number="12.7.2">
 <h3>
-<span class="header-section-number">12.5.2</span> Koefisien Determinasi (<span class="math inline">\(R^2\)</span>)<a class="anchor" aria-label="anchor" href="#koefisien-determinasi-r2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.7.2</span> Koefisien Determinasi (<span class="math inline">\(R^2\)</span>)<a class="anchor" aria-label="anchor" href="#koefisien-determinasi-r2"><i class="fas fa-link"></i></a>
 </h3>
 <p>Koefisien determinasi (<em>coefficient of determination</em>) yang dinotasikan dengan <span class="math inline">\(R^2\)</span> (dibaca “r-kuadrat”) adalah proporsi variasi pada variabel dependen yang dapat dijelaskan oleh variabel independen. Dengan demikian, ukuran ini dapat disebut juga <strong>ukuran kekuatan hubungan</strong>. Secara matematis, koefisien determinasi dirumuskan sebagai berikut.</p>
 <p><span class="math display" id="eq:rumus-r-square">\[
@@ -1582,9 +1643,9 @@ R^2 = \frac{SS_{reg}}{SS_{tot}} = \frac{\sum{(\hat{Y}_i - \bar{Y})^2}}{\sum{(Y_i
 <p><span class="math display">\[R^2 = \frac{SS_{reg}}{SS_{tot}} = \frac{10.365,10}{11.780,70} = 0,8798372\]</span></p>
 <p>Nilai <span class="math inline">\(R^2 = 0,8798372\)</span> berarti bahwa <strong>87,98% variasi Indeks Kualitas Udara dapat dijelaskan oleh jarak ke taman kota</strong>. Sementara itu, sisa 12,02% dipengaruhi oleh faktor-faktor lain yang tidak masuk dalam model, seperti kepadatan lalu lintas, keberadaan industri, atau pola angin.</p>
 </div>
-<div id="koefisien-signifikansi-model-dan-variabel-independen" class="section level3" number="12.5.3">
+<div id="signifikansi-model" class="section level3" number="12.7.3">
 <h3>
-<span class="header-section-number">12.5.3</span> Koefisien Signifikansi Model dan Variabel Independen<a class="anchor" aria-label="anchor" href="#koefisien-signifikansi-model-dan-variabel-independen"><i class="fas fa-link"></i></a>
+<span class="header-section-number">12.7.3</span> Koefisien Signifikansi Model dan Variabel Independen<a class="anchor" aria-label="anchor" href="#signifikansi-model"><i class="fas fa-link"></i></a>
 </h3>
 <p>Koefisien signifikansi model dan variabel independen diuji menggunakan uji F dan uji t. Uji F digunakan untuk menguji <strong>signifikansi model secara keseluruhan</strong>, sedangkan uji t digunakan untuk menguji <strong>signifikansi variabel independen secara individual</strong>.</p>
 <p>Signifikansi model diartikan sebagai <strong>keberartian hubungan pengaruh antara variabel independen dengan variabel dependennya</strong>. Jika uji F menunjukkan hasil yang signifikan, maka dikatakan bahwa hubungan antara variabel independen dengan variabel dependennya memiliki keberartian. Sebaliknya, jika uji F menunjukkan hasil yang tidak signifikan, maka dikatakan bahwa hubungan antara variabel independen dengan variabel dependennya tidak memiliki keberartian.</p>
@@ -1696,26 +1757,35 @@ R^2 = \frac{SS_{reg}}{SS_{tot}} = \frac{\sum{(\hat{Y}_i - \bar{Y})^2}}{\sum{(Y_i
 <a class="nav-link" href="#bab-13-regresi-sederhana"><span class="header-section-number">12</span> Kausalitas dengan Regresi Linear Sederhana</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#capaian-pembelajaran-11">Capaian Pembelajaran</a></li></ul>
 </li>
 <li><a class="nav-link" href="#apa-yang-menentukan-sebuah-hubungan-adalah-kausalitas"><span class="header-section-number">12.1</span> Apa yang Menentukan Sebuah Hubungan adalah Kausalitas?</a></li>
-<li>
-<a class="nav-link" href="#pemakaian-analisis-kausalitas-dalam-konteks-perencanaan-wilayah-dan-kota"><span class="header-section-number">12.2</span> Pemakaian Analisis Kausalitas dalam Konteks Perencanaan Wilayah dan Kota</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#studi-kasus-pemakaian-analisis-kausalitas-dalam-konteks-pwk">Studi Kasus Pemakaian Analisis Kausalitas dalam Konteks PWK</a></li></ul>
-</li>
+<li><a class="nav-link" href="#pemakaian-analisis-kausalitas-dalam-konteks-perencanaan-wilayah-dan-kota"><span class="header-section-number">12.2</span> Pemakaian Analisis Kausalitas dalam Konteks Perencanaan Wilayah dan Kota</a></li>
+<li><a class="nav-link" href="#studi-kasus-pemakaian-analisis-kausalitas-dalam-konteks-pwk">Studi Kasus Pemakaian Analisis Kausalitas dalam Konteks PWK</a></li>
 <li><a class="nav-link" href="#mengenal-model"><span class="header-section-number">12.3</span> Mengenal Model</a></li>
 <li>
 <a class="nav-link" href="#model-regresi-linear-sederhana"><span class="header-section-number">12.4</span> Model Regresi Linear Sederhana</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#memaknai-persamaan-regresi-linear-sederhana"><span class="header-section-number">12.4.1</span> Memaknai Persamaan Regresi Linear Sederhana</a></li>
 <li><a class="nav-link" href="#studi-kasus-memaknai-persamaan-regresi-linear-untuk-jarak-taman-dan-kualitas-udara">Studi Kasus: Memaknai Persamaan Regresi Linear untuk Jarak Taman dan Kualitas Udara</a></li>
 <li><a class="nav-link" href="#studi-kasus-memaknai-bentuk-linear-pada-persamaan-regresi-untuk-jarak-taman-dan-kualitas-udara">Studi Kasus: Memaknai Bentuk Linear pada Persamaan Regresi untuk Jarak Taman dan Kualitas Udara</a></li>
-<li><a class="nav-link" href="#memperoleh-persamaan-regresi-linear-sederhana"><span class="header-section-number">12.4.2</span> Memperoleh Persamaan Regresi Linear Sederhana</a></li>
-<li><a class="nav-link" href="#studi-kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk-jarak-taman-dan-kualitas-udara">Studi Kasus: Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#kualitas-model-regresi-linear-sederhana"><span class="header-section-number">12.5</span> Kualitas Model Regresi Linear Sederhana</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#estimasi-standar-error-standard-error-estimate"><span class="header-section-number">12.5.1</span> Estimasi Standar Error (Standard Error Estimate)</a></li>
+<a class="nav-link" href="#uji-asumsi-klasik"><span class="header-section-number">12.5</span> Uji Asumsi Klasik</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#linearitas"><span class="header-section-number">12.5.1</span> Linearitas</a></li>
+<li><a class="nav-link" href="#normalitas-residual"><span class="header-section-number">12.5.2</span> Normalitas Residual</a></li>
+<li><a class="nav-link" href="#non-multikolinearitas"><span class="header-section-number">12.5.3</span> Non-Multikolinearitas</a></li>
+<li><a class="nav-link" href="#homoskedastisitas"><span class="header-section-number">12.5.4</span> Homoskedastisitas</a></li>
+<li><a class="nav-link" href="#non-autokorelasi"><span class="header-section-number">12.5.5</span> Non-Autokorelasi</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#studi-kasus-uji-asumsi-klasik-untuk-hubungan-jarak-taman-dan-kualitas-udara">Studi Kasus: Uji Asumsi Klasik untuk Hubungan Jarak Taman dan Kualitas Udara</a></li>
+<li><a class="nav-link" href="#memperoleh-persamaan-regresi-linear-sederhana"><span class="header-section-number">12.6</span> Memperoleh Persamaan Regresi Linear Sederhana</a></li>
+<li><a class="nav-link" href="#studi-kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk-jarak-taman-dan-kualitas-udara">Studi Kasus: Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara</a></li>
+<li>
+<a class="nav-link" href="#kualitas-model-regresi-linear-sederhana"><span class="header-section-number">12.7</span> Kualitas Model Regresi Linear Sederhana</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#estimasi-standar-error-standard-error-estimate"><span class="header-section-number">12.7.1</span> Estimasi Standar Error (Standard Error Estimate)</a></li>
 <li><a class="nav-link" href="#studi-kasus-estimasi-standar-error">Studi Kasus: Estimasi Standar Error</a></li>
-<li><a class="nav-link" href="#koefisien-determinasi-r2"><span class="header-section-number">12.5.2</span> Koefisien Determinasi (\(R^2\))</a></li>
+<li><a class="nav-link" href="#koefisien-determinasi-r2"><span class="header-section-number">12.7.2</span> Koefisien Determinasi (\(R^2\))</a></li>
 <li><a class="nav-link" href="#studi-kasus-koefisien-determinasi">Studi Kasus: Koefisien Determinasi</a></li>
-<li><a class="nav-link" href="#koefisien-signifikansi-model-dan-variabel-independen"><span class="header-section-number">12.5.3</span> Koefisien Signifikansi Model dan Variabel Independen</a></li>
+<li><a class="nav-link" href="#signifikansi-model"><span class="header-section-number">12.7.3</span> Koefisien Signifikansi Model dan Variabel Independen</a></li>
 <li><a class="nav-link" href="#studi-kasus-signifikansi-model-dan-variabel-independen">Studi Kasus: Signifikansi Model dan Variabel Independen</a></li>
 </ul>
 </li>
