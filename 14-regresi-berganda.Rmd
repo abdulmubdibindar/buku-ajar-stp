@@ -65,7 +65,7 @@ Variabel-variabel independen yang akan kita perhitungkan di antaranya adalah
 - persentase tutupan vegetasi di sekitar lokasi pengamatan ($\text{vegetasi}$)
 - zona fungsi lahan (perumahan, komersial, atau industri) ($\text{zona}$)
 
-Jika kita melambangkan IKU dengan $\text{iku}$, maka persamaan regresi linear berganda yang akan kita gunakan adalah sebagai berikut.
+Jika kita melambangkan variabel dependen dengan $\text{IKU}$, maka persamaan regresi linear berganda yang akan kita gunakan adalah sebagai berikut.
 
 $$
 \text{IKU} = \beta_0 + \beta_1 \text{jarak_taman} + \beta_2 \text{jarak_industri} + \beta_3 \text{vegetasi} + \beta_4 \text{zona}
