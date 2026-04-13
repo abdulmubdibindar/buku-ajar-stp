@@ -433,8 +433,3 @@ mengelompokkan-variabel-variabel-ke-dalam-dimensi-baru
 merotasi-dimensi
 memperoleh-skor-komponen-khusus-pca
 interpretasi-dimensi
-appendix-tabel-normdist
-appendix-tabel-t-1arah
-appendix-tabel-t-2arah
-appendix-tabel-f-5
-appendix-tabel-f-10
