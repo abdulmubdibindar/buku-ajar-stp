@@ -8,7 +8,7 @@
 <meta name="author" content="Muhammad Abdul Mubdi Bindar">
 <meta name="author" content="Husna Tiara Putri">
 <meta name="author" content="Valendya Rilansari">
-<meta name="generator" content="bookdown 0.45 with bs4_book()">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
 <meta property="og:title" content="Bab 13 Kausalitas dengan Regresi Linear Berganda | Buku Ajar Statistika untuk Perencanaan">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
@@ -85,7 +85,7 @@
 <li><a class="" href="korelasi-antarvariabel-metrik.html"><span class="header-section-number">11</span> Korelasi Antarvariabel Metrik</a></li>
 <li><a class="" href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Kausalitas dengan Regresi Linear Sederhana</a></li>
 <li><a class="active" href="bab-regresi-berganda.html"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a></li>
-<li><a class="" href="analisis-statistik-multivariat-interdependensi.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi</a></li>
+<li><a class="" href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor</a></li>
 <li><a class="" href="referensi.html">Referensi</a></li>
 <li class="book-part">Lampiran</li>
 <li><a class="" href="tabel-statistik.html">Tabel Statistik</a></li>
@@ -166,7 +166,7 @@ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_k X_k + \epsilon
 <li>persentase tutupan vegetasi di sekitar lokasi pengamatan (<span class="math inline">\(\text{vegetasi}\)</span>)</li>
 <li>zona fungsi lahan (perumahan, komersial, atau industri) (<span class="math inline">\(\text{zona}\)</span>)</li>
 </ul>
-<p>Jika kita melambangkan IKU dengan <span class="math inline">\(\text{iku}\)</span>, maka persamaan regresi linear berganda yang akan kita gunakan adalah sebagai berikut.</p>
+<p>Jika kita melambangkan variabel dependen dengan <span class="math inline">\(\text{IKU}\)</span>, maka persamaan regresi linear berganda yang akan kita gunakan adalah sebagai berikut.</p>
 <p><span class="math display">\[
 \text{IKU} = \beta_0 + \beta_1 \text{jarak_taman} + \beta_2 \text{jarak_industri} + \beta_3 \text{vegetasi} + \beta_4 \text{zona}
 \]</span></p>
@@ -593,6 +593,15 @@ b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \ba
 <h3>Studi Kasus: Evaluasi dan Pemilihan Model Parsimoni<a class="anchor" aria-label="anchor" href="#studi-kasus-evaluasi-dan-pemilihan-model-parsimoni"><i class="fas fa-link"></i></a>
 </h3>
 <p>Mari kita aplikasikan prinsip evaluasi dan seleksi <em>stepwise</em> pada <em>dataset</em> kasus multikolinearitas yang sebelumnya telah kita singgung. Pertama-tama, kita buat model regresi penuh (<em>full model</em>) yang memasukkan seluruh variabel independen ke dalam persamaan.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Membuat model regresi dengan seluruh variabel</span></span>
+<span><span class="va">model_mk_penuh</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span></span>
+<span>    <span class="va">iku</span> <span class="op">~</span> <span class="va">jarak_taman</span> <span class="op">+</span> <span class="va">jarak_industri</span> <span class="op">+</span> <span class="va">vegetasi</span> <span class="op">+</span> <span class="va">zona</span>,</span>
+<span>    data <span class="op">=</span> <span class="va">df_mk</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Menampilkan ringkasan model</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_mk_penuh</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = iku ~ jarak_taman + jarak_industri + vegetasi + 
@@ -618,6 +627,15 @@ b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \ba
 ## F-statistic: 137,2 on 5 and 24 DF,  p-value: &lt; 2,2e-16</code></pre>
 <p>Jika dicermati pada <em>output</em> model penuh, nilai <em>p-value</em> untuk variabel <code>jarak_industri</code> adalah 0,471 (jauh lebih besar dari batas kekeliruan 0,05). Hal ini berarti secara parsial variabel tersebut <strong>tidak mencapai signifikansi statistik</strong>. Padahal, uji keseluruhan model sangat signifikan dengan F-statistik sebesar 137,2 (<em>p-value</em> &lt; 0,05) dan memiliki nilai <em>adjusted R-squared</em> sebesar 0,9591. Inilah dampak nyata dari multikolinearitas: model tampak sukses secara keseluruhan, namun variabel yang saling bertumpang-tindih di dalamnya menjadi gagal menunjukkan nilai prediksinya yang sebenarnya.</p>
 <p>Untuk menanggulangi penumpukan variabel redundan tersebut dan mencari model yang paling parsimoni, kita menggunakan fungsi <code><a href="https://rdrr.io/r/stats/step.html">step()</a></code> di R sebagai implementasi mekanisme <em>stepwise</em>.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Melakukan seleksi stepwise</span></span>
+<span><span class="va">model_mk_stepwise</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/step.html">step</a></span><span class="op">(</span></span>
+<span>    <span class="va">model_mk_penuh</span>,</span>
+<span>    direction <span class="op">=</span> <span class="st">"both"</span>, trace <span class="op">=</span> <span class="fl">0</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Menampilkan ringkasan model parsimoni</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model_mk_stepwise</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = iku ~ jarak_taman + vegetasi + zona, data = df_mk)
@@ -681,7 +699,7 @@ b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \ba
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Kausalitas dengan Regresi Linear Sederhana</a></div>
-<div class="next"><a href="analisis-statistik-multivariat-interdependensi.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi</a></div>
+<div class="next"><a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">

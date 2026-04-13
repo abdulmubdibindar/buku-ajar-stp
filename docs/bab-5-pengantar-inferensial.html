@@ -8,7 +8,7 @@
 <meta name="author" content="Muhammad Abdul Mubdi Bindar">
 <meta name="author" content="Husna Tiara Putri">
 <meta name="author" content="Valendya Rilansari">
-<meta name="generator" content="bookdown 0.45 with bs4_book()">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
 <meta property="og:title" content="Bab 5 Pengantar Analisis Statistik Inferensial | Buku Ajar Statistika untuk Perencanaan">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
@@ -85,7 +85,7 @@
 <li><a class="" href="korelasi-antarvariabel-metrik.html"><span class="header-section-number">11</span> Korelasi Antarvariabel Metrik</a></li>
 <li><a class="" href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Kausalitas dengan Regresi Linear Sederhana</a></li>
 <li><a class="" href="bab-regresi-berganda.html"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a></li>
-<li><a class="" href="analisis-statistik-multivariat-interdependensi.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi</a></li>
+<li><a class="" href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor</a></li>
 <li><a class="" href="referensi.html">Referensi</a></li>
 <li class="book-part">Lampiran</li>
 <li><a class="" href="tabel-statistik.html">Tabel Statistik</a></li>
@@ -144,7 +144,13 @@ Gambar 5.1: Ilustrasi Perbandingan Populasi Mahasiswa ITERA dan Sampel
 <span class="header-section-number">5.3</span> Teknik-Teknik Pengambilan Sampel <em>(Sampling Techniques)</em><a class="anchor" aria-label="anchor" href="#teknik-teknik-pengambilan-sampel-sampling-techniques"><i class="fas fa-link"></i></a>
 </h2>
 <p>Teknik pengambilan sampel bertujuan memastikan bahwa sampel yang dipilih benar-benar dapat mewakili populasinya. <span class="citation">Healey (<a href="referensi.html#ref-healey2021statistics">2021</a>)</span> menekankan prinsip EPSEM (<em>Equal Probability of Selection Method</em>), yakni prinsip yang menekankan bahwa <strong>setiap anggota populasi memiliki kesempatan yang sama untuk dipilih</strong>. Hal ini penting untuk menghasilkan sampel yang representatif.</p>
+<p>Terdapat dua jenis teknik dalam pengambilan sampel, yakni <strong>teknik probabilitas</strong> dan <strong>teknik non-probabilitas</strong>.</p>
+<div id="teknik-probabilitas" class="section level3" number="5.3.1">
+<h3>
+<span class="header-section-number">5.3.1</span> Teknik Probabilitas<a class="anchor" aria-label="anchor" href="#teknik-probabilitas"><i class="fas fa-link"></i></a>
+</h3>
 <p>Teknik probabilitas adalah teknik yang menggunakan prinsip EPSEM. Untuk dapat menggunakannya, kita harus memiliki <strong>kerangka sampel</strong>. Kerangka sampel adalah daftar seluruh anggota populasi yang akan menjadi acuan kita untuk memilih sampel nantinya. Ada empat jenis teknik yang termasuk ke dalam teknik pengambilan sampel probabilitas <span class="citation">Saunders et al. (<a href="referensi.html#ref-saunders2023">2023</a>)</span>: <em>simple random sampling</em>, <em>systematic sampling</em>, <em>stratified sampling</em>, dan <em>multi-stage cluster sampling</em>.</p>
+</div>
 <div id="studi-kasus-pengambilan-sampel-dengan-populasi-kecil" class="section level3 unnumbered rmdkasus">
 <h3>Studi Kasus: Pengambilan Sampel dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-pengambilan-sampel-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
 </h3>
@@ -248,10 +254,10 @@ Gambar 5.1: Ilustrasi Perbandingan Populasi Mahasiswa ITERA dan Sampel
 </table></div>
 <p>Mari kita terapkan keempat teknik <em>sampling</em> untuk memilih sampel dari 16 orang ini.</p>
 </div>
-<div id="simple-random-sampling" class="section level3" number="5.3.1">
-<h3>
-<span class="header-section-number">5.3.1</span> <em>Simple Random Sampling</em><a class="anchor" aria-label="anchor" href="#simple-random-sampling"><i class="fas fa-link"></i></a>
-</h3>
+<div id="simple-random-sampling" class="section level4" number="5.3.1.1">
+<h4>
+<span class="header-section-number">5.3.1.1</span> <em>Simple Random Sampling</em><a class="anchor" aria-label="anchor" href="#simple-random-sampling"><i class="fas fa-link"></i></a>
+</h4>
 <p><em>Simple random sampling</em> merupakan teknik paling dasar dalam pengambilan sampel probabilistik. Kita mengambil secara acak nomor yang merepresentasikan nomor urut sampel. Ini memungkinkan setiap anggota populasi memiliki peluang yang sama untuk dipilih. Pemilihan anggota sampel secara acak ini dapat dilakukan dengan bantuan sistem eksternal dari peneliti, misalnya melalui tabel angka acak atau program komputer yang menghasilkan angka acak (<em>random number generator</em>) (Gambar <a href="bab-5-pengantar-inferensial.html#fig:05-inferensia-img-srs">5.2</a>).</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:05-inferensia-img-srs"></span>
@@ -259,15 +265,14 @@ Gambar 5.1: Ilustrasi Perbandingan Populasi Mahasiswa ITERA dan Sampel
 Gambar 5.2: Ilustrasi Simple Random Sampling
 </p>
 </div>
-</div>
-<div id="catatan-miskonsepsi-tentang-istilah-random" class="section level3 unnumbered rmdnote">
-<h3>Catatan: Miskonsepsi tentang Istilah Random<a class="anchor" aria-label="anchor" href="#catatan-miskonsepsi-tentang-istilah-random"><i class="fas fa-link"></i></a>
-</h3>
+<div class="rmdnote">
+<p><span class="tajuksaya">Catatan: Miskonsepsi tentang Istilah Random</span></p>
 <p>Banyak yang salah kaprah dengan istilah <em>random</em> pada <em>simple random sampling</em>. Keacakan (<em>random</em>) di sini maksudnya bukan asal mengambil sampel secara acak <strong>langsung di dunia nyata</strong>, akan tetapi kita mengambil sampel tersebut dari <strong>sebuah kerangka sampel</strong>, elemen vital dalam teknik <em>sampling</em> probabilitas.</p>
 </div>
-<div id="studi-kasus-simple-random-sampling-dengan-populasi-kecil" class="section level3 unnumbered rmdkasus">
-<h3>Studi Kasus: <em>Simple Random Sampling</em> dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-simple-random-sampling-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
-</h3>
+</div>
+<div id="studi-kasus-simple-random-sampling-dengan-populasi-kecil" class="section level4 unnumbered rmdkasus">
+<h4>Studi Kasus: <em>Simple Random Sampling</em> dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-simple-random-sampling-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
+</h4>
 <p>Misalkan kita menggunakan <em>random number generator</em> yang ada di hampir semua program <em>spreadsheet</em> untuk memilih 4 sampel. <em>Hasilnya adalah 4 orang yang terpilih secara acak tanpa pola tertentu.</em></p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
@@ -306,10 +311,10 @@ Gambar 5.2: Ilustrasi Simple Random Sampling
 </tbody>
 </table></div>
 </div>
-<div id="systematic-random-sampling" class="section level3" number="5.3.2">
-<h3>
-<span class="header-section-number">5.3.2</span> <em>Systematic Random Sampling</em><a class="anchor" aria-label="anchor" href="#systematic-random-sampling"><i class="fas fa-link"></i></a>
-</h3>
+<div id="systematic-random-sampling" class="section level4" number="5.3.1.2">
+<h4>
+<span class="header-section-number">5.3.1.2</span> <em>Systematic Random Sampling</em><a class="anchor" aria-label="anchor" href="#systematic-random-sampling"><i class="fas fa-link"></i></a>
+</h4>
 <p>Berbeda dengan <em>simple random sampling</em>, <em>systematic random sampling</em> menggunakan sistem pemilihan berdasarkan interval tertentu. Langkah pertama adalah menentukan angka acak awal, kemudian memilih sampel berikutnya berdasarkan kelipatan dari angka tersebut.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:05-inferensia-img-systematic"></span>
@@ -318,9 +323,9 @@ Gambar 5.3: Ilustrasi Systematic Random Sampling
 </p>
 </div>
 </div>
-<div id="studi-kasus-systematic-sampling-dengan-populasi-kecil" class="section level3 unnumbered rmdkasus">
-<h3>Studi Kasus: <em>Systematic Sampling</em> dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-systematic-sampling-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
-</h3>
+<div id="studi-kasus-systematic-sampling-dengan-populasi-kecil" class="section level4 unnumbered rmdkasus">
+<h4>Studi Kasus: <em>Systematic Sampling</em> dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-systematic-sampling-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
+</h4>
 <p>Kita ingin mengambil sampel dengan interval <strong>k=4</strong>. Kita urutkan berdasarkan ID, lalu ambil setiap kelipatan 4 (4, 8, 12, 16).</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
@@ -360,10 +365,10 @@ Gambar 5.3: Ilustrasi Systematic Random Sampling
 </table></div>
 <p><em>Perhatikan pola ID yang terpilih selalu berjarak 4 angka.</em></p>
 </div>
-<div id="stratified-random-sampling" class="section level3" number="5.3.3">
-<h3>
-<span class="header-section-number">5.3.3</span> <em>Stratified Random Sampling</em><a class="anchor" aria-label="anchor" href="#stratified-random-sampling"><i class="fas fa-link"></i></a>
-</h3>
+<div id="stratified-random-sampling" class="section level4" number="5.3.1.3">
+<h4>
+<span class="header-section-number">5.3.1.3</span> <em>Stratified Random Sampling</em><a class="anchor" aria-label="anchor" href="#stratified-random-sampling"><i class="fas fa-link"></i></a>
+</h4>
 <p>Dalam beberapa kasus, populasi terdiri atas kelompok-kelompok, disebut <strong>strata</strong>, yang memiliki karakteristik yang sama didalamnya, misalnya jumlah anggota rumah tangga, tingkat pendidikan, atau status sosial ekonomi. Agar setiap kelompok terwakili, digunakanlah teknik <em>stratified random sampling</em>. Caranya adalah dengan membagi populasi ke dalam beberapa strata sesuai karakteristik yang relevan, kemudian mengambil sampel secara proporsional dari setiap strata.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:05-inferensia-img-stratified"></span>
@@ -372,9 +377,9 @@ Gambar 5.4: Ilustrasi Stratified Random Sampling
 </p>
 </div>
 </div>
-<div id="studi-kasus-stratified-random-sampling-dengan-populasi-kecil" class="section level3 unnumbered rmdkasus">
-<h3>Studi Kasus: <em>Stratified Random Sampling</em> dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-stratified-random-sampling-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
-</h3>
+<div id="studi-kasus-stratified-random-sampling-dengan-populasi-kecil" class="section level4 unnumbered rmdkasus">
+<h4>Studi Kasus: <em>Stratified Random Sampling</em> dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-stratified-random-sampling-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
+</h4>
 <p>Kita ingin memastikan setiap <strong>Kelompok</strong> (A, B, C, D) terwakili. Kita bagi populasi menjadi 4 strata (Kelompok), lalu ambil <strong>1 orang acak</strong> dari setiap strata.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
@@ -414,10 +419,10 @@ Gambar 5.4: Ilustrasi Stratified Random Sampling
 </table></div>
 <p><em>Hasilnya menjamin ada masing-masing satu perwakilan dari Kelompok A, B, C, dan D.</em></p>
 </div>
-<div id="multi-stage-cluster-sampling" class="section level3" number="5.3.4">
-<h3>
-<span class="header-section-number">5.3.4</span> <em>Multi-Stage Cluster Sampling</em><a class="anchor" aria-label="anchor" href="#multi-stage-cluster-sampling"><i class="fas fa-link"></i></a>
-</h3>
+<div id="multi-stage-cluster-sampling" class="section level4" number="5.3.1.4">
+<h4>
+<span class="header-section-number">5.3.1.4</span> <em>Multi-Stage Cluster Sampling</em><a class="anchor" aria-label="anchor" href="#multi-stage-cluster-sampling"><i class="fas fa-link"></i></a>
+</h4>
 <p>Teknik ini digunakan ketika kerangka sampel individu tidak tersedia, tetapi kerangka sampel untuk kelompok (klaster) tersedia. Misalnya, kita tidak punya daftar nama seluruh penduduk kota, tetapi kita punya kerangka sampel nama-nama kelurahan. Kita bisa memilih beberapa kelurahan secara acak (tahap 1), kemudian menghasilkan kerangka sampel baru dari kelurahan yang terpilih tersebut, misalnya berdasarkan batas administratif (RW/lingkungan), atau berdasarkan batas fisik, seperti blok-blok jalan (tahap 2). Dari kerangka sampel tersebut kita pilih lagi secara acak anggota kerangka sampel tersebut.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:05-inferensia-img-cluster"></span>
@@ -426,9 +431,9 @@ Gambar 5.5: Ilustrasi Multi-Stage Cluster Sampling
 </p>
 </div>
 </div>
-<div id="studi-kasus-multi-stage-cluster-sampling-dengan-populasi-kecil" class="section level3 unnumbered rmdkasus">
-<h3>Studi Kasus: <em>Multi-Stage Cluster Sampling</em> dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-multi-stage-cluster-sampling-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
-</h3>
+<div id="studi-kasus-multi-stage-cluster-sampling-dengan-populasi-kecil" class="section level4 unnumbered rmdkasus">
+<h4>Studi Kasus: <em>Multi-Stage Cluster Sampling</em> dengan Populasi Kecil<a class="anchor" aria-label="anchor" href="#studi-kasus-multi-stage-cluster-sampling-dengan-populasi-kecil"><i class="fas fa-link"></i></a>
+</h4>
 <p>Kita ingin menghemat tenaga dengan hanya mendatangi satu lokasi saja. Kita pilih secara acak <strong>1 Blok</strong> (Cluster), lalu ambil <strong>semua orang</strong> di blok tersebut.</p>
 <div class="inline-table"><table class="table table-sm">
 <caption>
@@ -467,6 +472,33 @@ Gambar 5.5: Ilustrasi Multi-Stage Cluster Sampling
 </tbody>
 </table></div>
 <p><em>Kita hanya perlu mendatangi satu lokasi (Blok), tapi mendapatkan 4 responden sekaligus.</em></p>
+</div>
+<div id="teknik-non-probabilitas" class="section level3" number="5.3.2">
+<h3>
+<span class="header-section-number">5.3.2</span> Teknik Non-probabilitas<a class="anchor" aria-label="anchor" href="#teknik-non-probabilitas"><i class="fas fa-link"></i></a>
+</h3>
+<p>Jika teknik probabilitas memerlukan kerangka sampel sebagai bahan pengambilan sampel, maka teknik non-probabilitas <strong>tidak memerlukan kerangka sampel</strong>, alias kita tidak perlu membuat daftar seluruh anggota populasi terlebih dahulu untuk mengambil sampel.</p>
+<p>Penggunaan sampel nonprobabilitas biasanya dilakukan ketika peneliti tidak memiliki kerangka sampel (<em>sampling frame</em>) yang memadai, atau ketika penggunaan sampel probabilitas dianggap tidak praktis, terlalu mahal, dan memakan waktu lama. Selain itu, teknik ini sering diaplikasikan pada tahap awal penelitian eksploratori, seperti pengujian awal kuesioner (<em>pilot testing</em>) <span class="citation">(<a href="referensi.html#ref-devaus2014surveys"><span class="nocase">de Vaus</span> 2014</a>; <a href="referensi.html#ref-saunders2023">Saunders et al. 2023</a>)</span>.</p>
+<p>Berikut adalah beberapa teknik pengambilan sampel nonprobabilitas yang umum digunakan:</p>
+<ol style="list-style-type: decimal">
+<li>
+<strong><em>Convenience</em> atau <em>Haphazard Sampling</em></strong>: Pemilihan kasus didasarkan pada kemudahan akses bagi peneliti, seperti mewawancarai orang yang kebetulan ditemui di pusat perbelanjaan atau menggunakan mahasiswa di kelas sendiri sebagai subjek penelitian.</li>
+<li>
+<strong><em>Quota Sampling</em></strong>: Teknik ini bertujuan untuk memastikan bahwa sampel yang diambil mewakili karakteristik tertentu dari populasi (seperti usia atau jenis kelamin) dengan menetapkan kuota tertentu bagi setiap kategori. Meskipun terlihat representatif dalam karakteristik yang ditetapkan, pemilihannya tetap tidak dilakukan secara acak.</li>
+<li>
+<strong><em>Purposive</em> atau <em>Judgemental Sampling</em></strong>: Peneliti menggunakan pertimbangan profesionalnya untuk memilih kasus yang dianggap paling informatif atau tipikal guna menjawab pertanyaan penelitian. Terdapat beberapa variasi dari teknik ini, antara lain:
+<ul>
+<li>Kasus Ekstrem (<em>Extreme Case</em>): Fokus pada kasus yang sangat tidak biasa untuk mempelajari fenomena secara mendalam.</li>
+<li>Heterogen (<em>Maximum Variation</em>): Memilih kasus yang sangat beragam untuk mengidentifikasi tema-tema utama yang muncul di berbagai kondisi.</li>
+<li>Kasus Kritis (<em>Critical Case</em>): Memilih kasus yang dianggap sangat penting karena jika suatu fenomena terjadi di sana, maka besar kemungkinan akan terjadi di tempat lain.</li>
+</ul>
+</li>
+<li>
+<strong><em>Snowball Sampling</em></strong>: Teknik ini dimulai dengan beberapa partisipan awal yang kemudian diminta untuk mengidentifikasi atau merekomendasikan anggota populasi lainnya yang sulit dijangkau. Metode ini sangat berguna untuk meneliti kelompok masyarakat yang “tersembunyi”.</li>
+<li>
+<strong><em>Volunteer atau Self-selection Sampling</em></strong>: Individu secara sukarela mendaftarkan diri atau merespons undangan peneliti untuk berpartisipasi dalam penelitian.</li>
+</ol>
+<p>Keterbatasan utama dari sampel nonprobabilitas adalah ketidakmampuannya untuk digunakan dalam generalisasi statistik ke populasi yang lebih luas. Karena tidak berdasarkan prinsip <em>Equal Probability of Selection Method</em> (EPSEM), peneliti tidak dapat menghitung margin kesalahan atau tingkat kepastian hasil secara matematis. Oleh karena itu, kesimpulan dari penelitian ini biasanya bersifat terbatas pada kelompok yang diuji atau digunakan untuk membangun teori yang perlu diuji lebih lanjut melalui metode probabilitas.</p>
 </div>
 </div>
 <div id="soal-evaluasi-6" class="section level2 unnumbered rmdexercise">
@@ -739,9 +771,84 @@ Gambar 5.11: Ilustrasi Aturan 68-95-99 (Aturan Empiris)
 </p>
 </div>
 </div>
-<div id="distribusi-objek-dan-distribusi-statistik" class="section level3" number="5.5.3">
+<div id="distribusi-t" class="section level3" number="5.5.3">
 <h3>
-<span class="header-section-number">5.5.3</span> Distribusi Objek dan Distribusi Statistik<a class="anchor" aria-label="anchor" href="#distribusi-objek-dan-distribusi-statistik"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5.3</span> Distribusi <span class="math inline">\(t\)</span><a class="anchor" aria-label="anchor" href="#distribusi-t"><i class="fas fa-link"></i></a>
+</h3>
+<p>Selain distribusi normal, dalam statistika inferensial kita juga mengenal distribusi <span class="math inline">\(t\)</span>. Distribusi <span class="math inline">\(t\)</span> digunakan ketika kita ingin melakukan inferensi statistik pada populasi yang berukuran kecil (<span class="math inline">\(n &lt; 120\)</span>) atau ketika kita tidak mengetahui varians populasi. Distribusi ini dikembangkan oleh William Sealy Gosset pada awal abad ke-20 saat ia bekerja di pabrik bir Guinness di Dublin, di mana ia menggunakan nama samaran “Student” untuk menerbitkan temuannya <span class="citation">(<a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>.</p>
+<div id="karakteristik-visual-dan-bentuk" class="section level4" number="5.5.3.1">
+<h4>
+<span class="header-section-number">5.5.3.1</span> Karakteristik Visual dan Bentuk<a class="anchor" aria-label="anchor" href="#karakteristik-visual-dan-bentuk"><i class="fas fa-link"></i></a>
+</h4>
+<p>Secara visual, distribusi <span class="math inline">\(t\)</span> memiliki bentuk yang menyerupai lonceng dan simetris, mirip dengan distribusi normal standar (<span class="math inline">\(Z\)</span>) <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Namun, terdapat perbedaan mendasar pada bagian ujung atau “ekor” kurvanya. Distribusi <span class="math inline">\(t\)</span> cenderung lebih datar dan memiliki ekor yang lebih “berat” atau lebih tebal dibandingkan distribusi normal <span class="citation">(<a href="referensi.html#ref-chan2021introduction">Chan 2021b</a>)</span>. Hal ini mencerminkan adanya ketidakpastian yang lebih besar karena penggunaan standar deviasi sampel (<span class="math inline">\(s\)</span>) sebagai estimasi dari standar deviasi populasi (<span class="math inline">\(\sigma\)</span>) yang tidak diketahui <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>.</p>
+</div>
+<div id="peran-derajat-bebas-degrees-of-freedom" class="section level4" number="5.5.3.2">
+<h4>
+<span class="header-section-number">5.5.3.2</span> Peran Derajat Bebas (Degrees of Freedom)<a class="anchor" aria-label="anchor" href="#peran-derajat-bebas-degrees-of-freedom"><i class="fas fa-link"></i></a>
+</h4>
+<p>Bentuk spesifik dari kurva distribusi <span class="math inline">\(t\)</span> sangat bergantung pada konsep yang disebut derajat bebas (<em>degrees of freedom</em> atau <span class="math inline">\(df\)</span>). Derajat bebas merujuk pada jumlah nilai dalam sebuah distribusi yang bebas bervariasi setelah konstanta tertentu (seperti rata-rata) ditetapkan <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Untuk pengujian rata-rata sampel tunggal, derajat bebas dihitung dengan rumus:</p>
+<p><span class="math display">\[df = N - 1\]</span></p>
+<p>Di mana <span class="math inline">\(N\)</span> adalah ukuran sampel <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Semakin besar ukuran sampel (dan otomatis semakin besar derajat bebasnya), distribusi <span class="math inline">\(t\)</span> akan semakin mendekati bentuk distribusi normal standar <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>. Secara praktis, jika ukuran sampel melebihi 120, kedua distribusi ini dianggap identik <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>.</p>
+</div>
+<div id="formulasi-matematis" class="section level4" number="5.5.3.3">
+<h4>
+<span class="header-section-number">5.5.3.3</span> Formulasi Matematis<a class="anchor" aria-label="anchor" href="#formulasi-matematis"><i class="fas fa-link"></i></a>
+</h4>
+<p>Dalam pengujian hipotesis, nilai <span class="math inline">\(t\)</span> yang diperoleh (t-obtained) dihitung untuk menentukan apakah perbedaan antara rata-rata sampel dan rata-rata populasi signifikan secara statistik. Persamaannya adalah sebagai berikut <span class="citation">(<a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>:</p>
+<p><span class="math display">\[
+t = \frac{\bar{X} - \mu}{s / \sqrt{N - 1}}
+\]</span></p>
+<p>Di mana:</p>
+<ul>
+<li>
+<span class="math inline">\(\bar{X}\)</span> adalah rata-rata sampel.</li>
+<li>
+<span class="math inline">\(\mu\)</span> adalah rata-rata populasi yang dihipotesiskan.</li>
+<li>
+<span class="math inline">\(s\)</span> adalah standar deviasi sampel.</li>
+<li>
+<span class="math inline">\(N - 1\)</span> digunakan sebagai koreksi bias pada sampel kecil <span class="citation">(<a href="referensi.html#ref-healey2021statistics">Healey 2021</a>)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="studi-kasus-menghitung-nilai-t-sampel-jarak-tempuh" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Menghitung Nilai <span class="math inline">\(t\)</span> Sampel Jarak Tempuh<a class="anchor" aria-label="anchor" href="#studi-kasus-menghitung-nilai-t-sampel-jarak-tempuh"><i class="fas fa-link"></i></a>
+</h3>
+<p>Sebuah penelitian sebelumnya menduga bahwa rata-rata jarak tempat tinggal mahasiswa ITERA ke kampus adalah 5 km (<span class="math inline">\(\\mu = 5\)</span>). Untuk menguji pernyataan tersebut, kita mengambil sampel acak sebanyak 20 mahasiswa (<span class="math inline">\(N = 20\)</span>) dari pangkalan data mahasiswa ITERA dan menghitung jarak tempat tinggal mereka.</p>
+<p>Dari sampel tersebut, didapatkan rata-rata sampel (<span class="math inline">\(\\bar{X}\)</span>) sebesar 7,2 km dengan simpangan baku sampel (<span class="math inline">\(s\)</span>) sebesar 3,8 km. Berapakah nilai statistik <span class="math inline">\(t\)</span> untuk sampel ini?</p>
+<p><strong>Penyelesaian:</strong></p>
+<p>Berdasarkan data yang kita peroleh dari sampel, kita memiliki informasi sebagai berikut.</p>
+<ul>
+<li><span class="math inline">\(\\bar{X} = 7,2\)</span></li>
+<li><span class="math inline">\(\\mu = 5\)</span></li>
+<li><span class="math inline">\(s = 3,8\)</span></li>
+<li><span class="math inline">\(N = 20\)</span></li>
+<li>Derajat bebas (<span class="math inline">\(df\)</span>) = <span class="math inline">\(N - 1 = 20 - 1 = 19\)</span>
+</li>
+</ul>
+<p>Kita dapat menghitung nilai <span class="math inline">\(t\)</span> (<em>t-obtained</em>) menggunakan persamaan distribusi <span class="math inline">\(t\)</span> yang sebelumnya telah dibahas:</p>
+<p><span class="math display">\[
+\\begin{align}
+t &amp;= \\frac{\\bar{X} - \\mu}{s / \\sqrt{N - 1}} \\\\
+&amp;= \\frac{7,2 - 5}{3,8 / \\sqrt{20 - 1}} \\\\
+&amp;= \\frac{2,2}{3,8 / \\sqrt{19}} \\\\
+&amp;= \\frac{2,2}{3,8 / 4,3589} \\\\
+&amp;= \\frac{2,2}{0,8718} \\\\
+&amp;= 2,523
+\\end{align}
+\]</span></p>
+<p>Nilai <span class="math inline">\(t = 2{,}523\)</span> menunjukkan bahwa rata-rata jarak sampel (7,2 km) berada pada 2,523 <em>standard error</em> di atas nilai rata-rata populasi yang diduga (5 km).</p>
+<p>Untuk memberikan gambaran yang lebih jelas, berikut adalah visualisasi letak nilai rata-rata sampel kita di dalam kurva distribusi <span class="math inline">\(t\)</span> dengan derajat bebas <span class="math inline">\(df = 19\)</span>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-05-inferensia-t-calc"></span>
+<img src="figures/fig-05-inferensia-t-calc-1.png" alt="Posisi Rata-rata Sampel pada Kurva Distribusi t (df = 19)" width="80%"><p class="caption">
+Gambar 5.12: Posisi Rata-rata Sampel pada Kurva Distribusi t (df = 19)
+</p>
+</div>
+</div>
+<div id="distribusi-objek-dan-distribusi-statistik" class="section level3" number="5.5.4">
+<h3>
+<span class="header-section-number">5.5.4</span> Distribusi Objek dan Distribusi Statistik<a class="anchor" aria-label="anchor" href="#distribusi-objek-dan-distribusi-statistik"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>Distribusi objek</strong> atau <strong>distribusi sampel</strong> merujuk pada <strong>sebaran nilai data</strong> dari objek-objek yang menjadi sampel yang kita ambil. Dengan kata lain, distribusi ini menggambarkan variasi data individual setiap objek.</p>
 <p>Di sisi lain, <strong>distribusi statistik</strong> atau <strong>distribusi hasil sampel</strong> <em>(sampling distribution)</em> adalah <strong>sebaran nilai statistik</strong> (misalnya rata-rata) dari suatu populasi yang berasal dari perhitungan statistik sampel-sampel yang diambil berulang kali dari populasi tersebut. Statistik yang dihitung biasanya dapat berupa proporsi atau rata-rata.</p>
@@ -989,7 +1096,7 @@ Jarak
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:05-inferensia-sampel-satu"></span>
 <img src="figures/05-inferensia-sampel-satu-1.png" alt="Histogram Distribusi Objek (n=10)" width="80%"><p class="caption">
-Gambar 5.12: Histogram Distribusi Objek (n=10)
+Gambar 5.13: Histogram Distribusi Objek (n=10)
 </p>
 </div>
 <p>Pada histogram di atas, sumbu Y (“Frekuensi”) menunjukkan <strong>jumlah mahasiswa</strong> yang memiliki jarak tempuh tertentu. Variasi datanya menggambarkan seberapa berbeda jarak antar individu.</p>
@@ -1087,7 +1194,7 @@ Rata_Rata_Sampel
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:05-inferensia-hist-sampling"></span>
 <img src="figures/05-inferensia-hist-sampling-1.png" alt="Distribusi Statistik (200 Rata-rata)" width="80%"><p class="caption">
-Gambar 5.13: Distribusi Statistik (200 Rata-rata)
+Gambar 5.14: Distribusi Statistik (200 Rata-rata)
 </p>
 </div>
 <p>Perhatikan perbedaan kedua histogram tersebut:</p>
@@ -1114,12 +1221,12 @@ Gambar 5.13: Distribusi Statistik (200 Rata-rata)
 <li><p>rata-rata dari distribusi statistik ini akan <strong>tepat sama dengan rata-rata populasi sebenarnya</strong>, dengan variasi yang semakin kecil seiring bertambahnya ukuran sampel. Ini adalah jaminan yang paling krusial dari teorema ini.</p></li>
 </ol>
 <p>Kombinasi bentuk normal dan akurasi inilah yang memungkinkan kita melakukan estimasi dan uji statistik dengan percaya diri.</p>
-<p>Berdasarkan teorema ini, kita dapat membagi analisis statistika inferensial menjadi analisis statistik inferensial <strong>parametrik</strong> dan <strong>nonparametrik</strong>. Analisis inferensial parametrik adalah analisis inferensial yang mengasumsikan bahwa populasi kita berdistribusi normal. Asumsi ini diuji dengan teknik pengujian kenormalan seperti <a href="" title="https://www.statistikian.com/2013/01/saphiro-wilk.html">uji Shapiro-Wilk</a> atau <a href="" title="https://online.stat.psu.edu/stat501/lesson/4/4.6">P-P plot</a>.</p>
+<p>Berdasarkan teorema ini, kita dapat membagi analisis statistika inferensial menjadi analisis statistik inferensial <strong>parametrik</strong> dan <strong>nonparametrik</strong>. Analisis inferensial parametrik adalah analisis inferensial yang mengasumsikan bahwa populasi kita berdistribusi normal. Asumsi ini diuji dengan teknik pengujian kenormalan seperti <a href="'https://www.statistikian.com/2013/01/saphiro-wilk.html'">uji Shapiro-Wilk</a> atau <a href="'https://online.stat.psu.edu/stat501/lesson/4/4.6'">P-P plot</a>.</p>
 <div id="studi-kasus-simulasi-teorema-limit-sentral" class="section level3 unnumbered rmdkasus">
 <h3>Studi Kasus: Simulasi Teorema Limit Sentral<a class="anchor" aria-label="anchor" href="#studi-kasus-simulasi-teorema-limit-sentral"><i class="fas fa-link"></i></a>
 </h3>
 <p>Mari kita buktikan CLT dengan melakukan simulasi pengambilan sampel berulang. Katakanlah kita memiliki <strong>428 mahasiswa</strong> sebagai populasi. Kita akan mengambil 1000 kali sampel berukuran 50 orang, lalu menghitung rata-ratanya dan memplot histogramnya.</p>
-<p>Berikut adalah baris perintah untuk melakukan simulasi tersebut dalam R. Dataset yang digunakan dapat diakses pada <a href="" title="https://github.com/abdulmubdibindar/buku-ajar-stp/blob/main/datasets/DataUtama_mhsITERA.csv">tautan ini</a>.</p>
+<p>Berikut adalah baris perintah untuk melakukan simulasi tersebut dalam R. Dataset yang digunakan dapat diakses pada <a href="'https://github.com/abdulmubdibindar/buku-ajar-stp/blob/main/datasets/DataUtama_mhsITERA.csv'">tautan ini</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span>
@@ -1157,10 +1264,10 @@ Gambar 5.13: Distribusi Statistik (200 Rata-rata)
 <div class="figure">
 <span style="display:block;" id="fig:fig-05-inferensia-2-clt-studi-kasus-simulasi"></span>
 <img src="figures/fig-05-inferensia-2-clt-studi-kasus-simulasi-1.png" alt="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)" width="960"><p class="caption">
-Gambar 5.14: Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)
+Gambar 5.15: Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)
 </p>
 </div>
-<p>Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-05-inferensia-2-clt-studi-kasus-simulasi">5.14</a> menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat “miring” (<em>skewed</em>) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna <strong>normal</strong>. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya (<span class="math inline">\(\mu = 5,01\)</span>).</p>
+<p>Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-05-inferensia-2-clt-studi-kasus-simulasi">5.15</a> menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat “miring” (<em>skewed</em>) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna <strong>normal</strong>. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya (<span class="math inline">\(\mu = 5,01\)</span>).</p>
 </div>
 <div id="studi-kasus-efek-ukuran-sampel-terhadap-variasi" class="section level3 unnumbered rmdkasus">
 <h3>Studi Kasus: Efek Ukuran Sampel terhadap Variasi<a class="anchor" aria-label="anchor" href="#studi-kasus-efek-ukuran-sampel-terhadap-variasi"><i class="fas fa-link"></i></a>
@@ -1169,10 +1276,10 @@ Gambar 5.14: Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya
 <div class="figure">
 <span style="display:block;" id="fig:fig-05-inferensia-3-clt-sample-size"></span>
 <img src="figures/fig-05-inferensia-3-clt-sample-size-1.png" alt="Perbandingan Distribusi Statistik dengan Ukuran Sampel Berbeda" width="960"><p class="caption">
-Gambar 5.15: Perbandingan Distribusi Statistik dengan Ukuran Sampel Berbeda
+Gambar 5.16: Perbandingan Distribusi Statistik dengan Ukuran Sampel Berbeda
 </p>
 </div>
-<p>Perhatikan Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-05-inferensia-3-clt-sample-size">5.15</a>. Meskipun kedua kurva sama-sama berbentuk lonceng dan berpusat di rata-rata populasi (garis merah), kurva distribusi statistik untuk <strong><span class="math inline">\(n=100\)</span> (biru)</strong> jauh lebih “kurus” dan tinggi dibandingkan kurva <strong><span class="math inline">\(n=30\)</span> (kuning)</strong>.</p>
+<p>Perhatikan Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-05-inferensia-3-clt-sample-size">5.16</a>. Meskipun kedua kurva sama-sama berbentuk lonceng dan berpusat di rata-rata populasi (garis merah), kurva distribusi statistik untuk <strong><span class="math inline">\(n=100\)</span> (biru)</strong> jauh lebih “kurus” dan tinggi dibandingkan kurva <strong><span class="math inline">\(n=30\)</span> (kuning)</strong>.</p>
 <p>Ini menunjukkan bahwa semakin banyak sampel yang kita ambil dalam satu kali pengambilan (<span class="math inline">\(n\)</span> semakin besar), maka <strong>variasi</strong> dari rata-rata yang kita peroleh akan semakin kecil. Artinya, rata-rata sampel kita akan semakin jarang meleset jauh dari rata-rata populasi sebenarnya. Dengan kata lain, memperbesar ukuran sampel akan meningkatkan peluang kita untuk mendapatkan hasil yang sangat mendekati kondisi populasi yang sebenarnya.</p>
 </div>
 </div>
@@ -1351,14 +1458,14 @@ Z &amp;= \frac{\bar{x} - \mu}{SE} \\
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-distribusi-normal-area-bc"></span>
 <img src="figures/distribusi-normal-area-bc.png" alt="Ilustrasi area b (kiri) dan c (kanan) pada distribusi normal. Area b dan c masing-masing melambangkan probabilitas nilai-nilai yang berada di luar rentang nilai yang diamati." width="60%"><p class="caption">
-Gambar 5.16: Ilustrasi area b (kiri) dan c (kanan) pada distribusi normal. Area b dan c masing-masing melambangkan probabilitas nilai-nilai yang berada di luar rentang nilai yang diamati.
+Gambar 5.17: Ilustrasi area b (kiri) dan c (kanan) pada distribusi normal. Area b dan c masing-masing melambangkan probabilitas nilai-nilai yang berada di luar rentang nilai yang diamati.
 </p>
 </div>
 <p>Beberapa contoh tabel yang dapat kita gunakan adalah seperti yang disertakan dalam <span class="citation">Healey (<a href="referensi.html#ref-healey2021statistics">2021</a>)</span> atau seperti yang disajikan <a href="https://statcalculators.com/z-score-table-standard-normal-distribution/">Stat Calculators</a> berikut.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:bab-5-fig-z-table"></span>
 <img src="images/z-score-02.png" alt="Contoh tabel Z-score." width="60%"><p class="caption">
-Gambar 5.17: Contoh tabel Z-score.
+Gambar 5.18: Contoh tabel Z-score.
 </p>
 </div>
 <p>Dalam perangkat lunak statistik seperti R, kita dapat memanfaatkan fungsi <code><a href="https://rdrr.io/r/stats/Normal.html">pnorm()</a></code> untuk menghitung probabilitas luasan di antara dua nilai <em>Z-score</em> ini.</p>
@@ -1376,8 +1483,8 @@ Z &amp;= \frac{51.500 - 52.000}{1.000} \\
 &amp;= -0,5
 \end{align}
 \]</span></p>
-<p>Sekarang kita memiliki dua singkapan tiang batas, yakni mulai dari <span class="math inline">\(Z = -0,5\)</span> hingga <span class="math inline">\(Z = 0,0\)</span> (rata-rata populasi). Kita dapat menggunakan tabel <em>Z-score</em> untuk menentukan probabilitas luasan di antara kedua nilai tersebut. Sebagai contoh, kita akan menggunakan Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-distribusi-normal-area-bc">5.16</a>.</p>
-<p>Pertama, kita perlu memperhatikan ilustrasi distribusi yang ada di pojok kiri atas tabel tersebut. Area yang diwarnai biru pada gambar tersebut menunjukkan area <strong>b</strong> dari ilustrasi kita (Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-distribusi-normal-area-bc">5.16</a>, yaitu luasan dari <span class="math inline">\(Z = 0\)</span> hingga suatu nilai <span class="math inline">\(Z\)</span> positif tertentu. Karena distribusi normal bersifat simetris, luasan area di rentang <span class="math inline">\(Z = 0\)</span> hingga <span class="math inline">\(Z = -0,5\)</span> (yang kita cari) nilainya sama dengan luasan area di rentang <span class="math inline">\(Z = 0\)</span> hingga <span class="math inline">\(Z = 0,5\)</span> (positif).</p>
+<p>Sekarang kita memiliki dua singkapan tiang batas, yakni mulai dari <span class="math inline">\(Z = -0,5\)</span> hingga <span class="math inline">\(Z = 0,0\)</span> (rata-rata populasi). Kita dapat menggunakan tabel <em>Z-score</em> untuk menentukan probabilitas luasan di antara kedua nilai tersebut. Sebagai contoh, kita akan menggunakan Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-distribusi-normal-area-bc">5.17</a>.</p>
+<p>Pertama, kita perlu memperhatikan ilustrasi distribusi yang ada di pojok kiri atas tabel tersebut. Area yang diwarnai biru pada gambar tersebut menunjukkan area <strong>b</strong> dari ilustrasi kita (Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-distribusi-normal-area-bc">5.17</a>, yaitu luasan dari <span class="math inline">\(Z = 0\)</span> hingga suatu nilai <span class="math inline">\(Z\)</span> positif tertentu. Karena distribusi normal bersifat simetris, luasan area di rentang <span class="math inline">\(Z = 0\)</span> hingga <span class="math inline">\(Z = -0,5\)</span> (yang kita cari) nilainya sama dengan luasan area di rentang <span class="math inline">\(Z = 0\)</span> hingga <span class="math inline">\(Z = 0,5\)</span> (positif).</p>
 <p>Untuk membaca tabel, kita perlu mengambil nilai absolut dari <span class="math inline">\(Z\)</span>, yakni <span class="math inline">\(|Z| = 0,5\)</span>. Nilai ini dibaca dengan cara:</p>
 <ol style="list-style-type: decimal">
 <li>Cari baris yang sesuai dengan <strong>angka puluhan</strong> dari <span class="math inline">\(Z\)</span>, yakni baris <strong>0,5</strong>.</li>
@@ -1403,15 +1510,15 @@ Z &amp;= \frac{51.500 - 52.000}{1.000} \\
 </h3>
 <p>Apabila rata-rata biaya perjalanan mahasiswa per bulan dalam satu populasi adalah <span class="math inline">\(\mu = 50.000\)</span> dengan simpangan baku <span class="math inline">\(\sigma = 10.000\)</span>, berapakah batas pengeluaran biaya perjalanan individu yang termasuk golongan 5% orang berbiaya hidup tertinggi di kampus tersebut?</p>
 <p><strong>Jawaban:</strong></p>
-<p><em>Pertama</em>, kita harus memahami konteks pertanyaan dari soal. Frasa “golongan 5% orang berbiaya hidup <strong>tertinggi</strong>” berarti bahwa jika kita nyatakan dalam bentuk grafik distribusi normal, maka area tersebut berada di bagian c di sebelah kanan yang besarnya 5% atau 0,05 (Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-bab-5-right-tail-5pct">5.18</a>).</p>
+<p><em>Pertama</em>, kita harus memahami konteks pertanyaan dari soal. Frasa “golongan 5% orang berbiaya hidup <strong>tertinggi</strong>” berarti bahwa jika kita nyatakan dalam bentuk grafik distribusi normal, maka area tersebut berada di bagian c di sebelah kanan yang besarnya 5% atau 0,05 (Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-bab-5-right-tail-5pct">5.19</a>).</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:fig-bab-5-right-tail-5pct"></span>
 <img src="figures/fig-bab-5-right-tail-5pct-1.png" alt="Ilustrasi area c (ekor kanan) sebesar 5% pada distribusi normal." width="60%"><p class="caption">
-Gambar 5.18: Ilustrasi area c (ekor kanan) sebesar 5% pada distribusi normal.
+Gambar 5.19: Ilustrasi area c (ekor kanan) sebesar 5% pada distribusi normal.
 </p>
 </div>
-<p><em>Kedua</em>, kita perlu memperhatikan area yang diwarnai biru pada Gambar <a href="bab-5-pengantar-inferensial.html#fig:bab-5-fig-z-table">5.17</a>. Area tersebut sebenarnya adalah area <strong>b</strong> di sebelah kanan dengan besar <span class="math inline">\(95%-50%=45%\)</span> atau 0,45. Dengan demikian, kita perlu mencari nilai <span class="math inline">\(Z\)</span> yang sesuai dengan proporsi 0,45.</p>
-<p><em>Ketiga</em>, kita akan cari nilai yang paling mendekati dengan 0,45 di sel-sel tabel pada Gambar <a href="bab-5-pengantar-inferensial.html#fig:bab-5-fig-z-table">5.17</a>. Didapatkan nilai <span class="math inline">\(Z = 1,64\)</span> (baris 1,6 dan kolom 0,04) atau <span class="math inline">\(Z = 1,65\)</span> (baris 1,6 dan kolom 0,05). Kita ambil nilai <span class="math inline">\(Z = 1,64\)</span>.</p>
+<p><em>Kedua</em>, kita perlu memperhatikan area yang diwarnai biru pada Gambar <a href="bab-5-pengantar-inferensial.html#fig:bab-5-fig-z-table">5.18</a>. Area tersebut sebenarnya adalah area <strong>b</strong> di sebelah kanan dengan besar <span class="math inline">\(95%-50%=45%\)</span> atau 0,45. Dengan demikian, kita perlu mencari nilai <span class="math inline">\(Z\)</span> yang sesuai dengan proporsi 0,45.</p>
+<p><em>Ketiga</em>, kita akan cari nilai yang paling mendekati dengan 0,45 di sel-sel tabel pada Gambar <a href="bab-5-pengantar-inferensial.html#fig:bab-5-fig-z-table">5.18</a>. Didapatkan nilai <span class="math inline">\(Z = 1,64\)</span> (baris 1,6 dan kolom 0,04) atau <span class="math inline">\(Z = 1,65\)</span> (baris 1,6 dan kolom 0,05). Kita ambil nilai <span class="math inline">\(Z = 1,64\)</span>.</p>
 <p><em>Keempat</em>, jabarkan kembali variabel <span class="math inline">\(Z\)</span> ini (berkisar <code>1,64</code>) ke unit mata uang yang senyata-nyatanya:</p>
 <p><span class="math display">\[
 \begin{align}
@@ -1430,7 +1537,7 @@ x &amp;= 50.000 + (1,64 \cdot 10.000) \\
 <p><em>Petunjuk:</em></p>
 <ul>
 <li><p><em>‘seberapa sering’ merujuk pada probabilitas.</em></p></li>
-<li><p><em>perhatikan betul frasa ‘lebih kecil’ pada soal dan kaitkan dengan posisi area yang diwarnai seperti pada Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-distribusi-normal-area-bc">5.16</a>.</em></p></li>
+<li><p><em>perhatikan betul frasa ‘lebih kecil’ pada soal dan kaitkan dengan posisi area yang diwarnai seperti pada Gambar <a href="bab-5-pengantar-inferensial.html#fig:fig-distribusi-normal-area-bc">5.17</a>.</em></p></li>
 </ul>
 </div>
 
@@ -1450,16 +1557,9 @@ x &amp;= 50.000 + (1,64 \cdot 10.000) \\
 </li>
 <li>
 <a class="nav-link" href="#teknik-teknik-pengambilan-sampel-sampling-techniques"><span class="header-section-number">5.3</span> Teknik-Teknik Pengambilan Sampel (Sampling Techniques)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#teknik-probabilitas"><span class="header-section-number">5.3.1</span> Teknik Probabilitas</a></li>
 <li><a class="nav-link" href="#studi-kasus-pengambilan-sampel-dengan-populasi-kecil">Studi Kasus: Pengambilan Sampel dengan Populasi Kecil</a></li>
-<li><a class="nav-link" href="#simple-random-sampling"><span class="header-section-number">5.3.1</span> Simple Random Sampling</a></li>
-<li><a class="nav-link" href="#catatan-miskonsepsi-tentang-istilah-random">Catatan: Miskonsepsi tentang Istilah Random</a></li>
-<li><a class="nav-link" href="#studi-kasus-simple-random-sampling-dengan-populasi-kecil">Studi Kasus: Simple Random Sampling dengan Populasi Kecil</a></li>
-<li><a class="nav-link" href="#systematic-random-sampling"><span class="header-section-number">5.3.2</span> Systematic Random Sampling</a></li>
-<li><a class="nav-link" href="#studi-kasus-systematic-sampling-dengan-populasi-kecil">Studi Kasus: Systematic Sampling dengan Populasi Kecil</a></li>
-<li><a class="nav-link" href="#stratified-random-sampling"><span class="header-section-number">5.3.3</span> Stratified Random Sampling</a></li>
-<li><a class="nav-link" href="#studi-kasus-stratified-random-sampling-dengan-populasi-kecil">Studi Kasus: Stratified Random Sampling dengan Populasi Kecil</a></li>
-<li><a class="nav-link" href="#multi-stage-cluster-sampling"><span class="header-section-number">5.3.4</span> Multi-Stage Cluster Sampling</a></li>
-<li><a class="nav-link" href="#studi-kasus-multi-stage-cluster-sampling-dengan-populasi-kecil">Studi Kasus: Multi-Stage Cluster Sampling dengan Populasi Kecil</a></li>
+<li><a class="nav-link" href="#teknik-non-probabilitas"><span class="header-section-number">5.3.2</span> Teknik Non-probabilitas</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#soal-evaluasi-6">Soal Evaluasi 6</a></li>
@@ -1470,7 +1570,9 @@ x &amp;= 50.000 + (1,64 \cdot 10.000) \\
 <a class="nav-link" href="#konsep-distribusi-dalam-statistik"><span class="header-section-number">5.5</span> Konsep Distribusi dalam Statistik</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#model-model-distribusi-statistik"><span class="header-section-number">5.5.1</span> Model-model Distribusi Statistik</a></li>
 <li><a class="nav-link" href="#bab-5-distribusi-normal"><span class="header-section-number">5.5.2</span> Distribusi Normal</a></li>
-<li><a class="nav-link" href="#distribusi-objek-dan-distribusi-statistik"><span class="header-section-number">5.5.3</span> Distribusi Objek dan Distribusi Statistik</a></li>
+<li><a class="nav-link" href="#distribusi-t"><span class="header-section-number">5.5.3</span> Distribusi \(t\)</a></li>
+<li><a class="nav-link" href="#studi-kasus-menghitung-nilai-t-sampel-jarak-tempuh">Studi Kasus: Menghitung Nilai \(t\) Sampel Jarak Tempuh</a></li>
+<li><a class="nav-link" href="#distribusi-objek-dan-distribusi-statistik"><span class="header-section-number">5.5.4</span> Distribusi Objek dan Distribusi Statistik</a></li>
 <li><a class="nav-link" href="#studi-kasus-distribusi-objek-vs-distribusi-statistik">Studi Kasus: Distribusi Objek vs Distribusi Statistik</a></li>
 </ul>
 </li>

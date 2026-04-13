@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bab 14 Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor | Buku Ajar Statistika untuk Perencanaan</title>
+<meta name="author" content="Muhammad Abdul Mubdi Bindar">
+<meta name="author" content="Husna Tiara Putri">
+<meta name="author" content="Valendya Rilansari">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
+<meta property="og:title" content="Bab 14 Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor | Buku Ajar Statistika untuk Perencanaan">
+<meta property="og:type" content="book">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bab 14 Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor | Buku Ajar Statistika untuk Perencanaan">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<link href="libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="libs/tabwid-1.1.3/tabwid.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Capaian Pembelajaran Setelah mempelajari bab ini Anda diharapkan: mampu menjelaskan kegunaan dan asumsi pendahuluan untuk melakukan analisis komponen prinsip dan analisis faktor STP-14.1 mampu...">
+<meta property="og:description" content="Capaian Pembelajaran Setelah mempelajari bab ini Anda diharapkan: mampu menjelaskan kegunaan dan asumsi pendahuluan untuk melakukan analisis komponen prinsip dan analisis faktor STP-14.1 mampu...">
+<meta name="twitter:description" content="Capaian Pembelajaran Setelah mempelajari bab ini Anda diharapkan: mampu menjelaskan kegunaan dan asumsi pendahuluan untuk melakukan analisis komponen prinsip dan analisis faktor STP-14.1 mampu...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Buku Ajar Statistika untuk Perencanaan</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Statistika untuk Perencanaan</a></li>
+<li><a class="" href="pengantar.html">Pengantar</a></li>
+<li><a class="" href="lembar-persembahan.html">Lembar Persembahan</a></li>
+<li><a class="" href="konsep-dasar-statistika-dalam-perencanaan.html"><span class="header-section-number">1</span> Konsep Dasar Statistika dalam Perencanaan</a></li>
+<li><a class="" href="data-terstruktur.html"><span class="header-section-number">2</span> Data Terstruktur</a></li>
+<li><a class="" href="bab-3-analisis-statistik-deskriptif.html"><span class="header-section-number">3</span> Analisis Statistik Deskriptif</a></li>
+<li><a class="" href="bab-4-visualisasi-data-kuantitatif.html"><span class="header-section-number">4</span> Visualisasi Data Kuantitatif</a></li>
+<li><a class="" href="bab-5-pengantar-inferensial.html"><span class="header-section-number">5</span> Pengantar Analisis Statistik Inferensial</a></li>
+<li><a class="" href="bab-6-estimasi-parameter.html"><span class="header-section-number">6</span> Estimasi Parameter</a></li>
+<li><a class="" href="bab-7-uji-hipotesis-satu-populasi.html"><span class="header-section-number">7</span> Uji Hipotesis Parameter Satu Populasi</a></li>
+<li><a class="" href="uji-hipotesis-parameter-dua-populasi-atau-lebih.html"><span class="header-section-number">8</span> Uji Hipotesis Parameter Dua Populasi Atau Lebih</a></li>
+<li><a class="" href="korelasi-antarvariabel-nominal.html"><span class="header-section-number">9</span> Korelasi Antarvariabel Nominal</a></li>
+<li><a class="" href="korelasi-antarvariabel-ordinal.html"><span class="header-section-number">10</span> Korelasi Antarvariabel Ordinal</a></li>
+<li><a class="" href="korelasi-antarvariabel-metrik.html"><span class="header-section-number">11</span> Korelasi Antarvariabel Metrik</a></li>
+<li><a class="" href="bab-13-regresi-sederhana.html"><span class="header-section-number">12</span> Kausalitas dengan Regresi Linear Sederhana</a></li>
+<li><a class="" href="bab-regresi-berganda.html"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a></li>
+<li><a class="active" href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor</a></li>
+<li><a class="" href="referensi.html">Referensi</a></li>
+<li class="book-part">Lampiran</li>
+<li><a class="" href="tabel-statistik.html">Tabel Statistik</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/abdulmubdibindar/buku-ajar-stp">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor" class="section level1" number="14">
+<h1>
+<span class="header-section-number">Bab 14</span> Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor<a class="anchor" aria-label="anchor" href="#analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor"><i class="fas fa-link"></i></a>
+</h1>
+<div id="capaian-pembelajaran-13" class="section level3 unnumbered rmdcapaian">
+<h3>Capaian Pembelajaran<a class="anchor" aria-label="anchor" href="#capaian-pembelajaran-13"><i class="fas fa-link"></i></a>
+</h3>
+<p>Setelah mempelajari bab ini Anda diharapkan:</p>
+<ol style="list-style-type: decimal">
+<li>mampu menjelaskan kegunaan dan asumsi pendahuluan untuk melakukan analisis komponen prinsip dan analisis faktor <span class="capaian">STP-14.1</span>
+</li>
+<li>mampu menginterpretasikan hasil analisis komponen prinsip/analisis faktor dengan benar <span class="capaian">STP-14.2</span>
+</li>
+</ol>
+</div>
+<div id="konsep-dasar-1" class="section level2" number="14.1">
+<h2>
+<span class="header-section-number">14.1</span> Konsep Dasar<a class="anchor" aria-label="anchor" href="#konsep-dasar-1"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Analisis komponen prinsip (<em>principal component analysis</em>, PCA)</strong> dan <strong>Analisis Faktor (<em>common factor analysis</em>)</strong> adalah metode analisis statistik multivariat lain yang berguna untuk <strong>mengurangi jumlah variabel yang dianalisis dengan meringkasnya</strong>.</p>
+<div class="rmdnote">
+<p><span class="tajuksaya">Istilah “Dimensi”</span></p>
+<p>Istilah “variabel” memiliki sebutan lain yakni <strong>dimensi (<em>dimension</em>)</strong>. Ini merujuk pada visualisasi data yang dilakukan dengan sumbu-sumbu X, Y, dan Z. Sumbu-sumbu tersebut tidak lain adalah variabel kita. Jumlah sumbu menandakan jumlah dimensinya juga: 2 dimensi berarti mengandung 2 variabel, 3 dimensi berarti mengandung 3 variabel.</p>
+</div>
+<p>Analisis komponen prinsip dan analisis faktor termasuk ke dalam analisis multivariat juga, seperti halnya analisis Regresi. Akan tetapi, sebagaimana gambar serupa yang bisa kita lihat pada Gambar <a href="bab-regresi-berganda.html#fig:diagram-asosiasi-multivariat">13.1</a>, pada Gambar <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#fig:posisi-pca-cfa">14.1</a> menunjukan posisi PCA dan CFA. Posisinya terletak pada jenis hubungan yang <strong>interdependen</strong>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:posisi-pca-cfa"></span>
+<img src="images/diagram_interdependensi.drawio.png" alt="Diagram Pohon Keputusan Asosiasi Multivariat: Bagian Interdependensi" width="790"><p class="caption">
+Gambar 14.1: Diagram Pohon Keputusan Asosiasi Multivariat: Bagian Interdependensi
+</p>
+</div>
+<p>Yang dimaksud dengan “hubungan interdependen” adalah <strong>hubungan yang seluruh variabelnya saling bergantung satu sama lain</strong>. Ini bermakna bahwa setiap variabel setara hubungannya sehingga tidak ada hubungan pengaruh (memengaruhi-dipengaruhi) seperti halnya yang ada dalam analisis regresi linear berganda.</p>
+</div>
+<div id="kegunaan-pca-analisis-faktor" class="section level2" number="14.2">
+<h2>
+<span class="header-section-number">14.2</span> Kegunaan PCA dan Analisis Faktor<a class="anchor" aria-label="anchor" href="#kegunaan-pca-analisis-faktor"><i class="fas fa-link"></i></a>
+</h2>
+<p>PCA dan analisis faktor sama-sama memliki kegunaan untuk mengurangi jumlah variabel dari analisis kita. Seperti yang sudah disampaikan, pengurangan ini dilakukan bukan dengan menghilangkan sebagian variabel, melainkan dengan merangkumnya menjadi variabel baru yang disebut dimensi.</p>
+<p>PCA dan Analisis Faktor memiliki perbedaan mendasar dalam memaknai hasil analisis masing-masing:</p>
+<ol style="list-style-type: decimal">
+<li>PCA <strong>mengurangi variabel-variabel (<em>data reduction</em>)</strong> yang dianalisis dengan mengelompokkan variabel-variabel yang mirip menjadi satu variat yang merupakan penjumlahan nilai setiap variabel yang mirip tersebut.</li>
+<li>Analisis faktor <strong>meringkas variabel-variabel (<em>data summarization</em>)</strong> yang dianalisis dengan mengelompokkan variabel-variabel yang mirip saja tanpa mengubahnya menjadi variabel lain/variat.</li>
+</ol>
+</div>
+<div id="studi-kasus-kegunaan-pca-dan-analisis-faktor" class="section level2 unnumbered rmdkasus">
+<h2>Studi Kasus: Kegunaan PCA dan Analisis Faktor<a class="anchor" aria-label="anchor" href="#studi-kasus-kegunaan-pca-dan-analisis-faktor"><i class="fas fa-link"></i></a>
+</h2>
+<p>Sebuah penelitian oleh <span class="citation">Bindar (<a href="referensi.html#ref-bindar2022faktor">2022</a>)</span> mengidentifikasi struktur di balik variabel-variabel yang memengaruhi penduduk Kota Bandung memilih cara mengakses lokasi <em>Car-Free Day</em>. Terdapat 12 variabel yang diukur beserta singkatan yang digunakan disajikan pada Tabel <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#tab:tabel-variabel-cfd">14.1</a> berikut.</p>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:tabel-variabel-cfd">Tabel 14.1: </span>Daftar Variabel Pemilihan Cara Mengakses Lokasi CFD
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+No. 
+</th>
+<th style="text-align:left;">
+Nama Variabel
+</th>
+<th style="text-align:left;">
+Singkatan
+</th>
+<th style="text-align:center;">
+No. 
+</th>
+<th style="text-align:left;">
+Nama Variabel
+</th>
+<th style="text-align:left;">
+Singkatan
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+total biaya perjalanan
+</td>
+<td style="text-align:left;">
+ongkos
+</td>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+jumlah sepeda motor
+</td>
+<td style="text-align:left;">
+jmlmotor
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+biaya parkir
+</td>
+<td style="text-align:left;">
+bparkir
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+jumlah mobil
+</td>
+<td style="text-align:left;">
+jmlmobil
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+durasi perjalanan
+</td>
+<td style="text-align:left;">
+durasi
+</td>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+jumlah sepeda
+</td>
+<td style="text-align:left;">
+jmlsepeda
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+jumlah rombongan dalam perjalanan
+</td>
+<td style="text-align:left;">
+bareng
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+jumlah orang dewasa dalam rumah tangganya
+</td>
+<td style="text-align:left;">
+jmldewasa
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+jumlah lajur jalan terbanyak yang dilalui
+</td>
+<td style="text-align:left;">
+toplajur
+</td>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+jumlah anak-anak dalam rumah tangganya
+</td>
+<td style="text-align:left;">
+jmlanak
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+usia pelaku perjalanan
+</td>
+<td style="text-align:left;">
+usia
+</td>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:left;width: 4.5cm; ">
+jarak tempuh dari rumah ke lokasi CFD
+</td>
+<td style="text-align:left;">
+jarak
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><span class="tajuksaya">Pembahasan</span></p>
+<p>Jika di akhir kita hanya ingin membuat pengelompokan variabel, maka kita cukup menggunakan <strong>analisis faktor</strong>. Lain halnya jika kita membutuhkan <strong>variat</strong> yang merupakan penjumlahan nilai-nilai variabel. Contoh variat misalnya adalah sebagai berikut:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{total_biaya} &amp;= \beta_1 \text{ongkos} + \beta_2 \text{biaya} \\
+\text{impedansi} &amp;= \beta_3 \text{jarak} + \beta_4 \text{durasi}
+\end{aligned}
+\]</span></p>
+<p>Pengelompokan keempat variabel menjadi 2 variat serta nilai-nilai <span class="math inline">\(\beta_1\)</span>, <span class="math inline">\(\beta_2\)</span>, <span class="math inline">\(\beta_3\)</span>, dan <span class="math inline">\(\beta_4\)</span>, dihasilkan secara bersama-sama sebagai keluaran dari PCA</p>
+</div>
+<div id="asumsi-asumsi-dasar-dalam-melakukan-pcaanalisis-faktor" class="section level2" number="14.3">
+<h2>
+<span class="header-section-number">14.3</span> Asumsi-asumsi Dasar dalam Melakukan PCA/Analisis Faktor<a class="anchor" aria-label="anchor" href="#asumsi-asumsi-dasar-dalam-melakukan-pcaanalisis-faktor"><i class="fas fa-link"></i></a>
+</h2>
+<p>Terdapat <strong>dua jenis asumsi dasar</strong> sebelum melakukan PCA/Analisis Faktor terhadap data kita. Yang pertama adalah <strong>asumsi konseptual</strong>, sedangkan yang kedua <strong>asumsi statistikal</strong>. Asumsi konseptual berbicara tentang <strong>kemasukakalan pengelompokan variabel-variabel</strong> yang dilibatkan. Kita harus memiliki justifikasi yang kuat secara konseptual bahwa di antara variabel-variabel yang kita analisis ada kelompok-kelompok yang bisa dibentuk. Asumsi kedua berbicara tentang <strong>kemungkinan dilakukannya analisis komponen prinsip dari sudut pandang ukuran statistik</strong>. Ada beberapa hal yang perlu kita perhatikan mengenai asumsi statistik:</p>
+<ol style="list-style-type: decimal">
+<li>Baik PCA maupun Analisis Faktor menggunakan basis <strong>nilai koefisien korelasi <span class="math inline">\(r\)</span> Pearson</strong> sebagai pengelompokan. Oleh karena itu, variabel-variabel yang bisa kita analisis dengan PCA adalah variabel <strong>metrik (interval/rasio)</strong>.</li>
+<li>Idealnya, setiap variabel metrik dalam variabel-variabel yang dianalisis <strong>berdistribusi normal</strong>.</li>
+<li>Terdapat <strong>hubungan linear antarvariabel</strong> yang ditunjukkan oleh pola diagram pencar antarvariabel yang disebut juga <strong>asumsi linearitas</strong>.</li>
+</ol>
+</div>
+<div id="studi-kasus-asumsi-konseptual-dan-statistikal" class="section level2 unnumbered rmdkasus">
+<h2>Studi Kasus: Asumsi Konseptual dan Statistikal<a class="anchor" aria-label="anchor" href="#studi-kasus-asumsi-konseptual-dan-statistikal"><i class="fas fa-link"></i></a>
+</h2>
+<p><span class="tajuksaya">Asumsi Konseptual</span></p>
+<p>Secara substansi, kita dapat melihat kemungkinan pemngelompokan dalam variabel-variabel yang dianalisis. Misalnya, variabel jarak tempuh dari rumah ke lokasi CFD dan durasi perjalanan kemungkinan besar akan berkorelasi positif, karena penambahan jarak tempuh pastinya akan menambah durasi perjalanan juga. Kemudian, variabel jumlah sepeda motor dan jumlah mobil kemungkinan besar akan berkorelasi positif, karena kepemilikan kendaraan bermotor berbanding lurus dengan pendapatan, sehingga bisa dianalisis bahwa kedua variabel tersebut memiliki hubungan. Dengan demikian, kita bisa katakan bahwa asumsi konseptual untuk kasus ini bisa dipenuhi.</p>
+<p><span class="tajuksaya">Asumsi Statistikal</span></p>
+<p>Dilihat dari tingkat pengukurannya, seluruh variabel yang akan kita analisis adalah variabel metrik, karena ukuran semua variabel adalah angka yang bermakna, serta memiliki posisi nol yang absolut dan masuk akal. Akan tetapi, secara ukuran kenormalan distribusi dan linearitas, dataset ini tidak memenuhi asumsi tersebut. Ini dapat dilihat dari hasil analisis grafis dan koefisien korelasi r-Pearsonnya seperti pada Gambar <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#fig:grafik-scatterplot-cfd">14.2</a>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:grafik-scatterplot-cfd"></span>
+<img src="figures/grafik-scatterplot-cfd-1.png" alt="Grafik Analisis CFD" width="672"><p class="caption">
+Gambar 14.2: Grafik Analisis CFD
+</p>
+</div>
+<p>Analisis <em>scatter-plot</em> antara <em>residual</em> (galat model vs data) dengan <em>model</em> (hasil prediksi) seperti yang ditampilkan Gambar <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#fig:grafik-residual-fitted">14.3</a> berikut memperlihatkan beberapa pasangan variabel yang memiliki heteroskedastisitas (sebaran residual yang melebar ke kanan, seiring bertambahnya nilai variabel dependen). Misalnya, <strong>durasi sebagai X, vs bparkir sebagai Y</strong> atau <strong>jarak sebagai X, vs jmlanak sebagai Y</strong>. Solusinya adalah kita mentransformasi nilai-nilai variabel kita dengan fungsi lain. Yang paling umum adalah fungsi logaritmik (<span class="math inline">\(log\)</span> atau <span class="math inline">\(ln\)</span>). Variabel mana yang kita ubah? Kita bisa memilih variabel yang mempunyai kemiringan ke kanan (<em>right-skewed</em>). Variabel-variabel tersebut dapat kita lihat pada Gambar <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#fig:grafik-scatterplot-cfd">14.2</a>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:grafik-residual-fitted"></span>
+<img src="figures/grafik-residual-fitted-1.png" alt="Scatter Plot Residual vs Fitted untuk Seluruh Pasangan Variabel" width="1440"><p class="caption">
+Gambar 14.3: Scatter Plot Residual vs Fitted untuk Seluruh Pasangan Variabel
+</p>
+</div>
+<p>Untuk mengatasi masalah non-linearitas ini, seperti yang sudah dijelaskan, kita dapat melakukan transformasi nilai. Melihat bentuk rentang distribusi dari pengamatan grafik bar sebelumnya yang hampir seluruhnya “menceng kanan” (berkumpul pada nilai kecil dengan <em>outlier</em> nilai sangat besar), pendekatan <strong>logaritma natural (<code><a href="https://rdrr.io/r/base/Log.html">log()</a></code>)</strong> sangat cocok diterapkan, dan akan kita terapkan hampir di semua variabel kecuali toplajur. Mari kita lihat pola korelasi terbarunya setelah data-data tersebut ditransformasikan menggunakan operasi logaritma.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:grafik-scatterplot-cfd-transform"></span>
+<img src="figures/grafik-scatterplot-cfd-transform-1.png" alt="Grafik Scatterplot Matrix CFD Pasca-Transformasi Logaritma" width="672"><p class="caption">
+Gambar 14.4: Grafik Scatterplot Matrix CFD Pasca-Transformasi Logaritma
+</p>
+</div>
+<p>Dapat dilihat pada Gambar <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#fig:grafik-scatterplot-cfd-transform">14.4</a> bahwa elips yang ditunjukkan antara <code>log_ongkos</code> dan variabel metrik lain (juga pada <code>log_jarak</code>) sudah menunjukkan orientasi yang miring dan lebih memanjang mengikuti titik referensi linear utamanya (titik sumbu silang). Elipsnya tidak lagi membulat atau berpusat sembarang di pojok seperti bentuk hubungan pada grafik sebelumnya. Pola linear ini menandakan bahwa hubungan tersebut kini terbaca lebih <em>linear</em>, sehingga korelasi Pearson bekerja lebih optimal dan pada gilirannya <strong>meningkatkan signifikansi variabel saat hendak dilibatkan dalam analisis komponen prinsip atau analisis faktor.</strong></p>
+</div>
+<div id="langkah-langkah-dalam-melakukan-pca-atau-analisis-faktor" class="section level2" number="14.4">
+<h2>
+<span class="header-section-number">14.4</span> Langkah-langkah dalam Melakukan PCA atau Analisis Faktor<a class="anchor" aria-label="anchor" href="#langkah-langkah-dalam-melakukan-pca-atau-analisis-faktor"><i class="fas fa-link"></i></a>
+</h2>
+<p>Setelah kita mengecek asumsi-asumsi, kita melakukan langkah-langkah berikut dalam melakukan analisis komponen prinsip. Secara umum langkah-langkah yang kita perlu lakukan di antaranya:</p>
+<ol style="list-style-type: decimal">
+<li>mempersiapkan data,</li>
+<li>mengekstrak dimensi baru, melakukan rotasi, dan</li>
+<li>interpretasi dimensi</li>
+</ol>
+<p>Tentu saja, secara teknis langkah-langkah ini kita lakukan dengan bantuan program komputer, bukan dengan hitungan manual seperti materi-materi sebelumnya.</p>
+<div id="mempersiapkan-data" class="section level3" number="14.4.1">
+<h3>
+<span class="header-section-number">14.4.1</span> Mempersiapkan Data<a class="anchor" aria-label="anchor" href="#mempersiapkan-data"><i class="fas fa-link"></i></a>
+</h3>
+<p>Di langkah ini kita melakukan <strong>uji kelayakan data</strong> untuk memastikan data kita memiliki <strong>interkorelasi</strong> yang memadai, artinya terdapat korelasi yang cukup kuat satu sama lain antarvariabel yang kita analisis. Pemenuhan kriteria ini dilihat dari 2 indikator:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Uji <em>Bartlett of Sphericity</em></strong>, kriteria korelasi memadai adalah ketika <em>p-value</em> pengujian &lt; 0,05, dan</p></li>
+<li>
+<p><strong><em>Measure of Sampling Adequacy</em></strong> yang diuji menggunakan koefisien <strong>Kaiser-Meyer-Olkin (KMO) <em>test</em></strong>, kriteria korelasi memadai adalah ketika nilai tes KMO &gt; 0,5.</p>
+<p>Ada dua jenis nilai KMO, yaitu KMO secara keseluruhan dan KMO secara individual. Jika nilai KMO secara keseluruhan &gt; 0,5 maka data kita layak untuk dilakukan analisis PCA atau analisis faktor. Akan tetapi, jika nilai KMO secara individual &lt; 0,5 maka variabel tersebut <strong>dikeluarkan</strong> analisis PCA atau analisis faktor.</p>
+</li>
+</ol>
+</div>
+<div id="studi-kasus-uji-kelayakan-data-interkorelasi" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Uji Kelayakan Data (interkorelasi)<a class="anchor" aria-label="anchor" href="#studi-kasus-uji-kelayakan-data-interkorelasi"><i class="fas fa-link"></i></a>
+</h3>
+<pre><code>## P-value Bartlett's Test of Sphericity adalah 1,191296e-141 
+## 
+## Kaiser-Meyer-Olkin factor adequacy
+## Call: KMO(r = dataCFDMetric_Log)
+## Overall MSA =  0,65
+## MSA for each item = 
+##      toplajur    log_ongkos   log_bparkir    log_durasi    log_bareng      log_usia  log_jmlmotor  log_jmlmobil 
+##          0,84          0,58          0,65          0,59          0,74          0,68          0,74          0,67 
+## log_jmlsepeda log_jmldewasa   log_jmlanak     log_jarak 
+##          0,65          0,59          0,60          0,65</code></pre>
+<p>Berdasarkan pengujian kedua indikator menggunakan R tersebut, nilai p pengujian <em>Bartlett of Sphericity</em> menunjukkan nilai 1,191296e-141. Nilai MSA/nilai uji KMO keseluruhan menunjukkan 0,6531869.</p>
+<p>Ini berarti uji Bartlett of Sphericity menunjukkan hasil yang signifikan karena bernilai &lt;0,05 serta untuk MSA nilai uji KMO berada lebih dari 0,5. Secara uji kelayakan data, maka data kita dikatakan layak. Hasil uji KMO untuk setiap variabel juga menunjukkan tidak adanya variabel yang memiliki nilai MSA &lt;0,5 yang berarti data kita bisa terus dianalisis.</p>
+</div>
+<div id="mengekstrak-dimensi-baru" class="section level3" number="14.4.2">
+<h3>
+<span class="header-section-number">14.4.2</span> Mengekstrak Dimensi Baru<a class="anchor" aria-label="anchor" href="#mengekstrak-dimensi-baru"><i class="fas fa-link"></i></a>
+</h3>
+<p>Jika kriteria-kriteria <em>Bartlett’s test of sphericity</em> serta MSA terpenuhi, kita dapat melanjutkan analisis kita ke tahap kedua, yakni mengekstrak atau ekstraksi dimensi baru. Terdapat dua metode dalam melakukan ekstraksi dimensi baru: metode <strong><em>principal component analysis</em> (PCA)</strong> dan <strong><em>common factor analysis</em></strong> atau yang akan kita sebut <strong>analisis faktor</strong>.</p>
+<p>Secara konseptual perbedaan keduanya sudah dijelaskan di subbab <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#kegunaan-pca-analisis-faktor">14.2</a>. Secara teknis, perbedaan antara PCA dan analisis faktor terletak pada <strong>variat</strong> dan <strong><em>factor score</em></strong>. Dua hal ini <strong>hanya dihasilkan dari PCA</strong>. Analisis faktor tidak menghasilkan dua hal ini, tetapi <strong>hanya mengelompokkan variabel-variabel yang mirip dalam satu dimensi baru</strong>.</p>
+<p>Mengekstrak dimensi baru membutuhkan keputusan terkait jumlah dimensi baru yang diekstrak. Untuk memutuskannya, kita melakukan analisis lain yang disebut <strong>analisis paralel (<em>parallel analysis</em>)</strong>. Analisis paralel dilakukan dengan menggunakan pendekatan <strong><em>eigenvalue</em></strong> (nilai eigen) dan <strong><em>scree plot</em></strong> (grafik patahan).</p>
+<div id="pendekatan-eigenvalue" class="section level4" number="14.4.2.1">
+<h4>
+<span class="header-section-number">14.4.2.1</span> Pendekatan <em>Eigenvalue</em><a class="anchor" aria-label="anchor" href="#pendekatan-eigenvalue"><i class="fas fa-link"></i></a>
+</h4>
+<p>Sebelum sampai ke pembahasan <em>eigenvalue</em>, kita akan mulai dari konsep yang paling awal terlebih dahulu: nilai terstandar dan variansi totalnya.</p>
+<p>Sebelum diolah, nilai-nilai seluruh variabel analisis kita distandarkan terlebih dahulu, atau diubah dalam bentuk <strong><em>Z-score</em></strong>. Artinya seluruh variabel akan mempunyai nilai rata-rata dan variansi/simpangan baku yang sama, yakni 0 dan 1, secara berturut-turut. Untuk menstandarkan nilai-nilai variabel kita, seperti yang sudah dibahas dalam Bab <a href="bab-5-pengantar-inferensial.html#bab-5-pengantar-inferensial">5</a>, yakni pada persamaan <a href="bab-5-pengantar-inferensial.html#eq:z-score">(5.5)</a>, setiap nilai dalam data kita (<span class="math inline">\(x_i\)</span>) dihitung dengan persamaan berikut:</p>
+<p><span class="math display">\[
+Z_i = \frac{x_i - \bar{x}}{s}
+\]</span></p>
+<p>Variansi bisa dihitung. Jika kita berbicara <strong>total variansi</strong>, artinya kita menjumlahkan seluruh variansi variabel yang kita analisis. Karena setiap variabel sudah terstandardisasi, variansinya bernilai 1. Karena itu juga, total variansi variabel-variabel yang kita analisis akan <strong>bernilai sama seperti jumlah variabel kita</strong>.</p>
+<p>Setiap dimensi atau jumlah dimensi yang dihasilkan dari gabungan variabel-variabel analisis kita memiliki sebuah skor yang disebut <strong>Nilai eigen</strong> atau <strong><em>eigenvalue</em></strong>. Nilai eigen atau <em>eigenvalue</em> adalah nilai yang merepresentasikan besar atau porsi variansi dari variabel asli yang berhasil dirangkum oleh dimensi tersebut. Nilai ini kita gunakan untuk menentukan jumlah dimensi baru yang kita hasilkan dalam analisis paralel.</p>
+<p>Tabel yang menunjukkan nilai <em>eigen</em> dan persentase kumulatif total nilai <em>eigen</em> untuk setiap jumlah dimensi biasa digunakan untuk menentukan jumlah dimensi yang dihasilkan. Tabel tersebut <strong>memiliki baris yang berjumlah sama dengan jumlah variabel yang dianalisis</strong>. Dengan demikian, jumlah dimensi yang akan dihasilkan bisa berjumlah <strong>1 yang berisi <span class="math inline">\(n\)</span> variabel yang dianalisis</strong> hingga <strong><span class="math inline">\(n\)</span> dimensi yang masing-masing hanya berisi 1 variabel analisis</strong>. Kita akan memilih jumlah yang optimal di antara itu.</p>
+<p>Kriteria yang digunakan untuk menentukan jumlah dimensi biasanya adalah yang memiliki nilai <em>eigen</em> <span class="math inline">\(&gt;1{,}00\)</span> atau yang memiliki persentase kumulatif total nilai <em>eigen</em> <span class="math inline">\(\geq 60\%\)</span> <span class="citation">(<a href="referensi.html#ref-Hair-Multivariate">Hair et al. 2013</a>)</span>.</p>
+</div>
+<div id="studi-kasus-mengekstrak-sejumlah-dimensi-baru-menggunakan-nilai-eigen" class="section level4 unnumbered rmdkasus">
+<h4>Studi Kasus: Mengekstrak Sejumlah Dimensi Baru Menggunakan Nilai <em>Eigen</em><a class="anchor" aria-label="anchor" href="#studi-kasus-mengekstrak-sejumlah-dimensi-baru-menggunakan-nilai-eigen"><i class="fas fa-link"></i></a>
+</h4>
+<p>Tabel <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#tab:show-loading">14.2</a> berikut menampilkan nilai <em>eigen</em> dan persentase kumulatif total nilai <em>eigen</em> untuk setiap jumlah dimensi. Berdasarkan kriteria yang telah disebutkan sebelumnya, yakni nilai <em>eigen</em> <span class="math inline">\(&gt;1{,}00\)</span> atau yang memiliki persentase kumulatif total nilai <em>eigen</em> <span class="math inline">\(\geq 60\%\)</span>. Sehingga jumlah dimensi yang akan diekstrak adalah <strong>4 dimensi</strong>, walaupun pada jumlah tersebut nilai persentase kumulatif total nilai <em>eigen</em>-nya tidak pas 60%, kita bisa menganggap nilai 59,2257% tersebut mendekati 60% saja.</p>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:show-loading">Tabel 14.2: </span>Nilai Eigen dan Persentase Kumulatif dari Tiap Dimensi
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Jumlah dimensi
+</th>
+<th style="text-align:center;">
+Nilai Eigen
+</th>
+<th style="text-align:center;">
+Persentase Kumulatif (%)
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+2,8721
+</td>
+<td style="text-align:center;">
+23,9342
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+1,8922
+</td>
+<td style="text-align:center;">
+39,7022
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+1,2761
+</td>
+<td style="text-align:center;">
+50,3363
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+1,0667
+</td>
+<td style="text-align:center;">
+59,2257
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+0,9924
+</td>
+<td style="text-align:center;">
+67,4956
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+0,9154
+</td>
+<td style="text-align:center;">
+75,1241
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+0,7647
+</td>
+<td style="text-align:center;">
+81,4967
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+0,6730
+</td>
+<td style="text-align:center;">
+87,1051
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+0,5352
+</td>
+<td style="text-align:center;">
+91,5653
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+0,4775
+</td>
+<td style="text-align:center;">
+95,5445
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+0,3268
+</td>
+<td style="text-align:center;">
+98,2681
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+0,2078
+</td>
+<td style="text-align:center;">
+100,0000
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="pendekatan-scree-plot" class="section level4" number="14.4.2.2">
+<h4>
+<span class="header-section-number">14.4.2.2</span> Pendekatan <em>Scree Plot</em><a class="anchor" aria-label="anchor" href="#pendekatan-scree-plot"><i class="fas fa-link"></i></a>
+</h4>
+<p>Untuk <em>scree plot</em>, kita perlu membuat grafik garis untuk nilai <em>eigen</em> dengan jumlah dimensinya. Jumlah dimensi yang kita ambil adalah titik yang menandakan <strong>perbelokan melandai pertama</strong> yang ada pada grafik tersebut. <em>Scree plot</em> pada dasarnya memetakan nilai <em>eigen</em> terhadap jumlah dimensi.</p>
+</div>
+<div id="studi-kasus-mengekstrak-sejumlah-dimensi-baru-menggunakan-scree-plot" class="section level4 unnumbered rmdkasus">
+<h4>Studi Kasus: Mengekstrak Sejumlah Dimensi Baru Menggunakan <em>Scree Plot</em><a class="anchor" aria-label="anchor" href="#studi-kasus-mengekstrak-sejumlah-dimensi-baru-menggunakan-scree-plot"><i class="fas fa-link"></i></a>
+</h4>
+<p>Grafik untuk kasus kita diperlihatkan pada Gambar <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#fig:show-scree-plot">14.5</a>. Pada gambar tersebut, perbelokan melandai agak sulit ditentukan karena nampaknya tidak perbelokan yang terlalu tajam pada titik mana pun. Dengan demikian, kriteria ini sulit untuk digunakan dalam menentukan jumlah dimensi yang akan diekstrak.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:show-scree-plot"></span>
+<img src="figures/show-scree-plot-1.png" alt="Scree Plot untuk Data CFD (Transformasi Log)" width="672"><p class="caption">
+Gambar 14.5: Scree Plot untuk Data CFD (Transformasi Log)
+</p>
+</div>
+<p>Karena kesulitan dalam pendekatan ini, kita akan menentukan jumlah dimensi yang akan diekstrak menggunakan pendekatan nilai <em>eigen</em> saja, yakni <strong>4 dimensi</strong>.</p>
+</div>
+</div>
+<div id="mengelompokkan-variabel-variabel-ke-dalam-dimensi-baru" class="section level3" number="14.4.3">
+<h3>
+<span class="header-section-number">14.4.3</span> Mengelompokkan Variabel-variabel ke dalam Dimensi Baru<a class="anchor" aria-label="anchor" href="#mengelompokkan-variabel-variabel-ke-dalam-dimensi-baru"><i class="fas fa-link"></i></a>
+</h3>
+<p>Setelah memutuskan jumlah dimensi yang kita ekstrak, kita harus mengelompokkan variabel-variabel ke dalam dimensi yang kita ekstrak.</p>
+<p>Istilah “dimensi” ini sekarang harus kita bedakan. Jika kita menggunakan PCA, maka nama dimensi kita adalah <strong>komponen</strong> atau <strong>variat</strong>. Namun apabila kita menggunakan analisis faktor, dimensi kita disebut <strong>faktor</strong>.</p>
+<p>Variabel dikelompokkan ke dalam dimensi berdasarkan <strong>nilai <em>loading</em>-nya</strong>. Setiap variabel mempunyai nilai loading untuk tiap-tiap dimensi yang disajikan dalam <strong><em>factor matrix</em></strong>. Untuk menentukan ke dalam dimensi mana tiap-tiap variabel dikelompokkan, kita mengacu pada <strong>nilai absolut <em>loading</em> terbesar</strong> yang ada di antara sejumlah dimensi yang diekstrak.</p>
+</div>
+<div id="studi-kasus-mengelompokkan-variabel-variabel-ke-dalam-dimensi-baru" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Mengelompokkan Variabel-variabel ke dalam Dimensi Baru<a class="anchor" aria-label="anchor" href="#studi-kasus-mengelompokkan-variabel-variabel-ke-dalam-dimensi-baru"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="tajuksaya">Untuk Analisis Komponen Prinsip</span></p>
+<p>Berikut adalah tabel <em>loading</em> untuk komponen-komponen yang diekstrak. Karena kita sudah menentukan jumlah dimensi yang diekstrak adalah 4, kita hanya tinggal menggolongkan tiap-tiap variabel ke dalam komponen yang memiliki nilai <em>loading</em> absolut terbesar. Sel yang tidak memiliki angka menandakan <strong>nilai <em>loading</em> variabel dalam dimensi tersebut sangat kecil hingga mendekati nol</strong>.</p>
+<pre><code>## 
+## Loadings:
+##               PC1    PC2    PC3    PC4   
+## toplajur       0,706        -0,227 -0,195
+## log_ongkos     0,623 -0,605  0,239 -0,123
+## log_bparkir    0,572 -0,528  0,376       
+## log_durasi     0,568  0,109 -0,620  0,283
+## log_bareng     0,146 -0,286  0,284  0,289
+## log_usia              0,491        -0,308
+## log_jmlmotor   0,464  0,450  0,131       
+## log_jmlmobil   0,418  0,207  0,377 -0,414
+## log_jmlsepeda  0,409  0,630  0,137 -0,183
+## log_jmldewasa  0,217  0,469  0,246  0,522
+## log_jmlanak    0,305  0,189  0,363  0,522
+## log_jarak      0,780 -0,124 -0,433       
+## 
+##                  PC1   PC2   PC3   PC4
+## SS loadings    2,872 1,892 1,276 1,067
+## Proportion Var 0,239 0,158 0,106 0,089
+## Cumulative Var 0,239 0,397 0,503 0,592</code></pre>
+<p>Berdasarkan hasil PCA tersebut, pengelompokan tiap-tiap komponennya adalah:</p>
+<ul>
+<li>toplajur : PC1</li>
+<li>log_ongkos : PC1</li>
+<li>log_bparkir : PC1</li>
+<li>log_durasi : PC3</li>
+<li>log_bareng : PC4</li>
+<li>log_usia : PC2</li>
+<li>log_jmlmotor : PC2</li>
+<li>log_jmlmobil : PC1</li>
+<li>log_jmlsepeda : PC2</li>
+<li>log_jmldewasa : PC4</li>
+<li>log_jmlanak : PC4</li>
+<li>log_jarak : PC1</li>
+</ul>
+<p>Dengan demikian, pengelompokan tiap-tiap komponennya ditunjukkan oleh Tabel <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#tab:pca-grouping">14.3</a> berikut.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:pca-grouping">Tabel 14.3: </span>Pengelompokan Variabel ke dalam Komponen Baru
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+PC1
+</th>
+<th style="text-align:center;">
+PC2
+</th>
+<th style="text-align:center;">
+PC3
+</th>
+<th style="text-align:center;">
+PC4
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+toplajur
+</td>
+<td style="text-align:center;">
+log_usia
+</td>
+<td style="text-align:center;">
+log_durasi
+</td>
+<td style="text-align:center;">
+log_bareng
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_ongkos
+</td>
+<td style="text-align:center;">
+log_jmlmotor
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+log_jmldewasa
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_bparkir
+</td>
+<td style="text-align:center;">
+log_jmlsepeda
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+log_jmlanak
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_jmlmobil
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_jarak
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table></div>
+<p><span class="tajuksaya">Untuk Analisis Faktor</span></p>
+<p>Berikut adalah tabel <em>loading</em> untuk faktor-faktor yang diekstrak. Karena kita sudah menentukan jumlah dimensi yang diekstrak adalah 4, kita hanya tinggal menggolongkan tiap-tiap variabel ke dalam faktor yang memiliki nilai <em>loading</em> absolut terbesar.</p>
+<pre><code>## 
+## Loadings:
+##               MR1    MR2    MR3    MR4   
+## toplajur       0,596        -0,162       
+## log_ongkos     0,691 -0,582  0,306       
+## log_bparkir    0,552 -0,397  0,342       
+## log_durasi     0,515  0,180 -0,392 -0,321
+## log_bareng     0,113 -0,138              
+## log_usia              0,270         0,199
+## log_jmlmotor   0,349  0,347         0,166
+## log_jmlmobil   0,312  0,156  0,125  0,251
+## log_jmlsepeda  0,338  0,574         0,456
+## log_jmldewasa  0,207  0,653  0,575 -0,445
+## log_jmlanak    0,217  0,147  0,163       
+## log_jarak      0,809        -0,372 -0,233
+## 
+##                  MR1   MR2   MR3   MR4
+## SS loadings    2,495 1,543 0,915 0,711
+## Proportion Var 0,208 0,129 0,076 0,059
+## Cumulative Var 0,208 0,337 0,413 0,472</code></pre>
+<p>Loadings:
+MR1 MR2 MR3 MR4<br>
+toplajur 0.596 -0.162<br>
+log_ongkos 0.691 -0.582 0.306<br>
+log_bparkir 0.552 -0.397 0.342<br>
+log_durasi 0.515 0.180 -0.392 -0.321
+log_bareng 0.113 -0.138<br>
+log_usia 0.270 0.199
+log_jmlmotor 0.349 0.347 0.166
+log_jmlmobil 0.312 0.156 0.125 0.251
+log_jmlsepeda 0.338 0.574 0.456
+log_jmldewasa 0.207 0.653 0.575 -0.445
+log_jmlanak 0.217 0.147 0.163<br>
+log_jarak 0.809 -0.372 -0.233</p>
+<p>Berdasarkan hasil analisis faktor tersebut, pengelompokan tiap-tiap faktornya adalah:</p>
+<ul>
+<li>toplajur : MR1</li>
+<li>log_ongkos : MR1</li>
+<li>log_bparkir : MR1</li>
+<li>log_durasi : MR1</li>
+<li>log_bareng : MR2</li>
+<li>log_usia : MR2</li>
+<li>log_jmlmotor : MR1</li>
+<li>log_jmlmobil : MR1</li>
+<li>log_jmlsepeda : MR2</li>
+<li>log_jmldewasa : MR2</li>
+<li>log_jmlanak : MR1</li>
+<li>log_jarak : MR1</li>
+</ul>
+<p>Dengan demikian, pengelompokan tiap-tiap faktornya ditunjukkan oleh Tabel <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#tab:factors-grouping">14.4</a> berikut.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:factors-grouping">Tabel 14.4: </span>Pengelompokan Variabel ke dalam Faktor Baru
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+MR1
+</th>
+<th style="text-align:center;">
+MR2
+</th>
+<th style="text-align:center;">
+MR3
+</th>
+<th style="text-align:center;">
+MR4
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+toplajur
+</td>
+<td style="text-align:center;">
+log_bareng
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_ongkos
+</td>
+<td style="text-align:center;">
+log_usia
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_bparkir
+</td>
+<td style="text-align:center;">
+log_jmlsepeda
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_durasi
+</td>
+<td style="text-align:center;">
+log_jmldewasa
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_jmlmotor
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_jmlmobil
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_jmlanak
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_jarak
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="merotasi-dimensi" class="section level3" number="14.4.4">
+<h3>
+<span class="header-section-number">14.4.4</span> Merotasi Dimensi<a class="anchor" aria-label="anchor" href="#merotasi-dimensi"><i class="fas fa-link"></i></a>
+</h3>
+<p>Nilai-nilai loading bisa tidak kontras antarfaktor atau antarkomponen. Ini membuat pengelompokan tidak tegas. Untuk membuat nilai loading dalam setiap faktor atau komponen cenderung kontras atau timpang satu sama lain, kita dapat melakukan <strong>rotasi</strong>. Proses rotasi akan memberatkan nilai loading tiap-tiap variabel ke satu faktor atau komponen sehingga pengelompokan dapat dilakukan dengan lebih baik.</p>
+<p>Terdapat banyak jenis rotasi faktor atau komponen yang digolongkan menjadi <strong><em>orthogonal</em></strong> dan <strong><em>oblique</em></strong>. Teknik rotasi yang termasuk ke dalam jenis orthogonal dan banyak dipakai antara lain <strong><em>quartimax</em></strong>, <strong><em>varimax</em></strong>, dan <strong><em>equamax</em></strong>. Sementara itu, teknik rotasi jenis oblique yang banyak dipakai antara lain <strong><em>promax</em></strong>, <strong><em>oblimin</em></strong>, dan <strong><em>simplimax</em></strong>.</p>
+</div>
+<div id="studi-kasus-merotasi-dimensi-menggunakan-varimax" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Merotasi Dimensi Menggunakan Varimax<a class="anchor" aria-label="anchor" href="#studi-kasus-merotasi-dimensi-menggunakan-varimax"><i class="fas fa-link"></i></a>
+</h3>
+<p>Sekarang kita akan menerapkan salah satu teknik rotasi yakni <em>varimax</em> baik untuk analisis komponen prinsip kita maupun analisis faktor.</p>
+<p><span class="tajuksaya">Untuk Analisis Komponen Prinsip</span></p>
+<pre><code>## 
+## Loadings:
+##               RC1    RC3    RC2    RC4   
+## toplajur       0,622  0,289  0,331       
+## log_ongkos     0,242  0,872              
+## log_bparkir    0,125  0,852              
+## log_durasi     0,872 -0,107         0,157
+## log_bareng            0,385 -0,199  0,275
+## log_usia             -0,214  0,550       
+## log_jmlmotor   0,225         0,552  0,284
+## log_jmlmobil          0,319  0,653       
+## log_jmlsepeda  0,163 -0,109  0,726  0,224
+## log_jmldewasa        -0,119  0,185  0,741
+## log_jmlanak           0,174         0,704
+## log_jarak      0,855  0,279              
+## 
+##                  RC1   RC3   RC2   RC4
+## SS loadings    2,039 2,013 1,758 1,298
+## Proportion Var 0,170 0,168 0,146 0,108
+## Cumulative Var 0,170 0,338 0,484 0,592</code></pre>
+<ul>
+<li>toplajur : RC1</li>
+<li>log_ongkos : RC3</li>
+<li>log_bparkir : RC3</li>
+<li>log_durasi : RC1</li>
+<li>log_bareng : RC3</li>
+<li>log_usia : RC2</li>
+<li>log_jmlmotor : RC2</li>
+<li>log_jmlmobil : RC2</li>
+<li>log_jmlsepeda : RC2</li>
+<li>log_jmldewasa : RC4</li>
+<li>log_jmlanak : RC4</li>
+<li>log_jarak : RC1</li>
+</ul>
+<p>Dengan demikian, pengelompokan tiap-tiap komponennya ditunjukkan oleh Tabel <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#tab:pca-grouping-rotation">14.5</a> berikut.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:pca-grouping-rotation">Tabel 14.5: </span>Pengelompokan Variabel ke dalam Komponen Baru
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+RC1
+</th>
+<th style="text-align:center;">
+RC2
+</th>
+<th style="text-align:center;">
+RC3
+</th>
+<th style="text-align:center;">
+RC4
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+toplajur
+</td>
+<td style="text-align:center;">
+log_usia
+</td>
+<td style="text-align:center;">
+log_ongkos
+</td>
+<td style="text-align:center;">
+log_jmldewasa
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_durasi
+</td>
+<td style="text-align:center;">
+log_jmlmotor
+</td>
+<td style="text-align:center;">
+log_bparkir
+</td>
+<td style="text-align:center;">
+log_jmlanak
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_jarak
+</td>
+<td style="text-align:center;">
+log_jmlmobil
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+log_jmlsepeda
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+</tbody>
+</table></div>
+<p><span class="tajuksaya">Untuk Analisis Faktor</span></p>
+<pre><code>## 
+## Loadings:
+##               MR2    MR1    MR4    MR3   
+## toplajur       0,268  0,471  0,308       
+## log_ongkos     0,937  0,194              
+## log_bparkir    0,751  0,106              
+## log_durasi            0,733         0,104
+## log_bareng     0,193                     
+## log_usia      -0,139         0,312       
+## log_jmlmotor          0,171  0,458  0,178
+## log_jmlmobil   0,182         0,398       
+## log_jmlsepeda -0,120  0,124  0,787       
+## log_jmldewasa                0,160  0,982
+## log_jmlanak    0,116         0,190  0,207
+## log_jarak      0,286  0,866  0,125       
+## 
+##                  MR2   MR1   MR4   MR3
+## SS loadings    1,722 1,610 1,264 1,069
+## Proportion Var 0,144 0,134 0,105 0,089
+## Cumulative Var 0,144 0,278 0,383 0,472</code></pre>
+<p>Dengan demikian, pengelompokan tiap-tiap faktornya adalah sebagai berikut.</p>
+<ul>
+<li>toplajur : MR1</li>
+<li>log_ongkos : MR2</li>
+<li>log_bparkir : MR2</li>
+<li>log_durasi : MR1</li>
+<li>log_bareng : MR2</li>
+<li>log_usia : MR4</li>
+<li>log_jmlmotor : MR4</li>
+<li>log_jmlmobil : MR4</li>
+<li>log_jmlsepeda : MR4</li>
+<li>log_jmldewasa : MR3</li>
+<li>log_jmlanak : MR3</li>
+<li>log_jarak : MR1</li>
+</ul>
+<p>Dengan demikian, pengelompokan tiap-tiap faktornya ditunjukkan oleh Tabel <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#tab:factors-grouping-rotation">14.6</a> berikut.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:factors-grouping-rotation">Tabel 14.6: </span>Pengelompokan Variabel ke dalam Faktor Baru
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+MR1
+</th>
+<th style="text-align:center;">
+MR2
+</th>
+<th style="text-align:center;">
+MR3
+</th>
+<th style="text-align:center;">
+MR4
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+toplajur
+</td>
+<td style="text-align:center;">
+log_ongkos
+</td>
+<td style="text-align:center;">
+log_jmldewasa
+</td>
+<td style="text-align:center;">
+log_usia
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_durasi
+</td>
+<td style="text-align:center;">
+log_bparkir
+</td>
+<td style="text-align:center;">
+log_jmlanak
+</td>
+<td style="text-align:center;">
+log_jmlmotor
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_jarak
+</td>
+<td style="text-align:center;">
+log_bareng
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+log_jmlmobil
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+log_jmlsepeda
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Perhatikan bahwa hasil rotasi faktor, baik di analisis komponen prinsip maupun analisis faktor, menghasilkan pengelompokan yang berbeda, terutama analisis faktor. Dengan merotasi dimensi kita, kita dapat memperoleh pengelompokan yang lebih baik, lebih merata.</p>
+</div>
+<div id="memperoleh-skor-komponen-khusus-pca" class="section level3" number="14.4.5">
+<h3>
+<span class="header-section-number">14.4.5</span> Memperoleh Skor Komponen (Khusus PCA)<a class="anchor" aria-label="anchor" href="#memperoleh-skor-komponen-khusus-pca"><i class="fas fa-link"></i></a>
+</h3>
+<p>Jika kita melakukan analisis komponen prinsip, langkah setelah kita merotasi komponen adalah memperoleh <strong>skor komponen</strong>. Skor komponen ini bertindak seperti halnya koefisien dalam variabel-variabel independen. Gunanya adalah untuk membentuk variat yang merupakan persamaan linear yang disusun oleh variabel-variabel anggotanya.</p>
+</div>
+<div id="studi-kasus-skor-komponen" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Skor Komponen<a class="anchor" aria-label="anchor" href="#studi-kasus-skor-komponen"><i class="fas fa-link"></i></a>
+</h3>
+<p>Berdasarkan hasil rotasi komponen pada analisis komponen prinsip sebelumnya, kita dapat memperoleh skor komponen yang hasilnya sebagai berikut.</p>
+<pre><code>##                         RC1         RC3          RC2         RC4
+## toplajur       0,2698448898  0,06185094  0,147576682 -0,16431033
+## log_ongkos    -0,0001587735  0,43591296  0,002633547 -0,08886238
+## log_bparkir   -0,0742058511  0,44423828  0,001300764  0,04262334
+## log_durasi     0,5184147911 -0,20292687 -0,173049076  0,09273347
+## log_bareng    -0,0833757986  0,21490275 -0,159137562  0,26415927
+## log_usia      -0,0512698654 -0,10229332  0,357584049 -0,11549171
+## log_jmlmotor   0,0350256675 -0,01468710  0,275851814  0,13075177
+## log_jmlmobil  -0,1633454889  0,19304302  0,436062929 -0,12960943
+## log_jmlsepeda -0,0002867880 -0,07286672  0,404523751  0,05463730
+## log_jmldewasa -0,0118721576 -0,07246386 -0,017484482  0,58147855
+## log_jmlanak   -0,0561462339  0,08874112 -0,072760073  0,56999606
+## log_jarak      0,4355962822  0,01305148 -0,062758122 -0,04884673</code></pre>
+<p>Berdasarkan keluaran skor tersebut, kita dapat menuliskan persamaan variat sebagai berikut.</p>
+<p><span class="math display">\[
+\begin{aligned}
+RC1 &amp;= 0{,}263 \text{toplajur} + 0{,}518\text{log_durasi} + 0{,}436 \text{log_jarak} \\
+RC2 &amp;= 0{,}357\text{log_usia} + 0{,}276 \text{log_jmlmotor} + 0{,}436 \text{log_jmlmobil} + 0{,}405 \text{log_jmlsepeda} \\
+RC3 &amp;= 0{,}436 \text{log_ongkos} + 0{,}444 \text{log_bparkir} \\
+RC4 &amp;= 0{,}581 \text{log_jmldewasa} + 0{,}570 \text{log_jmlanak}
+\end{aligned}
+\]</span></p>
+</div>
+<div id="interpretasi-dimensi" class="section level3" number="14.4.6">
+<h3>
+<span class="header-section-number">14.4.6</span> Interpretasi Dimensi<a class="anchor" aria-label="anchor" href="#interpretasi-dimensi"><i class="fas fa-link"></i></a>
+</h3>
+<p>Langkah terakhir adalah menginterpretasi dimensi baru yang mengelompokkan variabel-variabel analisis kita. Di sini, kita memberi nama dimensi-dimensi dengan nama yang sesuai.</p>
+<p>Untuk PCA, interpretasi akhir kita adalah persamaan akhir variat yang kita gunakan untuk mengurangi jumlah kolom dalam dataset kita. Sedangkan untuk analisis faktor, interpretasi akhir kita adalah nama-nama dari tiap-tiap faktornya yang lebih kontekstual.</p>
+</div>
+<div id="studi-kasus-interpretasi-faktor" class="section level3 unnumbered rmdkasus">
+<h3>Studi Kasus: Interpretasi Faktor<a class="anchor" aria-label="anchor" href="#studi-kasus-interpretasi-faktor"><i class="fas fa-link"></i></a>
+</h3>
+<p>Dari kasus sebelumnya, kita mendapatkan pengelompokan faktor seperti berikut.</p>
+<div class="inline-table"><table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:factors-grouping-rotation-rewrite">Tabel 14.7: </span>Pengelompokan Variabel ke dalam Faktor Baru (Ditulis Ulang)
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+MR1
+</th>
+<th style="text-align:center;">
+MR2
+</th>
+<th style="text-align:center;">
+MR3
+</th>
+<th style="text-align:center;">
+MR4
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+toplajur
+</td>
+<td style="text-align:center;">
+log_ongkos
+</td>
+<td style="text-align:center;">
+log_jmldewasa
+</td>
+<td style="text-align:center;">
+log_usia
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_durasi
+</td>
+<td style="text-align:center;">
+log_bparkir
+</td>
+<td style="text-align:center;">
+log_jmlanak
+</td>
+<td style="text-align:center;">
+log_jmlmotor
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+log_jarak
+</td>
+<td style="text-align:center;">
+log_bareng
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+log_jmlmobil
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+log_jmlsepeda
+</td>
+</tr>
+</tbody>
+</table></div>
+<p>Kita dapat mengubah nama “MR1”, “MR2”, “MR3”, dan “MR4” pada tabel tersebut dengan nama kelompok yang lebih kontekstual lagi mewakili anggota-anggota faktornya. Misalnya, kita dapat menggunakan nama <em>impedansi perjalanan</em>, <em>biaya perjalanan</em>, <em>faktor rumah tangga</em>, dan <em>faktor kepemilikan kendaraan</em> untuk MR1, MR2, MR3, dan MR4.</p>
+<p>Alasan penamaan faktor tersebut secara demikian bisa dijelaskan sebagai berikut:</p>
+<ol style="list-style-type: decimal">
+<li>istilah “impedansi” merujuk pada pengertian “hambatan” dari perjalanan yang dilakukan. Jarak dan waktu tempuh sudah jelas menggambarkan hambatan yang akan memengaruhi orang untuk mengakses lokasi CFD atau tidak. Jika jaraknya dekat atau waktu tempuhnya singkat, impedansinya kecil, kemungkinan besar orang mau mengakses lokasi CFD. Untuk jumlah lajur paling banyak, kita bisa anggap hal tersebut sebagai pemikiran jika mengakses lokasi CFD memerlukan akses ke jalan yang lebih banyak lajurnya, dengan kata lain lebih ramai, mengakses lokasi CFD mengalami kenaikan impedansi;</li>
+<li>dua variabel, biaya perjalanan (<code>ongkos</code>) dan biaya parkir (<code>bparkir</code>) sangat digambarkan oleh istilah “biaya”. Walaupun nampaknya variabel jumlah orang dalam rombongan perjalanan (<code>bareng</code>) tidak ada kaitannya dengan biaya, jika kita pikirkan secara lebih mendalam, jumlah orang dalam rombongan perjalanan bisa memengaruhi moda yang dipilih. Jika jumlah rombongannya banyak, orang akan cenderung menggunakan kendaraan bermotor untuk mengakses lokasi CFD, yang berpengaruh pada biaya parkir;</li>
+<li>jumlah orang dewasa (<code>jmldewasa</code>) dan jumlah anak (<code>jmlanak</code>) sudah jelas merupakan variabel-variabel yang menggambarkan kondisi “rumah tangga” (<em>household</em>). Perlu dipahami bahwa pengertian “rumah tangga” di sini lebih ditujukan pada <strong>unit amatan</strong> alih-alih pada keluarga yang terdiri atas suami, istri, dan anak. Dua orang mahasiswa yang tinggal di suatu rumah kontrakan pada dasarnya bisa kita sebut sebagai “rumah tangga”;</li>
+<li>seperti halnya poin-2, kita bisa menyangkutpautkan <code>usia</code> dengan kepemilikan kendaraan. Orang yang lebih tua cenderung memiliki kendaraan bermotor ketimbang orang yang masih belia.</li>
+</ol>
+</div>
+<p>Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis komponen prinsip dan analisis faktor</p>
+</div>
+<div id="soal-evaluasi-16-1" class="section level2 unnumbered rmdexercise">
+<h2>Soal Evaluasi 16<a class="anchor" aria-label="anchor" href="#soal-evaluasi-16-1"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>
+<p><span class="capaian">STP-14.1</span> Diperoleh hasil pengujian awal dari 10 variabel yang dianalisis menggunakan PCA sebagai berikut.</p>
+<pre><code>P-value Bartlett's Test of Sphericity adalah 0.12196
+
+Kaiser-Meyer-Olkin factor adequacy
+Call: KMO(r = dataSoal1)
+Overall MSA =  0.46
+MSA for each item = 
+    x1        x2        x3        x4        x5        x6        x7 
+  0.36      0.47      0.67      0.48      0.53      0.56      0.49 
+    x8        x9       x10 
+  0.73      0.44      0.55 </code></pre>
+<p>Apa yang bisa kita simpulkan dari hasil pengujian tersebut terhadap PCA yang akan dilakukan?</p>
+</li>
+<li>
+<p><span class="capaian">STP-14.2</span> Sebuah riset dilakukan untuk menilai kualitas sebuah taman kota menggunakan instrumen dari 9 variabel evaluasi. Analisis faktor telah dilaksanakan terhadap kesembilan variabel tersebut dan telah merangkumnya menjadi tiga faktor secara seimbang (F1, F2, dan F3) yang diperlihatkan nilai-nilai <em>loading</em> pada Tabel <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#tab:factor-matrix-taman">14.8</a> berikut.</p>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<div class="inline-table"><table class="table table-striped table-hover table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:factor-matrix-taman">Tabel 14.8: </span>Matriks Faktor Variabel Kualitas Taman Kota
+</caption>
+<thead><tr>
+<th style="text-align:left;">
+Variabel
+</th>
+<th style="text-align:center;">
+F1
+</th>
+<th style="text-align:center;">
+F2
+</th>
+<th style="text-align:center;">
+F3
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Kebersihan area taman
+</td>
+<td style="text-align:center;">
+0,782
+</td>
+<td style="text-align:center;">
+0,145
+</td>
+<td style="text-align:center;">
+0,112
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ketersediaan tempat sampah
+</td>
+<td style="text-align:center;">
+0,695
+</td>
+<td style="text-align:center;">
+0,112
+</td>
+<td style="text-align:center;">
+0,205
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Keindahan dan perawatan tanaman
+</td>
+<td style="text-align:center;">
+0,812
+</td>
+<td style="text-align:center;">
+0,231
+</td>
+<td style="text-align:center;">
+0,088
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ketersediaan tempat duduk
+</td>
+<td style="text-align:center;">
+0,124
+</td>
+<td style="text-align:center;">
+0,756
+</td>
+<td style="text-align:center;">
+0,198
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kondisi area bermain anak
+</td>
+<td style="text-align:center;">
+0,203
+</td>
+<td style="text-align:center;">
+0,841
+</td>
+<td style="text-align:center;">
+0,154
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ketersediaan toilet umum
+</td>
+<td style="text-align:center;">
+0,155
+</td>
+<td style="text-align:center;">
+0,689
+</td>
+<td style="text-align:center;">
+0,221
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ketersediaan lampu penerangan
+</td>
+<td style="text-align:center;">
+0,105
+</td>
+<td style="text-align:center;">
+0,245
+</td>
+<td style="text-align:center;">
+0,825
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Hadirnya petugas pengawas
+</td>
+<td style="text-align:center;">
+0,089
+</td>
+<td style="text-align:center;">
+0,187
+</td>
+<td style="text-align:center;">
+0,774
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Kemudahan akses masuk
+</td>
+<td style="text-align:center;">
+0,215
+</td>
+<td style="text-align:center;">
+0,098
+</td>
+<td style="text-align:center;">
+0,698
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><strong>Keterangan variabel yang dianalisis:</strong></p>
+<ul>
+<li>
+<strong>Kebersihan area taman</strong>: persentase luasan area pedestrian (<em>paving/track</em>) yang secara visual bebas dari hambatan sampah (%).</li>
+<li>
+<strong>Ketersediaan tempat sampah</strong>: kepadatan sebaran jumlah tempat sampah riil di seluruh kawasan (unit per <span class="math inline">\(m^2\)</span>).</li>
+<li>
+<strong>Keindahan dan perawatan tanaman</strong>: skor indeks tutupan kanopi peneduh di area taman (rentang metrik 1-100).</li>
+<li>
+<strong>Ketersediaan tempat duduk</strong>: rasio perbandingan jumlah bangku taman terhadap estimasi jumlah pengunjung di jam-jam sibuk.</li>
+<li>
+<strong>Kondisi area bermain anak</strong>: total luasan spasial lantai fasilitas bermain anak (<em>playground</em>) yang layak pakai (<span class="math inline">\(m^2\)</span>).</li>
+<li>
+<strong>Ketersediaan toilet umum</strong>: keberadaan jumlah bilik MCK atau toilet fungsional per kapita pengunjung di akhir pekan.</li>
+<li>
+<strong>Ketersediaan lampu penerangan</strong>: besaran intensitas pencahayaan rata-rata pada titik-titik kumpul di taman saat malam hari (Lux).</li>
+<li>
+<strong>Hadirnya petugas pengawas</strong>: tingkat frekuensi durasi dan putaran patroli keamanan atau linmas per hari (putaran/hari).</li>
+<li>
+<strong>Kemudahan akses masuk</strong>: jarak meter dari pintu gerbang atau akses pejalan kaki taman menuju perhentian transportasi terdekat (meter).</li>
+</ul>
+<p>Berdasarkan besaran nilai <em>loading</em> dalam Matriks Faktor di Tabel <a href="analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor.html#tab:factor-matrix-taman">14.8</a> tersebut:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Tentukan variabel-variabel mana saja yang menyusun masing-masing faktor (F1, F2, dan F3)!</li>
+<li>Berikan pemberian nama yang komprehensif bagi ketiga faktor baru tersebut berdasarkan atas esensi logis variabel-variabel utamanya, lalu jelaskan alasan logis singkat Anda!</li>
+</ol>
+</li>
+</ol>
+</div>
+
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="bab-regresi-berganda.html"><span class="header-section-number">13</span> Kausalitas dengan Regresi Linear Berganda</a></div>
+<div class="next"><a href="referensi.html">Referensi</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li>
+<a class="nav-link" href="#analisis-statistik-multivariat-interdependensi-analisis-komponen-prinsip-dan-analisis-faktor"><span class="header-section-number">14</span> Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#capaian-pembelajaran-13">Capaian Pembelajaran</a></li></ul>
+</li>
+<li><a class="nav-link" href="#konsep-dasar-1"><span class="header-section-number">14.1</span> Konsep Dasar</a></li>
+<li><a class="nav-link" href="#kegunaan-pca-analisis-faktor"><span class="header-section-number">14.2</span> Kegunaan PCA dan Analisis Faktor</a></li>
+<li><a class="nav-link" href="#studi-kasus-kegunaan-pca-dan-analisis-faktor">Studi Kasus: Kegunaan PCA dan Analisis Faktor</a></li>
+<li><a class="nav-link" href="#asumsi-asumsi-dasar-dalam-melakukan-pcaanalisis-faktor"><span class="header-section-number">14.3</span> Asumsi-asumsi Dasar dalam Melakukan PCA/Analisis Faktor</a></li>
+<li><a class="nav-link" href="#studi-kasus-asumsi-konseptual-dan-statistikal">Studi Kasus: Asumsi Konseptual dan Statistikal</a></li>
+<li>
+<a class="nav-link" href="#langkah-langkah-dalam-melakukan-pca-atau-analisis-faktor"><span class="header-section-number">14.4</span> Langkah-langkah dalam Melakukan PCA atau Analisis Faktor</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#mempersiapkan-data"><span class="header-section-number">14.4.1</span> Mempersiapkan Data</a></li>
+<li><a class="nav-link" href="#studi-kasus-uji-kelayakan-data-interkorelasi">Studi Kasus: Uji Kelayakan Data (interkorelasi)</a></li>
+<li><a class="nav-link" href="#mengekstrak-dimensi-baru"><span class="header-section-number">14.4.2</span> Mengekstrak Dimensi Baru</a></li>
+<li><a class="nav-link" href="#mengelompokkan-variabel-variabel-ke-dalam-dimensi-baru"><span class="header-section-number">14.4.3</span> Mengelompokkan Variabel-variabel ke dalam Dimensi Baru</a></li>
+<li><a class="nav-link" href="#studi-kasus-mengelompokkan-variabel-variabel-ke-dalam-dimensi-baru">Studi Kasus: Mengelompokkan Variabel-variabel ke dalam Dimensi Baru</a></li>
+<li><a class="nav-link" href="#merotasi-dimensi"><span class="header-section-number">14.4.4</span> Merotasi Dimensi</a></li>
+<li><a class="nav-link" href="#studi-kasus-merotasi-dimensi-menggunakan-varimax">Studi Kasus: Merotasi Dimensi Menggunakan Varimax</a></li>
+<li><a class="nav-link" href="#memperoleh-skor-komponen-khusus-pca"><span class="header-section-number">14.4.5</span> Memperoleh Skor Komponen (Khusus PCA)</a></li>
+<li><a class="nav-link" href="#studi-kasus-skor-komponen">Studi Kasus: Skor Komponen</a></li>
+<li><a class="nav-link" href="#interpretasi-dimensi"><span class="header-section-number">14.4.6</span> Interpretasi Dimensi</a></li>
+<li><a class="nav-link" href="#studi-kasus-interpretasi-faktor">Studi Kasus: Interpretasi Faktor</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#soal-evaluasi-16-1">Soal Evaluasi 16</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/abdulmubdibindar/buku-ajar-stp/blob/master/15-multivariat-interdependensi.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/abdulmubdibindar/buku-ajar-stp/edit/master/15-multivariat-interdependensi.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Buku Ajar Statistika untuk Perencanaan</strong>" was written by Muhammad Abdul Mubdi Bindar, Husna Tiara Putri, Valendya Rilansari. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
