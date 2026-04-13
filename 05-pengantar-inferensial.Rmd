@@ -41,6 +41,10 @@ Keputusan mengambil 428 sampel ini didasarkan pada pertimbangan **efisiensi** da
 
 Teknik pengambilan sampel bertujuan memastikan bahwa sampel yang dipilih benar-benar dapat mewakili populasinya. @healey2021statistics menekankan prinsip EPSEM (*Equal Probability of Selection Method*), yakni prinsip yang menekankan bahwa **setiap anggota populasi memiliki kesempatan yang sama untuk dipilih**. Hal ini penting untuk menghasilkan sampel yang representatif.
 
+Terdapat dua jenis teknik dalam pengambilan sampel, yakni **teknik probabilitas** dan **teknik non-probabilitas**.
+
+### Teknik Probabilitas
+
 Teknik probabilitas adalah teknik yang menggunakan prinsip EPSEM. Untuk dapat menggunakannya, kita harus memiliki **kerangka sampel**. Kerangka sampel adalah daftar seluruh anggota populasi yang akan menjadi acuan kita untuk memilih sampel nantinya. Ada empat jenis teknik yang termasuk ke dalam teknik pengambilan sampel probabilitas [@tjokropandojo2021pengantar, @saunders2023]: *simple random sampling*, *systematic sampling*, *stratified sampling*, dan *multi-stage cluster sampling*.
 
 ::: rmdkasus
@@ -86,7 +90,7 @@ kable(tabel_gabungan, caption = "Daftar Lengkap Populasi (N=16)")
 Mari kita terapkan keempat teknik *sampling* untuk memilih sampel dari 16 orang ini.
 :::
 
-### *Simple Random Sampling*
+#### *Simple Random Sampling*
 
 *Simple random sampling* merupakan teknik paling dasar dalam pengambilan sampel probabilistik. Kita mengambil secara acak nomor yang merepresentasikan nomor urut sampel. Ini memungkinkan setiap anggota populasi memiliki peluang yang sama untuk dipilih. Pemilihan anggota sampel secara acak ini dapat dilakukan dengan bantuan sistem eksternal dari peneliti, misalnya melalui tabel angka acak atau program komputer yang menghasilkan angka acak (*random number generator*) (Gambar \@ref(fig:05-inferensia-img-srs)).
 
@@ -95,13 +99,13 @@ knitr::include_graphics("images/bab-5-srs.png")
 ```
 
 ::: rmdnote
-### Catatan: Miskonsepsi tentang Istilah Random {.unnumbered}
+[Catatan: Miskonsepsi tentang Istilah Random]{.tajuksaya}
 
 Banyak yang salah kaprah dengan istilah *random* pada *simple random sampling*. Keacakan (*random*) di sini maksudnya bukan asal mengambil sampel secara acak **langsung di dunia nyata**, akan tetapi kita mengambil sampel tersebut dari **sebuah kerangka sampel**, elemen vital dalam teknik *sampling* probabilitas.
 :::
 
 ::: rmdkasus
-### Studi Kasus: *Simple Random Sampling* dengan Populasi Kecil {.unnumbered}
+#### Studi Kasus: *Simple Random Sampling* dengan Populasi Kecil {.unnumbered}
 
 Misalkan kita menggunakan *random number generator* yang ada di hampir semua program *spreadsheet* untuk memilih 4 sampel. *Hasilnya adalah 4 orang yang terpilih secara acak tanpa pola tertentu.*
 
@@ -112,7 +116,7 @@ kable(sampel_srs, caption = "Hasil SRS (n=4)")
 ```
 :::
 
-### *Systematic Random Sampling*
+#### *Systematic Random Sampling*
 
 Berbeda dengan *simple random sampling*, *systematic random sampling* menggunakan sistem pemilihan berdasarkan interval tertentu. Langkah pertama adalah menentukan angka acak awal, kemudian memilih sampel berikutnya berdasarkan kelipatan dari angka tersebut.
 
@@ -121,7 +125,7 @@ knitr::include_graphics("images/bab-5-systematic.png")
 ```
 
 ::: rmdkasus
-### Studi Kasus: *Systematic Sampling* dengan Populasi Kecil {.unnumbered}
+#### Studi Kasus: *Systematic Sampling* dengan Populasi Kecil {.unnumbered}
 
 Kita ingin mengambil sampel dengan interval **k=4**. Kita urutkan berdasarkan ID, lalu ambil setiap kelipatan 4 (4, 8, 12, 16).
 
@@ -135,7 +139,7 @@ kable(sampel_sys, caption = "Hasil Systematic Sampling (Interval k=4)")
 *Perhatikan pola ID yang terpilih selalu berjarak 4 angka.*
 :::
 
-### *Stratified Random Sampling*
+#### *Stratified Random Sampling*
 
 Dalam beberapa kasus, populasi terdiri atas kelompok-kelompok, disebut **strata**, yang memiliki karakteristik yang sama didalamnya, misalnya jumlah anggota rumah tangga, tingkat pendidikan, atau status sosial ekonomi. Agar setiap kelompok terwakili, digunakanlah teknik *stratified random sampling*. Caranya adalah dengan membagi populasi ke dalam beberapa strata sesuai karakteristik yang relevan, kemudian mengambil sampel secara proporsional dari setiap strata.
 
@@ -144,7 +148,7 @@ knitr::include_graphics("images/bab-5-stratified.png")
 ```
 
 ::: rmdkasus
-### Studi Kasus: *Stratified Random Sampling* dengan Populasi Kecil {.unnumbered}
+#### Studi Kasus: *Stratified Random Sampling* dengan Populasi Kecil {.unnumbered}
 
 Kita ingin memastikan setiap **Kelompok** (A, B, C, D) terwakili. Kita bagi populasi menjadi 4 strata (Kelompok), lalu ambil **1 orang acak** dari setiap strata.
 
@@ -164,7 +168,7 @@ kable(sampel_strat,
 *Hasilnya menjamin ada masing-masing satu perwakilan dari Kelompok A, B, C, dan D.*
 :::
 
-### *Multi-Stage Cluster Sampling*
+#### *Multi-Stage Cluster Sampling*
 
 Teknik ini digunakan ketika kerangka sampel individu tidak tersedia, tetapi kerangka sampel untuk kelompok (klaster) tersedia. Misalnya, kita tidak punya daftar nama seluruh penduduk kota, tetapi kita punya kerangka sampel nama-nama kelurahan. Kita bisa memilih beberapa kelurahan secara acak (tahap 1), kemudian menghasilkan kerangka sampel baru dari kelurahan yang terpilih tersebut, misalnya berdasarkan batas administratif (RW/lingkungan), atau berdasarkan batas fisik, seperti blok-blok jalan (tahap 2). Dari kerangka sampel tersebut kita pilih lagi secara acak anggota kerangka sampel tersebut.
 
@@ -173,7 +177,7 @@ knitr::include_graphics("images/bab-5-msc-sampling.png")
 ```
 
 ::: rmdkasus
-### Studi Kasus: *Multi-Stage Cluster Sampling* dengan Populasi Kecil {.unnumbered}
+#### Studi Kasus: *Multi-Stage Cluster Sampling* dengan Populasi Kecil {.unnumbered}
 
 Kita ingin menghemat tenaga dengan hanya mendatangi satu lokasi saja. Kita pilih secara acak **1 Blok** (Cluster), lalu ambil **semua orang** di blok tersebut.
 
@@ -192,6 +196,26 @@ kable(sampel_cluster,
 
 *Kita hanya perlu mendatangi satu lokasi (Blok), tapi mendapatkan 4 responden sekaligus.*
 :::
+
+### Teknik Non-probabilitas
+
+Jika teknik probabilitas memerlukan kerangka sampel sebagai bahan pengambilan sampel, maka teknik non-probabilitas **tidak memerlukan kerangka sampel**, alias kita tidak perlu membuat daftar seluruh anggota populasi terlebih dahulu untuk mengambil sampel.
+
+Penggunaan sampel nonprobabilitas biasanya dilakukan ketika peneliti tidak memiliki kerangka sampel (*sampling frame*) yang memadai, atau ketika penggunaan sampel probabilitas dianggap tidak praktis, terlalu mahal, dan memakan waktu lama. Selain itu, teknik ini sering diaplikasikan pada tahap awal penelitian eksploratori, seperti pengujian awal kuesioner (*pilot testing*) [@devaus2014surveys; @saunders2023].
+
+Berikut adalah beberapa teknik pengambilan sampel nonprobabilitas yang umum digunakan:
+
+1. ***Convenience* atau *Haphazard Sampling***: Pemilihan kasus didasarkan pada kemudahan akses bagi peneliti, seperti mewawancarai orang yang kebetulan ditemui di pusat perbelanjaan atau menggunakan mahasiswa di kelas sendiri sebagai subjek penelitian.
+2. ***Quota Sampling***: Teknik ini bertujuan untuk memastikan bahwa sampel yang diambil mewakili karakteristik tertentu dari populasi (seperti usia atau jenis kelamin) dengan menetapkan kuota tertentu bagi setiap kategori. Meskipun terlihat representatif dalam karakteristik yang ditetapkan, pemilihannya tetap tidak dilakukan secara acak.
+3. ***Purposive* atau *Judgemental Sampling***: Peneliti menggunakan pertimbangan profesionalnya untuk memilih kasus yang dianggap paling informatif atau tipikal guna menjawab pertanyaan penelitian. Terdapat beberapa variasi dari teknik ini, antara lain:
+    * Kasus Ekstrem (*Extreme Case*): Fokus pada kasus yang sangat tidak biasa untuk mempelajari fenomena secara mendalam.
+    * Heterogen (*Maximum Variation*): Memilih kasus yang sangat beragam untuk mengidentifikasi tema-tema utama yang muncul di berbagai kondisi.
+    * Kasus Kritis (*Critical Case*): Memilih kasus yang dianggap sangat penting karena jika suatu fenomena terjadi di sana, maka besar kemungkinan akan terjadi di tempat lain.
+4. ***Snowball Sampling***: Teknik ini dimulai dengan beberapa partisipan awal yang kemudian diminta untuk mengidentifikasi atau merekomendasikan anggota populasi lainnya yang sulit dijangkau. Metode ini sangat berguna untuk meneliti kelompok masyarakat yang "tersembunyi".
+5. ***Volunteer atau Self-selection Sampling***: Individu secara sukarela mendaftarkan diri atau merespons undangan peneliti untuk berpartisipasi dalam penelitian.
+
+Keterbatasan utama dari sampel nonprobabilitas adalah ketidakmampuannya untuk digunakan dalam generalisasi statistik ke populasi yang lebih luas. Karena tidak berdasarkan prinsip *Equal Probability of Selection Method* (EPSEM), peneliti tidak dapat menghitung margin kesalahan atau tingkat kepastian hasil secara matematis. Oleh karena itu, kesimpulan dari penelitian ini biasanya bersifat terbatas pada kelompok yang diuji atau digunakan untuk membangun teori yang perlu diuji lebih lanjut melalui metode probabilitas.
+
 
 ::: rmdexercise
 
@@ -256,9 +280,6 @@ Dengan membaca Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) pada baris *s
 
 Perhatikan bahwa angka ini tidak bergantung pada seberapa besar populasi mahasiswa ITERA (yang berjumlah lebih dari 18.000 orang). Cukup 400 responden, dan hasil surveinya akan memiliki akurasi dalam batas ±5% pada tingkat kepercayaan 95%.
 :::
-
-
-
 
 ## Konsep Distribusi dalam Statistik
 
@@ -602,6 +623,106 @@ ggplot(df, aes(x = x, y = y)) +
   theme(axis.text.x = element_text(size = 10))
 ```
 
+
+### Distribusi $t$
+
+Selain distribusi normal, dalam statistika inferensial kita juga mengenal distribusi $t$. Distribusi $t$ digunakan ketika kita ingin melakukan inferensi statistik pada populasi yang berukuran kecil ($n < 120$) atau ketika kita tidak mengetahui varians populasi. Distribusi ini dikembangkan oleh William Sealy Gosset pada awal abad ke-20 saat ia bekerja di pabrik bir Guinness di Dublin, di mana ia menggunakan nama samaran "Student" untuk menerbitkan temuannya [@ewing2020basic].
+
+#### Karakteristik Visual dan Bentuk
+
+Secara visual, distribusi $t$ memiliki bentuk yang menyerupai lonceng dan simetris, mirip dengan distribusi normal standar ($Z$) [@healey2021statistics]. Namun, terdapat perbedaan mendasar pada bagian ujung atau "ekor" kurvanya. Distribusi $t$ cenderung lebih datar dan memiliki ekor yang lebih "berat" atau lebih tebal dibandingkan distribusi normal [@chan2021introduction]. Hal ini mencerminkan adanya ketidakpastian yang lebih besar karena penggunaan standar deviasi sampel ($s$) sebagai estimasi dari standar deviasi populasi ($\sigma$) yang tidak diketahui [@healey2021statistics].
+
+#### Peran Derajat Bebas (Degrees of Freedom)
+
+Bentuk spesifik dari kurva distribusi $t$ sangat bergantung pada konsep yang disebut derajat bebas (*degrees of freedom* atau $df$). Derajat bebas merujuk pada jumlah nilai dalam sebuah distribusi yang bebas bervariasi setelah konstanta tertentu (seperti rata-rata) ditetapkan [@healey2021statistics]. Untuk pengujian rata-rata sampel tunggal, derajat bebas dihitung dengan rumus:
+
+$$df = N - 1$$
+
+Di mana $N$ adalah ukuran sampel [@healey2021statistics]. Semakin besar ukuran sampel (dan otomatis semakin besar derajat bebasnya), distribusi $t$ akan semakin mendekati bentuk distribusi normal standar [@healey2021statistics]. Secara praktis, jika ukuran sampel melebihi 120, kedua distribusi ini dianggap identik [@healey2021statistics].
+
+#### Formulasi Matematis
+
+Dalam pengujian hipotesis, nilai $t$ yang diperoleh (t-obtained) dihitung untuk menentukan apakah perbedaan antara rata-rata sampel dan rata-rata populasi signifikan secara statistik. Persamaannya adalah sebagai berikut [@ewing2020basic]:
+
+$$
+t = \frac{\bar{X} - \mu}{s / \sqrt{N - 1}}
+$$
+
+Di mana:
+
+- $\bar{X}$ adalah rata-rata sampel.
+- $\mu$ adalah rata-rata populasi yang dihipotesiskan.
+- $s$ adalah standar deviasi sampel.
+- $N - 1$ digunakan sebagai koreksi bias pada sampel kecil [@healey2021statistics].
+
+::: rmdkasus
+### Studi Kasus: Menghitung Nilai $t$ Sampel Jarak Tempuh {.unnumbered}
+
+Sebuah penelitian sebelumnya menduga bahwa rata-rata jarak tempat tinggal mahasiswa ITERA ke kampus adalah 5 km ($\\mu = 5$). Untuk menguji pernyataan tersebut, kita mengambil sampel acak sebanyak 20 mahasiswa ($N = 20$) dari pangkalan data mahasiswa ITERA dan menghitung jarak tempat tinggal mereka.
+
+Dari sampel tersebut, didapatkan rata-rata sampel ($\\bar{X}$) sebesar 7,2 km dengan simpangan baku sampel ($s$) sebesar 3,8 km. Berapakah nilai statistik $t$ untuk sampel ini?
+
+**Penyelesaian:**
+
+Berdasarkan data yang kita peroleh dari sampel, kita memiliki informasi sebagai berikut.
+
+- $\\bar{X} = 7,2$
+- $\\mu = 5$
+- $s = 3,8$
+- $N = 20$
+- Derajat bebas ($df$) = $N - 1 = 20 - 1 = 19$
+
+Kita dapat menghitung nilai $t$ (*t-obtained*) menggunakan persamaan distribusi $t$ yang sebelumnya telah dibahas:
+
+$$
+\\begin{align}
+t &= \\frac{\\bar{X} - \\mu}{s / \\sqrt{N - 1}} \\\\
+&= \\frac{7,2 - 5}{3,8 / \\sqrt{20 - 1}} \\\\
+&= \\frac{2,2}{3,8 / \\sqrt{19}} \\\\
+&= \\frac{2,2}{3,8 / 4,3589} \\\\
+&= \\frac{2,2}{0,8718} \\\\
+&= 2,523
+\\end{align}
+$$
+
+Nilai $t = 2{,}523$ menunjukkan bahwa rata-rata jarak sampel (7,2 km) berada pada 2,523 *standard error* di atas nilai rata-rata populasi yang diduga (5 km).
+
+Untuk memberikan gambaran yang lebih jelas, berikut adalah visualisasi letak nilai rata-rata sampel kita di dalam kurva distribusi $t$ dengan derajat bebas $df = 19$. 
+
+```{r fig-05-inferensia-t-calc, echo=FALSE, fig.cap="Posisi Rata-rata Sampel pada Kurva Distribusi t (df = 19)", fig.align='center', out.width='80%', warning=FALSE, message=FALSE}
+library(ggplot2)
+
+df_t <- 19
+t_val <- 2.523
+
+# Membuat data untuk plotting dari t = -4 sampai t = 4
+x_seq <- seq(-4, 4, length.out = 500)
+y_seq <- dt(x_seq, df = df_t)
+data_t <- data.frame(x = x_seq, y = y_seq)
+
+ggplot(data_t, aes(x = x, y = y)) +
+  geom_area(fill = "#56B4E9", alpha = 0.4) +
+  geom_line(color = "black", size = 0.8) +
+  # Garis rata-rata hipotesis (t = 0)
+  geom_vline(xintercept = 0, color = "black", linetype = "dashed", size = 0.8) +
+  # Garis untuk nilai t observasi
+  geom_vline(xintercept = t_val, color = "indianred", size = 1) +
+  # Anotasi
+  annotate("text",
+    x = 0.1, y = dt(0, df_t) * 0.5, label = expression(mu == 5),
+    color = "black", fontface = "bold", size = 4, hjust = 0
+  ) +
+  annotate("text",
+    x = t_val + 0.1, y = dt(t_val, df_t) * 0.5,
+    label = "t = 2,523", color = "indianred", fontface = "bold", size = 4, hjust = 0
+  ) +
+  labs(
+    x = "Nilai t",
+    y = "Densitas"
+  ) +
+  theme_minimal()
+```
+:::
 
 ### Distribusi Objek dan Distribusi Statistik
 
