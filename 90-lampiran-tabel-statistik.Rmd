@@ -1,8 +1,8 @@
-# (APPENDIX) Lampiran {-}
+# (APPENDIX) Lampiran {.unnumbered}
 
 # Tabel Statistik {.unnumbered}
 
-## Tabel Distribusi Normal Standar (Z) {.unnumbered} {#appendix-tabel-normdist}
+## Tabel Distribusi Normal Standar ($Z$) {.unnumbered #appendix-tabel-normdist}
 
 Tabel berikut menyajikan luas area di bawah kurva distribusi normal standar dari $Z = 0$ hingga nilai $Z$ tertentu, yaitu $P(0 \leq Z \leq z)$.
 
@@ -93,9 +93,11 @@ tbl_z |>
 
 \FloatBarrier
 
-## Tabel Distribusi $t$ *Student* (Satu Arah) {.unnumbered} {#appendix-tabel-t-1arah}
+## Tabel Distribusi $t$ *Student* (Satu Arah) {.unnumbered #appendix-tabel-t-1arah}
 
 Tabel berikut menyajikan nilai $t_{kritis}$ pada pengujian satu arah (*one-tailed*) untuk berbagai tingkat signifikansi $\alpha$. Nilai di dalam tabel merepresentasikan batas nilai $t$ yang memiliki luas area sebesar $\alpha$ di ekor kanan sebaran, yaitu $P(t > t_{tabel}) = \alpha$.
+
+Untuk ekor kiri, cukup ubah tanda nilai $t$ pada tabel ini menjadi negatif.
 
 ```{r fig-ilustrasi-t-table-1arah, echo=FALSE, fig.align='center', out.width='45%', fig.cap='Luas area yang dicari pada Tabel Distribusi t Satu Arah: $P(t > t_{tabel}) = \\alpha$'}
 library(ggplot2)
@@ -184,7 +186,7 @@ tbl_t1 |>
 
 \FloatBarrier
 
-## Tabel Distribusi $t$ *Student* (Dua Arah) {.unnumbered} {#appendix-tabel-t-2arah}
+## Tabel Distribusi $t$ *Student* (Dua Arah) {.unnumbered #appendix-tabel-t-2arah}
 
 Tabel berikut menyajikan nilai $t_{kritis}$ pada pengujian dua arah (*two-tailed*) untuk berbagai tingkat signifikansi $\alpha$. Nilai di dalam tabel merepresentasikan nilai $t$ yang membatasi luas area total sebesar $\alpha$ di kedua ekor sebaran, yaitu $P(|t| > t_{tabel}) = \alpha$.
 
@@ -193,7 +195,7 @@ library(ggplot2)
 
 df_ex <- 15
 alpha_ex <- 0.05
-t_kritis <- qt(1 - alpha_ex/2, df_ex)
+t_kritis <- qt(1 - alpha_ex / 2, df_ex)
 
 x <- seq(-4.5, 4.5, length.out = 500)
 d <- data.frame(x = x, y = dt(x, df_ex))
@@ -263,7 +265,7 @@ col_names <- c("0,50", "0,20", "0,10", "0,05", "0,02", "0,01", "0,002")
 fmt_t <- function(x) formatC(x, digits = 3, format = "f", decimal.mark = ",")
 
 mat_t2 <- outer(df_vals, alpha_2t, function(df, a) {
-  fmt_t(qt(1 - a/2, df))
+  fmt_t(qt(1 - a / 2, df))
 })
 
 tbl_t2 <- as.data.frame(mat_t2)
@@ -289,7 +291,7 @@ tbl_t2 |>
 
 \FloatBarrier
 
-## Tabel Distribusi F ($\alpha = 10\%$) {.unnumbered} {#appendix-tabel-f-5}
+## Tabel Distribusi F ($\alpha = 10\%$) {.unnumbered #appendix-tabel-f-5}
 
 Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 10\%$, yaitu nilai $F$ yang membatasi luas area sebesar 10% di ekor kanan distribusi F, $P(F > F_{tabel}) = 0{,}10$.
 
@@ -381,7 +383,7 @@ tbl_f10 |>
 
 \FloatBarrier
 
-## Tabel Distribusi F ($\alpha = 5\%$) {.unnumbered} {#appendix-tabel-f-10}
+## Tabel Distribusi F ($\alpha = 5\%$) {.unnumbered #appendix-tabel-f-10}
 
 Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 5\%$, yaitu nilai $F$ yang membatasi luas area sebesar 5% di ekor kanan distribusi F, $P(F > F_{tabel}) = 0{,}05$.
 
