@@ -17,10 +17,14 @@ output:
     keep_tex: true
     includes:
       in_header: preamble.tex
-    extra_dependencies: ["subfig"]
+    extra_dependencies: ["subfig", "float", "booktabs", "microtype", "longtable"]
 bibliography: referensi.bib
 biblio-title: "Referensi"
 link-citations: true
+geometry: ["paperwidth=15.5cm", "paperheight=23cm", "twoside", "inner=25mm", "outer=20mm", "top=25mm", "bottom=25mm"]
+fontsize: 11pt
+linestretch: 1.15
+colorlinks: true
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +37,9 @@ knitr::opts_chunk$set(
   echo = FALSE,
   fig.path = "figures/", # Gunakan folder tanpa underscore untuk GitHub Pages
   message = FALSE,
-  warning = FALSE
+  warning = FALSE,
+  fig.pos = "H",
+  crop = NULL
 )
 
 # Fungsi untuk mengamankan karakter < dan > agar tidak merusak sidebar HTML
