@@ -1,4 +1,4 @@
-# Kausalitas dengan Regresi Linear Sederhana {#bab-13-regresi-sederhana}
+﻿# Kausalitas dengan Regresi Linear Sederhana {#bab-13-regresi-sederhana}
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -136,7 +136,7 @@ dengan:
 
 Dari persamaan tersebut, kita dapat menganalisis bahwa:
 
-- **Koefisien regresi** sebesar $`r format(b_taman, decimal.mark = ",", nsmall = 2)`$ menunjukkan bahwa setiap penambahan jarak ke taman kota sejauh 1 km dikaitkan dengan **penurunan Indeks Kualitas Udara sebesar `r format(abs(b_taman), decimal.mark = ",", nsmall = 2)` poin**. Tanda negatif pada koefisien menunjukkan bahwa hubungan antara jarak dan kualitas udara bersifat berlawanan arah—semakin jauh dari taman, semakin rendah kualitas udara.
+- **Koefisien regresi** sebesar $`r format(b_taman, decimal.mark = ",", nsmall = 2)`$ menunjukkan bahwa setiap penambahan jarak ke taman kota sejauh 1 km dikaitkan dengan **penurunan Indeks Kualitas Udara sebesar `r format(abs(b_taman), decimal.mark = ",", nsmall = 2)` poin**. Tanda negatif pada koefisien menunjukkan bahwa hubungan antara jarak dan kualitas udara bersifat berlawanan arahâ€”semakin jauh dari taman, semakin rendah kualitas udara.
 - **Konstanta** sebesar $`r format(a_taman, decimal.mark = ",", nsmall = 2)`$ menunjukkan bahwa prediksi Indeks Kualitas Udara ketika sebuah lokasi tepat berada di taman kota (jarak = 0 km) adalah sebesar $`r format(a_taman, decimal.mark = ",", nsmall = 2)`$ poin.
 
 :::
@@ -183,7 +183,7 @@ kbl(df_regresi,
     kable_styling(
         bootstrap_options = c("striped", "hover", "responsive"),
         full_width = FALSE,
-        latex_options = c("scale_down", "HOLD_position"),
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
         position = "center"
     )
 ```
@@ -205,7 +205,7 @@ ggplot(df_line, aes(x = X, y = Y)) +
     theme_bw()
 ```
 
-Titik-titik hasil prediksi tersebut akan membentuk garis lurus ketika dihubungkan satu sama lain. Inilah yang dimaksud dengan sifat *linear* dari persamaan regresi linear sederhana—nilai $\hat{Y}$ berubah secara **konstan** seiring perubahan nilai $X$, menghasilkan pola garis lurus.
+Titik-titik hasil prediksi tersebut akan membentuk garis lurus ketika dihubungkan satu sama lain. Inilah yang dimaksud dengan sifat *linear* dari persamaan regresi linear sederhanaâ€”nilai $\hat{Y}$ berubah secara **konstan** seiring perubahan nilai $X$, menghasilkan pola garis lurus.
 
 :::
 
@@ -229,10 +229,10 @@ Pemenuhan asumsi ini sering kali diuji secara rupa visual dengan melihat kemirip
 Asumsi ini secara eksklusif hanya diperiksa **pada pemodelan analisis regresi linear berganda**, yakni manakala pemodelan kita melibatkan **lebih dari satu variabel independen**. Kondisi multikolinearitas terjadi jika variabel-variabel independen tersebut saling berkorelasi terlampau kuat satu sama lain [@Hair-Multivariate]. Kalau masalah ini dibiarkan, rumus matematika model kita akan kebingungan menghitung jernih seberapa besar sumbangan efek murni dari tiap-tiap variabel independen terhadap variabel dependennya. Akibat buruknya, angka acuan penghitungan standar eror prediksinya kelak membengkak tanpa dasar yang riil [@ewing2020basic].
 
 ### Homoskedastisitas
-Syarat homoskedastisitas berarti **besar varians (keragaman sebaran) dari galat model harus senantiasa konstan dan seragam** tanpa memedulikan seberapa besar nilai target prediksinya [@ModernStatR-Home]. Sebaliknya, jika sebaran galatnya tidak merata—misalnya menyempit di awal namun semakin melebar bebas di akhir mirip seperti bentuk corong—maka kondisi ini dinamakan **heteroskedastisitas** [@Hair-Multivariate]. Pelanggaran ini berdampak fatal karena dapat menipu nilai uji signifikansi model sehingga kesimpulan tebakannya seolah meyakinkan padahal menyesatkan.
+Syarat homoskedastisitas berarti **besar varians (keragaman sebaran) dari galat model harus senantiasa konstan dan seragam** tanpa memedulikan seberapa besar nilai target prediksinya [@ModernStatR-Home]. Sebaliknya, jika sebaran galatnya tidak merataâ€”misalnya menyempit di awal namun semakin melebar bebas di akhir mirip seperti bentuk corongâ€”maka kondisi ini dinamakan **heteroskedastisitas** [@Hair-Multivariate]. Pelanggaran ini berdampak fatal karena dapat menipu nilai uji signifikansi model sehingga kesimpulan tebakannya seolah meyakinkan padahal menyesatkan.
 
 ### Non-Autokorelasi
-Asumsi ini mengharuskan supaya galat prediksi pada suatu subjek pengamatan berdiri sendiri dan tidak saling memengaruhi nilai galat di pengamatan lainnya [@Hair-Multivariate]. Kondisi di mana galat saling menular (autokorelasi) umumnya sering terjadi pada **data deret waktu (*time series*)**, karena sebuah nilai di suatu waktu sangat bergantung erat pada nilainya di masa lalu (seperti angka tingkat inflasi bulanan atau suhu harian) [@ewing2020basic]. Namun untungnya, bagi riset yang pengumpulan datanya hanya bergantung pada **data silang tempat (*cross-section*)**—di mana sekelompok banyak data dari subjek berbeda direkam bersamaan secara serentak—peluang pelanggaran autokorelasi ini nyaris mustahil bisa terjadi.
+Asumsi ini mengharuskan supaya galat prediksi pada suatu subjek pengamatan berdiri sendiri dan tidak saling memengaruhi nilai galat di pengamatan lainnya [@Hair-Multivariate]. Kondisi di mana galat saling menular (autokorelasi) umumnya sering terjadi pada **data deret waktu (*time series*)**, karena sebuah nilai di suatu waktu sangat bergantung erat pada nilainya di masa lalu (seperti angka tingkat inflasi bulanan atau suhu harian) [@ewing2020basic]. Namun untungnya, bagi riset yang pengumpulan datanya hanya bergantung pada **data silang tempat (*cross-section*)**â€”di mana sekelompok banyak data dari subjek berbeda direkam bersamaan secara serentakâ€”peluang pelanggaran autokorelasi ini nyaris mustahil bisa terjadi.
 
 
 ::: rmdkasus
@@ -267,7 +267,7 @@ kbl(df_wide,
     kable_styling(
         bootstrap_options = c("striped", "hover", "responsive"),
         full_width = FALSE,
-        latex_options = c("scale_down", "HOLD_position"),
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
         position = "center"
     )
 ```
@@ -371,9 +371,9 @@ ggplot(df_scatter, aes(x = X, y = Y)) +
 
 Berdasarkan diagram pencar pada Gambar \@ref(fig:fig-scatter-jarak-iku), kita dapat mengevaluasi keterpenuhan tiga asumsi dasar regresi linear berikut.
 
-- **Tingkat pengukuran variabel metrik untuk kedua variabel.** Variabel jarak ke taman ($X$) dan Indeks Kualitas Udara ($Y$) keduanya berada pada tingkat pengukuran rasio—keduanya bersifat numerik dan dapat dikenai operasi matematis secara penuh. Asumsi ini **terpenuhi**.
+- **Tingkat pengukuran variabel metrik untuk kedua variabel.** Variabel jarak ke taman ($X$) dan Indeks Kualitas Udara ($Y$) keduanya berada pada tingkat pengukuran rasioâ€”keduanya bersifat numerik dan dapat dikenai operasi matematis secara penuh. Asumsi ini **terpenuhi**.
 - **Hubungan linear antara variabel independen dan variabel dependen.** Dari diagram pencar, terlihat bahwa titik-titik data tersebar mengikuti pola yang cenderung menurun dari kiri ke kanan, mengindikasikan adanya hubungan yang bersifat linear antara jarak ke taman dan kualitas udara. Asumsi ini **terpenuhi**.
-- **Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain.** Titik-titik data tampak tersebar secara acak di sekitar pola linear tersebut—sebagian berada di atas dan sebagian berada di bawah garis kecenderungan—tanpa membentuk pola khusus seperti kipas atau lengkungan. Asumsi ini **terpenuhi**.
+- **Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain.** Titik-titik data tampak tersebar secara acak di sekitar pola linear tersebutâ€”sebagian berada di atas dan sebagian berada di bawah garis kecenderunganâ€”tanpa membentuk pola khusus seperti kipas atau lengkungan. Asumsi ini **terpenuhi**.
 
 [Langkah 2: Hitung Rata-Rata $X$ dan $Y$]{.tajuksaya}
 
@@ -435,7 +435,7 @@ tbl_out2 <- kbl(df_tb_show,
     kable_styling(
         bootstrap_options = c("striped", "hover", "responsive"),
         full_width = FALSE,
-        latex_options = c("scale_down", "HOLD_position"),
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
         position = "center"
     ) |>
     row_spec(31, bold = TRUE)
@@ -563,7 +563,7 @@ sd_y <- sd(iku_obs)
 
 $$s_{y \cdot x} = \sqrt{\frac{\sum_{i=1}^{30}(Y_i - \hat{Y}_i)^2}{30 - 2}} = `r format(sse, decimal.mark = ",", nsmall = 2)`$$
 
-Simpangan baku variabel $Y$ (IKU) dari data kita adalah $s_Y = `r format(sd_y, decimal.mark = ",", nsmall = 2)`$. Karena estimasi standar *error* sebesar $`r format(sse, decimal.mark = ",", nsmall = 2)`$ **lebih kecil dari simpangan baku $Y$**, maka model regresi ini dapat dinyatakan cukup presisi—prediksi model lebih "ketat" dibandingkan sekadar menggunakan rata-rata $Y$ sebagai patokan. Nilai ini memiliki satuan yang sama dengan variabel dependen, yaitu **poin IKU**.
+Simpangan baku variabel $Y$ (IKU) dari data kita adalah $s_Y = `r format(sd_y, decimal.mark = ",", nsmall = 2)`$. Karena estimasi standar *error* sebesar $`r format(sse, decimal.mark = ",", nsmall = 2)`$ **lebih kecil dari simpangan baku $Y$**, maka model regresi ini dapat dinyatakan cukup presisiâ€”prediksi model lebih "ketat" dibandingkan sekadar menggunakan rata-rata $Y$ sebagai patokan. Nilai ini memiliki satuan yang sama dengan variabel dependen, yaitu **poin IKU**.
 
 :::
 

@@ -1,4 +1,4 @@
-# Korelasi Antarvariabel Metrik
+﻿# Korelasi Antarvariabel Metrik
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -39,7 +39,7 @@ dengan:
 - $D_i$ adalah selisih peringkat antara dua variabel
 - $n$ adalah jumlah pasangan kasus
 
-Nilai koefisien $\rho$ Spearman berkisar **antara 0 hingga 1**, yang menggambarkan **kekuatan hubungan** antardua variabel (lihat Tabel \@ref(tab:tbl-interpretasi-koefisien-nominal) untuk pedoman interpretasi kekuatan hubungan koefisien korelasi). Selain itu, nilai $\rho$ Spearman dapat bernilai positif (+) maupun negatif (−), yang menunjukkan **arah hubungan** antar kedua variabel.
+Nilai koefisien $\rho$ Spearman berkisar **antara 0 hingga 1**, yang menggambarkan **kekuatan hubungan** antardua variabel (lihat Tabel \@ref(tab:tbl-interpretasi-koefisien-nominal) untuk pedoman interpretasi kekuatan hubungan koefisien korelasi). Selain itu, nilai $\rho$ Spearman dapat bernilai positif (+) maupun negatif (âˆ’), yang menunjukkan **arah hubungan** antar kedua variabel.
 
 Hasil kuadrat dari koefisien $\rho$ Spearman ($\rho^2$) menggambarkan **besarnya kemampuan peningkatan keakuratan prediksi** suatu variabel berdasarkan informasi dari variabel lainnya. Dengan kata lain, semakin besar nilai $\rho^2$, semakin tinggi pula kemampuan satu variabel dalam menjelaskan variasi yang terjadi pada variabel pasangannya.
 
@@ -67,7 +67,11 @@ kbl(df_rho_spearman,
   escape = FALSE,
   col.names = c("Mahasiswa", "Jarak Tempuh (km)", "Skor Kepuasan Berkuliah")
 ) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 Langkah awal untuk menghitung koefisien $\rho$ Spearman adalah dengan memberikan **peringkat** pada setiap nilai dari masing-masing variabel yang akan diuji. Dalam hal ini, seluruh nilai pada **kedua variabel** diberi peringkat berdasarkan urutannya, dari nilai terkecil hingga terbesar.
@@ -96,7 +100,11 @@ kbl(df_rho_spearman_ranking,
     "Peringkat Skor Kepuasan"
   )
 ) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 Setelah proses pemberian peringkat dilakukan, langkah berikutnya adalah menghitung selisih peringkat ($D$) antara kedua variabel untuk setiap responden. Untuk meringkas demonstrasi, kolom nilai asli disembunyikan sehingga kita fokus pada peringkat dan selisihnya.
@@ -125,7 +133,11 @@ kbl(df_rho_spearman_selisih,
     "Kuadrat Selisih Peringkat (D^2)"
   )
 ) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 Dari Tabel \@ref(tab:tbl-data-sampel-rho-spearman-selisih) kolom terakhir, dapat kita hitung bahwa total kuadrat selisih peringkat ($\sum D^2$) adalah sebesar **572**. Dengan persamaan \@ref(eq:rumus-rho-spearman), maka koefisien korelasi $\rho$ Spearman dapat dihitung sebagai berikut.
@@ -205,7 +217,7 @@ data_persoalan |>
   kable_styling(
     bootstrap_options = c("striped", "hover", "responsive"),
     full_width = FALSE,
-    latex_options = c("scale_down", "HOLD_position")
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
   )
 ```
 
@@ -273,7 +285,7 @@ data_persoalan_meter |>
   kable_styling(
     bootstrap_options = c("striped", "hover", "responsive"),
     full_width = FALSE,
-    latex_options = c("scale_down", "HOLD_position")
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
   )
 ```
 
@@ -386,7 +398,7 @@ data_persoalan |>
   kable_styling(
     bootstrap_options = c("striped", "hover", "responsive"),
     full_width = FALSE,
-    latex_options = c("scale_down", "HOLD_position")
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
   )
 ```
 
@@ -405,7 +417,7 @@ Grafik (a) dan (b) menunjukkan **pola hubungan linear** karena sebaran titik-tit
 
 **Kekuatan** hubungan dilihat dari kerapatan titik-titik. Titik-titik yang mengumpul dengan **rapat** menandakan hubungan yang **kuat**, sementara hubungan yang **lemah** diperlihatkan oleh kumpulan titik-titik yang **renggang**.
 
-**Arah** hubungan dilihat dari **arah kemiringan** garis. Kemiringan **ke atas** menandakan hubungan yang **positif atau searah**. Hal ini dapat dilihat dari titik-titik yang berada di bawah garis merah (horizontal)—lebih kecil—juga berada di kiri garis biru (vertikal)—lebih kecil juga. Di sisi lain, kemiringan **ke bawah** menandakan hubungan yang **negatif atau berlawanan**. Titik-titik yang berada di bawah garis merah (horizontal)—lebih kecil—berada di kanan garis biru (vertikal)—lebih besar.
+**Arah** hubungan dilihat dari **arah kemiringan** garis. Kemiringan **ke atas** menandakan hubungan yang **positif atau searah**. Hal ini dapat dilihat dari titik-titik yang berada di bawah garis merah (horizontal)â€”lebih kecilâ€”juga berada di kiri garis biru (vertikal)â€”lebih kecil juga. Di sisi lain, kemiringan **ke bawah** menandakan hubungan yang **negatif atau berlawanan**. Titik-titik yang berada di bawah garis merah (horizontal)â€”lebih kecilâ€”berada di kanan garis biru (vertikal)â€”lebih besar.
 
 Pola hubungan lain adalah **nonlinear**. Hubungan nonlinear adalah hubungan yang, seperti namanya, tidak linear. Hubungan-hubungan nonlinear ini biasanya mengandung fungsi-fungsi matematis nonlinear seperti fungsi kuadrat (quadratic, $x^2$), kubik (cubic, $x^3$), eksponensial (exponential, $e^x$) atau sinusoidal ($sin(x)$). Hal ini diperjelas dengan ilustrasi yang ada di Gambar \@ref(fig:fig-pola-hubungan-nonlinear) berikut.
 
@@ -489,7 +501,7 @@ data_persoalan |>
   kable_styling(
     bootstrap_options = c("striped", "hover", "responsive"),
     full_width = FALSE,
-    latex_options = c("scale_down", "HOLD_position")
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
   )
 ```
   a. Tentukan koefisien yang pas digunakan untuk menyatakan korelasi kedua variabel pada masing-masing pasangan korelasi variabel (i, ii) ($\rho$ Spearman atau $r$ Pearson).

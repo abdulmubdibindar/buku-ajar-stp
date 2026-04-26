@@ -1,4 +1,4 @@
-# Estimasi Parameter {#bab-6-estimasi-parameter}
+﻿# Estimasi Parameter {#bab-6-estimasi-parameter}
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -25,25 +25,27 @@ Cara menyatakan ukuran statistik dan parameter, yakni menggunakan simbol-simbol 
 ```{r tab-simbol-statistik-parameter, echo=FALSE}
 library(kableExtra)
 data <- data.frame(
-    "Ukuran" = c(
-        "Rata-rata", "Simpangan baku", "Variansi", "Proporsi", "Jumlah nilai", "Ukuran observasi"
-    ),
-    "Statistik (Sampel)" = c(
-        "$\\bar{x}$", "$s$", "$s^2$", "$\\hat{p}$", "$x$", "$n$"
-    ),
-    "Parameter (Populasi)" = c(
-        "$\\mu$", "$\\sigma$", "$\\sigma^2$", "$P$", "$X$", "$N$"
-    ),
-    check.names = FALSE
+  "Ukuran" = c(
+    "Rata-rata", "Simpangan baku", "Variansi", "Proporsi", "Jumlah nilai", "Ukuran observasi"
+  ),
+  "Statistik (Sampel)" = c(
+    "$\\bar{x}$", "$s$", "$s^2$", "$\\hat{p}$", "$x$", "$n$"
+  ),
+  "Parameter (Populasi)" = c(
+    "$\\mu$", "$\\sigma$", "$\\sigma^2$", "$P$", "$X$", "$N$"
+  ),
+  check.names = FALSE
 )
 data |>
-    kbl(
-        caption = "Simbol-simbol yang Digunakan Untuk Statistik dan Parameter",
-        escape = FALSE, align = "l"
-    ) |>
-    kable_styling(
-        bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F
-    )
+  kbl(
+    caption = "Simbol-simbol yang Digunakan Untuk Statistik dan Parameter",
+    escape = FALSE, align = "l"
+  ) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = F
+  )
 ```
 
 ::: rmdkasus
@@ -78,39 +80,39 @@ Namun, kita tidak bisa memastikan apakah benar rata-rata populasi seluruh mahasi
 ```{r fig-ilustrasi-estimasi-titik-usia, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Estimasi Titik Usia Mahasiswa", fig.align="center"}
 library(ggplot2)
 ggplot() +
-    geom_vline(
-        xintercept = 20.9,
-        linetype = "dashed",
-        color = "blue",
-        size = 1
-    ) +
-    geom_vline(
-        xintercept = 21.4,
-        linetype = "solid",
-        color = "red",
-        size = 1
-    ) +
-    annotate(
-        "text",
-        x = 20.9,
-        y = 1.05,
-        label = expression(bar(x) == 20.9),
-        color = "blue",
-        vjust = -0.5
-    ) +
-    annotate(
-        "text",
-        x = 21.4,
-        y = 1.05,
-        label = expression(mu == 21.4),
-        color = "red",
-        vjust = -0.5
-    ) +
-    scale_y_continuous(labels = NULL, breaks = NULL) +
-    scale_x_continuous(breaks = c(20.0, 20.5, 20.9, 21.4, 22.0), limits = c(20.0, 22.0)) +
-    labs(x = "Usia Mahasiswa (Tahun)", y = NULL) +
-    theme_minimal() +
-    theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank())
+  geom_vline(
+    xintercept = 20.9,
+    linetype = "dashed",
+    color = "blue",
+    size = 1
+  ) +
+  geom_vline(
+    xintercept = 21.4,
+    linetype = "solid",
+    color = "red",
+    size = 1
+  ) +
+  annotate(
+    "text",
+    x = 20.9,
+    y = 1.05,
+    label = expression(bar(x) == 20.9),
+    color = "blue",
+    vjust = -0.5
+  ) +
+  annotate(
+    "text",
+    x = 21.4,
+    y = 1.05,
+    label = expression(mu == 21.4),
+    color = "red",
+    vjust = -0.5
+  ) +
+  scale_y_continuous(labels = NULL, breaks = NULL) +
+  scale_x_continuous(breaks = c(20.0, 20.5, 20.9, 21.4, 22.0), limits = c(20.0, 22.0)) +
+  labs(x = "Usia Mahasiswa (Tahun)", y = NULL) +
+  theme_minimal() +
+  theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank())
 ```
 
 Di sinilah keterbatasan estimasi titik terlihat; ia hanya menyajikan satu angka saja, sehingga sangat rentan meleset dari nilai parameter yang sebenarnya. Oleh karena itu, kita membutuhkan estimasi yang lebih "aman", yakni estimasi berupa rentang nilai yang akan kita pelajari pada bagian selanjutnya.
@@ -134,16 +136,16 @@ Artinya, kita memperkirakan bahwa nilai parameter rata-rata usia seluruh mahasis
 ```{r fig-ilustrasi-estimasi-rentang-usia, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Estimasi Rentang Usia Mahasiswa", fig.align="center"}
 library(ggplot2)
 ggplot() +
-    annotate("rect", xmin = 20.9 - 0.6, xmax = 20.9 + 0.6, ymin = -Inf, ymax = Inf, alpha = 0.3, fill = "blue") +
-    geom_vline(xintercept = 20.9, linetype = "dashed", color = "blue", size = 1) +
-    geom_vline(xintercept = 21.4, linetype = "solid", color = "red", size = 1) +
-    annotate("text", x = 20.9, y = 1.05, label = expression(bar(x) == 20.9), color = "blue", vjust = -0.5) +
-    annotate("text", x = 21.4, y = 1.05, label = expression(mu == 21.4), color = "red", vjust = -0.5) +
-    scale_y_continuous(labels = NULL, breaks = NULL) +
-    scale_x_continuous(breaks = c(20.0, 20.3, 20.9, 21.5, 22.0), limits = c(20.0, 22.0)) +
-    labs(x = "Usia Mahasiswa (Tahun)", y = NULL) +
-    theme_minimal() +
-    theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank())
+  annotate("rect", xmin = 20.9 - 0.6, xmax = 20.9 + 0.6, ymin = -Inf, ymax = Inf, alpha = 0.3, fill = "blue") +
+  geom_vline(xintercept = 20.9, linetype = "dashed", color = "blue", size = 1) +
+  geom_vline(xintercept = 21.4, linetype = "solid", color = "red", size = 1) +
+  annotate("text", x = 20.9, y = 1.05, label = expression(bar(x) == 20.9), color = "blue", vjust = -0.5) +
+  annotate("text", x = 21.4, y = 1.05, label = expression(mu == 21.4), color = "red", vjust = -0.5) +
+  scale_y_continuous(labels = NULL, breaks = NULL) +
+  scale_x_continuous(breaks = c(20.0, 20.3, 20.9, 21.5, 22.0), limits = c(20.0, 22.0)) +
+  labs(x = "Usia Mahasiswa (Tahun)", y = NULL) +
+  theme_minimal() +
+  theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank())
 ```
 
 Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi titik sebesar 20,90 tahun tadi. Memperhitungkan ketidakpastian dalam proses pengambilan sampel dengan batas-batas ini membuat kita menemukan rentang parameter seperti yang diilustrasikan oleh area arsir berwarna biru pada Gambar \@ref(fig:fig-ilustrasi-estimasi-rentang-usia) tersebut.
@@ -186,34 +188,34 @@ y <- dnorm(x)
 df <- data.frame(x, y)
 
 alpha <- 0.10
-z_alphahalve <- qnorm(1 - alpha/2)
+z_alphahalve <- qnorm(1 - alpha / 2)
 
 df_left <- df[df$x <= -z_alphahalve, ]
 df_right <- df[df$x >= z_alphahalve, ]
 
 ggplot(df, aes(x, y)) +
-    geom_line(linewidth = 1) +
-    geom_area(data = df_left, aes(x, y), fill = "red", alpha = 0.5) +
-    geom_area(data = df_right, aes(x, y), fill = "red", alpha = 0.5) +
-    geom_vline(xintercept = -z_alphahalve, linetype = "dashed") +
-    geom_vline(xintercept = z_alphahalve, linetype = "dashed") +
-    scale_y_continuous(labels = NULL, breaks = NULL) +
-    scale_x_continuous(
-        breaks = c(-z_alphahalve, 0, z_alphahalve),
-        labels = c(expression(-Z[alpha/2]), "0", expression(+Z[alpha/2]))
-    ) +
-    annotate("text", x = -2.2, y = 0.05, label = "5%", color = "black", size = 5) +
-    annotate("text", x = 2.2, y = 0.05, label = "5%", color = "black", size = 5) +
-    annotate("text", x = 0, y = 0.15, label = "90%", color = "black", size = 6) +
-    labs(x = "Nilai Z", y = NULL) +
-    theme_minimal() +
-    theme(
-        axis.line.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.y = element_blank(),
-        axis.text.x = element_text(size = 12)
-    )
+  geom_line(linewidth = 1) +
+  geom_area(data = df_left, aes(x, y), fill = "red", alpha = 0.5) +
+  geom_area(data = df_right, aes(x, y), fill = "red", alpha = 0.5) +
+  geom_vline(xintercept = -z_alphahalve, linetype = "dashed") +
+  geom_vline(xintercept = z_alphahalve, linetype = "dashed") +
+  scale_y_continuous(labels = NULL, breaks = NULL) +
+  scale_x_continuous(
+    breaks = c(-z_alphahalve, 0, z_alphahalve),
+    labels = c(expression(-Z[alpha / 2]), "0", expression(+Z[alpha / 2]))
+  ) +
+  annotate("text", x = -2.2, y = 0.05, label = "5%", color = "black", size = 5) +
+  annotate("text", x = 2.2, y = 0.05, label = "5%", color = "black", size = 5) +
+  annotate("text", x = 0, y = 0.15, label = "90%", color = "black", size = 6) +
+  labs(x = "Nilai Z", y = NULL) +
+  theme_minimal() +
+  theme(
+    axis.line.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    axis.text.x = element_text(size = 12)
+  )
 ```
 
 Dalam bab ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter **rata-rata** ($\mu$) dan **proporsi** ($P$).
@@ -245,7 +247,7 @@ Diketahui dari hasil survei terhadap 333 sampel mahasiswa ITERA, sebaran jenis t
 
 ```{r prep-data-sewa, include=FALSE}
 library(dplyr)
-df_itera <- read.csv("datasets/DataUtama_mhsITERA.csv", sep=";")
+df_itera <- read.csv("datasets/DataUtama_mhsITERA.csv", sep = ";")
 df_itera$jarak.km <- as.numeric(gsub(",", ".", df_itera$jarak.km))
 
 data_sewa <- df_itera |>
@@ -262,18 +264,18 @@ data_sewa <- df_itera |>
 data_sewa |>
   group_by(jenis.tempat.tinggal) |>
   summarize(
-    'n' = n(),
-    'Rata-rata Jarak (km)' = round(mean(jarak.km), 2),
-    'Simpangan Baku (km)' = round(sd(jarak.km), 2)
+    "n" = n(),
+    "Rata-rata Jarak (km)" = round(mean(jarak.km), 2),
+    "Simpangan Baku (km)" = round(sd(jarak.km), 2)
   ) |>
   kbl(
-    caption = 'Statistik Jarak Tempat Tinggal per Jenis Hunian',
-    col.names = c('Jenis Tempat Tinggal', '$n$', '$\\bar{x}$ (km)', '$s$ (km)'),
-    escape = FALSE, align = 'lccc',
-    format.args = list(decimal.mark = ',', big.mark = '.')
+    caption = "Statistik Jarak Tempat Tinggal per Jenis Hunian",
+    col.names = c("Jenis Tempat Tinggal", "$n$", "$\\bar{x}$ (km)", "$s$ (km)"),
+    escape = FALSE, align = "lccc",
+    format.args = list(decimal.mark = ",", big.mark = ".")
   ) |>
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'),
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
     full_width = FALSE
   )
 ```
@@ -345,8 +347,8 @@ library(ggplot2)
 
 df_ci <- data.frame(
   hunian = factor(
-    c('Kos Sendiri', 'Rumah Mengontrak\nBersama', 'Kos Bersama-sama'),
-    levels = c('Kos Bersama-sama', 'Rumah Mengontrak\nBersama', 'Kos Sendiri')
+    c("Kos Sendiri", "Rumah Mengontrak\nBersama", "Kos Bersama-sama"),
+    levels = c("Kos Bersama-sama", "Rumah Mengontrak\nBersama", "Kos Sendiri")
   ),
   mean = c(4.78, 4.79, 4.91),
   lower = c(4.47, 4.39, 3.78),
@@ -361,30 +363,30 @@ ggplot(df_ci, aes(y = hunian, x = mean)) +
   ) +
   geom_point(aes(color = hunian), size = 4) +
   geom_text(
-    aes(label = paste0('n = ', n), x = upper),
-    hjust = -0.2, size = 3.5, color = 'gray40'
+    aes(label = paste0("n = ", n), x = upper),
+    hjust = -0.2, size = 3.5, color = "gray40"
   ) +
   geom_text(
-    aes(label = paste0('[', lower, '; ', upper, ']'), x = mean),
-    vjust = -1.1, size = 3, color = 'gray30'
+    aes(label = paste0("[", lower, "; ", upper, "]"), x = mean),
+    vjust = -1.1, size = 3, color = "gray30"
   ) +
   scale_color_manual(values = c(
-    'Kos Sendiri' = '#2166AC',
-    'Rumah Mengontrak\nBersama' = '#4DAC26',
-    'Kos Bersama-sama' = '#D7191C'
+    "Kos Sendiri" = "#2166AC",
+    "Rumah Mengontrak\nBersama" = "#4DAC26",
+    "Kos Bersama-sama" = "#D7191C"
   )) +
   scale_x_continuous(
     limits = c(3.3, 6.7),
     breaks = seq(3.5, 6.5, by = 0.5),
-    labels = function(x) format(x, decimal.mark = ',')
+    labels = function(x) format(x, decimal.mark = ",")
   ) +
   labs(
-    x = 'Rata-rata Jarak Tempat Tinggal (km)',
+    x = "Rata-rata Jarak Tempat Tinggal (km)",
     y = NULL
   ) +
   theme_minimal(base_size = 11) +
   theme(
-    legend.position = 'none',
+    legend.position = "none",
     panel.grid.minor = element_blank(),
     axis.text.y = element_text(size = 10)
   )
@@ -446,19 +448,20 @@ Berdasarkan Tabel \@ref(tab:tabel-komponen-ci-jarak), kita dapat menghitung prop
 data_sewa |>
   group_by(jenis.tempat.tinggal) |>
   summarize(
-    'n' = n()
+    "n" = n()
   ) |>
   mutate(
-    'Proporsi' = round(n / sum(n), 3)
+    "Proporsi" = round(n / sum(n), 3)
   ) |>
   kbl(
-    caption = 'Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal',
-    col.names = c('Jenis Tempat Tinggal', '$n$', '$\\hat{p}$'),
-    escape = FALSE, align = 'lccc',
-    format.args = list(decimal.mark = ',', big.mark = '.')
+    caption = "Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal",
+    col.names = c("Jenis Tempat Tinggal", "$n$", "$\\hat{p}$"),
+    escape = FALSE, align = "lccc",
+    format.args = list(decimal.mark = ",", big.mark = ".")
   ) |>
   kable_styling(
-    bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'),
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE
   )
 ```
@@ -513,15 +516,15 @@ $$
 
 *Catatan: Kategori Rumah Mengontrak Pribadi ($n = 1$) tidak disertakan karena tidak representatif.*
 
-Dari ketiga hasil di atas, terlihat bahwa **Kos Sendiri** mendominasi dengan estimasi proporsi antara 56,59% hingga 63,61% dari seluruh mahasiswa yang menyewa hunian. **Rumah Mengontrak Bersama** berada di posisi kedua (28,75%–35,45%), disusul **Kos Bersama-sama** (5,61%–9,39%). Temuan ini menunjukkan bahwa mayoritas mahasiswa ITERA memilih hunian sewa mandiri.
+Dari ketiga hasil di atas, terlihat bahwa **Kos Sendiri** mendominasi dengan estimasi proporsi antara 56,59% hingga 63,61% dari seluruh mahasiswa yang menyewa hunian. **Rumah Mengontrak Bersama** berada di posisi kedua (28,75%â€“35,45%), disusul **Kos Bersama-sama** (5,61%â€“9,39%). Temuan ini menunjukkan bahwa mayoritas mahasiswa ITERA memilih hunian sewa mandiri.
 
 ```{r fig-ci-proporsi-per-hunian, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian", out.width='60%', fig.align="center"}
 library(ggplot2)
 
 df_ci_prop <- data.frame(
   hunian = factor(
-    c('Kos Sendiri', 'Rumah Mengontrak\nBersama', 'Kos Bersama-sama'),
-    levels = c('Kos Bersama-sama', 'Rumah Mengontrak\nBersama', 'Kos Sendiri')
+    c("Kos Sendiri", "Rumah Mengontrak\nBersama", "Kos Bersama-sama"),
+    levels = c("Kos Bersama-sama", "Rumah Mengontrak\nBersama", "Kos Sendiri")
   ),
   prop = c(0.601, 0.321, 0.075),
   lower = c(0.5659, 0.2875, 0.0561),
@@ -536,35 +539,35 @@ ggplot(df_ci_prop, aes(y = hunian, x = prop)) +
   ) +
   geom_point(aes(color = hunian), size = 4) +
   geom_text(
-    aes(label = paste0('n = ', n), x = upper),
-    hjust = -0.2, size = 3.5, color = 'gray40'
+    aes(label = paste0("n = ", n), x = upper),
+    hjust = -0.2, size = 3.5, color = "gray40"
   ) +
   geom_text(
     aes(
       label = paste0(
-        '[', scales::percent(lower, accuracy = 0.01, decimal.mark = ','),
-        '; ', scales::percent(upper, accuracy = 0.01, decimal.mark = ','), ']'
+        "[", scales::percent(lower, accuracy = 0.01, decimal.mark = ","),
+        "; ", scales::percent(upper, accuracy = 0.01, decimal.mark = ","), "]"
       ),
       x = prop
     ),
-    vjust = -1.1, size = 3, color = 'gray30'
+    vjust = -1.1, size = 3, color = "gray30"
   ) +
   scale_color_manual(values = c(
-    'Kos Sendiri' = '#2166AC',
-    'Rumah Mengontrak\nBersama' = '#4DAC26',
-    'Kos Bersama-sama' = '#D7191C'
+    "Kos Sendiri" = "#2166AC",
+    "Rumah Mengontrak\nBersama" = "#4DAC26",
+    "Kos Bersama-sama" = "#D7191C"
   )) +
   scale_x_continuous(
     limits = c(0, 0.75),
-    labels = scales::percent_format(accuracy = 1, decimal.mark = ',')
+    labels = scales::percent_format(accuracy = 1, decimal.mark = ",")
   ) +
   labs(
-    x = 'Proporsi Mahasiswa',
+    x = "Proporsi Mahasiswa",
     y = NULL
   ) +
   theme_minimal(base_size = 11) +
   theme(
-    legend.position = 'none',
+    legend.position = "none",
     panel.grid.minor = element_blank(),
     axis.text.y = element_text(size = 10)
   )
@@ -629,20 +632,20 @@ ci_95 <- mean_val + c(-1, 1) * qnorm(0.975) * se
 ci_99 <- mean_val + c(-1, 1) * qnorm(0.995) * se
 
 df_cl <- data.frame(
-    CL = factor(c("99%", "95%", "90%"), levels = c("99%", "95%", "90%")),
-    ymin = c(ci_99[1], ci_95[1], ci_90[1]),
-    ymax = c(ci_99[2], ci_95[2], ci_90[2])
+  CL = factor(c("99%", "95%", "90%"), levels = c("99%", "95%", "90%")),
+  ymin = c(ci_99[1], ci_95[1], ci_90[1]),
+  ymax = c(ci_99[2], ci_95[2], ci_90[2])
 )
 
 ggplot(df_cl, aes(y = CL, x = mean_val)) +
-    geom_errorbarh(aes(xmin = ymin, xmax = ymax, color = CL), height = 0.2, size = 1.5) +
-    geom_point(color = "black", size = 3) +
-    geom_vline(xintercept = mean_val, linetype = "dashed", color = "black") +
-    scale_color_manual(values = c("99%" = "purple", "95%" = "green", "90%" = "blue")) +
-    labs(x = "Tinggi Badan (cm)", y = "Tingkat Kepercayaan") +
-    theme_minimal() +
-    theme(legend.position = "none") +
-    scale_x_continuous(limits = c(min(ci_99) - 0.1, max(ci_99) + 0.1))
+  geom_errorbarh(aes(xmin = ymin, xmax = ymax, color = CL), height = 0.2, size = 1.5) +
+  geom_point(color = "black", size = 3) +
+  geom_vline(xintercept = mean_val, linetype = "dashed", color = "black") +
+  scale_color_manual(values = c("99%" = "purple", "95%" = "green", "90%" = "blue")) +
+  labs(x = "Tinggi Badan (cm)", y = "Tingkat Kepercayaan") +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  scale_x_continuous(limits = c(min(ci_99) - 0.1, max(ci_99) + 0.1))
 ```
 
 Garis hitam putus-putus pada posisi 165 menggambarkan estimasi titik, yaitu satu nilai hasil dari sampel [@chase2000general]. Garis horisontal biru, hijau, dan ungu menggambarkan interval kepercayaan dengan tingkat kepercayaan yang berbeda. Pada tingkat kepercayaan 90% (biru), intervalnya sempit, yakni 164,65-165,35 cm. Pada tingkat kepercayaan 95% (hijau), intervalnya sedikit lebih lebar, yaitu 164,58-165,42 cm. Sementara pada tingkat kepercayaan 99% (ungu), interval semakin melebar menjadi 164,45-165,55 cm. Dari sini terlihat bahwa semakin tinggi tingkat kepercayaan, semakin lebar rentang yang dihasilkan.

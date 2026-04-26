@@ -1,4 +1,4 @@
-# Korelasi Antarvariabel Nominal
+﻿# Korelasi Antarvariabel Nominal
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -46,7 +46,11 @@ kbl(data_univariat,
   escape = FALSE,
   col.names = c("Bab", "Pembahasan", "Variabel")
 ) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 Dari Tabel \@ref(tab:tbl-analisis-univariat), dapat kita lihat bahwa pada bab-bab sebelumnya, kita hanya menganalisis **satu variabel saja**. Namun, mulai bab ini, kita akan menganalisis **dua variabel secara bersamaan**.
@@ -82,7 +86,11 @@ df_lemah <- data.frame(
 )
 
 kbl(df_lemah, align = "lcc", caption = "Skenario Asosiasi Lemah: Persentase Seragam", escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 ```
 
 Pada Tabel \@ref(tab:tbl-kekuatan-lemah-hipotetis), perbedaan persentase untuk kelompok "Sering" di antara ketiga fakultas amatlah berdempetan (berkisar sempit antara $45\%-48\%$). Nilai yang saling menyerupai dan tanpa selisih riil ini menyatakan bahwa ciri kebiasaan fakultas nyaris tidak membuat pengaruh yang jelas terhadap penggunaan transportasi. Dapat disimpulkan, hubungan ini diklasifikasikan sebagai asosiasi yang **lemah**.
@@ -98,7 +106,11 @@ df_kuat <- data.frame(
 )
 
 kbl(df_kuat, align = "lcc", caption = "Skenario Asosiasi Kuat: Perbedaan Ekstrem", escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 ```
 
 Pada Tabel \@ref(tab:tbl-kekuatan-kuat-hipotetis), kita bisa menarik garis selisih persentase yang teramat ekstrem lintas fakultas (Fakultas A mencapai sentuhan angka $90\%$, sementara Fakultas B jeblok di $20\%$). Rentang kesenjangan distribusi yang sangat mencolok secara visual pada tabel kontingensi inilah yang menjadi indikator empirik sahih dari suatu korelasi asimetris yang **kuat**.
@@ -123,7 +135,11 @@ df_arah_pos <- data.frame(
 )
 
 kbl(df_arah_pos, align = "lccc", caption = "Arah Hubungan Positif di Tabel Kontingensi", escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 ```
 
 Di Tabel \@ref(tab:tbl-arah-positif-hipotetis) untuk skenario *Arah Positif*, angka tertinggi ($70\%$, $60\%$, $70\%$) berkumpul mengisi sel-sel diagonal urut yang membentang dari kiri atas turun ke kanan bawah. Artinya, makin padat jadwal kuliahnya, makin tinggi pula tingkat stres yang dialami mahasiswa. Ini menandakan hubungan yang **searah** antara kepadatan jadwal kuliah dengan tingkat stres mahasiswa.
@@ -140,7 +156,11 @@ df_arah_neg <- data.frame(
 )
 
 kbl(df_arah_neg, align = "lccc", caption = "Arah Hubungan Negatif di Tabel Kontingensi", escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 ```
 
 Dalam skenario di Tabel \@ref(tab:tbl-arah-negatif-hipotetis), konsentrasi datanya menumpuk membentuk diagonal terbalik. Hal ini diartikan makin padat jadwal kuliah, tingkat stres cenderung rendah. Ini menandakan hubungan yang **berlawanan arah** sehingga dikatakan memiliki arah yang **negatif**.
@@ -226,13 +246,17 @@ Di subbab sebelumnya kita telah mengenal karakteristik-karakteristik yang dapat 
 ```{r tbl-karakteristik-hubungan, echo=FALSE, fig.align='center'}
 df_karakteristik_tingkat_pengukuran <- data.frame(
   `Tingkat Pengukuran` = c("Nominal", "Ordinal", "Interval", "Rasio"),
-  `Kekuatan` = c("✅", "✅", "✅", "✅"),
-  `Arah` = c("❌", "✅", "✅", "✅"),
-  `Pola` = c("❌", "❌", "✅", "✅")
+  `Kekuatan` = c("âœ…", "âœ…", "âœ…", "âœ…"),
+  `Arah` = c("âŒ", "âœ…", "âœ…", "âœ…"),
+  `Pola` = c("âŒ", "âŒ", "âœ…", "âœ…")
 )
 
 kbl(df_karakteristik_tingkat_pengukuran, align = "lccc", caption = "Karakteristik Hubungan dan Tingkat Pengukuran Variabel", escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 ```
 
 Dari seluruh tingkat pengukuran, hanya tingkat pengukuran **nominal** yang tidak memiliki karakteristik **arah** dan **pola**. Ini dikarenakan sifat alami variabel nominal yang hanya berfungsi sebagai **label** atau **kategori** tanpa memiliki urutan atau nilai numerik yang dapat diinterpretasikan secara matematis. Mulai variabel **ordinal** dan seterusnya, **arah** bisa diidentifikasi, karena mulai tingkat ini urutan antar kategori sudah bisa diinterpretasikan secara logis.
@@ -254,7 +278,11 @@ df_dataset_beda_tingkat_pengukuran <- data.frame(
 )
 
 kbl(df_dataset_beda_tingkat_pengukuran, align = "lccc", caption = "Dataset Beda Tingkat Pengukuran", escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 ```
 
 Variabel `jarak` dan `uang_saku` memiliki tingkat pengukuran yang berbeda (rasio dan ordinal). Oleh karena itu, kita tidak dapat langsung menentukan karakteristik hubungan antara kedua variabel tersebut berdasarkan Tabel \@ref(tab:tbl-karakteristik-hubungan).
@@ -269,7 +297,11 @@ df_dataset_beda_tingkat_pengukuran_transformasi <- data.frame(
 )
 
 kbl(df_dataset_beda_tingkat_pengukuran_transformasi, align = "lccc", caption = "Dataset Beda Tingkat Pengukuran (Transformasi)", escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 ```
 
 Dengan demikian, kita dapat mengidentifikasi karakteristik hubungan antara kedua variabel tersebut berdasarkan Tabel \@ref(tab:tbl-karakteristik-hubungan) yakni untuk variabel **ordinal**, yakni **kekuatan** dan **arah**. Koefisien asosiasinya juga berarti memiliki kisaran angka antara 0 sampai dengan 1 dan tanda positif (+) atau negatif (-).
@@ -443,7 +475,7 @@ bahan_crosstab |>
 #     caption = "Tabel Silang Frekuensi Aktual/Teramati",
 #     format.args = list(big.mark = "."),
 #     escape = FALSE) |>
-#   kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = c("scale_down", "HOLD_position")) |>
+#   kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")) |>
 #   add_header_above(c(" " = 1, "Jenis Tempat Tinggal" = 7, " " = 1)) |>
 #   column_spec(1, width = "2.8cm") |>
 #   column_spec(2:8, width = "1.5cm") |>
@@ -541,7 +573,7 @@ df_exp_layout |>
 #     caption = "Tabel Silang Frekuensi Harapan",
 #     format.args = list(decimal.mark = ",", big.mark = "."),
 #     escape = FALSE) |>
-#   kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = c("scale_down", "HOLD_position")) |>
+#   kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")) |>
 #   add_header_above(c(" " = 1, "Jenis Tempat Tinggal" = 7, " " = 1)) |>
 #   column_spec(1, width = "2.8cm") |>
 #   column_spec(2:8, width = "1.5cm") |>
@@ -603,7 +635,11 @@ tbl_koef_out <- kbl(df_koefisien,
   caption = "Koefisien Korelasi Variabel Nominal Berbasis Chi-Kuadrat",
   escape = FALSE
 ) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = "HOLD_position") |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "responsive"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  ) |>
   collapse_rows(columns = 3, valign = "middle")
 
 if (knitr::is_html_output()) {
@@ -636,7 +672,11 @@ tbl_interpretasi_out <- kbl(df_interpretasi,
   caption = "Kriteria Koefisien Korelasi Variabel Nominal menurut @devaus2014surveys",
   escape = FALSE
 ) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "responsive"), full_width = FALSE, latex_options = "HOLD_position")
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "responsive"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 
 if (knitr::is_html_output()) {
   tbl_interpretasi_out <- tbl_interpretasi_out |>
@@ -678,7 +718,11 @@ df_pre_y <- data.frame(
 )
 
 kbl(df_pre_y, align = "lc", caption = "Distribusi Preferensi Penggunaan Transportasi Publik", escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  ) |>
   row_spec(nrow(df_pre_y), bold = TRUE)
 ```
 
@@ -698,7 +742,11 @@ df_pre_xy <- data.frame(
 )
 
 kbl(df_pre_xy, align = "lccc", caption = "Tabel Silang Kepemilikan Kendaraan dan Preferensi Transportasi", escape = FALSE) |>
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE) |>
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  ) |>
   row_spec(nrow(df_pre_xy), bold = TRUE)
 ```
 
@@ -865,7 +913,7 @@ tbl_eval18_out <- kbl(df_eval18,
   kable_styling(
     bootstrap_options = c("striped", "hover", "responsive"),
     full_width = FALSE,
-    latex_options = c("scale_down", "HOLD_position")
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
   ) |>
   add_header_above(c(" " = 1, "Apakah Anda anggota himpunan/organisasi mahasiswa?" = 2)) |>
   column_spec(1, width = "8cm") |>
@@ -877,7 +925,7 @@ if (knitr::is_html_output()) {
 tbl_eval18_out
   ```
   
-   a. Tentukan koefisien berbasis $\chi^2$ yang pas digunakan untuk menyatakan korelasi kedua variabel tersebut (phi, Cramer’s V, atau C, bisa lebih dari satu) 
+   a. Tentukan koefisien berbasis $\chi^2$ yang pas digunakan untuk menyatakan korelasi kedua variabel tersebut (phi, Cramerâ€™s V, atau C, bisa lebih dari satu) 
    b. Hitung dan interpretasikan nilai koefisien tersebut sesuai makna koefisien tersebut dalam konsepnya (pilih salah satu dari jawaban Anda di a). 
    c. Apa yang bisa kita simpulkan dari hasil perhitungan koefisien tersebut? 
 
@@ -904,7 +952,7 @@ tbl_eval_sampah_out <- kbl(df_eval_sampah,
   kable_styling(
     bootstrap_options = c("striped", "hover", "responsive"),
     full_width = FALSE,
-    latex_options = c("scale_down", "HOLD_position")
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
   ) |>
   add_header_above(c(" " = 1, "Tipe Tempat Tinggal" = 2)) |>
   column_spec(1, width = "8cm") |>

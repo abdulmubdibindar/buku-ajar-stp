@@ -1,4 +1,4 @@
-# Kausalitas dengan Regresi Linear Berganda {#bab-regresi-berganda}
+﻿# Kausalitas dengan Regresi Linear Berganda {#bab-regresi-berganda}
 
 ::: rmdcapaian
 
@@ -223,7 +223,7 @@ tbl_out <- kbl(
     kable_styling(
         bootstrap_options = c("striped", "hover"),
         full_width        = FALSE,
-        latex_options     = c("scale_down", "HOLD_position")
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
     )
 
 if (knitr::is_html_output()) {
@@ -232,7 +232,7 @@ if (knitr::is_html_output()) {
 tbl_out
 ```
 
-Hasil tabel di atas menunjukkan bahwa `jarak_taman` dan `jarak_industri` memiliki nilai korelasi `r round(cor(df_mk$jarak_taman, df_mk$jarak_industri), 2)`, yang mendekati −1. Ini merupakan tanda **multikolinearitas yang serius**: kedua variabel membawa informasi yang hampir identik (berlawanan arah), sehingga model tidak mampu memisahkan kontribusi masing-masing terhadap IKU. Sebaliknya, `vegetasi` berkorelasi rendah dengan kedua variabel lainnya, sehingga tidak menimbulkan masalah. Dalam situasi seperti ini, peneliti harus memilih salah satu dari `jarak_taman` atau `jarak_industri` untuk dimasukkan ke dalam model, atau menggabungkannya menjadi satu indeks komposit.
+Hasil tabel di atas menunjukkan bahwa `jarak_taman` dan `jarak_industri` memiliki nilai korelasi `r round(cor(df_mk$jarak_taman, df_mk$jarak_industri), 2)`, yang mendekati âˆ’1. Ini merupakan tanda **multikolinearitas yang serius**: kedua variabel membawa informasi yang hampir identik (berlawanan arah), sehingga model tidak mampu memisahkan kontribusi masing-masing terhadap IKU. Sebaliknya, `vegetasi` berkorelasi rendah dengan kedua variabel lainnya, sehingga tidak menimbulkan masalah. Dalam situasi seperti ini, peneliti harus memilih salah satu dari `jarak_taman` atau `jarak_industri` untuk dimasukkan ke dalam model, atau menggabungkannya menjadi satu indeks komposit.
 
 :::
 
@@ -324,7 +324,11 @@ kbl(
     escape = FALSE,
     caption = "Variabel Baru untuk 3 Kategori"
 ) |>
-    kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+    kable_styling(
+        bootstrap_options = c("striped", "hover"),
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+        full_width = FALSE
+    )
 ```
 
 Mari kita pusatkan pembahasan pada dua kolom variabel pertama, yakni $D_{\text{Perumahan}}$ dan $D_{\text{Komersial}}$. Pada baris terakhir (kategori Industri), nilai pada dua variabel tesebut adalah nol secara bersamaan. Ini berarti, ketika sebuah observasi bernilai 0 baik pada variabel $D_{\text{Perumahan}}$ maupun $D_{\text{Komersial}}$, kita sudah bisa memastikan bahwa observasi tersebut memuat nilai 1 pada $D_{\text{Industri}}$--yang artinya masuk ke kategori Industri. Kombinasi unik pada dua variabel *dummy* pertama ini menunjukkan bahwa informasi keberadaan kategori Industri sudah tercakup di dua variabel pertamanya, sehingga variabel ketiga ($D_{\text{Industri}}$) menjadi **redundan** dan tidak lagi kita perlukan.
@@ -355,7 +359,11 @@ kbl(
     escape = FALSE,
     caption = "Variabel Baru untuk 4 Kategori"
 ) |>
-    kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+    kable_styling(
+        bootstrap_options = c("striped", "hover"),
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+        full_width = FALSE
+    )
 ```
 
 Pada baris kategori Taman, kita mendapati bahwa nilainya adalah 0 secara keseluruhan pada ketiga variabel *dummy* yang lain. Informasi "bukan Perumahan, bukan Komersial, dan bukan Industri" sudah cukup untuk menyimpulkan secara mutlak bahwa observasi tersebut termasuk Taman tanpa perlu adanya variabel $D_{\text{Taman}}$. Praktik menyembunyikan variabel kategori referensi inilah yang menyebabkan kita hanya akan mendapati variabel *dummy* masuk ke dalam model regresi berganda sebanyak satu unit lebih sedikit daripada jumlah kategori semula.

@@ -1,4 +1,4 @@
-# Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor
+﻿# Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor
 
 ::: rmdcapaian
 
@@ -19,7 +19,7 @@ Setelah mempelajari bab ini Anda diharapkan:
 
 [Istilah "Dimensi"]{.tajuksaya}
 
-Istilah “variabel” memiliki sebutan lain yakni **dimensi (*dimension*)**. Ini merujuk pada visualisasi data yang dilakukan dengan sumbu-sumbu X, Y, dan Z. Sumbu-sumbu tersebut tidak lain adalah variabel kita. Jumlah sumbu menandakan jumlah dimensinya juga: 2 dimensi berarti mengandung 2 variabel, 3 dimensi berarti mengandung 3 variabel.
+Istilah â€œvariabelâ€ memiliki sebutan lain yakni **dimensi (*dimension*)**. Ini merujuk pada visualisasi data yang dilakukan dengan sumbu-sumbu X, Y, dan Z. Sumbu-sumbu tersebut tidak lain adalah variabel kita. Jumlah sumbu menandakan jumlah dimensinya juga: 2 dimensi berarti mengandung 2 variabel, 3 dimensi berarti mengandung 3 variabel.
 
 :::
 
@@ -29,7 +29,7 @@ Analisis komponen prinsip dan analisis faktor termasuk ke dalam analisis multiva
 knitr::include_graphics("images/diagram_interdependensi.drawio.png")
 ```
 
-Yang dimaksud dengan “hubungan interdependen” adalah **hubungan yang seluruh variabelnya saling bergantung satu sama lain**. Ini bermakna bahwa setiap variabel setara hubungannya sehingga tidak ada hubungan pengaruh (memengaruhi-dipengaruhi) seperti halnya yang ada dalam analisis regresi linear berganda.
+Yang dimaksud dengan â€œhubungan interdependenâ€ adalah **hubungan yang seluruh variabelnya saling bergantung satu sama lain**. Ini bermakna bahwa setiap variabel setara hubungannya sehingga tidak ada hubungan pengaruh (memengaruhi-dipengaruhi) seperti halnya yang ada dalam analisis regresi linear berganda.
 
 ## Kegunaan PCA dan Analisis Faktor {#kegunaan-pca-analisis-faktor}
 
@@ -97,7 +97,7 @@ tbl_out <- kbl(df_var,
     kable_styling(
         bootstrap_options = c("striped", "hover", "responsive"),
         full_width = FALSE,
-        latex_options = c("scale_down", "HOLD_position")
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
     ) |>
     column_spec(c(2, 5), width = "4.5cm")
 
@@ -417,7 +417,7 @@ out_eigen <- kbl(table_eigen,
     kable_styling(
         bootstrap_options = c("striped", "hover"),
         full_width = FALSE,
-        latex_options = c("HOLD_position")
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
     )
 
 if (knitr::is_html_output()) {
@@ -454,7 +454,7 @@ Karena kesulitan dalam pendekatan ini, kita akan menentukan jumlah dimensi yang 
 
 Setelah memutuskan jumlah dimensi yang kita ekstrak, kita harus mengelompokkan variabel-variabel ke dalam dimensi yang kita ekstrak.
 
-Istilah “dimensi” ini sekarang harus kita bedakan. Jika kita menggunakan PCA, maka nama dimensi kita adalah **komponen** atau **variat**. Namun apabila kita menggunakan analisis faktor, dimensi kita disebut **faktor**.
+Istilah â€œdimensiâ€ ini sekarang harus kita bedakan. Jika kita menggunakan PCA, maka nama dimensi kita adalah **komponen** atau **variat**. Namun apabila kita menggunakan analisis faktor, dimensi kita disebut **faktor**.
 
 Variabel dikelompokkan ke dalam dimensi berdasarkan **nilai *loading*-nya**. Setiap variabel mempunyai nilai loading untuk tiap-tiap dimensi yang disajikan dalam ***factor matrix***. Untuk menentukan ke dalam dimensi mana tiap-tiap variabel dikelompokkan, kita mengacu pada **nilai absolut *loading* terbesar** yang ada di antara sejumlah dimensi yang diekstrak.
 
@@ -512,7 +512,7 @@ kbl(
     kable_styling(
         bootstrap_options = c("striped", "hover"),
         full_width = FALSE,
-        latex_options = c("HOLD_position")
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
     )
 ```
 
@@ -581,7 +581,7 @@ kbl(
     kable_styling(
         bootstrap_options = c("striped", "hover"),
         full_width = FALSE,
-        latex_options = c("HOLD_position")
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
     )
 ```
 
@@ -644,7 +644,7 @@ kbl(
     kable_styling(
         bootstrap_options = c("striped", "hover"),
         full_width = FALSE,
-        latex_options = c("HOLD_position")
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
     )
 ```
 
@@ -695,7 +695,7 @@ kbl(
     kable_styling(
         bootstrap_options = c("striped", "hover"),
         full_width = FALSE,
-        latex_options = c("HOLD_position")
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
     )
 ```
 
@@ -760,7 +760,7 @@ kbl(
     kable_styling(
         bootstrap_options = c("striped", "hover"),
         full_width = FALSE,
-        latex_options = c("HOLD_position")
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
     )
 ```
 
@@ -826,7 +826,7 @@ out_taman <- kbl(
     kable_styling(
         bootstrap_options = c("striped", "hover", "responsive"),
         full_width = FALSE,
-        latex_options = c("HOLD_position")
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
     )
 
 if (knitr::is_html_output()) {

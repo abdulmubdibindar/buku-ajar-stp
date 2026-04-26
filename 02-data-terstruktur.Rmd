@@ -31,7 +31,7 @@ Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 ele
 Perhatikan hasil pengumpulan data kuesioner berupa tabulasi data dari mahasiswa-mahasiswa ITERA seperti yang ditampilkan pada Gambar \@ref(fig:bab-2-ilus-data-terstruktur).
 
 ```{r bab-2-ilus-data-terstruktur, echo=FALSE, fig.cap='Ilustrasi elemen data terstruktur', out.width='60%', fig.align='center'}
-knitr::include_graphics('images/bab-2-ilus-data-terstruktur.png')
+knitr::include_graphics("images/bab-2-ilus-data-terstruktur.png")
 ```
 
 Kita akan membedah elemen-elemen data terstruktur dari tabulasi data tersebut:
@@ -55,35 +55,48 @@ Pelajari kasus yang berisi perbandingan antara data yang tidak rapi dan data yan
 
 Berikut adalah beberapa contoh kesalahan umum dalam struktur data dan perbaikannya:
 
-```{r tabel-perbandingan-tidy, echo=FALSE, message=FALSE, out.width='60%', fig.align='center'}
-library(knitr)
-library(kableExtra)
+[Kesalahan-1: Header Baris Bersarang]{.tajuksaya}
 
-# Membuat data frame dengan path gambar
-perbandingan <- data.frame(
-  Jenis = c('Kesalahan 1: Header Baris Bersarang', 
-            'Kesalahan 2: Struktur Kompleks', 
-            'Kesalahan 3: Format Tidak Konsisten'),
-  `Data Tidak Rapi` = c(
-    '<img src="images/bab-2-kesalahan-1-recreate.png" width="300"/>',
-    '<img src="images/bab-2-kesalahan-2-recreate.png" width="300"/>',
-    '<img src="images/bab-2-kesalahan-3-recreate.png" width="300"/>'
-  ),
-  `Data Rapi` = c(
-    '<img src="images/bab-2-perbaikan-1-recreate.png" width="300"/>',
-    '<img src="images/bab-2-perbaikan-2-recreate.png" width="300"/>',
-    '<img src="images/bab-2-perbaikan-3-recreate.png" width="300"/>'
-  ),
-  check.names = FALSE
-)
+- **Data Tidak Rapi**
+  
+  ```{r bab-2-kesalahan-1, echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("images/bab-2-kesalahan-1-recreate.png")
+  ```
 
-kbl(perbandingan, format = 'html', escape = FALSE, 
-      col.names = c('Jenis Kesalahan', 'Data Tidak Rapi (Salah)', 'Data Rapi (Benar)')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  column_spec(1, bold = TRUE, width = '20%') %>%
-  column_spec(2, width = '40%') %>%
-  column_spec(3, width = '40%')
-```
+- **Data Rapi**
+  
+  ```{r bab-2-perbaikan-1, echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("images/bab-2-perbaikan-1-recreate.png")
+  ```
+
+[Kesalahan-2: Struktur Kompleks]{.tajuksaya}
+
+- **Data Tidak Rapi**
+  
+  ```{r bab-2-kesalahan-2, echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("images/bab-2-kesalahan-2-recreate.png")
+  ```
+
+- **Data Rapi**
+  
+  ```{r bab-2-perbaikan-2, echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("images/bab-2-perbaikan-2-recreate.png")
+  ```
+
+[Kesalahan-3: Format Tidak Konsisten]{.tajuksaya}
+
+- **Data Tidak Rapi**
+  
+  ```{r bab-2-kesalahan-3, echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("images/bab-2-kesalahan-3-recreate.png")
+  ```
+
+- **Data Rapi**
+  
+  ```{r bab-2-perbaikan-3, echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("images/bab-2-perbaikan-3-recreate.png")
+  ```
+
 :::
 
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-elemen data terstruktur.
@@ -98,19 +111,24 @@ library(knitr)
 library(kableExtra)
 
 tabel_1_3 <- data.frame(
-  ID_rumah = c('001', '002', '003', '004'),
+  ID_rumah = c("001", "002", "003", "004"),
   Usia_KK = c(55, 64, 33, 28),
   Jml_anggota = c(2, 5, 7, 2),
   Luas_rumah = c(101, 245, 69, 44),
   Income_bln = c(3.3, 6.0, 3.5, 27.0)
 )
 
-kbl(tabel_1_3, format = 'html', escape = FALSE, 
-      col.names = c('ID_rumah', 'Usia_KK', 'Jml_anggota', 'Luas_rumah', 'Income_bln')) %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  column_spec(1, bold = TRUE, width = '20%') %>%
-  column_spec(2, width = '40%') %>%
-  column_spec(3, width = '40%')
+kbl(tabel_1_3,
+  col.names = c("ID_rumah", "Usia_KK", "Jml_anggota", "Luas_rumah", "Income_bln")
+) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  ) %>%
+  column_spec(1, bold = TRUE, width = "20%") %>%
+  column_spec(2, width = "40%") %>%
+  column_spec(3, width = "40%")
 ```
 
 Jawablah pertanyaan-pertanyaan berikut berdasarkan tabel tersebut:
@@ -195,7 +213,7 @@ Dalam praktiknya, menentukan tingkat pengukuran variabel seringkali tidak mudah 
 Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilkan dalam Gambar \@ref(fig:fig-menentukan-tingpeng) berikut. 
 
 ```{r fig-menentukan-tingpeng, echo=FALSE, fig.cap='Diagram alir menentukan tingkat pengukuran variabel', fig.align='center'}
-knitr::include_graphics('images/bab-2-menentukan-tingpeng.svg')
+knitr::include_graphics("images/bab-2-menentukan-tingpeng.png")
 ```
 
 ::: rmdkasus
@@ -208,19 +226,27 @@ library(knitr)
 library(kableExtra)
 
 rancangan <- data.frame(
-  Variabel = c('Moda transportasi yang digunakan responden', 'Jarak tempuh dari rumah ke kampus', 'Banyaknya perjalanan ke kampus dalam satu pekan', 'Total biaya transportasi selama satu pekan'),
-  `Nama Panggilan` = c('`kend`', '`jarak`', '`frek_jalan_sepekan`', '`biaya`'),
-  `Penjelasan` = c('Nilai-nilai dari moda transportasi bukanlah angka, melainkan label yang merepresentasikan jenis moda transportasi yang digunakan responden. Oleh karena itu, jenis nilai dari variabel ini adalah kategorik. Tidak ada tingkatan pada nilai-nilai di variabel ini, sehingga tingkat pengukurannya adalah nominal.',
-  'Nilai-nilai dari jarak tempuh dari rumah ke kampus adalah angka yang merepresentasikan jarak tempuh dari rumah ke kampus. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan tidak ada jarak tempuh. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio.',
-  'Nilai-nilai dari banyaknya perjalanan ke kampus dalam satu pekan adalah angka yang merepresentasikan banyaknya perjalanan ke kampus dalam satu pekan. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan banyaknya perjalanan ke kampus 0 kali, atau tidak pernah ke kampus. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio.',
-  'Nilai-nilai dari total biaya transportasi selama satu pekan adalah angka yang merepresentasikan total biaya transportasi selama satu pekan. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan total biaya transportasi 0 rupiah, atau tidak mengeluarkan biaya transportasi. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio.'),
+  Variabel = c("Moda transportasi yang digunakan responden", "Jarak tempuh dari rumah ke kampus", "Banyaknya perjalanan ke kampus dalam satu pekan", "Total biaya transportasi selama satu pekan"),
+  `Nama Panggilan` = c("`kend`", "`jarak`", "`frek\\_jalan\\_sepekan`", "`biaya`"),
+  `Penjelasan` = c(
+    "Nilai-nilai dari moda transportasi bukanlah angka, melainkan label yang merepresentasikan jenis moda transportasi yang digunakan responden. Oleh karena itu, jenis nilai dari variabel ini adalah kategorik. Tidak ada tingkatan pada nilai-nilai di variabel ini, sehingga tingkat pengukurannya adalah nominal.",
+    "Nilai-nilai dari jarak tempuh dari rumah ke kampus adalah angka yang merepresentasikan jarak tempuh dari rumah ke kampus. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan tidak ada jarak tempuh. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio.",
+    "Nilai-nilai dari banyaknya perjalanan ke kampus dalam satu pekan adalah angka yang merepresentasikan banyaknya perjalanan ke kampus dalam satu pekan. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan banyaknya perjalanan ke kampus 0 kali, atau tidak pernah ke kampus. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio.",
+    "Nilai-nilai dari total biaya transportasi selama satu pekan adalah angka yang merepresentasikan total biaya transportasi selama satu pekan. Oleh karena itu, jenis nilai dari variabel ini adalah numerik. Angka 0 merepresentasikan total biaya transportasi 0 rupiah, atau tidak mengeluarkan biaya transportasi. Karena ini angka sebenarnya dan memiliki makna 0 yang sebenarnya, maka tingkat pengukurannya adalah rasio."
+  ),
   check.names = FALSE
 )
 
-kbl(rancangan, format = 'html', escape = FALSE, 
-      col.names = c('Variabel', 'Nama Panggilan', 'Penjelasan'),
-      caption = 'Penelaahan tingkat pengukuran variabel penelitian') %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kbl(rancangan,
+  escape = FALSE,
+  col.names = c("Variabel", "Nama Panggilan", "Penjelasan"),
+  caption = "Penelaahan tingkat pengukuran variabel penelitian"
+) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 Setelah menelaah jenis nilai dan tingkat pengukuran variabel, kita perlu menspesifikasikan nilai isian beserta satuannya. Jika menggunakan kodifikasi, aturannya harus diperjelas. Spesifikasi ini disebut **metadata**, yaitu data yang menjelaskan tentang data.
@@ -230,18 +256,24 @@ library(knitr)
 library(kableExtra)
 
 metadata <- data.frame(
-  Variabel = c('Moda transportasi yang digunakan responden', 'Jarak tempuh dari rumah ke kampus', 'Banyaknya perjalanan ke kampus dalam satu pekan', 'Total biaya transportasi selama satu pekan'),
-  `Nama Panggilan` = c('`kend`', '`jarak`', '`frek_jalan_sepekan`', '`biaya`'),
-  `Tingkat Pengukuran` = c('Nominal', 'Metrik', 'Metrik', 'Metrik'),
-  `Satuan` = c('Tidak ada', 'km', 'kali', 'rupiah (Rp)'),
-  `Nilai yang mungkin` = c('Sepeda motor, mobil, angkutan umum, dll', '0 - ∞ km', '0 - 7', '0 - ∞'),
+  Variabel = c("Moda transportasi yang digunakan responden", "Jarak tempuh dari rumah ke kampus", "Banyaknya perjalanan ke kampus dalam satu pekan", "Total biaya transportasi selama satu pekan"),
+  `Nama Panggilan` = c("`kend`", "`jarak`", "`frek\\_jalan\\_sepekan`", "`biaya`"),
+  `Tingkat Pengukuran` = c("Nominal", "Metrik", "Metrik", "Metrik"),
+  `Satuan` = c("Tidak ada", "km", "kali", "rupiah (Rp)"),
+  `Nilai yang mungkin` = c("Sepeda motor, mobil, angkutan umum, dll", "0 - $\\infty$ km", "0 - 7", "0 - $\\infty$"),
   check.names = FALSE
 )
 
-kbl(metadata, format = 'html', escape = FALSE, 
-      col.names = c('Variabel', 'Nama Panggilan', 'Tingkat Pengukuran', 'Satuan', 'Nilai yang mungkin'),
-      caption = 'Metadata variabel penelitian') %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kbl(metadata,
+  escape = FALSE,
+  col.names = c("Variabel", "Nama Panggilan", "Tingkat Pengukuran", "Satuan", "Nilai yang mungkin"),
+  caption = "Metadata variabel penelitian"
+) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 **Mengubah Tingkat Pengukuran Variabel**
@@ -255,19 +287,26 @@ library(knitr)
 library(kableExtra)
 
 metadata_2 <- data.frame(
-  Variabel = c('Moda transportasi yang digunakan responden', 'Jarak tempuh dari rumah ke kampus', 'Banyaknya perjalanan ke kampus dalam satu pekan', 'Total biaya transportasi selama satu pekan'),
-  `Nama Panggilan` = c('`kend`', '`jarak`', '`frek_jalan_sepekan`', '`biaya`'),
-  `Tingkat Pengukuran` = c('Nominal', 'Ordinal', 'Metrik', 'Metrik'),
-  `Satuan` = c('Tidak ada', 'km', 'kali', 'rupiah (Rp)'),
-  `Nilai yang mungkin` = c('Sepeda motor, mobil, angkutan umum, dll', '0 - 5 km,<br>5 - 10 km,<br>10 - 15 km,<br>dll', '0 - 7', '0 - ∞'),
+  Variabel = c("Moda transportasi yang digunakan responden", "Jarak tempuh dari rumah ke kampus", "Banyaknya perjalanan ke kampus dalam satu pekan", "Total biaya transportasi selama satu pekan"),
+  `Nama Panggilan` = c("`kend`", "`jarak`", "`frek\\_jalan\\_sepekan`", "`biaya`"),
+  `Tingkat Pengukuran` = c("Nominal", "Ordinal", "Metrik", "Metrik"),
+  `Satuan` = c("Tidak ada", "km", "kali", "rupiah (Rp)"),
+  `Nilai yang mungkin` = c("Sepeda motor, mobil, angkutan umum, dll", linebreak("0 - 5 km,\n5 - 10 km,\n10 - 15 km,\ndll"), "0 - 7", "0 - $\\infty$"),
   check.names = FALSE
 )
 
-kbl(metadata_2, format = 'html', escape = FALSE, 
-      col.names = c('Variabel', 'Nama Panggilan', 'Tingkat Pengukuran', 'Satuan', 'Nilai yang mungkin'),
-      caption = 'Metadata variabel penelitian yang diubah') %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE) %>%
-  row_spec(2, background = '#ffffcc')
+kbl(metadata_2,
+  longtable = TRUE,
+  escape = FALSE,
+  col.names = c("Variabel", "Nama Panggilan", "Tingkat Pengukuran", "Satuan", "Nilai yang mungkin"),
+  caption = "Metadata variabel penelitian yang diubah"
+) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  ) %>%
+  row_spec(2, background = "#ffffcc")
 ```
 :::
 
@@ -284,7 +323,7 @@ library(knitr)
 library(kableExtra)
 
 preview_data <- data.frame(
-  KodeResp = c('001', '002', '003', '004', '005', '006'),
+  KodeResp = c("001", "002", "003", "004", "005", "006"),
   Usia = c(22, 25, 24, 19, 23, 20),
   Fakultas = c(1, 1, 2, 3, 2, 1),
   ThnMsk = c(2020, 2020, 2021, 2022, 2021, 2020),
@@ -292,9 +331,15 @@ preview_data <- data.frame(
   Jarak = c(19.27, 0.58, 0.56, 1.05, 1.69, 1.37)
 )
 
-kbl(preview_data, format = 'html', align = 'c',
-      caption = 'Cuplikan data survei mahasiswa') %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kbl(preview_data,
+  align = "c",
+  caption = "Cuplikan data survei mahasiswa"
+) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
@@ -304,21 +349,28 @@ library(knitr)
 library(kableExtra)
 
 metadata_soal <- data.frame(
-  `Nama Variabel` = c('`KodeResp`', '`Usia`', '`Fakultas`', '`ThnMsk`', '`UangSaku`', '`Jarak`'),
-  Deskripsi = c('Nomor urut responden', 'Usia responden (tahun)', 'Fakultas mahasiswa', 'Tahun masuk kuliah (Masehi)', 'Uang saku mahasiswa per bulan', 'Jarak tempat tinggal mahasiswa dari kampus (km)'),
+  `Nama Variabel` = c("`KodeResp`", "`Usia`", "`Fakultas`", "`ThnMsk`", "`UangSaku`", "`Jarak`"),
+  Deskripsi = c("Nomor urut responden", "Usia responden (tahun)", "Fakultas mahasiswa", "Tahun masuk kuliah (Masehi)", "Uang saku mahasiswa per bulan", "Jarak tempat tinggal mahasiswa dari kampus (km)"),
   `Nilai-nilai yang valid` = c(
-  ' tiga digit angka, hingga jumlah responden minimal', 
-  ' 18 - &infin;', 
-  '1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi', 
-  '2018 - 2022',
-  '1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta',
-  '0 - &infin;')
+    " tiga digit angka, hingga jumlah responden minimal",
+    " 18 - $\\infty$",
+    linebreak("1 = Fakultas Syariah\n2 = Fakultas Tarbiyah dan Keguruan\n3 = Fakultas Dakwah dan Komunikasi"),
+    "2018 - 2022",
+    linebreak("1 = $<$ 1 juta rupiah\n2 = 1-2 juta rupiah\n3 = 2-3 juta rupiah\n4 = 3-4 juta\n5 = $>$ 4 juta"),
+    "0 - $\\infty$"
+  )
 )
 
-kbl(metadata_soal, format = 'html', escape = FALSE,
-      col.names = c('Nama Variabel', 'Deskripsi', 'Nilai-nilai yang valid'),
-      caption = 'Metadata variabel survei mahasiswa') %>%
-  kable_styling(bootstrap_options = c('striped', 'hover'), full_width = TRUE)
+kbl(metadata_soal,
+  escape = FALSE,
+  col.names = c("Nama Variabel", "Deskripsi", "Nilai-nilai yang valid"),
+  caption = "Metadata variabel survei mahasiswa"
+) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 Sebutkan tingkat pengukuran untuk variabel-variabel yang ada dalam set data tersebut dan jelaskan! [STP-2.1]{.capaian}

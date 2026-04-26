@@ -1,4 +1,4 @@
-# Visualisasi Data Kuantitatif {#bab-4-visualisasi-data-kuantitatif}
+﻿# Visualisasi Data Kuantitatif {#bab-4-visualisasi-data-kuantitatif}
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -71,6 +71,7 @@ kbl(tabel_moda,
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE, position = "center"
   )
 ```
@@ -146,6 +147,7 @@ kbl(
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE,
     position = "center"
   )
@@ -182,9 +184,9 @@ ggplot(tabel_moda_jk_long, aes(x = kendaraan.utama, y = Frekuensi, fill = jenis.
 
 #### Grafik Lollipop
 
-Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data direpresentasikan oleh tiang-tiang berujung lingkaran yang menyerupai permen loli. Penggunaannya sangat cocok untuk data berjumlah banyak guna menghindari efek Moiré (dibaca `moarey') @wikipedia2025moire. Efek Moiré adalah ilusi optik pergerakan benda yang posisinya berdekatan dan membentuk sebuah kisi (fringe) seperti yang ditunjukkan Gambar \@ref(fig:contoh-moire), sehingga dapat menyulitkan pembaca grafik.
+Diagram lollipop pada dasarnya serupa dengan diagram batang, hanya saja data direpresentasikan oleh tiang-tiang berujung lingkaran yang menyerupai permen loli. Penggunaannya sangat cocok untuk data berjumlah banyak guna menghindari efek MoirÃ© (dibaca `moarey') @wikipedia2025moire. Efek MoirÃ© adalah ilusi optik pergerakan benda yang posisinya berdekatan dan membentuk sebuah kisi (fringe) seperti yang ditunjukkan Gambar \@ref(fig:contoh-moire), sehingga dapat menyulitkan pembaca grafik.
 
-```{r contoh-moire, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Contoh efek Moiré pada grafik batang'}
+```{r contoh-moire, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Contoh efek MoirÃ© pada grafik batang'}
 knitr::include_graphics("images/contoh-moire.png")
 ```
 
@@ -193,7 +195,7 @@ knitr::include_graphics("images/contoh-moire.png")
 
 #### Studi Kasus: Perbandingan Grafik Lollipop dengan Grafik Batang {.unnumbered}
 
-Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek Moiré yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
+Pada dataset dengan banyak kategori, grafik batang konvensional dapat menghasilkan efek MoirÃ© yang mengganggu. Mari kita bandingkan penggunaan grafik batang biasa dengan grafik lollipop menggunakan data program studi mahasiswa UINRIL.
 
 ```{r bab-4-distribusi-per-prodi, echo=FALSE, fig.align='center'}
 # Install package ggplot2 jika belum ada
@@ -216,6 +218,7 @@ kbl(
 ) |>
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE,
     position = "center"
   ) |>
@@ -259,7 +262,7 @@ ggplot(tabel_prodi, aes(x = reorder(prodi, -Frekuensi), y = Frekuensi)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
 ```
 
-**Perbandingan:** Pada grafik lollipop, setiap kategori lebih mudah dibedakan karena hanya tiang tipis dan titik yang mewakili nilai, sehingga menghindari efek visual yang berlebihan (Moiré). Grafik lollipop sangat cocok untuk dataset dengan banyak kategori seperti ini, karena lebih ringkas dan tetap informatif. Sementara grafik batang biasa terlihat lebih padat dan dapat menimbulkan kesulitan dalam membaca data ketika batang-batangnya berdekatan.
+**Perbandingan:** Pada grafik lollipop, setiap kategori lebih mudah dibedakan karena hanya tiang tipis dan titik yang mewakili nilai, sehingga menghindari efek visual yang berlebihan (MoirÃ©). Grafik lollipop sangat cocok untuk dataset dengan banyak kategori seperti ini, karena lebih ringkas dan tetap informatif. Sementara grafik batang biasa terlihat lebih padat dan dapat menimbulkan kesulitan dalam membaca data ketika batang-batangnya berdekatan.
 
 :::
 
@@ -297,6 +300,7 @@ kbl(
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE,
     position = "center"
   )
@@ -351,6 +355,7 @@ kbl(
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE,
     position = "center"
   )
@@ -478,6 +483,7 @@ kbl(
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE,
     position = "center"
   )
@@ -539,6 +545,7 @@ kbl(
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE,
     position = "center"
   )
@@ -608,6 +615,7 @@ kbl(
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE,
     position = "center"
   )
@@ -654,7 +662,7 @@ ggplot(data_gabung, aes(x = kampus, y = biaya.dalam.sepekan, fill = kampus)) +
 - **Kotak bagian bawah (Q1)**: Kuartil pertama, 25% data berada di bawah nilai ini
 - **Kotak bagian atas (Q3)**: Kuartil ketiga, 75% data berada di bawah nilai ini
 - **Tinggi kotak (IQR)**: Jarak interkuartil, menunjukkan rentang 50% data tengah
-- ***Whiskers* (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 × IQR)
+- ***Whiskers* (garis atas dan bawah)**: Menunjukkan rentang data yang masih dalam batas normal (1,5 Ã— IQR)
 - **Titik-titik di luar *whiskers***: *Outlier* atau pencilan, yakni nilai-nilai ekstrem yang jauh dari sebagian besar data
 
 **Interpretasi:** Dari boxplot ganda terlihat bahwa distribusi biaya perjalanan mahasiswa UNILA memiliki median yang sedikit lebih tinggi dibandingkan UINRIL. Rentang interkuartil (tinggi kotak) UNILA juga lebih besar, menunjukkan variasi biaya perjalanan yang lebih beragam. Terdapat beberapa outlier pada kedua kampus yang menunjukkan ada mahasiswa dengan biaya perjalanan yang jauh lebih tinggi dari mayoritas. Informasi ini berguna untuk perencanaan fasilitas kampus seperti kantin atau transportasi yang disesuaikan dengan daya beli mahasiswa.
@@ -708,6 +716,7 @@ kbl(
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE,
     position = "center"
   )
@@ -811,10 +820,14 @@ preview_data <- data.frame(
 )
 
 kbl(preview_data,
-  format = "html", align = "c",
+  align = "c",
   caption = "Cuplikan data survei mahasiswa"
 ) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
@@ -828,20 +841,24 @@ metadata_soal <- data.frame(
   Deskripsi = c("Nomor urut responden", "Usia responden (tahun)", "Fakultas mahasiswa", "Tahun masuk kuliah (Masehi)", "Uang saku mahasiswa per bulan", "Jarak tempat tinggal mahasiswa dari kampus (km)"),
   `Nilai-nilai yang valid` = c(
     " tiga digit angka, hingga jumlah responden minimal",
-    " 18 - &infin;",
-    "1 = Fakultas Syariah,<br>2 = Fakultas Tarbiyah dan Keguruan,<br>3 = Fakultas Dakwah dan Komunikasi",
+    " 18 - âˆž",
+    linebreak("1 = Fakultas Syariah\n2 = Fakultas Tarbiyah dan Keguruan\n3 = Fakultas Dakwah dan Komunikasi"),
     "2018 - 2022",
-    "1 = &lt;1 juta rupiah,<br>2 = 1-2 juta rupiah,<br>3 = 2-3 juta rupiah,<br>4 = 3-4 juta,<br>5 = &gt;4 juta",
-    "0 - &infin;"
+    linebreak("1 = $<$1 juta rupiah\n2 = 1-2 juta rupiah\n3 = 2-3 juta rupiah\n4 = 3-4 juta\n5 = $>$4 juta"),
+    "0 - âˆž"
   )
 )
 
 kbl(metadata_soal,
-  format = "html", escape = FALSE,
+  escape = FALSE,
   col.names = c("Nama Variabel", "Deskripsi", "Nilai-nilai yang valid"),
   caption = "Metadata variabel survei mahasiswa"
 ) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 ```
 
 1. Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut! [STP-3.1]{.capaian}
@@ -858,10 +875,14 @@ jawaban_tabel <- data.frame(
 )
 
 kbl(jawaban_tabel,
-  format = "html", align = "c",
+  align = "c",
   col.names = c("#", "Nama Variabel", "Tingkat Pengukuran", "Jenis Grafik yang Bisa Digunakan (bisa lebih dari 1)")
 ) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"), full_width = TRUE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
   ```
 
 2. Tentukan jenis grafik yang sesuai untuk beberapa tujuan visualisasi berikut [STP-3.2]{.capaian}:

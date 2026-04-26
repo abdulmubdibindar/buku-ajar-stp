@@ -1,4 +1,4 @@
-# Korelasi Antarvariabel Ordinal {#korelasi-antarvariabel-ordinal}
+﻿# Korelasi Antarvariabel Ordinal {#korelasi-antarvariabel-ordinal}
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -7,7 +7,7 @@ Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korel
 
 :::
 
-Pada bab ini, penjelasan analisis asosiasi bivariat sama dengan yang telah dijelaskan pada bab sebelumnya. Hanya saja, pada bab ini jenis variabel yang akan dianalisis adalah **variabel ordinal**. Sebagai pengingat, variabel dengan jenis ordinal ini adalah variabel yang memiliki ragam nilai kategori yang dapat diurutkan (contoh: tinggi – sedang – rendah, dsb).
+Pada bab ini, penjelasan analisis asosiasi bivariat sama dengan yang telah dijelaskan pada bab sebelumnya. Hanya saja, pada bab ini jenis variabel yang akan dianalisis adalah **variabel ordinal**. Sebagai pengingat, variabel dengan jenis ordinal ini adalah variabel yang memiliki ragam nilai kategori yang dapat diurutkan (contoh: tinggi â€“ sedang â€“ rendah, dsb).
 
 Untuk mengukur korelasi antarvariabel ordinal, kita akan mempelajari koefisien-koefisien yang sesuai, di antaranya Gamma ($\gamma$) dari Goodman dan Kruskal, $d$ dari Sommer, dan tau-b ($\tau$-b) dari Kendall yang secara konseptual sama dengan korelasi berbasis proporsi kesalahan yang dikurangi (PRE) seperti yang dibahas pada subbab \@ref(koefisien-korelasi-nominal-error).
 
@@ -61,7 +61,7 @@ tbl_out <- kbl(df_var,
   kable_styling(
     bootstrap_options = c("striped", "hover", "responsive"),
     full_width = FALSE,
-    latex_options = c("scale_down", "HOLD_position")
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
   ) |>
   collapse_rows(columns = 1, valign = "top")
 
@@ -95,7 +95,7 @@ tbl_out <- kbl(df_cross,
   kable_styling(
     bootstrap_options = c("striped", "hover", "responsive"),
     full_width = FALSE,
-    latex_options = c("scale_down", "HOLD_position")
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
   ) |>
   add_header_above(c(" " = 1, "Kode TingkatSemester" = 4, " " = 1))
 
@@ -204,15 +204,15 @@ dengan:
 - $D$ adalah jumlah pasangan frekuensi ***discordant***
 - $T$ adalah jumlah pasangan frekuensi terikat *(tied ranks)* pada variabel independen
 
-Nilai koefisien Somers’ D berada pada rentang 0 sampai dengan 1 sehingga dapat diinterpretasikan kekuatan asosiasinya, serta arah asosiasi dengan nilai positif ataupun negatif sebagaimana koefisien $\gamma$.
+Nilai koefisien Somersâ€™ D berada pada rentang 0 sampai dengan 1 sehingga dapat diinterpretasikan kekuatan asosiasinya, serta arah asosiasi dengan nilai positif ataupun negatif sebagaimana koefisien $\gamma$.
 
 Pelajari kasus berikut untuk memahami perhitungan koefisien $d$ dari Sommer, terutama perhitungan komponen $T$.
 
 ::: rmdkasus
 ### Studi Kasus: Menghitung Sommer's $d$ {.unnumbered}
-Dalam perhitungan koefisien d Sommer (Sommer’s d) kita sudah melibatkan penentuan variabel dependen dan independen, atau variabel yang dipengaruhi dan memengaruhi.
+Dalam perhitungan koefisien d Sommer (Sommerâ€™s d) kita sudah melibatkan penentuan variabel dependen dan independen, atau variabel yang dipengaruhi dan memengaruhi.
 
-Dalam kasus kita, yang paling masuk akal adalah mengatakan **“tingkat semester perkuliahan memengaruhi tingkat uang saku”** ketimbang “tingkat uang saku memengaruhi tingkat semester perkuliahan.” Oleh karena itu, kita menganggap variabel independennya adalah Tingkat Semester Perkuliahan dan variabel dependennya Tingkat Uang Saku.
+Dalam kasus kita, yang paling masuk akal adalah mengatakan **â€œtingkat semester perkuliahan memengaruhi tingkat uang sakuâ€** ketimbang â€œtingkat uang saku memengaruhi tingkat semester perkuliahan.â€ Oleh karena itu, kita menganggap variabel independennya adalah Tingkat Semester Perkuliahan dan variabel dependennya Tingkat Uang Saku.
 
 **Perhitungan $T$ atau pasangan frekuensi terikat (*tied ranks*)**
 
@@ -313,7 +313,7 @@ tbl_out <- kbl(df_perbandingan,
   kable_styling(
     bootstrap_options = c("striped", "hover", "responsive"),
     full_width = FALSE,
-    latex_options = c("scale_down", "HOLD_position")
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
   ) |>
   column_spec(1, width = "15em") |>
   column_spec(2:4, width = "12em")

@@ -1,4 +1,4 @@
-# Uji Hipotesis Parameter Dua Populasi Atau Lebih
+﻿# Uji Hipotesis Parameter Dua Populasi Atau Lebih
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -10,9 +10,9 @@ Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil dari pengujian
 
 Pengertian *lebih dari satu populasi* mengacu pada dua sudut pandang, yaitu:
 
-1. **Cakupan populasi yang kita definisikan pada penelitian kita**. Jika satu populasi pada penelitian kita adalah *“seluruh mahasiswa ITERA”*, maka dua populasi dapat menjadi *“seluruh mahasiswa ITERA”* dan *“seluruh mahasiswa UIN RIL”*, dan sebagainya.
+1. **Cakupan populasi yang kita definisikan pada penelitian kita**. Jika satu populasi pada penelitian kita adalah *â€œseluruh mahasiswa ITERAâ€*, maka dua populasi dapat menjadi *â€œseluruh mahasiswa ITERAâ€* dan *â€œseluruh mahasiswa UIN RILâ€*, dan sebagainya.
    
-   Akan ada hal yang kita bandingkan dari kedua ataupun seluruh populasi tersebut. Dalam hal ini, kita akan membuktikan bahwa *“ada atau tidaknya perbedaan karakteristik dari mahasiswa ITERA dan mahasiswa UIN RIL”*. Perbedaan karakteristik ini dapat berupa parameter tertentu, seperti rata-rata, median, atau proporsi pada dua atau lebih populasi yang diujikan.
+   Akan ada hal yang kita bandingkan dari kedua ataupun seluruh populasi tersebut. Dalam hal ini, kita akan membuktikan bahwa *â€œada atau tidaknya perbedaan karakteristik dari mahasiswa ITERA dan mahasiswa UIN RILâ€*. Perbedaan karakteristik ini dapat berupa parameter tertentu, seperti rata-rata, median, atau proporsi pada dua atau lebih populasi yang diujikan.
 
 ::: rmdkasus
 ### Studi Kasus: Batasan Cakupan Sebagai Dasar Penentuan Populasi {.unnumbered}
@@ -77,12 +77,16 @@ data.frame(
     check.names = FALSE
 ) |>
     kbl(caption = "Bentuk Hipotesis Kosong Dua Populasi", escape = FALSE, align = "c") |>
-    kable_styling(full_width = FALSE)
+    kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+        full_width = FALSE
+    )
 ```
 
 Dalam Tabel \@ref(tab:tab-hipotesis-kosong-dua-populasi), kita dapat melihat bahwa hipotesis kosong ini dapat dirumuskan dengan dua bentuk, yaitu **bentuk umum** dan **bentuk selisih**. Kedua bentuk ini sebenarnya memiliki arti yang sama, yaitu tidak adanya perbedaan antara kedua populasi yang dibandingkan. Hanya saja, bentuk selisih lebih mudah diterapkan ketika **kita hanya berfokus pada perbedaan nilai parameter antara kedua populasi tersebut** alih-alih nilai absolut parameter-parameternya. 
 
-Sementara itu, hipotesis alternatif ($H_1$) menunjukkan kondisi **adanya perbedaan antara kedua populasi tersebut** — baik perbedaan yang memiliki arah (lebih besar atau lebih kecil), maupun yang tidak memiliki arah (tidak sama dengan). Perhatikan Tabel \@ref(tab:tab-hipotesis-alternatif-dua-populasi) berikut֫.
+Sementara itu, hipotesis alternatif ($H_1$) menunjukkan kondisi **adanya perbedaan antara kedua populasi tersebut** â€” baik perbedaan yang memiliki arah (lebih besar atau lebih kecil), maupun yang tidak memiliki arah (tidak sama dengan). Perhatikan Tabel \@ref(tab:tab-hipotesis-alternatif-dua-populasi) berikutÖ«.
 
 ```{r tab-hipotesis-alternatif-dua-populasi, echo=FALSE, message=FALSE, warning=FALSE, fig.align="center", out.width="60%"}
 library(dplyr)
@@ -101,7 +105,11 @@ data.frame(
     check.names = FALSE
 ) |>
     kbl(caption = "Bentuk Hipotesis Alternatif Dua Populasi", escape = FALSE, align = "c") |>
-    kable_styling(full_width = FALSE)
+    kable_styling(
+        bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+        latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+        full_width = FALSE
+    )
 ```
 
 ### Perhitungan Statistik Uji dalam Uji Hipotesis Parameter Dua Populasi Independen
@@ -172,7 +180,7 @@ Di mana:
 - $N_1$ dan $N_2$ adalah jumlah observasi sampel 1 dan sampel 2
 - $\hat{p}_1$ dan $\hat{p}_2$ adalah proporsi sampel 1 dan sampel 2
 
-Perlu dicatat bahwa pada persamaan \@ref(eq:statistik-uji-proporsi-dua-populasi), standar *error* dihitung menggunakan **proporsi gabungan** ($\hat{p}$) — bukan proporsi masing-masing sampel. Ini dilakukan karena, di bawah asumsi $H_0$ (bahwa kedua proporsi populasi sesungguhnya adalah sama), kita memiliki basis yang lebih kuat jika mengestimasi proporsi populasi tersebut dari kedua sampel secara bersamaan.
+Perlu dicatat bahwa pada persamaan \@ref(eq:statistik-uji-proporsi-dua-populasi), standar *error* dihitung menggunakan **proporsi gabungan** ($\hat{p}$) â€” bukan proporsi masing-masing sampel. Ini dilakukan karena, di bawah asumsi $H_0$ (bahwa kedua proporsi populasi sesungguhnya adalah sama), kita memiliki basis yang lebih kuat jika mengestimasi proporsi populasi tersebut dari kedua sampel secara bersamaan.
 
 Aturan pengambilan keputusan untuk uji proporsi ini sama dengan yang berlaku pada uji rata-rata, yakni: jika statistik uji **jatuh di dalam wilayah kritis**, kita tolak $H_0$; sebaliknya, kita **gagal menolak $H_0$**.
 
@@ -545,7 +553,7 @@ g. **Menarik Kesimpulan dan Memaknai Hasil**
 Lain halnya dengan ITERA, pola jarinagan jalan di sekitar ITERA adalah satu jalan raya memanjang, Jalan Terusan Ryacudu, yang di sekitarnya lebih tersebar *(disepersed)*, mengakibatkan tempat tinggal di sekitarnya juga jadi berjauhan.
 
 ```{r fig-perbandingan-itera-unila, echo=FALSE, fig.align="center", fig.cap='Gambaran Struktur Ruang ITERA *(dispersed)* vs. UNILA *(compact)*'}
-knitr::include_graphics('images/perbandingan-itera-unila.png')
+knitr::include_graphics("images/perbandingan-itera-unila.png")
 ```
 :::
 
@@ -563,7 +571,7 @@ Dengan menggunakan **tingkat kepercayaan 90%**, kita akan menguji apakah propors
 Kita jalankan langkah-langkah pengujian hipotesis proporsi dua populasi independen:
 
 a. **Menyatakan Asumsi Awal**  
-   Data yang diamati merupakan dua kelompok sampel yang **independen** — tidak ada hubungan berpasangan antara mahasiswa ITERA dan UNILA. Variabel yang diuji adalah **kategorikal dikotomis** (menggunakan sepeda motor atau tidak), dan ukuran sampel keduanya cukup besar sehingga memenuhi syarat distribusi normal untuk proporsi.
+   Data yang diamati merupakan dua kelompok sampel yang **independen** â€” tidak ada hubungan berpasangan antara mahasiswa ITERA dan UNILA. Variabel yang diuji adalah **kategorikal dikotomis** (menggunakan sepeda motor atau tidak), dan ukuran sampel keduanya cukup besar sehingga memenuhi syarat distribusi normal untuk proporsi.
 
 b. **Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**  
    Kita misalkan populasi ITERA = 1 dan UNILA = 2. Karena kita ingin mengetahui apakah ada perbedaan (tanpa menentukan arah), kita gunakan hipotesis alternatif **tidak berarah**:
@@ -605,7 +613,7 @@ f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**
 g. **Menarik Kesimpulan dan Memaknai Hasil**  
    Karena statistik uji tidak berada di dalam wilayah kritis, keputusan kita adalah **gagal menolak $H_0$**. Artinya, data yang tersedia **belum cukup untuk membuktikan** adanya perbedaan yang signifikan antara proporsi pengguna sepeda motor mahasiswa ITERA dan UNILA pada tingkat kepercayaan 90%.
 
-   **Interpretasi ke dalam bidang PWK:** meskipun proporsi pengguna sepeda motor di ITERA (≈60,7%) tampak lebih tinggi dari UNILA (≈58,4%), selisih tersebut tidak cukup signifikan secara statistik. Ini menunjukkan bahwa **budaya penggunaan kendaraan bermotor pribadi cenderung serupa** di kedua kampus. Dalam konteks perencanaan transportasi, hal ini mengindikasikan bahwa intervensi kebijakan untuk mendorong moda transportasi alternatif — seperti angkutan umum atau sepeda — kemungkinan perlu diformulasikan secara bersamaan untuk kedua kawasan kampus tersebut.
+   **Interpretasi ke dalam bidang PWK:** meskipun proporsi pengguna sepeda motor di ITERA (â‰ˆ60,7%) tampak lebih tinggi dari UNILA (â‰ˆ58,4%), selisih tersebut tidak cukup signifikan secara statistik. Ini menunjukkan bahwa **budaya penggunaan kendaraan bermotor pribadi cenderung serupa** di kedua kampus. Dalam konteks perencanaan transportasi, hal ini mengindikasikan bahwa intervensi kebijakan untuk mendorong moda transportasi alternatif â€” seperti angkutan umum atau sepeda â€” kemungkinan perlu diformulasikan secara bersamaan untuk kedua kawasan kampus tersebut.
 :::
 
 Kerjakan soal evaluasi berikut untuk mengaplikasikan pemahaman kalian mengenai uji hipotesis dua populasi independen.

@@ -1,4 +1,4 @@
-# Uji Hipotesis Parameter Satu Populasi {#bab-7-uji-hipotesis-satu-populasi}
+﻿# Uji Hipotesis Parameter Satu Populasi {#bab-7-uji-hipotesis-satu-populasi}
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -123,7 +123,11 @@ data <- data.frame(
 )
 data |>
   kbl(caption = "Alternatif Bentuk Hipotesis Alternatif", escape = FALSE, align = "llcl") |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed", "responsive"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 ```
 
 ::: rmdkasus

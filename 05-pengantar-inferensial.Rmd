@@ -1,4 +1,4 @@
-# Pengantar Analisis Statistik Inferensial {#bab-5-pengantar-inferensial}
+﻿# Pengantar Analisis Statistik Inferensial {#bab-5-pengantar-inferensial}
 
 ::: rmdcapaian
 ### Capaian Pembelajaran {.unnumbered}
@@ -266,7 +266,11 @@ kbl(
   caption = "Ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%",
   align = c("c", "c", "c", "c")
 ) |>
-  kable_styling(full_width = FALSE, position = "center")
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE, position = "center"
+  )
 ```
 
 ::: rmdkasus
@@ -278,7 +282,7 @@ Karena ia belum tahu berapa proporsi sesungguhnya di populasi, ia menggunakan as
 
 Dengan membaca Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) pada baris *sampling error* 5,0%, ia menemukan bahwa **sampel minimum yang dibutuhkan adalah 400 responden**. Jumlah inilah yang ia jadikan target pengumpulan data.
 
-Perhatikan bahwa angka ini tidak bergantung pada seberapa besar populasi mahasiswa ITERA (yang berjumlah lebih dari 18.000 orang). Cukup 400 responden, dan hasil surveinya akan memiliki akurasi dalam batas ±5% pada tingkat kepercayaan 95%.
+Perhatikan bahwa angka ini tidak bergantung pada seberapa besar populasi mahasiswa ITERA (yang berjumlah lebih dari 18.000 orang). Cukup 400 responden, dan hasil surveinya akan memiliki akurasi dalam batas Â±5% pada tingkat kepercayaan 95%.
 :::
 
 ## Konsep Distribusi dalam Statistik
@@ -765,7 +769,11 @@ tabel_gabung <- cbind(tabel_kiri, tabel_kanan)
 colnames(tabel_gabung) <- c("ID", "Jarak", "ID", "Jarak")
 
 kbl(tabel_gabung, caption = "Data Populasi (N=30)") |>
-  kable_styling(full_width = T)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = TRUE
+  )
 
 # Statistik Populasi
 mu_pop <- mean(populasi_kecil$Jarak)
@@ -823,7 +831,11 @@ df_sim <- data.frame(
 tabel_sim_head <- head(df_sim, 8)
 rbind(tabel_sim_head |> mutate(Pengambilan_Ke = as.character(Pengambilan_Ke)), c("...", "...")) |>
   kbl(caption = "Hasil Simulasi Distribusi Sampling (8 Teratas dari 200)") |>
-  kable_styling(full_width = F)
+  kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+    full_width = FALSE
+  )
 ```
 
 Mari kita lihat histogram dari 200 rata-rata ini:
