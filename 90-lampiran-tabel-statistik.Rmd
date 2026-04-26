@@ -1,4 +1,4 @@
-# (APPENDIX) Lampiran {.unnumbered}
+﻿# (APPENDIX) Lampiran {.unnumbered}
 
 # Tabel Statistik {.unnumbered}
 
@@ -72,23 +72,27 @@ tbl_z <- cbind(
   tbl_z
 )
 
-tbl_z |>
-  kbl(
-    caption  = "Tabel Distribusi Normal Standar $P(0 \\leq Z \\leq z)$",
-    align    = c("c", rep("c", length(z_cols))),
-    escape   = FALSE,
-    booktabs = TRUE
-  ) |>
-  kable_styling(
-    full_width        = FALSE,
-    bootstrap_options = c("striped", "hover", "condensed"),
-    latex_options     = c("scale_down", "HOLD_position")
-  ) |>
-  add_header_above(
-    c(" " = 1, "Desimal kedua nilai z" = length(z_cols))
-  ) |>
-  column_spec(1, bold = TRUE) |>
-  scroll_box(width = "100%", height = "450px")
+if (knitr::is_html_output()) {
+  tbl_z |>
+    kbl(
+      caption  = "Tabel Distribusi Normal Standar $P(0 \\leq Z \\leq z)$",
+      align    = c("c", rep("c", length(z_cols))),
+      escape   = FALSE,
+      booktabs = TRUE
+    ) |>
+    kable_styling(
+      full_width        = FALSE,
+      bootstrap_options = c("striped", "hover", "condensed"),
+      latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
+    ) |>
+    add_header_above(
+      c(" " = 1, "Desimal kedua nilai z" = length(z_cols))
+    ) |>
+    column_spec(1, bold = TRUE) |>
+    scroll_box(width = "100%", height = "450px")
+}
+
+tbl_z
 ```
 
 \FloatBarrier
@@ -167,21 +171,25 @@ tbl_t1 <- as.data.frame(mat_t1)
 colnames(tbl_t1) <- col_names
 tbl_t1 <- cbind(`df` = lbl, tbl_t1)
 
-tbl_t1 |>
-  kbl(
-    caption  = "Tabel Distribusi t *Student* (Satu Arah / *One-tailed*)",
-    align    = c("c", rep("c", length(alpha_1t))),
-    escape   = FALSE,
-    booktabs = TRUE
-  ) |>
-  kable_styling(
-    full_width        = FALSE,
-    bootstrap_options = c("striped", "hover", "condensed"),
-    latex_options     = c("scale_down", "HOLD_position")
-  ) |>
-  add_header_above(c(" " = 1, "Tingkat Signifikansi $\\alpha$" = length(alpha_1t)), escape = FALSE) |>
-  column_spec(1, bold = TRUE) |>
-  scroll_box(width = "100%", height = "450px")
+if (knitr::is_html_output()) {
+  tbl_t1 |>
+    kbl(
+      caption  = "Tabel Distribusi t *Student* (Satu Arah / *One-tailed*)",
+      align    = c("c", rep("c", length(alpha_1t))),
+      escape   = FALSE,
+      booktabs = TRUE
+    ) |>
+    kable_styling(
+      full_width        = FALSE,
+      bootstrap_options = c("striped", "hover", "condensed"),
+      latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
+    ) |>
+    add_header_above(c(" " = 1, "Tingkat Signifikansi $\\alpha$" = length(alpha_1t)), escape = FALSE) |>
+    column_spec(1, bold = TRUE) |>
+    scroll_box(width = "100%", height = "450px")
+}
+
+tbl_t1
 ```
 
 \FloatBarrier
@@ -272,21 +280,25 @@ tbl_t2 <- as.data.frame(mat_t2)
 colnames(tbl_t2) <- col_names
 tbl_t2 <- cbind(`df` = lbl, tbl_t2)
 
-tbl_t2 |>
-  kbl(
-    caption  = "Tabel Distribusi t *Student* (Dua Arah / *Two-tailed*)",
-    align    = c("c", rep("c", length(alpha_2t))),
-    escape   = FALSE,
-    booktabs = TRUE
-  ) |>
-  kable_styling(
-    full_width        = FALSE,
-    bootstrap_options = c("striped", "hover", "condensed"),
-    latex_options     = c("scale_down", "HOLD_position")
-  ) |>
-  add_header_above(c(" " = 1, "Tingkat Signifikansi $\\alpha$" = length(alpha_2t)), escape = FALSE) |>
-  column_spec(1, bold = TRUE) |>
-  scroll_box(width = "100%", height = "450px")
+if (knitr::is_html_output()) {
+  tbl_t2 |>
+    kbl(
+      caption  = "Tabel Distribusi t *Student* (Dua Arah / *Two-tailed*)",
+      align    = c("c", rep("c", length(alpha_2t))),
+      escape   = FALSE,
+      booktabs = TRUE
+    ) |>
+    kable_styling(
+      full_width        = FALSE,
+      bootstrap_options = c("striped", "hover", "condensed"),
+      latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover")
+    ) |>
+    add_header_above(c(" " = 1, "Tingkat Signifikansi $\\alpha$" = length(alpha_2t)), escape = FALSE) |>
+    column_spec(1, bold = TRUE) |>
+    scroll_box(width = "100%", height = "450px")
+}
+
+tbl_t2
 ```
 
 \FloatBarrier
@@ -363,22 +375,26 @@ tbl_f10 <- as.data.frame(mat_f10)
 colnames(tbl_f10) <- lbl
 tbl_f10 <- cbind(`dfw` = lbl, tbl_f10)
 
-tbl_f10 |>
-  kbl(
-    caption  = "Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 10\\%$",
-    align    = c("c", rep("c", length(dfb_vals))),
-    escape   = FALSE,
-    booktabs = TRUE
-  ) |>
-  kable_styling(
-    full_width        = FALSE,
-    bootstrap_options = c("striped", "hover", "condensed"),
-    latex_options     = c("scale_down", "HOLD_position"),
-    font_size         = 10
-  ) |>
-  add_header_above(c(" " = 1, "dfb" = length(dfb_vals))) |>
-  column_spec(1, bold = TRUE) |>
-  scroll_box(width = "100%", height = "450px")
+if (knitr::is_html_output()) {
+  tbl_f10 |>
+    kbl(
+      caption  = "Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 10\\%$",
+      align    = c("c", rep("c", length(dfb_vals))),
+      escape   = FALSE,
+      booktabs = TRUE
+    ) |>
+    kable_styling(
+      full_width        = FALSE,
+      bootstrap_options = c("striped", "hover", "condensed"),
+      latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+      font_size         = 10
+    ) |>
+    add_header_above(c(" " = 1, "dfb" = length(dfb_vals))) |>
+    column_spec(1, bold = TRUE) |>
+    scroll_box(width = "100%", height = "450px")
+}
+
+tbl_f10
 ```
 
 \FloatBarrier
@@ -455,20 +471,24 @@ tbl_f05 <- as.data.frame(mat_f05)
 colnames(tbl_f05) <- lbl
 tbl_f05 <- cbind(`dfw` = lbl, tbl_f05)
 
-tbl_f05 |>
-  kbl(
-    caption  = "Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 5\\%$",
-    align    = c("c", rep("c", length(dfb_vals))),
-    escape   = FALSE,
-    booktabs = TRUE
-  ) |>
-  kable_styling(
-    full_width        = FALSE,
-    bootstrap_options = c("striped", "hover", "condensed"),
-    latex_options     = c("scale_down", "HOLD_position"),
-    font_size         = 10
-  ) |>
-  add_header_above(c(" " = 1, "dfb" = length(dfb_vals))) |>
-  column_spec(1, bold = TRUE) |>
-  scroll_box(width = "100%", height = "450px")
+if (knitr::is_html_output()) {
+  tbl_f05 |>
+    kbl(
+      caption  = "Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 5\\%$",
+      align    = c("c", rep("c", length(dfb_vals))),
+      escape   = FALSE,
+      booktabs = TRUE
+    ) |>
+    kable_styling(
+      full_width        = FALSE,
+      bootstrap_options = c("striped", "hover", "condensed"),
+      latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
+      font_size         = 10
+    ) |>
+    add_header_above(c(" " = 1, "dfb" = length(dfb_vals))) |>
+    column_spec(1, bold = TRUE) |>
+    scroll_box(width = "100%", height = "450px")
+}
+
+tbl_f05
 ```
