@@ -4,7 +4,7 @@
 
 ### Pertanyaan
 
-::: {#callout-note
+::: {.callout-note}
 Proyek Bookdown saya menggunakan cross-reference dengan pola berikut:
 
 - Referensi gambar: `\@ref(fig:nama-chunk)`, contoh: `\@ref(fig:proses-perencanaan-rasional)`
@@ -12,13 +12,13 @@ Proyek Bookdown saya menggunakan cross-reference dengan pola berikut:
 - Referensi section: `\@ref(nama-section)`, contoh: `\@ref(analisis-kuantitatif-vs-kualitatif)`
 - Referensi section dengan custom ID: `\@ref(kasus-elemen-data-terstruktur)`
 
-Gambar-gambar dimasukkan dengan knitr::include_graphics() di dalam R chunk, contoh:
+Gambar-gambar dimasukkan dengan `knitr::include_graphics()` di dalam R chunk, contoh:
 
 ```r
 
-```{r proses-perencanaan-rasional, fig.cap='Proses Perencanaan Rasional', echo=FALSE, out.width='60%', fig.align='center', eval=FALSE}
-knitr::include_graphics("./images/proses-perencanaan-rasional.png")
-```
+  ```{r proses-perencanaan-rasional, fig.cap='Proses Perencanaan Rasional', echo=FALSE, out.width='60%', fig.align='center', eval=FALSE}
+  knitr::include_graphics("./images/proses-perencanaan-rasional.png")
+  ```
 
 ```
 

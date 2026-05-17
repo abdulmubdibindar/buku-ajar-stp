@@ -91,7 +91,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="cross-reference-system">Cross Reference system</h2>
 <section id="pertanyaan" class="level3">
 <h3 class="anchored" data-anchor-id="pertanyaan">Pertanyaan</h3>
-<div class="{#callout-note">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Proyek Bookdown saya menggunakan cross-reference dengan pola berikut:</p>
 <ul>
 <li>Referensi gambar: <code>\@ref(fig:nama-chunk)</code>, contoh: <code>\@ref(fig:proses-perencanaan-rasional)</code></li>
@@ -99,14 +108,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Referensi section: <code>\@ref(nama-section)</code>, contoh: <code>\@ref(analisis-kuantitatif-vs-kualitatif)</code></li>
 <li>Referensi section dengan custom ID: <code>\@ref(kasus-elemen-data-terstruktur)</code></li>
 </ul>
-<p>Gambar-gambar dimasukkan dengan knitr::include_graphics() di dalam R chunk, contoh:</p>
+<p>Gambar-gambar dimasukkan dengan <code>knitr::include_graphics()</code> di dalam R chunk, contoh:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.cell layout<span class="sc">-</span>align<span class="ot">=</span><span class="st">"center"</span>}</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="sc">:::</span> {.cell layout<span class="sc">-</span>align<span class="ot">=</span><span class="st">"center"</span>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="sc">:::</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Bagaimana cara mengonversi semua pola cross-reference ini ke Quarto? Apakah ada tool atau regex otomatis yang bisa digunakan? Berikan contoh konversi untuk masing-masing pola di atas.</p>
+</div>
 </div>
 </section>
 <section id="jawaban" class="level3">
