@@ -1,25 +1,61 @@
-language:
-  label:
-    fig: "Gambar "
-    tab: "Tabel "
-chapter_name: "Bab "
-output_dir: "docs"
-delete_merged_file: false
-rmd_files:
-  - index.Rmd
-  - 01-konsep-dasar.Rmd
-  - 02-data-terstruktur.Rmd
-  - 03-statistik-deskriptif.Rmd
-  - 04-visualisasi-data.Rmd
-  - 05-pengantar-inferensial.Rmd
-  - 06-estimasi-parameter.Rmd
-  - 07-uji-hipotesis-satu-populasi.Rmd
-  - 08-uji-hipotesis-dua-populasi.Rmd
-  - 10-korelasi-nominal.Rmd
-  - 11-korelasi-ordinal.Rmd
-  - 12-korelasi-metrik.Rmd
-  - 13-regresi-sederhana.Rmd
-  - 14-regresi-berganda.Rmd
-  - 15-multivariat-interdependensi.Rmd
-  - 89-referensi.Rmd
-  - 90-lampiran-tabel-statistik.Rmd
+project:
+  type: book
+
+lang: id
+bibliography: referensi.bib
+
+book:
+  title: "Buku Ajar Statistika untuk Perencanaan"
+  author:
+    - "Muhammad Abdul Mubdi Bindar"
+    - "Husna Tiara Putri"
+    - "Valendya Rilansari"
+  repo-url: "https://github.com/abdulmubdibindar/buku-ajar-stp"  
+  chapters:
+    - index.qmd
+    - 00-a-pengantar.qmd
+    - 00-b-lembar-persembahan.qmd
+    - 01-konsep-dasar.qmd
+    - 02-data-terstruktur.qmd
+    - 03-statistik-deskriptif.qmd
+    - 04-visualisasi-data.qmd
+    - 05-pengantar-inferensial.qmd
+    - 06-estimasi-parameter.qmd
+    - 07-uji-hipotesis-satu-populasi.qmd
+    - 08-uji-hipotesis-dua-populasi.qmd
+    - 10-korelasi-nominal.qmd
+    - 11-korelasi-ordinal.qmd
+    - 12-korelasi-metrik.qmd
+    - 13-regresi-sederhana.qmd
+    - 14-regresi-berganda.qmd
+    - 15-multivariat-interdependensi.qmd
+    - 89-referensi.qmd
+    - 90-lampiran-tabel-statistik.qmd
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: style.css
+    df-print: paged
+    code-copy: hover
+    code-annotations: hover
+    
+  pdf:
+    pdf-engine: xelatex
+    keep-tex: true
+    documentclass: scrreprt
+    citation-package: natbib
+    include-in-header:
+      - text: |
+          \usepackage{subfig}
+          
+  typst:
+    toc: true
+    number-sections: true
+    toc-depth: 4
+    columns: 1
+    margin:
+      x: 2cm
+      y: 2.5cm
