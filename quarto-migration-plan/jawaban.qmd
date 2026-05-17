@@ -1,0 +1,36 @@
+``` markdown
+<!-- Contoh Raw Block (HTML) -->
+```{=html}
+<div class="custom-class">
+  <p>Ini adalah teks HTML mentah.</p>
+</div>
+```
+
+<!-- Contoh Raw Block (LaTeX/TeX) -->
+
+\begin{figure}[ht]
+\end{figure}
+
+<!-- Contoh Code Block (Tampilan Sintaks) -->
+
+``` python
+def sapa():
+    print("Halo, Dunia!")
+```
+
+<!-- Contoh Code Block (Dieksekusi) -->
+
+```{r}
+#| echo: false
+print("Kode ini akan dieksekusi oleh Knitr.")
+```
+
+\`\`\`
+
+### Penjelasan
+
+**Raw Block** *Raw block* adalah blok yang digunakan untuk memasukkan perintah LaTeX atau tag HTML mentah secara langsung ke dalam dokumen Anda. Blok ini ditulis dengan menggunakan atribut mentah yang eksplisit, seperti `{=html}` untuk HTML atau `{=tex}` untuk LaTeX. Karakteristik utamanya adalah Pandoc akan mengabaikan perintah LaTeX jika dokumen tidak dirender ke format berbasis LaTeX (seperti PDF), dan akan mengabaikan tag HTML jika tidak dirender ke format berbasis HTML.
+
+**Code Block** *Code block* adalah blok yang dibatasi dengan tanda *backtick* (\``) dan berfungsi untuk menampilkan baris kode sumber. Jika Anda menyertakan nama bahasa pemrograman setelah *backtick* (misalnya`python````` ), kode tersebut akan ditampilkan dengan *syntax highlighting* yang secara otomatis diproses oleh Pandoc. Selain hanya untuk ditampilkan, *code block* juga dapat berupa blok komputasi yang dapat dieksekusi (seperti ````{r} ````` atau \`\`\``{python}`) oleh *engine* seperti Jupyter atau Knitr sebagai bagian dari proses *rendering* dokumen.
+
+**Perbedaan Utama** 1. **Tujuan:** *Raw block* ditujukan untuk menyematkan tata letak atau pemformatan bahasa *markup* tingkat rendah (HTML/LaTeX) yang langsung diterjemahkan pada hasil cetak dokumen. Sebaliknya, *code block* ditujukan untuk mendemonstrasikan kode sumber (untuk tutorial atau dokumentasi) atau untuk menjalankan perhitungan matematika/analisis data secara dinamis. 2. **Sintaksis Penulisan:** *Raw block* menggunakan tanda sama dengan sebelum nama bahasa seperti `{=html}` atau `{=tex}`. *Code block* cukup dipanggil dengan menggunakan awalan nama bahasanya saja seperti `python` (untuk sekadar tampilan) atau menggunakan tanda kurung kurawal seperti `{r}` (untuk blok kode yang dapat dieksekusi). 3. **Perilaku Rendering:** Isi dari *raw block* hanya akan muncul di dokumen akhir jika format *output* Quarto sesuai dengan *raw block* tersebut. Isi dari *code block* akan diwarnai (*syntax highlighting*) atau dijalankan oleh mesin komputasi untuk menghasilkan teks, plot, atau tabel.

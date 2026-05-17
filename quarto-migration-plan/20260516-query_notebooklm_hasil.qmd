@@ -1,0 +1,127 @@
+# Hasil Query
+
+## Cross Reference system
+
+### Pertanyaan
+
+::: {#callout-note
+Proyek Bookdown saya menggunakan cross-reference dengan pola berikut:
+
+- Referensi gambar: `\@ref(fig:nama-chunk)`, contoh: `\@ref(fig:proses-perencanaan-rasional)`
+- Referensi tabel: `\@ref(tab:nama-chunk)`, contoh otomatis dari kbl() dengan caption
+- Referensi section: `\@ref(nama-section)`, contoh: `\@ref(analisis-kuantitatif-vs-kualitatif)`
+- Referensi section dengan custom ID: `\@ref(kasus-elemen-data-terstruktur)`
+
+Gambar-gambar dimasukkan dengan knitr::include_graphics() di dalam R chunk, contoh:
+
+```r
+
+```{r proses-perencanaan-rasional, fig.cap='Proses Perencanaan Rasional', echo=FALSE, out.width='60%', fig.align='center', eval=FALSE}
+knitr::include_graphics("./images/proses-perencanaan-rasional.png")
+```
+
+```
+
+Bagaimana cara mengonversi semua pola cross-reference ini ke Quarto? Apakah ada tool atau regex otomatis yang bisa digunakan? Berikan contoh konversi untuk masing-masing pola di atas.
+:::
+
+### Jawaban
+
+#### Konversi Referensi Silang di Dalam Teks
+
+| Sebelum (Bookdown) | Sesudah (Quarto) |
+|:--------------------------------------|---------------------------------|
+| `Lihat Gambar \@ref(fig:proses-perencanaan-rasional)` | `Lihat @fig-proses-perencanaan-rasional` |
+| `Lihat Tabel \@ref(tab:nama-chunk)` | `Lihat @tbl-nama-chunk` |
+| `Sesuai dengan Bagian \@ref(analisis-kuantitatif-vs-kualitatif)` | `Sesuai dengan @sec-analisis-kuantitatif-vs-kualitatif` |
+
+: Konversi Referensi Silang (Di dalam Teks)
+
+#### Konversi R Chunk untuk Gambar
+
+::: list-table
+- 
+
+  - SEBELUM (Bookdown)
+  - SESUDAH (Quarto)
+
+- 
+
+  - ```
+    {r proses-perencanaan-rasional, fig.cap='Proses Perencanaan Rasional', echo=FALSE, out.width='60%', fig.align='center', eval=FALSE} knitr::include_graphics("./images/proses-perencanaan-rasional.png")
+    ```
+  - ```
+    #| label: fig-proses-perencanaan-rasional
+    #| fig-cap: "Proses Perencanaan Rasional"
+    #| echo: false
+    #| out-width: "60%"
+    #| fig-align: "center"
+    #| eval: false
+    knitr::include_graphics("./images/proses-perencanaan-rasional.png")
+    ```
+:::
+
+
+ATAU Menggunakan Markdown Native Quarto (Alternatif Gambar yang Sangat Disarankan)
+
+```markdown
+![Proses Perencanaan Rasional](./images/proses-perencanaan-rasional.png){#fig-proses-perencanaan-rasional width="60%" fig-align="center"}
+```
+
+#### Konversi Tajuk/Heading (Definisi Section)
+
+::: list-table
+- 
+
+  - SEBELUM (Bookdown)
+  - SESUDAH (Quarto)
+
+- 
+
+  - 
+
+    `### Analisis Kuantitatif vs Kualitatif {#analisis-kuantitatif-vs-kualitatif}`
+
+  - 
+
+    `### Analisis Kuantitatif vs Kualitatif {#sec-analisis-kuantitatif-vs-kualitatif}`
+
+- 
+
+  - 
+
+    `#### Elemen Data Terstruktur {#kasus-elemen-data-terstruktur}`
+
+  - 
+
+    `#### Elemen Data Terstruktur {#sec-kasus-elemen-data-terstruktur}`
+:::
+
+#### Pola Regex (Regular Expression) untuk Find & Replace Otomatis di IDE/Teks Editor
+
+Gunakan ekstensi regex di pencarian IDE Anda.
+
+**Gambar**
+
+- Cari (Find): `\\@ref\(fig:([^)]+)\)`
+- Ganti (Replace): `@fig-$1`
+
+**Tabel**
+
+- Cari (Find): `\\@ref\(tab:([^)]+)\)`
+- Ganti (Replace): `@tbl-$1`
+
+**Section/Bab (Eksekusi setelah gambar dan tabel selesai di-replace)**:
+
+- Cari (Find): `\\@ref\(([^)]+)\)`
+- Ganti (Replace): `@sec-$1`
+
+**Penjelasan:**
+
+- **Sintaks Referensi Teks**: Di Quarto, pemanggilan referensi silang disederhanakan dengan menggunakan awalan spesifik diikuti pengidentifikasi setelah simbol `@`. Anda tidak boleh lagi menggunakan `\@ref()`. Quarto mewajibkan adanya awalan tipe (*reserved prefixes*) untuk entitas referensi, yaitu `fig-` untuk gambar, `tbl-` untuk tabel, dan `sec-` untuk bab/bagian (*section*).
+
+- **Pengaturan R Chunk Gambar**: Pada Quarto, penggunaan opsi di dalam kurung kurawal seperti di R Markdown lawas telah digantikan dengan opsi *hash-pipe* khusus (`#|`) yang diletakkan pada awal baris di dalam *chunk*. Beberapa format penamaan opsi berubah, seperti `out.width` di Bookdown menjadi `out-width` di Quarto, dan `fig.cap` menjadi `fig-cap`. Opsi `echo=FALSE` juga ditulis lebih modern menjadi `echo: false`. Namun, jika Anda hanya menyisipkan gambar statis (tanpa komputasi R), sangat disarankan memigrasikannya menjadi sintaks Markdown native Quarto seperti pada alternatif poin ke-2 agar dokumen lebih bersih dan optimal saat dirender.
+
+- **Label Heading/Section**: Pemanggilan `@sec-nama-section` pada poin pertama baru akan berhasil jika *identifier* rujukan dari judul/heading aslinya diubah juga. Agar suatu bab atau bagian dapat direferensikan (*cross-referenceable*), label *heading* utamanya juga wajib berawalan `sec-` (contoh: `{#sec-nama-section}`).
+
+- **Tool/Otomatisasi Konversi**: Jika Anda ingin menggunakan *tool* yang siap pakai, Nick Tierney membuat catatan "Notes on Changing from Rmarkdown/Bookdown to Quarto" yang membagikan berbagai *script* otomasi konversi Bookdown ke Quarto. Sebagai alternatif praktis, Anda bisa memanfaatkan fitur **Find & Replace** menggunakan dukungan **Regular Expression (Regex)** yang ada pada Editor/IDE (seperti Positron, VS Code, atau RStudio). Anda cukup menyalin blok perintah Regex di atas dan mengganti seluruh pola secara massal (klik *Replace All*). Namun perlu diingat, setelah *Find & Replace* beres, Anda tetap perlu menambahkan awalan `sec-` pada definisi label heading secara manual atau memodifikasi regex tambahan untuk pencarian elemen tajuk.

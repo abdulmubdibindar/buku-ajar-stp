@@ -1,0 +1,6 @@
+2026-05-16 10:34
+
+- create diary.text
+- create 2026-05-16-quarto-migration-plan.md
+- create qmd files from rmd files
+- 
