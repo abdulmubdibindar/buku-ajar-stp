@@ -1,0 +1,52 @@
+```{r}
+#| label: setup
+#| include: false
+
+# Opsi ini penting untuk mencegah error LaTeX karena karakter khusus dari pesan warning/error
+options(cli.hyperlink = FALSE)
+options(OutDec = ",")
+
+
+# Konfigurasi knitr untuk output gambar
+knitr::opts_chunk$set(
+    echo = FALSE,
+    fig.path = "figures/", # Gunakan folder tanpa underscore untuk GitHub Pages
+    message = FALSE,
+    warning = FALSE,
+    fig.pos = "H",
+    crop = NULL
+)
+
+# Fungsi untuk mengamankan karakter < dan > agar tidak merusak sidebar HTML
+safe_html <- function(x) {
+    if (knitr::is_html_output()) {
+        x <- gsub("<", "&lt;", x)
+        x <- gsub(">", "&gt;", x)
+    }
+    return(x)
+}
+```
+
+# Statistika untuk Perencanaan {.unnumbered}
+
+Buku ini dirancang untuk membantu mahasiswa dalam memahami konsep statistika dan penggunaan R dalam pengolahan data kuantitatif, terutama dalam perencanaan wilayah dan kota. Buku ini terdiri atas 15 bab yang terdiri atas beberapa bagian:
+
+1. Konsep Dasar Statistika
+    1. Konsep Dasar Statistika dalam Perencanaan
+    1. Data Terstruktur
+2. Statistika Univariat
+    1. Analisis Statistik Deskriptif
+    1. Visualisasi Data Kuantitatif
+    1. Pengantar Statistik Inferensial
+    1. Estimasi Parameter
+    1. Uji Hipotesis Parameter Satu Populasi
+    1. Uji Hipotesis Parameter Dua Populasi
+    1. Uji Hipotesis Parameter Lebih dari Dua Populasi
+3. Statistika Bivariat
+    1. Korelasi Antarvariabel Nominal
+    1. Korelasi Antarvariabel Ordinal
+    1. Korelasi Antarvariabel Metrik
+    1. Regresi Linear Sederhana
+4. Statistika Multivariat
+    1. Regresi Linear Berganda
+    1. Analisis Statistik Multivariat Interdependensi
