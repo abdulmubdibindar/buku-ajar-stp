@@ -1,8 +1,10 @@
 project:
   type: book
 
+execute:
+  freeze: auto
+
 lang: id
-bibliography: referensi.bib
 
 book:
   title: "Buku Ajar Statistika untuk Perencanaan"
@@ -31,6 +33,8 @@ book:
     - 15-multivariat-interdependensi.qmd
     - 89-referensi.qmd
     - 90-lampiran-tabel-statistik.qmd
+
+bibliography: referensi.bib
 
 format:
   html:

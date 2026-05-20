@@ -1,7 +1,23 @@
+---
+author:
+    - name: Muhammad Abdul Mubdi Bindar
+      affiliations:
+        - name: Program Studi Perencanaan Wilayah dan Kota, Fakultas Teknologi Infrastruktur dan Kewilayahan, Institut Teknologi Sumatera
+    - name: Husna Tiara Putri
+      affiliations:
+        - name: Program Studi Perencanaan Wilayah dan Kota, Fakultas Teknologi Infrastruktur dan Kewilayahan, Institut Teknologi Sumatera
+    - name: Valendya Rilansari
+      affiliations:
+        - name: Program Studi Perencanaan Wilayah dan Kota, Fakultas Teknologi Infrastruktur dan Kewilayahan, Institut Teknologi Sumatera
+
+editors:
+    - name: Vivian Alvianti
+      affiliation: Program Studi Perencanaan Wilayah dan Kota, Fakultas Teknologi Infrastruktur dan Kewilayahan, Institut Teknologi Sumatera
+---
+
 ```{r}
 #| label: setup
 #| include: false
-
 # Opsi ini penting untuk mencegah error LaTeX karena karakter khusus dari pesan warning/error
 options(cli.hyperlink = FALSE)
 options(OutDec = ",")
