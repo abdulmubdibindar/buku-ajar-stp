@@ -1,0 +1,96 @@
+# Penjelasan File _quarto.yml
+
+Berikut adalah penjelasan baris per baris dari konfigurasi Quarto `_quarto.yml` dari buku "Introdução à acessibilidade urbana", dengan mengabaikan baris kosong:
+
+- `project:`: Mendefinisikan pengaturan tingkat proyek.
+- `  type: book`: Menentukan bahwa proyek Quarto ini adalah berjenis buku (book).
+- `execute:`: Mendefinisikan opsi eksekusi untuk kode dalam dokumen.
+- `  freeze: auto`: Menentukan bahwa hasil komputasi akan di-freeze (tidak dijalankan ulang jika tidak ada perubahan pada kode) secara otomatis untuk menghemat waktu kompilasi.
+- `lang: pt`: Menetapkan bahasa default dokumen ke bahasa Portugis (`pt`).
+- `book:`: Memulai bagian konfigurasi khusus untuk output buku.
+- `  title: "Introdução à acessibilidade urbana"`: Menetapkan judul utama buku.
+- `  subtitle: "um guia prático em R"`: Menetapkan subjudul buku.
+- `  date: today`: Meminta Quarto untuk menggunakan tanggal saat ini ketika buku di-render (di-build).
+- `  status: "advance online publication"`: Menyatakan status publikasi dari buku ini.
+- `  language: pt`: Menetapkan bahasa buku secara spesifik ke bahasa Portugis.
+- `  publisher: "Ipea - Instituto de Pesquisa Econômica Aplicada"`: Menyebutkan penerbit buku (Ipea).
+- `  publisher-place: "Brasilia - DF, Brazil"`: Menunjukkan lokasi penerbitan.
+- `  isbn: "978-65-5635-054-7"`: Mendefinisikan nomor ISBN (International Standard Book Number) dari buku.
+- `  doi: "http://dx.doi.org/10.38116/9786556350547"`: Memberikan tautan DOI (Digital Object Identifier) untuk buku ini.
+- `  cover-image: images/cover.png`: Menentukan jalur (path) relatif untuk gambar sampul buku.
+- `  site-url: https://ipeagit.github.io/intro_access_book/pt`: URL situs web tempat buku HTML akan dihosting.
+- `  repo-url: https://github.com/ipeaGIT/intro_access_book`: URL repositori GitHub tempat source code buku disimpan.
+- `  repo-branch: main`: Menentukan branch utama (main) di repositori sumber.
+- `  repo-actions: [edit]`: Menyediakan tautan aksi di buku yang memungkinkan pembaca mengusulkan perubahan/edit di repositori.
+- `  sharing: [twitter, facebook, linkedin]`: Menambahkan tombol berbagi sosial media untuk Twitter, Facebook, dan LinkedIn.
+- `  favicon: images/favicon.png`: Menentukan ikon kecil (favicon) yang muncul di tab browser.
+- `  twitter-card: true`: Mengaktifkan meta tag Twitter Card agar tautan yang dibagikan ke Twitter terlihat bagus (dengan gambar dan ringkasan).
+- `  open-graph: true`: Mengaktifkan metadata Open Graph yang digunakan oleh Facebook, LinkedIn, dan lainnya saat tautan dibagikan.
+- `  google-analytics:`: Memulai blok pengaturan Google Analytics.
+- `    tracking-id: "G-YVERJQF9PJ"`: Menentukan ID pelacakan (Tracking ID) properti Google Analytics (GA4) untuk memantau pengunjung.
+- `    anonymize-ip: true`: Menganonimkan alamat IP pengunjung sebelum dikirim ke Google Analytics, untuk mematuhi regulasi privasi (misalnya GDPR).
+- `  chapters:`: Memulai daftar struktur bab atau isi dari buku.
+- `    - index.qmd`: Menunjuk ke halaman beranda/kata pengantar buku.
+- `    - part: s1_intro.qmd`: Mendefinisikan bagian pertama buku menggunakan file `s1_intro.qmd`.
+- `      chapters:`: Daftar bab yang termasuk dalam bagian pertama.
+- `        - 1_conceito.qmd`: Bab pertama tentang konsep.
+- `        - 2_indicadores.qmd`: Bab kedua tentang indikator.
+- `    - part: s2_calculo.qmd`: Bagian kedua buku mengenai kalkulasi.
+- `      chapters:`: Daftar bab untuk bagian kedua.
+- `        - 3_calculando_acesso.qmd`: Bab ketiga.
+- `    - part: s3_dados_tp.qmd`: Bagian ketiga tentang data transportasi umum.
+- `      chapters:`: Daftar bab di dalam bagian ketiga.
+- `        - 4_dados_gtfs.qmd`: Bab keempat tentang data GTFS.
+- `        - 5_gtfstools.qmd`: Bab kelima mengenai tools GTFS.
+- `    - part: s4_avaliacao_impacto.qmd`: Bagian keempat mengenai evaluasi dampak.
+- `      chapters:`: Daftar bab bagian keempat.
+- `        - 6_cenarios_transporte.qmd`: Bab keenam.
+- `    - part: s5_dados_aop.qmd`: Bagian kelima tentang data AOP (Acesso a Oportunidades).
+- `      chapters:`: Bab untuk bagian kelima.
+- `        - 7_aopdata_populacao.qmd`: Bab ketujuh.
+- `        - 8_aopdata_uso_solo.qmd`: Bab kedelapan.
+- `        - 9_aopdata_acessibilidade.qmd`: Bab kesembilan.
+- `    - references.qmd`: File terakhir yang berisi daftar pustaka/referensi.
+- `  page-navigation: true`: Memunculkan tombol navigasi (next/previous bab) di bagian bawah halaman.
+- `  page-footer:`: Mengonfigurasi area footer (catatan kaki halaman web) buku.
+- `    border: false`: Menghilangkan garis batas (border) pada footer.
+- `    left: "Copyright 2023, Ipea - Instituto de Pesquisa Econômica Aplicada"`: Teks yang akan muncul di sisi kiri footer, umumnya berisi hak cipta.
+- `    right:`: Elemen yang akan muncul di sebelah kanan footer.
+- `      - icon: github`: Menggunakan ikon GitHub.
+- `        href: https://github.com/ipeaGIT/intro_access_book`: URL yang dituju ketika ikon GitHub tersebut diklik.
+- `  sidebar:`: Mengatur navigasi bar sisi (sidebar) di sebelah kiri.
+- `    tools:`: Menambahkan elemen "tools" (peralatan tambahan) di bagian sidebar.
+- `      - icon: download`: Menambahkan tombol dengan ikon unduh (download).
+- `        href: https://repositorio.ipea.gov.br/bitstream/11058/12264/51/Introducao_a_acessibilidade_urbana_selo.pdf`: Tautan untuk mengunduh buku versi PDF.
+- `        text: "Download PDF"`: Teks alternatif/label yang menyertai ikon unduh.
+- `bibliography: references.bib`: Menentukan file `.bib` (berformat BibTeX) yang berisi database referensi pustaka buku ini.
+- `fig-dpi: 300`: Menetapkan resolusi gambar/grafik (dots per inch) sebesar 300, agar menghasilkan cetakan atau tampilan berkualitas tinggi.
+- `editor_options:`: Pengaturan untuk program editor yang digunakan (seperti RStudio).
+- `  markdown:`: Opsi spesifik untuk bagaimana markdown dikelola oleh editor.
+- `    wrap: 80`: Memberitahu editor untuk memotong teks otomatis (hard-wrap) pada panjang 80 karakter.
+- `    canonical: true`: Menerapkan format kanonikal agar kode markdown tetap konsisten (sering kali digunakan di Quarto/RStudio).
+- `theme:`: Pengaturan tema tampilan situs web.
+- `  light: cosmo`: Jika pengguna menggunakan mode terang, tema Bootswatch "cosmo" yang akan digunakan.
+- `  dark: superhero`: Jika pengguna menggunakan mode gelap, tema Bootswatch "superhero" yang akan digunakan.
+- `crossref:`: Pengaturan pelabelan untuk referensi silang (cross-references).
+- `  fig-title: Figura`: Label judul untuk gambar menggunakan kata Portugis "Figura" (bukan Figure).
+- `  fig-prefix: Figura`: Awalan saat mereferensikan gambar di teks (misalnya Figura 1).
+- `  tbl-title: Tabela`: Label judul untuk tabel menjadi "Tabela".
+- `  tbl-prefix: Tabela`: Awalan saat mereferensikan tabel (misalnya Tabela 1).
+- `  sec-prefix: Seção`: Awalan saat mereferensikan seksi/bagian dalam bab (misalnya Seção 2).
+- `citation:`: Informasi metadata sitasi (cara mensitasi dokumen ini).
+- `  type: book`: Mendefinisikan bahwa tipe referensi karya ini adalah buku.
+- `  title: "Introdução à acessibilidade urbana: um guia prático em R"`: Judul lengkap untuk keperluan sitasi.
+- `  author:`: Memulai daftar penulis buku.
+- `    - Rafael H. M. Pereira`: Penulis pertama.
+- `    - Daniel Herszenhut`: Penulis kedua.
+- `  issued: 2023`: Tahun penerbitan karya tersebut.
+- `  edition: 1`: Menandakan ini adalah edisi pertama.
+- `  url: "https://ipeagit.github.io/intro_access_book/pt"`: URL permanen untuk sitasi referensi online.
+- `  pdf-url: "https://repositorio.ipea.gov.br/bitstream/11058/12264/51/Introducao_a_acessibilidade_urbana_selo.pdf"`: URL PDF yang disertakan dalam metadata sitasi.
+- `  publisher: "Ipea - Instituto de Pesquisa Econômica Aplicada"`: Penerbit untuk metadata sitasi.
+- `  publisher-place: "Brasilia - DF, Brazil"`: Lokasi penerbit untuk sitasi.
+- `  language: pt`: Bahasa dokumen tersebut dalam metadata sitasi.
+- `  isbn: "978-65-5635-054-7"`: Nomor ISBN dalam metadata.
+- `  doi: "http://dx.doi.org/10.38116/9786556350547"`: Nomor DOI dalam metadata.
+- `google-scholar: true`: Menginstruksikan Quarto untuk menyertakan meta tag Google Scholar sehingga karya ilmiah ini dapat dengan mudah diindeks oleh mesin pencari Google Scholar.
