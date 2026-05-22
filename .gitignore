@@ -4,3 +4,17 @@
 .Ruserdata
 notebooklm/
 prompts
+
+# Quarto output and cache
+/_book/
+/_freeze/
+/.quarto/
+/html_freeze/
+/typst_freeze/
+/pdf_freeze/
+
+# Ignored skills and rules
+/.agents/rules/
+/.agents/skills/*
+!/.agents/skills/setup-quarto-multiformat/
+!/.agents/skills/skill-creator/
