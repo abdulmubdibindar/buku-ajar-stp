@@ -7,3 +7,11 @@ prompts
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Quarto output and cache
+/_book/
+/_freeze/
+/.quarto/
+/html_freeze/
+/typst_freeze/
+/pdf_freeze/
