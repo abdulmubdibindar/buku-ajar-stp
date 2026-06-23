@@ -4,3 +4,6 @@
 .Ruserdata
 notebooklm/
 prompts
+
+/.quarto/
+**/*.quarto_ipynb
