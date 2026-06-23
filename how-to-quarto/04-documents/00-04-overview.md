@@ -1,0 +1,3 @@
+- [`@08-pdf-basics.md`](08-pdf-basics.md) : pengaturan, persyaratan (seperti instalasi TeX), dan cara dasar dalam menghasilkan output berformat PDF
+- [`@09-pdf-engines.md`](09-pdf-engines.md) : penjelasan mendalam terkait opsi engine PDF yang bisa dipakai (seperti pdflatex, lualatex, atau xelatex)
+- [`@10-word-basics.md`](10-word-basics.md) : panduan menghasilkan output menjadi format dokumen Microsoft Word (.docx) beserta penyelesaian dasarnya

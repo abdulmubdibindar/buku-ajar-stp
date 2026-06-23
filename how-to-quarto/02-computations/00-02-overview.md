@@ -1,0 +1,6 @@
+- [`@01-python.md`](01-python.md) : eksekusi kode blok Python menggunakan engine Jupyter atau ekosistem terkait
+- [`@02-r.md`](02-r.md) : eksekusi kode blok R menggunakan knitr
+- [`@05-inline-code.md`](05-inline-code.md) : penulisan dan pengeksekusian kode secara inline (langsung menyatu dalam teks paragraf)
+- [`@06-rendering-script-files.md`](06-rendering-script-files.md) : panduan merender skrip kode mentah menjadi dokumen
+- [`@07-execution-options.md`](07-execution-options.md) : pengaturan tingkat lanjut untuk opsi eksekusi sel kode (menyembunyikan output, error handling, penggunaan cache)
+- [`@08-parameters.md`](08-parameters.md) : penggunaan parameter untuk injeksi variabel eksternal sehingga hasil render dapat diatur secara dinamis
