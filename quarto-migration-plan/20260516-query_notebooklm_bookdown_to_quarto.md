@@ -2,7 +2,7 @@
 
 Berikut adalah daftar pertanyaan untuk ditanyakan ke NotebookLM (notebook ID: `da395c50-daef-4bc9-86c9-07087cc5fa35`) agar dapat mengonversi proyek buku ajar ini dari lingkungan **Bookdown** ke **Quarto Book**.
 
-> \[!NOTE\] Pertanyaan-pertanyaan ini disusun berdasarkan inventarisasi fitur-fitur Bookdown yang digunakan dalam proyek buku ajar ini. Setiap pertanyaan mencantumkan konteks spesifik dari proyek untuk mendapatkan jawaban yang tepat sasaran.
+> [!NOTE] Pertanyaan-pertanyaan ini disusun berdasarkan inventarisasi fitur-fitur Bookdown yang digunakan dalam proyek buku ajar ini. Setiap pertanyaan mencantumkan konteks spesifik dari proyek untuk mendapatkan jawaban yang tepat sasaran.
 
 ---
 
