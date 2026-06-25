@@ -370,7 +370,7 @@ $$
 Kerjakan soal evaluasi berikut untuk mengukur pemahaman Anda mengenai koefisien korelasi ordinal.
 
 ::: rmdexercise
-## Soal Evaluasi 12 {.unnumbered}
+## Soal Evaluasi 19 {.unnumbered}
 
 Perhatikan tabel silang yang menunjukkan distribusi frekuensi  dari 100 orang peserta musrenbang (musyawarah perencanaan pembangunan) di suatu lingkungan berdasarkan variabel persepsi mereka terhadap keberjalanan musrenbang dan tingkat partisipasi mereka. [STP-10.1]{.capaian}
 

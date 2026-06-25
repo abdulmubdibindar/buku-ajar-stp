@@ -458,7 +458,7 @@ Berdasarkan pengamatan visual terhadap titik-titik koordinat tersebut, kita dapa
 Kerjakanlah soal-soal berikut untuk menguji pemahaman Anda mengenai korelasi variabel metrik.
 
 ::: rmdexercise
-## Soal Evaluasi 13 {.unnumbered}
+## Soal Evaluasi 20 {.unnumbered}
 Perhatikan tabel terkait jarak rumah ke fasilitas kesehatan, frekuensi kunjungan per tahun, dan tingkat kepuasan terhadap fasilitas kesehatan berikut. Lakukanlah pengujian asosiasi pada masing-masing variabel berikut: (i) jarak dan frekuensi kunjungan; dan (ii) frekuensi kunjungan dan kepuasan.
 
 ```{r tbl-evaluasi-13, echo=FALSE, out.width='60%', fig.align='center'}

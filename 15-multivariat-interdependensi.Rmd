@@ -779,7 +779,7 @@ Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis ko
 
 ::: rmdexercise
 
-## Soal Evaluasi 16 {.unnumbered}
+## Soal Evaluasi 23 {.unnumbered}
 
 1. [STP-14.1]{.capaian} Diperoleh hasil pengujian awal dari 10 variabel yang dianalisis menggunakan PCA sebagai berikut.
    

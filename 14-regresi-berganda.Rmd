@@ -495,7 +495,7 @@ Demonstrasi tersebut membuktikan secara konklusif bahwa pembuangan variabel-vari
 
 ::: rmdexercise
 
-## Soal Evaluasi 15 {-}
+## Soal Evaluasi 22 {-}
 
 1. [STP-13.1]{.capaian} Sebuah penelitian ingin mengetahui hubungan kausal antara Tingkat Penggunaan Transportasi Umum dengan sejumlah variabel. Peneliti pertama menghasilkan persamaan model seperti berikut.
    

@@ -659,7 +659,7 @@ Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap capaian pem
 
 ::: rmdexercise
 
-## Soal Evaluasi 14 {.unnumbered}
+## Soal Evaluasi 21 {.unnumbered}
 
 1.  Berikan tanda centang pada kotak yang sesuai dengan masing-masing pernyataan berikut. *(Petunjuk: ingat kembali apa makna 'kausalitas')* [STP-12.1]{.capaian}
     
