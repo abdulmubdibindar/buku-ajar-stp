@@ -13,6 +13,8 @@ number-sections: true
 
 crossref:
   chapters: true
+  # Terjemahan bawaan Quarto untuk id memakai "Perhitungan"
+  eq-prefix: Persamaan
 
 # Callout Capaian/Studi Kasus/Soal Latihan/Penting/Catatan. Harus pre-ast
 # agar div yang dihasilkan masih diproses menjadi callout oleh Quarto.

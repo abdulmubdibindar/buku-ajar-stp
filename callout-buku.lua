@@ -255,7 +255,8 @@ function Pandoc(doc)
       numbered_h1 = numbered_h1 + 1
     end
   end
-  local merged = numbered_h1 > 1
+  -- Typst selalu satu dokumen untuk seluruh buku, walau bab bernomornya satu.
+  local merged = numbered_h1 > 1 or is_typst()
 
   if not merged then
     local file = current_file()
