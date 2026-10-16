@@ -1,0 +1,42 @@
+# Bab Satu
+
+::: {#capaian-bab-satu .capaian}
+Mahasiswa mampu menghitung rata-rata [STP-1.1]{.capaian}.
+:::
+
+## Konsep Rata-rata
+
+Rata-rata adalah jumlah nilai dibagi banyaknya nilai, $\bar{x} = \sum x_i / n$.
+
+Contoh daftar:
+
+- satu
+- dua
+
+::: {#kasus-satu-a .kasus title="Rata-rata Usia Mahasiswa dengan $\bar{x}$"}
+Isi studi kasus pertama. Lihat juga @kasus-dua-a di bab lain.
+
+| Kolom A | Kolom B |
+|---------|---------|
+| 1       | 2       |
+:::
+
+::: {.catatan}
+Catatan tanpa nomor dan tanpa TOC.
+:::
+
+::: {.penting title="Jangan tertukar"}
+Kotak penting.
+:::
+
+### Sub-bagian
+
+::: {#latihan-satu-a .latihan}
+### Judul lama di heading
+
+Soal latihan pertama.
+:::
+
+::: {#latihan-satu-b .latihan title="Soal Kedua"}
+Soal latihan kedua. Rujukan dalam bab: @kasus-satu-a.
+:::

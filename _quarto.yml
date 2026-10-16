@@ -1,7 +1,10 @@
+# Quarto 1.7 belum mendukung buku Typst; diuji dengan 1.10.19.
+quarto-required: ">= 1.10.0"
+
 project:
   type: book
   output-dir: docs
-  pre-render: reset_counter.R
+  pre-render: _scripts/indeks_callout.py
 
 execute:
   freeze: auto
@@ -10,14 +13,12 @@ number-sections: true
 
 crossref:
   chapters: true
-  custom:
-    - kind: float
-      key: kasus
-      reference-prefix: "Studi Kasus"
-      caption-prefix: "Studi Kasus"
 
+# Callout Capaian/Studi Kasus/Soal Latihan/Penting/Catatan. Harus pre-ast
+# agar div yang dihasilkan masih diproses menjadi callout oleh Quarto.
 filters:
-  - soal-filter.lua
+  - path: callout-buku.lua
+    at: pre-ast
 
 lang: id
 
@@ -75,9 +76,11 @@ format:
     df-print: paged
     code-copy: hover
     code-annotations: hover
+    toc-expand: true
     
   typst:
     toc: true
+    include-in-header: _typst/kotak-buku.typ
     number-sections: true
     toc-depth: 4
     columns: 1

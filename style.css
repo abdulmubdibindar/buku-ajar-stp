@@ -93,3 +93,26 @@ table th {
 table td {
     text-align: left !important;
 }
+
+/* ===== Callout buku (callout-buku.lua) ===== */
+
+/* Heading tersembunyi yang hanya berfungsi memasukkan judul callout ke TOC */
+section[id^="toc-buku-"] > :is(h2, h3, h4, h5, h6):first-child {
+    display: none;
+}
+
+div.callout.buku-capaian { border-left-color: #00a152 !important; }
+div.callout.buku-capaian > .callout-header { background-color: #e8f5e9 !important; }
+div.callout.buku-kasus { border-left-color: #ff8f00 !important; }
+div.callout.buku-kasus > .callout-header { background-color: #fff8e1 !important; }
+div.callout.buku-latihan { border-left-color: #8e24aa !important; }
+div.callout.buku-latihan > .callout-header { background-color: #f3e5f5 !important; }
+div.callout.buku-penting { border-left-color: #d32f2f !important; }
+div.callout.buku-penting > .callout-header { background-color: #ffebee !important; }
+div.callout.buku-catatan { border-left-color: #1e88e5 !important; }
+div.callout.buku-catatan > .callout-header { background-color: #e3f2fd !important; }
+
+/* Ukuran huruf tabel tidak boleh melebihi teks badan */
+main table {
+    font-size: 0.9em !important;
+}

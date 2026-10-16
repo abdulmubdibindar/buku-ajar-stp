@@ -1,0 +1,32 @@
+# Proyek uji callout-buku.lua (tanpa R). Render dari direktori ini:
+#   quarto render --to html && quarto render --to typst
+project:
+  type: book
+  output-dir: _out
+  pre-render:
+    - salin_css.py
+    - ../../_scripts/indeks_callout.py
+
+filters:
+  - path: ../../callout-buku.lua
+    at: pre-ast
+
+lang: id
+
+book:
+  title: "Uji Callout"
+  author:
+    - "Penulis Satu"
+    - "Penulis Dua"
+  chapters:
+    - index.qmd
+    - 01-bab-satu.qmd
+    - 02-bab-dua.qmd
+
+format:
+  html:
+    css: style.css
+    toc-expand: true
+  typst:
+    toc: true
+    include-in-header: ../../_typst/kotak-buku.typ
