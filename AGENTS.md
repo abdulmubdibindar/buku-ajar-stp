@@ -6,7 +6,8 @@ Persoalan _rendering_ ditemukan ketika kami me-_render_ buku ini ke dua keluaran
 
 ## Struktur Direktori Proyek
 
-* [`.agents/skills`](./.agents/skills/): skill untuk agen (juga dimuat Claude Code lewat `.claude/skills`)
+* [`.agents/skills`](./.agents/skills/): skill penulisan dan render buku untuk semua agen
+* [`.claude/skills`](./.claude/skills/): skill untuk Claude Code — `icm-architecture`, plus symlink ke tiap skill di `.agents/skills` (skill baru di `.agents/skills` perlu ditautkan juga di sini)
 * [`_bookdown_files`](./_bookdown_files/): sisa hasil _rendering_ Bookdown lama
 * [`_scripts`](./_scripts/): skrip pre-render (indeks callout), linter, dan migrasi bab
 * [`_tests`](./_tests/): proyek uji kecil untuk filter callout (tanpa R)
