@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
   pre-render: reset_counter.R
 
 execute:
@@ -64,9 +65,6 @@ editor_options:
     wrap: 80
     canonical: true
 
-theme:
-  light: materia
-  dark: materia
 
 format:
   html:
@@ -78,15 +76,6 @@ format:
     code-copy: hover
     code-annotations: hover
     
-  pdf:
-    pdf-engine: xelatex
-    keep-tex: true
-    documentclass: scrreprt
-    citation-package: natbib
-    include-in-header:
-      - text: |
-          \usepackage{subfig}
-          
   typst:
     toc: true
     number-sections: true

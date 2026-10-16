@@ -5,11 +5,12 @@
 notebooklm/
 prompts
 
-/.quarto/
 **/*.quarto_ipynb
 
-# Quarto output and cache
+# Keluaran & cache Quarto (HTML sengaja di docs/ untuk GitHub Pages)
 /_book/
+/_book_html/
+/_book_pdf/
 /_freeze/
 /.quarto/
 /html_freeze/
