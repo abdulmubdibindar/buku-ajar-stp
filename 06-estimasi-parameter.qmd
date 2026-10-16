@@ -48,7 +48,6 @@ data |>
   ) |>
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = F
   )
 ```
@@ -176,7 +175,7 @@ $$
 c.i. = \text{estimasi titik} \pm (Z_{\alpha/2} \times \text{S.E.})
 $$ {#eq-confidence-int-verbose}
 
-Nilai kritis ($Z_{\alpha/2}$) ini adalah nilai yang berkaitan dengan **tingkat kepercayaan** dan **signifikansi** ($\alpha$). Singkatnya, tingkat kepercayaan + signifikansi harus menghasilkan angka 100%. Konsepnya akan kita dalami di subbab @sec-tingkat-kepercayaan.
+Nilai kritis ($Z_{\alpha/2}$) ini adalah nilai yang berkaitan dengan **tingkat kepercayaan** dan **signifikansi** ($\alpha$). Singkatnya, tingkat kepercayaan + signifikansi harus menghasilkan angka 100%. Konsep ini dibahas lebih dalam pada @sec-tingkat-kepercayaan.
 
 Nilai kritis dicari dengan membagi 2 terlebih dahulu nilai $\alpha$ di kiri dan kanan kurva distribusi statistik, kemudian menemukan nilai yang menjadi pembatasnya dengan tabel nilai Z seperti yang sudah kita lakukan pada @sec-untuk-z-kritis. @fig-ilustrasi-z-alpha berikut mengilustrasikan pencarian nilai kritis pada signifikansi sebesar 10%.
 
@@ -242,7 +241,7 @@ $$
 c.i. = \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}}
 $$ {#eq-ci-mean-verbose}
 
-::: {#kasus-menghitung-rata-rata-jarak-tempat-tinggal .kasus title="Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya"}
+::: {#kasus-ci-jarak-hunian .kasus title="Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya"}
 Diketahui dari hasil survei terhadap 333 sampel mahasiswa ITERA, sebaran jenis tempat tinggalnya, beserta statistik jarak tempat tinggalnya, ditampilkan sebagai berikut.
 
 ```{r}
@@ -435,7 +434,7 @@ $$
 c.i. = \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 $$ {#eq-confidence-interval-proportion-verbose}
 
-::: {#kasus-proporsi-mahasiswa-berdasarkan-jenis-tempat-tinggal .kasus title="Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal"}
+::: {#kasus-ci-proporsi-hunian .kasus title="Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal"}
 Masih berdasarkan data dari kasus sebelumnya, kita akang menghitung parameter proporsi mahasiswa yang tinggal berdasarkan jenis tempat tinggal, akan tetapi, kita menurunkan tingkat kepercayaan kita menjadi 91%.
 
 **Jawaban:**
@@ -471,7 +470,6 @@ data_sewa |>
   ) |>
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed", "responsive"),
-    latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
     full_width = FALSE
   )
 ```
@@ -634,7 +632,7 @@ Adapun nilai $\alpha$ yang umum digunakan dalam penelitian adalah 0,10 (10%), 0,
 
 Bagaimana kaitan antara tingkat kepercayaan dengan rentang kepercayaan yang dihasilkan? Simak kasus berikut untuk memahaminya.
 
-::: {#kasus-pengaruh-tingkat-kepercayaan-terhadap-lebar-rentang .kasus title="Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan"}
+::: {#kasus-lebar-rentang .kasus title="Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan"}
 Perbedaan tingkat kepercayaan memengaruhi lebar interval estimasi. @fig-pengaruh-nilai-tingkat-kepercayaan menunjukkan hasil estimasi parameter tinggi badan mahasiswa yang nilai statistiknya adalah 165 cm, simpangan baku 3 cm, dan ukuran sampel 200 orang.
 
 ```{r}
