@@ -128,11 +128,9 @@ Berbeda dari estimasi titik, estimasi rentang (*interval estimate*) menetapkan p
 Rentang kepercayaan dibentuk dari dua nilai batas, yaitu batas bawah (*lower limit*) dan batas atas (*upper limit*). Batas bawah dan batas atas ini diperoleh dari pengurangan dan penambahan margin kesalahan (*margin of error*) dari estimasi titik yang kita hitung dari sampel.
 
 ::: {#kasus-keuntungan-estimasi-rentang .kasus title="Keuntungan Estimasi Rentang"}
-Telah disebutkan bahwa rentang kepercayaan diperoleh dari pengurangan dan penambahan margin kesalahan (*margin of error*) atas estimasi titik yang kita hitung dari sampel.
-
 Melanjutkan contoh usia mahasiswa, alih-alih hanya menyatakan estimasi parameter sebesar 20,90 tahun, misalkan kita memperhitungkan pula *margin of error*-nya sebesar $\pm 0,60$ tahun. Hasil pengurangannya memperoleh batas bawah interval pada 20,30 tahun, dan penambahannya menghasilkan batas atas interval usia pada 21,50 tahun. 
 
-Artinya, kita memperkirakan bahwa nilai parameter rata-rata usia seluruh mahasiswa ITERA berada pada rentang antara 20,30 tahun hingga 21,50 tahun. Karena tebakan parameter sesungguhnya ($\mu = 21,4$) berada di dalam wilayah ini, maka tebakan kita jauh lebih akurat.
+Artinya, kita memperkirakan bahwa nilai parameter rata-rata usia seluruh mahasiswa ITERA berada pada rentang antara 20,30 tahun hingga 21,50 tahun. Seandainya parameter sesungguhnya adalah $\mu = 21,40$ tahun (salah satu kemungkinan pada @fig-ilustrasi-estimasi-titik-usia), nilai itu tertangkap di dalam rentang ini, sedangkan estimasi titik 20,90 tahun meleset.
 
 ```{r}
 #| label: fig-ilustrasi-estimasi-rentang-usia
@@ -221,11 +219,11 @@ ggplot(df, aes(x, y)) +
   )
 ```
 
-Dalam bab ini kita akan mempelajari perhitungan rentang kepercayaan untuk parameter **rata-rata** ($\mu$) dan **proporsi** ($P$).
+Rentang kepercayaan dihitung untuk dua jenis parameter: **rata-rata** ($\mu$) dan **proporsi** ($P$).
 
 ### Perhitungan Rentang Kepercayaan Rata-rata
 
-Kita akan mulai dengan estimasi parameter untuk variabel numerik, yakni rata-rata. Estimasi parameter rata-rata, berarti kita memperkirakan nilai rata-rata populasi berdasarkan nilai rata-rata yang diperoleh dari sampel [@kachigan1986statistical].
+Rata-rata adalah parameter untuk variabel numerik. Estimasi parameter rata-rata berarti kita memperkirakan nilai rata-rata populasi berdasarkan nilai rata-rata yang diperoleh dari sampel [@kachigan1986statistical].
 
 Dari sampel ini diperoleh sebuah nilai rata-rata ($\bar{x}$) yang berfungsi sebagai estimasi titik. Estimasi titik ini kita tambah dan kurangkan dengan MoE agar menjadi rentang [@healey2021statistics].
 
@@ -288,7 +286,7 @@ Kita akan menghitung rentang kepercayaan rata-rata jarak tempat tinggal mahasisw
 
 **Langkah-1: Menghitung Statistik**
 
-Dari @tbl-komponen-ci-jarak tersebut kita dapat melihat bahwa rata-rata jarak tempat tinggal mahasiswa sudah tersedia dan bervariasi menurut jenis hunian.
+Rata-rata sampel $\bar{x}$ pada @tbl-komponen-ci-jarak adalah **estimasi titik** jarak tempat tinggal untuk tiap jenis hunian. Simpangan baku $s$ dan ukuran sampel $n$ dipakai untuk menghitung S.E. dalam *margin of error* (@eq-ci-mean).
 
 **Langkah-2: Menentukan Nilai Kritis Z**
 
@@ -350,7 +348,7 @@ $$
 
 ***Catatan:** Kategori Rumah Mengontrak Pribadi hanya memiliki 1 responden ($n = 1$), sehingga simpangan baku tidak dapat dihitung dan rentang kepercayaan tidak dapat diestimasi. Kategori ini tidak disertakan dalam perhitungan.*
 
-Dari ketiga hasil di atas, terlihat bahwa rata-rata jarak tempat tinggal ketiga jenis hunian relatif serupa, berkisar antara **4,47 km hingga 5,19 km** dari kampus. Perbedaan yang paling mencolok terletak pada lebar rentang: kategori **Kos Bersama-sama** memiliki rentang paling lebar ($\pm 1,13$ km) karena ukuran sampelnya jauh lebih kecil ($n = 25$), yang mencerminkan ketidakpastian estimasi yang lebih besar. Sebaliknya, **Kos Sendiri** dan **Rumah Mengontrak Bersama** memiliki rentang lebih sempit karena jumlah respondennya lebih besar.
+Dari ketiga hasil di atas, terlihat bahwa rata-rata jarak tempat tinggal ketiga jenis hunian relatif serupa, berkisar antara **4,47 km hingga 5,19 km** dari kampus. Perbedaan yang paling mencolok terletak pada lebar rentang: kategori **Kos Bersama-sama** memiliki rentang paling lebar ($\pm 1,13$ km) karena ukuran sampelnya jauh lebih kecil ($n = 25$). Pada @eq-ci-mean, $n$ berada di penyebut S.E., sehingga $n$ yang kecil memperbesar *margin of error* dan ketidakpastian estimasi. Sebaliknya, **Kos Sendiri** dan **Rumah Mengontrak Bersama** memiliki rentang lebih sempit karena jumlah respondennya lebih besar.
 
 ```{r}
 #| label: fig-ci-jarak-per-hunian
@@ -409,8 +407,6 @@ ggplot(df_ci, aes(y = hunian, x = mean)) +
 :::
 
 
-Jawablah soal berikut untuk melatih keterampilan Anda menghitung rentang kepercayaan rata-rata.
-
 ::: {#latihan-estimasi-parameter-1 .latihan}
 Dari suatu sampel dosen ITERA berjumlah 73 orang diperoleh rata-rata usianya adalah 30 tahun dan simpangan bakunya 2,9 tahun. Anda diminta menggunakan probabilitas galat, $\alpha = 5\%$ [STP-5.1]{.capaian}
 
@@ -435,7 +431,7 @@ c.i. = \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
 $$ {#eq-confidence-interval-proportion-verbose}
 
 ::: {#kasus-ci-proporsi-hunian .kasus title="Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal"}
-Masih berdasarkan data dari kasus sebelumnya, kita akang menghitung parameter proporsi mahasiswa yang tinggal berdasarkan jenis tempat tinggal, akan tetapi, kita menurunkan tingkat kepercayaan kita menjadi 91%.
+Masih berdasarkan data dari kasus sebelumnya, kita akan menghitung parameter proporsi mahasiswa yang tinggal berdasarkan jenis tempat tinggal, akan tetapi, kita menurunkan tingkat kepercayaan kita menjadi 91%.
 
 **Jawaban:**
 
@@ -476,7 +472,7 @@ data_sewa |>
 
 **Langkah-2: Menentukan Nilai Kritis Z**
 
-Sama konsepnya seperti kasus sebelumnya, sebelumnya kita akan menghitung terlebih dahulu nilai $\alpha$. Karena tingkat kepercayaan kita 91%, maka $\alpha=9\%$ atau $0,09$. @fig-membagi-dua-nilai-alpha-proporsi-91 berikut menunjukkan area yang kita cari nilai $Z_{\alpha/2}$-nya, yakni $0,405$. 
+Seperti pada @kasus-ci-jarak-hunian, nilai $\alpha$ dihitung lebih dulu. Karena tingkat kepercayaan kita 91%, maka $\alpha=9\%$ atau $0,09$. @fig-membagi-dua-nilai-alpha-proporsi-91 berikut menunjukkan area yang kita cari nilai $Z_{\alpha/2}$-nya, yakni $0,405$. 
 
 ```{r}
 #| label: fig-membagi-dua-nilai-alpha-proporsi-91
@@ -533,6 +529,8 @@ $$
 *Catatan: Kategori Rumah Mengontrak Pribadi ($n = 1$) tidak disertakan karena tidak representatif.*
 
 Dari ketiga hasil di atas, terlihat bahwa **Kos Sendiri** mendominasi dengan estimasi proporsi antara 56,59% hingga 63,61% dari seluruh mahasiswa yang menyewa hunian. **Rumah Mengontrak Bersama** berada di posisi kedua (28,75%–35,45%), disusul **Kos Bersama-sama** (5,61%–9,39%). Temuan ini menunjukkan bahwa mayoritas mahasiswa ITERA memilih hunian sewa mandiri.
+
+Karena tingkat kepercayaan diturunkan menjadi 91% ($Z_{\alpha/2} = 1,31$, bukan 1,96), rentang-rentang ini lebih sempit daripada bila dihitung dengan tingkat kepercayaan 95%. Hubungan ini dibahas pada @kasus-lebar-rentang.
 
 ```{r}
 #| label: fig-ci-proporsi-per-hunian
@@ -595,8 +593,6 @@ ggplot(df_ci_prop, aes(y = hunian, x = prop)) +
 
 :::
 
-Jawablah soal berikut untuk melatih keterampilan Anda menghitung rentang kepercayaan proporsi.
-
 ::: {#latihan-estimasi-parameter-2 .latihan}
 Diketahui bahwa proporsi pengguna mobil pribadi dari suatu sampel mahasiswa berjumlah 429 orang adalah 0,04. [STP-5.1]{.capaian}
 
@@ -608,13 +604,13 @@ Diketahui bahwa proporsi pengguna mobil pribadi dari suatu sampel mahasiswa berj
 
 ## Lebih Dalam tentang Tingkat Kepercayaan (*Confidence Level*) {#sec-tingkat-kepercayaan}
 
-Kita sudah mengetahui bahwa tingkat kepercayaan penting dalam perhitungan rentang kepercayaan. Di bagian ini, kita akan menganalisis lebih dalam apa yang dinyatakan oleh angka tingkat kepercayaan dan pengaruhnya terhadap perhitungan rentang kepercayaan.
+Tingkat kepercayaan menentukan nilai kritis $Z_{\alpha/2}$ dalam perhitungan rentang kepercayaan. Apa sebenarnya yang dinyatakan oleh angka ini, dan bagaimana pengaruhnya terhadap rentang yang dihasilkan?
 
 Sebelum lebih lanjut, kita harus sadar bahwa **tingkat kepercayaan (*confidence level*, CL) berbeda dengan rentang kepercayaan (*confidence interval*)**. Jika rentang kepercayaan adalah hasil berupa interval nilai yang memperkirakan posisi parameter populasi, maka tingkat kepercayaan adalah **ukuran seberapa yakin kita terhadap interval tersebut** [@chase2000general].
 
-Apa yang kita yakini? Yang kita yakini adalah **dimuatnya nilai parameter dalam interval yang kita hasilkan**. Keyakinan ini dinyatakan dalam bentuk **probabilitas** yang merupakan angka persentase atau proporsi. Misalnya pada kasus rata-rata jarak tempat tinggal mahasiswa yang mengekos sendiri. Tingkat kepercayaan 95% (0,95) bermakna **dari 100 sampel yang mungkin diambil, sebanyak 95% sampel akan memuat nilai parameter**. Dalam kasus ini, maka kita yakin bahwa **95% sampel yang kita ambil, yang menghasilkan rentang 4,47 km hingga 5,09 km, mencakup nilai parameter sebenarnya**.
+Apa yang kita yakini? Yang kita yakini adalah **dimuatnya nilai parameter dalam interval yang kita hasilkan**. Keyakinan ini dinyatakan dalam bentuk **probabilitas** yang merupakan angka persentase atau proporsi. Misalnya pada kasus rata-rata jarak tempat tinggal mahasiswa yang mengekos sendiri. Tingkat kepercayaan 95% (0,95) bermakna **dari 100 sampel yang mungkin diambil, sebanyak 95% sampel akan memuat nilai parameter**. Dalam kasus ini, rentang 4,47 km hingga 5,09 km adalah **satu dari sekian banyak rentang yang mungkin** dihasilkan sampel; dengan prosedur yang sama, **95% dari rentang-rentang itu akan mencakup nilai parameter sebenarnya**.
 
-Banyak orang salah dalam menginterpretasikan angka tingkat kepercayaan. Simak pembahasan berikut untuk memahaminya.
+Banyak orang salah dalam menginterpretasikan angka tingkat kepercayaan.
 
 ::: {.catatan title="Salah Kaprah Tingkat Kepercayaan"}
 Tingkat kepercayaan sering disalahmaknai sebagai **peluang parameter ada di dalam interval**. Jadi, nilai tingkat kepercayaan 90% bukan berarti kita 90% yakin bahwa nilai parameter ada dalam rentang kepercayaan kita. Nilai parameter populasi itu tetap, misalnya rata-rata tinggi badan seluruh mahasiswa memang punya satu angka pasti, hanya saja kita tidak tahu berapa nilainya. Oleh karena itu, kita mengambil sampel yang representatif dan menghitung statistiknya untuk mengestimasi parameter.
@@ -630,7 +626,7 @@ Dengan demikian, secara matematis, tingkat kepercayaan dituliskan sebagai $1-\al
 Adapun nilai $\alpha$ yang umum digunakan dalam penelitian adalah 0,10 (10%), 0,05 (5%), dan 0,01 (1%), tergantung seberapa besar tingkat keyakinan yang dikehendaki peneliti.
 
 
-Bagaimana kaitan antara tingkat kepercayaan dengan rentang kepercayaan yang dihasilkan? Simak kasus berikut untuk memahaminya.
+Bagaimana kaitan antara tingkat kepercayaan dengan rentang kepercayaan yang dihasilkan?
 
 ::: {#kasus-lebar-rentang .kasus title="Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan"}
 Perbedaan tingkat kepercayaan memengaruhi lebar interval estimasi. @fig-pengaruh-nilai-tingkat-kepercayaan menunjukkan hasil estimasi parameter tinggi badan mahasiswa yang nilai statistiknya adalah 165 cm, simpangan baku 3 cm, dan ukuran sampel 200 orang.
