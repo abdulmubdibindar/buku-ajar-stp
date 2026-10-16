@@ -1,8 +1,12 @@
-﻿# Estimasi Parameter {#bab-6-estimasi-parameter}
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
 
-::: rmdcapaian
-### Capaian Pembelajaran {.unnumbered}
+# Estimasi Parameter {#sec-bab-6-estimasi-parameter}
 
+::: {#capaian-estimasi-parameter .capaian}
 Setelah mempelajari bab ini, Anda diharapkan mampu memaknai interval kepercayaan estimasi sebuah parameter [STP-5.1]{.capaian}.
 :::
 
@@ -22,7 +26,9 @@ Karena parameter adalah ukuran untuk populasi, mengukurnya hanya bisa dilakukan 
 
 Cara menyatakan ukuran statistik dan parameter, yakni menggunakan simbol-simbol matematis [@healey2021statistics], disajikan dalam tabel berikut.
 
-```{r tab-simbol-statistik-parameter, echo=FALSE}
+```{r}
+#| label: tbl-simbol-statistik-parameter
+#| tbl-cap: 'Simbol-simbol yang Digunakan Untuk Statistik dan Parameter'
 library(kableExtra)
 data <- data.frame(
   "Ukuran" = c(
@@ -38,7 +44,6 @@ data <- data.frame(
 )
 data |>
   kbl(
-    caption = "Simbol-simbol yang Digunakan Untuk Statistik dan Parameter",
     escape = FALSE, align = "l"
   ) |>
   kable_styling(
@@ -48,9 +53,7 @@ data |>
   )
 ```
 
-::: rmdkasus
-### Studi Kasus: Statistik vs Parameter {.unnumbered}
-
+::: {#kasus-statistik-vs-parameter .kasus title="Statistik vs Parameter"}
 Mengingat kembali studi kasus pada bab sebelumnya, diketahui populasi seluruh mahasiswa aktif ITERA pada pertengahan tahun 2023 berjumlah 18.877 orang. Namun, karena keterbatasan biaya dan waktu, survei hanya dilakukan terhadap sebagian mahasiswa, yaitu sebanyak 428 orang sebagai sampel.
 
 Misalkan kita ingin mengetahui rata-rata usia para mahasiswa tersebut. Dengan menghitung usia 428 responden tersebut, kita akan memperoleh rata-rata usianya sebesar 20,90 tahun. Angka ini merupakan sebuah **statistik** karena dihitung berdasarkan data sampel. Kita akan menggunakan simbol $\bar{x}$ untuk menerangkan rata-rata sampel ini, sehingga $\bar{x} = 20,90$ tahun.
@@ -70,14 +73,15 @@ Estimasi titik (*point estimate*) adalah estimasi nilai suatu parameter hanya de
 
 Ciri utama estimasi titik adalah ia hanya terdiri dari satu nilai tunggal. Karena hanya memiliki satu nilai saja, kemungkinan kesalahannya sangat besar, karena sangat mungkin nilai tersebut berbeda jauh dari parameter yang sebenarnya.
 
-::: rmdkasus
-### Studi Kasus: Keterbatasan Estimasi Titik {.unnumbered}
-
+::: {#kasus-keterbatasan-estimasi-titik .kasus title="Keterbatasan Estimasi Titik"}
 Melanjutkan contoh sebelumnya, estimasi titik dari rata-rata usia mahasiswa ITERA adalah sebesar 20,90 tahun. Angka 20,90 tahun ini kita peroleh dari 428 responden, lalu kita gunakan sebagai penduga untuk parameter rata-rata usia seluruh mahasiswa ITERA ($\mu$).
 
-Namun, kita tidak bisa memastikan apakah benar rata-rata populasi seluruh mahasiswa *tepat sama* dengan 20,90 tahun. Mungkin saja rata-rata populasi sebenarnya (parameter) adalah mendekati 20,50 tahun, 21,40 tahun, atau nilai lainnya. Hal inilah yang digambarkan pada Gambar \@ref(fig:fig-ilustrasi-estimasi-titik-usia) berikut.
+Namun, kita tidak bisa memastikan apakah benar rata-rata populasi seluruh mahasiswa *tepat sama* dengan 20,90 tahun. Mungkin saja rata-rata populasi sebenarnya (parameter) adalah mendekati 20,50 tahun, 21,40 tahun, atau nilai lainnya. Hal inilah yang digambarkan pada @fig-ilustrasi-estimasi-titik-usia berikut.
 
-```{r fig-ilustrasi-estimasi-titik-usia, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Estimasi Titik Usia Mahasiswa", fig.align="center"}
+```{r}
+#| label: fig-ilustrasi-estimasi-titik-usia
+#| fig-cap: 'Ilustrasi Estimasi Titik Usia Mahasiswa'
+#| fig-align: 'center'
 library(ggplot2)
 ggplot() +
   geom_vline(
@@ -124,16 +128,17 @@ Berbeda dari estimasi titik, estimasi rentang (*interval estimate*) menetapkan p
 
 Rentang kepercayaan dibentuk dari dua nilai batas, yaitu batas bawah (*lower limit*) dan batas atas (*upper limit*). Batas bawah dan batas atas ini diperoleh dari pengurangan dan penambahan margin kesalahan (*margin of error*) dari estimasi titik yang kita hitung dari sampel.
 
-::: rmdkasus
-### Studi Kasus: Keuntungan Estimasi Rentang {.unnumbered}
-
+::: {#kasus-keuntungan-estimasi-rentang .kasus title="Keuntungan Estimasi Rentang"}
 Telah disebutkan bahwa rentang kepercayaan diperoleh dari pengurangan dan penambahan margin kesalahan (*margin of error*) atas estimasi titik yang kita hitung dari sampel.
 
 Melanjutkan contoh usia mahasiswa, alih-alih hanya menyatakan estimasi parameter sebesar 20,90 tahun, misalkan kita memperhitungkan pula *margin of error*-nya sebesar $\pm 0,60$ tahun. Hasil pengurangannya memperoleh batas bawah interval pada 20,30 tahun, dan penambahannya menghasilkan batas atas interval usia pada 21,50 tahun. 
 
 Artinya, kita memperkirakan bahwa nilai parameter rata-rata usia seluruh mahasiswa ITERA berada pada rentang antara 20,30 tahun hingga 21,50 tahun. Karena tebakan parameter sesungguhnya ($\mu = 21,4$) berada di dalam wilayah ini, maka tebakan kita jauh lebih akurat.
 
-```{r fig-ilustrasi-estimasi-rentang-usia, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Estimasi Rentang Usia Mahasiswa", fig.align="center"}
+```{r}
+#| label: fig-ilustrasi-estimasi-rentang-usia
+#| fig-cap: 'Ilustrasi Estimasi Rentang Usia Mahasiswa'
+#| fig-align: 'center'
 library(ggplot2)
 ggplot() +
   annotate("rect", xmin = 20.9 - 0.6, xmax = 20.9 + 0.6, ymin = -Inf, ymax = Inf, alpha = 0.3, fill = "blue") +
@@ -148,7 +153,7 @@ ggplot() +
   theme(axis.line.y = element_blank(), axis.ticks.y = element_blank(), panel.grid.major.y = element_blank(), panel.grid.minor.y = element_blank())
 ```
 
-Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi titik sebesar 20,90 tahun tadi. Memperhitungkan ketidakpastian dalam proses pengambilan sampel dengan batas-batas ini membuat kita menemukan rentang parameter seperti yang diilustrasikan oleh area arsir berwarna biru pada Gambar \@ref(fig:fig-ilustrasi-estimasi-rentang-usia) tersebut.
+Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi titik sebesar 20,90 tahun tadi. Memperhitungkan ketidakpastian dalam proses pengambilan sampel dengan batas-batas ini membuat kita menemukan rentang parameter seperti yang diilustrasikan oleh area arsir berwarna biru pada @fig-ilustrasi-estimasi-rentang-usia tersebut.
 :::
 
 ## Konsep Perhitungan Rentang Kepercayaan Sebagai Estimasi Rentang
@@ -156,31 +161,30 @@ Estimasi ini jauh lebih mendekati kebenaran dibandingkan hanya menyebut estimasi
 **Rentang kepercayaan** atau **interval kepercayaan** *(confidence interval)* adalah bentuk estimasi rentang dalam statistika inferensial yang merupakan **estimasi titik** ($\bar{x}$ atau $\hat{p}$) **yang kita kurangkan dan tambahkan dengan** ***margin of error*** (MoE) [@healey2021statistics]. Jadi, rumus dasar untuk rentang kepercayaan adalah berikut.
 
 $$
-\begin{equation}
 c.i. = \text{estimasi titik} \pm MoE
-(\#eq:confidence-interval)
-\end{equation}
-$$
+$$ {#eq-confidence-interval}
 
 Sedangkan $MoE$ sendiri sebenarnya adalah perkalian antara **nilai kritis** dan *standard error*. Dengan demikian, rumus dasar *confidence interval* sebenarnya adalah:
 
 $$
 MoE = Z_{\alpha/2} \times \text{S.E.}
-(\#eq:margin-of-error)
-$$
+$$ {#eq-margin-of-error}
 
-Maka, dengan mensubstitusi $MoE$ dengan persamaan \@ref(eq:margin-of-error), persamaan \@ref(eq:confidence-interval) menjadi:
+Maka, dengan mensubstitusi $MoE$ dengan @eq-margin-of-error, @eq-confidence-interval menjadi:
 
 $$
 c.i. = \text{estimasi titik} \pm (Z_{\alpha/2} \times \text{S.E.})
-(\#eq:confidence-int-verbose)
-$$
+$$ {#eq-confidence-int-verbose}
 
-Nilai kritis ($Z_{\alpha/2}$) ini adalah nilai yang berkaitan dengan **tingkat kepercayaan** dan **signifikansi** ($\alpha$). Singkatnya, tingkat kepercayaan + signifikansi harus menghasilkan angka 100%. Konsepnya akan kita dalami di subbab \@ref(tingkat-kepercayaan).
+Nilai kritis ($Z_{\alpha/2}$) ini adalah nilai yang berkaitan dengan **tingkat kepercayaan** dan **signifikansi** ($\alpha$). Singkatnya, tingkat kepercayaan + signifikansi harus menghasilkan angka 100%. Konsepnya akan kita dalami di subbab @sec-tingkat-kepercayaan.
 
-Nilai kritis dicari dengan membagi 2 terlebih dahulu nilai $\alpha$ di kiri dan kanan kurva distribusi statistik, kemudian menemukan nilai yang menjadi pembatasnya dengan tabel nilai Z seperti yang sudah kita lakukan pada \@ref(untuk-z-kritis). Gambar \@ref(fig:fig-ilustrasi-z-alpha) berikut mengilustrasikan pencarian nilai kritis pada signifikansi sebesar 10%.
+Nilai kritis dicari dengan membagi 2 terlebih dahulu nilai $\alpha$ di kiri dan kanan kurva distribusi statistik, kemudian menemukan nilai yang menjadi pembatasnya dengan tabel nilai Z seperti yang sudah kita lakukan pada @sec-untuk-z-kritis. @fig-ilustrasi-z-alpha berikut mengilustrasikan pencarian nilai kritis pada signifikansi sebesar 10%.
 
-```{r fig-ilustrasi-z-alpha, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Nilai Kritis Z pada Distribusi Normal, contoh $\alpha = 10%$", out.width='60%', fig.align="center"}
+```{r}
+#| label: fig-ilustrasi-z-alpha
+#| fig-cap: 'Ilustrasi Nilai Kritis Z pada Distribusi Normal, contoh $\alpha = 10%$'
+#| out-width: '60%'
+#| fig-align: 'center'
 library(ggplot2)
 
 x <- seq(-3.5, 3.5, length.out = 1000)
@@ -226,26 +230,24 @@ Kita akan mulai dengan estimasi parameter untuk variabel numerik, yakni rata-rat
 
 Dari sampel ini diperoleh sebuah nilai rata-rata ($\bar{x}$) yang berfungsi sebagai estimasi titik. Estimasi titik ini kita tambah dan kurangkan dengan MoE agar menjadi rentang [@healey2021statistics].
 
-Rumus S.E. untuk rata-rata ditunjukkan oleh Persamaan \@ref(eq:konsep-se-pake-sd), maka, berdasarkan Persamaan \@ref(eq:margin-of-error), MoE untuk interval rata-rata adalah:
+Rumus S.E. untuk rata-rata ditunjukkan oleh @eq-konsep-se-pake-sd, maka, berdasarkan @eq-margin-of-error, MoE untuk interval rata-rata adalah:
 
 $$
 MoE = Z_{\alpha/2} \times \frac{s}{\sqrt{n}}
-(\#eq:ci-mean)
-$$
+$$ {#eq-ci-mean}
 
 dengan keterangan: $s$ adalah simpangan baku sampel dan $n$ adalah ukuran sampel. Dengan demikian, rumus lengkap untuk perhitungan rentang kepercayaan rata-rata adalah:
 
 $$
 c.i. = \bar{x} \pm Z_{\alpha/2} \frac{s}{\sqrt{n}}
-(\#eq:ci-mean-verbose)
-$$
+$$ {#eq-ci-mean-verbose}
 
-::: rmdkasus
-### Studi Kasus: Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya {.unnumbered}
-
+::: {#kasus-menghitung-rata-rata-jarak-tempat-tinggal .kasus title="Menghitung Rata-rata Jarak Tempat Tinggal Mahasiswa ITERA Berdasarkan Jenis Tempat Tinggalnya"}
 Diketahui dari hasil survei terhadap 333 sampel mahasiswa ITERA, sebaran jenis tempat tinggalnya, beserta statistik jarak tempat tinggalnya, ditampilkan sebagai berikut.
 
-```{r prep-data-sewa, include=FALSE}
+```{r}
+#| label: prep-data-sewa
+#| include: false
 library(dplyr)
 df_itera <- read.csv("datasets/DataUtama_mhsITERA.csv", sep = ";")
 df_itera$jarak.km <- as.numeric(gsub(",", ".", df_itera$jarak.km))
@@ -260,7 +262,9 @@ data_sewa <- df_itera |>
   ))
 ```
 
-```{r tabel-komponen-ci-jarak, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-komponen-ci-jarak
+#| tbl-cap: 'Statistik Jarak Tempat Tinggal per Jenis Hunian'
 data_sewa |>
   group_by(jenis.tempat.tinggal) |>
   summarize(
@@ -269,7 +273,6 @@ data_sewa |>
     "Simpangan Baku (km)" = round(sd(jarak.km), 2)
   ) |>
   kbl(
-    caption = "Statistik Jarak Tempat Tinggal per Jenis Hunian",
     col.names = c("Jenis Tempat Tinggal", "$n$", "$\\bar{x}$ (km)", "$s$ (km)"),
     escape = FALSE, align = "lccc",
     format.args = list(decimal.mark = ",", big.mark = ".")
@@ -286,13 +289,17 @@ Kita akan menghitung rentang kepercayaan rata-rata jarak tempat tinggal mahasisw
 
 **Langkah-1: Menghitung Statistik**
 
-Dari Tabel \@ref(tab:tabel-komponen-ci-jarak) tersebut kita dapat melihat bahwa rata-rata jarak tempat tinggal mahasiswa sudah tersedia dan bervariasi menurut jenis hunian.
+Dari @tbl-komponen-ci-jarak tersebut kita dapat melihat bahwa rata-rata jarak tempat tinggal mahasiswa sudah tersedia dan bervariasi menurut jenis hunian.
 
 **Langkah-2: Menentukan Nilai Kritis Z**
 
 Langkah berikutnya adalah menentukan nilai kritis $Z_{\alpha/2}$ sesuai dengan tingkat kepercayaan yang digunakan. Nilai kritis $Z_{\alpha/2}$ diperoleh dari distribusi normal baku.
 
-```{r fig-membagi-dua-nilai-alpha-mean, echo=FALSE, fig.cap="Membagi Dua Nilai Alpha", out.width='60%', fig.align="center"}
+```{r}
+#| label: fig-membagi-dua-nilai-alpha-mean
+#| fig-cap: 'Membagi Dua Nilai Alpha'
+#| out-width: '60%'
+#| fig-align: 'center'
 knitr::include_graphics("images/bab-6-membagi-2-alpha.png")
 ```
 
@@ -300,13 +307,17 @@ Nilai tingkat kepercayaan yang kita gunakan adalah luas area di bawah kurva yang
 
 Nilai Z diperoleh dari area seluas 0,475 di bawah kurva normal mulai dari titik tengah (0). Dengan mencocokkan pada tabel distribusi normal, didapatkan nilai $Z=1,96$, yang berasal dari kombinasi angka 1,9 pada sisi vertikal dan 0,06 pada sisi horizontal tabel.
 
-```{r fig-mencari-nilai-z-mean, echo=FALSE, fig.cap="Mencari Nilai Z", out.width='60%', fig.align="center"}
+```{r}
+#| label: fig-mencari-nilai-z-mean
+#| fig-cap: 'Mencari Nilai Z'
+#| out-width: '60%'
+#| fig-align: 'center'
 knitr::include_graphics("images/bab-6-mencari-z.PNG")
 ```
 
 **Langkah-3: Menghitung Rentang Kepercayaan dan Menarik Kesimpulan**
 
-Dengan $Z_{\alpha/2} = 1,96$, rentang kepercayaan dihitung per kategori menggunakan simpangan baku dan jumlah objek masing-masing. Mensubstitusi nilai-nilai per kategori dari Tabel \@ref(tab:tabel-komponen-ci-jarak) ke dalam rumus Persamaan \@ref(eq:ci-mean-verbose) menghasilkan:
+Dengan $Z_{\alpha/2} = 1,96$, rentang kepercayaan dihitung per kategori menggunakan simpangan baku dan jumlah objek masing-masing. Mensubstitusi nilai-nilai per kategori dari @tbl-komponen-ci-jarak ke dalam rumus @eq-ci-mean-verbose menghasilkan:
 
 **Kos Sendiri** ($n = 200$, $\bar{x} = 4,78$, $s = 2,21$):
 
@@ -342,7 +353,11 @@ $$
 
 Dari ketiga hasil di atas, terlihat bahwa rata-rata jarak tempat tinggal ketiga jenis hunian relatif serupa, berkisar antara **4,47 km hingga 5,19 km** dari kampus. Perbedaan yang paling mencolok terletak pada lebar rentang: kategori **Kos Bersama-sama** memiliki rentang paling lebar ($\pm 1,13$ km) karena ukuran sampelnya jauh lebih kecil ($n = 25$), yang mencerminkan ketidakpastian estimasi yang lebih besar. Sebaliknya, **Kos Sendiri** dan **Rumah Mengontrak Bersama** memiliki rentang lebih sempit karena jumlah respondennya lebih besar.
 
-```{r fig-ci-jarak-per-hunian, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Interval Kepercayaan 95% Rata-rata Jarak Tempat Tinggal per Jenis Hunian", out.width='60%', fig.align="center"}
+```{r}
+#| label: fig-ci-jarak-per-hunian
+#| fig-cap: 'Interval Kepercayaan 95% Rata-rata Jarak Tempat Tinggal per Jenis Hunian'
+#| out-width: '60%'
+#| fig-align: 'center'
 library(ggplot2)
 
 df_ci <- data.frame(
@@ -397,9 +412,7 @@ ggplot(df_ci, aes(y = hunian, x = mean)) +
 
 Jawablah soal berikut untuk melatih keterampilan Anda menghitung rentang kepercayaan rata-rata.
 
-::: rmdexercise
-## Soal Evaluasi 12 {.unnumbered}
-
+::: {#latihan-estimasi-parameter-1 .latihan}
 Dari suatu sampel dosen ITERA berjumlah 73 orang diperoleh rata-rata usianya adalah 30 tahun dan simpangan bakunya 2,9 tahun. Anda diminta menggunakan probabilitas galat, $\alpha = 5\%$ [STP-5.1]{.capaian}
 
    a. Berapakah tingkat kepercayaan (*confidence level*) yang digunakan?
@@ -414,19 +427,15 @@ Perhitungan rentang kepercayaan proporsi hanya berbeda pada rumus S.E.-nya [@kac
 
 $$
 \text{S.E.} = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
-(\#eq:se-proporsi)
-$$
+$$ {#eq-se-proporsi}
 
 dengan keterangan: $\hat{p}$ adalah proporsi sampel dan $n$ ukuran sampel [@healey2021statistics]. Maka, rumus rentang kepercayaan untuk statistik proporsi adalah:
 
 $$
 c.i. = \hat{p} \pm Z_{\alpha/2} \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
-(\#eq:confidence-interval-proportion-verbose)
-$$
+$$ {#eq-confidence-interval-proportion-verbose}
 
-::: rmdkasus
-### Studi Kasus: Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal {.unnumbered}
-
+::: {#kasus-proporsi-mahasiswa-berdasarkan-jenis-tempat-tinggal .kasus title="Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal"}
 Masih berdasarkan data dari kasus sebelumnya, kita akang menghitung parameter proporsi mahasiswa yang tinggal berdasarkan jenis tempat tinggal, akan tetapi, kita menurunkan tingkat kepercayaan kita menjadi 91%.
 
 **Jawaban:**
@@ -442,9 +451,11 @@ dengan:
 - $x$ = jumlah responden yang memiliki karakteristik tertentu,
 - $n$ = jumlah seluruh responden.
 
-Berdasarkan Tabel \@ref(tab:tabel-komponen-ci-jarak), kita dapat menghitung proporsi tiap-tiap kategori jenis tempat tinggal. Hasilnya ditunjukkan oleh Tabel \@ref(tab:tabel-proporsi-jenis-tempat-tinggal) berikut.
+Berdasarkan @tbl-komponen-ci-jarak, kita dapat menghitung proporsi tiap-tiap kategori jenis tempat tinggal. Hasilnya ditunjukkan oleh @tbl-proporsi-jenis-tempat-tinggal berikut.
 
-```{r tabel-proporsi-jenis-tempat-tinggal, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-proporsi-jenis-tempat-tinggal
+#| tbl-cap: 'Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal'
 data_sewa |>
   group_by(jenis.tempat.tinggal) |>
   summarize(
@@ -454,7 +465,6 @@ data_sewa |>
     "Proporsi" = round(n / sum(n), 3)
   ) |>
   kbl(
-    caption = "Proporsi Mahasiswa Berdasarkan Jenis Tempat Tinggal",
     col.names = c("Jenis Tempat Tinggal", "$n$", "$\\hat{p}$"),
     escape = FALSE, align = "lccc",
     format.args = list(decimal.mark = ",", big.mark = ".")
@@ -468,21 +478,29 @@ data_sewa |>
 
 **Langkah-2: Menentukan Nilai Kritis Z**
 
-Sama konsepnya seperti kasus sebelumnya, sebelumnya kita akan menghitung terlebih dahulu nilai $\alpha$. Karena tingkat kepercayaan kita 91%, maka $\alpha=9\%$ atau $0,09$. Gambar \@ref(fig:fig-membagi-dua-nilai-alpha-proporsi-91) berikut menunjukkan area yang kita cari nilai $Z_{\alpha/2}$-nya, yakni $0,405$. 
+Sama konsepnya seperti kasus sebelumnya, sebelumnya kita akan menghitung terlebih dahulu nilai $\alpha$. Karena tingkat kepercayaan kita 91%, maka $\alpha=9\%$ atau $0,09$. @fig-membagi-dua-nilai-alpha-proporsi-91 berikut menunjukkan area yang kita cari nilai $Z_{\alpha/2}$-nya, yakni $0,405$. 
 
-```{r fig-membagi-dua-nilai-alpha-proporsi-91, echo=FALSE, fig.cap="Membagi Dua Nilai Alpha", out.width='60%', fig.align="center"}
+```{r}
+#| label: fig-membagi-dua-nilai-alpha-proporsi-91
+#| fig-cap: 'Membagi Dua Nilai Alpha'
+#| out-width: '60%'
+#| fig-align: 'center'
 knitr::include_graphics("images/bab-6-membagi-2-alpha-91.png")
 ```
 
-Dari tabel nilai Z di Gambar \@ref(fig:bab-5-fig-z-table), kita dapat memperoleh nilai Z untuk tingkat kepercayaan 91% sebagai berikut.
+Dari tabel nilai Z di @fig-bab-5-fig-z-table, kita dapat memperoleh nilai Z untuk tingkat kepercayaan 91% sebagai berikut.
 
-```{r fig-mencari-nilai-z-proporsi-91, echo=FALSE, fig.cap="Mencari Nilai Z", out.width='60%', fig.align="center"}
+```{r}
+#| label: fig-mencari-nilai-z-proporsi-91
+#| fig-cap: 'Mencari Nilai Z'
+#| out-width: '60%'
+#| fig-align: 'center'
 knitr::include_graphics("images/bab-6-mencari-z-91.png")
 ```
 
 **Langkah-3: Menghitung Rentang Kepercayaan dan Menarik Kesimpulan**
 
-Setelah seluruh komponen perhitungan ditentukan, langkah terakhir adalah menghitung rentang kepercayaan proporsi untuk setiap kategori. Nilai kritis yang digunakan adalah $Z_{\alpha/2} = 1,31$ dan $n = 333$. Nilai-nilai $\hat{p}$ dari Tabel \@ref(tab:tabel-proporsi-jenis-tempat-tinggal) disubstitusikan ke dalam rumus Persamaan \@ref(eq:confidence-interval-proportion-verbose) untuk masing-masing kategori.
+Setelah seluruh komponen perhitungan ditentukan, langkah terakhir adalah menghitung rentang kepercayaan proporsi untuk setiap kategori. Nilai kritis yang digunakan adalah $Z_{\alpha/2} = 1,31$ dan $n = 333$. Nilai-nilai $\hat{p}$ dari @tbl-proporsi-jenis-tempat-tinggal disubstitusikan ke dalam rumus @eq-confidence-interval-proportion-verbose untuk masing-masing kategori.
 
 **Kos Sendiri** ($\hat{p} = 0,601$):
 
@@ -516,9 +534,13 @@ $$
 
 *Catatan: Kategori Rumah Mengontrak Pribadi ($n = 1$) tidak disertakan karena tidak representatif.*
 
-Dari ketiga hasil di atas, terlihat bahwa **Kos Sendiri** mendominasi dengan estimasi proporsi antara 56,59% hingga 63,61% dari seluruh mahasiswa yang menyewa hunian. **Rumah Mengontrak Bersama** berada di posisi kedua (28,75%â€“35,45%), disusul **Kos Bersama-sama** (5,61%â€“9,39%). Temuan ini menunjukkan bahwa mayoritas mahasiswa ITERA memilih hunian sewa mandiri.
+Dari ketiga hasil di atas, terlihat bahwa **Kos Sendiri** mendominasi dengan estimasi proporsi antara 56,59% hingga 63,61% dari seluruh mahasiswa yang menyewa hunian. **Rumah Mengontrak Bersama** berada di posisi kedua (28,75%–35,45%), disusul **Kos Bersama-sama** (5,61%–9,39%). Temuan ini menunjukkan bahwa mayoritas mahasiswa ITERA memilih hunian sewa mandiri.
 
-```{r fig-ci-proporsi-per-hunian, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian", out.width='60%', fig.align="center"}
+```{r}
+#| label: fig-ci-proporsi-per-hunian
+#| fig-cap: 'Interval Kepercayaan 91% Proporsi Mahasiswa per Jenis Hunian'
+#| out-width: '60%'
+#| fig-align: 'center'
 library(ggplot2)
 
 df_ci_prop <- data.frame(
@@ -577,9 +599,7 @@ ggplot(df_ci_prop, aes(y = hunian, x = prop)) +
 
 Jawablah soal berikut untuk melatih keterampilan Anda menghitung rentang kepercayaan proporsi.
 
-::: rmdexercise
-## Soal Evaluasi 13  {.unnumbered}
-
+::: {#latihan-estimasi-parameter-2 .latihan}
 Diketahui bahwa proporsi pengguna mobil pribadi dari suatu sampel mahasiswa berjumlah 429 orang adalah 0,04. [STP-5.1]{.capaian}
 
    a. Apabila kita menggunakan *confidence level* 93%, berapakah tingkat signifikansi kita?
@@ -588,7 +608,7 @@ Diketahui bahwa proporsi pengguna mobil pribadi dari suatu sampel mahasiswa berj
 :::
 
 
-## Lebih Dalam tentang Tingkat Kepercayaan (*Confidence Level*) {#tingkat-kepercayaan}
+## Lebih Dalam tentang Tingkat Kepercayaan (*Confidence Level*) {#sec-tingkat-kepercayaan}
 
 Kita sudah mengetahui bahwa tingkat kepercayaan penting dalam perhitungan rentang kepercayaan. Di bagian ini, kita akan menganalisis lebih dalam apa yang dinyatakan oleh angka tingkat kepercayaan dan pengaruhnya terhadap perhitungan rentang kepercayaan.
 
@@ -598,9 +618,7 @@ Apa yang kita yakini? Yang kita yakini adalah **dimuatnya nilai parameter dalam 
 
 Banyak orang salah dalam menginterpretasikan angka tingkat kepercayaan. Simak pembahasan berikut untuk memahaminya.
 
-::: rmdnote
-### Catatan: Salah Kaprah Tingkat Kepercayaan {.unnumbered}
-
+::: {.catatan title="Salah Kaprah Tingkat Kepercayaan"}
 Tingkat kepercayaan sering disalahmaknai sebagai **peluang parameter ada di dalam interval**. Jadi, nilai tingkat kepercayaan 90% bukan berarti kita 90% yakin bahwa nilai parameter ada dalam rentang kepercayaan kita. Nilai parameter populasi itu tetap, misalnya rata-rata tinggi badan seluruh mahasiswa memang punya satu angka pasti, hanya saja kita tidak tahu berapa nilainya. Oleh karena itu, kita mengambil sampel yang representatif dan menghitung statistiknya untuk mengestimasi parameter.
 
 Dengan tingkat kepercayaan 90%, artinya kita mengatakan bahwa sampel kita tersebut hanya akan salah sebanyak 10 kali pengambilan saja dari 100 kali pengambilan yang mungkin. Dengan kata lain, 90 sampel tersebut akan benar-benar berisi nilai parameter populasi yang sebenarnya.
@@ -616,12 +634,14 @@ Adapun nilai $\alpha$ yang umum digunakan dalam penelitian adalah 0,10 (10%), 0,
 
 Bagaimana kaitan antara tingkat kepercayaan dengan rentang kepercayaan yang dihasilkan? Simak kasus berikut untuk memahaminya.
 
-::: rmdkasus
-### Studi Kasus: Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan {.unnumbered}
+::: {#kasus-pengaruh-tingkat-kepercayaan-terhadap-lebar-rentang .kasus title="Pengaruh Tingkat Kepercayaan terhadap Lebar Rentang Kepercayaan"}
+Perbedaan tingkat kepercayaan memengaruhi lebar interval estimasi. @fig-pengaruh-nilai-tingkat-kepercayaan menunjukkan hasil estimasi parameter tinggi badan mahasiswa yang nilai statistiknya adalah 165 cm, simpangan baku 3 cm, dan ukuran sampel 200 orang.
 
-Perbedaan tingkat kepercayaan memengaruhi lebar interval estimasi. Gambar \@ref(fig:fig-pengaruh-nilai-tingkat-kepercayaan) menunjukkan hasil estimasi parameter tinggi badan mahasiswa yang nilai statistiknya adalah 165 cm, simpangan baku 3 cm, dan ukuran sampel 200 orang.
-
-```{r fig-pengaruh-nilai-tingkat-kepercayaan, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang", out.width='60%', fig.align="center"}
+```{r}
+#| label: fig-pengaruh-nilai-tingkat-kepercayaan
+#| fig-cap: 'Ilustrasi Pengaruh Nilai Tingkat Kepercayaan Terhadap Ukuran Rentang'
+#| out-width: '60%'
+#| fig-align: 'center'
 library(ggplot2)
 mean_val <- 165
 sd_val <- 2
@@ -650,7 +670,7 @@ ggplot(df_cl, aes(y = CL, x = mean_val)) +
 
 Garis hitam putus-putus pada posisi 165 menggambarkan estimasi titik, yaitu satu nilai hasil dari sampel [@chase2000general]. Garis horisontal biru, hijau, dan ungu menggambarkan interval kepercayaan dengan tingkat kepercayaan yang berbeda. Pada tingkat kepercayaan 90% (biru), intervalnya sempit, yakni 164,65-165,35 cm. Pada tingkat kepercayaan 95% (hijau), intervalnya sedikit lebih lebar, yaitu 164,58-165,42 cm. Sementara pada tingkat kepercayaan 99% (ungu), interval semakin melebar menjadi 164,45-165,55 cm. Dari sini terlihat bahwa semakin tinggi tingkat kepercayaan, semakin lebar rentang yang dihasilkan.
 
-**Interpretasi**: menaikkan tingkat kepercayaan artinya memperbesar cakupan area probabilitas pada kurva distribusi statistik (ingat aturan empiris pada Gambar \@ref(fig:fig-bab-5-aturan-689599)). Cakupan area probabilitas yang semakin besar berarti menambah cakupan nilai Z di distribusi tersebut.
+**Interpretasi**: menaikkan tingkat kepercayaan artinya memperbesar cakupan area probabilitas pada kurva distribusi statistik (ingat aturan empiris pada @fig-bab-5-aturan-689599). Cakupan area probabilitas yang semakin besar berarti menambah cakupan nilai Z di distribusi tersebut.
 
 Karena nilai Z mencerminkan nilai statistik yang salah satunya adalah parameter yang kita perkirakan, tingkat kepercayaan yang lebih besar memperlebar rentang perkiraan kita sehingga nilai parameter dapat tercakup dan "tertangkap" di dalam rentang perkiraan kita.
 :::
