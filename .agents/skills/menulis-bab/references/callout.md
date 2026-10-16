@@ -7,7 +7,7 @@ menulis "Studi Kasus 6.3" atau "Soal Latihan" secara manual.
 |---|---|---|---|---|---|
 | `.capaian` | Capaian Pembelajaran Bab X | per bab | ya | `#capaian-…` | tidak dipakai |
 | `.kasus` | Studi Kasus X.n: *title* | per bab | ya | `#kasus-…` wajib | wajib |
-| `.latihan` | Soal Latihan X.n: *title* | per bab | ya | `#latihan-…` wajib | wajib |
+| `.latihan` | Soal Latihan X.n[: *title*] | per bab | ya | `#latihan-…` wajib | opsional |
 | `.penting` | Penting[: *title*] | — | tidak | opsional | opsional |
 | `.catatan` | Catatan[: *title*] | — | tidak | opsional | opsional |
 

@@ -17,3 +17,5 @@ prompts
 /typst_freeze/
 /pdf_freeze/
 _callout-index.json
+
+__pycache__/

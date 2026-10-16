@@ -10,7 +10,7 @@ Galat (keluar dengan kode 1):
   bom         berkas diawali BOM UTF-8                              [--fix]
   mojibake    teks rusak encoding, mis. "â€”" atau "Ã—"             [--fix]
   bookdown    sisa sintaks Bookdown: \\@ref(), (\\#...), ::: rmd...
-  callout     callout bernomor tanpa id/berprefiks salah/tanpa title,
+  callout     callout bernomor tanpa id/berprefiks salah, studi kasus tanpa title,
               id ganda, atau heading di dalam callout
   rujukan     @kasus-/@latihan-/@capaian- ke id yang tidak ada
   tabel       font_size pada tabel (huruf tabel diatur global)
@@ -156,7 +156,7 @@ def lint(path, ids, fix):
                     issues.append((n, "callout", f"id #{ident} harus berawalan '{kind}-'", False))
                 elif len(ids.get(ident, [])) > 1:
                     issues.append((n, "callout", f"id #{ident} ganda: {', '.join(ids[ident])}", False))
-                if kind in ("kasus", "latihan") and not title:
+                if kind == "kasus" and not title:
                     issues.append((n, "callout", f'.{kind} wajib punya title="..."', False))
         elif FENCE_LEGACY.match(line):
             issues.append((n, "bookdown", f"blok {FENCE_LEGACY.match(line).group(1)} -> callout baru", False))
