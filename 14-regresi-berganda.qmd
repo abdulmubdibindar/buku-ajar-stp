@@ -1,9 +1,12 @@
-﻿# Kausalitas dengan Regresi Linear Berganda {#bab-regresi-berganda}
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
 
-::: rmdcapaian
+# Kausalitas dengan Regresi Linear Berganda {#sec-bab-regresi-berganda}
 
-### Capaian Pembelajaran {-}
-
+::: {#capaian-regresi-berganda .capaian}
 Setelah mempelajari bab ini, Anda diharapkan mampu:
 
 1. menyebutkan perbedaan analisis regresi linear berganda dengan analisis regresi linear sederhana [STP-13.1]{.capaian}
@@ -17,7 +20,10 @@ Kita sudah mempelajari hubungan antara 1 variabel dependen dan 1 variabel indepe
 
 Terdapat dua kelompok besar asosiasi multivariat: **interdependensi** dan **dependensi**. interdependensi adalah jenis asosiasi yang **tidak memiliki hubungan ketergantungan antara variabel-variabel yang dianalisis**. Sebaliknya, dependensi adalah jenis asosiasi yang **memiliki hubungan ketergantungan antara variabel-variabel yang dianalisis**. Yang dimaksud dengan "ketergantungan" adalah hubungan *memengaruhi-dipengaruhi* seperti yang sudah kalian pelajari dalam analisis hubungan regresi linear sederhana. Diagram berikut menunjukkan bagaimana semua teknik analisis multivariat dikelompokkan berdasarkan kedua jenis asosiasi tersebut.
 
-```{r diagram-asosiasi-multivariat, echo=FALSE, message=FALSE, fig.align='center', fig.cap="Diagram Pohon Keputusan Asosiasi Multivariat"}
+```{r}
+#| label: fig-diagram-asosiasi-multivariat
+#| fig-align: 'center'
+#| fig-cap: 'Diagram Pohon Keputusan Asosiasi Multivariat'
 knitr::include_graphics("images/diagram_dependensi.drawio.png")
 ```
 
@@ -37,8 +43,7 @@ Sementara itu, regresi linear **berganda** digunakan ketika variabel dependen di
 
 $$
 Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_k X_k + \epsilon
-(\#eq:bentuk-dasar-regresi-linear-berganda)
-$$
+$$ {#eq-bentuk-dasar-regresi-linear-berganda}
 
 dengan:
 
@@ -52,10 +57,7 @@ Lagi-lagi, karena kita tidak tahu berapa nilai komponen acak, $\epsilon$, maka k
 
 Karena jumlah variabel yang terlibat adalah lebih dari 2, **kemampuan prediksi** variabel dependen dengan model regresi linear berganda akan **lebih baik** dibandingkan dengan model regresi linear sederhana. Akan tetapi, kelebihan kemampuan prediksi tersebut juga mengakibatkan **hubungan yang lebih kompleks antarvariabelnya**. Misalnya adalah **multikolinearitas** yang merupakan hubungan antarvariabel independen dalam persamaan model. Ini menambahkan kompleksitas dalam perumusan dan analisis model regresi linear berganda.
 
-::: rmdkasus
-
-## Studi Kasus: Regresi Linear Sederhana vs Berganda {.unnumbered}
-
+::: {#kasus-regresi-linear-sederhana-vs-berganda .kasus title="Regresi Linear Sederhana vs Berganda"}
 Pada bab sebelumnya, kita sudah mempelajari kasus penerapan regresi linear sederhana untuk memprediksi Indeks Kualitas Udara (IKU) berdasarkan jarak ke taman kota. Pada kasus tersebut, kita menemukan bahwa IKU dapat diprediksi dengan baik menggunakan jarak ke taman kota. Namun, kita juga menyadari bahwa IKU dipengaruhi oleh faktor lain, seperti jarak ke kawasan industri dan tutupan vegetasi. Oleh karena itu, pada kasus ini kita akan mempelajari penerapan regresi linear berganda untuk memprediksi IKU berdasarkan beberapa variabel independen yang menjadi faktor-faktor lain tersebut.
 
 Variabel-variabel independen yang akan kita perhitungkan di antaranya adalah
@@ -101,7 +103,9 @@ Dalam regresi linear berganda, antarvariabel independen **tidak boleh memiliki h
 
 Dalam konteks penelitian perencanaan wilayah dan kota, multikolinearitas perlu dihindari karena banyak fenomena perkotaan memiliki hubungan yang saling berkorelasi. Misalnya, kepadatan penduduk dan kepadatan bangunan sering bergerak dalam arah yang sama sehingga tidak tepat dimasukkan bersamaan tanpa pengecekan diagnostik.
 
-```{r bab14-dataset-regresi-linear-berganda, include=FALSE}
+```{r}
+#| label: bab14-dataset-regresi-linear-berganda
+#| include: false
 set.seed(42)
 n <- 30
 
@@ -146,7 +150,9 @@ df_berganda <- data.frame(
 )
 ```
 
-```{r bab14-dataset-multikolinearitas, include=FALSE}
+```{r}
+#| label: bab14-dataset-multikolinearitas
+#| include: false
 set.seed(42)
 n_mk <- 30
 
@@ -194,13 +200,12 @@ df_mk <- data.frame(
 )
 ```
 
-::: rmdkasus
-
-### Studi Kasus: Multikolinearitas {.unnumbered}
-
+::: {#kasus-multikolinearitas .kasus title="Multikolinearitas"}
 Misalkan seorang peneliti mengumpulkan data untuk memodelkan Indeks Kualitas Udara (IKU) menggunakan tiga variabel independen metrik: jarak ke taman kota (`jarak_taman`), jarak ke kawasan industri (`jarak_industri`), dan persentase tutupan vegetasi (`vegetasi`). Sebelum membangun model, peneliti membuat **tabel korelasi silang** untuk memeriksa hubungan antarvariabel independen.
 
-```{r tbl-korelasi-mk, echo=FALSE, message=FALSE}
+```{r}
+#| label: tbl-korelasi-mk
+#| tbl-cap: 'Matriks Korelasi Antarvariabel Independen'
 library(knitr)
 library(kableExtra)
 
@@ -216,7 +221,6 @@ rownames(mat_kor) <- kolom_nama
 
 tbl_out <- kbl(
     mat_kor,
-    caption = "Matriks Korelasi Antarvariabel Independen",
     format.args = list(big.mark = ".", decimal.mark = ","),
     escape = FALSE
 ) |>
@@ -232,20 +236,19 @@ if (knitr::is_html_output()) {
 tbl_out
 ```
 
-Hasil tabel di atas menunjukkan bahwa `jarak_taman` dan `jarak_industri` memiliki nilai korelasi `r round(cor(df_mk$jarak_taman, df_mk$jarak_industri), 2)`, yang mendekati âˆ’1. Ini merupakan tanda **multikolinearitas yang serius**: kedua variabel membawa informasi yang hampir identik (berlawanan arah), sehingga model tidak mampu memisahkan kontribusi masing-masing terhadap IKU. Sebaliknya, `vegetasi` berkorelasi rendah dengan kedua variabel lainnya, sehingga tidak menimbulkan masalah. Dalam situasi seperti ini, peneliti harus memilih salah satu dari `jarak_taman` atau `jarak_industri` untuk dimasukkan ke dalam model, atau menggabungkannya menjadi satu indeks komposit.
+Hasil tabel di atas menunjukkan bahwa `jarak_taman` dan `jarak_industri` memiliki nilai korelasi `r round(cor(df_mk$jarak_taman, df_mk$jarak_industri), 2)`, yang mendekati −1. Ini merupakan tanda **multikolinearitas yang serius**: kedua variabel membawa informasi yang hampir identik (berlawanan arah), sehingga model tidak mampu memisahkan kontribusi masing-masing terhadap IKU. Sebaliknya, `vegetasi` berkorelasi rendah dengan kedua variabel lainnya, sehingga tidak menimbulkan masalah. Dalam situasi seperti ini, peneliti harus memilih salah satu dari `jarak_taman` atau `jarak_industri` untuk dimasukkan ke dalam model, atau menggabungkannya menjadi satu indeks komposit.
 
 :::
 
 Selain mengamatinya melalui tabel korelasi silang, adanya multikolinearitas juga dapat dideteksi melalui nilai **Variance Inflation Factor (VIF)**. VIF mengukur seberapa besar varians dari koefisien regresi meningkat akibat adanya multikolinearitas. Nilai VIF yang tinggi menunjukkan adanya multikolinearitas yang serius. Umumnya, nilai VIF > 10 dianggap sebagai indikator multikolinearitas yang serius.
 
 
-::: rmdkasus
-
-### Studi Kasus: Deteksi Multikolinearitas dengan VIF {.unnumbered}
-
+::: {#kasus-deteksi-multikolinearitas-dengan-vif .kasus title="Deteksi Multikolinearitas dengan VIF"}
 Indikasi multikolinearitas pada ketiga variabel independen metrik di atas juga dapat dipastikan melalui nilai VIF. Berikut adalah hasil perhitungan VIF untuk `jarak_taman`, `jarak_industri`, dan `vegetasi`.
 
-```{r tbl-vif-mk, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-vif-mk
+#| tbl-cap: 'Nilai Variance Inflation Factor (VIF)'
 library(knitr)
 library(kableExtra)
 library(car)
@@ -262,7 +265,6 @@ df_vif <- data.frame(
 
 tbl_vif <- kbl(
     df_vif,
-    caption = "Nilai Variance Inflation Factor (VIF)",
     digits = 2,
     format.args = list(big.mark = ".", decimal.mark = ","),
     align = c("l", "c")
@@ -291,17 +293,16 @@ Dalam beberapa kasus, **variabel independen** yang digunakan dalam model regresi
 
 Perhatikan kasus berikut untuk memahami bagaimana variabel *dummy* bekerja.
 
-::: rmdkasus
-
-### Studi Kasus: Variabel *Dummy* {.unnumbered}
-
+::: {#kasus-variabel-dummy .kasus title="Variabel *Dummy*"}
 Dalam kasus sebelumnya, kita melibatkan satu variabel nominal, yakni $\text{zona}$ yang terdiri atas tiga kategori: **Perumahan**, **Komersial**, dan **Industri**. Untuk dapat memasukkan variabel ini ke dalam model regresi, kita perlu mengubahnya menjadi variabel *dummy*. Proses pembentukan variabel dummy adalah sebagai berikut.
 
 Karena variabel $\text{zona}$ memiliki tiga kategori, kita pertama-tama akan membuat tiga variabel baru berdasarkan masing-masing kategori. Kita misalkan variabel tersebut adalah $D_{\text{Perumahan}}$, $D_{\text{Komersial}}$, dan $D_{\text{Industri}}$. Nilainya diisi dengan 1 jika observasi benar berada pada kategori tersebut, dan 0 jika salah.
 
 Berikut adalah tabel ilustrasi nilai ketiga variabel baru tersebut. Kategori **Industri** diletakkan di baris paling bawah sebagai **kategori referensi**. Oleh karena itu, variabel $D_{\text{Industri}}$ juga ditempatkan di kolom paling kanan.
 
-```{r tbl-dummy-3-kategori, echo=FALSE, message=FALSE}
+```{r}
+#| label: tbl-dummy-3-kategori
+#| tbl-cap: 'Variabel Baru untuk 3 Kategori'
 library(knitr)
 library(kableExtra)
 
@@ -321,9 +322,7 @@ kbl(
         "$D_{\\text{Industri}}$"
     ),
     align = "c",
-    escape = FALSE,
-    caption = "Variabel Baru untuk 3 Kategori"
-) |>
+    escape = FALSE,) |>
     kable_styling(
         bootstrap_options = c("striped", "hover"),
         latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
@@ -337,7 +336,9 @@ Prinsip ini menegaskan bahwa **jumlah variabel *dummy* yang akan kita masukkan u
 
 Sebagai penekanan, mari kita lihat apa yang terjadi jika kita memiliki empat kategori, misalnya ditambahkan kategori **Taman**. Jika kita juga menjadikan Taman sebagai kategori referensi, ilustrasinya adalah sebagai berikut.
 
-```{r tbl-dummy-4-kategori, echo=FALSE, message=FALSE}
+```{r}
+#| label: tbl-dummy-4-kategori
+#| tbl-cap: 'Variabel Baru untuk 4 Kategori'
 df_dummy4 <- data.frame(
     Kategori = c("Perumahan", "Komersial", "Industri", "Taman"),
     D_Perumahan = c(1, 0, 0, 0),
@@ -356,9 +357,7 @@ kbl(
         "$D_{\\text{Taman}}$"
     ),
     align = "c",
-    escape = FALSE,
-    caption = "Variabel Baru untuk 4 Kategori"
-) |>
+    escape = FALSE,) |>
     kable_styling(
         bootstrap_options = c("striped", "hover"),
         latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
@@ -394,18 +393,17 @@ Dari kasus tersebut, kita dapat menyimpulkan bahwa **variabel kategorik akan men
 
 ## Mencari Koefisien Variabel Independen Regresi Linear Berganda
 
-Untuk persamaan regresi linear sederhana, rumus untuk menghitung koefisien variabel independen adalah seperti yang ditunjukkan pada Persamaan \@ref(eq:rumus-koefisien-regresi-linear) yang ditulis ulang sebagai berikut.
+Untuk persamaan regresi linear sederhana, rumus untuk menghitung koefisien variabel independen adalah seperti yang ditunjukkan pada @eq-rumus-koefisien-regresi-linear yang ditulis ulang sebagai berikut.
 
 $$
 b = \frac{\sum^{n}_{i=1}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum^{n}_{i=1}(X_i - \bar{X})^2}
 $$
 
-Rumus tersebut menghitung selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikalikan dengan selisih antara nilai variabel dependen dengan nilai rata-ratanya. Hasilnya kemudian dibagi dengan selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikuadratkan. Ini hanya bisa dilakukan pada 2 variabel saja: satu variabel independen dan satu variabel dependen. Untuk yang lebih dari 2 variabel, kita perlu menggunakan rumus yang lebih kompleks, yaitu seperti yang ditunjukkan pada Persamaan \@ref(eq:rumus-koefisien-regresi-linear) [@chan2021introduction].
+Rumus tersebut menghitung selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikalikan dengan selisih antara nilai variabel dependen dengan nilai rata-ratanya. Hasilnya kemudian dibagi dengan selisih antara nilai variabel independen dengan nilai rata-ratanya, kemudian dikuadratkan. Ini hanya bisa dilakukan pada 2 variabel saja: satu variabel independen dan satu variabel dependen. Untuk yang lebih dari 2 variabel, kita perlu menggunakan rumus yang lebih kompleks, yaitu seperti yang ditunjukkan pada @eq-rumus-koefisien-regresi-linear [@chan2021introduction].
 
 $$
 \mathbf{b} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}
-(\#eq:rumus-koefisien-regresi-linear-berganda)
-$$
+$$ {#eq-rumus-koefisien-regresi-linear-berganda}
 
 Penjelasan dari rumus tersebut adalah sebagai berikut:
 
@@ -437,7 +435,7 @@ Nilai *R-squared* pada dasarnya akan selalu meningkat ketika jumlah variabel ind
 
 ### Signifikansi Model dan Variabel Independen (Uji F dan Uji t)
 
-Uji ini sama persis dengan yang sudah dibahas pada subbab \@ref(signifikansi-model), yakni menilai **keberartian hubungan pengaruh antara variabel independen dengan variabel dependennya**. Perbedaannya terletak pada **jumlah variabel independen** yang diuji. Pada regresi linear sederhana, kita hanya menguji satu variabel independen, sedangkan pada regresi linear berganda, kita menguji lebih dari satu variabel independen.
+Uji ini sama persis dengan yang sudah dibahas pada subbab @sec-signifikansi-model, yakni menilai **keberartian hubungan pengaruh antara variabel independen dengan variabel dependennya**. Perbedaannya terletak pada **jumlah variabel independen** yang diuji. Pada regresi linear sederhana, kita hanya menguji satu variabel independen, sedangkan pada regresi linear berganda, kita menguji lebih dari satu variabel independen.
 
 Oleh karena pada regresi linear sederhana kita hanya menggunakan satu variabel independen, maka uji signifikansi model sama saja dengan uji signifikansi variabel independennya. Namun, pada regresi linear berganda, kita perlu melakukan kedua uji tersebut secara terpisah.
 
@@ -449,13 +447,12 @@ Uji signifikansi variabel menggunakan nilai uji statistik t, yakni pengujian hip
 
 Untuk merealisasikan prinsip ***parsimony*** secara objektif, salah satu metode pencarian sekuensial yang sangat direkomendasikan adalah **metode *stepwise***. Metode ini secara iteratif **menyeleksi dan mengeliminasi** variabel independen dari dalam persamaan regresi berdasarkan **nilai uji F parsial**. Pada prosesnya, *stepwise* akan **memasukkan variabel baru** yang menyumbangkan akurasi prediksi signifikan, sekaligus **mengevaluasi ulang** variabel-variabel yang sudah lebih dahulu ada di dalam model. Jika ada variabel lama yang informasinya menjadi **tumpang tindih** dan **kehilangan signifikansi** akibat penambahan tersebut, **variabel lama itu akan dibuang**. Mekanisme seleksi ketat ini menjamin bahwa model akhir **hanya memuat variabel-variabel paling esensial** tanpa risiko ***overfitting***, sehingga keseimbangan antara **kesederhanaan model** dan **kebaikan suai (*goodness-of-fit*)** dapat tercapai secara maksimal.
 
-::: rmdkasus
-
-### Studi Kasus: Evaluasi dan Pemilihan Model Parsimoni {.unnumbered}
-
+::: {#kasus-evaluasi-dan-pemilihan-model-parsimoni .kasus title="Evaluasi dan Pemilihan Model Parsimoni"}
 Mari kita aplikasikan prinsip evaluasi dan seleksi *stepwise* pada *dataset* kasus multikolinearitas yang sebelumnya telah kita singgung. Pertama-tama, kita buat model regresi penuh (*full model*) yang memasukkan seluruh variabel independen ke dalam persamaan.
 
-```{r bab14-model-penuh-evaluasi, echo=TRUE}
+```{r}
+#| label: bab14-model-penuh-evaluasi
+#| echo: true
 # Membuat model regresi dengan seluruh variabel
 model_mk_penuh <- lm(
     iku ~ jarak_taman + jarak_industri + vegetasi + zona,
@@ -470,7 +467,9 @@ Jika dicermati pada *output* model penuh, nilai *p-value* untuk variabel `jarak_
 
 Untuk menanggulangi penumpukan variabel redundan tersebut dan mencari model yang paling parsimoni, kita menggunakan fungsi `step()` di R sebagai implementasi mekanisme *stepwise*.
 
-```{r bab14-model-stepwise-evaluasi, echo=TRUE}
+```{r}
+#| label: bab14-model-stepwise-evaluasi
+#| echo: true
 # Melakukan seleksi stepwise
 model_mk_stepwise <- step(
     model_mk_penuh,
@@ -493,10 +492,7 @@ Demonstrasi tersebut membuktikan secara konklusif bahwa pembuangan variabel-vari
 
 
 
-::: rmdexercise
-
-## Soal Evaluasi 15 {-}
-
+::: {#latihan-regresi-berganda-1 .latihan}
 1. [STP-13.1]{.capaian} Sebuah penelitian ingin mengetahui hubungan kausal antara Tingkat Penggunaan Transportasi Umum dengan sejumlah variabel. Peneliti pertama menghasilkan persamaan model seperti berikut.
    
    $$Y = 11{,}2 + 0{,}7X_1$$
