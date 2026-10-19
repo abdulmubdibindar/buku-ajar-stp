@@ -21,6 +21,7 @@ Keterangan:
 - Persamaan yang tidak dirujuk: `$$ … $$` tanpa label (tidak bernomor di HTML
   maupun PDF).
 - Label unik di seluruh buku; label ganda membuat PDF gagal dikompilasi.
+- Keterangan simbol langsung di bawah persamaan, sebagai daftar.
 
 ## Agar tampil di PDF (Typst)
 
@@ -32,7 +33,6 @@ Keterangan:
   `$$ \begin{gathered} H_0: \mu = 5 \\ H_1: \mu < 5 \end{gathered} $$`.
 - Satu backslash per perintah: `$\mu$`, bukan `$\\mu$` (escape string R tidak
   berlaku di markdown maupun di `#| fig-cap:`).
-- Keterangan simbol langsung di bawah persamaan, sebagai daftar.
 
 ## Angka di dalam math
 
