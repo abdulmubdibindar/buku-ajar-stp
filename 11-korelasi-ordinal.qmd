@@ -1,17 +1,21 @@
-﻿# Korelasi Antarvariabel Ordinal {#korelasi-antarvariabel-ordinal}
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
 
-::: rmdcapaian
-### Capaian Pembelajaran {.unnumbered}
+# Korelasi Antarvariabel Ordinal {#sec-korelasi-antarvariabel-ordinal}
 
+::: {#capaian-korelasi-ordinal .capaian}
 Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran ordinal dengan tepat [STP-10.1]{.capaian}
 
 :::
 
-Pada bab ini, penjelasan analisis asosiasi bivariat sama dengan yang telah dijelaskan pada bab sebelumnya. Hanya saja, pada bab ini jenis variabel yang akan dianalisis adalah **variabel ordinal**. Sebagai pengingat, variabel dengan jenis ordinal ini adalah variabel yang memiliki ragam nilai kategori yang dapat diurutkan (contoh: tinggi â€“ sedang â€“ rendah, dsb).
+Pada bab ini, penjelasan analisis asosiasi bivariat sama dengan yang telah dijelaskan pada bab sebelumnya. Hanya saja, pada bab ini jenis variabel yang akan dianalisis adalah **variabel ordinal**. Sebagai pengingat, variabel dengan jenis ordinal ini adalah variabel yang memiliki ragam nilai kategori yang dapat diurutkan (contoh: tinggi – sedang – rendah, dsb).
 
-Untuk mengukur korelasi antarvariabel ordinal, kita akan mempelajari koefisien-koefisien yang sesuai, di antaranya Gamma ($\gamma$) dari Goodman dan Kruskal, $d$ dari Sommer, dan tau-b ($\tau$-b) dari Kendall yang secara konseptual sama dengan korelasi berbasis proporsi kesalahan yang dikurangi (PRE) seperti yang dibahas pada subbab \@ref(koefisien-korelasi-nominal-error).
+Untuk mengukur korelasi antarvariabel ordinal, kita akan mempelajari koefisien-koefisien yang sesuai, di antaranya Gamma ($\gamma$) dari Goodman dan Kruskal, $d$ dari Sommer, dan tau-b ($\tau$-b) dari Kendall yang secara konseptual sama dengan korelasi berbasis proporsi kesalahan yang dikurangi (PRE) seperti yang dibahas pada subbab @sec-koefisien-korelasi-nominal-error.
 
-## Koefisien Gamma ($\gamma$) dari Goodman dan Kruskal {#gamma}
+## Koefisien Gamma ($\gamma$) dari Goodman dan Kruskal {#sec-gamma}
 Goodman and Kruskal's $\gamma$ digunakan untuk mengukur korelasi antarvariabel ordinal, khususnya variabel yang **memiliki kategori nilai yang relatif lebih sedikit** (tidak lebih dari lima atau enam kategori) [@devaus2014surveys].
 
 Pengukuran koefisien Gamma dapat menjawab tiga pertanyaan dasar mengenai asosiasi bivariat pada variabel ordinal sebagai berikut:
@@ -26,8 +30,7 @@ Rumus untuk menghitung koefisien Gamma adalah sebagai berikut:
 
 $$
 \gamma = \frac{C - D}{C + D}
-(\#eq:gamma)
-$$
+$$ {#eq-gamma}
 
 dengan:
 
@@ -36,11 +39,12 @@ dengan:
 
 Simak kasus berikut untuk mempelajari apa yang dimaksud dengan pasangan frekuensi *concordant* dan *discordant*.
 
-::: rmdkasus
-### Studi Kasus: Pasangan Frekuensi Concordant* dan *Discordant* {.unnumbered}
+::: {#kasus-pasangan-frekuensi-concordant-dan-discordant .kasus title="Pasangan Frekuensi Concordant* dan *Discordant*"}
 Kita akan meninjau korelasi antara variabel **"tingkat uang saku"** dan **"tingkat semester perkuliahan"**. Perhatikan kategori nilai dalam kedua variabel tersebut sebagai berikut beserta kode yang akan digunakan pada tabel silangnya.
 
-```{r tbl-variabel-ordinal, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-variabel-ordinal
+#| tbl-cap: 'Kategori Nilai pada Variabel Tingkat Uang Saku dan Tingkat Semester'
 library(kableExtra)
 
 df_var <- data.frame(
@@ -54,7 +58,6 @@ df_var <- data.frame(
 )
 
 tbl_out <- kbl(df_var,
-  caption = "Kategori Nilai pada Variabel Tingkat Uang Saku dan Tingkat Semester",
   format.args = list(big.mark = ".", decimal.mark = ","),
   escape = FALSE
 ) |>
@@ -73,7 +76,9 @@ tbl_out
 
 Setelah diobservasi, tabel silangnya adalah sebagai berikut.
 
-```{r tbl-crosstab-ordinal, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-crosstab-ordinal
+#| tbl-cap: 'Tabel Silang Antara Tingkat Uang Saku dan Tingkat Semester'
 library(kableExtra)
 
 df_cross <- data.frame(
@@ -87,7 +92,6 @@ df_cross <- data.frame(
 )
 
 tbl_out <- kbl(df_cross,
-  caption = "Tabel Silang Antara Tingkat Uang Saku dan Tingkat Semester",
   format.args = list(big.mark = ".", decimal.mark = ","),
   align = c("l", rep("c", 5)),
   escape = FALSE
@@ -107,9 +111,9 @@ tbl_out
 
 **Pembahasan**
 
-Dari metadata di Tabel \@ref(tab:tbl-variabel-ordinal) tersebut, sangat jelas bahwa kedua variabel memiliki tingkat pengukuran **ordinal**, karena pada masing-masing variabel kita dapat melihat ada **tingkatan yang logis** dari tiap nilainya. Kemudian, pada kedua variabel tersebut, nilai-nilai yang ada hanyalah nilai-nilai diskret atau **kategoris**. Misalnya, jika dilihat dari kategorinya saja, kita tidak akan tahu pasti "<Rp1 juta" itu apakah Rp900 ribu atau Rp500 ribu.
+Dari metadata di @tbl-variabel-ordinal tersebut, sangat jelas bahwa kedua variabel memiliki tingkat pengukuran **ordinal**, karena pada masing-masing variabel kita dapat melihat ada **tingkatan yang logis** dari tiap nilainya. Kemudian, pada kedua variabel tersebut, nilai-nilai yang ada hanyalah nilai-nilai diskret atau **kategoris**. Misalnya, jika dilihat dari kategorinya saja, kita tidak akan tahu pasti "<Rp1 juta" itu apakah Rp900 ribu atau Rp500 ribu.
 
-Pada Tabel \@ref(tab:tbl-crosstab-ordinal) tersebut, nilai-nilai yang ada pada baris dan kolom adalah nilai-nilai **frekuensi** atau jumlah responden yang memiliki kombinasi kategori nilai tertentu. Misalnya, pada baris pertama kolom pertama, kita dapat melihat bahwa ada **58 responden** yang memiliki tingkat uang saku "<Rp1 juta" dan tingkat semester "Semester 1 - Semester 2" (kode $a$ dan $w$).
+Pada @tbl-crosstab-ordinal tersebut, nilai-nilai yang ada pada baris dan kolom adalah nilai-nilai **frekuensi** atau jumlah responden yang memiliki kombinasi kategori nilai tertentu. Misalnya, pada baris pertama kolom pertama, kita dapat melihat bahwa ada **58 responden** yang memiliki tingkat uang saku "<Rp1 juta" dan tingkat semester "Semester 1 - Semester 2" (kode $a$ dan $w$).
 
 Yang dinamakan pasangan frekuensi ***concordant*** adalah dua frekuensi yang nilai kategori pada kedua variabel **sama-sama meningkat**. Pasangan frekuensi ***concordant*** dari tabel tersebut misalnya adalah  $aw$-$bx$, $aw$-$by$, $ax$-$by$, $ax$-$bz$, dan seterusnya. Sebaliknya, yang dinamakan pasangan ***discordant*** adalah pasangan kategori yang memiliki urutan yang **satu meningkat, satu lagi menurun**. Pasangan kategori ***discordant*** dari tabel tersebut misalnya adalah $az$-$by$, $az$-$bx$, $ay$-$bx$, dan seterusnya.
 
@@ -119,19 +123,22 @@ Pasangan $aw$-$ax$ **bukan pasangan *concordant***, karena walaupun variabel Tin
 
 Jika diilustrasikan, bentuk pasangan *concordant* dan *discordant* adalah sebagai berikut.
 
-```{r fig-ilustrasi-concordant-discordant, echo=FALSE, fig.cap="Ilustrasi Pasangan Frekuensi Concordant dan Discordant", fig.show="hold", fig.align="center"}
+```{r}
+#| label: fig-ilustrasi-concordant-discordant
+#| fig-cap: 'Ilustrasi Pasangan Frekuensi Concordant dan Discordant'
+#| fig.show: 'hold'
+#| fig-align: 'center'
 knitr::include_graphics("images/gabungin-ae-lah-capek.png")
 ```
 
-Nilai $C$ pada persamaan \@ref(eq:gamma) adalah penjumlahan dari perkalian seluruh frekuensi pasangan ***concordant***, sedangkan nilai $D$ adalah penjumlahan dari perkalian seluruh frekuensi pasangan ***discordant***.
+Nilai $C$ pada @eq-gamma adalah penjumlahan dari perkalian seluruh frekuensi pasangan ***concordant***, sedangkan nilai $D$ adalah penjumlahan dari perkalian seluruh frekuensi pasangan ***discordant***.
 
-::: rmdkasus
-### Studi Kasus: Menghitung Goodman & Kruskal's Gamma ($\gamma$) {.unnumbered}
-Setelah kita memahami apa yang dimaksud dengan pasangan frekuensi ***concordant*** dan ***discordant***, mari kita hitung nilai $C$ dan $D$ dari Tabel \@ref(tab:tbl-crosstab-ordinal).
+::: {#kasus-menghitung-goodman-kruskal-s-gamma .kasus title="Menghitung Goodman & Kruskal's Gamma ($\gamma$)"}
+Setelah kita memahami apa yang dimaksud dengan pasangan frekuensi ***concordant*** dan ***discordant***, mari kita hitung nilai $C$ dan $D$ dari @tbl-crosstab-ordinal.
 
 **Total perkalian seluruh frekuensi pasangan *concordant* ($C$)**
 
-Berdasarkan pada Gambar \@ref(fig:fig-ilustrasi-concordant-discordant) (a) dan disesuaikan dengan Tabel \@ref(tab:tbl-crosstab-ordinal), maka nilai $C$ adalah sebagai berikut.
+Berdasarkan pada @fig-ilustrasi-concordant-discordant (a) dan disesuaikan dengan @tbl-crosstab-ordinal, maka nilai $C$ adalah sebagai berikut.
 
 $$
 \begin{aligned}
@@ -151,7 +158,7 @@ $$
 
 **Total perkalian seluruh frekuensi pasangan *discordant* ($D$)**
 
-Berdasarkan pada Gambar \@ref(fig:fig-ilustrasi-concordant-discordant) (b) dan disesuaikan dengan Tabel \@ref(tab:tbl-crosstab-ordinal), maka nilai $D$ adalah sebagai berikut.
+Berdasarkan pada @fig-ilustrasi-concordant-discordant (b) dan disesuaikan dengan @tbl-crosstab-ordinal, maka nilai $D$ adalah sebagai berikut.
 
 $$
 \begin{aligned}
@@ -167,7 +174,7 @@ $$
 
 **Nilai Goodman & Kruskal's Gamma ($\gamma$)**
 
-Setelah mendapatkan nilai $C$ dan $D$, kita dapat menghitung nilai Goodman & Kruskal's Gamma ($\gamma$) dengan menggunakan persamaan \@ref(eq:gamma).
+Setelah mendapatkan nilai $C$ dan $D$, kita dapat menghitung nilai Goodman & Kruskal's Gamma ($\gamma$) dengan menggunakan @eq-gamma.
 
 $$
 \begin{aligned}
@@ -184,7 +191,7 @@ Dari koefisien $\gamma$ yang telah kita hitung, kita bisa mengetahui bahwa **hub
 
 :::
 
-## Koefisien $d$ dari Sommer {#sommersd}
+## Koefisien $d$ dari Sommer {#sec-sommersd}
 Untuk kasus pengujian korelasi antarvariabel ordinal dengan **ukuran kategori yang tidak sama (non-persegi)**, koefisien $d$ dari Sommer (*Sommer's* $d$) lebih sering digunakan dibandingkan dengan koefisien $\gamma$. Hal ini karena nilai koefisien $d$ dari Sommer dapat mencapai nilai sempurna, yaitu 1, meskipun jumlah kategori pada kedua variabel tidak sama. Dengan demikian, koefisien $d$ dari Sommer memiliki fleksibilitas yang lebih tinggi.
 
 Dalam perhitungannya, $d$ dari Sommer tidak hanya mempertimbangkan pasangan *concordant* dan *discordant*, tetapi juga keberadaan pasangan kasus yang terikat pada variabel independen. Hal ini menjadi pembeda utama $d$ dari Sommer dengan $\gamma$. Meskipun lebih konservatif, tetapi hasil estimasinya lebih baik.
@@ -195,8 +202,7 @@ Koefisien $d$ dari Sommer dapat dihitung dengan menggunakan rumus berikut:
 
 $$
 d = \frac{C - D}{C + D + T}
-(\#eq:rumus-sommersd)
-$$
+$$ {#eq-rumus-sommersd}
 
 dengan:
 
@@ -204,23 +210,26 @@ dengan:
 - $D$ adalah jumlah pasangan frekuensi ***discordant***
 - $T$ adalah jumlah pasangan frekuensi terikat *(tied ranks)* pada variabel independen
 
-Nilai koefisien Somersâ€™ D berada pada rentang 0 sampai dengan 1 sehingga dapat diinterpretasikan kekuatan asosiasinya, serta arah asosiasi dengan nilai positif ataupun negatif sebagaimana koefisien $\gamma$.
+Nilai koefisien Somers’ D berada pada rentang 0 sampai dengan 1 sehingga dapat diinterpretasikan kekuatan asosiasinya, serta arah asosiasi dengan nilai positif ataupun negatif sebagaimana koefisien $\gamma$.
 
 Pelajari kasus berikut untuk memahami perhitungan koefisien $d$ dari Sommer, terutama perhitungan komponen $T$.
 
-::: rmdkasus
-### Studi Kasus: Menghitung Sommer's $d$ {.unnumbered}
-Dalam perhitungan koefisien d Sommer (Sommerâ€™s d) kita sudah melibatkan penentuan variabel dependen dan independen, atau variabel yang dipengaruhi dan memengaruhi.
+::: {#kasus-menghitung-sommer-s .kasus title="Menghitung Sommer's $d$"}
+Dalam perhitungan koefisien d Sommer (Sommer’s d) kita sudah melibatkan penentuan variabel dependen dan independen, atau variabel yang dipengaruhi dan memengaruhi.
 
-Dalam kasus kita, yang paling masuk akal adalah mengatakan **â€œtingkat semester perkuliahan memengaruhi tingkat uang sakuâ€** ketimbang â€œtingkat uang saku memengaruhi tingkat semester perkuliahan.â€ Oleh karena itu, kita menganggap variabel independennya adalah Tingkat Semester Perkuliahan dan variabel dependennya Tingkat Uang Saku.
+Dalam kasus kita, yang paling masuk akal adalah mengatakan **“tingkat semester perkuliahan memengaruhi tingkat uang saku”** ketimbang “tingkat uang saku memengaruhi tingkat semester perkuliahan.” Oleh karena itu, kita menganggap variabel independennya adalah Tingkat Semester Perkuliahan dan variabel dependennya Tingkat Uang Saku.
 
 **Perhitungan $T$ atau pasangan frekuensi terikat (*tied ranks*)**
 
-Perhitungan T adalah jumlah dari perkalian pasangan-pasangan *concordant* dari tabel silang kita, tetapi per ruas tempat variabel independennya berlokasi. Merujuk pada tabel silang kita yang ada di Tabel \@ref(tab:tbl-crosstab-ordinal), variabel independen kita berada ***di kolom***. Oleh karena itu, kita perlu menghitung perkalian pasangan-pasangan *concordant* yang ada di kolom.
+Perhitungan T adalah jumlah dari perkalian pasangan-pasangan *concordant* dari tabel silang kita, tetapi per ruas tempat variabel independennya berlokasi. Merujuk pada tabel silang kita yang ada di @tbl-crosstab-ordinal, variabel independen kita berada ***di kolom***. Oleh karena itu, kita perlu menghitung perkalian pasangan-pasangan *concordant* yang ada di kolom.
 
 Seperti halnya perhitungan $C$ dan $D$ pada koefisien $\gamma$ sebelumnya, perhitungan $T$ diilustrasikan sebagai berikut.
 
-```{r fig-ilustrasi-tied-rank, echo=FALSE, out.width = '60%', fig.align = "center", fig.cap = 'Ilustrasi Perhitungan Pasangan Terikat (Tied Ranks)'}
+```{r}
+#| label: fig-ilustrasi-tied-rank
+#| out-width: '60%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Perhitungan Pasangan Terikat (Tied Ranks)'
 knitr::include_graphics("images/ilustrasi-tied-rank.png")
 ```
 
@@ -269,7 +278,7 @@ Nilai tersebut tidak jauh berbeda dengan nilai koefisien $\gamma$ yang tadi kita
 :::
 
 
-## Koefisien tau-b ($\tau$-b) dari Kendall {#kendall}
+## Koefisien tau-b ($\tau$-b) dari Kendall {#sec-kendall}
 Koefisien tau-b dari Kendall (*Kendall's* $\tau_b$) memiliki banyak kemiripan prinsip dengan koefisien $\gamma$. Koefisien $\tau_b$ Kendall akan efektif apabila digunakan pada **tabel silang berbentuk persegi** dengan banyak kasus yang cenderung menghasilkan **peringkat yang sama (tied ranks)**. Dalam pengukurannya, koefisien $tau_b$ juga mempertimbangkan prinsip pasangan terikat sebagaimana yang disertakan oleh koefisien $d$ dari Sommer, tetapi tidak hanya di variabel dependen melainkan juga di variabel dependennya.
 
 Koefisien $\tau_b$ Kendall memiliki sifat simetris, sehingga posisi variabel X dan variabel Y tidak bermasalah apabila ditukar.
@@ -278,12 +287,13 @@ Akan tetapi, jika pun diaplikasikan, setelah kita menghitung koefisien $d$, kita
 
 $$
 \tau_b = \frac{C - D}{\sqrt{(C + D + T_x)(C + D + T_y)}}
-(\#eq:rumus-kendaltaub)
-$$
+$$ {#eq-rumus-kendaltaub}
 
 Secara keseluruhan, perbandingan penggunaan ketiga koefisien korelasi variabel ordinal kita adalah seperti berikut.
 
-```{r tbl-perbandingan-koefisien-ordinal, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-perbandingan-koefisien-ordinal
+#| tbl-cap: 'Perbandingan Karakteristik Koefisien Korelasi Ordinal'
 library(kableExtra)
 
 df_perbandingan <- data.frame(
@@ -307,7 +317,6 @@ df_perbandingan <- data.frame(
 )
 
 tbl_out <- kbl(df_perbandingan,
-  caption = "Perbandingan Karakteristik Koefisien Korelasi Ordinal",
   escape = FALSE
 ) |>
   kable_styling(
@@ -324,10 +333,7 @@ tbl_out <- kbl(df_perbandingan,
 tbl_out
 ```
 
-::: rmdkasus
-
-### Studi Kasus: Menghitung Kendall's $\tau_b$ {.unnumbered}
-
+::: {#kasus-menghitung-kendall-s .kasus title="Menghitung Kendall's $\tau_b$"}
 Nilai *tied ranks* sudah kita hitung untuk variabel independen yang ada di kolom pada perhitungan koefisien $d$ Sommer, yaitu sebesar $T_x = 245.191$. Sekarang, kita perlu menghitung nilai $T$ untuk variabel dependen yang ada di baris, yaitu $T_y$.
 
 $$
@@ -352,7 +358,7 @@ $$
 
 dengan demikian, nilai $T_y$ kita adalah penjumlahan seluruh nilai di atas, yaitu sebesar $T_y = 269.555$.
 
-Kita pun bisa menghitung nilai $\tau_b$ Kendall dengan memasukkan nilai $C$, $D$, $T_x$, dan $T_y$ ke dalam persamaan \@ref(eq:rumus-kendaltaub).
+Kita pun bisa menghitung nilai $\tau_b$ Kendall dengan memasukkan nilai $C$, $D$, $T_x$, dan $T_y$ ke dalam @eq-rumus-kendaltaub.
 
 $$
 \begin{aligned}
@@ -369,12 +375,12 @@ $$
 
 Kerjakan soal evaluasi berikut untuk mengukur pemahaman Anda mengenai koefisien korelasi ordinal.
 
-::: rmdexercise
-## Soal Evaluasi 12 {.unnumbered}
-
+::: {#latihan-korelasi-ordinal-1 .latihan}
 Perhatikan tabel silang yang menunjukkan distribusi frekuensi  dari 100 orang peserta musrenbang (musyawarah perencanaan pembangunan) di suatu lingkungan berdasarkan variabel persepsi mereka terhadap keberjalanan musrenbang dan tingkat partisipasi mereka. [STP-10.1]{.capaian}
 
-```{r tbl-evaluasi-musrenbang, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-evaluasi-musrenbang
+#| tbl-cap: 'Distribusi Frekuensi Persepsi vs Kehadiran Peserta Musrenbang'
 library(kableExtra)
 
 df_eval <- data.frame(
@@ -389,7 +395,6 @@ df_eval <- data.frame(
 names(df_eval) <- safe_html(names(df_eval))
 
 tbl_out <- kbl(df_eval,
-  caption = "Distribusi Frekuensi Persepsi vs Kehadiran Peserta Musrenbang",
   format.args = list(big.mark = ".", decimal.mark = ","),
   align = c("l", "c", "c", "c")
 ) |>
