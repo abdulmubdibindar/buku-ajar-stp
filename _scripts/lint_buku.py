@@ -129,7 +129,7 @@ def lint(path, ids, fix):
         raw = raw[1:]
     lines = raw.split("\n")
     out = []
-    in_code = False
+    in_code = in_math = False
     stack = []  # (panjang fence, jenis callout atau None)
     for i, line in enumerate(lines):
         n = i + 1
@@ -188,6 +188,11 @@ def lint(path, ids, fix):
             issues.append((n, "daftar", "butir daftar tanpa baris kosong sebelumnya", True))
             if fix:
                 out.append("")
+
+        if line.strip().startswith("$$") and line.strip().count("$$") == 1:
+            in_math = not in_math
+        elif not in_math and re.match(r"^\s*\\begin\{(align|equation|gather|multline)\*?\}", line):
+            issues.append((n, "bookdown", "persamaan LaTeX mentah di luar $$ (hilang di PDF)", False))
 
         for pattern, msg in BOOKDOWN:
             if pattern.search(line):

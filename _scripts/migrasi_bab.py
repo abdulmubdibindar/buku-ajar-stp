@@ -6,7 +6,8 @@ Pemakaian (dari akar proyek):
 Yang dikerjakan:
   - blok rmdcapaian/rmdkasus/rmdexercise/rmdnote -> callout baru
     (.capaian/.kasus/.latihan/.catatan/.penting), heading judul -> title
-  - persamaan (\\#eq:x) dan \\begin{equation} -> $$ ... $$ {#eq-x}
+  - persamaan (\\#eq:x) dan \\begin{equation}/\\begin{align} (juga di luar
+    $$, yang hilang di PDF Typst) -> $$ ... $$ {#eq-x}
   - chunk {r label, opsi=...} -> {r} + #| label/opsi gaya Quarto;
     label grafik diberi awalan fig-, label tabel tbl-, caption kbl() -> tbl-cap
   - \\@ref(fig:x)/\\@ref(tab:x)/\\@ref(eq:x)/\\@ref(sec) -> @fig-/@tbl-/@eq-/@sec-
@@ -211,6 +212,60 @@ def convert_equations(lines):
     return out
 
 
+RAW_BEGIN = re.compile(r"^(\s*)\\begin\{(align|equation|gather|multline)\*?\}\s*$")
+WRAP = {"align": "aligned", "gather": "gathered"}
+
+
+def convert_raw_math(lines):
+    """\\begin{align|equation|...} di luar $$ -> $$ ... $$ {#eq-x}.
+
+    Lingkungan LaTeX mentah dibuang pandoc saat menulis Typst, sehingga
+    persamaannya hilang dari PDF.
+    """
+    out = []
+    i = 0
+    in_math = in_code = False
+    while i < len(lines):
+        line = lines[i]
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            in_code = not in_code
+        elif not in_code and stripped.startswith("$$") and stripped.count("$$") == 1:
+            in_math = not in_math
+        m = None if (in_code or in_math) else RAW_BEGIN.match(line)
+        if not m:
+            out.append(line)
+            i += 1
+            continue
+        indent, env = m.group(1), m.group(2)
+        j = i + 1
+        while j < len(lines) and not re.match(r"^\s*\\end\{" + env + r"\*?\}", lines[j]):
+            j += 1
+        labels = []
+        body = []
+        for b in lines[i + 1 : j]:
+            if b.strip().startswith("%"):
+                continue
+            for lm in re.finditer(r"\(\\#eq:([\w-]+)\)", b):
+                labels.append(lm.group(1))
+            b = re.sub(r"\s*\(\\#eq:[\w-]+\)", "", b)
+            b = re.sub(r"\\(nonumber|notag)\b", "", b)
+            b = b.replace("\\begin{split}", "\\begin{aligned}").replace("\\end{split}", "\\end{aligned}")
+            if b.strip():
+                body.append(b.rstrip())
+        if len(labels) > 1:
+            note(f"PERIKSA persamaan {labels}: hanya label pertama dipakai")
+        out.append(indent + "$$")
+        if env in WRAP:
+            out.append(indent + "\\begin{" + WRAP[env] + "}")
+        out.extend(body)
+        if env in WRAP:
+            out.append(indent + "\\end{" + WRAP[env] + "}")
+        out.append(indent + "$$" + (f" {{#eq-{labels[0]}}}" if labels else ""))
+        i = j + 1
+    return out
+
+
 def convert_blocks(lines, bab_slug):
     out = []
     i = 0
@@ -308,6 +363,7 @@ def migrate(path):
     lines = text.split("\n")
     lines = convert_blocks(lines, bab_slug)
     lines = convert_equations(lines)
+    lines = convert_raw_math(lines)
     lines = convert_chunks(lines, fig_labels, tbl_labels)
     text = "\n".join(lines)
 
