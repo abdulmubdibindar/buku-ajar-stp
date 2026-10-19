@@ -1,0 +1,24 @@
+- [`@01-markdown-basic.md`](01-markdown-basic.md) : membahas dasar-dasar sintaks Markdown yang didukung oleh Quarto
+- [`@02-figures.md`](02-figures.md) : panduan menyisipkan, memformat layout, dan menambahkan keterangan (caption) pada gambar atau figur
+- [`@03-Tables.md`](03-Tables.md) : berbagai cara untuk membangun tabel di Quarto (pipe tables, list tables, dll)
+- [`@04-diagrams.md`](04-diagrams.md) : panduan membangun diagram menggunakan kode (seperti Mermaid atau Graphviz)
+- [`@05-shortcodes-overview.md`](05-shortcodes-overview.md) : pengantar penggunaan shortcodes di Quarto
+- [`@0501-shortcodes-placeholder-image.md`](0501-shortcodes-placeholder-image.md) : shortcode untuk membuat gambar penanda (placeholder)
+- [`@0502-shortcodes-lorem.md`](0502-shortcodes-lorem.md) : shortcode untuk menyisipkan teks lorem ipsum
+- [`@0503-rearrange-contents.md`](0503-rearrange-contents.md) : shortcode untuk memanipulasi susunan urutan elemen
+- [`@0504-quarto-version.md`](0504-quarto-version.md) : shortcode untuk menampilkan informasi versi aplikasi Quarto
+- [`@06-embeds.md`](06-embeds.md) : menyematkan konten dari file lain (misalnya Jupyter Notebook)
+- [`@06-videos.md`](06-videos.md) : panduan embed file video maupun link video daring
+- [`@07-callout-blocks.md`](07-callout-blocks.md) : cara membuat blok peringatan atau callouts (Note, Tip, Warning, Caution, dll)
+- [`@08-code-annotation.md`](08-code-annotation.md) : panduan membuat anotasi untuk memberikan penjelasan di dalam blok kode
+- [`@09-brand.md`](09-brand.md) : konfigurasi desain visual untuk mengimplementasikan branding
+- [`@10-article-layout.md`](10-article-layout.md) : penyesuaian tata letak (layout) halaman, penempatan di area margin, dan format multi-kolom
+- [`@11-front-matter.md`](11-front-matter.md) : panduan detail tentang opsi-opsi metadata YAML front-matter
+- [`@12-title-blocks.md`](12-title-blocks.md) : penyesuaian blok judul, struktur afiliasi, atribusi penulis, dll
+- [`@13-citations.md`](13-citations.md) : dokumentasi untuk menggunakan bibliografi dan melakukan sitasi otomatis pada naskah
+- [`@14-crossref-basic.md`](14-crossref-basic.md) : dasar-dasar referensi silang (cross-reference) antar elemen seperti tabel, gambar, atau bab
+- [`@15-crossref-options.md`](15-crossref-options.md) : opsi pengaturan format referensi silang kustom
+- [`@16-crossref-div-syntax.md`](16-crossref-div-syntax.md) : referensi silang dengan pendekatan sintaks fenced div untuk sub-figur
+- [`@17-custom-floats.md`](17-custom-floats.md) : membuat lingkungan rujukan/elemen bernomor khusus di luar tabel dan gambar
+- [`@18-creating-citeable-articles.md`](18-creating-citeable-articles.md) : mempersiapkan metadata artikel agar mudah dikutip oleh reference manager
+- [`@19-appendices.md`](19-appendices.md) : format pengaturan bagian lampiran, daftar pustaka, dan bab-bab backmatter pendukung

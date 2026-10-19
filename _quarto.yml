@@ -1,0 +1,93 @@
+# Quarto 1.7 belum mendukung buku Typst; diuji dengan 1.10.19.
+quarto-required: ">= 1.10.0"
+
+project:
+  type: book
+  output-dir: docs
+  pre-render: _scripts/indeks_callout.py
+
+execute:
+  freeze: auto
+
+number-sections: true
+
+crossref:
+  chapters: true
+  # Terjemahan bawaan Quarto untuk id memakai "Perhitungan"
+  eq-prefix: Persamaan
+
+# Callout Capaian/Studi Kasus/Soal Latihan/Penting/Catatan. Harus pre-ast
+# agar div yang dihasilkan masih diproses menjadi callout oleh Quarto.
+filters:
+  - path: callout-buku.lua
+    at: pre-ast
+
+lang: id
+
+book:
+  title: "Buku Ajar Statistika untuk Perencanaan"
+  author:
+    - "Muhammad Abdul Mubdi Bindar"
+    - "Husna Tiara Putri"
+    - "Valendya Rilansari"
+  language: id
+  repo-url: "https://github.com/abdulmubdibindar/buku-ajar-stp"  
+  
+  chapters:
+    - index.qmd
+    - 00-a-pengantar.qmd
+    - 00-b-lembar-persembahan.qmd
+    - 01-konsep-dasar.qmd
+    - 02-data-terstruktur.qmd
+    - 03-statistik-deskriptif.qmd
+    - 04-visualisasi-data.qmd
+    - 05-pengantar-inferensial.qmd
+    - 06-estimasi-parameter.qmd
+    - 07-uji-hipotesis-satu-populasi.qmd
+    - 08-uji-hipotesis-dua-populasi.qmd
+    - 10-korelasi-nominal.qmd
+    - 11-korelasi-ordinal.qmd
+    - 12-korelasi-metrik.qmd
+    - 13-regresi-sederhana.qmd
+    - 14-regresi-berganda.qmd
+    - 15-multivariat-interdependensi.qmd
+    - 89-referensi.qmd
+
+  appendices:
+    - 90-lampiran-tabel-statistik.qmd
+  
+  page-navigation: true
+  page-footer:
+    border: false
+    left: "Perencanaan Wilayah dan Kota, Fakultas Teknologi Infrastruktur dan Kewilayahan, Institut Teknologi Sumatera"
+
+bibliography: referensi.bib
+
+fig-dpi: 300
+
+editor_options:
+  markdown:
+    wrap: 80
+    canonical: true
+
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: style.css
+    df-print: paged
+    code-copy: hover
+    code-annotations: hover
+    toc-expand: true
+    
+  typst:
+    toc: true
+    include-in-header: _typst/kotak-buku.typ
+    number-sections: true
+    toc-depth: 4
+    columns: 1
+    margin:
+      x: 2cm
+      y: 2.5cm

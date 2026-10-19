@@ -4,3 +4,19 @@
 .Ruserdata
 notebooklm/
 prompts
+
+**/*.quarto_ipynb
+
+# Keluaran & cache Quarto (HTML sengaja di docs/ untuk GitHub Pages)
+/_book/
+/_book_html/
+/_book_pdf/
+/_freeze/
+/.quarto/
+/html_freeze/
+/typst_freeze/
+/pdf_freeze/
+_callout-index.json
+
+__pycache__/
+/_uji_render/

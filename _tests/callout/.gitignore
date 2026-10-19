@@ -1,0 +1,7 @@
+_out/
+.quarto/
+style.css
+_callout-index.json
+
+/.quarto/
+**/*.quarto_ipynb

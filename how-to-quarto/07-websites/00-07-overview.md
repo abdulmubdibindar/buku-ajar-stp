@@ -1,0 +1,15 @@
+- [`@01-creating-a-website-positron.md`](01-creating-a-website-positron.md) : inisialisasi awal proyek website biasa menggunakan editor Positron
+- [`@01-creating-a-website-rstudio.md`](01-creating-a-website-rstudio.md) : inisialisasi awal proyek website biasa menggunakan editor RStudio
+- [`@01-creating-a-website-terminal.md`](01-creating-a-website-terminal.md) : inisialisasi awal proyek website biasa melalui Terminal (CLI)
+- [`@01-creating-a-website-vscode.md`](01-creating-a-website-vscode.md) : inisialisasi awal proyek website biasa menggunakan editor VS Code
+- [`@02-website-nav.md`](02-website-nav.md) : mengelola bilah menu (navbar), menu samping (sidebar), dan skema navigasi halaman
+- [`@03-creating-blog-positron.md`](03-creating-blog-positron.md) : inisialisasi awal proyek format blog menggunakan editor Positron
+- [`@03-creating-blog-rstudio.md`](03-creating-blog-rstudio.md) : inisialisasi awal proyek format blog menggunakan editor RStudio
+- [`@03-creating-blog-terminal.md`](03-creating-blog-terminal.md) : inisialisasi awal proyek format blog melalui Terminal (CLI)
+- [`@03-creating-blog-vscode.md`](03-creating-blog-vscode.md) : inisialisasi awal proyek format blog menggunakan editor VS Code
+- [`@04-website-drafts.md`](04-website-drafts.md) : menyimpan artikel atau proyek sementara sebagai wujud draft tanpa mengeksposnya ke publik
+- [`@05-website-search.md`](05-website-search.md) : mengaktifkan dan menyesuaikan perilaku fitur pencarian (search engine) lokal
+- [`@06-website-tools.md`](06-website-tools.md) : menambahkan fitur perkakas pihak ketiga ke web Anda (misalnya analitik trafik, komentar)
+- [`@08-about-pages.md`](08-about-pages.md) : template untuk membangun halaman Tentang Kami (About pages) yang responsif
+- [`@09-document-listings.md`](09-document-listings.md) : men-generate senarai/daftar dokumen blog secara otomatis berdasarkan metadata konten
+- [`@10-custom-listings.md`](10-custom-listings.md) : teknik penyesuaian (kustomisasi) untuk tata letak grid dan daftar pustaka item pada laman web
