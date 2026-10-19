@@ -119,12 +119,13 @@ def convert_chunks(lines, fig_labels, tbl_labels):
     i = 0
     while i < len(lines):
         line = lines[i]
-        m = re.match(r"^```\{r\s*(.*)\}\s*$", line)
-        if not m or not m.group(1).strip():
+        m = re.match(r"^(\s*)```\{r\s*(.*)\}\s*$", line)
+        if not m or not m.group(2).strip():
             out.append(line)
             i += 1
             continue
-        parts = split_options(m.group(1).lstrip(",").strip())
+        indent = m.group(1)
+        parts = split_options(m.group(2).lstrip(",").strip())
         label = None
         opts = []
         for p in parts:
@@ -149,7 +150,7 @@ def convert_chunks(lines, fig_labels, tbl_labels):
 
         # Badan chunk
         j = i + 1
-        while j < len(lines) and not lines[j].startswith("```"):
+        while j < len(lines) and not lines[j].lstrip().startswith("```"):
             j += 1
         body = lines[i + 1 : j]
 
@@ -167,11 +168,11 @@ def convert_chunks(lines, fig_labels, tbl_labels):
             else:
                 note(f"PERIKSA tabel '{label}': caption tidak ditemukan, tambahkan #| tbl-cap")
 
-        out.append("```{r}")
+        out.append(indent + "```{r}")
         if label:
-            out.append(f"#| label: {label}")
+            out.append(f"{indent}#| label: {label}")
         for k, v in opts:
-            out.append(f"#| {k}: {v}")
+            out.append(f"{indent}#| {k}: {v}")
         out.extend(body)
         if j < len(lines):
             out.append(lines[j])

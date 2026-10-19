@@ -12,7 +12,8 @@ Galat (keluar dengan kode 1):
   bookdown    sisa sintaks Bookdown: \\@ref(), (\\#...), ::: rmd...
   callout     callout bernomor tanpa id/berprefiks salah, studi kasus tanpa title,
               id ganda, atau heading di dalam callout
-  rujukan     @kasus-/@latihan-/@capaian- ke id yang tidak ada
+  rujukan     @fig-/@tbl-/@eq-/@sec-/@kasus-/@latihan-/@capaian- ke label
+              yang tidak ada di bab mana pun
   tabel       font_size pada tabel (huruf tabel diatur global)
 
 Peringatan (tinjau manual, lihat skill tinjau-bab):
@@ -31,12 +32,14 @@ FENCE_OPEN = re.compile(r"^\s*(:{3,})\s*\{([^}]*)\}")
 FENCE_LEGACY = re.compile(r"^\s*:{3,}\s*\{?\s*\.?(rmd\w+)")
 FENCE_CLOSE = re.compile(r"^\s*(:{3,})\s*$")
 CODE = re.compile(r"^\s*(```|~~~)")
-REF = re.compile(r"(?<![\w@])@((?:kasus|latihan|capaian)-[\w:-]*\w)")
+REF = re.compile(r"(?<![\w@])@((?:fig|tbl|eq|sec|kasus|latihan|capaian)-[\w:-]*\w)")
+LABEL_ATTR = re.compile(r"\{#([\w:.-]+)")
+LABEL_CHUNK = re.compile(r"^\s*#\|\s*label:\s*(\S+)")
 
 BOOKDOWN = [
     (re.compile(r"\\@ref\("), "\\@ref() -> @fig-/@tbl-/@eq-/@sec-"),
     (re.compile(r"\(\\#(eq|fig|tab):"), "label (\\#...) -> {#eq-...} atau #| label:"),
-    (re.compile(r"\{\.tajuksaya\}"), ".tajuksaya -> callout .penting/.catatan"),
+    (re.compile(r"\{\.tajuksaya\}"), ".tajuksaya -> teks tebal, atau callout .penting/.catatan"),
     (re.compile(r"^#\s+\(APPENDIX\)"), "(APPENDIX) -> book.appendices di _quarto.yml"),
 ]
 
@@ -100,11 +103,19 @@ def collect_ids(files):
                 if CODE.match(line):
                     in_code = not in_code
                     continue
-                m = None if in_code else FENCE_OPEN.match(line)
+                if in_code:
+                    m = LABEL_CHUNK.match(line)
+                    if m:
+                        ids.setdefault(m.group(1), []).append(f"{path}:{n}")
+                    continue
+                m = FENCE_OPEN.match(line)
                 if m:
                     classes, ident, _ = parse_attrs(m.group(2))
                     if ident and any(c in NUMBERED for c in classes):
                         ids.setdefault(ident, []).append(f"{path}:{n}")
+                    continue
+                for label in LABEL_ATTR.findall(line):
+                    ids.setdefault(label, []).append(f"{path}:{n}")
     return ids
 
 
@@ -138,6 +149,8 @@ def lint(path, ids, fix):
 
         if CODE.match(line):
             in_code = not in_code
+            if re.match(r"^\s*```\{r\s+[^}]*[=,]", line):
+                issues.append((n, "bookdown", "opsi chunk gaya knitr -> #| label/opsi", False))
             out.append(line)
             continue
         if in_code:
