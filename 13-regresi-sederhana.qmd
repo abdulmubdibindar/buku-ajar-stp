@@ -282,8 +282,7 @@ model_iku_30 <- lm(iku_obs ~ jarak_obs)
 
 Mengingat analisis ini hanya melibatkan **satu variabel independen** (jarak), maka asumsi **non-multikolinearitas secara otomatis tidak diperlukan**. Selain itu, memandang pengamatan dilakukan pada beberapa lokasi berbeda pada satu waktu yang sama (*cross-section*), asumsi **non-autokorelasi umumnya juga dipandang telah terpenuhi secara konseptual**. Oleh karena itu, kita hanya akan melakukan uji diagnostik atas asumsi yang tersisa, yaitu **linearitas & homoskedastisitas**, serta **normalitas residual**.
 
-[Uji Linearitas dan Homoskedastisitas]{.tajuksaya}
-
+**Uji Linearitas dan Homoskedastisitas**
 Pemeriksaan linearitas dan pemerataan varians galat (homoskedastisitas) paling mudah dilakukan secara visual menggunakan diagram *Residuals vs Fitted* (plot titik galat terhadap titik prediksi).
 
 ```{r}
@@ -300,8 +299,7 @@ abline(h = 0, lty = 2, col = "red")
 
 Pada *output* pengujian ($n = 30$) ini, titik-titik residual tersebut idealnya tersebar secara acak di sekitar batas atas dan bawah dari garis $0$ secara simetris, tanpa membentuk pola pelebaran/penyempitan seperti corong (sebagai representasi persetujuan asumsi homoskedastisitas) maupun garis tren berwarna merah yang terlihat melengkung tajam memanjang (sebagai representasi pemenuhan asumsi linearitas).
 
-[Uji Normalitas Residual]{.tajuksaya}
-
+**Uji Normalitas Residual**
 Untuk memastikan tingkat keyakinan yang akurat dalam analisis kita nanti, galat model perlu berdistribusi normal. Salah satu alat uji yang sangat umum dan direkomendasikan adalah uji Shapiro-Wilk.
 
 ```{r}
@@ -354,8 +352,7 @@ Mari kita pelajari studi kasus berikut untuk lebih memahami bagaimana memperoleh
 ::: {#kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk .kasus title="Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara"}
 Menggunakan data dari studi kasus sebelumnya, kita akan memperoleh persamaan regresi linear sederhana untuk hubungan antara jarak ke taman kota dan Indeks Kualitas Udara (IKU).
 
-[Langkah 1: Periksa Diagram Pencar]{.tajuksaya}
-
+**Langkah 1: Periksa Diagram Pencar**
 Sebelum menghitung persamaan regresi, kita perlu memastikan bahwa data memenuhi asumsi-asumsi yang diperlukan. Langkah pertama adalah menyajikan **diagram pencar** (*scatterplot*) dari data di atas.
 
 ```{r}
@@ -382,8 +379,7 @@ Berdasarkan diagram pencar pada @fig-scatter-jarak-iku, kita dapat mengevaluasi 
 - **Hubungan linear antara variabel independen dan variabel dependen.** Dari diagram pencar, terlihat bahwa titik-titik data tersebar mengikuti pola yang cenderung menurun dari kiri ke kanan, mengindikasikan adanya hubungan yang bersifat linear antara jarak ke taman dan kualitas udara. Asumsi ini **terpenuhi**.
 - **Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain.** Titik-titik data tampak tersebar secara acak di sekitar pola linear tersebut—sebagian berada di atas dan sebagian berada di bawah garis kecenderungan—tanpa membentuk pola khusus seperti kipas atau lengkungan. Asumsi ini **terpenuhi**.
 
-[Langkah 2: Hitung Rata-Rata $X$ dan $Y$]{.tajuksaya}
-
+**Langkah 2: Hitung Rata-Rata $X$ dan $Y$**
 Sebelum mengisi tabel pembantu, kita hitung terlebih dahulu rata-rata dari variabel jarak ($\bar{X}$) dan Indeks Kualitas Udara ($\bar{Y}$).
 
 ```{r}
@@ -396,8 +392,7 @@ $$\bar{X} = \frac{\sum_{i=1}^{30} X_i}{30} = `r format(mean_X, decimal.mark = ",
 
 $$\bar{Y} = \frac{\sum_{i=1}^{30} Y_i}{30} = `r format(mean_Y, decimal.mark = ",", nsmall = 2)`$$
 
-[Langkah 3: Susun Tabel Pembantu]{.tajuksaya}
-
+**Langkah 3: Susun Tabel Pembantu**
 Untuk mempermudah penghitungan nilai $b$ menggunakan @eq-rumus-koefisien-regresi-linear, kita susun tabel pembantu berikut. Tabel ini memuat selisih setiap nilai $X_i$ dan $Y_i$ dari rata-ratanya masing-masing, hasil perkalian selisih tersebut per objek, serta kuadrat selisih nilai $X_i$ dari rata-ratanya.
 
 ```{r}
@@ -455,8 +450,7 @@ if (knitr::is_html_output()) {
 tbl_out2
 ```
 
-[Langkah 4: Hitung Nilai $b$]{.tajuksaya}
-
+**Langkah 4: Hitung Nilai $b$**
 Dengan menggunakan hasil penjumlahan dari tabel pembantu di atas, kita dapat menghitung nilai koefisien regresi $b$ menggunakan @eq-rumus-koefisien-regresi-linear.
 
 ```{r}
@@ -464,17 +458,15 @@ Dengan menggunakan hasil penjumlahan dari tabel pembantu di atas, kita dapat men
 b_val <- sum_dXdY / sum_dX2
 ```
 
-\begin{equation}
-\begin{split}
+$$
+\begin{aligned}
 b &= \frac{\sum_{i=1}^{n}(X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^{n}(X_i - \bar{X})^2} \\
   &= \frac{`r format(sum_dXdY, decimal.mark = ",", big.mark = ".", nsmall = 2)`}{`r format(sum_dX2, decimal.mark = ",", big.mark = ".", nsmall = 2)`} \\
   &= `r format(b_val, decimal.mark = ",", nsmall = 2)`
-\end{split}
-(\#eq:hitung-b-kasus)
-\end{equation}
+\end{aligned}
+$$ {#eq-hitung-b-kasus}
 
-[Langkah 5: Hitung Nilai $a$]{.tajuksaya}
-
+**Langkah 5: Hitung Nilai $a$**
 Setelah memperoleh nilai $b$, kita gunakan @eq-rumus-konstanta-regresi-linear untuk menghitung konstanta $a$.
 
 ```{r}
@@ -482,17 +474,15 @@ Setelah memperoleh nilai $b$, kita gunakan @eq-rumus-konstanta-regresi-linear un
 a_val <- mean_Y - b_val * mean_X
 ```
 
-\begin{equation}
-\begin{split}
+$$
+\begin{aligned}
 a &= \bar{Y} - b\bar{X} \\
   &= `r format(mean_Y, decimal.mark = ",", nsmall = 2)` - (`r format(b_val, decimal.mark = ",", nsmall = 2)`) \times `r format(mean_X, decimal.mark = ",", nsmall = 2)` \\
   &= `r format(a_val, decimal.mark = ",", nsmall = 2)`
-\end{split}
-(\#eq:hitung-a-kasus)
-\end{equation}
+\end{aligned}
+$$ {#eq-hitung-a-kasus}
 
-[Persamaan Regresi yang Terbentuk]{.tajuksaya}
-
+**Persamaan Regresi yang Terbentuk**
 Dari hasil perhitungan di atas, diperoleh nilai $b \approx `r format(round(b_val, 1), decimal.mark = ",")`$ dan $a \approx `r format(round(a_val, 1), decimal.mark = ",")`$. Dengan demikian, persamaan regresi linear sederhana yang menjelaskan pengaruh jarak ke taman kota terhadap Indeks Kualitas Udara adalah:
 
 $$\hat{Y} = `r format(round(a_val, 2), decimal.mark = ",")` + (`r format(round(b_val, 2), decimal.mark = ",")`)X$$
@@ -525,8 +515,7 @@ ggplot(df_scatter2, aes(x = X, y = Y)) +
     theme_bw()
 ```
 
-[Pemanfaatan Persamaan Regresi Linear]{.tajuksaya}
-
+**Pemanfaatan Persamaan Regresi Linear**
 Dengan memperoleh persamaan regresi linear sederhana, kita dapat menggunakannya untuk memprediksi nilai variabel dependen berdasarkan nilai variabel independen. Misalnya, jika kita ingin memprediksi IKU suatu lokasi yang berjarak 8 km dari taman kota, kita cukup substitusikan $X = 8$ ke dalam persamaan regresi yang diperoleh. Hasilnya adalah $\hat{Y} = `r format(round(a_val, 2), decimal.mark = ",")` + (`r format(round(b_val, 2), decimal.mark = ",")`) \times 8 = `r format(round(a_val + b_val * 8, 2), decimal.mark = ",")` poin IKU.
 
 :::
