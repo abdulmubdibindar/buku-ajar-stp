@@ -14,7 +14,7 @@ Tabel berikut menyajikan luas area di bawah kurva distribusi normal standar dari
 #| label: fig-ilustrasi-z-table
 #| fig-align: 'center'
 #| out-width: '45%'
-#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi Normal Standar: $P(0 \\leq Z \\leq z)$'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi Normal Standar: $P(0 \leq Z \leq z)$'
 library(ggplot2)
 
 x <- seq(-3.5, 3.5, length.out = 500)
@@ -60,7 +60,7 @@ ggplot(d, aes(x, y)) +
 
 ```{r}
 #| label: tbl-distribusi-z
-#| tbl-cap: 'Tabel Distribusi Normal Standar $P(0 \\leq Z \\leq z)$'
+#| tbl-cap: 'Tabel Distribusi Normal Standar $P(0 \leq Z \leq z)$'
 library(dplyr)
 library(kableExtra)
 
@@ -116,7 +116,7 @@ Untuk ekor kiri, cukup ubah tanda nilai $t$ pada tabel ini menjadi negatif.
 #| label: fig-ilustrasi-t-table-1arah
 #| fig-align: 'center'
 #| out-width: '45%'
-#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi t Satu Arah: $P(t > t_{tabel}) = \\alpha$'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi t Satu Arah: $P(t > t_{tabel}) = \alpha$'
 library(ggplot2)
 
 df_ex <- 15
@@ -216,7 +216,7 @@ Tabel berikut menyajikan nilai $t_{kritis}$ pada pengujian dua arah (*two-tailed
 #| label: fig-ilustrasi-t-table-2arah
 #| fig-align: 'center'
 #| out-width: '45%'
-#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi t Dua Arah: $P(|t| > t_{tabel}) = \\alpha$'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi t Dua Arah: $P(|t| > t_{tabel}) = \alpha$'
 library(ggplot2)
 
 df_ex <- 15
@@ -330,7 +330,7 @@ Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 
 #| label: fig-ilustrasi-f-table-10
 #| fig-align: 'center'
 #| out-width: '45%'
-#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi F ($\\alpha = 10\\%$): $P(F > F_{tabel}) = 0{,}10$'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi F ($\alpha = 10\%$): $P(F > F_{tabel}) = 0{,}10$'
 library(ggplot2)
 
 df1 <- 5
@@ -382,7 +382,7 @@ ggplot(d, aes(x, y)) +
 
 ```{r}
 #| label: tbl-distribusi-f-10persen
-#| tbl-cap: 'Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 10\\%$'
+#| tbl-cap: 'Tabel Distribusi F pada Tingkat Signifikansi $\alpha = 10\%$'
 library(dplyr)
 library(kableExtra)
 
@@ -431,7 +431,7 @@ Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 
 #| label: fig-ilustrasi-f-table-05
 #| fig-align: 'center'
 #| out-width: '45%'
-#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi F ($\\alpha = 5\\%$): $P(F > F_{tabel}) = 0{,}05$'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi F ($\alpha = 5\%$): $P(F > F_{tabel}) = 0{,}05$'
 library(ggplot2)
 
 df1 <- 5
@@ -483,7 +483,7 @@ ggplot(d, aes(x, y)) +
 
 ```{r}
 #| label: tbl-distribusi-f-5persen-lampiran
-#| tbl-cap: 'Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 5\\%$'
+#| tbl-cap: 'Tabel Distribusi F pada Tingkat Signifikansi $\alpha = 5\%$'
 library(dplyr)
 library(kableExtra)
 

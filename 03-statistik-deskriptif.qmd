@@ -1117,21 +1117,21 @@ kbl(stat_rentang,
 **Perhitungan Rentang untuk UIN RIL:**
 
 $$
-\begin{align}
+\begin{aligned}
 \text{Rentang}_{\text{UIN RIL}} &= \text{Maks} - \text{Min}\\
 &= 150 - 0\\
 &= 150
-\end{align}
+\end{aligned}
 $$
 
 **Perhitungan Rentang untuk UNILA:**
 
 $$
-\begin{align}
+\begin{aligned}
 \text{Rentang}_{\text{UNILA}} &= \text{Maks} - \text{Min}\\
 &=400 - 0\\
 &=400
-\end{align}
+\end{aligned}
 $$
 
 Nilai spesifik untuk minimum, maksimum, dan rentang dapat dilihat pada tabel di atas.
@@ -1241,10 +1241,10 @@ $$ {#eq-konsep-variansi}
 Karena nilai variansi dihasilkan dari kuadrat selisih nilai objek dengan rata-rata, maka satuannya juga ikut dikuadratkan. Ini membuat penafsiran menjadi aneh. Untuk menormalkannya, ditariklah akar kuadrat dari variansi itu yang dinamakan **simpangan baku** (*standard deviation*).
 
 $$
-\begin{align}
+\begin{aligned}
 \text{Simpangan Baku} &= \sqrt{\text{Variansi}}\\
 &=\sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}}
-\end{align}
+\end{aligned}
 $$ {#eq-konsep-simpangan-baku}
 
 Nilai variansi dan simpangan baku yang kecil menunjukkan bahwa nilai tiap-tiap objek cenderung berdekatan dengan nilai rata-ratanya. Sebaliknya, nilai variansi dan simpangan baku yang besar menunjukkan bahwa nilai tiap-tiap objek cenderung berjauhan dengan nilai rata-ratanya.

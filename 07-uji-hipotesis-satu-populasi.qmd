@@ -502,8 +502,10 @@ Mari kita pelajari kasus lain yang langkah-langkahnya lebih terlihat dari awal s
 Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah **rata-rata sama dengan 5 km**. Untuk bentuk hipotesis alternatifnya, kita berusaha membuktikan agar klaim kita bahwa "penyediaan bus akan efektif saat rata-rata jarak tempuh dari tempat tinggal <5 km" bisa menolak hipotesis kosong. Dengan demikian, bentuk hipotesis alternatif kita adalah kondisi di mana penyediaan bus akan efektif (<5 km).
 
 $$
+\begin{gathered}
 H_0: \mu = 5 \text{ km}\\
 H_1: \mu < 5 \text{ km}
+\end{gathered}
 $$
 
 Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa rata-rata jarak adalah 5 km. $H_1$ berusaha menolak hipotesis kosong dengan mengeklaim bahwa penyediaan bus efisien, di saat rata-rata <5 km.
@@ -686,8 +688,10 @@ Skenario layanan Bus Kampus sama dengan @kasus-bus-rata-rata.
 Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah **proporsi mahasiswa yang berminat sama dengan 80%**. Untuk bentuk hipotesis alternatifnya, kita berusaha untuk membuktikan klaim bahwa program akan berhasil jika minat melebihi 80%. Dengan demikian, bentuk hipotesis alternatif kita adalah $H_1: P > 0,8$.
 
 $$
+\begin{gathered}
 H_0: P = 0,8 \\
 H_1: P > 0,8
+\end{gathered}
 $$
 
 Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa besaran proporsi adalah 0,8. $H_1$ berusaha menolak hipotesis kosong dengan mengeklaim bahwa program akan berhasil di saat proporsi > 0,8.

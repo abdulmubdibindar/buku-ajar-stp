@@ -235,7 +235,7 @@ c. **Menetapkan Wilayah Kritis dari Signifikansi**
 #| label: fig-wilayah-kritis-dua-vs-satu-ekor
 #| fig-align: 'center'
 #| out-width: '90%'
-#| fig-cap: 'Ilustrasi wilayah kritis: uji dua ekor (kiri) dan uji satu ekor kanan (kanan) pada tingkat signifikansi $\\alpha$ = 10%'
+#| fig-cap: 'Ilustrasi wilayah kritis: uji dua ekor (kiri) dan uji satu ekor kanan (kanan) pada tingkat signifikansi $\alpha$ = 10%'
 library(ggplot2)
 library(patchwork)
 
@@ -880,13 +880,13 @@ Di mana $MSB$ adalah *Mean Square Between* atau variansi antar kelompok, dan $MS
 
 - Untuk menghitung $MSB$ sendiri kita menggunakan persamaan berikut
 
-$$
+  $$
   MSB = \frac{SSB}{dfb}
   $$ {#eq-rumus-msb-anova}
 
   $SSB$ sendiri kita hitung dengan persamaan berikut
 
-$$
+  $$
   SSB = \sum_{i=1}^{k} n_i (\bar{x}_i - \bar{x})^2
   $$ {#eq-rumus-ssb-anova}
 
@@ -898,25 +898,25 @@ $$
 
 - Untuk menghitung $MSW$ kita menggunakan persamaan berikut
 
-$$
+  $$
   MSW = \frac{SSW}{dfw}
   $$ {#eq-rumus-msw-anova}
 
   Dalam prosedur ANOVA, variasi total dari seluruh skor dibagi menjadi dua komponen utama: variasi **di dalam** kelompok ($SSW$) dan variasi **antar** kelompok ($SSB$). Jika keduanya dijumlahkan, kita mendapatkan nilai variasi total (*Total Sum of Squares*, $SST$) yang dinyatakan sebagai
 
-$$
+  $$
   SST = SSB + SSW
   $$ {#eq-rumus-sst-anova}
 
   sehingga $SSW$ dapat diperoleh dengan
 
-$$
+  $$
   SSW = SST - SSB
   $$ {#eq-rumus-ssw-anova}
 
   $SST$ sendiri terlebih dahulu dihitung dengan persamaan
 
-$$
+  $$
   SST = \sum x^2 - N\bar{x}^2
   $$ {#eq-rumus-sst-detail-anova}
 
@@ -946,15 +946,15 @@ c. **Menetapkan Wilayah Kritis dan Titik Kritis**
    Wilayah kritis kita adalah nilai $\alpha$ yang digunakan untuk pengujian, yakni 5%. Untuk mencari titik kritisnya, maka kita harus menggunakan Tabel $F$ dengan $\alpha = 5\%$.
    Untuk menentukan titik kritisnya, kita menggunakan dua besaran derajat kebebasan $dfb$ dan $dfw$.
    
-$$
-   \begin{align}
+   $$
+   \begin{aligned}
    dfb &= K - 1 \\
        &= 3 - 1 \\
        &= 2 \\
    dfw &= N - K \\
        &= 1.172 - 3 \\
        &= 1.169
-   \end{align}
+   \end{aligned}
    $$
    
    Oleh karena nilai $dfw$ sangat besar, kita menggunakan angka tak hingga ($\infty$).
@@ -974,13 +974,13 @@ d. **Menghitung Statistik Uji**
      | 25      | 625     |
      | $\dots$ | $\dots$ |
 
-$$
-     \begin{align}
-     \sum x_i^2 &= 22.500 + 22.500 + 625 + 625 + 625 + \dots = 11.205.372 \nonumber\\
-     SST &= \sum x_i^2 - N\bar{x}^2 \nonumber\\
-     &= 11.205.372 - 1.172(70,29)^2 \nonumber\\
-     &\approx \mathbf{5.414.663} \nonumber
-     \end{align}
+     $$
+     \begin{aligned}
+     \sum x_i^2 &= 22.500 + 22.500 + 625 + 625 + 625 + \dots = 11.205.372 \\
+     SST &= \sum x_i^2 - N\bar{x}^2 \\
+     &= 11.205.372 - 1.172(70,29)^2 \\
+     &\approx \mathbf{5.414.663}
+     \end{aligned}
      $$
 
    - **Nilai Variasi Antar-Kelompok ($SSB$)**: Variansi ini mengukur seberapa jauh perbedaan rata-rata tiap kampus ($\bar{x}_j$) terhadap rata-rata gabungan keseluruhannya (*grand mean*). Karena jumlah sampel kita sangat banyak, perhitungannya bisa dipersingkat. Kita cukup mencari selisih rata-rata tiap kampus dengan *grand mean*, mengkuadratkannya, lalu mengalikannya dengan jumlah sampel di kampus tersebut ($n_j$):  
@@ -991,28 +991,28 @@ $$
      | UNILA        | 394   | 74,00       | 3,71                    | 13,76                     | **5.423,1**                  |
      | UBL          | 378   | 99,18       | 28,89                   | 834,63                    | **315.490,9**                |
 
-$$
-     \begin{align}
+     $$
+     \begin{aligned}
      SSB &= \sum n_j(\bar{x}_j - \bar{x})^2 \\
      &= 383.408{,}6 + 5.423{,}1 + 315.490{,}9 \\
      &= \mathbf{704.322{,}6} \approx \mathbf{704.352{,}5}
-     \end{align}
+     \end{aligned}
      $$
      
    - **Nilai Variasi Dalam-Kelompok ($SSW$)**: Nilai ini mewakili variasi alami yang memang terjadi di dalam observasi masing-masing kelompok kampus. Alih-alih menghitung rumusnya dari awal satu per satu, kita bisa memanfaatkan sifat penjumlahan komponen variasi secara langsung. Kita cukup mengurangkan variasi total ($SST$) dengan variasi antar-kelompok ($SSB$):  
    
-$$
-     \begin{align}
-     SSW &= SST - SSB \nonumber\\
-         &= 5.414.663 - 704.352{,}5 \nonumber\\
-         &= \mathbf{4.710.310{,}5} \nonumber
-     \end{align}
+     $$
+     \begin{aligned}
+     SSW &= SST - SSB \\
+         &= 5.414.663 - 704.352{,}5 \\
+         &= \mathbf{4.710.310{,}5}
+     \end{aligned}
      $$
 
      Nilai variasi $SSB$ dan $SSW$ yang baru saja kita dapatkan belum bisa dibandingkan secara langsung. Kita harus menstandarkannya terlebih dahulu dengan membaginya menggunakan besaran derajat kebebasannya ($df$) masing-masing untuk memperoleh nilai rata-rata kuadrat atau *Mean Square* ($MSB$ dan $MSW$). Setelah itu, barulah kita bisa mendapatkan nilai $F_{hitung}$ dari pembagian antara $MSB$ dan $MSW$:  
    
-$$
-     \begin{align}
+     $$
+     \begin{aligned}
      MSB &= \frac{SSB}{dfb} \\
          &= \frac{704.352{,}5}{2} \\
          &= 352.176{,}2 \\
@@ -1022,7 +1022,7 @@ $$
      F_{hitung} &= \frac{MSB}{MSW} \\
          &= \frac{352.176{,}2}{4.029{,}3} \\
          &= \mathbf{87{,}4}
-     \end{align}
+     \end{aligned}
      $$
 
 e. **Menarik Kesimpulan**  

@@ -150,7 +150,7 @@ Pertama, kita buat tabel yang menyandingkan nilai jarak ke taman ($X$) dengan ni
 
 ```{r}
 #| label: tbl-bahan-regresi
-#| tbl-cap: 'Nilai Prediksi Indeks Kualitas Udara ($\\hat{Y}$) Berdasarkan Persamaan Regresi'
+#| tbl-cap: 'Nilai Prediksi Indeks Kualitas Udara ($\hat{Y}$) Berdasarkan Persamaan Regresi'
 library(kableExtra)
 
 # Ambil 5 data pertama dari dataset 30 observasi di Bab 12

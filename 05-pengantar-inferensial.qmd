@@ -696,16 +696,16 @@ Di mana:
 - $N - 1$ digunakan sebagai koreksi bias pada sampel kecil [@healey2021statistics].
 
 ::: {#kasus-menghitung-nilai-sampel-jarak-tempuh .kasus title="Menghitung Nilai $t$ Sampel Jarak Tempuh"}
-Sebuah penelitian sebelumnya menduga bahwa rata-rata jarak tempat tinggal mahasiswa ITERA ke kampus adalah 5 km ($\\mu = 5$). Untuk menguji pernyataan tersebut, kita mengambil sampel acak sebanyak 20 mahasiswa ($N = 20$) dari pangkalan data mahasiswa ITERA dan menghitung jarak tempat tinggal mereka.
+Sebuah penelitian sebelumnya menduga bahwa rata-rata jarak tempat tinggal mahasiswa ITERA ke kampus adalah 5 km ($\mu = 5$). Untuk menguji pernyataan tersebut, kita mengambil sampel acak sebanyak 20 mahasiswa ($N = 20$) dari pangkalan data mahasiswa ITERA dan menghitung jarak tempat tinggal mereka.
 
-Dari sampel tersebut, didapatkan rata-rata sampel ($\\bar{X}$) sebesar 7,2 km dengan simpangan baku sampel ($s$) sebesar 3,8 km. Berapakah nilai statistik $t$ untuk sampel ini?
+Dari sampel tersebut, didapatkan rata-rata sampel ($\bar{X}$) sebesar 7,2 km dengan simpangan baku sampel ($s$) sebesar 3,8 km. Berapakah nilai statistik $t$ untuk sampel ini?
 
 **Penyelesaian:**
 
 Berdasarkan data yang kita peroleh dari sampel, kita memiliki informasi sebagai berikut.
 
-- $\\bar{X} = 7,2$
-- $\\mu = 5$
+- $\bar{X} = 7,2$
+- $\mu = 5$
 - $s = 3,8$
 - $N = 20$
 - Derajat bebas ($df$) = $N - 1 = 20 - 1 = 19$
@@ -713,14 +713,14 @@ Berdasarkan data yang kita peroleh dari sampel, kita memiliki informasi sebagai 
 Kita dapat menghitung nilai $t$ (*t-obtained*) menggunakan persamaan distribusi $t$ yang sebelumnya telah dibahas:
 
 $$
-\\begin{align}
-t &= \\frac{\\bar{X} - \\mu}{s / \\sqrt{N - 1}} \\\\
-&= \\frac{7,2 - 5}{3,8 / \\sqrt{20 - 1}} \\\\
-&= \\frac{2,2}{3,8 / \\sqrt{19}} \\\\
-&= \\frac{2,2}{3,8 / 4,3589} \\\\
-&= \\frac{2,2}{0,8718} \\\\
+\begin{aligned}
+t &= \frac{\bar{X} - \mu}{s / \sqrt{N - 1}} \\
+&= \frac{7,2 - 5}{3,8 / \sqrt{20 - 1}} \\
+&= \frac{2,2}{3,8 / \sqrt{19}} \\
+&= \frac{2,2}{3,8 / 4,3589} \\
+&= \frac{2,2}{0,8718} \\
 &= 2,523
-\\end{align}
+\end{aligned}
 $$
 
 Nilai $t = 2{,}523$ menunjukkan bahwa rata-rata jarak sampel (7,2 km) berada pada 2,523 *standard error* di atas nilai rata-rata populasi yang diduga (5 km).
@@ -1044,18 +1044,18 @@ Sebagaimana yang sudah kita pelajari, distribusi statistik berbeda dengan distri
 Dalam distribusi objek, lebar distribusi berkaitan dengan ukuran statistik deskriptif yang disebut **standar deviasi** atau **simpangan baku**. Simpangan baku menunjukkan ukuran jarak rata-rata penyimpangan nilai-nilai dalam distribusi terhadap rata-ratanya. Untuk penyegaran, rumusnya adalah sebagai berikut.
 
 $$
-\begin{align}
+\begin{aligned}
 \text{Simpangan Baku} &= \sqrt{\text{Variansi}}\\
 &=\sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}}
-\end{align}
+\end{aligned}
 $$ {#eq-konsep-simpangan-baku-bab5}
 
 Di sisi lain, dalam distribusi statistik simpangan bakunya punya sebutan lain, yakni ***standard error*** (SE). *Standard error* pada hakikatnya adalah adalah **ukuran jarak statistik sampel dari parameter populasi**. Ingat kembali bahwa **rata-rata dari distribusi statistik adalah nilai parameter populasinya**. Semakin kecil SE, semakin presisi estimasi sampel kita terhadap parameter populasi. Secara matematis, standard error dihitung dari simpangan baku sampel kita dengan rumus berikut.
 
 $$
-\begin{align}
+\begin{aligned}
 \text{SE} &=\frac{\sigma}{\sqrt{n}}
-\end{align}
+\end{aligned}
 $$ {#eq-konsep-standard-error-bab5}
 
 Dengan $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel.
@@ -1063,9 +1063,9 @@ Dengan $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel.
 Jika $\sigma$ tidak diketahui, kita gunakan simpangan baku sampel ($s$) sebagai estimasi, sehingga @eq-konsep-standard-error-bab5 menjadi:
 
 $$
-\begin{align}
+\begin{aligned}
 \text{SE} &=\frac{s}{\sqrt{n}}
-\end{align}
+\end{aligned}
 $$ {#eq-konsep-se-pake-sd}
 
 
@@ -1076,9 +1076,9 @@ $$ {#eq-konsep-se-pake-sd}
 Dalam beberapa sumber, seperti @healey2021statistics, perhitungan *standard error* yang menggunakan estimasi dari simpangan baku seperti @eq-konsep-se-pake-sd menggunakan bentuk yang dikoreksi, yakni dengan cara mengurangkan 1 dari nilai ukuran sampelnya, sehingga persamaannya menjadi:
 
 $$
-\begin{align}
+\begin{aligned}
 \text{SE} &=\frac{s}{\sqrt{n-1}}
-\end{align}
+\end{aligned}
 $$ {#eq-konsep-se-pake-sd-healey}
 
 Yang mana yang betul? Karena keduanya sama-sama disebutkan dalam banyak literatur, di sini yang perlu kita perhatikan adalah **konsistensi kita** dalam penggunaan salah satunya.
@@ -1105,11 +1105,11 @@ sd_sampel <- sd(satu_sampel$jarak)
 Dari sampel ini, kita peroleh rata-rata jarak $\bar{x} = `r round(mean_sampel, 2)`$ km. Kita tahu simpangan baku populasi $\sigma = `r round(sigma, 2)`$ km. Maka *Standard error* adalah:
 
 $$
-\begin{align}
+\begin{aligned}
 SE &=\frac{s}{\sqrt{n}}\\
 &= \frac{`r round(sigma, 2)`}{\sqrt{100}} \\
 &= `r round(sigma / 10, 4)`
-\end{align}
+\end{aligned}
 $$
 
 Nilai ini memberitahu kita bahwa rata-rata sampel kita (`r round(mean_sampel, 2)`) diperkirakan menyimpang sekitar $\pm `r round(sigma/10, 2)`$ km dari rata-rata populasi sebenarnya.
@@ -1127,9 +1127,9 @@ Berapakah standard error dari distribusi statistik sampel tersebut?
 *Z-score* menunjukkan posisi suatu nilai dalam sumbu X distribusi normal **jika rata-rata distribusi tersebut dibuat 0** dan **simpangan bakunya dibuat 1**. Untuk distribusi objek, rumusnya adalah:
 
 $$
-\begin{align}
+\begin{aligned}
 Z = \frac{x - \mu}{\sigma}
-\end{align}
+\end{aligned}
 $$ {#eq-z-score}
 
 Dengan $x$ adalah nilai dalam distribusi normal yang akan kita konversi, $\mu$ melambangkan rata-rata distribusi, dan $\sigma$ melambangkan simpangan baku distribusi.
@@ -1144,12 +1144,12 @@ Dalam sebuah sampel yang berjumlah 100 orang, kita mempunyai distribusi biaya pe
 *Z-score* nilainya dihitung sebagai berikut:
 
 $$
-\begin{align}
+\begin{aligned}
 Z &= \frac{x - \mu}{\sigma} \\
 &= \frac{65.000 - 50.000}{10.000} \\
 &= \frac{15.000}{10.000} \\
 &= 1,5
-\end{align}
+\end{aligned}
 $$
 
 Nilai $Z = 1,5$ berarti biaya perjalanan orang tersebut berada 1,5 kali simpangan baku di atas rata-rata populasi.
@@ -1163,12 +1163,12 @@ Misalkan dari 100 orang tersebut, kita juga mempunyai distribusi jarak tempuh de
 *Z-score* nilainya dihitung sebagai berikut:
 
 $$
-\begin{align}
+\begin{aligned}
 Z &= \frac{x - \mu}{\sigma} \\
 &= \frac{13 - 10}{2} \\
 &= \frac{3}{2} \\
 &= 1,5
-\end{align}
+\end{aligned}
 $$
 
 Meskipun menggunakan satuan yang berbeda (biaya dalam Rupiah versus jarak dalam kilometer), nilai *Z-score* pada kedua variabel tersebut ternyata sama ($Z=1,5$). Hal ini berarti biaya perjalanan sebesar 65.000 dan jarak tempuh sejauh 13 km memiliki "posisi" relatif yang sama, yakni sama-sama melampaui 1,5 simpangan baku di atas rata-ratanya masing-masing. Inilah wujud nyata bagaimana *Z-score* menyetarakan nilai-nilai dengan satuan yang berbeda ke dalam satu ukuran standar.
@@ -1177,16 +1177,16 @@ Meskipun menggunakan satuan yang berbeda (biaya dalam Rupiah versus jarak dalam 
 Jika kita menggunakan konsep *Z-Score* tersebut pada distribusi statistik, @eq-z-score akan berubah dari $x$ menjadi $\bar{x}$ dan $\sigma$ menjadi $SE$:
 
 $$
-\begin{align}
+\begin{aligned}
 Z = \frac{\bar{x} - \mu}{SE}
-\end{align}
+\end{aligned}
 $$ {#eq-z-score-sampling-distribution}
 
 Dengan $\bar{x}$ adalah rata-rata sampel yang kita miliki, $\mu$ adalah rata-rata populasi (parameter) yang kita jadikan sebagai patokan, dan $SE$ adalah *standard error* yang dihitung dengan @eq-konsep-se-pake-sd atau @eq-konsep-se-pake-sd-healey, sehingga @eq-z-score-sampling-distribution sama saja bentuknya dengan:
 
 $$
 Z = \frac{\bar{x} - \mu}{s/\sqrt{n}}
-$$ {#eq-z-score-sampling-distribution}
+$$ {#eq-z-score-sampling-distribution-s}
 
 ::: {#kasus-menghitung-z-score-rata-rata-sampel .kasus title="Menghitung *Z-Score* Rata-rata Sampel"}
 Melanjutkan kasus distribusi biaya perjalanan sebelumnya, dengan menggunakan nilai rata-rata, simpangan baku, dan ukuran sampel yang sama, asumsikan kita mengetahui bahwa rata-rata biaya perjalanan populasi ($\mu$) sebesar 52.000. Berapakah nilai *Z-score* dari rata-rata sampel tersebut?
@@ -1196,23 +1196,23 @@ Melanjutkan kasus distribusi biaya perjalanan sebelumnya, dengan menggunakan nil
 Pertama-tama, hitung terlebih dahulu nilai *standard error* (SE)-nya:
 
 $$
-\begin{align}
+\begin{aligned}
 SE &= \frac{s}{\sqrt{n}} \\
 &= \frac{10.000}{\sqrt{100}} \\
 &= \frac{10.000}{10} \\
 &= 1.000
-\end{align}
+\end{aligned}
 $$
 
 Selanjutnya, gunakan nilai SE tersebut untuk menghitung nilai *Z-score* dari rata-rata sampel yang kita peroleh:
 
 $$
-\begin{align}
+\begin{aligned}
 Z &= \frac{\bar{x} - \mu}{SE} \\
 &= \frac{50.000 - 52.000}{1.000} \\
 &= \frac{-2.000}{1.000} \\
 &= -2,0
-\end{align}
+\end{aligned}
 $$
 
 Nilai $Z = -2,0$ ini berarti angka rata-rata sampel yang kita himpun tersebut ($\bar{x} = 50.000$) menduduki posisi 2 simpangan baku (atau 2 kali *standard error*) di bawah asumsi parameter rata-rata populasinya ($\mu = 52.000$). Dalam hal ini, *Z-score* mencerminkan rentang penyimpangan sampel terhadap populasinya: semakin jauh nilai *Z-score* dari angka nol, semakin jauh sampel kita menyimpang. Jika sampel kita ternyata dikategorikan "terlalu menyimpang", ada kemungkinan terjadinya bias ketika kita menghimpun sampel ke lapangan, atau asumsi kita mengenai rata-rata populasi tersebutlah yang justru keliru.
@@ -1262,11 +1262,11 @@ Dengan sampel berukuran 100 orang yang memiliki rata-rata $\bar{x} = 51.500$ dan
 Kita perlu menghitung *Z-score* untuk $\bar{x}=51.500$ terlebih dahulu:
 
 $$
-\begin{align}
+\begin{aligned}
 Z &= \frac{51.500 - 52.000}{1.000} \\
 &= \frac{-500}{1.000} \\
 &= -0,5
-\end{align}
+\end{aligned}
 $$
 
 Sekarang kita memiliki dua singkapan tiang batas, yakni mulai dari $Z = -0,5$ hingga $Z = 0,0$ (rata-rata populasi). Kita dapat menggunakan tabel *Z-score* untuk menentukan probabilitas luasan di antara kedua nilai tersebut. Sebagai contoh, kita akan menggunakan @fig-distribusi-normal-area-bc.
@@ -1374,11 +1374,11 @@ ggplot(df_plot, aes(x, y)) +
 *Keempat*, jabarkan kembali variabel $Z$ ini (berkisar `1,64`) ke unit mata uang yang senyata-nyatanya:
 
 $$
-\begin{align}
+\begin{aligned}
 x &= 50.000 + (1,64 \cdot 10.000) \\
 &= 50.000 + 16.400 \\
 &= 66.450
-\end{align}
+\end{aligned}
 $$
 
 Ini membeberkan simpulan bahwa seorang mahasiswa akan tergolong di klaster "5% mahasiswa dengan perjalanan kampus tereksklusif" asalkan ia rutin mengeluarkan paling tidak Rp66.450 ribu per bulan.

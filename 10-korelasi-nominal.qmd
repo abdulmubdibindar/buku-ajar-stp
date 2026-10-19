@@ -622,13 +622,13 @@ Berdasarkan @eq-rumus-chi-square, nilai uji $\chi^2$ dihitung dengan menjumlahka
 Berikut adalah contoh perhitungan masing-masing selnya. Kita akan mulai dari sel paling kiri-atas, yakni $\text{Berjalan kaki} \times \text{Asrama}$, berjalan ke kanan pada baris $\text{Berjalan Kaki}$, yakni ke kolom $\text{Kos bersama-sama}$, kemudian $\text{Kos Sendiri}$, sampai ke sel paling kanan-bawah, $\text{Transportasi daring} \times \text{Rumah pribadi/rumah keluarga}$
 
 $$
-\begin{align}
+\begin{aligned}
 \chi^2 &= \sum \frac{(f_o - f_e)^2}{f_e} \\
 &= \frac{(10 - 19{,}65)^2}{19{,}65} + \frac{(5 - 4{,}47)^2}{4{,}47} + \dots + \frac{(16 - 19{,}65)^2}{19{,}65} \\
 &= \frac{93{,}1225}{19{,}65} + \frac{0{,}2304}{4{,}47} + \dots + \frac{10{,}5625}{19{,}65} \\
 &= 4{,}739 + 0{,}051 + \dots + 0{,}549 \\
 &= 146{,}4233
-\end{align}
+\end{aligned}
 $$
 
 Dengan derajat kebebasan `r uji_chisq$parameter` ($(b-1)\times(k-1)=(5-1)\times(7-1)=6\times4$), pada tingkat kepercayaan 95% ($\alpha=5\%$), nilai $\chi^2_{kritis}$ kita adalah `r format(qchisq(0.95, df = uji_chisq$parameter), digits = 4)`. Bila dibandingkan dengan nilai $\chi^2_{hitung}$ yang diperoleh, yakni 146,4233, maka nilai tersebut **lebih besar** dari nilai $\chi^2_{kritis}$.
@@ -908,11 +908,11 @@ Maka **jumlah kesalahan prediksi akhir ($E_2$) adalah 154**.
 Berdasarkan angka $E_1$ dan $E_2$ yang sudah dihitung sebelumnya, besaran koefisien Lambda ($\lambda$) adalah:
 
 $$
-\begin{align}
+\begin{aligned}
 \lambda &= \frac{E_1 - E_2}{E_1} \\
 &= \frac{`r e1_unila` - `r e2_unila`}{`r e1_unila`}
 &= \frac{`r e1_unila - e2_unila`}{`r e1_unila`} \approx `r format(lambda_unila, digits = 3)`
-\end{align}
+\end{aligned}
 $$
 
 **4. Interpretasi Koefisien Lambda ($\lambda$)**
