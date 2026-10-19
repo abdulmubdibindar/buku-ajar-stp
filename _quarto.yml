@@ -52,6 +52,8 @@ book:
     - 14-regresi-berganda.qmd
     - 15-multivariat-interdependensi.qmd
     - 89-referensi.qmd
+
+  appendices:
     - 90-lampiran-tabel-statistik.qmd
   
   page-navigation: true

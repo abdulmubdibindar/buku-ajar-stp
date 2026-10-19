@@ -4,9 +4,9 @@ Indeks berisi nomor bab tiap berkas dan label setiap callout bernomor yang
 punya id, sehingga rujukan seperti @kasus-jarak-hunian bisa dicetak sebagai
 "Studi Kasus 6.3" dan ditautkan walaupun callout-nya ada di bab lain.
 
-Nomor bab = urutan bab dalam book.chapters (dan book.appendices) yang judul
-H1-nya tidak bertanda {.unnumbered} atau {-}. Nomor callout = urutan
-kemunculan per jenis di dalam bab. Aturan yang sama dipakai filter Lua saat
+Nomor bab = urutan bab dalam book.chapters yang judul H1-nya tidak bertanda
+{.unnumbered} atau {-}; bab di book.appendices tidak diberi nomor. Nomor
+callout = urutan kemunculan per jenis di dalam bab. Aturan yang sama dipakai filter Lua saat
 indeks tidak tersedia.
 
 Skrip ini hanya memakai pustaka standar Python dan dijalankan dari direktori
@@ -29,18 +29,20 @@ CODE = re.compile(r"^\s*(```|~~~)")
 
 
 def chapter_files(config_text):
-    """Ambil daftar .qmd dari book.chapters dan book.appendices, urut."""
+    """Daftar (berkas .qmd, apakah lampiran) dari book.chapters/appendices."""
     files = []
     in_list = False
+    appendix = False
     for line in config_text.splitlines():
         stripped = line.strip()
         if stripped in ("chapters:", "appendices:"):
             in_list = True
+            appendix = stripped == "appendices:"
             continue
         if in_list:
             m = re.match(r"^-\s+(?:part:\s+)?([^\s#]+\.qmd)\s*$", stripped)
             if m:
-                files.append(m.group(1))
+                files.append((m.group(1), appendix))
             elif stripped.startswith("- "):
                 continue
             elif stripped and not stripped.startswith("#"):
@@ -83,13 +85,14 @@ def build(config_path="_quarto.yml"):
         files = chapter_files(f.read())
     index = {"chapters": {}, "callouts": {}}
     bab = 0
-    for path in files:
+    for path, appendix in files:
         try:
             numbered, callouts = scan(path)
         except FileNotFoundError:
             print(f"indeks_callout: {path} tidak ditemukan", file=sys.stderr)
             continue
-        if not numbered:
+        # Lampiran diberi huruf oleh Quarto, bukan nomor bab.
+        if not numbered or appendix:
             continue
         bab += 1
         index["chapters"][path] = bab
