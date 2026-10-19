@@ -1,3 +1,9 @@
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
 # Konsep Dasar Statistika dalam Perencanaan
 
 :::{.callout-important}
@@ -11,9 +17,13 @@ Setelah mempelajari bab ini, Anda diharapkan:
 
 ## Kedudukan dan Peran Analisis Data dalam Perencanaan
 
-Proses perencanaan adalah proses yang sangat memerlukan data di seluruh tahapannya. Seperti yang ditunjukkan dalam Gambar \@ref(fig:proses-perencanaan-rasional) tentang proses perencanaan secara rasional, setiap tahapnya sangat memerlukan data sebagai masukan untuk melaksanakan **setiap tahap**.
+Proses perencanaan adalah proses yang sangat memerlukan data di seluruh tahapannya. Seperti yang ditunjukkan dalam @fig-proses-perencanaan-rasional tentang proses perencanaan secara rasional, setiap tahapnya sangat memerlukan data sebagai masukan untuk melaksanakan **setiap tahap**.
 
-```{r proses-perencanaan-rasional, fig.cap='Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic', echo=FALSE, out.width='60%',  fig.align='center'}
+```{r}
+#| label: fig-proses-perencanaan-rasional
+#| fig-cap: 'Proses Perencanaan Rasional. Diadaptasi dari @ewing2020basic'
+#| out-width: '60%'
+#| fig-align: 'center'
 knitr::include_graphics("images/proses-perencanaan-rasional.png")
 ```
 
@@ -23,14 +33,16 @@ Lain lagi di tahap kedua, contoh lainnya. Perumusan persoalan (*problem*) adalah
 
 Dari paparan sebelumnya, kita dapat menyimpulkan bahwa setiap tahap dalam perencanaan memerlukan penelitian, yakni kegiatan membuat pertanyaan mengenai suatu permasalahan dan menjawab pertanyaan tersebut dengan proses yang sistematis.
 
-::: rmdkasus
-### Studi Kasus: Analisis Data dalam Perencanaan Transportasi Berkelanjutan di Kampus ITERA {#kasus-analisis-data-dalam-perencanaan .unnumbered}
-
+::: {#kasus-analisis-data-dalam-perencanaan-transportasi-berkelanjutan .kasus title="Analisis Data dalam Perencanaan Transportasi Berkelanjutan di Kampus ITERA"}
 Kita akan mengambil kasus berupa perencanaan transportasi berkelanjutan mahasiswa dan staf pegawai di kampus ITERA. Transportasi berkelanjutan adalah perpindahan dalam konteks transportasi yang memiliki nilai berkelanjutan, salah satunya minim polusi udara.
 
-Dalam kasus ini, kita sudah mengetahui bahwa tujuan dari rektorat adalah “transportasi mahasiswa dan pegawai yang berkelanjutan.” Selanjutnya, kita perlu mengetahui apa persoalan yang ada saat ini di kampus ITERA (perhatikan Gambar \@ref(fig:kasus-bab1))
+Dalam kasus ini, kita sudah mengetahui bahwa tujuan dari rektorat adalah “transportasi mahasiswa dan pegawai yang berkelanjutan.” Selanjutnya, kita perlu mengetahui apa persoalan yang ada saat ini di kampus ITERA (perhatikan @fig-kasus-bab1)
 
-```{r kasus-bab1, fig.cap='Persoalan Transportasi di ITERA', echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: fig-kasus-bab1
+#| fig-cap: 'Persoalan Transportasi di ITERA'
+#| out-width: '60%'
+#| fig-align: 'center'
 knitr::include_graphics("images/kasus-bab1.png")
 ```
 
@@ -47,7 +59,7 @@ Penelitian secara umum adalah proses mengajukan pertanyaan dan menjawabnya secar
 
 Secara umum, pendekatan penelitian terbagi menjadi **pendekatan kuantitatif** dan **pendekatan kualitatif**. Singkatnya, pendekatan kuantitatif menekankan penggunaan angka-angka (kuantitas) dalam prosesnya, sementara pendekatan kualitatif menekankan pada eksplorasi data-data yang bersifat non-angka dan perlu diindra (dilihat, dicium, diraba, didengar) dan dirasakan.
 
-### Analisis Kuantitatif vs. Analisis Kualitatif {#analisis-kuantitatif-vs-kualitatif}
+### Analisis Kuantitatif vs. Analisis Kualitatif {#sec-analisis-kuantitatif-vs-kualitatif}
 
 Analisis adalah salah satu proses dalam penelitian yang mengolah data yang dikumpulkan menjadi jawaban dari pertanyaan di awal. Sebagaimana pendekatannya, secara umum analisis juga dapat dibagi menjadi **analisis kuantitatif** dan **analisis kualitatif**.
 
@@ -55,9 +67,7 @@ Di sisi lain, data sebagai bahan analisis juga dapat dibagi menjadi **data kuant
 
 Karena analisis kuantitatif menggunakan angka-angka, pengumpulan data kuantitatif dapat disebut juga sebagai **pengukuran**.
 
-::: rmdkasus
-### Studi Kasus: Penelitian Mengenai Pola Pergerakan Mahasiswa dan Pegawai di Kampus ITERA {.unnumbered}
-
+::: {#kasus-penelitian-mengenai-pola-pergerakan-mahasiswa-dan .kasus title="Penelitian Mengenai Pola Pergerakan Mahasiswa dan Pegawai di Kampus ITERA"}
 Berdasarkan pertanyaan penelitian *sudah sejauh mana keberlanjutan pada pola pergerakan pada mahasiswa dan pegawai kampus ITERA saat ini?*, kita akan mengumpulkan data terkait pola pergerakan mahasiswa dan pegawai di ITERA dengan menyebarkan kuesioner kepada para mahasiswa dan pegawai kampus ITERA tentang pola pergerakan mereka. Berikut adalah analisis tentang perbandingan antara analisis kuantitatif dan analisis kualitatif.
 
 | Aspek | Analisis Kuantitatif | Analisis Kualitatif |
@@ -88,9 +98,7 @@ Berdasarkan jumlah variabelnya statistika juga dapat dibagi menjadi 3: **statist
 
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang konsep dasar statistika dalam perencanaan.
 
-::: rmdexercise
-## Soal Evaluasi 1 {.unnumbered}
-
+::: {#latihan-konsep-dasar-1 .latihan}
 1.  Jelaskanlah penggunaan analisis data dalam setiap tahap perencanaan untuk kasus acara kumpul keakraban angkatan! [STP-1.1]{.capaian}
 2.  Ceritakan perbedaan analisis kuantitatif dan kualitatif yang mungkin digunakan dalam perencanaan acara tersebut. [STP-1.2]{.capaian}
 :::
