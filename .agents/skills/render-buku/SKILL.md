@@ -26,6 +26,17 @@ quarto preview                 # pratinjau HTML selama menulis
   langsung ke `docs/` akan menghapus hasil HTML.
 - Cache `_freeze` dipisah per format (`html_freeze/`, `typst_freeze/`).
 
+## Uji tanpa R
+
+```bash
+python _scripts/uji_render.py [--quarto /path/ke/quarto]
+```
+
+Menyalin buku ke `_uji_render/`, mengganti chunk R dengan placeholder
+berlabel sama, lalu merender HTML dan PDF. Lolos = 0 peringatan. Jalankan
+setelah mengubah markup, callout, persamaan, atau konfigurasi; hasil
+perhitungan R tetap perlu render penuh.
+
 ## Komponen render
 
 | Berkas | Fungsi |
@@ -33,16 +44,18 @@ quarto preview                 # pratinjau HTML selama menulis
 | `_quarto.yml` | konfigurasi buku, urutan bab |
 | `_scripts/indeks_callout.py` | pre-render: nomor bab & label callout → `_callout-index.json` |
 | `callout-buku.lua` | judul/nomor callout, TOC, rujukan `@kasus-…` |
-| `_typst/kotak-buku.typ` | kotak callout PDF (bisa terpotong halaman), ukuran huruf tabel |
+| `_typst/kotak-buku.typ` | kotak callout PDF (bisa terpotong halaman), ukuran huruf tabel, hanya persamaan berlabel yang bernomor |
 | `style.css` | gaya HTML |
 | `_common.R` | opsi knitr bersama, di-source tiap bab |
 | `_tests/callout/` | proyek uji callout tanpa R |
+| `_scripts/uji_render.py` | uji render seluruh buku tanpa R |
 
 ## Mengatasi galat
 
 1. Jalankan `python _scripts/lint_buku.py` dulu — sisa sintaks Bookdown sering
    jadi penyebab.
-2. Uji filter tanpa R: `cd _tests/callout && quarto render --to html && quarto render --to typst`.
+2. Uji tanpa R: `python _scripts/uji_render.py`; untuk filter callout saja:
+   `cd _tests/callout && quarto render --to html && quarto render --to typst`.
 3. Galat Typst: render ulang dengan `quarto render --to typst -M keep-typ:true
    --output-dir _book_pdf` lalu periksa `.typ` pada baris yang disebut.
 4. Nomor callout salah/rujukan `??kasus-…`: pastikan pre-render berjalan
