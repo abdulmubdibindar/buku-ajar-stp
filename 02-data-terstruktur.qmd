@@ -234,7 +234,7 @@ Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilka
 #| label: fig-menentukan-tingpeng
 #| fig-cap: 'Diagram alir menentukan tingkat pengukuran variabel'
 #| fig-align: 'center'
-knitr::include_graphics("images/bab-2-menentukan-tingpeng.png")
+knitr::include_graphics("images/bab-2-menentukan-tingpeng.svg")
 ```
 
 ::: {#kasus-menentukan-tingkat-pengukuran-variabel .kasus title="Menentukan Tingkat Pengukuran Variabel"}

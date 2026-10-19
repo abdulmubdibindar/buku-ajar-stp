@@ -8,7 +8,7 @@
 <meta name="author" content="Muhammad Abdul Mubdi Bindar">
 <meta name="author" content="Husna Tiara Putri">
 <meta name="author" content="Valendya Rilansari">
-<meta name="generator" content="bookdown 0.45 with bs4_book()">
+<meta name="generator" content="bookdown 0.46 with bs4_book()">
 <meta property="og:title" content="Bab 12 Kausalitas dengan Regresi Linear Sederhana | Buku Ajar Statistika untuk Perencanaan">
 <meta property="og:type" content="book">
 <meta name="twitter:card" content="summary">
@@ -249,7 +249,7 @@ Y = a + bX + e
 <p>Dari persamaan tersebut, kita dapat menganalisis bahwa:</p>
 <ul>
 <li>
-<strong>Koefisien regresi</strong> sebesar <span class="math inline">\(-10,23237\)</span> menunjukkan bahwa setiap penambahan jarak ke taman kota sejauh 1 km dikaitkan dengan <strong>penurunan Indeks Kualitas Udara sebesar 10,23237 poin</strong>. Tanda negatif pada koefisien menunjukkan bahwa hubungan antara jarak dan kualitas udara bersifat berlawanan arah—semakin jauh dari taman, semakin rendah kualitas udara.</li>
+<strong>Koefisien regresi</strong> sebesar <span class="math inline">\(-10,23237\)</span> menunjukkan bahwa setiap penambahan jarak ke taman kota sejauh 1 km dikaitkan dengan <strong>penurunan Indeks Kualitas Udara sebesar 10,23237 poin</strong>. Tanda negatif pada koefisien menunjukkan bahwa hubungan antara jarak dan kualitas udara bersifat berlawanan arahâ€”semakin jauh dari taman, semakin rendah kualitas udara.</li>
 <li>
 <strong>Konstanta</strong> sebesar <span class="math inline">\(85,94374\)</span> menunjukkan bahwa prediksi Indeks Kualitas Udara ketika sebuah lokasi tepat berada di taman kota (jarak = 0 km) adalah sebesar <span class="math inline">\(85,94374\)</span> poin.</li>
 </ul>
@@ -322,7 +322,7 @@ IKU Prediksi (<span class="math inline">\(\hat{Y} = 85,94 - 10,23X\)</span>)
 Gambar 12.2: Garis Regresi Linear Sederhana untuk Jarak Taman Kota dan Indeks Kualitas Udara
 </p>
 </div>
-<p>Titik-titik hasil prediksi tersebut akan membentuk garis lurus ketika dihubungkan satu sama lain. Inilah yang dimaksud dengan sifat <em>linear</em> dari persamaan regresi linear sederhana—nilai <span class="math inline">\(\hat{Y}\)</span> berubah secara <strong>konstan</strong> seiring perubahan nilai <span class="math inline">\(X\)</span>, menghasilkan pola garis lurus.</p>
+<p>Titik-titik hasil prediksi tersebut akan membentuk garis lurus ketika dihubungkan satu sama lain. Inilah yang dimaksud dengan sifat <em>linear</em> dari persamaan regresi linear sederhanaâ€”nilai <span class="math inline">\(\hat{Y}\)</span> berubah secara <strong>konstan</strong> seiring perubahan nilai <span class="math inline">\(X\)</span>, menghasilkan pola garis lurus.</p>
 </div>
 </div>
 <div id="uji-asumsi-klasik" class="section level2" number="12.5">
@@ -355,13 +355,13 @@ Gambar 12.2: Garis Regresi Linear Sederhana untuk Jarak Taman Kota dan Indeks Ku
 <h3>
 <span class="header-section-number">12.5.4</span> Homoskedastisitas<a class="anchor" aria-label="anchor" href="#homoskedastisitas"><i class="fas fa-link"></i></a>
 </h3>
-<p>Syarat homoskedastisitas berarti <strong>besar varians (keragaman sebaran) dari galat model harus senantiasa konstan dan seragam</strong> tanpa memedulikan seberapa besar nilai target prediksinya <span class="citation">(<a href="referensi.html#ref-ModernStatR-Home">Thulin 2021</a>)</span>. Sebaliknya, jika sebaran galatnya tidak merata—misalnya menyempit di awal namun semakin melebar bebas di akhir mirip seperti bentuk corong—maka kondisi ini dinamakan <strong>heteroskedastisitas</strong> <span class="citation">(<a href="referensi.html#ref-Hair-Multivariate">Hair et al. 2013</a>)</span>. Pelanggaran ini berdampak fatal karena dapat menipu nilai uji signifikansi model sehingga kesimpulan tebakannya seolah meyakinkan padahal menyesatkan.</p>
+<p>Syarat homoskedastisitas berarti <strong>besar varians (keragaman sebaran) dari galat model harus senantiasa konstan dan seragam</strong> tanpa memedulikan seberapa besar nilai target prediksinya <span class="citation">(<a href="referensi.html#ref-ModernStatR-Home">Thulin 2021</a>)</span>. Sebaliknya, jika sebaran galatnya tidak merataâ€”misalnya menyempit di awal namun semakin melebar bebas di akhir mirip seperti bentuk corongâ€”maka kondisi ini dinamakan <strong>heteroskedastisitas</strong> <span class="citation">(<a href="referensi.html#ref-Hair-Multivariate">Hair et al. 2013</a>)</span>. Pelanggaran ini berdampak fatal karena dapat menipu nilai uji signifikansi model sehingga kesimpulan tebakannya seolah meyakinkan padahal menyesatkan.</p>
 </div>
 <div id="non-autokorelasi" class="section level3" number="12.5.5">
 <h3>
 <span class="header-section-number">12.5.5</span> Non-Autokorelasi<a class="anchor" aria-label="anchor" href="#non-autokorelasi"><i class="fas fa-link"></i></a>
 </h3>
-<p>Asumsi ini mengharuskan supaya galat prediksi pada suatu subjek pengamatan berdiri sendiri dan tidak saling memengaruhi nilai galat di pengamatan lainnya <span class="citation">(<a href="referensi.html#ref-Hair-Multivariate">Hair et al. 2013</a>)</span>. Kondisi di mana galat saling menular (autokorelasi) umumnya sering terjadi pada <strong>data deret waktu (<em>time series</em>)</strong>, karena sebuah nilai di suatu waktu sangat bergantung erat pada nilainya di masa lalu (seperti angka tingkat inflasi bulanan atau suhu harian) <span class="citation">(<a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>. Namun untungnya, bagi riset yang pengumpulan datanya hanya bergantung pada <strong>data silang tempat (<em>cross-section</em>)</strong>—di mana sekelompok banyak data dari subjek berbeda direkam bersamaan secara serentak—peluang pelanggaran autokorelasi ini nyaris mustahil bisa terjadi.</p>
+<p>Asumsi ini mengharuskan supaya galat prediksi pada suatu subjek pengamatan berdiri sendiri dan tidak saling memengaruhi nilai galat di pengamatan lainnya <span class="citation">(<a href="referensi.html#ref-Hair-Multivariate">Hair et al. 2013</a>)</span>. Kondisi di mana galat saling menular (autokorelasi) umumnya sering terjadi pada <strong>data deret waktu (<em>time series</em>)</strong>, karena sebuah nilai di suatu waktu sangat bergantung erat pada nilainya di masa lalu (seperti angka tingkat inflasi bulanan atau suhu harian) <span class="citation">(<a href="referensi.html#ref-ewing2020basic">Ewing and Park 2020</a>)</span>. Namun untungnya, bagi riset yang pengumpulan datanya hanya bergantung pada <strong>data silang tempat (<em>cross-section</em>)</strong>â€”di mana sekelompok banyak data dari subjek berbeda direkam bersamaan secara serentakâ€”peluang pelanggaran autokorelasi ini nyaris mustahil bisa terjadi.</p>
 </div>
 </div>
 <div id="studi-kasus-uji-asumsi-klasik-untuk-hubungan-jarak-taman-dan-kualitas-udara" class="section level2 unnumbered rmdkasus">
@@ -777,11 +777,11 @@ Gambar 12.4: Diagram Pencar Hubungan Jarak ke Taman Kota dan Indeks Kualitas Uda
 <p>Berdasarkan diagram pencar pada Gambar <a href="bab-13-regresi-sederhana.html#fig:fig-scatter-jarak-iku">12.4</a>, kita dapat mengevaluasi keterpenuhan tiga asumsi dasar regresi linear berikut.</p>
 <ul>
 <li>
-<strong>Tingkat pengukuran variabel metrik untuk kedua variabel.</strong> Variabel jarak ke taman (<span class="math inline">\(X\)</span>) dan Indeks Kualitas Udara (<span class="math inline">\(Y\)</span>) keduanya berada pada tingkat pengukuran rasio—keduanya bersifat numerik dan dapat dikenai operasi matematis secara penuh. Asumsi ini <strong>terpenuhi</strong>.</li>
+<strong>Tingkat pengukuran variabel metrik untuk kedua variabel.</strong> Variabel jarak ke taman (<span class="math inline">\(X\)</span>) dan Indeks Kualitas Udara (<span class="math inline">\(Y\)</span>) keduanya berada pada tingkat pengukuran rasioâ€”keduanya bersifat numerik dan dapat dikenai operasi matematis secara penuh. Asumsi ini <strong>terpenuhi</strong>.</li>
 <li>
 <strong>Hubungan linear antara variabel independen dan variabel dependen.</strong> Dari diagram pencar, terlihat bahwa titik-titik data tersebar mengikuti pola yang cenderung menurun dari kiri ke kanan, mengindikasikan adanya hubungan yang bersifat linear antara jarak ke taman dan kualitas udara. Asumsi ini <strong>terpenuhi</strong>.</li>
 <li>
-<strong>Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain.</strong> Titik-titik data tampak tersebar secara acak di sekitar pola linear tersebut—sebagian berada di atas dan sebagian berada di bawah garis kecenderungan—tanpa membentuk pola khusus seperti kipas atau lengkungan. Asumsi ini <strong>terpenuhi</strong>.</li>
+<strong>Komponen galat terdistribusi acak dan tidak berkorelasi satu sama lain.</strong> Titik-titik data tampak tersebar secara acak di sekitar pola linear tersebutâ€”sebagian berada di atas dan sebagian berada di bawah garis kecenderunganâ€”tanpa membentuk pola khusus seperti kipas atau lengkungan. Asumsi ini <strong>terpenuhi</strong>.</li>
 </ul>
 <p><span class="tajuksaya">Langkah 2: Hitung Rata-Rata <span class="math inline">\(X\)</span> dan <span class="math inline">\(Y\)</span></span></p>
 <p>Sebelum mengisi tabel pembantu, kita hitung terlebih dahulu rata-rata dari variabel jarak (<span class="math inline">\(\bar{X}\)</span>) dan Indeks Kualitas Udara (<span class="math inline">\(\bar{Y}\)</span>).</p>
@@ -1606,7 +1606,7 @@ s_{y \cdot x} = \sqrt{\frac{\sum_{i=1}^{n}(Y_i - \hat{Y}_i)^2}{n-2}}
 </h3>
 <p>Melanjutkan kasus sebelumnya, kita hitung estimasi standar <em>error</em> untuk model regresi jarak ke taman kota dan Indeks Kualitas Udara menggunakan Persamaan <a href="bab-13-regresi-sederhana.html#eq:rumus-standar-error-estimation">(12.6)</a>.</p>
 <p><span class="math display">\[s_{y \cdot x} = \sqrt{\frac{\sum_{i=1}^{30}(Y_i - \hat{Y}_i)^2}{30 - 2}} = 7,11036\]</span></p>
-<p>Simpangan baku variabel <span class="math inline">\(Y\)</span> (IKU) dari data kita adalah <span class="math inline">\(s_Y = 20,15517\)</span>. Karena estimasi standar <em>error</em> sebesar <span class="math inline">\(7,11036\)</span> <strong>lebih kecil dari simpangan baku <span class="math inline">\(Y\)</span></strong>, maka model regresi ini dapat dinyatakan cukup presisi—prediksi model lebih “ketat” dibandingkan sekadar menggunakan rata-rata <span class="math inline">\(Y\)</span> sebagai patokan. Nilai ini memiliki satuan yang sama dengan variabel dependen, yaitu <strong>poin IKU</strong>.</p>
+<p>Simpangan baku variabel <span class="math inline">\(Y\)</span> (IKU) dari data kita adalah <span class="math inline">\(s_Y = 20,15517\)</span>. Karena estimasi standar <em>error</em> sebesar <span class="math inline">\(7,11036\)</span> <strong>lebih kecil dari simpangan baku <span class="math inline">\(Y\)</span></strong>, maka model regresi ini dapat dinyatakan cukup presisiâ€”prediksi model lebih “ketat” dibandingkan sekadar menggunakan rata-rata <span class="math inline">\(Y\)</span> sebagai patokan. Nilai ini memiliki satuan yang sama dengan variabel dependen, yaitu <strong>poin IKU</strong>.</p>
 </div>
 <div id="koefisien-determinasi-r2" class="section level3" number="12.7.2">
 <h3>
@@ -1667,8 +1667,8 @@ R^2 = \frac{SS_{reg}}{SS_{tot}} = \frac{\sum{(\hat{Y}_i - \bar{Y})^2}}{\sum{(Y_i
 </div>
 <p>Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap capaian pembelajaran pada bab ini.</p>
 </div>
-<div id="soal-evaluasi-14-1" class="section level2 unnumbered rmdexercise">
-<h2>Soal Evaluasi 14<a class="anchor" aria-label="anchor" href="#soal-evaluasi-14-1"><i class="fas fa-link"></i></a>
+<div id="soal-evaluasi-21" class="section level2 unnumbered rmdexercise">
+<h2>Soal Evaluasi 21<a class="anchor" aria-label="anchor" href="#soal-evaluasi-21"><i class="fas fa-link"></i></a>
 </h2>
 <ol style="list-style-type: decimal">
 <li>
@@ -1789,7 +1789,7 @@ R^2 = \frac{SS_{reg}}{SS_{tot}} = \frac{\sum{(\hat{Y}_i - \bar{Y})^2}}{\sum{(Y_i
 <li><a class="nav-link" href="#studi-kasus-signifikansi-model-dan-variabel-independen">Studi Kasus: Signifikansi Model dan Variabel Independen</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#soal-evaluasi-14-1">Soal Evaluasi 14</a></li>
+<li><a class="nav-link" href="#soal-evaluasi-21">Soal Evaluasi 21</a></li>
 </ul>
 
       <div class="book-extra">
