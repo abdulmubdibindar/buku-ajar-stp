@@ -90,7 +90,7 @@ data.frame(
 
 Dalam @tbl-hipotesis-kosong-dua-populasi, kita dapat melihat bahwa hipotesis kosong ini dapat dirumuskan dengan dua bentuk, yaitu **bentuk umum** dan **bentuk selisih**. Kedua bentuk ini sebenarnya memiliki arti yang sama, yaitu tidak adanya perbedaan antara kedua populasi yang dibandingkan. Hanya saja, bentuk selisih lebih mudah diterapkan ketika **kita hanya berfokus pada perbedaan nilai parameter antara kedua populasi tersebut** alih-alih nilai absolut parameter-parameternya. 
 
-Sementara itu, hipotesis alternatif ($H_1$) menunjukkan kondisi **adanya perbedaan antara kedua populasi tersebut** — baik perbedaan yang memiliki arah (lebih besar atau lebih kecil), maupun yang tidak memiliki arah (tidak sama dengan). Perhatikan @tbl-hipotesis-alternatif-dua-populasi berikutÖ«.
+Sementara itu, hipotesis alternatif ($H_1$) menunjukkan kondisi **adanya perbedaan antara kedua populasi tersebut** — baik perbedaan yang memiliki arah (lebih besar atau lebih kecil), maupun yang tidak memiliki arah (tidak sama dengan). Perhatikan @tbl-hipotesis-alternatif-dua-populasi berikut.
 
 ```{r}
 #| label: tbl-hipotesis-alternatif-dua-populasi
@@ -383,16 +383,17 @@ d. **Mencari Nilai Titik Kritis**
 e. **Mencari Nilai Statistik Uji**  
    Perhitungan nilai statistik uji (misalnya $Z_{hitung}$) dieksekusi berdasarkan selisih jarak proporsi   rata-rata kedua sampel waktu tempuh tersebut setelah dikalibrasi oleh gabungan *standard error* dari beda rata-rata independen (@eq-statistik-uji-dua-populasi-independen-2).
 
-   \begin{align}
-   Z_{hitung} &= \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{ \dfrac{s_1^2}{N_1 - 1} + \dfrac{s_2^2}{N_2 - 1} }} \nonumber\\
-              &= \frac{5{,}01 - 2{,}78}{\sqrt{ \dfrac{2{,}82^2}{428 - 1} + \dfrac{2{,}53^2}{394 - 1} }} \nonumber\\
-              &= \frac{2{,}23}{\sqrt{ \dfrac{7{,}9524}{427} + \dfrac{6{,}4009}{393} }} \nonumber\\
-              &= \frac{2{,}23}{\sqrt{0{,}01863 + 0{,}01629}} \nonumber\\
-              &= \frac{2{,}23}{\sqrt{0{,}03492}} \nonumber\\
-              &= \frac{2{,}23}{0{,}1869} \nonumber\\
+   $$
+   \begin{aligned}
+   Z_{hitung} &= \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{ \dfrac{s_1^2}{N_1 - 1} + \dfrac{s_2^2}{N_2 - 1} }} \\
+              &= \frac{5{,}01 - 2{,}78}{\sqrt{ \dfrac{2{,}82^2}{428 - 1} + \dfrac{2{,}53^2}{394 - 1} }} \\
+              &= \frac{2{,}23}{\sqrt{ \dfrac{7{,}9524}{427} + \dfrac{6{,}4009}{393} }} \\
+              &= \frac{2{,}23}{\sqrt{0{,}01863 + 0{,}01629}} \\
+              &= \frac{2{,}23}{\sqrt{0{,}03492}} \\
+              &= \frac{2{,}23}{0{,}1869} \\
               &\approx 11{,}93
-              % (\#eq:z-hitung-itera-unila)
-   \end{align}
+   \end{aligned}
+   $$
 
 
 f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**  
@@ -600,22 +601,26 @@ d. **Mencari Nilai Titik Kritis**
 e. **Mencari Nilai Statistik Uji**  
    Terlebih dahulu kita hitung proporsi masing-masing sampel dan proporsi gabungannya (@eq-proporsi-gabungan):
 
-   \begin{align}
-   \hat{p}_1 &= \frac{260}{428} \approx 0{,}607 \nonumber\\
-   \hat{p}_2 &= \frac{230}{394} \approx 0{,}584 \nonumber\\
-   \hat{p}   &= \frac{260 + 230}{428 + 394} = \frac{490}{822} \approx 0{,}596 \nonumber
-   \end{align}
+   $$
+   \begin{aligned}
+   \hat{p}_1 &= \frac{260}{428} \approx 0{,}607 \\
+   \hat{p}_2 &= \frac{230}{394} \approx 0{,}584 \\
+   \hat{p}   &= \frac{260 + 230}{428 + 394} = \frac{490}{822} \approx 0{,}596
+   \end{aligned}
+   $$
 
    Kemudian kita hitung nilai statistik ujinya (@eq-statistik-uji-proporsi-dua-populasi):
 
-   \begin{align}
-   Z_{hitung} &= \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left(\dfrac{1}{N_1} + \dfrac{1}{N_2}\right)}} \nonumber\\
-              &= \frac{0{,}607 - 0{,}584}{\sqrt{0{,}596 \times 0{,}404 \times \left(\dfrac{1}{428} + \dfrac{1}{394}\right)}} \nonumber\\
-              &= \frac{0{,}023}{\sqrt{0{,}2408 \times 0{,}00487}} \nonumber\\
-              &= \frac{0{,}023}{\sqrt{0{,}001173}} \nonumber\\
-              &= \frac{0{,}023}{0{,}0343} \nonumber\\
+   $$
+   \begin{aligned}
+   Z_{hitung} &= \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left(\dfrac{1}{N_1} + \dfrac{1}{N_2}\right)}} \\
+              &= \frac{0{,}607 - 0{,}584}{\sqrt{0{,}596 \times 0{,}404 \times \left(\dfrac{1}{428} + \dfrac{1}{394}\right)}} \\
+              &= \frac{0{,}023}{\sqrt{0{,}2408 \times 0{,}00487}} \\
+              &= \frac{0{,}023}{\sqrt{0{,}001173}} \\
+              &= \frac{0{,}023}{0{,}0343} \\
               &\approx 0{,}69
-   \end{align}
+   \end{aligned}
+   $$
 
 f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**  
    Nilai $Z_{hitung} \approx 0{,}69$ berada **di antara $-1{,}645$ dan $+1{,}645$**, sehingga ia **tidak jatuh ke dalam wilayah kritis** di kedua ujung kurva.
@@ -648,10 +653,9 @@ Oleh karena populasinya berpasangan, dalam kasus ini kita **hanya bisa menghitun
 
 Karena kita hanya mempunyai 1 angka tunggal, maka pernyataan hipotesis dan juga perhitungan statistik ujinya sama persis teknisnya dengan uji hipotesis satu populasi:
 
-\begin{equation}
+$$
 Z_{hitung} = \frac{\bar{D} - \mu_{D_0}}{s_D / \sqrt{n}}
-(\#eq:statistik-uji-dua-populasi-berpasangan)
-\end{equation}
+$$ {#eq-statistik-uji-dua-populasi-berpasangan}
 
 Di mana:
 
@@ -689,13 +693,15 @@ d. **Mencari Nilai Titik Kritis**
 e. **Mencari Nilai Statistik Uji**  
    Kita menghitung nilai statistik uji $Z_{hitung}$ untuk data berpasangan:
 
-   \begin{align}
-   Z_{hitung} &= \frac{\bar{D} - \mu_{D_0}}{s_D / \sqrt{n}} \nonumber\\
-              &= \frac{5.300 - 0}{1.800 / \sqrt{35}} \nonumber\\
-              &= \frac{5.300}{1.800 / 5{,}916} \nonumber\\
-              &= \frac{5.300}{304{,}26} \nonumber\\
-              &\approx 17{,}42 (\#eq:z-hitung-biaya-perjalanan)
-   \end{align}
+   $$
+   \begin{aligned}
+   Z_{hitung} &= \frac{\bar{D} - \mu_{D_0}}{s_D / \sqrt{n}} \\
+              &= \frac{5.300 - 0}{1.800 / \sqrt{35}} \\
+              &= \frac{5.300}{1.800 / 5{,}916} \\
+              &= \frac{5.300}{304{,}26} \\
+              &\approx 17{,}42
+   \end{aligned}
+   $$ {#eq-z-hitung-biaya-perjalanan}
 
 f. **Membandingkan Nilai Statistik Uji dan Titik Kritis**  
    Nilai $Z_{hitung} \approx 17{,}42$ jauh lebih besar daripada $+1,96$, sehingga statistik uji **jatuh di dalam wilayah kritis** sebelah kanan.
