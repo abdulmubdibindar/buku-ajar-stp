@@ -1165,7 +1165,7 @@ knitr::include_graphics("images/bab-3-kuartil.png")
 Kuartil membagi distribusi data menjadi empat bagian yang sama. Ini sangat berguna untuk memahami posisi suatu nilai dalam keseluruhan data. Mari kita gunakan kembali data biaya perjalanan mahasiswa UNILA.
 
 ```{r}
-#| label: tbl-bab-3-kuartil-unila
+#| label: bab-3-kuartil-unila
 #| out-width: '70%'
 #| fig-align: 'center'
 library(knitr)
