@@ -740,6 +740,8 @@ RC4 &= 0{,}581 \text{log_jmldewasa} + 0{,}570 \text{log_jmlanak}
 \end{aligned}
 $$
 
+Persamaan inilah wujud **reduksi dimensi** pada PCA: setiap responden kini cukup diwakili oleh empat skor variat (RC1–RC4) alih-alih seluruh variabel awal. Skor tiap variat diperoleh dengan mengalikan nilai terstandar variabel-variabelnya dengan bobot di atas lalu menjumlahkannya, dan skor ini dapat dipakai sebagai variabel dalam analisis lanjutan.
+
 :::
 
 ### Interpretasi Dimensi

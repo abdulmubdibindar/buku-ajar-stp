@@ -764,6 +764,8 @@ ggplot(data_t, aes(x = x, y = y)) +
   ) +
   theme_minimal()
 ```
+
+Nilai $t = 2{,}523$ berarti rata-rata sampel 7,2 km terletak sekitar 2,5 *standard error* di atas dugaan $\mu = 5$ km, di ekor kanan distribusi $t$ dengan $df = 19$. Seberapa kecil peluang munculnya nilai sejauh ini bila $\mu$ memang 5 km adalah pertanyaan uji hipotesis yang dibahas pada @sec-bab-7-uji-hipotesis-satu-populasi.
 :::
 
 ### Distribusi Objek dan Distribusi Statistik

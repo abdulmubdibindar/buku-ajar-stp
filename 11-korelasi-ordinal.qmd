@@ -369,6 +369,8 @@ $$
 \end{aligned}
 $$
 
+Hasil $\tau_b$ sejalan dengan $\gamma$ ($-0{,}0085$) dan $d$ Sommer ($-0{,}00598$): tandanya **negatif** (semakin tinggi tingkat semester, uang saku cenderung semakin rendah) dan besarnya hampir nol (**sangat lemah**). Nilai $\tau_b$ paling kecil di antara ketiganya karena penyebutnya memperhitungkan pasangan *tied* pada **kedua** variabel ($T_x$ dan $T_y$), sedangkan $d$ Sommer hanya pada variabel independen dan $\gamma$ mengabaikannya.
+
 :::
 
 ::: {#latihan-korelasi-ordinal-1 .latihan}
