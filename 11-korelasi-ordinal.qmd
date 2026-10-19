@@ -13,7 +13,7 @@ Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korel
 
 Pada bab ini, penjelasan analisis asosiasi bivariat sama dengan yang telah dijelaskan pada bab sebelumnya. Hanya saja, pada bab ini jenis variabel yang akan dianalisis adalah **variabel ordinal**. Sebagai pengingat, variabel dengan jenis ordinal ini adalah variabel yang memiliki ragam nilai kategori yang dapat diurutkan (contoh: tinggi – sedang – rendah, dsb).
 
-Untuk mengukur korelasi antarvariabel ordinal, kita akan mempelajari koefisien-koefisien yang sesuai, di antaranya Gamma ($\gamma$) dari Goodman dan Kruskal, $d$ dari Sommer, dan tau-b ($\tau$-b) dari Kendall yang secara konseptual sama dengan korelasi berbasis proporsi kesalahan yang dikurangi (PRE) seperti yang dibahas pada subbab @sec-koefisien-korelasi-nominal-error.
+Korelasi antarvariabel ordinal diukur dengan koefisien Gamma ($\gamma$) dari Goodman dan Kruskal, $d$ dari Sommer, dan tau-b ($\tau$-b) dari Kendall yang secara konseptual sama dengan korelasi berbasis proporsi kesalahan yang dikurangi (PRE) seperti yang dibahas pada subbab @sec-koefisien-korelasi-nominal-error.
 
 ## Koefisien Gamma ($\gamma$) dari Goodman dan Kruskal {#sec-gamma}
 Goodman and Kruskal's $\gamma$ digunakan untuk mengukur korelasi antarvariabel ordinal, khususnya variabel yang **memiliki kategori nilai yang relatif lebih sedikit** (tidak lebih dari lima atau enam kategori) [@devaus2014surveys].
@@ -36,8 +36,6 @@ dengan:
 
 - $C$ adalah jumlah pasangan kategori yang *concordant*
 - $D$ adalah jumlah pasangan kategori yang *discordant*
-
-Simak kasus berikut untuk mempelajari apa yang dimaksud dengan pasangan frekuensi *concordant* dan *discordant*.
 
 ::: {#kasus-concordant-discordant .kasus title="Pasangan Frekuensi *Concordant* dan *Discordant*"}
 Kita akan meninjau korelasi antara variabel **"tingkat uang saku"** dan **"tingkat semester perkuliahan"**. Perhatikan kategori nilai dalam kedua variabel tersebut sebagai berikut beserta kode yang akan digunakan pada tabel silangnya.
@@ -372,8 +370,6 @@ $$
 $$
 
 :::
-
-Kerjakan soal evaluasi berikut untuk mengukur pemahaman Anda mengenai koefisien korelasi ordinal.
 
 ::: {#latihan-korelasi-ordinal-1 .latihan}
 Perhatikan tabel silang yang menunjukkan distribusi frekuensi  dari 100 orang peserta musrenbang (musyawarah perencanaan pembangunan) di suatu lingkungan berdasarkan variabel persepsi mereka terhadap keberjalanan musrenbang dan tingkat partisipasi mereka. [STP-10.1]{.capaian}

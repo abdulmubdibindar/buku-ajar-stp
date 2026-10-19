@@ -291,7 +291,7 @@ Dari seluruh tingkat pengukuran, hanya tingkat pengukuran **nominal** yang tidak
 
 Sementara itu, **pola** hanya bisa diidentifikasi pada tingkat pengukuran **interval** dan **rasio**, karena pola hanya bisa diidentifikasi pada nilai yang berupa angka.
 
-Bagaimana jika dua variabel kita memiliki tingkat pengukuran yang berbeda? Kita harus melihat variabel yang **tingkat pengukurannya lebih rendah**. Mari simak contoh kasus berikut.
+Bagaimana jika dua variabel kita memiliki tingkat pengukuran yang berbeda? Kita harus melihat variabel yang **tingkat pengukurannya lebih rendah**.
 
 ::: {#kasus-karakteristik-hubungan-berdasarkan-tingkat-pengukuran-variabel .kasus title="Karakteristik Hubungan Berdasarkan Tingkat Pengukuran Variabel"}
 Perhatikan dataset contoh berikut.
@@ -369,7 +369,7 @@ Tentu saja kesimpulan tersebut keliru. Kendati secara hitungan matematis keduany
 :::
 
 ## Koefisien Korelasi Variabel Nominal
-Dalam bab ini kita akan mempelajari **koefisien-koefisien korelasi** untuk dua variabel **nominal**. Koefisien-koefisien yang akan kita pelajari di antaranya adalah koefisien yang termasuk ke dalam kategori berbasis chi-kuadrat (*chi-square*, $\chi^2$) dan berbasis galat (*error*).
+**Koefisien korelasi** untuk dua variabel **nominal** terbagi ke dalam dua kategori: berbasis chi-kuadrat (*chi-square*, $\chi^2$) dan berbasis galat (*error*).
 
 Koefisien yang termasuk ke dalam kategori berbasis chi-kuadrat yang akan kita bahas di antaranya adalah **koefisien *phi*** ($\phi$), **koefisien *Cramer's V*** (V), dan **koefisien *contingency*** (C). Sementara itu, koefisien yang termasuk ke dalam kategori berbasis galat (*error*) adalah **koefisien *Lambda*** ($\lambda$).
 
@@ -822,8 +822,6 @@ Oleh karena itu, kita dapat menyimpulkan bahwa terdapat hubungan yang kuat antar
 Akan tetapi, kita **belum bisa** menyimpulkan secara gamblang bahwa *"kepemilikan kendaraan menyebabkan ketidaksetujuan menggunakan transportasi publik"* (**kausalitas**). Ibarat kasus konsumsi cokelat dan peraih Nobel yang sudah dibahas pada awal bab, adanya korelasi yang tampak teramat kuat sekalipun belum tentu membuktikan secara empiris adanya **sebab-akibat**. 
 :::
 
-Mari kita terapkan analisis korelasi menggunakan koefisien $\lambda$ pada kasus **jenis tempat tinggal** versus **kendaraan utama**.
-
 ::: {#kasus-lambda-hunian-kendaraan .kasus title="Koefisien Lambda: Jenis Tempat Tinggal dan Kendaraan Utama"}
 Mari kita aplikasikan logika pengurangan kesalahan prediksi (PRE) untuk menghitung koefisien Lambda ($\lambda$) pada hubungan antara `jenis.tempat.tinggal` (sebagai variabel independen, X) dengan `kendaraan.utama` yang digunakan (sebagai variabel dependen, Y) oleh mahasiswa UNILA.
 
@@ -921,8 +919,6 @@ Nilai $\lambda = `r format(lambda_unila, digits = 3)`$ menunjukkan bahwa informa
 
 Berdasarkan @tbl-interpretasi-koefisien-nominal, nilai tersebut berada pada rentang $0,01 - 0,09$ yang berarti kedua variabel memiliki **hubungan yang sangat kecil (sangat lemah/nyaris tanpa pengaruh)**. Kesimpulannya, jenis tempat tinggal mahasiswa UNILA hampir tidak memiliki hubungan apapun terhadap jenis kendaraan utama yang mereka gunakan sehari-hari.
 :::
-
-Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda mengenai materi yang telah dipelajari pada subbab ini.
 
 ::: {#latihan-korelasi-nominal-1 .latihan}
 1. Perhatikan tabel silang yang menunjukkan distribusi frekuensi pandangan mahasiswa terhadap kegiatan ekstrakurikuler (ekskul) berdasarkan variabel pandangan mereka dan apakah mereka anggota sebuah himpunan. [STP-9.1]{.capaian}

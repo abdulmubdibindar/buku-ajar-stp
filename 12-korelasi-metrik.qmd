@@ -10,11 +10,11 @@ source("_common.R")
 Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran metrik dengan tepat [STP-11.1]{.capaian}
 :::
 
-Setelah mempelajari korelasi antara dua variabel nominal dan ordinal, pada bab ini kita akan membahas bentuk pengujian asosiasi yang lebih kompleks, yaitu pengujian pada pasangan variabel berjenis **metrik**. Variabel metrik mencakup data dengan skala pengukuran **interval** maupun **rasio**. Variabel jenis ini **memiliki nilai yang beragam** dan **bersifat numerik**, sehingga **dapat langsung diolah secara matematis**.
+Setelah korelasi antara dua variabel nominal dan ordinal, bentuk pengujian asosiasi yang lebih kompleks adalah pengujian pada pasangan variabel berjenis **metrik**. Variabel metrik mencakup data dengan skala pengukuran **interval** maupun **rasio**. Variabel jenis ini **memiliki nilai yang beragam** dan **bersifat numerik**, sehingga **dapat langsung diolah secara matematis**.
 
 Dalam analisis asosiasi, pengujian hubungan antarvariabel metrik dapat memberikan informasi yang lebih lengkap, meliputi (1) kekuatan hubungan, (2) arah hubungan (positif/searah atau negatif/berlawanan arah), dan (3) **pola hubungan** (linear atau non-linear).
 
-Untuk asosiasi antarvariabel metrik, kita akan mempelajari dua koefisien, yaitu koefisien korelasi $\rho$ (rho) Spearman dan koefisien $r$ Pearson. Kedua ukuran ini didasarkan pada logika pengurangan kesalahan prediksi **(Proportional Reduction of Error, PRE)**, seperti halnya $\lambda$ pada ukuran asosiasi antarvariabel nominal dan pada ukuran-ukuran asosiasi antarvariabel ordinal. Artinya, pengujian dilakukan untuk melihat sejauh mana informasi dari satu variabel dapat mengurangi kesalahan prediksi terhadap nilai variabel lainnya.
+Untuk asosiasi antarvariabel metrik, digunakan dua koefisien, yaitu koefisien korelasi $\rho$ (rho) Spearman dan koefisien $r$ Pearson. Kedua ukuran ini didasarkan pada logika pengurangan kesalahan prediksi **(Proportional Reduction of Error, PRE)**, seperti halnya $\lambda$ pada ukuran asosiasi antarvariabel nominal dan pada ukuran-ukuran asosiasi antarvariabel ordinal. Artinya, pengujian dilakukan untuk melihat sejauh mana informasi dari satu variabel dapat mengurangi kesalahan prediksi terhadap nilai variabel lainnya.
 
 ## Koefisien Korelasi $\rho$ Spearman
 Koefisien $\rho$ Spearman digunakan untuk mengukur tingkat asosiasi antara dua variabel interval (atau bisa salah satunya saja) dan **tidak mensyaratkan distribusi data yang normal**. Kondisi ini menjadikan pengukuran asosiasi menggunakan $\rho$ Spearman lebih fleksibel, karena dapat **diterapkan tanpa perlu terlebih dahulu mengidentifikasi bentuk distribusi datanya**.
@@ -480,8 +480,6 @@ Berdasarkan pengamatan visual terhadap titik-titik koordinat tersebut, kita dapa
 3. **Arah**: Hubungan bersifat negatif atau berlawanan arah. Hal ini ditunjukkan oleh kemiringan pola yang menurun dari kiri atas ke kanan bawah, yang berarti semakin jauh jarak ke taman (nilai $x$ membesar), maka kualitas udara cenderung semakin rendah (nilai $y$ mengecil).
 4. **Pola**: Secara visual, sebaran titik-titik tersebut lebih mendekati bentuk garis lurus (linear) daripada bentuk melengkung (nonlinear). Oleh karena itu, kita dapat menyimpulkan bahwa hubungan kedua variabel ini mengikuti pola hubungan linear.
 :::
-
-Kerjakanlah soal-soal berikut untuk menguji pemahaman Anda mengenai korelasi variabel metrik.
 
 ::: {#latihan-korelasi-metrik-1 .latihan}
 Perhatikan tabel terkait jarak rumah ke fasilitas kesehatan, frekuensi kunjungan per tahun, dan tingkat kepuasan terhadap fasilitas kesehatan berikut. Lakukanlah pengujian asosiasi pada masing-masing variabel berikut: (i) jarak dan frekuensi kunjungan; dan (ii) frekuensi kunjungan dan kepuasan.

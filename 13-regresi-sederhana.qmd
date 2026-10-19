@@ -347,8 +347,6 @@ dengan:
 - $\bar{Y}$ adalah rata-rata nilai variabel dependen
 - $b$ adalah koefisien regresi hasil perhitungan sebelumnya
 
-Mari kita pelajari studi kasus berikut untuk lebih memahami bagaimana memperoleh persamaan regresi linear sederhana.
-
 ::: {#kasus-memperoleh-persamaan-regresi-linear-sederhana-untuk .kasus title="Memperoleh Persamaan Regresi Linear Sederhana untuk Jarak Taman dan Kualitas Udara"}
 Menggunakan data dari studi kasus sebelumnya, kita akan memperoleh persamaan regresi linear sederhana untuk hubungan antara jarak ke taman kota dan Indeks Kualitas Udara (IKU).
 
@@ -649,8 +647,6 @@ Hasil uji F menunjukkan nilai $F_{(`r f_df1`,`r f_df2`)} = `r format(f_stat, dec
 Hasil uji t untuk variabel jarak ke taman menunjukkan $t = `r format(t_stat, decimal.mark = ",", nsmall = 2)`$ dengan $p = `r format(t_pval, decimal.mark = ",", scientific = FALSE, nsmall = 4)`$. Karena $p < 0{,}05$, maka **variabel jarak ke taman kota secara individual signifikan** dalam memengaruhi Indeks Kualitas Udara.
 
 :::
-
-Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap capaian pembelajaran pada bab ini.
 
 ::: {#latihan-regresi-sederhana-1 .latihan}
 1.  Berikan tanda centang pada kotak yang sesuai dengan masing-masing pernyataan berikut. *(Petunjuk: ingat kembali apa makna 'kausalitas')* [STP-12.1]{.capaian}

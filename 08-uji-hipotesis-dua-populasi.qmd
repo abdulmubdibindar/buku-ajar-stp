@@ -40,7 +40,7 @@ Meski kelompok subjek yang diamati sama (mahasiswa UBL), perbedaan waktu pengamb
 
 Sudut pandang pertama juga bisa dibagi lagi menjadi dua populasi **berpasangan** dan **independen**. Populasi berpasangan adalah dua populasi yang terikat hubungan satu sama lain secara logis. Misalnya, kita mengambil data suami dan istri dalam suatu kelurahan. Dalam hal tersebut, suami adalah populasi pertama, sementara istri adalah populasi kedua. Sudut pandang kedua juga kita bisa katakan sebagai populasi yang berpasangan.
 
-Dengan demikian, berdasarkan sudut pandangnya, penjelasan uji hipotesis lebih dari satu populasi ini dapat dikelompokkan ke dalam tiga bentuk kasus, yaitu **dua populasi tidak berpasangan**, **dua populasi berpasangan**, dan **lebih dari dua populasi**. Sedangkan berdasarkan statistiknya, kita akan membahas uji hipotesis parameter **rata-rata** dan **proporsi**.
+Dengan demikian, berdasarkan sudut pandangnya, penjelasan uji hipotesis lebih dari satu populasi ini dapat dikelompokkan ke dalam tiga bentuk kasus, yaitu **dua populasi tidak berpasangan**, **dua populasi berpasangan**, dan **lebih dari dua populasi**. Berdasarkan statistiknya, parameter yang diuji adalah **rata-rata** dan **proporsi**.
 
 ## Tahapan Pengujian Hipotesis Parameter Dua Populasi atau Lebih
 
@@ -60,7 +60,7 @@ Langkah-langkah ini juga akan kita gunakan dalam melakukan uji hipotesis paramet
 
 ## Uji Hipotesis Parameter Dua Populasi Independen
 
-Dalam subbab ini, kita akan membahas **perumusan hipotesis kosong dan alternatif** serta **perhitungan statistik ujinya**, sesuai penjelasan sebelumnya yang mengatakan bahwa dua hal tersebut merupakan hal yang membedakan uji hipotesis parameter dua populasi atau lebih dengan uji hipotesis parameter satu populasi.
+Dua hal yang membedakan uji hipotesis parameter dua populasi atau lebih dari uji hipotesis parameter satu populasi adalah **perumusan hipotesis kosong dan alternatif** serta **perhitungan statistik ujinya**.
 
 ### Hipotesis Kosong dan Alternatif Uji Hipotesis Parameter Dua Populasi Independen
 
@@ -631,8 +631,6 @@ g. **Menarik Kesimpulan dan Memaknai Hasil**
    **Interpretasi ke dalam bidang PWK:** meskipun proporsi pengguna sepeda motor di ITERA (≈60,7%) tampak lebih tinggi dari UNILA (≈58,4%), selisih tersebut tidak cukup signifikan secara statistik. Ini menunjukkan bahwa **budaya penggunaan kendaraan bermotor pribadi cenderung serupa** di kedua kampus. Dalam konteks perencanaan transportasi, hal ini mengindikasikan bahwa intervensi kebijakan untuk mendorong moda transportasi alternatif — seperti angkutan umum atau sepeda — kemungkinan perlu diformulasikan secara bersamaan untuk kedua kawasan kampus tersebut.
 :::
 
-Kerjakan soal evaluasi berikut untuk mengaplikasikan pemahaman kalian mengenai uji hipotesis dua populasi independen.
-
 ::: {#latihan-uji-hipotesis-dua-populasi-1 .latihan}
 1. Gilang ingin mengetahui apakah selisih rata-rata usia antara seluruh Dosen dengan Tenaga Kependidikan di ITERA sama dengan 1 tahun atau sebenarnya lebih. Dari 73 sampel Dosen, Gilang mendapatkan rata-rata usianya yaitu 30 tahun, sementara dari 69 sampel Tenaga Kependidikan, rata-rata usianya 29 tahun. Simpangan baku sampel Dosen dan Tenaga Kependidikan yang didapatkan Gilang adalah 2,9 tahun dan 2,5 tahun secara berturut-turut. Dengan galat 10%, bantulah Gilang menganalisis hipotesis tersebut. [STP-7.1]{.capaian}
 2. Masih dari data yang sama, Gilang juga ingin mengetahui apakah proporsi Dosen yang sudah menikah di ITERA **lebih besar** dari proporsi Tenaga Kependidikan yang sudah menikah. Dari 73 sampel Dosen, sebanyak 54 orang sudah menikah, sementara dari 69 sampel Tenaga Kependidikan, sebanyak 38 orang sudah menikah. Dengan tingkat kepercayaan 95%, bantulah Gilang menganalisis hipotesis tersebut. [STP-7.1]{.capaian}
@@ -711,8 +709,6 @@ g. **Menarik Kesimpulan dan Memaknai Hasil**
 
 **Interpretasi ke dalam bidang PWK:** Penurunan biaya perjalanan yang signifikan menunjukkan bahwa penyediaan infrastruktur transportasi umum yang terintegrasi di kawasan pendidikan efektif dalam meningkatkan efisiensi ekonomi bagi pengguna. Dalam perencanaan wilayah, keberhasilan ini dapat menjadi dasar untuk memperluas jangkauan layanan angkutan umum guna mendorong pergeseran moda (*modal shift*) dari kendaraan pribadi ke transportasi publik yang lebih berkelanjutan.
 :::
-
-Kerjakan soal evaluasi berikut untuk mengaplikasikan pemahaman kalian mengenai uji hipotesis dua populasi berpasangan.
 
 ::: {#latihan-uji-hipotesis-dua-populasi-2 .latihan}
 Kampus ITERA melakukan penilaian terhadap Program Bus Kampus, khusus untuk segmen pegawai dan Tenaga Kependidikan (Tendik). Sebanyak 120 orang pegawai dipilih secara acak dan diamati beberapa bulan sebelum dan setelah program berjalan. Hasilnya, rata-rata selisih biaya perjalanan harian (sesudah dikurangi sebelum) yang diperoleh adalah $-$Rp250.000 dengan simpangan baku Rp120.000. Dengan galat 10%, buktikanlah apakah selisih tersebut signifikan secara statistik. [STP-7.1]{.capaian}

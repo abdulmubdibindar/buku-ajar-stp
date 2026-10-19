@@ -122,8 +122,6 @@ knitr::include_graphics("images/bab-2-perbaikan-3-recreate.png")
 
 :::
 
-Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-elemen data terstruktur.
-
 ::: {#latihan-data-terstruktur-1 .latihan}
 Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
 
@@ -165,7 +163,7 @@ d. Apakah format tabel tersebut sesuai dengan prinsip data yang rapi? Jelaskan a
 
 ## Tingkat Pengukuran Variabel
 
-Pada subbab ini kita akan membahas lebih dalam tentang nilai dalam variabel yang berpengaruh pada analisis selanjutnya, yakni tingkat pengukuran variabel.
+Sifat nilai dalam suatu variabel menentukan analisis yang bisa dilakukan terhadapnya. Sifat ini disebut **tingkat pengukuran variabel**.
 
 Sebagaimana telah disebutkan pada Subbab @sec-analisis-kuantitatif-vs-kualitatif bahwa pengumpulan data kuantitatif dapat disebut juga sebagai pengukuran suatu variabel, cara kita mengukur suatu variabel bisa diibaratkan seperti menggunakan mistar yang memiliki sederet angka [@kachigan1986statistical].
 
@@ -197,8 +195,6 @@ Dalam variabel tersebut, nilai `Usia` dapat kita nyatakan dalam 2 bentuk yang be
     Dalam kasus ini, nilai `17` bukan lagi berarti "17 tahun", melainkan "17-25 tahun". Artinya nilai `17` ini bisa saja bernilai `17` atau `18` atau `19` atau `20` atau `21` atau `22` atau `23` atau `24` atau `25`.
 
 Kedua kasus tersebut menunjukkan bahwa kita bisa menggunakan tingkat pengukuran yang berbeda untuk variabel yang sama. 
-
-Kita akan mempelajari nama-nama tingkat pengukuran tersebut dalam subbab-subbab selanjutnya.
 :::
 
 ## Jenis-jenis Tingkat Pengukuran Variabel
@@ -339,8 +335,6 @@ kbl(metadata_2,
 ```
 :::
 
-
-Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang tingkat pengukuran variabel.
 
 ::: {#latihan-data-terstruktur-2 .latihan}
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:

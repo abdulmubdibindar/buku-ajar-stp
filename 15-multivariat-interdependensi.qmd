@@ -785,8 +785,6 @@ Alasan penamaan faktor tersebut secara demikian bisa dijelaskan sebagai berikut:
 
 :::
 
-Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis komponen prinsip dan analisis faktor
-
 ::: {#latihan-multivariat-interdependensi-1 .latihan}
 1. [STP-14.1]{.capaian} Diperoleh hasil pengujian awal dari 10 variabel yang dianalisis menggunakan PCA sebagai berikut.
    

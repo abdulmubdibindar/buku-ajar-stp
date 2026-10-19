@@ -44,7 +44,7 @@ Makna yang dihasilkan dari teknik ini adalah seberapa besar perbandingan jumlah 
 Karena rumus perhitungan frekuensi relatif melibatkan penghitungan frekuensi atau jumlah objek (@eq-konsep-frekuensi-relatif), maka teknik ini hanya dapat digunakan pada data nominal dan ordinal. Teknik ini tidak dapat digunakan pada data interval dan rasio karena data interval dan rasio tidak memiliki kategori.
 
 ::: {#kasus-penerapan-ukuran-frekuensi-dari-dataset-hasil .kasus title="Penerapan Ukuran Frekuensi dari Dataset Hasil Survei"}
-Sekarang kita akan membahas teknik analisis statistik dalam set data (dataset) mengenai pola pergerakan mahasiswa di ITERA. Untuk kepentingan kelengkapan ulasan, variabelnya kita tambah dengan satu variabel ordinal: tingkat tahun kuliah (`tingkat`).
+Studi kasus ini memakai set data (*dataset*) pola pergerakan mahasiswa ITERA. Untuk kepentingan kelengkapan ulasan, variabelnya kita tambah dengan satu variabel ordinal: tingkat tahun kuliah (`tingkat`).
 
 Berikut adalah contoh set data hasil kuesioner yang sudah disebarkan beserta metadatanya:
 
@@ -1372,8 +1372,6 @@ kbl(rangkuman_df,
   ) %>%
   column_spec(1, bold = TRUE)
 ```
-
-Kerjakanlah soal-soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis statistik deskriptif.
 
 ::: {#latihan-statistik-deskriptif-1 .latihan}
 Perhatikan cuplikan set data hasil pengumpulan kuesioner yang terdiri atas 6 responden berikut.

@@ -852,8 +852,6 @@ Ringkasan dari pemilihan diagram berdasarkan tujuan, jumlah variabel, dan tingka
 knitr::include_graphics("images/CrazyEgg-Diagram.webp")
 ```
 
-Silakan kerjakan soal-soal evaluasi berikut terkait visualisasi data kuantitatif untuk menguji pemahaman Anda terhadap penjelasan-penjelasan yang telah Anda pelajari.
-
 ::: {#latihan-visualisasi-data-1 .latihan}
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
