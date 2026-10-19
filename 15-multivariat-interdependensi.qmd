@@ -1,9 +1,12 @@
-﻿# Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
 
-::: rmdcapaian
+# Analisis Statistik Multivariat Interdependensi: Analisis Komponen Prinsip dan Analisis Faktor
 
-### Capaian Pembelajaran {-}
-
+::: {#capaian-multivariat-interdependensi .capaian}
 Setelah mempelajari bab ini Anda diharapkan:
 
 1. mampu menjelaskan kegunaan dan asumsi pendahuluan untuk melakukan analisis komponen prinsip dan analisis faktor [STP-14.1]{.capaian}
@@ -15,23 +18,23 @@ Setelah mempelajari bab ini Anda diharapkan:
 
 **Analisis komponen prinsip (*principal component analysis*, PCA)** dan **Analisis Faktor (*common factor analysis*)** adalah metode analisis statistik multivariat lain yang berguna untuk **mengurangi jumlah variabel yang dianalisis dengan meringkasnya**.
 
-::: rmdnote
-
-[Istilah "Dimensi"]{.tajuksaya}
-
-Istilah â€œvariabelâ€ memiliki sebutan lain yakni **dimensi (*dimension*)**. Ini merujuk pada visualisasi data yang dilakukan dengan sumbu-sumbu X, Y, dan Z. Sumbu-sumbu tersebut tidak lain adalah variabel kita. Jumlah sumbu menandakan jumlah dimensinya juga: 2 dimensi berarti mengandung 2 variabel, 3 dimensi berarti mengandung 3 variabel.
+::: {.catatan title="Istilah 'Dimensi'"}
+Istilah “variabel” memiliki sebutan lain yakni **dimensi (*dimension*)**. Ini merujuk pada visualisasi data yang dilakukan dengan sumbu-sumbu X, Y, dan Z. Sumbu-sumbu tersebut tidak lain adalah variabel kita. Jumlah sumbu menandakan jumlah dimensinya juga: 2 dimensi berarti mengandung 2 variabel, 3 dimensi berarti mengandung 3 variabel.
 
 :::
 
-Analisis komponen prinsip dan analisis faktor termasuk ke dalam analisis multivariat juga, seperti halnya analisis Regresi. Akan tetapi, sebagaimana gambar serupa yang bisa kita lihat pada Gambar \@ref(fig:diagram-asosiasi-multivariat), pada Gambar \@ref(fig:posisi-pca-cfa) menunjukan posisi PCA dan CFA. Posisinya terletak pada jenis hubungan yang **interdependen**.
+Analisis komponen prinsip dan analisis faktor termasuk ke dalam analisis multivariat juga, seperti halnya analisis Regresi. Akan tetapi, sebagaimana gambar serupa yang bisa kita lihat pada @fig-diagram-asosiasi-multivariat, pada @fig-posisi-pca-cfa menunjukan posisi PCA dan CFA. Posisinya terletak pada jenis hubungan yang **interdependen**.
 
-```{r posisi-pca-cfa, echo=FALSE, message=FALSE, fig.align='center', fig.cap="Diagram Pohon Keputusan Asosiasi Multivariat: Bagian Interdependensi"}
+```{r}
+#| label: fig-posisi-pca-cfa
+#| fig-align: 'center'
+#| fig-cap: 'Diagram Pohon Keputusan Asosiasi Multivariat: Bagian Interdependensi'
 knitr::include_graphics("images/diagram_interdependensi.drawio.png")
 ```
 
-Yang dimaksud dengan â€œhubungan interdependenâ€ adalah **hubungan yang seluruh variabelnya saling bergantung satu sama lain**. Ini bermakna bahwa setiap variabel setara hubungannya sehingga tidak ada hubungan pengaruh (memengaruhi-dipengaruhi) seperti halnya yang ada dalam analisis regresi linear berganda.
+Yang dimaksud dengan “hubungan interdependen” adalah **hubungan yang seluruh variabelnya saling bergantung satu sama lain**. Ini bermakna bahwa setiap variabel setara hubungannya sehingga tidak ada hubungan pengaruh (memengaruhi-dipengaruhi) seperti halnya yang ada dalam analisis regresi linear berganda.
 
-## Kegunaan PCA dan Analisis Faktor {#kegunaan-pca-analisis-faktor}
+## Kegunaan PCA dan Analisis Faktor {#sec-kegunaan-pca-analisis-faktor}
 
 PCA dan analisis faktor sama-sama memliki kegunaan untuk mengurangi jumlah variabel dari analisis kita. Seperti yang sudah disampaikan, pengurangan ini dilakukan bukan dengan menghilangkan sebagian variabel, melainkan dengan merangkumnya menjadi variabel baru yang disebut dimensi.
 
@@ -40,13 +43,12 @@ PCA dan Analisis Faktor memiliki perbedaan mendasar dalam memaknai hasil analisi
 1. PCA **mengurangi variabel-variabel (*data reduction*)** yang dianalisis dengan mengelompokkan variabel-variabel yang mirip menjadi satu variat yang merupakan penjumlahan nilai setiap variabel yang mirip tersebut.
 2. Analisis faktor **meringkas variabel-variabel (*data summarization*)** yang dianalisis dengan mengelompokkan variabel-variabel yang mirip saja tanpa mengubahnya menjadi variabel lain/variat.
 
-::: rmdkasus
+::: {#kasus-kegunaan-pca-dan-analisis-faktor .kasus title="Kegunaan PCA dan Analisis Faktor"}
+Sebuah penelitian oleh @bindar2022faktor mengidentifikasi struktur di balik variabel-variabel yang memengaruhi penduduk Kota Bandung memilih cara mengakses lokasi *Car-Free Day*. Terdapat 12 variabel yang diukur beserta singkatan yang digunakan disajikan pada @tbl-variabel-cfd berikut.
 
-## Studi Kasus: Kegunaan PCA dan Analisis Faktor {.unnumbered}
-
-Sebuah penelitian oleh @bindar2022faktor mengidentifikasi struktur di balik variabel-variabel yang memengaruhi penduduk Kota Bandung memilih cara mengakses lokasi *Car-Free Day*. Terdapat 12 variabel yang diukur beserta singkatan yang digunakan disajikan pada Tabel \@ref(tab:tabel-variabel-cfd) berikut.
-
-```{r tabel-variabel-cfd, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-variabel-cfd
+#| tbl-cap: 'Daftar Variabel Pemilihan Cara Mengakses Lokasi CFD'
 library(knitr)
 library(kableExtra)
 
@@ -89,7 +91,6 @@ tbl_out <- kbl(df_var,
         "Nama Variabel",
         "Singkatan"
     ),
-    caption = "Daftar Variabel Pemilihan Cara Mengakses Lokasi CFD",
     format.args = list(big.mark = ".", decimal.mark = ","),
     escape = FALSE,
     align = "cllcll"
@@ -130,15 +131,14 @@ Terdapat **dua jenis asumsi dasar** sebelum melakukan PCA/Analisis Faktor terhad
 2. Idealnya, setiap variabel metrik dalam variabel-variabel yang dianalisis **berdistribusi normal**.
 3. Terdapat **hubungan linear antarvariabel** yang ditunjukkan oleh pola diagram pencar antarvariabel yang disebut juga **asumsi linearitas**.
 
-::: rmdkasus
-
-## Studi Kasus: Asumsi Konseptual dan Statistikal {.unnumbered}
-
+::: {#kasus-asumsi-konseptual-dan-statistikal .kasus title="Asumsi Konseptual dan Statistikal"}
 [Asumsi Konseptual]{.tajuksaya}
 
 Secara substansi, kita dapat melihat kemungkinan pemngelompokan dalam variabel-variabel yang dianalisis. Misalnya, variabel jarak tempuh dari rumah ke lokasi CFD dan durasi perjalanan kemungkinan besar akan berkorelasi positif, karena penambahan jarak tempuh pastinya akan menambah durasi perjalanan juga. Kemudian, variabel jumlah sepeda motor dan jumlah mobil kemungkinan besar akan berkorelasi positif, karena kepemilikan kendaraan bermotor berbanding lurus dengan pendapatan, sehingga bisa dianalisis bahwa kedua variabel tersebut memiliki hubungan. Dengan demikian, kita bisa katakan bahwa asumsi konseptual untuk kasus ini bisa dipenuhi.
 
-```{r setup-pca-case, include=FALSE}
+```{r}
+#| label: setup-pca-case
+#| include: false
 # Load library
 library(tidyverse)
 library(psych)
@@ -171,7 +171,9 @@ dataCFD <- read_csv2(
 )
 ```
 
-```{r tidy-data-pca, include=FALSE}
+```{r}
+#| label: tidy-data-pca
+#| include: false
 # Changing integer to factor
 
 dataCFD <- dataCFD |>
@@ -191,7 +193,9 @@ dataCFD <- dataCFD |>
     drop_na(kendaraan)
 ```
 
-```{r select-metric-var-only-and-motorized, include=FALSE}
+```{r}
+#| label: select-metric-var-only-and-motorized
+#| include: false
 # Selecting metric vars only
 dataCFDMetric <- dataCFD |>
     select(
@@ -203,9 +207,12 @@ dataCFDMetric <- dataCFD |>
 
 [Asumsi Statistikal]{.tajuksaya}
 
-Dilihat dari tingkat pengukurannya, seluruh variabel yang akan kita analisis adalah variabel metrik, karena ukuran semua variabel adalah angka yang bermakna, serta memiliki posisi nol yang absolut dan masuk akal. Akan tetapi, secara ukuran kenormalan distribusi dan linearitas, dataset ini tidak memenuhi asumsi tersebut. Ini dapat dilihat dari hasil analisis grafis dan koefisien korelasi r-Pearsonnya seperti pada Gambar \@ref(fig:grafik-scatterplot-cfd).
+Dilihat dari tingkat pengukurannya, seluruh variabel yang akan kita analisis adalah variabel metrik, karena ukuran semua variabel adalah angka yang bermakna, serta memiliki posisi nol yang absolut dan masuk akal. Akan tetapi, secara ukuran kenormalan distribusi dan linearitas, dataset ini tidak memenuhi asumsi tersebut. Ini dapat dilihat dari hasil analisis grafis dan koefisien korelasi r-Pearsonnya seperti pada @fig-grafik-scatterplot-cfd.
 
-```{r grafik-scatterplot-cfd, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="Grafik Analisis CFD"}
+```{r}
+#| label: fig-grafik-scatterplot-cfd
+#| fig-align: 'center'
+#| fig-cap: 'Grafik Analisis CFD'
 pairs.panels(dataCFDMetric,
     method = "pearson", # Menggunakan korelasi Pearson,
     hist.border = NA,
@@ -219,7 +226,9 @@ pairs.panels(dataCFDMetric,
 )
 ```
 
-```{r linearity-test-broom-purr, include=FALSE}
+```{r}
+#| label: linearity-test-broom-purr
+#| include: false
 library(broom)
 library(purrr)
 
@@ -245,9 +254,14 @@ data_residu_lengkap <- pmap_dfr(kombinasi_var, function(y, x) {
 })
 ```
 
-Analisis *scatter-plot* antara *residual* (galat model vs data) dengan *model* (hasil prediksi) seperti yang ditampilkan Gambar \@ref(fig:grafik-residual-fitted) berikut memperlihatkan beberapa pasangan variabel yang memiliki heteroskedastisitas (sebaran residual yang melebar ke kanan, seiring bertambahnya nilai variabel dependen). Misalnya, **durasi sebagai X, vs bparkir sebagai Y** atau **jarak sebagai X, vs jmlanak sebagai Y**. Solusinya adalah kita mentransformasi nilai-nilai variabel kita dengan fungsi lain. Yang paling umum adalah fungsi logaritmik ($log$ atau $ln$). Variabel mana yang kita ubah? Kita bisa memilih variabel yang mempunyai kemiringan ke kanan (*right-skewed*). Variabel-variabel tersebut dapat kita lihat pada Gambar \@ref(fig:grafik-scatterplot-cfd).
+Analisis *scatter-plot* antara *residual* (galat model vs data) dengan *model* (hasil prediksi) seperti yang ditampilkan @fig-grafik-residual-fitted berikut memperlihatkan beberapa pasangan variabel yang memiliki heteroskedastisitas (sebaran residual yang melebar ke kanan, seiring bertambahnya nilai variabel dependen). Misalnya, **durasi sebagai X, vs bparkir sebagai Y** atau **jarak sebagai X, vs jmlanak sebagai Y**. Solusinya adalah kita mentransformasi nilai-nilai variabel kita dengan fungsi lain. Yang paling umum adalah fungsi logaritmik ($log$ atau $ln$). Variabel mana yang kita ubah? Kita bisa memilih variabel yang mempunyai kemiringan ke kanan (*right-skewed*). Variabel-variabel tersebut dapat kita lihat pada @fig-grafik-scatterplot-cfd.
 
-```{r grafik-residual-fitted, echo=FALSE, message=FALSE, warning=FALSE, fig.width=15, fig.height=23, fig.align='center', fig.cap="Scatter Plot Residual vs Fitted untuk Seluruh Pasangan Variabel"}
+```{r}
+#| label: fig-grafik-residual-fitted
+#| fig-width: 15
+#| fig-height: 23
+#| fig-align: 'center'
+#| fig-cap: 'Scatter Plot Residual vs Fitted untuk Seluruh Pasangan Variabel'
 library(ggplot2)
 
 ggplot(data_residu_lengkap, aes(x = .fitted, y = .resid)) +
@@ -272,7 +286,9 @@ ggplot(data_residu_lengkap, aes(x = .fitted, y = .resid)) +
 
 Untuk mengatasi masalah non-linearitas ini, seperti yang sudah dijelaskan, kita dapat melakukan transformasi nilai. Melihat bentuk rentang distribusi dari pengamatan grafik bar sebelumnya yang hampir seluruhnya "menceng kanan" (berkumpul pada nilai kecil dengan *outlier* nilai sangat besar), pendekatan **logaritma natural (`log()`)** sangat cocok diterapkan, dan akan kita terapkan hampir di semua variabel kecuali toplajur. Mari kita lihat pola korelasi terbarunya setelah data-data tersebut ditransformasikan menggunakan operasi logaritma.
 
-```{r transformasi-log-cfd, include=FALSE}
+```{r}
+#| label: transformasi-log-cfd
+#| include: false
 # Melakukan transformasi logaritma natural (ln) serempak untuk semua variabel kecuali toplajur.
 # Kita menggunakan subset fungsi across() untuk memutasi antar kolom secara cepat.
 # Ingat untuk menambahkan +1 jika rentang nilai data ada yang bernilai nol
@@ -284,7 +300,10 @@ dataCFDMetric_Log <- dataCFDMetric |>
     select(toplajur, starts_with("log_"))
 ```
 
-```{r grafik-scatterplot-cfd-transform, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="Grafik Scatterplot Matrix CFD Pasca-Transformasi Logaritma"}
+```{r}
+#| label: fig-grafik-scatterplot-cfd-transform
+#| fig-align: 'center'
+#| fig-cap: 'Grafik Scatterplot Matrix CFD Pasca-Transformasi Logaritma'
 pairs.panels(dataCFDMetric_Log,
     method = "pearson",
     hist.border = NA,
@@ -297,9 +316,11 @@ pairs.panels(dataCFDMetric_Log,
 )
 ```
 
-Dapat dilihat pada Gambar \@ref(fig:grafik-scatterplot-cfd-transform) bahwa elips yang ditunjukkan antara `log_ongkos` dan variabel metrik lain (juga pada `log_jarak`) sudah menunjukkan orientasi yang miring dan lebih memanjang mengikuti titik referensi linear utamanya (titik sumbu silang). Elipsnya tidak lagi membulat atau berpusat sembarang di pojok seperti bentuk hubungan pada grafik sebelumnya. Pola linear ini menandakan bahwa hubungan tersebut kini terbaca lebih *linear*, sehingga korelasi Pearson bekerja lebih optimal dan pada gilirannya **meningkatkan signifikansi variabel saat hendak dilibatkan dalam analisis komponen prinsip atau analisis faktor.**
+Dapat dilihat pada @fig-grafik-scatterplot-cfd-transform bahwa elips yang ditunjukkan antara `log_ongkos` dan variabel metrik lain (juga pada `log_jarak`) sudah menunjukkan orientasi yang miring dan lebih memanjang mengikuti titik referensi linear utamanya (titik sumbu silang). Elipsnya tidak lagi membulat atau berpusat sembarang di pojok seperti bentuk hubungan pada grafik sebelumnya. Pola linear ini menandakan bahwa hubungan tersebut kini terbaca lebih *linear*, sehingga korelasi Pearson bekerja lebih optimal dan pada gilirannya **meningkatkan signifikansi variabel saat hendak dilibatkan dalam analisis komponen prinsip atau analisis faktor.**
 
-```{r linearity-test-using-reset-post-transform, include=FALSE}
+```{r}
+#| label: linearity-test-using-reset-post-transform
+#| include: false
 # Untuk memastikannya kembali secara statistik, kita dapat menjalankan
 # pengujian RESET test seperti sebelumnya terhadap matrix data yang baru.
 vars_log <- names(dataCFDMetric_Log)
@@ -346,11 +367,10 @@ Di langkah ini kita melakukan **uji kelayakan data** untuk memastikan data kita 
    
    Ada dua jenis nilai KMO, yaitu KMO secara keseluruhan dan KMO secara individual. Jika nilai KMO secara keseluruhan > 0,5 maka data kita layak untuk dilakukan analisis PCA atau analisis faktor. Akan tetapi, jika nilai KMO secara individual < 0,5 maka variabel tersebut **dikeluarkan** analisis PCA atau analisis faktor. 
 
-::: rmdkasus
-
-### Studi Kasus: Uji Kelayakan Data (interkorelasi) {.unnumbered}
-
-```{r bartlett-kmo, echo=FALSE, message=FALSE, results='hold'}
+::: {#kasus-uji-kelayakan-data-interkorelasi .kasus title="Uji Kelayakan Data (interkorelasi)"}
+```{r}
+#| label: bartlett-kmo
+#| output: 'hold'
 bartlett_Log <- cortest.bartlett(dataCFDMetric_Log)
 cat("P-value Bartlett's Test of Sphericity adalah", bartlett_Log$p.value, "\n\n")
 
@@ -367,7 +387,7 @@ Ini berarti uji Bartlett of Sphericity menunjukkan hasil yang signifikan karena 
 
 Jika kriteria-kriteria *Bartlett's test of sphericity* serta MSA terpenuhi, kita dapat melanjutkan analisis kita ke tahap kedua, yakni mengekstrak atau ekstraksi dimensi baru. Terdapat dua metode dalam melakukan ekstraksi dimensi baru: metode ***principal component analysis* (PCA)** dan ***common factor analysis*** atau yang akan kita sebut **analisis faktor**.
 
-Secara konseptual perbedaan keduanya sudah dijelaskan di subbab \@ref(kegunaan-pca-analisis-faktor). Secara teknis, perbedaan antara PCA dan analisis faktor terletak pada **variat** dan ***factor score***. Dua hal ini **hanya dihasilkan dari PCA**. Analisis faktor tidak menghasilkan dua hal ini, tetapi **hanya mengelompokkan variabel-variabel yang mirip dalam satu dimensi baru**.
+Secara konseptual perbedaan keduanya sudah dijelaskan di subbab @sec-kegunaan-pca-analisis-faktor. Secara teknis, perbedaan antara PCA dan analisis faktor terletak pada **variat** dan ***factor score***. Dua hal ini **hanya dihasilkan dari PCA**. Analisis faktor tidak menghasilkan dua hal ini, tetapi **hanya mengelompokkan variabel-variabel yang mirip dalam satu dimensi baru**.
 
 Mengekstrak dimensi baru membutuhkan keputusan terkait jumlah dimensi baru yang diekstrak. Untuk memutuskannya, kita melakukan analisis lain yang disebut **analisis paralel (*parallel analysis*)**. Analisis paralel dilakukan dengan menggunakan pendekatan ***eigenvalue*** (nilai eigen) dan ***scree plot*** (grafik patahan).
 
@@ -375,7 +395,7 @@ Mengekstrak dimensi baru membutuhkan keputusan terkait jumlah dimensi baru yang 
 
 Sebelum sampai ke pembahasan *eigenvalue*, kita akan mulai dari konsep yang paling awal terlebih dahulu: nilai terstandar dan variansi totalnya.
 
-Sebelum diolah, nilai-nilai seluruh variabel analisis kita distandarkan terlebih dahulu, atau diubah dalam bentuk ***Z-score***. Artinya seluruh variabel akan mempunyai nilai rata-rata dan variansi/simpangan baku yang sama, yakni 0 dan 1, secara berturut-turut. Untuk menstandarkan nilai-nilai variabel kita, seperti yang sudah dibahas dalam Bab \@ref(bab-5-pengantar-inferensial), yakni pada persamaan \@ref(eq:z-score), setiap nilai dalam data kita ($x_i$) dihitung dengan persamaan berikut:
+Sebelum diolah, nilai-nilai seluruh variabel analisis kita distandarkan terlebih dahulu, atau diubah dalam bentuk ***Z-score***. Artinya seluruh variabel akan mempunyai nilai rata-rata dan variansi/simpangan baku yang sama, yakni 0 dan 1, secara berturut-turut. Untuk menstandarkan nilai-nilai variabel kita, seperti yang sudah dibahas dalam Bab @sec-bab-5-pengantar-inferensial, yakni pada @eq-z-score, setiap nilai dalam data kita ($x_i$) dihitung dengan persamaan berikut:
 
 $$
 Z_i = \frac{x_i - \bar{x}}{s}
@@ -389,13 +409,13 @@ Tabel yang menunjukkan nilai *eigen* dan persentase kumulatif total nilai *eigen
 
 Kriteria yang digunakan untuk menentukan jumlah dimensi biasanya adalah yang memiliki nilai *eigen* $>1{,}00$ atau yang memiliki persentase kumulatif total nilai *eigen* $\geq 60\%$ [@Hair-Multivariate].
 
-::: rmdkasus
+::: {#kasus-mengekstrak-sejumlah-dimensi-baru-menggunakan-nilai .kasus title="Mengekstrak Sejumlah Dimensi Baru Menggunakan Nilai *Eigen*"}
+@tbl-show-loading berikut menampilkan nilai *eigen* dan persentase kumulatif total nilai *eigen* untuk setiap jumlah dimensi. Berdasarkan kriteria yang telah disebutkan sebelumnya, yakni nilai *eigen* $>1{,}00$ atau yang memiliki persentase kumulatif total nilai *eigen* $\geq 60\%$. Sehingga jumlah dimensi yang akan diekstrak adalah **4 dimensi**, walaupun pada jumlah tersebut nilai persentase kumulatif total nilai *eigen*-nya tidak pas 60%, kita bisa menganggap nilai 59,2257% tersebut mendekati 60% saja.
 
-#### Studi Kasus: Mengekstrak Sejumlah Dimensi Baru Menggunakan Nilai *Eigen* {.unnumbered}
-
-Tabel \@ref(tab:show-loading) berikut menampilkan nilai *eigen* dan persentase kumulatif total nilai *eigen* untuk setiap jumlah dimensi. Berdasarkan kriteria yang telah disebutkan sebelumnya, yakni nilai *eigen* $>1{,}00$ atau yang memiliki persentase kumulatif total nilai *eigen* $\geq 60\%$. Sehingga jumlah dimensi yang akan diekstrak adalah **4 dimensi**, walaupun pada jumlah tersebut nilai persentase kumulatif total nilai *eigen*-nya tidak pas 60%, kita bisa menganggap nilai 59,2257% tersebut mendekati 60% saja.
-
-```{r show-loading, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+```{r}
+#| label: tbl-show-loading
+#| fig-align: 'center'
+#| tbl-cap: 'Nilai Eigen dan Persentase Kumulatif dari Tiap Dimensi'
 library(knitr)
 library(kableExtra)
 
@@ -409,7 +429,6 @@ table_eigen <- tibble(
 )
 
 out_eigen <- kbl(table_eigen,
-    caption = "Nilai Eigen dan Persentase Kumulatif dari Tiap Dimensi",
     digits = 4, # membulatkan hingga 4 angka pecahan
     format.args = list(decimal.mark = ",", big.mark = "."),
     align = "ccc"
@@ -432,13 +451,13 @@ out_eigen
 
 Untuk *scree plot*, kita perlu membuat grafik garis untuk nilai *eigen* dengan jumlah dimensinya. Jumlah dimensi yang kita ambil adalah titik yang menandakan **perbelokan melandai pertama** yang ada pada grafik tersebut. *Scree plot* pada dasarnya memetakan nilai *eigen* terhadap jumlah dimensi.
 
-::: rmdkasus
+::: {#kasus-mengekstrak-sejumlah-dimensi-baru-menggunakan-scree .kasus title="Mengekstrak Sejumlah Dimensi Baru Menggunakan *Scree Plot*"}
+Grafik untuk kasus kita diperlihatkan pada @fig-show-scree-plot. Pada gambar tersebut, perbelokan melandai agak sulit ditentukan karena nampaknya tidak perbelokan yang terlalu tajam pada titik mana pun. Dengan demikian, kriteria ini sulit untuk digunakan dalam menentukan jumlah dimensi yang akan diekstrak.
 
-#### Studi Kasus: Mengekstrak Sejumlah Dimensi Baru Menggunakan *Scree Plot* {.unnumbered}
-
-Grafik untuk kasus kita diperlihatkan pada Gambar \@ref(fig:show-scree-plot). Pada gambar tersebut, perbelokan melandai agak sulit ditentukan karena nampaknya tidak perbelokan yang terlalu tajam pada titik mana pun. Dengan demikian, kriteria ini sulit untuk digunakan dalam menentukan jumlah dimensi yang akan diekstrak.
-
-```{r show-scree-plot, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.cap="Scree Plot untuk Data CFD (Transformasi Log)"}
+```{r}
+#| label: fig-show-scree-plot
+#| fig-align: 'center'
+#| fig-cap: 'Scree Plot untuk Data CFD (Transformasi Log)'
 dataCFDMetric_Log |>
     scree(
         main = "Scree Plot untuk Data CFD (Transformasi Log)",
@@ -454,19 +473,17 @@ Karena kesulitan dalam pendekatan ini, kita akan menentukan jumlah dimensi yang 
 
 Setelah memutuskan jumlah dimensi yang kita ekstrak, kita harus mengelompokkan variabel-variabel ke dalam dimensi yang kita ekstrak.
 
-Istilah â€œdimensiâ€ ini sekarang harus kita bedakan. Jika kita menggunakan PCA, maka nama dimensi kita adalah **komponen** atau **variat**. Namun apabila kita menggunakan analisis faktor, dimensi kita disebut **faktor**.
+Istilah “dimensi” ini sekarang harus kita bedakan. Jika kita menggunakan PCA, maka nama dimensi kita adalah **komponen** atau **variat**. Namun apabila kita menggunakan analisis faktor, dimensi kita disebut **faktor**.
 
 Variabel dikelompokkan ke dalam dimensi berdasarkan **nilai *loading*-nya**. Setiap variabel mempunyai nilai loading untuk tiap-tiap dimensi yang disajikan dalam ***factor matrix***. Untuk menentukan ke dalam dimensi mana tiap-tiap variabel dikelompokkan, kita mengacu pada **nilai absolut *loading* terbesar** yang ada di antara sejumlah dimensi yang diekstrak.
 
-::: rmdkasus
-
-### Studi Kasus: Mengelompokkan Variabel-variabel ke dalam Dimensi Baru {.unnumbered}
-
+::: {#kasus-mengelompokkan-variabel-variabel-ke-dalam-dimensi .kasus title="Mengelompokkan Variabel-variabel ke dalam Dimensi Baru"}
 [Untuk Analisis Komponen Prinsip]{.tajuksaya}
 
 Berikut adalah tabel *loading* untuk komponen-komponen yang diekstrak. Karena kita sudah menentukan jumlah dimensi yang diekstrak adalah 4, kita hanya tinggal menggolongkan tiap-tiap variabel ke dalam komponen yang memiliki nilai *loading* absolut terbesar. Sel yang tidak memiliki angka menandakan **nilai *loading* variabel dalam dimensi tersebut sangat kecil hingga mendekati nol**.
 
-```{r pca-extraction, echo=FALSE, warning=FALSE, message=FALSE}
+```{r}
+#| label: pca-extraction
 variates <- principal(
     dataCFDMetric_Log,
     rotate = "none",
@@ -492,9 +509,11 @@ Berdasarkan hasil PCA tersebut, pengelompokan tiap-tiap komponennya adalah:
 - log_jmlanak : PC4
 - log_jarak : PC1
 
-Dengan demikian, pengelompokan tiap-tiap komponennya ditunjukkan oleh Tabel \@ref(tab:pca-grouping) berikut.
+Dengan demikian, pengelompokan tiap-tiap komponennya ditunjukkan oleh @tbl-pca-grouping berikut.
 
-```{r pca-grouping, echo=FALSE}
+```{r}
+#| label: tbl-pca-grouping
+#| tbl-cap: 'Pengelompokan Variabel ke dalam Komponen Baru'
 variates_grouping <- tibble(
     "PC1" = c("toplajur", "log_ongkos", "log_bparkir", "log_jmlmobil", "log_jarak"),
     "PC2" = c("log_usia", "log_jmlmotor", "log_jmlsepeda", "", ""),
@@ -504,7 +523,6 @@ variates_grouping <- tibble(
 
 kbl(
     variates_grouping,
-    caption = "Pengelompokan Variabel ke dalam Komponen Baru",
     digits = 4,
     format.args = list(decimal.mark = ",", big.mark = "."),
     align = "ccc"
@@ -521,7 +539,8 @@ kbl(
 
 Berikut adalah tabel *loading* untuk faktor-faktor yang diekstrak. Karena kita sudah menentukan jumlah dimensi yang diekstrak adalah 4, kita hanya tinggal menggolongkan tiap-tiap variabel ke dalam faktor yang memiliki nilai *loading* absolut terbesar.
 
-```{r factors-extraction, echo=FALSE, warning=FALSE, message=FALSE}
+```{r}
+#| label: factors-extraction
 factors <- fa(
     dataCFDMetric_Log,
     rotate = "none",
@@ -561,9 +580,11 @@ Berdasarkan hasil analisis faktor tersebut, pengelompokan tiap-tiap faktornya ad
 - log_jmlanak : MR1
 - log_jarak : MR1
 
-Dengan demikian, pengelompokan tiap-tiap faktornya ditunjukkan oleh Tabel \@ref(tab:factors-grouping) berikut.
+Dengan demikian, pengelompokan tiap-tiap faktornya ditunjukkan oleh @tbl-factors-grouping berikut.
 
-```{r factors-grouping, echo=FALSE}
+```{r}
+#| label: tbl-factors-grouping
+#| tbl-cap: 'Pengelompokan Variabel ke dalam Faktor Baru'
 factors_grouping <- tibble(
     "MR1" = c("toplajur", "log_ongkos", "log_bparkir", "log_durasi", "log_jmlmotor", "log_jmlmobil", "log_jmlanak", "log_jarak"),
     "MR2" = c("log_bareng", "log_usia", "log_jmlsepeda", "log_jmldewasa", "", "", "", ""),
@@ -573,7 +594,6 @@ factors_grouping <- tibble(
 
 kbl(
     factors_grouping,
-    caption = "Pengelompokan Variabel ke dalam Faktor Baru",
     digits = 4,
     format.args = list(decimal.mark = ",", big.mark = "."),
     align = "ccc"
@@ -593,15 +613,13 @@ Nilai-nilai loading bisa tidak kontras antarfaktor atau antarkomponen. Ini membu
 
 Terdapat banyak jenis rotasi faktor atau komponen yang digolongkan menjadi ***orthogonal*** dan ***oblique***. Teknik rotasi yang termasuk ke dalam jenis orthogonal dan banyak dipakai antara lain ***quartimax***, ***varimax***, dan ***equamax***. Sementara itu, teknik rotasi jenis oblique yang banyak dipakai antara lain ***promax***, ***oblimin***, dan ***simplimax***.
 
-::: rmdkasus
-
-### Studi Kasus: Merotasi Dimensi Menggunakan Varimax {.unnumbered}
-
+::: {#kasus-merotasi-dimensi-menggunakan-varimax .kasus title="Merotasi Dimensi Menggunakan Varimax"}
 Sekarang kita akan menerapkan salah satu teknik rotasi yakni *varimax* baik untuk analisis komponen prinsip kita maupun analisis faktor.
 
 [Untuk Analisis Komponen Prinsip]{.tajuksaya}
 
-```{r pca-rotation, echo=FALSE, warning=FALSE, message=FALSE}
+```{r}
+#| label: pca-rotation
 variates_rotation <- principal(
     dataCFDMetric_Log,
     nfactors = 4,
@@ -624,9 +642,11 @@ variates_rotation$loadings
 - log_jmlanak : RC4
 - log_jarak : RC1
 
-Dengan demikian, pengelompokan tiap-tiap komponennya ditunjukkan oleh Tabel \@ref(tab:pca-grouping-rotation) berikut.
+Dengan demikian, pengelompokan tiap-tiap komponennya ditunjukkan oleh @tbl-pca-grouping-rotation berikut.
 
-```{r pca-grouping-rotation, echo=FALSE}
+```{r}
+#| label: tbl-pca-grouping-rotation
+#| tbl-cap: 'Pengelompokan Variabel ke dalam Komponen Baru'
 variates_grouping_rotation <- tibble(
     "RC1" = c("toplajur", "log_durasi", "log_jarak", ""),
     "RC2" = c("log_usia", "log_jmlmotor", "log_jmlmobil", "log_jmlsepeda"),
@@ -636,7 +656,6 @@ variates_grouping_rotation <- tibble(
 
 kbl(
     variates_grouping_rotation,
-    caption = "Pengelompokan Variabel ke dalam Komponen Baru",
     digits = 4,
     format.args = list(decimal.mark = ",", big.mark = "."),
     align = "ccc"
@@ -650,7 +669,8 @@ kbl(
 
 [Untuk Analisis Faktor]{.tajuksaya}
 
-```{r factors-rotation, echo=FALSE, warning=FALSE, message=FALSE}
+```{r}
+#| label: factors-rotation
 factors_rotation <- fa(
     dataCFDMetric_Log,
     nfactors = 4,
@@ -675,9 +695,11 @@ Dengan demikian, pengelompokan tiap-tiap faktornya adalah sebagai berikut.
 - log_jmlanak : MR3
 - log_jarak : MR1
 
-Dengan demikian, pengelompokan tiap-tiap faktornya ditunjukkan oleh Tabel \@ref(tab:factors-grouping-rotation) berikut.
+Dengan demikian, pengelompokan tiap-tiap faktornya ditunjukkan oleh @tbl-factors-grouping-rotation berikut.
 
-```{r factors-grouping-rotation, echo=FALSE}
+```{r}
+#| label: tbl-factors-grouping-rotation
+#| tbl-cap: 'Pengelompokan Variabel ke dalam Faktor Baru'
 factors_grouping_rotation <- tibble(
     "MR1" = c("toplajur", "log_durasi", "log_jarak", ""),
     "MR2" = c("log_ongkos", "log_bparkir", "log_bareng", ""),
@@ -687,7 +709,6 @@ factors_grouping_rotation <- tibble(
 
 kbl(
     factors_grouping_rotation,
-    caption = "Pengelompokan Variabel ke dalam Faktor Baru",
     digits = 4,
     format.args = list(decimal.mark = ",", big.mark = "."),
     align = "ccc"
@@ -707,13 +728,11 @@ Perhatikan bahwa hasil rotasi faktor, baik di analisis komponen prinsip maupun a
 
 Jika kita melakukan analisis komponen prinsip, langkah setelah kita merotasi komponen adalah memperoleh **skor komponen**. Skor komponen ini bertindak seperti halnya koefisien dalam variabel-variabel independen. Gunanya adalah untuk membentuk variat yang merupakan persamaan linear yang disusun oleh variabel-variabel anggotanya.
 
-::: rmdkasus
-
-### Studi Kasus: Skor Komponen {.unnumbered}
-
+::: {#kasus-skor-komponen .kasus title="Skor Komponen"}
 Berdasarkan hasil rotasi komponen pada analisis komponen prinsip sebelumnya, kita dapat memperoleh skor komponen yang hasilnya sebagai berikut.
 
-```{r pca-scores, echo=FALSE, warning=FALSE, message=FALSE}
+```{r}
+#| label: pca-scores
 variates_rotation$weights
 ```
 
@@ -736,13 +755,12 @@ Langkah terakhir adalah menginterpretasi dimensi baru yang mengelompokkan variab
 
 Untuk PCA, interpretasi akhir kita adalah persamaan akhir variat yang kita gunakan untuk mengurangi jumlah kolom dalam dataset kita. Sedangkan untuk analisis faktor, interpretasi akhir kita adalah nama-nama dari tiap-tiap faktornya yang lebih kontekstual.
 
-::: rmdkasus
-
-### Studi Kasus: Interpretasi Faktor {.unnumbered}
-
+::: {#kasus-interpretasi-faktor .kasus title="Interpretasi Faktor"}
 Dari kasus sebelumnya, kita mendapatkan pengelompokan faktor seperti berikut.
 
-```{r factors-grouping-rotation-rewrite, echo=FALSE}
+```{r}
+#| label: tbl-factors-grouping-rotation-rewrite
+#| tbl-cap: 'Pengelompokan Variabel ke dalam Faktor Baru (Ditulis Ulang)'
 factors_grouping_rotation <- tibble(
     "MR1" = c("toplajur", "log_durasi", "log_jarak", ""),
     "MR2" = c("log_ongkos", "log_bparkir", "log_bareng", ""),
@@ -752,7 +770,6 @@ factors_grouping_rotation <- tibble(
 
 kbl(
     factors_grouping_rotation,
-    caption = "Pengelompokan Variabel ke dalam Faktor Baru (Ditulis Ulang)",
     digits = 4,
     format.args = list(decimal.mark = ",", big.mark = "."),
     align = "ccc"
@@ -777,10 +794,7 @@ Alasan penamaan faktor tersebut secara demikian bisa dijelaskan sebagai berikut:
 
 Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis komponen prinsip dan analisis faktor
 
-::: rmdexercise
-
-## Soal Evaluasi 16 {.unnumbered}
-
+::: {#latihan-multivariat-interdependensi-1 .latihan}
 1. [STP-14.1]{.capaian} Diperoleh hasil pengujian awal dari 10 variabel yang dianalisis menggunakan PCA sebagai berikut.
    
    ```
@@ -798,7 +812,7 @@ Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis ko
 
    Apa yang bisa kita simpulkan dari hasil pengujian tersebut terhadap PCA yang akan dilakukan?
 
-2. [STP-14.2]{.capaian} Sebuah riset dilakukan untuk menilai kualitas sebuah taman kota menggunakan instrumen dari 9 variabel evaluasi. Analisis faktor telah dilaksanakan terhadap kesembilan variabel tersebut dan telah merangkumnya menjadi tiga faktor secara seimbang (F1, F2, dan F3) yang diperlihatkan nilai-nilai *loading* pada Tabel \@ref(tab:factor-matrix-taman) berikut.
+2. [STP-14.2]{.capaian} Sebuah riset dilakukan untuk menilai kualitas sebuah taman kota menggunakan instrumen dari 9 variabel evaluasi. Analisis faktor telah dilaksanakan terhadap kesembilan variabel tersebut dan telah merangkumnya menjadi tiga faktor secara seimbang (F1, F2, dan F3) yang diperlihatkan nilai-nilai *loading* pada @tbl-factor-matrix-taman berikut.
 
    ```{r factor-matrix-taman, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -847,12 +861,14 @@ out_taman
    -   **Hadirnya petugas pengawas**: tingkat frekuensi durasi dan putaran patroli keamanan atau linmas per hari (putaran/hari).
    -   **Kemudahan akses masuk**: jarak meter dari pintu gerbang atau akses pejalan kaki taman menuju perhentian transportasi terdekat (meter).
 
-   Berdasarkan besaran nilai *loading* dalam Matriks Faktor di Tabel \@ref(tab:factor-matrix-taman) tersebut:
+   Berdasarkan besaran nilai *loading* dalam Matriks Faktor di @tbl-factor-matrix-taman tersebut:
    
    a.  Tentukan variabel-variabel mana saja yang menyusun masing-masing faktor (F1, F2, dan F3)!
    b.  Berikan pemberian nama yang komprehensif bagi ketiga faktor baru tersebut berdasarkan atas esensi logis variabel-variabel utamanya, lalu jelaskan alasan logis singkat Anda!
 
-```{r kunci-jawaban-evaluasi-16, include=FALSE}
+```{r}
+#| label: kunci-jawaban-evaluasi-16
+#| include: false
 # KUNCI JAWABAN SOAL EVALUASI BAB 15
 # ==================================
 #
