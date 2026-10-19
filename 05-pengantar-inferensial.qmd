@@ -1,8 +1,12 @@
-﻿# Pengantar Analisis Statistik Inferensial {#bab-5-pengantar-inferensial}
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
 
-::: rmdcapaian
-### Capaian Pembelajaran {.unnumbered}
+# Pengantar Analisis Statistik Inferensial {#sec-bab-5-pengantar-inferensial}
 
+::: {#capaian-pengantar-inferensial .capaian}
 Setelah mempelajari bab ini, Anda diharapkan:
 
 1.  mampu memilih jenis-jenis pengambilan sampel dalam statistik untuk sebuah kasus. [STP-4.1]{.capaian}
@@ -23,14 +27,16 @@ Sebaliknya, **sampel** adalah sebagian kecil dari populasi yang kita ambil untuk
 
 **Mengapa kita mengambil sampel?** Alasan utamanya adalah **efisiensi** dan **kelayakan**. Menurut @saunders2023, melakukan sensus terhadap populasi yang besar sering kali tidak praktis karena membutuhkan **biaya** yang sangat mahal dan **waktu** yang lama. Selain itu, @devaus2014surveys menekankan bahwa sensus tidak menjamin data yang lebih akurat. Sebaliknya, sampel yang dipilih dengan hati-hati memungkinkan peneliti untuk mengontrol kualitas data dengan lebih ketat (misalnya melalui pelatihan pewawancara yang lebih intensif), sehingga justru dapat menghasilkan tingkat **akurasi** yang lebih tinggi dibandingkan sensus yang rentan terhadap *non-sampling error*.
 
-::: rmdkasus
-### Studi Kasus: Populasi vs. Sampel {.unnumbered}
-
+::: {#kasus-populasi-vs-sampel .kasus title="Populasi vs. Sampel"}
 Kita ingin menganalisis data karakteristik perjalanan mahasiswa di ITERA. Oleh karena itu, kita mengumpulkan data terstruktur yang mengukur variabel-variabel terkait pola perjalanan mahasiswa di ITERA.
 
 Berdasarkan data tahun 2023 pertengahan, tercatat sebanyak **18.877** mahasiswa aktif di ITERA. Jika kita mengumpulkan seluruh mahasiswa aktif dengan jumlah tersebut, maka kita akan mendapatkan data populasi. Namun, karena jumlah mahasiswa yang sangat banyak, kita tidak mungkin mengumpulkan data seluruh mahasiswa aktif di ITERA. Oleh karena itu, kita mengumpulkan data sebagian mahasiswa aktif di ITERA, yaitu sebanyak **428** mahasiswa.
 
-```{r 05-inferensia-populasi-sampel-viz, echo=FALSE, out.width='80%', fig.align='center', fig.cap="Ilustrasi Perbandingan Populasi Mahasiswa ITERA dan Sampel"}
+```{r}
+#| label: fig-05-inferensia-populasi-sampel-viz
+#| out-width: '80%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Perbandingan Populasi Mahasiswa ITERA dan Sampel'
 knitr::include_graphics("images/populasi_vs_sampel_itera.png")
 ```
 
@@ -47,14 +53,13 @@ Terdapat dua jenis teknik dalam pengambilan sampel, yakni **teknik probabilitas*
 
 Teknik probabilitas adalah teknik yang menggunakan prinsip EPSEM. Untuk dapat menggunakannya, kita harus memiliki **kerangka sampel**. Kerangka sampel adalah daftar seluruh anggota populasi yang akan menjadi acuan kita untuk memilih sampel nantinya. Ada empat jenis teknik yang termasuk ke dalam teknik pengambilan sampel probabilitas [@tjokropandojo2021pengantar, @saunders2023]: *simple random sampling*, *systematic sampling*, *stratified sampling*, dan *multi-stage cluster sampling*.
 
-::: rmdkasus
-### Studi Kasus: Pengambilan Sampel dengan Populasi Kecil {.unnumbered}
-
+::: {#kasus-pengambilan-sampel-dengan-populasi-kecil .kasus title="Pengambilan Sampel dengan Populasi Kecil"}
 Untuk mempermudah pemahaman, bayangkan kita memiliki **populasi kecil** yang terdiri dari **16 orang** saja. Setiap orang memiliki atribut **Kelompok** (A/B/C/D) dan tinggal di **Blok** tertentu (1/2/3/4).
 
 Berikut adalah data lengkap ke-16 orang tersebut:
 
-```{r 05-inferensia-setup-toy-populasi, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: 05-inferensia-setup-toy-populasi
 library(dplyr)
 library(knitr)
 
@@ -92,24 +97,25 @@ Mari kita terapkan keempat teknik *sampling* untuk memilih sampel dari 16 orang 
 
 #### *Simple Random Sampling*
 
-*Simple random sampling* merupakan teknik paling dasar dalam pengambilan sampel probabilistik. Kita mengambil secara acak nomor yang merepresentasikan nomor urut sampel. Ini memungkinkan setiap anggota populasi memiliki peluang yang sama untuk dipilih. Pemilihan anggota sampel secara acak ini dapat dilakukan dengan bantuan sistem eksternal dari peneliti, misalnya melalui tabel angka acak atau program komputer yang menghasilkan angka acak (*random number generator*) (Gambar \@ref(fig:05-inferensia-img-srs)).
+*Simple random sampling* merupakan teknik paling dasar dalam pengambilan sampel probabilistik. Kita mengambil secara acak nomor yang merepresentasikan nomor urut sampel. Ini memungkinkan setiap anggota populasi memiliki peluang yang sama untuk dipilih. Pemilihan anggota sampel secara acak ini dapat dilakukan dengan bantuan sistem eksternal dari peneliti, misalnya melalui tabel angka acak atau program komputer yang menghasilkan angka acak (*random number generator*) (@fig-05-inferensia-img-srs).
 
-```{r 05-inferensia-img-srs, echo=FALSE, out.width='80%', fig.align='center', fig.cap="Ilustrasi Simple Random Sampling"}
+```{r}
+#| label: fig-05-inferensia-img-srs
+#| out-width: '80%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Simple Random Sampling'
 knitr::include_graphics("images/bab-5-srs.png")
 ```
 
-::: rmdnote
-[Catatan: Miskonsepsi tentang Istilah Random]{.tajuksaya}
-
+::: {.catatan title="Miskonsepsi tentang Istilah Random"}
 Banyak yang salah kaprah dengan istilah *random* pada *simple random sampling*. Keacakan (*random*) di sini maksudnya bukan asal mengambil sampel secara acak **langsung di dunia nyata**, akan tetapi kita mengambil sampel tersebut dari **sebuah kerangka sampel**, elemen vital dalam teknik *sampling* probabilitas.
 :::
 
-::: rmdkasus
-#### Studi Kasus: *Simple Random Sampling* dengan Populasi Kecil {.unnumbered}
-
+::: {#kasus-simple-random-sampling-dengan-populasi-kecil .kasus title="*Simple Random Sampling* dengan Populasi Kecil"}
 Misalkan kita menggunakan *random number generator* yang ada di hampir semua program *spreadsheet* untuk memilih 4 sampel. *Hasilnya adalah 4 orang yang terpilih secara acak tanpa pola tertentu.*
 
-```{r 05-inferensia-toy-srs, echo=FALSE}
+```{r}
+#| label: 05-inferensia-toy-srs
 set.seed(101) # Seed for reproducibility
 sampel_srs <- populasi_kecil |> sample_n(4)
 kable(sampel_srs, caption = "Hasil SRS (n=4)")
@@ -120,16 +126,19 @@ kable(sampel_srs, caption = "Hasil SRS (n=4)")
 
 Berbeda dengan *simple random sampling*, *systematic random sampling* menggunakan sistem pemilihan berdasarkan interval tertentu. Langkah pertama adalah menentukan angka acak awal, kemudian memilih sampel berikutnya berdasarkan kelipatan dari angka tersebut.
 
-```{r 05-inferensia-img-systematic, echo=FALSE, out.width='60%', fig.align='center', fig.cap="Ilustrasi Systematic Random Sampling"}
+```{r}
+#| label: fig-05-inferensia-img-systematic
+#| out-width: '60%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Systematic Random Sampling'
 knitr::include_graphics("images/bab-5-systematic.png")
 ```
 
-::: rmdkasus
-#### Studi Kasus: *Systematic Sampling* dengan Populasi Kecil {.unnumbered}
-
+::: {#kasus-systematic-sampling-dengan-populasi-kecil .kasus title="*Systematic Sampling* dengan Populasi Kecil"}
 Kita ingin mengambil sampel dengan interval **k=4**. Kita urutkan berdasarkan ID, lalu ambil setiap kelipatan 4 (4, 8, 12, 16).
 
-```{r 05-inferensia-toy-systematic, echo=FALSE}
+```{r}
+#| label: 05-inferensia-toy-systematic
 # Ambil setiap kelipatan 4
 urutan_sys <- seq(4, 16, by = 4)
 sampel_sys <- populasi_kecil |> slice(urutan_sys)
@@ -143,16 +152,19 @@ kable(sampel_sys, caption = "Hasil Systematic Sampling (Interval k=4)")
 
 Dalam beberapa kasus, populasi terdiri atas kelompok-kelompok, disebut **strata**, yang memiliki karakteristik yang sama didalamnya, misalnya jumlah anggota rumah tangga, tingkat pendidikan, atau status sosial ekonomi. Agar setiap kelompok terwakili, digunakanlah teknik *stratified random sampling*. Caranya adalah dengan membagi populasi ke dalam beberapa strata sesuai karakteristik yang relevan, kemudian mengambil sampel secara proporsional dari setiap strata.
 
-```{r 05-inferensia-img-stratified, echo=FALSE, out.width='60%', fig.align='center', fig.cap="Ilustrasi Stratified Random Sampling"}
+```{r}
+#| label: fig-05-inferensia-img-stratified
+#| out-width: '60%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Stratified Random Sampling'
 knitr::include_graphics("images/bab-5-stratified.png")
 ```
 
-::: rmdkasus
-#### Studi Kasus: *Stratified Random Sampling* dengan Populasi Kecil {.unnumbered}
-
+::: {#kasus-stratified-random-sampling-dengan-populasi-kecil .kasus title="*Stratified Random Sampling* dengan Populasi Kecil"}
 Kita ingin memastikan setiap **Kelompok** (A, B, C, D) terwakili. Kita bagi populasi menjadi 4 strata (Kelompok), lalu ambil **1 orang acak** dari setiap strata.
 
-```{r 05-inferensia-toy-stratified, echo=FALSE}
+```{r}
+#| label: 05-inferensia-toy-stratified
 set.seed(102)
 sampel_strat <- populasi_kecil |>
   group_by(Kelompok) |>
@@ -172,16 +184,19 @@ kable(sampel_strat,
 
 Teknik ini digunakan ketika kerangka sampel individu tidak tersedia, tetapi kerangka sampel untuk kelompok (klaster) tersedia. Misalnya, kita tidak punya daftar nama seluruh penduduk kota, tetapi kita punya kerangka sampel nama-nama kelurahan. Kita bisa memilih beberapa kelurahan secara acak (tahap 1), kemudian menghasilkan kerangka sampel baru dari kelurahan yang terpilih tersebut, misalnya berdasarkan batas administratif (RW/lingkungan), atau berdasarkan batas fisik, seperti blok-blok jalan (tahap 2). Dari kerangka sampel tersebut kita pilih lagi secara acak anggota kerangka sampel tersebut.
 
-```{r 05-inferensia-img-cluster, echo=FALSE, out.width='60%', fig.align='center', fig.cap="Ilustrasi Multi-Stage Cluster Sampling"}
+```{r}
+#| label: fig-05-inferensia-img-cluster
+#| out-width: '60%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Multi-Stage Cluster Sampling'
 knitr::include_graphics("images/bab-5-msc-sampling.png")
 ```
 
-::: rmdkasus
-#### Studi Kasus: *Multi-Stage Cluster Sampling* dengan Populasi Kecil {.unnumbered}
-
+::: {#kasus-multi-stage-cluster-sampling-dengan-populasi .kasus title="*Multi-Stage Cluster Sampling* dengan Populasi Kecil"}
 Kita ingin menghemat tenaga dengan hanya mendatangi satu lokasi saja. Kita pilih secara acak **1 Blok** (Cluster), lalu ambil **semua orang** di blok tersebut.
 
-```{r 05-inferensia-toy-cluster, echo=FALSE}
+```{r}
+#| label: 05-inferensia-toy-cluster
 set.seed(103)
 # Pilih 1 blok secara acak
 blok_terpilih <- sample(unique(populasi_kecil$Blok), 1)
@@ -217,10 +232,7 @@ Berikut adalah beberapa teknik pengambilan sampel nonprobabilitas yang umum digu
 Keterbatasan utama dari sampel nonprobabilitas adalah ketidakmampuannya untuk digunakan dalam generalisasi statistik ke populasi yang lebih luas. Karena tidak berdasarkan prinsip *Equal Probability of Selection Method* (EPSEM), peneliti tidak dapat menghitung margin kesalahan atau tingkat kepastian hasil secara matematis. Oleh karena itu, kesimpulan dari penelitian ini biasanya bersifat terbatas pada kelompok yang diuji atau digunakan untuk membangun teori yang perlu diuji lebih lanjut melalui metode probabilitas.
 
 
-::: rmdexercise
-
-## Soal Evaluasi 6 {.unnumbered}
-
+::: {#latihan-pengantar-inferensial-1 .latihan}
 [STP-4.3]{.capaian} Sebuah acara keakraban angkatan Anda akan dilakukan di suatu tempat yang memerlukan biaya sewa tempat. Agar acara Anda dihadiri sebanyak mungkin orang, Anda menanyakan kesediaan kawan-kawan Anda. Anda pun merancang sebuah survei untuk mengetahui persentase kawan Anda yang setuju acara keakraban diadakan di tempat tersebut. Untuk itu Anda menanyakan sebagian kawan Anda sebagai sampel.
 
   a. Apabila Anda memiliki daftar nama seluruh kawan Anda, apa nama teknik pengambilan sampel yang Anda bisa lakukan?
@@ -232,9 +244,12 @@ Keterbatasan utama dari sampel nonprobabilitas adalah ketidakmampuannya untuk di
 
 ## Menentukan Ukuran Sampel
 
-Jika selama ini kita masih berpikir bahwa ukuran sampel (jumlah sampel yang menjadi bahan data kita) ditentukan berdasarkan ukuran populasinya, maka kita salah kaprah. Menurut @devaus2014surveys, ukuran sampel menentukan galat dari perkiraan kita terhadap populasi, tapi ukuran sampel **bukan ditentukan dari ukuran populasi**. @devaus2014surveys juga menjabarkan jumlah-jumlah sampel yang berbeda untuk setiap galat dari perkiraan kita. Galat perkiraan ini disebut juga dengan *sampling error*. Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) menunjukkan ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%. Ini akan kita pelajari lebih dalam di Bab \@ref(bab-6-estimasi-parameter).
+Jika selama ini kita masih berpikir bahwa ukuran sampel (jumlah sampel yang menjadi bahan data kita) ditentukan berdasarkan ukuran populasinya, maka kita salah kaprah. Menurut @devaus2014surveys, ukuran sampel menentukan galat dari perkiraan kita terhadap populasi, tapi ukuran sampel **bukan ditentukan dari ukuran populasi**. @devaus2014surveys juga menjabarkan jumlah-jumlah sampel yang berbeda untuk setiap galat dari perkiraan kita. Galat perkiraan ini disebut juga dengan *sampling error*. @tbl-ukuran-sampel-sampling-error menunjukkan ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%. Ini akan kita pelajari lebih dalam di Bab @sec-bab-6-estimasi-parameter.
 
-```{r tabel-ukuran-sampel-sampling-error, echo=FALSE, fig.align='center'}
+```{r}
+#| label: tbl-ukuran-sampel-sampling-error
+#| fig-align: 'center'
+#| tbl-cap: 'Ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%'
 library(knitr)
 library(kableExtra)
 
@@ -263,7 +278,6 @@ kbl(
     "_Sampling error_", "Ukuran Sampel Min.",
     "_Sampling error_", "Ukuran Sampel Min."
   ),
-  caption = "Ukuran sampel minimum berdasarkan *sampling error* pada varians 50/50, tingkat kepercayaan 95%",
   align = c("c", "c", "c", "c")
 ) |>
   kable_styling(
@@ -273,16 +287,14 @@ kbl(
   )
 ```
 
-::: rmdkasus
-### Studi Kasus: Menentukan Jumlah Sampel dari Tabel {.unnumbered}
-
+::: {#kasus-menentukan-jumlah-sampel-dari-tabel .kasus title="Menentukan Jumlah Sampel dari Tabel"}
 Seorang mahasiswa ingin meneliti **proporsi mahasiswa ITERA yang menggunakan kendaraan bermotor** sebagai moda utama perjalanan ke kampus. Ia merancang survei dan perlu menentukan berapa responden yang harus ia kumpulkan.
 
 Karena ia belum tahu berapa proporsi sesungguhnya di populasi, ia menggunakan asumsi terburuk: 50% menggunakan kendaraan bermotor dan 50% tidak (varians 50/50). Ia juga menetapkan bahwa *sampling error* yang masih dapat ia tolerir adalah **5%** pada tingkat kepercayaan 95%.
 
-Dengan membaca Tabel \@ref(tab:tabel-ukuran-sampel-sampling-error) pada baris *sampling error* 5,0%, ia menemukan bahwa **sampel minimum yang dibutuhkan adalah 400 responden**. Jumlah inilah yang ia jadikan target pengumpulan data.
+Dengan membaca @tbl-ukuran-sampel-sampling-error pada baris *sampling error* 5,0%, ia menemukan bahwa **sampel minimum yang dibutuhkan adalah 400 responden**. Jumlah inilah yang ia jadikan target pengumpulan data.
 
-Perhatikan bahwa angka ini tidak bergantung pada seberapa besar populasi mahasiswa ITERA (yang berjumlah lebih dari 18.000 orang). Cukup 400 responden, dan hasil surveinya akan memiliki akurasi dalam batas Â±5% pada tingkat kepercayaan 95%.
+Perhatikan bahwa angka ini tidak bergantung pada seberapa besar populasi mahasiswa ITERA (yang berjumlah lebih dari 18.000 orang). Cukup 400 responden, dan hasil surveinya akan memiliki akurasi dalam batas ±5% pada tingkat kepercayaan 95%.
 :::
 
 ## Konsep Distribusi dalam Statistik
@@ -293,9 +305,13 @@ Dalam stastistika inferensial, kita harus menguasai konsep mengenai **distribusi
 
 Terdapat banyak jenis model distribusi dalam statistik yang sering dipakai. Beberapa jenis model statisik yang populer misalnya adalah distribusi *uniform* (seragam), distribusi binomial, distribusi Poisson, dan distribusi normal atau Gaussian [@ModernStatR-Home]. Namun, dalam pembahasan statistika inferensial di buku ini kita hanya akan fokus pada **distribusi normal** dan turunannya, distribusi Student's t, beserta distribusi binomial, distribusi F, dan distribusi *Chi-square*.
 
-Seperti yang ditampilkan oleh Gambar \@ref(fig:fig-ragam-distribusi) berikut, setiap jenis distribusi statistik mempunyai berbagai bentuknya. Bentuk-bentuk ini pada hakikatnya adalah **histogram-histogram** representasi sebaran nilai-nilai sekumpulan objek.
+Seperti yang ditampilkan oleh @fig-ragam-distribusi berikut, setiap jenis distribusi statistik mempunyai berbagai bentuknya. Bentuk-bentuk ini pada hakikatnya adalah **histogram-histogram** representasi sebaran nilai-nilai sekumpulan objek.
 
-```{r fig-ragam-distribusi, echo=FALSE, out.width='80%', fig.align='center', fig.cap="Ragam Bentuk Distribusi Statistik", message=FALSE, warning=FALSE}
+```{r}
+#| label: fig-ragam-distribusi
+#| out-width: '80%'
+#| fig-align: 'center'
+#| fig-cap: 'Ragam Bentuk Distribusi Statistik'
 library(ggplot2)
 library(gridExtra)
 library(grid)
@@ -380,11 +396,15 @@ Seperti yang sudah dijelaskan bahwa bentuk distribusi sebenarnya adalah histogra
 
 Begitu juga gambar-gambar distribusi tersebut. Sumbu X mencerminkan **nilai-nilai yang terdapat dalam objek-objek** yang dinyatakan distribusinya, sumbu Y jumlah kemunculan nilai-nilai tersebut. Selain dipahami sebagai jumlah, sumbu Y juga bisa diinterpretasikan sebagai **probabilitas** kemunculan nilai-nilai tersebut.
 
-### Distribusi Normal {#bab-5-distribusi-normal}
+### Distribusi Normal {#sec-bab-5-distribusi-normal}
 
-Distribusi normal adalah salah satu jenis distribusi nilai yang memiliki karakteristik berbentuk seperti lonceng, simetris, dan membentang tanpa batas di kedua sisi sumbu horizontal [@tjokropandojo2021pengantar]. Oleh karena itu, model distribusi ini juga disebut *bell curve* atau kurva lonceng [@healey2021statistics] (Gambar \@ref(fig:fig-bab-5-hist-normal)).
+Distribusi normal adalah salah satu jenis distribusi nilai yang memiliki karakteristik berbentuk seperti lonceng, simetris, dan membentang tanpa batas di kedua sisi sumbu horizontal [@tjokropandojo2021pengantar]. Oleh karena itu, model distribusi ini juga disebut *bell curve* atau kurva lonceng [@healey2021statistics] (@fig-bab-5-hist-normal).
 
-```{r fig-bab-5-hist-normal, echo=FALSE, out.width='80%', fig.align='center', fig.cap="Distribusi Normal"}
+```{r}
+#| label: fig-bab-5-hist-normal
+#| out-width: '80%'
+#| fig-align: 'center'
+#| fig-cap: 'Distribusi Normal'
 # 4. Normal
 p4 <- ggplot(data.frame(x = c(-3, 3)), aes(x)) +
   stat_function(fun = dnorm, geom = "area", fill = "#56B4E9", alpha = 0.8) +
@@ -393,11 +413,15 @@ p4 <- ggplot(data.frame(x = c(-3, 3)), aes(x)) +
 p4
 ```
 
-Dari Gambar \@ref(fig:fig-bab-5-hist-normal), kita dapat melihat bahwa distribusi normal memiliki beberapa karakteristik utama berikut:
+Dari @fig-bab-5-hist-normal, kita dapat melihat bahwa distribusi normal memiliki beberapa karakteristik utama berikut:
 
 1.  **Parameter Utama:** Distribusi normal ditentukan sepenuhnya oleh dua parameter: rata-rata (*mean* atau $\mu$) dan varians ($\sigma^2$) [@Chan-IntroProb]. Rata-rata menentukan lokasi tengah distribusi, sedangkan varians (atau standar deviasi) menentukan lebar atau penyebaran kurva [@healey2021statistics; @Hair-Multivariate].
 
-```{r fig-bab-5-parameter-normal, echo=FALSE, out.width='80%', fig.align='center', fig.cap="Perbandingan Distribusi Normal dengan Rata-rata Sama namun Standar Deviasi Berbeda", warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-bab-5-parameter-normal
+#| out-width: '80%'
+#| fig-align: 'center'
+#| fig-cap: 'Perbandingan Distribusi Normal dengan Rata-rata Sama namun Standar Deviasi Berbeda'
 library(ggplot2)
 library(gridExtra)
 
@@ -517,7 +541,11 @@ grid.arrange(p4, p5, ncol = 1)
 
       - **Kurtosis (Keruncingan):** Mengukur keruncingan atau kedataran puncak distribusi relatif terhadap distribusi normal. Distribusi normal memiliki nilai kurtosis 3. Distribusi yang lebih runcing disebut leptokurtik (>3), dan yang lebih datar disebut platikurtik (<3) [@Chan-IntroProb; @ewing2020basic].
 
-```{r 05-inferensia-viz-skewness, echo=FALSE, out.width='49%', fig.show='hold', fig.cap="Ilustrasi Positive dan Negative Skewness", warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-05-inferensia-viz-skewness
+#| out-width: '49%'
+#| fig.show: 'hold'
+#| fig-cap: 'Ilustrasi Positive dan Negative Skewness'
 library(ggplot2)
 library(gridExtra)
 
@@ -540,7 +568,11 @@ p_neg <- ggplot(data.frame(x = x_neg), aes(x)) +
 
 grid.arrange(p_pos, p_neg, ncol = 2)
 ```
-```{r 05-inferensia-viz-kurtosis, echo=FALSE, out.width='49%', fig.show='hold', fig.cap="Perbandingan Kurtosis: Normal (3) vs Platikurtik (<3)", warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-05-inferensia-viz-kurtosis
+#| out-width: '49%'
+#| fig.show: 'hold'
+#| fig-cap: 'Perbandingan Kurtosis: Normal (3) vs Platikurtik (<3)'
 # Create data for Normal (Mesokurtic) and Uniform (Platykurtic)
 x_seq <- seq(-4, 4, length.out = 200)
 
@@ -569,7 +601,11 @@ ggplot(df_kurt, aes(x = x, y = y, fill = Type)) +
 
     Ini mengimplikasikan bahwa kejadian yang berada jauh di luar 3 standar deviasi dari rata-rata sangat jarang terjadi.
 
-```{r fig-bab-5-aturan-689599, echo=FALSE, out.width="80%", fig.align='center', fig.cap="Ilustrasi Aturan 68-95-99 (Aturan Empiris)"}
+```{r}
+#| label: fig-bab-5-aturan-689599
+#| out-width: '80%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Aturan 68-95-99 (Aturan Empiris)'
 library(ggplot2)
 
 mu <- 15
@@ -659,9 +695,7 @@ Di mana:
 - $s$ adalah standar deviasi sampel.
 - $N - 1$ digunakan sebagai koreksi bias pada sampel kecil [@healey2021statistics].
 
-::: rmdkasus
-### Studi Kasus: Menghitung Nilai $t$ Sampel Jarak Tempuh {.unnumbered}
-
+::: {#kasus-menghitung-nilai-sampel-jarak-tempuh .kasus title="Menghitung Nilai $t$ Sampel Jarak Tempuh"}
 Sebuah penelitian sebelumnya menduga bahwa rata-rata jarak tempat tinggal mahasiswa ITERA ke kampus adalah 5 km ($\\mu = 5$). Untuk menguji pernyataan tersebut, kita mengambil sampel acak sebanyak 20 mahasiswa ($N = 20$) dari pangkalan data mahasiswa ITERA dan menghitung jarak tempat tinggal mereka.
 
 Dari sampel tersebut, didapatkan rata-rata sampel ($\\bar{X}$) sebesar 7,2 km dengan simpangan baku sampel ($s$) sebesar 3,8 km. Berapakah nilai statistik $t$ untuk sampel ini?
@@ -693,7 +727,11 @@ Nilai $t = 2{,}523$ menunjukkan bahwa rata-rata jarak sampel (7,2 km) berada pad
 
 Untuk memberikan gambaran yang lebih jelas, berikut adalah visualisasi letak nilai rata-rata sampel kita di dalam kurva distribusi $t$ dengan derajat bebas $df = 19$. 
 
-```{r fig-05-inferensia-t-calc, echo=FALSE, fig.cap="Posisi Rata-rata Sampel pada Kurva Distribusi t (df = 19)", fig.align='center', out.width='80%', warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-05-inferensia-t-calc
+#| fig-cap: 'Posisi Rata-rata Sampel pada Kurva Distribusi t (df = 19)'
+#| fig-align: 'center'
+#| out-width: '80%'
 library(ggplot2)
 
 df_t <- 19
@@ -736,16 +774,16 @@ Di sisi lain, **distribusi statistik** atau **distribusi hasil sampel** *(sampli
 
 Mari pelajari kasus berikut untuk lebih memahami perbedaan antara distribusi objek dengan distribusi statistik.
 
-::: rmdkasus
-### Studi Kasus: Distribusi Objek vs Distribusi Statistik {.unnumbered}
-
+::: {#kasus-distribusi-objek-vs-distribusi-statistik .kasus title="Distribusi Objek vs Distribusi Statistik"}
 Agar lebih mudah membayangkan perbedaan antara distribusi objek dan distribusi statistik, mari kita gunakan **populasi kecil** yang hanya terdiri dari **30 mahasiswa** (diambil dari data ITERA). Kita akan melihat variabel **Jarak Tempuh (km)**.
 
 **1. Distribusi Objek (Sebaran Data Individu)**
 
 Berikut adalah data populasi lengkap (N=30):
 
-```{r 05-inferensia-populasi-30, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-05-inferensia-populasi-30
+#| tbl-cap: 'Data Populasi (N=30)'
 library(readr)
 library(dplyr)
 library(knitr)
@@ -768,7 +806,7 @@ tabel_kanan <- populasi_kecil[16:30, ]
 tabel_gabung <- cbind(tabel_kiri, tabel_kanan)
 colnames(tabel_gabung) <- c("ID", "Jarak", "ID", "Jarak")
 
-kbl(tabel_gabung, caption = "Data Populasi (N=30)") |>
+kbl(tabel_gabung,) |>
   kable_styling(
     bootstrap_options = c("striped", "hover"),
     latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
@@ -784,7 +822,11 @@ Rata-rata populasi adalah $\mu = `r round(mu_pop, 2)`$ km dengan simpangan baku 
 
 Sekarang, kita ambil **1 sampel** berukuran $n=10$ secara acak (*Simple Random Sampling*). Pengambilan menghasilkan sampel dengan ID 3, 9, 14, 17, 22, 23, 24, 25, 27, dan 30.
 
-```{r 05-inferensia-sampel-satu, echo=FALSE, fig.cap="Histogram Distribusi Objek (n=10)", fig.align='center', out.width='80%'}
+```{r}
+#| label: fig-05-inferensia-sampel-satu
+#| fig-cap: 'Histogram Distribusi Objek (n=10)'
+#| fig-align: 'center'
+#| out-width: '80%'
 library(ggplot2)
 set.seed(101)
 sampel_satu <- populasi_kecil |> sample_n(10)
@@ -811,7 +853,9 @@ Sekarang, kita lakukan simulasi: kita mengambil sampel ($n=10$) dari populasi te
 
 Berikut adalah 8 hasil pertama dari 200 pengambilan sampel:
 
-```{r 05-inferensia-simulasi-200, echo=FALSE}
+```{r}
+#| label: tbl-05-inferensia-simulasi-200
+#| tbl-cap: 'Hasil Simulasi Distribusi Sampling (8 Teratas dari 200)'
 set.seed(999)
 n_sim <- 200
 n_sampel <- 10
@@ -830,7 +874,7 @@ df_sim <- data.frame(
 
 tabel_sim_head <- head(df_sim, 8)
 rbind(tabel_sim_head |> mutate(Pengambilan_Ke = as.character(Pengambilan_Ke)), c("...", "...")) |>
-  kbl(caption = "Hasil Simulasi Distribusi Sampling (8 Teratas dari 200)") |>
+  kbl() |>
   kable_styling(
     bootstrap_options = c("striped", "hover"),
     latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
@@ -840,7 +884,11 @@ rbind(tabel_sim_head |> mutate(Pengambilan_Ke = as.character(Pengambilan_Ke)), c
 
 Mari kita lihat histogram dari 200 rata-rata ini:
 
-```{r 05-inferensia-hist-sampling, echo=FALSE, fig.cap="Distribusi Statistik (200 Rata-rata)", fig.align='center', out.width='80%'}
+```{r}
+#| label: fig-05-inferensia-hist-sampling
+#| fig-cap: 'Distribusi Statistik (200 Rata-rata)'
+#| fig-align: 'center'
+#| out-width: '80%'
 mean_sampling <- mean(hasil_simulasi)
 se_sampling <- sd(hasil_simulasi)
 
@@ -862,9 +910,7 @@ Perhatikan perbedaan kedua histogram tersebut:
 2.  **Distribusi statistik**: Pada distribusi statistik, tinggi batang mencerminkan **frekuensi munculnya nilai rata-rata** dari 200 kali pengambilan sampel sebanyak 10 objek. Jika kita kaitkan dengan probabilitas, maka tinggi batang mewakili tingkat kemungkinan suatu nilai rata-rata dihasilkan dari sampel yang berjumlah 10 objek.
 :::
 
-::: rmdexercise
-## Soal Evaluasi 7 {.unnumbered}
-
+::: {#latihan-pengantar-inferensial-2 .latihan}
 [STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
 
 Jelaskan perbedaan distribusi objek dengan distribusi statistik berdasarkan kasus tersebut.
@@ -885,14 +931,16 @@ Kombinasi bentuk normal dan akurasi inilah yang memungkinkan kita melakukan esti
 
 Berdasarkan teorema ini, kita dapat membagi analisis statistika inferensial menjadi analisis statistik inferensial **parametrik** dan **nonparametrik**. Analisis inferensial parametrik adalah analisis inferensial yang mengasumsikan bahwa populasi kita berdistribusi normal. Asumsi ini diuji dengan teknik pengujian kenormalan seperti [uji Shapiro-Wilk]('https://www.statistikian.com/2013/01/saphiro-wilk.html') atau [P-P plot]('https://online.stat.psu.edu/stat501/lesson/4/4.6').
 
-::: rmdkasus
-### Studi Kasus: Simulasi Teorema Limit Sentral {.unnumbered}
-
+::: {#kasus-simulasi-teorema-limit-sentral .kasus title="Simulasi Teorema Limit Sentral"}
 Mari kita buktikan CLT dengan melakukan simulasi pengambilan sampel berulang. Katakanlah kita memiliki **428 mahasiswa** sebagai populasi. Kita akan mengambil 1000 kali sampel berukuran 50 orang, lalu menghitung rata-ratanya dan memplot histogramnya.
 
 Berikut adalah baris perintah untuk melakukan simulasi tersebut dalam R. Dataset yang digunakan dapat diakses pada [tautan ini]('https://github.com/abdulmubdibindar/buku-ajar-stp/blob/main/datasets/DataUtama_mhsITERA.csv').
 
-```{r fig-05-inferensia-2-clt-studi-kasus-simulasi, echo=TRUE, fig.cap="Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)", fig.width=10}
+```{r}
+#| label: fig-05-inferensia-2-clt-studi-kasus-simulasi
+#| echo: true
+#| fig-cap: 'Perbandingan Distribusi Populasi (Kiri) dan Distribusi Statistiknya (Kanan)'
+#| fig-width: 10
 library(ggplot2)
 library(gridExtra)
 library(dplyr)
@@ -928,15 +976,16 @@ p2 <- ggplot(df_means, aes(x = means)) +
 grid.arrange(p1, p2, ncol = 2)
 ```
 
-Gambar \@ref(fig:fig-05-inferensia-2-clt-studi-kasus-simulasi) menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat "miring" (*skewed*) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna **normal**. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = `r round(mu, 2)`$).
+@fig-05-inferensia-2-clt-studi-kasus-simulasi menunjukkan distribusi objek populasi. Distribusi populasi (kiri) terlihat "miring" (*skewed*) ke kanan, artinya tidak normal. Namun, distribusi rata-rata sampelnya (kanan) berbentuk lonceng simetris yang hampir sempurna **normal**. Rata-rata dari distribusi statistik ini juga sangat dekat dengan rata-rata populasi sebenarnya ($\mu = `r round(mu, 2)`$).
 :::
 
-::: rmdkasus
-### Studi Kasus: Efek Ukuran Sampel terhadap Variasi {.unnumbered}
-
+::: {#kasus-efek-ukuran-sampel-terhadap-variasi .kasus title="Efek Ukuran Sampel terhadap Variasi"}
 Mari kita lanjutkan eksperimen kita. Apa yang terjadi jika kita mengubah ukuran sampel ($n$) yang kita ambil berulang-ulang tersebut? Kali ini kita akan membandingkan distribusi statistik yang dihasilkan dari pengambilan sampel berukuran **$n=30$** dengan **$n=100$**.
 
-```{r fig-05-inferensia-3-clt-sample-size, echo=FALSE, fig.cap="Perbandingan Distribusi Statistik dengan Ukuran Sampel Berbeda", fig.width=10, warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-05-inferensia-3-clt-sample-size
+#| fig-cap: 'Perbandingan Distribusi Statistik dengan Ukuran Sampel Berbeda'
+#| fig-width: 10
 # Simulasi n=30
 set.seed(101)
 means_n30 <- replicate(1000, mean(sample(data_populasi$jarak, 30)))
@@ -964,14 +1013,12 @@ ggplot(df_compare, aes(x = means, fill = type)) +
   theme(legend.title = element_blank(), legend.position = "top")
 ```
 
-Perhatikan Gambar \@ref(fig:fig-05-inferensia-3-clt-sample-size). Meskipun kedua kurva sama-sama berbentuk lonceng dan berpusat di rata-rata populasi (garis merah), kurva distribusi statistik untuk **$n=100$ (biru)** jauh lebih "kurus" dan tinggi dibandingkan kurva **$n=30$ (kuning)**.
+Perhatikan @fig-05-inferensia-3-clt-sample-size. Meskipun kedua kurva sama-sama berbentuk lonceng dan berpusat di rata-rata populasi (garis merah), kurva distribusi statistik untuk **$n=100$ (biru)** jauh lebih "kurus" dan tinggi dibandingkan kurva **$n=30$ (kuning)**.
 
 Ini menunjukkan bahwa semakin banyak sampel yang kita ambil dalam satu kali pengambilan ($n$ semakin besar), maka **variasi** dari rata-rata yang kita peroleh akan semakin kecil. Artinya, rata-rata sampel kita akan semakin jarang meleset jauh dari rata-rata populasi sebenarnya. Dengan kata lain, memperbesar ukuran sampel akan meningkatkan peluang kita untuk mendapatkan hasil yang sangat mendekati kondisi populasi yang sebenarnya.
 :::
 
-::: rmdexercise
-## Soal Evaluasi 8 {.unnumbered}
-
+::: {#latihan-pengantar-inferensial-3 .latihan}
 [STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
 
 Apakah kita dapat menggunakan teorema limit sentral dalam perhitungan probabilitas distribusi statistik sampel tersebut? Jelaskan jawaban Anda.
@@ -980,7 +1027,7 @@ Apakah kita dapat menggunakan teorema limit sentral dalam perhitungan probabilit
 
 ## Menghitung Peluang Kemunculan Nilai Tertentu dari Distribusi Statistik yang Berbentuk Normal.
 
-Pada subbab \@ref(bab-5-distribusi-normal), kita telah belajar bahwa distribusi normal mempunyai aturan empiris atau aturan 68-95-99. Aturan ini berbicara tentang besar area di bawah kurva yang tetap berdasarkan jarak standar deviasi (SD) dari rata-rata [@healey2021statistics]:
+Pada subbab @sec-bab-5-distribusi-normal, kita telah belajar bahwa distribusi normal mempunyai aturan empiris atau aturan 68-95-99. Aturan ini berbicara tentang besar area di bawah kurva yang tetap berdasarkan jarak standar deviasi (SD) dari rata-rata [@healey2021statistics]:
 
   -   $\pm$ 1 SD mencakup sekitar 68,26% dari total kasus.
   -   $\pm$ 2 SD mencakup sekitar 95,44% dari total kasus.
@@ -999,51 +1046,50 @@ Dalam distribusi objek, lebar distribusi berkaitan dengan ukuran statistik deskr
 $$
 \begin{align}
 \text{Simpangan Baku} &= \sqrt{\text{Variansi}}\\
-&=\sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}} (\#eq:konsep-simpangan-baku-bab5)
+&=\sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}}
 \end{align}
-$$ 
+$$ {#eq-konsep-simpangan-baku-bab5}
 
 Di sisi lain, dalam distribusi statistik simpangan bakunya punya sebutan lain, yakni ***standard error*** (SE). *Standard error* pada hakikatnya adalah adalah **ukuran jarak statistik sampel dari parameter populasi**. Ingat kembali bahwa **rata-rata dari distribusi statistik adalah nilai parameter populasinya**. Semakin kecil SE, semakin presisi estimasi sampel kita terhadap parameter populasi. Secara matematis, standard error dihitung dari simpangan baku sampel kita dengan rumus berikut.
 
 $$
 \begin{align}
-\text{SE} &=\frac{\sigma}{\sqrt{n}} (\#eq:konsep-standard-error-bab5)
+\text{SE} &=\frac{\sigma}{\sqrt{n}}
 \end{align}
-$$ 
+$$ {#eq-konsep-standard-error-bab5}
 
 Dengan $\sigma$ adalah simpangan baku populasi dan $n$ adalah ukuran sampel.
 
-Jika $\sigma$ tidak diketahui, kita gunakan simpangan baku sampel ($s$) sebagai estimasi, sehingga Persamaan \@ref(eq:konsep-standard-error-bab5) menjadi:
+Jika $\sigma$ tidak diketahui, kita gunakan simpangan baku sampel ($s$) sebagai estimasi, sehingga @eq-konsep-standard-error-bab5 menjadi:
 
 $$
 \begin{align}
-\text{SE} &=\frac{s}{\sqrt{n}} (\#eq:konsep-se-pake-sd)
+\text{SE} &=\frac{s}{\sqrt{n}}
 \end{align}
-$$ 
+$$ {#eq-konsep-se-pake-sd}
 
 
-::: rmdnote
+::: {.catatan}
 
 **PENTING**
 
-Dalam beberapa sumber, seperti @healey2021statistics, perhitungan *standard error* yang menggunakan estimasi dari simpangan baku seperti Persamaan \@ref(eq:konsep-se-pake-sd) menggunakan bentuk yang dikoreksi, yakni dengan cara mengurangkan 1 dari nilai ukuran sampelnya, sehingga persamaannya menjadi:
+Dalam beberapa sumber, seperti @healey2021statistics, perhitungan *standard error* yang menggunakan estimasi dari simpangan baku seperti @eq-konsep-se-pake-sd menggunakan bentuk yang dikoreksi, yakni dengan cara mengurangkan 1 dari nilai ukuran sampelnya, sehingga persamaannya menjadi:
 
 $$
 \begin{align}
-\text{SE} &=\frac{s}{\sqrt{n-1}} (\#eq:konsep-se-pake-sd-healey)
+\text{SE} &=\frac{s}{\sqrt{n-1}}
 \end{align}
-$$ 
+$$ {#eq-konsep-se-pake-sd-healey}
 
 Yang mana yang betul? Karena keduanya sama-sama disebutkan dalam banyak literatur, di sini yang perlu kita perhatikan adalah **konsistensi kita** dalam penggunaan salah satunya.
 
 :::
 
-::: rmdkasus
-### Studi Kasus: Menghitung Standard Error {.unnumbered}
-
+::: {#kasus-menghitung-standard-error .kasus title="Menghitung Standard Error"}
 Misalkan kita mengambil **satu sampel** acak berukuran $n=100$ mahasiswa dari populasi.
 
-```{r 05-inferensia-3-se-studi-kasus-hitung, echo=FALSE}
+```{r}
+#| label: 05-inferensia-3-se-studi-kasus-hitung
 # Pastikan parameter populasi tersedia
 mu <- mean(data_populasi$jarak)
 sigma <- sd(data_populasi$jarak)
@@ -1069,9 +1115,7 @@ $$
 Nilai ini memberitahu kita bahwa rata-rata sampel kita (`r round(mean_sampel, 2)`) diperkirakan menyimpang sekitar $\pm `r round(sigma/10, 2)`$ km dari rata-rata populasi sebenarnya.
 :::
 
-::: rmdexercise
-## Soal Evaluasi 9 {.unnumbered}
-
+::: {#latihan-pengantar-inferensial-4 .latihan}
 [STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
 
 Berapakah standard error dari distribusi statistik sampel tersebut?
@@ -1084,17 +1128,15 @@ Berapakah standard error dari distribusi statistik sampel tersebut?
 
 $$
 \begin{align}
-Z = \frac{x - \mu}{\sigma} (\#eq:z-score)
+Z = \frac{x - \mu}{\sigma}
 \end{align}
-$$
+$$ {#eq-z-score}
 
 Dengan $x$ adalah nilai dalam distribusi normal yang akan kita konversi, $\mu$ melambangkan rata-rata distribusi, dan $\sigma$ melambangkan simpangan baku distribusi.
 
 Kegunaan dari perhitungan nilai terstandar atau nilai Z ini adalah **kita dapat menyatakan nilai statistik yang menggunakan skala berbeda-beda menjadi nilai yang sama**. Hal ini memungkinkan kita membandingkan nilai-nilai tersebut dengan setara, walaupun skala atau satuannya tidak sama.
 
-::: rmdkasus
-### Studi Kasus: Menghitung *Z-Score* Suatu Nilai {.unnumbered}
-
+::: {#kasus-menghitung-z-score-suatu-nilai .kasus title="Menghitung *Z-Score* Suatu Nilai"}
 Dalam sebuah sampel yang berjumlah 100 orang, kita mempunyai distribusi biaya perjalanan dengan rata-rata ($\mu$) 50.000 dan simpangan baku ($\sigma$) 10.000. Jika seseorang menghabiskan biaya perjalanan sebesar $x = 65.000$. Berapakah *Z-score* pengeluarannya?
 
 **Jawaban:**
@@ -1132,27 +1174,21 @@ $$
 Meskipun menggunakan satuan yang berbeda (biaya dalam Rupiah versus jarak dalam kilometer), nilai *Z-score* pada kedua variabel tersebut ternyata sama ($Z=1,5$). Hal ini berarti biaya perjalanan sebesar 65.000 dan jarak tempuh sejauh 13 km memiliki "posisi" relatif yang sama, yakni sama-sama melampaui 1,5 simpangan baku di atas rata-ratanya masing-masing. Inilah wujud nyata bagaimana *Z-score* menyetarakan nilai-nilai dengan satuan yang berbeda ke dalam satu ukuran standar.
 :::
 
-Jika kita menggunakan konsep *Z-Score* tersebut pada distribusi statistik, persamaan \@ref(eq:z-score) akan berubah dari $x$ menjadi $\bar{x}$ dan $\sigma$ menjadi $SE$:
+Jika kita menggunakan konsep *Z-Score* tersebut pada distribusi statistik, @eq-z-score akan berubah dari $x$ menjadi $\bar{x}$ dan $\sigma$ menjadi $SE$:
 
 $$
 \begin{align}
 Z = \frac{\bar{x} - \mu}{SE}
-(\#eq:z-score-sampling-distribution)
 \end{align}
-$$
+$$ {#eq-z-score-sampling-distribution}
 
-Dengan $\bar{x}$ adalah rata-rata sampel yang kita miliki, $\mu$ adalah rata-rata populasi (parameter) yang kita jadikan sebagai patokan, dan $SE$ adalah *standard error* yang dihitung dengan persamaan \@ref(eq:konsep-se-pake-sd) atau \@ref(eq:konsep-se-pake-sd-healey), sehingga persamaan \@ref(eq:z-score-sampling-distribution) sama saja bentuknya dengan:
+Dengan $\bar{x}$ adalah rata-rata sampel yang kita miliki, $\mu$ adalah rata-rata populasi (parameter) yang kita jadikan sebagai patokan, dan $SE$ adalah *standard error* yang dihitung dengan @eq-konsep-se-pake-sd atau @eq-konsep-se-pake-sd-healey, sehingga @eq-z-score-sampling-distribution sama saja bentuknya dengan:
 
 $$
-\begin{equation}
 Z = \frac{\bar{x} - \mu}{s/\sqrt{n}}
-(\#eq:z-score-sampling-distribution)
-\end{equation}
-$$
+$$ {#eq-z-score-sampling-distribution}
 
-::: rmdkasus
-### Studi Kasus: Menghitung *Z-Score* Rata-rata Sampel {.unnumbered}
-
+::: {#kasus-menghitung-z-score-rata-rata-sampel .kasus title="Menghitung *Z-Score* Rata-rata Sampel"}
 Melanjutkan kasus distribusi biaya perjalanan sebelumnya, dengan menggunakan nilai rata-rata, simpangan baku, dan ukuran sampel yang sama, asumsikan kita mengetahui bahwa rata-rata biaya perjalanan populasi ($\mu$) sebesar 52.000. Berapakah nilai *Z-score* dari rata-rata sampel tersebut?
 
 **Jawaban:**
@@ -1182,9 +1218,7 @@ $$
 Nilai $Z = -2,0$ ini berarti angka rata-rata sampel yang kita himpun tersebut ($\bar{x} = 50.000$) menduduki posisi 2 simpangan baku (atau 2 kali *standard error*) di bawah asumsi parameter rata-rata populasinya ($\mu = 52.000$). Dalam hal ini, *Z-score* mencerminkan rentang penyimpangan sampel terhadap populasinya: semakin jauh nilai *Z-score* dari angka nol, semakin jauh sampel kita menyimpang. Jika sampel kita ternyata dikategorikan "terlalu menyimpang", ada kemungkinan terjadinya bias ketika kita menghimpun sampel ke lapangan, atau asumsi kita mengenai rata-rata populasi tersebutlah yang justru keliru.
 :::
 
-::: rmdexercise
-## Soal Evaluasi 10 {.unnumbered}
-
+::: {#latihan-pengantar-inferensial-5 .latihan}
 [STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
 
 Jika diketahui parameter (rata-rata jarak tempat tinggal seluruh pegawai ITERA) sebesar 7,5 km, hitunglah nilai standar (*z-score*) sampel tersebut. Ulaslah hasil perhitungan Anda secara analitik berdasarkan konsep yang sudah Anda pelajar.
@@ -1192,7 +1226,7 @@ Jika diketahui parameter (rata-rata jarak tempat tinggal seluruh pegawai ITERA) 
 
 
 
-### Menentukan Probabilitas Terjadinya Suatu Nilai {#probabilitas-nilai-di-distribusi-statistik}
+### Menentukan Probabilitas Terjadinya Suatu Nilai {#sec-probabilitas-nilai-di-distribusi-statistik}
 
 Probabilitas terjadinya suatu nilai dalam distribusi statistik yang berbentuk normal ditunjukkan oleh **luasan area di bawah kurva distribusi tersebut**. Luasan area di bawah kurva distribusi statistik ini dapat dihitung dengan terlebih dahulu menentukan nilai *Z-score* dari nilai tersebut.
 
@@ -1200,21 +1234,27 @@ Karena kurva distribusi normal bersifat kontinu, probabilitas terjadinya *tepat*
 
 Untuk dapat menghitung probabilitas luasan di antara dua nilai *Z-score* ini, kita dapat memanfaatkan tabel statistik yang memuat nilai probabilitas kumulatif untuk setiap nilai *Z-score*. Tabel ini biasanya disajikan bersama ilustrasi area yang dimaksud seperti berikut.
 
-```{r fig-distribusi-normal-area-bc, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Ilustrasi area b (kiri) dan c (kanan) pada distribusi normal. Area b dan c masing-masing melambangkan probabilitas nilai-nilai yang berada di luar rentang nilai yang diamati.'}
+```{r}
+#| label: fig-distribusi-normal-area-bc
+#| out-width: '60%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi area b (kiri) dan c (kanan) pada distribusi normal. Area b dan c masing-masing melambangkan probabilitas nilai-nilai yang berada di luar rentang nilai yang diamati.'
 knitr::include_graphics("figures/distribusi-normal-area-bc.png")
 ```
 
 Beberapa contoh tabel yang dapat kita gunakan adalah seperti yang disertakan dalam @healey2021statistics atau seperti yang disajikan [Stat Calculators](https://statcalculators.com/z-score-table-standard-normal-distribution/) berikut.
 
-```{r bab-5-fig-z-table, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Contoh tabel Z-score.'}
+```{r}
+#| label: fig-bab-5-fig-z-table
+#| out-width: '60%'
+#| fig-align: 'center'
+#| fig-cap: 'Contoh tabel Z-score.'
 knitr::include_graphics("images/z-score-02.png")
 ```
 
 Dalam perangkat lunak statistik seperti R, kita dapat memanfaatkan fungsi `pnorm()` untuk menghitung probabilitas luasan di antara dua nilai *Z-score* ini. 
 
-::: rmdkasus
-### Studi Kasus: Probabilitas Ditemukannya Suatu Sampel dengan Rata-rata Tertentu Dibandingkan dengan Rata-rata Populasi {.unnumbered}
-
+::: {#kasus-probabilitas-ditemukannya-suatu-sampel-dengan-rata .kasus title="Probabilitas Ditemukannya Suatu Sampel dengan Rata-rata Tertentu Dibandingkan dengan Rata-rata Populasi"}
 Dengan sampel berukuran 100 orang yang memiliki rata-rata $\bar{x} = 51.500$ dan *standard error* $SE = 1.000$, berapakah probabilitas sampel tersebut ditemukan bila acuan kita adalah rata-rata populasi ($\mu = 52.000$)?
 
 **Jawaban:**
@@ -1229,9 +1269,9 @@ Z &= \frac{51.500 - 52.000}{1.000} \\
 \end{align}
 $$
 
-Sekarang kita memiliki dua singkapan tiang batas, yakni mulai dari $Z = -0,5$ hingga $Z = 0,0$ (rata-rata populasi). Kita dapat menggunakan tabel *Z-score* untuk menentukan probabilitas luasan di antara kedua nilai tersebut. Sebagai contoh, kita akan menggunakan Gambar \@ref(fig:fig-distribusi-normal-area-bc).
+Sekarang kita memiliki dua singkapan tiang batas, yakni mulai dari $Z = -0,5$ hingga $Z = 0,0$ (rata-rata populasi). Kita dapat menggunakan tabel *Z-score* untuk menentukan probabilitas luasan di antara kedua nilai tersebut. Sebagai contoh, kita akan menggunakan @fig-distribusi-normal-area-bc.
 
-Pertama, kita perlu memperhatikan ilustrasi distribusi yang ada di pojok kiri atas tabel tersebut. Area yang diwarnai biru pada gambar tersebut menunjukkan area **b** dari ilustrasi kita (Gambar \@ref(fig:fig-distribusi-normal-area-bc), yaitu luasan dari $Z = 0$ hingga suatu nilai $Z$ positif tertentu. Karena distribusi normal bersifat simetris, luasan area di rentang $Z = 0$ hingga $Z = -0,5$ (yang kita cari) nilainya sama dengan luasan area di rentang $Z = 0$ hingga $Z = 0,5$ (positif).
+Pertama, kita perlu memperhatikan ilustrasi distribusi yang ada di pojok kiri atas tabel tersebut. Area yang diwarnai biru pada gambar tersebut menunjukkan area **b** dari ilustrasi kita (@fig-distribusi-normal-area-bc, yaitu luasan dari $Z = 0$ hingga suatu nilai $Z$ positif tertentu. Karena distribusi normal bersifat simetris, luasan area di rentang $Z = 0$ hingga $Z = -0,5$ (yang kita cari) nilainya sama dengan luasan area di rentang $Z = 0$ hingga $Z = 0,5$ (positif).
 
 Untuk membaca tabel, kita perlu mengambil nilai absolut dari $Z$, yakni $|Z| = 0,5$. Nilai ini dibaca dengan cara:
 
@@ -1257,17 +1297,19 @@ $X = \mu + Z \cdot \sigma$
 Untuk distribusi statistik:
 $\bar{x} = \mu + Z \cdot SE$
 
-::: rmdkasus
-### Studi Kasus: Menentukan Batas Biaya Perjalanan Ekstrem (Distribusi Objek) {.unnumbered}
-
+::: {#kasus-menentukan-batas-biaya-perjalanan-ekstrem-distribusi .kasus title="Menentukan Batas Biaya Perjalanan Ekstrem (Distribusi Objek)"}
 Apabila rata-rata biaya perjalanan mahasiswa per bulan dalam satu populasi adalah $\mu = 50.000$ dengan simpangan baku $\sigma = 10.000$, berapakah batas pengeluaran biaya perjalanan individu yang termasuk golongan 5% orang berbiaya hidup tertinggi di kampus tersebut?
 
 **Jawaban:**
 
-*Pertama*, kita harus memahami konteks pertanyaan dari soal. Frasa "golongan 5% orang berbiaya hidup **tertinggi**" berarti bahwa jika kita nyatakan dalam bentuk grafik distribusi normal, maka area tersebut berada di bagian c di sebelah kanan yang besarnya 5% atau 0,05 (Gambar \@ref(fig:fig-bab-5-right-tail-5pct)).
+*Pertama*, kita harus memahami konteks pertanyaan dari soal. Frasa "golongan 5% orang berbiaya hidup **tertinggi**" berarti bahwa jika kita nyatakan dalam bentuk grafik distribusi normal, maka area tersebut berada di bagian c di sebelah kanan yang besarnya 5% atau 0,05 (@fig-bab-5-right-tail-5pct).
 
 
-```{r fig-bab-5-right-tail-5pct, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Ilustrasi area c (ekor kanan) sebesar 5% pada distribusi normal.'}
+```{r}
+#| label: fig-bab-5-right-tail-5pct
+#| out-width: '60%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi area c (ekor kanan) sebesar 5% pada distribusi normal.'
 library(ggplot2)
 
 z_cut <- qnorm(0.95)
@@ -1325,9 +1367,9 @@ ggplot(df_plot, aes(x, y)) +
   )
 ```
 
-*Kedua*, kita perlu memperhatikan area yang diwarnai biru pada Gambar \@ref(fig:bab-5-fig-z-table). Area tersebut sebenarnya adalah area **b** di sebelah kanan dengan besar $95%-50%=45%$ atau 0,45. Dengan demikian, kita perlu mencari nilai $Z$ yang sesuai dengan proporsi 0,45.
+*Kedua*, kita perlu memperhatikan area yang diwarnai biru pada @fig-bab-5-fig-z-table. Area tersebut sebenarnya adalah area **b** di sebelah kanan dengan besar $95%-50%=45%$ atau 0,45. Dengan demikian, kita perlu mencari nilai $Z$ yang sesuai dengan proporsi 0,45.
 
-*Ketiga*, kita akan cari nilai yang paling mendekati dengan 0,45 di sel-sel tabel pada Gambar \@ref(fig:bab-5-fig-z-table). Didapatkan nilai $Z = 1,64$ (baris 1,6 dan kolom 0,04) atau $Z = 1,65$ (baris 1,6 dan kolom 0,05). Kita ambil nilai $Z = 1,64$.
+*Ketiga*, kita akan cari nilai yang paling mendekati dengan 0,45 di sel-sel tabel pada @fig-bab-5-fig-z-table. Didapatkan nilai $Z = 1,64$ (baris 1,6 dan kolom 0,04) atau $Z = 1,65$ (baris 1,6 dan kolom 0,05). Kita ambil nilai $Z = 1,64$.
 
 *Keempat*, jabarkan kembali variabel $Z$ ini (berkisar `1,64`) ke unit mata uang yang senyata-nyatanya:
 
@@ -1343,9 +1385,7 @@ Ini membeberkan simpulan bahwa seorang mahasiswa akan tergolong di klaster "5% m
 :::
 
 
-::: rmdexercise
-## Soal Evaluasi 11 {.unnumbered}
-
+::: {#latihan-pengantar-inferensial-6 .latihan}
 [STP-4.2]{.capaian} *Suatu sampel pegawai ITERA berjumlah 286 orang yang mengukur jarak tempat tinggal mereka ke kampus menghasilkan rata-rata 7,90 km dan simpangan baku 6,42 km.*
 
 Hitunglah seberapa sering sampel-sampel yang nilainya **lebih kecil** dari statistik sampel kita (rata-rata jarak 7,9 km) ditemukan. Lengkapi penjelasan Anda dengan ilustrasi grafik distribusi normalnya.
@@ -1354,5 +1394,5 @@ Hitunglah seberapa sering sampel-sampel yang nilainya **lebih kecil** dari stati
 
 - *'seberapa sering' merujuk pada probabilitas.*
   
-- *perhatikan betul frasa 'lebih kecil' pada soal dan kaitkan dengan posisi area yang diwarnai seperti pada Gambar \@ref(fig:fig-distribusi-normal-area-bc).*
+- *perhatikan betul frasa 'lebih kecil' pada soal dan kaitkan dengan posisi area yang diwarnai seperti pada @fig-distribusi-normal-area-bc.*
 :::
