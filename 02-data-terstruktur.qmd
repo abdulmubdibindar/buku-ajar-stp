@@ -1,8 +1,12 @@
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
 # Data Terstruktur
 
-::: rmdcapaian
-### Capaian Pembelajaran {.unnumbered}
-
+::: {#capaian-data-terstruktur .capaian}
 Setelah mempelajari bab ini, Anda diharapkan:
 
 1. mampu menganalisis variabel dan objek dalam sebuah format data terstruktur sesuai dengan konsepnya [STP-1.3]{.capaian}
@@ -17,7 +21,7 @@ Di sisi lain, data terstruktur adalah data yang memiliki definisi yang jelas dan
 
 **Penelitian yang menggunakan analisis statistik pasti menghasilkan data terstruktur dari pengumpulannya** [@devaus2014surveys]. Hal ini bukan berarti penelitian kualitatif juga tidak bisa menghasilkan data terstruktur, akan tetapi hal tersebut tidak mutlak. Hanya penelitian kuantitatif dengan metode analisis statistik yang mutlak menggunakan data terstruktur.
 
-## Elemen Data Terstruktur {#kasus-elemen-data-terstruktur}
+## Elemen Data Terstruktur {#sec-kasus-elemen-data-terstruktur}
 
 Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 elemen penting: objek (*object*), variabel (*variable*), dan nilai (*value*). Ketiga hal ini membentuk struktur yang disebut **tabulasi data**. Tabulasi data adalah bentuk penyajian data dalam bentuk tabel yang terdiri atas baris dan kolom. Sebuah tabulasi data yang baik harus memiliki struktur yang jelas di mana baris mewakili objek dan kolom mewakili variabel.
 
@@ -25,16 +29,19 @@ Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 ele
 2.  **Variabel**. Variabel adalah karakteristik atau atribut yang melekat pada objek yang nilainya bisa berbeda-beda (bervariasi) antar satu objek dengan objek lainnya. Dalam tabulasi data, variabel menempati posisi **kolom** (*column*). Contoh variabel adalah luas lahan, jumlah penduduk, pendapatan per bulan, dan tingkat pendidikan.
 3.  **Nilai**. Nilai adalah angka atau kategori yang mengisi perpotongan antara baris (objek) dan kolom (variabel), yakni **sel** (*cell*). Nilai ini merepresentasikan data spesifik dari variabel tertentu untuk objek tertentu.
 
-::: rmdkasus
-### Studi Kasus: Elemen Data Terstruktur {.unnumbered} 
+::: {#sec-kasus-elemen-data-terstruktur .kasus title="Elemen Data Terstruktur"}
+Perhatikan hasil pengumpulan data kuesioner berupa tabulasi data dari mahasiswa-mahasiswa ITERA seperti yang ditampilkan pada @fig-bab-2-ilus-data-terstruktur.
 
-Perhatikan hasil pengumpulan data kuesioner berupa tabulasi data dari mahasiswa-mahasiswa ITERA seperti yang ditampilkan pada Gambar \@ref(fig:bab-2-ilus-data-terstruktur).
-
-```{r bab-2-ilus-data-terstruktur, echo=FALSE, fig.cap='Ilustrasi elemen data terstruktur', out.width='60%', fig.align='center'}
+```{r}
+#| label: fig-bab-2-ilus-data-terstruktur
+#| fig-cap: 'Ilustrasi elemen data terstruktur'
+#| out-width: '60%'
+#| fig-align: 'center'
 knitr::include_graphics("images/bab-2-ilus-data-terstruktur.png")
 ```
 
 Kita akan membedah elemen-elemen data terstruktur dari tabulasi data tersebut:
+
 - Objek dari tabulasi data tersebut adalah mahasiswa-mahasiswa ITERA. Tiap objek dibedakan berdasarkan variabel `ID-mahasiswa`.
 - Variabel dari tabulasi data tersebut di antaranya adalah `Program Studi`, `Usia`, `Jumlah Motor`, dan `Jumlah Mobil`. Adapun variabel `ID-mahasiswa` tidak termasuk dalam variabel yang dihitung karena hanya bertindak sebagai pengidentifikasi objek.
 - Nilai dari tabulasi data tersebut bisa kita lihat di sel-selnya. Misalnya, objek mahasiswa dengan `ID-mahasiswa` 002 memiliki nilai `Program Studi` adalah "Matematika", `Usia` adalah 21 tahun, `Jumlah Motor` adalah 0, dan `Jumlah Mobil` adalah 1.
@@ -50,9 +57,7 @@ Agar data dapat diolah dengan baik menggunakan perangkat lunak statistik seperti
 
 Pelajari kasus yang berisi perbandingan antara data yang tidak rapi dan data yang rapi berikut.
 
-::: rmdkasus
-### Studi Kasus: Perbandingan Data yang Tidak Rapi dan Data yang Rapi {.unnumbered} 
-
+::: {#kasus-perbandingan-data-yang-tidak-rapi-dan .kasus title="Perbandingan Data yang Tidak Rapi dan Data yang Rapi"}
 Berikut adalah beberapa contoh kesalahan umum dalam struktur data dan perbaikannya:
 
 [Kesalahan-1: Header Baris Bersarang]{.tajuksaya}
@@ -101,12 +106,13 @@ knitr::include_graphics("images/bab-2-perbaikan-3-recreate.png")
 
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-elemen data terstruktur.
 
-::: rmdexercise
-## Soal Evaluasi 2 {.unnumbered}
-
+::: {#latihan-data-terstruktur-1 .latihan}
 Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
 
-```{r tabel-1-3, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-1-3
+#| out-width: '60%'
+#| fig-align: 'center'
 library(knitr)
 library(kableExtra)
 
@@ -143,14 +149,12 @@ d. Apakah format tabel tersebut sesuai dengan prinsip data yang rapi? Jelaskan a
 
 Pada subbab ini kita akan membahas lebih dalam tentang nilai dalam variabel yang berpengaruh pada analisis selanjutnya, yakni tingkat pengukuran variabel.
 
-Sebagaimana telah disebutkan pada Subbab \@ref(analisis-kuantitatif-vs-kualitatif) bahwa pengumpulan data kuantitatif dapat disebut juga sebagai pengukuran suatu variabel, cara kita mengukur suatu variabel bisa diibaratkan seperti menggunakan mistar yang memiliki sederet angka [@kachigan1986statistical].
+Sebagaimana telah disebutkan pada Subbab @sec-analisis-kuantitatif-vs-kualitatif bahwa pengumpulan data kuantitatif dapat disebut juga sebagai pengukuran suatu variabel, cara kita mengukur suatu variabel bisa diibaratkan seperti menggunakan mistar yang memiliki sederet angka [@kachigan1986statistical].
 
 Tingkat pengukuran berbicara tentang cara kita menyatakan hasil pengukuran suatu variabel tersebut dalam angka, mulai dari hasil yang sangat menyerupai angka dalam mistar hingga hasil yang bukan angka sama sekali.
 
-::: rmdkasus
-### Studi Kasus: Tingkat Pengukuran Variabel {.unnumbered}
-
-Sesuai dengan kasus \@ref(kasus-elemen-data-terstruktur), kita akan menggunakan kasus variabel `Usia` dari data terstruktur tersebut.
+::: {#kasus-tingkat-pengukuran-variabel .kasus title="Tingkat Pengukuran Variabel"}
+Sesuai dengan kasus @sec-kasus-elemen-data-terstruktur, kita akan menggunakan kasus variabel `Usia` dari data terstruktur tersebut.
 
 Dalam variabel tersebut, nilai `Usia` dapat kita nyatakan dalam 2 bentuk yang berbeda. Kita akan bedakan bentuknya menjadi kasus-kasus berikut:
 
@@ -210,18 +214,23 @@ Dalam praktiknya, menentukan tingkat pengukuran variabel seringkali tidak mudah 
 3. Jika **numerik**, pastikan apakah angka-angka merepresentasikan angka sebenarnya. Jika tidak, ia sebenarnya adalah **kategorik**. Kembali ke langkah 1.
 4. Jika **numerik** dan angka-angka merepresentasikan angka sebenarnya, pastikan apakah angka-angka memiliki posisi nol absolut. Jika tidak, ia pasti berupa **interval**. Jika ya, ia pasti berupa **rasio**.
 
-Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilkan dalam Gambar \@ref(fig:fig-menentukan-tingpeng) berikut. 
+Langkah-langkah tersebut dapat diilustrasikan dalam diagram alir yang ditampilkan dalam @fig-menentukan-tingpeng berikut. 
 
-```{r fig-menentukan-tingpeng, echo=FALSE, fig.cap='Diagram alir menentukan tingkat pengukuran variabel', fig.align='center'}
+```{r}
+#| label: fig-menentukan-tingpeng
+#| fig-cap: 'Diagram alir menentukan tingkat pengukuran variabel'
+#| fig-align: 'center'
 knitr::include_graphics("images/bab-2-menentukan-tingpeng.png")
 ```
 
-::: rmdkasus
-### Studi Kasus: Menentukan Tingkat Pengukuran Variabel {.unnumbered}
-
+::: {#kasus-menentukan-tingkat-pengukuran-variabel .kasus title="Menentukan Tingkat Pengukuran Variabel"}
 Melanjutkan kasus pengumpulan data pergerakan mahasiswa ITERA dari bab sebelumnya, setelah merumuskan pertanyaan penelitian mengenai keberlanjutan pola pergerakan, kita perlu menentukan variabel yang akan diukur. Berikut adalah variabel-variabel tersebut beserta penjelasannya:
 
-```{r bab-2-rancangan-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-bab-2-rancangan-metadata
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Penelaahan tingkat pengukuran variabel penelitian'
 library(knitr)
 library(kableExtra)
 
@@ -239,9 +248,7 @@ rancangan <- data.frame(
 
 kbl(rancangan,
   escape = FALSE,
-  col.names = c("Variabel", "Nama Panggilan", "Penjelasan"),
-  caption = "Penelaahan tingkat pengukuran variabel penelitian"
-) %>%
+  col.names = c("Variabel", "Nama Panggilan", "Penjelasan"),) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover"),
     latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
@@ -251,7 +258,11 @@ kbl(rancangan,
 
 Setelah menelaah jenis nilai dan tingkat pengukuran variabel, kita perlu menspesifikasikan nilai isian beserta satuannya. Jika menggunakan kodifikasi, aturannya harus diperjelas. Spesifikasi ini disebut **metadata**, yaitu data yang menjelaskan tentang data.
 
-```{r bab-2-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-bab-2-metadata
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Metadata variabel penelitian'
 library(knitr)
 library(kableExtra)
 
@@ -266,9 +277,7 @@ metadata <- data.frame(
 
 kbl(metadata,
   escape = FALSE,
-  col.names = c("Variabel", "Nama Panggilan", "Tingkat Pengukuran", "Satuan", "Nilai yang mungkin"),
-  caption = "Metadata variabel penelitian"
-) %>%
+  col.names = c("Variabel", "Nama Panggilan", "Tingkat Pengukuran", "Satuan", "Nilai yang mungkin"),) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover"),
     latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
@@ -282,7 +291,11 @@ Kita sudah menentukan nilai dari telaahan variabel-variabel yang sudah kita buat
 
 Kita bisa mengubah tingkat pengukuran variabel dari satu tingkat ke lainnya. Misalnya, kita bisa mengubah tingkat pengukuran variabel `jarak` dari metrik (rasio) menjadi ordinal. Karena tingkat pengukuran variabel metrik adalah angka, untuk mengubahnya menjadi ordinal maka kita perlu mengubahnya menjadi kategorikal. Artinya, kita perlu membuat kategori baru dari variabel `jarak` tersebut.
 
-```{r bab-2-ubah-tingkat-pengukuran, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-bab-2-ubah-tingkat-pengukuran
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Metadata variabel penelitian yang diubah'
 library(knitr)
 library(kableExtra)
 
@@ -298,9 +311,7 @@ metadata_2 <- data.frame(
 kbl(metadata_2,
   longtable = TRUE,
   escape = FALSE,
-  col.names = c("Variabel", "Nama Panggilan", "Tingkat Pengukuran", "Satuan", "Nilai yang mungkin"),
-  caption = "Metadata variabel penelitian yang diubah"
-) %>%
+  col.names = c("Variabel", "Nama Panggilan", "Tingkat Pengukuran", "Satuan", "Nilai yang mungkin"),) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover"),
     latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
@@ -313,12 +324,14 @@ kbl(metadata_2,
 
 Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang tingkat pengukuran variabel.
 
-::: rmdexercise
-## Soal Evaluasi 3 {.unnumbered}
-
+::: {#latihan-data-terstruktur-2 .latihan}
 Perhatikan cuplikan data hasil survei mahasiswa berikut ini:
 
-```{r bab-2-eval-3-preview, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-bab-2-eval-3-preview
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Cuplikan data survei mahasiswa'
 library(knitr)
 library(kableExtra)
 
@@ -332,9 +345,7 @@ preview_data <- data.frame(
 )
 
 kbl(preview_data,
-  align = "c",
-  caption = "Cuplikan data survei mahasiswa"
-) %>%
+  align = "c",) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover"),
     latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
@@ -344,7 +355,11 @@ kbl(preview_data,
 
 Adapun keterangan dari variabel-variabel tersebut (metadata) adalah sebagai berikut:
 
-```{r bab-2-eval-3-metadata, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-bab-2-eval-3-metadata
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Metadata variabel survei mahasiswa'
 library(knitr)
 library(kableExtra)
 
@@ -363,9 +378,7 @@ metadata_soal <- data.frame(
 
 kbl(metadata_soal,
   escape = FALSE,
-  col.names = c("Nama Variabel", "Deskripsi", "Nilai-nilai yang valid"),
-  caption = "Metadata variabel survei mahasiswa"
-) %>%
+  col.names = c("Nama Variabel", "Deskripsi", "Nilai-nilai yang valid"),) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover"),
     latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
