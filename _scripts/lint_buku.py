@@ -14,6 +14,8 @@ Galat (keluar dengan kode 1):
               id ganda, atau heading di dalam callout
   rujukan     @fig-/@tbl-/@eq-/@sec-/@kasus-/@latihan-/@capaian- ke label
               yang tidak ada di bab mana pun
+  math        persamaan yang tidak bisa diubah ke Typst: LaTeX mentah di luar
+              $$, align/equation di dalam $$, \\\\ tanpa lingkungan, \\\\alpha
   tabel       font_size pada tabel (huruf tabel diatur global)
 
 Peringatan (tinjau manual, lihat skill tinjau-bab):
@@ -130,6 +132,7 @@ def lint(path, ids, fix):
     lines = raw.split("\n")
     out = []
     in_code = in_math = False
+    math_start, math_env, math_break = 0, False, False
     stack = []  # (panjang fence, jenis callout atau None)
     for i, line in enumerate(lines):
         n = i + 1
@@ -147,6 +150,10 @@ def lint(path, ids, fix):
             if fix_mojibake(junk) == junk:
                 issues.append((n, "mojibake", f"karakter sampah {junk!r}: hapus atau ganti manual", False))
 
+        m = LABEL_CHUNK.match(line) if in_code else None
+        if m and m.group(1) != "setup" and len(ids.get(m.group(1), [])) > 1:
+            issues.append((n, "rujukan", f"label {m.group(1)} ganda: {', '.join(ids[m.group(1)])}", False))
+
         if CODE.match(line):
             in_code = not in_code
             if re.match(r"^\s*```\{r\s+[^}]*[=,]", line):
@@ -154,6 +161,8 @@ def lint(path, ids, fix):
             out.append(line)
             continue
         if in_code:
+            if re.match(r"^\s*#\|\s*(fig|tbl)-cap:", line) and re.search(r"(?<!\\)\\\\[a-zA-Z]", line):
+                issues.append((n, "math", "backslash ganda di caption (\\\\alpha -> \\alpha)", False))
             out.append(line)
             continue
 
@@ -191,12 +200,25 @@ def lint(path, ids, fix):
 
         if line.strip().startswith("$$") and line.strip().count("$$") == 1:
             in_math = not in_math
-        elif not in_math and re.match(r"^\s*\\begin\{(align|equation|gather|multline)\*?\}", line):
-            issues.append((n, "bookdown", "persamaan LaTeX mentah di luar $$ (hilang di PDF)", False))
+            if in_math:
+                math_start, math_env, math_break = n, False, False
+            elif math_break and not math_env:
+                issues.append((math_start, "math", "baris \\\\ tanpa lingkungan (aligned/gathered) tidak dikenali Typst", False))
+        elif re.match(r"^\s*\\begin\{(align|equation|gather|multline|split)\*?\}", line):
+            msg = "di dalam $$ pakai aligned/gathered" if in_math else "persamaan LaTeX mentah di luar $$ (hilang di PDF)"
+            issues.append((n, "math", msg, False))
+        if in_math:
+            math_env = math_env or "\\begin{" in line
+            math_break = math_break or line.rstrip().endswith("\\\\")
+        if re.search(r"(?<!\\)\\\\[a-zA-Z]", line):
+            issues.append((n, "math", "backslash ganda sebelum perintah (\\\\alpha -> \\alpha)", False))
 
         for pattern, msg in BOOKDOWN:
             if pattern.search(line):
                 issues.append((n, "bookdown", msg, False))
+        for label in LABEL_ATTR.findall(line):
+            if len(ids.get(label, [])) > 1 and not FENCE_OPEN.match(line):
+                issues.append((n, "rujukan", f"label {label} ganda: {', '.join(ids[label])}", False))
         for ref in REF.findall(line):
             if ref not in ids:
                 issues.append((n, "rujukan", f"@{ref} tidak ditemukan", False))

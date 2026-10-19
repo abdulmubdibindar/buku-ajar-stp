@@ -81,7 +81,8 @@ def yaml_value(value):
         return v
     m = re.fullmatch(r"""(['"])(.*)\1""", v, re.S)
     if m:
-        v = m.group(2)
+        # Buang escape string R: "\\alpha" di R berarti \alpha.
+        v = re.sub(r"\\([\\'\"])", r"\1", m.group(2))
     return "'" + v.replace("'", "''") + "'"
 
 
@@ -202,9 +203,18 @@ def convert_equations(lines):
                 b = b[: m.start()] + b[m.end() :]
             if b.strip() in ("\\begin{equation}", "\\end{equation}"):
                 continue
+            # align/gather/split hanya sah sebagai lingkungan tingkat atas
+            # LaTeX; di dalam $$ dipakai versi -ed (dikenali MathJax & Typst).
+            b = re.sub(r"\\(begin|end)\{(align|split)\*?\}", r"\\\1{aligned}", b)
+            b = re.sub(r"\\(begin|end)\{gather\*?\}", r"\\\1{gathered}", b)
+            b = re.sub(r"\\(nonumber|notag)\b", "", b)
             if b.strip():
                 kept.append(b.rstrip())
-        out.append("$$")
+        # Pindah baris \\ tanpa lingkungan tidak dikenali Typst.
+        if any(k.rstrip().endswith("\\\\") for k in kept) and not any("\\begin{" in k for k in kept):
+            ind = kept[0][: len(kept[0]) - len(kept[0].lstrip())]
+            kept = [ind + "\\begin{gathered}"] + kept + [ind + "\\end{gathered}"]
+        out.append(lines[i][: len(lines[i]) - len(lines[i].lstrip())] + "$$")
         out.extend(kept)
         close = lines[j] if j < len(lines) else "$$"
         out.append(close.rstrip() + (f" {{#eq-{label}}}" if label else ""))
