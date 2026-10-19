@@ -21,7 +21,7 @@ Di sisi lain, data terstruktur adalah data yang memiliki definisi yang jelas dan
 
 **Penelitian yang menggunakan analisis statistik pasti menghasilkan data terstruktur dari pengumpulannya** [@devaus2014surveys]. Hal ini bukan berarti penelitian kualitatif juga tidak bisa menghasilkan data terstruktur, akan tetapi hal tersebut tidak mutlak. Hanya penelitian kuantitatif dengan metode analisis statistik yang mutlak menggunakan data terstruktur.
 
-## Elemen Data Terstruktur {#sec-kasus-elemen-data-terstruktur}
+## Elemen Data Terstruktur {#sec-elemen-data-terstruktur}
 
 Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 elemen penting: objek (*object*), variabel (*variable*), dan nilai (*value*). Ketiga hal ini membentuk struktur yang disebut **tabulasi data**. Tabulasi data adalah bentuk penyajian data dalam bentuk tabel yang terdiri atas baris dan kolom. Sebuah tabulasi data yang baik harus memiliki struktur yang jelas di mana baris mewakili objek dan kolom mewakili variabel.
 
@@ -29,7 +29,7 @@ Dengan format yang jelas, data terstruktur dapat dipandang sebagai susunan 3 ele
 2.  **Variabel**. Variabel adalah karakteristik atau atribut yang melekat pada objek yang nilainya bisa berbeda-beda (bervariasi) antar satu objek dengan objek lainnya. Dalam tabulasi data, variabel menempati posisi **kolom** (*column*). Contoh variabel adalah luas lahan, jumlah penduduk, pendapatan per bulan, dan tingkat pendidikan.
 3.  **Nilai**. Nilai adalah angka atau kategori yang mengisi perpotongan antara baris (objek) dan kolom (variabel), yakni **sel** (*cell*). Nilai ini merepresentasikan data spesifik dari variabel tertentu untuk objek tertentu.
 
-::: {#sec-kasus-elemen-data-terstruktur .kasus title="Elemen Data Terstruktur"}
+::: {#kasus-elemen-data .kasus title="Elemen Data Terstruktur"}
 Perhatikan hasil pengumpulan data kuesioner berupa tabulasi data dari mahasiswa-mahasiswa ITERA seperti yang ditampilkan pada @fig-bab-2-ilus-data-terstruktur.
 
 ```{r}
@@ -60,45 +60,63 @@ Pelajari kasus yang berisi perbandingan antara data yang tidak rapi dan data yan
 ::: {#kasus-perbandingan-data-yang-tidak-rapi-dan .kasus title="Perbandingan Data yang Tidak Rapi dan Data yang Rapi"}
 Berikut adalah beberapa contoh kesalahan umum dalam struktur data dan perbaikannya:
 
-[Kesalahan-1: Header Baris Bersarang]{.tajuksaya}
+**Kesalahan-1: Header Baris Bersarang**
 
 - **Data Tidak Rapi**
   
-  ```{r bab-2-kesalahan-1, echo=FALSE, out.width='60%', fig.align='center'}
+  ```{r}
+  #| label: bab-2-kesalahan-1
+  #| out-width: '60%'
+  #| fig-align: 'center'
 knitr::include_graphics("images/bab-2-kesalahan-1-recreate.png")
   ```
 
 - **Data Rapi**
   
-  ```{r bab-2-perbaikan-1, echo=FALSE, out.width='60%', fig.align='center'}
+  ```{r}
+  #| label: bab-2-perbaikan-1
+  #| out-width: '60%'
+  #| fig-align: 'center'
 knitr::include_graphics("images/bab-2-perbaikan-1-recreate.png")
   ```
 
-[Kesalahan-2: Struktur Kompleks]{.tajuksaya}
+**Kesalahan-2: Struktur Kompleks**
 
 - **Data Tidak Rapi**
   
-  ```{r bab-2-kesalahan-2, echo=FALSE, out.width='60%', fig.align='center'}
+  ```{r}
+  #| label: bab-2-kesalahan-2
+  #| out-width: '60%'
+  #| fig-align: 'center'
 knitr::include_graphics("images/bab-2-kesalahan-2-recreate.png")
   ```
 
 - **Data Rapi**
   
-  ```{r bab-2-perbaikan-2, echo=FALSE, out.width='60%', fig.align='center'}
+  ```{r}
+  #| label: bab-2-perbaikan-2
+  #| out-width: '60%'
+  #| fig-align: 'center'
 knitr::include_graphics("images/bab-2-perbaikan-2-recreate.png")
   ```
 
-[Kesalahan-3: Format Tidak Konsisten]{.tajuksaya}
+**Kesalahan-3: Format Tidak Konsisten**
 
 - **Data Tidak Rapi**
   
-  ```{r bab-2-kesalahan-3, echo=FALSE, out.width='60%', fig.align='center'}
+  ```{r}
+  #| label: bab-2-kesalahan-3
+  #| out-width: '60%'
+  #| fig-align: 'center'
 knitr::include_graphics("images/bab-2-kesalahan-3-recreate.png")
   ```
 
 - **Data Rapi**
   
-  ```{r bab-2-perbaikan-3, echo=FALSE, out.width='60%', fig.align='center'}
+  ```{r}
+  #| label: bab-2-perbaikan-3
+  #| out-width: '60%'
+  #| fig-align: 'center'
 knitr::include_graphics("images/bab-2-perbaikan-3-recreate.png")
   ```
 
@@ -110,7 +128,7 @@ Jawablah soal evaluasi berikut untuk menguji pemahaman Anda tentang elemen-eleme
 Perhatikan tabel hasil pengumpulan data kuesioner berikut ini [STP-1.3]{.capaian}:
 
 ```{r}
-#| label: tbl-1-3
+#| label: tabel-1-3
 #| out-width: '60%'
 #| fig-align: 'center'
 library(knitr)
@@ -154,7 +172,7 @@ Sebagaimana telah disebutkan pada Subbab @sec-analisis-kuantitatif-vs-kualitatif
 Tingkat pengukuran berbicara tentang cara kita menyatakan hasil pengukuran suatu variabel tersebut dalam angka, mulai dari hasil yang sangat menyerupai angka dalam mistar hingga hasil yang bukan angka sama sekali.
 
 ::: {#kasus-tingkat-pengukuran-variabel .kasus title="Tingkat Pengukuran Variabel"}
-Sesuai dengan kasus @sec-kasus-elemen-data-terstruktur, kita akan menggunakan kasus variabel `Usia` dari data terstruktur tersebut.
+Sesuai dengan @kasus-elemen-data, kita akan menggunakan kasus variabel `Usia` dari data terstruktur tersebut.
 
 Dalam variabel tersebut, nilai `Usia` dapat kita nyatakan dalam 2 bentuk yang berbeda. Kita akan bedakan bentuknya menjadi kasus-kasus berikut:
 
