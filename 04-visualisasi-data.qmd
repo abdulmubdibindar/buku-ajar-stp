@@ -918,7 +918,10 @@ kbl(metadata_soal,
 
 1. Analisislah tiap-tiap variabel berdasarkan tingkat pengukuran variabelnya untuk menentukan jenis grafik apa yang bisa digunakan untuk memvisualkan variabel-variabel tersebut! [STP-3.1]{.capaian}
 
-  ```{r bab-4-eval-5-jawaban-1, echo=FALSE, out.width='50%', fig.align='center'}
+  ```{r}
+  #| label: bab-4-eval-5-jawaban-1
+  #| out-width: '50%'
+  #| fig-align: 'center'
 library(knitr)
 library(kableExtra)
 
