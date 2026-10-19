@@ -358,7 +358,7 @@ Hasil *scatterplot*-nya secara mengejutkan menunjukkan bahwa terdapat **korelasi
 ```{r}
 #| label: fig-scatterplot-cokelat-nobel
 #| fig-align: 'center'
-#| width: '60%'
+#| out-width: '60%'
 #| fig-cap: 'Scatterplot Konsumsi Cokelat dan Peraih Nobel. Sumber: data.europa.eu'
 knitr::include_graphics("images/chocolate_countries_large.jpg")
 ```
@@ -388,6 +388,7 @@ Korelasi antara variabel `jenis.tempat.tinggal` dan `kendaraan.utama` mahasiswa 
 
 ```{r}
 #| label: tbl-contoh-tabel-silang
+#| tbl-cap: 'Tabel Silang Variabel Jenis Tempat Tinggal dan Kendaraan Utama Mahasiswa UNILA'
 library(tidyverse)
 library(gtsummary)
 library(flextable)
@@ -410,8 +411,7 @@ bahan_crosstab |>
   remove_footnote_header(columns = all_stat_cols()) |>
   as_flex_table() |>
   bg(bg = "white", part = "all") |>
-  autofit() |>
-  set_caption("Tabel Silang Variabel Jenis Tempat Tinggal dan Kendaraan Utama Mahasiswa UNILA")
+  autofit()
 ```
 
 **Penjelasan Tabel Silang**
@@ -453,7 +453,7 @@ Sebelum menghitung frekuensi harapan, mari kita visualisasikan kembali tabel sil
 
 ```{r}
 #| label: tbl-frekuensi-observasi-unila
-#| tbl-cap: 'Tabel Silang Frekuensi Aktual/Teramati'
+#| tbl-cap: 'Tabel Silang Frekuensi Teramati'
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -475,8 +475,7 @@ bahan_crosstab |>
   remove_footnote_header(columns = all_stat_cols()) |>
   as_flex_table() |>
   bg(bg = "white", part = "all") |>
-  autofit() |>
-  set_caption("Tabel Silang Frekuensi Teramati")
+  autofit()
 
 # Commented for later used as educational purpose
 # -----------------------------------------------
@@ -595,8 +594,7 @@ df_exp_layout |>
   hline_top(part = "header", border = fp_border(width = 2)) |>
   hline_bottom(part = "body", border = fp_border(width = 2)) |>
   bg(bg = "white", part = "all") |>
-  autofit() |>
-  set_caption("Tabel Silang Frekuensi Harapan")
+  autofit()
 
 # Commented for later used as educational purpose
 # -----------------------------------------------
@@ -812,21 +810,21 @@ dengan:
 
 Nilai koefisien $\lambda$ berkisar antara 0 hingga 1. Semakin besar nilai $\lambda$, semakin kuat hubungan antara kedua variabel. Kita bisa menggunakan kriteria pada @tbl-interpretasi-koefisien-nominal untuk menilai kekuatan hubungan antara kedua variabel yang kita analisis.
 
-::: {#kasus-menghitung-koefisien-korelasi-lambda .kasus title="Menghitung Koefisien Korelasi Lambda"}
+::: {#kasus-lambda-kepemilikan-kendaraan .kasus title="Menghitung Koefisien Korelasi Lambda"}
 Dari kasus sebelumnya, kita mendapatkan nilai $E_1 = 40$ dan $E_2 = 15$. Dengan demikian, koefisien korelasi lambda dapat dihitung sebagai berikut:
 
-$$\lambda = \frac{40 - 15}{40} = \frac{25}{40} = 0.625$$
+$$\lambda = \frac{40 - 15}{40} = \frac{25}{40} = 0{,}625$$
 
 Oleh karena itu, kita dapat menyimpulkan bahwa terdapat hubungan yang kuat antara variabel kepemilikan kendaraan dan preferensi penggunaan transportasi publik. Berdasarkan @tbl-pre-e2-hipotetis, kita dapat mengatakan bahwa pemilik kendaraan *cenderung* tidak setuju menggunakan transportasi publik, sedangkan mereka yang tidak memiliki kendaraan *cenderung* setuju menggunakan transportasi publik.
 
-[**Penting!**]{.tajuksaya} Di sini kita tidak menyatakan klaim bahwa "kepemilikan kendaraan otomatis menyebabkan seseorang menolak penggunaan transportasi publik". Kita secara terukur menggunakan kata sifat **cenderung** untuk menerangkan bahwa terdapat **korelasi** atau hubungan antara variabel kepemilikan kendaraan dengan preferensi penggunaan transportasi publik. 
+**Penting!** Di sini kita tidak menyatakan klaim bahwa "kepemilikan kendaraan otomatis menyebabkan seseorang menolak penggunaan transportasi publik". Kita secara terukur menggunakan kata sifat **cenderung** untuk menerangkan bahwa terdapat **korelasi** atau hubungan antara variabel kepemilikan kendaraan dengan preferensi penggunaan transportasi publik. 
 
 Akan tetapi, kita **belum bisa** menyimpulkan secara gamblang bahwa *"kepemilikan kendaraan menyebabkan ketidaksetujuan menggunakan transportasi publik"* (**kausalitas**). Ibarat kasus konsumsi cokelat dan peraih Nobel yang sudah dibahas pada awal bab, adanya korelasi yang tampak teramat kuat sekalipun belum tentu membuktikan secara empiris adanya **sebab-akibat**. 
 :::
 
 Mari kita terapkan analisis korelasi menggunakan koefisien $\lambda$ pada kasus **jenis tempat tinggal** versus **kendaraan utama**.
 
-::: {#kasus-menghitung-koefisien-korelasi-lambda .kasus title="Menghitung Koefisien Korelasi Lambda"}
+::: {#kasus-lambda-hunian-kendaraan .kasus title="Koefisien Lambda: Jenis Tempat Tinggal dan Kendaraan Utama"}
 Mari kita aplikasikan logika pengurangan kesalahan prediksi (PRE) untuk menghitung koefisien Lambda ($\lambda$) pada hubungan antara `jenis.tempat.tinggal` (sebagai variabel independen, X) dengan `kendaraan.utama` yang digunakan (sebagai variabel dependen, Y) oleh mahasiswa UNILA.
 
 Variabel `jenis.tempat.tinggal` ditentukan sebagai **variabel independen** karena secara logika lebih masuk jika dikatakan *"jenis kendaraan yang digunakan untuk mengakses kampus ditentukan oleh jenis tempat tinggalnya"* daripada sebaliknya.
@@ -839,6 +837,7 @@ Tebakan terbaik kita pada kondisi ini adalah memilih jenis kendaraan yang paling
 
 ```{r}
 #| label: tbl-frekuensi-e1-unila
+#| tbl-cap: 'Tabel Frekuensi Kendaraan Utama Mahasiswa UNILA'
 library(tidyverse)
 library(gtsummary)
 library(flextable)
@@ -855,8 +854,7 @@ bahan_unila |>
   remove_footnote_header() |>
   as_flex_table() |>
   bg(bg = "white", part = "all") |>
-  autofit() |>
-  set_caption("Tabel Frekuensi Kendaraan Utama Mahasiswa UNILA")
+  autofit()
 
 n_semua <- length(bahan_unila$kendaraan.utama)
 n_motor_unila <- length(bahan_unila$kendaraan.utama[bahan_unila$kendaraan.utama == "Sepeda motor pribadi"])
@@ -874,6 +872,7 @@ Langkah berikutnya adalah memasukkan informasi dari variabel tambahan, yakni jen
 
 ```{r}
 #| label: tbl-frekuensi-e2-unila
+#| tbl-cap: 'Tabel Silang Kendaraan Utama Berdasarkan Jenis Tempat Tinggal'
 bahan_unila |>
   select(Jenis.Tempat.Tinggal, kendaraan.utama) |>
   rename(jenis.tempat.tinggal = Jenis.Tempat.Tinggal) |>
@@ -883,8 +882,7 @@ bahan_unila |>
   ) |>
   as_flex_table() |>
   bg(bg = "white", part = "all") |>
-  autofit() |>
-  set_caption("Tabel Silang Kendaraan Utama Berdasarkan Jenis Tempat Tinggal")
+  autofit()
 
 e2_unila <- 154
 e1_unila <- 164
@@ -929,7 +927,9 @@ Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda mengenai materi yang
 ::: {#latihan-korelasi-nominal-1 .latihan}
 1. Perhatikan tabel silang yang menunjukkan distribusi frekuensi pandangan mahasiswa terhadap kegiatan ekstrakurikuler (ekskul) berdasarkan variabel pandangan mereka dan apakah mereka anggota sebuah himpunan. [STP-9.1]{.capaian}
 
-  ```{r tbl-evaluasi-ekskul, echo=FALSE, message=FALSE, warning=FALSE}
+  ```{r}
+  #| label: tbl-evaluasi-ekskul
+  #| tbl-cap: 'Tabel Silang Pandangan Mahasiswa terhadap Kegiatan Ekstrakurikuler'
 library(knitr)
 library(kableExtra)
 
@@ -943,7 +943,6 @@ df_eval18 <- data.frame(
 tbl_eval18_out <- kbl(df_eval18,
   align = "lcc",
   col.names = c("Bagaimana pendapat Anda tentang kegiatan ekstrakurikuler (ekskul) mahasiswa?", "Ya", "Tidak"),
-  caption = "Tabel Silang Pandangan Mahasiswa terhadap Kegiatan Ekstrakurikuler",
   format.args = list(big.mark = ".", decimal.mark = ","),
   escape = FALSE
 ) |>
@@ -968,7 +967,9 @@ tbl_eval18_out
 
 2. Perhatikan tabel silang yang menyajikan data hipotesis pola utama pengelolaan sampah berdasarkan tipe tempat tinggal 1.000 rumah tangga berikut. [STP-9.1]{.capaian}
 
-  ```{r tbl-evaluasi-sampah, echo=FALSE, message=FALSE, warning=FALSE}
+  ```{r}
+  #| label: tbl-evaluasi-sampah
+  #| tbl-cap: 'Tabel Silang Pola Pengelolaan Sampah berdasarkan Tipe Tempat Tinggal'
 library(knitr)
 library(kableExtra)
 
@@ -982,7 +983,6 @@ df_eval_sampah <- data.frame(
 tbl_eval_sampah_out <- kbl(df_eval_sampah,
   align = "lcc",
   col.names = c("Pola utama pengelolaan sampah rumah tangga", "Apartemen", "Perumahan Tapak"),
-  caption = "Tabel Silang Pola Pengelolaan Sampah berdasarkan Tipe Tempat Tinggal",
   format.args = list(big.mark = ".", decimal.mark = ","),
   escape = FALSE
 ) |>
