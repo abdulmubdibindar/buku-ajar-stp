@@ -1,36 +1,41 @@
-﻿# Uji Hipotesis Parameter Satu Populasi {#bab-7-uji-hipotesis-satu-populasi}
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
 
-::: rmdcapaian
-### Capaian Pembelajaran {.unnumbered}
+# Uji Hipotesis Parameter Satu Populasi {#sec-bab-7-uji-hipotesis-satu-populasi}
 
+::: {#capaian-uji-hipotesis-satu-populasi .capaian}
 Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil dari pengujian hipotesis parameter satu populasi pada suatu kasus [STP-6.1]{.capaian}
 :::
 
-## Konsep Dasar Uji Hipotesis Parameter {#konsep-dasar-uji-hipotesis-1samp}
+## Konsep Dasar Uji Hipotesis Parameter {#sec-konsep-dasar-uji-hipotesis-1samp}
 
 Analisis statistika inferensial dengan uji hipotesis parameter digunakan untuk **memperkirakan nilai dari parameter** melalui **pengujian hipotesis nilai sebuah parameter** berdasarkan informasi yang diperoleh dari sampel, atau seperti yang telah kita pelajari, disebut **statistik** [@healey2021statistics]. Hipotesis sendiri dapat dipahami sebagai **dugaan awal mengenai suatu kondisi, nilai, atau keadaan parameter**. Dalam metode ilmiah, hipotesis berasal dari teori, penelitian sebelumnya, atau klaim tertentu yang ingin diuji  [@ewing2020basic; @healey2021statistics].
 
-Melalui pengujian hipotesis, inferensi dilakukan dengan menarik kesimpulan terhadap hasil pengujian hipotesis kita berdasarkan statistik yang kita peroleh (Gambar \@ref(fig:fig-ilustrasi-hipotesis)). Secara sederhana, analisis diawali dengan pertanyaan: "Apakah nilai parameter $\mu = b$?". Bentuk pertanyaan ini bisa kita ubah juga menjadi bentuk pernyataan, atau **hipotesis**, yakni "nilai parameter kita $b$ ($\mu = b$)." Kesimpulan yang kita akan ambil nanti hanya ada di antara dua pilihan: **menerima** atau **menolak** hipotesis tersebut.
+Melalui pengujian hipotesis, inferensi dilakukan dengan menarik kesimpulan terhadap hasil pengujian hipotesis kita berdasarkan statistik yang kita peroleh (@fig-ilustrasi-hipotesis). Secara sederhana, analisis diawali dengan pertanyaan: "Apakah nilai parameter $\mu = b$?". Bentuk pertanyaan ini bisa kita ubah juga menjadi bentuk pernyataan, atau **hipotesis**, yakni "nilai parameter kita $b$ ($\mu = b$)." Kesimpulan yang kita akan ambil nanti hanya ada di antara dua pilihan: **menerima** atau **menolak** hipotesis tersebut.
 
-```{r fig-ilustrasi-hipotesis, echo=FALSE, fig.align="center", fig.cap="Ilustrasi Alur Hubungan Parameter, Sampel, dan Inferensinya"}
+```{r}
+#| label: fig-ilustrasi-hipotesis
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Alur Hubungan Parameter, Sampel, dan Inferensinya'
 knitr::include_graphics("images/bab7-ilustrasi-alur-pengujian-hipotesis.png")
 ```
 
-::: rmdkasus
-### Studi Kasus: Alur Logika Evaluasi Makan Bergizi Gratis (MBG) {.unnumbered}
-
+::: {#kasus-alur-logika-evaluasi-makan-bergizi-gratis .kasus title="Alur Logika Evaluasi Makan Bergizi Gratis (MBG)"}
 Sebagai pelengkap dari ilustrasi alur pengujian di atas, mari perhatikan kasus evaluasi kepuasan program Makan Bergizi Gratis (MBG). Pemerintah ingin mengetahui rata-rata tingkat kepuasan dari seluruh penerima manfaat (populasi) di mana nilai sejatinya belum diketahui ($\mu = \,?$). Pemerintah memiliki **pertanyaan evaluasi**: *"Apakah benar program MBG memberikan rata-rata skor kepuasan hingga mencapai nilai standar 80?"* Pertanyaan ini kemudian disusun menjadi **pernyataan sasaran (hipotesis)** bahwa "Rata-rata kepuasan populasi adalah 80" ($\mu = 80$). 
 
 Untuk membuktikan apakah pernyataan asumsi ini bisa dipertahankan, dilakukan **pengambilan sampel** secara acak terhadap 200 responden. Dari data sampel tersebut, diperoleh nilai **statistik** rata-rata kepuasan sebesar 95 ($\bar{x} = 95$). Nilai bukti dari data sampel ($\bar{x}=95$) inilah yang digunakan sebagai landasan analisis (**uji**) untuk mempertanyakan keabsahan dari klaim awal ($\mu=80$). Puncak dari uji ini bermuara pada **kesimpulan**: yakni apakah pernyataan sasaran dapat tetap dilanggengkan (diterima) atau justru harus digugurkan (*ditolak*) karena dibantah oleh bukti empiris.
 :::
 
-## Perbedaan Uji Hipotesis Parameter dengan Estimasi Parameter {#perbedaan-uji-hipotesis-estimasi-parameter}
+## Perbedaan Uji Hipotesis Parameter dengan Estimasi Parameter {#sec-perbedaan-uji-hipotesis-estimasi-parameter}
 
 Estimasi parameter dan uji hipotesis parameter **sama-sama bertujuan memperkirakan nilai parameter**. Akan tetapi, keduanya melakukannya  dengan cara yang berbeda. Estimasi parameter menghasilkan suatu **rentang nilai yang memuat parameter-parameter yang mungkin* bagi parameter populasi**. Pertanyaan yang dijawab berupa *"Berapa kira-kira nilai rata-rata populasi?"*
 
 Sementara itu, uji hipotesis parameter berfokus pada **penerimaan atau penolakan dugaan** kita tentang hipotesis terhadap parameter. Pertanyaan yang dijawab berupa *"Jika saya menduga bahwa rata-rata populasi adalah $b$, apakah dugaan tersebut dapat diterima?"*
 
-## Asumsi-asumsi yang Harus Dipenuhi dalam Menguji Hipotesis Parameter {#asumsi-dasar-uji-hipotesis}
+## Asumsi-asumsi yang Harus Dipenuhi dalam Menguji Hipotesis Parameter {#sec-asumsi-dasar-uji-hipotesis}
 
 Sebelum menguji hipotesis untuk parameter yang kita ingin inferensi, kita harus menyatakan sejumlah asumsi yang harus dipenuhi. Mengapa hal ini penting? Setiap alat uji statistik **dibangun di atas model probabilitas teoretis tertentu**. Apabila data kita melanggar asumsi-asumsi dasar tersebut, maka keakuratan perhitungan probabilitasnya (seperti perolehan p-value) akan terganggu, sehingga simpulan inferensi ke populasi menjadi tidak valid.
 
@@ -40,9 +45,7 @@ Secara umum, ada tiga asumsi yang harus dipenuhi dalam menguji hipotesis paramet
 2. **Tingkat pengukuran**: Variabel yang diukur harus berada pada tingkat pengukuran yang sesuai dengan alat uji yang digunakan.
 3. **Bentuk distribusi statistik**: Distribusi statistik (*sampling distribution*) berbentuk normal
 
-::: rmdkasus
-### Studi Kasus: Memeriksa Asumsi pada Evaluasi MBG {.unnumbered}
-
+::: {#kasus-memeriksa-asumsi-pada-evaluasi-mbg .kasus title="Memeriksa Asumsi pada Evaluasi MBG"}
 Mari kita perhatikan kembali kasus evaluasi program Makan Bergizi Gratis (MBG) yang melibatkan 200 responden sebelumnya. Apakah kasus tersebut terbukti memenuhi ketiga asumsi pengujian hipotesis?
 
 1. **Independensi**: Pengambilan sampel 200 responden dilakukan secara **acak**. Artinya, setiap responden memiliki peluang yang sama untuk terpilih sehingga nilai satu observasi tidak terkait dengan observasi lainnya. Asumsi independensi terpenuhi.
@@ -52,13 +55,13 @@ Mari kita perhatikan kembali kasus evaluasi program Makan Bergizi Gratis (MBG) y
 Oleh karena seluruh prasyarat dasarnya terpenuhi, barulah tahapan inferensi berikutnya berhak kita lanjutkan secara ilmiah.
 :::
 
-## Hipotesis Kosong dan Hipotesis Alternatif {#hipotesis-kosong-dan-alternatif}
+## Hipotesis Kosong dan Hipotesis Alternatif {#sec-hipotesis-kosong-dan-alternatif}
 
-Sebagaimana yang sudah dibahas di subbab \@ref(konsep-dasar-uji-hipotesis-1samp) dan \@ref(perbedaan-uji-hipotesis-estimasi-parameter), inferensi dilakukan dengan menguji hipotesis yang mengandung pernyataan terhadap parameter, yakni **mana hipotesis yang bisa kita terima?**
+Sebagaimana yang sudah dibahas di subbab @sec-konsep-dasar-uji-hipotesis-1samp dan @sec-perbedaan-uji-hipotesis-estimasi-parameter, inferensi dilakukan dengan menguji hipotesis yang mengandung pernyataan terhadap parameter, yakni **mana hipotesis yang bisa kita terima?**
 
 Oleh karena kita harus memilih, maka minimal kita memiliki **dua** jenis (dan memang tidak lebih) hipotesis, yaitu **hipotesis kosong** ($H_0$) dan **hipotesis alternatif** ($H_1$ atau $H_a$) yang masing-masing akan dijelaskan dengan rinci sebagai berikut.
 
-### Hipotesis Kosong {#konsep-hipotesis-kosong}
+### Hipotesis Kosong {#sec-konsep-hipotesis-kosong}
 
 Hipotesis kosong *(null hypothesis)* muncul dari prinsip ilmiah bahwa **pengetahuan harus dapat dibuktikan oleh data**. Konsekuensinya, peneliti tidak bisa langsung membenarkan suatu klaim atau fenomena baru secara sepihak sebelum memiliki bukti empiris (data). Oleh karena itu, prosedur yang paling logis adalah menetapkan hipotesis kosong sebagai pijakan awal; yakni sebuah kerangka netral (*status quo*) yang berasumsi bahwa dugaan baru tersebut belum terbukti dan kondisi yang ada diasumsikan tidak mengalami perubahan dari standar umumnya.
 
@@ -68,8 +71,7 @@ Dalam pengertian matematis, hipotesis kosong yang merupakan kondisi netral atau 
 
 $$
 H_0 : \text{parameter} = \text{nilai dugaan}
-(\#eq:bentuk-umum-h0)
-$$
+$$ {#eq-bentuk-umum-h0}
 
 Secara khusus, jika kita menyatakan hipotesis parameter rata-rata dan proporsi, kita menyebut $\text{nilai dugaan}$ ini dengan notasi sesuai parameternya dan diberi *subscript* $0$.
 
@@ -78,13 +80,10 @@ $$
 &H_0 : \mu = \mu_0, \\
 &H_0 : P = P_0
 \end{aligned}
-(\#eq:bentuk-khusus-h0)
-$$
+$$ {#eq-bentuk-khusus-h0}
 
 
-::: rmdkasus
-### Studi Kasus: Menentukan Hipotesis Kosong pada Evaluasi MBG {.unnumbered}
-
+::: {#kasus-menentukan-hipotesis-kosong-pada-evaluasi-mbg .kasus title="Menentukan Hipotesis Kosong pada Evaluasi MBG"}
 Misalkan kita memiliki pertanyaan evaluasi: *"Apakah benar bahwa program MBG berhasil dengan memberikan kepuasan kepada masyarakat?"*. Kita pun menetapkan nilai 80 sebagai ambang kepuasan masyarakat. Dalam hal ini, ada dua kemungkinan kondisi yang terjadi: 
 
 1) program tidak memberikan kepuasan kepada masyarakat sehingga rata-rata nilai 80 (atau mungkin kurang); atau
@@ -98,7 +97,7 @@ Dalam kasus ini, karena kita menetapkan nilai minimal masyarakat "puas" adalah p
 
 :::
 
-### Hipotesis Alternatif {#konsep-hipotesis-alternatif}
+### Hipotesis Alternatif {#sec-konsep-hipotesis-alternatif}
 
 Sementara itu, hipotesis alternatif (*alternative hypothesis* $H_1$) adalah **klaim kita terhadap keadaan netral atau standar yang diasumsikan dalam hipotesis kosong** [@healey2021statistics]. Jika hipotesis kosong mewakili *status quo* bahwa "tidak ada yang terjadi", klaim dalam hipotesis alternatif justru menantang hal tersebut dengan menyatakan bahwa "ada sesuatu yang berubah atau berdampak" sehingga perlu dibuktikan. Dengan kata lain, hipotesis alternatif menyatakan adanya **perbedaan** yang ingin dibuktikan peneliti.
 
@@ -110,9 +109,11 @@ Secara rinci ragam bentuk hipotesis alternatif ini adalah sebagai berikut [@tjok
 2. Kasus **"lebih dari" ($>$)** digunakan ketika dugaan menyatakan bahwa parameter populasi lebih besar daripada nilai dugaan.
 3. Kasus **"kurang dari" ($<$)** digunakan ketika dugaan menyatakan bahwa parameter populasi lebih kecil daripada nilai dugaan.
 
-Adapun bentuk matematis dari hipotesis alternatif yang mungkin dipilih ditampilkan pada Tabel \@ref(tab:tab-bentuk-hipotesis-alternatif) berikut.
+Adapun bentuk matematis dari hipotesis alternatif yang mungkin dipilih ditampilkan pada @tbl-bentuk-hipotesis-alternatif berikut.
 
-```{r tab-bentuk-hipotesis-alternatif, echo=FALSE}
+```{r}
+#| label: tbl-bentuk-hipotesis-alternatif
+#| tbl-cap: 'Alternatif Bentuk Hipotesis Alternatif'
 library(kableExtra)
 data <- data.frame(
   "No" = c(1, 2, 3),
@@ -122,7 +123,7 @@ data <- data.frame(
   check.names = FALSE
 )
 data |>
-  kbl(caption = "Alternatif Bentuk Hipotesis Alternatif", escape = FALSE, align = "llcl") |>
+  kbl( escape = FALSE, align = "llcl") |>
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed", "responsive"),
     latex_options = if (knitr::is_latex_output()) "HOLD_position" else c("striped", "hover"),
@@ -130,9 +131,7 @@ data |>
   )
 ```
 
-::: rmdkasus
-### Studi Kasus: Menentukan Hipotesis Alternatif pada Evaluasi MBG {.unnumbered}
-
+::: {#kasus-menentukan-hipotesis-alternatif-pada-evaluasi-mbg .kasus title="Menentukan Hipotesis Alternatif pada Evaluasi MBG"}
 Pada evaluasi kepuasan program MBG, hipotesis alternatif mencerminkan kemungkinan kondisi ke-2, yaitu "program berhasil memberikan kepuasan kepada masyarakat sehingga rata-rata nilai lebih dari 80". Ini adalah contoh kasus untuk bentuk hipotesis alternatif yang berarah karena menggunakan pertidaksamaan (ada kata "lebih dari"). Dengan demikian, penulisan hipotesis alternatif untuk kasus ini adalah sebagai berikut:
 
 $$
@@ -140,17 +139,15 @@ H_1: \mu > 80
 $$
 :::
 
-### Pentingnya Menentukan Bentuk Hipotesis Alternatif {#pentingnya-menentukan-bentuk-h1}
+### Pentingnya Menentukan Bentuk Hipotesis Alternatif {#sec-pentingnya-menentukan-bentuk-h1}
 
-Memilih bentuk hipotesis alternatif sesuai yang dijelaskan pada Tabel \@ref(tab:tab-bentuk-hipotesis-alternatif) sangat penting karena ini menjadi penentu **posisi wilayah kritis** pada kurva distribusi statistik sampel, yang menjadi penentu kita **menolak/menerima hipotesis kosong**. Posisi ini disebut ***tail* (ekor)** yang merupakan istilah untuk posisi wilayah kritis sebagaimana yang dijelaskan lebih rinci pada subbab berikutnya.
+Memilih bentuk hipotesis alternatif sesuai yang dijelaskan pada @tbl-bentuk-hipotesis-alternatif sangat penting karena ini menjadi penentu **posisi wilayah kritis** pada kurva distribusi statistik sampel, yang menjadi penentu kita **menolak/menerima hipotesis kosong**. Posisi ini disebut ***tail* (ekor)** yang merupakan istilah untuk posisi wilayah kritis sebagaimana yang dijelaskan lebih rinci pada subbab berikutnya.
 
 ### Kemungkinan Hasil Pengujian Hipotesis: "Menerima $H_0$" atau "Gagal Menolak $H_0$"?
 
 Hasil dari pengujian hipotesis hanya memiliki dua kemungkinan, yaitu **menolak** atau **gagal menolak hipotesis kosong ($H_0$)**. Kita tidak menggunakan diksi "menerima" hipotesis kosong karena pendekatan statistik **bukan untuk membuktikan bahwa hipotesis kosong ($H_0$) benar**. Fokus pengujian hipotesis adalah mencari kemungkinan untuk menolak hipotesis kosong ($H_0$), bukan membuktikan kebenarannya. Dengan cara pandang ini, proses pengolahan data menjadi lebih mudah dipahami: kita mencari bukti untuk **menolak dugaan awal**, bukan membuktikan bahwa dugaan awal itu pasti benar.
 
-::: rmdnote
-### Catatan: Analogi Pengadilan {.unnumbered}
-
+::: {.catatan title="Analogi Pengadilan"}
 Pengujian hipotesis dapat dianalogikan seperti proses peradilan di pengadilan. Dalam analogi ini, posisi terdakwa adalah hipotesis kosong ($H_0$), alat bukti di persidangan adalah data sampel (statistik hitung), dan vonis pengadilan adalah hasil uji statistiknya. 
 
 Sebagaimana asas praduga tak bersalah, dari awal proses pengadilan selalu diasumsikan bahwa terdakwa tidak bersalah (kondisi awal netral). Tugas peneliti adalah mengumpulkan **alat bukti** (observasi dan data sampel) untuk mendukung dakwaan bahwa telah terjadi sesuatu yang menyimpang (hipotesis alternatif).
@@ -161,15 +158,15 @@ Jika bukti dari data sampel *sangat kuat dan meyakinkan*, maka pengujian akan **
 
 ## Menentukan Hasil Pengujian Hipotesis Parameter
 
-Penentuan hasil pengujian hipotesis dilakukan dengan menggabungkan tiga besaran penting: **titik kritis**, **wilayah kritis** dan **nilai *p* (*p-value*)**. Seluruhnya didasarkan pada konsep perhitungan probabilitas pada distribusi statistik sebagaimana yang dijelaskan pada subbab \@ref(probabilitas-nilai-di-distribusi-statistik).
+Penentuan hasil pengujian hipotesis dilakukan dengan menggabungkan tiga besaran penting: **titik kritis**, **wilayah kritis** dan **nilai *p* (*p-value*)**. Seluruhnya didasarkan pada konsep perhitungan probabilitas pada distribusi statistik sebagaimana yang dijelaskan pada subbab @sec-probabilitas-nilai-di-distribusi-statistik.
 
-#### Titik Kritis dan Wilayah Kritis {#titik-kritis-wilayah-kritis}
+#### Titik Kritis dan Wilayah Kritis {#sec-titik-kritis-wilayah-kritis}
 
 Sesuai konsep distribusi statistik normal, titik kritis (*critical value*) sebenarnya adalah nilai $Z$ pada distribusi statistik yang **menandai batas awal dari wilayah kritis** (*critical region*), sehingga disebut juga nilai $Z_{kritis}$ atau $Z_{critical}$/$Z_{crit}$. Wilayah kritis adalah **wilayah penolakan $H_0$** karena wilayah ini mencakup nilai statistik yang dianggap "tidak mungkin" ditemukan jika kita gagal menolak $H_0$ [@healey2021statistics]. Praktisnya, titik kritis menjadi pemisah kedua area untuk menentukan apakah $H_0$ ditolak atau gagal ditolak.   
 
-Wilayah kritis ditentukan oleh dua hal: **tingkat signifikansi ($\alpha$)** dan **bentuk hipotesis alternatif**. Secara grafis, wilayah kritis sebenarnya adalah wilayah (c) pada Gambar \@ref(fig:fig-distribusi-normal-area-bc). Penentuan titik kritisnya dilakukan dengan memanfaatkan tabel distribusi, yaitu Tabel Z atau Tabel Distribusi Normal, seperti yang sudah dipelajari di \@ref(untuk-z-kritis) untuk ukuran sampel besar, dan Tabel Distribusi t untuk ukuran sampel kecil. Untuk saat ini, dapat kita sepakati bahwa ukuran sampel besar adalah jumlah sampel lebih dari 100, sedangkan sampel dengan jumlah 100 atau kurang digolongkan sebagai sampel kecil [@devaus2014surveys; @kachigan1986statistical].
+Wilayah kritis ditentukan oleh dua hal: **tingkat signifikansi ($\alpha$)** dan **bentuk hipotesis alternatif**. Secara grafis, wilayah kritis sebenarnya adalah wilayah (c) pada @fig-distribusi-normal-area-bc. Penentuan titik kritisnya dilakukan dengan memanfaatkan tabel distribusi, yaitu Tabel Z atau Tabel Distribusi Normal, seperti yang sudah dipelajari di @sec-untuk-z-kritis untuk ukuran sampel besar, dan Tabel Distribusi t untuk ukuran sampel kecil. Untuk saat ini, dapat kita sepakati bahwa ukuran sampel besar adalah jumlah sampel lebih dari 100, sedangkan sampel dengan jumlah 100 atau kurang digolongkan sebagai sampel kecil [@devaus2014surveys; @kachigan1986statistical].
 
-Seperti yang telah dijelaskan, untuk menentukan wilayah kritis kita harus memperhatikan juga **bentuk hipotesis alternatif yang telah dirumuskan**. Inilah yang dimaksud pada subbab \@ref(pentingnya-menentukan-bentuk-h1):
+Seperti yang telah dijelaskan, untuk menentukan wilayah kritis kita harus memperhatikan juga **bentuk hipotesis alternatif yang telah dirumuskan**. Inilah yang dimaksud pada subbab @sec-pentingnya-menentukan-bentuk-h1:
 
 a. **Kasus tidak sama dengan (*two tailed*)**  
    Kasus tidak sama dengan adalah bentuk hipotesis tanpa arah, sehingga wilayah kritis akan terbagi dua secara sama rata di ekor kurva. Apabila kita menetapkan $\alpha = 5\%$, maka masing-masing ekor akan menampung $\alpha/2 = 2,5\%$. Dalam hal ini, titik kritis dihitung berdasarkan nilai $\alpha/2$.
@@ -180,9 +177,15 @@ b. **Kasus lebih dari (*right tailed*)**
 c. **Kasus kurang dari (*left tailed*)**  
    Wilayah kritis akan berada di ekor sebelah kiri. Sama halnya dengan bentuk lebih dari, nilai titik kritis ditentukan langsung berdasarkan nilai $\alpha$ yang digunakan.
 
-Ketiga bentuk hipotesis alternatif ini akan menghasilkan wilayah kritis yang berbeda-beda, seperti yang disajikan pada Gambar \@ref(fig:fig-titik-kritis-distribusi) berikut.
+Ketiga bentuk hipotesis alternatif ini akan menghasilkan wilayah kritis yang berbeda-beda, seperti yang disajikan pada @fig-titik-kritis-distribusi berikut.
 
-```{r fig-titik-kritis-distribusi, echo=FALSE, out.width='100%', fig.align="center", fig.cap="Ilustrasi Titik Kritis pada Kurva Distribusi Normal", fig.width=8, fig.height=6, warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-titik-kritis-distribusi
+#| out-width: '100%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Titik Kritis pada Kurva Distribusi Normal'
+#| fig-width: 8
+#| fig-height: 6
 knitr::include_graphics("images/bab7-bentuk-tail.png")
 # library(ggplot2)
 # library(patchwork)
@@ -250,7 +253,7 @@ knitr::include_graphics("images/bab7-bentuk-tail.png")
 # p_two + p_right + p_left + plot_layout(design = design)
 ```
 
-#### Nilai Statistik Uji dan Nilai p (*p-value*) {#nilai-statistik-uji-nilai-p}
+#### Nilai Statistik Uji dan Nilai p (*p-value*) {#sec-nilai-statistik-uji-nilai-p}
 
 Setelah titik kritis ditetapkan ($Z_{crit}$ untuk sampel besar atau $t_{crit}$ untuk sampel kecil), kita bisa mengambil dua pendekatan untuk menentukan hasil pengujian: pendekatan **statistik uji** atau **nilai-p (*p-value*)**.
 
@@ -263,11 +266,8 @@ Pendekatan statistik uji *(test statistic)* berupa Z atau t, tergantung jenis di
 Nilai statistik uji untuk **rata-rata** dihitung dengan rumus berikut:
 
 $$
-\begin{equation}
 Z = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
-(\#eq:statistik-uji-mean)
-\end{equation}
-$$
+$$ {#eq-statistik-uji-mean}
 
 dengan:
 
@@ -280,11 +280,8 @@ dengan:
 Sedangkan, untuk **proporsi**, statistik ujinya dihitung dengan rumus berikut:
 
 $$
-\begin{equation}
 Z = \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1 - p_0)}{n}}}
-(\#eq:statistik-uji-proporsi)
-\end{equation}
-$$
+$$ {#eq-statistik-uji-proporsi}
 
 dengan:
 
@@ -297,10 +294,14 @@ Nilai p atau *p-value* adalah cara lain selain titik kritis untuk menentukan nas
 
 Penolakan $H_0$ didasarkan pada perbandingannya dengan nilai signifikansi ($\alpha$) yang kita gunakan.
 
-*  Jika nilai *p-value* **lebih besar dari $\alpha$**, maka kita **gagal menolak $H_0$** (Gambar \@ref(fig:fig-penetapan-hipotesis) (a)).
-*  Jika nilai *p-value* **lebih kecil dari $\alpha$**, maka kita **menolak $H_0$** (Gambar \@ref(fig:fig-penetapan-hipotesis) (b)).
+*  Jika nilai *p-value* **lebih besar dari $\alpha$**, maka kita **gagal menolak $H_0$** (@fig-penetapan-hipotesis (a)).
+*  Jika nilai *p-value* **lebih kecil dari $\alpha$**, maka kita **menolak $H_0$** (@fig-penetapan-hipotesis (b)).
 
-```{r fig-penetapan-hipotesis, echo=FALSE, out.width='100%', fig.align="center", fig.cap="Ilustrasi Perbandingan Nilai p (p-value) dengan Wilayah Kritis (Uji Satu Ekor)", warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-penetapan-hipotesis
+#| out-width: '100%'
+#| fig-align: 'center'
+#| fig-cap: 'Ilustrasi Perbandingan Nilai p (p-value) dengan Wilayah Kritis (Uji Satu Ekor)'
 library(ggplot2)
 library(patchwork)
 
@@ -403,21 +404,19 @@ p_A + p_B
 ```
 
 
-## Langkah-langkah Pengujian Hipotesis {#langkah-pengujian-hipotesis}
+## Langkah-langkah Pengujian Hipotesis {#sec-langkah-pengujian-hipotesis}
 
 Berdasarkan konsep-konsep yang sudah kita pelajari sebelunya, berikut adalah rangkuman langkah-langkah pengujian hipotesis.
 
-a. Menyatakan asumsi awal (\@ref(asumsi-dasar-uji-hipotesis))
-b. Menetapkan hipotesis kosong dan alternatif (\@ref(konsep-hipotesis-kosong) dan \@ref(konsep-hipotesis-alternatif))
-c. Menetapkan wilayah kritis dari signifikansi (\@ref(titik-kritis-wilayah-kritis))
-d. Mencari nilai titik kritis (\@ref(titik-kritis-wilayah-kritis))
-e. Mencari nilai statistik uji (\@ref(nilai-statistik-uji-nilai-p))
-f. Membandingkan nilai statistik uji dan titik kritis (\@ref(nilai-statistik-uji-nilai-p))
+a. Menyatakan asumsi awal (@sec-asumsi-dasar-uji-hipotesis)
+b. Menetapkan hipotesis kosong dan alternatif (@sec-konsep-hipotesis-kosong dan @sec-konsep-hipotesis-alternatif)
+c. Menetapkan wilayah kritis dari signifikansi (@sec-titik-kritis-wilayah-kritis)
+d. Mencari nilai titik kritis (@sec-titik-kritis-wilayah-kritis)
+e. Mencari nilai statistik uji (@sec-nilai-statistik-uji-nilai-p)
+f. Membandingkan nilai statistik uji dan titik kritis (@sec-nilai-statistik-uji-nilai-p)
 g. Menarik kesimpulan dan memaknai hasil pengujian.
 
-::: rmdkasus
-### Studi Kasus: Melanjutkan Langkah Pengujian Hipotesis MBG {.unnumbered}
-
+::: {#kasus-melanjutkan-langkah-pengujian-hipotesis-mbg .kasus title="Melanjutkan Langkah Pengujian Hipotesis MBG"}
 Mari kita lanjutkan pembahasan evaluasi program MBG ini. Sebelumnya di subbab hipotesis, kita telah merumuskan hipotesis kosong dan alternatif sebagai berikut:
 
 $$H_0: \mu = 80$$
@@ -431,7 +430,10 @@ Berdasarkan hipotesis alternatif ($H_1$), arah ketidaksamaan yang digunakan adal
 **c. Mencari Nilai Titik Kritis**  
 Mengingat ukuran sampel kita besar ($n = 200 > 100$), kita menggunakan **Distribusi Z** sebagai acuan penentuan kritisnya. Dengan tingkat signifikansi $\alpha = 5\%$, kita mendapati nilai titik kritis di tabel Z adalah $Z_{kritis} = +1,65$. Titik ini menjadi batas awal di mana nilai $Z > +1,65$ merupakan wilayah kritis.
 
-```{r fig-kurva-kritis-mbg, echo=FALSE, fig.align="center", fig.cap="Distribusi Sampling dan Wilayah Kritis Kasus MBG", warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-kurva-kritis-mbg
+#| fig-align: 'center'
+#| fig-cap: 'Distribusi Sampling dan Wilayah Kritis Kasus MBG'
 library(ggplot2)
 x <- seq(-3.5, 3.5, length.out = 1000)
 df <- data.frame(x = x, y = dnorm(x))
@@ -487,9 +489,7 @@ Dengan menolak $H_0$, terbukti bahwa rata-rata skor kepuasan masyarakat yang dip
 
 Mari kita pelajari kasus lain yang langkah-langkahnya lebih terlihat dari awal sampai akhir, juga untuk statistik proporsi
 
-::: rmdkasus
-### Studi Kasus: Layanan Bus Kampus {.unnumbered}
-
+::: {#kasus-layanan-bus-kampus .kasus title="Layanan Bus Kampus"}
 *Dengan menggunakan data pada subbab sebelumnya mengenai jarak tempat tinggal mahasiswa ITERA menuju kampus yang menghasilkan rata-rata 4,95 km dan simpangan baku 2,23 km didasarkan pada jawaban 333 responden, pihak kampus merespons kebutuhan mobilitas mahasiswa dengan merencanakan penyediaan layanan Bus Kampus. Namun, layanan ini hanya akan efektif jika mayoritas mahasiswa tinggal pada jarak dekat ($\leq 5$ km) dari kampus dan apabila lebih dari 80% mahasiswa berminat terhadap layanan tersebut.*
 
 
@@ -518,14 +518,17 @@ Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa rata-rata jarak adalah 
 
 Karena kita menggunakan sampel besar, kita menggunakan distribusi Z. Lalu, kita menggunakan tingkat kepercayaan 95%, yang berarti tingkat kepercayaan kita adalah $\alpha = 5\% = 0,05$.
 
-Berdasarkan subbab \@ref(titik-kritis-wilayah-kritis), dan Gambar \@ref(fig:fig-titik-kritis-distribusi), kita menggunakan bentuk (b) atau *left-tailed*.
+Berdasarkan subbab @sec-titik-kritis-wilayah-kritis, dan @fig-titik-kritis-distribusi, kita menggunakan bentuk (b) atau *left-tailed*.
 
 
 ##### Mencari Nilai Titik Kritis {-}
 
 Berdasarkan tabel Distribusi Z, nilai titik kritis untuk $\alpha = 5\%$ *left-tailed* adalah $-1,65$.
 
-```{r fig-kurva-kritis-bus-kampus, echo=FALSE, fig.align="center", fig.cap="Distribusi Sampling dan Wilayah Kritis Kasus Rata-rata Jarak ke Kampus ITERA", warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-kurva-kritis-bus-kampus
+#| fig-align: 'center'
+#| fig-cap: 'Distribusi Sampling dan Wilayah Kritis Kasus Rata-rata Jarak ke Kampus ITERA'
 library(ggplot2)
 x <- seq(-3.5, 3.5, length.out = 1000)
 df <- data.frame(x = x, y = dnorm(x))
@@ -574,7 +577,7 @@ ggplot(df, aes(x, y)) +
 
 ##### Mencari Nilai Statistik Uji {-}
 
-Kita menggunakan persamaan \@ref(eq:statistik-uji-mean) untuk menghitung statistik uji kita.
+Kita menggunakan @eq-statistik-uji-mean untuk menghitung statistik uji kita.
 
 - $\bar{x} = 4,59$
 - $\mu_0 = 5$
@@ -595,9 +598,12 @@ $$
 - $Z_{hitung} = -3,36$
 - $Z_{kritis} = -1,65$
 
-Nilai statistik uji **jatuh ke dalam wilayah kritis** karena nilai $Z_{hitung}$ (-3,36) lebih kecil dari $Z_{kritis}$ (-1,65) sehingga berada di sebelah kirinya (masuk ke dalam area penolakan $H_0$) (Gambar \@ref(fig:fig-perbandingan-z-jarak)).
+Nilai statistik uji **jatuh ke dalam wilayah kritis** karena nilai $Z_{hitung}$ (-3,36) lebih kecil dari $Z_{kritis}$ (-1,65) sehingga berada di sebelah kirinya (masuk ke dalam area penolakan $H_0$) (@fig-perbandingan-z-jarak).
 
-```{r fig-perbandingan-z-jarak, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.cap="Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Jarak ke Kampus ITERA)"}
+```{r}
+#| label: fig-perbandingan-z-jarak
+#| fig-align: 'center'
+#| fig-cap: 'Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Jarak ke Kampus ITERA)'
 library(ggplot2)
 x <- seq(-4, 4, length.out = 1000)
 df <- data.frame(x = x, y = dnorm(x))
@@ -701,7 +707,10 @@ Berdasarkan hipotesis alternatif $H_1$ yang berarah "lebih dari" (>), kita mengg
 
 Berdasarkan tabel Distribusi Z, nilai titik kritis untuk $\alpha = 1\%$ *right-tailed* adalah $+2,33$.
 
-```{r fig-kurva-kritis-proporsi-bus, echo=FALSE, fig.align="center", fig.cap="Distribusi Sampling dan Wilayah Kritis Kasus Proporsi Minat Bus Kampus", warning=FALSE, message=FALSE}
+```{r}
+#| label: fig-kurva-kritis-proporsi-bus
+#| fig-align: 'center'
+#| fig-cap: 'Distribusi Sampling dan Wilayah Kritis Kasus Proporsi Minat Bus Kampus'
 library(ggplot2)
 x <- seq(-4.5, 4.5, length.out = 1000)
 df <- data.frame(x = x, y = dnorm(x))
@@ -750,7 +759,7 @@ ggplot(df, aes(x, y)) +
 
 ##### Mencari Nilai Statistik Uji {-}
 
-Kita menggunakan persamaan \@ref(eq:statistik-uji-proporsi) untuk menghitung statistik uji kita.
+Kita menggunakan @eq-statistik-uji-proporsi untuk menghitung statistik uji kita.
 
 - $\hat{p} = 0,82$
 - $p_0 = 0,8$
@@ -770,9 +779,12 @@ $$
 - $Z_{hitung} = +0,91$
 - $Z_{kritis} = +2,33$
 
-Nilai statistik uji **tidak jatuh ke dalam wilayah kritis** karena nilai $Z_{hitung}$ (0,91) tidak melampaui dan lebih kecil dari titik kritis $Z_{kritis}$ (+2,33). Titik wilayah kritis kita berada di ekor sebelah kanan (+2,33), sementara statistik uji jatuh jauh di sebelah kiri kurva sumbu nol (Gambar \@ref(fig:fig-perbandingan-z-proporsi)). Oleh karena itu, kita **gagal menolak hipotesis kosong ($H_0$)**.
+Nilai statistik uji **tidak jatuh ke dalam wilayah kritis** karena nilai $Z_{hitung}$ (0,91) tidak melampaui dan lebih kecil dari titik kritis $Z_{kritis}$ (+2,33). Titik wilayah kritis kita berada di ekor sebelah kanan (+2,33), sementara statistik uji jatuh jauh di sebelah kiri kurva sumbu nol (@fig-perbandingan-z-proporsi). Oleh karena itu, kita **gagal menolak hipotesis kosong ($H_0$)**.
 
-```{r fig-perbandingan-z-proporsi, echo=FALSE, warning=FALSE, message=FALSE, fig.align="center", fig.cap="Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Proporsi Minat Bus Kampus)"}
+```{r}
+#| label: fig-perbandingan-z-proporsi
+#| fig-align: 'center'
+#| fig-cap: 'Perbandingan Nilai Statistik Uji dan Titik Kritis (Kasus Proporsi Minat Bus Kampus)'
 library(ggplot2)
 x <- seq(-5.5, 5.5, length.out = 1000)
 df <- data.frame(x = x, y = dnorm(x))
@@ -851,10 +863,7 @@ Karena kita gagal menolak $H_0$, terbukti bahwa statistik proporsi sebesar 0,82 
 
 Kerjakanlah soal evaluasi berikut untuk mengasah pemahaman Anda tentang pengujian hipotesis parameter baik untuk rata-rata maupun proporsi. 
 
-::: rmdexercise
-
-## Soal Evaluasi 14 {.unnumbered}
-
+::: {#latihan-uji-hipotesis-satu-populasi-1 .latihan}
 1. Berdasarkan survei kepada 173 orang dosen ITERA pada tahun 2023, rata-rata usianya pada saat itu adalah 29 tahun dengan simpangan bakunya adalah 2,9 tahun. Jika ingin diketahui apakah rata-rata usia dosen ITERA pada tahun 2023 tersebut adalah sebenarnya sama saja dengan 30 tahun, ujilah pernyataan tersebut! Gunakan galat sebesar 5%. [STP-6.1]{.capaian}
    a. Tuliskan asumsi awal pengujian hipotesis!
    b. Tentukanlah hipotesis kosong dan hipotesis alternatifnya!
