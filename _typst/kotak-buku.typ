@@ -1,5 +1,5 @@
-// Kotak callout buku (dipakai callout-buku.lua). Berbeda dari callout bawaan
-// Quarto, kotak ini boleh terpotong antarhalaman (breakable: true).
+// Definisi Typst buku (via include-in-header): kotak callout yang boleh
+// terpotong antarhalaman, ukuran huruf tabel, dan penomoran persamaan.
 #let kotak-warna = (
   capaian: (garis: rgb("#00a152"), latar: rgb("#e8f5e9")),
   kasus: (garis: rgb("#ff8f00"), latar: rgb("#fff8e1")),
@@ -28,3 +28,15 @@
 
 // Ukuran huruf tabel tidak boleh melebihi teks badan.
 #show table: set text(size: 0.9em)
+
+// Hanya persamaan berlabel ({#eq-...}) yang bernomor, sama seperti di HTML.
+// Persamaan tanpa label dirender ulang tanpa nomor dan penghitungnya
+// dikembalikan, agar nomor persamaan berlabel tidak bergeser.
+#show math.equation.where(block: true): it => {
+  if it.has("label") {
+    it
+  } else {
+    counter(math.equation).update(n => n - 1)
+    [#math.equation(it.body, block: true, numbering: none)<eq-tanpa-nomor>]
+  }
+}

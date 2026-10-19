@@ -13,6 +13,9 @@ filters:
 
 lang: id
 
+crossref:
+  eq-prefix: Persamaan
+
 book:
   title: "Uji Callout"
   author:

@@ -40,3 +40,30 @@ Soal latihan pertama.
 ::: {#latihan-satu-b .latihan title="Soal Kedua"}
 Soal latihan kedua. Rujukan dalam bab: @kasus-satu-a.
 :::
+
+## Persamaan
+
+Persamaan tanpa label tidak bernomor:
+
+$$
+\bar{x} = \frac{\sum x_i}{n}
+$$
+
+Persamaan berlabel bernomor dan bisa dirujuk (@eq-uji-satu):
+
+$$
+s^2 = \frac{\sum (x_i - \bar{x})^2}{n - 1}
+$$ {#eq-uji-satu}
+
+$$
+\begin{gathered}
+H_0: \mu = 5 \\
+H_1: \mu < 5
+\end{gathered}
+$$
+
+$$
+s = \sqrt{s^2}
+$$ {#eq-uji-dua}
+
+Rujukan: @eq-uji-satu dan @eq-uji-dua.
