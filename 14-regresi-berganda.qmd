@@ -73,8 +73,7 @@ $$
 \text{IKU} = \beta_0 + \beta_1 \text{jarak_taman} + \beta_2 \text{jarak_industri} + \beta_3 \text{vegetasi} + \beta_4 \text{zona}
 $$
 
-[Makna Konstanta dan Koefisien]{.tajuksaya}
-
+**Makna Konstanta dan Koefisien**
 Berdasarkan persamaan tersebut, kita dapat menginterpretasikan konstanta dan koefisien sebagai berikut.
 
 - $\beta_0$ adalah konstanta, yaitu nilai IKU ketika semua variabel independen bernilai 0.
@@ -367,8 +366,7 @@ kbl(
 
 Pada baris kategori Taman, kita mendapati bahwa nilainya adalah 0 secara keseluruhan pada ketiga variabel *dummy* yang lain. Informasi "bukan Perumahan, bukan Komersial, dan bukan Industri" sudah cukup untuk menyimpulkan secara mutlak bahwa observasi tersebut termasuk Taman tanpa perlu adanya variabel $D_{\text{Taman}}$. Praktik menyembunyikan variabel kategori referensi inilah yang menyebabkan kita hanya akan mendapati variabel *dummy* masuk ke dalam model regresi berganda sebanyak satu unit lebih sedikit daripada jumlah kategori semula.
 
-[Kaitan dengan Persamaan Regresi]{.tajuksaya}
-
+**Kaitan dengan Persamaan Regresi**
 Dengan diubahnya variabel kategorik $\text{zona}$ menjadi variabel *dummy*, maka persamaan regresi berganda yang akan kita gunakan adalah sebagai berikut.
 
 $$
