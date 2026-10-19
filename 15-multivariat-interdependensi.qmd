@@ -108,8 +108,7 @@ if (knitr::is_html_output()) {
 tbl_out
 ```
 
-[Pembahasan]{.tajuksaya}
-
+**Pembahasan**
 Jika di akhir kita hanya ingin membuat pengelompokan variabel, maka kita cukup menggunakan **analisis faktor**. Lain halnya jika kita membutuhkan **variat** yang merupakan penjumlahan nilai-nilai variabel. Contoh variat misalnya adalah sebagai berikut:
 
 $$
@@ -132,8 +131,7 @@ Terdapat **dua jenis asumsi dasar** sebelum melakukan PCA/Analisis Faktor terhad
 3. Terdapat **hubungan linear antarvariabel** yang ditunjukkan oleh pola diagram pencar antarvariabel yang disebut juga **asumsi linearitas**.
 
 ::: {#kasus-asumsi-konseptual-dan-statistikal .kasus title="Asumsi Konseptual dan Statistikal"}
-[Asumsi Konseptual]{.tajuksaya}
-
+**Asumsi Konseptual**
 Secara substansi, kita dapat melihat kemungkinan pemngelompokan dalam variabel-variabel yang dianalisis. Misalnya, variabel jarak tempuh dari rumah ke lokasi CFD dan durasi perjalanan kemungkinan besar akan berkorelasi positif, karena penambahan jarak tempuh pastinya akan menambah durasi perjalanan juga. Kemudian, variabel jumlah sepeda motor dan jumlah mobil kemungkinan besar akan berkorelasi positif, karena kepemilikan kendaraan bermotor berbanding lurus dengan pendapatan, sehingga bisa dianalisis bahwa kedua variabel tersebut memiliki hubungan. Dengan demikian, kita bisa katakan bahwa asumsi konseptual untuk kasus ini bisa dipenuhi.
 
 ```{r}
@@ -205,8 +203,7 @@ dataCFDMetric <- dataCFD |>
     )
 ```
 
-[Asumsi Statistikal]{.tajuksaya}
-
+**Asumsi Statistikal**
 Dilihat dari tingkat pengukurannya, seluruh variabel yang akan kita analisis adalah variabel metrik, karena ukuran semua variabel adalah angka yang bermakna, serta memiliki posisi nol yang absolut dan masuk akal. Akan tetapi, secara ukuran kenormalan distribusi dan linearitas, dataset ini tidak memenuhi asumsi tersebut. Ini dapat dilihat dari hasil analisis grafis dan koefisien korelasi r-Pearsonnya seperti pada @fig-grafik-scatterplot-cfd.
 
 ```{r}
@@ -478,8 +475,7 @@ Istilah “dimensi” ini sekarang harus kita bedakan. Jika kita menggunakan PCA
 Variabel dikelompokkan ke dalam dimensi berdasarkan **nilai *loading*-nya**. Setiap variabel mempunyai nilai loading untuk tiap-tiap dimensi yang disajikan dalam ***factor matrix***. Untuk menentukan ke dalam dimensi mana tiap-tiap variabel dikelompokkan, kita mengacu pada **nilai absolut *loading* terbesar** yang ada di antara sejumlah dimensi yang diekstrak.
 
 ::: {#kasus-mengelompokkan-variabel-variabel-ke-dalam-dimensi .kasus title="Mengelompokkan Variabel-variabel ke dalam Dimensi Baru"}
-[Untuk Analisis Komponen Prinsip]{.tajuksaya}
-
+**Untuk Analisis Komponen Prinsip**
 Berikut adalah tabel *loading* untuk komponen-komponen yang diekstrak. Karena kita sudah menentukan jumlah dimensi yang diekstrak adalah 4, kita hanya tinggal menggolongkan tiap-tiap variabel ke dalam komponen yang memiliki nilai *loading* absolut terbesar. Sel yang tidak memiliki angka menandakan **nilai *loading* variabel dalam dimensi tersebut sangat kecil hingga mendekati nol**.
 
 ```{r}
@@ -535,8 +531,7 @@ kbl(
 ```
 
 
-[Untuk Analisis Faktor]{.tajuksaya}
-
+**Untuk Analisis Faktor**
 Berikut adalah tabel *loading* untuk faktor-faktor yang diekstrak. Karena kita sudah menentukan jumlah dimensi yang diekstrak adalah 4, kita hanya tinggal menggolongkan tiap-tiap variabel ke dalam faktor yang memiliki nilai *loading* absolut terbesar.
 
 ```{r}
@@ -616,8 +611,7 @@ Terdapat banyak jenis rotasi faktor atau komponen yang digolongkan menjadi ***or
 ::: {#kasus-merotasi-dimensi-menggunakan-varimax .kasus title="Merotasi Dimensi Menggunakan Varimax"}
 Sekarang kita akan menerapkan salah satu teknik rotasi yakni *varimax* baik untuk analisis komponen prinsip kita maupun analisis faktor.
 
-[Untuk Analisis Komponen Prinsip]{.tajuksaya}
-
+**Untuk Analisis Komponen Prinsip**
 ```{r}
 #| label: pca-rotation
 variates_rotation <- principal(
@@ -667,8 +661,7 @@ kbl(
     )
 ```
 
-[Untuk Analisis Faktor]{.tajuksaya}
-
+**Untuk Analisis Faktor**
 ```{r}
 #| label: factors-rotation
 factors_rotation <- fa(
@@ -814,7 +807,9 @@ Kerjakan soal evaluasi berikut untuk menguji pemahaman Anda terhadap analisis ko
 
 2. [STP-14.2]{.capaian} Sebuah riset dilakukan untuk menilai kualitas sebuah taman kota menggunakan instrumen dari 9 variabel evaluasi. Analisis faktor telah dilaksanakan terhadap kesembilan variabel tersebut dan telah merangkumnya menjadi tiga faktor secara seimbang (F1, F2, dan F3) yang diperlihatkan nilai-nilai *loading* pada @tbl-factor-matrix-taman berikut.
 
-   ```{r factor-matrix-taman, echo=FALSE, message=FALSE, warning=FALSE}
+   ```{r}
+   #| label: tbl-factor-matrix-taman
+   #| tbl-cap: 'Matriks Faktor Variabel Kualitas Taman Kota'
 library(knitr)
 library(kableExtra)
 library(tibble)
@@ -832,7 +827,6 @@ factor_matrix <- tibble(
 
 out_taman <- kbl(
     factor_matrix,
-    caption = "Matriks Faktor Variabel Kualitas Taman Kota",
     digits = 3,
     format.args = list(decimal.mark = ",", big.mark = "."),
     align = "lccc"
