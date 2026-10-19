@@ -39,7 +39,7 @@ dengan:
 
 Simak kasus berikut untuk mempelajari apa yang dimaksud dengan pasangan frekuensi *concordant* dan *discordant*.
 
-::: {#kasus-pasangan-frekuensi-concordant-dan-discordant .kasus title="Pasangan Frekuensi Concordant* dan *Discordant*"}
+::: {#kasus-concordant-discordant .kasus title="Pasangan Frekuensi *Concordant* dan *Discordant*"}
 Kita akan meninjau korelasi antara variabel **"tingkat uang saku"** dan **"tingkat semester perkuliahan"**. Perhatikan kategori nilai dalam kedua variabel tersebut sebagai berikut beserta kode yang akan digunakan pada tabel silangnya.
 
 ```{r}
