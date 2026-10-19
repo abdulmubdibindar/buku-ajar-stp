@@ -1,7 +1,12 @@
-﻿# Korelasi Antarvariabel Metrik
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
 
-::: rmdcapaian
-### Capaian Pembelajaran {.unnumbered}
+# Korelasi Antarvariabel Metrik
+
+::: {#capaian-korelasi-metrik .capaian}
 Setelah mempelajari bab ini, Anda diharapkan mampu memaknai hasil analisis korelasi pasangan variabel bertingkat pengukuran metrik dengan tepat [STP-11.1]{.capaian}
 :::
 
@@ -14,9 +19,7 @@ Untuk asosiasi antarvariabel metrik, kita akan mempelajari dua koefisien, yaitu 
 ## Koefisien Korelasi $\rho$ Spearman
 Koefisien $\rho$ Spearman digunakan untuk mengukur tingkat asosiasi antara dua variabel interval (atau bisa salah satunya saja) dan **tidak mensyaratkan distribusi data yang normal**. Kondisi ini menjadikan pengukuran asosiasi menggunakan $\rho$ Spearman lebih fleksibel, karena dapat **diterapkan tanpa perlu terlebih dahulu mengidentifikasi bentuk distribusi datanya**.
 
-::: rmdnote
-[Catatan]{.tajuksaya}
-
+::: {.catatan}
 Ingat kembali perbedaan mendasar antara tingkat pengukuran variabel interval dan rasio, yakni bahwa variabel interval adalah **variabel angka yang titik nolnya tidak absolut**.
 
 Yang dimaksud dengan "tidak absolut" adalah **tidak ada posisi nilai nol mutlak yang berarti untuk variabel tersebut**. Contoh paling mudah adalah variabel *rating* yang memiliki rentang panjang, seperti 0 hingga 10 (apalagi jika menggunakan desimal).Tidak ada makna nol absolut dalam sebuah rating, karena rating bersifat subjektif tidak bisa dibuat titik nol universal.
@@ -31,27 +34,27 @@ Koefisien $\rho$ Spearman ini dapat diukur dengan rumus:
 
 $$
 \rho = 1 - \frac{6 \sum D_i^2}{n(n^2 - 1)}
-(\#eq:rumus-rho-spearman)
-$$
+$$ {#eq-rumus-rho-spearman}
 
 dengan:
 
 - $D_i$ adalah selisih peringkat antara dua variabel
 - $n$ adalah jumlah pasangan kasus
 
-Nilai koefisien $\rho$ Spearman berkisar **antara 0 hingga 1**, yang menggambarkan **kekuatan hubungan** antardua variabel (lihat Tabel \@ref(tab:tbl-interpretasi-koefisien-nominal) untuk pedoman interpretasi kekuatan hubungan koefisien korelasi). Selain itu, nilai $\rho$ Spearman dapat bernilai positif (+) maupun negatif (âˆ’), yang menunjukkan **arah hubungan** antar kedua variabel.
+Nilai koefisien $\rho$ Spearman berkisar **antara 0 hingga 1**, yang menggambarkan **kekuatan hubungan** antardua variabel (lihat @tbl-interpretasi-koefisien-nominal untuk pedoman interpretasi kekuatan hubungan koefisien korelasi). Selain itu, nilai $\rho$ Spearman dapat bernilai positif (+) maupun negatif (−), yang menunjukkan **arah hubungan** antar kedua variabel.
 
 Hasil kuadrat dari koefisien $\rho$ Spearman ($\rho^2$) menggambarkan **besarnya kemampuan peningkatan keakuratan prediksi** suatu variabel berdasarkan informasi dari variabel lainnya. Dengan kata lain, semakin besar nilai $\rho^2$, semakin tinggi pula kemampuan satu variabel dalam menjelaskan variasi yang terjadi pada variabel pasangannya.
 
 Mari pelajari kasus berikut untuk lebih memahami penggunaan koefisien korelasi $\rho$ Spearman.
 
-::: rmdkasus
+::: {#kasus-mengukur-asosiasi-antarvariabel-metrik-dengan-spearman .kasus title="Mengukur Asosiasi Antarvariabel Metrik dengan $\rho$ Spearman"}
+Agar proses perhitungan $\rho$ Spearman lebih mudah dipahami, kita akan menggunakan data sampel berukuran kecil. Dari 12 mahasiswa, kita mendapatkan data berupa jarak tempuh tempat tinggal ke kampus (dalam km) dan skor kepuasan berkuliah dari 0 sampai 20. Datanya ditampilkan dalam @tbl-data-sampel-rho-spearman.
 
-### Studi Kasus: Mengukur Asosiasi Antarvariabel Metrik dengan $\rho$ Spearman {.unnumbered}
-
-Agar proses perhitungan $\rho$ Spearman lebih mudah dipahami, kita akan menggunakan data sampel berukuran kecil. Dari 12 mahasiswa, kita mendapatkan data berupa jarak tempuh tempat tinggal ke kampus (dalam km) dan skor kepuasan berkuliah dari 0 sampai 20. Datanya ditampilkan dalam Tabel \@ref(tab:tbl-data-sampel-rho-spearman).
-
-```{r tbl-data-sampel-rho-spearman, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-data-sampel-rho-spearman
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Data Sampel Jarak Tempuh dan Skor Kepuasan Berkuliah'
 library(knitr)
 library(kableExtra)
 
@@ -63,7 +66,6 @@ df_rho_spearman <- data.frame(
 
 kbl(df_rho_spearman,
   align = "ccc",
-  caption = "Data Sampel Jarak Tempuh dan Skor Kepuasan Berkuliah",
   escape = FALSE,
   col.names = c("Mahasiswa", "Jarak Tempuh (km)", "Skor Kepuasan Berkuliah")
 ) |>
@@ -76,7 +78,11 @@ kbl(df_rho_spearman,
 
 Langkah awal untuk menghitung koefisien $\rho$ Spearman adalah dengan memberikan **peringkat** pada setiap nilai dari masing-masing variabel yang akan diuji. Dalam hal ini, seluruh nilai pada **kedua variabel** diberi peringkat berdasarkan urutannya, dari nilai terkecil hingga terbesar.
 
-```{r tbl-data-sampel-rho-spearman-ranking, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-data-sampel-rho-spearman-ranking
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Data Sampel Jarak Tempuh dan Skor Kepuasan Berkuliah Beserta Peringkatnya'
 library(knitr)
 library(kableExtra)
 
@@ -90,7 +96,6 @@ df_rho_spearman_ranking <- data.frame(
 
 kbl(df_rho_spearman_ranking,
   align = "ccccc",
-  caption = "Data Sampel Jarak Tempuh dan Skor Kepuasan Berkuliah Beserta Peringkatnya",
   escape = FALSE,
   col.names = c(
     "Mahasiswa",
@@ -109,7 +114,11 @@ kbl(df_rho_spearman_ranking,
 
 Setelah proses pemberian peringkat dilakukan, langkah berikutnya adalah menghitung selisih peringkat ($D$) antara kedua variabel untuk setiap responden. Untuk meringkas demonstrasi, kolom nilai asli disembunyikan sehingga kita fokus pada peringkat dan selisihnya.
 
-```{r tbl-data-sampel-rho-spearman-selisih, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-data-sampel-rho-spearman-selisih
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Pengolahan Data untuk Menghitung Koefisien Korelasi $\rho$ Spearman'
 library(knitr)
 library(kableExtra)
 
@@ -123,7 +132,6 @@ df_rho_spearman_selisih <- data.frame(
 
 kbl(df_rho_spearman_selisih,
   align = "ccccc",
-  caption = "Pengolahan Data untuk Menghitung Koefisien Korelasi $\rho$ Spearman",
   escape = FALSE,
   col.names = c(
     "Mahasiswa",
@@ -140,7 +148,7 @@ kbl(df_rho_spearman_selisih,
   )
 ```
 
-Dari Tabel \@ref(tab:tbl-data-sampel-rho-spearman-selisih) kolom terakhir, dapat kita hitung bahwa total kuadrat selisih peringkat ($\sum D^2$) adalah sebesar **572**. Dengan persamaan \@ref(eq:rumus-rho-spearman), maka koefisien korelasi $\rho$ Spearman dapat dihitung sebagai berikut.
+Dari @tbl-data-sampel-rho-spearman-selisih kolom terakhir, dapat kita hitung bahwa total kuadrat selisih peringkat ($\sum D^2$) adalah sebesar **572**. Dengan @eq-rumus-rho-spearman, maka koefisien korelasi $\rho$ Spearman dapat dihitung sebagai berikut.
 
 $$
 \begin{aligned}
@@ -174,8 +182,7 @@ Secara matematis, alih-alih menguadratkan selisih satu variabel, kita mengalikan
 
 $$
 cov(x, y) = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{n-1}
-(\#eq:rumus-kovariansi)
-$$
+$$ {#eq-rumus-kovariansi}
 
 Logika kovariansi:
 
@@ -188,11 +195,14 @@ Kovariansi sangat berguna untuk mengetahui arah hubungan, namun ia memiliki kele
 
 Jika kita mengukur jarak dalam meter alih-alih kilometer, **nilai kovariansinya akan melonjak drastis meskipun hubungan aslinya tidak berubah**. Hal ini membuat kita sulit menentukan seberapa "kuat" hubungan tersebut hanya dengan melihat angka kovariansi.
 
-::: rmdkasus
-### Studi Kasus: Masalah Skala dan Unit pada Kovariansi {.unnumbered}
+::: {#kasus-masalah-skala-dan-unit-pada-kovariansi .kasus title="Masalah Skala dan Unit pada Kovariansi"}
 Seorang perencana ingin menguji hubungan antara Jarak ke Taman Kota ($x$) dan Indeks Kualitas Udara ($y$) di 5 lokasi. Data awalnya adalah sebagai berikut:
 
-```{r tbl-jarak-iku, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-jarak-iku
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Data Jarak ke Taman dan Kualitas Udara'
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -208,7 +218,6 @@ data_persoalan <- data.frame(
 data_persoalan |>
   kbl(
     col.names = c("Lokasi", "Jarak (km)", "Kualitas Udara (Indeks)"),
-    caption = "Data Jarak ke Taman dan Kualitas Udara",
     format.args = list(big.mark = ".", decimal.mark = ","),
     booktabs = TRUE,
     align = "c",
@@ -221,7 +230,8 @@ data_persoalan |>
   )
 ```
 
-```{r hitung-kovariansi, echo=FALSE}
+```{r}
+#| label: hitung-kovariansi
 # Menggunakan data_persoalan yang sudah didefinisikan sebelumnya
 jarak_km <- data_persoalan$Jarak_km
 kualitas_udara <- data_persoalan$IKU
@@ -247,7 +257,7 @@ cor_m <- cor(jarak_m, kualitas_udara)
 
 Perhitungan kovariansi untuk data tersebut kita mulai dengan perhitungan rata-rata dari masing-masing variabel. Untuk variabel jarak tempuh dalam kilometer, rata-ratanya adalah $\bar{x} = \frac{0{,}5 + 1{,}2 + 2{,}5 + 3{,}0 + 4{,}5}{5} = `r format(mean_jarak_km, decimal.mark = ",", big.mark = ".", trim = TRUE)`$ kilometer. Sementara itu, rata-rata kualitas udara adalah $\bar{y} = \frac{80 + 75 + 60 + 55 + 40}{5} = `r format(mean_kualitas_udara, decimal.mark = ",", big.mark = ".", trim = TRUE)`$.
 
-Sekarang kita akan menghitung kovariansinya menggunakan persamaan \@ref(eq:rumus-kovariansi):
+Sekarang kita akan menghitung kovariansinya menggunakan @eq-rumus-kovariansi:
 
 $$
 \begin{aligned}
@@ -260,7 +270,11 @@ $$
 
 Bagaimana jika kita mengubah satuan jarak tempuh dari kilometer menjadi meter? Berikut adalah dataset yang kita miliki:
 
-```{r tbl-jarak-iku-meter, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-jarak-iku-meter
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Data Jarak ke Taman dan Kualitas Udara (Satuan Meter)'
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -276,7 +290,6 @@ data_persoalan_meter <- data.frame(
 data_persoalan_meter |>
   kbl(
     col.names = c("Lokasi", "Jarak (meter)", "Kualitas Udara (Indeks)"),
-    caption = "Data Jarak ke Taman dan Kualitas Udara (Satuan Meter)",
     format.args = list(big.mark = ".", decimal.mark = ","),
     booktabs = TRUE,
     align = "c",
@@ -291,7 +304,7 @@ data_persoalan_meter |>
 
 Rata-rata jarak tempuh dalam meter sekarang adalah $`r format(mean_jarak_m, big.mark = ".", trim = TRUE)`$ meter. Dan ketika kita menghitung kovariansinya, nilainya menjadi:
 
-$$ 
+$$
 \begin{aligned}
 \text{cov}(X, Y) &= \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{n-1} \\
 &= \frac{(500 - `r format(mean_jarak_m, big.mark = ".", trim = TRUE)`)(80 - `r format(mean_kualitas_udara, big.mark = ".", decimal.mark = ",", trim = TRUE)`) + (1200 - `r format(mean_jarak_m, big.mark = ".", trim = TRUE)`)(75 - `r format(mean_kualitas_udara, big.mark = ".", decimal.mark = ",", trim = TRUE)`) + \dots}{5-1} \\
@@ -309,8 +322,8 @@ Karena nilai selisih $(x_i - \bar{x})$ membesar 1000 kali lipat, maka nilai tota
 Untuk mengatasi masalah unit tersebut, Karl Pearson [-@pearson1895note] mengusulkan agar kovariansi "distandarisasi". Caranya adalah dengan membagi kovariansi dengan hasil kali standar deviasi kedua variabel ($s_x$ dan $s_y$). Indeks hasil standardisasi ini dikenal sebagai **Koefisien Korelasi Pearson** ($r$):
 
 $$
-r = \frac{Cov(x,y)}{s_x s_y}(\#eq:rumus-korelasi-pearson)
-$$
+r = \frac{Cov(x,y)}{s_x s_y}
+$$ {#eq-rumus-korelasi-pearson}
 
 dengan:
 
@@ -321,8 +334,8 @@ dengan:
 atau jika kita nyatakan dalam bentuk variabel-variabel yang dianalisis, maka persamaannya adalah:
 
 $$
-r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2} \sqrt{\sum_{i=1}^{n} (y_i - \bar{y})^2}}(\#eq:rumus-korelasi-pearson-variabel)
-$$
+r = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2} \sqrt{\sum_{i=1}^{n} (y_i - \bar{y})^2}}
+$$ {#eq-rumus-korelasi-pearson-variabel}
 
 dengan:
 
@@ -334,8 +347,7 @@ dengan:
 
 Interpretasi dari nilai ini juga lebih sederhana: rentang nilai $r$ selalu berada di antara $-1{,}00$ sampai dengan $+1{,}00$, yang berarti jika tandanya positif maka kedua variabel **bergerak searah**, sedangkan jika tandanya negatif maka kedua variabel **bergerak berlawanan arah**. Semakin mendekati nilai mutlak 1, maka **semakin kuat hubungan antara kedua variabel tersebut**.
 
-::: rmdkasus
-### Studi Kasus: Menghitung Korelasi Pearson {.unnumbered}
+::: {#kasus-menghitung-korelasi-pearson .kasus title="Menghitung Korelasi Pearson"}
 Kita akan menggunakan kembali data Jarak ke Taman Kota ($x$) dalam kilometer dan Indeks Kualitas Udara ($y$) dari contoh sebelumnya. Kita telah mengetahui bahwa:
 
 - $Cov(x,y) = `r format(kov_km, decimal.mark = ",", big.mark = ".", trim = TRUE)`$\
@@ -344,7 +356,7 @@ Kita akan menggunakan kembali data Jarak ke Taman Kota ($x$) dalam kilometer dan
 - $s_x = `r format(sd(data_persoalan$Jarak_km), decimal.mark = ",", big.mark = ".", trim = TRUE)`$\
 - $s_y = `r format(sd(data_persoalan$IKU), decimal.mark = ",", big.mark = ".", trim = TRUE)`$
 
-Dengan menggunakan persamaan \@ref(eq:rumus-korelasi-pearson), kita dapat menghitung nilai korelasi sebagai berikut:
+Dengan menggunakan @eq-rumus-korelasi-pearson, kita dapat menghitung nilai korelasi sebagai berikut:
 
 $$
 \begin{aligned}
@@ -355,9 +367,10 @@ r &= \frac{Cov(x,y)}{s_x s_y} \\
 \end{aligned}
 $$
 
-Bila dihitung menggunakan persamaan dalam bentuk variabel-variabel yang dianalisis seperti pada \@ref(eq:rumus-korelasi-pearson-variabel), maka hasilnya adalah:
+Bila dihitung menggunakan persamaan dalam bentuk variabel-variabel yang dianalisis seperti pada @eq-rumus-korelasi-pearson-variabel, maka hasilnya adalah:
 
-```{r perhitungan-simple, echo=FALSE}
+```{r}
+#| label: perhitungan-simple
 mean_jarak_km <- format(mean_jarak_km, decimal.mark = ",", big.mark = ".", trim = TRUE)
 mean_kualitas_udara <- format(mean_kualitas_udara, decimal.mark = ",", big.mark = ".", trim = TRUE)
 ```
@@ -373,7 +386,11 @@ $$
 
 Untuk memudahkan pengecekan, berikut adalah hasil pengolahan dari data mentah yang kita miliki:
 
-```{r tbl-jarak-iku-2, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-jarak-iku-2
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Data Jarak ke Taman dan Kualitas Udara (diulang)'
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -389,7 +406,6 @@ data_persoalan <- data.frame(
 data_persoalan |>
   kbl(
     col.names = c("Lokasi", "Jarak (km)", "Kualitas Udara (Indeks)"),
-    caption = "Data Jarak ke Taman dan Kualitas Udara (diulang)",
     format.args = list(big.mark = ".", decimal.mark = ","),
     booktabs = TRUE,
     align = "c",
@@ -406,10 +422,14 @@ Nilai koefisien korelasi Pearson adalah `r format(cor_km, decimal.mark = ",", bi
 
 :::
 
-## Pola Hubungan Data Metrik {#pola-hubungan-data-metrik}
-Pola hubungan data metrik adalah **bentuk visual** dari **titik-titik yang ada dalam *scatter plot*** antara variabel-variabel metrik yang kita analisis. Dari pola dalam *scatter plot* kita juga sebenarnya dapat menelaah elemen-elemen hubungan lainnya: **keberadaan dan kekuatan** serta **arah hubungan**. Gambar \@ref(fig:fig-pola-hubungan) menjelaskan maksud hal tersebut.
+## Pola Hubungan Data Metrik {#sec-pola-hubungan-data-metrik}
+Pola hubungan data metrik adalah **bentuk visual** dari **titik-titik yang ada dalam *scatter plot*** antara variabel-variabel metrik yang kita analisis. Dari pola dalam *scatter plot* kita juga sebenarnya dapat menelaah elemen-elemen hubungan lainnya: **keberadaan dan kekuatan** serta **arah hubungan**. @fig-pola-hubungan menjelaskan maksud hal tersebut.
 
-```{r fig-pola-hubungan, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Pola Hubungan Linear dan Ketiadaan Hubungan pada Scatter Plot'}
+```{r}
+#| label: fig-pola-hubungan
+#| out-width: '60%'
+#| fig-align: 'center'
+#| fig-cap: 'Pola Hubungan Linear dan Ketiadaan Hubungan pada Scatter Plot'
 knitr::include_graphics("images/pola-hubungan-metrik.png")
 ```
 
@@ -417,20 +437,26 @@ Grafik (a) dan (b) menunjukkan **pola hubungan linear** karena sebaran titik-tit
 
 **Kekuatan** hubungan dilihat dari kerapatan titik-titik. Titik-titik yang mengumpul dengan **rapat** menandakan hubungan yang **kuat**, sementara hubungan yang **lemah** diperlihatkan oleh kumpulan titik-titik yang **renggang**.
 
-**Arah** hubungan dilihat dari **arah kemiringan** garis. Kemiringan **ke atas** menandakan hubungan yang **positif atau searah**. Hal ini dapat dilihat dari titik-titik yang berada di bawah garis merah (horizontal)â€”lebih kecilâ€”juga berada di kiri garis biru (vertikal)â€”lebih kecil juga. Di sisi lain, kemiringan **ke bawah** menandakan hubungan yang **negatif atau berlawanan**. Titik-titik yang berada di bawah garis merah (horizontal)â€”lebih kecilâ€”berada di kanan garis biru (vertikal)â€”lebih besar.
+**Arah** hubungan dilihat dari **arah kemiringan** garis. Kemiringan **ke atas** menandakan hubungan yang **positif atau searah**. Hal ini dapat dilihat dari titik-titik yang berada di bawah garis merah (horizontal)—lebih kecil—juga berada di kiri garis biru (vertikal)—lebih kecil juga. Di sisi lain, kemiringan **ke bawah** menandakan hubungan yang **negatif atau berlawanan**. Titik-titik yang berada di bawah garis merah (horizontal)—lebih kecil—berada di kanan garis biru (vertikal)—lebih besar.
 
-Pola hubungan lain adalah **nonlinear**. Hubungan nonlinear adalah hubungan yang, seperti namanya, tidak linear. Hubungan-hubungan nonlinear ini biasanya mengandung fungsi-fungsi matematis nonlinear seperti fungsi kuadrat (quadratic, $x^2$), kubik (cubic, $x^3$), eksponensial (exponential, $e^x$) atau sinusoidal ($sin(x)$). Hal ini diperjelas dengan ilustrasi yang ada di Gambar \@ref(fig:fig-pola-hubungan-nonlinear) berikut.
+Pola hubungan lain adalah **nonlinear**. Hubungan nonlinear adalah hubungan yang, seperti namanya, tidak linear. Hubungan-hubungan nonlinear ini biasanya mengandung fungsi-fungsi matematis nonlinear seperti fungsi kuadrat (quadratic, $x^2$), kubik (cubic, $x^3$), eksponensial (exponential, $e^x$) atau sinusoidal ($sin(x)$). Hal ini diperjelas dengan ilustrasi yang ada di @fig-pola-hubungan-nonlinear berikut.
 
-```{r fig-pola-hubungan-nonlinear, echo=FALSE, out.width='60%', fig.align='center', fig.cap='Pola Hubungan Linear dan Ketiadaan Hubungan pada Scatter Plot'}
+```{r}
+#| label: fig-pola-hubungan-nonlinear
+#| out-width: '60%'
+#| fig-align: 'center'
+#| fig-cap: 'Pola Hubungan Linear dan Ketiadaan Hubungan pada Scatter Plot'
 knitr::include_graphics("images/pola-hubungan-nonlinear.png")
 ```
 
-::: rmdkasus
-### Studi Kasus: Pola Hubungan Jarak dengan IKU {.unnumbered}
+::: {#kasus-pola-hubungan-jarak-dengan-iku .kasus title="Pola Hubungan Jarak dengan IKU"}
+Untuk memahami gambaran hubungan antarvariabel metrik secara lebih luas, mari kita perhatikan hasil pengolahan data jarak ke taman dan kualitas udara dari 30 lokasi yang disajikan dalam @fig-scatter-jarak-iku-30.
 
-Untuk memahami gambaran hubungan antarvariabel metrik secara lebih luas, mari kita perhatikan hasil pengolahan data jarak ke taman dan kualitas udara dari 30 lokasi yang disajikan dalam Gambar \@ref(fig:fig-scatter-jarak-iku-30).
-
-```{r fig-scatter-jarak-iku-30, echo=FALSE, out.width='70%', fig.align='center', fig.cap='Scatter Plot Hubungan Jarak ke Taman dengan IKU'}
+```{r}
+#| label: fig-scatter-jarak-iku-30
+#| out-width: '70%'
+#| fig-align: 'center'
+#| fig-cap: 'Scatter Plot Hubungan Jarak ke Taman dengan IKU'
 library(ggplot2)
 
 set.seed(42)
@@ -457,11 +483,14 @@ Berdasarkan pengamatan visual terhadap titik-titik koordinat tersebut, kita dapa
 
 Kerjakanlah soal-soal berikut untuk menguji pemahaman Anda mengenai korelasi variabel metrik.
 
-::: rmdexercise
-## Soal Evaluasi 13 {.unnumbered}
+::: {#latihan-korelasi-metrik-1 .latihan}
 Perhatikan tabel terkait jarak rumah ke fasilitas kesehatan, frekuensi kunjungan per tahun, dan tingkat kepuasan terhadap fasilitas kesehatan berikut. Lakukanlah pengujian asosiasi pada masing-masing variabel berikut: (i) jarak dan frekuensi kunjungan; dan (ii) frekuensi kunjungan dan kepuasan.
 
-```{r tbl-evaluasi-13, echo=FALSE, out.width='60%', fig.align='center'}
+```{r}
+#| label: tbl-evaluasi-13
+#| out-width: '60%'
+#| fig-align: 'center'
+#| tbl-cap: 'Data Jarak ke Taman dan Kualitas Udara (diulang)'
 library(knitr)
 library(kableExtra)
 library(dplyr)
@@ -492,7 +521,6 @@ data_persoalan |>
       "Responden", "Jarak (km)", "Frekuensi Kunjungan",
       "Tingkat Kepuasan terhadap Faskes (0-20)"
     ),
-    caption = "Data Jarak ke Taman dan Kualitas Udara (diulang)",
     format.args = list(big.mark = ".", decimal.mark = ","),
     booktabs = TRUE,
     align = "c",
