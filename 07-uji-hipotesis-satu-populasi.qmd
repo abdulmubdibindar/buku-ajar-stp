@@ -82,7 +82,6 @@ $$
 \end{aligned}
 $$ {#eq-bentuk-khusus-h0}
 
-
 ::: {#kasus-menentukan-hipotesis-kosong-pada-evaluasi-mbg .kasus title="Menentukan Hipotesis Kosong pada Evaluasi MBG"}
 Misalkan kita memiliki pertanyaan evaluasi: *"Apakah benar bahwa program MBG berhasil dengan memberikan kepuasan kepada masyarakat?"*. Kita pun menetapkan nilai 80 sebagai ambang kepuasan masyarakat. Dalam hal ini, ada dua kemungkinan kondisi yang terjadi: 
 
@@ -154,7 +153,6 @@ Sebagaimana asas praduga tak bersalah, dari awal proses pengadilan selalu diasum
 
 Jika bukti dari data sampel *sangat kuat dan meyakinkan*, maka pengujian akan **menolak $H_0$** (terdakwa divonis bersalah). Namun, jika bukti-bukti data sampel kurang kuat, kaidah statistik tidak otomatis menyimpulkan "kami memastikan Anda tidak bersalah" (*menerima $H_0$*). Sebaliknya, keputusan yang diambil adalah "bukti terlalu lemah untuk membuktikan Anda bersalah". Dalam bahasa statistik, ini disebut dengan **gagal menolak $H_0$**, yakni saat alat bukti (statistik sampel) tidak cukup memadai untuk menggugurkan dugaan mula-mula (*status quo*) yang kita miliki.
 :::
-
 
 ## Menentukan Hasil Pengujian Hipotesis Parameter
 
@@ -403,7 +401,6 @@ p_B <- ggplot(df, aes(x, y)) +
 p_A + p_B
 ```
 
-
 ## Langkah-langkah Pengujian Hipotesis {#sec-langkah-pengujian-hipotesis}
 
 Berdasarkan konsep-konsep yang sudah kita pelajari sebelunya, berikut adalah rangkuman langkah-langkah pengujian hipotesis.
@@ -489,21 +486,18 @@ Dengan menolak $H_0$, terbukti bahwa rata-rata skor kepuasan masyarakat yang dip
 
 Mari kita pelajari kasus lain yang langkah-langkahnya lebih terlihat dari awal sampai akhir, juga untuk statistik proporsi
 
-::: {#kasus-layanan-bus-kampus .kasus title="Layanan Bus Kampus"}
+::: {#kasus-bus-rata-rata .kasus title="Layanan Bus Kampus: Uji Rata-rata Jarak Tempat Tinggal"}
 *Dengan menggunakan data pada subbab sebelumnya mengenai jarak tempat tinggal mahasiswa ITERA menuju kampus yang menghasilkan rata-rata 4,95 km dan simpangan baku 2,23 km didasarkan pada jawaban 333 responden, pihak kampus merespons kebutuhan mobilitas mahasiswa dengan merencanakan penyediaan layanan Bus Kampus. Namun, layanan ini hanya akan efektif jika mayoritas mahasiswa tinggal pada jarak dekat ($\leq 5$ km) dari kampus dan apabila lebih dari 80% mahasiswa berminat terhadap layanan tersebut.*
-
-
-#### Pengujian Hipotesis Rata-rata Populasi {.unnumbered}
 
 *Pada tingkat kepercayaan 95%, apakah layanan Bus Kampus akan efektif melayani seluruh mahasiswa ITERA, yang dengan bentuk pertanyaan lain, apakah benar mahasiswa ITERA tinggal $\leq 5$ km dari kampus?*
 
-##### Memeriksa Asumsi Pengujian {.unnumbered}
+**Langkah 1: Memeriksa Asumsi Pengujian**
 
 1. **Independensi**: Pengambilan sampel 333 responden diasumsikan dilakukan secara acak sehingga hasil pengamatan antarmahasiswa saling bebas. Asumsi independensi terpenuhi.
 2. **Tingkat pengukuran**: Variabel yang dikaji adalah jarak tempuh (km), sebuah skor ukur yang numerik dan konstan (interval-rasio). Asumsi tingkat pengukuran terpenuhi.
 3. **Bentuk distribusi statistik**: Oleh karena jumlah sampel tergolong besar ($n = 333 > 100$), Teorema Limit Sentral dapat digunakan sehingga distribusi probabilitas rata-rata ukurnya diasumsikan berdistribusi normal secara praktis. Asumsi kenormalan terpenuhi.
 
-##### Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$) {.unnumbered}
+**Langkah 2: Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**
 
 Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah **rata-rata sama dengan 5 km**. Untuk bentuk hipotesis alternatifnya, kita berusaha membuktikan agar klaim kita bahwa "penyediaan bus akan efektif saat rata-rata jarak tempuh dari tempat tinggal <5 km" bisa menolak hipotesis kosong. Dengan demikian, bentuk hipotesis alternatif kita adalah kondisi di mana penyediaan bus akan efektif (<5 km).
 
@@ -514,14 +508,13 @@ $$
 
 Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa rata-rata jarak adalah 5 km. $H_1$ berusaha menolak hipotesis kosong dengan mengeklaim bahwa penyediaan bus efisien, di saat rata-rata <5 km.
 
-##### Menetapkan Wilayah Kritis dari Signifikansi {.unnumbered}
+**Langkah 3: Menetapkan Wilayah Kritis dari Signifikansi**
 
 Karena kita menggunakan sampel besar, kita menggunakan distribusi Z. Lalu, kita menggunakan tingkat kepercayaan 95%, yang berarti tingkat kepercayaan kita adalah $\alpha = 5\% = 0,05$.
 
 Berdasarkan subbab @sec-titik-kritis-wilayah-kritis, dan @fig-titik-kritis-distribusi, kita menggunakan bentuk (b) atau *left-tailed*.
 
-
-##### Mencari Nilai Titik Kritis {-}
+**Langkah 4: Mencari Nilai Titik Kritis**
 
 Berdasarkan tabel Distribusi Z, nilai titik kritis untuk $\alpha = 5\%$ *left-tailed* adalah $-1,65$.
 
@@ -575,7 +568,7 @@ ggplot(df, aes(x, y)) +
   )
 ```
 
-##### Mencari Nilai Statistik Uji {-}
+**Langkah 5: Mencari Nilai Statistik Uji**
 
 Kita menggunakan @eq-statistik-uji-mean untuk menghitung statistik uji kita.
 
@@ -593,7 +586,7 @@ Z &= \frac{\bar{x} - \mu_0}{s / \sqrt{n}} \\
 \end{aligned}
 $$
 
-##### Membandingkan Nilai Statistik Uji dan Titik Kritis {-}
+**Langkah 6: Membandingkan Nilai Statistik Uji dan Titik Kritis**
 
 - $Z_{hitung} = -3,36$
 - $Z_{kritis} = -1,65$
@@ -671,22 +664,24 @@ ggplot(df, aes(x, y)) +
   )
 ```
 
-##### Menarik Kesimpulan dan Memaknai Hasil {-}
+**Langkah 7: Menarik Kesimpulan dan Memaknai Hasil**
 
 Dengan demikian, data sampel kita cukup untuk dapat menolak $H_0$, yaitu bahwa rata-rata jarak mahasiswa ITERA ke kampus adalah 5 km atau kurang. Berdasarkan perhitungan statistik, penyediaan Bus Kampus dapat dianggap tepat dan berpotensi efektif. 
 
+:::
 
-#### Pengujian Hipotesis Proporsi Populasi {.unnumbered}
+::: {#kasus-bus-proporsi .kasus title="Layanan Bus Kampus: Uji Proporsi Mahasiswa yang Berminat"}
+Skenario layanan Bus Kampus sama dengan @kasus-bus-rata-rata.
 
 *Program dinilai akan berhasil apabila lebih dari 80% mahasiswa berminat. Berdasarkan survei terhadap 333 responden, diketahui 82% mahasiswa berminat. Dengan tingkat kepercayaan 99%, kita uji hipotesis parameter proporsi ini.*
 
-##### Memeriksa Asumsi Pengujian {-}
+**Langkah 1: Memeriksa Asumsi Pengujian**
 
 1. **Independensi**: Sebagaimana pada uji rata-rata, sampel 333 responden ini diasumsikan ditarik secara acak. Asumsi independensi terpenuhi.
 2. **Tingkat pengukuran**: Respons yang diberikan mahasiswa bersifat kategorik nominal dikotomis (hanya ada dua kemungkinan: "berminat" atau "tidak berminat"), sesuai dengan alat ukur proporsi. Asumsi tingkat pengukuran terpenuhi.
 3. **Bentuk distribusi statistik**: Mempertimbangkan bahwa ukuran sampel yang digunakan sangat besar ($n = 333$), distribusi statistik dari proporsi sampel tersebut cukup memadai untuk didekati dengan distribusi normal. Asumsi kenormalan terpenuhi.
 
-##### Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$) {-}
+**Langkah 2: Menetapkan Hipotesis Kosong dan Alternatif ($H_0$ dan $H_1$)**
 
 Bentuk kondisi netral yang dapat dijadikan hipotesis kosong adalah **proporsi mahasiswa yang berminat sama dengan 80%**. Untuk bentuk hipotesis alternatifnya, kita berusaha untuk membuktikan klaim bahwa program akan berhasil jika minat melebihi 80%. Dengan demikian, bentuk hipotesis alternatif kita adalah $H_1: P > 0,8$.
 
@@ -697,13 +692,13 @@ $$
 
 Pada hipotesis tersebut, $H_0$ menunjukkan kondisi bahwa besaran proporsi adalah 0,8. $H_1$ berusaha menolak hipotesis kosong dengan mengeklaim bahwa program akan berhasil di saat proporsi > 0,8.
 
-##### Menetapkan Wilayah Kritis dari Signifikansi {-}
+**Langkah 3: Menetapkan Wilayah Kritis dari Signifikansi**
 
 Oleh karena kita menguji proporsi, kita menggunakan metode sampel besar, sehingga titik statistik acuan adalah distribusi Z. Lalu, kita menggunakan tingkat kepercayaan 99%, yang berarti tingkat signifikansi kita adalah $\alpha = 1\% = 0,01$.
 
 Berdasarkan hipotesis alternatif $H_1$ yang berarah "lebih dari" (>), kita menggunakan uji ekor kanan (*right-tailed*).
 
-##### Mencari Nilai Titik Kritis {-}
+**Langkah 4: Mencari Nilai Titik Kritis**
 
 Berdasarkan tabel Distribusi Z, nilai titik kritis untuk $\alpha = 1\%$ *right-tailed* adalah $+2,33$.
 
@@ -757,7 +752,7 @@ ggplot(df, aes(x, y)) +
   )
 ```
 
-##### Mencari Nilai Statistik Uji {-}
+**Langkah 5: Mencari Nilai Statistik Uji**
 
 Kita menggunakan @eq-statistik-uji-proporsi untuk menghitung statistik uji kita.
 
@@ -774,7 +769,7 @@ Z &= \frac{\hat{p} - p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}} \\
 \end{aligned}
 $$
 
-##### Membandingkan Nilai Statistik Uji dan Titik Kritis {-}
+**Langkah 6: Membandingkan Nilai Statistik Uji dan Titik Kritis**
 
 - $Z_{hitung} = +0,91$
 - $Z_{kritis} = +2,33$
@@ -856,7 +851,7 @@ ggplot(df, aes(x, y)) +
   )
 ```
 
-##### Menarik Kesimpulan dan Memaknai Hasil {-}
+**Langkah 7: Menarik Kesimpulan dan Memaknai Hasil**
 
 Karena kita gagal menolak $H_0$, terbukti bahwa statistik proporsi sebesar 0,82 atau 82% belum memiliki cukup bukti empiris untuk menolak pernyataan bahwasanya proporsi mahasiswa yang berminat hanya 80%. Walaupun kita mendapat sampel dengan nilai 82% (>80%), hasil pengujian hipotesis menyatakan bahwa sampel kita tersebut didapatkan secara kebetulan. Oleh karena itu, secara populasi, kita bisa menyimpulkan bahwa proporsi minat mahasiswa belum mencukupi standar target kelayakan. Pihak kampus perlu mengkaji ulang atau mempertimbangkan kembali penyediaan Bus Kampus ini mengingat minimnya potensi minat mahasiswa.
 :::
