@@ -1,4 +1,10 @@
-﻿# (APPENDIX) Lampiran {.unnumbered}
+```{r}
+#| label: setup
+#| include: false
+source("_common.R")
+```
+
+# (APPENDIX) Lampiran {.unnumbered}
 
 # Tabel Statistik {.unnumbered}
 
@@ -6,7 +12,11 @@
 
 Tabel berikut menyajikan luas area di bawah kurva distribusi normal standar dari $Z = 0$ hingga nilai $Z$ tertentu, yaitu $P(0 \leq Z \leq z)$.
 
-```{r fig-ilustrasi-z-table, echo=FALSE, fig.align='center', out.width='45%', fig.cap='Luas area yang dicari pada Tabel Distribusi Normal Standar: $P(0 \\leq Z \\leq z)$'}
+```{r}
+#| label: fig-ilustrasi-z-table
+#| fig-align: 'center'
+#| out-width: '45%'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi Normal Standar: $P(0 \\leq Z \\leq z)$'
 library(ggplot2)
 
 x <- seq(-3.5, 3.5, length.out = 500)
@@ -50,7 +60,9 @@ ggplot(d, aes(x, y)) +
   )
 ```
 
-```{r tab-distribusi-z, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-distribusi-z
+#| tbl-cap: 'Tabel Distribusi Normal Standar $P(0 \\leq Z \\leq z)$'
 library(dplyr)
 library(kableExtra)
 
@@ -75,7 +87,6 @@ tbl_z <- cbind(
 if (knitr::is_html_output()) {
   tbl_z |>
     kbl(
-      caption  = "Tabel Distribusi Normal Standar $P(0 \\leq Z \\leq z)$",
       align    = c("c", rep("c", length(z_cols))),
       escape   = FALSE,
       booktabs = TRUE
@@ -103,7 +114,11 @@ Tabel berikut menyajikan nilai $t_{kritis}$ pada pengujian satu arah (*one-taile
 
 Untuk ekor kiri, cukup ubah tanda nilai $t$ pada tabel ini menjadi negatif.
 
-```{r fig-ilustrasi-t-table-1arah, echo=FALSE, fig.align='center', out.width='45%', fig.cap='Luas area yang dicari pada Tabel Distribusi t Satu Arah: $P(t > t_{tabel}) = \\alpha$'}
+```{r}
+#| label: fig-ilustrasi-t-table-1arah
+#| fig-align: 'center'
+#| out-width: '45%'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi t Satu Arah: $P(t > t_{tabel}) = \\alpha$'
 library(ggplot2)
 
 df_ex <- 15
@@ -152,7 +167,9 @@ ggplot(d, aes(x, y)) +
   )
 ```
 
-```{r tab-distribusi-t-1arah, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-distribusi-t-1arah
+#| tbl-cap: 'Tabel Distribusi t *Student* (Satu Arah / *One-tailed*)'
 library(dplyr)
 library(kableExtra)
 
@@ -174,7 +191,6 @@ tbl_t1 <- cbind(`df` = lbl, tbl_t1)
 if (knitr::is_html_output()) {
   tbl_t1 |>
     kbl(
-      caption  = "Tabel Distribusi t *Student* (Satu Arah / *One-tailed*)",
       align    = c("c", rep("c", length(alpha_1t))),
       escape   = FALSE,
       booktabs = TRUE
@@ -198,7 +214,11 @@ tbl_t1
 
 Tabel berikut menyajikan nilai $t_{kritis}$ pada pengujian dua arah (*two-tailed*) untuk berbagai tingkat signifikansi $\alpha$. Nilai di dalam tabel merepresentasikan nilai $t$ yang membatasi luas area total sebesar $\alpha$ di kedua ekor sebaran, yaitu $P(|t| > t_{tabel}) = \alpha$.
 
-```{r fig-ilustrasi-t-table-2arah, echo=FALSE, fig.align='center', out.width='45%', fig.cap='Luas area yang dicari pada Tabel Distribusi t Dua Arah: $P(|t| > t_{tabel}) = \\alpha$'}
+```{r}
+#| label: fig-ilustrasi-t-table-2arah
+#| fig-align: 'center'
+#| out-width: '45%'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi t Dua Arah: $P(|t| > t_{tabel}) = \\alpha$'
 library(ggplot2)
 
 df_ex <- 15
@@ -261,7 +281,9 @@ ggplot(d, aes(x, y)) +
   )
 ```
 
-```{r tab-distribusi-t-2arah, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-distribusi-t-2arah
+#| tbl-cap: 'Tabel Distribusi t *Student* (Dua Arah / *Two-tailed*)'
 library(dplyr)
 library(kableExtra)
 
@@ -283,7 +305,6 @@ tbl_t2 <- cbind(`df` = lbl, tbl_t2)
 if (knitr::is_html_output()) {
   tbl_t2 |>
     kbl(
-      caption  = "Tabel Distribusi t *Student* (Dua Arah / *Two-tailed*)",
       align    = c("c", rep("c", length(alpha_2t))),
       escape   = FALSE,
       booktabs = TRUE
@@ -307,7 +328,11 @@ tbl_t2
 
 Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 10\%$, yaitu nilai $F$ yang membatasi luas area sebesar 10% di ekor kanan distribusi F, $P(F > F_{tabel}) = 0{,}10$.
 
-```{r fig-ilustrasi-f-table-10, echo=FALSE, fig.align='center', out.width='45%', fig.cap='Luas area yang dicari pada Tabel Distribusi F ($\\alpha = 10\\%$): $P(F > F_{tabel}) = 0{,}10$'}
+```{r}
+#| label: fig-ilustrasi-f-table-10
+#| fig-align: 'center'
+#| out-width: '45%'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi F ($\\alpha = 10\\%$): $P(F > F_{tabel}) = 0{,}10$'
 library(ggplot2)
 
 df1 <- 5
@@ -357,7 +382,9 @@ ggplot(d, aes(x, y)) +
   )
 ```
 
-```{r tab-distribusi-f-10persen, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-distribusi-f-10persen
+#| tbl-cap: 'Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 10\\%$'
 library(dplyr)
 library(kableExtra)
 
@@ -378,7 +405,6 @@ tbl_f10 <- cbind(`dfw` = lbl, tbl_f10)
 if (knitr::is_html_output()) {
   tbl_f10 |>
     kbl(
-      caption  = "Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 10\\%$",
       align    = c("c", rep("c", length(dfb_vals))),
       escape   = FALSE,
       booktabs = TRUE
@@ -403,7 +429,11 @@ tbl_f10
 
 Tabel berikut menyajikan nilai $F_{kritis}$ pada tingkat signifikansi $\alpha = 5\%$, yaitu nilai $F$ yang membatasi luas area sebesar 5% di ekor kanan distribusi F, $P(F > F_{tabel}) = 0{,}05$.
 
-```{r fig-ilustrasi-f-table-05, echo=FALSE, fig.align='center', out.width='45%', fig.cap='Luas area yang dicari pada Tabel Distribusi F ($\\alpha = 5\\%$): $P(F > F_{tabel}) = 0{,}05$'}
+```{r}
+#| label: fig-ilustrasi-f-table-05
+#| fig-align: 'center'
+#| out-width: '45%'
+#| fig-cap: 'Luas area yang dicari pada Tabel Distribusi F ($\\alpha = 5\\%$): $P(F > F_{tabel}) = 0{,}05$'
 library(ggplot2)
 
 df1 <- 5
@@ -453,7 +483,9 @@ ggplot(d, aes(x, y)) +
   )
 ```
 
-```{r tab-distribusi-f-5persen-lampiran, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
+#| label: tbl-distribusi-f-5persen-lampiran
+#| tbl-cap: 'Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 5\\%$'
 library(dplyr)
 library(kableExtra)
 
@@ -474,7 +506,6 @@ tbl_f05 <- cbind(`dfw` = lbl, tbl_f05)
 if (knitr::is_html_output()) {
   tbl_f05 |>
     kbl(
-      caption  = "Tabel Distribusi F pada Tingkat Signifikansi $\\alpha = 5\\%$",
       align    = c("c", rep("c", length(dfb_vals))),
       escape   = FALSE,
       booktabs = TRUE
